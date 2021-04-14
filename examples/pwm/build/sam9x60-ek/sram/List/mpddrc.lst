@@ -1,0 +1,1062 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         26/May/2020  11:35:29
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\mpddrc.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW9FA6.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\mpddrc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\List\mpddrc.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\Obj\mpddrc.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#      __iar_require _Printf         
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\mpddrc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          #include "chip.h"
+     31          #include "barriers.h"
+     32          #include "timer.h"
+     33          #include "trace.h"
+     34          
+     35          #include "extram/mpddrc.h"
+     36          #include "peripherals/pmc.h"
+     37          #include "peripherals/sfrbu.h"
+     38          
+     39          #include <assert.h>
+     40          #include <stdlib.h>
+     41          
+     42          #ifndef MPDDRC_LPR_LPCB_DISABLED
+     43          #define MPDDRC_LPR_LPCB_DISABLED			(MPDDRC_LPR_LPCB_NOLOWPOWER)
+     44          #endif
+     45          
+     46          static void _set_ddr_timings(struct _mpddrc_desc* desc)
+     47          {
+     48          #ifdef CONFIG_HAVE_MPDDRC_SDRAM_ONLY
+     49          	uint8_t trc_trfc, txsr;
+     50          
+     51          	/* single register value for tRC and tRFC, use max */
+     52          	trc_trfc = desc->timings.trc;
+     53          	if (desc->timings.trfc > trc_trfc)
+     54          		trc_trfc = desc->timings.trfc;
+     55          
+     56          	/* single register value for tXSRD and tXSNR */
+     57          	txsr = desc->timings.txsrd;
+     58          	if (desc->timings.txsnr > txsr)
+     59          		txsr = desc->timings.txsnr;
+     60          
+     61          	uint32_t cr = MPDDRC->MPDDRC_CR;
+     62          	cr &= ~(MPDDRC_CR_TWR_Msk |
+     63          	        MPDDRC_CR_TRC_TRFC_Msk |
+     64          	        MPDDRC_CR_TRP_Msk |
+     65          	        MPDDRC_CR_TRCD_Msk |
+     66          	        MPDDRC_CR_TRAS_Msk |
+     67          	        MPDDRC_CR_TXSR_Msk);
+     68          	cr |= MPDDRC_CR_TWR(desc->timings.twr)
+     69          	    | MPDDRC_CR_TRC_TRFC(trc_trfc)
+     70          	    | MPDDRC_CR_TRP(desc->timings.trp)
+     71          	    | MPDDRC_CR_TRCD(desc->timings.trcd)
+     72          	    | MPDDRC_CR_TRAS(desc->timings.tras)
+     73          	    | MPDDRC_CR_TXSR(txsr);
+     74          	MPDDRC->MPDDRC_CR = cr;
+     75          #ifdef MPDDRC_CFR1_UNAL_SUPPORTED
+     76          	MPDDRC->MPDDRC_CFR1 |= MPDDRC_CFR1_UNAL_SUPPORTED;
+     77          #endif
+     78          #else /* !CONFIG_HAVE_MPDDRC_SDRAM_ONLY */
+     79          	MPDDRC->MPDDRC_TPR0 = MPDDRC_TPR0_TMRD(desc->timings.tmrd)
+     80          	                    | MPDDRC_TPR0_TWTR(desc->timings.twtr)
+     81          	                    | MPDDRC_TPR0_TRRD(desc->timings.trrd)
+     82          	                    | MPDDRC_TPR0_TRP(desc->timings.trp)
+     83          	                    | MPDDRC_TPR0_TRC(desc->timings.trc)
+     84          	                    | MPDDRC_TPR0_TWR(desc->timings.twr)
+     85          	                    | MPDDRC_TPR0_TRCD(desc->timings.trcd)
+     86          	                    | MPDDRC_TPR0_TRAS(desc->timings.tras);
+     87          	MPDDRC->MPDDRC_TPR1 = MPDDRC_TPR1_TXP(desc->timings.txp)
+     88          	                    | MPDDRC_TPR1_TXSRD(desc->timings.txsrd)
+     89          	                    | MPDDRC_TPR1_TXSNR(desc->timings.txsnr)
+     90          	                    | MPDDRC_TPR1_TRFC(desc->timings.trfc);
+     91          
+     92          #ifdef CONFIG_HAVE_MPDDRC_SDRAM
+     93          	if (desc->type == MPDDRC_TYPE_SDRAM)
+     94          		return;
+     95          #endif
+     96          	MPDDRC->MPDDRC_TPR2 = MPDDRC_TPR2_TFAW(desc->timings.tfaw)
+     97          	                    | MPDDRC_TPR2_TRTP(desc->timings.trtp)
+     98          	                    | MPDDRC_TPR2_TRPA(desc->timings.trpa)
+     99          	                    | MPDDRC_TPR2_TXARDS(desc->timings.txards)
+    100          	                    | MPDDRC_TPR2_TXARD(desc->timings.txard);
+    101          #endif /* !CONFIG_HAVE_MPDDRC_SDRAM_ONLY */
+    102          }
+    103          
+    104          /* Compute BA[] offset according to configuration */
+    105          static uint32_t _compute_ba_offset(void)
+    106          {
+    107          	uint8_t nc, nr;
+    108          	bool interleaved, dbw16;
+    109          
+    110          #if defined CONFIG_HAVE_MPDDRC_SDRAM_ONLY
+    111          	nc = ((MPDDRC->MPDDRC_CR & MPDDRC_CR_NC_Msk) >> MPDDRC_CR_NC_Pos) + 8;
+    112          	nr = ((MPDDRC->MPDDRC_CR & MPDDRC_CR_NR_Msk) >> MPDDRC_CR_NR_Pos) + 11;
+    113          	interleaved = false;
+    114          	dbw16 = (MPDDRC->MPDDRC_CR & MPDDRC_CR_DBW) != 0;
+    115          #else
+    116          	nc = ((MPDDRC->MPDDRC_CR & MPDDRC_CR_NC_Msk) >> MPDDRC_CR_NC_Pos) + 9;
+    117          	nr = ((MPDDRC->MPDDRC_CR & MPDDRC_CR_NR_Msk) >> MPDDRC_CR_NR_Pos) + 11;
+    118          	interleaved = (MPDDRC->MPDDRC_CR & MPDDRC_CR_DECOD_INTERLEAVED) != 0;
+    119          	dbw16 = (MPDDRC->MPDDRC_MD & MPDDRC_MD_DBW) != 0;
+    120          #endif
+    121          
+    122          	return nc + (interleaved ? 0 : nr) + (dbw16 ? 1 : 2);
+    123          }
+    124          
+    125          static void _send_ddr_cmd(uint32_t cmd)
+    126          {
+    127          	MPDDRC->MPDDRC_MR = cmd & MPDDRC_MR_MODE_Msk;
+    128          	MPDDRC->MPDDRC_MR;
+    129          	dmb();
+    130          
+    131          	/* Perform a write to DDR to acknowledge the command */
+    132          	*((uint32_t*)DDR_CS_ADDR) = 0;
+    133          }
+    134          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    135          static void _send_ext_lmr_cmd(uint32_t opcode, uint32_t ba_offset)
+    136          {
+   \                     _send_ext_lmr_cmd:
+   \        0x0   0xE92D'4000        PUSH     {LR}
+    137          	MPDDRC->MPDDRC_MR = MPDDRC_MR_MODE_EXT_LMR_CMD;
+   \        0x4   0xE3E0'20FF        MVN      R2,#+255
+   \        0x8   0xE3C2'2D5C        BIC      R2,R2,#0x1700
+   \        0xC   0xE3A0'3005        MOV      R3,#+5
+   \       0x10   0xE582'3000        STR      R3,[R2, #+0]
+    138          	MPDDRC->MPDDRC_MR;
+    139          	dmb();
+    140          
+    141          	/* Perform a write to DDR to acknowledge the command */
+    142          	*((uint32_t*)(DDR_CS_ADDR + (opcode << ba_offset))) = 0u;
+   \       0x14   0xE3A0'E580        MOV      LR,#+536870912
+   \       0x18   0xE592'2000        LDR      R2,[R2, #+0]
+   \       0x1C   0xE08E'0110        ADD      R0,LR,R0, LSL R1
+   \       0x20   0xE3A0'C000        MOV      R12,#+0
+   \       0x24   0xE580'C000        STR      R12,[R0, #+0]
+    143          }
+   \       0x28   0xE8BD'8000        POP      {PC}             ;; return
+    144          
+    145          #if defined(CONFIG_HAVE_MPDDRC_LPDDR2) || defined(CONFIG_HAVE_MPDDRC_LPDDR3)
+    146          
+    147          static void _send_lpddr2_cmd(uint32_t mrs)
+    148          {
+    149          	MPDDRC->MPDDRC_MR = MPDDRC_MR_MODE_LPDDR2_CMD | MPDDRC_MR_MRS(mrs);
+    150          	MPDDRC->MPDDRC_MR;
+    151          	dmb();
+    152          
+    153          	/* Perform a write to DDR to acknowledge the command */
+    154          	*((uint32_t*)DDR_CS_ADDR) = 0;
+    155          }
+    156          
+    157          #endif /* CONFIG_HAVE_MPDDRC_LPDDR2 || CONFIG_HAVE_MPDDRC_LPDDR3 */
+    158          
+    159          #ifdef CONFIG_HAVE_MPDDRC_DDR3
+    160          
+    161          /* Configure DDR3 */
+    162          static void _configure_ddr3(struct _mpddrc_desc* desc)
+    163          {
+    164          	uint32_t ba_offset = _compute_ba_offset();
+    165          
+    166          	/* Timings */
+    167          	_set_ddr_timings(desc);
+    168          
+    169          #ifdef CONFIG_HAVE_SFRBU
+    170          	/* Only initialize DDR chip when needed */
+    171          	if (sfrbu_is_ddr_backup_enabled())
+    172          		return;
+    173          #endif
+    174          
+    175          	/* Step 3: Issue a NOP command. */
+    176          	_send_ddr_cmd(MPDDRC_MR_MODE_NOP_CMD);
+    177          
+    178          	/* Step 4: Pause for at least 500μs. */
+    179          	usleep(500);
+    180          
+    181          	/* Step 5: Issue a NOP command. */
+    182          	_send_ddr_cmd(MPDDRC_MR_MODE_NOP_CMD);
+    183          
+    184          	/* Step 6: Issue Extended Mode Register Set 2 (EMRS2) cycle to choose
+    185          	 * between commercial or high temperature operations. */
+    186          	_send_ext_lmr_cmd(0x2, ba_offset);
+    187          
+    188          	/* Step 7: Issue Extended Mode Register Set 3 (EMRS3) cycle to set the
+    189          	 * Extended Mode Register to 0. */
+    190          	_send_ext_lmr_cmd(0x3, ba_offset);
+    191          
+    192          	/* Step 8: Issue Extended Mode Register Set 1 (EMRS1) cycle to disable
+    193          	 * and to program O.D.S. (Output Driver Strength). */
+    194          	_send_ext_lmr_cmd(0x1, ba_offset);
+    195          
+    196          	/* Step 9: Write a one to the DLL bit (enable DLL reset) in the MPDDRC
+    197          	 * Configuration Register (MPDDRC_CR). */
+    198          	MPDDRC->MPDDRC_CR |= MPDDRC_CR_DLL_RESET_ENABLED;
+    199          
+    200          	/* Step 10: Issue a Mode Register Set (MRS) cycle to reset DLL. */
+    201          	_send_ddr_cmd(MPDDRC_MR_MODE_LMR_CMD);
+    202          
+    203          	/* Step 11: Issue a Calibration command (MRS) cycle to calibrate RTT
+    204          	 * and RON values for the Process Voltage Temperature (PVT). */
+    205          	_send_ddr_cmd(MPDDRC_MR_MODE_CALIB_CMD);
+    206          
+    207          	/* Step 12: A Normal Mode command is provided.  Program the Normal mode
+    208          	 * in the MPDDRC_MR and perform a write access to any DDR3-SDRAM
+    209          	 * address to acknowledge this command. */
+    210          	_send_ddr_cmd(MPDDRC_MR_MODE_NORMAL_CMD);
+    211          }
+    212          
+    213          #endif /* CONFIG_HAVE_MPDDRC_DDR3 */
+    214          
+    215          #ifdef CONFIG_HAVE_MPDDRC_DDR2
+    216          
+    217          /* Configure DDR2 */
+    218          static void _configure_ddr2(struct _mpddrc_desc* desc)
+    219          {
+    220          	uint32_t ba_offset = _compute_ba_offset();
+    221          
+    222          	/* Timings */
+    223          	_set_ddr_timings(desc);
+    224          
+    225          	/* Step 3: Issue a NOP command. */
+    226          	_send_ddr_cmd(MPDDRC_MR_MODE_NOP_CMD);
+    227          
+    228          	/* Step 4: Pause for at least 200μs. */
+    229          	usleep(200);
+    230          
+    231          	/* Step 5: Issue a NOP command. */
+    232          	_send_ddr_cmd(MPDDRC_MR_MODE_NOP_CMD);
+    233          
+    234          	/* Step 6: Issue all banks precharge command. */
+    235          	_send_ddr_cmd(MPDDRC_MR_MODE_PRCGALL_CMD);
+    236          
+    237          	/* Step 7: Issue an Extended Mode Register Set (EMRS2) cycle to chose
+    238          	 * between commercial or high  temperature operations. */
+    239          	_send_ext_lmr_cmd(0x2, ba_offset);
+    240          
+    241          	/* Step 8: Issue an Extended Mode Register Set (EMRS3) cycle to set all
+    242          	 * registers to 0. */
+    243          	_send_ext_lmr_cmd(0x3, ba_offset);
+    244          
+    245          	/* Step 9: Issue an Extended Mode Register Set (EMRS1) cycle to enable
+    246          	 * DLL. */
+    247          	_send_ext_lmr_cmd(0x1, ba_offset);
+    248          
+    249          	/* Step 10: An additional 200 cycles of clock are required for locking
+    250          	 * DLL (2μs should be enough). */
+    251          	usleep(2);
+    252          
+    253          	/* Step 11: Program DLL field into the Configuration Register. */
+    254          	MPDDRC->MPDDRC_CR |= MPDDRC_CR_DLL_RESET_ENABLED;
+    255          
+    256          	/* Step 12: A Mode Register set (MRS) cycle is issued to reset DLL. */
+    257          	_send_ddr_cmd(MPDDRC_MR_MODE_LMR_CMD);
+    258          
+    259          	/* Step 13: Issue all banks precharge command. */
+    260          	_send_ddr_cmd(MPDDRC_MR_MODE_PRCGALL_CMD);
+    261          
+    262          	/* Step 14: Two auto-refresh (CBR) cycles are provided. Program the
+    263          	 * auto refresh command (CBR) into the Mode Register. */
+    264          	_send_ddr_cmd(MPDDRC_MR_MODE_RFSH_CMD);
+    265          	_send_ddr_cmd(MPDDRC_MR_MODE_RFSH_CMD);
+    266          
+    267          	/* Step 15: Program DLL field into the Configuration Register to low
+    268          	 * (Disable DLL reset). */
+    269          	MPDDRC->MPDDRC_CR &= ~MPDDRC_CR_DLL_RESET_ENABLED;
+    270          
+    271          	/* Step 16: Issue a Mode Register Set (MRS) cycle to program the
+    272          	 * parameters device. */
+    273          	_send_ddr_cmd(MPDDRC_MR_MODE_LMR_CMD);
+    274          
+    275          	/* Step 17: Program OCD field into the Configuration Register to high
+    276          	 * (OCD calibration default). */
+    277          	MPDDRC->MPDDRC_CR |= MPDDRC_CR_OCD_DDR2_DEFAULT_CALIB;
+    278          
+    279          	/* Step 18: An Extended Mode Register Set (EMRS1) cycle is issued to
+    280          	 * OCD default value. */
+    281          	_send_ext_lmr_cmd(0x1, ba_offset);
+    282          
+    283          	/* Step 19: Program OCD field into the Configuration Register to high
+    284          	 * (OCD calibration default). */
+    285          	MPDDRC->MPDDRC_CR &= ~MPDDRC_CR_OCD_Msk;
+    286          
+    287          	/* Step 20: An Extended Mode Register Set (EMRS1) cycle is issued to
+    288          	 * enable OCD exit. */
+    289          	_send_ext_lmr_cmd(0x1, ba_offset);
+    290          
+    291          	/* Step 21: A mode Normal command is provided. Program the Normal mode
+    292          	 * into Mode Register. */
+    293          	_send_ddr_cmd(MPDDRC_MR_MODE_NORMAL_CMD);
+    294          }
+    295          
+    296          #endif /* CONFIG_HAVE_MPDDRC_DDR2 */
+    297          
+    298          #if defined(CONFIG_HAVE_MPDDRC_LPDDR2) || defined(CONFIG_HAVE_MPDDRC_LPDDR3)
+    299          
+    300          /* Configure LPDDR2 / LPDDR3 */
+    301          static void _configure_lpddr2(struct _mpddrc_desc* desc)
+    302          {
+    303          	/* Timings */
+    304          	_set_ddr_timings(desc);
+    305          
+    306          	/* Step 3: Issue a NOP command. */
+    307          	_send_ddr_cmd(MPDDRC_MR_MODE_NOP_CMD);
+    308          
+    309          	/* Step 4: Pause for at least 100ns (use 1μs instead). */
+    310          	usleep(1);
+    311          
+    312          	/* Step 5: Issue a NOP command. */
+    313          	_send_ddr_cmd(MPDDRC_MR_MODE_NOP_CMD);
+    314          
+    315          	/* Step 6: A pause of at least 200μs must be observed before issuing a
+    316          	 * Reset command. */
+    317          	usleep(200);
+    318          
+    319          	/* Step 7. A Reset command is issued. */
+    320          	_send_lpddr2_cmd(0x3f);
+    321          
+    322          	/* Step 8. A pause of at least tINIT5 must be observed before issuing
+    323          	 * any commands.*/
+    324          	usleep(500);
+    325          
+    326          	/* Step 9. Issued a calibration command by issuing mode register write
+    327          	 * command */
+    328          	_send_lpddr2_cmd(0xa);
+    329          
+    330          	/* Step 10: Perform a write access by issuing mode register write
+    331          	 * command */
+    332          	_send_lpddr2_cmd(0x1);
+    333          
+    334          	/* Step 11: Program CAS Latency by issuing mode register write
+    335          	 * command. */
+    336          	_send_lpddr2_cmd(0x2);
+    337          
+    338          	/* Step 12: Program Drive Strength and Slew Rate by issuing mode
+    339          	 * register write command. */
+    340          	_send_lpddr2_cmd(0x3);
+    341          
+    342          	/* Step 13: Program Partial Array Self Refresh (PASR) by issuing mode
+    343          	 * register write command. */
+    344          	_send_lpddr2_cmd(0x10);
+    345          
+    346          #ifdef CONFIG_SOC_SAMA5D2
+    347          	/* Step 14: In the DDR Configuration Register (SFR_DDRCFG), the
+    348          	 * application must write a 1 to fields 17 and 16 to open the input
+    349          	 * buffers (See section “Special Function Registers (SFR)”). */
+    350          	SFR->SFR_DDRCFG |= SFR_DDRCFG_FDQIEN | SFR_DDRCFG_FDQSIEN;
+    351          #endif
+    352          
+    353          	/* Step 15: Issue a NOP command. */
+    354          	_send_ddr_cmd(MPDDRC_MR_MODE_NOP_CMD);
+    355          
+    356          	/* Step 16: Read command cycle by issuing Mode register read
+    357          	 * command. */
+    358          	_send_lpddr2_cmd(0x5);
+    359          
+    360          	/* Step 17: Read revision by issuing Mode register read command. */
+    361          	_send_lpddr2_cmd(0x6);
+    362          
+    363          	/* Step 18: Read memory organization by issuing Mode register read
+    364          	 * command. */
+    365          	_send_lpddr2_cmd(0x8);
+    366          
+    367          	/* Step 19: Read device information by issuing Mode register read
+    368          	 * command. */
+    369          	_send_lpddr2_cmd(0x0);
+    370          
+    371          	/* Step 20: Issue a Normal mode command. */
+    372          	_send_ddr_cmd(MPDDRC_MR_MODE_NORMAL_CMD);
+    373          
+    374          #ifdef CONFIG_SOC_SAMA5D2
+    375          	/* Step 21: In the DDR configuration Register (SFR_DDRCCFG), the
+    376          	 * application must write a 0 to fields 17 and 16 to close the input
+    377          	 * buffers. The buffers are then driven by the MPDDRC controller. */
+    378          	SFR->SFR_DDRCFG &= ~(SFR_DDRCFG_FDQIEN | SFR_DDRCFG_FDQSIEN);
+    379          #endif
+    380          }
+    381          
+    382          #endif /* CONFIG_HAVE_MPDDRC_LPDDR2 */
+    383          
+    384          #ifdef CONFIG_HAVE_MPDDRC_SDRAM
+    385          
+    386          /* Configure SDRAM */
+    387          static void _configure_sdram(struct _mpddrc_desc* desc)
+    388          {
+    389          	uint32_t ba_offset = _compute_ba_offset();
+    390          	volatile uint32_t i;
+    391          
+    392          	/* Timings */
+    393          	_set_ddr_timings(desc);
+    394          
+    395          	/* Step 4: A pause of at least 200μs must be observed before issuing a
+    396          	 * Reset command. */
+    397          	usleep(200);
+    398          
+    399          	/* Step 5: Issue a NOP command. */
+    400          	_send_ddr_cmd(MPDDRC_MR_MODE_NOP_CMD);
+    401          
+    402          	/* Step 6: Issue all banks precharge command. */
+    403          	_send_ddr_cmd(MPDDRC_MR_MODE_PRCGALL_CMD);
+    404          
+    405          	/* Step 7: Issue auto-refresh (CBR) cycles command for eight times */
+    406          	for (i = 0; i < 8; i++)
+    407          		_send_ddr_cmd(MPDDRC_MR_MODE_RFSH_CMD);
+    408          
+    409          	/* Step 8: Issue an Extended Mode Register Set (EMRS3) cycle to set all
+    410          	 * registers to 0. */
+    411          	_send_ddr_cmd(MPDDRC_MR_MODE_LMR_CMD);
+    412          
+    413          	/* Step 9: For mobile SDRAM , Issue Extended Mode Register Set 2 (EMR)
+    414          		cycle to choose between commercial or high temperature operations.*/
+    415          #ifdef CONFIG_HAVE_MPDDRC_SDRAM_ONLY
+    416          	if (desc->mode & MPDDRC_MD_MD_LPSDRAM)
+    417          #else
+    418          	if (desc->mode & MPDDRC_MD_MD_LPSDR_SDRAM)
+    419          #endif
+    420          		_send_ext_lmr_cmd(0x1, ba_offset);
+    421          
+    422          	/* Step 10: A mode Normal command is provided. Program the Normal mode
+    423          	 * into Mode Register. */
+    424          	_send_ddr_cmd(MPDDRC_MR_MODE_NORMAL_CMD);
+    425          }
+    426          
+    427          #endif /* CONFIG_HAVE_MPDDRC_SDRAM */
+    428          
+    429          #ifdef CONFIG_HAVE_MPDDRC_LPDDR
+    430          
+    431          /* Configure LPDDR */
+    432          static void _configure_lpddr(struct _mpddrc_desc *desc)
+    433          {
+    434          	uint32_t ba_offset = _compute_ba_offset();
+    435          
+    436          	/* Timings */
+    437          	_set_ddr_timings(desc);
+    438          
+    439          	/*
+    440          	 * Step 4: Program Temperature Compensated Self-refresh (TCR), Partial
+    441          	 * Array Self-refresh (PASR) and Drive Strength (DS) parameters in the
+    442          	 * Low-power register (MPDDRC_LPR).
+    443          	 */
+    444          
+    445          	/* Assign one-quarter output buffer drive strength to external EMR.DS */
+    446          	uint32_t value = MPDDRC->MPDDRC_LPR & ~MPDDRC_LPR_DS_Msk;
+    447          	MPDDRC->MPDDRC_LPR = value | MPDDRC_LPR_DS(0x2);
+    448          
+    449          	/* Step 5: Issue a NOP command. */
+    450          	_send_ddr_cmd(MPDDRC_MR_MODE_NOP_CMD);
+    451          
+    452          	/* Step 6: Pause for at least 200μs. */
+    453          	usleep(200);
+    454          
+    455          	/* Step 7: Issue a NOP command. */
+    456          	_send_ddr_cmd(MPDDRC_MR_MODE_NOP_CMD);
+    457          
+    458          	/* Step 8: Issue a All Banks Precharge command. */
+    459          	_send_ddr_cmd(MPDDRC_MR_MODE_PRCGALL_CMD);
+    460          
+    461          	/* Step 9: Issue 2 autorefresh commands. */
+    462          	_send_ddr_cmd(MPDDRC_MR_MODE_RFSH_CMD);
+    463          	_send_ddr_cmd(MPDDRC_MR_MODE_RFSH_CMD);
+    464          
+    465          	/*
+    466          	 * Step 10: An Extended Mode Register Set (EMRS) cycle is issued to
+    467          	 * program the low-power DDR1-SDRAM parameters (TCSR, PASR, DS).
+    468          	 * [...]
+    469          	 * The write address must be chosen so that signal BA[1] is set to 1
+    470          	 * and BA[0] is set to 0.
+    471          	 */
+    472          	_send_ext_lmr_cmd(0x2, ba_offset);
+    473          
+    474          	/* Step 11: Issue a Mode Register Set command. */
+    475          	_send_ddr_cmd(MPDDRC_MR_MODE_LMR_CMD);
+    476          
+    477          	/* Step 12 Issue a Normal mode command. */
+    478          	_send_ddr_cmd(MPDDRC_MR_MODE_NORMAL_CMD);
+    479          }
+    480          
+    481          #endif /* CONFIG_HAVE_MPDDRC_LPDDR */
+    482          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    483          extern void mpddrc_configure(struct _mpddrc_desc* desc)
+    484          {
+   \                     mpddrc_configure:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    485          #ifdef MPDDRC_HS_DIS_ANTICIP_READ
+    486          	/* Disable anticipated read */
+    487          	MPDDRC->MPDDRC_HS = MPDDRC_HS_DIS_ANTICIP_READ;
+    488          #endif
+    489          
+    490          	/* controller and DDR clock */
+    491          #ifdef ID_MPDDRC
+    492          	pmc_configure_peripheral(ID_MPDDRC, NULL, true);
+   \        0x8   0xE3A0'2001        MOV      R2,#+1
+   \        0xC   0xE3A0'1000        MOV      R1,#+0
+   \       0x10   0xE3A0'0031        MOV      R0,#+49
+   \       0x14   0x....'....        BL       pmc_configure_peripheral
+    493          #endif
+    494          	pmc_enable_system_clock(PMC_SYSTEM_CLOCK_DDR);
+   \       0x18   0xE3A0'0000        MOV      R0,#+0
+   \       0x1C   0x....'....        BL       pmc_enable_system_clock
+    495          
+    496          	/* Step1: Program memory device type */
+    497          	MPDDRC->MPDDRC_MD = desc->mode;
+   \       0x20   0xE3E0'50FF        MVN      R5,#+255
+   \       0x24   0xE594'000C        LDR      R0,[R4, #+12]
+   \       0x28   0xE3C5'5D5C        BIC      R5,R5,#0x1700
+   \       0x2C   0xE585'0020        STR      R0,[R5, #+32]
+    498          
+    499          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    500          	/* set driver impedance */
+    501          	uint32_t value = MPDDRC->MPDDRC_IO_CALIBR;
+   \       0x30   0xE595'0034        LDR      R0,[R5, #+52]
+    502          #ifdef MPDDRC_IO_CALIBR_RDIV_Msk
+    503          	value &= ~MPDDRC_IO_CALIBR_RDIV_Msk;
+    504          #endif
+    505          #ifdef MPDDRC_IO_CALIBR_CK_F_RANGE_Msk
+    506          	value &= ~MPDDRC_IO_CALIBR_CK_F_RANGE_Msk;
+    507          #endif
+    508          #ifdef MPDDRC_IO_CALIBR_EN_CALIB
+    509          	value &= ~MPDDRC_IO_CALIBR_EN_CALIB;
+    510          #endif
+    511          	value &= ~MPDDRC_IO_CALIBR_TZQIO_Msk;
+    512          	value &= ~MPDDRC_IO_CALIBR_CALCODEP_Msk;
+    513          	value &= ~MPDDRC_IO_CALIBR_CALCODEN_Msk;
+    514          
+    515          	value |= desc->io_calibr;
+    516          	MPDDRC->MPDDRC_IO_CALIBR = value;
+   \       0x34   0x....'....        LDR      R1,??DataTable2  ;; 0xff0080f8
+   \       0x38   0xE594'2004        LDR      R2,[R4, #+4]
+   \       0x3C   0xE001'0000        AND      R0,R1,R0
+   \       0x40   0xE182'2000        ORR      R2,R2,R0
+   \       0x44   0xE585'2034        STR      R2,[R5, #+52]
+    517          #endif
+    518          
+    519          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    520          	MPDDRC->MPDDRC_RD_DATA_PATH = desc->data_path;
+   \       0x48   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x4C   0xE585'005C        STR      R0,[R5, #+92]
+    521          #endif
+    522          
+    523          	/* Step 2: Program features of the DDR3-SDRAM device in the
+    524          	 * configuration register and timing parameter registers (TPR0
+    525          	 * ans TPR1) */
+    526          
+    527          	/* Configurations */
+    528          	MPDDRC->MPDDRC_CR = desc->control;
+   \       0x50   0xE594'1010        LDR      R1,[R4, #+16]
+   \       0x54   0xE585'1008        STR      R1,[R5, #+8]
+    529          
+    530          	uint32_t lpr_prv = MPDDRC->MPDDRC_LPR, lpr = lpr_prv;
+   \       0x58   0xE595'101C        LDR      R1,[R5, #+28]
+    531          #ifdef MPDDRC_LPR_APDE
+    532          	lpr = (lpr & ~MPDDRC_LPR_APDE) | MPDDRC_LPR_APDE_DDR2_FAST_EXIT;
+   \       0x5C   0xE3C1'0B40        BIC      R0,R1,#0x10000
+    533          #endif
+    534          #ifdef CONFIG_HAVE_SFRBU
+    535          	if (sfrbu_is_ddr_backup_enabled())
+    536          		/* The memory is in self-refresh mode; restore MPDDRC_LPR */
+    537          		lpr = (lpr & ~MPDDRC_LPR_LPCB_Msk) | MPDDRC_LPR_LPCB_SELFREFRESH;
+    538          #endif
+    539          	if (lpr != lpr_prv)
+   \       0x60   0xE150'0001        CMP      R0,R1
+    540          		MPDDRC->MPDDRC_LPR = lpr;
+   \       0x64   0x1585'001C        STRNE    R0,[R5, #+28]
+    541          
+    542          	switch(desc->type) {
+   \       0x68   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x6C   0xE350'0000        CMP      R0,#+0
+   \       0x70   0x1A00'009F        BNE      ??mpddrc_configure_0
+    543          #ifdef CONFIG_HAVE_MPDDRC_SDRAM
+    544          	case MPDDRC_TYPE_SDRAM:
+    545          		_configure_sdram(desc);
+    546          		break;
+    547          #endif
+    548          #ifdef CONFIG_HAVE_MPDDRC_DDR2
+    549          	case MPDDRC_TYPE_DDR2:
+    550          		_configure_ddr2(desc);
+   \       0x74   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0x78   0xE3A0'B001        MOV      R11,#+1
+   \       0x7C   0xE200'1003        AND      R1,R0,#0x3
+   \       0x80   0xE281'0009        ADD      R0,R1,#+9
+   \       0x84   0xE595'1008        LDR      R1,[R5, #+8]
+   \       0x88   0xE595'3008        LDR      R3,[R5, #+8]
+   \       0x8C   0xE595'2020        LDR      R2,[R5, #+32]
+   \       0x90   0xE313'0840        TST      R3,#0x400000
+   \       0x94   0x01A0'1121        LSREQ    R1,R1,#+2
+   \       0x98   0x0201'3003        ANDEQ    R3,R1,#0x3
+   \       0x9C   0xE1A0'C222        LSR      R12,R2,#+4
+   \       0xA0   0x0283'100B        ADDEQ    R1,R3,#+11
+   \       0xA4   0xE20C'2001        AND      R2,R12,#0x1
+   \       0xA8   0x13A0'1000        MOVNE    R1,#+0
+   \       0xAC   0x0201'10FF        ANDEQ    R1,R1,#0xFF
+   \       0xB0   0xE352'0000        CMP      R2,#+0
+   \       0xB4   0xE200'00FF        AND      R0,R0,#0xFF
+   \       0xB8   0x03A0'2002        MOVEQ    R2,#+2
+   \       0xBC   0xE081'0000        ADD      R0,R1,R0
+   \       0xC0   0xE082'0000        ADD      R0,R2,R0
+   \       0xC4   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0xC8   0xE5D4'1015        LDRB     R1,[R4, #+21]
+   \       0xCC   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \       0xD0   0xE3A0'2670        MOV      R2,#+117440512
+   \       0xD4   0xE002'2C01        AND      R2,R2,R1, LSL #+24
+   \       0xD8   0xE5D4'1016        LDRB     R1,[R4, #+22]
+   \       0xDC   0xE182'0E00        ORR      R0,R2,R0, LSL #+28
+   \       0xE0   0xE3A0'28F0        MOV      R2,#+15728640
+   \       0xE4   0xE002'2A01        AND      R2,R2,R1, LSL #+20
+   \       0xE8   0xE5D4'1017        LDRB     R1,[R4, #+23]
+   \       0xEC   0xE182'0000        ORR      R0,R2,R0
+   \       0xF0   0xE3A0'2AF0        MOV      R2,#+983040
+   \       0xF4   0xE002'2801        AND      R2,R2,R1, LSL #+16
+   \       0xF8   0xE5D4'1018        LDRB     R1,[R4, #+24]
+   \       0xFC   0xE182'0000        ORR      R0,R2,R0
+   \      0x100   0xE3A0'2CF0        MOV      R2,#+61440
+   \      0x104   0xE002'2601        AND      R2,R2,R1, LSL #+12
+   \      0x108   0xE5D4'1019        LDRB     R1,[R4, #+25]
+   \      0x10C   0xE182'0000        ORR      R0,R2,R0
+   \      0x110   0xE3A0'2EF0        MOV      R2,#+3840
+   \      0x114   0xE002'2401        AND      R2,R2,R1, LSL #+8
+   \      0x118   0xE5D4'101A        LDRB     R1,[R4, #+26]
+   \      0x11C   0xE182'0000        ORR      R0,R2,R0
+   \      0x120   0xE3A0'20F0        MOV      R2,#+240
+   \      0x124   0xE002'2201        AND      R2,R2,R1, LSL #+4
+   \      0x128   0xE5D4'101B        LDRB     R1,[R4, #+27]
+   \      0x12C   0xE182'0000        ORR      R0,R2,R0
+   \      0x130   0xE3A0'6580        MOV      R6,#+536870912
+   \      0x134   0xE201'300F        AND      R3,R1,#0xF
+   \      0x138   0xE183'3000        ORR      R3,R3,R0
+   \      0x13C   0xE585'300C        STR      R3,[R5, #+12]
+   \      0x140   0xE5D4'001C        LDRB     R0,[R4, #+28]
+   \      0x144   0xE3A0'16F0        MOV      R1,#+251658240
+   \      0x148   0xE3A0'7000        MOV      R7,#+0
+   \      0x14C   0xE001'1C00        AND      R1,R1,R0, LSL #+24
+   \      0x150   0xE5D4'001D        LDRB     R0,[R4, #+29]
+   \      0x154   0xE3A0'8002        MOV      R8,#+2
+   \      0x158   0xE3A0'9005        MOV      R9,#+5
+   \      0x15C   0xE181'2800        ORR      R2,R1,R0, LSL #+16
+   \      0x160   0xE5D4'101E        LDRB     R1,[R4, #+30]
+   \      0x164   0xE3A0'A003        MOV      R10,#+3
+   \      0x168   0xE182'0401        ORR      R0,R2,R1, LSL #+8
+   \      0x16C   0xE5D4'201F        LDRB     R2,[R4, #+31]
+   \      0x170   0xE202'107F        AND      R1,R2,#0x7F
+   \      0x174   0xE181'1000        ORR      R1,R1,R0
+   \      0x178   0xE585'1010        STR      R1,[R5, #+16]
+   \      0x17C   0xE5D4'0020        LDRB     R0,[R4, #+32]
+   \      0x180   0xE3A0'1AF0        MOV      R1,#+983040
+   \      0x184   0xE3A0'2C70        MOV      R2,#+28672
+   \      0x188   0xE001'1800        AND      R1,R1,R0, LSL #+16
+   \      0x18C   0xE5D4'0021        LDRB     R0,[R4, #+33]
+   \      0x190   0xE002'2600        AND      R2,R2,R0, LSL #+12
+   \      0x194   0xE5D4'0022        LDRB     R0,[R4, #+34]
+   \      0x198   0xE182'1001        ORR      R1,R2,R1
+   \      0x19C   0xE3A0'2EF0        MOV      R2,#+3840
+   \      0x1A0   0xE002'2400        AND      R2,R2,R0, LSL #+8
+   \      0x1A4   0xE5D4'0023        LDRB     R0,[R4, #+35]
+   \      0x1A8   0xE182'1001        ORR      R1,R2,R1
+   \      0x1AC   0xE3A0'20F0        MOV      R2,#+240
+   \      0x1B0   0xE002'2200        AND      R2,R2,R0, LSL #+4
+   \      0x1B4   0xE5D4'0024        LDRB     R0,[R4, #+36]
+   \      0x1B8   0xE182'1001        ORR      R1,R2,R1
+   \      0x1BC   0xE200'300F        AND      R3,R0,#0xF
+   \      0x1C0   0xE183'3001        ORR      R3,R3,R1
+   \      0x1C4   0xE585'3014        STR      R3,[R5, #+20]
+   \      0x1C8   0xE585'B000        STR      R11,[R5, #+0]
+   \      0x1CC   0xE595'0000        LDR      R0,[R5, #+0]
+   \      0x1D0   0xE586'7000        STR      R7,[R6, #+0]
+   \      0x1D4   0xE3A0'00C8        MOV      R0,#+200
+   \      0x1D8   0x....'....        BL       usleep
+   \      0x1DC   0xE585'B000        STR      R11,[R5, #+0]
+   \      0x1E0   0xE595'0000        LDR      R0,[R5, #+0]
+   \      0x1E4   0xE586'7000        STR      R7,[R6, #+0]
+   \      0x1E8   0xE585'8000        STR      R8,[R5, #+0]
+   \      0x1EC   0xE595'1000        LDR      R1,[R5, #+0]
+   \      0x1F0   0xE586'7000        STR      R7,[R6, #+0]
+   \      0x1F4   0xE59D'1000        LDR      R1,[SP, #+0]
+   \      0x1F8   0xE3A0'0002        MOV      R0,#+2
+   \      0x1FC   0x....'....        BL       _send_ext_lmr_cmd
+   \      0x200   0xE585'9000        STR      R9,[R5, #+0]
+   \      0x204   0xE595'0000        LDR      R0,[R5, #+0]
+   \      0x208   0xE59D'2000        LDR      R2,[SP, #+0]
+   \      0x20C   0xE086'021A        ADD      R0,R6,R10, LSL R2
+   \      0x210   0xE580'7000        STR      R7,[R0, #+0]
+   \      0x214   0xE585'9000        STR      R9,[R5, #+0]
+   \      0x218   0xE595'3000        LDR      R3,[R5, #+0]
+   \      0x21C   0xE59D'2000        LDR      R2,[SP, #+0]
+   \      0x220   0xE3A0'0002        MOV      R0,#+2
+   \      0x224   0xE086'B21B        ADD      R11,R6,R11, LSL R2
+   \      0x228   0xE58B'7000        STR      R7,[R11, #+0]
+   \      0x22C   0x....'....        BL       usleep
+   \      0x230   0xE595'0008        LDR      R0,[R5, #+8]
+   \      0x234   0xE380'1080        ORR      R1,R0,#0x80
+   \      0x238   0xE585'1008        STR      R1,[R5, #+8]
+   \      0x23C   0xE585'A000        STR      R10,[R5, #+0]
+   \      0x240   0xE595'2000        LDR      R2,[R5, #+0]
+   \      0x244   0xE586'7000        STR      R7,[R6, #+0]
+   \      0x248   0xE585'8000        STR      R8,[R5, #+0]
+   \      0x24C   0xE595'0000        LDR      R0,[R5, #+0]
+   \      0x250   0xE586'7000        STR      R7,[R6, #+0]
+   \      0x254   0xE3A0'0004        MOV      R0,#+4
+   \      0x258   0xE585'0000        STR      R0,[R5, #+0]
+   \      0x25C   0xE595'1000        LDR      R1,[R5, #+0]
+   \      0x260   0xE586'7000        STR      R7,[R6, #+0]
+   \      0x264   0xE585'0000        STR      R0,[R5, #+0]
+   \      0x268   0xE595'2000        LDR      R2,[R5, #+0]
+   \      0x26C   0xE586'7000        STR      R7,[R6, #+0]
+   \      0x270   0xE595'0008        LDR      R0,[R5, #+8]
+   \      0x274   0xE3C0'1080        BIC      R1,R0,#0x80
+   \      0x278   0xE585'1008        STR      R1,[R5, #+8]
+   \      0x27C   0xE585'A000        STR      R10,[R5, #+0]
+   \      0x280   0xE595'2000        LDR      R2,[R5, #+0]
+   \      0x284   0xE586'7000        STR      R7,[R6, #+0]
+   \      0x288   0xE595'0008        LDR      R0,[R5, #+8]
+   \      0x28C   0xE380'1C70        ORR      R1,R0,#0x7000
+   \      0x290   0xE585'1008        STR      R1,[R5, #+8]
+   \      0x294   0xE585'9000        STR      R9,[R5, #+0]
+   \      0x298   0xE595'2000        LDR      R2,[R5, #+0]
+   \      0x29C   0xE58B'7000        STR      R7,[R11, #+0]
+   \      0x2A0   0xE595'0008        LDR      R0,[R5, #+8]
+   \      0x2A4   0xE3C0'1C70        BIC      R1,R0,#0x7000
+   \      0x2A8   0xE585'1008        STR      R1,[R5, #+8]
+   \      0x2AC   0xE585'9000        STR      R9,[R5, #+0]
+   \      0x2B0   0xE595'2000        LDR      R2,[R5, #+0]
+   \      0x2B4   0xE58B'7000        STR      R7,[R11, #+0]
+   \      0x2B8   0xE585'7000        STR      R7,[R5, #+0]
+   \      0x2BC   0xE595'0000        LDR      R0,[R5, #+0]
+   \      0x2C0   0xE586'7000        STR      R7,[R6, #+0]
+    551          		break;
+    552          #endif
+    553          #ifdef CONFIG_HAVE_MPDDRC_DDR3
+    554          	case MPDDRC_TYPE_DDR3:
+    555          		_configure_ddr3(desc);
+    556          		break;
+    557          #endif
+    558          #ifdef CONFIG_HAVE_MPDDRC_LPDDR
+    559          	case MPDDRC_TYPE_LPDDR:
+    560          		_configure_lpddr(desc);
+    561          		break;
+    562          #endif
+    563          #ifdef CONFIG_HAVE_MPDDRC_LPDDR2
+    564          	case MPDDRC_TYPE_LPDDR2:
+    565          		_configure_lpddr2(desc);
+    566          		break;
+    567          #endif
+    568          #ifdef CONFIG_HAVE_MPDDRC_LPDDR3
+    569          	case MPDDRC_TYPE_LPDDR3:
+    570          		_configure_lpddr2(desc);
+    571          		break;
+    572          #endif
+    573          	default:
+    574          		trace_error("DDRAM type not handled\r\n");
+    575          		abort();
+    576          	}
+    577          
+    578          	/* Last step: Write the refresh rate */
+    579          	/* Refresh Timer is (refresh_window / refresh_cycles) * master_clock */
+    580          	uint32_t master_clock = pmc_get_master_clock() / 1000;
+   \      0x2C4   0x....'....        BL       pmc_get_master_clock
+    581          	MPDDRC->MPDDRC_RTR = MPDDRC_RTR_COUNT(desc->refresh_window * master_clock / desc->refresh_cycles);
+   \      0x2C8   0x....'....        LDR      R3,??DataTable2_1  ;; 0x83126e98
+   \      0x2CC   0xE594'1028        LDR      R1,[R4, #+40]
+   \      0x2D0   0xE082'3390        UMULL    R3,R2,R0,R3
+   \      0x2D4   0xE1A0'24A2        LSR      R2,R2,#+9
+   \      0x2D8   0xE000'0192        MUL      R0,R2,R1
+   \      0x2DC   0xE594'102C        LDR      R1,[R4, #+44]
+   \      0x2E0   0x....'....        BL       __aeabi_uidiv
+   \      0x2E4   0xE1A0'0A00        LSL      R0,R0,#+20
+   \      0x2E8   0xE1A0'0A20        LSR      R0,R0,#+20
+   \      0x2EC   0xE585'0004        STR      R0,[R5, #+4]
+    582          
+    583          #ifdef CONFIG_HAVE_SFRBU
+    584          	if (sfrbu_is_ddr_backup_enabled()) {
+    585          		MPDDRC->MPDDRC_MR = MPDDRC_MR_MODE_NORMAL_CMD;
+    586          		sfrbu_disable_ddr_backup();
+    587          		mpddrc_issue_low_power_command(MPDDRC_LPR_LPCB_DISABLED);
+    588          	}
+    589          #endif
+    590          }
+   \      0x2F0   0xE8BD'8FF1        POP      {R0,R4-R11,PC}
+   \                     ??mpddrc_configure_0:
+   \      0x2F4   0x....'....        LDR      R1,??DataTable2_2
+   \      0x2F8   0xE591'0000        LDR      R0,[R1, #+0]
+   \      0x2FC   0xE350'0002        CMP      R0,#+2
+   \      0x300   0x3A00'0001        BCC      ??mpddrc_configure_1
+   \      0x304   0x....'....        ADR      R0,?_0
+   \      0x308   0x....'....        BL       printf
+   \                     ??mpddrc_configure_1:
+   \      0x30C   0x....'....        BL       abort
+   \      0x310   0xE1A0'0000        Nop
+    591          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    592          RAMCODE void mpddrc_issue_low_power_command(uint32_t cmd)
+    593          {
+    594          	uint32_t value;
+    595          	value = MPDDRC->MPDDRC_LPR & ~MPDDRC_LPR_LPCB_Msk;
+   \                     mpddrc_issue_low_power_command:
+   \        0x0   0xE3E0'10E3        MVN      R1,#+227
+   \        0x4   0xE3C1'1D5C        BIC      R1,R1,#0x1700
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+    596          	MPDDRC->MPDDRC_LPR = value | (cmd & MPDDRC_LPR_LPCB_Msk);
+   \        0xC   0xE200'3003        AND      R3,R0,#0x3
+   \       0x10   0xE1A0'2122        LSR      R2,R2,#+2
+   \       0x14   0xE183'3102        ORR      R3,R3,R2, LSL #+2
+   \       0x18   0xE581'3000        STR      R3,[R1, #+0]
+    597          
+    598          #ifdef MPDDRC_LPR_SELF_DONE
+    599          	if (cmd == MPDDRC_LPR_LPCB_SELFREFRESH)
+   \       0x1C   0xE350'0001        CMP      R0,#+1
+   \       0x20   0x1A00'0002        BNE      ??mpddrc_issue_low_power_command_0
+    600          		/* Wait for the memory to enter self-refresh mode */
+    601          		while (!((MPDDRC->MPDDRC_LPR) & MPDDRC_LPR_SELF_DONE)) ;
+   \                     ??mpddrc_issue_low_power_command_1:
+   \       0x24   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x28   0xE310'0780        TST      R0,#0x2000000
+   \       0x2C   0x0AFF'FFFC        BEQ      ??mpddrc_issue_low_power_command_1
+    602          #endif
+    603          }
+   \                     ??mpddrc_issue_low_power_command_0:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    604          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    605          RAMCODE void ddr_self_refresh(void)
+    606          {
+    607          	mpddrc_issue_low_power_command(MPDDRC_LPR_LPCB_SELFREFRESH);
+   \                     ddr_self_refresh:
+   \        0x0   0xE3E0'00E3        MVN      R0,#+227
+   \        0x4   0xE3C0'0D5C        BIC      R0,R0,#0x1700
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE3C1'1003        BIC      R1,R1,#0x3
+   \       0x10   0xE381'2001        ORR      R2,R1,#0x1
+   \       0x14   0xE580'2000        STR      R2,[R0, #+0]
+   \                     ??ddr_self_refresh_0:
+   \       0x18   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0x1C   0xE313'0780        TST      R3,#0x2000000
+   \       0x20   0x0AFF'FFFC        BEQ      ??ddr_self_refresh_0
+    608          
+    609          #ifdef CONFIG_HAVE_SFRBU
+    610          	if (!sfrbu_is_ddr_backup_enabled()) {
+    611          		/* Disable the DDR Controller clock signal at PMC level*/
+    612          		pmc_disable_peripheral(ID_MPDDRC);
+    613          		/* Disable ddrclk */
+    614          		pmc_disable_system_clock(PMC_SYSTEM_CLOCK_DDR);
+    615          
+    616          		sfrbu_enable_ddr_backup();
+    617          	}
+    618          #endif
+    619          }
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    620          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    621          RAMCODE void check_ddr_ready(void)
+    622          {
+    623          #ifdef CONFIG_HAVE_SFRBU
+    624          	if (sfrbu_is_ddr_backup_enabled()) {
+    625          		/* Enable the DDR Controller clock signal at PMC level */
+    626          		pmc_configure_peripheral(ID_MPDDRC, NULL, true);
+    627          		/* Enable ddrclk */
+    628          		pmc_enable_system_clock(PMC_SYSTEM_CLOCK_DDR);
+    629          		/* Disable DDR Backup mode */
+    630          		sfrbu_disable_ddr_backup();
+    631          	}
+    632          #endif
+    633          
+    634          	mpddrc_issue_low_power_command(MPDDRC_LPR_LPCB_DISABLED);
+   \                     check_ddr_ready:
+   \        0x0   0xE3E0'00E3        MVN      R0,#+227
+   \        0x4   0xE3C0'0D5C        BIC      R0,R0,#0x1700
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE3C1'1003        BIC      R1,R1,#0x3
+   \       0x10   0xE580'1000        STR      R1,[R0, #+0]
+    635          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    636          
+
+   \                                 In section .bss, align 4
+    637          RAMDATA struct pck_mck_cfg clock_setting_backup = {0};
+   \                     clock_setting_backup:
+   \        0x0                      DS8 40
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0xFF00'80F8        DC32     0xff0080f8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \        0x0   0x8312'6E98        DC32     0x83126e98
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_0:
+   \        0x0   0x2D 0x45          DC8 "-E- DDRAM type not handled\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x44 0x44    
+
+   \              0x52 0x41    
+
+   \              0x4D 0x20    
+
+   \              0x74 0x79    
+
+   \              0x70 0x65    
+
+   \              0x20 0x6E    
+
+   \              0x6F 0x74    
+
+   \              0x20 0x68    
+
+   \              0x61 0x6E    
+
+   \              0x64 0x6C    
+
+   \              0x65 0x64    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x1D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+    638          #ifdef CONFIG_RAMCODE
+    639          RAMDATA volatile int _ddr_active_needed = 0;
+    640          
+    641          RAMCODE void ddram_active(void) {
+    642          	/* Restore default PCK and MCK */
+    643          	while ((PMC->PMC_SR & PMC_SR_MCKRDY) == 0);
+    644          	pmc_set_custom_pck_mck(&clock_setting_backup);
+    645          	check_ddr_ready();
+    646          	_ddr_active_needed = 0;
+    647          }
+    648          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   _send_ext_lmr_cmd
+       0   check_ddr_ready
+       0   ddr_self_refresh
+      40   mpddrc_configure
+        40   -> _send_ext_lmr_cmd
+        40   -> abort
+        40   -> pmc_configure_peripheral
+        40   -> pmc_enable_system_clock
+        40   -> pmc_get_master_clock
+        40   -> printf
+        40   -> usleep
+        40 __aeabi_uidiv
+       0   mpddrc_issue_low_power_command
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+      32  ?_0
+      44  _send_ext_lmr_cmd
+      24  check_ddr_ready
+      40  clock_setting_backup
+      40  ddr_self_refresh
+     788  mpddrc_configure
+      52  mpddrc_issue_low_power_command
+
+ 
+  40 bytes in section .bss
+ 992 bytes in section SOFTPACK
+ 
+ 992 bytes of CODE memory
+  40 bytes of DATA memory
+
+Errors: none
+Warnings: none

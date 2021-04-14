@@ -1,0 +1,1483 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         08/Dec/2020  16:30:46
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\pdmic.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW627C.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\pdmic.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_PDMIC -D CONFIG_HAVE_AUDIO_AD1934 -D
+#        CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D CONFIG_HAVE_SPI_FIFO -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_UART -D CONFIG_HAVE_SERIALD_UART -D
+#        CONFIG_HAVE_USART -D CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\build\sama5d2-xplained\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\build\sama5d2-xplained\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\build\sama5d2-xplained\ddram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-A5 -e --fpu=VFPv4_D16 --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\build\sama5d2-xplained\ddram\List\pdmic.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\build\sama5d2-xplained\ddram\Obj\pdmic.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf  =  int_specials
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\pdmic.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <assert.h>
+     35          #include <stdio.h>
+     36          #include <string.h>
+     37          
+     38          #include "audio/pdmic.h"
+     39          #include "callback.h"
+     40          #include "chip.h"
+     41          #include "dma/dma.h"
+     42          #include "errno.h"
+     43          #include "mm/cache.h"
+     44          #include "peripherals/pmc.h"
+     45          #include "trace.h"
+     46          
+     47          /*----------------------------------------------------------------------------
+     48           *        Local functions
+     49           *----------------------------------------------------------------------------*/
+     50          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     51          static int _pdmic_dma_transfer_callback(void* arg, void* arg2)
+     52          {
+   \                     _pdmic_dma_transfer_callback:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     53          	struct _pdmic_desc* desc = (struct _pdmic_desc*)arg;
+   \        0xC   0xE1B0'6004        MOVS     R6,R4
+     54          
+     55          	cache_invalidate_region(desc->rx.dma.cfg.daddr, desc->rx.dma.cfg.len);
+   \       0x10   0xE596'104C        LDR      R1,[R6, #+76]
+   \       0x14   0xE596'0048        LDR      R0,[R6, #+72]
+   \       0x18   0x....'....        BL       cache_invalidate_region
+     56          
+     57          	dma_reset_channel(desc->rx.dma.channel);
+   \       0x1C   0xE596'0034        LDR      R0,[R6, #+52]
+   \       0x20   0x....'....        BL       dma_reset_channel
+     58          
+     59          	mutex_unlock(&desc->rx.mutex);
+   \       0x24   0xE296'0018        ADDS     R0,R6,#+24
+   \       0x28   0x....'....        BL       mutex_unlock
+     60          
+     61          	return callback_call(&desc->rx.callback, NULL);
+   \       0x2C   0xE3A0'1000        MOV      R1,#+0
+   \       0x30   0xE296'002C        ADDS     R0,R6,#+44
+   \       0x34   0x....'....        BL       callback_call
+   \       0x38   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+     62          }
+     63          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     64          static void _pdmic_dma_transfer(struct _pdmic_desc* desc, struct _buffer* buffer)
+     65          {
+   \                     _pdmic_dma_transfer:
+   \        0x0   0xE92D'41FC        PUSH     {R2-R8,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     66          	struct _callback _cb;
+     67          
+     68          	memset(&desc->rx.dma.cfg, 0, sizeof(desc->rx.dma.cfg));
+   \        0xC   0xE3A0'600C        MOV      R6,#+12
+   \       0x10   0xE3A0'7000        MOV      R7,#+0
+   \       0x14   0xE294'8044        ADDS     R8,R4,#+68
+   \       0x18   0xE1B0'2007        MOVS     R2,R7
+   \       0x1C   0xE1B0'1006        MOVS     R1,R6
+   \       0x20   0xE1B0'0008        MOVS     R0,R8
+   \       0x24   0x....'....        BL       __aeabi_memset
+   \       0x28   0xE1B0'0008        MOVS     R0,R8
+     69          
+     70          	desc->rx.dma.cfg.saddr = (void*)&desc->addr->PDMIC_CDR;
+   \       0x2C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x30   0xE290'0014        ADDS     R0,R0,#+20
+   \       0x34   0xE584'0044        STR      R0,[R4, #+68]
+     71          	desc->rx.dma.cfg.daddr = buffer->data;
+   \       0x38   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x3C   0xE584'0048        STR      R0,[R4, #+72]
+     72          
+     73          	if (desc->dsp_size == PDMIC_CONVERTED_DATA_SIZE_32) {
+   \       0x40   0xE5D4'000E        LDRB     R0,[R4, #+14]
+   \       0x44   0xE350'0020        CMP      R0,#+32
+   \       0x48   0x1A00'0005        BNE      ??_pdmic_dma_transfer_0
+     74          		desc->rx.dma.cfg.len = buffer->size / 4;
+   \       0x4C   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x50   0xE1B0'0120        LSRS     R0,R0,#+2
+   \       0x54   0xE584'004C        STR      R0,[R4, #+76]
+     75          		desc->rx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_WORD;
+   \       0x58   0xE3A0'0002        MOV      R0,#+2
+   \       0x5C   0xE584'0038        STR      R0,[R4, #+56]
+   \       0x60   0xEA00'0004        B        ??_pdmic_dma_transfer_1
+     76          	} else {
+     77          		desc->rx.dma.cfg.len = buffer->size / 2;
+   \                     ??_pdmic_dma_transfer_0:
+   \       0x64   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x68   0xE1B0'00A0        LSRS     R0,R0,#+1
+   \       0x6C   0xE584'004C        STR      R0,[R4, #+76]
+     78          		desc->rx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_HALF_WORD;
+   \       0x70   0xE3A0'0001        MOV      R0,#+1
+   \       0x74   0xE584'0038        STR      R0,[R4, #+56]
+     79          	}
+     80          	dma_configure_transfer(desc->rx.dma.channel, &desc->rx.dma.cfg_dma, &desc->rx.dma.cfg, 1);
+   \                     ??_pdmic_dma_transfer_1:
+   \       0x78   0xE3A0'3001        MOV      R3,#+1
+   \       0x7C   0xE294'2044        ADDS     R2,R4,#+68
+   \       0x80   0xE294'1038        ADDS     R1,R4,#+56
+   \       0x84   0xE594'0034        LDR      R0,[R4, #+52]
+   \       0x88   0x....'....        BL       dma_configure_transfer
+     81          	callback_set(&_cb, _pdmic_dma_transfer_callback, (void*)desc);
+   \       0x8C   0xE1B0'2004        MOVS     R2,R4
+   \       0x90   0x....'....        ADR      R1,_pdmic_dma_transfer_callback
+   \       0x94   0xE1B0'000D        MOVS     R0,SP
+   \       0x98   0x....'....        BL       callback_set
+     82          	dma_set_callback(desc->rx.dma.channel, &_cb);
+   \       0x9C   0xE1B0'100D        MOVS     R1,SP
+   \       0xA0   0xE594'0034        LDR      R0,[R4, #+52]
+   \       0xA4   0x....'....        BL       dma_set_callback
+     83          	dma_start_transfer(desc->rx.dma.channel);
+   \       0xA8   0xE594'0034        LDR      R0,[R4, #+52]
+   \       0xAC   0x....'....        BL       dma_start_transfer
+     84          }
+   \       0xB0   0xE8BD'81F3        POP      {R0,R1,R4-R8,PC}  ;; return
+     85          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     86          static void _pdmic_polling_transfer(struct _pdmic_desc* desc, struct _buffer* buffer)
+     87          {
+   \                     _pdmic_polling_transfer:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     88          	uint16_t* data = (uint16_t*)buffer->data;
+   \        0xC   0xE595'6000        LDR      R6,[R5, #+0]
+     89          	uint32_t  length = buffer->size / sizeof(uint16_t);
+   \       0x10   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x14   0xE1B0'70A0        LSRS     R7,R0,#+1
+     90          	volatile uint32_t current = 0;
+   \       0x18   0xE3A0'0000        MOV      R0,#+0
+   \       0x1C   0xE58D'0000        STR      R0,[SP, #+0]
+     91          
+     92          	while (current < length) {
+   \                     ??_pdmic_polling_transfer_0:
+   \       0x20   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x24   0xE150'0007        CMP      R0,R7
+   \       0x28   0x2A00'000B        BCS      ??_pdmic_polling_transfer_1
+     93          		if (pdmic_data_ready(desc)) {
+   \       0x2C   0xE1B0'0004        MOVS     R0,R4
+   \       0x30   0x....'....        BL       pdmic_data_ready
+   \       0x34   0xE350'0000        CMP      R0,#+0
+   \       0x38   0x0AFF'FFF8        BEQ      ??_pdmic_polling_transfer_0
+     94          			/* start copy data from PDMIC_CDR to memory */
+     95          			*data = desc->addr->PDMIC_CDR;
+   \       0x3C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x40   0xE590'0014        LDR      R0,[R0, #+20]
+   \       0x44   0xE1C6'00B0        STRH     R0,[R6, #+0]
+     96          			data++;
+   \       0x48   0xE296'6002        ADDS     R6,R6,#+2
+     97          			current++;
+   \       0x4C   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x50   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x54   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x58   0xEAFF'FFF0        B        ??_pdmic_polling_transfer_0
+     98          		}
+     99          	}
+    100          
+    101          	mutex_unlock(&desc->rx.mutex);
+   \                     ??_pdmic_polling_transfer_1:
+   \       0x5C   0xE294'0018        ADDS     R0,R4,#+24
+   \       0x60   0x....'....        BL       mutex_unlock
+    102          
+    103          	callback_call(&desc->rx.callback, NULL);
+   \       0x64   0xE3A0'1000        MOV      R1,#+0
+   \       0x68   0xE294'002C        ADDS     R0,R4,#+44
+   \       0x6C   0x....'....        BL       callback_call
+    104          }
+   \       0x70   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    105          
+    106          /*----------------------------------------------------------------------------
+    107           *        Exported functions
+    108           *----------------------------------------------------------------------------*/
+    109          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    110          void pdmic_enable(struct _pdmic_desc* desc)
+    111          {
+   \                     pdmic_enable:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    112          	uint32_t id = get_pdmic_id_from_addr(desc->addr);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_pdmic_id_from_addr
+   \       0x10   0xE1B0'5000        MOVS     R5,R0
+    113          
+    114          	pmc_enable_gck(id);
+   \       0x14   0xE1B0'0005        MOVS     R0,R5
+   \       0x18   0x....'....        BL       pmc_enable_gck
+    115          	pmc_enable_peripheral(id);
+   \       0x1C   0xE1B0'0005        MOVS     R0,R5
+   \       0x20   0x....'....        BL       pmc_enable_peripheral
+    116          	/* Enable the overrun error interrupt */
+    117          	desc->addr->PDMIC_IER = PDMIC_IER_OVRE;
+   \       0x24   0xE3A0'0780        MOV      R0,#+33554432
+   \       0x28   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0x2C   0xE581'0018        STR      R0,[R1, #+24]
+    118          }
+   \       0x30   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    119          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    120          void pdmic_disable(struct _pdmic_desc* desc)
+    121          {
+   \                     pdmic_disable:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    122          	uint32_t id = get_pdmic_id_from_addr(desc->addr);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_pdmic_id_from_addr
+   \       0x10   0xE1B0'5000        MOVS     R5,R0
+    123          
+    124          	/* Disable the overrun error interrupt */
+    125          	desc->addr->PDMIC_IDR = PDMIC_IDR_OVRE;
+   \       0x14   0xE3A0'0780        MOV      R0,#+33554432
+   \       0x18   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0x1C   0xE581'001C        STR      R0,[R1, #+28]
+    126          	pmc_disable_gck(id);
+   \       0x20   0xE1B0'0005        MOVS     R0,R5
+   \       0x24   0x....'....        BL       pmc_disable_gck
+    127          	pmc_disable_peripheral(id);
+   \       0x28   0xE1B0'0005        MOVS     R0,R5
+   \       0x2C   0x....'....        BL       pmc_disable_peripheral
+    128          }
+   \       0x30   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    129          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    130          int pdmic_configure(struct _pdmic_desc *desc)
+    131          {
+   \                     pdmic_configure:
+   \        0x0   0xE92D'4FFE        PUSH     {R1-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    132          	uint32_t mr_val;
+    133          	uint32_t dspr0_val, dspr1_val;
+    134          	uint32_t pclk_rate, gclk_rate;
+    135          	uint32_t pclk_prescal, gclk_prescal;
+    136          	uint32_t f_pdmic;
+    137          	uint32_t id = get_pdmic_id_from_addr(desc->addr);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_pdmic_id_from_addr
+   \       0x10   0xE1B0'5000        MOVS     R5,R0
+    138          
+    139          	desc->addr->PDMIC_CR = (desc->addr->PDMIC_CR & ~PDMIC_CR_ENPDM) | PDMIC_CR_SWRST;
+   \       0x14   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x18   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x1C   0xE3D0'0010        BICS     R0,R0,#0x10
+   \       0x20   0xE390'0001        ORRS     R0,R0,#0x1
+   \       0x24   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0x28   0xE581'0000        STR      R0,[R1, #+0]
+    140          
+    141          	if (desc->channels != 1) {
+   \       0x2C   0xE5D4'000C        LDRB     R0,[R4, #+12]
+   \       0x30   0xE350'0001        CMP      R0,#+1
+   \       0x34   0x0A00'0007        BEQ      ??pdmic_configure_0
+    142          		trace_error("only supports one channel\n");
+   \       0x38   0x....'....        LDR      R0,??DataTable2
+   \       0x3C   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x40   0xE350'0002        CMP      R0,#+2
+   \       0x44   0x3A00'0001        BCC      ??pdmic_configure_1
+   \       0x48   0x....'....        LDR      R0,??DataTable2_1
+   \       0x4C   0x....'....        BL       printf
+    143          		return -EINVAL;
+   \                     ??pdmic_configure_1:
+   \       0x50   0xE3E0'001B        MVN      R0,#+27
+   \       0x54   0xEA00'0090        B        ??pdmic_configure_2
+    144          	}
+    145          
+    146          	switch (desc->dsp_size) {
+   \                     ??pdmic_configure_0:
+   \       0x58   0xE5D4'000E        LDRB     R0,[R4, #+14]
+   \       0x5C   0xE350'0010        CMP      R0,#+16
+   \       0x60   0x0A00'0002        BEQ      ??pdmic_configure_3
+   \       0x64   0xE350'0020        CMP      R0,#+32
+   \       0x68   0x0A00'0002        BEQ      ??pdmic_configure_4
+   \       0x6C   0xEA00'0003        B        ??pdmic_configure_5
+    147          	case PDMIC_CONVERTED_DATA_SIZE_16:
+    148          		dspr0_val = PDMIC_DSPR0_SIZE_16;
+   \                     ??pdmic_configure_3:
+   \       0x70   0xE3A0'1000        MOV      R1,#+0
+    149          		break;
+   \       0x74   0xEA00'0003        B        ??pdmic_configure_6
+    150          
+    151          	case PDMIC_CONVERTED_DATA_SIZE_32:
+    152          		dspr0_val = PDMIC_DSPR0_SIZE_32;
+   \                     ??pdmic_configure_4:
+   \       0x78   0xE3A0'1008        MOV      R1,#+8
+    153          		break;
+   \       0x7C   0xEA00'0001        B        ??pdmic_configure_6
+    154          
+    155          	default:
+    156          		return -EINVAL;
+   \                     ??pdmic_configure_5:
+   \       0x80   0xE3E0'001B        MVN      R0,#+27
+   \       0x84   0xEA00'0084        B        ??pdmic_configure_2
+    157          	}
+    158          
+    159          	switch (desc->dsp_osr) {
+   \                     ??pdmic_configure_6:
+   \       0x88   0xE5D4'000D        LDRB     R0,[R4, #+13]
+   \       0x8C   0xE350'0040        CMP      R0,#+64
+   \       0x90   0x0A00'0002        BEQ      ??pdmic_configure_7
+   \       0x94   0xE350'0080        CMP      R0,#+128
+   \       0x98   0x0A00'0002        BEQ      ??pdmic_configure_8
+   \       0x9C   0xEA00'0002        B        ??pdmic_configure_9
+    160          	case PDMIC_OVER_SAMPLING_RATIO_64:
+    161          		dspr0_val |= PDMIC_DSPR0_OSR(1);
+   \                     ??pdmic_configure_7:
+   \       0xA0   0xE391'1010        ORRS     R1,R1,#0x10
+    162          		break;
+   \       0xA4   0xEA00'0002        B        ??pdmic_configure_10
+    163          
+    164          	case PDMIC_OVER_SAMPLING_RATIO_128:
+    165          		dspr0_val |= PDMIC_DSPR0_OSR(0);
+    166          		break;
+   \                     ??pdmic_configure_8:
+   \       0xA8   0xEA00'0001        B        ??pdmic_configure_10
+    167          
+    168          	default:
+    169          		return -EINVAL;
+   \                     ??pdmic_configure_9:
+   \       0xAC   0xE3E0'001B        MVN      R0,#+27
+   \       0xB0   0xEA00'0079        B        ??pdmic_configure_2
+    170          	}
+    171          
+    172          	switch (desc->dsp_hpfbyp) {
+   \                     ??pdmic_configure_10:
+   \       0xB4   0xE5D4'000F        LDRB     R0,[R4, #+15]
+   \       0xB8   0xE350'0000        CMP      R0,#+0
+   \       0xBC   0x0A00'0002        BEQ      ??pdmic_configure_11
+   \       0xC0   0xE350'0001        CMP      R0,#+1
+   \       0xC4   0x0A00'0002        BEQ      ??pdmic_configure_12
+   \       0xC8   0xEA00'0003        B        ??pdmic_configure_13
+    173          	case PDMIC_DSP_HIGH_PASS_FILTER_ON:
+    174          		dspr0_val &= ~PDMIC_DSPR0_HPFBYP;
+   \                     ??pdmic_configure_11:
+   \       0xCC   0xE3D1'1002        BICS     R1,R1,#0x2
+    175          		break;
+   \       0xD0   0xEA00'0003        B        ??pdmic_configure_14
+    176          
+    177          	case PDMIC_DSP_HIGH_PASS_FILTER_OFF:
+    178          		dspr0_val |= PDMIC_DSPR0_HPFBYP;
+   \                     ??pdmic_configure_12:
+   \       0xD4   0xE391'1002        ORRS     R1,R1,#0x2
+    179          		break;
+   \       0xD8   0xEA00'0001        B        ??pdmic_configure_14
+    180          
+    181          	default:
+    182          		return -EINVAL;
+   \                     ??pdmic_configure_13:
+   \       0xDC   0xE3E0'001B        MVN      R0,#+27
+   \       0xE0   0xEA00'006D        B        ??pdmic_configure_2
+    183          	}
+    184          
+    185          	switch (desc->dsp_sinbyp) {
+   \                     ??pdmic_configure_14:
+   \       0xE4   0xE5D4'0010        LDRB     R0,[R4, #+16]
+   \       0xE8   0xE350'0000        CMP      R0,#+0
+   \       0xEC   0x0A00'0002        BEQ      ??pdmic_configure_15
+   \       0xF0   0xE350'0001        CMP      R0,#+1
+   \       0xF4   0x0A00'0002        BEQ      ??pdmic_configure_16
+   \       0xF8   0xEA00'0003        B        ??pdmic_configure_17
+    186          	case PDMIC_DSP_SINCC_PASS_FILTER_ON:
+    187          		dspr0_val &= ~PDMIC_DSPR0_SINBYP;
+   \                     ??pdmic_configure_15:
+   \       0xFC   0xE3D1'1004        BICS     R1,R1,#0x4
+    188          		break;
+   \      0x100   0xEA00'0003        B        ??pdmic_configure_18
+    189          
+    190          	case PDMIC_DSP_SINCC_PASS_FILTER_OFF:
+    191          		dspr0_val |= PDMIC_DSPR0_SINBYP;
+   \                     ??pdmic_configure_16:
+   \      0x104   0xE391'1004        ORRS     R1,R1,#0x4
+    192          		break;
+   \      0x108   0xEA00'0001        B        ??pdmic_configure_18
+    193          
+    194          	default:
+    195          		return -EINVAL;
+   \                     ??pdmic_configure_17:
+   \      0x10C   0xE3E0'001B        MVN      R0,#+27
+   \      0x110   0xEA00'0061        B        ??pdmic_configure_2
+    196          	}
+    197          
+    198          	if (desc->dsp_shift < PDMIC_DSPR_SHIFT_MAX_VAL)
+   \                     ??pdmic_configure_18:
+   \      0x114   0xE5D4'0012        LDRB     R0,[R4, #+18]
+   \      0x118   0xE350'0010        CMP      R0,#+16
+   \      0x11C   0xAA00'0007        BGE      ??pdmic_configure_19
+    199          		dspr0_val |= PDMIC_DSPR0_SHIFT(desc->dsp_shift);
+   \      0x120   0xE5D4'0012        LDRB     R0,[R4, #+18]
+   \      0x124   0xE3A0'2CF0        MOV      R2,#+61440
+   \      0x128   0xE012'0600        ANDS     R0,R2,R0, LSL #+12
+   \      0x12C   0xE190'1001        ORRS     R1,R0,R1
+    200          	else
+    201          		return -EINVAL;
+    202          
+    203          	if (desc->dsp_scale < PDMIC_DSPR_SCALE_MAX_VAL)
+   \      0x130   0xE5D4'0011        LDRB     R0,[R4, #+17]
+   \      0x134   0xE350'0010        CMP      R0,#+16
+   \      0x138   0xAA00'000C        BGE      ??pdmic_configure_20
+   \      0x13C   0xEA00'0001        B        ??pdmic_configure_21
+   \                     ??pdmic_configure_19:
+   \      0x140   0xE3E0'001B        MVN      R0,#+27
+   \      0x144   0xEA00'0054        B        ??pdmic_configure_2
+    204          		dspr0_val |= PDMIC_DSPR0_SCALE(desc->dsp_scale);
+   \                     ??pdmic_configure_21:
+   \      0x148   0xE5D4'0011        LDRB     R0,[R4, #+17]
+   \      0x14C   0xE3A0'2EF0        MOV      R2,#+3840
+   \      0x150   0xE012'0400        ANDS     R0,R2,R0, LSL #+8
+   \      0x154   0xE190'6001        ORRS     R6,R0,R1
+    205          	else
+    206          		return false;
+    207          
+    208          	dspr1_val = PDMIC_DSPR1_OFFSET(desc->dsp_offset);
+   \      0x158   0xE1D4'01B6        LDRH     R0,[R4, #+22]
+   \      0x15C   0xE1B0'1800        LSLS     R1,R0,#+16
+    209          
+    210          	if (desc->dsp_dgain < PDMIC_DSPR_DGAIN_MAX_VAL)
+   \      0x160   0xE1D4'01B4        LDRH     R0,[R4, #+20]
+   \      0x164   0xE350'0C80        CMP      R0,#+32768
+   \      0x168   0xAA00'0022        BGE      ??pdmic_configure_22
+   \      0x16C   0xEA00'0001        B        ??pdmic_configure_23
+   \                     ??pdmic_configure_20:
+   \      0x170   0xE3A0'0000        MOV      R0,#+0
+   \      0x174   0xEA00'0048        B        ??pdmic_configure_2
+    211          		dspr1_val |= PDMIC_DSPR1_DGAIN(desc->dsp_dgain);
+   \                     ??pdmic_configure_23:
+   \      0x178   0xE1D4'01B4        LDRH     R0,[R4, #+20]
+   \      0x17C   0xE1B0'0880        LSLS     R0,R0,#+17
+   \      0x180   0xE191'08A0        ORRS     R0,R1,R0, LSR #+17
+   \      0x184   0xE58D'0004        STR      R0,[SP, #+4]
+    212          	else
+    213          		return -EINVAL;
+    214          
+    215          	desc->addr->PDMIC_DSPR0 = dspr0_val;
+   \      0x188   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x18C   0xE580'6058        STR      R6,[R0, #+88]
+    216          	desc->addr->PDMIC_DSPR1 = dspr1_val;
+   \      0x190   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x194   0xE594'1000        LDR      R1,[R4, #+0]
+   \      0x198   0xE581'005C        STR      R0,[R1, #+92]
+    217          
+    218          	f_pdmic = (desc->sample_rate * desc->dsp_osr);
+   \      0x19C   0xE594'0008        LDR      R0,[R4, #+8]
+   \      0x1A0   0xE5D4'100D        LDRB     R1,[R4, #+13]
+   \      0x1A4   0xE010'0091        MULS     R0,R1,R0
+   \      0x1A8   0xE58D'0000        STR      R0,[SP, #+0]
+    219          
+    220          	pclk_rate = pmc_get_peripheral_clock(id);
+   \      0x1AC   0xE1B0'0005        MOVS     R0,R5
+   \      0x1B0   0x....'....        BL       pmc_get_peripheral_clock
+   \      0x1B4   0xE1B0'7000        MOVS     R7,R0
+    221          	gclk_rate = pmc_get_gck_clock(id);
+   \      0x1B8   0xE1B0'0005        MOVS     R0,R5
+   \      0x1BC   0x....'....        BL       pmc_get_gck_clock
+   \      0x1C0   0xE1B0'8000        MOVS     R8,R0
+    222          
+    223          	/* PRESCAL = SELCK/(2*f_pdmic) - 1*/
+    224          	pclk_prescal = (uint32_t)(pclk_rate / (f_pdmic << 1)) - 1;
+   \      0x1C4   0xE1B0'0007        MOVS     R0,R7
+   \      0x1C8   0xE59D'1000        LDR      R1,[SP, #+0]
+   \      0x1CC   0xE1B0'1081        LSLS     R1,R1,#+1
+   \      0x1D0   0x....'....        BL       __aeabi_uidiv
+   \      0x1D4   0xE250'9001        SUBS     R9,R0,#+1
+    225          	gclk_prescal = (uint32_t)(gclk_rate / (f_pdmic << 1)) - 1;
+   \      0x1D8   0xE1B0'0008        MOVS     R0,R8
+   \      0x1DC   0xE59D'1000        LDR      R1,[SP, #+0]
+   \      0x1E0   0xE1B0'1081        LSLS     R1,R1,#+1
+   \      0x1E4   0x....'....        BL       __aeabi_uidiv
+   \      0x1E8   0xE250'A001        SUBS     R10,R0,#+1
+    226          
+    227          	if (pclk_prescal < PDMIC_MR_PRESCAL_MAX_VAL) {
+   \      0x1EC   0xE359'0080        CMP      R9,#+128
+   \      0x1F0   0x2A00'0005        BCS      ??pdmic_configure_24
+   \      0x1F4   0xEA00'0001        B        ??pdmic_configure_25
+   \                     ??pdmic_configure_22:
+   \      0x1F8   0xE3E0'001B        MVN      R0,#+27
+   \      0x1FC   0xEA00'0026        B        ??pdmic_configure_2
+    228          		mr_val = PDMIC_MR_PRESCAL(pclk_prescal) | PDMIC_MR_CLKS_PCLK;
+   \                     ??pdmic_configure_25:
+   \      0x200   0xE3A0'0C7F        MOV      R0,#+32512
+   \      0x204   0xE010'B409        ANDS     R11,R0,R9, LSL #+8
+   \      0x208   0xEA00'000D        B        ??pdmic_configure_26
+    229          	} else if (gclk_prescal < PDMIC_MR_PRESCAL_MAX_VAL) {
+   \                     ??pdmic_configure_24:
+   \      0x20C   0xE35A'0080        CMP      R10,#+128
+   \      0x210   0x2A00'0003        BCS      ??pdmic_configure_27
+    230          		mr_val = PDMIC_MR_PRESCAL(gclk_prescal) | PDMIC_MR_CLKS_GCLK;
+   \      0x214   0xE3A0'0C7F        MOV      R0,#+32512
+   \      0x218   0xE010'040A        ANDS     R0,R0,R10, LSL #+8
+   \      0x21C   0xE390'B010        ORRS     R11,R0,#0x10
+   \      0x220   0xEA00'0007        B        ??pdmic_configure_26
+    231          	} else {
+    232          		trace_error("PDMIC Prescal configure error");
+   \                     ??pdmic_configure_27:
+   \      0x224   0x....'....        LDR      R0,??DataTable2
+   \      0x228   0xE590'0000        LDR      R0,[R0, #+0]
+   \      0x22C   0xE350'0002        CMP      R0,#+2
+   \      0x230   0x3A00'0001        BCC      ??pdmic_configure_28
+   \      0x234   0x....'....        LDR      R0,??DataTable2_2
+   \      0x238   0x....'....        BL       printf
+    233          		return -EINVAL;
+   \                     ??pdmic_configure_28:
+   \      0x23C   0xE3E0'001B        MVN      R0,#+27
+   \      0x240   0xEA00'0015        B        ??pdmic_configure_2
+    234          	}
+    235          
+    236          	desc->rx.dma.channel = dma_allocate_channel(id, DMA_PERIPH_MEMORY);
+   \                     ??pdmic_configure_26:
+   \      0x244   0xE3A0'10FF        MOV      R1,#+255
+   \      0x248   0xE1B0'0005        MOVS     R0,R5
+   \      0x24C   0xE6EF'0070        UXTB     R0,R0
+   \      0x250   0x....'....        BL       dma_allocate_channel
+   \      0x254   0xE584'0034        STR      R0,[R4, #+52]
+    237          	assert(desc->rx.dma.channel);
+   \      0x258   0xE594'0034        LDR      R0,[R4, #+52]
+   \      0x25C   0xE350'0000        CMP      R0,#+0
+   \      0x260   0x1A00'0004        BNE      ??pdmic_configure_29
+   \      0x264   0xE3A0'20ED        MOV      R2,#+237
+   \      0x268   0x....'....        LDR      R1,??DataTable2_3
+   \      0x26C   0x....'....        LDR      R0,??DataTable2_4
+   \      0x270   0x....'....        BL       __aeabi_assert
+   \      0x274   0x....'....        BL       __iar_EmptyStepPoint
+    238          
+    239          	desc->rx.dma.cfg_dma.incr_saddr = false;
+   \                     ??pdmic_configure_29:
+   \      0x278   0xE3A0'0000        MOV      R0,#+0
+   \      0x27C   0xE5C4'0040        STRB     R0,[R4, #+64]
+    240          	desc->rx.dma.cfg_dma.incr_daddr = true;
+   \      0x280   0xE3A0'1001        MOV      R1,#+1
+   \      0x284   0xE5C4'1041        STRB     R1,[R4, #+65]
+    241          	desc->rx.dma.cfg_dma.loop = false;
+   \      0x288   0xE5C4'0042        STRB     R0,[R4, #+66]
+    242          	desc->rx.dma.cfg_dma.chunk_size = DMA_CHUNK_SIZE_1;
+   \      0x28C   0xE584'003C        STR      R0,[R4, #+60]
+    243          
+    244          	/* write configuration */
+    245          	desc->addr->PDMIC_MR = mr_val;
+   \      0x290   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x294   0xE580'B004        STR      R11,[R0, #+4]
+    246          
+    247          	return 0;
+   \      0x298   0xE3A0'0000        MOV      R0,#+0
+   \                     ??pdmic_configure_2:
+   \      0x29C   0xE8BD'8FFE        POP      {R1-R11,PC}      ;; return
+    248          }
+    249          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    250          int pdmic_set_gain(struct _pdmic_desc* desc, uint16_t dgain, uint8_t scale)
+    251          {
+   \                     pdmic_set_gain:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'3000        MOVS     R3,R0
+    252          	uint32_t dspr0_scale, dspr1_dgain;
+    253          
+    254          	if (dgain < PDMIC_DSPR_DGAIN_MAX_VAL &&
+    255          			scale < PDMIC_DSPR_SCALE_MAX_VAL) {
+   \        0x8   0xE1B0'0001        MOVS     R0,R1
+   \        0xC   0xE6FF'0070        UXTH     R0,R0
+   \       0x10   0xE350'0C80        CMP      R0,#+32768
+   \       0x14   0xAA00'0022        BGE      ??pdmic_set_gain_0
+   \       0x18   0xE1B0'0002        MOVS     R0,R2
+   \       0x1C   0xE6EF'0070        UXTB     R0,R0
+   \       0x20   0xE350'0010        CMP      R0,#+16
+   \       0x24   0xAA00'001E        BGE      ??pdmic_set_gain_0
+    256          		dspr0_scale = PDMIC_DSPR0_SCALE(scale);
+   \       0x28   0xE1B0'0002        MOVS     R0,R2
+   \       0x2C   0xE6EF'0070        UXTB     R0,R0
+   \       0x30   0xE3A0'CEF0        MOV      R12,#+3840
+   \       0x34   0xE01C'C400        ANDS     R12,R12,R0, LSL #+8
+    257          		dspr1_dgain = PDMIC_DSPR1_DGAIN(dgain);
+   \       0x38   0xE1B0'0001        MOVS     R0,R1
+   \       0x3C   0xE6FF'0070        UXTH     R0,R0
+   \       0x40   0xE1B0'0880        LSLS     R0,R0,#+17
+   \       0x44   0xE1B0'E8A0        LSRS     LR,R0,#+17
+    258          
+    259          		desc->addr->PDMIC_DSPR0 &= ~PDMIC_DSPR0_SCALE_Msk;
+   \       0x48   0xE593'0000        LDR      R0,[R3, #+0]
+   \       0x4C   0xE590'0058        LDR      R0,[R0, #+88]
+   \       0x50   0xE3D0'0EF0        BICS     R0,R0,#0xF00
+   \       0x54   0xE593'4000        LDR      R4,[R3, #+0]
+   \       0x58   0xE584'0058        STR      R0,[R4, #+88]
+    260          		desc->addr->PDMIC_DSPR1 &= ~PDMIC_DSPR1_DGAIN_Msk;
+   \       0x5C   0xE593'0000        LDR      R0,[R3, #+0]
+   \       0x60   0xE590'005C        LDR      R0,[R0, #+92]
+   \       0x64   0xE1B0'07A0        LSRS     R0,R0,#+15
+   \       0x68   0xE1B0'0780        LSLS     R0,R0,#+15
+   \       0x6C   0xE593'4000        LDR      R4,[R3, #+0]
+   \       0x70   0xE584'005C        STR      R0,[R4, #+92]
+    261          
+    262          		desc->addr->PDMIC_DSPR0 |= dspr0_scale;
+   \       0x74   0xE593'0000        LDR      R0,[R3, #+0]
+   \       0x78   0xE590'0058        LDR      R0,[R0, #+88]
+   \       0x7C   0xE19C'0000        ORRS     R0,R12,R0
+   \       0x80   0xE593'4000        LDR      R4,[R3, #+0]
+   \       0x84   0xE584'0058        STR      R0,[R4, #+88]
+    263          		desc->addr->PDMIC_DSPR1 |= dspr1_dgain;
+   \       0x88   0xE593'0000        LDR      R0,[R3, #+0]
+   \       0x8C   0xE590'005C        LDR      R0,[R0, #+92]
+   \       0x90   0xE19E'0000        ORRS     R0,LR,R0
+   \       0x94   0xE593'4000        LDR      R4,[R3, #+0]
+   \       0x98   0xE584'005C        STR      R0,[R4, #+92]
+    264          
+    265          		return 0;
+   \       0x9C   0xE3A0'0000        MOV      R0,#+0
+   \       0xA0   0xEA00'0000        B        ??pdmic_set_gain_1
+    266          	}
+    267          
+    268          	return -EINVAL;
+   \                     ??pdmic_set_gain_0:
+   \       0xA4   0xE3E0'001B        MVN      R0,#+27
+   \                     ??pdmic_set_gain_1:
+   \       0xA8   0xE8BD'8010        POP      {R4,PC}          ;; return
+    269          }
+    270          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    271          void pdmic_stream_convert(struct _pdmic_desc* desc, bool flag)
+    272          {
+    273          	if (flag)
+   \                     pdmic_stream_convert:
+   \        0x0   0xE1B0'2001        MOVS     R2,R1
+   \        0x4   0xE6EF'2072        UXTB     R2,R2
+   \        0x8   0xE352'0000        CMP      R2,#+0
+   \        0xC   0x0A00'0005        BEQ      ??pdmic_stream_convert_0
+    274          		desc->addr->PDMIC_CR |= PDMIC_CR_ENPDM;
+   \       0x10   0xE590'2000        LDR      R2,[R0, #+0]
+   \       0x14   0xE592'2000        LDR      R2,[R2, #+0]
+   \       0x18   0xE392'2010        ORRS     R2,R2,#0x10
+   \       0x1C   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0x20   0xE583'2000        STR      R2,[R3, #+0]
+   \       0x24   0xEA00'0004        B        ??pdmic_stream_convert_1
+    275          	else
+    276          		desc->addr->PDMIC_CR &= ~PDMIC_CR_ENPDM;
+   \                     ??pdmic_stream_convert_0:
+   \       0x28   0xE590'2000        LDR      R2,[R0, #+0]
+   \       0x2C   0xE592'2000        LDR      R2,[R2, #+0]
+   \       0x30   0xE3D2'2010        BICS     R2,R2,#0x10
+   \       0x34   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0x38   0xE583'2000        STR      R2,[R3, #+0]
+    277          }
+   \                     ??pdmic_stream_convert_1:
+   \       0x3C   0xE12F'FF1E        BX       LR               ;; return
+    278          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    279          int pdmic_init(struct _pdmic_desc *desc)
+    280          {
+   \                     pdmic_init:
+   \        0x0   0xE92D'41FC        PUSH     {R2-R8,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    281          	uint32_t id = get_pdmic_id_from_addr(desc->addr);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_pdmic_id_from_addr
+   \       0x10   0xE1B0'5000        MOVS     R5,R0
+    282          
+    283          #if (TRACE_LEVEL >= TRACE_LEVEL_DEBUG)
+    284          	uint32_t pclk, gclk;
+    285          	pclk = pmc_get_peripheral_clock(id);
+   \       0x14   0xE1B0'0005        MOVS     R0,R5
+   \       0x18   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x1C   0xE1B0'6000        MOVS     R6,R0
+    286          	trace_debug("-- PDMIC PCLK: %uMHz --\n\r", (unsigned)(pclk / 1000000));
+   \       0x20   0x....'....        LDR      R7,??DataTable2
+   \       0x24   0xE597'0000        LDR      R0,[R7, #+0]
+   \       0x28   0xE350'0005        CMP      R0,#+5
+   \       0x2C   0x3A00'0006        BCC      ??pdmic_init_0
+   \       0x30   0xE1B0'0006        MOVS     R0,R6
+   \       0x34   0xE3A0'1AF4        MOV      R1,#+999424
+   \       0x38   0xE381'1F90        ORR      R1,R1,#0x240
+   \       0x3C   0x....'....        BL       __aeabi_uidiv
+   \       0x40   0xE1B0'1000        MOVS     R1,R0
+   \       0x44   0x....'....        LDR      R0,??DataTable2_5
+   \       0x48   0x....'....        BL       printf
+    287          #endif
+    288          
+    289          	/* The gclk clock frequency must always be three times
+    290          	 * lower than the pclk clock frequency
+    291          	 */
+    292          	struct _pmc_periph_cfg cfg = {
+    293          		.gck = {
+    294          			.css = PMC_PCR_GCKCSS_PLLA_CLK,
+    295          			.div = 18,
+    296          		},
+    297          	};
+   \                     ??pdmic_init_0:
+   \       0x4C   0x....'....        LDR      R2,??DataTable2_6
+   \       0x50   0xE892'0003        LDM      R2,{R0,R1}
+   \       0x54   0xE1B0'200D        MOVS     R2,SP
+   \       0x58   0xE1C2'00F0        STRD     R0,R1,[R2, #+0]
+    298          	pmc_configure_peripheral(id, &cfg, true);
+   \       0x5C   0xE3A0'2001        MOV      R2,#+1
+   \       0x60   0xE1B0'100D        MOVS     R1,SP
+   \       0x64   0xE1B0'0005        MOVS     R0,R5
+   \       0x68   0x....'....        BL       pmc_configure_peripheral
+    299          
+    300          #if (TRACE_LEVEL >= TRACE_LEVEL_DEBUG)
+    301          	gclk = pmc_get_gck_clock(id);
+   \       0x6C   0xE1B0'0005        MOVS     R0,R5
+   \       0x70   0x....'....        BL       pmc_get_gck_clock
+   \       0x74   0xE1B0'8000        MOVS     R8,R0
+    302          	trace_debug("-- PDMIC GCLK: %uMHz --\n\r", (unsigned)(gclk / 1000000));
+   \       0x78   0xE597'0000        LDR      R0,[R7, #+0]
+   \       0x7C   0xE350'0005        CMP      R0,#+5
+   \       0x80   0x3A00'0006        BCC      ??pdmic_init_1
+   \       0x84   0xE1B0'0008        MOVS     R0,R8
+   \       0x88   0xE3A0'1AF4        MOV      R1,#+999424
+   \       0x8C   0xE381'1F90        ORR      R1,R1,#0x240
+   \       0x90   0x....'....        BL       __aeabi_uidiv
+   \       0x94   0xE1B0'1000        MOVS     R1,R0
+   \       0x98   0x....'....        LDR      R0,??DataTable2_7
+   \       0x9C   0x....'....        BL       printf
+    303          #endif
+    304          	pdmic_enable(desc);
+   \                     ??pdmic_init_1:
+   \       0xA0   0xE1B0'0004        MOVS     R0,R4
+   \       0xA4   0x....'....        BL       pdmic_enable
+    305          
+    306          	return pdmic_configure(desc);
+   \       0xA8   0xE1B0'0004        MOVS     R0,R4
+   \       0xAC   0x....'....        BL       pdmic_configure
+   \       0xB0   0xE8BD'81F6        POP      {R1,R2,R4-R8,PC}  ;; return
+    307          }
+
+   \                                 In section .rodata, align 4
+   \                     ?_6:
+   \        0x0   0x0000'0200        DC32 512, 18
+
+   \              0x0000'0012
+    308          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    309          bool pdmic_data_ready(struct _pdmic_desc* desc)
+    310          {
+    311          	return (desc->addr->PDMIC_ISR & PDMIC_ISR_DRDY) == PDMIC_ISR_DRDY;
+   \                     pdmic_data_ready:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE590'0024        LDR      R0,[R0, #+36]
+   \        0x8   0xE1B0'0C20        LSRS     R0,R0,#+24
+   \        0xC   0xE210'0001        ANDS     R0,R0,#0x1
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    312          }
+    313          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    314          int pdmic_transfer(struct _pdmic_desc* desc, struct _buffer* buf, struct _callback* cb)
+    315          {
+   \                     pdmic_transfer:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    316          	uint8_t tmode;
+    317          
+    318          	tmode = desc->transfer_mode;
+   \       0x10   0xE5D4'7004        LDRB     R7,[R4, #+4]
+    319          
+    320          	if ((buf == NULL) || (buf->size == 0))
+   \       0x14   0xE355'0000        CMP      R5,#+0
+   \       0x18   0x0A00'0002        BEQ      ??pdmic_transfer_0
+   \       0x1C   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x20   0xE350'0000        CMP      R0,#+0
+   \       0x24   0x1A00'0001        BNE      ??pdmic_transfer_1
+    321          		return -EINVAL;
+   \                     ??pdmic_transfer_0:
+   \       0x28   0xE3E0'001B        MVN      R0,#+27
+   \       0x2C   0xEA00'001F        B        ??pdmic_transfer_2
+    322          
+    323          	if (buf->attr & PDMIC_BUF_ATTR_READ) {
+   \                     ??pdmic_transfer_1:
+   \       0x30   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \       0x34   0xE310'0002        TST      R0,#0x2
+   \       0x38   0x0A00'001B        BEQ      ??pdmic_transfer_3
+    324          		mutex_lock(&desc->rx.mutex);
+   \       0x3C   0xE294'0018        ADDS     R0,R4,#+24
+   \       0x40   0x....'....        BL       mutex_lock
+    325          
+    326          		callback_copy(&desc->rx.callback, cb);
+   \       0x44   0xE1B0'1006        MOVS     R1,R6
+   \       0x48   0xE294'002C        ADDS     R0,R4,#+44
+   \       0x4C   0x....'....        BL       callback_copy
+    327          
+    328          		desc->rx.transferred = 0;
+   \       0x50   0xE3A0'0000        MOV      R0,#+0
+   \       0x54   0xE1C4'02B8        STRH     R0,[R4, #+40]
+    329          		desc->rx.buffer.data = buf->data;
+   \       0x58   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x5C   0xE584'001C        STR      R0,[R4, #+28]
+    330          		desc->rx.buffer.size = buf->size;
+   \       0x60   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x64   0xE584'0020        STR      R0,[R4, #+32]
+    331          		desc->rx.buffer.attr = buf->attr;
+   \       0x68   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0x6C   0xE584'0024        STR      R0,[R4, #+36]
+    332          
+    333          		if (tmode == PDMIC_MODE_DMA)
+   \       0x70   0xE1B0'0007        MOVS     R0,R7
+   \       0x74   0xE6EF'0070        UXTB     R0,R0
+   \       0x78   0xE350'0001        CMP      R0,#+1
+   \       0x7C   0x1A00'0003        BNE      ??pdmic_transfer_4
+    334          			_pdmic_dma_transfer(desc, buf);
+   \       0x80   0xE1B0'1005        MOVS     R1,R5
+   \       0x84   0xE1B0'0004        MOVS     R0,R4
+   \       0x88   0x....'....        BL       _pdmic_dma_transfer
+   \       0x8C   0xEA00'0006        B        ??pdmic_transfer_3
+    335          		else if (tmode == PDMIC_MODE_POLLING)
+   \                     ??pdmic_transfer_4:
+   \       0x90   0xE1B0'0007        MOVS     R0,R7
+   \       0x94   0xE6EF'0070        UXTB     R0,R0
+   \       0x98   0xE350'0000        CMP      R0,#+0
+   \       0x9C   0x1A00'0002        BNE      ??pdmic_transfer_3
+    336          			_pdmic_polling_transfer(desc, buf);
+   \       0xA0   0xE1B0'1005        MOVS     R1,R5
+   \       0xA4   0xE1B0'0004        MOVS     R0,R4
+   \       0xA8   0x....'....        BL       _pdmic_polling_transfer
+    337          	}
+    338          
+    339          	return 0;
+   \                     ??pdmic_transfer_3:
+   \       0xAC   0xE3A0'0000        MOV      R0,#+0
+   \                     ??pdmic_transfer_2:
+   \       0xB0   0xE8BD'80F2        POP      {R1,R4-R7,PC}    ;; return
+    340          }
+    341          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    342          bool pdmic_rx_transfer_is_done(struct _pdmic_desc* desc)
+    343          {
+   \                     pdmic_rx_transfer_is_done:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    344          	return (!mutex_is_locked(&desc->rx.mutex));
+   \        0x8   0xE294'0018        ADDS     R0,R4,#+24
+   \        0xC   0x....'....        BL       mutex_is_locked
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x1A00'0001        BNE      ??pdmic_rx_transfer_is_done_0
+   \       0x18   0xE3A0'0001        MOV      R0,#+1
+   \       0x1C   0xEA00'0000        B        ??pdmic_rx_transfer_is_done_1
+   \                     ??pdmic_rx_transfer_is_done_0:
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \                     ??pdmic_rx_transfer_is_done_1:
+   \       0x24   0xE6EF'0070        UXTB     R0,R0
+   \       0x28   0xE8BD'8010        POP      {R4,PC}          ;; return
+    345          }
+    346          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    347          void pdmic_rx_stop(struct _pdmic_desc* desc)
+    348          {
+   \                     pdmic_rx_stop:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    349          	if (desc->transfer_mode == PDMIC_MODE_DMA) {
+   \        0x8   0xE5D4'0004        LDRB     R0,[R4, #+4]
+   \        0xC   0xE350'0001        CMP      R0,#+1
+   \       0x10   0x1A00'0006        BNE      ??pdmic_rx_stop_0
+    350          		if (desc->rx.dma.channel){
+   \       0x14   0xE594'0034        LDR      R0,[R4, #+52]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x0A00'0003        BEQ      ??pdmic_rx_stop_0
+    351          			dma_stop_transfer(desc->rx.dma.channel);
+   \       0x20   0xE594'0034        LDR      R0,[R4, #+52]
+   \       0x24   0x....'....        BL       dma_stop_transfer
+    352          			mutex_unlock(&desc->rx.mutex);
+   \       0x28   0xE294'0018        ADDS     R0,R4,#+24
+   \       0x2C   0x....'....        BL       mutex_unlock
+    353          		}
+    354          	}
+    355          }
+   \                     ??pdmic_rx_stop_0:
+   \       0x30   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_5:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_6:
+   \        0x0   0x....'....        DC32     ?_6
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_7:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x45          DC8 "-E- only supports one channel\012"
+
+   \              0x2D 0x20    
+
+   \              0x6F 0x6E    
+
+   \              0x6C 0x79    
+
+   \              0x20 0x73    
+
+   \              0x75 0x70    
+
+   \              0x70 0x6F    
+
+   \              0x72 0x74    
+
+   \              0x73 0x20    
+
+   \              0x6F 0x6E    
+
+   \              0x65 0x20    
+
+   \              0x63 0x68    
+
+   \              0x61 0x6E    
+
+   \              0x6E 0x65    
+
+   \              0x6C 0x0A    
+
+   \              0x00
+   \       0x1F   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x2D 0x45          DC8 "-E- PDMIC Prescal configure error"
+
+   \              0x2D 0x20    
+
+   \              0x50 0x44    
+
+   \              0x4D 0x49    
+
+   \              0x43 0x20    
+
+   \              0x50 0x72    
+
+   \              0x65 0x73    
+
+   \              0x63 0x61    
+
+   \              0x6C 0x20    
+
+   \              0x63 0x6F    
+
+   \              0x6E 0x66    
+
+   \              0x69 0x67    
+
+   \              0x75 0x72    
+
+   \              0x65 0x20    
+
+   \              0x65 0x72    
+
+   \              0x72 0x6F    
+
+   \              0x72 0x00
+   \       0x22   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x64 0x65          DC8 "desc->rx.dma.channel"
+
+   \              0x73 0x63    
+
+   \              0x2D 0x3E    
+
+   \              0x72 0x78    
+
+   \              0x2E 0x64    
+
+   \              0x6D 0x61    
+
+   \              0x2E 0x63    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x6C    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x61, 0x75, 0x64, 0x69, 0x6F, 0x5C
+
+   \              0x61 0x75    
+
+   \              0x64 0x69    
+
+   \              0x6F 0x5C
+   \       0x40   0x70 0x64          DC8 0x70, 0x64, 0x6D, 0x69, 0x63, 0x2E, 0x63, 0
+
+   \              0x6D 0x69    
+
+   \              0x63 0x2E    
+
+   \              0x63 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_4:
+   \        0x0   0x2D 0x44          DC8 0x2D, 0x44, 0x2D, 0x20, 0x43, 0x3A, 0x5C, 0x77
+
+   \              0x2D 0x20    
+
+   \              0x43 0x3A    
+
+   \              0x5C 0x77
+   \        0x8   0x6F 0x72          DC8 0x6F, 0x72, 0x6B, 0x5C, 0x41, 0x74, 0x6D, 0x65
+
+   \              0x6B 0x5C    
+
+   \              0x41 0x74    
+
+   \              0x6D 0x65
+   \       0x10   0x6C 0x53          DC8 0x6C, 0x53, 0x6F, 0x66, 0x74, 0x50, 0x41, 0x63
+
+   \              0x6F 0x66    
+
+   \              0x74 0x50    
+
+   \              0x41 0x63
+   \       0x18   0x6B 0x5C          DC8 0x6B, 0x5C, 0x61, 0x74, 0x6D, 0x65, 0x6C, 0x2D
+
+   \              0x61 0x74    
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x2D
+   \       0x20   0x73 0x6F          DC8 0x73, 0x6F, 0x66, 0x74, 0x77, 0x61, 0x72, 0x65
+
+   \              0x66 0x74    
+
+   \              0x77 0x61    
+
+   \              0x72 0x65
+   \       0x28   0x2D 0x70          DC8 0x2D, 0x70, 0x61, 0x63, 0x6B, 0x61, 0x67, 0x65
+
+   \              0x61 0x63    
+
+   \              0x6B 0x61    
+
+   \              0x67 0x65
+   \       0x30   0x2D 0x32          DC8 0x2D, 0x32, 0x2E, 0x31, 0x37, 0x5C, 0x64, 0x72
+
+   \              0x2E 0x31    
+
+   \              0x37 0x5C    
+
+   \              0x64 0x72
+   \       0x38   0x69 0x76          DC8 0x69, 0x76, 0x65, 0x72, 0x73, 0x5C, 0x61, 0x75
+
+   \              0x65 0x72    
+
+   \              0x73 0x5C    
+
+   \              0x61 0x75
+   \       0x40   0x64 0x69          DC8 0x64, 0x69, 0x6F, 0x5C, 0x70, 0x64, 0x6D, 0x69
+
+   \              0x6F 0x5C    
+
+   \              0x70 0x64    
+
+   \              0x6D 0x69
+   \       0x48   0x63 0x2E          DC8 0x63, 0x2E, 0x63, 0x3A, 0x32, 0x38, 0x36, 0x20
+
+   \              0x63 0x3A    
+
+   \              0x32 0x38    
+
+   \              0x36 0x20
+   \       0x50   0x2D 0x2D          DC8 0x2D, 0x2D, 0x20, 0x50, 0x44, 0x4D, 0x49, 0x43
+
+   \              0x20 0x50    
+
+   \              0x44 0x4D    
+
+   \              0x49 0x43
+   \       0x58   0x20 0x50          DC8 0x20, 0x50, 0x43, 0x4C, 0x4B, 0x3A, 0x20, 0x25
+
+   \              0x43 0x4C    
+
+   \              0x4B 0x3A    
+
+   \              0x20 0x25
+   \       0x60   0x75 0x4D          DC8 0x75, 0x4D, 0x48, 0x7A, 0x20, 0x2D, 0x2D, 0x0A
+
+   \              0x48 0x7A    
+
+   \              0x20 0x2D    
+
+   \              0x2D 0x0A
+   \       0x68   0x0D 0x00          DC8 0x0D, 0
+   \       0x6A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_5:
+   \        0x0   0x2D 0x44          DC8 0x2D, 0x44, 0x2D, 0x20, 0x43, 0x3A, 0x5C, 0x77
+
+   \              0x2D 0x20    
+
+   \              0x43 0x3A    
+
+   \              0x5C 0x77
+   \        0x8   0x6F 0x72          DC8 0x6F, 0x72, 0x6B, 0x5C, 0x41, 0x74, 0x6D, 0x65
+
+   \              0x6B 0x5C    
+
+   \              0x41 0x74    
+
+   \              0x6D 0x65
+   \       0x10   0x6C 0x53          DC8 0x6C, 0x53, 0x6F, 0x66, 0x74, 0x50, 0x41, 0x63
+
+   \              0x6F 0x66    
+
+   \              0x74 0x50    
+
+   \              0x41 0x63
+   \       0x18   0x6B 0x5C          DC8 0x6B, 0x5C, 0x61, 0x74, 0x6D, 0x65, 0x6C, 0x2D
+
+   \              0x61 0x74    
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x2D
+   \       0x20   0x73 0x6F          DC8 0x73, 0x6F, 0x66, 0x74, 0x77, 0x61, 0x72, 0x65
+
+   \              0x66 0x74    
+
+   \              0x77 0x61    
+
+   \              0x72 0x65
+   \       0x28   0x2D 0x70          DC8 0x2D, 0x70, 0x61, 0x63, 0x6B, 0x61, 0x67, 0x65
+
+   \              0x61 0x63    
+
+   \              0x6B 0x61    
+
+   \              0x67 0x65
+   \       0x30   0x2D 0x32          DC8 0x2D, 0x32, 0x2E, 0x31, 0x37, 0x5C, 0x64, 0x72
+
+   \              0x2E 0x31    
+
+   \              0x37 0x5C    
+
+   \              0x64 0x72
+   \       0x38   0x69 0x76          DC8 0x69, 0x76, 0x65, 0x72, 0x73, 0x5C, 0x61, 0x75
+
+   \              0x65 0x72    
+
+   \              0x73 0x5C    
+
+   \              0x61 0x75
+   \       0x40   0x64 0x69          DC8 0x64, 0x69, 0x6F, 0x5C, 0x70, 0x64, 0x6D, 0x69
+
+   \              0x6F 0x5C    
+
+   \              0x70 0x64    
+
+   \              0x6D 0x69
+   \       0x48   0x63 0x2E          DC8 0x63, 0x2E, 0x63, 0x3A, 0x33, 0x30, 0x32, 0x20
+
+   \              0x63 0x3A    
+
+   \              0x33 0x30    
+
+   \              0x32 0x20
+   \       0x50   0x2D 0x2D          DC8 0x2D, 0x2D, 0x20, 0x50, 0x44, 0x4D, 0x49, 0x43
+
+   \              0x20 0x50    
+
+   \              0x44 0x4D    
+
+   \              0x49 0x43
+   \       0x58   0x20 0x47          DC8 0x20, 0x47, 0x43, 0x4C, 0x4B, 0x3A, 0x20, 0x25
+
+   \              0x43 0x4C    
+
+   \              0x4B 0x3A    
+
+   \              0x20 0x25
+   \       0x60   0x75 0x4D          DC8 0x75, 0x4D, 0x48, 0x7A, 0x20, 0x2D, 0x2D, 0x0A
+
+   \              0x48 0x7A    
+
+   \              0x20 0x2D    
+
+   \              0x2D 0x0A
+   \       0x68   0x0D 0x00          DC8 0x0D, 0
+   \       0x6A   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   _pdmic_dma_transfer
+        32   -> __aeabi_memset
+        32   -> callback_set
+        32   -> dma_configure_transfer
+        32   -> dma_set_callback
+        32   -> dma_start_transfer
+      16   _pdmic_dma_transfer_callback
+        16   -> cache_invalidate_region
+        16   -> callback_call
+        16   -> dma_reset_channel
+        16   -> mutex_unlock
+      24   _pdmic_polling_transfer
+        24   -> callback_call
+        24   -> mutex_unlock
+        24   -> pdmic_data_ready
+      48   pdmic_configure
+        48   -> __aeabi_assert
+        48   -> __iar_EmptyStepPoint
+        48   -> dma_allocate_channel
+        48   -> get_pdmic_id_from_addr
+        48   -> pmc_get_gck_clock
+        48   -> pmc_get_peripheral_clock
+        48   -> printf
+        48 __aeabi_uidiv
+       0   pdmic_data_ready
+      16   pdmic_disable
+        16   -> get_pdmic_id_from_addr
+        16   -> pmc_disable_gck
+        16   -> pmc_disable_peripheral
+      16   pdmic_enable
+        16   -> get_pdmic_id_from_addr
+        16   -> pmc_enable_gck
+        16   -> pmc_enable_peripheral
+      32   pdmic_init
+        32   -> get_pdmic_id_from_addr
+        32   -> pdmic_configure
+        32   -> pdmic_enable
+        32   -> pmc_configure_peripheral
+        32   -> pmc_get_gck_clock
+        32   -> pmc_get_peripheral_clock
+        32   -> printf
+        32 __aeabi_uidiv
+       8   pdmic_rx_stop
+         8   -> dma_stop_transfer
+         8   -> mutex_unlock
+       8   pdmic_rx_transfer_is_done
+         8   -> mutex_is_locked
+       8   pdmic_set_gain
+       0   pdmic_stream_convert
+      24   pdmic_transfer
+        24   -> _pdmic_dma_transfer
+        24   -> _pdmic_polling_transfer
+        24   -> callback_copy
+        24   -> mutex_lock
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+       4  ??DataTable2_6
+       4  ??DataTable2_7
+      32  ?_0
+      36  ?_1
+      24  ?_2
+      72  ?_3
+     108  ?_4
+     108  ?_5
+       8  ?_6
+     180  _pdmic_dma_transfer
+      60  _pdmic_dma_transfer_callback
+     116  _pdmic_polling_transfer
+     672  pdmic_configure
+      20  pdmic_data_ready
+      52  pdmic_disable
+      52  pdmic_enable
+     180  pdmic_init
+      52  pdmic_rx_stop
+      44  pdmic_rx_transfer_is_done
+     172  pdmic_set_gain
+      64  pdmic_stream_convert
+     180  pdmic_transfer
+
+ 
+   388 bytes in section .rodata
+ 1'876 bytes in section SOFTPACK
+ 
+ 1'876 bytes of CODE  memory
+   388 bytes of CONST memory
+
+Errors: none
+Warnings: none

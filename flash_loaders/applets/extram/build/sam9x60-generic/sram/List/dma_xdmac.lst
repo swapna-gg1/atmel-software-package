@@ -1,0 +1,628 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         22/Jul/2020  10:36:47
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dma_xdmac.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW28A4.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dma_xdmac.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_GENERIC -D
+#        CONFIG_HAVE_AIC5 -D CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D
+#        CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_ADC_LOW_RES -D CONFIG_HAVE_PMC_FAST_STARTUP -D
+#        CONFIG_HAVE_PMC_GENERATED_CLOCKS -D CONFIG_HAVE_SCKC -D
+#        CONFIG_TIMER_POLLING -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC
+#        -D CONFIG_HAVE_PWMC -D CONFIG_HAVE_SDRAM_W9864G6KH -D
+#        CONFIG_HAVE_DDR2_MT47H64M16 -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_SERIALD_USART -D
+#        CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\flash_loaders\applets\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\flash_loaders\applets\common\framework2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List\dma_xdmac.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\Obj\dma_xdmac.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dma_xdmac.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Includes
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <assert.h>
+     35          
+     36          #include "callback.h"
+     37          #include "compiler.h"
+     38          #include "dma/dma.h"
+     39          #include "dma/dma_xdmac.h"
+     40          #include "errno.h"
+     41          #include "irq/irq.h"
+     42          #include "peripherals/pmc.h"
+     43          
+     44          /*----------------------------------------------------------------------------
+     45           *        Local definitions
+     46           *----------------------------------------------------------------------------*/
+     47          
+     48          /* Compatibility for devices with no secure matrix */
+     49          #ifndef XDMAC_CC_PROT_UNSEC
+     50          #define XDMAC_CC_PROT_UNSEC 0
+     51          #endif
+     52          
+     53          /*----------------------------------------------------------------------------
+     54           *        Exported functions
+     55           *----------------------------------------------------------------------------*/
+     56          
+     57          /**
+     58           * \brief Enable clock of the DMA peripheral, Enable the peripheral,
+     59           * setup configuration register for transfer.
+     60           * \param channel Channel pointer
+     61           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     62          int dma_prepare_channel(struct _dma_channel* channel)
+     63          {
+   \                     dma_prepare_channel:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     64          	Xdmac* xdmac = channel->hw;
+   \        0x8   0xE594'5000        LDR      R5,[R4, #+0]
+     65          
+     66          	if (channel->state == DMA_STATE_FREE)
+   \        0xC   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x1A00'0001        BNE      ??dma_prepare_channel_0
+     67          		return -EPERM;
+   \       0x18   0xE3E0'0042        MVN      R0,#+66
+   \       0x1C   0xE8BD'8032        POP      {R1,R4,R5,PC}
+     68          	else if (channel->state == DMA_STATE_STARTED)
+   \                     ??dma_prepare_channel_0:
+   \       0x20   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \       0x24   0xE350'0002        CMP      R0,#+2
+   \       0x28   0x1A00'0001        BNE      ??dma_prepare_channel_1
+     69          		return -EBUSY;
+   \       0x2C   0xE3E0'0009        MVN      R0,#+9
+   \       0x30   0xE8BD'8032        POP      {R1,R4,R5,PC}
+     70          
+     71          	/* Clear status */
+     72          	xdmac_get_global_channel_status(xdmac);
+   \                     ??dma_prepare_channel_1:
+   \       0x34   0xE1A0'0005        MOV      R0,R5
+   \       0x38   0x....'....        BL       xdmac_get_global_channel_status
+     73          	xdmac_get_global_isr(xdmac);
+   \       0x3C   0xE1A0'0005        MOV      R0,R5
+   \       0x40   0x....'....        BL       xdmac_get_global_isr
+     74          
+     75          	/* Enable clock of the DMA peripheral */
+     76          	pmc_configure_peripheral(get_xdmac_id_from_addr(xdmac), NULL, true);
+   \       0x44   0xE1A0'0005        MOV      R0,R5
+   \       0x48   0x....'....        BL       get_xdmac_id_from_addr
+   \       0x4C   0xE3A0'2001        MOV      R2,#+1
+   \       0x50   0xE3A0'1000        MOV      R1,#+0
+   \       0x54   0x....'....        BL       pmc_configure_peripheral
+     77          
+     78          	/* Clear status */
+     79          	xdmac_get_channel_isr(xdmac, channel->id);
+   \       0x58   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x5C   0xE1A0'0005        MOV      R0,R5
+   \       0x60   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0x64   0x....'....        BL       xdmac_get_channel_isr
+     80          
+     81          	/* Disables XDMAC interrupt for the given channel */
+     82          	xdmac_disable_global_it(xdmac, 1 << channel->id);
+   \       0x68   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x6C   0xE3A0'0001        MOV      R0,#+1
+   \       0x70   0xE1A0'1110        LSL      R1,R0,R1
+   \       0x74   0xE1A0'0005        MOV      R0,R5
+   \       0x78   0x....'....        BL       xdmac_disable_global_it
+     83          	xdmac_disable_channel_it(xdmac, channel->id, -1);
+   \       0x7C   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x80   0xE3E0'2000        MVN      R2,#+0
+   \       0x84   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0x88   0xE1A0'0005        MOV      R0,R5
+   \       0x8C   0x....'....        BL       xdmac_disable_channel_it
+     84          
+     85          	/* Disable the given dma channel */
+     86          	xdmac_disable_channel(xdmac, channel->id);
+   \       0x90   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x94   0xE1A0'0005        MOV      R0,R5
+   \       0x98   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0x9C   0x....'....        BL       xdmac_disable_channel
+     87          	xdmac_set_src_addr(xdmac, channel->id, 0);
+   \       0xA0   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xA4   0xE3A0'2000        MOV      R2,#+0
+   \       0xA8   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0xAC   0xE1A0'0005        MOV      R0,R5
+   \       0xB0   0x....'....        BL       xdmac_set_src_addr
+     88          	xdmac_set_dest_addr(xdmac, channel->id, 0);
+   \       0xB4   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xB8   0xE3A0'2000        MOV      R2,#+0
+   \       0xBC   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0xC0   0xE1A0'0005        MOV      R0,R5
+   \       0xC4   0x....'....        BL       xdmac_set_dest_addr
+     89          	xdmac_set_block_control(xdmac, channel->id, 0);
+   \       0xC8   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xCC   0xE3A0'2000        MOV      R2,#+0
+   \       0xD0   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0xD4   0xE1A0'0005        MOV      R0,R5
+   \       0xD8   0x....'....        BL       xdmac_set_block_control
+     90          	xdmac_set_channel_config(xdmac, channel->id, XDMAC_CC_PROT_UNSEC);
+   \       0xDC   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xE0   0xE3A0'2000        MOV      R2,#+0
+   \       0xE4   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0xE8   0xE1A0'0005        MOV      R0,R5
+   \       0xEC   0x....'....        BL       xdmac_set_channel_config
+     91          	xdmac_set_descriptor_addr(xdmac, channel->id, 0, 0);
+   \       0xF0   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xF4   0xE3A0'3000        MOV      R3,#+0
+   \       0xF8   0xE3A0'2000        MOV      R2,#+0
+   \       0xFC   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x100   0xE1A0'0005        MOV      R0,R5
+   \      0x104   0x....'....        BL       xdmac_set_descriptor_addr
+     92          	xdmac_set_descriptor_control(xdmac, channel->id, 0);
+   \      0x108   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x10C   0xE3A0'2000        MOV      R2,#+0
+   \      0x110   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x114   0xE1A0'0005        MOV      R0,R5
+   \      0x118   0x....'....        BL       xdmac_set_descriptor_control
+     93          
+     94          	return 0;
+   \      0x11C   0xE3A0'0000        MOV      R0,#+0
+   \      0x120   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+     95          }
+     96          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     97          int xdmacd_configure_transfer(struct _dma_channel* channel,
+     98          			      struct _xdmacd_cfg *cfg,
+     99          			      uint32_t desc_cntrl,
+    100          			      void *desc_addr)
+    101          {
+   \                     xdmacd_configure_transfer:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    102          	if (channel->state == DMA_STATE_FREE)
+   \        0x8   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \        0xC   0xE1A0'5001        MOV      R5,R1
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+   \       0x14   0xE1A0'7003        MOV      R7,R3
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x1A00'0001        BNE      ??xdmacd_configure_transfer_0
+    103          		return -EPERM;
+   \       0x20   0xE3E0'0042        MVN      R0,#+66
+   \       0x24   0xE8BD'83F2        POP      {R1,R4-R9,PC}
+    104          	else if (channel->state == DMA_STATE_STARTED)
+   \                     ??xdmacd_configure_transfer_0:
+   \       0x28   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \       0x2C   0xE350'0002        CMP      R0,#+2
+   \       0x30   0x1A00'0001        BNE      ??xdmacd_configure_transfer_1
+    105          		return -EBUSY;
+   \       0x34   0xE3E0'0009        MVN      R0,#+9
+   \       0x38   0xE8BD'83F2        POP      {R1,R4-R9,PC}
+    106          
+    107          	Xdmac* xdmac = channel->hw;
+    108          	const uint32_t first_view = desc_cntrl & XDMAC_CNDC_NDVIEW_Msk;
+    109          
+    110          	cfg->cfg &= ~XDMAC_CC_PERID_Msk;
+   \                     ??xdmacd_configure_transfer_1:
+   \       0x3C   0xE595'001C        LDR      R0,[R5, #+28]
+   \       0x40   0xE594'8000        LDR      R8,[R4, #+0]
+   \       0x44   0xE3C0'047F        BIC      R0,R0,#0x7F000000
+   \       0x48   0xE206'9018        AND      R9,R6,#0x18
+   \       0x4C   0xE585'001C        STR      R0,[R5, #+28]
+    111          	if ((cfg->cfg & XDMAC_CC_TYPE_PER_TRAN) == XDMAC_CC_TYPE_PER_TRAN) {
+   \       0x50   0xE310'0001        TST      R0,#0x1
+   \       0x54   0x0A00'0007        BEQ      ??xdmacd_configure_transfer_2
+    112          		if ((cfg->cfg & XDMAC_CC_DSYNC) == XDMAC_CC_DSYNC_PER2MEM) {
+   \       0x58   0xE310'0010        TST      R0,#0x10
+    113          			cfg->cfg |= XDMAC_CC_PERID(channel->src_rxif);
+   \       0x5C   0x05D4'1011        LDRBEQ   R1,[R4, #+17]
+    114          		} else {
+    115          			cfg->cfg |= XDMAC_CC_PERID(channel->dest_txif);
+   \       0x60   0x15D4'1012        LDRBNE   R1,[R4, #+18]
+   \       0x64   0xE3A0'247F        MOV      R2,#+2130706432
+   \       0x68   0xE002'2C01        AND      R2,R2,R1, LSL #+24
+   \       0x6C   0xE182'0000        ORR      R0,R2,R0
+   \       0x70   0xE585'001C        STR      R0,[R5, #+28]
+   \       0x74   0xEA00'0001        B        ??xdmacd_configure_transfer_3
+    116          		}
+    117          	} else {
+    118          		/* Use PERID mask as 'unused peripheral number' for MEM2MEM */
+    119          		cfg->cfg |= XDMAC_CC_PERID_Msk;
+   \                     ??xdmacd_configure_transfer_2:
+   \       0x78   0xE380'147F        ORR      R1,R0,#0x7F000000
+   \       0x7C   0xE585'101C        STR      R1,[R5, #+28]
+    120          	}
+    121          
+    122          	/* Clear status */
+    123          	xdmac_get_global_isr(xdmac);
+   \                     ??xdmacd_configure_transfer_3:
+   \       0x80   0xE1A0'0008        MOV      R0,R8
+   \       0x84   0x....'....        BL       xdmac_get_global_isr
+    124          	xdmac_get_channel_isr(xdmac, channel->id);
+   \       0x88   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x8C   0xE1A0'0008        MOV      R0,R8
+   \       0x90   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0x94   0x....'....        BL       xdmac_get_channel_isr
+    125          
+    126          	if ((desc_cntrl & XDMAC_CNDC_NDE) == XDMAC_CNDC_NDE_DSCR_FETCH_EN) {
+   \       0x98   0xE316'0001        TST      R6,#0x1
+   \       0x9C   0x0A00'002C        BEQ      ??xdmacd_configure_transfer_4
+    127          		/* Linked List is enabled */
+    128          		if (first_view <= XDMAC_CNDC_NDVIEW_NDV2) {
+   \       0xA0   0xE359'0010        CMP      R9,#+16
+   \       0xA4   0x8A00'0013        BHI      ??xdmacd_configure_transfer_5
+    129          			xdmac_set_block_control(xdmac, channel->id, cfg->bc);
+   \       0xA8   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xAC   0xE595'2004        LDR      R2,[R5, #+4]
+   \       0xB0   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0xB4   0xE1A0'0008        MOV      R0,R8
+   \       0xB8   0x....'....        BL       xdmac_set_block_control
+    130          			xdmac_set_data_stride_mem_pattern(xdmac, channel->id, cfg->ds);
+   \       0xBC   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xC0   0xE595'2008        LDR      R2,[R5, #+8]
+   \       0xC4   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0xC8   0xE1A0'0008        MOV      R0,R8
+   \       0xCC   0x....'....        BL       xdmac_set_data_stride_mem_pattern
+    131          			xdmac_set_src_microblock_stride(xdmac, channel->id, cfg->sus);
+   \       0xD0   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xD4   0xE595'200C        LDR      R2,[R5, #+12]
+   \       0xD8   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0xDC   0xE1A0'0008        MOV      R0,R8
+   \       0xE0   0x....'....        BL       xdmac_set_src_microblock_stride
+    132          			xdmac_set_dest_microblock_stride(xdmac, channel->id, cfg->dus);
+   \       0xE4   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xE8   0xE595'2010        LDR      R2,[R5, #+16]
+   \       0xEC   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0xF0   0xE1A0'0008        MOV      R0,R8
+   \       0xF4   0x....'....        BL       xdmac_set_dest_microblock_stride
+    133          		}
+    134          		xdmac_set_channel_config(xdmac, channel->id, cfg->cfg);
+   \                     ??xdmacd_configure_transfer_5:
+   \       0xF8   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xFC   0xE595'201C        LDR      R2,[R5, #+28]
+   \      0x100   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x104   0xE1A0'0008        MOV      R0,R8
+   \      0x108   0x....'....        BL       xdmac_set_channel_config
+    135          		xdmac_set_descriptor_addr(xdmac, channel->id, desc_addr, 0);
+   \      0x10C   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x110   0xE3A0'3000        MOV      R3,#+0
+   \      0x114   0xE1A0'2007        MOV      R2,R7
+   \      0x118   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x11C   0xE1A0'0008        MOV      R0,R8
+   \      0x120   0x....'....        BL       xdmac_set_descriptor_addr
+    136          		xdmac_set_descriptor_control(xdmac, channel->id, desc_cntrl);
+   \      0x124   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x128   0xE1A0'2006        MOV      R2,R6
+   \      0x12C   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x130   0xE1A0'0008        MOV      R0,R8
+   \      0x134   0x....'....        BL       xdmac_set_descriptor_control
+    137          		xdmac_disable_channel_it(xdmac, channel->id, XDMAC_CID_BID
+    138          					 | XDMAC_CID_LID | XDMAC_CID_DID
+    139          					 | XDMAC_CID_FID | XDMAC_CID_RBEID
+    140          					 | XDMAC_CID_WBEID | XDMAC_CID_ROID);
+   \      0x138   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x13C   0xE3A0'207F        MOV      R2,#+127
+   \      0x140   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x144   0xE1A0'0008        MOV      R0,R8
+   \      0x148   0x....'....        BL       xdmac_disable_channel_it
+    141          		xdmac_enable_channel_it(xdmac, channel->id, XDMAC_CIE_LIE);
+   \      0x14C   0xE3A0'2002        MOV      R2,#+2
+   \      0x150   0xEA00'0038        B        ??xdmacd_configure_transfer_6
+    142          	} else {
+    143          		/* Linked List is disabled. */
+    144          		xdmac_set_src_addr(xdmac, channel->id, cfg->sa);
+   \                     ??xdmacd_configure_transfer_4:
+   \      0x154   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x158   0xE595'2014        LDR      R2,[R5, #+20]
+   \      0x15C   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x160   0xE1A0'0008        MOV      R0,R8
+   \      0x164   0x....'....        BL       xdmac_set_src_addr
+    145          		xdmac_set_dest_addr(xdmac, channel->id, cfg->da);
+   \      0x168   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x16C   0xE595'2018        LDR      R2,[R5, #+24]
+   \      0x170   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x174   0xE1A0'0008        MOV      R0,R8
+   \      0x178   0x....'....        BL       xdmac_set_dest_addr
+    146          		xdmac_set_microblock_control(xdmac, channel->id, cfg->ubc);
+   \      0x17C   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x180   0xE595'2000        LDR      R2,[R5, #+0]
+   \      0x184   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x188   0xE1A0'0008        MOV      R0,R8
+   \      0x18C   0x....'....        BL       xdmac_set_microblock_control
+    147          		xdmac_set_block_control(xdmac, channel->id, cfg->bc);
+   \      0x190   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x194   0xE595'2004        LDR      R2,[R5, #+4]
+   \      0x198   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x19C   0xE1A0'0008        MOV      R0,R8
+   \      0x1A0   0x....'....        BL       xdmac_set_block_control
+    148          		xdmac_set_data_stride_mem_pattern(xdmac, channel->id, cfg->ds);
+   \      0x1A4   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x1A8   0xE595'2008        LDR      R2,[R5, #+8]
+   \      0x1AC   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x1B0   0xE1A0'0008        MOV      R0,R8
+   \      0x1B4   0x....'....        BL       xdmac_set_data_stride_mem_pattern
+    149          		xdmac_set_src_microblock_stride(xdmac, channel->id, cfg->sus);
+   \      0x1B8   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x1BC   0xE595'200C        LDR      R2,[R5, #+12]
+   \      0x1C0   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x1C4   0xE1A0'0008        MOV      R0,R8
+   \      0x1C8   0x....'....        BL       xdmac_set_src_microblock_stride
+    150          		xdmac_set_dest_microblock_stride(xdmac, channel->id, cfg->dus);
+   \      0x1CC   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x1D0   0xE595'2010        LDR      R2,[R5, #+16]
+   \      0x1D4   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x1D8   0xE1A0'0008        MOV      R0,R8
+   \      0x1DC   0x....'....        BL       xdmac_set_dest_microblock_stride
+    151          		xdmac_set_channel_config(xdmac, channel->id, cfg->cfg);
+   \      0x1E0   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x1E4   0xE595'201C        LDR      R2,[R5, #+28]
+   \      0x1E8   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x1EC   0xE1A0'0008        MOV      R0,R8
+   \      0x1F0   0x....'....        BL       xdmac_set_channel_config
+    152          		xdmac_set_descriptor_addr(xdmac, channel->id, 0, 0);
+   \      0x1F4   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x1F8   0xE3A0'3000        MOV      R3,#+0
+   \      0x1FC   0xE3A0'2000        MOV      R2,#+0
+   \      0x200   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x204   0xE1A0'0008        MOV      R0,R8
+   \      0x208   0x....'....        BL       xdmac_set_descriptor_addr
+    153          		xdmac_set_descriptor_control(xdmac, channel->id, 0);
+   \      0x20C   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x210   0xE3A0'2000        MOV      R2,#+0
+   \      0x214   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x218   0xE1A0'0008        MOV      R0,R8
+   \      0x21C   0x....'....        BL       xdmac_set_descriptor_control
+    154          		xdmac_disable_channel_it(xdmac, channel->id, XDMAC_CID_LID);
+   \      0x220   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x224   0xE3A0'2002        MOV      R2,#+2
+   \      0x228   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x22C   0xE1A0'0008        MOV      R0,R8
+   \      0x230   0x....'....        BL       xdmac_disable_channel_it
+    155          		xdmac_enable_channel_it(xdmac, channel->id, XDMAC_CIE_BIE
+    156          					| XDMAC_CIE_LIE | XDMAC_CIE_DIE
+    157          					| XDMAC_CIE_FIE | XDMAC_CIE_RBIE
+    158          					| XDMAC_CIE_WBIE | XDMAC_CIE_ROIE);
+   \      0x234   0xE3A0'207F        MOV      R2,#+127
+   \                     ??xdmacd_configure_transfer_6:
+   \      0x238   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x23C   0xE1A0'0008        MOV      R0,R8
+   \      0x240   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x244   0x....'....        BL       xdmac_enable_channel_it
+    159          	}
+    160          	return 0;
+   \      0x248   0xE3A0'0000        MOV      R0,#+0
+   \      0x24C   0xE8BD'83F2        POP      {R1,R4-R9,PC}    ;; return
+    161          }
+    162          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    163          void dma_irq_handler(uint32_t source, void* user_arg)
+    164          {
+   \                     dma_irq_handler:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE1A0'8001        MOV      R8,R1
+    165          	uint32_t chan, gis, gcs;
+    166          	struct _dma_controller* ctrl = (struct _dma_controller*)user_arg;
+    167          	Xdmac* xdmac = ctrl->hw;
+   \        0x8   0xE598'4004        LDR      R4,[R8, #+4]
+    168          
+    169          	gis = xdmac_get_global_isr(xdmac);
+   \        0xC   0xE1A0'0004        MOV      R0,R4
+   \       0x10   0x....'....        BL       xdmac_get_global_isr
+   \       0x14   0xE1A0'5000        MOV      R5,R0
+    170          	if ((gis & ((1ull << DMA_CHANNELS) - 1)) == 0)
+   \       0x18   0xE1B0'0800        LSLS     R0,R0,#+16
+   \       0x1C   0x0A00'002A        BEQ      ??dma_irq_handler_0
+    171          		return;
+    172          
+    173          	gcs = xdmac_get_global_channel_status(xdmac);
+   \       0x20   0xE1A0'0004        MOV      R0,R4
+   \       0x24   0x....'....        BL       xdmac_get_global_channel_status
+    174          	for (chan = 0; chan < DMA_CHANNELS; chan++) {
+   \       0x28   0xE288'A008        ADD      R10,R8,#+8
+   \       0x2C   0xE1A0'6000        MOV      R6,R0
+   \       0x30   0xE3A0'7000        MOV      R7,#+0
+   \       0x34   0xE3A0'8003        MOV      R8,#+3
+    175          		struct _dma_channel* channel = &ctrl->channels[chan];
+    176          		bool exec = false;
+    177          
+    178          		if (!(gis & (1 << chan)))
+   \                     ??dma_irq_handler_1:
+   \       0x38   0xE3A0'0001        MOV      R0,#+1
+   \       0x3C   0xE110'0735        TST      R0,R5, LSR R7
+   \       0x40   0xE3A0'9000        MOV      R9,#+0
+   \       0x44   0x0A00'001C        BEQ      ??dma_irq_handler_2
+    179          			continue;
+    180          		if (channel->state == DMA_STATE_FREE)
+   \       0x48   0xE5DA'0014        LDRB     R0,[R10, #+20]
+   \       0x4C   0xE350'0000        CMP      R0,#+0
+   \       0x50   0x0A00'0019        BEQ      ??dma_irq_handler_2
+    181          			continue;
+    182          
+    183          		if (!(gcs & (1 << chan))) {
+   \       0x54   0xE3A0'1001        MOV      R1,#+1
+   \       0x58   0xE111'0736        TST      R1,R6, LSR R7
+   \       0x5C   0x1A00'0016        BNE      ??dma_irq_handler_2
+    184          			uint32_t cis = xdmac_get_channel_isr(xdmac, chan);
+   \       0x60   0xE207'10FF        AND      R1,R7,#0xFF
+   \       0x64   0xE1A0'0004        MOV      R0,R4
+   \       0x68   0x....'....        BL       xdmac_get_channel_isr
+   \       0x6C   0xE1A0'B000        MOV      R11,R0
+    185          
+    186          			if (cis & XDMAC_CIS_BIS) {
+   \       0x70   0xE31B'0001        TST      R11,#0x1
+   \       0x74   0x0A00'0005        BEQ      ??dma_irq_handler_3
+    187          				if (!(xdmac_get_channel_it_mask(xdmac, chan) & XDMAC_CIM_LIM)) {
+   \       0x78   0xE207'10FF        AND      R1,R7,#0xFF
+   \       0x7C   0xE1A0'0004        MOV      R0,R4
+   \       0x80   0x....'....        BL       xdmac_get_channel_it_mask
+   \       0x84   0xE310'0002        TST      R0,#0x2
+    188          					channel->state = DMA_STATE_DONE;
+   \       0x88   0x05CA'8014        STRBEQ   R8,[R10, #+20]
+    189          					exec = 1;
+   \       0x8C   0x03A0'9001        MOVEQ    R9,#+1
+    190          				}
+    191          			}
+    192          
+    193          			if (cis & XDMAC_CIS_LIS) {
+   \                     ??dma_irq_handler_3:
+   \       0x90   0xE31B'0002        TST      R11,#0x2
+    194          				channel->state = DMA_STATE_DONE;
+   \       0x94   0x15CA'8014        STRBNE   R8,[R10, #+20]
+    195          				exec = 1;
+   \       0x98   0x13A0'9001        MOVNE    R9,#+1
+    196          			}
+    197          
+    198          			if (cis & XDMAC_CIS_DIS) {
+   \       0x9C   0xE31B'0004        TST      R11,#0x4
+    199          				channel->state = DMA_STATE_DONE;
+   \       0xA0   0x15CA'8014        STRBNE   R8,[R10, #+20]
+    200          				exec = 1;
+   \       0xA4   0x1A00'0001        BNE      ??dma_irq_handler_4
+    201          			}
+    202          		}
+    203          
+    204          		/* Execute callback */
+    205          		if (exec)
+   \       0xA8   0xE359'0000        CMP      R9,#+0
+   \       0xAC   0x0A00'0002        BEQ      ??dma_irq_handler_2
+    206          			callback_call(&channel->callback, NULL);
+   \                     ??dma_irq_handler_4:
+   \       0xB0   0xE3A0'1000        MOV      R1,#+0
+   \       0xB4   0xE28A'0008        ADD      R0,R10,#+8
+   \       0xB8   0x....'....        BL       callback_call
+    207          	}
+   \                     ??dma_irq_handler_2:
+   \       0xBC   0xE287'7001        ADD      R7,R7,#+1
+   \       0xC0   0xE28A'A01C        ADD      R10,R10,#+28
+   \       0xC4   0xE357'0010        CMP      R7,#+16
+   \       0xC8   0x3AFF'FFDA        BCC      ??dma_irq_handler_1
+    208          }
+   \                     ??dma_irq_handler_0:
+   \       0xCC   0xE8BD'8FF1        POP      {R0,R4-R11,PC}   ;; return
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      40   dma_irq_handler
+        40   -> callback_call
+        40   -> xdmac_get_channel_isr
+        40   -> xdmac_get_channel_it_mask
+        40   -> xdmac_get_global_channel_status
+        40   -> xdmac_get_global_isr
+      16   dma_prepare_channel
+        16   -> get_xdmac_id_from_addr
+        16   -> pmc_configure_peripheral
+        16   -> xdmac_disable_channel
+        16   -> xdmac_disable_channel_it
+        16   -> xdmac_disable_global_it
+        16   -> xdmac_get_channel_isr
+        16   -> xdmac_get_global_channel_status
+        16   -> xdmac_get_global_isr
+        16   -> xdmac_set_block_control
+        16   -> xdmac_set_channel_config
+        16   -> xdmac_set_descriptor_addr
+        16   -> xdmac_set_descriptor_control
+        16   -> xdmac_set_dest_addr
+        16   -> xdmac_set_src_addr
+      32   xdmacd_configure_transfer
+        32   -> xdmac_disable_channel_it
+        32   -> xdmac_enable_channel_it
+        32   -> xdmac_get_channel_isr
+        32   -> xdmac_get_global_isr
+        32   -> xdmac_set_block_control
+        32   -> xdmac_set_channel_config
+        32   -> xdmac_set_data_stride_mem_pattern
+        32   -> xdmac_set_descriptor_addr
+        32   -> xdmac_set_descriptor_control
+        32   -> xdmac_set_dest_addr
+        32   -> xdmac_set_dest_microblock_stride
+        32   -> xdmac_set_microblock_control
+        32   -> xdmac_set_src_addr
+        32   -> xdmac_set_src_microblock_stride
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+     208  dma_irq_handler
+     292  dma_prepare_channel
+     592  xdmacd_configure_transfer
+
+ 
+ 1'092 bytes in section SOFTPACK
+ 
+ 1'092 bytes of CODE memory
+
+Errors: none
+Warnings: none

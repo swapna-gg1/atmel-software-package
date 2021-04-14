@@ -1,0 +1,1740 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         26/May/2020  11:35:27
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\chip_common.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW9834.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\chip_common.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\List\chip_common.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\Obj\chip_common.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\chip_common.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <stdlib.h>
+     35          
+     36          #include "chip.h"
+     37          #include "chip_common.h"
+     38          
+     39          /*----------------------------------------------------------------------------
+     40           *        Exported functions
+     41           *----------------------------------------------------------------------------*/
+     42          
+     43          #ifdef CONFIG_HAVE_CAN
+     44          
+     45          uint32_t get_can_id_from_addr(const Can* addr)
+     46          {
+     47          #ifdef CAN0
+     48          	if (addr == (void*)CAN0)
+     49          		return ID_CAN0;
+     50          #endif
+     51          #ifdef CAN1
+     52          	if (addr == (void*)CAN1)
+     53          		return ID_CAN1;
+     54          #endif
+     55          	return ID_PERIPH_COUNT;
+     56          }
+     57          
+     58          Can* get_can_addr_from_id(const uint32_t id)
+     59          {
+     60          #ifdef CAN0
+     61          	if (id == ID_CAN0)
+     62          		return CAN0;
+     63          #endif
+     64          #ifdef CAN1
+     65          	if (id == ID_CAN1)
+     66          		return CAN1;
+     67          #endif
+     68          	return NULL;
+     69          }
+     70          
+     71          #endif /* CONFIG_HAVE_CAN */
+     72          
+     73          #ifdef CONFIG_HAVE_CLASSD
+     74          
+     75          uint32_t get_classd_id_from_addr(const Classd* addr)
+     76          {
+     77          #ifdef CLASSD0
+     78          	if (addr == CLASSD0)
+     79          		return ID_CLASSD0;
+     80          #endif
+     81          	return ID_PERIPH_COUNT;
+     82          }
+     83          
+     84          #endif /* CONFIG_HAVE_CLASSD */
+     85          
+     86          #ifdef CONFIG_HAVE_DMAC
+     87          
+     88          uint32_t get_dmac_id_from_addr(const Dmac* addr)
+     89          {
+     90          #ifdef DMAC0
+     91          	if (addr == DMAC0)
+     92          		return ID_DMAC0;
+     93          #endif
+     94          #ifdef DMAC1
+     95          	if (addr == DMAC1)
+     96          		return ID_DMAC1;
+     97          #endif
+     98          	return ID_PERIPH_COUNT;
+     99          }
+    100          
+    101          Dmac* get_dmac_addr_from_id(uint32_t id)
+    102          {
+    103          #ifdef DMAC0
+    104          	if (id == ID_DMAC0)
+    105          		return DMAC0;
+    106          #endif
+    107          #ifdef DMAC1
+    108          	if (id == ID_DMAC1)
+    109          		return DMAC1;
+    110          #endif
+    111          	return NULL;
+    112          }
+    113          
+    114          #endif /* CONFIG_HAVE_DMAC */
+    115          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    116          uint32_t get_ebi_addr_from_cs(uint32_t cs)
+    117          {
+    118          	switch (cs) {
+   \                     get_ebi_addr_from_cs:
+   \        0x0   0xE350'0005        CMP      R0,#+5
+   \        0x4   0x8A00'000F        BHI      ??get_ebi_addr_from_cs_1
+   \        0x8   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \        0xC   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??get_ebi_addr_from_cs_0:
+   \       0x10   0x01 0x03          DC8      0x1,0x3,0x5,0x7
+
+   \              0x05 0x07
+   \       0x14   0x09 0x0B          DC8      0x9,0xB,0x0,0x0
+
+   \              0x00 0x00
+    119          #ifdef EBI_CS0_ADDR
+    120          	case 0:
+    121          		return EBI_CS0_ADDR;
+   \                     ??get_ebi_addr_from_cs_2:
+   \       0x18   0xE3A0'0540        MOV      R0,#+268435456
+   \       0x1C   0xE12F'FF1E        BX       LR
+    122          #endif
+    123          #ifdef EBI_CS1_ADDR
+    124          	case 1:
+    125          		return EBI_CS1_ADDR;
+   \                     ??get_ebi_addr_from_cs_3:
+   \       0x20   0xE3A0'0580        MOV      R0,#+536870912
+   \       0x24   0xE12F'FF1E        BX       LR
+    126          #endif
+    127          #ifdef EBI_CS2_ADDR
+    128          	case 2:
+    129          		return EBI_CS2_ADDR;
+   \                     ??get_ebi_addr_from_cs_4:
+   \       0x28   0xE3A0'05C0        MOV      R0,#+805306368
+   \       0x2C   0xE12F'FF1E        BX       LR
+    130          #endif
+    131          #ifdef EBI_CS3_ADDR
+    132          	case 3:
+    133          		return EBI_CS3_ADDR;
+   \                     ??get_ebi_addr_from_cs_5:
+   \       0x30   0xE3A0'0440        MOV      R0,#+1073741824
+   \       0x34   0xE12F'FF1E        BX       LR
+    134          #endif
+    135          #ifdef EBI_CS4_ADDR
+    136          	case 4:
+    137          		return EBI_CS4_ADDR;
+   \                     ??get_ebi_addr_from_cs_6:
+   \       0x38   0xE3A0'0450        MOV      R0,#+1342177280
+   \       0x3C   0xE12F'FF1E        BX       LR
+    138          #endif
+    139          #ifdef EBI_CS5_ADDR
+    140          	case 5:
+    141          		return EBI_CS5_ADDR;
+   \                     ??get_ebi_addr_from_cs_7:
+   \       0x40   0xE3A0'0460        MOV      R0,#+1610612736
+   \       0x44   0xE12F'FF1E        BX       LR
+    142          #endif
+    143          	default:
+    144          		return 0;
+   \                     ??get_ebi_addr_from_cs_1:
+   \       0x48   0xE3A0'0000        MOV      R0,#+0
+   \       0x4C   0xE12F'FF1E        BX       LR               ;; return
+    145          	}
+    146          }
+    147          
+    148          #ifdef CONFIG_HAVE_EMAC
+    149          
+    150          uint32_t get_emac_id_from_addr(const Emac* addr)
+    151          {
+    152          #ifdef EMAC0
+    153          	if (addr == EMAC0)
+    154          		return ID_EMAC0;
+    155          #endif
+    156          #ifdef EMAC1
+    157          	if (addr == EMAC1)
+    158          		return ID_EMAC1;
+    159          #endif
+    160          	return ID_PERIPH_COUNT;
+    161          }
+    162          
+    163          #endif /* CONFIG_HAVE_EMAC */
+    164          
+    165          #ifdef CONFIG_HAVE_FLEXCOM
+    166          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    167          uint32_t get_flexcom_id_from_addr(const Flexcom* addr)
+    168          {
+    169          #ifdef FLEXCOM0
+    170          	if (addr == FLEXCOM0)
+   \                     get_flexcom_id_from_addr:
+   \        0x0   0xE3A0'14F8        MOV      R1,#-134217728
+   \        0x4   0xE381'1B70        ORR      R1,R1,#0x1C000
+   \        0x8   0xE150'0001        CMP      R0,R1
+   \        0xC   0x1A00'0001        BNE      ??get_flexcom_id_from_addr_0
+    171          		return ID_FLEXCOM0;
+   \       0x10   0xE3A0'0005        MOV      R0,#+5
+   \       0x14   0xE12F'FF1E        BX       LR
+    172          #endif
+    173          #ifdef FLEXCOM1
+    174          	if (addr == FLEXCOM1)
+   \                     ??get_flexcom_id_from_addr_0:
+   \       0x18   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0x1C   0xE150'0001        CMP      R0,R1
+   \       0x20   0x1A00'0001        BNE      ??get_flexcom_id_from_addr_1
+    175          		return ID_FLEXCOM1;
+   \       0x24   0xE3A0'0006        MOV      R0,#+6
+   \       0x28   0xE12F'FF1E        BX       LR
+    176          #endif
+    177          #ifdef FLEXCOM2
+    178          	if (addr == FLEXCOM2)
+   \                     ??get_flexcom_id_from_addr_1:
+   \       0x2C   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x30   0xE150'0001        CMP      R0,R1
+   \       0x34   0x1A00'0001        BNE      ??get_flexcom_id_from_addr_2
+    179          		return ID_FLEXCOM2;
+   \       0x38   0xE3A0'0007        MOV      R0,#+7
+   \       0x3C   0xE12F'FF1E        BX       LR
+    180          #endif
+    181          #ifdef FLEXCOM3
+    182          	if (addr == FLEXCOM3)
+   \                     ??get_flexcom_id_from_addr_2:
+   \       0x40   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0x44   0xE150'0001        CMP      R0,R1
+   \       0x48   0x1A00'0001        BNE      ??get_flexcom_id_from_addr_3
+    183          		return ID_FLEXCOM3;
+   \       0x4C   0xE3A0'0008        MOV      R0,#+8
+   \       0x50   0xE12F'FF1E        BX       LR
+    184          #endif
+    185          #ifdef FLEXCOM4
+    186          	if (addr == FLEXCOM4)
+   \                     ??get_flexcom_id_from_addr_3:
+   \       0x54   0xE350'04F0        CMP      R0,#-268435456
+   \       0x58   0x1A00'0001        BNE      ??get_flexcom_id_from_addr_4
+    187          		return ID_FLEXCOM4;
+   \       0x5C   0xE3A0'000D        MOV      R0,#+13
+   \       0x60   0xE12F'FF1E        BX       LR
+    188          #endif
+    189          #ifdef FLEXCOM5
+    190          	if (addr == FLEXCOM5)
+   \                     ??get_flexcom_id_from_addr_4:
+   \       0x64   0xE3A0'14F0        MOV      R1,#-268435456
+   \       0x68   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x6C   0xE150'0001        CMP      R0,R1
+   \       0x70   0x1A00'0001        BNE      ??get_flexcom_id_from_addr_5
+    191          		return ID_FLEXCOM5;
+   \       0x74   0xE3A0'000E        MOV      R0,#+14
+   \       0x78   0xE12F'FF1E        BX       LR
+    192          #endif
+    193          #ifdef FLEXCOM6
+    194          	if (addr == FLEXCOM6)
+   \                     ??get_flexcom_id_from_addr_5:
+   \       0x7C   0xE3A0'14F8        MOV      R1,#-134217728
+   \       0x80   0xE381'1B40        ORR      R1,R1,#0x10000
+   \       0x84   0xE150'0001        CMP      R0,R1
+   \       0x88   0x1A00'0001        BNE      ??get_flexcom_id_from_addr_6
+    195          		return ID_FLEXCOM6;
+   \       0x8C   0xE3A0'0009        MOV      R0,#+9
+   \       0x90   0xE12F'FF1E        BX       LR
+    196          #endif
+    197          #ifdef FLEXCOM7
+    198          	if (addr == FLEXCOM7)
+   \                     ??get_flexcom_id_from_addr_6:
+   \       0x94   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x98   0xE150'0001        CMP      R0,R1
+   \       0x9C   0x1A00'0001        BNE      ??get_flexcom_id_from_addr_7
+    199          		return ID_FLEXCOM7;
+   \       0xA0   0xE3A0'000A        MOV      R0,#+10
+   \       0xA4   0xE12F'FF1E        BX       LR
+    200          #endif
+    201          #ifdef FLEXCOM8
+    202          	if (addr == FLEXCOM8)
+   \                     ??get_flexcom_id_from_addr_7:
+   \       0xA8   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0xAC   0xE150'0001        CMP      R0,R1
+   \       0xB0   0x1A00'0001        BNE      ??get_flexcom_id_from_addr_8
+    203          		return ID_FLEXCOM8;
+   \       0xB4   0xE3A0'000B        MOV      R0,#+11
+   \       0xB8   0xE12F'FF1E        BX       LR
+    204          #endif
+    205          #ifdef FLEXCOM9
+    206          	if (addr == FLEXCOM9)
+   \                     ??get_flexcom_id_from_addr_8:
+   \       0xBC   0x....'....        B        ?Subroutine0
+    207          		return ID_FLEXCOM9;
+    208          #endif
+    209          	return ID_PERIPH_COUNT;
+    210          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE281'1BA0        ADD      R1,R1,#+163840
+   \        0x4   0xE150'0001        CMP      R0,R1
+   \        0x8   0x03A0'000F        MOVEQ    R0,#+15
+   \        0xC                      REQUIRE ??Subroutine1_0
+   \        0xC                      ;; // Fall through to label ??Subroutine1_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??Subroutine1_0:
+   \        0x0   0x13A0'0033        MOVNE    R0,#+51
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    211          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    212          Flexcom* get_flexcom_addr_from_id(uint32_t id)
+    213          {
+    214          #ifdef FLEXCOM0
+    215          	if (id == ID_FLEXCOM0)
+   \                     get_flexcom_addr_from_id:
+   \        0x0   0xE350'0005        CMP      R0,#+5
+   \        0x4   0x1A00'0002        BNE      ??get_flexcom_addr_from_id_0
+    216          		return FLEXCOM0;
+   \        0x8   0xE3A0'04F8        MOV      R0,#-134217728
+   \        0xC   0xE380'0B70        ORR      R0,R0,#0x1C000
+   \       0x10   0xE12F'FF1E        BX       LR
+    217          #endif
+    218          #ifdef FLEXCOM1
+    219          	if (id == ID_FLEXCOM1)
+   \                     ??get_flexcom_addr_from_id_0:
+   \       0x14   0xE350'0006        CMP      R0,#+6
+   \       0x18   0x1A00'0002        BNE      ??get_flexcom_addr_from_id_1
+    220          		return FLEXCOM1;
+   \       0x1C   0xE3A0'04F8        MOV      R0,#-134217728
+   \       0x20   0xE380'0B80        ORR      R0,R0,#0x20000
+   \       0x24   0xE12F'FF1E        BX       LR
+    221          #endif
+    222          #ifdef FLEXCOM2
+    223          	if (id == ID_FLEXCOM2)
+   \                     ??get_flexcom_addr_from_id_1:
+   \       0x28   0xE350'0007        CMP      R0,#+7
+   \       0x2C   0x1A00'0002        BNE      ??get_flexcom_addr_from_id_2
+    224          		return FLEXCOM2;
+   \       0x30   0xE3A0'04F8        MOV      R0,#-134217728
+   \       0x34   0xE380'0B90        ORR      R0,R0,#0x24000
+   \       0x38   0xE12F'FF1E        BX       LR
+    225          #endif
+    226          #ifdef FLEXCOM3
+    227          	if (id == ID_FLEXCOM3)
+   \                     ??get_flexcom_addr_from_id_2:
+   \       0x3C   0xE350'0008        CMP      R0,#+8
+   \       0x40   0x1A00'0002        BNE      ??get_flexcom_addr_from_id_3
+    228          		return FLEXCOM3;
+   \       0x44   0xE3A0'04F8        MOV      R0,#-134217728
+   \       0x48   0xE380'0BA0        ORR      R0,R0,#0x28000
+   \       0x4C   0xE12F'FF1E        BX       LR
+    229          #endif
+    230          #ifdef FLEXCOM4
+    231          	if (id == ID_FLEXCOM4)
+   \                     ??get_flexcom_addr_from_id_3:
+   \       0x50   0xE350'000D        CMP      R0,#+13
+   \       0x54   0x1A00'0001        BNE      ??get_flexcom_addr_from_id_4
+    232          		return FLEXCOM4;
+   \       0x58   0xE3A0'04F0        MOV      R0,#-268435456
+   \       0x5C   0xE12F'FF1E        BX       LR
+    233          #endif
+    234          #ifdef FLEXCOM5
+    235          	if (id == ID_FLEXCOM5)
+   \                     ??get_flexcom_addr_from_id_4:
+   \       0x60   0xE350'000E        CMP      R0,#+14
+   \       0x64   0x1A00'0002        BNE      ??get_flexcom_addr_from_id_5
+    236          		return FLEXCOM5;
+   \       0x68   0xE3A0'04F0        MOV      R0,#-268435456
+   \       0x6C   0xE380'0C40        ORR      R0,R0,#0x4000
+   \       0x70   0xE12F'FF1E        BX       LR
+    237          #endif
+    238          #ifdef FLEXCOM6
+    239          	if (id == ID_FLEXCOM6)
+   \                     ??get_flexcom_addr_from_id_5:
+   \       0x74   0xE350'0009        CMP      R0,#+9
+   \       0x78   0x1A00'0002        BNE      ??get_flexcom_addr_from_id_6
+    240          		return FLEXCOM6;
+   \       0x7C   0xE3A0'04F8        MOV      R0,#-134217728
+   \       0x80   0xE380'0B40        ORR      R0,R0,#0x10000
+   \       0x84   0xE12F'FF1E        BX       LR
+    241          #endif
+    242          #ifdef FLEXCOM7
+    243          	if (id == ID_FLEXCOM7)
+   \                     ??get_flexcom_addr_from_id_6:
+   \       0x88   0xE350'000A        CMP      R0,#+10
+   \       0x8C   0x1A00'0002        BNE      ??get_flexcom_addr_from_id_7
+    244          		return FLEXCOM7;
+   \       0x90   0xE3A0'04F8        MOV      R0,#-134217728
+   \       0x94   0xE380'0B50        ORR      R0,R0,#0x14000
+   \       0x98   0xE12F'FF1E        BX       LR
+    245          #endif
+    246          #ifdef FLEXCOM8
+    247          	if (id == ID_FLEXCOM8)
+   \                     ??get_flexcom_addr_from_id_7:
+   \       0x9C   0xE350'000B        CMP      R0,#+11
+   \       0xA0   0x1A00'0002        BNE      ??get_flexcom_addr_from_id_8
+    248          		return FLEXCOM8;
+   \       0xA4   0xE3A0'04F8        MOV      R0,#-134217728
+   \       0xA8   0xE380'0B60        ORR      R0,R0,#0x18000
+   \       0xAC   0xE12F'FF1E        BX       LR
+    249          #endif
+    250          #ifdef FLEXCOM9
+    251          	if (id == ID_FLEXCOM9)
+   \                     ??get_flexcom_addr_from_id_8:
+   \       0xB0   0xE350'000F        CMP      R0,#+15
+    252          		return FLEXCOM9;
+   \       0xB4   0x03A0'04F8        MOVEQ    R0,#-134217728
+   \       0xB8   0x0380'0A40        ORREQ    R0,R0,#0x40000
+    253          #endif
+    254          	return NULL;
+   \       0xBC   0x13A0'0000        MOVNE    R0,#+0
+   \       0xC0   0xE12F'FF1E        BX       LR               ;; return
+    255          }
+    256          
+    257          #endif /* CONFIG_HAVE_FLEXCOM */
+    258          
+    259          #ifdef CONFIG_HAVE_GMAC
+    260          
+    261          uint32_t get_gmac_id_from_addr(const Gmac* addr)
+    262          {
+    263          #ifdef GMAC0
+    264          	if (addr == GMAC0)
+    265          		return ID_GMAC0;
+    266          #endif
+    267          #ifdef GMAC1
+    268          	if (addr == GMAC1)
+    269          		return ID_GMAC1;
+    270          #endif
+    271          	return ID_PERIPH_COUNT;
+    272          }
+    273          
+    274          #endif /* CONFIG_HAVE_GMAC */
+    275          
+    276          #ifdef CONFIG_HAVE_HSMCI
+    277          
+    278          uint32_t get_hsmci_id_from_addr(const Hsmci* addr)
+    279          {
+    280          #ifdef HSMCI0
+    281          	if (addr == HSMCI0)
+    282          		return ID_HSMCI0;
+    283          #endif
+    284          #ifdef HSMCI1
+    285          	if (addr == HSMCI1)
+    286          		return ID_HSMCI1;
+    287          #endif
+    288          	return ID_PERIPH_COUNT;
+    289          }
+    290          
+    291          Hsmci* get_hsmci_addr_from_id(uint32_t id)
+    292          {
+    293          #ifdef HSMCI0
+    294          	if (id == ID_HSMCI0)
+    295          		return HSMCI0;
+    296          #endif
+    297          #ifdef HSMCI1
+    298          	if (id == ID_HSMCI1)
+    299          		return HSMCI1;
+    300          #endif
+    301          	return NULL;
+    302          }
+    303          
+    304          #endif /* CONFIG_HAVE_HSMCI */
+    305          
+    306          #ifdef CONFIG_HAVE_MCAN
+    307          
+    308          uint32_t get_mcan_id_from_addr(const Mcan* addr, uint8_t int_idx)
+    309          {
+    310          	if (int_idx > 1)
+    311          		return ID_PERIPH_COUNT;
+    312          #ifdef MCAN0
+    313          	if (addr == (void*)MCAN0)
+    314          		return int_idx == 0 ? ID_MCAN0_INT0 : ID_MCAN0_INT1;
+    315          #endif
+    316          #ifdef MCAN1
+    317          	if (addr == (void*)MCAN1)
+    318          		return  int_idx == 0 ? ID_MCAN1_INT0 : ID_MCAN1_INT1;
+    319          #endif
+    320          #ifdef MCAN2
+    321          	if (addr == (void*)MCAN2)
+    322          		return  int_idx == 0 ? ID_MCAN2_INT0 : ID_MCAN2_INT1;
+    323          #endif
+    324          #ifdef MCAN3
+    325          	if (addr == (void*)MCAN3)
+    326          		return  int_idx == 0 ? ID_MCAN3_INT0 : ID_MCAN3_INT1;
+    327          #endif
+    328          	return ID_PERIPH_COUNT;
+    329          }
+    330          
+    331          Mcan* get_mcan_addr_from_id(const uint32_t id)
+    332          {
+    333          #ifdef MCAN0
+    334          	if (id == ID_MCAN0_INT0 || id == ID_MCAN0_INT1)
+    335          		return MCAN0;
+    336          #endif
+    337          #ifdef MCAN1
+    338          	if (id == ID_MCAN1_INT0 || id == ID_MCAN1_INT1)
+    339          		return MCAN1;
+    340          #endif
+    341          #ifdef MCAN2
+    342          	if (id == ID_MCAN2_INT0 || id == ID_MCAN2_INT1)
+    343          		return MCAN2;
+    344          #endif
+    345          #ifdef MCAN3
+    346          	if (id == ID_MCAN3_INT0 || id == ID_MCAN3_INT1)
+    347          		return MCAN3;
+    348          #endif
+    349          	return NULL;
+    350          }
+    351          
+    352          #endif /* CONFIG_HAVE_MCAN */
+    353          
+    354          #ifdef CONFIG_HAVE_PDMIC
+    355          
+    356          uint32_t get_pdmic_id_from_addr(const Pdmic* addr)
+    357          {
+    358          #ifdef PDMIC0
+    359          	if (addr == PDMIC0)
+    360          		return ID_PDMIC0;
+    361          #endif
+    362          #ifdef PDMIC1
+    363          	if (addr == PDMIC1)
+    364          		return ID_PDMIC1;
+    365          #endif
+    366          #ifdef PDMIC2
+    367          	if (addr == PDMIC2)
+    368          		return ID_PDMIC2;
+    369          #endif
+    370          #ifdef PDMIC3
+    371          	if (addr == PDMIC3)
+    372          		return ID_PDMIC3;
+    373          #endif
+    374          	return ID_PERIPH_COUNT;
+    375          }
+    376          
+    377          #endif /* CONFIG_HAVE_PDMIC */
+    378          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    379          uint32_t get_pwm_id_from_addr(const Pwm* addr)
+    380          {
+    381          #ifdef PWM0
+    382          	if (addr == PWM0)
+   \                     get_pwm_id_from_addr:
+   \        0x0   0xE3A0'14F8        MOV      R1,#-134217728
+   \        0x4   0xE381'1BD0        ORR      R1,R1,#0x34000
+   \        0x8   0xE150'0001        CMP      R0,R1
+    383          		return ID_PWM0;
+   \        0xC   0x03A0'0012        MOVEQ    R0,#+18
+    384          #endif
+    385          #ifdef PWM1
+    386          	if (addr == PWM1)
+    387          		return ID_PWM1;
+    388          #endif
+    389          	return ID_PERIPH_COUNT;
+   \       0x10   0x....'....        B        ??Subroutine1_0
+    390          }
+    391          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    392          Pwm* get_pwm_addr_from_id(uint32_t id)
+    393          {
+    394          #ifdef PWM0
+    395          	if (id == ID_PWM0)
+   \                     get_pwm_addr_from_id:
+   \        0x0   0xE350'0012        CMP      R0,#+18
+    396          		return PWM0;
+   \        0x4   0x03A0'04F8        MOVEQ    R0,#-134217728
+   \        0x8   0x0380'0BD0        ORREQ    R0,R0,#0x34000
+    397          #endif
+    398          #ifdef PWM1
+    399          	if (id == ID_PWM1)
+    400          		return PWM1;
+    401          #endif
+    402          	return NULL;
+   \        0xC   0x13A0'0000        MOVNE    R0,#+0
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    403          }
+    404          
+    405          #ifdef CONFIG_HAVE_QSPI
+    406          
+    407          uint32_t get_qspi_id_from_addr(const Qspi* addr)
+    408          {
+    409          #ifdef QSPI0
+    410          	if (addr == QSPI0)
+    411          		return ID_QSPI0;
+    412          #endif
+    413          #ifdef QSPI1
+    414          	if (addr == QSPI1)
+    415          		return ID_QSPI1;
+    416          #endif
+    417          	return ID_PERIPH_COUNT;
+    418          }
+    419          
+    420          void *get_qspi_mem_from_addr(const Qspi* addr)
+    421          {
+    422          #ifdef QSPI0
+    423          	if (addr == QSPI0)
+    424          		return (void*)QSPIMEM0_ADDR;
+    425          #endif
+    426          #ifdef QSPI1
+    427          	if (addr == QSPI1)
+    428          		return (void*)QSPIMEM1_ADDR;
+    429          #endif
+    430          	return NULL;
+    431          }
+    432          
+    433          #ifdef CONFIG_HAVE_AESB
+    434          
+    435          void *get_qspi_aesb_mem_from_addr(const Qspi* addr)
+    436          {
+    437          #ifdef QSPI0
+    438          	if (addr == QSPI0)
+    439          		return (void*)QSPI_AES0_ADDR;
+    440          #endif
+    441          #ifdef QSPI1
+    442          	if (addr == QSPI1)
+    443          		return (void*)QSPI_AES1_ADDR;
+    444          #endif
+    445          	return NULL;
+    446          }
+    447          
+    448          #endif /* CONFIG_HAVE_AESB */
+    449          
+    450          #endif /* CONFIG_HAVE_QSPI */
+    451          
+    452          #ifdef CONFIG_HAVE_SDMMC
+    453          
+    454          uint32_t get_sdmmc_id_from_addr(const Sdmmc* addr)
+    455          {
+    456          #ifdef SDMMC0
+    457          	if (addr == SDMMC0)
+    458          		return ID_SDMMC0;
+    459          #endif
+    460          #ifdef SDMMC1
+    461          	if (addr == SDMMC1)
+    462          		return ID_SDMMC1;
+    463          #endif
+    464          	return ID_PERIPH_COUNT;
+    465          }
+    466          
+    467          Sdmmc* get_sdmmc_addr_from_id(uint32_t id)
+    468          {
+    469          #ifdef SDMMC0
+    470          	if (id == ID_SDMMC0)
+    471          		return SDMMC0;
+    472          #endif
+    473          #ifdef SDMMC1
+    474          	if (id == ID_SDMMC1)
+    475          		return SDMMC1;
+    476          #endif
+    477          	return NULL;
+    478          }
+    479          
+    480          #endif /* CONFIG_HAVE_SDMMC */
+    481          
+    482          #ifdef CONFIG_HAVE_SSC
+    483          
+    484          uint32_t get_ssc_id_from_addr(const Ssc* addr)
+    485          {
+    486          #ifdef SSC0
+    487          	if (addr == SSC0)
+    488          		return ID_SSC0;
+    489          #endif
+    490          #ifdef SSC1
+    491          	if (addr == SSC1)
+    492          		return ID_SSC1;
+    493          #endif
+    494          	return ID_PERIPH_COUNT;
+    495          }
+    496          
+    497          #endif /* CONFIG_HAVE_SSC */
+    498          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    499          uint32_t get_spi_id_from_addr(const Spi* addr)
+    500          {
+    501          #ifdef SPI0
+    502          	if (addr == SPI0)
+    503          		return ID_SPI0;
+    504          #endif
+    505          #ifdef SPI1
+    506          	if (addr == SPI1)
+    507          		return ID_SPI1;
+    508          #endif
+    509          #ifdef SPI2
+    510          	if (addr == SPI2)
+    511          		return ID_SPI2;
+    512          #endif
+    513          #ifdef FLEXSPI0
+    514          	if (addr == FLEXSPI0)
+   \                     get_spi_id_from_addr:
+   \        0x0   0xE3A0'14F8        MOV      R1,#-134217728
+   \        0x4   0xE381'1B71        ORR      R1,R1,#0x1C400
+   \        0x8   0xE150'0001        CMP      R0,R1
+   \        0xC   0x1A00'0001        BNE      ??get_spi_id_from_addr_0
+    515          		return ID_FLEXCOM0;
+   \       0x10   0xE3A0'0005        MOV      R0,#+5
+   \       0x14   0xE12F'FF1E        BX       LR
+    516          #endif
+    517          #ifdef FLEXSPI1
+    518          	if (addr == FLEXSPI1)
+   \                     ??get_spi_id_from_addr_0:
+   \       0x18   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0x1C   0xE150'0001        CMP      R0,R1
+   \       0x20   0x1A00'0001        BNE      ??get_spi_id_from_addr_1
+    519          		return ID_FLEXCOM1;
+   \       0x24   0xE3A0'0006        MOV      R0,#+6
+   \       0x28   0xE12F'FF1E        BX       LR
+    520          #endif
+    521          #ifdef FLEXSPI2
+    522          	if (addr == FLEXSPI2)
+   \                     ??get_spi_id_from_addr_1:
+   \       0x2C   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x30   0xE150'0001        CMP      R0,R1
+   \       0x34   0x1A00'0001        BNE      ??get_spi_id_from_addr_2
+    523          		return ID_FLEXCOM2;
+   \       0x38   0xE3A0'0007        MOV      R0,#+7
+   \       0x3C   0xE12F'FF1E        BX       LR
+    524          #endif
+    525          #ifdef FLEXSPI3
+    526          	if (addr == FLEXSPI3)
+   \                     ??get_spi_id_from_addr_2:
+   \       0x40   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0x44   0xE150'0001        CMP      R0,R1
+   \       0x48   0x1A00'0001        BNE      ??get_spi_id_from_addr_3
+    527          		return ID_FLEXCOM3;
+   \       0x4C   0xE3A0'0008        MOV      R0,#+8
+   \       0x50   0xE12F'FF1E        BX       LR
+    528          #endif
+    529          #ifdef FLEXSPI4
+    530          	if (addr == FLEXSPI4)
+   \                     ??get_spi_id_from_addr_3:
+   \       0x54   0xE3A0'14F0        MOV      R1,#-268435456
+   \       0x58   0xE381'1E40        ORR      R1,R1,#0x400
+   \       0x5C   0xE150'0001        CMP      R0,R1
+   \       0x60   0x1A00'0001        BNE      ??get_spi_id_from_addr_4
+    531          		return ID_FLEXCOM4;
+   \       0x64   0xE3A0'000D        MOV      R0,#+13
+   \       0x68   0xE12F'FF1E        BX       LR
+    532          #endif
+    533          #ifdef FLEXSPI5
+    534          	if (addr == FLEXSPI5)
+   \                     ??get_spi_id_from_addr_4:
+   \       0x6C   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x70   0xE150'0001        CMP      R0,R1
+    535          		return ID_FLEXCOM5;
+   \       0x74   0x03A0'000E        MOVEQ    R0,#+14
+    536          #endif
+    537          #ifdef FLEXSPI6
+    538          	if (addr == FLEXSPI6)
+    539          		return ID_FLEXCOM6;
+    540          #endif
+    541          #ifdef FLEXSPI7
+    542          	if (addr == FLEXSPI7)
+    543          		return ID_FLEXCOM7;
+    544          #endif
+    545          #ifdef FLEXSPI8
+    546          	if (addr == FLEXSPI8)
+    547          		return ID_FLEXCOM8;
+    548          #endif
+    549          #ifdef FLEXSPI9
+    550          	if (addr == FLEXSPI9)
+    551          		return ID_FLEXCOM9;
+    552          #endif
+    553          	return ID_PERIPH_COUNT;
+   \       0x78   0x....'....        B        ??Subroutine1_0
+    554          }
+    555          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    556          Spi* get_spi_addr_from_id(uint32_t id)
+    557          {
+    558          #ifdef SPI0
+    559          	if (id == ID_SPI0)
+    560          		return SPI0;
+    561          #endif
+    562          #ifdef SPI1
+    563          	if (id == ID_SPI1)
+    564          		return SPI1;
+    565          #endif
+    566          #ifdef SPI2
+    567          	if (id == ID_SPI2)
+    568          		return SPI2;
+    569          #endif
+    570          #ifdef  FLEXSPI0
+    571          	if (id == ID_FLEXCOM0)
+   \                     get_spi_addr_from_id:
+   \        0x0   0xE350'0005        CMP      R0,#+5
+   \        0x4   0x1A00'0002        BNE      ??get_spi_addr_from_id_0
+    572          		return FLEXSPI0;
+   \        0x8   0xE3A0'04F8        MOV      R0,#-134217728
+   \        0xC   0xE380'0B71        ORR      R0,R0,#0x1C400
+   \       0x10   0xE12F'FF1E        BX       LR
+    573          #endif
+    574          #ifdef  FLEXSPI1
+    575          	if (id == ID_FLEXCOM1)
+   \                     ??get_spi_addr_from_id_0:
+   \       0x14   0xE350'0006        CMP      R0,#+6
+   \       0x18   0x1A00'0002        BNE      ??get_spi_addr_from_id_1
+    576          		return FLEXSPI1;
+   \       0x1C   0xE3A0'04F8        MOV      R0,#-134217728
+   \       0x20   0xE380'0B81        ORR      R0,R0,#0x20400
+   \       0x24   0xE12F'FF1E        BX       LR
+    577          #endif
+    578          #ifdef  FLEXSPI2
+    579          	if (id == ID_FLEXCOM2)
+   \                     ??get_spi_addr_from_id_1:
+   \       0x28   0xE350'0007        CMP      R0,#+7
+   \       0x2C   0x1A00'0002        BNE      ??get_spi_addr_from_id_2
+    580          		return FLEXSPI2;
+   \       0x30   0xE3A0'04F8        MOV      R0,#-134217728
+   \       0x34   0xE380'0B91        ORR      R0,R0,#0x24400
+   \       0x38   0xE12F'FF1E        BX       LR
+    581          #endif
+    582          #ifdef  FLEXSPI3
+    583          	if (id == ID_FLEXCOM3)
+   \                     ??get_spi_addr_from_id_2:
+   \       0x3C   0xE350'0008        CMP      R0,#+8
+   \       0x40   0x1A00'0002        BNE      ??get_spi_addr_from_id_3
+    584          		return FLEXSPI3;
+   \       0x44   0xE3A0'04F8        MOV      R0,#-134217728
+   \       0x48   0xE380'0BA1        ORR      R0,R0,#0x28400
+   \       0x4C   0xE12F'FF1E        BX       LR
+    585          #endif
+    586          #ifdef  FLEXSPI4
+    587          	if (id == ID_FLEXCOM4)
+   \                     ??get_spi_addr_from_id_3:
+   \       0x50   0xE350'000D        CMP      R0,#+13
+   \       0x54   0x1A00'0002        BNE      ??get_spi_addr_from_id_4
+    588          		return FLEXSPI4;
+   \       0x58   0xE3A0'04F0        MOV      R0,#-268435456
+   \       0x5C   0xE380'0E40        ORR      R0,R0,#0x400
+   \       0x60   0xE12F'FF1E        BX       LR
+    589          #endif
+    590          #ifdef  FLEXSPI5
+    591          	if (id == ID_FLEXCOM5)
+   \                     ??get_spi_addr_from_id_4:
+   \       0x64   0xE350'000E        CMP      R0,#+14
+    592          		return FLEXSPI5;
+   \       0x68   0x03A0'04F0        MOVEQ    R0,#-268435456
+   \       0x6C   0x0380'0C44        ORREQ    R0,R0,#0x4400
+    593          #endif
+    594          #ifdef  FLEXSPI6
+    595          	if (id == ID_FLEXCOM6)
+    596          		return FLEXSPI6;
+    597          #endif
+    598          #ifdef  FLEXSPI7
+    599          	if (id == ID_FLEXCOM7)
+    600          		return FLEXSPI7;
+    601          #endif
+    602          #ifdef  FLEXSPI8
+    603          	if (id == ID_FLEXCOM8)
+    604          		return FLEXSPI8;
+    605          #endif
+    606          #ifdef  FLEXSPI9
+    607          	if (id == ID_FLEXCOM9)
+    608          		return FLEXSPI9;
+    609          #endif
+    610          	return NULL;
+   \       0x70   0x13A0'0000        MOVNE    R0,#+0
+   \       0x74   0xE12F'FF1E        BX       LR               ;; return
+    611          }
+    612          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    613          uint32_t get_tc_id_from_addr(const Tc* addr, uint8_t channel)
+    614          {
+    615          #ifdef TC0
+    616          	if (addr == TC0)
+   \                     get_tc_id_from_addr:
+   \        0x0   0xE3A0'14F8        MOV      R1,#-134217728
+   \        0x4   0xE381'1C80        ORR      R1,R1,#0x8000
+   \        0x8   0xE150'0001        CMP      R0,R1
+   \        0xC   0x1A00'0001        BNE      ??get_tc_id_from_addr_0
+    617          #ifdef ID_TC0_CH0
+    618          		return ID_TC0 + channel;
+    619          #else
+    620          		return ID_TC0;
+   \       0x10   0xE3A0'0011        MOV      R0,#+17
+   \       0x14   0xE12F'FF1E        BX       LR
+    621          #endif
+    622          #endif
+    623          
+    624          #ifdef TC1
+    625          	if (addr == TC1)
+   \                     ??get_tc_id_from_addr_0:
+   \       0x18   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x1C   0xE150'0001        CMP      R0,R1
+    626          #ifdef ID_TC1_CH0
+    627          		return ID_TC1 + channel;
+    628          #else
+    629          		return ID_TC1;
+   \       0x20   0x03A0'002D        MOVEQ    R0,#+45
+    630          #endif
+    631          #endif
+    632          
+    633          #ifdef TC2
+    634          	if (addr == TC2)
+    635          #ifdef ID_TC2_CH0
+    636          		return ID_TC2 + channel;
+    637          #else
+    638          		return ID_TC2;
+    639          #endif
+    640          #endif
+    641          
+    642          #ifdef TC3
+    643          	if (addr == TC3)
+    644          #ifdef ID_TC3_CH0
+    645          		return ID_TC3 + channel;
+    646          #else
+    647          		return ID_TC3;
+    648          #endif
+    649          #endif
+    650          	return ID_PERIPH_COUNT;
+   \       0x24   0x....'....        B        ??Subroutine1_0
+    651          }
+    652          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    653          Tc* get_tc_addr_from_id(uint32_t id)
+    654          {
+    655          #ifdef TC0
+    656          	if (id == ID_TC0)
+   \                     get_tc_addr_from_id:
+   \        0x0   0xE350'0011        CMP      R0,#+17
+   \        0x4   0x1A00'0002        BNE      ??get_tc_addr_from_id_0
+    657          		return TC0;
+   \        0x8   0xE3A0'04F8        MOV      R0,#-134217728
+   \        0xC   0xE380'0C80        ORR      R0,R0,#0x8000
+   \       0x10   0xE12F'FF1E        BX       LR
+    658          #endif
+    659          #ifdef TC1
+    660          	if (id == ID_TC1)
+   \                     ??get_tc_addr_from_id_0:
+   \       0x14   0xE350'002D        CMP      R0,#+45
+    661          		return TC1;
+   \       0x18   0x03A0'04F8        MOVEQ    R0,#-134217728
+   \       0x1C   0x0380'0CC0        ORREQ    R0,R0,#0xC000
+    662          #endif
+    663          #ifdef TC2
+    664          	if (id == ID_TC2)
+    665          		return TC2;
+    666          #endif
+    667          #ifdef TC3
+    668          	if (id == ID_TC3)
+    669          		return TC3;
+    670          #endif
+    671          	return NULL;
+   \       0x20   0x13A0'0000        MOVNE    R0,#+0
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    672          }
+    673          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    674          uint32_t get_twi_id_from_addr(const Twi* addr)
+    675          {
+    676          #ifdef TWI0
+    677          	if (addr == TWI0)
+    678          		return ID_TWI0;
+    679          #endif
+    680          #ifdef TWI1
+    681          	if (addr == TWI1)
+    682          		return ID_TWI1;
+    683          #endif
+    684          #ifdef TWI2
+    685          	if (addr == TWI2)
+    686          		return ID_TWI2;
+    687          #endif
+    688          #ifdef TWI3
+    689          	if (addr == TWI3)
+    690          		return ID_TWI3;
+    691          #endif
+    692          #ifdef TWI4
+    693          	if (addr == TWI4)
+    694          		return ID_TWI4;
+    695          #endif
+    696          #ifdef FLEXTWI0
+    697          	if (addr == FLEXTWI0)
+   \                     get_twi_id_from_addr:
+   \        0x0   0x....'....        LDR      R1,??DataTable4  ;; 0xf801c600
+   \        0x4   0xE150'0001        CMP      R0,R1
+   \        0x8   0x1A00'0001        BNE      ??get_twi_id_from_addr_0
+    698          		return ID_FLEXCOM0;
+   \        0xC   0xE3A0'0005        MOV      R0,#+5
+   \       0x10   0xE12F'FF1E        BX       LR
+    699          #endif
+    700          #ifdef FLEXTWI1
+    701          	if (addr == FLEXTWI1)
+   \                     ??get_twi_id_from_addr_0:
+   \       0x14   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0x18   0xE150'0001        CMP      R0,R1
+   \       0x1C   0x1A00'0001        BNE      ??get_twi_id_from_addr_1
+    702          		return ID_FLEXCOM1;
+   \       0x20   0xE3A0'0006        MOV      R0,#+6
+   \       0x24   0xE12F'FF1E        BX       LR
+    703          #endif
+    704          #ifdef FLEXTWI2
+    705          	if (addr == FLEXTWI2)
+   \                     ??get_twi_id_from_addr_1:
+   \       0x28   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x2C   0xE150'0001        CMP      R0,R1
+   \       0x30   0x1A00'0001        BNE      ??get_twi_id_from_addr_2
+    706          		return ID_FLEXCOM2;
+   \       0x34   0xE3A0'0007        MOV      R0,#+7
+   \       0x38   0xE12F'FF1E        BX       LR
+    707          #endif
+    708          #ifdef FLEXTWI3
+    709          	if (addr == FLEXTWI3)
+   \                     ??get_twi_id_from_addr_2:
+   \       0x3C   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0x40   0xE150'0001        CMP      R0,R1
+   \       0x44   0x1A00'0001        BNE      ??get_twi_id_from_addr_3
+    710          		return ID_FLEXCOM3;
+   \       0x48   0xE3A0'0008        MOV      R0,#+8
+   \       0x4C   0xE12F'FF1E        BX       LR
+    711          #endif
+    712          #ifdef FLEXTWI4
+    713          	if (addr == FLEXTWI4)
+   \                     ??get_twi_id_from_addr_3:
+   \       0x50   0xE3A0'14F0        MOV      R1,#-268435456
+   \       0x54   0xE381'1E60        ORR      R1,R1,#0x600
+   \       0x58   0xE150'0001        CMP      R0,R1
+   \       0x5C   0x1A00'0001        BNE      ??get_twi_id_from_addr_4
+    714          		return ID_FLEXCOM4;
+   \       0x60   0xE3A0'000D        MOV      R0,#+13
+   \       0x64   0xE12F'FF1E        BX       LR
+    715          #endif
+    716          #ifdef FLEXTWI5
+    717          	if (addr == FLEXTWI5)
+   \                     ??get_twi_id_from_addr_4:
+   \       0x68   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x6C   0xE150'0001        CMP      R0,R1
+   \       0x70   0x1A00'0001        BNE      ??get_twi_id_from_addr_5
+    718          		return ID_FLEXCOM5;
+   \       0x74   0xE3A0'000E        MOV      R0,#+14
+   \       0x78   0xE12F'FF1E        BX       LR
+    719          #endif
+    720          #ifdef FLEXTWI6
+    721          	if (addr == FLEXTWI6)
+   \                     ??get_twi_id_from_addr_5:
+   \       0x7C   0x....'....        LDR      R1,??DataTable4_1  ;; 0xf8010600
+   \       0x80   0xE150'0001        CMP      R0,R1
+   \       0x84   0x1A00'0001        BNE      ??get_twi_id_from_addr_6
+    722          		return ID_FLEXCOM6;
+   \       0x88   0xE3A0'0009        MOV      R0,#+9
+   \       0x8C   0xE12F'FF1E        BX       LR
+    723          #endif
+    724          #ifdef FLEXTWI7
+    725          	if (addr == FLEXTWI7)
+   \                     ??get_twi_id_from_addr_6:
+   \       0x90   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x94   0xE150'0001        CMP      R0,R1
+   \       0x98   0x1A00'0001        BNE      ??get_twi_id_from_addr_7
+    726          		return ID_FLEXCOM7;
+   \       0x9C   0xE3A0'000A        MOV      R0,#+10
+   \       0xA0   0xE12F'FF1E        BX       LR
+    727          #endif
+    728          #ifdef FLEXTWI8
+    729          	if (addr == FLEXTWI8)
+   \                     ??get_twi_id_from_addr_7:
+   \       0xA4   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0xA8   0xE150'0001        CMP      R0,R1
+   \       0xAC   0x1A00'0001        BNE      ??get_twi_id_from_addr_8
+    730          		return ID_FLEXCOM8;
+   \       0xB0   0xE3A0'000B        MOV      R0,#+11
+   \       0xB4   0xE12F'FF1E        BX       LR
+    731          #endif
+    732          #ifdef FLEXTWI9
+    733          	if (addr == FLEXTWI9)
+   \                     ??get_twi_id_from_addr_8:
+   \       0xB8                      REQUIRE ?Subroutine0
+   \       0xB8                      ;; // Fall through to label ?Subroutine0
+    734          		return ID_FLEXCOM9;
+    735          #endif
+    736          	return ID_PERIPH_COUNT;
+    737          }
+    738          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    739          Twi* get_twi_addr_from_id(uint32_t id)
+    740          {
+    741          #ifdef TWI0
+    742          	if (id == ID_TWI0)
+    743          		return TWI0;
+    744          #endif
+    745          #ifdef TWI1
+    746          	if (id == ID_TWI1)
+    747          		return TWI1;
+    748          #endif
+    749          #ifdef TWI2
+    750          	if (id == ID_TWI2)
+    751          		return TWI2;
+    752          #endif
+    753          #ifdef TWI3
+    754          	if (id == ID_TWI3)
+    755          		return TWI3;
+    756          #endif
+    757          #ifdef TWI4
+    758          	if (id == ID_TWI4)
+    759          		return TWI4;
+    760          #endif
+    761          #ifdef FLEXTWI0
+    762          	if (id == ID_FLEXCOM0)
+   \                     get_twi_addr_from_id:
+   \        0x0   0xE350'0005        CMP      R0,#+5
+   \        0x4   0x1A00'0001        BNE      ??get_twi_addr_from_id_0
+    763          		return FLEXTWI0;
+   \        0x8   0x....'....        LDR      R0,??DataTable4  ;; 0xf801c600
+   \        0xC   0xE12F'FF1E        BX       LR
+    764          #endif
+    765          #ifdef FLEXTWI1
+    766          	if (id == ID_FLEXCOM1)
+   \                     ??get_twi_addr_from_id_0:
+   \       0x10   0xE350'0006        CMP      R0,#+6
+   \       0x14   0x1A00'0001        BNE      ??get_twi_addr_from_id_1
+    767          		return FLEXTWI1;
+   \       0x18   0x....'....        LDR      R0,??DataTable4_2  ;; 0xf8020600
+   \       0x1C   0xE12F'FF1E        BX       LR
+    768          #endif
+    769          #ifdef FLEXTWI2
+    770          	if (id == ID_FLEXCOM2)
+   \                     ??get_twi_addr_from_id_1:
+   \       0x20   0xE350'0007        CMP      R0,#+7
+   \       0x24   0x1A00'0001        BNE      ??get_twi_addr_from_id_2
+    771          		return FLEXTWI2;
+   \       0x28   0x....'....        LDR      R0,??DataTable4_3  ;; 0xf8024600
+   \       0x2C   0xE12F'FF1E        BX       LR
+    772          #endif
+    773          #ifdef FLEXTWI3
+    774          	if (id == ID_FLEXCOM3)
+   \                     ??get_twi_addr_from_id_2:
+   \       0x30   0xE350'0008        CMP      R0,#+8
+   \       0x34   0x1A00'0001        BNE      ??get_twi_addr_from_id_3
+    775          		return FLEXTWI3;
+   \       0x38   0x....'....        LDR      R0,??DataTable4_4  ;; 0xf8028600
+   \       0x3C   0xE12F'FF1E        BX       LR
+    776          #endif
+    777          #ifdef FLEXTWI4
+    778          	if (id == ID_FLEXCOM4)
+   \                     ??get_twi_addr_from_id_3:
+   \       0x40   0xE350'000D        CMP      R0,#+13
+   \       0x44   0x1A00'0002        BNE      ??get_twi_addr_from_id_4
+    779          		return FLEXTWI4;
+   \       0x48   0xE3A0'04F0        MOV      R0,#-268435456
+   \       0x4C   0xE380'0E60        ORR      R0,R0,#0x600
+   \       0x50   0xE12F'FF1E        BX       LR
+    780          #endif
+    781          #ifdef FLEXTWI5
+    782          	if (id == ID_FLEXCOM5)
+   \                     ??get_twi_addr_from_id_4:
+   \       0x54   0xE350'000E        CMP      R0,#+14
+   \       0x58   0x1A00'0002        BNE      ??get_twi_addr_from_id_5
+    783          		return FLEXTWI5;
+   \       0x5C   0xE3A0'04F0        MOV      R0,#-268435456
+   \       0x60   0xE380'0C46        ORR      R0,R0,#0x4600
+   \       0x64   0xE12F'FF1E        BX       LR
+    784          #endif
+    785          #ifdef FLEXTWI6
+    786          	if (id == ID_FLEXCOM6)
+   \                     ??get_twi_addr_from_id_5:
+   \       0x68   0xE350'0009        CMP      R0,#+9
+   \       0x6C   0x1A00'0001        BNE      ??get_twi_addr_from_id_6
+    787          		return FLEXTWI6;
+   \       0x70   0x....'....        LDR      R0,??DataTable4_1  ;; 0xf8010600
+   \       0x74   0xE12F'FF1E        BX       LR
+    788          #endif
+    789          #ifdef FLEXTWI7
+    790          	if (id == ID_FLEXCOM7)
+   \                     ??get_twi_addr_from_id_6:
+   \       0x78   0xE350'000A        CMP      R0,#+10
+   \       0x7C   0x1A00'0001        BNE      ??get_twi_addr_from_id_7
+    791          		return FLEXTWI7;
+   \       0x80   0x....'....        LDR      R0,??DataTable4_5  ;; 0xf8014600
+   \       0x84   0xE12F'FF1E        BX       LR
+    792          #endif
+    793          #ifdef FLEXTWI8
+    794          	if (id == ID_FLEXCOM8)
+   \                     ??get_twi_addr_from_id_7:
+   \       0x88   0xE350'000B        CMP      R0,#+11
+   \       0x8C   0x1A00'0001        BNE      ??get_twi_addr_from_id_8
+    795          		return FLEXTWI8;
+   \       0x90   0x....'....        LDR      R0,??DataTable4_6  ;; 0xf8018600
+   \       0x94   0xE12F'FF1E        BX       LR
+    796          #endif
+    797          #ifdef FLEXTWI9
+    798          	if (id == ID_FLEXCOM9)
+   \                     ??get_twi_addr_from_id_8:
+   \       0x98   0xE350'000F        CMP      R0,#+15
+    799          		return FLEXTWI9;
+   \       0x9C   0x....'....        LDREQ    R0,??DataTable4_7  ;; 0xf8040600
+    800          #endif
+    801          	return NULL;
+   \       0xA0   0x13A0'0000        MOVNE    R0,#+0
+   \       0xA4   0xE12F'FF1E        BX       LR               ;; return
+    802          }
+    803          
+    804          #ifdef CONFIG_HAVE_UART
+    805          
+    806          uint32_t get_uart_id_from_addr(const Uart* addr)
+    807          {
+    808          #ifdef UART0
+    809          	if (addr == UART0)
+    810          		return ID_UART0;
+    811          #endif
+    812          #ifdef UART1
+    813          	if (addr == UART1)
+    814          		return ID_UART1;
+    815          #endif
+    816          #ifdef UART2
+    817          	if (addr == UART2)
+    818          		return ID_UART2;
+    819          #endif
+    820          #ifdef UART3
+    821          	if (addr == UART3)
+    822          		return ID_UART3;
+    823          #endif
+    824          #ifdef UART4
+    825          	if (addr == UART4)
+    826          		return ID_UART4;
+    827          #endif
+    828          	return ID_PERIPH_COUNT;
+    829          }
+    830          
+    831          Uart* get_uart_addr_from_id(uint32_t id)
+    832          {
+    833          #ifdef UART0
+    834          	if (id == ID_UART0)
+    835          		return UART0;
+    836          #endif
+    837          #ifdef UART1
+    838          	if (id == ID_UART1)
+    839          		return UART1;
+    840          #endif
+    841          #ifdef UART2
+    842          	if (id == ID_UART2)
+    843          		return UART2;
+    844          #endif
+    845          #ifdef UART3
+    846          	if (id == ID_UART3)
+    847          		return UART3;
+    848          #endif
+    849          #ifdef UART4
+    850          	if (id == ID_UART4)
+    851          		return UART4;
+    852          #endif
+    853          	return NULL;
+    854          }
+    855          
+    856          #endif /* CONFIG_HAVE_UART */
+    857          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    858          uint32_t get_usart_id_from_addr(const Usart* addr)
+    859          {
+    860          #ifdef USART0
+    861          	if (addr == USART0)
+    862          		return ID_USART0;
+    863          #endif
+    864          #ifdef USART1
+    865          	if (addr == USART1)
+    866          		return ID_USART1;
+    867          #endif
+    868          #ifdef USART2
+    869          	if (addr == USART2)
+    870          		return ID_USART2;
+    871          #endif
+    872          #ifdef USART3
+    873          	if (addr == USART3)
+    874          		return ID_USART3;
+    875          #endif
+    876          #ifdef USART4
+    877          	if (addr == USART4)
+    878          		return ID_USART4;
+    879          #endif
+    880          #ifdef FLEXUSART0
+    881          	if (addr == FLEXUSART0)
+   \                     get_usart_id_from_addr:
+   \        0x0   0x....'....        LDR      R1,??DataTable4_8  ;; 0xf801c200
+   \        0x4   0xE150'0001        CMP      R0,R1
+   \        0x8   0x1A00'0001        BNE      ??get_usart_id_from_addr_0
+    882          		return ID_FLEXCOM0;
+   \        0xC   0xE3A0'0005        MOV      R0,#+5
+   \       0x10   0xE12F'FF1E        BX       LR
+    883          #endif
+    884          #ifdef FLEXUSART1
+    885          	if (addr == FLEXUSART1)
+   \                     ??get_usart_id_from_addr_0:
+   \       0x14   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0x18   0xE150'0001        CMP      R0,R1
+   \       0x1C   0x1A00'0001        BNE      ??get_usart_id_from_addr_1
+    886          		return ID_FLEXCOM1;
+   \       0x20   0xE3A0'0006        MOV      R0,#+6
+   \       0x24   0xE12F'FF1E        BX       LR
+    887          #endif
+    888          #ifdef FLEXUSART2
+    889          	if (addr == FLEXUSART2)
+   \                     ??get_usart_id_from_addr_1:
+   \       0x28   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x2C   0xE150'0001        CMP      R0,R1
+   \       0x30   0x1A00'0001        BNE      ??get_usart_id_from_addr_2
+    890          		return ID_FLEXCOM2;
+   \       0x34   0xE3A0'0007        MOV      R0,#+7
+   \       0x38   0xE12F'FF1E        BX       LR
+    891          #endif
+    892          #ifdef FLEXUSART3
+    893          	if (addr == FLEXUSART3)
+   \                     ??get_usart_id_from_addr_2:
+   \       0x3C   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0x40   0xE150'0001        CMP      R0,R1
+   \       0x44   0x1A00'0001        BNE      ??get_usart_id_from_addr_3
+    894          		return ID_FLEXCOM3;
+   \       0x48   0xE3A0'0008        MOV      R0,#+8
+   \       0x4C   0xE12F'FF1E        BX       LR
+    895          #endif
+    896          #ifdef FLEXUSART4
+    897          	if (addr == FLEXUSART4)
+   \                     ??get_usart_id_from_addr_3:
+   \       0x50   0xE3A0'14F0        MOV      R1,#-268435456
+   \       0x54   0xE381'1F80        ORR      R1,R1,#0x200
+   \       0x58   0xE150'0001        CMP      R0,R1
+   \       0x5C   0x1A00'0001        BNE      ??get_usart_id_from_addr_4
+    898          		return ID_FLEXCOM4;
+   \       0x60   0xE3A0'000D        MOV      R0,#+13
+   \       0x64   0xE12F'FF1E        BX       LR
+    899          #endif
+    900          #ifdef FLEXUSART5
+    901          	if (addr == FLEXUSART5)
+   \                     ??get_usart_id_from_addr_4:
+   \       0x68   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x6C   0xE150'0001        CMP      R0,R1
+   \       0x70   0x1A00'0001        BNE      ??get_usart_id_from_addr_5
+    902          		return ID_FLEXCOM5;
+   \       0x74   0xE3A0'000E        MOV      R0,#+14
+   \       0x78   0xE12F'FF1E        BX       LR
+    903          #endif
+    904          #ifdef FLEXUSART6
+    905          	if (addr == FLEXUSART6)
+   \                     ??get_usart_id_from_addr_5:
+   \       0x7C   0x....'....        LDR      R1,??DataTable4_9  ;; 0xf8010200
+   \       0x80   0xE150'0001        CMP      R0,R1
+   \       0x84   0x1A00'0001        BNE      ??get_usart_id_from_addr_6
+    906          		return ID_FLEXCOM6;
+   \       0x88   0xE3A0'0009        MOV      R0,#+9
+   \       0x8C   0xE12F'FF1E        BX       LR
+    907          #endif
+    908          #ifdef FLEXUSART7
+    909          	if (addr == FLEXUSART7)
+   \                     ??get_usart_id_from_addr_6:
+   \       0x90   0xE381'1C40        ORR      R1,R1,#0x4000
+   \       0x94   0xE150'0001        CMP      R0,R1
+   \       0x98   0x1A00'0001        BNE      ??get_usart_id_from_addr_7
+    910          		return ID_FLEXCOM7;
+   \       0x9C   0xE3A0'000A        MOV      R0,#+10
+   \       0xA0   0xE12F'FF1E        BX       LR
+    911          #endif
+    912          #ifdef FLEXUSART8
+    913          	if (addr == FLEXUSART8)
+   \                     ??get_usart_id_from_addr_7:
+   \       0xA4   0xE281'1C40        ADD      R1,R1,#+16384
+   \       0xA8   0xE150'0001        CMP      R0,R1
+   \       0xAC   0x1A00'0001        BNE      ??get_usart_id_from_addr_8
+    914          		return ID_FLEXCOM8;
+   \       0xB0   0xE3A0'000B        MOV      R0,#+11
+   \       0xB4   0xE12F'FF1E        BX       LR
+    915          #endif
+    916          #ifdef FLEXUSART9
+    917          	if (addr == FLEXUSART9)
+   \                     ??get_usart_id_from_addr_8:
+   \       0xB8   0x....'....        B        ?Subroutine0
+    918          		return ID_FLEXCOM9;
+    919          #endif
+    920          	return ID_PERIPH_COUNT;
+    921          }
+    922          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    923          Usart* get_usart_addr_from_id(uint32_t id)
+    924          {
+    925          #ifdef USART0
+    926          	if (id == ID_USART0)
+    927          		return USART0;
+    928          #endif
+    929          #ifdef USART1
+    930          	if (id == ID_USART1)
+    931          		return USART1;
+    932          #endif
+    933          #ifdef USART2
+    934          	if (id == ID_USART2)
+    935          		return USART2;
+    936          #endif
+    937          #ifdef USART3
+    938          	if (id == ID_USART3)
+    939          		return USART3;
+    940          #endif
+    941          #ifdef USART4
+    942          	if (id == ID_USART4)
+    943          		return USART4;
+    944          #endif
+    945          #ifdef FLEXUSART0
+    946          	if (id == ID_FLEXCOM0)
+   \                     get_usart_addr_from_id:
+   \        0x0   0xE350'0005        CMP      R0,#+5
+   \        0x4   0x1A00'0001        BNE      ??get_usart_addr_from_id_0
+    947          		return FLEXUSART0;
+   \        0x8   0x....'....        LDR      R0,??DataTable4_8  ;; 0xf801c200
+   \        0xC   0xE12F'FF1E        BX       LR
+    948          #endif
+    949          #ifdef FLEXUSART1
+    950          	if (id == ID_FLEXCOM1)
+   \                     ??get_usart_addr_from_id_0:
+   \       0x10   0xE350'0006        CMP      R0,#+6
+   \       0x14   0x1A00'0001        BNE      ??get_usart_addr_from_id_1
+    951          		return FLEXUSART1;
+   \       0x18   0x....'....        LDR      R0,??DataTable4_10  ;; 0xf8020200
+   \       0x1C   0xE12F'FF1E        BX       LR
+    952          #endif
+    953          #ifdef FLEXUSART2
+    954          	if (id == ID_FLEXCOM2)
+   \                     ??get_usart_addr_from_id_1:
+   \       0x20   0xE350'0007        CMP      R0,#+7
+   \       0x24   0x1A00'0001        BNE      ??get_usart_addr_from_id_2
+    955          		return FLEXUSART2;
+   \       0x28   0x....'....        LDR      R0,??DataTable4_11  ;; 0xf8024200
+   \       0x2C   0xE12F'FF1E        BX       LR
+    956          #endif
+    957          #ifdef FLEXUSART3
+    958          	if (id == ID_FLEXCOM3)
+   \                     ??get_usart_addr_from_id_2:
+   \       0x30   0xE350'0008        CMP      R0,#+8
+   \       0x34   0x1A00'0001        BNE      ??get_usart_addr_from_id_3
+    959          		return FLEXUSART3;
+   \       0x38   0x....'....        LDR      R0,??DataTable4_12  ;; 0xf8028200
+   \       0x3C   0xE12F'FF1E        BX       LR
+    960          #endif
+    961          #ifdef FLEXUSART4
+    962          	if (id == ID_FLEXCOM4)
+   \                     ??get_usart_addr_from_id_3:
+   \       0x40   0xE350'000D        CMP      R0,#+13
+   \       0x44   0x1A00'0002        BNE      ??get_usart_addr_from_id_4
+    963          		return FLEXUSART4;
+   \       0x48   0xE3A0'04F0        MOV      R0,#-268435456
+   \       0x4C   0xE380'0F80        ORR      R0,R0,#0x200
+   \       0x50   0xE12F'FF1E        BX       LR
+    964          #endif
+    965          #ifdef FLEXUSART5
+    966          	if (id == ID_FLEXCOM5)
+   \                     ??get_usart_addr_from_id_4:
+   \       0x54   0xE350'000E        CMP      R0,#+14
+   \       0x58   0x1A00'0002        BNE      ??get_usart_addr_from_id_5
+    967          		return FLEXUSART5;
+   \       0x5C   0xE3A0'04F0        MOV      R0,#-268435456
+   \       0x60   0xE380'0C42        ORR      R0,R0,#0x4200
+   \       0x64   0xE12F'FF1E        BX       LR
+    968          #endif
+    969          #ifdef FLEXUSART6
+    970          	if (id == ID_FLEXCOM6)
+   \                     ??get_usart_addr_from_id_5:
+   \       0x68   0xE350'0009        CMP      R0,#+9
+   \       0x6C   0x1A00'0001        BNE      ??get_usart_addr_from_id_6
+    971          		return FLEXUSART6;
+   \       0x70   0x....'....        LDR      R0,??DataTable4_9  ;; 0xf8010200
+   \       0x74   0xE12F'FF1E        BX       LR
+    972          #endif
+    973          #ifdef FLEXUSART7
+    974          	if (id == ID_FLEXCOM7)
+   \                     ??get_usart_addr_from_id_6:
+   \       0x78   0xE350'000A        CMP      R0,#+10
+   \       0x7C   0x1A00'0001        BNE      ??get_usart_addr_from_id_7
+    975          		return FLEXUSART7;
+   \       0x80   0x....'....        LDR      R0,??DataTable4_13  ;; 0xf8014200
+   \       0x84   0xE12F'FF1E        BX       LR
+    976          #endif
+    977          #ifdef FLEXUSART8
+    978          	if (id == ID_FLEXCOM8)
+   \                     ??get_usart_addr_from_id_7:
+   \       0x88   0xE350'000B        CMP      R0,#+11
+   \       0x8C   0x1A00'0001        BNE      ??get_usart_addr_from_id_8
+    979          		return FLEXUSART8;
+   \       0x90   0x....'....        LDR      R0,??DataTable4_14  ;; 0xf8018200
+   \       0x94   0xE12F'FF1E        BX       LR
+    980          #endif
+    981          #ifdef FLEXUSART9
+    982          	if (id == ID_FLEXCOM9)
+   \                     ??get_usart_addr_from_id_8:
+   \       0x98   0xE350'000F        CMP      R0,#+15
+    983          		return FLEXUSART9;
+   \       0x9C   0x....'....        LDREQ    R0,??DataTable4_15  ;; 0xf8040200
+    984          #endif
+    985          	return NULL;
+   \       0xA0   0x13A0'0000        MOVNE    R0,#+0
+   \       0xA4   0xE12F'FF1E        BX       LR               ;; return
+    986          }
+    987          
+    988          #ifdef CONFIG_HAVE_XDMAC
+    989          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    990          uint32_t get_xdmac_id_from_addr(const Xdmac* addr)
+    991          {
+    992          #ifdef XDMAC0
+    993          	if (addr == XDMAC0)
+   \                     get_xdmac_id_from_addr:
+   \        0x0   0xE3A0'14F0        MOV      R1,#-268435456
+   \        0x4   0xE381'1C80        ORR      R1,R1,#0x8000
+   \        0x8   0xE150'0001        CMP      R0,R1
+    994          		return ID_XDMAC0;
+   \        0xC   0x03A0'0014        MOVEQ    R0,#+20
+    995          #endif
+    996          #ifdef XDMAC1
+    997          	if (addr == XDMAC1)
+    998          		return ID_XDMAC1;
+    999          #endif
+   1000          	return ID_PERIPH_COUNT;
+   \       0x10   0x....'....        B        ??Subroutine1_0
+   1001          }
+   1002          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1003          Xdmac* get_xdmac_addr_from_id(uint32_t id)
+   1004          {
+   1005          #ifdef XDMAC0
+   1006          	if (id == ID_XDMAC0)
+   \                     get_xdmac_addr_from_id:
+   \        0x0   0xE350'0014        CMP      R0,#+20
+   1007          		return XDMAC0;
+   \        0x4   0x03A0'04F0        MOVEQ    R0,#-268435456
+   \        0x8   0x0380'0C80        ORREQ    R0,R0,#0x8000
+   1008          #endif
+   1009          #ifdef XDMAC1
+   1010          	if (id == ID_XDMAC1)
+   1011          		return XDMAC1;
+   1012          #endif
+   1013          	return (void*)0;
+   \        0xC   0x13A0'0000        MOVNE    R0,#+0
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+   1014          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4:
+   \        0x0   0xF801'C600        DC32     0xf801c600
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \        0x0   0xF801'0600        DC32     0xf8010600
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_2:
+   \        0x0   0xF802'0600        DC32     0xf8020600
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_3:
+   \        0x0   0xF802'4600        DC32     0xf8024600
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_4:
+   \        0x0   0xF802'8600        DC32     0xf8028600
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_5:
+   \        0x0   0xF801'4600        DC32     0xf8014600
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_6:
+   \        0x0   0xF801'8600        DC32     0xf8018600
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_7:
+   \        0x0   0xF804'0600        DC32     0xf8040600
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_8:
+   \        0x0   0xF801'C200        DC32     0xf801c200
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_9:
+   \        0x0   0xF801'0200        DC32     0xf8010200
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_10:
+   \        0x0   0xF802'0200        DC32     0xf8020200
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_11:
+   \        0x0   0xF802'4200        DC32     0xf8024200
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_12:
+   \        0x0   0xF802'8200        DC32     0xf8028200
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_13:
+   \        0x0   0xF801'4200        DC32     0xf8014200
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_14:
+   \        0x0   0xF801'8200        DC32     0xf8018200
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_15:
+   \        0x0   0xF804'0200        DC32     0xf8040200
+   1015          
+   1016          #endif /* CONFIG_HAVE_XDMAC */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   get_ebi_addr_from_cs
+       0   get_flexcom_addr_from_id
+       0   get_flexcom_id_from_addr
+       0   get_pwm_addr_from_id
+       0   get_pwm_id_from_addr
+       0   get_spi_addr_from_id
+       0   get_spi_id_from_addr
+       0   get_tc_addr_from_id
+       0   get_tc_id_from_addr
+       0   get_twi_addr_from_id
+       0   get_twi_id_from_addr
+       0   get_usart_addr_from_id
+       0   get_usart_id_from_addr
+       0   get_xdmac_addr_from_id
+       0   get_xdmac_id_from_addr
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_10
+       4  ??DataTable4_11
+       4  ??DataTable4_12
+       4  ??DataTable4_13
+       4  ??DataTable4_14
+       4  ??DataTable4_15
+       4  ??DataTable4_2
+       4  ??DataTable4_3
+       4  ??DataTable4_4
+       4  ??DataTable4_5
+       4  ??DataTable4_6
+       4  ??DataTable4_7
+       4  ??DataTable4_8
+       4  ??DataTable4_9
+       8  ??Subroutine1_0
+      12  ?Subroutine0
+      80  get_ebi_addr_from_cs
+     196  get_flexcom_addr_from_id
+     192  get_flexcom_id_from_addr
+      20  get_pwm_addr_from_id
+      20  get_pwm_id_from_addr
+     120  get_spi_addr_from_id
+     124  get_spi_id_from_addr
+      40  get_tc_addr_from_id
+      40  get_tc_id_from_addr
+     168  get_twi_addr_from_id
+     184  get_twi_id_from_addr
+     168  get_usart_addr_from_id
+     188  get_usart_id_from_addr
+      20  get_xdmac_addr_from_id
+      20  get_xdmac_id_from_addr
+
+ 
+ 1'664 bytes in section SOFTPACK
+ 
+ 1'664 bytes of CODE memory
+
+Errors: none
+Warnings: none

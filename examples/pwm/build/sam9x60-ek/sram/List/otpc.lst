@@ -1,0 +1,1945 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         26/May/2020  11:35:30
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\otp\otpc.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWA073.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\otp\otpc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\List\otpc.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sam9x60-ek\sram\Obj\otpc.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\otp\otpc.c
+      1          /* ---------------------------------------------------------------------------- */
+      2          /*                Microchip Microcontroller Software Support                    */
+      3          /*                       SAM Software Package License                           */
+      4          /* ---------------------------------------------------------------------------- */
+      5          /* Copyright (c) 2019, Microchip Technology Inc.                                */
+      6          /*                                                                              */
+      7          /* All rights reserved.                                                         */
+      8          /*                                                                              */
+      9          /* Redistribution and use in source and binary forms, with or without           */
+     10          /* modification, are permitted provided that the following condition is met:    */
+     11          /*                                                                              */
+     12          /* - Redistributions of source code must retain the above copyright notice,     */
+     13          /* this list of conditions and the disclaimer below.                            */
+     14          /*                                                                              */
+     15          /* Microchip's name may not be used to endorse or promote products derived from */
+     16          /* this software without specific prior written permission.                     */
+     17          /*                                                                              */
+     18          /* DISCLAIMER:  THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS  */
+     19          /* OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES */
+     20          /* OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT    */
+     21          /* ARE DISCLAIMED. IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT,        */
+     22          /* INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES           */
+     23          /* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; */
+     24          /* LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND  */
+     25          /* ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT   */
+     26          /* (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF     */
+     27          /* THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.            */
+     28          /* ---------------------------------------------------------------------------- */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <assert.h>
+     35          #include <string.h>
+     36          
+     37          #include "chip.h"
+     38          #include "otpc.h"
+     39          #include "trace.h"
+     40          
+     41          /*----------------------------------------------------------------------------
+     42           *        Marcos
+     43           *----------------------------------------------------------------------------*/
+     44          
+     45          // #define CONFIG_HAVE_OTP_DEBUG
+     46          
+     47          #define OTPC_UID_DISABLED 0XCAFECAFE
+     48          
+     49          #define OTPC_KEY_FOR_WRITING      (0x7167U)
+     50          #define OTPC_KEY_FOR_UPDATING     (0x7167U)
+     51          #define OTPC_KEY_FOR_LOCKING      OTPC_KEY_FOR_UPDATING
+     52          #define OTPC_KEY_FOR_INVALIDATING OTPC_KEY_FOR_UPDATING
+     53          #define OTPC_KEY_FOR_EMUL         OTPC_KEY_FOR_UPDATING
+     54          
+     55          #define OTPC_MAX_PAYLOAD_ALLOWED  1024
+     56          
+     57          #define OTPC_4B_AND_REGULAR       (OTPC_HR_PACKET_REGULAR | OTPC_HR_ONE)
+     58          
+     59          /*
+     60           * writing one word lasts 350us
+     61           * the timeout was chosen to be enough for writing 10 words
+     62           **/
+     63          #define TIMEOUT 500000
+     64          
+     65          #ifdef OTPC_MR_KBDST_Msk
+     66            #define OTPC_MR_KBDST_SET(value) ((OTPC->OTPC_MR & ~OTPC_MR_KBDST_Msk) | OTPC_MR_KBDST(value))
+     67          #else
+     68            #define OTPC_MR_KBDST_SET(value) ((OTPC->OTPC_MR & ~OTPC_MR_KBDST) | (((value) * (OTPC_MR_KBDST & ~(OTPC_MR_KBDST << 1))) & OTPC_MR_KBDST))
+     69            #define OTPC_MR_KBDST_Msk OTPC_MR_KBDST
+     70          #endif
+     71          
+     72          #define OTPC_MR_ALWAYS_RESET_Msk (OTPC_MR_KBDST_Msk | OTPC_MR_NPCKT)
+     73          
+     74          /*----------------------------------------------------------------------------
+     75           *        Local functions
+     76           *----------------------------------------------------------------------------*/
+     77          
+     78          #if defined(CONFIG_SOC_SAM9X60) && defined(CONFIG_HAVE_OTPC_SAM9X60_FIXUP)
+     79          #include <component/dbgu.h>
+     80          
+     81          #define DBGU_CIDR_REVISION_Pos  0
+     82          #define DBGU_CIDR_REVISION_Msk  (0x7u << DBGU_CIDR_REVISION_Pos)
+     83          #define DBGU_CIDR_REVISION_A    (0x1u << DBGU_CIDR_REVISION_Pos)
+     84          
+     85          static void otp_sam9x60_fixup(void)
+     86          {
+     87          	static const uint32_t fixup_reg1[4] = {0x04194801, 0x01000000, 0x00000008, 0x00000000};
+     88          	static const uint32_t fixup_reg2[4] = {0xfb964801, 0x4c017d12, 0x02120e01, 0x00004000};
+     89          	__IO uint32_t *reg0 = (__IO uint32_t *)(0xeff00090);
+     90          	__IO uint32_t *reg1 = (__IO uint32_t *)(0xeff000a0);
+     91          	__IO uint32_t *reg2 = (__IO uint32_t *)(0xeff000b0);
+     92          	uint32_t timeout;
+     93          	int i;
+     94          
+     95          	if ((DBGU->DBGU_CIDR & DBGU_CIDR_REVISION_Msk) != DBGU_CIDR_REVISION_A)
+     96          		return;
+     97          
+     98          	timeout = TIMEOUT;
+     99          	*reg0 = 0x43910001;
+    100          	while (!(OTPC->OTPC_SR & OTPC_SR_UNLOCK) && --timeout > 0);
+    101          
+    102          	for (i = 0; i < ARRAY_SIZE(fixup_reg1); i++)
+    103          		reg1[i] = fixup_reg1[i];
+    104          
+    105          	for (i = 0; i < ARRAY_SIZE(fixup_reg2); i++)
+    106          		reg2[i] = fixup_reg2[i];
+    107          
+    108          	timeout = TIMEOUT;
+    109          	*reg0 = 0x43910000;
+    110          	while ((OTPC->OTPC_SR & OTPC_SR_UNLOCK) && --timeout > 0);
+    111          }
+    112          #endif
+    113          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    114          int otp_init(void)
+    115          {
+    116          #if defined(CONFIG_SOC_SAM9X60) && defined(CONFIG_HAVE_OTPC_SAM9X60_FIXUP)
+    117          	otp_sam9x60_fixup();
+    118          #endif
+    119          
+    120          	return 0;
+   \                     otp_init:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    121          }
+    122          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    123          void otp_cleanup(void)
+    124          {
+    125          
+    126          }
+   \                     otp_cleanup:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    127          
+    128          static uint8_t otp_set_type(enum otp_packet_type type, uint32_t *pckt_hdr)
+    129          {
+    130          	*pckt_hdr &= ~OTPC_HR_PACKET_Msk;
+    131          
+    132          	switch (type) {
+    133          	case OTP_PCKT_REGULAR:
+    134          		*pckt_hdr |= OTPC_HR_PACKET_REGULAR;
+    135          		break;
+    136          
+    137          	case OTP_PCKT_KEY:
+    138          		*pckt_hdr |= OTPC_HR_PACKET_KEY;
+    139          		break;
+    140          
+    141          	case OTP_PCKT_BOOT_CONFIGURATION:
+    142          		*pckt_hdr |= OTPC_HR_PACKET_BOOT_CONFIGURATION;
+    143          		break;
+    144          
+    145          	case OTP_PCKT_SECURE_BOOT_CONFIGURATION:
+    146          		*pckt_hdr |= OTPC_HR_PACKET_SECURE_BOOT_CONFIGURATION;
+    147          		break;
+    148          
+    149          	case OTP_PCKT_HARDWARE_CONFIGURATION:
+    150          		*pckt_hdr |= OTPC_HR_PACKET_HARDWARE_CONFIGURATION;
+    151          		break;
+    152          
+    153          	case OTP_PCKT_CUSTOM:
+    154          		*pckt_hdr |= OTPC_HR_PACKET_CUSTOM;
+    155          		break;
+    156          
+    157          	default:
+    158          		return OTPC_ERROR_BAD_HEADER;
+    159          	}
+    160          
+    161          	return OTPC_NO_ERROR;
+    162          }
+    163          
+    164          static enum otp_packet_type otp_get_type(uint32_t pckt_hdr)
+    165          {
+    166          	switch (pckt_hdr & OTPC_HR_PACKET_Msk) {
+    167          	case OTPC_HR_PACKET_REGULAR:
+    168          		return OTP_PCKT_REGULAR;
+    169          
+    170          	case OTPC_HR_PACKET_KEY:
+    171          		return OTP_PCKT_KEY;
+    172          
+    173          	case OTPC_HR_PACKET_BOOT_CONFIGURATION:
+    174          		return OTP_PCKT_BOOT_CONFIGURATION;
+    175          
+    176          	case OTPC_HR_PACKET_SECURE_BOOT_CONFIGURATION:
+    177          		return OTP_PCKT_SECURE_BOOT_CONFIGURATION;
+    178          
+    179          	case OTPC_HR_PACKET_HARDWARE_CONFIGURATION:
+    180          		return OTP_PCKT_HARDWARE_CONFIGURATION;
+    181          
+    182          	case OTPC_HR_PACKET_CUSTOM:
+    183          		return OTP_PCKT_CUSTOM;
+    184          
+    185          	default:
+    186          		break;
+    187          	}
+    188          
+    189          	return OTP_PCKT_MAX_TYPE;
+    190          }
+    191          
+    192          static uint8_t otp_set_payload_size(uint32_t size, uint32_t *pckt_hdr)
+    193          {
+    194          	if (!size || (size & 3))
+    195          		return OTPC_ERROR_BAD_HEADER;
+    196          
+    197          	*pckt_hdr &= ~OTPC_HR_SIZE_Msk;
+    198          	*pckt_hdr |= OTPC_HR_SIZE((size >> 2) - 1);
+    199          
+    200          	return OTPC_NO_ERROR;
+    201          }
+    202          
+    203          static uint16_t otp_get_payload_size(uint32_t pckt_hdr)
+    204          {
+    205          	uint16_t pckt_size;
+    206          
+    207          	pckt_size = (pckt_hdr & OTPC_HR_SIZE_Msk) >> OTPC_HR_SIZE_Pos;
+    208          	return (pckt_size + 1) * sizeof(uint32_t);
+    209          }
+    210          
+    211          static uint8_t otp_set_new_packet_header(const struct otp_new_packet *pckt,
+    212          					 uint32_t *pckt_hdr)
+    213          {
+    214          	uint8_t error;
+    215          
+    216          	*pckt_hdr = OTPC_HR_ONE;
+    217          	error = otp_set_type(pckt->type, pckt_hdr);
+    218          	error = error ? error : otp_set_payload_size(pckt->size, pckt_hdr);
+    219          #ifdef OTPC_HR_SECURE
+    220          	if (pckt->is_secure)
+    221          		*pckt_hdr |= OTPC_HR_SECURE;
+    222          #endif
+    223          
+    224          	return error;
+    225          }
+    226          
+    227          static uint8_t otp_set_packet_filters(uint32_t filters,
+    228          				      const struct otp_packet_header *match,
+    229          				      uint32_t *value, uint32_t *mask)
+    230          {
+    231          	uint8_t error;
+    232          
+    233          	*value = 0;
+    234          	*mask = 0;
+    235          
+    236          	if (filters & OTP_FILTER_TYPE) {
+    237          		error = otp_set_type(match->type, value);
+    238          		if (error)
+    239          			return error;
+    240          
+    241          		*mask |= OTPC_HR_PACKET_Msk;
+    242          	}
+    243          
+    244          	if (filters & OTP_FILTER_SIZE) {
+    245          		error = otp_set_payload_size(match->size, value);
+    246          		if (error)
+    247          			return error;
+    248          
+    249          		*mask |= OTPC_HR_SIZE_Msk;
+    250          	}
+    251          
+    252          	if (filters & OTP_FILTER_LOCKED) {
+    253          		if (match->is_locked)
+    254          			*value |= OTPC_HR_LOCK;
+    255          
+    256          		*mask |= OTPC_HR_LOCK;
+    257          	}
+    258          
+    259          	if (filters & OTP_FILTER_INVALID) {
+    260          		if (match->is_invalid)
+    261          			*value |= OTPC_HR_INVLD_Msk;
+    262          
+    263          		*mask |= OTPC_HR_INVLD_Msk;
+    264          	}
+    265          
+    266          	if (filters & OTP_FILTER_CHECKSUM) {
+    267          		*value |= OTPC_HR_CHECKSUM(match->checksum);
+    268          		*mask |= OTPC_HR_CHECKSUM_Msk;
+    269          	}
+    270          
+    271          #ifdef OTPC_HR_SECURE
+    272          	if (filters & OTP_FILTER_SECURE) {
+    273          		if (match->is_secure)
+    274          			*value |= OTPC_HR_SECURE;
+    275          
+    276          		*mask |= OTPC_HR_SECURE;
+    277          	}
+    278          #endif
+    279          
+    280          	return OTPC_NO_ERROR;
+    281          }
+    282          
+    283          static void otp_header2packet(uint32_t pckt_hdr, struct otp_packet_header *pckt)
+    284          {
+    285          	memset(pckt, 0, sizeof(*pckt));
+    286          	pckt->type = otp_get_type(pckt_hdr);
+    287          	pckt->size = otp_get_payload_size(pckt_hdr);
+    288          	pckt->is_locked = (pckt_hdr & OTPC_HR_LOCK) == OTPC_HR_LOCK;
+    289          	pckt->is_invalid = (pckt_hdr & OTPC_HR_INVLD_Msk) == OTPC_HR_INVLD_Msk;
+    290          #ifdef OTPC_HR_SECURE
+    291          	pckt->is_secure = (pckt_hdr & OTPC_HR_SECURE) == OTPC_HR_SECURE;
+    292          #endif
+    293          	pckt->checksum = (pckt_hdr & OTPC_HR_CHECKSUM_Msk) >> OTPC_HR_CHECKSUM_Pos;
+    294          }
+    295          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    296          static uint32_t otp_wait_isr(uint32_t mask)
+    297          {
+   \                     otp_wait_isr:
+   \        0x0   0xE1A0'1000        MOV      R1,R0
+    298          	uint32_t timeout = TIMEOUT;
+    299          	uint32_t reg = 0;
+   \        0x4   0xE3A0'2A7A        MOV      R2,#+499712
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0xE382'2F48        ORR      R2,R2,#0x120
+   \       0x10   0x....'....        LDR      R3,??DataTable9  ;; 0xeff0001c
+    300          	do {
+    301          		reg |= OTPC->OTPC_ISR;
+   \                     ??otp_wait_isr_0:
+   \       0x14   0xE593'C000        LDR      R12,[R3, #+0]
+   \       0x18   0xE18C'0000        ORR      R0,R12,R0
+    302          		if (reg & mask)
+   \       0x1C   0xE111'0000        TST      R1,R0
+   \       0x20   0x1A00'0001        BNE      ??otp_wait_isr_1
+    303          			break;
+    304          		timeout--;
+    305          	} while (timeout != 0);
+   \       0x24   0xE252'2001        SUBS     R2,R2,#+1
+   \       0x28   0x1AFF'FFF9        BNE      ??otp_wait_isr_0
+    306          	return reg;
+   \                     ??otp_wait_isr_1:
+   \       0x2C   0xE12F'FF1E        BX       LR               ;; return
+    307          }
+    308          
+    309          /*!
+    310            \brief The generic part used for both Atmel and User spaces
+    311            \param hdr_addr Represents the address of the header given by value
+    312            \param pckt_hdr Pointer to the output word where OTPC_HR is written into
+    313            \return OTPC_NO_ERROR is successfull, OTPC_READING_DID_NOT_STOP otherwise.
+    314           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    315          static uint8_t otp_trigger_packet_read(uint16_t hdr_addr, uint32_t *pckt_hdr)
+    316          {
+    317          	uint32_t isr_reg, mr_reg;
+    318          
+    319          	/* Write address of the header in OTPC_MR register (AADDR field)*/
+    320          	mr_reg = OTPC->OTPC_MR;
+   \                     otp_trigger_packet_read:
+   \        0x0   0xE3A0'24E0        MOV      R2,#-536870912
+   \        0x4   0xE382'26FF        ORR      R2,R2,#0xFF00000
+   \        0x8   0xE592'3004        LDR      R3,[R2, #+4]
+    321          	mr_reg &= ~OTPC_MR_ALWAYS_RESET_Msk;
+    322          	mr_reg = (mr_reg & ~OTPC_MR_ADDR_Msk) | OTPC_MR_ADDR(hdr_addr);
+    323          	OTPC->OTPC_MR = mr_reg;
+   \        0xC   0xE3A0'C0EF        MOV      R12,#+239
+   \       0x10   0xE38C'CCEF        ORR      R12,R12,#0xEF00
+   \       0x14   0xE00C'3003        AND      R3,R12,R3
+   \       0x18   0xE183'0800        ORR      R0,R3,R0, LSL #+16
+   \       0x1C   0xE582'0004        STR      R0,[R2, #+4]
+    324          
+    325          	/* dummy read on OTPC_ISR to clear pending interrupts */
+    326          	(void)OTPC->OTPC_ISR;
+   \       0x20   0xE592'301C        LDR      R3,[R2, #+28]
+    327          
+    328          	/* Set READ bit in OTPC_CR register*/
+    329          	OTPC->OTPC_CR = OTPC_CR_READ;
+   \       0x24   0xE3A0'0040        MOV      R0,#+64
+   \       0x28   0xE582'0000        STR      R0,[R2, #+0]
+    330          
+    331          	/* Wait for EOR bit in OTPC_ISR to be 1 (packet was transfered )*/
+    332          	isr_reg = otp_wait_isr(OTPC_ISR_EOR);
+   \       0x2C   0xE3A0'3A7A        MOV      R3,#+499712
+   \       0x30   0xE3A0'0000        MOV      R0,#+0
+   \       0x34   0xE383'3F48        ORR      R3,R3,#0x120
+   \                     ??otp_trigger_packet_read_0:
+   \       0x38   0xE592'C01C        LDR      R12,[R2, #+28]
+   \       0x3C   0xE18C'0000        ORR      R0,R12,R0
+   \       0x40   0xE310'0F40        TST      R0,#0x100
+   \       0x44   0x1A00'0003        BNE      ??otp_trigger_packet_read_1
+   \       0x48   0xE253'3001        SUBS     R3,R3,#+1
+   \       0x4C   0x1AFF'FFF9        BNE      ??otp_trigger_packet_read_0
+    333          	if (!(isr_reg & OTPC_ISR_EOR))
+    334          		return OTPC_READING_DID_NOT_STOP;
+   \       0x50   0xE3A0'000E        MOV      R0,#+14
+   \       0x54   0xE12F'FF1E        BX       LR
+    335          
+    336          	/* Read the header value from OTPC_HR */
+    337          	if (pckt_hdr)
+   \                     ??otp_trigger_packet_read_1:
+   \       0x58   0xE351'0000        CMP      R1,#+0
+    338          		*pckt_hdr = OTPC->OTPC_HR;
+   \       0x5C   0x1592'0020        LDRNE    R0,[R2, #+32]
+   \       0x60   0x1581'0000        STRNE    R0,[R1, #+0]
+    339          
+    340          	return OTPC_NO_ERROR;
+   \       0x64   0xE3A0'0000        MOV      R0,#+0
+   \       0x68   0xE12F'FF1E        BX       LR               ;; return
+    341          }
+    342          
+    343          static uint8_t otp_trans_key(uint32_t key_bus_dest)
+    344          {
+    345          	static const uint32_t isr_err = OTPC_ISR_KBERR;
+    346          	uint32_t isr_reg;
+    347          	uint32_t value;
+    348          
+    349          	switch (key_bus_dest) {
+    350          #ifdef OTPC_MR_KBDST_AES
+    351          	case OTPC_AES_MODULE:
+    352          		value = OTPC_MR_KBDST_AES;
+    353          		break;
+    354          #endif
+    355          #ifdef OTPC_MR_KBDST_TDES
+    356          	case OTPC_TDES_MODULE:
+    357          		value = OTPC_MR_KBDST_TDES;
+    358          		break;
+    359          #endif
+    360          	default:
+    361          		return OTPC_CANNOT_TRANSFER_KEY;
+    362          	}
+    363          	OTPC->OTPC_MR = (OTPC->OTPC_MR & ~OTPC_MR_KBDST_Msk) | value;
+    364          
+    365          	/* dummy read on OTPC_ISR to clear pending interrupts */
+    366          	(void)OTPC->OTPC_ISR;
+    367          
+    368          	OTPC->OTPC_CR = OTPC_CR_KEY(OTPC_KEY_FOR_WRITING) | OTPC_CR_KBSTART;
+    369          	isr_reg = otp_wait_isr(OTPC_ISR_EOKT | isr_err);
+    370          	if (!(isr_reg & OTPC_ISR_EOKT) || (isr_reg & isr_err))
+    371          		return OTPC_CANNOT_TRANSFER_KEY;
+    372          	return 0;
+    373          }
+    374          
+    375          /*----------------------------------------------------------------------------
+    376           *        Global functions
+    377           *----------------------------------------------------------------------------*/
+    378          
+    379          /*!
+    380            \brief Perform a read of a packet
+    381            \param hdr_addr Represents the address of the packet header to be read
+    382            \param dest Represents the output buffer in which the payload will be put
+    383                             In case of a key transfer the value of the dest must be :
+    384                             - OTPC_AES_MODULE
+    385                             - OTPC_TZAESB_MODULE
+    386                             - OTPC_TDES_MODULE
+    387            \param buffer_size Represents the buffer size where data will be put
+    388            \return error code: - OTPC_ERROR_BUFFER_OVERFLOW - The payload is too big
+    389                                - OTPC_NO_ERROR              - Payload read successfully
+    390                                - OTPC_CANNOT_TRANSFER_KEY   - The key cannot be transfered safely
+    391                                - OTPC_ERROR_PACKET_IS_INVALID - The packet is invalid
+    392           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    393          uint8_t otp_read_packet(uint16_t hdr_addr,
+    394                                  uint32_t *dest,
+    395                                  uint16_t buffer_size,
+    396                                  uint16_t *actually_read)
+    397          {
+   \                     otp_read_packet:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+    398          	uint32_t hdr_value = 0;
+   \        0x8   0xE3A0'1000        MOV      R1,#+0
+    399          	uint16_t payload_size = 0;
+    400          	uint8_t error = OTPC_NO_ERROR;
+    401          	uint32_t ar_reg;
+    402          
+    403          	if (OTPC->OTPC_MR & OTPC_MR_RDDIS)
+   \        0xC   0xE3A0'44E0        MOV      R4,#-536870912
+   \       0x10   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x14   0xE384'46FF        ORR      R4,R4,#0xFF00000
+   \       0x18   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x1C   0xE1A0'6002        MOV      R6,R2
+   \       0x20   0xE1A0'7003        MOV      R7,R3
+   \       0x24   0xE311'0F40        TST      R1,#0x100
+   \       0x28   0x0A00'0001        BEQ      ??otp_read_packet_0
+    404          		return  OTPC_CANNOT_START_READING;
+   \       0x2C   0xE3A0'000A        MOV      R0,#+10
+   \       0x30   0xE8BD'80F2        POP      {R1,R4-R7,PC}
+    405          
+    406          	error = otp_trigger_packet_read(hdr_addr, &hdr_value);
+   \                     ??otp_read_packet_0:
+   \       0x34   0xE1A0'100D        MOV      R1,SP
+   \       0x38   0x....'....        BL       otp_trigger_packet_read
+    407          	if (error != OTPC_NO_ERROR)
+   \       0x3C   0xE1B0'1000        MOVS     R1,R0
+   \       0x40   0x1A00'0038        BNE      ??otp_read_packet_1
+    408          		return error;
+    409          
+    410          	if ((hdr_value & OTPC_HR_INVLD_Msk) == OTPC_HR_INVLD_Msk)
+   \       0x44   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x48   0xE201'2030        AND      R2,R1,#0x30
+   \       0x4C   0xE352'0030        CMP      R2,#+48
+   \       0x50   0x1A00'0001        BNE      ??otp_read_packet_2
+    411          		return OTPC_ERROR_PACKET_IS_INVALID;
+   \       0x54   0xE3A0'0015        MOV      R0,#+21
+   \       0x58   0xE8BD'80F2        POP      {R1,R4-R7,PC}
+    412          
+    413          	if ((hdr_value & OTPC_HR_PACKET_Msk) == OTPC_HR_PACKET_KEY)
+   \                     ??otp_read_packet_2:
+   \       0x5C   0xE201'2007        AND      R2,R1,#0x7
+   \       0x60   0xE352'0002        CMP      R2,#+2
+   \       0x64   0x1A00'0017        BNE      ??otp_read_packet_3
+    414          		return otp_trans_key(*dest);
+   \       0x68   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x6C   0xE350'0001        CMP      R0,#+1
+   \       0x70   0x0A00'0003        BEQ      ??otp_read_packet_4
+   \       0x74   0xE350'0003        CMP      R0,#+3
+   \       0x78   0x1A00'0010        BNE      ??otp_read_packet_5
+   \       0x7C   0xE3A0'0000        MOV      R0,#+0
+   \       0x80   0xEA00'0000        B        ??otp_read_packet_6
+   \                     ??otp_read_packet_4:
+   \       0x84   0xE3A0'0D40        MOV      R0,#+4096
+   \                     ??otp_read_packet_6:
+   \       0x88   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x8C   0xE3C1'2D40        BIC      R2,R1,#0x1000
+   \       0x90   0xE180'0002        ORR      R0,R0,R2
+   \       0x94   0xE584'0004        STR      R0,[R4, #+4]
+   \       0x98   0x....'....        LDR      R0,??DataTable9_1  ;; 0x71670100
+   \       0x9C   0xE594'101C        LDR      R1,[R4, #+28]
+   \       0xA0   0xE584'0000        STR      R0,[R4, #+0]
+   \       0xA4   0xE3A0'4008        MOV      R4,#+8
+   \       0xA8   0xE384'4B40        ORR      R4,R4,#0x10000
+   \       0xAC   0xE1A0'0004        MOV      R0,R4
+   \       0xB0   0x....'....        BL       otp_wait_isr
+   \       0xB4   0xE004'0000        AND      R0,R4,R0
+   \       0xB8   0xE350'0008        CMP      R0,#+8
+   \       0xBC   0x0A00'0018        BEQ      ??otp_read_packet_7
+   \                     ??otp_read_packet_5:
+   \       0xC0   0xE3A0'0012        MOV      R0,#+18
+   \       0xC4   0xE8BD'80F2        POP      {R1,R4-R7,PC}
+    415          
+    416          	/*
+    417          	 * Read packet payload from offset 0:
+    418          	 * clear DADDR field and set INCRT to AFTER_READ
+    419          	 */
+    420          	ar_reg = OTPC->OTPC_AR;
+   \                     ??otp_read_packet_3:
+   \       0xC8   0xE594'0008        LDR      R0,[R4, #+8]
+    421          	ar_reg &= ~(OTPC_AR_DADDR_Msk | OTPC_AR_INCRT);
+    422          	ar_reg |= OTPC_AR_INCRT_AFTER_READ;
+    423          	OTPC->OTPC_AR = ar_reg;
+   \       0xCC   0xE3E0'10FF        MVN      R1,#+255
+   \       0xD0   0xE3C1'1B40        BIC      R1,R1,#0x10000
+   \       0xD4   0xE001'0000        AND      R0,R1,R0
+   \       0xD8   0xE584'0008        STR      R0,[R4, #+8]
+    424          
+    425          	/* The value read from header shall be interpreted as follows: */
+    426          	/* 0   ==> 4 bytes */
+    427          	/* 255 ==> 1024 bytes */
+    428          	payload_size = otp_get_payload_size(hdr_value);
+   \       0xDC   0xE59D'3000        LDR      R3,[SP, #+0]
+   \       0xE0   0xE1A0'0423        LSR      R0,R3,#+8
+   \       0xE4   0xE200'10FF        AND      R1,R0,#0xFF
+   \       0xE8   0xE281'2001        ADD      R2,R1,#+1
+   \       0xEC   0xE1A0'0102        LSL      R0,R2,#+2
+   \       0xF0   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0xF4   0xE1A0'0820        LSR      R0,R0,#+16
+    429          
+    430          	if (payload_size > buffer_size)
+   \       0xF8   0xE156'0000        CMP      R6,R0
+   \       0xFC   0xAA00'0001        BGE      ??otp_read_packet_8
+    431          		return OTPC_ERROR_BUFFER_OVERFLOW;
+   \      0x100   0xE3A0'0005        MOV      R0,#+5
+   \      0x104   0xE8BD'80F2        POP      {R1,R4-R7,PC}
+    432          
+    433          	*actually_read = payload_size;
+   \                     ??otp_read_packet_8:
+   \      0x108   0xE1C7'00B0        STRH     R0,[R7, #+0]
+   \      0x10C   0xEA00'0002        B        ??otp_read_packet_9
+    434          
+    435          	while (payload_size != 0) {
+    436          		/* Start reading the payload (one word at a time) */
+    437          		/* otpc_struct->OTPC_DR will be incremented automatically (default value) */
+    438          		*dest++ =  OTPC->OTPC_DR;
+   \                     ??otp_read_packet_10:
+   \      0x110   0xE594'1024        LDR      R1,[R4, #+36]
+    439          
+    440          		/* Update the size of the payload to be read */
+    441          		payload_size -= sizeof(uint32_t);
+   \      0x114   0xE240'0004        SUB      R0,R0,#+4
+   \      0x118   0xE485'1004        STR      R1,[R5], #+4
+    442          	}
+   \                     ??otp_read_packet_9:
+   \      0x11C   0xE1B0'1800        LSLS     R1,R0,#+16
+   \      0x120   0x1AFF'FFFA        BNE      ??otp_read_packet_10
+    443          
+    444          	return OTPC_NO_ERROR;
+   \                     ??otp_read_packet_7:
+   \      0x124   0xE3A0'0000        MOV      R0,#+0
+   \                     ??otp_read_packet_1:
+   \      0x128   0xE8BD'80F2        POP      {R1,R4-R7,PC}    ;; return
+    445          }
+    446          
+    447          /*!
+    448            \brief
+    449            \param packet_header Represents the value of the header to be written
+    450            \param src Represents the payload to be written
+    451            \param pckt_hdr_addr Represents the address of the header. It is an output
+    452            \param actually_written Represents the actual size which was written
+    453            \return error code: - OTPC_NO_ERROR                 - Packet was written successfully
+    454                                - OTPC_ERROR_PACKET_OVERLAPPED  - Packet overlaps another one
+    455                                - OTPC_ERROR_HW_WRITE_DISABLED  - No write access is allowed
+    456                                - OTPC_ERROR_PACKET_INVALIDATED - Packet was invalidated
+    457                                - OTPC_CANNOT_START_PROGRAMMING - Cannot perform writing operation
+    458                                - OTPC_READING_DID_NOT_START    - Cannot perform reading operation
+    459                                - OTPC_READING_DID_NOT_STOP     - A read operation is not ended
+    460                                - OTPC_FLUSHING_DID_NOT_END     - Flushing operation did not end
+    461           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    462          uint8_t otp_write_packet(const struct otp_new_packet *pckt,
+    463                                   const uint32_t *src,
+    464                                   uint16_t *pckt_hdr_addr,
+    465                                   uint16_t *actually_written)
+    466          {
+   \                     otp_write_packet:
+   \        0x0   0xE92D'4FD8        PUSH     {R3,R4,R6-R11,LR}
+   \        0x4   0xE92D'000E        PUSH     {R1-R3}
+   \        0x8   0xE24D'D008        SUB      SP,SP,#+8
+   \        0xC   0xE1A0'1000        MOV      R1,R0
+    467          	static const uint32_t isr_err = OTPC_ISR_WERR | OTPC_ISR_PGERR;
+    468          	uint32_t hdr_value;
+    469          	uint32_t backup_header_reg;
+    470          	uint32_t backup_data_reg;
+    471          	uint32_t backup_header_value;
+    472          	const uint32_t *backup_src = src;
+    473          	uint32_t error = OTPC_NO_ERROR;
+    474          	uint32_t isr_reg, mr_reg, ar_reg;
+    475          	uint16_t payload_size;
+    476          	uint16_t backup_size;
+    477          	uint16_t size_field;
+    478          	bool must_invalidate = false;
+    479          	bool is_key = false;
+    480          
+    481          	error = otp_set_new_packet_header(pckt, &hdr_value);
+   \       0x10   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x14   0xE59D'0008        LDR      R0,[SP, #+8]
+   \       0x18   0xE3A0'4000        MOV      R4,#+0
+   \       0x1C   0xE3A0'6000        MOV      R6,#+0
+   \       0x20   0xE352'0005        CMP      R2,#+5
+   \       0x24   0x8A00'0026        BHI      ??otp_write_packet_1
+   \       0x28   0xE7DF'3002        LDRB     R3,[PC, R2]
+   \       0x2C   0xE08F'F103        ADD      PC,PC,R3, LSL #+2
+   \                     ??otp_write_packet_0:
+   \       0x30   0x0B 0x09          DC8      0xB,0x9,0x7,0x5
+
+   \              0x07 0x05
+   \       0x34   0x03 0x01          DC8      0x3,0x1,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??otp_write_packet_2:
+   \       0x38   0xE3A0'2086        MOV      R2,#+134
+   \       0x3C   0xEA00'0008        B        ??otp_write_packet_3
+   \                     ??otp_write_packet_4:
+   \       0x40   0xE3A0'2085        MOV      R2,#+133
+   \       0x44   0xEA00'0006        B        ??otp_write_packet_3
+   \                     ??otp_write_packet_5:
+   \       0x48   0xE3A0'2084        MOV      R2,#+132
+   \       0x4C   0xEA00'0004        B        ??otp_write_packet_3
+   \                     ??otp_write_packet_6:
+   \       0x50   0xE3A0'2083        MOV      R2,#+131
+   \       0x54   0xEA00'0002        B        ??otp_write_packet_3
+   \                     ??otp_write_packet_7:
+   \       0x58   0xE3A0'2082        MOV      R2,#+130
+   \       0x5C   0xEA00'0000        B        ??otp_write_packet_3
+   \                     ??otp_write_packet_8:
+   \       0x60   0xE3A0'2081        MOV      R2,#+129
+   \                     ??otp_write_packet_3:
+   \       0x64   0xE591'1004        LDR      R1,[R1, #+4]
+   \       0x68   0xE351'0000        CMP      R1,#+0
+   \       0x6C   0x0A00'0014        BEQ      ??otp_write_packet_1
+   \       0x70   0xE311'0003        TST      R1,#0x3
+   \       0x74   0x1A00'0012        BNE      ??otp_write_packet_1
+   \       0x78   0xE1E0'3004        MVN      R3,R4
+   \       0x7C   0xE083'1121        ADD      R1,R3,R1, LSR #+2
+   \       0x80   0xE3A0'CCFF        MOV      R12,#+65280
+   \       0x84   0xE00C'C401        AND      R12,R12,R1, LSL #+8
+   \       0x88   0xE18C'1002        ORR      R1,R12,R2
+    482          	if (error != OTPC_NO_ERROR)
+    483          		return error;
+    484          
+    485          	backup_header_value = hdr_value;
+    486          	payload_size = otp_get_payload_size(hdr_value);
+   \       0x8C   0xE1A0'2421        LSR      R2,R1,#+8
+   \       0x90   0xE282'3001        ADD      R3,R2,#+1
+   \       0x94   0xE1A0'7103        LSL      R7,R3,#+2
+   \       0x98   0xE1A0'7807        LSL      R7,R7,#+16
+    487          	backup_size = payload_size;
+    488          
+    489          	if (payload_size > OTPC_MAX_PAYLOAD_ALLOWED)
+   \       0x9C   0xE3A0'2001        MOV      R2,#+1
+   \       0xA0   0xE1A0'7827        LSR      R7,R7,#+16
+   \       0xA4   0xE382'2E40        ORR      R2,R2,#0x400
+   \       0xA8   0xE1A0'A001        MOV      R10,R1
+   \       0xAC   0xE58D'7004        STR      R7,[SP, #+4]
+   \       0xB0   0xE157'0002        CMP      R7,R2
+   \       0xB4   0xBA00'0005        BLT      ??otp_write_packet_9
+    490          		return OTPC_PACKET_TOO_BIG;
+   \       0xB8   0xE3A0'000B        MOV      R0,#+11
+    491          
+    492          	/* Check against the hardware write disable */
+    493          	if (OTPC->OTPC_MR & OTPC_MR_WRDIS)
+    494          		return OTPC_ERROR_HW_WRITE_DISABLED;
+    495          
+    496          	if ((hdr_value & OTPC_HR_PACKET_Msk) == OTPC_HR_PACKET_KEY) {
+    497          		is_key = true;
+    498          		backup_header_value &= ~OTPC_HR_PACKET_Msk;
+    499          		backup_header_value |= OTPC_HR_PACKET_REGULAR;
+    500          	}
+    501          
+    502          	/* Set MR_ADDR to its maximum value then read packet */
+    503          	error = otp_trigger_packet_read(~0, NULL);
+    504          	if (error != OTPC_NO_ERROR)
+    505          		return error;
+    506          
+    507          	/* There is "1" */
+    508          	if (OTPC->OTPC_SR & OTPC_SR_ONEF) {
+    509          		backup_header_reg = OTPC->OTPC_HR;
+    510          		size_field = otp_get_payload_size(backup_header_reg);
+    511          		backup_header_reg |= hdr_value;
+    512          
+    513          		if (backup_header_reg != hdr_value) {
+    514          			/* Try to minimize the waste of memory, allocate 4 bytes and invalidate the packet */
+    515          			backup_size = size_field;
+    516          			backup_header_value &= OTPC_4B_AND_REGULAR;
+    517          			must_invalidate = true;
+    518          			goto start_programming;
+    519          		}
+    520          
+    521          		/* Header is safe to be written, but what about payload ? */
+    522          		if (!must_invalidate) {
+    523          			while (backup_size != 0) {
+    524          				backup_data_reg = OTPC->OTPC_DR;
+    525          				backup_data_reg |= *backup_src;
+    526          
+    527          				/* Can be payload safely written ? */
+    528          				if (backup_data_reg != (*backup_src)) {
+    529          					must_invalidate = true;
+    530          					backup_size = size_field;
+    531          					backup_header_value &= OTPC_4B_AND_REGULAR;
+    532          					backup_src = src;
+    533          					goto further;
+    534          				}
+    535          
+    536          				backup_size -= sizeof(uint32_t);
+    537          				backup_src++;
+    538          			}
+    539          		}
+    540          
+    541          		backup_size = payload_size;
+    542          	}
+    543          
+    544          further:
+    545          	/* Write OTPC_MR.ADDR to '0' and set NPCKT */
+    546          	mr_reg = OTPC->OTPC_MR;
+    547          	mr_reg &= ~(OTPC_MR_ALWAYS_RESET_Msk | OTPC_MR_ADDR_Msk);
+    548          	mr_reg |= OTPC_MR_NPCKT;
+    549          	OTPC->OTPC_MR = mr_reg;
+    550          
+    551          	/* Check for flushing process */
+    552          	if (OTPC->OTPC_SR & OTPC_SR_FLUSH) {
+    553          		/* Wait until flush operation is done or timeout occured */
+    554          		isr_reg = otp_wait_isr(OTPC_ISR_EOF);
+    555          		if (!(isr_reg & OTPC_ISR_EOF)) {
+    556          			error = OTPC_FLUSHING_DID_NOT_END;
+    557          			goto __exit__;
+    558          		}
+    559          	}
+    560          
+    561          	OTPC->OTPC_HR = backup_header_value;
+    562          
+    563          	/*
+    564          	 * Write packet payload from offset 0:
+    565          	 * clear DADDR field and set INCRT to AFTER_WRITE
+    566          	 */
+    567          	ar_reg = OTPC->OTPC_AR;
+    568          	ar_reg &= ~(OTPC_AR_DADDR_Msk | OTPC_AR_INCRT);
+    569          	ar_reg |= OTPC_AR_INCRT_AFTER_WRITE;
+    570          	OTPC->OTPC_AR = ar_reg;
+    571          
+    572          	/* Start downloading data */
+    573          	while (backup_size) {
+    574          		OTPC->OTPC_DR = *src++;
+    575          
+    576          		backup_size -= sizeof(uint32_t);
+    577          	}
+    578          
+    579          	if (is_key) {
+    580          		backup_header_value &= ~OTPC_HR_PACKET_Msk;
+    581          		backup_header_value |= OTPC_HR_PACKET_KEY;
+    582          		OTPC->OTPC_HR = backup_header_value;
+    583          	}
+    584          
+    585          start_programming:
+    586          	/* dummy read on OTPC_ISR to clear pending interrupts */
+    587          	(void)OTPC->OTPC_ISR;
+    588          
+    589          	/* Set the KEY field * Set PGM field */
+    590          	OTPC->OTPC_CR = OTPC_CR_KEY(OTPC_KEY_FOR_WRITING) | OTPC_CR_PGM;
+    591          
+    592          	/* Check whether the data was written correctly */
+    593          	isr_reg = otp_wait_isr(OTPC_ISR_EOP | isr_err);
+    594          	if (!(isr_reg & OTPC_ISR_EOP) || (isr_reg & isr_err)) {
+    595          		error = OTPC_CANNOT_START_PROGRAMMING;
+    596          		goto __exit__;
+    597          	}
+    598          
+    599          	/* Retrieve the address of the packet header */
+    600          	*pckt_hdr_addr = (OTPC->OTPC_MR & OTPC_MR_ADDR_Msk) >> OTPC_MR_ADDR_Pos;
+    601          
+    602          	if (must_invalidate) {
+    603          		/* Invalidate packet */
+    604          		otp_invalidate_packet(*pckt_hdr_addr);
+    605          
+    606          		error = OTPC_ERROR_PACKET_INVALIDATED;
+    607          		*actually_written = size_field;
+    608          	} else {
+    609          		*actually_written = payload_size;
+    610          	}
+    611          
+    612          __exit__:
+    613          	OTPC->OTPC_MR &= ~OTPC_MR_NPCKT;
+    614          
+    615          	return error;
+   \       0xBC   0xE28D'D018        ADD      SP,SP,#+24
+   \       0xC0   0xE8BD'8FD0        POP      {R4,R6-R11,PC}
+   \                     ??otp_write_packet_1:
+   \       0xC4   0xE3A0'0016        MOV      R0,#+22
+   \       0xC8   0xE28D'D018        ADD      SP,SP,#+24
+   \       0xCC   0xE8BD'8FD0        POP      {R4,R6-R11,PC}
+   \                     ??otp_write_packet_9:
+   \       0xD0   0xE3A0'84E0        MOV      R8,#-536870912
+   \       0xD4   0xE388'86FF        ORR      R8,R8,#0xFF00000
+   \       0xD8   0xE598'2004        LDR      R2,[R8, #+4]
+   \       0xDC   0xE312'0F80        TST      R2,#0x200
+   \       0xE0   0x13A0'0001        MOVNE    R0,#+1
+   \       0xE4   0x1A00'0077        BNE      ??otp_write_packet_10
+   \       0xE8   0xE3A0'90EF        MOV      R9,#+239
+   \       0xEC   0xE389'9CEF        ORR      R9,R9,#0xEF00
+   \       0xF0   0xE3A0'34FF        MOV      R3,#-16777216
+   \       0xF4   0xE383'38FF        ORR      R3,R3,#0xFF0000
+   \       0xF8   0xE201'2007        AND      R2,R1,#0x7
+   \       0xFC   0xE352'0002        CMP      R2,#+2
+   \      0x100   0x03CA'2007        BICEQ    R2,R10,#0x7
+   \      0x104   0x0382'A001        ORREQ    R10,R2,#0x1
+   \      0x108   0xE598'2004        LDR      R2,[R8, #+4]
+   \      0x10C   0x03A0'6001        MOVEQ    R6,#+1
+   \      0x110   0xE009'2002        AND      R2,R9,R2
+   \      0x114   0xE183'3002        ORR      R3,R3,R2
+   \      0x118   0xE588'3004        STR      R3,[R8, #+4]
+   \      0x11C   0xE598'201C        LDR      R2,[R8, #+28]
+   \      0x120   0xE3A0'3040        MOV      R3,#+64
+   \      0x124   0xE588'3000        STR      R3,[R8, #+0]
+   \      0x128   0xE3A0'3A7A        MOV      R3,#+499712
+   \      0x12C   0xE3A0'2000        MOV      R2,#+0
+   \      0x130   0xE383'3F48        ORR      R3,R3,#0x120
+   \                     ??otp_write_packet_11:
+   \      0x134   0xE598'C01C        LDR      R12,[R8, #+28]
+   \      0x138   0xE18C'2002        ORR      R2,R12,R2
+   \      0x13C   0xE312'0F40        TST      R2,#0x100
+   \      0x140   0x1A00'0004        BNE      ??otp_write_packet_12
+   \      0x144   0xE253'3001        SUBS     R3,R3,#+1
+   \      0x148   0x1AFF'FFF9        BNE      ??otp_write_packet_11
+   \      0x14C   0xE3A0'000E        MOV      R0,#+14
+   \      0x150   0xE28D'D018        ADD      SP,SP,#+24
+   \      0x154   0xE8BD'8FD0        POP      {R4,R6-R11,PC}
+   \                     ??otp_write_packet_12:
+   \      0x158   0xE598'200C        LDR      R2,[R8, #+12]
+   \      0x15C   0xE312'0F80        TST      R2,#0x200
+   \      0x160   0x0A00'001A        BEQ      ??otp_write_packet_13
+   \      0x164   0xE598'2020        LDR      R2,[R8, #+32]
+   \      0x168   0xE1A0'3422        LSR      R3,R2,#+8
+   \      0x16C   0xE203'C0FF        AND      R12,R3,#0xFF
+   \      0x170   0xE28C'E001        ADD      LR,R12,#+1
+   \      0x174   0xE1A0'B10E        LSL      R11,LR,#+2
+   \      0x178   0xE181'2002        ORR      R2,R1,R2
+   \      0x17C   0xE1CD'B0B0        STRH     R11,[SP, #+0]
+   \      0x180   0xE152'0001        CMP      R2,R1
+   \      0x184   0x13A0'B001        MOVNE    R11,#+1
+   \      0x188   0x1A00'0033        BNE      ??otp_write_packet_14
+   \      0x18C   0xE1DD'10B0        LDRH     R1,[SP, #+0]
+   \      0x190   0xE59D'2004        LDR      R2,[SP, #+4]
+   \      0x194   0xEA00'0001        B        ??otp_write_packet_15
+   \                     ??otp_write_packet_16:
+   \      0x198   0xE242'2004        SUB      R2,R2,#+4
+   \      0x19C   0xE280'0004        ADD      R0,R0,#+4
+   \                     ??otp_write_packet_15:
+   \      0x1A0   0xE1B0'3802        LSLS     R3,R2,#+16
+   \      0x1A4   0x0A00'0016        BEQ      ??otp_write_packet_17
+   \      0x1A8   0xE598'3024        LDR      R3,[R8, #+36]
+   \      0x1AC   0xE590'C000        LDR      R12,[R0, #+0]
+   \      0x1B0   0xE18C'3003        ORR      R3,R12,R3
+   \      0x1B4   0xE153'000C        CMP      R3,R12
+   \      0x1B8   0x0AFF'FFF6        BEQ      ??otp_write_packet_16
+   \      0x1BC   0xE3A0'4001        MOV      R4,#+1
+   \      0x1C0   0xE1A0'0001        MOV      R0,R1
+   \      0x1C4   0xE20A'A081        AND      R10,R10,#0x81
+   \                     ??otp_write_packet_18:
+   \      0x1C8   0xE1CD'10B0        STRH     R1,[SP, #+0]
+   \      0x1CC   0xE58D'0004        STR      R0,[SP, #+4]
+   \                     ??otp_write_packet_13:
+   \      0x1D0   0xE598'0004        LDR      R0,[R8, #+4]
+   \      0x1D4   0xE009'0000        AND      R0,R9,R0
+   \      0x1D8   0xE380'1010        ORR      R1,R0,#0x10
+   \      0x1DC   0xE588'1004        STR      R1,[R8, #+4]
+   \      0x1E0   0xE598'000C        LDR      R0,[R8, #+12]
+   \      0x1E4   0xE310'0080        TST      R0,#0x80
+   \      0x1E8   0x0A00'0007        BEQ      ??otp_write_packet_19
+   \      0x1EC   0xE3A0'0F80        MOV      R0,#+512
+   \      0x1F0   0x....'....        BL       otp_wait_isr
+   \      0x1F4   0xE310'0F80        TST      R0,#0x200
+   \      0x1F8   0x1A00'0003        BNE      ??otp_write_packet_19
+   \      0x1FC   0xE3A0'000C        MOV      R0,#+12
+   \      0x200   0xEA00'002D        B        ??otp_write_packet_20
+   \                     ??otp_write_packet_17:
+   \      0x204   0xE1A0'0007        MOV      R0,R7
+   \      0x208   0xEAFF'FFEE        B        ??otp_write_packet_18
+   \                     ??otp_write_packet_19:
+   \      0x20C   0xE588'A020        STR      R10,[R8, #+32]
+   \      0x210   0xE598'0008        LDR      R0,[R8, #+8]
+   \      0x214   0xE3E0'10FF        MVN      R1,#+255
+   \      0x218   0xE3C1'1B40        BIC      R1,R1,#0x10000
+   \      0x21C   0xE001'0000        AND      R0,R1,R0
+   \      0x220   0xE380'2B40        ORR      R2,R0,#0x10000
+   \      0x224   0xE588'2008        STR      R2,[R8, #+8]
+   \      0x228   0xE59D'0008        LDR      R0,[SP, #+8]
+   \      0x22C   0xE59D'1004        LDR      R1,[SP, #+4]
+   \      0x230   0xEA00'0002        B        ??otp_write_packet_21
+   \                     ??otp_write_packet_22:
+   \      0x234   0xE490'2004        LDR      R2,[R0], #+4
+   \      0x238   0xE241'1004        SUB      R1,R1,#+4
+   \      0x23C   0xE588'2024        STR      R2,[R8, #+36]
+   \                     ??otp_write_packet_21:
+   \      0x240   0xE1B0'2801        LSLS     R2,R1,#+16
+   \      0x244   0x1AFF'FFFA        BNE      ??otp_write_packet_22
+   \      0x248   0xE356'0000        CMP      R6,#+0
+   \      0x24C   0x13CA'0007        BICNE    R0,R10,#0x7
+   \      0x250   0x1380'1002        ORRNE    R1,R0,#0x2
+   \      0x254   0x1588'1020        STRNE    R1,[R8, #+32]
+   \      0x258   0xE1A0'B004        MOV      R11,R4
+   \                     ??otp_write_packet_14:
+   \      0x25C   0x....'....        LDR      R1,??DataTable9_2  ;; 0x71670001
+   \      0x260   0xE598'001C        LDR      R0,[R8, #+28]
+   \      0x264   0xE588'1000        STR      R1,[R8, #+0]
+   \      0x268   0xE3A0'0091        MOV      R0,#+145
+   \      0x26C   0x....'....        BL       otp_wait_isr
+   \      0x270   0xE200'0091        AND      R0,R0,#0x91
+   \      0x274   0xE350'0001        CMP      R0,#+1
+   \      0x278   0x13A0'0009        MOVNE    R0,#+9
+   \      0x27C   0x1A00'000E        BNE      ??otp_write_packet_20
+   \      0x280   0xE59D'000C        LDR      R0,[SP, #+12]
+   \      0x284   0xE598'1004        LDR      R1,[R8, #+4]
+   \      0x288   0xE35B'0000        CMP      R11,#+0
+   \      0x28C   0xE1A0'2821        LSR      R2,R1,#+16
+   \      0x290   0xE1C0'20B0        STRH     R2,[R0, #+0]
+   \      0x294   0xE59D'4010        LDR      R4,[SP, #+16]
+   \      0x298   0x0A00'0005        BEQ      ??otp_write_packet_23
+   \      0x29C   0xE1A0'0002        MOV      R0,R2
+   \      0x2A0   0x....'....        BL       otp_invalidate_packet
+   \      0x2A4   0xE1DD'20B0        LDRH     R2,[SP, #+0]
+   \      0x2A8   0xE3A0'0006        MOV      R0,#+6
+   \      0x2AC   0xE1C4'20B0        STRH     R2,[R4, #+0]
+   \      0x2B0   0xEA00'0001        B        ??otp_write_packet_20
+   \                     ??otp_write_packet_23:
+   \      0x2B4   0xE1C4'70B0        STRH     R7,[R4, #+0]
+   \      0x2B8   0xE3A0'0000        MOV      R0,#+0
+   \                     ??otp_write_packet_20:
+   \      0x2BC   0xE598'1004        LDR      R1,[R8, #+4]
+   \      0x2C0   0xE3C1'2010        BIC      R2,R1,#0x10
+   \      0x2C4   0xE588'2004        STR      R2,[R8, #+4]
+   \                     ??otp_write_packet_10:
+   \      0x2C8   0xE28D'D018        ADD      SP,SP,#+24
+   \      0x2CC   0xE8BD'8FD0        POP      {R4,R6-R11,PC}   ;; return
+    616          }
+    617          
+    618          /*!
+    619            \brief Updating an existing packet
+    620            \param hdr_addr Represents the address of the header
+    621            \param src Represents the input buffer
+    622            \return error code: - OTPC_NO_ERROR                  - Packet was updated successfully
+    623                                - OTPC_CANNOT_START_PROGRAMMING  - The packet cannot be updated
+    624                                - OTPC_ERROR_PACKET_IS_INVALID   - The packet is invalid
+    625           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    626          uint8_t otp_update_payload(uint16_t hdr_addr, const uint32_t *src)
+    627          {
+   \                     otp_update_payload:
+   \        0x0   0xE92D'401C        PUSH     {R2-R4,LR}
+   \        0x4   0xE1A0'4001        MOV      R4,R1
+    628          	static const uint32_t isr_err = OTPC_ISR_WERR | OTPC_ISR_PGERR;
+    629          	uint32_t hdr_value = 0;
+   \        0x8   0xE3A0'1000        MOV      R1,#+0
+   \        0xC   0xE58D'1000        STR      R1,[SP, #+0]
+    630          	uint32_t reg;
+    631          	uint16_t payload_size = 0;
+    632          	uint8_t error = OTPC_NO_ERROR;
+    633          
+    634          	error = otp_trigger_packet_read(hdr_addr, &hdr_value);
+   \       0x10   0xE1A0'100D        MOV      R1,SP
+   \       0x14   0x....'....        BL       otp_trigger_packet_read
+    635          	if (error != OTPC_NO_ERROR)
+   \       0x18   0xE1B0'1000        MOVS     R1,R0
+   \       0x1C   0x1A00'0025        BNE      ??otp_update_payload_0
+    636          		return error;
+    637          
+    638          	if ((hdr_value & OTPC_HR_INVLD_Msk) == OTPC_HR_INVLD_Msk)
+   \       0x20   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x24   0xE201'2030        AND      R2,R1,#0x30
+   \       0x28   0xE352'0030        CMP      R2,#+48
+   \       0x2C   0x1A00'0001        BNE      ??otp_update_payload_1
+    639          		return OTPC_ERROR_PACKET_IS_INVALID;
+   \       0x30   0xE3A0'0015        MOV      R0,#+21
+   \       0x34   0xE8BD'8016        POP      {R1,R2,R4,PC}
+    640          
+    641          	/*
+    642          	 * Write packet payload from offset 0:
+    643          	 * clear DADDR field and set INCRT to AFTER_WRITE
+    644          	 */
+    645          	reg = OTPC->OTPC_AR;
+   \                     ??otp_update_payload_1:
+   \       0x38   0xE3A0'04E0        MOV      R0,#-536870912
+   \       0x3C   0xE380'06FF        ORR      R0,R0,#0xFF00000
+   \       0x40   0xE590'1008        LDR      R1,[R0, #+8]
+    646          	reg &= ~(OTPC_AR_DADDR_Msk | OTPC_AR_INCRT);
+    647          	reg |= OTPC_AR_INCRT_AFTER_WRITE;
+    648          	OTPC->OTPC_AR = reg;
+   \       0x44   0xE3E0'20FF        MVN      R2,#+255
+   \       0x48   0xE3C2'2B40        BIC      R2,R2,#0x10000
+   \       0x4C   0xE002'1001        AND      R1,R2,R1
+   \       0x50   0xE381'3B40        ORR      R3,R1,#0x10000
+   \       0x54   0xE580'3008        STR      R3,[R0, #+8]
+    649          
+    650          	/* The value read from header shall be interpreted as follows: */
+    651          	/* 0   ==> 4 bytes */
+    652          	/* 255 ==> 1024 bytes */
+    653          	payload_size = otp_get_payload_size(hdr_value);
+   \       0x58   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x5C   0xE1A0'2421        LSR      R2,R1,#+8
+   \       0x60   0xE202'30FF        AND      R3,R2,#0xFF
+   \       0x64   0xE283'C001        ADD      R12,R3,#+1
+   \       0x68   0xE1A0'110C        LSL      R1,R12,#+2
+   \       0x6C   0xE1A0'1801        LSL      R1,R1,#+16
+   \       0x70   0xE1A0'1821        LSR      R1,R1,#+16
+   \       0x74   0xEA00'0002        B        ??otp_update_payload_2
+    654          
+    655          	while (payload_size) {
+    656          		OTPC->OTPC_DR = *src++;
+   \                     ??otp_update_payload_3:
+   \       0x78   0xE494'2004        LDR      R2,[R4], #+4
+    657          
+    658          		payload_size -= sizeof(uint32_t);
+   \       0x7C   0xE241'1004        SUB      R1,R1,#+4
+   \       0x80   0xE580'2024        STR      R2,[R0, #+36]
+    659          	}
+   \                     ??otp_update_payload_2:
+   \       0x84   0xE1B0'2801        LSLS     R2,R1,#+16
+   \       0x88   0x1AFF'FFFA        BNE      ??otp_update_payload_3
+    660          
+    661          	/* dummy read on OTPC_ISR to clear pending interrupts */
+    662          	(void)OTPC->OTPC_ISR;
+    663          
+    664          	/* Set the KEY field && PGM */
+    665          	OTPC->OTPC_CR = OTPC_CR_KEY(OTPC_KEY_FOR_UPDATING) | OTPC_CR_PGM;
+   \       0x8C   0x....'....        LDR      R2,??DataTable9_2  ;; 0x71670001
+   \       0x90   0xE590'101C        LDR      R1,[R0, #+28]
+   \       0x94   0xE580'2000        STR      R2,[R0, #+0]
+    666          
+    667          	/* Programming without errors */
+    668          	reg = otp_wait_isr(OTPC_ISR_EOP | isr_err);
+    669          	if (!(reg & OTPC_ISR_EOP) || (reg & isr_err))
+   \       0x98   0xE3A0'0091        MOV      R0,#+145
+   \       0x9C   0x....'....        BL       otp_wait_isr
+   \       0xA0   0xE200'0091        AND      R0,R0,#0x91
+   \       0xA4   0xE350'0001        CMP      R0,#+1
+   \       0xA8   0x0A00'0001        BEQ      ??otp_update_payload_4
+    670          		return OTPC_CANNOT_START_PROGRAMMING;
+   \       0xAC   0xE3A0'0009        MOV      R0,#+9
+   \       0xB0   0xE8BD'8016        POP      {R1,R2,R4,PC}
+    671          
+    672          	return OTPC_NO_ERROR;
+   \                     ??otp_update_payload_4:
+   \       0xB4   0xE3A0'0000        MOV      R0,#+0
+   \                     ??otp_update_payload_0:
+   \       0xB8   0xE8BD'8016        POP      {R1,R2,R4,PC}    ;; return
+    673          }
+    674          
+    675          /*!
+    676            \brief Locking a packet
+    677            \param hdr_addr Represents the address of the packet header to be locked
+    678            \return error code: - OTPC_CANNOT_LOCK - The packet cannot be locked
+    679                                - OTPC_NO_ERROR    - The packet was locked susscessfully
+    680                                - OTPC_ERROR_PACKET_IS_INVALID - The packet is invalid
+    681           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    682          uint8_t otp_lock_packet(uint16_t hdr_addr)
+    683          {
+   \                     otp_lock_packet:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    684          	static const uint32_t isr_err = OTPC_ISR_LKERR;
+    685          	uint32_t hdr_value;
+    686          	uint32_t reg;
+    687          	uint8_t error = OTPC_NO_ERROR;
+    688          
+    689          	error = otp_trigger_packet_read(hdr_addr, &hdr_value);
+   \        0x4   0xE1A0'100D        MOV      R1,SP
+   \        0x8   0x....'....        BL       otp_trigger_packet_read
+    690          	if (error != OTPC_NO_ERROR)
+   \        0xC   0xE1B0'1000        MOVS     R1,R0
+   \       0x10   0x1A00'0012        BNE      ??otp_lock_packet_0
+    691          		return error;
+    692          
+    693          	if ((hdr_value & OTPC_HR_INVLD_Msk) == OTPC_HR_INVLD_Msk)
+   \       0x14   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x18   0xE201'2030        AND      R2,R1,#0x30
+   \       0x1C   0xE352'0030        CMP      R2,#+48
+   \       0x20   0x1A00'0001        BNE      ??otp_lock_packet_1
+    694          		return OTPC_ERROR_PACKET_IS_INVALID;
+   \       0x24   0xE3A0'0015        MOV      R0,#+21
+   \       0x28   0xE8BD'8002        POP      {R1,PC}
+    695          
+    696          	/* dummy read on OTPC_ISR to clear pending interrupts */
+    697          	(void)OTPC->OTPC_ISR;
+   \                     ??otp_lock_packet_1:
+   \       0x2C   0xE3A0'04E0        MOV      R0,#-536870912
+   \       0x30   0xE380'06FF        ORR      R0,R0,#0xFF00000
+    698          
+    699          	/* Set the KEY field */
+    700          	OTPC->OTPC_CR = OTPC_CR_KEY(OTPC_KEY_FOR_LOCKING) | OTPC_CR_CKSGEN;
+   \       0x34   0x....'....        LDR      R2,??DataTable9_3  ;; 0x71670002
+   \       0x38   0xE590'101C        LDR      R1,[R0, #+28]
+   \       0x3C   0xE580'2000        STR      R2,[R0, #+0]
+    701          
+    702          	/* Wait for locking the packet */
+    703          	reg = otp_wait_isr(OTPC_ISR_EOL | isr_err);
+    704          	if (!(reg & OTPC_ISR_EOL) || (reg & isr_err))
+   \       0x40   0xE3A0'0022        MOV      R0,#+34
+   \       0x44   0x....'....        BL       otp_wait_isr
+   \       0x48   0xE200'0022        AND      R0,R0,#0x22
+   \       0x4C   0xE350'0002        CMP      R0,#+2
+   \       0x50   0x0A00'0001        BEQ      ??otp_lock_packet_2
+    705          		return OTPC_CANNOT_LOCK;
+   \       0x54   0xE3A0'000F        MOV      R0,#+15
+   \       0x58   0xE8BD'8002        POP      {R1,PC}
+    706          
+    707          	return OTPC_NO_ERROR;
+   \                     ??otp_lock_packet_2:
+   \       0x5C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??otp_lock_packet_0:
+   \       0x60   0xE8BD'8002        POP      {R1,PC}          ;; return
+    708          }
+    709          
+    710          /*!
+    711            \brief Invalidating a packet
+    712            \param hdr_addr Represents the address of the packet header to be invalidated
+    713            \return error code: - OTPC_CANNOT_INVALIDATE - The packet cannot be invalidated
+    714                                - OTPC_NO_ERROR          - The packet was invalidated successfully
+    715           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    716          uint8_t otp_invalidate_packet(uint16_t hdr_addr)
+    717          {
+    718          	static const uint32_t isr_err = OTPC_ISR_IVERR;
+    719          	uint32_t reg;
+    720          
+    721          	/* Set the header address and using reg as temp value */
+    722          	reg = OTPC->OTPC_MR;
+   \                     otp_invalidate_packet:
+   \        0x0   0xE3A0'14E0        MOV      R1,#-536870912
+   \        0x4   0xE381'16FF        ORR      R1,R1,#0xFF00000
+   \        0x8   0xE591'2004        LDR      R2,[R1, #+4]
+    723          	reg &= ~OTPC_MR_ALWAYS_RESET_Msk;
+    724          	reg = (reg & ~OTPC_MR_ADDR_Msk) | OTPC_MR_ADDR(hdr_addr);
+    725          	OTPC->OTPC_MR = reg;
+   \        0xC   0xE3A0'30EF        MOV      R3,#+239
+   \       0x10   0xE383'3CEF        ORR      R3,R3,#0xEF00
+   \       0x14   0xE003'2002        AND      R2,R3,R2
+   \       0x18   0xE182'0800        ORR      R0,R2,R0, LSL #+16
+   \       0x1C   0xE581'0004        STR      R0,[R1, #+4]
+    726          
+    727          	/* dummy read on OTPC_ISR to clear pending interrupts */
+    728          	(void)OTPC->OTPC_ISR;
+    729          
+    730          	OTPC->OTPC_CR = OTPC_CR_KEY(OTPC_KEY_FOR_INVALIDATING) | OTPC_CR_INVLD;
+   \       0x20   0x....'....        LDR      R0,??DataTable9_4  ;; 0x71670004
+   \       0x24   0xE591'201C        LDR      R2,[R1, #+28]
+   \       0x28   0xE581'0000        STR      R0,[R1, #+0]
+    731          
+    732          	/* Wait for invalidating the packet */
+    733          	reg = otp_wait_isr(OTPC_ISR_EOI | isr_err);
+   \       0x2C   0xE3A0'2A7A        MOV      R2,#+499712
+   \       0x30   0xE3A0'0000        MOV      R0,#+0
+   \       0x34   0xE382'2F48        ORR      R2,R2,#0x120
+   \                     ??otp_invalidate_packet_0:
+   \       0x38   0xE591'301C        LDR      R3,[R1, #+28]
+   \       0x3C   0xE183'0000        ORR      R0,R3,R0
+   \       0x40   0xE310'0044        TST      R0,#0x44
+   \       0x44   0x1A00'0002        BNE      ??otp_invalidate_packet_1
+   \       0x48   0xE252'2001        SUBS     R2,R2,#+1
+   \       0x4C   0x1AFF'FFF9        BNE      ??otp_invalidate_packet_0
+   \       0x50   0xEA00'0002        B        ??otp_invalidate_packet_2
+    734          	if (!(reg & OTPC_ISR_EOI) || (reg & isr_err))
+   \                     ??otp_invalidate_packet_1:
+   \       0x54   0xE200'0044        AND      R0,R0,#0x44
+   \       0x58   0xE350'0004        CMP      R0,#+4
+   \       0x5C   0x0A00'0001        BEQ      ??otp_invalidate_packet_3
+    735          		return OTPC_CANNOT_INVALIDATE;
+   \                     ??otp_invalidate_packet_2:
+   \       0x60   0xE3A0'0010        MOV      R0,#+16
+   \       0x64   0xE12F'FF1E        BX       LR
+    736          
+    737          	return OTPC_NO_ERROR;
+   \                     ??otp_invalidate_packet_3:
+   \       0x68   0xE3A0'0000        MOV      R0,#+0
+   \       0x6C   0xE12F'FF1E        BX       LR               ;; return
+    738          }
+    739          
+    740          /*!
+    741            \brief Enable/Disable the emulation mode
+    742            \param enable Represents the memory area in which the emulation will be enabled
+    743            \return error code:
+    744                              - OTPC_ERROR_EMULATION   - Update emulation mode failed
+    745                              - OTPC_NO_ERROR          - Update emulation mode succeed
+    746                              - OTPC_CANNOT_REFRESH    - The memory cannot be refreshed
+    747                              - OTPC_ERROR_MR_LOCKED   - Register OTPC_MR is locked
+    748           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    749          uint8_t otp_emulation_mode(bool on_off)
+    750          {
+   \                     otp_emulation_mode:
+   \        0x0   0xE92D'4000        PUSH     {LR}
+    751          	static const uint32_t isr_err = OTPC_ISR_COERR | OTPC_ISR_CKERR;
+    752          	uint32_t reg;
+    753          	uint32_t mr_emul_value;
+    754          
+    755          	mr_emul_value = (((uint32_t)!!on_off) * (OTPC_MR_EMUL & ((~OTPC_MR_EMUL) << 1)));
+    756          	OTPC->OTPC_MR = (OTPC->OTPC_MR & (~OTPC_MR_EMUL)) | mr_emul_value;
+   \        0x4   0xE3A0'34E0        MOV      R3,#-536870912
+   \        0x8   0xE383'36FF        ORR      R3,R3,#0xFF00000
+   \        0xC   0xE593'C004        LDR      R12,[R3, #+4]
+   \       0x10   0xE1B0'2000        MOVS     R2,R0
+   \       0x14   0x13A0'0080        MOVNE    R0,#+128
+   \       0x18   0x03A0'0000        MOVEQ    R0,#+0
+   \       0x1C   0xE3CC'E080        BIC      LR,R12,#0x80
+   \       0x20   0xE180'000E        ORR      R0,R0,LR
+   \       0x24   0xE583'0004        STR      R0,[R3, #+4]
+    757          
+    758          	/* dummy read on OTPC_ISR to clear pending interrupts */
+    759          	(void)OTPC->OTPC_ISR;
+    760          
+    761          	OTPC->OTPC_CR = OTPC_CR_REFRESH | OTPC_CR_KEY(OTPC_KEY_FOR_EMUL);
+   \       0x28   0x....'....        LDR      R0,??DataTable9_5  ;; 0x71678000
+   \       0x2C   0xE593'C01C        LDR      R12,[R3, #+28]
+   \       0x30   0xE583'0000        STR      R0,[R3, #+0]
+    762          
+    763          	/* Wait for refreshing data */
+    764          	reg = otp_wait_isr(OTPC_ISR_EORF | isr_err);
+   \       0x34   0xE3A0'CA7A        MOV      R12,#+499712
+   \       0x38   0xE3A0'0000        MOV      R0,#+0
+   \       0x3C   0xE38C'CF48        ORR      R12,R12,#0x120
+   \                     ??otp_emulation_mode_0:
+   \       0x40   0xE593'E01C        LDR      LR,[R3, #+28]
+   \       0x44   0xE18E'0000        ORR      R0,LR,R0
+   \       0x48   0xE310'0DE0        TST      R0,#0x3800
+   \       0x4C   0x1A00'0002        BNE      ??otp_emulation_mode_1
+   \       0x50   0xE25C'C001        SUBS     R12,R12,#+1
+   \       0x54   0x1AFF'FFF9        BNE      ??otp_emulation_mode_0
+   \       0x58   0xEA00'0002        B        ??otp_emulation_mode_2
+    765          	if (!(reg & OTPC_ISR_EORF) || (reg & isr_err))
+   \                     ??otp_emulation_mode_1:
+   \       0x5C   0xE200'0DE0        AND      R0,R0,#0x3800
+   \       0x60   0xE350'0E80        CMP      R0,#+2048
+   \       0x64   0x0A00'0001        BEQ      ??otp_emulation_mode_3
+    766          		return OTPC_CANNOT_REFRESH;
+   \                     ??otp_emulation_mode_2:
+   \       0x68   0xE3A0'0011        MOV      R0,#+17
+   \       0x6C   0xE8BD'8000        POP      {PC}
+    767          
+    768          	/* Check if the Emulation mode state */
+    769          	if ((!!(OTPC->OTPC_SR & OTPC_SR_EMUL)) ^ (!!on_off))
+   \                     ??otp_emulation_mode_3:
+   \       0x70   0xE593'000C        LDR      R0,[R3, #+12]
+   \       0x74   0xE352'0000        CMP      R2,#+0
+   \       0x78   0xE1A0'31A0        LSR      R3,R0,#+3
+   \       0x7C   0xE203'0001        AND      R0,R3,#0x1
+   \       0x80   0x13A0'2001        MOVNE    R2,#+1
+   \       0x84   0xE032'0000        EORS     R0,R2,R0
+    770          		return OTPC_ERROR_CANNOT_ACTIVATE_EMULATION;
+   \       0x88   0x13A0'0003        MOVNE    R0,#+3
+    771          
+    772          	return OTPC_NO_ERROR;
+   \       0x8C   0xE8BD'8000        POP      {PC}             ;; return
+    773          }
+    774          
+    775          /*!
+    776            \brief The routine checks whether or not the OTP emulation mode is enabled
+    777            \param none
+    778            \return true  - OTP enumation mode is enabled
+    779                   false - OTP enumation mode is disabled
+    780          */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    781          bool otp_is_emulation_enabled(void)
+    782          {
+    783          	return (OTPC->OTPC_SR & OTPC_SR_EMUL) == OTPC_SR_EMUL;
+   \                     otp_is_emulation_enabled:
+   \        0x0   0xE3A0'02CE        MOV      R0,#-536870900
+   \        0x4   0xE380'06FF        ORR      R0,R0,#0xFF00000
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE1A0'21A1        LSR      R2,R1,#+3
+   \       0x10   0xE202'0001        AND      R0,R2,#0x1
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    784          }
+    785          
+    786          /*!
+    787            \brief The routine hides a packet
+    788            \param hdr_addr Represents the header address to be hidden
+    789            \return error code: - OTPC_NO_ERROR              - Packet was hidden successfully
+    790                                - OTPC_CANNOT_START_HIDING   - Hiding operation cannot be started
+    791                                - OTPC_CANNOT_PERFORM_HIDING - The hiding operation cannot be completed
+    792          */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    793          uint8_t otp_hide_packet(uint16_t hdr_addr)
+    794          {
+    795          	static const uint32_t isr_err = OTPC_ISR_HDERR;
+    796          	uint32_t reg;
+    797          
+    798          	reg = OTPC->OTPC_MR;
+   \                     otp_hide_packet:
+   \        0x0   0xE3A0'14E0        MOV      R1,#-536870912
+   \        0x4   0xE381'16FF        ORR      R1,R1,#0xFF00000
+   \        0x8   0xE591'2004        LDR      R2,[R1, #+4]
+    799          	reg &= ~OTPC_MR_ALWAYS_RESET_Msk;
+    800          	reg = (reg & ~OTPC_MR_ADDR_Msk) | OTPC_MR_ADDR(hdr_addr);
+    801          	OTPC->OTPC_MR = reg;
+   \        0xC   0xE3A0'30EF        MOV      R3,#+239
+   \       0x10   0xE383'3CEF        ORR      R3,R3,#0xEF00
+   \       0x14   0xE003'2002        AND      R2,R3,R2
+   \       0x18   0xE182'0800        ORR      R0,R2,R0, LSL #+16
+   \       0x1C   0xE581'0004        STR      R0,[R1, #+4]
+    802          
+    803          	/* dummy read on OTPC_ISR to clear pending interrupts */
+    804          	(void)OTPC->OTPC_ISR;
+    805          
+    806          	OTPC->OTPC_CR = OTPC_CR_KEY(OTPC_KEY_FOR_WRITING) | OTPC_CR_HIDE;
+   \       0x20   0x....'....        LDR      R0,??DataTable9_6  ;; 0x71670010
+   \       0x24   0xE591'201C        LDR      R2,[R1, #+28]
+   \       0x28   0xE581'0000        STR      R0,[R1, #+0]
+    807          
+    808          	reg = otp_wait_isr(OTPC_ISR_EOH | isr_err);
+   \       0x2C   0xE3A0'2A7A        MOV      R2,#+499712
+   \       0x30   0xE3A0'0000        MOV      R0,#+0
+   \       0x34   0xE382'2F48        ORR      R2,R2,#0x120
+   \                     ??otp_hide_packet_0:
+   \       0x38   0xE591'301C        LDR      R3,[R1, #+28]
+   \       0x3C   0xE183'0000        ORR      R0,R3,R0
+   \       0x40   0xE310'0C44        TST      R0,#0x4400
+   \       0x44   0x1A00'0002        BNE      ??otp_hide_packet_1
+   \       0x48   0xE252'2001        SUBS     R2,R2,#+1
+   \       0x4C   0x1AFF'FFF9        BNE      ??otp_hide_packet_0
+   \       0x50   0xEA00'0002        B        ??otp_hide_packet_2
+    809          	if (!(reg & OTPC_ISR_EOH) || (reg & isr_err))
+   \                     ??otp_hide_packet_1:
+   \       0x54   0xE200'0C44        AND      R0,R0,#0x4400
+   \       0x58   0xE350'0E40        CMP      R0,#+1024
+   \       0x5C   0x0A00'0001        BEQ      ??otp_hide_packet_3
+    810          		return OTPC_CANNOT_PERFORM_HIDING;
+   \                     ??otp_hide_packet_2:
+   \       0x60   0xE3A0'0014        MOV      R0,#+20
+   \       0x64   0xE12F'FF1E        BX       LR
+    811          
+    812          	return OTPC_NO_ERROR;
+   \                     ??otp_hide_packet_3:
+   \       0x68   0xE3A0'0000        MOV      R0,#+0
+   \       0x6C   0xE12F'FF1E        BX       LR               ;; return
+    813          }
+    814          
+    815          /*!
+    816           \brief The routine checks whether or not the OTP is disabled
+    817           \param none
+    818           \return true  - OTP is disabled
+    819                   false - OTP is not disabled
+    820          */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    821          bool otp_is_disabled(void)
+    822          {
+    823          	return (
+    824          	    (OTPC->OTPC_UIDxR[0] == OTPC_UID_DISABLED) &&
+    825          	    (OTPC->OTPC_UIDxR[1] == OTPC_UID_DISABLED) &&
+    826          	    (OTPC->OTPC_UIDxR[2] == OTPC_UID_DISABLED) &&
+    827          	    (OTPC->OTPC_UIDxR[3] == OTPC_UID_DISABLED));
+   \                     otp_is_disabled:
+   \        0x0   0x....'....        LDR      R1,??DataTable9_7  ;; 0xeff00060
+   \        0x4   0x....'....        LDR      R0,??DataTable9_8  ;; 0xcafecafe
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0xC   0xE152'0000        CMP      R2,R0
+   \       0x10   0x1A00'000A        BNE      ??otp_is_disabled_0
+   \       0x14   0xE591'3004        LDR      R3,[R1, #+4]
+   \       0x18   0xE153'0000        CMP      R3,R0
+   \       0x1C   0x1A00'0007        BNE      ??otp_is_disabled_0
+   \       0x20   0xE591'2008        LDR      R2,[R1, #+8]
+   \       0x24   0xE152'0000        CMP      R2,R0
+   \       0x28   0x1A00'0004        BNE      ??otp_is_disabled_0
+   \       0x2C   0xE591'100C        LDR      R1,[R1, #+12]
+   \       0x30   0xE151'0000        CMP      R1,R0
+   \       0x34   0x1A00'0001        BNE      ??otp_is_disabled_0
+   \       0x38   0xE3A0'0001        MOV      R0,#+1
+   \       0x3C   0xE12F'FF1E        BX       LR
+   \                     ??otp_is_disabled_0:
+   \       0x40   0xE3A0'0000        MOV      R0,#+0
+   \       0x44   0xE12F'FF1E        BX       LR               ;; return
+    828          }
+    829          
+    830          /*!
+    831           \brief Look up the OTP for the next packet matching the given packet header value
+    832           \param filters [IN] bitmask of packet header filters
+    833           \param match [IN] packet header value associated to filters
+    834           \result [OUT] if not NULL, the header value of the matching packet
+    835           \result [INOUT] if not NULL, the address to start the scan from and the address
+    836                           of the matching packet, if any
+    837           \return : - OTPC_NO_ERROR               - A matching packet was found
+    838                     - OTPC_ERROR_PACKET_NOT_FOUND - No matching packet was found
+    839           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    840          uint8_t otp_get_next_matching_packet(uint32_t filters,
+    841          				     const struct otp_packet_header *match,
+    842          				     struct otp_packet_header *result,
+    843          				     uint16_t *hdr_addr)
+    844          {
+   \                     otp_get_next_matching_packet:
+   \        0x0   0xE92D'47D0        PUSH     {R4,R6-R10,LR}
+    845          	uint16_t addr = (hdr_addr) ? *hdr_addr : 0;
+   \        0x4   0xE353'0000        CMP      R3,#+0
+   \        0x8   0x11D3'40B0        LDRHNE   R4,[R3, #+0]
+   \        0xC   0x03A0'4000        MOVEQ    R4,#+0
+    846          	uint32_t pckt_hdr, value, mask;
+    847          	uint8_t error;
+    848          
+    849          	error = otp_set_packet_filters(filters, match, &value, &mask);
+   \       0x10   0xE3A0'E000        MOV      LR,#+0
+   \       0x14   0xE3A0'C000        MOV      R12,#+0
+   \       0x18   0xE310'0001        TST      R0,#0x1
+   \       0x1C   0x0A00'0012        BEQ      ??otp_get_next_matching_packet_2
+   \       0x20   0xE5D1'C000        LDRB     R12,[R1, #+0]
+   \       0x24   0xE35C'0005        CMP      R12,#+5
+   \       0x28   0x8A00'0036        BHI      ??otp_get_next_matching_packet_3
+   \       0x2C   0xE7DF'E00C        LDRB     LR,[PC, R12]
+   \       0x30   0xE08F'F10E        ADD      PC,PC,LR, LSL #+2
+   \                     ??otp_get_next_matching_packet_0:
+   \       0x34   0x0B 0x09          DC8      0xB,0x9,0x7,0x5
+
+   \              0x07 0x05
+   \       0x38   0x03 0x01          DC8      0x3,0x1,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??otp_get_next_matching_packet_4:
+   \       0x3C   0xE3A0'E006        MOV      LR,#+6
+   \       0x40   0xEA00'0008        B        ??otp_get_next_matching_packet_5
+   \                     ??otp_get_next_matching_packet_6:
+   \       0x44   0xE3A0'E005        MOV      LR,#+5
+   \       0x48   0xEA00'0006        B        ??otp_get_next_matching_packet_5
+   \                     ??otp_get_next_matching_packet_7:
+   \       0x4C   0xE3A0'E004        MOV      LR,#+4
+   \       0x50   0xEA00'0004        B        ??otp_get_next_matching_packet_5
+   \                     ??otp_get_next_matching_packet_8:
+   \       0x54   0xE3A0'E003        MOV      LR,#+3
+   \       0x58   0xEA00'0002        B        ??otp_get_next_matching_packet_5
+   \                     ??otp_get_next_matching_packet_9:
+   \       0x5C   0xE3A0'E002        MOV      LR,#+2
+   \       0x60   0xEA00'0000        B        ??otp_get_next_matching_packet_5
+   \                     ??otp_get_next_matching_packet_10:
+   \       0x64   0xE3A0'E001        MOV      LR,#+1
+   \                     ??otp_get_next_matching_packet_5:
+   \       0x68   0xE3A0'C007        MOV      R12,#+7
+   \                     ??otp_get_next_matching_packet_2:
+   \       0x6C   0xE310'0002        TST      R0,#0x2
+   \       0x70   0x0A00'000A        BEQ      ??otp_get_next_matching_packet_11
+   \       0x74   0xE591'6004        LDR      R6,[R1, #+4]
+   \       0x78   0xE356'0000        CMP      R6,#+0
+   \       0x7C   0x0A00'0021        BEQ      ??otp_get_next_matching_packet_3
+   \       0x80   0xE316'0003        TST      R6,#0x3
+   \       0x84   0x1A00'001F        BNE      ??otp_get_next_matching_packet_3
+   \       0x88   0xE3E0'7000        MVN      R7,#+0
+   \       0x8C   0xE087'6126        ADD      R6,R7,R6, LSR #+2
+   \       0x90   0xE3A0'8CFF        MOV      R8,#+65280
+   \       0x94   0xE008'8406        AND      R8,R8,R6, LSL #+8
+   \       0x98   0xE188'E00E        ORR      LR,R8,LR
+   \       0x9C   0xE38C'CCFF        ORR      R12,R12,#0xFF00
+   \                     ??otp_get_next_matching_packet_11:
+   \       0xA0   0xE310'0004        TST      R0,#0x4
+   \       0xA4   0x0A00'0003        BEQ      ??otp_get_next_matching_packet_12
+   \       0xA8   0xE5D1'6008        LDRB     R6,[R1, #+8]
+   \       0xAC   0xE38C'C008        ORR      R12,R12,#0x8
+   \       0xB0   0xE356'0000        CMP      R6,#+0
+   \       0xB4   0x138E'E008        ORRNE    LR,LR,#0x8
+   \                     ??otp_get_next_matching_packet_12:
+   \       0xB8   0xE310'0008        TST      R0,#0x8
+   \       0xBC   0x0A00'0003        BEQ      ??otp_get_next_matching_packet_13
+   \       0xC0   0xE5D1'6009        LDRB     R6,[R1, #+9]
+   \       0xC4   0xE38C'C030        ORR      R12,R12,#0x30
+   \       0xC8   0xE356'0000        CMP      R6,#+0
+   \       0xCC   0x138E'E030        ORRNE    LR,LR,#0x30
+   \                     ??otp_get_next_matching_packet_13:
+   \       0xD0   0xE310'0010        TST      R0,#0x10
+   \       0xD4   0x0A00'0004        BEQ      ??otp_get_next_matching_packet_14
+   \       0xD8   0xE1D1'00BC        LDRH     R0,[R1, #+12]
+   \       0xDC   0xE3A0'14FF        MOV      R1,#-16777216
+   \       0xE0   0xE381'18FF        ORR      R1,R1,#0xFF0000
+   \       0xE4   0xE18E'E800        ORR      LR,LR,R0, LSL #+16
+   \       0xE8   0xE181'C00C        ORR      R12,R1,R12
+   \                     ??otp_get_next_matching_packet_14:
+   \       0xEC   0xE3A0'90A5        MOV      R9,#+165
+   \       0xF0   0xE3A0'A0FF        MOV      R10,#+255
+   \       0xF4   0xE1A0'0004        MOV      R0,R4
+   \       0xF8   0xE1A0'100C        MOV      R1,R12
+   \       0xFC   0xE389'9CA5        ORR      R9,R9,#0xA500
+   \      0x100   0xE38A'ACFF        ORR      R10,R10,#0xFF00
+   \      0x104   0xEA00'0003        B        ??otp_get_next_matching_packet_15
+    850          	if (error)
+    851          		return error;
+   \                     ??otp_get_next_matching_packet_3:
+   \      0x108   0xE3A0'0016        MOV      R0,#+22
+   \      0x10C   0xE8BD'87D0        POP      {R4,R6-R10,PC}
+    852          
+    853          	while (otp_trigger_packet_read(addr, &pckt_hdr) == OTPC_NO_ERROR) {
+    854          		uint16_t crc = (pckt_hdr & OTPC_HR_CHECKSUM_Msk) >> OTPC_HR_CHECKSUM_Pos;
+    855          		uint16_t size = (pckt_hdr & OTPC_HR_SIZE_Msk) >> OTPC_HR_SIZE_Pos;
+    856          
+    857          		if ((pckt_hdr & OTPC_HR_ONE) != OTPC_HR_ONE ||
+    858          		    (crc != OTPC_CS_NOT_GENERATED &&
+    859          		     crc != OTPC_CS_CHECK_OK &&
+    860          		     crc != OTPC_CS_NOT_VALID))
+    861          			break;
+    862          
+    863          		if ((pckt_hdr & mask) == value) {
+    864          			if (result)
+    865          				otp_header2packet(pckt_hdr, result);
+    866          			if (hdr_addr)
+    867          				*hdr_addr = addr;
+    868          			return OTPC_NO_ERROR;
+    869          		}
+    870          
+    871          		addr += size + 2;
+   \                     ??otp_get_next_matching_packet_16:
+   \      0x110   0xE287'C002        ADD      R12,R7,#+2
+   \      0x114   0xE08C'0000        ADD      R0,R12,R0
+   \                     ??otp_get_next_matching_packet_15:
+   \      0x118   0xE3A0'C4E0        MOV      R12,#-536870912
+   \      0x11C   0xE38C'C6FF        ORR      R12,R12,#0xFF00000
+   \      0x120   0xE59C'4004        LDR      R4,[R12, #+4]
+   \      0x124   0xE3A0'60EF        MOV      R6,#+239
+   \      0x128   0xE386'6CEF        ORR      R6,R6,#0xEF00
+   \      0x12C   0xE1A0'7800        LSL      R7,R0,#+16
+   \      0x130   0xE006'6004        AND      R6,R6,R4
+   \      0x134   0xE1A0'7827        LSR      R7,R7,#+16
+   \      0x138   0xE186'8807        ORR      R8,R6,R7, LSL #+16
+   \      0x13C   0xE58C'8004        STR      R8,[R12, #+4]
+   \      0x140   0xE59C'401C        LDR      R4,[R12, #+28]
+   \      0x144   0xE3A0'6040        MOV      R6,#+64
+   \      0x148   0xE58C'6000        STR      R6,[R12, #+0]
+   \      0x14C   0xE3A0'6A7A        MOV      R6,#+499712
+   \      0x150   0xE3A0'4000        MOV      R4,#+0
+   \      0x154   0xE386'6F48        ORR      R6,R6,#0x120
+   \                     ??otp_get_next_matching_packet_17:
+   \      0x158   0xE59C'701C        LDR      R7,[R12, #+28]
+   \      0x15C   0xE187'4004        ORR      R4,R7,R4
+   \      0x160   0xE314'0F40        TST      R4,#0x100
+   \      0x164   0x1A00'0003        BNE      ??otp_get_next_matching_packet_18
+   \      0x168   0xE256'6001        SUBS     R6,R6,#+1
+   \      0x16C   0x1AFF'FFF9        BNE      ??otp_get_next_matching_packet_17
+    872          	}
+    873          
+    874          	return OTPC_ERROR_PACKET_NOT_FOUND;
+   \                     ??otp_get_next_matching_packet_19:
+   \      0x170   0xE3A0'0004        MOV      R0,#+4
+   \      0x174   0xE8BD'87D0        POP      {R4,R6-R10,PC}   ;; return
+   \                     ??otp_get_next_matching_packet_18:
+   \      0x178   0xE59C'C020        LDR      R12,[R12, #+32]
+   \      0x17C   0xE1A0'642C        LSR      R6,R12,#+8
+   \      0x180   0xE1A0'482C        LSR      R4,R12,#+16
+   \      0x184   0xE206'70FF        AND      R7,R6,#0xFF
+   \      0x188   0xE31C'0080        TST      R12,#0x80
+   \      0x18C   0x0AFF'FFF7        BEQ      ??otp_get_next_matching_packet_19
+   \      0x190   0xE354'0000        CMP      R4,#+0
+   \      0x194   0x0A00'0003        BEQ      ??otp_get_next_matching_packet_20
+   \      0x198   0xE154'0009        CMP      R4,R9
+   \      0x19C   0x0A00'0001        BEQ      ??otp_get_next_matching_packet_20
+   \      0x1A0   0xE154'000A        CMP      R4,R10
+   \      0x1A4   0x1AFF'FFF1        BNE      ??otp_get_next_matching_packet_19
+   \                     ??otp_get_next_matching_packet_20:
+   \      0x1A8   0xE001'800C        AND      R8,R1,R12
+   \      0x1AC   0xE158'000E        CMP      R8,LR
+   \      0x1B0   0x1AFF'FFD6        BNE      ??otp_get_next_matching_packet_16
+   \      0x1B4   0xE352'0000        CMP      R2,#+0
+   \      0x1B8   0x0A00'0029        BEQ      ??otp_get_next_matching_packet_21
+   \      0x1BC   0xE3A0'A000        MOV      R10,#+0
+   \      0x1C0   0xE3A0'9000        MOV      R9,#+0
+   \      0x1C4   0xE3A0'8000        MOV      R8,#+0
+   \      0x1C8   0xE3A0'7000        MOV      R7,#+0
+   \      0x1CC   0xE882'0780        STM      R2,{R7-R10}
+   \      0x1D0   0xE20C'7007        AND      R7,R12,#0x7
+   \      0x1D4   0xE247'7001        SUB      R7,R7,#+1
+   \      0x1D8   0xE357'0005        CMP      R7,#+5
+   \      0x1DC   0x8A00'000F        BHI      ??otp_get_next_matching_packet_22
+   \      0x1E0   0xE7DF'8007        LDRB     R8,[PC, R7]
+   \      0x1E4   0xE08F'F108        ADD      PC,PC,R8, LSL #+2
+   \                     ??otp_get_next_matching_packet_1:
+   \      0x1E8   0x0B 0x09          DC8      0xB,0x9,0x7,0x5
+
+   \              0x07 0x05
+   \      0x1EC   0x03 0x01          DC8      0x3,0x1,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??otp_get_next_matching_packet_23:
+   \      0x1F0   0xE3A0'7005        MOV      R7,#+5
+   \      0x1F4   0xEA00'000A        B        ??otp_get_next_matching_packet_24
+   \                     ??otp_get_next_matching_packet_25:
+   \      0x1F8   0xE3A0'7004        MOV      R7,#+4
+   \      0x1FC   0xEA00'0008        B        ??otp_get_next_matching_packet_24
+   \                     ??otp_get_next_matching_packet_26:
+   \      0x200   0xE3A0'7003        MOV      R7,#+3
+   \      0x204   0xEA00'0006        B        ??otp_get_next_matching_packet_24
+   \                     ??otp_get_next_matching_packet_27:
+   \      0x208   0xE3A0'7002        MOV      R7,#+2
+   \      0x20C   0xEA00'0004        B        ??otp_get_next_matching_packet_24
+   \                     ??otp_get_next_matching_packet_28:
+   \      0x210   0xE3A0'7001        MOV      R7,#+1
+   \      0x214   0xEA00'0002        B        ??otp_get_next_matching_packet_24
+   \                     ??otp_get_next_matching_packet_29:
+   \      0x218   0xE3A0'7000        MOV      R7,#+0
+   \      0x21C   0xEA00'0000        B        ??otp_get_next_matching_packet_24
+   \                     ??otp_get_next_matching_packet_22:
+   \      0x220   0xE3A0'7006        MOV      R7,#+6
+   \                     ??otp_get_next_matching_packet_24:
+   \      0x224   0xE5C2'7000        STRB     R7,[R2, #+0]
+   \      0x228   0xE206'60FF        AND      R6,R6,#0xFF
+   \      0x22C   0xE286'7001        ADD      R7,R6,#+1
+   \      0x230   0xE1A0'8107        LSL      R8,R7,#+2
+   \      0x234   0xE1A0'8808        LSL      R8,R8,#+16
+   \      0x238   0xE1A0'61AC        LSR      R6,R12,#+3
+   \      0x23C   0xE20C'C030        AND      R12,R12,#0x30
+   \      0x240   0xE35C'0030        CMP      R12,#+48
+   \      0x244   0xE1A0'8828        LSR      R8,R8,#+16
+   \      0x248   0xE206'7001        AND      R7,R6,#0x1
+   \      0x24C   0x03A0'C001        MOVEQ    R12,#+1
+   \      0x250   0x13A0'C000        MOVNE    R12,#+0
+   \      0x254   0xE582'8004        STR      R8,[R2, #+4]
+   \      0x258   0xE5C2'7008        STRB     R7,[R2, #+8]
+   \      0x25C   0xE5C2'C009        STRB     R12,[R2, #+9]
+   \      0x260   0xE1C2'40BC        STRH     R4,[R2, #+12]
+   \                     ??otp_get_next_matching_packet_21:
+   \      0x264   0xE353'0000        CMP      R3,#+0
+   \      0x268   0x11C3'00B0        STRHNE   R0,[R3, #+0]
+   \      0x26C   0xE3A0'0000        MOV      R0,#+0
+   \      0x270   0xE8BD'87D0        POP      {R4,R6-R10,PC}
+    875          }
+    876          
+    877          /*!
+    878           \brief Look up the OTP for the latest packet matching the given packet header value
+    879           \param filters [IN] bitmask of packet header filters
+    880           \param match [IN] packet header value associated to filters
+    881           \result [OUT] if not NULL, the header value of the matching packet
+    882           \result [INOUT] if not NULL, the address to start the scan from and the address
+    883                           of the matching packet, if any
+    884           \return : - OTPC_NO_ERROR               - A matching packet was found
+    885                     - OTPC_ERROR_PACKET_NOT_FOUND - No matching packet was found
+    886           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    887          uint8_t otp_get_latest_matching_packet(uint32_t filters,
+    888          				       const struct otp_packet_header *match,
+    889          				       struct otp_packet_header *result,
+    890          				       uint16_t *hdr_addr)
+    891          {
+   \                     otp_get_latest_matching_packet:
+   \        0x0   0xE92D'41F8        PUSH     {R3-R8,LR}
+   \        0x4   0xE24D'D014        SUB      SP,SP,#+20
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1B0'7003        MOVS     R7,R3
+    892          	uint16_t addr = (hdr_addr) ? *hdr_addr : 0;
+   \       0x10   0x11D7'00B0        LDRHNE   R0,[R7, #+0]
+   \       0x14   0x03A0'0000        MOVEQ    R0,#+0
+   \       0x18   0xE1A0'5001        MOV      R5,R1
+   \       0x1C   0xE1A0'6002        MOV      R6,R2
+   \       0x20   0xE1CD'00B0        STRH     R0,[SP, #+0]
+    893          	struct otp_packet_header pos;
+    894          	uint8_t error = OTPC_ERROR_PACKET_NOT_FOUND;
+   \       0x24   0xE3A0'8004        MOV      R8,#+4
+   \       0x28   0xEA00'000E        B        ??otp_get_latest_matching_packet_0
+    895          
+    896          	while (!otp_get_next_matching_packet(filters, match, &pos, &addr)) {
+    897          		uint16_t size = (pos.size >> 2) - 1;
+   \                     ??otp_get_latest_matching_packet_1:
+   \       0x2C   0xE59D'1008        LDR      R1,[SP, #+8]
+   \       0x30   0xE3E0'0000        MVN      R0,#+0
+   \       0x34   0xE080'0121        ADD      R0,R0,R1, LSR #+2
+    898          
+    899          		error = OTPC_NO_ERROR;
+    900          
+    901          		if (result)
+   \       0x38   0xE356'0000        CMP      R6,#+0
+    902          			memcpy(result, &pos, sizeof(*result));
+   \       0x3C   0x128D'1004        ADDNE    R1,SP,#+4
+   \       0x40   0x1891'500C        LDMNE    R1,{R2,R3,R12,LR}
+    903          		if (hdr_addr)
+    904          			*hdr_addr = addr;
+    905          
+    906          		addr += size + 2;
+   \       0x44   0xE280'0002        ADD      R0,R0,#+2
+   \       0x48   0xE3A0'8000        MOV      R8,#+0
+   \       0x4C   0x1886'500C        STMNE    R6,{R2,R3,R12,LR}
+   \       0x50   0xE357'0000        CMP      R7,#+0
+   \       0x54   0x11DD'20B0        LDRHNE   R2,[SP, #+0]
+   \       0x58   0x11C7'20B0        STRHNE   R2,[R7, #+0]
+   \       0x5C   0xE1DD'10B0        LDRH     R1,[SP, #+0]
+   \       0x60   0xE080'0001        ADD      R0,R0,R1
+   \       0x64   0xE1CD'00B0        STRH     R0,[SP, #+0]
+    907          	}
+   \                     ??otp_get_latest_matching_packet_0:
+   \       0x68   0xE1A0'300D        MOV      R3,SP
+   \       0x6C   0xE28D'2004        ADD      R2,SP,#+4
+   \       0x70   0xE1A0'1005        MOV      R1,R5
+   \       0x74   0xE1A0'0004        MOV      R0,R4
+   \       0x78   0x....'....        BL       otp_get_next_matching_packet
+   \       0x7C   0xE350'0000        CMP      R0,#+0
+   \       0x80   0x0AFF'FFE9        BEQ      ??otp_get_latest_matching_packet_1
+    908          
+    909          	return error;
+   \       0x84   0xE1A0'0008        MOV      R0,R8
+   \       0x88   0xE28D'D018        ADD      SP,SP,#+24
+   \       0x8C   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    910          }
+    911          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    912          bool otp_can_update_payload(const void *old_payload,
+    913          			    const void *new_payload,
+    914          			    uint16_t payload_size)
+    915          {
+    916          	const uint32_t *old_word = (const uint32_t *)old_payload;
+    917          	const uint32_t *new_word = (const uint32_t *)new_payload;
+    918          	size_t size = payload_size / sizeof(uint32_t);
+   \                     otp_can_update_payload:
+   \        0x0   0xE1A0'2122        LSR      R2,R2,#+2
+   \        0x4   0xEA00'0002        B        ??otp_can_update_payload_0
+    919          
+    920          	while (size) {
+    921          		if (*old_word != 0 && *old_word != *new_word)
+    922          			return false;
+    923          
+    924          		old_word++;
+   \                     ??otp_can_update_payload_1:
+   \        0x8   0xE280'0004        ADD      R0,R0,#+4
+    925          		new_word++;
+   \        0xC   0xE281'1004        ADD      R1,R1,#+4
+    926          		size--;
+   \       0x10   0xE242'2001        SUB      R2,R2,#+1
+   \                     ??otp_can_update_payload_0:
+   \       0x14   0xE352'0000        CMP      R2,#+0
+   \       0x18   0x0A00'0007        BEQ      ??otp_can_update_payload_2
+   \       0x1C   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0x20   0xE353'0000        CMP      R3,#+0
+   \       0x24   0x0AFF'FFF7        BEQ      ??otp_can_update_payload_1
+   \       0x28   0xE591'C000        LDR      R12,[R1, #+0]
+   \       0x2C   0xE153'000C        CMP      R3,R12
+   \       0x30   0x0AFF'FFF4        BEQ      ??otp_can_update_payload_1
+   \       0x34   0xE3A0'0000        MOV      R0,#+0
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+    927          	}
+    928          
+    929          	return true;
+   \                     ??otp_can_update_payload_2:
+   \       0x3C   0xE3A0'0001        MOV      R0,#+1
+   \       0x40   0xE12F'FF1E        BX       LR
+    930          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9:
+   \        0x0   0xEFF0'001C        DC32     0xeff0001c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_1:
+   \        0x0   0x7167'0100        DC32     0x71670100
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_2:
+   \        0x0   0x7167'0001        DC32     0x71670001
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_3:
+   \        0x0   0x7167'0002        DC32     0x71670002
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_4:
+   \        0x0   0x7167'0004        DC32     0x71670004
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_5:
+   \        0x0   0x7167'8000        DC32     0x71678000
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_6:
+   \        0x0   0x7167'0010        DC32     0x71670010
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_7:
+   \        0x0   0xEFF0'0060        DC32     0xeff00060
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_8:
+   \        0x0   0xCAFE'CAFE        DC32     0xcafecafe
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   otp_can_update_payload
+       0   otp_cleanup
+       4   otp_emulation_mode
+      48   otp_get_latest_matching_packet
+        48   -> otp_get_next_matching_packet
+      28   otp_get_next_matching_packet
+       0   otp_hide_packet
+       0   otp_init
+       0   otp_invalidate_packet
+       0   otp_is_disabled
+       0   otp_is_emulation_enabled
+       8   otp_lock_packet
+         8   -> otp_trigger_packet_read
+         8   -> otp_wait_isr
+      24   otp_read_packet
+        24   -> otp_trigger_packet_read
+        24   -> otp_wait_isr
+       0   otp_trigger_packet_read
+      16   otp_update_payload
+        16   -> otp_trigger_packet_read
+        16   -> otp_wait_isr
+       0   otp_wait_isr
+      56   otp_write_packet
+        56   -> otp_invalidate_packet
+        56   -> otp_wait_isr
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable9
+       4  ??DataTable9_1
+       4  ??DataTable9_2
+       4  ??DataTable9_3
+       4  ??DataTable9_4
+       4  ??DataTable9_5
+       4  ??DataTable9_6
+       4  ??DataTable9_7
+       4  ??DataTable9_8
+      68  otp_can_update_payload
+       4  otp_cleanup
+     144  otp_emulation_mode
+     144  otp_get_latest_matching_packet
+     628  otp_get_next_matching_packet
+     112  otp_hide_packet
+       8  otp_init
+     112  otp_invalidate_packet
+      72  otp_is_disabled
+      24  otp_is_emulation_enabled
+     100  otp_lock_packet
+     300  otp_read_packet
+     108  otp_trigger_packet_read
+     188  otp_update_payload
+      48  otp_wait_isr
+     720  otp_write_packet
+
+ 
+ 2'816 bytes in section SOFTPACK
+ 
+ 2'816 bytes of CODE memory
+
+Errors: none
+Warnings: none

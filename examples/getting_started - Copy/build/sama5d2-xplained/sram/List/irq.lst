@@ -1,0 +1,591 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         15/Jul/2020  06:35:20
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\irq\irq.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWA5C0.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\irq\irq.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_TWI_FIFO -D
+#        CONFIG_HAVE_PMIC_ACT8945A -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d2-xplained\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d2-xplained\sram\List\irq.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d2-xplained\sram\Obj\irq.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\irq\irq.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "chip.h"
+     35          
+     36          #if defined(CONFIG_HAVE_AIC2) || defined(CONFIG_HAVE_AIC5)
+     37          #include "irq/aic.h"
+     38          #endif
+     39          #include "irq/irq.h"
+     40          #if defined(CONFIG_HAVE_NVIC)
+     41          #include "irq/nvic.h"
+     42          #endif
+     43          
+     44          #include <assert.h>
+     45          
+     46          /*------------------------------------------------------------------------------
+     47           *         Local types
+     48           *------------------------------------------------------------------------------*/
+     49          
+     50          struct handler_entry {
+     51          	irq_handler_t handler;
+     52          	void* user_arg;
+     53          	struct handler_entry* next;
+     54          };
+     55          
+     56          /*------------------------------------------------------------------------------
+     57           *         Local variables
+     58           *------------------------------------------------------------------------------*/
+     59          
+
+   \                                 In section .bss, align 4
+     60          static struct handler_entry  handlers_pool[ID_PERIPH_COUNT * 2];
+   \                     handlers_pool:
+   \        0x0                      DS8 1'896
+   \      0x768                      DS8 4
+   \      0x76C                      DS8 316
+     61          static struct handler_entry* next_free_handler;
+     62          static struct handler_entry* handlers[ID_PERIPH_COUNT];
+     63          
+     64          /*------------------------------------------------------------------------------
+     65           *         Local functions
+     66           *------------------------------------------------------------------------------*/
+     67          
+     68          static void _initialize_handlers_pool(void)
+     69          {
+     70          	int i;
+     71          
+     72          	for (i = 0; i < ARRAY_SIZE(handlers_pool); i++) {
+     73          		handlers_pool[i].handler = NULL;
+     74          		handlers_pool[i].next = &handlers_pool[i + 1];
+     75          	}
+     76          	handlers_pool[i - 1].next = NULL;
+     77          
+     78          	next_free_handler = &handlers_pool[0];
+     79          }
+     80          
+     81          static struct handler_entry* _alloc_handler(void)
+     82          {
+     83          	struct handler_entry* entry;
+     84          
+     85          	assert(next_free_handler);
+     86          
+     87          	entry = next_free_handler;
+     88          	next_free_handler = next_free_handler->next;
+     89          	entry->handler = NULL;
+     90          	entry->user_arg = NULL;
+     91          	entry->next = NULL;
+     92          	return entry;
+     93          }
+     94          
+     95          static void _free_handler(struct handler_entry* entry)
+     96          {
+     97          	entry->handler = NULL;
+     98          	entry->next = next_free_handler;
+     99          	next_free_handler = entry;
+    100          }
+    101          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    102          static void _default_irq_handler(void)
+    103          {
+   \                     _default_irq_handler:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    104          	uint32_t source;
+    105          	struct handler_entry *entry;
+    106          
+    107          #if defined(CONFIG_HAVE_AIC2) || defined(CONFIG_HAVE_AIC5)
+    108          	source = aic_get_current_interrupt_source();
+   \        0x4   0x....'....        BL       aic_get_current_interrupt_source
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    109          #elif defined(CONFIG_HAVE_NVIC)
+    110          	source = nvic_get_current_interrupt_source();
+    111          #else
+    112          #error Unknown IRQ controller!
+    113          #endif
+    114          
+    115          	entry = handlers[source];
+   \        0xC   0x....'....        LDR      R0,??DataTable4
+   \       0x10   0xE080'1104        ADD      R1,R0,R4, LSL #+2
+   \       0x14   0xE591'576C        LDR      R5,[R1, #+1900]
+    116          	if (!entry) {
+   \       0x18   0xE355'0000        CMP      R5,#+0
+   \       0x1C   0x1A00'0000        BNE      ??_default_irq_handler_0
+    117          		// no handler for interrupt, block
+    118          		while (1);
+   \                     ??_default_irq_handler_1:
+   \       0x20   0xEAFF'FFFE        B        ??_default_irq_handler_1
+    119          	}
+    120          
+    121          	while (entry) {
+    122          		if (entry->handler)
+   \                     ??_default_irq_handler_0:
+   \       0x24   0xE595'2000        LDR      R2,[R5, #+0]
+   \       0x28   0xE352'0000        CMP      R2,#+0
+   \       0x2C   0x0A00'0002        BEQ      ??_default_irq_handler_2
+    123          			entry->handler(source, entry->user_arg);
+   \       0x30   0xE595'1004        LDR      R1,[R5, #+4]
+   \       0x34   0xE1A0'0004        MOV      R0,R4
+   \       0x38   0xE12F'FF32        BLX      R2
+    124          		entry = entry->next;
+   \                     ??_default_irq_handler_2:
+   \       0x3C   0xE595'5008        LDR      R5,[R5, #+8]
+    125          	}
+   \       0x40   0xE355'0000        CMP      R5,#+0
+   \       0x44   0x1AFF'FFF6        BNE      ??_default_irq_handler_0
+    126          }
+   \       0x48   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    127          
+    128          /*----------------------------------------------------------------------------
+    129           *        Public functions
+    130           *----------------------------------------------------------------------------*/
+    131          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    132          void irq_initialize(void)
+    133          {
+   \                     irq_initialize:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    134          	_initialize_handlers_pool();
+   \        0x4   0x....'....        LDR      R1,??DataTable4
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0xE1A0'2001        MOV      R2,R1
+   \       0x10   0xE3A0'3000        MOV      R3,#+0
+   \                     ??irq_initialize_0:
+   \       0x14   0xE280'0002        ADD      R0,R0,#+2
+   \       0x18   0xE582'3000        STR      R3,[R2, #+0]
+   \       0x1C   0xE282'C00C        ADD      R12,R2,#+12
+   \       0x20   0xE282'E018        ADD      LR,R2,#+24
+   \       0x24   0xE350'009E        CMP      R0,#+158
+   \       0x28   0xE582'C008        STR      R12,[R2, #+8]
+   \       0x2C   0xE582'300C        STR      R3,[R2, #+12]
+   \       0x30   0xE582'E014        STR      LR,[R2, #+20]
+   \       0x34   0xE282'2018        ADD      R2,R2,#+24
+   \       0x38   0x3AFF'FFF5        BCC      ??irq_initialize_0
+   \       0x3C   0xE080'2080        ADD      R2,R0,R0, LSL #+1
+   \       0x40   0xE081'0102        ADD      R0,R1,R2, LSL #+2
+   \       0x44   0xE500'3004        STR      R3,[R0, #-4]
+   \       0x48   0xE581'1768        STR      R1,[R1, #+1896]
+    135          
+    136          #if defined(CONFIG_HAVE_AIC2) || defined(CONFIG_HAVE_AIC5)
+    137          	aic_initialize(_default_irq_handler);
+   \       0x4C   0xE8BD'4002        POP      {R1,LR}
+   \       0x50   0x....'....        ADR      R0,_default_irq_handler
+   \       0x54   0x....'....        B        aic_initialize   ;; tailcall
+    138          #elif defined(CONFIG_HAVE_NVIC)
+    139          	nvic_initialize(_default_irq_handler);
+    140          #else
+    141          #error Unknown IRQ controller!
+    142          #endif
+    143          }
+    144          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    145          void irq_configure_mode(uint32_t source, enum _irq_mode mode)
+    146          {
+    147          #if defined(CONFIG_HAVE_AIC2) || defined(CONFIG_HAVE_AIC5)
+    148          	aic_configure_mode(source, mode);
+   \                     irq_configure_mode:
+   \        0x0   0x....'....        B        aic_configure_mode  ;; tailcall
+    149          #elif defined(CONFIG_HAVE_NVIC)
+    150          	// ignored, not implemented on NVIC
+    151          #else
+    152          #error Unknown IRQ controller!
+    153          #endif
+    154          }
+    155          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    156          void irq_configure_priority(uint32_t source, uint8_t priority)
+    157          {
+    158          #if defined(CONFIG_HAVE_AIC2) || defined(CONFIG_HAVE_AIC5)
+    159          	aic_configure_priority(source, priority);
+   \                     irq_configure_priority:
+   \        0x0   0x....'....        B        aic_configure_priority  ;; tailcall
+    160          #elif defined(CONFIG_HAVE_NVIC)
+    161          	nvic_configure_priority(source, priority);
+    162          #else
+    163          #error Unknown IRQ controller!
+    164          #endif
+    165          }
+    166          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    167          void irq_add_handler(uint32_t source, irq_handler_t handler, void* user_arg)
+    168          {
+   \                     irq_add_handler:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+    169          	struct handler_entry* entry;
+    170          
+    171          	/* check if handler is already registered */
+    172          	entry = handlers[source];
+   \        0x4   0x....'....        LDR      R6,??DataTable4
+   \        0x8   0xE086'7100        ADD      R7,R6,R0, LSL #+2
+   \        0xC   0xE1A0'4001        MOV      R4,R1
+   \       0x10   0xE1A0'5002        MOV      R5,R2
+   \       0x14   0xE597'076C        LDR      R0,[R7, #+1900]
+   \       0x18   0xEA00'0000        B        ??irq_add_handler_0
+    173          	while (entry) {
+    174          		if (entry->handler == handler) {
+    175          			entry->user_arg = user_arg;
+    176          			return;
+    177          		}
+    178          		entry = entry->next;
+   \                     ??irq_add_handler_1:
+   \       0x1C   0xE590'0008        LDR      R0,[R0, #+8]
+   \                     ??irq_add_handler_0:
+   \       0x20   0xE350'0000        CMP      R0,#+0
+   \       0x24   0x0A00'0004        BEQ      ??irq_add_handler_2
+   \       0x28   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x2C   0xE151'0004        CMP      R1,R4
+   \       0x30   0x1AFF'FFF9        BNE      ??irq_add_handler_1
+   \       0x34   0xE580'5004        STR      R5,[R0, #+4]
+   \       0x38   0xE8BD'80F1        POP      {R0,R4-R7,PC}
+    179          	}
+    180          
+    181          	/* add handler to linked list */
+    182          	entry = _alloc_handler();
+   \                     ??irq_add_handler_2:
+   \       0x3C   0xE596'0768        LDR      R0,[R6, #+1896]
+   \       0x40   0xE350'0000        CMP      R0,#+0
+   \       0x44   0x1A00'0004        BNE      ??irq_add_handler_3
+   \       0x48   0xE3A0'2055        MOV      R2,#+85
+   \       0x4C   0x....'....        LDR      R1,??DataTable4_1
+   \       0x50   0x....'....        ADR      R0,?_1
+   \       0x54   0x....'....        BL       __aeabi_assert
+   \       0x58   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??irq_add_handler_3:
+   \       0x5C   0xE596'0768        LDR      R0,[R6, #+1896]
+   \       0x60   0xE590'1008        LDR      R1,[R0, #+8]
+   \       0x64   0xE586'1768        STR      R1,[R6, #+1896]
+   \       0x68   0xE3A0'1000        MOV      R1,#+0
+   \       0x6C   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x70   0xE580'1004        STR      R1,[R0, #+4]
+   \       0x74   0xE580'1008        STR      R1,[R0, #+8]
+    183          	entry->handler = handler;
+   \       0x78   0xE580'4000        STR      R4,[R0, #+0]
+    184          	entry->user_arg = user_arg;
+   \       0x7C   0xE580'5004        STR      R5,[R0, #+4]
+    185          	entry->next = handlers[source];
+   \       0x80   0xE597'176C        LDR      R1,[R7, #+1900]
+   \       0x84   0xE580'1008        STR      R1,[R0, #+8]
+    186          	handlers[source] = entry;
+   \       0x88   0xE587'076C        STR      R0,[R7, #+1900]
+    187          }
+   \       0x8C   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    188          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    189          void irq_remove_handler(uint32_t source, irq_handler_t handler)
+    190          {
+    191          	struct handler_entry* prev;
+    192          	struct handler_entry* cur;
+    193          
+    194          	/* remove handler from linked list */
+    195          	prev = NULL;
+    196          	cur = handlers[source];
+   \                     irq_remove_handler:
+   \        0x0   0x....'....        LDR      R2,??DataTable4
+   \        0x4   0xE082'0100        ADD      R0,R2,R0, LSL #+2
+   \        0x8   0xE92D'4000        PUSH     {LR}
+   \        0xC   0xE590'076C        LDR      R0,[R0, #+1900]
+   \       0x10   0xEA00'0000        B        ??irq_remove_handler_0
+    197          	while (cur) {
+    198          		if (cur->handler == handler) {
+    199          			if (prev)
+    200          				prev->next = cur->next;
+    201          			_free_handler(cur);
+    202          			return;
+    203          		}
+    204          		cur = cur->next;
+   \                     ??irq_remove_handler_1:
+   \       0x14   0xE590'0008        LDR      R0,[R0, #+8]
+   \                     ??irq_remove_handler_0:
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x0A00'0007        BEQ      ??irq_remove_handler_2
+   \       0x20   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0x24   0xE153'0001        CMP      R3,R1
+   \       0x28   0x1AFF'FFF9        BNE      ??irq_remove_handler_1
+   \       0x2C   0xE3A0'1000        MOV      R1,#+0
+   \       0x30   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x34   0xE592'E768        LDR      LR,[R2, #+1896]
+   \       0x38   0xE580'E008        STR      LR,[R0, #+8]
+   \       0x3C   0xE582'0768        STR      R0,[R2, #+1896]
+   \                     ??irq_remove_handler_2:
+   \       0x40   0xE8BD'8000        POP      {PC}             ;; return
+    205          	}
+    206          }
+    207          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    208          void irq_enable(uint32_t source)
+    209          {
+    210          #if defined(CONFIG_HAVE_AIC2) || defined(CONFIG_HAVE_AIC5)
+    211          	aic_enable(source);
+   \                     irq_enable:
+   \        0x0   0x....'....        B        aic_enable       ;; tailcall
+    212          #elif defined(CONFIG_HAVE_NVIC)
+    213          	nvic_enable(source);
+    214          #else
+    215          #error Unknown IRQ controller!
+    216          #endif
+    217          }
+    218          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    219          void irq_disable(uint32_t source)
+    220          {
+    221          #if defined(CONFIG_HAVE_AIC2) || defined(CONFIG_HAVE_AIC5)
+    222          	aic_disable(source);
+   \                     irq_disable:
+   \        0x0   0x....'....        B        aic_disable      ;; tailcall
+    223          #elif defined(CONFIG_HAVE_NVIC)
+    224          	nvic_disable(source);
+    225          #else
+    226          #error Unknown IRQ controller!
+    227          #endif
+    228          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4:
+   \        0x0   0x....'....        DC32     handlers_pool
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x69, 0x72, 0x71, 0x5C, 0x69, 0x72
+
+   \              0x69 0x72    
+
+   \              0x71 0x5C    
+
+   \              0x69 0x72
+   \       0x40   0x71 0x2E          DC8 0x71, 0x2E, 0x63, 0
+
+   \              0x63 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x6E 0x65          DC8 "next_free_handler"
+
+   \              0x78 0x74    
+
+   \              0x5F 0x66    
+
+   \              0x72 0x65    
+
+   \              0x65 0x5F    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x64    
+
+   \              0x6C 0x65    
+
+   \              0x72 0x00
+   \       0x12   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   _default_irq_handler
+        16   -- Indirect call
+        16   -> aic_get_current_interrupt_source
+      24   irq_add_handler
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+       0   irq_configure_mode
+         0   -> aic_configure_mode
+       0   irq_configure_priority
+         0   -> aic_configure_priority
+       0   irq_disable
+         0   -> aic_disable
+       0   irq_enable
+         0   -> aic_enable
+       8   irq_initialize
+         0   -> aic_initialize
+       4   irq_remove_handler
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+      68  ?_0
+      20  ?_1
+      76  _default_irq_handler
+   2'216  handlers_pool
+          next_free_handler
+          handlers
+     144  irq_add_handler
+       4  irq_configure_mode
+       4  irq_configure_priority
+       4  irq_disable
+       4  irq_enable
+      88  irq_initialize
+      68  irq_remove_handler
+
+ 
+ 2'216 bytes in section .bss
+    68 bytes in section .rodata
+   420 bytes in section SOFTPACK
+ 
+   420 bytes of CODE  memory
+    68 bytes of CONST memory
+ 2'216 bytes of DATA  memory
+
+Errors: none
+Warnings: none

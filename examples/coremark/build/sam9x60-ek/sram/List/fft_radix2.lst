@@ -1,0 +1,1517 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Apr/2020  10:56:59
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\fft_radix2.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW946C.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\fft_radix2.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\lib\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\List\fft_radix2.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\Obj\fft_radix2.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#      __iar_require _Printf      =  flags,floats,int_specials,widths
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\fft_radix2.c
+      1          /*
+      2          (C) 2014 EEMBC(R).  All rights reserved.                            
+      3          
+      4          All EEMBC Benchmark Software are products of EEMBC 
+      5          and are provided under the terms of the EEMBC Benchmark License Agreements.  
+      6          The EEMBC Benchmark Software are proprietary intellectual properties of EEMBC and its Members 
+      7          and is protected under all applicable laws, including all applicable copyright laws.  
+      8          If you received this EEMBC Benchmark Software without having 
+      9          a currently effective EEMBC Benchmark License Agreement, you must discontinue use. 
+     10          Please refer to LICENSE.md for the specific license agreement that pertains to this Benchmark Software.
+     11          */
+     12          
+     13          /*************************
+     14          ** FFT radix 2 **
+     15          ** Perform FFT with radix2.
+     16          *************************/
+     17          //#include "th_cfg.h"
+     18          #include <math.h> /* for sin, cos and pow */
+     19          #include <stdlib.h>
+     20          #include <string.h>
+     21          #include "th_rand.h" /* initialize a random data vector */
+     22          #include "fft_radix2.h"
+     23          #include <stdio.h>
+     24          
+     25          
+     26          #define EE_MININI (1.0e38)
+     27          #define EE_MAXINI (-1.0e38)
+     28          #define EE_EPSINI (1.0e-37)
+     29          #define EE_EPSILON EE_EPSINI
+     30          #define BMDEBUG (0)
+     31          
+     32          //PT: 4/4/2016: w/g decision (undoes th_lib.h for radix only)
+     33          #undef  MIN_ACC_BITS_FP64    
+     34          #define MIN_ACC_BITS_FP64 25
+     35          
+     36          #define EE_PI 3.1415926535897932
+     37          #define MIN_ACC_BITS_FP32 14
+     38          
+     39          #if !defined(ALIGN_BOUNDARY)
+     40          #define ALIGN_BOUNDARY 64
+     41          #endif
+
+   \                                 In section .bss, align 4
+     42          radix2_params presets_radix2[NUM_DATAS];
+   \                     presets_radix2:
+   \        0x0                      DS8 384
+     43          extern void init_preset_0();
+     44          /* ======================================================================== */
+     45          /*         F U N C T I O N   P R O T O T Y P E S                            */
+     46          /* ======================================================================== */
+     47          /* file provides :
+     48          define - init base input params (segment [within 0..2 boundary], number of coefficients to calculate, number of integration steps)
+     49          init -  allocate working memory, assign a[0] and b[0] . 
+     50          run - calculate N coefficients in the segment
+     51          fini - calculate avg of coeffients then dealloc working memory
+     52          verify - SNR average of coefficients vs golden reference, must run at least base iterations for valid output.
+     53          clean - deallocate output memory
+     54          */
+     55          
+     56          
+     57          
+     58          
+     59          /* benchmark function declarations */
+     60          static void FFT_transform_internal (int N, float * data, int direction, float *twp);
+     61          static void FFT_bitreverse(int N, float * data);
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     62          static int int_log2 (int n)
+     63          {
+   \                     int_log2:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+     64              int k = 1;
+   \        0x8   0xE3A0'5001        MOV      R5,#+1
+     65              int log = 0;
+   \        0xC   0xE3A0'6000        MOV      R6,#+0
+     66              for(/*k=1*/; k < n; k *= 2, log++);
+   \                     ??int_log2_0:
+   \       0x10   0xE155'0004        CMP      R5,R4
+   \       0x14   0xAA00'0002        BGE      ??int_log2_1
+   \       0x18   0xE1B0'5085        LSLS     R5,R5,#+1
+   \       0x1C   0xE296'6001        ADDS     R6,R6,#+1
+   \       0x20   0xEAFF'FFFA        B        ??int_log2_0
+     67              if (n != (1 << log))
+   \                     ??int_log2_1:
+   \       0x24   0xE3A0'0001        MOV      R0,#+1
+   \       0x28   0xE154'0610        CMP      R4,R0, LSL R6
+   \       0x2C   0x0A00'0002        BEQ      ??int_log2_2
+     68                printf("ERROR: FFT radix2, Data length is not a power of 2! [%d]\n",n);
+   \       0x30   0xE1B0'1004        MOVS     R1,R4
+   \       0x34   0x....'....        LDR      R0,??DataTable5
+   \       0x38   0x....'....        BL       printf
+     69              return log; 
+   \                     ??int_log2_2:
+   \       0x3C   0xE1B0'0006        MOVS     R0,R6
+   \       0x40   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+     70          }
+     71          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     72          static float *calculate_twiddles(int size, int direction) {
+   \                     calculate_twiddles:
+   \        0x0   0xE92D'4FF3        PUSH     {R0,R1,R4-R11,LR}
+   \        0x4   0xE24D'D01C        SUB      SP,SP,#+28
+     73              int n=0,a;
+   \        0x8   0xE3A0'7000        MOV      R7,#+0
+     74              float *twp=NULL;
+   \        0xC   0xE3A0'6000        MOV      R6,#+0
+     75              int bit = 0;
+   \       0x10   0xE3A0'5000        MOV      R5,#+0
+     76              int logn;
+     77              int dual = 1;
+   \       0x14   0xE3A0'A001        MOV      R10,#+1
+     78          	
+     79              if (size == 1) return twp;         
+   \       0x18   0xE59D'001C        LDR      R0,[SP, #+28]
+   \       0x1C   0xE350'0001        CMP      R0,#+1
+   \       0x20   0x1A00'0001        BNE      ??calculate_twiddles_0
+   \       0x24   0xE1B0'0006        MOVS     R0,R6
+   \       0x28   0xEA00'0080        B        ??calculate_twiddles_1
+     80              logn = int_log2(size/2);
+   \                     ??calculate_twiddles_0:
+   \       0x2C   0xE59D'001C        LDR      R0,[SP, #+28]
+   \       0x30   0xE3A0'1002        MOV      R1,#+2
+   \       0x34   0x....'....        BL       __aeabi_idiv
+   \       0x38   0x....'....        BL       int_log2
+   \       0x3C   0xE58D'0014        STR      R0,[SP, #+20]
+     81          	
+     82              for (bit = 0; bit < logn; bit++, dual *= 2) 
+   \       0x40   0xE3A0'8000        MOV      R8,#+0
+   \                     ??calculate_twiddles_2:
+   \       0x44   0xE59D'0014        LDR      R0,[SP, #+20]
+   \       0x48   0xE158'0000        CMP      R8,R0
+   \       0x4C   0xAA00'0009        BGE      ??calculate_twiddles_3
+     83                for (a = 1; a < dual; a++) 
+   \       0x50   0xE3A0'0001        MOV      R0,#+1
+   \       0x54   0xE1B0'4000        MOVS     R4,R0
+   \                     ??calculate_twiddles_4:
+   \       0x58   0xE154'000A        CMP      R4,R10
+   \       0x5C   0xAA00'0002        BGE      ??calculate_twiddles_5
+     84          	    n++;
+   \       0x60   0xE297'7001        ADDS     R7,R7,#+1
+   \       0x64   0xE294'4001        ADDS     R4,R4,#+1
+   \       0x68   0xEAFF'FFFA        B        ??calculate_twiddles_4
+   \                     ??calculate_twiddles_5:
+   \       0x6C   0xE298'8001        ADDS     R8,R8,#+1
+   \       0x70   0xE1B0'A08A        LSLS     R10,R10,#+1
+   \       0x74   0xEAFF'FFF2        B        ??calculate_twiddles_2
+     85          	twp=(float *)malloc(sizeof(float)*2*n);
+   \                     ??calculate_twiddles_3:
+   \       0x78   0xE1B0'0187        LSLS     R0,R7,#+3
+   \       0x7C   0x....'....        BL       malloc
+   \       0x80   0xE58D'0008        STR      R0,[SP, #+8]
+     86          	n=0;
+   \       0x84   0xE3A0'5000        MOV      R5,#+0
+     87          	bit=0;
+   \       0x88   0xE3A0'0000        MOV      R0,#+0
+     88          	dual=1;
+   \       0x8C   0xE3A0'9001        MOV      R9,#+1
+     89              for (bit = 0; bit < logn; bit++, dual *= 2) {
+   \       0x90   0xE3A0'1000        MOV      R1,#+0
+   \       0x94   0xE58D'1004        STR      R1,[SP, #+4]
+   \                     ??calculate_twiddles_6:
+   \       0x98   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x9C   0xE59D'1014        LDR      R1,[SP, #+20]
+   \       0xA0   0xE150'0001        CMP      R0,R1
+   \       0xA4   0xAA00'0060        BGE      ??calculate_twiddles_7
+     90          		float w_real = (1.0);
+   \       0xA8   0xE3A0'65FE        MOV      R6,#+1065353216
+     91          		float w_imag = (0.0);
+   \       0xAC   0xE3A0'7000        MOV      R7,#+0
+     92          
+     93          		float theta = (2.0) * direction * EE_PI / ((2.0) * (float) dual);
+   \       0xB0   0xE59D'0020        LDR      R0,[SP, #+32]
+   \       0xB4   0x....'....        BL       __aeabi_i2d
+   \       0xB8   0xE3A0'2000        MOV      R2,#+0
+   \       0xBC   0xE3A0'3440        MOV      R3,#+1073741824
+   \       0xC0   0x....'....        BL       __aeabi_dmul
+   \       0xC4   0x....'....        ADR      R2,??DataTable3
+   \       0xC8   0xE892'000C        LDM      R2,{R2,R3}
+   \       0xCC   0x....'....        BL       __aeabi_dmul
+   \       0xD0   0xE1A0'A000        MOV      R10,R0
+   \       0xD4   0xE1A0'B001        MOV      R11,R1
+   \       0xD8   0xE1B0'0009        MOVS     R0,R9
+   \       0xDC   0x....'....        BL       __aeabi_i2f
+   \       0xE0   0x....'....        BL       __aeabi_f2d
+   \       0xE4   0xE3A0'2000        MOV      R2,#+0
+   \       0xE8   0xE3A0'3440        MOV      R3,#+1073741824
+   \       0xEC   0x....'....        BL       __aeabi_dmul
+   \       0xF0   0xE1A0'2000        MOV      R2,R0
+   \       0xF4   0xE1A0'3001        MOV      R3,R1
+   \       0xF8   0xE1A0'000A        MOV      R0,R10
+   \       0xFC   0xE1A0'100B        MOV      R1,R11
+   \      0x100   0x....'....        BL       __aeabi_ddiv
+   \      0x104   0x....'....        BL       __aeabi_d2f
+   \      0x108   0xE58D'0010        STR      R0,[SP, #+16]
+     94          		float s = sinf(theta);
+   \      0x10C   0xE59D'0010        LDR      R0,[SP, #+16]
+   \      0x110   0x....'....        BL       sinf
+   \      0x114   0xE1B0'8000        MOVS     R8,R0
+     95          		float t = sinf(theta / (2.0));
+   \      0x118   0xE59D'0010        LDR      R0,[SP, #+16]
+   \      0x11C   0x....'....        BL       __aeabi_f2d
+   \      0x120   0xE3A0'2000        MOV      R2,#+0
+   \      0x124   0xE3A0'3440        MOV      R3,#+1073741824
+   \      0x128   0x....'....        BL       __aeabi_ddiv
+   \      0x12C   0x....'....        BL       __aeabi_d2f
+   \      0x130   0x....'....        BL       sinf
+   \      0x134   0xE58D'000C        STR      R0,[SP, #+12]
+     96          		float s2 = (2.0) * t * t;
+   \      0x138   0xE59D'000C        LDR      R0,[SP, #+12]
+   \      0x13C   0x....'....        BL       __aeabi_f2d
+   \      0x140   0xE3A0'2000        MOV      R2,#+0
+   \      0x144   0xE3A0'3440        MOV      R3,#+1073741824
+   \      0x148   0x....'....        BL       __aeabi_dmul
+   \      0x14C   0xE1A0'A000        MOV      R10,R0
+   \      0x150   0xE1A0'B001        MOV      R11,R1
+   \      0x154   0xE59D'000C        LDR      R0,[SP, #+12]
+   \      0x158   0x....'....        BL       __aeabi_f2d
+   \      0x15C   0xE1A0'200A        MOV      R2,R10
+   \      0x160   0xE1A0'300B        MOV      R3,R11
+   \      0x164   0x....'....        BL       __aeabi_dmul
+   \      0x168   0x....'....        BL       __aeabi_d2f
+   \      0x16C   0xE1B0'A000        MOVS     R10,R0
+     97          
+     98          		for (a = 1; a < dual; a++) {
+   \      0x170   0xE3A0'0001        MOV      R0,#+1
+   \      0x174   0xE1B0'4000        MOVS     R4,R0
+   \                     ??calculate_twiddles_8:
+   \      0x178   0xE154'0009        CMP      R4,R9
+   \      0x17C   0xAA00'0025        BGE      ??calculate_twiddles_9
+     99          			float tmp_real = w_real - s * w_imag - s2 * w_real;
+   \      0x180   0xE1B0'0008        MOVS     R0,R8
+   \      0x184   0xE1B0'1007        MOVS     R1,R7
+   \      0x188   0x....'....        BL       __aeabi_fmul
+   \      0x18C   0xE1B0'1000        MOVS     R1,R0
+   \      0x190   0xE1B0'0006        MOVS     R0,R6
+   \      0x194   0x....'....        BL       __aeabi_fsub
+   \      0x198   0xE1B0'B000        MOVS     R11,R0
+   \      0x19C   0xE1B0'000A        MOVS     R0,R10
+   \      0x1A0   0xE1B0'1006        MOVS     R1,R6
+   \      0x1A4   0x....'....        BL       __aeabi_fmul
+   \      0x1A8   0xE1B0'1000        MOVS     R1,R0
+   \      0x1AC   0xE1B0'000B        MOVS     R0,R11
+   \      0x1B0   0x....'....        BL       __aeabi_fsub
+   \      0x1B4   0xE1B0'B000        MOVS     R11,R0
+    100          			float tmp_imag = w_imag + s * w_real - s2 * w_imag;
+   \      0x1B8   0xE1B0'0008        MOVS     R0,R8
+   \      0x1BC   0xE1B0'1006        MOVS     R1,R6
+   \      0x1C0   0x....'....        BL       __aeabi_fmul
+   \      0x1C4   0xE1B0'1007        MOVS     R1,R7
+   \      0x1C8   0x....'....        BL       __aeabi_fadd
+   \      0x1CC   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x1D0   0xE1B0'000A        MOVS     R0,R10
+   \      0x1D4   0xE1B0'1007        MOVS     R1,R7
+   \      0x1D8   0x....'....        BL       __aeabi_fmul
+   \      0x1DC   0xE1B0'1000        MOVS     R1,R0
+   \      0x1E0   0xE59D'0000        LDR      R0,[SP, #+0]
+   \      0x1E4   0x....'....        BL       __aeabi_fsub
+    101          			w_real = tmp_real;
+   \      0x1E8   0xE1B0'600B        MOVS     R6,R11
+    102          			w_imag = tmp_imag;
+   \      0x1EC   0xE1B0'7000        MOVS     R7,R0
+    103          			twp[n++] = w_real;
+   \      0x1F0   0xE59D'1008        LDR      R1,[SP, #+8]
+   \      0x1F4   0xE1B0'2105        LSLS     R2,R5,#+2
+   \      0x1F8   0xE781'6002        STR      R6,[R1, +R2]
+   \      0x1FC   0xE295'1001        ADDS     R1,R5,#+1
+    104          			twp[n++] = w_imag;
+   \      0x200   0xE59D'2008        LDR      R2,[SP, #+8]
+   \      0x204   0xE1B0'3101        LSLS     R3,R1,#+2
+   \      0x208   0xE782'7003        STR      R7,[R2, +R3]
+   \      0x20C   0xE291'5001        ADDS     R5,R1,#+1
+    105          		}
+   \      0x210   0xE294'4001        ADDS     R4,R4,#+1
+   \      0x214   0xEAFF'FFD7        B        ??calculate_twiddles_8
+    106          	}
+   \                     ??calculate_twiddles_9:
+   \      0x218   0xE59D'1004        LDR      R1,[SP, #+4]
+   \      0x21C   0xE291'1001        ADDS     R1,R1,#+1
+   \      0x220   0xE58D'1004        STR      R1,[SP, #+4]
+   \      0x224   0xE1B0'9089        LSLS     R9,R9,#+1
+   \      0x228   0xEAFF'FF9A        B        ??calculate_twiddles_6
+    107          	return twp;
+   \                     ??calculate_twiddles_7:
+   \      0x22C   0xE59D'0008        LDR      R0,[SP, #+8]
+   \                     ??calculate_twiddles_1:
+   \      0x230   0xE28D'D024        ADD      SP,SP,#+36
+   \      0x234   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    108          }
+
+   \                                 In section .data, align 4
+    109          intparts intparts_zero={0,1,0,0};
+   \                     intparts_zero:
+   \        0x0   0x00 0x00          DC8 0, 0
+   \        0x2   0x0001             DC16 1
+   \        0x4   0x0000'0000        DC32 0, 0
+
+   \              0x0000'0000
+    110          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    111          void *define_params_radix2() {
+   \                     define_params_radix2:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    112              radix2_params *params;
+    113              int32_t data_index=0;
+   \        0x4   0xE3A0'4000        MOV      R4,#+0
+    114              init_preset_0();
+   \        0x8   0x....'....        BL       init_preset_0
+    115              //init_preset_1();
+    116              //init_preset_2();
+    117              //init_preset_3();
+    118              //init_preset_4();
+    119              //init_preset_5();	
+    120          
+    121          	/* parameter setup */
+    122          	params=(radix2_params *)calloc(1,sizeof(radix2_params));
+   \        0xC   0xE3A0'1040        MOV      R1,#+64
+   \       0x10   0xE3A0'0001        MOV      R0,#+1
+   \       0x14   0x....'....        BL       calloc
+   \       0x18   0xE1B0'5000        MOVS     R5,R0
+    123          	if ( params == NULL ){
+   \       0x1C   0xE355'0000        CMP      R5,#+0
+   \       0x20   0x1A00'0005        BNE      ??define_params_radix2_0
+    124                    printf( "Cannot Allocate Memory %s:%d", __FILE__,__LINE__ );
+   \       0x24   0xE3A0'207C        MOV      R2,#+124
+   \       0x28   0x....'....        LDR      R1,??DataTable5_1
+   \       0x2C   0x....'....        LDR      R0,??DataTable5_2
+   \       0x30   0x....'....        BL       printf
+    125                    return 0;
+   \       0x34   0xE3A0'0000        MOV      R0,#+0
+   \       0x38   0xEA00'003D        B        ??define_params_radix2_1
+    126                  }
+    127          	params->N=256; /* default */
+   \                     ??define_params_radix2_0:
+   \       0x3C   0xE3A0'0F40        MOV      R0,#+256
+   \       0x40   0xE585'0008        STR      R0,[R5, #+8]
+    128          	params->gen_ref=0;
+   \       0x44   0xE3A0'0000        MOV      R0,#+0
+   \       0x48   0xE585'000C        STR      R0,[R5, #+12]
+    129          	params->ref_min=intparts_zero;
+   \       0x4C   0x....'....        LDR      R1,??DataTable5_3
+   \       0x50   0xE295'2014        ADDS     R2,R5,#+20
+   \       0x54   0xE891'5008        LDM      R1,{R3,R12,LR}
+   \       0x58   0xE882'5008        STM      R2,{R3,R12,LR}
+    130          	params->ref_max=intparts_zero;
+   \       0x5C   0xE295'2020        ADDS     R2,R5,#+32
+   \       0x60   0xE891'5008        LDM      R1,{R3,R12,LR}
+   \       0x64   0xE882'5008        STM      R2,{R3,R12,LR}
+    131          	params->ref_avg=intparts_zero;
+   \       0x68   0xE295'202C        ADDS     R2,R5,#+44
+   \       0x6C   0xE891'5008        LDM      R1,{R3,R12,LR}
+   \       0x70   0xE882'5008        STM      R2,{R3,R12,LR}
+    132          	params->ref_data=NULL;
+   \       0x74   0xE585'0010        STR      R0,[R5, #+16]
+    133          	params->seed=0;
+   \       0x78   0xE585'003C        STR      R0,[R5, #+60]
+    134          	params->minbits=MIN_ACC_BITS_FP32;
+   \       0x7C   0xE3A0'000E        MOV      R0,#+14
+   \       0x80   0xE585'0038        STR      R0,[R5, #+56]
+    135          
+    136          	//th_parse_buf_flag(dataset,"-i",&data_index);
+    137          	//if (pgo_training_run!=0) {
+    138          	//	data_index=0; 
+    139          	//}
+    140          	/* preset datasets */
+    141          	if ((data_index>=0) && (data_index<NUM_DATAS)) {
+   \       0x84   0xE354'0000        CMP      R4,#+0
+   \       0x88   0x4A00'0020        BMI      ??define_params_radix2_2
+   \       0x8C   0xE354'0006        CMP      R4,#+6
+   \       0x90   0xAA00'001E        BGE      ??define_params_radix2_2
+    142          		params->N=presets_radix2[data_index].N; /* default */
+   \       0x94   0x....'....        LDR      R0,??DataTable5_4
+   \       0x98   0xE1B0'1304        LSLS     R1,R4,#+6
+   \       0x9C   0xE090'1001        ADDS     R1,R0,R1
+   \       0xA0   0xE591'1008        LDR      R1,[R1, #+8]
+   \       0xA4   0xE585'1008        STR      R1,[R5, #+8]
+    143          		params->ref_min=presets_radix2[data_index].ref_min;
+   \       0xA8   0xE295'1014        ADDS     R1,R5,#+20
+   \       0xAC   0xE1B0'2304        LSLS     R2,R4,#+6
+   \       0xB0   0xE090'2002        ADDS     R2,R0,R2
+   \       0xB4   0xE292'2014        ADDS     R2,R2,#+20
+   \       0xB8   0xE892'5008        LDM      R2,{R3,R12,LR}
+   \       0xBC   0xE881'5008        STM      R1,{R3,R12,LR}
+    144          		params->ref_max=presets_radix2[data_index].ref_max;
+   \       0xC0   0xE295'1020        ADDS     R1,R5,#+32
+   \       0xC4   0xE1B0'2304        LSLS     R2,R4,#+6
+   \       0xC8   0xE090'2002        ADDS     R2,R0,R2
+   \       0xCC   0xE292'2020        ADDS     R2,R2,#+32
+   \       0xD0   0xE892'5008        LDM      R2,{R3,R12,LR}
+   \       0xD4   0xE881'5008        STM      R1,{R3,R12,LR}
+    145          		params->ref_avg=presets_radix2[data_index].ref_avg;
+   \       0xD8   0xE295'102C        ADDS     R1,R5,#+44
+   \       0xDC   0xE1B0'2304        LSLS     R2,R4,#+6
+   \       0xE0   0xE090'2002        ADDS     R2,R0,R2
+   \       0xE4   0xE292'202C        ADDS     R2,R2,#+44
+   \       0xE8   0xE892'5008        LDM      R2,{R3,R12,LR}
+   \       0xEC   0xE881'5008        STM      R1,{R3,R12,LR}
+    146          		params->ref_data=presets_radix2[data_index].ref_data;
+   \       0xF0   0xE1B0'1304        LSLS     R1,R4,#+6
+   \       0xF4   0xE090'1001        ADDS     R1,R0,R1
+   \       0xF8   0xE591'1010        LDR      R1,[R1, #+16]
+   \       0xFC   0xE585'1010        STR      R1,[R5, #+16]
+    147          		params->seed=presets_radix2[data_index].seed;
+   \      0x100   0xE1B0'1304        LSLS     R1,R4,#+6
+   \      0x104   0xE090'0001        ADDS     R0,R0,R1
+   \      0x108   0xE590'003C        LDR      R0,[R0, #+60]
+   \      0x10C   0xE585'003C        STR      R0,[R5, #+60]
+    148          	} 
+    149          	/* command line overrides */
+    150          	//if (pgo_training_run==0) {
+    151          	//	th_parse_buf_flag_unsigned(dataset,"-s",&params->seed);
+    152          	//	th_parse_buf_flag_unsigned(dataset,"-n",&params->N);
+    153          	//	th_parse_buf_flag(dataset,"-g",&params->gen_ref);
+    154          	//}
+    155          	/* generate the data */
+    156          	params->data=fromint_f32_vector(params->N,params->seed); /* default */
+   \                     ??define_params_radix2_2:
+   \      0x110   0xE595'103C        LDR      R1,[R5, #+60]
+   \      0x114   0xE595'0008        LDR      R0,[R5, #+8]
+   \      0x118   0x....'....        BL       fromint_f32_vector
+   \      0x11C   0xE585'0000        STR      R0,[R5, #+0]
+    157          	params->twp=calculate_twiddles(params->N,-1);
+   \      0x120   0xE3E0'1000        MVN      R1,#+0
+   \      0x124   0xE595'0008        LDR      R0,[R5, #+8]
+   \      0x128   0x....'....        BL       calculate_twiddles
+   \      0x12C   0xE585'0004        STR      R0,[R5, #+4]
+    158          	
+    159          	return params;
+   \      0x130   0xE1B0'0005        MOVS     R0,R5
+   \                     ??define_params_radix2_1:
+   \      0x134   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    160          }
+    161          
+    162          /*
+    163          void *bmark_init_radix2(void *in_params) {
+    164          	radix2_params *params=(radix2_params *)in_params;
+    165                  radix2_params *myparams;
+    166          	if (in_params==NULL){
+    167          		printf( "Invalid pointer %s:%d\r\n", __FILE__,__LINE__ );
+    168                          return NULL;
+    169                  }
+    170          	myparams=(radix2_params *)calloc(1,sizeof(radix2_params));
+    171          	if ( myparams == NULL ){
+    172                    printf( "Cannot Allocate Memory %s:%d\r\n", __FILE__,__LINE__ );
+    173                    return NULL;
+    174                  }
+    175          	memcpy(myparams,params,sizeof(radix2_params));
+    176          
+    177          	//myparams->data = (float *)aligned_alloc(ALIGN_BOUNDARY, params->N*sizeof(float) );
+    178                  myparams->data = (float *)malloc(params->N*sizeof(float) );
+    179          	if ( myparams->data == NULL) {
+    180                    printf("%s:%d - cannot allocate working array!", __FILE__, __LINE__ );
+    181          		return NULL;
+    182          	}
+    183          
+    184          	memcpy(myparams->data,params->data,params->N*sizeof(float));
+    185          	
+    186          	return myparams;
+    187          }
+    188          */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    189          void t_run_test_radix2(struct TCDef *tcdef,void *in_params) {
+   \                     t_run_test_radix2:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    190          	int i;
+    191          	uint32_t test;
+    192          	float min=EE_MININI,max=EE_MAXINI,avg=(0.0);
+   \        0xC   0x....'....        LDR      R7,??DataTable5_5  ;; 0x7e967699
+   \       0x10   0x....'....        LDR      R8,??DataTable5_6  ;; 0xfe967699
+   \       0x14   0xE3A0'A000        MOV      R10,#+0
+    193          	radix2_params *params=(radix2_params *)in_params;
+   \       0x18   0xE1B0'6005        MOVS     R6,R5
+    194          	FFT_transform_internal(params->N, params->data, -1, params->twp);
+   \       0x1C   0xE596'3004        LDR      R3,[R6, #+4]
+   \       0x20   0xE3E0'2000        MVN      R2,#+0
+   \       0x24   0xE596'1000        LDR      R1,[R6, #+0]
+   \       0x28   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0x2C   0x....'....        BL       FFT_transform_internal
+    195          	for (i=0; i<params->N ; i++) {
+   \       0x30   0xE3A0'9000        MOV      R9,#+0
+   \                     ??t_run_test_radix2_0:
+   \       0x34   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0x38   0xE159'0000        CMP      R9,R0
+   \       0x3C   0x2A00'001B        BCS      ??t_run_test_radix2_1
+    196          		min=(min>params->data[i])?params->data[i]:min;
+   \       0x40   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0x44   0xE1B0'1109        LSLS     R1,R9,#+2
+   \       0x48   0xE790'0001        LDR      R0,[R0, +R1]
+   \       0x4C   0xE1B0'1007        MOVS     R1,R7
+   \       0x50   0x....'....        BL       __aeabi_cfcmple
+   \       0x54   0x2A00'0003        BCS      ??t_run_test_radix2_2
+   \       0x58   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0x5C   0xE1B0'1109        LSLS     R1,R9,#+2
+   \       0x60   0xE790'7001        LDR      R7,[R0, +R1]
+   \       0x64   0xEAFF'FFFF        B        ??t_run_test_radix2_3
+    197          		max=(max<params->data[i])?params->data[i]:max;
+   \                     ??t_run_test_radix2_2:
+   \                     ??t_run_test_radix2_3:
+   \       0x68   0xE1B0'0008        MOVS     R0,R8
+   \       0x6C   0xE596'1000        LDR      R1,[R6, #+0]
+   \       0x70   0xE1B0'2109        LSLS     R2,R9,#+2
+   \       0x74   0xE791'1002        LDR      R1,[R1, +R2]
+   \       0x78   0x....'....        BL       __aeabi_cfcmple
+   \       0x7C   0x2A00'0003        BCS      ??t_run_test_radix2_4
+   \       0x80   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0x84   0xE1B0'1109        LSLS     R1,R9,#+2
+   \       0x88   0xE790'8001        LDR      R8,[R0, +R1]
+   \       0x8C   0xEAFF'FFFF        B        ??t_run_test_radix2_5
+    198          		avg+=params->data[i];
+   \                     ??t_run_test_radix2_4:
+   \                     ??t_run_test_radix2_5:
+   \       0x90   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0x94   0xE1B0'1109        LSLS     R1,R9,#+2
+   \       0x98   0xE790'0001        LDR      R0,[R0, +R1]
+   \       0x9C   0xE1B0'100A        MOVS     R1,R10
+   \       0xA0   0x....'....        BL       __aeabi_fadd
+   \       0xA4   0xE1B0'A000        MOVS     R10,R0
+    199          	}
+   \       0xA8   0xE299'9001        ADDS     R9,R9,#+1
+   \       0xAC   0xEAFF'FFE0        B        ??t_run_test_radix2_0
+    200          	avg/=params->N;
+   \                     ??t_run_test_radix2_1:
+   \       0xB0   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0xB4   0x....'....        BL       __aeabi_ui2f
+   \       0xB8   0xE1B0'1000        MOVS     R1,R0
+   \       0xBC   0xE1B0'000A        MOVS     R0,R10
+   \       0xC0   0x....'....        BL       __aeabi_fdiv
+   \       0xC4   0xE1B0'A000        MOVS     R10,R0
+    201          	
+    202          	test=fp_iaccurate_bits_sp(avg,&params->ref_avg);
+   \       0xC8   0xE296'102C        ADDS     R1,R6,#+44
+   \       0xCC   0xE1B0'000A        MOVS     R0,R10
+   \       0xD0   0x....'....        BL       fp_iaccurate_bits_sp
+    203          	if (test>=params->minbits)
+   \       0xD4   0xE596'1038        LDR      R1,[R6, #+56]
+   \       0xD8   0xE150'0001        CMP      R0,R1
+   \       0xDC   0x3A00'0002        BCC      ??t_run_test_radix2_6
+    204          		tcdef->CRC=0;
+   \       0xE0   0xE3A0'1000        MOV      R1,#+0
+   \       0xE4   0xE1C4'10B0        STRH     R1,[R4, #+0]
+   \       0xE8   0xEA00'0001        B        ??t_run_test_radix2_7
+    205          	else 
+    206          		tcdef->CRC=1;
+   \                     ??t_run_test_radix2_6:
+   \       0xEC   0xE3A0'1001        MOV      R1,#+1
+   \       0xF0   0xE1C4'10B0        STRH     R1,[R4, #+0]
+    207          		
+    208          	tcdef->v1=test;
+   \                     ??t_run_test_radix2_7:
+   \       0xF4   0xE584'0014        STR      R0,[R4, #+20]
+    209          	tcdef->dbl_data[0]=avg;
+   \       0xF8   0xE584'A004        STR      R10,[R4, #+4]
+    210          	tcdef->dbl_data[1]=min;
+   \       0xFC   0xE584'7008        STR      R7,[R4, #+8]
+    211          	tcdef->dbl_data[2]=max;
+   \      0x100   0xE584'800C        STR      R8,[R4, #+12]
+    212          	
+    213          }
+   \      0x104   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    214          
+    215          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    216          int bmark_clean_radix2(void *in_params) {
+   \                     bmark_clean_radix2:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    217          	radix2_params *params=(radix2_params *)in_params;
+   \        0x8   0xE1B0'5004        MOVS     R5,R4
+    218          	if (params) {
+   \        0xC   0xE355'0000        CMP      R5,#+0
+   \       0x10   0x0A00'000B        BEQ      ??bmark_clean_radix2_0
+    219          		if (params->data)
+   \       0x14   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x0A00'0001        BEQ      ??bmark_clean_radix2_1
+    220          			free(params->data);
+   \       0x20   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x24   0x....'....        BL       free
+    221          		if (params->twp)
+   \                     ??bmark_clean_radix2_1:
+   \       0x28   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x2C   0xE350'0000        CMP      R0,#+0
+   \       0x30   0x0A00'0001        BEQ      ??bmark_clean_radix2_2
+    222          			free(params->twp);
+   \       0x34   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x38   0x....'....        BL       free
+    223          		free(params);
+   \                     ??bmark_clean_radix2_2:
+   \       0x3C   0xE1B0'0005        MOVS     R0,R5
+   \       0x40   0x....'....        BL       free
+    224          	}
+    225          	return 1;
+   \                     ??bmark_clean_radix2_0:
+   \       0x44   0xE3A0'0001        MOV      R0,#+1
+   \       0x48   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    226          }
+    227          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    228          void *bmark_fini_radix2(void *in_params) {
+   \                     bmark_fini_radix2:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    229              radix2_params *params;
+    230              if (in_params==NULL){
+   \        0x8   0xE354'0000        CMP      R4,#+0
+   \        0xC   0x1A00'0005        BNE      ??bmark_fini_radix2_0
+    231          		printf( "Invalid pointer %s:%d", __FILE__,__LINE__ );
+   \       0x10   0xE3A0'20E7        MOV      R2,#+231
+   \       0x14   0x....'....        LDR      R1,??DataTable5_1
+   \       0x18   0x....'....        LDR      R0,??DataTable5_7
+   \       0x1C   0x....'....        BL       printf
+    232                          return NULL;
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \       0x24   0xEA00'0008        B        ??bmark_fini_radix2_1
+    233              }
+    234          	params=(radix2_params *)in_params;
+   \                     ??bmark_fini_radix2_0:
+   \       0x28   0xE1B0'5004        MOVS     R5,R4
+    235          
+    236          	if (params->data)
+   \       0x2C   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x30   0xE350'0000        CMP      R0,#+0
+   \       0x34   0x0A00'0001        BEQ      ??bmark_fini_radix2_2
+    237          		free(params->data);
+   \       0x38   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x3C   0x....'....        BL       free
+    238          	free(params);
+   \                     ??bmark_fini_radix2_2:
+   \       0x40   0xE1B0'0005        MOVS     R0,R5
+   \       0x44   0x....'....        BL       free
+    239          
+    240          	return NULL;
+   \       0x48   0xE3A0'0000        MOV      R0,#+0
+   \                     ??bmark_fini_radix2_1:
+   \       0x4C   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    241          }
+    242          
+    243          #if BMDEBUG
+    244          static void dump_data(int iter, int N, float * data)
+    245          {
+    246             int i;
+    247             for (i=0;i<N;i++)
+    248                printf("\t%d, %d, %1.18le\n", iter, i, data[i]);
+    249          }
+    250          #endif
+    251          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    252          int th_print_fp(float value)
+    253          {
+   \                     th_print_fp:
+   \        0x0   0xE92D'4011        PUSH     {R0,R4,LR}
+   \        0x4   0xE24D'D01C        SUB      SP,SP,#+28
+    254          	intparts num;
+    255          	int st = load_sp(&value,&num);
+   \        0x8   0xE28D'1010        ADD      R1,SP,#+16
+   \        0xC   0xE28D'001C        ADD      R0,SP,#+28
+   \       0x10   0x....'....        BL       load_sp
+   \       0x14   0xE1B0'4000        MOVS     R4,R0
+    256          	if (!st)
+   \       0x18   0xE354'0000        CMP      R4,#+0
+   \       0x1C   0x1A00'0001        BNE      ??th_print_fp_0
+    257          		return 0;
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \       0x24   0xEA00'000B        B        ??th_print_fp_1
+    258          	printf("{%u,%d,0x%08x,0x%08x}/*%1.18e*/",num.sign,num.exp,num.mant_high32,num.mant_low32,value);
+   \                     ??th_print_fp_0:
+   \       0x28   0xE59D'001C        LDR      R0,[SP, #+28]
+   \       0x2C   0x....'....        BL       __aeabi_f2d
+   \       0x30   0xE58D'0008        STR      R0,[SP, #+8]
+   \       0x34   0xE58D'100C        STR      R1,[SP, #+12]
+   \       0x38   0xE59D'0018        LDR      R0,[SP, #+24]
+   \       0x3C   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x40   0xE59D'3014        LDR      R3,[SP, #+20]
+   \       0x44   0xE1DD'21F2        LDRSH    R2,[SP, #+18]
+   \       0x48   0xE1DD'11D0        LDRSB    R1,[SP, #+16]
+   \       0x4C   0x....'....        LDR      R0,??DataTable5_8
+   \       0x50   0x....'....        BL       printf
+    259          	return 1;
+   \       0x54   0xE3A0'0001        MOV      R0,#+1
+   \                     ??th_print_fp_1:
+   \       0x58   0xE28D'D020        ADD      SP,SP,#+32
+   \       0x5C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    260          }
+    261          #if 0
+    262          int bmark_verify_radix2(void *in_params) {
+    263          	int i;
+    264          	radix2_params *params=(radix2_params *)in_params;
+    265          	if (params->gen_ref) {
+    266          		float min=EE_MININI,max=EE_MAXINI,avg=(0.0);
+    267          		char sbuf[256];
+    268          		for (i=0; i<params->N; i++) {
+    269          			printf("\t");
+    270          			th_print_fp(params->data[i]);
+    271          			if (i<params->N-1)
+    272          				th_printf(",\n");
+    273          			min=(min>params->data[i])?params->data[i]:min;
+    274          			max=(max<params->data[i])?params->data[i]:max;
+    275          			avg+=params->data[i];
+    276          		}
+    277          		//th_printf("}; //ref_data\n\n"); 
+    278          		avg/=params->N;
+    279          		printf("static intparts ref_avg=%s;\n",th_sprint_fp(avg,sbuf));
+    280          		printf("static intparts ref_max=%s;\n",th_sprint_fp(max,sbuf));
+    281          		printf("static intparts ref_min=%s;\n",th_sprint_fp(min,sbuf));
+    282          		printf("void init_preset_index() {\n");
+    283          		printf("presets_radix2[index].ref_data=(intparts *)ref_data_index;\npresets_radix2[index].N=%d;\n",params->N);
+    284          		printf("presets_radix2[index].seed=%d;\n",params->seed);
+    285          		printf("presets_radix2[index].ref_avg=ref_avg;\npresets_radix2[index].ref_max=ref_max;\npresets_radix2[index].ref_min=ref_min;\n}\n",params->ref_avg,params->ref_max,params->ref_min);
+    286          		printf("/**** END DATASET ****/\n");
+    287          	} else {
+    288          		snr_result resa;
+    289          		if (params->ref_data==NULL) {
+    290          			th_printf("Cannot validate this dataset! Please generate reference data on reliable hardware and tools using -g!\n");
+    291          			return -1;
+    292          		}
+    293          		resa.bmin_ok=params->minbits;
+    294          		ee_ifpbits_buffer(params->data,params->ref_data,params->N,&resa);
+    295          	
+    296          		if (!resa.pass) return 0;
+    297          	}
+    298          	return 1;
+    299          }
+    300          
+    301          #endif
+    302          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    303          static void FFT_transform_internal (int N, float * data, int direction, float *twp) {
+   \                     FFT_transform_internal:
+   \        0x0   0xE92D'4FFD        PUSH     {R0,R2-R11,LR}
+   \        0x4   0xE24D'D020        SUB      SP,SP,#+32
+   \        0x8   0xE1B0'4001        MOVS     R4,R1
+    304              int n = N/2;
+   \        0xC   0xE59D'0020        LDR      R0,[SP, #+32]
+   \       0x10   0xE3A0'1002        MOV      R1,#+2
+   \       0x14   0x....'....        BL       __aeabi_idiv
+   \       0x18   0xE58D'0000        STR      R0,[SP, #+0]
+    305              int bit = 0;
+   \       0x1C   0xE3A0'6000        MOV      R6,#+0
+    306              int logn;
+    307              int dual = 1;
+   \       0x20   0xE3A0'5001        MOV      R5,#+1
+    308          
+    309              if (n == 1) return;         /* Identity operation! */
+   \       0x24   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x28   0xE350'0001        CMP      R0,#+1
+   \       0x2C   0x0A00'0093        BEQ      ??FFT_transform_internal_0
+    310              logn = int_log2(n);
+   \                     ??FFT_transform_internal_1:
+   \       0x30   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x34   0x....'....        BL       int_log2
+   \       0x38   0xE58D'0018        STR      R0,[SP, #+24]
+    311          
+    312              if (N == 0) return;    
+   \       0x3C   0xE59D'0020        LDR      R0,[SP, #+32]
+   \       0x40   0xE350'0000        CMP      R0,#+0
+   \       0x44   0x0A00'008D        BEQ      ??FFT_transform_internal_0
+    313          
+    314          #if BMDEBUG
+    315              //dump_data(-1, N, data);
+    316          #endif
+    317              /* bit reverse the input data for decimation in time algorithm */
+    318              FFT_bitreverse(N, data) ;
+   \                     ??FFT_transform_internal_2:
+   \       0x48   0xE1B0'1004        MOVS     R1,R4
+   \       0x4C   0xE59D'0020        LDR      R0,[SP, #+32]
+   \       0x50   0x....'....        BL       FFT_bitreverse
+    319          
+    320              /* apply fft recursion */
+    321              /* this loop executed int_log2(N) times */
+    322              for (bit = 0; bit < logn; bit++, dual *= 2) {
+   \       0x54   0xE3A0'0000        MOV      R0,#+0
+   \       0x58   0xE58D'000C        STR      R0,[SP, #+12]
+   \                     ??FFT_transform_internal_3:
+   \       0x5C   0xE59D'000C        LDR      R0,[SP, #+12]
+   \       0x60   0xE59D'1018        LDR      R1,[SP, #+24]
+   \       0x64   0xE150'0001        CMP      R0,R1
+   \       0x68   0xAA00'0084        BGE      ??FFT_transform_internal_4
+    323                int a;
+    324                int b;
+    325                float w_real;
+    326                float w_imag;
+    327          
+    328                for (a=0, b = 0; b < n; b += 2 * dual) {
+   \       0x6C   0xE3A0'7000        MOV      R7,#+0
+   \       0x70   0xE3A0'6000        MOV      R6,#+0
+   \                     ??FFT_transform_internal_5:
+   \       0x74   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x78   0xE156'0000        CMP      R6,R0
+   \       0x7C   0xAA00'0026        BGE      ??FFT_transform_internal_6
+    329                  int i = 2*b ;
+   \       0x80   0xE1B0'8086        LSLS     R8,R6,#+1
+    330                  int j = 2*(b + dual);
+   \       0x84   0xE095'0006        ADDS     R0,R5,R6
+   \       0x88   0xE1B0'9080        LSLS     R9,R0,#+1
+    331          
+    332                  float wd_real = data[j] ;
+   \       0x8C   0xE1B0'0109        LSLS     R0,R9,#+2
+   \       0x90   0xE794'A000        LDR      R10,[R4, +R0]
+    333                  float wd_imag = data[j+1] ;
+   \       0x94   0xE1B0'0109        LSLS     R0,R9,#+2
+   \       0x98   0xE094'0000        ADDS     R0,R4,R0
+   \       0x9C   0xE590'B004        LDR      R11,[R0, #+4]
+    334                    
+    335                  data[j]   = data[i]   - wd_real;
+   \       0xA0   0xE1B0'0108        LSLS     R0,R8,#+2
+   \       0xA4   0xE794'0000        LDR      R0,[R4, +R0]
+   \       0xA8   0xE1B0'100A        MOVS     R1,R10
+   \       0xAC   0x....'....        BL       __aeabi_fsub
+   \       0xB0   0xE1B0'1109        LSLS     R1,R9,#+2
+   \       0xB4   0xE784'0001        STR      R0,[R4, +R1]
+    336                  data[j+1] = data[i+1] - wd_imag;
+   \       0xB8   0xE1B0'0108        LSLS     R0,R8,#+2
+   \       0xBC   0xE094'0000        ADDS     R0,R4,R0
+   \       0xC0   0xE590'0004        LDR      R0,[R0, #+4]
+   \       0xC4   0xE1B0'100B        MOVS     R1,R11
+   \       0xC8   0x....'....        BL       __aeabi_fsub
+   \       0xCC   0xE1B0'1109        LSLS     R1,R9,#+2
+   \       0xD0   0xE094'1001        ADDS     R1,R4,R1
+   \       0xD4   0xE581'0004        STR      R0,[R1, #+4]
+    337                  data[i]  += wd_real;
+   \       0xD8   0xE1B0'0108        LSLS     R0,R8,#+2
+   \       0xDC   0xE794'1000        LDR      R1,[R4, +R0]
+   \       0xE0   0xE1B0'000A        MOVS     R0,R10
+   \       0xE4   0x....'....        BL       __aeabi_fadd
+   \       0xE8   0xE1B0'1108        LSLS     R1,R8,#+2
+   \       0xEC   0xE784'0001        STR      R0,[R4, +R1]
+    338                  data[i+1]+= wd_imag;
+   \       0xF0   0xE1B0'0108        LSLS     R0,R8,#+2
+   \       0xF4   0xE094'0000        ADDS     R0,R4,R0
+   \       0xF8   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0xFC   0xE1B0'000B        MOVS     R0,R11
+   \      0x100   0x....'....        BL       __aeabi_fadd
+   \      0x104   0xE1B0'1108        LSLS     R1,R8,#+2
+   \      0x108   0xE094'1001        ADDS     R1,R4,R1
+   \      0x10C   0xE581'0004        STR      R0,[R1, #+4]
+    339                }
+   \      0x110   0xE3A0'0002        MOV      R0,#+2
+   \      0x114   0xE026'6590        MLA      R6,R0,R5,R6
+   \      0x118   0xEAFF'FFD5        B        ??FFT_transform_internal_5
+    340                
+    341                /* a = 1 .. (dual-1) */
+    342                for (a = 1; a < dual; a++) {
+   \                     ??FFT_transform_internal_6:
+   \      0x11C   0xE3A0'8001        MOV      R8,#+1
+   \                     ??FFT_transform_internal_7:
+   \      0x120   0xE158'0005        CMP      R8,R5
+   \      0x124   0xAA00'0050        BGE      ??FFT_transform_internal_8
+    343                  /* trignometric recurrence for w-> exp(i theta) w */
+    344          	w_real=*twp++;
+   \      0x128   0xE59D'0028        LDR      R0,[SP, #+40]
+   \      0x12C   0xE590'0000        LDR      R0,[R0, #+0]
+   \      0x130   0xE58D'0008        STR      R0,[SP, #+8]
+   \      0x134   0xE59D'0028        LDR      R0,[SP, #+40]
+   \      0x138   0xE290'0004        ADDS     R0,R0,#+4
+    345          	w_imag=*twp++;
+   \      0x13C   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x140   0xE58D'1004        STR      R1,[SP, #+4]
+   \      0x144   0xE290'0004        ADDS     R0,R0,#+4
+   \      0x148   0xE58D'0028        STR      R0,[SP, #+40]
+    346          
+    347                  for (b = 0; b < n; b += 2 * dual) {
+   \      0x14C   0xE3A0'0000        MOV      R0,#+0
+   \      0x150   0xE1B0'6000        MOVS     R6,R0
+   \                     ??FFT_transform_internal_9:
+   \      0x154   0xE59D'0000        LDR      R0,[SP, #+0]
+   \      0x158   0xE156'0000        CMP      R6,R0
+   \      0x15C   0xAA00'0040        BGE      ??FFT_transform_internal_10
+    348                    int i = 2*(b + a);
+   \      0x160   0xE098'0006        ADDS     R0,R8,R6
+   \      0x164   0xE1B0'7080        LSLS     R7,R0,#+1
+    349                    int j = 2*(b + a + dual);
+   \      0x168   0xE098'0006        ADDS     R0,R8,R6
+   \      0x16C   0xE095'0000        ADDS     R0,R5,R0
+   \      0x170   0xE1B0'9080        LSLS     R9,R0,#+1
+    350          
+    351                    float z1_real = data[j];
+   \      0x174   0xE1B0'1109        LSLS     R1,R9,#+2
+   \      0x178   0xE794'1001        LDR      R1,[R4, +R1]
+   \      0x17C   0xE58D'1014        STR      R1,[SP, #+20]
+    352                    float z1_imag = data[j+1];
+   \      0x180   0xE1B0'1109        LSLS     R1,R9,#+2
+   \      0x184   0xE094'1001        ADDS     R1,R4,R1
+   \      0x188   0xE591'1004        LDR      R1,[R1, #+4]
+   \      0x18C   0xE58D'1010        STR      R1,[SP, #+16]
+    353                        
+    354                    float wd_real = w_real * z1_real - w_imag * z1_imag;
+   \      0x190   0xE59D'1008        LDR      R1,[SP, #+8]
+   \      0x194   0xE59D'0014        LDR      R0,[SP, #+20]
+   \      0x198   0x....'....        BL       __aeabi_fmul
+   \      0x19C   0xE1B0'A000        MOVS     R10,R0
+   \      0x1A0   0xE59D'1004        LDR      R1,[SP, #+4]
+   \      0x1A4   0xE59D'0010        LDR      R0,[SP, #+16]
+   \      0x1A8   0x....'....        BL       __aeabi_fmul
+   \      0x1AC   0xE1B0'1000        MOVS     R1,R0
+   \      0x1B0   0xE1B0'000A        MOVS     R0,R10
+   \      0x1B4   0x....'....        BL       __aeabi_fsub
+   \      0x1B8   0xE1B0'A000        MOVS     R10,R0
+    355                    float wd_imag = w_real * z1_imag + w_imag * z1_real;
+   \      0x1BC   0xE59D'1008        LDR      R1,[SP, #+8]
+   \      0x1C0   0xE59D'0010        LDR      R0,[SP, #+16]
+   \      0x1C4   0x....'....        BL       __aeabi_fmul
+   \      0x1C8   0xE1B0'B000        MOVS     R11,R0
+   \      0x1CC   0xE59D'1004        LDR      R1,[SP, #+4]
+   \      0x1D0   0xE59D'0014        LDR      R0,[SP, #+20]
+   \      0x1D4   0x....'....        BL       __aeabi_fmul
+   \      0x1D8   0xE1B0'1000        MOVS     R1,R0
+   \      0x1DC   0xE1B0'000B        MOVS     R0,R11
+   \      0x1E0   0x....'....        BL       __aeabi_fadd
+   \      0x1E4   0xE1B0'B000        MOVS     R11,R0
+    356          
+    357                    data[j]   = data[i]   - wd_real;
+   \      0x1E8   0xE1B0'0107        LSLS     R0,R7,#+2
+   \      0x1EC   0xE794'0000        LDR      R0,[R4, +R0]
+   \      0x1F0   0xE1B0'100A        MOVS     R1,R10
+   \      0x1F4   0x....'....        BL       __aeabi_fsub
+   \      0x1F8   0xE1B0'1109        LSLS     R1,R9,#+2
+   \      0x1FC   0xE784'0001        STR      R0,[R4, +R1]
+    358                    data[j+1] = data[i+1] - wd_imag;
+   \      0x200   0xE1B0'0107        LSLS     R0,R7,#+2
+   \      0x204   0xE094'0000        ADDS     R0,R4,R0
+   \      0x208   0xE590'0004        LDR      R0,[R0, #+4]
+   \      0x20C   0xE1B0'100B        MOVS     R1,R11
+   \      0x210   0x....'....        BL       __aeabi_fsub
+   \      0x214   0xE1B0'1109        LSLS     R1,R9,#+2
+   \      0x218   0xE094'1001        ADDS     R1,R4,R1
+   \      0x21C   0xE581'0004        STR      R0,[R1, #+4]
+    359                    data[i]  += wd_real;
+   \      0x220   0xE1B0'0107        LSLS     R0,R7,#+2
+   \      0x224   0xE794'1000        LDR      R1,[R4, +R0]
+   \      0x228   0xE1B0'000A        MOVS     R0,R10
+   \      0x22C   0x....'....        BL       __aeabi_fadd
+   \      0x230   0xE1B0'1107        LSLS     R1,R7,#+2
+   \      0x234   0xE784'0001        STR      R0,[R4, +R1]
+    360                    data[i+1]+= wd_imag;
+   \      0x238   0xE1B0'0107        LSLS     R0,R7,#+2
+   \      0x23C   0xE094'0000        ADDS     R0,R4,R0
+   \      0x240   0xE590'1004        LDR      R1,[R0, #+4]
+   \      0x244   0xE1B0'000B        MOVS     R0,R11
+   \      0x248   0x....'....        BL       __aeabi_fadd
+   \      0x24C   0xE1B0'1107        LSLS     R1,R7,#+2
+   \      0x250   0xE094'1001        ADDS     R1,R4,R1
+   \      0x254   0xE581'0004        STR      R0,[R1, #+4]
+    361                  }
+   \      0x258   0xE3A0'0002        MOV      R0,#+2
+   \      0x25C   0xE026'6590        MLA      R6,R0,R5,R6
+   \      0x260   0xEAFF'FFBB        B        ??FFT_transform_internal_9
+    362                }
+   \                     ??FFT_transform_internal_10:
+   \      0x264   0xE298'8001        ADDS     R8,R8,#+1
+   \      0x268   0xEAFF'FFAC        B        ??FFT_transform_internal_7
+    363              }
+   \                     ??FFT_transform_internal_8:
+   \      0x26C   0xE59D'100C        LDR      R1,[SP, #+12]
+   \      0x270   0xE291'1001        ADDS     R1,R1,#+1
+   \      0x274   0xE58D'100C        STR      R1,[SP, #+12]
+   \      0x278   0xE1B0'5085        LSLS     R5,R5,#+1
+   \      0x27C   0xEAFF'FF76        B        ??FFT_transform_internal_3
+    364          #if BMDEBUG
+    365              dump_data(bit, N, data);
+    366          #endif
+    367          }
+   \                     ??FFT_transform_internal_4:
+   \                     ??FFT_transform_internal_0:
+   \      0x280   0xE28D'D02C        ADD      SP,SP,#+44
+   \      0x284   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    368          
+    369          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    370          static void FFT_bitreverse(int N, float * data) {
+   \                     FFT_bitreverse:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    371              /* This is the Goldrader bit-reversal algorithm */
+    372              int n=N/2;
+   \        0xC   0xE1B0'0004        MOVS     R0,R4
+   \       0x10   0xE3A0'1002        MOV      R1,#+2
+   \       0x14   0x....'....        BL       __aeabi_idiv
+    373              int nm1 = n-1;
+   \       0x18   0xE250'1001        SUBS     R1,R0,#+1
+    374              int i=0; 
+   \       0x1C   0xE3A0'2000        MOV      R2,#+0
+    375              int j=0;
+   \       0x20   0xE3A0'3000        MOV      R3,#+0
+    376              for (; i < nm1; i++) {
+   \                     ??FFT_bitreverse_0:
+   \       0x24   0xE152'0001        CMP      R2,R1
+   \       0x28   0xAA00'0020        BGE      ??FFT_bitreverse_1
+    377          
+    378                /*int ii = 2*i; */
+    379                int ii = i << 1;
+   \       0x2C   0xE1B0'C082        LSLS     R12,R2,#+1
+    380          
+    381                /*int jj = 2*j; */
+    382                int jj = j << 1;
+   \       0x30   0xE1B0'E083        LSLS     LR,R3,#+1
+    383          
+    384                /* int k = n / 2 ; */
+    385                int k = n >> 1;
+   \       0x34   0xE1B0'60C0        ASRS     R6,R0,#+1
+    386          
+    387                if (i < j) {
+   \       0x38   0xE152'0003        CMP      R2,R3
+   \       0x3C   0xAA00'0013        BGE      ??FFT_bitreverse_2
+    388                  float tmp_real    = data[ii];
+   \       0x40   0xE1B0'710C        LSLS     R7,R12,#+2
+   \       0x44   0xE795'7007        LDR      R7,[R5, +R7]
+    389                  float tmp_imag    = data[ii+1];
+   \       0x48   0xE1B0'810C        LSLS     R8,R12,#+2
+   \       0x4C   0xE095'8008        ADDS     R8,R5,R8
+   \       0x50   0xE598'8004        LDR      R8,[R8, #+4]
+    390                  data[ii]   = data[jj];
+   \       0x54   0xE1B0'910E        LSLS     R9,LR,#+2
+   \       0x58   0xE795'9009        LDR      R9,[R5, +R9]
+   \       0x5C   0xE1B0'A10C        LSLS     R10,R12,#+2
+   \       0x60   0xE785'900A        STR      R9,[R5, +R10]
+    391                  data[ii+1] = data[jj+1];
+   \       0x64   0xE1B0'910E        LSLS     R9,LR,#+2
+   \       0x68   0xE095'9009        ADDS     R9,R5,R9
+   \       0x6C   0xE599'9004        LDR      R9,[R9, #+4]
+   \       0x70   0xE1B0'A10C        LSLS     R10,R12,#+2
+   \       0x74   0xE095'A00A        ADDS     R10,R5,R10
+   \       0x78   0xE58A'9004        STR      R9,[R10, #+4]
+    392                  data[jj]   = tmp_real;
+   \       0x7C   0xE1B0'910E        LSLS     R9,LR,#+2
+   \       0x80   0xE785'7009        STR      R7,[R5, +R9]
+    393                  data[jj+1] = tmp_imag; }
+   \       0x84   0xE1B0'910E        LSLS     R9,LR,#+2
+   \       0x88   0xE095'9009        ADDS     R9,R5,R9
+   \       0x8C   0xE589'8004        STR      R8,[R9, #+4]
+    394          
+    395                while (k <= j) 
+   \                     ??FFT_bitreverse_2:
+   \       0x90   0xE153'0006        CMP      R3,R6
+   \       0x94   0xBA00'0002        BLT      ??FFT_bitreverse_3
+    396                {
+    397                  /*j = j - k ; */
+    398                  j -= k;
+   \       0x98   0xE053'3006        SUBS     R3,R3,R6
+    399          
+    400                  /*k = k / 2 ;  */
+    401                  k >>= 1 ; 
+   \       0x9C   0xE1B0'60C6        ASRS     R6,R6,#+1
+   \       0xA0   0xEAFF'FFFA        B        ??FFT_bitreverse_2
+    402                }
+    403                j += k ;
+   \                     ??FFT_bitreverse_3:
+   \       0xA4   0xE096'3003        ADDS     R3,R6,R3
+    404              }
+   \       0xA8   0xE292'2001        ADDS     R2,R2,#+1
+   \       0xAC   0xEAFF'FFDC        B        ??FFT_bitreverse_0
+    405            }
+   \                     ??FFT_bitreverse_1:
+   \       0xB0   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3:
+   \        0x0   0x5444'2D18        DC32     0x54442D18,0x400921FB
+
+   \              0x4009'21FB
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_3:
+   \        0x0   0x....'....        DC32     intparts_zero
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_4:
+   \        0x0   0x....'....        DC32     presets_radix2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_5:
+   \        0x0   0x7E96'7699        DC32     0x7e967699
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_6:
+   \        0x0   0xFE96'7699        DC32     0xfe967699
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_7:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_8:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x45 0x52          DC8 0x45, 0x52, 0x52, 0x4F, 0x52, 0x3A, 0x20, 0x46
+
+   \              0x52 0x4F    
+
+   \              0x52 0x3A    
+
+   \              0x20 0x46
+   \        0x8   0x46 0x54          DC8 0x46, 0x54, 0x20, 0x72, 0x61, 0x64, 0x69, 0x78
+
+   \              0x20 0x72    
+
+   \              0x61 0x64    
+
+   \              0x69 0x78
+   \       0x10   0x32 0x2C          DC8 0x32, 0x2C, 0x20, 0x44, 0x61, 0x74, 0x61, 0x20
+
+   \              0x20 0x44    
+
+   \              0x61 0x74    
+
+   \              0x61 0x20
+   \       0x18   0x6C 0x65          DC8 0x6C, 0x65, 0x6E, 0x67, 0x74, 0x68, 0x20, 0x69
+
+   \              0x6E 0x67    
+
+   \              0x74 0x68    
+
+   \              0x20 0x69
+   \       0x20   0x73 0x20          DC8 0x73, 0x20, 0x6E, 0x6F, 0x74, 0x20, 0x61, 0x20
+
+   \              0x6E 0x6F    
+
+   \              0x74 0x20    
+
+   \              0x61 0x20
+   \       0x28   0x70 0x6F          DC8 0x70, 0x6F, 0x77, 0x65, 0x72, 0x20, 0x6F, 0x66
+
+   \              0x77 0x65    
+
+   \              0x72 0x20    
+
+   \              0x6F 0x66
+   \       0x30   0x20 0x32          DC8 0x20, 0x32, 0x21, 0x20, 0x5B, 0x25, 0x64, 0x5D
+
+   \              0x21 0x20    
+
+   \              0x5B 0x25    
+
+   \              0x64 0x5D
+   \       0x38   0x0A 0x00          DC8 0x0A, 0
+   \       0x3A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x43 0x61          DC8 "Cannot Allocate Memory %s:%d"
+
+   \              0x6E 0x6E    
+
+   \              0x6F 0x74    
+
+   \              0x20 0x41    
+
+   \              0x6C 0x6C    
+
+   \              0x6F 0x63    
+
+   \              0x61 0x74    
+
+   \              0x65 0x20    
+
+   \              0x4D 0x65    
+
+   \              0x6D 0x6F    
+
+   \              0x72 0x79    
+
+   \              0x20 0x25    
+
+   \              0x73 0x3A    
+
+   \              0x25 0x64    
+
+   \              0x00
+   \       0x1D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x65, 0x78, 0x61, 0x6D, 0x70, 0x6C
+
+   \              0x65 0x78    
+
+   \              0x61 0x6D    
+
+   \              0x70 0x6C
+   \       0x38   0x65 0x73          DC8 0x65, 0x73, 0x5C, 0x63, 0x6F, 0x72, 0x65, 0x6D
+
+   \              0x5C 0x63    
+
+   \              0x6F 0x72    
+
+   \              0x65 0x6D
+   \       0x40   0x61 0x72          DC8 0x61, 0x72, 0x6B, 0x5C, 0x63, 0x6F, 0x72, 0x65
+
+   \              0x6B 0x5C    
+
+   \              0x63 0x6F    
+
+   \              0x72 0x65
+   \       0x48   0x6D 0x61          DC8 0x6D, 0x61, 0x72, 0x6B, 0x5C, 0x66, 0x66, 0x74
+
+   \              0x72 0x6B    
+
+   \              0x5C 0x66    
+
+   \              0x66 0x74
+   \       0x50   0x5F 0x72          DC8 0x5F, 0x72, 0x61, 0x64, 0x69, 0x78, 0x32, 0x2E
+
+   \              0x61 0x64    
+
+   \              0x69 0x78    
+
+   \              0x32 0x2E
+   \       0x58   0x63 0x00          DC8 0x63, 0
+   \       0x5A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x49 0x6E          DC8 "Invalid pointer %s:%d"
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x70 0x6F    
+
+   \              0x69 0x6E    
+
+   \              0x74 0x65    
+
+   \              0x72 0x20    
+
+   \              0x25 0x73    
+
+   \              0x3A 0x25    
+
+   \              0x64 0x00
+   \       0x16   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_4:
+   \        0x0   0x7B 0x25          DC8 "{%u,%d,0x%08x,0x%08x}/*%1.18e*/"
+
+   \              0x75 0x2C    
+
+   \              0x25 0x64    
+
+   \              0x2C 0x30    
+
+   \              0x78 0x25    
+
+   \              0x30 0x38    
+
+   \              0x78 0x2C    
+
+   \              0x30 0x78    
+
+   \              0x25 0x30    
+
+   \              0x38 0x78    
+
+   \              0x7D 0x2F    
+
+   \              0x2A 0x25    
+
+   \              0x31 0x2E    
+
+   \              0x31 0x38    
+
+   \              0x65 0x2A    
+
+   \              0x2F 0x00
+    406          
+    407          #if NEED_INVERSE
+    408          static void FFT_inverse(int N, float * data)
+    409          {
+    410              int n = N/2;
+    411              float norm = 0.0;
+    412              int i=0;
+    413          	float *twp=calculate_twiddles(N,+1);
+    414              FFT_transform_internal(N, data, +1,twp);
+    415          	th_free(twp);
+    416          
+    417              /* Normalize */
+    418              norm=1.0/((float) n);
+    419              for(i=0; i<N; i++)
+    420                data[i] *= norm;
+    421            
+    422          }
+    423          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   FFT_bitreverse
+        32 __aeabi_idiv
+      80   FFT_transform_internal
+        80   -> FFT_bitreverse
+        80   -> __aeabi_fadd
+        80   -> __aeabi_fmul
+        80   -> __aeabi_fsub
+        80   -> int_log2
+        80 __aeabi_idiv
+      16   bmark_clean_radix2
+        16   -> free
+      16   bmark_fini_radix2
+        16   -> free
+        16   -> printf
+      72   calculate_twiddles
+        72   -> __aeabi_d2f
+        72   -> __aeabi_ddiv
+        72   -> __aeabi_dmul
+        72   -> __aeabi_f2d
+        72   -> __aeabi_fadd
+        72   -> __aeabi_fmul
+        72   -> __aeabi_fsub
+        72   -> __aeabi_i2d
+        72   -> __aeabi_i2f
+        72   -> int_log2
+        72   -> malloc
+        72   -> sinf
+        72 __aeabi_idiv
+      16   define_params_radix2
+        16   -> calculate_twiddles
+        16   -> calloc
+        16   -> fromint_f32_vector
+        16   -> init_preset_0
+        16   -> printf
+      16   int_log2
+        16   -> printf
+      32   t_run_test_radix2
+        32   -> FFT_transform_internal
+        32   -> __aeabi_fadd
+        32   -> __aeabi_fdiv
+        32   -> __aeabi_ui2f
+        32   -> fp_iaccurate_bits_sp
+        32 __aeabi_cfcmple
+      40   th_print_fp
+        40   -> __aeabi_f2d
+        40   -> load_sp
+        40   -> printf
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       8  ??DataTable3
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable5_6
+       4  ??DataTable5_7
+       4  ??DataTable5_8
+      60  ?_0
+      32  ?_1
+      92  ?_2
+      24  ?_3
+      32  ?_4
+     180  FFT_bitreverse
+     648  FFT_transform_internal
+      76  bmark_clean_radix2
+      80  bmark_fini_radix2
+     568  calculate_twiddles
+     312  define_params_radix2
+      68  int_log2
+      12  intparts_zero
+     384  presets_radix2
+     264  t_run_test_radix2
+      96  th_print_fp
+
+ 
+   384 bytes in section .bss
+    12 bytes in section .data
+   240 bytes in section .rodata
+ 2'336 bytes in section SOFTPACK
+ 
+ 2'336 bytes of CODE  memory
+   240 bytes of CONST memory
+   396 bytes of DATA  memory
+
+Errors: none
+Warnings: none

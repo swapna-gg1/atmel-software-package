@@ -1,0 +1,1695 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Apr/2020  10:57:02
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\rtc.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW9BF0.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\rtc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\lib\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\List\rtc.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\Obj\rtc.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\rtc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup rtc_module Working with RTC
+     31           * \section Purpose
+     32           * The RTC driver provides the interface to configure and use the RTC
+     33           * peripheral.
+     34           *
+     35           * It manages date, time, and alarms.\n
+     36           * This timer is clocked by the 32kHz system clock, and is not impacted by
+     37           * power management settings (PMC). To be accurate, it is better to use an
+     38           * external 32kHz crystal instead of the internal 32kHz RC.\n
+     39           *
+     40           * It uses BCD format, and time can be set in AM/PM or 24h mode through a
+     41           * configuration bit in the mode register.\n
+     42           *
+     43           * To update date or time, the user has to follow these few steps :
+     44           * <ul>
+     45           * <li>Set UPDTIM and/or UPDCAL bit(s) in RTC_CR,</li>
+     46           * <li>Polling or IRQ on the ACKUPD bit of RTC_CR,</li>
+     47           * <li>Clear ACKUPD bit in RTC_SCCR,</li>
+     48           * <li>Update Time and/or Calendar values in RTC_TIMR/RTC_CALR (BCD format),</li>
+     49           * <li>Clear UPDTIM and/or UPDCAL bit in RTC_CR.</li>
+     50           * </ul>
+     51           * An alarm can be set to happen on month, date, hours, minutes or seconds,
+     52           * by setting the proper "Enable" bit of each of these fields in the Time and
+     53           * Calendar registers.
+     54           * This allows a large number of configurations to be available for the user.
+     55           * Alarm occurence can be detected even by polling or interrupt.
+     56           *
+     57           * A check of the validity of the date and time format and values written by the user is automatically done.
+     58           * Errors are reported through the Valid Entry Register.
+     59           *
+     60           * \section Usage
+     61           * <ul>
+     62           * <li>  Enable & disable RTC interrupt using rtc_enable_it() and rtc_disable_it().
+     63           * <li>  Set RTC data, time, alarm using rtc_set_date(), rtc_set_time(),
+     64           * rtc_set_time_alarm() and rtc_set_date_alarm().
+     65           * <li>  Get RTC data, time using rtc_get_date() and rtc_get_time().
+     66           * </li>
+     67           * </ul>
+     68           *
+     69           * For more accurate information, please look at the RTC section of the
+     70           * Datasheet.
+     71           *
+     72           * Related files :\n
+     73           * \ref rtc.c\n
+     74           * \ref rtc.h.\n
+     75          */
+     76          /*@{*/
+     77          /*@}*/
+     78          
+     79          /**
+     80           * \file
+     81           *
+     82           * Implementation of Real Time Clock (RTC) controller.
+     83           *
+     84           */
+     85          
+     86          /*----------------------------------------------------------------------------
+     87           *        Headers
+     88           *----------------------------------------------------------------------------*/
+     89          
+     90          #include "chip.h"
+     91          #include "peripherals/rtc.h"
+     92          #include "trace.h"
+     93          #include <stdint.h>
+     94          #include <assert.h>
+     95          
+     96          /*----------------------------------------------------------------------------
+     97           *        Local Defines
+     98           *----------------------------------------------------------------------------*/
+     99          
+    100          /* The BCD code shift value */
+    101          #define BCD_SHIFT      4
+    102          
+    103          /* The BCD code mask value */
+    104          #define BCD_MASK       0xfu
+    105          
+    106          /* The BCD mul/div factor value */
+    107          #define BCD_FACTOR     10
+    108          
+    109          /*----------------------------------------------------------------------------
+    110           *        Local Types
+    111           *----------------------------------------------------------------------------*/
+    112          
+    113          struct rtc_ppm_lookup {
+    114          	int8_t   tempr;
+    115          	int16_t  ppm;
+    116          	bool     negppm;
+    117          	bool     highppm;
+    118          	uint16_t correction;
+    119          };
+    120          
+    121          //------------------------------------------------------------------------------
+    122          //         Local constants
+    123          //------------------------------------------------------------------------------
+    124          
+    125          #ifdef CONFIG_HAVE_RTC_CALIBRATION
+    126          
+    127          static const struct rtc_ppm_lookup ppm_lookup[] = {
+    128          	{ -40, -168, false,  true,  22 },
+    129          	{ -39, -163, false,  true,  23 },
+    130          	{ -38, -158, false,  true,  24 },
+    131          	{ -37, -153, false,  true,  25 },
+    132          	{ -36, -148, false,  true,  25 },
+    133          	{ -35, -143, false,  true,  26 },
+    134          	{ -34, -138, false,  true,  27 },
+    135          	{ -33, -134, false,  true,  28 },
+    136          	{ -32, -129, false,  true,  29 },
+    137          	{ -31, -124, false,  true,  31 },
+    138          	{ -30, -120, false,  true,  32 },
+    139          	{ -29, -116, false,  true,  33 },
+    140          	{ -28, -111, false,  true,  34 },
+    141          	{ -27, -107, false,  true,  36 },
+    142          	{ -26, -103, false,  true,  37 },
+    143          	{ -25,  -99, false,  true,  38 },
+    144          	{ -24,  -95, false,  true,  40 },
+    145          	{ -23,  -91, false,  true,  42 },
+    146          	{ -22,  -87, false,  true,  44 },
+    147          	{ -21,  -84, false,  true,  45 },
+    148          	{ -20,  -80, false,  true,  48 },
+    149          	{ -19,  -76, false,  true,  50 },
+    150          	{ -18,  -73, false,  true,  53 },
+    151          	{ -17,  -70, false,  true,  55 },
+    152          	{ -16,  -66, false,  true,  58 },
+    153          	{ -15,  -63, false,  true,  61 },
+    154          	{ -14,  -60, false,  true,  64 },
+    155          	{ -13,  -57, false,  true,  68 },
+    156          	{ -12,  -54, false,  true,  71 },
+    157          	{ -11,  -51, false,  true,  76 },
+    158          	{ -10,  -48, false,  true,  80 },
+    159          	{  -9,  -45, false,  true,  86 },
+    160          	{  -8,  -43, false,  true,  90 },
+    161          	{  -7,  -40, false,  true,  97 },
+    162          	{  -6,  -37, false,  true, 105 },
+    163          	{  -5,  -35, false,  true, 111 },
+    164          	{  -4,  -33, false,  true, 117 },
+    165          	{  -3,  -30, false, false,   6 },
+    166          	{  -2,  -28, false, false,   6 },
+    167          	{  -1,  -26, false, false,   7 },
+    168          	{   0,  -24, false, false,   7 },
+    169          	{   1,  -22, false, false,   8 },
+    170          	{   2,  -20, false, false,   9 },
+    171          	{   3,  -18, false, false,  10 },
+    172          	{   4,  -17, false, false,  10 },
+    173          	{   5,  -15, false, false,  12 },
+    174          	{   6,  -13, false, false,  14 },
+    175          	{   7,  -12, false, false,  15 },
+    176          	{   8,  -11, false, false,  17 },
+    177          	{   9,   -9, false, false,  21 },
+    178          	{  10,   -8, false, false,  23 },
+    179          	{  11,   -7, false, false,  27 },
+    180          	{  12,   -6, false, false,  32 },
+    181          	{  13,   -5, false, false,  38 },
+    182          	{  14,   -4, false, false,  48 },
+    183          	{  15,   -3, false, false,  64 },
+    184          	{  16,   -2, false, false,  97 },
+    185          	{  17,   -2, false, false,  97 },
+    186          	{  18,   -1, false, false, 127 },
+    187          	{  19,    0,  true, false,   0 },
+    188          	{  20,    0,  true, false,   0 },
+    189          	{  21,    0,  true, false,   0 },
+    190          	{  22,    1,  true, false, 127 },
+    191          	{  23,    1,  true, false, 127 },
+    192          	{  24,    1,  true, false, 127 },
+    193          	{  25,    1,  true, false, 127 },
+    194          	{  26,    1,  true, false, 127 },
+    195          	{  27,    1,  true, false, 127 },
+    196          	{  28,    1,  true, false, 127 },
+    197          	{  29,    0,  true, false,   0 },
+    198          	{  30,    0,  true, false,   0 },
+    199          	{  31,    0,  true, false,   0 },
+    200          	{  32,   -1, false, false, 127 },
+    201          	{  33,   -2, false, false,  97 },
+    202          	{  34,   -2, false, false,  97 },
+    203          	{  35,   -3, false, false,  64 },
+    204          	{  36,   -4, false, false,  48 },
+    205          	{  37,   -5, false, false,  38 },
+    206          	{  38,   -6, false, false,  32 },
+    207          	{  39,   -7, false, false,  27 },
+    208          	{  40,   -8, false, false,  23 },
+    209          	{  41,   -9, false, false,  21 },
+    210          	{  42,  -11, false, false,  17 },
+    211          	{  43,  -12, false, false,  15 },
+    212          	{  44,  -13, false, false,  14 },
+    213          	{  45,  -15, false, false,  12 },
+    214          	{  46,  -17, false, false,  10 },
+    215          	{  47,  -18, false, false,  10 },
+    216          	{  48,  -20, false, false,   9 },
+    217          	{  49,  -22, false, false,   8 },
+    218          	{  50,  -24, false, false,   7 },
+    219          	{  51,  -26, false, false,   7 },
+    220          	{  52,  -28, false, false,   6 },
+    221          	{  53,  -30, false, false,   6 },
+    222          	{  54,  -33, false,  true, 117 },
+    223          	{  55,  -35, false,  true, 111 },
+    224          	{  56,  -37, false,  true, 105 },
+    225          	{  57,  -40, false,  true,  97 },
+    226          	{  58,  -43, false,  true,  90 },
+    227          	{  59,  -45, false,  true,  86 },
+    228          	{  60,  -48, false,  true,  80 },
+    229          	{  61,  -51, false,  true,  76 },
+    230          	{  62,  -54, false,  true,  71 },
+    231          	{  63,  -57, false,  true,  68 },
+    232          	{  64,  -60, false,  true,  64 },
+    233          	{  65,  -63, false,  true,  61 },
+    234          	{  66,  -66, false,  true,  58 },
+    235          	{  67,  -70, false,  true,  55 },
+    236          	{  68,  -73, false,  true,  53 },
+    237          	{  69,  -76, false,  true,  50 },
+    238          	{  70,  -80, false,  true,  48 },
+    239          	{  71,  -84, false,  true,  45 },
+    240          	{  72,  -87, false,  true,  44 },
+    241          	{  73,  -91, false,  true,  42 },
+    242          	{  74,  -95, false,  true,  40 },
+    243          	{  75,  -99, false,  true,  38 },
+    244          	{  76, -103, false,  true,  37 },
+    245          	{  77, -107, false,  true,  36 },
+    246          	{  78, -111, false,  true,  34 },
+    247          	{  79, -116, false,  true,  33 },
+    248          	{  80, -120, false,  true,  32 },
+    249          	{  81, -124, false,  true,  31 },
+    250          	{  82, -129, false,  true,  29 },
+    251          	{  83, -134, false,  true,  28 },
+    252          	{  84, -138, false,  true,  27 },
+    253          	{  85, -143, false,  true,  26 }
+    254          };
+    255          
+    256          #endif /* CONFIG_HAVE_RTC_CALIBRATION */
+    257          
+    258          /*----------------------------------------------------------------------------
+    259           *        Exported functions
+    260           *----------------------------------------------------------------------------*/
+    261          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    262          void rtc_set_mode(enum _rtc_mode mode)
+    263          {
+   \                     rtc_set_mode:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    264          	uint32_t mr;
+    265          
+    266          	mr = RTC->RTC_MR;
+   \        0x8   0xE3E0'6053        MVN      R6,#+83
+   \        0xC   0xE3C6'6F40        BIC      R6,R6,#0x100
+   \       0x10   0xE596'5000        LDR      R5,[R6, #+0]
+    267          #ifdef CONFIG_HAVE_RTC_MODE_PERSIAN
+    268          	mr &= ~RTC_MR_PERSIAN;
+    269          #endif
+    270          #ifdef CONFIG_HAVE_RTC_MODE_UTC
+    271          	mr &= ~RTC_MR_UTC;
+    272          #endif
+    273          
+    274          	switch (mode) {
+   \       0x14   0xE1B0'0004        MOVS     R0,R4
+   \       0x18   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x1C   0xE350'0000        CMP      R0,#+0
+   \       0x20   0x0A00'0005        BEQ      ??rtc_set_mode_0
+    275          	case RTC_MODE_GREGORIAN:
+    276          		// nothing here, this is the default
+    277          		break;
+    278          #ifdef CONFIG_HAVE_RTC_MODE_PERSIAN
+    279          	case RTC_MODE_PERSIAN:
+    280          		mr |= RTC_MR_PERSIAN;
+    281          		break;
+    282          #endif
+    283          #ifdef CONFIG_HAVE_RTC_MODE_UTC
+    284          	case RTC_MODE_UTC:
+    285          		mr |= RTC_MR_UTC;
+    286          		break;
+    287          #endif
+    288          	default:
+    289          		trace_debug("RTC: Invalid time_mode\r\n");
+   \                     ??rtc_set_mode_1:
+   \       0x24   0x....'....        LDR      R0,??DataTable2
+   \       0x28   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x2C   0xE350'0005        CMP      R0,#+5
+   \       0x30   0x3A00'0001        BCC      ??rtc_set_mode_2
+   \       0x34   0x....'....        LDR      R0,??DataTable2_1
+   \       0x38   0x....'....        BL       printf
+    290          	}
+    291          
+    292          	RTC->RTC_MR = mr;
+   \                     ??rtc_set_mode_2:
+   \                     ??rtc_set_mode_0:
+   \       0x3C   0xE586'5000        STR      R5,[R6, #+0]
+    293          }
+   \       0x40   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    294          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    295          enum _rtc_mode rtc_get_mode(void)
+    296          {
+    297          #if defined(CONFIG_HAVE_RTC_MODE_UTC) || defined(CONFIG_HAVE_RTC_MODE_PERSIAN)
+    298          	uint32_t mr = RTC->RTC_MR;
+    299          #endif
+    300          
+    301          #ifdef CONFIG_HAVE_RTC_MODE_UTC
+    302          	if (mr & RTC_MR_UTC)
+    303          		return RTC_MODE_UTC;
+    304          #endif
+    305          #ifdef CONFIG_HAVE_RTC_MODE_PERSIAN
+    306          	if (mr & RTC_MR_PERSIAN)
+    307          		return RTC_MODE_PERSIAN;
+    308          #endif
+    309          
+    310          	return RTC_MODE_GREGORIAN;
+   \                     rtc_get_mode:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    311          }
+    312          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    313          void rtc_set_hour_mode(enum _rtc_hour_mode mode)
+    314          {
+    315          	RTC->RTC_MR &= ~RTC_MR_HRMOD;
+   \                     rtc_set_hour_mode:
+   \        0x0   0xE3E0'1053        MVN      R1,#+83
+   \        0x4   0xE3C1'1F40        BIC      R1,R1,#0x100
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0xC   0xE3D2'2001        BICS     R2,R2,#0x1
+   \       0x10   0xE581'2000        STR      R2,[R1, #+0]
+    316          	switch (mode) {
+   \       0x14   0xE1B0'2000        MOVS     R2,R0
+   \       0x18   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x1C   0xE352'0000        CMP      R2,#+0
+   \       0x20   0x0A00'0005        BEQ      ??rtc_set_hour_mode_0
+   \       0x24   0xE352'0001        CMP      R2,#+1
+   \       0x28   0x1A00'0003        BNE      ??rtc_set_hour_mode_1
+    317          	case RTC_HOUR_MODE_12:
+    318          		RTC->RTC_MR |= RTC_MR_HRMOD;
+   \                     ??rtc_set_hour_mode_2:
+   \       0x2C   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x30   0xE392'2001        ORRS     R2,R2,#0x1
+   \       0x34   0xE581'2000        STR      R2,[R1, #+0]
+    319          		break;
+   \       0x38   0xEAFF'FFFF        B        ??rtc_set_hour_mode_1
+    320          	case RTC_HOUR_MODE_24:
+    321          		break;
+    322          	}
+    323          }
+   \                     ??rtc_set_hour_mode_0:
+   \                     ??rtc_set_hour_mode_1:
+   \       0x3C   0xE12F'FF1E        BX       LR               ;; return
+    324          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    325          enum _rtc_hour_mode rtc_get_hour_mode(void)
+    326          {
+    327          	return (RTC->RTC_MR & RTC_MR_HRMOD) ? RTC_HOUR_MODE_12 : RTC_HOUR_MODE_24;
+   \                     rtc_get_hour_mode:
+   \        0x0   0xE3E0'0053        MVN      R0,#+83
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE210'0001        ANDS     R0,R0,#0x1
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    328          }
+    329          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    330          void rtc_enable_it(uint32_t sources)
+    331          {
+   \                     rtc_enable_it:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    332          #ifndef RTC_IER_TDERREN
+    333          #define RTC_IER_TDERREN 0
+    334          #endif
+    335          	assert((sources &  (uint32_t)(~(RTC_IER_ACKEN | RTC_IER_ALREN | RTC_IER_SECEN
+    336          			    | RTC_IER_TIMEN | RTC_IER_CALEN | RTC_IER_TDERREN))) == 0);
+   \        0x8   0xE3D4'003F        BICS     R0,R4,#0x3F
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x0A00'0004        BEQ      ??rtc_enable_it_0
+   \       0x14   0xE3A0'2F54        MOV      R2,#+336
+   \       0x18   0x....'....        LDR      R1,??DataTable2_2
+   \       0x1C   0x....'....        LDR      R0,??DataTable2_3
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    337          	RTC->RTC_IER = sources;
+   \                     ??rtc_enable_it_0:
+   \       0x28   0xE3E0'0037        MVN      R0,#+55
+   \       0x2C   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \       0x30   0xE580'4000        STR      R4,[R0, #+0]
+    338          }
+   \       0x34   0xE8BD'8010        POP      {R4,PC}          ;; return
+    339          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    340          void rtc_disable_it(uint32_t sources)
+    341          {
+   \                     rtc_disable_it:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    342          #ifndef RTC_IDR_TDERRDIS
+    343          #define RTC_IDR_TDERRDIS 0
+    344          #endif
+    345          	assert((sources & (uint32_t)(~(RTC_IDR_ACKDIS | RTC_IDR_ALRDIS | RTC_IDR_SECDIS
+    346          			   | RTC_IDR_TIMDIS | RTC_IDR_CALDIS | RTC_IDR_TDERRDIS))) == 0);
+   \        0x8   0xE3D4'003F        BICS     R0,R4,#0x3F
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x0A00'0005        BEQ      ??rtc_disable_it_0
+   \       0x14   0xE3A0'205A        MOV      R2,#+90
+   \       0x18   0xE382'2F40        ORR      R2,R2,#0x100
+   \       0x1C   0x....'....        LDR      R1,??DataTable2_2
+   \       0x20   0x....'....        LDR      R0,??DataTable2_3
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    347          	RTC->RTC_IDR = sources;
+   \                     ??rtc_disable_it_0:
+   \       0x2C   0xE3E0'0033        MVN      R0,#+51
+   \       0x30   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \       0x34   0xE580'4000        STR      R4,[R0, #+0]
+    348          }
+   \       0x38   0xE8BD'8010        POP      {R4,PC}          ;; return
+    349          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    350          uint32_t rtc_set_time(struct _time *time)
+    351          {
+   \                     rtc_set_time:
+   \        0x0   0xE92D'43F0        PUSH     {R4-R9,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    352          	uint32_t ltime = 0;
+   \        0x8   0xE3A0'7000        MOV      R7,#+0
+    353          	uint8_t hour_bcd , min_bcd, sec_bcd;
+    354          
+    355          	/* if 12-hour mode, set AMPM bit */
+    356          	if ((RTC->RTC_MR & RTC_MR_HRMOD) == RTC_MR_HRMOD) {
+   \        0xC   0xE3E0'0053        MVN      R0,#+83
+   \       0x10   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \       0x14   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x18   0xE310'0001        TST      R0,#0x1
+   \       0x1C   0x0A00'0006        BEQ      ??rtc_set_time_0
+    357          		if (time->hour > 12) {
+   \       0x20   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x24   0xE350'000D        CMP      R0,#+13
+   \       0x28   0xBA00'0003        BLT      ??rtc_set_time_0
+    358          			time->hour -= 12;
+   \       0x2C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x30   0xE250'000C        SUBS     R0,R0,#+12
+   \       0x34   0xE5C4'0000        STRB     R0,[R4, #+0]
+    359          			ltime |= RTC_TIMR_AMPM;
+   \       0x38   0xE397'7840        ORRS     R7,R7,#0x400000
+    360          		}
+    361          	}
+    362          	hour_bcd = (time->hour % 10) | ((time->hour / 10) << 4);
+   \                     ??rtc_set_time_0:
+   \       0x3C   0xE3A0'800A        MOV      R8,#+10
+   \       0x40   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x44   0xE1B0'1008        MOVS     R1,R8
+   \       0x48   0x....'....        BL       __aeabi_idivmod
+   \       0x4C   0xE1B0'5001        MOVS     R5,R1
+   \       0x50   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x54   0xE1B0'1008        MOVS     R1,R8
+   \       0x58   0x....'....        BL       __aeabi_idiv
+   \       0x5C   0xE195'5200        ORRS     R5,R5,R0, LSL #+4
+    363          	min_bcd = (time->min % 10) | ((time->min / 10) << 4);
+   \       0x60   0xE5D4'0001        LDRB     R0,[R4, #+1]
+   \       0x64   0xE1B0'1008        MOVS     R1,R8
+   \       0x68   0x....'....        BL       __aeabi_idivmod
+   \       0x6C   0xE1B0'6001        MOVS     R6,R1
+   \       0x70   0xE5D4'0001        LDRB     R0,[R4, #+1]
+   \       0x74   0xE1B0'1008        MOVS     R1,R8
+   \       0x78   0x....'....        BL       __aeabi_idiv
+   \       0x7C   0xE196'6200        ORRS     R6,R6,R0, LSL #+4
+    364          	sec_bcd = (time->sec % 10) | ((time->sec / 10) << 4);
+   \       0x80   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0x84   0xE1B0'1008        MOVS     R1,R8
+   \       0x88   0x....'....        BL       __aeabi_idivmod
+   \       0x8C   0xE1B0'9001        MOVS     R9,R1
+   \       0x90   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0x94   0xE1B0'1008        MOVS     R1,R8
+   \       0x98   0x....'....        BL       __aeabi_idiv
+   \       0x9C   0xE199'1200        ORRS     R1,R9,R0, LSL #+4
+    365          	/* value overflow */
+    366          	if ((hour_bcd & (uint8_t) (~RTC_HOUR_BIT_LEN_MASK)) |
+    367          	    (min_bcd & (uint8_t) (~RTC_MIN_BIT_LEN_MASK)) |
+    368          	    (sec_bcd & (uint8_t) (~RTC_SEC_BIT_LEN_MASK))) {
+   \       0xA0   0xE1B0'0005        MOVS     R0,R5
+   \       0xA4   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xA8   0xE210'00C0        ANDS     R0,R0,#0xC0
+   \       0xAC   0xE1B0'2006        MOVS     R2,R6
+   \       0xB0   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0xB4   0xE212'2080        ANDS     R2,R2,#0x80
+   \       0xB8   0xE192'0000        ORRS     R0,R2,R0
+   \       0xBC   0xE1B0'2001        MOVS     R2,R1
+   \       0xC0   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0xC4   0xE212'2080        ANDS     R2,R2,#0x80
+   \       0xC8   0xE192'0000        ORRS     R0,R2,R0
+   \       0xCC   0xE350'0000        CMP      R0,#+0
+   \       0xD0   0x0A00'0001        BEQ      ??rtc_set_time_1
+    369          		return 1;
+   \       0xD4   0xE3A0'0001        MOV      R0,#+1
+   \       0xD8   0xEA00'0026        B        ??rtc_set_time_2
+    370          	}
+    371          	ltime |= sec_bcd | (min_bcd << 8) | (hour_bcd << 16);
+   \                     ??rtc_set_time_1:
+   \       0xDC   0xE1B0'0001        MOVS     R0,R1
+   \       0xE0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xE4   0xE1B0'2006        MOVS     R2,R6
+   \       0xE8   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0xEC   0xE190'0402        ORRS     R0,R0,R2, LSL #+8
+   \       0xF0   0xE1B0'2005        MOVS     R2,R5
+   \       0xF4   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0xF8   0xE190'0802        ORRS     R0,R0,R2, LSL #+16
+   \       0xFC   0xE190'2007        ORRS     R2,R0,R7
+    372          	/* Wait for a second periodic event */
+    373          	while ((RTC->RTC_SR & RTC_SR_SEC_SECEVENT) != RTC_SR_SEC_SECEVENT);
+   \                     ??rtc_set_time_3:
+   \      0x100   0xE3E0'303F        MVN      R3,#+63
+   \      0x104   0xE3C3'3F40        BIC      R3,R3,#0x100
+   \      0x108   0xE593'0000        LDR      R0,[R3, #+0]
+   \      0x10C   0xE310'0004        TST      R0,#0x4
+   \      0x110   0x0AFF'FFFA        BEQ      ??rtc_set_time_3
+    374          	/* Set UPDTIM bit in RTC_CR */
+    375          	RTC->RTC_CR |= RTC_CR_UPDTIM;
+   \      0x114   0xE3E0'0057        MVN      R0,#+87
+   \      0x118   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \      0x11C   0xE590'C000        LDR      R12,[R0, #+0]
+   \      0x120   0xE39C'C001        ORRS     R12,R12,#0x1
+   \      0x124   0xE580'C000        STR      R12,[R0, #+0]
+    376          	while ((RTC->RTC_SR & RTC_SR_ACKUPD) != RTC_SR_ACKUPD);
+   \                     ??rtc_set_time_4:
+   \      0x128   0xE593'C000        LDR      R12,[R3, #+0]
+   \      0x12C   0xE31C'0001        TST      R12,#0x1
+   \      0x130   0x0AFF'FFFC        BEQ      ??rtc_set_time_4
+    377          	RTC->RTC_SCCR = RTC_SCCR_ACKCLR;
+   \      0x134   0xE3E0'303B        MVN      R3,#+59
+   \      0x138   0xE3C3'3F40        BIC      R3,R3,#0x100
+   \      0x13C   0xE3A0'C001        MOV      R12,#+1
+   \      0x140   0xE583'C000        STR      R12,[R3, #+0]
+    378          	RTC->RTC_TIMR = ltime;
+   \      0x144   0xE3E0'C04F        MVN      R12,#+79
+   \      0x148   0xE3CC'CF40        BIC      R12,R12,#0x100
+   \      0x14C   0xE58C'2000        STR      R2,[R12, #+0]
+    379          	RTC->RTC_CR &= (uint32_t) (~RTC_CR_UPDTIM);
+   \      0x150   0xE590'C000        LDR      R12,[R0, #+0]
+   \      0x154   0xE3DC'C001        BICS     R12,R12,#0x1
+   \      0x158   0xE580'C000        STR      R12,[R0, #+0]
+    380          	RTC->RTC_SCCR |= RTC_SCCR_SECCLR;
+   \      0x15C   0xE593'0000        LDR      R0,[R3, #+0]
+   \      0x160   0xE390'0004        ORRS     R0,R0,#0x4
+   \      0x164   0xE583'0000        STR      R0,[R3, #+0]
+    381          	return (uint32_t) (RTC->RTC_VER & RTC_VER_NVTIM);
+   \      0x168   0xE3E0'002B        MVN      R0,#+43
+   \      0x16C   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \      0x170   0xE590'0000        LDR      R0,[R0, #+0]
+   \      0x174   0xE210'0001        ANDS     R0,R0,#0x1
+   \                     ??rtc_set_time_2:
+   \      0x178   0xE8BD'83F0        POP      {R4-R9,PC}       ;; return
+    382          }
+    383          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    384          void rtc_get_time(struct _time *time)
+    385          {
+    386          	uint32_t ltime;
+    387          
+    388          	/* Get current RTC time */
+    389          	ltime = RTC->RTC_TIMR;
+   \                     rtc_get_time:
+   \        0x0   0xE3E0'204F        MVN      R2,#+79
+   \        0x4   0xE3C2'2F40        BIC      R2,R2,#0x100
+   \        0x8   0xE592'1000        LDR      R1,[R2, #+0]
+    390          	while (ltime != RTC->RTC_TIMR) {
+   \                     ??rtc_get_time_0:
+   \        0xC   0xE592'3000        LDR      R3,[R2, #+0]
+   \       0x10   0xE151'0003        CMP      R1,R3
+   \       0x14   0x0A00'0002        BEQ      ??rtc_get_time_1
+    391          		ltime = RTC->RTC_TIMR;
+   \       0x18   0xE592'3000        LDR      R3,[R2, #+0]
+   \       0x1C   0xE1B0'1003        MOVS     R1,R3
+   \       0x20   0xEAFF'FFF9        B        ??rtc_get_time_0
+    392          	}
+    393          	/* Hour */
+    394          	time->hour = ((ltime & 0x00300000) >> 20) * 10 + ((ltime & 0x000F0000) >> 16);
+   \                     ??rtc_get_time_1:
+   \       0x24   0xE3A0'2003        MOV      R2,#+3
+   \       0x28   0xE012'2A21        ANDS     R2,R2,R1, LSR #+20
+   \       0x2C   0xE3A0'300A        MOV      R3,#+10
+   \       0x30   0xE3A0'C00F        MOV      R12,#+15
+   \       0x34   0xE01C'C821        ANDS     R12,R12,R1, LSR #+16
+   \       0x38   0xE022'C293        MLA      R2,R3,R2,R12
+   \       0x3C   0xE5C0'2000        STRB     R2,[R0, #+0]
+    395          	if ((ltime & RTC_TIMR_AMPM) == RTC_TIMR_AMPM) {
+   \       0x40   0xE311'0840        TST      R1,#0x400000
+   \       0x44   0x0A00'0002        BEQ      ??rtc_get_time_2
+    396          		time->hour += 12;
+   \       0x48   0xE5D0'2000        LDRB     R2,[R0, #+0]
+   \       0x4C   0xE292'200C        ADDS     R2,R2,#+12
+   \       0x50   0xE5C0'2000        STRB     R2,[R0, #+0]
+    397          	}
+    398          	/* Minute */
+    399          	time->min = ((ltime & 0x00007000) >> 12) * 10 + ((ltime & 0x00000F00) >> 8);
+   \                     ??rtc_get_time_2:
+   \       0x54   0xE3A0'2007        MOV      R2,#+7
+   \       0x58   0xE012'2621        ANDS     R2,R2,R1, LSR #+12
+   \       0x5C   0xE3A0'300A        MOV      R3,#+10
+   \       0x60   0xE3A0'C00F        MOV      R12,#+15
+   \       0x64   0xE01C'C421        ANDS     R12,R12,R1, LSR #+8
+   \       0x68   0xE022'C293        MLA      R2,R3,R2,R12
+   \       0x6C   0xE5C0'2001        STRB     R2,[R0, #+1]
+    400          	/* Second */
+    401          	time->sec = ((ltime & 0x00000070) >> 4) * 10 + (ltime & 0x0000000F);
+   \       0x70   0xE3A0'2007        MOV      R2,#+7
+   \       0x74   0xE012'2221        ANDS     R2,R2,R1, LSR #+4
+   \       0x78   0xE3A0'300A        MOV      R3,#+10
+   \       0x7C   0xE211'C00F        ANDS     R12,R1,#0xF
+   \       0x80   0xE022'C293        MLA      R2,R3,R2,R12
+   \       0x84   0xE5C0'2002        STRB     R2,[R0, #+2]
+    402          }
+   \       0x88   0xE12F'FF1E        BX       LR               ;; return
+    403          
+    404          #ifdef CONFIG_HAVE_RTC_MODE_UTC
+    405          
+    406          void rtc_get_utc_time(uint32_t* utc_time)
+    407          {
+    408          	if (utc_time)
+    409          		*utc_time = RTC->RTC_TIMR;
+    410          }
+    411          
+    412          uint32_t rtc_set_utc_time(uint32_t utc_time)
+    413          {
+    414          	/* Wait for a second periodic event */
+    415          	while ((RTC->RTC_SR & RTC_SR_SEC_SECEVENT) != RTC_SR_SEC_SECEVENT);
+    416          	/* Set UPDTIM bit in RTC_CR */
+    417          	RTC->RTC_CR |= RTC_CR_UPDTIM;
+    418          	while ((RTC->RTC_SR & RTC_SR_ACKUPD) != RTC_SR_ACKUPD);
+    419          	RTC->RTC_SCCR = RTC_SCCR_ACKCLR;
+    420          	RTC->RTC_TIMR = utc_time;
+    421          	RTC->RTC_CR &= ~RTC_CR_UPDTIM;
+    422          	RTC->RTC_SCCR |= RTC_SCCR_SECCLR;
+    423          	return RTC->RTC_VER & RTC_VER_NVTIM;
+    424          }
+    425          
+    426          uint32_t rtc_set_utc_time_alarm(uint32_t utc_time)
+    427          {
+    428          	/* Disable the alarm. */
+    429          	RTC->RTC_CALALR = 0;
+    430          	/* Change the UTC_TIME alarm value. */
+    431          	RTC->RTC_TIMALR = utc_time;
+    432          	/* Enable the alarm in UTC mode. */
+    433          	RTC->RTC_CALALR = RTC_CALALR_UTCEN;
+    434          	return (uint32_t) (RTC->RTC_VER & RTC_VER_NVTIMALR);
+    435          }
+    436          
+    437          #endif /* CONFIG_HAVE_RTC_MODE_UTC */
+    438          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    439          uint32_t rtc_set_time_alarm(struct _time *time)
+    440          {
+   \                     rtc_set_time_alarm:
+   \        0x0   0xE92D'40F0        PUSH     {R4-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    441          	uint32_t alarm = 0;
+   \        0x8   0xE3A0'5000        MOV      R5,#+0
+    442          
+    443          	/* Hour */
+    444          	if (time->hour) {
+   \        0xC   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x0A00'000B        BEQ      ??rtc_set_time_alarm_0
+    445          		alarm |= RTC_TIMALR_HOUREN | ((time->hour / 10) << 20) | ((time->hour % 10) << 16);
+   \       0x18   0xE3A0'600A        MOV      R6,#+10
+   \       0x1C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x20   0xE1B0'1006        MOVS     R1,R6
+   \       0x24   0x....'....        BL       __aeabi_idiv
+   \       0x28   0xE1B0'7000        MOVS     R7,R0
+   \       0x2C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x30   0xE1B0'1006        MOVS     R1,R6
+   \       0x34   0x....'....        BL       __aeabi_idivmod
+   \       0x38   0xE1B0'0801        LSLS     R0,R1,#+16
+   \       0x3C   0xE190'0A07        ORRS     R0,R0,R7, LSL #+20
+   \       0x40   0xE390'0880        ORRS     R0,R0,#0x800000
+   \       0x44   0xE190'5005        ORRS     R5,R0,R5
+    446          	}
+    447          	/* Minute */
+    448          	if (time->min) {
+   \                     ??rtc_set_time_alarm_0:
+   \       0x48   0xE5D4'0001        LDRB     R0,[R4, #+1]
+   \       0x4C   0xE350'0000        CMP      R0,#+0
+   \       0x50   0x0A00'000B        BEQ      ??rtc_set_time_alarm_1
+    449          		alarm |= RTC_TIMALR_MINEN | ((time->min / 10) << 12) | ((time->min % 10) << 8);
+   \       0x54   0xE3A0'600A        MOV      R6,#+10
+   \       0x58   0xE5D4'0001        LDRB     R0,[R4, #+1]
+   \       0x5C   0xE1B0'1006        MOVS     R1,R6
+   \       0x60   0x....'....        BL       __aeabi_idiv
+   \       0x64   0xE1B0'7000        MOVS     R7,R0
+   \       0x68   0xE5D4'0001        LDRB     R0,[R4, #+1]
+   \       0x6C   0xE1B0'1006        MOVS     R1,R6
+   \       0x70   0x....'....        BL       __aeabi_idivmod
+   \       0x74   0xE1B0'0401        LSLS     R0,R1,#+8
+   \       0x78   0xE190'0607        ORRS     R0,R0,R7, LSL #+12
+   \       0x7C   0xE390'0C80        ORRS     R0,R0,#0x8000
+   \       0x80   0xE190'5005        ORRS     R5,R0,R5
+    450          	}
+    451          	/* Second */
+    452          	if (time->sec) {
+   \                     ??rtc_set_time_alarm_1:
+   \       0x84   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0x88   0xE350'0000        CMP      R0,#+0
+   \       0x8C   0x0A00'000A        BEQ      ??rtc_set_time_alarm_2
+    453          		alarm |= RTC_TIMALR_SECEN | ((time->sec / 10) << 4) | (time->sec % 10);
+   \       0x90   0xE3A0'600A        MOV      R6,#+10
+   \       0x94   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0x98   0xE1B0'1006        MOVS     R1,R6
+   \       0x9C   0x....'....        BL       __aeabi_idiv
+   \       0xA0   0xE1B0'7000        MOVS     R7,R0
+   \       0xA4   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0xA8   0xE1B0'1006        MOVS     R1,R6
+   \       0xAC   0x....'....        BL       __aeabi_idivmod
+   \       0xB0   0xE191'0207        ORRS     R0,R1,R7, LSL #+4
+   \       0xB4   0xE390'0080        ORRS     R0,R0,#0x80
+   \       0xB8   0xE190'5005        ORRS     R5,R0,R5
+    454          	}
+    455          	RTC->RTC_SCCR = RTC_SCCR_ALRCLR;
+   \                     ??rtc_set_time_alarm_2:
+   \       0xBC   0xE3A0'0002        MOV      R0,#+2
+   \       0xC0   0xE3E0'103B        MVN      R1,#+59
+   \       0xC4   0xE3C1'1F40        BIC      R1,R1,#0x100
+   \       0xC8   0xE581'0000        STR      R0,[R1, #+0]
+    456          	RTC->RTC_TIMALR = alarm;
+   \       0xCC   0xE3E0'0047        MVN      R0,#+71
+   \       0xD0   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \       0xD4   0xE580'5000        STR      R5,[R0, #+0]
+    457          	return (uint32_t) (RTC->RTC_VER & RTC_VER_NVTIMALR);
+   \       0xD8   0xE3E0'002B        MVN      R0,#+43
+   \       0xDC   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \       0xE0   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0xE4   0xE210'0004        ANDS     R0,R0,#0x4
+   \       0xE8   0xE8BD'80F0        POP      {R4-R7,PC}       ;; return
+    458          }
+    459          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    460          void rtc_get_date(struct _date *date)
+    461          {
+    462          	uint32_t ldate;
+    463          
+    464          	/* Get current date (multiple reads are necessary to insure a stable value) */
+    465          	do {
+    466          		ldate = RTC->RTC_CALR;
+   \                     rtc_get_date:
+   \                     ??rtc_get_date_0:
+   \        0x0   0xE3E0'204B        MVN      R2,#+75
+   \        0x4   0xE3C2'2F40        BIC      R2,R2,#0x100
+   \        0x8   0xE592'3000        LDR      R3,[R2, #+0]
+   \        0xC   0xE1B0'1003        MOVS     R1,R3
+    467          	} while (ldate != RTC->RTC_CALR);
+   \       0x10   0xE592'2000        LDR      R2,[R2, #+0]
+   \       0x14   0xE151'0002        CMP      R1,R2
+   \       0x18   0x1AFF'FFF8        BNE      ??rtc_get_date_0
+    468          
+    469          	/* Retrieve values */
+    470          	date->year = (((ldate >> 4) & 0x7) * 1000) + ((ldate & 0xF) * 100)
+    471          		+ (((ldate >> 12) & 0xF) * 10) + ((ldate >> 8) & 0xF);
+   \       0x1C   0xE1B0'2221        LSRS     R2,R1,#+4
+   \       0x20   0xE212'2007        ANDS     R2,R2,#0x7
+   \       0x24   0xE3A0'3FFA        MOV      R3,#+1000
+   \       0x28   0xE162'0382        SMULBB   R2,R2,R3
+   \       0x2C   0xE1B0'3001        MOVS     R3,R1
+   \       0x30   0xE213'300F        ANDS     R3,R3,#0xF
+   \       0x34   0xE3A0'C064        MOV      R12,#+100
+   \       0x38   0xE102'2C83        SMLABB   R2,R3,R12,R2
+   \       0x3C   0xE3A0'300F        MOV      R3,#+15
+   \       0x40   0xE013'3621        ANDS     R3,R3,R1, LSR #+12
+   \       0x44   0xE3A0'C00A        MOV      R12,#+10
+   \       0x48   0xE102'2C83        SMLABB   R2,R3,R12,R2
+   \       0x4C   0xE1B0'3421        LSRS     R3,R1,#+8
+   \       0x50   0xE213'300F        ANDS     R3,R3,#0xF
+   \       0x54   0xE093'2002        ADDS     R2,R3,R2
+   \       0x58   0xE1C0'20B0        STRH     R2,[R0, #+0]
+    472          	date->month = (((ldate >> 20) & 1) * 10) + ((ldate >> 16) & 0xF);
+   \       0x5C   0xE3A0'2001        MOV      R2,#+1
+   \       0x60   0xE012'2A21        ANDS     R2,R2,R1, LSR #+20
+   \       0x64   0xE3A0'300A        MOV      R3,#+10
+   \       0x68   0xE3A0'C00F        MOV      R12,#+15
+   \       0x6C   0xE01C'C821        ANDS     R12,R12,R1, LSR #+16
+   \       0x70   0xE022'C293        MLA      R2,R3,R2,R12
+   \       0x74   0xE5C0'2002        STRB     R2,[R0, #+2]
+    473          	date->day = (((ldate >> 28) & 0x3) * 10) + ((ldate >> 24) & 0xF);
+   \       0x78   0xE3A0'2003        MOV      R2,#+3
+   \       0x7C   0xE012'2E21        ANDS     R2,R2,R1, LSR #+28
+   \       0x80   0xE3A0'300A        MOV      R3,#+10
+   \       0x84   0xE3A0'C00F        MOV      R12,#+15
+   \       0x88   0xE01C'CC21        ANDS     R12,R12,R1, LSR #+24
+   \       0x8C   0xE022'C293        MLA      R2,R3,R2,R12
+   \       0x90   0xE5C0'2003        STRB     R2,[R0, #+3]
+    474          	date->week = ((ldate >> 21) & 0x7);
+   \       0x94   0xE1B0'2AA1        LSRS     R2,R1,#+21
+   \       0x98   0xE212'2007        ANDS     R2,R2,#0x7
+   \       0x9C   0xE5C0'2004        STRB     R2,[R0, #+4]
+    475          }
+   \       0xA0   0xE12F'FF1E        BX       LR               ;; return
+    476          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    477          uint32_t rtc_set_date(struct _date *date)
+    478          {
+   \                     rtc_set_date:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    479          	uint32_t ldate;
+    480          	uint8_t cent_bcd, year_bcd, month_bcd, day_bcd, week_bcd;
+    481          
+    482          	cent_bcd = ((date->year / 100) % 10) | ((date->year / 1000) << 4);
+   \        0x8   0xE3A0'900A        MOV      R9,#+10
+   \        0xC   0xE1D4'00B0        LDRH     R0,[R4, #+0]
+   \       0x10   0xE3A0'1064        MOV      R1,#+100
+   \       0x14   0x....'....        BL       __aeabi_idiv
+   \       0x18   0xE1B0'1009        MOVS     R1,R9
+   \       0x1C   0x....'....        BL       __aeabi_idivmod
+   \       0x20   0xE1B0'5001        MOVS     R5,R1
+   \       0x24   0xE1D4'00B0        LDRH     R0,[R4, #+0]
+   \       0x28   0xE3A0'1FFA        MOV      R1,#+1000
+   \       0x2C   0x....'....        BL       __aeabi_idiv
+   \       0x30   0xE195'5200        ORRS     R5,R5,R0, LSL #+4
+    483          	year_bcd = (date->year % 10) | (((date->year / 10) % 10) << 4);
+   \       0x34   0xE1D4'00B0        LDRH     R0,[R4, #+0]
+   \       0x38   0xE1B0'1009        MOVS     R1,R9
+   \       0x3C   0x....'....        BL       __aeabi_idivmod
+   \       0x40   0xE1B0'6001        MOVS     R6,R1
+   \       0x44   0xE1D4'00B0        LDRH     R0,[R4, #+0]
+   \       0x48   0xE1B0'1009        MOVS     R1,R9
+   \       0x4C   0x....'....        BL       __aeabi_idiv
+   \       0x50   0xE1B0'1009        MOVS     R1,R9
+   \       0x54   0x....'....        BL       __aeabi_idivmod
+   \       0x58   0xE196'6201        ORRS     R6,R6,R1, LSL #+4
+    484          	month_bcd = ((date->month % 10) | (date->month / 10) << 4);
+   \       0x5C   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0x60   0xE1B0'1009        MOVS     R1,R9
+   \       0x64   0x....'....        BL       __aeabi_idivmod
+   \       0x68   0xE1B0'7001        MOVS     R7,R1
+   \       0x6C   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0x70   0xE1B0'1009        MOVS     R1,R9
+   \       0x74   0x....'....        BL       __aeabi_idiv
+   \       0x78   0xE197'7200        ORRS     R7,R7,R0, LSL #+4
+    485          	day_bcd = ((date->day % 10) | (date->day / 10) << 4);
+   \       0x7C   0xE5D4'0003        LDRB     R0,[R4, #+3]
+   \       0x80   0xE1B0'1009        MOVS     R1,R9
+   \       0x84   0x....'....        BL       __aeabi_idivmod
+   \       0x88   0xE1B0'8001        MOVS     R8,R1
+   \       0x8C   0xE5D4'0003        LDRB     R0,[R4, #+3]
+   \       0x90   0xE1B0'1009        MOVS     R1,R9
+   \       0x94   0x....'....        BL       __aeabi_idiv
+   \       0x98   0xE198'8200        ORRS     R8,R8,R0, LSL #+4
+    486          	week_bcd = ((date->week % 10) | (date->week / 10) << 4);
+   \       0x9C   0xE5D4'0004        LDRB     R0,[R4, #+4]
+   \       0xA0   0xE1B0'1009        MOVS     R1,R9
+   \       0xA4   0x....'....        BL       __aeabi_idivmod
+   \       0xA8   0xE1B0'A001        MOVS     R10,R1
+   \       0xAC   0xE5D4'0004        LDRB     R0,[R4, #+4]
+   \       0xB0   0xE1B0'1009        MOVS     R1,R9
+   \       0xB4   0x....'....        BL       __aeabi_idiv
+   \       0xB8   0xE19A'1200        ORRS     R1,R10,R0, LSL #+4
+    487          	/* value over flow */
+    488          	if ((cent_bcd & (uint8_t) (~RTC_CENT_BIT_LEN_MASK)) |
+    489          	    (year_bcd & (uint8_t) (~RTC_YEAR_BIT_LEN_MASK)) |
+    490          	    (month_bcd & (uint8_t) (~RTC_MONTH_BIT_LEN_MASK)) |
+    491          	    (week_bcd & (uint8_t) (~RTC_WEEK_BIT_LEN_MASK)) |
+    492          	    (day_bcd & (uint8_t) (~RTC_DATE_BIT_LEN_MASK))
+    493          	    ) {
+   \       0xBC   0xE1B0'0005        MOVS     R0,R5
+   \       0xC0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xC4   0xE210'0080        ANDS     R0,R0,#0x80
+   \       0xC8   0xE1B0'2007        MOVS     R2,R7
+   \       0xCC   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0xD0   0xE212'20E0        ANDS     R2,R2,#0xE0
+   \       0xD4   0xE192'0000        ORRS     R0,R2,R0
+   \       0xD8   0xE1B0'2001        MOVS     R2,R1
+   \       0xDC   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0xE0   0xE212'20F8        ANDS     R2,R2,#0xF8
+   \       0xE4   0xE192'0000        ORRS     R0,R2,R0
+   \       0xE8   0xE1B0'2008        MOVS     R2,R8
+   \       0xEC   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0xF0   0xE212'20C0        ANDS     R2,R2,#0xC0
+   \       0xF4   0xE192'0000        ORRS     R0,R2,R0
+   \       0xF8   0xE350'0000        CMP      R0,#+0
+   \       0xFC   0x0A00'0001        BEQ      ??rtc_set_date_0
+    494          		return 1;
+   \      0x100   0xE3A0'0001        MOV      R0,#+1
+   \      0x104   0xEA00'002B        B        ??rtc_set_date_1
+    495          	}
+    496          	/* Convert values to date register value */
+    497          	ldate = cent_bcd | (year_bcd << 8) | (month_bcd << 16) | (week_bcd << 21) | (day_bcd << 24);
+   \                     ??rtc_set_date_0:
+   \      0x108   0xE1B0'0005        MOVS     R0,R5
+   \      0x10C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x110   0xE1B0'2006        MOVS     R2,R6
+   \      0x114   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \      0x118   0xE190'0402        ORRS     R0,R0,R2, LSL #+8
+   \      0x11C   0xE1B0'2007        MOVS     R2,R7
+   \      0x120   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \      0x124   0xE190'0802        ORRS     R0,R0,R2, LSL #+16
+   \      0x128   0xE1B0'2001        MOVS     R2,R1
+   \      0x12C   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \      0x130   0xE190'0A82        ORRS     R0,R0,R2, LSL #+21
+   \      0x134   0xE1B0'2008        MOVS     R2,R8
+   \      0x138   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \      0x13C   0xE190'2C02        ORRS     R2,R0,R2, LSL #+24
+    498          	/* Wait for a second periodic event */
+    499          	while ((RTC->RTC_SR & RTC_SR_SEC_SECEVENT) != RTC_SR_SEC_SECEVENT);
+   \                     ??rtc_set_date_2:
+   \      0x140   0xE3E0'303F        MVN      R3,#+63
+   \      0x144   0xE3C3'3F40        BIC      R3,R3,#0x100
+   \      0x148   0xE593'0000        LDR      R0,[R3, #+0]
+   \      0x14C   0xE310'0004        TST      R0,#0x4
+   \      0x150   0x0AFF'FFFA        BEQ      ??rtc_set_date_2
+    500          	/* Update calendar register  */
+    501          	RTC->RTC_CR |= RTC_CR_UPDCAL;
+   \      0x154   0xE3E0'0057        MVN      R0,#+87
+   \      0x158   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \      0x15C   0xE590'C000        LDR      R12,[R0, #+0]
+   \      0x160   0xE39C'C002        ORRS     R12,R12,#0x2
+   \      0x164   0xE580'C000        STR      R12,[R0, #+0]
+    502          	while ((RTC->RTC_SR & RTC_SR_ACKUPD) != RTC_SR_ACKUPD);
+   \                     ??rtc_set_date_3:
+   \      0x168   0xE593'C000        LDR      R12,[R3, #+0]
+   \      0x16C   0xE31C'0001        TST      R12,#0x1
+   \      0x170   0x0AFF'FFFC        BEQ      ??rtc_set_date_3
+    503          	RTC->RTC_SCCR = RTC_SCCR_ACKCLR;
+   \      0x174   0xE3E0'303B        MVN      R3,#+59
+   \      0x178   0xE3C3'3F40        BIC      R3,R3,#0x100
+   \      0x17C   0xE3A0'C001        MOV      R12,#+1
+   \      0x180   0xE583'C000        STR      R12,[R3, #+0]
+    504          	RTC->RTC_CALR = ldate;
+   \      0x184   0xE3E0'C04B        MVN      R12,#+75
+   \      0x188   0xE3CC'CF40        BIC      R12,R12,#0x100
+   \      0x18C   0xE58C'2000        STR      R2,[R12, #+0]
+    505          	RTC->RTC_CR &= (uint32_t) (~RTC_CR_UPDCAL);
+   \      0x190   0xE590'C000        LDR      R12,[R0, #+0]
+   \      0x194   0xE3DC'C002        BICS     R12,R12,#0x2
+   \      0x198   0xE580'C000        STR      R12,[R0, #+0]
+    506          	RTC->RTC_SCCR |= RTC_SCCR_SECCLR;	/* clear SECENV in SCCR */
+   \      0x19C   0xE593'0000        LDR      R0,[R3, #+0]
+   \      0x1A0   0xE390'0004        ORRS     R0,R0,#0x4
+   \      0x1A4   0xE583'0000        STR      R0,[R3, #+0]
+    507          	return (uint32_t) (RTC->RTC_VER & RTC_VER_NVCAL);
+   \      0x1A8   0xE3E0'002B        MVN      R0,#+43
+   \      0x1AC   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \      0x1B0   0xE590'0000        LDR      R0,[R0, #+0]
+   \      0x1B4   0xE210'0002        ANDS     R0,R0,#0x2
+   \                     ??rtc_set_date_1:
+   \      0x1B8   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    508          }
+    509          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    510          uint32_t rtc_set_date_alarm(struct _date *date)
+    511          {
+   \                     rtc_set_date_alarm:
+   \        0x0   0xE92D'40F0        PUSH     {R4-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    512          	uint32_t alarm;
+    513          
+    514          	alarm = ((date->month) || (date->day)) ? (0) : (0x01010000);
+   \        0x8   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x1A00'0002        BNE      ??rtc_set_date_alarm_0
+   \       0x14   0xE5D4'0003        LDRB     R0,[R4, #+3]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x0A00'0001        BEQ      ??rtc_set_date_alarm_1
+   \                     ??rtc_set_date_alarm_0:
+   \       0x20   0xE3A0'5000        MOV      R5,#+0
+   \       0x24   0xEA00'0001        B        ??rtc_set_date_alarm_2
+   \                     ??rtc_set_date_alarm_1:
+   \       0x28   0xE3A0'5740        MOV      R5,#+16777216
+   \       0x2C   0xE385'5B40        ORR      R5,R5,#0x10000
+    515          	/* Compute alarm field value */
+    516          	if (date->month) {
+   \                     ??rtc_set_date_alarm_2:
+   \       0x30   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0x34   0xE350'0000        CMP      R0,#+0
+   \       0x38   0x0A00'000B        BEQ      ??rtc_set_date_alarm_3
+    517          		alarm |= RTC_CALALR_MTHEN | ((date->month / 10) << 20) | ((date->month % 10) << 16);
+   \       0x3C   0xE3A0'600A        MOV      R6,#+10
+   \       0x40   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0x44   0xE1B0'1006        MOVS     R1,R6
+   \       0x48   0x....'....        BL       __aeabi_idiv
+   \       0x4C   0xE1B0'7000        MOVS     R7,R0
+   \       0x50   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0x54   0xE1B0'1006        MOVS     R1,R6
+   \       0x58   0x....'....        BL       __aeabi_idivmod
+   \       0x5C   0xE1B0'0801        LSLS     R0,R1,#+16
+   \       0x60   0xE190'0A07        ORRS     R0,R0,R7, LSL #+20
+   \       0x64   0xE390'0880        ORRS     R0,R0,#0x800000
+   \       0x68   0xE190'5005        ORRS     R5,R0,R5
+    518          	}
+    519          	if (date->day) {
+   \                     ??rtc_set_date_alarm_3:
+   \       0x6C   0xE5D4'0003        LDRB     R0,[R4, #+3]
+   \       0x70   0xE350'0000        CMP      R0,#+0
+   \       0x74   0x0A00'000B        BEQ      ??rtc_set_date_alarm_4
+    520          		alarm |= RTC_CALALR_DATEEN | ((date->day / 10) << 28) | ((date->day % 10) << 24);
+   \       0x78   0xE3A0'600A        MOV      R6,#+10
+   \       0x7C   0xE5D4'0003        LDRB     R0,[R4, #+3]
+   \       0x80   0xE1B0'1006        MOVS     R1,R6
+   \       0x84   0x....'....        BL       __aeabi_idiv
+   \       0x88   0xE1B0'7000        MOVS     R7,R0
+   \       0x8C   0xE5D4'0003        LDRB     R0,[R4, #+3]
+   \       0x90   0xE1B0'1006        MOVS     R1,R6
+   \       0x94   0x....'....        BL       __aeabi_idivmod
+   \       0x98   0xE1B0'0C01        LSLS     R0,R1,#+24
+   \       0x9C   0xE190'0E07        ORRS     R0,R0,R7, LSL #+28
+   \       0xA0   0xE390'0480        ORRS     R0,R0,#0x80000000
+   \       0xA4   0xE190'5005        ORRS     R5,R0,R5
+    521          	}
+    522          	/* Set alarm */
+    523          	RTC->RTC_CALALR = alarm;
+   \                     ??rtc_set_date_alarm_4:
+   \       0xA8   0xE3E0'0043        MVN      R0,#+67
+   \       0xAC   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \       0xB0   0xE580'5000        STR      R5,[R0, #+0]
+    524          	return (uint32_t) (RTC->RTC_VER & RTC_VER_NVCALALR);
+   \       0xB4   0xE3E0'002B        MVN      R0,#+43
+   \       0xB8   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \       0xBC   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0xC0   0xE210'0008        ANDS     R0,R0,#0x8
+   \       0xC4   0xE8BD'80F0        POP      {R4-R7,PC}       ;; return
+    525          }
+    526          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    527          void rtc_clear_sccr(uint32_t mask)
+    528          {
+    529          	/* Clear all flag bits in status clear command register */
+    530          	mask &= RTC_SCCR_ACKCLR | RTC_SCCR_ALRCLR | RTC_SCCR_SECCLR |
+    531          		RTC_SCCR_TIMCLR | RTC_SCCR_CALCLR;
+   \                     rtc_clear_sccr:
+   \        0x0   0xE210'001F        ANDS     R0,R0,#0x1F
+    532          	RTC->RTC_SCCR = mask;
+   \        0x4   0xE3E0'103B        MVN      R1,#+59
+   \        0x8   0xE3C1'1F40        BIC      R1,R1,#0x100
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+    533          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    534          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    535          uint32_t rtc_get_sr(uint32_t mask)
+    536          {
+    537          	return (RTC->RTC_SR) & mask;
+   \                     rtc_get_sr:
+   \        0x0   0xE3E0'103F        MVN      R1,#+63
+   \        0x4   0xE3C1'1F40        BIC      R1,R1,#0x100
+   \        0x8   0xE591'1000        LDR      R1,[R1, #+0]
+   \        0xC   0xE010'0001        ANDS     R0,R0,R1
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    538          }
+    539          
+    540          #ifdef CONFIG_HAVE_RTC_TAMPER
+    541          
+    542          void rtc_get_tamper_time(struct _time *time,  uint8_t reg_num)
+    543          {
+    544          	uint32_t ltime, temp;
+    545          
+    546          	/* Get current RTC time */
+    547          	ltime = RTC->RTC_TS[reg_num].RTC_TSTR;
+    548          	while (ltime != RTC->RTC_TS[reg_num].RTC_TSTR) {
+    549          		ltime = RTC->RTC_TS[reg_num].RTC_TSTR;
+    550          	}
+    551          	/* Hour */
+    552          	if (time->hour) {
+    553          		temp = (ltime & RTC_TSTR_HOUR_Msk) >> RTC_TSTR_HOUR_Pos;
+    554          		time->hour = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+    555          		if ((ltime & RTC_TSTR_AMPM) == RTC_TSTR_AMPM) {
+    556          			time->hour += 12;
+    557          		}
+    558          	}
+    559          	/* Minute */
+    560          	if (time->min) {
+    561          		temp = (ltime & RTC_TSTR_MIN_Msk) >> RTC_TSTR_MIN_Pos;
+    562          		time->min = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+    563          	}
+    564          	/* Second */
+    565          	if (time->sec) {
+    566          		temp = (ltime & RTC_TSTR_SEC_Msk) >> RTC_TSTR_SEC_Pos;
+    567          		time->sec = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+    568          	}
+    569          }
+    570          
+    571          void rtc_get_tamper_date(struct _date *date, uint8_t reg_num)
+    572          {
+    573          	uint32_t ldate, cent, temp;
+    574          
+    575          	/* Get the current date (multiple reads are to insure a stable value). */
+    576          	ldate = RTC->RTC_TS[reg_num].RTC_TSDR;
+    577          	while (ldate != RTC->RTC_TS[reg_num].RTC_TSDR) {
+    578          		ldate = RTC->RTC_TS[reg_num].RTC_TSDR;
+    579          	}
+    580          	/* Retrieve year */
+    581          	temp = (ldate & RTC_TSDR_CENT_Msk) >> RTC_TSDR_CENT_Pos;
+    582          	cent = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+    583          	temp = (ldate & RTC_TSDR_YEAR_Msk) >> RTC_TSDR_YEAR_Pos;
+    584          	date->year = (cent * BCD_FACTOR * BCD_FACTOR) + (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+    585          
+    586          	/* Retrieve month */
+    587          	temp = (ldate & RTC_TSDR_MONTH_Msk) >> RTC_TSDR_MONTH_Pos;
+    588          	date->month = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+    589          
+    590          	/* Retrieve day */
+    591          	temp = (ldate & RTC_TSDR_DATE_Msk) >> RTC_TSDR_DATE_Pos;
+    592          	date->day = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+    593          
+    594          	/* Retrieve week */
+    595          	date->week= ((ldate & RTC_TSDR_DAY_Msk) >> RTC_TSDR_DAY_Pos);
+    596          }
+    597          
+    598          uint32_t rtc_get_tamper_source(uint8_t reg_num)
+    599          {
+    600          	return RTC->RTC_TS[reg_num].RTC_TSSR;
+    601          }
+    602          
+    603          uint32_t rtc_get_tamper_event_counter(void)
+    604          {
+    605          	return (RTC->RTC_TS[0].RTC_TSTR & RTC_TSTR_TEVCNT_Msk) >> RTC_TSTR_TEVCNT_Pos;
+    606          }
+    607          
+    608          uint8_t rtc_is_tamper_occur_in_backup_mode(uint8_t reg_num)
+    609          {
+    610          	if (RTC->RTC_TS[reg_num].RTC_TSTR & RTC_TSTR_BACKUP) {
+    611          		return 1;
+    612          	} else {
+    613          		return 0;
+    614          	}
+    615          }
+    616          
+    617          #endif /* CONFIG_HAVE_RTC_TAMPER */
+    618          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    619          void rtc_convert_time_to_hms(struct _time *time, uint32_t count)
+    620          {
+   \                     rtc_convert_time_to_hms:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'0001        MOVS     R0,R1
+    621          	count = count % 86400;
+   \        0xC   0xE3A0'1B50        MOV      R1,#+81920
+   \       0x10   0xE381'1D46        ORR      R1,R1,#0x1180
+   \       0x14   0x....'....        BL       __aeabi_uidivmod
+   \       0x18   0xE1B0'5001        MOVS     R5,R1
+    622          	time->hour = count / 3600;
+   \       0x1C   0xE3A0'6EE1        MOV      R6,#+3600
+   \       0x20   0xE1B0'0005        MOVS     R0,R5
+   \       0x24   0xE1B0'1006        MOVS     R1,R6
+   \       0x28   0x....'....        BL       __aeabi_uidiv
+   \       0x2C   0xE5C4'0000        STRB     R0,[R4, #+0]
+    623          	count -= time->hour * 3600;
+   \       0x30   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x34   0xE010'0096        MULS     R0,R6,R0
+   \       0x38   0xE055'5000        SUBS     R5,R5,R0
+    624          	time->min = count / 60;
+   \       0x3C   0xE3A0'603C        MOV      R6,#+60
+   \       0x40   0xE1B0'0005        MOVS     R0,R5
+   \       0x44   0xE1B0'1006        MOVS     R1,R6
+   \       0x48   0x....'....        BL       __aeabi_uidiv
+   \       0x4C   0xE5C4'0001        STRB     R0,[R4, #+1]
+    625          	time->sec = count % 60;
+   \       0x50   0xE1B0'0005        MOVS     R0,R5
+   \       0x54   0xE1B0'1006        MOVS     R1,R6
+   \       0x58   0x....'....        BL       __aeabi_uidivmod
+   \       0x5C   0xE5C4'1002        STRB     R1,[R4, #+2]
+    626          }
+   \       0x60   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    627          
+    628          #ifdef CONFIG_HAVE_RTC_CALIBRATION
+    629          
+    630          void rtc_calibration(int32_t current_tempr)
+    631          {
+    632          	int i;
+    633          	uint32_t mr;
+    634          
+    635          	for (i = 0; i < ARRAY_SIZE(ppm_lookup); i++) {
+    636          		if (ppm_lookup[i].tempr == current_tempr) {
+    637          			/* update the calibration value */
+    638          			mr = RTC->RTC_MR & ~(RTC_MR_CORRECTION_Msk | RTC_MR_HIGHPPM | RTC_MR_NEGPPM);
+    639          			mr |= RTC_MR_CORRECTION(ppm_lookup[i].correction);
+    640          			if (ppm_lookup[i].highppm)
+    641          				mr |= RTC_MR_HIGHPPM;
+    642          			if (ppm_lookup[i].negppm)
+    643          				mr |= RTC_MR_NEGPPM;
+    644          			RTC->RTC_MR = mr;
+    645          			break;
+    646          		}
+    647          	}
+    648          }
+    649          
+    650          #endif /* CONFIG_HAVE_RTC_CALIBRATION */
+    651          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    652          uint32_t rtc_set_time_event (uint32_t mask)
+    653          {
+   \                     rtc_set_time_event:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    654             uint32_t reg;
+    655             reg = RTC->RTC_CR;
+   \        0x4   0xE3E0'3057        MVN      R3,#+87
+   \        0x8   0xE3C3'3F40        BIC      R3,R3,#0x100
+   \        0xC   0xE593'0000        LDR      R0,[R3, #+0]
+    656             reg &= ~RTC_CR_TIMEVSEL_Msk;
+   \       0x10   0xE3D0'0FC0        BICS     R0,R0,#0x300
+    657             reg |= mask;
+   \       0x14   0xE191'2000        ORRS     R2,R1,R0
+    658             RTC->RTC_CR = reg;
+   \       0x18   0xE583'2000        STR      R2,[R3, #+0]
+    659             return RTC->RTC_CR;
+   \       0x1C   0xE593'0000        LDR      R0,[R3, #+0]
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    660          }
+    661          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    662          uint32_t rtc_set_calendar_event (uint32_t mask)
+    663          {
+   \                     rtc_set_calendar_event:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    664             uint32_t reg;
+    665             reg = RTC->RTC_CR;
+   \        0x4   0xE3E0'3057        MVN      R3,#+87
+   \        0x8   0xE3C3'3F40        BIC      R3,R3,#0x100
+   \        0xC   0xE593'0000        LDR      R0,[R3, #+0]
+    666             reg &= ~RTC_CR_CALEVSEL_Msk;
+   \       0x10   0xE3D0'0BC0        BICS     R0,R0,#0x30000
+    667             reg |= mask;
+   \       0x14   0xE191'2000        ORRS     R2,R1,R0
+    668             RTC->RTC_CR = reg;
+   \       0x18   0xE583'2000        STR      R2,[R3, #+0]
+    669             return RTC->RTC_CR;
+   \       0x1C   0xE593'0000        LDR      R0,[R3, #+0]
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    670          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x44          DC8 0x2D, 0x44, 0x2D, 0x20, 0x43, 0x3A, 0x5C, 0x77
+
+   \              0x2D 0x20    
+
+   \              0x43 0x3A    
+
+   \              0x5C 0x77
+   \        0x8   0x6F 0x72          DC8 0x6F, 0x72, 0x6B, 0x5C, 0x41, 0x74, 0x6D, 0x65
+
+   \              0x6B 0x5C    
+
+   \              0x41 0x74    
+
+   \              0x6D 0x65
+   \       0x10   0x6C 0x53          DC8 0x6C, 0x53, 0x6F, 0x66, 0x74, 0x50, 0x41, 0x63
+
+   \              0x6F 0x66    
+
+   \              0x74 0x50    
+
+   \              0x41 0x63
+   \       0x18   0x6B 0x5C          DC8 0x6B, 0x5C, 0x61, 0x74, 0x6D, 0x65, 0x6C, 0x2D
+
+   \              0x61 0x74    
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x2D
+   \       0x20   0x73 0x6F          DC8 0x73, 0x6F, 0x66, 0x74, 0x77, 0x61, 0x72, 0x65
+
+   \              0x66 0x74    
+
+   \              0x77 0x61    
+
+   \              0x72 0x65
+   \       0x28   0x2D 0x70          DC8 0x2D, 0x70, 0x61, 0x63, 0x6B, 0x61, 0x67, 0x65
+
+   \              0x61 0x63    
+
+   \              0x6B 0x61    
+
+   \              0x67 0x65
+   \       0x30   0x2D 0x32          DC8 0x2D, 0x32, 0x2E, 0x31, 0x37, 0x5C, 0x64, 0x72
+
+   \              0x2E 0x31    
+
+   \              0x37 0x5C    
+
+   \              0x64 0x72
+   \       0x38   0x69 0x76          DC8 0x69, 0x76, 0x65, 0x72, 0x73, 0x5C, 0x70, 0x65
+
+   \              0x65 0x72    
+
+   \              0x73 0x5C    
+
+   \              0x70 0x65
+   \       0x40   0x72 0x69          DC8 0x72, 0x69, 0x70, 0x68, 0x65, 0x72, 0x61, 0x6C
+
+   \              0x70 0x68    
+
+   \              0x65 0x72    
+
+   \              0x61 0x6C
+   \       0x48   0x73 0x5C          DC8 0x73, 0x5C, 0x72, 0x74, 0x63, 0x2E, 0x63, 0x3A
+
+   \              0x72 0x74    
+
+   \              0x63 0x2E    
+
+   \              0x63 0x3A
+   \       0x50   0x32 0x38          DC8 0x32, 0x38, 0x39, 0x20, 0x52, 0x54, 0x43, 0x3A
+
+   \              0x39 0x20    
+
+   \              0x52 0x54    
+
+   \              0x43 0x3A
+   \       0x58   0x20 0x49          DC8 0x20, 0x49, 0x6E, 0x76, 0x61, 0x6C, 0x69, 0x64
+
+   \              0x6E 0x76    
+
+   \              0x61 0x6C    
+
+   \              0x69 0x64
+   \       0x60   0x20 0x74          DC8 0x20, 0x74, 0x69, 0x6D, 0x65, 0x5F, 0x6D, 0x6F
+
+   \              0x69 0x6D    
+
+   \              0x65 0x5F    
+
+   \              0x6D 0x6F
+   \       0x68   0x64 0x65          DC8 0x64, 0x65, 0x0D, 0x0A, 0
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x6D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x28 0x73          DC8 0x28, 0x73, 0x6F, 0x75, 0x72, 0x63, 0x65, 0x73
+
+   \              0x6F 0x75    
+
+   \              0x72 0x63    
+
+   \              0x65 0x73
+   \        0x8   0x20 0x26          DC8 0x20, 0x26, 0x20, 0x28, 0x75, 0x69, 0x6E, 0x74
+
+   \              0x20 0x28    
+
+   \              0x75 0x69    
+
+   \              0x6E 0x74
+   \       0x10   0x33 0x32          DC8 0x33, 0x32, 0x5F, 0x74, 0x29, 0x28, 0x7E, 0x28
+
+   \              0x5F 0x74    
+
+   \              0x29 0x28    
+
+   \              0x7E 0x28
+   \       0x18   0x28 0x30          DC8 0x28, 0x30, 0x78, 0x31, 0x75, 0x20, 0x3C, 0x3C
+
+   \              0x78 0x31    
+
+   \              0x75 0x20    
+
+   \              0x3C 0x3C
+   \       0x20   0x20 0x30          DC8 0x20, 0x30, 0x29, 0x20, 0x7C, 0x20, 0x28, 0x30
+
+   \              0x29 0x20    
+
+   \              0x7C 0x20    
+
+   \              0x28 0x30
+   \       0x28   0x78 0x31          DC8 0x78, 0x31, 0x75, 0x20, 0x3C, 0x3C, 0x20, 0x31
+
+   \              0x75 0x20    
+
+   \              0x3C 0x3C    
+
+   \              0x20 0x31
+   \       0x30   0x29 0x20          DC8 0x29, 0x20, 0x7C, 0x20, 0x28, 0x30, 0x78, 0x31
+
+   \              0x7C 0x20    
+
+   \              0x28 0x30    
+
+   \              0x78 0x31
+   \       0x38   0x75 0x20          DC8 0x75, 0x20, 0x3C, 0x3C, 0x20, 0x32, 0x29, 0x20
+
+   \              0x3C 0x3C    
+
+   \              0x20 0x32    
+
+   \              0x29 0x20
+   \       0x40   0x7C 0x20          DC8 0x7C, 0x20, 0x28, 0x30, 0x78, 0x31, 0x75, 0x20
+
+   \              0x28 0x30    
+
+   \              0x78 0x31    
+
+   \              0x75 0x20
+   \       0x48   0x3C 0x3C          DC8 0x3C, 0x3C, 0x20, 0x33, 0x29, 0x20, 0x7C, 0x20
+
+   \              0x20 0x33    
+
+   \              0x29 0x20    
+
+   \              0x7C 0x20
+   \       0x50   0x28 0x30          DC8 0x28, 0x30, 0x78, 0x31, 0x75, 0x20, 0x3C, 0x3C
+
+   \              0x78 0x31    
+
+   \              0x75 0x20    
+
+   \              0x3C 0x3C
+   \       0x58   0x20 0x34          DC8 0x20, 0x34, 0x29, 0x20, 0x7C, 0x20, 0x28, 0x30
+
+   \              0x29 0x20    
+
+   \              0x7C 0x20    
+
+   \              0x28 0x30
+   \       0x60   0x78 0x31          DC8 0x78, 0x31, 0x75, 0x20, 0x3C, 0x3C, 0x20, 0x35
+
+   \              0x75 0x20    
+
+   \              0x3C 0x3C    
+
+   \              0x20 0x35
+   \       0x68   0x29 0x29          DC8 0x29, 0x29, 0x29, 0x29, 0x20, 0x3D, 0x3D, 0x20
+
+   \              0x29 0x29    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x20
+   \       0x70   0x30 0x00          DC8 0x30, 0
+   \       0x72   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x70, 0x65, 0x72, 0x69, 0x70, 0x68
+
+   \              0x70 0x65    
+
+   \              0x72 0x69    
+
+   \              0x70 0x68
+   \       0x40   0x65 0x72          DC8 0x65, 0x72, 0x61, 0x6C, 0x73, 0x5C, 0x72, 0x74
+
+   \              0x61 0x6C    
+
+   \              0x73 0x5C    
+
+   \              0x72 0x74
+   \       0x48   0x63 0x2E          DC8 0x63, 0x2E, 0x63, 0
+
+   \              0x63 0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   rtc_clear_sccr
+      16   rtc_convert_time_to_hms
+        16 __aeabi_uidiv
+        16 __aeabi_uidivmod
+       8   rtc_disable_it
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   rtc_enable_it
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       0   rtc_get_date
+       0   rtc_get_hour_mode
+       0   rtc_get_mode
+       0   rtc_get_sr
+       0   rtc_get_time
+       0   rtc_set_calendar_event
+      32   rtc_set_date
+        32 __aeabi_idiv
+        32 __aeabi_idivmod
+      20   rtc_set_date_alarm
+        20 __aeabi_idiv
+        20 __aeabi_idivmod
+       0   rtc_set_hour_mode
+      16   rtc_set_mode
+        16   -> printf
+      28   rtc_set_time
+        28 __aeabi_idiv
+        28 __aeabi_idivmod
+      20   rtc_set_time_alarm
+        20 __aeabi_idiv
+        20 __aeabi_idivmod
+       0   rtc_set_time_event
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+     112  ?_0
+     116  ?_1
+      76  ?_2
+      20  rtc_clear_sccr
+     100  rtc_convert_time_to_hms
+      60  rtc_disable_it
+      56  rtc_enable_it
+     164  rtc_get_date
+      20  rtc_get_hour_mode
+       8  rtc_get_mode
+      20  rtc_get_sr
+     140  rtc_get_time
+      36  rtc_set_calendar_event
+     444  rtc_set_date
+     200  rtc_set_date_alarm
+      64  rtc_set_hour_mode
+      68  rtc_set_mode
+     380  rtc_set_time
+     236  rtc_set_time_alarm
+      36  rtc_set_time_event
+
+ 
+   304 bytes in section .rodata
+ 2'068 bytes in section SOFTPACK
+ 
+ 2'068 bytes of CODE  memory
+   304 bytes of CONST memory
+
+Errors: none
+Warnings: none

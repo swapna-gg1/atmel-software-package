@@ -1,0 +1,437 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         22/Jul/2020  10:36:47
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\common\framework2\flash_loader.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW2ABA.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\common\framework2\flash_loader.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_GENERIC -D
+#        CONFIG_HAVE_AIC5 -D CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D
+#        CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_ADC_LOW_RES -D CONFIG_HAVE_PMC_FAST_STARTUP -D
+#        CONFIG_HAVE_PMC_GENERATED_CLOCKS -D CONFIG_HAVE_SCKC -D
+#        CONFIG_TIMER_POLLING -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC
+#        -D CONFIG_HAVE_PWMC -D CONFIG_HAVE_SDRAM_W9864G6KH -D
+#        CONFIG_HAVE_DDR2_MT47H64M16 -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_SERIALD_USART -D
+#        CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\flash_loaders\applets\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\flash_loaders\applets\common\framework2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List\flash_loader.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\Obj\flash_loader.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\common\framework2\flash_loader.c
+      1          //------------------------------------------------------------------------------
+      2          //
+      3          // Copyright (c) 2008-2015 IAR Systems
+      4          //
+      5          // Licensed under the Apache License, Version 2.0 (the "License")
+      6          // you may not use this file except in compliance with the License.
+      7          // You may obtain a copy of the License at
+      8          //     http://www.apache.org/licenses/LICENSE-2.0
+      9          //
+     10          // Unless required by applicable law or agreed to in writing, software
+     11          // distributed under the License is distributed on an "AS IS" BASIS,
+     12          // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     13          // See the License for the specific language governing permissions and
+     14          // limitations under the License.
+     15          //
+     16          // $Revision: 39361 $
+     17          //
+     18          //------------------------------------------------------------------------------
+     19          
+     20          // Wrapper for target-specific flash loader code
+     21          
+     22          #include "flash_loader.h"
+     23          #include "flash_loader_extra.h"
+     24          
+     25          #ifndef MAX_ARGS
+     26          #define MAX_ARGS 7
+     27          #endif
+     28          
+     29          // Maximum combined size of arguments, including a trailing null for each argument.
+     30          #ifndef MAX_ARG_SIZE
+     31          #define MAX_ARG_SIZE 64
+     32          #endif
+     33          
+     34          // Functions in this file, called from the assembly wrapper
+     35          void Fl2FlashInitEntry(void);
+     36          void Fl2FlashWriteEntry(void);
+     37          void Fl2FlashEraseWriteEntry(void);
+     38          void Fl2FlashChecksumEntry(void);
+     39          void Fl2FlashSignoffEntry(void);
+     40          void FlashBreak(void);
+     41          
+     42          
+     43          uint16_t Crc16_helper(uint8_t const *p, uint32_t len, uint16_t sum);
+     44          
+     45          // Flashloader framework version
+
+   \                                 In section .rodata, align 2, root
+     46          __root const uint16_t frameworkVersion = 200;
+   \                     frameworkVersion:
+   \        0x0   0x00C8             DC16 200
+     47          
+
+   \                                 In section .noinit, align 4, root
+     48          __root __no_init FlashParamsHolder  theFlashParams;
+   \                     theFlashParams:
+   \        0x0                      DS8 20
+     49          
+     50          __no_init int __argc;
+   \                     __argc:
+   \       0x14                      DS8 4
+     51          __no_init char __argvbuf[MAX_ARG_SIZE];
+     52          #pragma required=__argvbuf
+     53          __no_init const char* __argv[MAX_ARGS];
+   \                     __argv:
+   \       0x18                      DS8 28
+   \       0x34                      REQUIRE __argvbuf
+
+   \                                 In section .noinit, align 4
+   \                     __argvbuf:
+   \        0x0                      DS8 64
+     54          
+     55          #if CODE_ADDR_AS_VOID_PTR
+     56          #define CODE_REF void *
+     57          #else
+     58          #define CODE_REF uint32_t
+     59          #endif
+     60          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     61          void Fl2FlashInitEntry()
+     62          {
+   \                     Fl2FlashInitEntry:
+   \        0x0   0xE92D'401C        PUSH     {R2-R4,LR}
+     63          #if USE_ARGC_ARGV
+     64            theFlashParams.count = FlashInit((CODE_REF)theFlashParams.base_ptr,
+     65                                             theFlashParams.block_size,       // Image size
+     66                                             theFlashParams.offset_into_block,// link adr
+     67                                             theFlashParams.count,            // flags
+     68                                             __argc,
+     69                                             __argv);
+   \        0x4   0x....'....        LDR      R4,??DataTable4
+   \        0x8   0xE594'1014        LDR      R1,[R4, #+20]
+   \        0xC   0xE284'0018        ADD      R0,R4,#+24
+   \       0x10   0xE58D'0004        STR      R0,[SP, #+4]
+   \       0x14   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x18   0xE594'3004        LDR      R3,[R4, #+4]
+   \       0x1C   0xE594'2008        LDR      R2,[R4, #+8]
+   \       0x20   0xE594'1010        LDR      R1,[R4, #+16]
+   \       0x24   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x28   0x....'....        BL       FlashInit
+   \       0x2C   0xE584'0004        STR      R0,[R4, #+4]
+     70          #else
+     71            theFlashParams.count = FlashInit((CODE_REF)theFlashParams.base_ptr,
+     72                                             theFlashParams.block_size,       // Image size
+     73                                             theFlashParams.offset_into_block,// link adr
+     74                                             theFlashParams.count);           // flags
+     75          #endif
+     76          }
+   \       0x30   0xE8BD'8013        POP      {R0,R1,R4,PC}    ;; return
+     77          
+     78          // The normal flash write function ----------------------------------------------
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     79          void Fl2FlashWriteEntry()
+     80          {
+   \                     Fl2FlashWriteEntry:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+     81            theFlashParams.count = FlashWrite((CODE_REF)theFlashParams.base_ptr,
+     82                                              theFlashParams.offset_into_block,
+     83                                              theFlashParams.count,
+     84                                              theFlashParams.buffer);
+   \        0x4   0x....'....        LDR      R4,??DataTable4
+   \        0x8   0xE594'300C        LDR      R3,[R4, #+12]
+   \        0xC   0xE594'2004        LDR      R2,[R4, #+4]
+   \       0x10   0xE594'1008        LDR      R1,[R4, #+8]
+   \       0x14   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x18   0x....'....        BL       FlashWrite
+   \       0x1C   0xE584'0004        STR      R0,[R4, #+4]
+     85          }
+   \       0x20   0xE8BD'8010        POP      {R4,PC}          ;; return
+     86          
+     87          // The erase-first flash write function -----------------------------------------
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     88          void Fl2FlashEraseWriteEntry()
+     89          {
+   \                     Fl2FlashEraseWriteEntry:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+     90            uint32_t tmp = theFlashParams.block_size;
+   \        0x4   0x....'....        LDR      R4,??DataTable4
+   \        0x8   0xE594'1010        LDR      R1,[R4, #+16]
+     91            if (tmp == 0)
+   \        0xC   0xE351'0000        CMP      R1,#+0
+   \       0x10   0x1A00'000D        BNE      ??Fl2FlashEraseWriteEntry_0
+     92            {
+     93              FlashEraseData *p = (FlashEraseData*)theFlashParams.buffer;
+   \       0x14   0xE594'500C        LDR      R5,[R4, #+12]
+     94              for (uint32_t i = 0; i < theFlashParams.count; ++i)
+   \       0x18   0xE3A0'6000        MOV      R6,#+0
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??Fl2FlashEraseWriteEntry_1:
+   \       0x20   0xE594'2004        LDR      R2,[R4, #+4]
+   \       0x24   0xE156'0002        CMP      R6,R2
+   \       0x28   0x2A00'0010        BCS      ??Fl2FlashEraseWriteEntry_2
+     95              {
+     96                tmp = FlashErase((CODE_REF)p->start, p->length);
+   \       0x2C   0xE595'1004        LDR      R1,[R5, #+4]
+   \       0x30   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x34   0x....'....        BL       FlashErase
+     97                if (tmp != 0) break;
+   \       0x38   0xE350'0000        CMP      R0,#+0
+     98                ++p;
+   \       0x3C   0x0285'5008        ADDEQ    R5,R5,#+8
+     99              }
+   \       0x40   0x0286'6001        ADDEQ    R6,R6,#+1
+   \       0x44   0x0AFF'FFF5        BEQ      ??Fl2FlashEraseWriteEntry_1
+   \       0x48   0xEA00'0008        B        ??Fl2FlashEraseWriteEntry_2
+    100            }
+    101            else
+    102            {
+    103              tmp = FlashErase((CODE_REF)theFlashParams.base_ptr,
+    104                               theFlashParams.block_size);
+   \                     ??Fl2FlashEraseWriteEntry_0:
+   \       0x4C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x50   0x....'....        BL       FlashErase
+    105              if (tmp == 0)
+   \       0x54   0xE350'0000        CMP      R0,#+0
+   \       0x58   0x1A00'0004        BNE      ??Fl2FlashEraseWriteEntry_2
+    106              {
+    107                tmp = FlashWrite((CODE_REF)theFlashParams.base_ptr,
+    108                                 theFlashParams.offset_into_block,
+    109                                 theFlashParams.count,
+    110                                 theFlashParams.buffer);
+   \       0x5C   0xE594'300C        LDR      R3,[R4, #+12]
+   \       0x60   0xE594'2004        LDR      R2,[R4, #+4]
+   \       0x64   0xE594'1008        LDR      R1,[R4, #+8]
+   \       0x68   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x6C   0x....'....        BL       FlashWrite
+    111              }
+    112            }
+    113            theFlashParams.count = tmp;
+   \                     ??Fl2FlashEraseWriteEntry_2:
+   \       0x70   0xE584'0004        STR      R0,[R4, #+4]
+    114          }
+   \       0x74   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    115          
+    116          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    117          void Fl2FlashChecksumEntry()
+    118          {
+   \                     Fl2FlashChecksumEntry:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    119            theFlashParams.count = FlashChecksum((CODE_REF)theFlashParams.base_ptr,
+    120                                                 theFlashParams.count);
+   \        0x4   0x....'....        LDR      R4,??DataTable4
+   \        0x8   0xE594'1004        LDR      R1,[R4, #+4]
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0x....'....        BL       FlashChecksum
+   \       0x14   0xE584'0004        STR      R0,[R4, #+4]
+    121          }
+   \       0x18   0xE8BD'8010        POP      {R4,PC}          ;; return
+    122          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    123          void Fl2FlashSignoffEntry()
+    124          {
+   \                     Fl2FlashSignoffEntry:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    125            theFlashParams.count = FlashSignoff();
+   \        0x4   0x....'....        BL       FlashSignoff
+   \        0x8   0x....'....        LDR      R1,??DataTable4
+   \        0xC   0xE581'0004        STR      R0,[R1, #+4]
+    126          }
+   \       0x10   0xE8BD'8001        POP      {R0,PC}          ;; return
+    127          
+    128          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    129          uint16_t Crc16(uint8_t const *p, uint32_t len)
+    130          {
+   \                     Crc16:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+   \        0xC   0xE3A0'2002        MOV      R2,#+2
+   \       0x10   0xE3A0'1000        MOV      R1,#+0
+   \       0x14   0xE1A0'000D        MOV      R0,SP
+   \       0x18   0x....'....        BL       memset
+    131            uint8_t zero[2] = { 0, 0 };
+    132            uint16_t sum = Crc16_helper(p, len, 0);
+   \       0x1C   0xE3A0'2000        MOV      R2,#+0
+   \       0x20   0xE1A0'1005        MOV      R1,R5
+   \       0x24   0xE1A0'0004        MOV      R0,R4
+   \       0x28   0x....'....        BL       Crc16_helper
+   \       0x2C   0xE1A0'2000        MOV      R2,R0
+    133            return Crc16_helper(zero, 2, sum);
+   \       0x30   0xE3A0'1002        MOV      R1,#+2
+   \       0x34   0xE1A0'000D        MOV      R0,SP
+   \       0x38   0x....'....        BL       Crc16_helper
+   \       0x3C   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    134          }
+    135          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    136          uint16_t Crc16_helper(uint8_t const *p, uint32_t len, uint16_t sum)
+    137          {
+   \                     Crc16_helper:
+   \        0x0   0xE1A0'3000        MOV      R3,R0
+   \        0x4   0xE92D'4010        PUSH     {R4,LR}
+   \        0x8   0xE1A0'0002        MOV      R0,R2
+   \        0xC   0xE3A0'2021        MOV      R2,#+33
+   \       0x10   0xE382'2D40        ORR      R2,R2,#0x1000
+    138            while (len--)
+   \                     ??Crc16_helper_0:
+   \       0x14   0xE351'0000        CMP      R1,#+0
+   \       0x18   0x0A00'000D        BEQ      ??Crc16_helper_1
+   \       0x1C   0xE241'1001        SUB      R1,R1,#+1
+    139            {
+    140              int i;
+    141              uint8_t byte = *p++;
+   \       0x20   0xE4D3'C001        LDRB     R12,[R3], #+1
+    142          
+    143              for (i = 0; i < 8; ++i)
+   \       0x24   0xE3A0'E008        MOV      LR,#+8
+    144              {
+    145                uint32_t osum = sum;
+   \                     ??Crc16_helper_2:
+   \       0x28   0xE1A0'4800        LSL      R4,R0,#+16
+    146                sum <<= 1;
+   \       0x2C   0xE1A0'0080        LSL      R0,R0,#+1
+    147                if (byte & 0x80)
+   \       0x30   0xE31C'0080        TST      R12,#0x80
+   \       0x34   0xE1A0'4824        LSR      R4,R4,#+16
+    148                  sum |= 1 ;
+   \       0x38   0x1380'0001        ORRNE    R0,R0,#0x1
+    149                if (osum & 0x8000)
+   \       0x3C   0xE314'0C80        TST      R4,#0x8000
+    150                  sum ^= 0x1021;
+   \       0x40   0x1022'0000        EORNE    R0,R2,R0
+    151                byte <<= 1;
+   \       0x44   0xE1A0'C08C        LSL      R12,R12,#+1
+    152              }
+   \       0x48   0xE25E'E001        SUBS     LR,LR,#+1
+   \       0x4C   0x1AFF'FFF5        BNE      ??Crc16_helper_2
+   \       0x50   0xEAFF'FFEF        B        ??Crc16_helper_0
+    153            }
+    154            return sum;
+   \                     ??Crc16_helper_1:
+   \       0x54   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x58   0xE1A0'0820        LSR      R0,R0,#+16
+   \       0x5C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    155          }
+    156          
+    157          #pragma optimize=no_inline
+
+   \                                 In section SOFTPACK, align 4, keep-with-next, root
+    158          __root void FlashBreak()
+    159          {
+    160            while(1);
+   \                     FlashBreak:
+   \                     ??FlashBreak_0:
+   \        0x0   0xEAFF'FFFE        B        ??FlashBreak_0
+    161          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4:
+   \        0x0   0x....'....        DC32     theFlashParams
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   Crc16
+        16   -> Crc16_helper
+        16   -> memset
+       8   Crc16_helper
+       8   Fl2FlashChecksumEntry
+         8   -> FlashChecksum
+      16   Fl2FlashEraseWriteEntry
+        16   -> FlashErase
+        16   -> FlashWrite
+      16   Fl2FlashInitEntry
+        16   -> FlashInit
+       8   Fl2FlashSignoffEntry
+         8   -> FlashSignoff
+       8   Fl2FlashWriteEntry
+         8   -> FlashWrite
+       0   FlashBreak
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+      64  Crc16
+      96  Crc16_helper
+      28  Fl2FlashChecksumEntry
+     120  Fl2FlashEraseWriteEntry
+      52  Fl2FlashInitEntry
+      20  Fl2FlashSignoffEntry
+      36  Fl2FlashWriteEntry
+       4  FlashBreak
+      64  __argvbuf
+       2  frameworkVersion
+      52  theFlashParams
+          __argc
+          __argv
+
+ 
+ 116 bytes in section .noinit
+   2 bytes in section .rodata
+ 424 bytes in section SOFTPACK
+ 
+ 424 bytes of CODE  memory
+   2 bytes of CONST memory
+ 116 bytes of DATA  memory
+
+Errors: none
+Warnings: none

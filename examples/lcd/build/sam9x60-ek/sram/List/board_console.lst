@@ -1,0 +1,234 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         20/Jan/2021  09:41:38
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_console.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWCB1D.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_console.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_LCD -D CONFIG_HAVE_LCDC -D CONFIG_HAVE_LCDC_OVR1 -D
+#        CONFIG_HAVE_LCDC_OVR2 -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_DDR2_W972GG6KB -D CONFIG_HAVE_RSTC_EXTERNAL_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_RTT -D
+#        CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\List\board_console.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\Obj\board_console.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_console.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2017, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <string.h>
+     35          
+     36          #include "board.h"
+     37          #include "board_console.h"
+     38          #include "serial/console.h"
+     39          
+     40          /*----------------------------------------------------------------------------
+     41           *        Public Functions
+     42           *----------------------------------------------------------------------------*/
+     43          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     44          void board_cfg_console(uint32_t baudrate)
+     45          {
+   \                     board_cfg_console:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE24D'D048        SUB      SP,SP,#+72
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+     46          	struct _console_cfg console_cfg;
+     47          
+     48          	if (!baudrate) {
+   \        0xC   0xE354'0000        CMP      R4,#+0
+   \       0x10   0x1A00'0002        BNE      ??board_cfg_console_1
+     49          #ifdef BOARD_CONSOLE_BAUDRATE
+     50          		baudrate = BOARD_CONSOLE_BAUDRATE;
+   \       0x14   0xE3A0'0B40        MOV      R0,#+65536
+   \       0x18   0xE380'0CC2        ORR      R0,R0,#0xC200
+   \       0x1C   0xE1B0'4000        MOVS     R4,R0
+     51          #else
+     52          		baudrate = 115200;
+     53          #endif
+     54          	}
+     55          
+     56          #ifdef BOARD_CONSOLE_ADDR
+     57          	memset(&console_cfg, 0, sizeof(console_cfg));
+   \                     ??board_cfg_console_1:
+   \       0x20   0xE3A0'5028        MOV      R5,#+40
+   \       0x24   0xE3A0'6000        MOV      R6,#+0
+   \       0x28   0xE28D'7020        ADD      R7,SP,#+32
+   \       0x2C   0xE1B0'2006        MOVS     R2,R6
+   \       0x30   0xE1B0'1005        MOVS     R1,R5
+   \       0x34   0xE1B0'0007        MOVS     R0,R7
+   \       0x38   0x....'....        BL       __aeabi_memset
+   \       0x3C   0xE1B0'0007        MOVS     R0,R7
+     58          	console_cfg.addr = BOARD_CONSOLE_ADDR;
+   \       0x40   0xE3E0'00FF        MVN      R0,#+255
+   \       0x44   0xE3C0'0ED0        BIC      R0,R0,#0xD00
+   \       0x48   0xE58D'0020        STR      R0,[SP, #+32]
+     59          	console_cfg.baudrate = baudrate;
+   \       0x4C   0xE58D'4024        STR      R4,[SP, #+36]
+     60          #  ifdef BOARD_CONSOLE_TX_PIN
+     61          	const struct _pin tx_pin = BOARD_CONSOLE_TX_PIN;
+   \       0x50   0xE28D'0010        ADD      R0,SP,#+16
+   \       0x54   0xE59F'1044        LDR      R1,??board_cfg_console_0
+   \       0x58   0xE3A0'2010        MOV      R2,#+16
+   \       0x5C   0x....'....        BL       __aeabi_memcpy4
+     62          	console_cfg.tx_pin = tx_pin;
+   \       0x60   0xE28D'0028        ADD      R0,SP,#+40
+   \       0x64   0xE28D'1010        ADD      R1,SP,#+16
+   \       0x68   0xE3A0'2010        MOV      R2,#+16
+   \       0x6C   0x....'....        BL       __aeabi_memcpy4
+     63          #  endif
+     64          #  ifdef BOARD_CONSOLE_RX_PIN
+     65          	const struct _pin rx_pin = BOARD_CONSOLE_RX_PIN;
+   \       0x70   0xE1B0'000D        MOVS     R0,SP
+   \       0x74   0xE59F'1028        LDR      R1,??board_cfg_console_0+0x4
+   \       0x78   0xE3A0'2010        MOV      R2,#+16
+   \       0x7C   0x....'....        BL       __aeabi_memcpy4
+     66          	console_cfg.rx_pin = rx_pin;
+   \       0x80   0xE28D'0038        ADD      R0,SP,#+56
+   \       0x84   0xE1B0'100D        MOVS     R1,SP
+   \       0x88   0xE3A0'2010        MOV      R2,#+16
+   \       0x8C   0x....'....        BL       __aeabi_memcpy4
+     67          #  endif
+     68          #else
+     69          	get_romcode_console(&console_cfg);
+     70          #endif
+     71          
+     72          	console_configure(&console_cfg);
+   \       0x90   0xE28D'0020        ADD      R0,SP,#+32
+   \       0x94   0x....'....        BL       console_configure
+     73          }
+   \       0x98   0xE28D'D04C        ADD      SP,SP,#+76
+   \       0x9C   0xE8BD'80F0        POP      {R4-R7,PC}       ;; return
+   \                     ??board_cfg_console_0:
+   \       0xA0   0x....'....        DC32     ?_0
+   \       0xA4   0x....'....        DC32     ?_1
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'0400        DC32 1'024
+   \        0x8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'0200        DC32 512
+   \        0x8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+     74          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      96   board_cfg_console
+        96   -> __aeabi_memcpy4
+        96   -> __aeabi_memset
+        96   -> console_configure
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      16  ?_0
+      16  ?_1
+     168  board_cfg_console
+
+ 
+  32 bytes in section .rodata
+ 168 bytes in section SOFTPACK
+ 
+ 168 bytes of CODE  memory
+  32 bytes of CONST memory
+
+Errors: none
+Warnings: none

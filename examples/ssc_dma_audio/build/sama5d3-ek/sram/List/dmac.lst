@@ -1,0 +1,1590 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         08/Dec/2020  16:47:03
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dmac.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW462F.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dmac.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D3 -D
+#        CONFIG_CHIP_SAMA5D36 -D CONFIG_BOARD_SAMA5D3_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_INPUT_OFFSET -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_PLLA_CHARGE_PUMP -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_PMC_PERIPH_DIV -D CONFIG_HAVE_SCKC -D
+#        CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_DMAC
+#        -D CONFIG_HAVE_DMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SMD -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_MT47H128M16 -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_TC_FAULT_MODE -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC
+#        -D CONFIG_HAVE_AUDIO_WM8904 -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sama5d3\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List\dmac.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj\dmac.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dmac.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           * \file
+     32           *
+     33           * Implementation of DMA controller (DMAC).
+     34           *
+     35           */
+     36          
+     37          /*----------------------------------------------------------------------------
+     38           *        Headers
+     39           *----------------------------------------------------------------------------*/
+     40          
+     41          #include "chip.h"
+     42          #include "dma/dmac.h"
+     43          
+     44          #include <assert.h>
+     45          #include "compiler.h"
+     46          
+     47          /*----------------------------------------------------------------------------
+     48           *        Exported functions
+     49           *----------------------------------------------------------------------------*/
+     50          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     51          uint32_t dmac_get_config(Dmac *dmac)
+     52          {
+   \                     dmac_get_config:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     53          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0x8   0xE374'0D68        CMN      R4,#+6656
+   \        0xC   0x0A00'0006        BEQ      ??dmac_get_config_0
+   \       0x10   0xE374'0D60        CMN      R4,#+6144
+   \       0x14   0x0A00'0004        BEQ      ??dmac_get_config_0
+   \       0x18   0x....'....        LDR      R0,??DataTable32
+   \       0x1C   0xE3A0'2035        MOV      R2,#+53
+   \       0x20   0xE280'1040        ADD      R1,R0,#+64
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+     54          
+     55          	return dmac->DMAC_GCFG;
+   \                     ??dmac_get_config_0:
+   \       0x2C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x30   0xE8BD'8010        POP      {R4,PC}          ;; return
+     56          }
+     57          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     58          void dmac_enable(Dmac *dmac)
+     59          {
+   \                     dmac_enable:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     60          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0x8   0xE374'0D68        CMN      R4,#+6656
+   \        0xC   0x0A00'0006        BEQ      ??dmac_enable_0
+   \       0x10   0xE374'0D60        CMN      R4,#+6144
+   \       0x14   0x0A00'0004        BEQ      ??dmac_enable_0
+   \       0x18   0x....'....        LDR      R0,??DataTable32
+   \       0x1C   0xE3A0'203C        MOV      R2,#+60
+   \       0x20   0xE280'1040        ADD      R1,R0,#+64
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+     61          
+     62          	dmac->DMAC_EN = DMAC_EN_ENABLE;
+   \                     ??dmac_enable_0:
+   \       0x2C   0xE3A0'0001        MOV      R0,#+1
+   \       0x30   0x....'....        B        ?Subroutine0
+     63          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE584'0004        STR      R0,[R4, #+4]
+   \        0x4   0xE8BD'8010        POP      {R4,PC}          ;; return
+     64          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     65          void dmac_disable(Dmac *dmac)
+     66          {
+   \                     dmac_disable:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     67          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0x8   0xE374'0D68        CMN      R4,#+6656
+   \        0xC   0x0A00'0006        BEQ      ??dmac_disable_0
+   \       0x10   0xE374'0D60        CMN      R4,#+6144
+   \       0x14   0x0A00'0004        BEQ      ??dmac_disable_0
+   \       0x18   0x....'....        LDR      R0,??DataTable32
+   \       0x1C   0xE3A0'2043        MOV      R2,#+67
+   \       0x20   0xE280'1040        ADD      R1,R0,#+64
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+     68          
+     69          	dmac->DMAC_EN = 0 ;
+   \                     ??dmac_disable_0:
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \       0x30                      REQUIRE ?Subroutine0
+   \       0x30                      ;; // Fall through to label ?Subroutine0
+     70          }
+     71          
+     72          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     73          void dmac_enable_global_it(Dmac *dmac, uint32_t int_mask)
+     74          {
+   \                     dmac_enable_global_it:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+     75          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_enable_global_it_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_enable_global_it_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'204B        MOV      R2,#+75
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+     76          
+     77          	dmac->DMAC_EBCIER |= int_mask;
+   \                     ??dmac_enable_global_it_0:
+   \       0x30   0xE594'0018        LDR      R0,[R4, #+24]
+   \       0x34   0xE185'0000        ORR      R0,R5,R0
+   \       0x38   0xE584'0018        STR      R0,[R4, #+24]
+     78          }
+   \       0x3C   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+     79          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     80          void dmac_disable_global_it(Dmac *dmac, uint32_t int_mask)
+     81          {
+   \                     dmac_disable_global_it:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+     82          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_disable_global_it_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_disable_global_it_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'2052        MOV      R2,#+82
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+     83          
+     84          	dmac->DMAC_EBCIDR |= int_mask;
+   \                     ??dmac_disable_global_it_0:
+   \       0x30   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x34   0xE185'0000        ORR      R0,R5,R0
+   \       0x38   0xE584'001C        STR      R0,[R4, #+28]
+     85          }
+   \       0x3C   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+     86          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     87          uint32_t dmac_get_global_it_mask(Dmac *dmac)
+     88          {
+   \                     dmac_get_global_it_mask:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     89          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0x8   0xE374'0D68        CMN      R4,#+6656
+   \        0xC   0x0A00'0006        BEQ      ??dmac_get_global_it_mask_0
+   \       0x10   0xE374'0D60        CMN      R4,#+6144
+   \       0x14   0x0A00'0004        BEQ      ??dmac_get_global_it_mask_0
+   \       0x18   0x....'....        LDR      R0,??DataTable32
+   \       0x1C   0xE3A0'2059        MOV      R2,#+89
+   \       0x20   0xE280'1040        ADD      R1,R0,#+64
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+     90          
+     91          	return dmac->DMAC_EBCIMR;
+   \                     ??dmac_get_global_it_mask_0:
+   \       0x2C   0xE594'0020        LDR      R0,[R4, #+32]
+   \       0x30   0xE8BD'8010        POP      {R4,PC}          ;; return
+     92          }
+     93          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     94          uint32_t dmac_get_global_isr(Dmac *dmac)
+     95          {
+   \                     dmac_get_global_isr:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     96          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0x8   0xE374'0D68        CMN      R4,#+6656
+   \        0xC   0x0A00'0006        BEQ      ??dmac_get_global_isr_0
+   \       0x10   0xE374'0D60        CMN      R4,#+6144
+   \       0x14   0x0A00'0004        BEQ      ??dmac_get_global_isr_0
+   \       0x18   0x....'....        LDR      R0,??DataTable32
+   \       0x1C   0xE3A0'2060        MOV      R2,#+96
+   \       0x20   0xE280'1040        ADD      R1,R0,#+64
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+     97          
+     98          	return dmac->DMAC_EBCISR;
+   \                     ??dmac_get_global_isr_0:
+   \       0x2C   0xE594'0024        LDR      R0,[R4, #+36]
+   \       0x30   0xE8BD'8010        POP      {R4,PC}          ;; return
+     99          }
+    100          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    101          uint32_t dmac_get_masked_global_isr(Dmac *dmac)
+    102          {
+   \                     dmac_get_masked_global_isr:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    103          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0x8   0xE374'0D68        CMN      R4,#+6656
+   \        0xC   0x0A00'0006        BEQ      ??dmac_get_masked_global_isr_0
+   \       0x10   0xE374'0D60        CMN      R4,#+6144
+   \       0x14   0x0A00'0004        BEQ      ??dmac_get_masked_global_isr_0
+   \       0x18   0x....'....        LDR      R0,??DataTable32
+   \       0x1C   0xE3A0'2067        MOV      R2,#+103
+   \       0x20   0xE280'1040        ADD      R1,R0,#+64
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    104          
+    105          	uint32_t mask = dmac->DMAC_EBCIMR;
+   \                     ??dmac_get_masked_global_isr_0:
+   \       0x2C   0xE594'0020        LDR      R0,[R4, #+32]
+    106          
+    107          	return dmac->DMAC_EBCISR & mask;
+   \       0x30   0xE594'1024        LDR      R1,[R4, #+36]
+   \       0x34   0xE000'0001        AND      R0,R0,R1
+   \       0x38   0xE8BD'8010        POP      {R4,PC}          ;; return
+    108          }
+    109          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    110          void dmac_enable_channel(Dmac *dmac, uint8_t channel)
+    111          {
+   \                     dmac_enable_channel:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    112          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_enable_channel_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_enable_channel_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'2070        MOV      R2,#+112
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    113          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_enable_channel_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_enable_channel_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'2071        MOV      R2,#+113
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    114          
+    115          	dmac->DMAC_CHER = DMAC_CHER_ENA0 << channel;
+   \                     ??dmac_enable_channel_1:
+   \       0x50   0xE3A0'0001        MOV      R0,#+1
+   \       0x54   0x....'....        B        ?Subroutine1
+    116          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE1A0'0510        LSL      R0,R0,R5
+   \        0x4   0xE584'0028        STR      R0,[R4, #+40]
+   \        0x8   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    117          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    118          void dmac_enable_channels(Dmac *dmac, uint8_t channel_mask)
+    119          {
+   \                     dmac_enable_channels:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    120          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_enable_channels_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_enable_channels_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'2078        MOV      R2,#+120
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    121          
+    122          	dmac->DMAC_CHER = channel_mask;
+   \                     ??dmac_enable_channels_0:
+   \       0x30   0xE584'5028        STR      R5,[R4, #+40]
+    123          }
+   \       0x34   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    124          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    125          void dmac_disable_channel(Dmac *dmac, uint8_t channel)
+    126          {
+   \                     dmac_disable_channel:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    127          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_disable_channel_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_disable_channel_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'207F        MOV      R2,#+127
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    128          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_disable_channel_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_disable_channel_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'2080        MOV      R2,#+128
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    129          
+    130          	dmac->DMAC_CHDR = DMAC_CHDR_DIS0 << channel;
+   \                     ??dmac_disable_channel_1:
+   \       0x50   0xE3A0'0001        MOV      R0,#+1
+   \       0x54   0x....'....        B        ?Subroutine2
+    131          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE1A0'0510        LSL      R0,R0,R5
+   \        0x4   0xE584'002C        STR      R0,[R4, #+44]
+   \        0x8   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    132          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    133          void dmac_suspend_channel(Dmac *dmac, uint8_t channel)
+    134          {
+   \                     dmac_suspend_channel:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    135          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_suspend_channel_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_suspend_channel_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'2087        MOV      R2,#+135
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    136          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_suspend_channel_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_suspend_channel_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'2088        MOV      R2,#+136
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    137          
+    138          	dmac->DMAC_CHER = DMAC_CHER_SUSP0 << channel;
+   \                     ??dmac_suspend_channel_1:
+   \       0x50   0xE3A0'0F40        MOV      R0,#+256
+   \       0x54                      REQUIRE ?Subroutine1
+   \       0x54                      ;; // Fall through to label ?Subroutine1
+    139          }
+    140          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    141          void dmac_disable_channels(Dmac *dmac, uint8_t channel_mask)
+    142          {
+   \                     dmac_disable_channels:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    143          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_disable_channels_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_disable_channels_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'208F        MOV      R2,#+143
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    144          
+    145          	dmac->DMAC_CHDR = channel_mask;
+   \                     ??dmac_disable_channels_0:
+   \       0x30   0xE584'502C        STR      R5,[R4, #+44]
+    146          }
+   \       0x34   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    147          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    148          void dmac_resume_channel(Dmac *dmac, uint8_t channel)
+    149          {
+   \                     dmac_resume_channel:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    150          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_resume_channel_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_resume_channel_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'2096        MOV      R2,#+150
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    151          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_resume_channel_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_resume_channel_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'2097        MOV      R2,#+151
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    152          	dmac->DMAC_CHDR = DMAC_CHDR_RES0 << channel;
+   \                     ??dmac_resume_channel_1:
+   \       0x50   0xE3A0'0F40        MOV      R0,#+256
+   \       0x54                      REQUIRE ?Subroutine2
+   \       0x54                      ;; // Fall through to label ?Subroutine2
+    153          }
+    154          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    155          uint32_t dmac_get_channel_status(Dmac *dmac)
+    156          {
+   \                     dmac_get_channel_status:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    157          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0x8   0xE374'0D68        CMN      R4,#+6656
+   \        0xC   0x0A00'0006        BEQ      ??dmac_get_channel_status_0
+   \       0x10   0xE374'0D60        CMN      R4,#+6144
+   \       0x14   0x0A00'0004        BEQ      ??dmac_get_channel_status_0
+   \       0x18   0x....'....        LDR      R0,??DataTable32
+   \       0x1C   0xE3A0'209D        MOV      R2,#+157
+   \       0x20   0xE280'1040        ADD      R1,R0,#+64
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    158          
+    159          	return dmac->DMAC_CHSR;
+   \                     ??dmac_get_channel_status_0:
+   \       0x2C   0xE594'0030        LDR      R0,[R4, #+48]
+   \       0x30   0xE8BD'8010        POP      {R4,PC}          ;; return
+    160          }
+    161          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    162          void dmac_software_single_request(Dmac *dmac, uint8_t channel)
+    163          {
+   \                     dmac_software_single_request:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    164          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_software_single_request_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_software_single_request_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'20A4        MOV      R2,#+164
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    165          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_software_single_request_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_software_single_request_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'20A5        MOV      R2,#+165
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    166          
+    167          	dmac->DMAC_SREQ |= ((DMAC_SREQ_SSREQ0 | DMAC_SREQ_DSREQ0) << (channel << 1) );
+   \                     ??dmac_software_single_request_1:
+   \       0x50   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x54   0xE3A0'1003        MOV      R1,#+3
+   \       0x58   0xE1A0'2085        LSL      R2,R5,#+1
+   \       0x5C   0xE180'2211        ORR      R2,R0,R1, LSL R2
+   \       0x60   0xE584'2008        STR      R2,[R4, #+8]
+    168          }
+   \       0x64   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    169          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    170          void dmac_software_chunk_transfer_request(Dmac *dmac, uint8_t channel)
+    171          {
+   \                     dmac_software_chunk_transfer_request:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    172          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_software_chunk_transfer_request_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_software_chunk_transfer_request_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'20AC        MOV      R2,#+172
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    173          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_software_chunk_transfer_request_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_software_chunk_transfer_request_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'20AD        MOV      R2,#+173
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    174          	dmac->DMAC_CREQ |= ((DMAC_CREQ_SCREQ0 | DMAC_CREQ_DCREQ0) << (channel << 1));
+   \                     ??dmac_software_chunk_transfer_request_1:
+   \       0x50   0xE594'000C        LDR      R0,[R4, #+12]
+   \       0x54   0xE3A0'1003        MOV      R1,#+3
+   \       0x58   0xE1A0'2085        LSL      R2,R5,#+1
+   \       0x5C   0xE180'2211        ORR      R2,R0,R1, LSL R2
+   \       0x60   0xE584'200C        STR      R2,[R4, #+12]
+    175          }
+   \       0x64   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    176          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    177          void dmac_set_src_addr(Dmac *dmac, uint8_t channel, const void *addr)
+    178          {
+   \                     dmac_set_src_addr:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    179          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+   \       0x14   0x0A00'0006        BEQ      ??dmac_set_src_addr_0
+   \       0x18   0xE374'0D60        CMN      R4,#+6144
+   \       0x1C   0x0A00'0004        BEQ      ??dmac_set_src_addr_0
+   \       0x20   0x....'....        LDR      R0,??DataTable32
+   \       0x24   0xE3A0'20B3        MOV      R2,#+179
+   \       0x28   0xE280'1040        ADD      R1,R0,#+64
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    180          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_set_src_addr_0:
+   \       0x34   0xE355'0008        CMP      R5,#+8
+   \       0x38   0x3A00'0005        BCC      ??dmac_set_src_addr_1
+   \       0x3C   0x....'....        LDR      R0,??DataTable32
+   \       0x40   0xE280'1040        ADD      R1,R0,#+64
+   \       0x44   0xE3A0'20B4        MOV      R2,#+180
+   \       0x48   0xE280'0088        ADD      R0,R0,#+136
+   \       0x4C   0x....'....        BL       __aeabi_assert
+   \       0x50   0x....'....        BL       __iar_EmptyStepPoint
+    181          
+    182          	dmac->DMAC_CH[channel].DMAC_SADDR = (uint32_t)addr;
+   \                     ??dmac_set_src_addr_1:
+   \       0x54   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x58   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x5C   0xE580'603C        STR      R6,[R0, #+60]
+    183          }
+   \       0x60   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    184          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    185          void dmac_set_dest_addr(Dmac *dmac, uint8_t channel, void *addr)
+    186          {
+   \                     dmac_set_dest_addr:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    187          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+   \       0x14   0x0A00'0006        BEQ      ??dmac_set_dest_addr_0
+   \       0x18   0xE374'0D60        CMN      R4,#+6144
+   \       0x1C   0x0A00'0004        BEQ      ??dmac_set_dest_addr_0
+   \       0x20   0x....'....        LDR      R0,??DataTable32
+   \       0x24   0xE3A0'20BB        MOV      R2,#+187
+   \       0x28   0xE280'1040        ADD      R1,R0,#+64
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    188          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_set_dest_addr_0:
+   \       0x34   0xE355'0008        CMP      R5,#+8
+   \       0x38   0x3A00'0005        BCC      ??dmac_set_dest_addr_1
+   \       0x3C   0x....'....        LDR      R0,??DataTable32
+   \       0x40   0xE280'1040        ADD      R1,R0,#+64
+   \       0x44   0xE3A0'20BC        MOV      R2,#+188
+   \       0x48   0xE280'0088        ADD      R0,R0,#+136
+   \       0x4C   0x....'....        BL       __aeabi_assert
+   \       0x50   0x....'....        BL       __iar_EmptyStepPoint
+    189          
+    190          	dmac->DMAC_CH[channel].DMAC_DADDR = (uint32_t)addr;
+   \                     ??dmac_set_dest_addr_1:
+   \       0x54   0xE085'1105        ADD      R1,R5,R5, LSL #+2
+   \       0x58   0xE284'0040        ADD      R0,R4,#+64
+   \       0x5C   0xE780'6181        STR      R6,[R0, +R1, LSL #+3]
+    191          }
+   \       0x60   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    192          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    193          uint32_t dmac_get_channel_src_addr(Dmac *dmac, uint8_t channel)
+    194          {
+   \                     dmac_get_channel_src_addr:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    195          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_get_channel_src_addr_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_get_channel_src_addr_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'20C3        MOV      R2,#+195
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    196          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_get_channel_src_addr_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_get_channel_src_addr_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'20C4        MOV      R2,#+196
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    197          
+    198          	return dmac->DMAC_CH[channel].DMAC_SADDR;
+   \                     ??dmac_get_channel_src_addr_1:
+   \       0x50   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x54   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x58   0xE590'003C        LDR      R0,[R0, #+60]
+   \       0x5C   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    199          }
+    200          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    201          uint32_t dmac_get_channel_dest_addr(Dmac *dmac, uint8_t channel)
+    202          {
+   \                     dmac_get_channel_dest_addr:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    203          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_get_channel_dest_addr_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_get_channel_dest_addr_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'20CB        MOV      R2,#+203
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    204          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_get_channel_dest_addr_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_get_channel_dest_addr_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'20CC        MOV      R2,#+204
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    205          
+    206          	return dmac->DMAC_CH[channel].DMAC_DADDR;
+   \                     ??dmac_get_channel_dest_addr_1:
+   \       0x50   0xE085'1105        ADD      R1,R5,R5, LSL #+2
+   \       0x54   0xE284'0040        ADD      R0,R4,#+64
+   \       0x58   0xE790'0181        LDR      R0,[R0, +R1, LSL #+3]
+   \       0x5C   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    207          }
+    208          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    209          void dmac_set_descriptor_addr(Dmac *dmac, uint8_t channel, void *addr,
+    210          		uint32_t ndaif)
+    211          {
+   \                     dmac_set_descriptor_addr:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    212          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+   \       0x14   0xE1A0'7003        MOV      R7,R3
+   \       0x18   0x0A00'0006        BEQ      ??dmac_set_descriptor_addr_0
+   \       0x1C   0xE374'0D60        CMN      R4,#+6144
+   \       0x20   0x0A00'0004        BEQ      ??dmac_set_descriptor_addr_0
+   \       0x24   0x....'....        LDR      R0,??DataTable32
+   \       0x28   0xE3A0'20D4        MOV      R2,#+212
+   \       0x2C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x30   0x....'....        BL       __aeabi_assert
+   \       0x34   0x....'....        BL       __iar_EmptyStepPoint
+    213          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_set_descriptor_addr_0:
+   \       0x38   0xE355'0008        CMP      R5,#+8
+   \       0x3C   0x3A00'0005        BCC      ??dmac_set_descriptor_addr_1
+   \       0x40   0x....'....        LDR      R0,??DataTable32
+   \       0x44   0xE280'1040        ADD      R1,R0,#+64
+   \       0x48   0xE3A0'20D5        MOV      R2,#+213
+   \       0x4C   0xE280'0088        ADD      R0,R0,#+136
+   \       0x50   0x....'....        BL       __aeabi_assert
+   \       0x54   0x....'....        BL       __iar_EmptyStepPoint
+    214          
+    215          	dmac->DMAC_CH[channel].DMAC_DSCR = (((uint32_t)addr) & 0xFFFFFFFC) | ndaif;
+   \                     ??dmac_set_descriptor_addr_1:
+   \       0x58   0xE085'1105        ADD      R1,R5,R5, LSL #+2
+   \       0x5C   0xE1A0'0126        LSR      R0,R6,#+2
+   \       0x60   0xE187'0100        ORR      R0,R7,R0, LSL #+2
+   \       0x64   0xE084'1181        ADD      R1,R4,R1, LSL #+3
+   \       0x68   0xE581'0044        STR      R0,[R1, #+68]
+    216          }
+   \       0x6C   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    217          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    218          uint32_t dmac_get_descriptor_addr(Dmac *dmac, uint8_t channel)
+    219          {
+   \                     dmac_get_descriptor_addr:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    220          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_get_descriptor_addr_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_get_descriptor_addr_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'20DC        MOV      R2,#+220
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    221          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_get_descriptor_addr_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_get_descriptor_addr_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'20DD        MOV      R2,#+221
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    222          
+    223          	return dmac->DMAC_CH[channel].DMAC_DSCR & (~DMAC_DSCR_DSCR_IF_Msk);
+   \                     ??dmac_get_descriptor_addr_1:
+   \       0x50   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x54   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x58   0xE590'1044        LDR      R1,[R0, #+68]
+   \       0x5C   0xE3C1'0003        BIC      R0,R1,#0x3
+   \       0x60   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    224          }
+    225          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    226          void dmac_set_control_a(Dmac *dmac, uint8_t channel,
+    227          		uint32_t config)
+    228          {
+   \                     dmac_set_control_a:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    229          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+   \       0x14   0x0A00'0006        BEQ      ??dmac_set_control_a_0
+   \       0x18   0xE374'0D60        CMN      R4,#+6144
+   \       0x1C   0x0A00'0004        BEQ      ??dmac_set_control_a_0
+   \       0x20   0x....'....        LDR      R0,??DataTable32
+   \       0x24   0xE3A0'20E5        MOV      R2,#+229
+   \       0x28   0xE280'1040        ADD      R1,R0,#+64
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    230          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_set_control_a_0:
+   \       0x34   0xE355'0008        CMP      R5,#+8
+   \       0x38   0x3A00'0005        BCC      ??dmac_set_control_a_1
+   \       0x3C   0x....'....        LDR      R0,??DataTable32
+   \       0x40   0xE280'1040        ADD      R1,R0,#+64
+   \       0x44   0xE3A0'20E6        MOV      R2,#+230
+   \       0x48   0xE280'0088        ADD      R0,R0,#+136
+   \       0x4C   0x....'....        BL       __aeabi_assert
+   \       0x50   0x....'....        BL       __iar_EmptyStepPoint
+    231          	dmac->DMAC_CH[channel].DMAC_CTRLA = config;
+   \                     ??dmac_set_control_a_1:
+   \       0x54   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x58   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x5C   0xE580'6048        STR      R6,[R0, #+72]
+    232          }
+   \       0x60   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    233          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    234          void dmac_set_control_b(Dmac *dmac, uint8_t channel,
+    235          		uint32_t config)
+    236          {
+   \                     dmac_set_control_b:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    237          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+   \       0x14   0x0A00'0006        BEQ      ??dmac_set_control_b_0
+   \       0x18   0xE374'0D60        CMN      R4,#+6144
+   \       0x1C   0x0A00'0004        BEQ      ??dmac_set_control_b_0
+   \       0x20   0x....'....        LDR      R0,??DataTable32
+   \       0x24   0xE3A0'20ED        MOV      R2,#+237
+   \       0x28   0xE280'1040        ADD      R1,R0,#+64
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    238          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_set_control_b_0:
+   \       0x34   0xE355'0008        CMP      R5,#+8
+   \       0x38   0x3A00'0005        BCC      ??dmac_set_control_b_1
+   \       0x3C   0x....'....        LDR      R0,??DataTable32
+   \       0x40   0xE280'1040        ADD      R1,R0,#+64
+   \       0x44   0xE3A0'20EE        MOV      R2,#+238
+   \       0x48   0xE280'0088        ADD      R0,R0,#+136
+   \       0x4C   0x....'....        BL       __aeabi_assert
+   \       0x50   0x....'....        BL       __iar_EmptyStepPoint
+    239          
+    240          	dmac->DMAC_CH[channel].DMAC_CTRLB = config;
+   \                     ??dmac_set_control_b_1:
+   \       0x54   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x58   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x5C   0xE580'604C        STR      R6,[R0, #+76]
+    241          }
+   \       0x60   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    242          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    243          void dmac_set_channel_config(Dmac *dmac, uint8_t channel, uint32_t config)
+    244          {
+   \                     dmac_set_channel_config:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    245          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+   \       0x14   0x0A00'0006        BEQ      ??dmac_set_channel_config_0
+   \       0x18   0xE374'0D60        CMN      R4,#+6144
+   \       0x1C   0x0A00'0004        BEQ      ??dmac_set_channel_config_0
+   \       0x20   0x....'....        LDR      R0,??DataTable32
+   \       0x24   0xE3A0'20F5        MOV      R2,#+245
+   \       0x28   0xE280'1040        ADD      R1,R0,#+64
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    246          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_set_channel_config_0:
+   \       0x34   0xE355'0008        CMP      R5,#+8
+   \       0x38   0x3A00'0005        BCC      ??dmac_set_channel_config_1
+   \       0x3C   0x....'....        LDR      R0,??DataTable32
+   \       0x40   0xE280'1040        ADD      R1,R0,#+64
+   \       0x44   0xE3A0'20F6        MOV      R2,#+246
+   \       0x48   0xE280'0088        ADD      R0,R0,#+136
+   \       0x4C   0x....'....        BL       __aeabi_assert
+   \       0x50   0x....'....        BL       __iar_EmptyStepPoint
+    247          
+    248          	dmac->DMAC_CH[channel].DMAC_CFG = config;
+   \                     ??dmac_set_channel_config_1:
+   \       0x54   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x58   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x5C   0xE580'6050        STR      R6,[R0, #+80]
+    249          }
+   \       0x60   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    250          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    251          bool is_dmac_auto_transfer(Dmac *dmac, uint8_t channel)
+    252          {
+   \                     is_dmac_auto_transfer:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    253          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??is_dmac_auto_transfer_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??is_dmac_auto_transfer_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'20FD        MOV      R2,#+253
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    254          	assert(channel < DMAC_CHANNELS);
+   \                     ??is_dmac_auto_transfer_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??is_dmac_auto_transfer_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'20FE        MOV      R2,#+254
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    255          	return (dmac->DMAC_CH[channel].DMAC_CTRLB & DMAC_CTRLB_AUTO_ENABLE);
+   \                     ??is_dmac_auto_transfer_1:
+   \       0x50   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x54   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x58   0xE590'104C        LDR      R1,[R0, #+76]
+   \       0x5C   0xE1A0'0FA1        LSR      R0,R1,#+31
+   \       0x60   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    256          }
+    257          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    258          void dmac_auto_clear(Dmac *dmac, uint8_t channel)
+    259          {
+   \                     dmac_auto_clear:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    260          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_auto_clear_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_auto_clear_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE3A0'2F41        MOV      R2,#+260
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    261          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_auto_clear_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_auto_clear_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE300'2105        MOVW     R2,#+261
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    262          	dmac->DMAC_CH[channel].DMAC_CTRLB &= ~DMAC_CTRLB_AUTO;
+   \                     ??dmac_auto_clear_1:
+   \       0x50   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x54   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x58   0xE590'104C        LDR      R1,[R0, #+76]
+   \       0x5C   0xE3C1'2480        BIC      R2,R1,#0x80000000
+   \       0x60   0xE580'204C        STR      R2,[R0, #+76]
+    263          }
+   \       0x64   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    264          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    265          uint32_t dmac_get_channel_config(Dmac *dmac, uint8_t channel)
+    266          {
+   \                     dmac_get_channel_config:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    267          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_get_channel_config_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_get_channel_config_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE300'210B        MOVW     R2,#+267
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    268          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_get_channel_config_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_get_channel_config_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'2F43        MOV      R2,#+268
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    269          
+    270          	return dmac->DMAC_CH[channel].DMAC_CFG;
+   \                     ??dmac_get_channel_config_1:
+   \       0x50   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x54   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x58   0xE590'0050        LDR      R0,[R0, #+80]
+   \       0x5C   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    271          }
+    272          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    273          void dmac_set_src_pip(Dmac *dmac, uint8_t channel, uint32_t pip)
+    274          {
+   \                     dmac_set_src_pip:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    275          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+   \       0x14   0x0A00'0006        BEQ      ??dmac_set_src_pip_0
+   \       0x18   0xE374'0D60        CMN      R4,#+6144
+   \       0x1C   0x0A00'0004        BEQ      ??dmac_set_src_pip_0
+   \       0x20   0x....'....        LDR      R0,??DataTable32
+   \       0x24   0xE300'2113        MOVW     R2,#+275
+   \       0x28   0xE280'1040        ADD      R1,R0,#+64
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    276          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_set_src_pip_0:
+   \       0x34   0xE355'0008        CMP      R5,#+8
+   \       0x38   0x3A00'0005        BCC      ??dmac_set_src_pip_1
+   \       0x3C   0x....'....        LDR      R0,??DataTable32
+   \       0x40   0xE280'1040        ADD      R1,R0,#+64
+   \       0x44   0xE3A0'2F45        MOV      R2,#+276
+   \       0x48   0xE280'0088        ADD      R0,R0,#+136
+   \       0x4C   0x....'....        BL       __aeabi_assert
+   \       0x50   0x....'....        BL       __iar_EmptyStepPoint
+    277          
+    278          	dmac->DMAC_CH[channel].DMAC_SPIP = pip;
+   \                     ??dmac_set_src_pip_1:
+   \       0x54   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x58   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x5C   0xE580'6054        STR      R6,[R0, #+84]
+    279          }
+   \       0x60   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    280          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    281          void dmac_set_des_pip(Dmac *dmac, uint8_t channel, uint32_t pip)
+    282          {
+   \                     dmac_set_des_pip:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    283          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+   \       0x14   0x0A00'0006        BEQ      ??dmac_set_des_pip_0
+   \       0x18   0xE374'0D60        CMN      R4,#+6144
+   \       0x1C   0x0A00'0004        BEQ      ??dmac_set_des_pip_0
+   \       0x20   0x....'....        LDR      R0,??DataTable32
+   \       0x24   0xE300'211B        MOVW     R2,#+283
+   \       0x28   0xE280'1040        ADD      R1,R0,#+64
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    284          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_set_des_pip_0:
+   \       0x34   0xE355'0008        CMP      R5,#+8
+   \       0x38   0x3A00'0005        BCC      ??dmac_set_des_pip_1
+   \       0x3C   0x....'....        LDR      R0,??DataTable32
+   \       0x40   0xE280'1040        ADD      R1,R0,#+64
+   \       0x44   0xE3A0'2F47        MOV      R2,#+284
+   \       0x48   0xE280'0088        ADD      R0,R0,#+136
+   \       0x4C   0x....'....        BL       __aeabi_assert
+   \       0x50   0x....'....        BL       __iar_EmptyStepPoint
+    285          
+    286          	dmac->DMAC_CH[channel].DMAC_DPIP = pip;
+   \                     ??dmac_set_des_pip_1:
+   \       0x54   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x58   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x5C   0xE580'6058        STR      R6,[R0, #+88]
+    287          }
+   \       0x60   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    288          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    289          uint32_t dmac_get_btsize(Dmac *dmac, uint8_t channel)
+    290          {
+   \                     dmac_get_btsize:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    291          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_get_btsize_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_get_btsize_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE300'2123        MOVW     R2,#+291
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    292          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_get_btsize_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_get_btsize_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE3A0'2F49        MOV      R2,#+292
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    293          	return (dmac->DMAC_CH[channel].DMAC_CTRLA & DMAC_CTRLA_BTSIZE_Msk);
+   \                     ??dmac_get_btsize_1:
+   \       0x50   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0x54   0xE084'0180        ADD      R0,R4,R0, LSL #+3
+   \       0x58   0xE590'1048        LDR      R1,[R0, #+72]
+   \       0x5C   0xE1A0'2801        LSL      R2,R1,#+16
+   \       0x60   0xE1A0'0822        LSR      R0,R2,#+16
+   \       0x64   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    294          }
+    295          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    296          void dmac_fifo_flush(Dmac *dmac, uint8_t channel)
+    297          {
+   \                     dmac_fifo_flush:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    298          	assert(dmac == DMAC0 || dmac == DMAC1);
+   \        0xC   0xE374'0D68        CMN      R4,#+6656
+   \       0x10   0x0A00'0006        BEQ      ??dmac_fifo_flush_0
+   \       0x14   0xE374'0D60        CMN      R4,#+6144
+   \       0x18   0x0A00'0004        BEQ      ??dmac_fifo_flush_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable32
+   \       0x20   0xE300'212A        MOVW     R2,#+298
+   \       0x24   0xE280'1040        ADD      R1,R0,#+64
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    299          	assert(channel < DMAC_CHANNELS);
+   \                     ??dmac_fifo_flush_0:
+   \       0x30   0xE355'0008        CMP      R5,#+8
+   \       0x34   0x3A00'0005        BCC      ??dmac_fifo_flush_1
+   \       0x38   0x....'....        LDR      R0,??DataTable32
+   \       0x3C   0xE280'1040        ADD      R1,R0,#+64
+   \       0x40   0xE300'212B        MOVW     R2,#+299
+   \       0x44   0xE280'0088        ADD      R0,R0,#+136
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    300          
+    301          	while ((dmac->DMAC_CHSR & (DMAC_CHSR_EMPT0 << channel)) == 0);
+   \                     ??dmac_fifo_flush_1:
+   \       0x50   0xE594'0030        LDR      R0,[R4, #+48]
+   \       0x54   0xE3A0'1B40        MOV      R1,#+65536
+   \       0x58   0xE110'0511        TST      R0,R1, LSL R5
+   \       0x5C   0x0AFF'FFFB        BEQ      ??dmac_fifo_flush_1
+    302          }
+   \       0x60   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable32:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x64 0x6D          DC8 0x64, 0x6D, 0x61, 0x63, 0x20, 0x3D, 0x3D, 0x20
+
+   \              0x61 0x63    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x20
+   \        0x8   0x28 0x28          DC8 0x28, 0x28, 0x44, 0x6D, 0x61, 0x63, 0x20, 0x2A
+
+   \              0x44 0x6D    
+
+   \              0x61 0x63    
+
+   \              0x20 0x2A
+   \       0x10   0x29 0x30          DC8 0x29, 0x30, 0x78, 0x46, 0x46, 0x46, 0x46, 0x45
+
+   \              0x78 0x46    
+
+   \              0x46 0x46    
+
+   \              0x46 0x45
+   \       0x18   0x36 0x30          DC8 0x36, 0x30, 0x30, 0x55, 0x29, 0x20, 0x7C, 0x7C
+
+   \              0x30 0x55    
+
+   \              0x29 0x20    
+
+   \              0x7C 0x7C
+   \       0x20   0x20 0x64          DC8 0x20, 0x64, 0x6D, 0x61, 0x63, 0x20, 0x3D, 0x3D
+
+   \              0x6D 0x61    
+
+   \              0x63 0x20    
+
+   \              0x3D 0x3D
+   \       0x28   0x20 0x28          DC8 0x20, 0x28, 0x28, 0x44, 0x6D, 0x61, 0x63, 0x20
+
+   \              0x28 0x44    
+
+   \              0x6D 0x61    
+
+   \              0x63 0x20
+   \       0x30   0x2A 0x29          DC8 0x2A, 0x29, 0x30, 0x78, 0x46, 0x46, 0x46, 0x46
+
+   \              0x30 0x78    
+
+   \              0x46 0x46    
+
+   \              0x46 0x46
+   \       0x38   0x45 0x38          DC8 0x45, 0x38, 0x30, 0x30, 0x55, 0x29, 0
+
+   \              0x30 0x30    
+
+   \              0x55 0x29    
+
+   \              0x00
+   \       0x3F   0x00               DC8 0
+   \       0x40   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \       0x48   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x50   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x58   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x60   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x68   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x70   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x78   0x73 0x5C          DC8 0x73, 0x5C, 0x64, 0x6D, 0x61, 0x5C, 0x64, 0x6D
+
+   \              0x64 0x6D    
+
+   \              0x61 0x5C    
+
+   \              0x64 0x6D
+   \       0x80   0x61 0x63          DC8 0x61, 0x63, 0x2E, 0x63, 0
+
+   \              0x2E 0x63    
+
+   \              0x00
+   \       0x85   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0x88   0x63 0x68          DC8 0x63, 0x68, 0x61, 0x6E, 0x6E, 0x65, 0x6C, 0x20
+
+   \              0x61 0x6E    
+
+   \              0x6E 0x65    
+
+   \              0x6C 0x20
+   \       0x90   0x3C 0x20          DC8 0x3C, 0x20, 0x28, 0x73, 0x69, 0x7A, 0x65, 0x6F
+
+   \              0x28 0x73    
+
+   \              0x69 0x7A    
+
+   \              0x65 0x6F
+   \       0x98   0x66 0x20          DC8 0x66, 0x20, 0x28, 0x28, 0x28, 0x28, 0x44, 0x6D
+
+   \              0x28 0x28    
+
+   \              0x28 0x28    
+
+   \              0x44 0x6D
+   \       0xA0   0x61 0x63          DC8 0x61, 0x63, 0x2A, 0x29, 0x30, 0x29, 0x2D, 0x3E
+
+   \              0x2A 0x29    
+
+   \              0x30 0x29    
+
+   \              0x2D 0x3E
+   \       0xA8   0x44 0x4D          DC8 0x44, 0x4D, 0x41, 0x43, 0x5F, 0x43, 0x48, 0x29
+
+   \              0x41 0x43    
+
+   \              0x5F 0x43    
+
+   \              0x48 0x29
+   \       0xB0   0x29 0x20          DC8 0x29, 0x20, 0x2F, 0x20, 0x73, 0x69, 0x7A, 0x65
+
+   \              0x2F 0x20    
+
+   \              0x73 0x69    
+
+   \              0x7A 0x65
+   \       0xB8   0x6F 0x66          DC8 0x6F, 0x66, 0x28, 0x2A, 0x28, 0x28, 0x28, 0x44
+
+   \              0x28 0x2A    
+
+   \              0x28 0x28    
+
+   \              0x28 0x44
+   \       0xC0   0x6D 0x61          DC8 0x6D, 0x61, 0x63, 0x2A, 0x29, 0x30, 0x29, 0x2D
+
+   \              0x63 0x2A    
+
+   \              0x29 0x30    
+
+   \              0x29 0x2D
+   \       0xC8   0x3E 0x44          DC8 0x3E, 0x44, 0x4D, 0x41, 0x43, 0x5F, 0x43, 0x48
+
+   \              0x4D 0x41    
+
+   \              0x43 0x5F    
+
+   \              0x43 0x48
+   \       0xD0   0x29 0x29          DC8 0x29, 0x29, 0x29, 0
+
+   \              0x29 0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   dmac_auto_clear
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       8   dmac_disable
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+      16   dmac_disable_channel
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_disable_channels
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_disable_global_it
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       8   dmac_enable
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+      16   dmac_enable_channel
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_enable_channels
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_enable_global_it
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_fifo_flush
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_get_btsize
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_get_channel_config
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_get_channel_dest_addr
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_get_channel_src_addr
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       8   dmac_get_channel_status
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   dmac_get_config
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+      16   dmac_get_descriptor_addr
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       8   dmac_get_global_isr
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   dmac_get_global_it_mask
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   dmac_get_masked_global_isr
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+      16   dmac_resume_channel
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_set_channel_config
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_set_control_a
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_set_control_b
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_set_des_pip
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      24   dmac_set_descriptor_addr
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+      16   dmac_set_dest_addr
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_set_src_addr
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_set_src_pip
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_software_chunk_transfer_request
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_software_single_request
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   dmac_suspend_channel
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   is_dmac_auto_transfer
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable32
+       8  ?Subroutine0
+      12  ?Subroutine1
+      12  ?Subroutine2
+     212  ?_0
+     104  dmac_auto_clear
+      48  dmac_disable
+      88  dmac_disable_channel
+      56  dmac_disable_channels
+      64  dmac_disable_global_it
+      52  dmac_enable
+      88  dmac_enable_channel
+      56  dmac_enable_channels
+      64  dmac_enable_global_it
+     100  dmac_fifo_flush
+     104  dmac_get_btsize
+      96  dmac_get_channel_config
+      96  dmac_get_channel_dest_addr
+      96  dmac_get_channel_src_addr
+      52  dmac_get_channel_status
+      52  dmac_get_config
+     100  dmac_get_descriptor_addr
+      52  dmac_get_global_isr
+      52  dmac_get_global_it_mask
+      60  dmac_get_masked_global_isr
+      84  dmac_resume_channel
+     100  dmac_set_channel_config
+     100  dmac_set_control_a
+     100  dmac_set_control_b
+     100  dmac_set_des_pip
+     112  dmac_set_descriptor_addr
+     100  dmac_set_dest_addr
+     100  dmac_set_src_addr
+     100  dmac_set_src_pip
+     104  dmac_software_chunk_transfer_request
+     104  dmac_software_single_request
+      84  dmac_suspend_channel
+     100  is_dmac_auto_transfer
+
+ 
+   212 bytes in section .rodata
+ 2'804 bytes in section SOFTPACK
+ 
+ 2'804 bytes of CODE  memory
+   212 bytes of CONST memory
+
+Errors: none
+Warnings: none

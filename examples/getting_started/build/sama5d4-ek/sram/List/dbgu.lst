@@ -1,0 +1,458 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         24/Nov/2020  14:00:47
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\dbgu.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW4B25.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\dbgu.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D4 -D
+#        CONFIG_CHIP_SAMA5D44 -D CONFIG_BOARD_SAMA5D4_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_ADC_LOW_RES -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D
+#        CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SFC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_SECURE_MATRIX -D
+#        CONFIG_HAVE_DDR2_MT47H128M8 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_TC_FAULT_MODE -D
+#        CONFIG_HAVE_RTC_CALIBRATION -D CONFIG_HAVE_RTC_MODE_PERSIAN -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_SPI_MODE -D CONFIG_HAVE_SERIALD_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sama5d4\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\List\dbgu.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\Obj\dbgu.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\dbgu.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2013, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           * \file
+     32           *
+     33           * Implements DBGU console.
+     34           *
+     35           */
+     36          
+     37          /*----------------------------------------------------------------------------
+     38           *        Headers
+     39           *----------------------------------------------------------------------------*/
+     40          
+     41          #include "chip.h"
+     42          #include "compiler.h"
+     43          
+     44          #include "serial/dbgu.h"
+     45          #include "gpio/pio.h"
+     46          #include "peripherals/pmc.h"
+     47          
+     48          #include <assert.h>
+     49          #include <stdio.h>
+     50          #include <stdint.h>
+     51          
+     52          /*------------------------------------------------------------------------------
+     53          *         Exported functions
+     54          *------------------------------------------------------------------------------*/
+     55          
+     56          /**
+     57           * \brief Configures an DBGU peripheral with the specified parameters.
+     58           *
+     59           * \param dgbu  Pointer to the DBGU peripheral to configure
+     60           * \param baudrate  Baudrate at which the DBGU should operate (in Hz).
+     61           * \param clock  Frequency of the system master clock (in Hz).
+     62           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     63          void dbgu_configure(Dbgu* dbgu, uint32_t mode, uint32_t baudrate)
+     64          {
+   \                     dbgu_configure:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     65          	assert(dbgu == DBGU);
+   \        0x8   0xE3A0'04FC        MOV      R0,#-67108864
+   \        0xC   0xE380'0A69        ORR      R0,R0,#0x69000
+   \       0x10   0xE1A0'6001        MOV      R6,R1
+   \       0x14   0xE154'0000        CMP      R4,R0
+   \       0x18   0xE1A0'5002        MOV      R5,R2
+   \       0x1C   0x0A00'0004        BEQ      ??dbgu_configure_0
+   \       0x20   0xE3A0'2041        MOV      R2,#+65
+   \       0x24   0x....'....        LDR      R1,??DataTable1
+   \       0x28   0x....'....        ADR      R0,?_1
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+     66          
+     67          	/* Reset and disable receiver & transmitter */
+     68          	dbgu->DBGU_CR = DBGU_CR_RSTRX | DBGU_CR_RSTTX;
+   \                     ??dbgu_configure_0:
+   \       0x34   0xE3A0'000C        MOV      R0,#+12
+     69          	dbgu->DBGU_IDR = 0xFFFFFFFF;
+   \       0x38   0xE3E0'1000        MVN      R1,#+0
+   \       0x3C   0xE584'0000        STR      R0,[R4, #+0]
+   \       0x40   0xE584'100C        STR      R1,[R4, #+12]
+     70          	dbgu->DBGU_SR;
+   \       0x44   0xE594'2014        LDR      R2,[R4, #+20]
+     71          
+     72          	/* Configure mode */
+     73          	dbgu->DBGU_MR = mode;
+   \       0x48   0xE584'6004        STR      R6,[R4, #+4]
+     74          
+     75          	/* Configure baudrate */
+     76          	dbgu->DBGU_BRGR = ROUND_INT_DIV(pmc_get_peripheral_clock(ID_DBGU) / 16, baudrate);
+   \       0x4C   0xE3A0'002D        MOV      R0,#+45
+   \       0x50   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x54   0xE1B0'0220        LSRS     R0,R0,#+4
+   \       0x58   0x0A00'0012        BEQ      ??dbgu_configure_1
+   \       0x5C   0xE3A0'002D        MOV      R0,#+45
+   \       0x60   0xE1A0'60A5        LSR      R6,R5,#+1
+   \       0x64   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x68   0xE1B0'0220        LSRS     R0,R0,#+4
+   \       0x6C   0x03A0'0001        MOVEQ    R0,#+1
+   \       0x70   0x13A0'0000        MOVNE    R0,#+0
+   \       0x74   0xE355'0000        CMP      R5,#+0
+   \       0x78   0x03A0'1001        MOVEQ    R1,#+1
+   \       0x7C   0x13A0'1000        MOVNE    R1,#+0
+   \       0x80   0xE031'0000        EORS     R0,R1,R0
+   \       0x84   0xE3A0'002D        MOV      R0,#+45
+   \       0x88   0x0A00'0002        BEQ      ??dbgu_configure_2
+   \       0x8C   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x90   0xE066'0220        RSB      R0,R6,R0, LSR #+4
+   \       0x94   0xEA00'0001        B        ??dbgu_configure_3
+   \                     ??dbgu_configure_2:
+   \       0x98   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x9C   0xE086'0220        ADD      R0,R6,R0, LSR #+4
+   \                     ??dbgu_configure_3:
+   \       0xA0   0xE1A0'1005        MOV      R1,R5
+   \       0xA4   0x....'....        BL       __aeabi_uidiv
+   \                     ??dbgu_configure_1:
+   \       0xA8   0xE584'0020        STR      R0,[R4, #+32]
+     77          
+     78          	/* Enable receiver and transmitter */
+     79          	dbgu->DBGU_CR = DBGU_CR_RXEN | DBGU_CR_TXEN;
+   \       0xAC   0xE3A0'0050        MOV      R0,#+80
+   \       0xB0   0xE584'0000        STR      R0,[R4, #+0]
+     80          }
+   \       0xB4   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+     81          
+     82          /**
+     83           * \brief Outputs a character on the DBGU line.
+     84           *
+     85           * \param Pointer to the DBGU peripheral
+     86           * \note This function is synchronous (i.e. uses polling).
+     87           * \param c  Character to send.
+     88           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     89          void dbgu_put_char(Dbgu* dbgu, uint8_t c)
+     90          {
+     91          	/* Wait for the transmitter to be ready */
+     92          	while ((dbgu->DBGU_SR & DBGU_SR_TXRDY) == 0);
+   \                     dbgu_put_char:
+   \                     ??dbgu_put_char_0:
+   \        0x0   0xE590'2014        LDR      R2,[R0, #+20]
+   \        0x4   0xE312'0002        TST      R2,#0x2
+   \        0x8   0x0AFF'FFFC        BEQ      ??dbgu_put_char_0
+     93          
+     94          	/* Send character */
+     95          	dbgu->DBGU_THR = c;
+   \        0xC   0xE580'101C        STR      R1,[R0, #+28]
+     96          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+     97          
+     98          /**
+     99           * \brief Input a character from the DBGU line.
+    100           *
+    101           * \param Pointer to the DBGU peripheral
+    102           * \note This function is synchronous
+    103           * \return character received.
+    104           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    105          extern uint32_t dbgu_get_char(Dbgu* dbgu)
+    106          {
+    107          	while ((dbgu->DBGU_SR & DBGU_SR_RXRDY) == 0);
+   \                     dbgu_get_char:
+   \                     ??dbgu_get_char_0:
+   \        0x0   0xE590'1014        LDR      R1,[R0, #+20]
+   \        0x4   0xE311'0001        TST      R1,#0x1
+   \        0x8   0x0AFF'FFFC        BEQ      ??dbgu_get_char_0
+    108          	return dbgu->DBGU_RHR;
+   \        0xC   0xE590'0018        LDR      R0,[R0, #+24]
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    109          }
+    110          
+    111          /**
+    112           * \brief Check is character has been sent
+    113           * \param dbgu  Pointer to the DBGU peripheral.
+    114           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    115          bool dbgu_is_tx_empty(Dbgu* dbgu)
+    116          {
+    117          	return (dbgu->DBGU_SR & DBGU_SR_TXEMPTY) != 0;
+   \                     dbgu_is_tx_empty:
+   \        0x0   0xE590'0014        LDR      R0,[R0, #+20]
+   \        0x4   0xE1A0'14A0        LSR      R1,R0,#+9
+   \        0x8   0xE201'0001        AND      R0,R1,#0x1
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    118          }
+    119          
+    120          /**
+    121           * \brief Check if there is Input from DBGU line.
+    122           *
+    123           * \param  Pointer to the DBGU peripheral
+    124           * \return true if there is Input.
+    125           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    126          extern bool dbgu_is_rx_ready(Dbgu* dbgu)
+    127          {
+    128          	return (dbgu->DBGU_SR & DBGU_SR_RXRDY) != 0;
+   \                     dbgu_is_rx_ready:
+   \        0x0   0xE590'0014        LDR      R0,[R0, #+20]
+   \        0x4   0xE200'0001        AND      R0,R0,#0x1
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    129          }
+    130          
+    131          /**
+    132           * \brief Enable interrupt bits
+    133           * \param dbgu  Pointer to the DBGU peripheral.
+    134           * \param mode  Interrupt bits to enable
+    135           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    136          void dbgu_enable_it(Dbgu* dbgu, uint32_t mode)
+    137          {
+    138          	dbgu->DBGU_IER = mode;
+   \                     dbgu_enable_it:
+   \        0x0   0xE580'1008        STR      R1,[R0, #+8]
+    139          }
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    140          
+    141          /**
+    142           * \brief Disable interrupt bits
+    143           * \param dbgu  Pointer to the DBGU peripheral.
+    144           * \param mode  Interrupt bits to disable
+    145           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    146          void dbgu_disable_it(Dbgu* dbgu, uint32_t mode)
+    147          {
+    148          	dbgu->DBGU_IDR = mode;
+   \                     dbgu_disable_it:
+   \        0x0   0xE580'100C        STR      R1,[R0, #+12]
+    149          }
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6C
+
+   \              0x73 0x65    
+
+   \              0x72 0x69    
+
+   \              0x61 0x6C
+   \       0x40   0x5C 0x64          DC8 0x5C, 0x64, 0x62, 0x67, 0x75, 0x2E, 0x63, 0
+
+   \              0x62 0x67    
+
+   \              0x75 0x2E    
+
+   \              0x63 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x64 0x62          DC8 "dbgu == ((Dbgu *)0xFC069000U)"
+
+   \              0x67 0x75    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x20    
+
+   \              0x28 0x28    
+
+   \              0x44 0x62    
+
+   \              0x67 0x75    
+
+   \              0x20 0x2A    
+
+   \              0x29 0x30    
+
+   \              0x78 0x46    
+
+   \              0x43 0x30    
+
+   \              0x36 0x39    
+
+   \              0x30 0x30    
+
+   \              0x30 0x55    
+
+   \              0x29 0x00
+   \       0x1E   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   dbgu_configure
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+        16   -> pmc_get_peripheral_clock
+        16 __aeabi_uidiv
+       0   dbgu_disable_it
+       0   dbgu_enable_it
+       0   dbgu_get_char
+       0   dbgu_is_rx_ready
+       0   dbgu_is_tx_empty
+       0   dbgu_put_char
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+      72  ?_0
+      32  ?_1
+     184  dbgu_configure
+       8  dbgu_disable_it
+       8  dbgu_enable_it
+      20  dbgu_get_char
+      12  dbgu_is_rx_ready
+      16  dbgu_is_tx_empty
+      20  dbgu_put_char
+
+ 
+  72 bytes in section .rodata
+ 304 bytes in section SOFTPACK
+ 
+ 304 bytes of CODE  memory
+  72 bytes of CONST memory
+
+Errors: none
+Warnings: none

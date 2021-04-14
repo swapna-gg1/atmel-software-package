@@ -1,0 +1,995 @@
+###############################################################################
+#
+# IAR ELF Linker V8.50.1.245/W32 for ARM                  23/Oct/2020  09:46:39
+# Copyright 2007-2020 IAR Systems AB.
+#
+#    Output file  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Exe\crypto-qspi-aesb.out
+#    Map file     =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\List\crypto-qspi-aesb.map
+#    Command line =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWBE0E.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\aesb.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\aic5.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\board_console.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\board_sama5d2-xplained.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\board_spi.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\board_support.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\board_timer.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\bus.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\cache.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\callback.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\chip.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\chip_common.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\console.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\cstartup.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\ddram.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\dma.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\dma_xdmac.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\fault_handlers.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\flexcom.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\intmath.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\irq.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\l1cache_cp15.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\l2cache_l2cc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\main.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\matrix.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\mmu_cp15.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\mpddrc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\mutex.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\nfc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\pio4.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\piobu.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\pit.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\pmc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\pwmc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\qspi.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\rand.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\rstc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\rtc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\secumod.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\seriald.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\sfc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\sfdp.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\sfrbu.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\shdwc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\slowclock_sckc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\smc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\spi-flash.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\spi-nor-ids.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\spi-nor.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\spi.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\spid.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\syscalls.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\tc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\tcd.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\timer.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\trace.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\uart.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\usart.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\usartd.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\wdt.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\xdmac.o
+#        --redirect _Printf=_PrintfSmallNoMb --redirect _Scanf=_ScanfSmallNoMb
+#        --no_out_extension -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Exe\crypto-qspi-aesb.out
+#        --map
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\List\crypto-qspi-aesb.map
+#        --config
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\target\sama5d2\toolchain\iar\sram.icf
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at start of [from 0x20'0000 to 0x21'ffff] { section .vectors };
+"P1":  place in [from 0x20'0000 to 0x21'ffff] { section .cstartup };
+"P2":  place in [from 0x20'0000 to 0x21'ffff] { ro };
+"P3":  place in [from 0x20'0000 to 0x21'ffff] { rw };
+define block CACHE_ALIGNED_CONST
+   with alignment = 32 { section .region_cache_aligned_const };
+"P4":  place in [from 0x20'0000 to 0x21'ffff] { block CACHE_ALIGNED_CONST };
+"P5":  place in [from 0x20'0000 to 0x21'ffff] { zi };
+define block CACHE_ALIGNED
+   with alignment = 32 { section .region_cache_aligned };
+"P6":  place in [from 0x20'0000 to 0x21'ffff] { block CACHE_ALIGNED };
+define block SRAM { section .region_sram };
+"P7":  place in [from 0x20'0000 to 0x21'ffff] { block SRAM };
+define block HEAP with size = 512, alignment = 4 { };
+"P8":  place in [from 0x20'0000 to 0x21'ffff] { block HEAP };
+define block IRQ_STACK with size = 96, alignment = 8 { };
+"P9":  place in [from 0x20'0000 to 0x21'ffff] { block IRQ_STACK };
+define block FIQ_STACK with size = 96, alignment = 8 { };
+"P10": place in [from 0x20'0000 to 0x21'ffff] { block FIQ_STACK };
+define block ABT_STACK with size = 64, alignment = 8 { };
+"P11": place in [from 0x20'0000 to 0x21'ffff] { block ABT_STACK };
+define block UND_STACK with size = 64, alignment = 8 { };
+"P12": place in [from 0x20'0000 to 0x21'ffff] { block UND_STACK };
+define block SYS_STACK with size = 64, alignment = 8 { };
+"P13": place in [from 0x20'0000 to 0x21'ffff] { block SYS_STACK };
+define block CSTACK with size = 2K, alignment = 8 { };
+"P14": place in [from 0x20'0000 to 0x21'ffff] { block CSTACK };
+do not initialize { section .region_cache_aligned };
+
+No sections matched the following patterns:
+
+  section .region_cache_aligned_const  in block CACHE_ALIGNED_CONST
+  section .region_ddr                  in block DDRAM
+  section .region_ddr_cache_aligned    in block DDR_CACHE_ALIGNED
+  section .region_nocache              in block NO_CACHE
+  section .region_sram                 in block SRAM
+
+
+  Section                 Kind       Address    Size  Object
+  -------                 ----       -------    ----  ------
+"A0":                                           0x3c
+  .vectors                ro code  0x20'0000    0x3c  cstartup.o [1]
+                                 - 0x20'003c    0x3c
+
+"P1-P14", part 1 of 3:                        0xba18
+  SOFTPACK                ro code  0x20'003c   0xf1c  pmc.o [1]
+  .text                   ro code  0x20'0f58   0x1a8  I32DivMod.o [4]
+  SOFTPACK                ro code  0x20'1100    0x1c  slowclock_sckc.o [1]
+  .text                   ro code  0x20'111c    0x1e  assert.o [2]
+  .text                   ro code  0x20'113a    0x2a  printf.o [2]
+  SOFTPACK                ro code  0x20'1164   0x33c  chip.o [1]
+  .text                   ro code  0x20'14a0   0x130  I64DivMod.o [4]
+  .text                   ro code  0x20'15d0     0x4  IntDivZer.o [4]
+  Veneer                  ro code  0x20'15d4     0x8  - Linker created -
+  .text                   ro code  0x20'15dc     0x6  abort.o [2]
+  .text                   ro code  0x20'15e2   0x510  xprintfsmall_nomb.o [2]
+  .text                   ro code  0x20'1af2    0x3a  zero_init3.o [4]
+  SOFTPACK                ro code  0x20'1b2c   0x388  chip_common.o [1]
+  SOFTPACK                ro code  0x20'1eb4   0x378  matrix.o [1]
+  .text                   ro code  0x20'222c     0x4  I64DivZer.o [4]
+  .text                   ro code  0x20'2230    0x14  XXexit.o [4]
+  .text                   ro code  0x20'2244    0x20  strchr.o [4]
+  .text                   ro code  0x20'2264    0x2e  xfail_s.o [2]
+  .text                   ro code  0x20'2294    0x54  strlen.o [4]
+  .text                   ro code  0x20'22e8    0x94  memchr.o [4]
+  SOFTPACK                ro code  0x20'237c   0x188  l1cache_cp15.o [1]
+  SOFTPACK                ro code  0x20'2504    0x88  cache.o [1]
+  SOFTPACK                ro code  0x20'258c   0x4bc  l2cache_l2cc.o [1]
+  SOFTPACK                ro code  0x20'2a48   0xf18  spi-nor.o [1]
+  SOFTPACK                ro code  0x20'3960   0x4e0  bus.o [1]
+  .text                   ro code  0x20'3e40    0x74  ABImemset.o [4]
+  SOFTPACK                ro code  0x20'3eb4   0x764  spi-flash.o [1]
+  .text                   ro code  0x20'4618     0x8  ABImemclr4.o [4]
+  SOFTPACK                ro code  0x20'4620   0x604  qspi.o [1]
+  SOFTPACK                ro code  0x20'4c24   0x2dc  timer.o [1]
+  .text                   ro code  0x20'4f00    0x84  memcmp.o [4]
+  .text                   ro code  0x20'4f84    0xb0  ABImemcpy.o [4]
+  SOFTPACK                ro code  0x20'5034   0x49c  sfdp.o [1]
+  SOFTPACK                ro code  0x20'54d0    0x84  mutex.o [1]
+  SOFTPACK                ro code  0x20'5554    0x54  callback.o [1]
+  .text                   ro code  0x20'55a8     0x8  ABImemclr.o [4]
+  SOFTPACK                ro code  0x20'55b0   0x6b4  spid.o [1]
+  SOFTPACK                ro code  0x20'5c64   0x844  dma.o [1]
+  SOFTPACK                ro code  0x20'64a8    0x28  intmath.o [1]
+  .text                   ro code  0x20'64d0    0x38  ABImemset48.o [4]
+  SOFTPACK                ro code  0x20'6508   0x1f4  tc.o [1]
+  SOFTPACK                ro code  0x20'66fc   0x154  irq.o [1]
+  SOFTPACK                ro code  0x20'6850   0x2c8  spi.o [1]
+  SOFTPACK                ro code  0x20'6b18    0xbc  flexcom.o [1]
+  SOFTPACK                ro code  0x20'6bd4   0x3ac  xdmac.o [1]
+  SOFTPACK                ro code  0x20'6f80   0x444  dma_xdmac.o [1]
+  SOFTPACK                ro code  0x20'73c4   0x134  aic5.o [1]
+  SOFTPACK                ro code  0x20'74f8    0x28  usart.o [1]
+  .rodata                 const    0x20'7520   0x984  spi-nor-ids.o [1]
+  SOFTPACK                ro code  0x20'7ea4   0x740  board_support.o [1]
+  SOFTPACK                ro code  0x20'85e4    0x18  wdt.o [1]
+  SOFTPACK                ro code  0x20'85fc   0x2b0  pio4.o [1]
+  SOFTPACK                ro code  0x20'88ac    0x14  board_timer.o [1]
+  SOFTPACK                ro code  0x20'88c0   0x250  ddram.o [1]
+  SOFTPACK                ro code  0x20'8b10    0x7c  mmu_cp15.o [1]
+  SOFTPACK                ro code  0x20'8b8c   0x5d4  mpddrc.o [1]
+  SOFTPACK                ro code  0x20'9160    0x28  sfrbu.o [1]
+  CACHE_ALIGNED                    0x20'91a0   0x430  <Block>
+    .region_cache_aligned
+                          rw data  0x20'91a0     0x4  spid.o [1]
+    .region_cache_aligned
+                          uninit   0x20'91c0   0x410  dma.o [1]
+  .rodata                 const    0x20'95d0   0x378  main.o [1]
+  SOFTPACK                ro code  0x20'9948   0x298  main.o [1]
+  SOFTPACK                ro code  0x20'9be0   0x120  board_spi.o [1]
+  SOFTPACK                ro code  0x20'9d00   0x1ec  console.o [1]
+  SOFTPACK                ro code  0x20'9eec    0x1c  aesb.o [1]
+  SOFTPACK                ro code  0x20'9f08    0xec  seriald.o [1]
+  SOFTPACK                ro code  0x20'9ff4    0x9c  uart.o [1]
+  .rodata                 const    0x20'a090   0x128  spi-nor.o [1]
+  .rodata                 const    0x20'a1b8    0xe8  chip.o [1]
+  .cstartup               ro code  0x20'a2a0    0xe0  cstartup.o [1]
+  .text                   ro code  0x20'a380    0x30  data_init.o [4]
+  .text                   ro code  0x20'a3b0    0x28  fpinit.o [3]
+  SOFTPACK                ro code  0x20'a3d8    0x30  board_sama5d2-xplained.o [1]
+  SOFTPACK                ro code  0x20'a408    0x80  board_console.o [1]
+  .rodata                 const    0x20'a488    0xd0  pmc.o [1]
+  .rodata                 const    0x20'a558    0xcc  console.o [1]
+  .rodata                 const    0x20'a624    0xc8  pio4.o [1]
+  .rodata                 const    0x20'a6ec    0xbc  flexcom.o [1]
+  .rodata                 const    0x20'a7a8    0xbc  tc.o [1]
+  .rodata                 const    0x20'a864    0xb4  spi.o [1]
+  .rodata                 const    0x20'a918    0xb0  spi-flash.o [1]
+  .text                   ro code  0x20'a9c8    0xa4  cstartup.o [1]
+  .rodata                 const    0x20'aa6c    0x9c  l2cache_l2cc.o [1]
+  .rodata                 const    0x20'ab08    0x98  xdmac.o [1]
+  .rodata                 const    0x20'aba0    0x94  board_spi.o [1]
+  .rodata                 const    0x20'ac34    0x90  sfdp.o [1]
+  .rodata                 const    0x20'acc4    0x80  pmc.o [1]
+  .rodata                 const    0x20'ad44    0x78  chip.o [1]
+  .rodata                 const    0x20'adbc    0x70  pmc.o [1]
+  .rodata                 const    0x20'ae2c    0x6c  chip.o [1]
+  .rodata                 const    0x20'ae98    0x6c  qspi.o [1]
+  .rodata                 const    0x20'af04    0x50  matrix.o [1]
+  .rodata                 const    0x20'af54    0x4c  ddram.o [1]
+  .rodata                 const    0x20'afa0    0x4c  l1cache_cp15.o [1]
+  .rodata                 const    0x20'afec    0x48  mmu_cp15.o [1]
+  .rodata                 const    0x20'b034    0x44  irq.o [1]
+  .rodata                 const    0x20'b078    0x2c  bus.o [1]
+  .rodata                 const    0x20'b0a4    0x28  qspi.o [1]
+  .rodata                 const    0x20'b0cc    0x28  xprintfsmall_nomb.o [2]
+  .rodata                 const    0x20'b0f4    0x24  qspi.o [1]
+  .rodata                 const    0x20'b118    0x24  seriald.o [1]
+  .rodata                 const    0x20'b13c    0x24  spid.o [1]
+  .iar.init_table         const    0x20'b160    0x10  - Linker created -
+  .rodata                 const    0x20'b170    0x20  pio4.o [1]
+  .rodata                 const    0x20'b190    0x20  assert.o [2]
+  .rodata                 const    0x20'b1b0    0x20  xfail_s.o [2]
+  .rodata                 const    0x20'b1d0    0x1c  board_support.o [1]
+  .rodata                 const    0x20'b1ec    0x1c  spi-nor.o [1]
+  .rodata                 const    0x20'b208    0x18  spid.o [1]
+  SOFTPACK                ro code  0x20'b220    0x18  syscalls.o [1]
+  .text                   ro code  0x20'b238    0x16  xprout.o [2]
+  .rodata                 const    0x20'b250    0x10  chip.o [1]
+  .rodata                 const    0x20'b260    0x10  chip.o [1]
+  .rodata                 const    0x20'b270    0x10  chip.o [1]
+  .rodata                 const    0x20'b280    0x10  chip.o [1]
+  SOFTPACK                ro code  0x20'b290    0x10  fault_handlers.o [1]
+  .rodata                 const    0x20'b2a0     0xc  chip.o [1]
+  .rodata                 const    0x20'b2ac     0xc  chip.o [1]
+  .rodata                 const    0x20'b2b8     0xc  chip.o [1]
+  .rodata                 const    0x20'b2c4     0xc  chip.o [1]
+  .rodata                 const    0x20'b2d0     0xc  chip.o [1]
+  .rodata                 const    0x20'b2dc     0xc  chip.o [1]
+  .rodata                 const    0x20'b2e8     0xc  chip.o [1]
+  .rodata                 const    0x20'b2f4     0xc  chip.o [1]
+  .rodata                 const    0x20'b300     0xc  chip.o [1]
+  .rodata                 const    0x20'b30c     0xc  chip.o [1]
+  .rodata                 const    0x20'b318     0xc  chip.o [1]
+  .rodata                 const    0x20'b324     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b330     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b33c     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b348     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b354     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b360     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b36c     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b378     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b384     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b390     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b39c     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b3a8     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b3b4     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b3c0     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b3cc     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b3d8     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b3e4     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b3f0     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b3fc     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b408     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b414     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b420     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b42c     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b438     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b444     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b450     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b45c     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b468     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b474     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b480     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b48c     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b498     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b4a4     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b4b0     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b4bc     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b4c8     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b4d4     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b4e0     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b4ec     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b4f8     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b504     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b510     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b51c     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b528     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b534     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b540     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b54c     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b558     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b564     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b570     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b57c     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b588     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b594     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b5a0     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b5ac     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b5b8     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b5c4     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b5d0     0xc  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b5dc     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b5e4     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b5ec     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b5f4     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b5fc     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b604     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b60c     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b614     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b61c     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b624     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b62c     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b634     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b63c     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b644     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b64c     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b654     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b65c     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b664     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b66c     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b674     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b67c     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b684     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b68c     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b694     0x8  spi-nor-ids.o [1]
+  .rodata                 const    0x20'b69c     0x0  zero_init3.o [4]
+  .data                   rw data  0x20'b69c   0x39c  dma.o [1]
+  .data                   rw data  0x20'ba38     0xc  pmc.o [1]
+  .data                   rw data  0x20'ba44     0xc  qspi.o [1]
+  .data                   rw data  0x20'ba50     0x4  trace.o [1]
+                                 - 0x20'ba54  0xba18
+
+"P1-P14", part 2 of 3:                        0x7494
+  .bss                    zero     0x20'c000  0x4000  board_support.o [1]
+  .bss                    zero     0x21'0000  0x2000  main.o [1]
+  .bss                    zero     0x21'2000   0x8a8  irq.o [1]
+  .bss                    zero     0x21'28a8   0x4ac  bus.o [1]
+  .bss                    zero     0x21'2d54     0x4  xfail_s.o [2]
+  .bss                    zero     0x21'2d58    0xc0  board_spi.o [1]
+  .bss                    zero     0x21'2e18    0x70  spi-nor.o [1]
+  .bss                    zero     0x21'2e88    0x28  spi-nor.o [1]
+  .bss                    zero     0x21'2eb0    0x18  sfdp.o [1]
+  .bss                    zero     0x21'2ec8    0x10  console.o [1]
+  .bss                    zero     0x21'2ed8    0x10  timer.o [1]
+                                 - 0x21'2ee8  0x7494
+
+"P1-P14", part 3 of 3:                         0x980
+  IRQ_STACK                        0x21'2ee8    0x60  <Block>
+    IRQ_STACK             uninit   0x21'2ee8    0x60  <Block tail>
+  FIQ_STACK                        0x21'2f48    0x60  <Block>
+    FIQ_STACK             uninit   0x21'2f48    0x60  <Block tail>
+  ABT_STACK                        0x21'2fa8    0x40  <Block>
+    ABT_STACK             uninit   0x21'2fa8    0x40  <Block tail>
+  UND_STACK                        0x21'2fe8    0x40  <Block>
+    UND_STACK             uninit   0x21'2fe8    0x40  <Block tail>
+  SYS_STACK                        0x21'3028    0x40  <Block>
+    SYS_STACK             uninit   0x21'3028    0x40  <Block tail>
+  CSTACK                           0x21'3068   0x800  <Block>
+    CSTACK                uninit   0x21'3068   0x800  <Block tail>
+                                 - 0x21'3868   0x980
+
+Unused ranges:
+
+       From         To    Size
+       ----         --    ----
+  0x21'3868  0x21'ffff  0xc798
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address    Size
+          -------    ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x6ee8:
+          0x20'c000  0x6ee8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                    ro code  ro data  rw data
+    ------                    -------  -------  -------
+command line/config:
+    ---------------------------------------------------
+    Total:
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj: [1]
+    aesb.o                         28
+    aic5.o                        308
+    board_console.o               128
+    board_sama5d2-xplained.o       48
+    board_spi.o                   288      148      192
+    board_support.o             1'856       28   16'384
+    board_timer.o                  20
+    bus.o                       1'248       44    1'196
+    cache.o                       136
+    callback.o                     84
+    chip.o                        828      656
+    chip_common.o                 904
+    console.o                     492      204       16
+    cstartup.o                    448
+    ddram.o                       592       76
+    dma.o                       2'116             1'964
+    dma_xdmac.o                 1'092
+    fault_handlers.o               16
+    flexcom.o                     188      188
+    intmath.o                      40
+    irq.o                         340       68    2'216
+    l1cache_cp15.o                392       76
+    l2cache_l2cc.o              1'212      156
+    main.o                        664      888    8'192
+    matrix.o                      888       80
+    mmu_cp15.o                    124       72
+    mpddrc.o                    1'492
+    mutex.o                       132
+    pio4.o                        688      232
+    pmc.o                       3'868      448       12
+    qspi.o                      1'540      184       12
+    seriald.o                     236       36
+    sfdp.o                      1'180      144       24
+    sfrbu.o                        40
+    slowclock_sckc.o               28
+    spi-flash.o                 1'892      176
+    spi-nor-ids.o                        3'324
+    spi-nor.o                   3'864      324      152
+    spi.o                         712      180
+    spid.o                      1'716       60        4
+    syscalls.o                     24
+    tc.o                          500      188
+    timer.o                       732                16
+    trace.o                                           4
+    uart.o                        156
+    usart.o                        40
+    wdt.o                          24
+    xdmac.o                       940      152
+    ---------------------------------------------------
+    Total:                     34'284    8'132   30'384
+
+dl7Sx_tln.a: [2]
+    abort.o                         6
+    assert.o                       30       32
+    printf.o                       42
+    xfail_s.o                      46       32        4
+    xprintfsmall_nomb.o         1'296       40
+    xprout.o                       22
+    ---------------------------------------------------
+    Total:                      1'442      104        4
+
+m7Sx_tlv.a: [3]
+    fpinit.o                       40
+    ---------------------------------------------------
+    Total:                         40
+
+rt7Sx_tl.a: [4]
+    ABImemclr.o                     8
+    ABImemclr4.o                    8
+    ABImemcpy.o                   176
+    ABImemset.o                   116
+    ABImemset48.o                  56
+    I32DivMod.o                   424
+    I64DivMod.o                   304
+    I64DivZer.o                     4
+    IntDivZer.o                     4
+    XXexit.o                       20
+    data_init.o                    48
+    memchr.o                      148
+    memcmp.o                      132
+    strchr.o                       32
+    strlen.o                       84
+    zero_init3.o                   58
+    ---------------------------------------------------
+    Total:                      1'622
+
+    Gaps                            2        2    1'480
+    Linker created                  8       16    2'432
+-------------------------------------------------------
+    Grand Total:               37'398    8'254   34'300
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                     Address    Size  Type      Object
+-----                     -------    ----  ----      ------
+.iar.init_table$$Base   0x20'b160           --   Gb  - Linker created -
+.iar.init_table$$Limit  0x20'b170           --   Gb  - Linker created -
+ABT_STACK$$Base         0x21'2fa8           --   Gb  - Linker created -
+ABT_STACK$$Limit        0x21'2fe8           --   Gb  - Linker created -
+CACHE_ALIGNED$$Base     0x20'91a0           --   Gb  - Linker created -
+CACHE_ALIGNED$$Limit    0x20'95d0           --   Gb  - Linker created -
+CSTACK$$Base            0x21'3068           --   Gb  - Linker created -
+CSTACK$$Limit           0x21'3868           --   Gb  - Linker created -
+FIQ_STACK$$Base         0x21'2f48           --   Gb  - Linker created -
+FIQ_STACK$$Limit        0x21'2fa8           --   Gb  - Linker created -
+IRQ_STACK$$Base         0x21'2ee8           --   Gb  - Linker created -
+IRQ_STACK$$Limit        0x21'2f48           --   Gb  - Linker created -
+Region$$Table$$Base     0x20'b160           --   Gb  - Linker created -
+Region$$Table$$Limit    0x20'b170           --   Gb  - Linker created -
+SYS_STACK$$Base         0x21'3028           --   Gb  - Linker created -
+SYS_STACK$$Limit        0x21'3068           --   Gb  - Linker created -
+UND_STACK$$Base         0x21'2fe8           --   Gb  - Linker created -
+UND_STACK$$Limit        0x21'3028           --   Gb  - Linker created -
+_LitobSmallNoMb         0x20'19c3    0xe2  Code  Lc  xprintfsmall_nomb.o [2]
+_PrintfSmallNoMb        0x20'15e3   0x3da  Code  Gb  xprintfsmall_nomb.o [2]
+_Prout                  0x20'b239    0x16  Code  Gb  xprout.o [2]
+_PutcharSmallNoMb       0x20'1aa5    0x20  Code  Lc  xprintfsmall_nomb.o [2]
+_PutcharsSmallNoMb      0x20'1ac5    0x2e  Code  Lc  xprintfsmall_nomb.o [2]
+__aeabi_assert          0x20'111d    0x1e  Code  Gb  assert.o [2]
+__aeabi_idiv            0x20'0f58          Code  Gb  I32DivMod.o [4]
+__aeabi_idiv0           0x20'15d0          Code  Gb  IntDivZer.o [4]
+__aeabi_idivmod         0x20'0f58          Code  Gb  I32DivMod.o [4]
+__aeabi_ldiv0           0x20'222c          Code  Gb  I64DivZer.o [4]
+__aeabi_memclr          0x20'55a8          Code  Gb  ABImemclr.o [4]
+__aeabi_memclr4         0x20'4618          Code  Gb  ABImemclr4.o [4]
+__aeabi_memcpy4         0x20'4f84          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8         0x20'4f84          Code  Gb  ABImemcpy.o [4]
+__aeabi_memset          0x20'3e40          Code  Gb  ABImemset.o [4]
+__aeabi_uidiv           0x20'0f84          Code  Gb  I32DivMod.o [4]
+__aeabi_uidivmod        0x20'0f84          Code  Gb  I32DivMod.o [4]
+__aeabi_uldivmod        0x20'14a0          Code  Gb  I64DivMod.o [4]
+__exit                  0x20'2230          Code  Gb  XXexit.o [4]
+__iar_Fail_s            0x20'2265    0x2e  Code  Gb  xfail_s.o [2]
+__iar_Memchr            0x20'22e8          Code  Gb  memchr.o [4]
+__iar_Memset            0x20'3e40          Code  Gb  ABImemset.o [4]
+__iar_Memset4_word      0x20'64d0          Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word      0x20'64d0          Code  Gb  ABImemset48.o [4]
+__iar_Memset_word       0x20'3e48          Code  Gb  ABImemset.o [4]
+__iar_Strchr            0x20'2244          Code  Gb  strchr.o [4]
+__iar_data_init3        0x20'a381    0x30  Code  Gb  data_init.o [4]
+__iar_init_vfp          0x20'a3c4          Code  Gb  fpinit.o [3]
+__iar_init_vfp_v6       0x20'a3b0          Code  Gb  fpinit.o [3]
+__iar_program_start     0x20'a2c0          Code  Gb  cstartup.o [1]
+__iar_zero_init3        0x20'1af3    0x3a  Code  Gb  zero_init3.o [4]
+_aic_initialize         0x20'73d8    0x64  Code  Lc  aic5.o [1]
+_bus                    0x21'28a8   0x4ac  Data  Lc  bus.o [1]
+_bus_callback           0x20'3960    0x3c  Code  Lc  bus.o [1]
+_bus_cleanup            0x20'2a80     0x4  Code  Lc  spi-nor.o [1]
+_bus_exec               0x20'2aa4   0x164  Code  Lc  spi-nor.o [1]
+_bus_exec_buffer        0x21'2e88    0x18  Data  Lc  spi-nor.o [1]
+_bus_init               0x20'2a7c     0x4  Code  Lc  spi-nor.o [1]
+_bus_set_freq           0x20'2a8c     0x8  Code  Lc  spi-nor.o [1]
+_bus_set_mode           0x20'2a94     0x4  Code  Lc  spi-nor.o [1]
+_compute_ba_offset      0x20'8c88    0x50  Code  Lc  mpddrc.o [1]
+_configure_lpddr2       0x20'8d30   0x138  Code  Lc  mpddrc.o [1]
+_default_irq_handler    0x20'66fc    0x4c  Code  Lc  irq.o [1]
+_dma_ctrl               0x20'b69c   0x394  Data  Lc  dma.o [1]
+_dma_sg_desc_free       0x20'5c64    0x68  Code  Lc  dma.o [1]
+_dma_sg_pool            0x20'91c0   0x410  Data  Lc  dma.o [1]
+_exid_names             0x20'ad44    0x78  Data  Lc  chip.o [1]
+_garbage                0x20'91a0     0x4  Data  Lc  spid.o [1]
+_h64_peripherals        0x20'1490    0x10  Data  Lc  chip.o [1]
+_init_mt41k128m16       0x20'88c0   0x18c  Code  Lc  ddram.o [1]
+_pmc_get_system_clock_bits
+                        0x20'003c    0x88  Code  Lc  pmc.o [1]
+_pmc_main_oscillators   0x20'ba38     0x8  Data  Lc  pmc.o [1]
+_pmc_mck                0x20'ba40     0x4  Data  Lc  pmc.o [1]
+_reset_vector           0x20'0000          Data  Gb  cstartup.o [1]
+_send_ddr_cmd           0x20'8cd8    0x28  Code  Lc  mpddrc.o [1]
+_send_ext_lmr_cmd       0x20'8d00    0x30  Code  Lc  mpddrc.o [1]
+_set_ddr_timings        0x20'8b8c    0xfc  Code  Lc  mpddrc.o [1]
+_spi_bus_ops            0x20'b1f4    0x14  Data  Lc  spi-nor.o [1]
+_spi_flash              0x21'2d58    0xc0  Data  Lc  board_spi.o [1]
+_spi_flash_cfg          0x20'abc8    0x6c  Data  Lc  board_spi.o [1]
+_spi_flash_hdr          0x21'2ea0    0x10  Data  Lc  spi-nor.o [1]
+_spid_dma_rx_callback   0x20'55b0    0x3c  Code  Lc  spid.o [1]
+_spid_dma_tx_callback   0x20'55ec    0x14  Code  Lc  spid.o [1]
+_spid_handler           0x20'5600   0x134  Code  Lc  spid.o [1]
+_spid_transfer_current_buffer
+                        0x20'5734   0x2a4  Code  Lc  spid.o [1]
+_spid_transfer_next_buffer
+                        0x20'59e0    0x60  Code  Lc  spid.o [1]
+_timer                  0x21'2ed8    0x10  Data  Lc  timer.o [1]
+_timer_get_tick         0x20'4c64    0x3c  Code  Lc  timer.o [1]
+_xdmac_peripherals      0x20'a1b8    0xe8  Data  Lc  chip.o [1]
+abort                   0x20'15dd     0x6  Code  Gb  abort.o [2]
+aesb_configure          0x20'9f00     0x8  Code  Gb  aesb.o [1]
+aesb_swrst              0x20'9eec     0x8  Code  Gb  aesb.o [1]
+aic_enable              0x20'7488    0x54  Code  Gb  aic5.o [1]
+aic_get_current_interrupt_source
+                        0x20'74dc     0xc  Code  Gb  aic5.o [1]
+aic_initialize          0x20'743c    0x4c  Code  Gb  aic5.o [1]
+arch_irq_disable        0x20'73cc     0x8  Code  Lc  aic5.o [1]
+arch_irq_disable        0x20'4c2c     0x8  Code  Lc  timer.o [1]
+arch_irq_enable         0x20'73c4     0x8  Code  Lc  aic5.o [1]
+arch_irq_enable         0x20'4c24     0x8  Code  Lc  timer.o [1]
+at25_set_protection     0x20'2f1c    0xb8  Code  Gb  spi-nor.o [1]
+board_cfg_clocks        0x20'7eac    0x7c  Code  Gb  board_support.o [1]
+board_cfg_console       0x20'a408    0x60  Code  Gb  board_console.o [1]
+board_cfg_console::rx_pin
+                        0x20'a478    0x10  Data  Lc  board_console.o [1]
+board_cfg_console::tx_pin
+                        0x20'a468    0x10  Data  Lc  board_console.o [1]
+board_cfg_lowlevel      0x20'7f28    0x74  Code  Gb  board_support.o [1]
+board_cfg_matrix_for_ddr
+                        0x20'8360   0x280  Code  Gb  board_support.o [1]
+board_cfg_mmu           0x20'7f9c   0x3a4  Code  Gb  board_support.o [1]
+board_cfg_spi_bus       0x20'9be0    0x38  Code  Gb  board_spi.o [1]
+board_cfg_spi_bus::iface_bus0
+                        0x20'9cc8     0xc  Data  Lc  board_spi.o [1]
+board_cfg_spi_bus::iface_bus1
+                        0x20'9cf4     0xc  Data  Lc  board_spi.o [1]
+board_cfg_spi_bus::pins_spi_bus0
+                        0x20'9ca8    0x20  Data  Lc  board_spi.o [1]
+board_cfg_spi_bus::pins_spi_bus1
+                        0x20'9cd4    0x20  Data  Lc  board_spi.o [1]
+board_cfg_spi_flash     0x20'9c18    0x64  Code  Gb  board_spi.o [1]
+board_cfg_timer         0x20'88ac    0x14  Code  Gb  board_timer.o [1]
+board_get_spi_flash     0x20'9c7c    0x10  Code  Gb  board_spi.o [1]
+board_init              0x20'a3d8    0x30  Code  Wk  board_sama5d2-xplained.o [1]
+buffer                  0x21'0000  0x1000  Data  Lc  main.o [1]
+buffer_read             0x21'1000  0x1000  Data  Lc  main.o [1]
+bus_configure           0x20'399c    0x9c  Code  Gb  bus.o [1]
+bus_configure_slave     0x20'3a38    0x68  Code  Gb  bus.o [1]
+bus_ioctl               0x20'3aa0   0x170  Code  Gb  bus.o [1]
+bus_start_transaction   0x20'3d2c    0x2c  Code  Gb  bus.o [1]
+bus_stop_transaction    0x20'3d58    0x2c  Code  Gb  bus.o [1]
+bus_transfer            0x20'3c10   0x11c  Code  Gb  bus.o [1]
+bus_wait_transfer       0x20'3d94    0x98  Code  Gb  bus.o [1]
+cache_clean_region      0x20'2548    0x44  Code  Gb  cache.o [1]
+cache_invalidate_region
+                        0x20'2504    0x44  Code  Gb  cache.o [1]
+callback_call           0x20'5588    0x20  Code  Gb  callback.o [1]
+callback_copy           0x20'5564    0x24  Code  Gb  callback.o [1]
+callback_set            0x20'5554    0x10  Code  Gb  callback.o [1]
+console                 0x21'2ec8    0x10  Data  Lc  console.o [1]
+console_configure       0x20'9d00    0x84  Code  Gb  console.o [1]
+console_example_info    0x20'9d8c    0xfc  Code  Gb  console.o [1]
+console_put_char        0x20'9d84     0x8  Code  Gb  console.o [1]
+controllers             0x20'ba30     0x8  Data  Lc  dma.o [1]
+data_abort_irq_handler  0x20'b298     0x4  Code  Gb  fault_handlers.o [1]
+dcache_clean_region     0x20'2494    0x4c  Code  Gb  l1cache_cp15.o [1]
+dcache_enable           0x20'23d8    0x3c  Code  Gb  l1cache_cp15.o [1]
+dcache_invalidate       0x20'2414    0x34  Code  Gb  l1cache_cp15.o [1]
+dcache_invalidate_region
+                        0x20'2448    0x4c  Code  Gb  l1cache_cp15.o [1]
+dcache_is_enabled       0x20'23c0    0x18  Code  Gb  l1cache_cp15.o [1]
+ddram_configure         0x20'8a90    0x34  Code  Gb  ddram.o [1]
+ddram_init_descriptor   0x20'8a4c    0x44  Code  Gb  ddram.o [1]
+dma_allocate_channel    0x20'5e3c   0x104  Code  Gb  dma.o [1]
+dma_configure_transfer  0x20'6028   0x404  Code  Gb  dma.o [1]
+dma_initialize          0x20'5ccc   0x13c  Code  Gb  dma.o [1]
+dma_irq_handler         0x20'72f4    0xd0  Code  Gb  dma_xdmac.o [1]
+dma_is_transfer_done    0x20'6480    0x28  Code  Gb  dma.o [1]
+dma_poll                0x20'5e08    0x34  Code  Gb  dma.o [1]
+dma_prepare_channel     0x20'6f80   0x124  Code  Gb  dma_xdmac.o [1]
+dma_reset_channel       0x20'5f40    0x68  Code  Gb  dma.o [1]
+dma_set_callback        0x20'6444    0x3c  Code  Gb  dma.o [1]
+dma_start_transfer      0x20'5fa8    0x6c  Code  Gb  dma.o [1]
+fiqHandler              0x20'a9c8          Code  Gb  cstartup.o [1]
+flash_name              0x20'b1ec     0x8  Data  Lc  spi-nor.o [1]
+flexcom_select          0x20'6b18    0xb0  Code  Gb  flexcom.o [1]
+fls                     0x20'64a8    0x28  Code  Gb  intmath.o [1]
+get_board_name          0x20'7ea4     0x8  Code  Gb  board_support.o [1]
+get_chip_name           0x20'11b4    0x58  Code  Gb  chip.o [1]
+get_flexcom_addr_from_id
+                        0x20'1b78    0x5c  Code  Gb  chip_common.o [1]
+get_flexcom_id_from_addr
+                        0x20'1b2c    0x4c  Code  Gb  chip_common.o [1]
+get_peripheral_clock_matrix_div
+                        0x20'1240    0x3c  Code  Gb  chip.o [1]
+get_peripheral_dma_channel
+                        0x20'127c    0x60  Code  Gb  chip.o [1]
+get_peripheral_fifo_depth
+                        0x20'13ac    0xbc  Code  Gb  chip.o [1]
+get_peripheral_matrix   0x20'120c    0x34  Code  Gb  chip.o [1]
+get_peripheral_xdma     0x20'1164    0x50  Code  Lc  chip.o [1]
+get_qspi_aesb_mem_from_addr
+                        0x20'1c2c    0x28  Code  Gb  chip_common.o [1]
+get_qspi_id_from_addr   0x20'1bdc    0x28  Code  Gb  chip_common.o [1]
+get_qspi_mem_from_addr  0x20'1c04    0x28  Code  Gb  chip_common.o [1]
+get_spi_addr_from_id    0x20'1cf4    0x80  Code  Gb  chip_common.o [1]
+get_spi_id_from_addr    0x20'1c54    0x6c  Code  Gb  chip_common.o [1]
+get_tc_id_from_addr     0x20'1d74    0x28  Code  Gb  chip_common.o [1]
+get_uart_id_from_addr   0x20'1d9c    0x68  Code  Gb  chip_common.o [1]
+get_usart_addr_from_id  0x20'1e04    0x4c  Code  Gb  chip_common.o [1]
+get_xdmac_addr_from_id  0x20'1e8c    0x20  Code  Gb  chip_common.o [1]
+get_xdmac_id_from_addr  0x20'1e64    0x28  Code  Gb  chip_common.o [1]
+handlers                0x21'276c   0x13c  Data  Lc  irq.o [1]
+handlers_pool           0x21'2000   0x768  Data  Lc  irq.o [1]
+header                  0x21'2eb8    0x10  Data  Lc  sfdp.o [1]
+icache_enable           0x20'239c    0x24  Code  Gb  l1cache_cp15.o [1]
+icache_invalidate       0x20'237c    0x10  Code  Gb  l1cache_cp15.o [1]
+icache_is_enabled       0x20'238c    0x10  Code  Gb  l1cache_cp15.o [1]
+irqHandler              0x20'aa0c          Code  Gb  cstartup.o [1]
+irq_add_handler         0x20'67a0    0x90  Code  Gb  irq.o [1]
+irq_enable              0x20'6838     0x4  Code  Gb  irq.o [1]
+irq_initialize          0x20'6748    0x58  Code  Gb  irq.o [1]
+is_peripheral_on_dma_controller
+                        0x20'12dc    0xb8  Code  Gb  chip.o [1]
+l2cache_clean_region    0x20'2888    0x88  Code  Gb  l2cache_l2cc.o [1]
+l2cache_invalidate_region
+                        0x20'2800    0x88  Code  Gb  l2cache_l2cc.o [1]
+l2cache_is_enabled      0x20'258c    0x14  Code  Gb  l2cache_l2cc.o [1]
+l2cache_set_exclusive   0x20'25a0    0x38  Code  Gb  l2cache_l2cc.o [1]
+l2cc_cfg                0x20'85e0     0x4  Data  Lc  board_support.o [1]
+l2cc_configure          0x20'2910   0x108  Code  Gb  l2cache_l2cc.o [1]
+l2cc_set_config         0x20'25e0   0x220  Code  Gb  l2cache_l2cc.o [1]
+macronix_quad_enable    0x20'2d1c    0x94  Code  Gb  spi-nor.o [1]
+main                    0x20'9948   0x274  Code  Gb  main.o [1]
+matrix_configure_slave_sec
+                        0x20'1f38    0x18  Code  Gb  matrix.o [1]
+matrix_is_peripheral_secured
+                        0x20'200c    0x24  Code  Gb  matrix.o [1]
+matrix_master_priority_for_slave
+                        0x20'1eb4    0x84  Code  Gb  matrix.o [1]
+matrix_remap_ram        0x20'203c    0x3c  Code  Gb  matrix.o [1]
+matrix_remove_write_protection
+                        0x20'2030     0xc  Code  Gb  matrix.o [1]
+matrix_set_default_config
+                        0x20'2088   0x180  Code  Gb  matrix.o [1]
+matrix_set_slave_region_size
+                        0x20'1f98    0x74  Code  Gb  matrix.o [1]
+matrix_set_slave_split_addr
+                        0x20'1f50    0x48  Code  Gb  matrix.o [1]
+memchr                  0x20'22e8          Code  Gb  memchr.o [4]
+memcmp                  0x20'4f00          Code  Gb  memcmp.o [4]
+micron_enable_0_4_4     0x20'2e5c    0xc0  Code  Gb  spi-nor.o [1]
+mmu_configure           0x20'8b10    0x40  Code  Gb  mmu_cp15.o [1]
+mmu_enable              0x20'8b60    0x18  Code  Gb  mmu_cp15.o [1]
+mmu_is_enabled          0x20'8b54     0xc  Code  Gb  mmu_cp15.o [1]
+mpddrc_configure        0x20'8e68   0x2c8  Code  Gb  mpddrc.o [1]
+msleep                  0x20'4e24    0x20  Code  Gb  timer.o [1]
+mutex_is_locked         0x20'5540    0x14  Code  Gb  mutex.o [1]
+mutex_lock              0x20'54d0    0x30  Code  Gb  mutex.o [1]
+mutex_try_lock          0x20'5500    0x30  Code  Gb  mutex.o [1]
+mutex_unlock            0x20'5530    0x10  Code  Gb  mutex.o [1]
+next_free_handler       0x21'2768     0x4  Data  Lc  irq.o [1]
+param_header            0x21'2eb0     0x8  Data  Lc  sfdp.o [1]
+params                  0x21'2e18    0x70  Data  Lc  spi-nor.o [1]
+pio_configure           0x20'85fc   0x228  Code  Gb  pio4.o [1]
+pio_reset_all_it        0x20'8824    0x54  Code  Gb  pio4.o [1]
+pmc_configure_gck       0x20'0c24    0xd0  Code  Gb  pmc.o [1]
+pmc_configure_peripheral
+                        0x20'0a10    0x94  Code  Gb  pmc.o [1]
+pmc_configure_plla      0x20'092c    0x54  Code  Gb  pmc.o [1]
+pmc_disable_gck         0x20'0d4c    0x4c  Code  Gb  pmc.o [1]
+pmc_disable_peripheral  0x20'0af0    0x44  Code  Gb  pmc.o [1]
+pmc_disable_plla        0x20'0980    0x10  Code  Gb  pmc.o [1]
+pmc_enable_external_osc
+                        0x20'0608    0xc8  Code  Gb  pmc.o [1]
+pmc_enable_gck          0x20'0cf4    0x58  Code  Gb  pmc.o [1]
+pmc_enable_internal_osc
+                        0x20'0774    0x34  Code  Gb  pmc.o [1]
+pmc_enable_peripheral   0x20'0aa4    0x4c  Code  Gb  pmc.o [1]
+pmc_enable_system_clock
+                        0x20'09a0    0x68  Code  Gb  pmc.o [1]
+pmc_get_audio_pmc_clock
+                        0x20'0ec4    0x50  Code  Gb  pmc.o [1]
+pmc_get_gck_clock       0x20'0d98    0xe4  Code  Gb  pmc.o [1]
+pmc_get_master_clock    0x20'0374   0x100  Code  Gb  pmc.o [1]
+pmc_get_peripheral_clock
+                        0x20'0b7c    0x40  Code  Gb  pmc.o [1]
+pmc_get_plla_clock      0x20'047c    0x58  Code  Gb  pmc.o [1]
+pmc_get_processor_clock
+                        0x20'04d4    0x40  Code  Gb  pmc.o [1]
+pmc_get_slow_clock      0x20'0474     0x8  Code  Gb  pmc.o [1]
+pmc_get_upll_clock      0x20'0bd0    0x4c  Code  Gb  pmc.o [1]
+pmc_has_system_clock    0x20'0990    0x10  Code  Gb  pmc.o [1]
+pmc_is_gck_enabled      0x20'0e7c    0x40  Code  Gb  pmc.o [1]
+pmc_is_peripheral_enabled
+                        0x20'0b34    0x48  Code  Gb  pmc.o [1]
+pmc_select_external_osc
+                        0x20'0514    0xf4  Code  Gb  pmc.o [1]
+pmc_select_internal_osc
+                        0x20'06d8    0x90  Code  Gb  pmc.o [1]
+pmc_set_main_oscillator_freq
+                        0x20'00c4   0x2b0  Code  Gb  pmc.o [1]
+pmc_set_mck_divider     0x20'08e4    0x30  Code  Gb  pmc.o [1]
+pmc_set_mck_h32mxdiv    0x20'08a4    0x40  Code  Gb  pmc.o [1]
+pmc_set_mck_plladiv2    0x20'0864    0x40  Code  Gb  pmc.o [1]
+pmc_set_mck_prescaler   0x20'0830    0x34  Code  Gb  pmc.o [1]
+pmc_switch_mck_to_new_source
+                        0x20'07a8    0x34  Code  Gb  pmc.o [1]
+pmc_switch_mck_to_pll   0x20'07dc    0x14  Code  Gb  pmc.o [1]
+pmc_switch_mck_to_slck  0x20'0810    0x20  Code  Gb  pmc.o [1]
+prefetch_abort_irq_handler
+                        0x20'b29c     0x4  Code  Gb  fault_handlers.o [1]
+printf                  0x20'113b    0x2a  Code  Gb  printf.o [2]
+putchar                 0x20'b220    0x18  Code  Wk  syscalls.o [1]
+qspi_cleanup            0x20'4820    0x14  Code  Lc  qspi.o [1]
+qspi_configure          0x20'4bcc    0x44  Code  Gb  qspi.o [1]
+qspi_exec               0x20'483c   0x368  Code  Lc  qspi.o [1]
+qspi_init               0x20'4780    0x98  Code  Lc  qspi.o [1]
+qspi_memcpy             0x20'4620    0xac  Code  Lc  qspi.o [1]
+qspi_memcpy{1}{2}::dma_cfg
+                        0x20'ba44     0xc  Data  Lc  qspi.o [1]
+qspi_ops                0x20'4c10    0x14  Data  Lc  qspi.o [1]
+qspi_set_freq           0x20'46d4    0x54  Code  Lc  qspi.o [1]
+qspi_set_mode           0x20'4728    0x58  Code  Lc  qspi.o [1]
+sec_hand                0x21'2d54     0x4  Data  Lc  xfail_s.o [2]
+seriald_configure       0x20'9f08    0x7c  Code  Gb  seriald.o [1]
+seriald_ops_uart        0x20'b118    0x24  Data  Lc  seriald.o [1]
+seriald_put_char        0x20'9f84    0x28  Code  Gb  seriald.o [1]
+seriald_put_string      0x20'9fac    0x44  Code  Gb  seriald.o [1]
+sfdp_bfpt_erases        0x20'54b0    0x20  Data  Lc  sfdp.o [1]
+sfdp_bfpt_reads         0x20'ac34    0x90  Data  Lc  sfdp.o [1]
+sfrbu_disable_ddr_backup
+                        0x20'9160    0x14  Code  Gb  sfrbu.o [1]
+sfrbu_is_ddr_backup_enabled
+                        0x20'9174    0x10  Code  Gb  sfrbu.o [1]
+slowclock_get_clock     0x20'1100    0x18  Code  Gb  slowclock_sckc.o [1]
+software_interrupt_irq_handler
+                        0x20'b294     0x4  Code  Gb  fault_handlers.o [1]
+spansion_new_quad_enable
+                        0x20'2c60    0xbc  Code  Gb  spi-nor.o [1]
+spansion_quad_enable    0x20'2c08    0x58  Code  Gb  spi-nor.o [1]
+spi_configure           0x20'6874    0x20  Code  Gb  spi.o [1]
+spi_configure_cs        0x20'68e8    0xf4  Code  Gb  spi.o [1]
+spi_disable             0x20'6858     0x4  Code  Gb  spi.o [1]
+spi_disable_it          0x20'686c     0x8  Code  Gb  spi.o [1]
+spi_enable              0x20'6850     0x8  Code  Gb  spi.o [1]
+spi_enable_it           0x20'6864     0x8  Code  Gb  spi.o [1]
+spi_fifo_configure      0x20'6a58    0x44  Code  Gb  spi.o [1]
+spi_fifo_enable         0x20'6a9c    0x2c  Code  Gb  spi.o [1]
+spi_flash_cleanup       0x20'4564     0xc  Code  Gb  spi-flash.o [1]
+spi_flash_command_init  0x20'45b8    0x34  Code  Gb  spi-flash.o [1]
+spi_flash_div_by_erase_size
+                        0x20'44d8    0x44  Code  Gb  spi-flash.o [1]
+spi_flash_erase         0x20'4598     0x8  Code  Gb  spi-flash.o [1]
+spi_flash_exec          0x20'4544     0xc  Code  Gb  spi-flash.o [1]
+spi_flash_get_mfr       0x20'4550     0x8  Code  Gb  spi-flash.o [1]
+spi_flash_has_uniform_erase
+                        0x20'45a0    0x18  Code  Gb  spi-flash.o [1]
+spi_flash_hwcaps2cmd    0x20'4058    0xa8  Code  Gb  spi-flash.o [1]
+spi_flash_init          0x20'4558     0xc  Code  Gb  spi-flash.o [1]
+spi_flash_init_uniform_erase_map
+                        0x20'451c    0x28  Code  Gb  spi-flash.o [1]
+spi_flash_parse_sfdp    0x20'5034   0x454  Code  Gb  sfdp.o [1]
+spi_flash_read          0x20'4588     0x8  Code  Gb  spi-flash.o [1]
+spi_flash_read_reg      0x20'3eb4    0x68  Code  Gb  spi-flash.o [1]
+spi_flash_read_sr       0x20'4350    0x68  Code  Gb  spi-flash.o [1]
+spi_flash_reset         0x20'43c8    0xac  Code  Gb  spi-flash.o [1]
+spi_flash_set_erase_command
+                        0x20'4480    0x58  Code  Gb  spi-flash.o [1]
+spi_flash_set_freq      0x20'457c     0xc  Code  Gb  spi-flash.o [1]
+spi_flash_set_mode      0x20'4570     0xc  Code  Gb  spi-flash.o [1]
+spi_flash_set_protection
+                        0x20'4604     0xc  Code  Gb  spi-flash.o [1]
+spi_flash_setup         0x20'4100   0x250  Code  Gb  spi-flash.o [1]
+spi_flash_use_aesb      0x20'45fc     0x8  Code  Gb  spi-flash.o [1]
+spi_flash_wait_till_ready
+                        0x20'4474     0xc  Code  Gb  spi-flash.o [1]
+spi_flash_wait_till_ready_timeout
+                        0x20'3f90    0xc0  Code  Gb  spi-flash.o [1]
+spi_flash_write         0x20'4590     0x8  Code  Gb  spi-flash.o [1]
+spi_flash_write_enable  0x20'43b8    0x10  Code  Gb  spi-flash.o [1]
+spi_flash_write_reg     0x20'3f1c    0x6c  Code  Gb  spi-flash.o [1]
+spi_get_masked_status   0x20'69dc    0x30  Code  Gb  spi.o [1]
+spi_mode_master_enable  0x20'6894    0x20  Code  Gb  spi.o [1]
+spi_nor_configure       0x20'2fd4   0x670  Code  Gb  spi-nor.o [1]
+spi_nor_convert_3to4_erase::spi_nor_3to4_erase
+                        0x20'3958     0x8  Data  Lc  spi-nor.o [1]
+spi_nor_convert_3to4_read::spi_nor_3to4_read
+                        0x20'3944     0xc  Data  Lc  spi-nor.o [1]
+spi_nor_convert_3to4_write::spi_nor_3to4_program
+                        0x20'3950     0x8  Data  Lc  spi-nor.o [1]
+spi_nor_convert_inst    0x20'2a48    0x34  Code  Lc  spi-nor.o [1]
+spi_nor_erase           0x20'37ec   0x150  Code  Gb  spi-nor.o [1]
+spi_nor_ids             0x20'7520   0x984  Data  Gb  spi-nor-ids.o [1]
+spi_nor_read            0x20'369c    0x7c  Code  Gb  spi-nor.o [1]
+spi_nor_write           0x20'3718    0xd4  Code  Gb  spi-nor.o [1]
+spi_read                0x20'6a20    0x10  Code  Gb  spi.o [1]
+spi_release_cs          0x20'68e0     0x8  Code  Gb  spi.o [1]
+spi_select_cs           0x20'68b4    0x2c  Code  Gb  spi.o [1]
+spi_transfer            0x20'6a30    0x1c  Code  Gb  spi.o [1]
+spi_write               0x20'6a0c    0x14  Code  Gb  spi.o [1]
+spid_configure          0x20'5b04    0xc0  Code  Gb  spid.o [1]
+spid_configure_cs       0x20'5bc4    0x50  Code  Gb  spid.o [1]
+spid_configure_master   0x20'5c14    0x20  Code  Gb  spid.o [1]
+spid_transfer           0x20'5a40    0xb0  Code  Gb  spid.o [1]
+spurious_handler        0x20'73d4     0x4  Code  Lc  aic5.o [1]
+sr2_bit7_quad_enable    0x20'2db8    0xa4  Code  Gb  spi-nor.o [1]
+strchr                  0x20'2244          Code  Gb  strchr.o [4]
+strlen                  0x20'2294          Code  Gb  strlen.o [4]
+tc_configure            0x20'6508    0x4c  Code  Gb  tc.o [1]
+tc_enable_it            0x20'6590    0x38  Code  Gb  tc.o [1]
+tc_get_available_freq   0x20'65fc    0x84  Code  Gb  tc.o [1]
+tc_get_channel_freq     0x20'6680    0x44  Code  Gb  tc.o [1]
+tc_get_cv               0x20'66c4    0x34  Code  Gb  tc.o [1]
+tc_get_status           0x20'65c8    0x34  Code  Gb  tc.o [1]
+tc_start                0x20'6554    0x3c  Code  Gb  tc.o [1]
+timer_configure         0x20'4ca0    0x9c  Code  Gb  timer.o [1]
+timer_get_interval      0x20'4d3c    0x3c  Code  Gb  timer.o [1]
+timer_irq_handler       0x20'4c38     0x4  Code  Lc  timer.o [1]
+timer_start_timeout     0x20'4d78    0x44  Code  Gb  timer.o [1]
+timer_timeout_reached   0x20'4dbc    0x68  Code  Gb  timer.o [1]
+timer_update_upper_tick_counter
+                        0x20'4c34     0x4  Code  Lc  timer.o [1]
+tlb                     0x20'c000  0x4000  Data  Lc  board_support.o [1]
+trace_level             0x20'ba50     0x4  Data  Gb  trace.o [1]
+uart_configure          0x20'9ff4    0x44  Code  Gb  uart.o [1]
+uart_disable_it         0x20'a040     0x8  Code  Gb  uart.o [1]
+uart_enable_it          0x20'a038     0x8  Code  Gb  uart.o [1]
+uart_get_char           0x20'a078    0x18  Code  Gb  uart.o [1]
+uart_is_rx_ready        0x20'a06c     0xc  Code  Gb  uart.o [1]
+uart_is_tx_empty        0x20'a048     0x8  Code  Gb  uart.o [1]
+uart_put_char           0x20'a058    0x14  Code  Gb  uart.o [1]
+undefined_instruction_irq_handler
+                        0x20'b290     0x4  Code  Gb  fault_handlers.o [1]
+usart_set_receiver_enabled
+                        0x20'7508     0xc  Code  Gb  usart.o [1]
+usart_set_transmitter_enabled
+                        0x20'74f8    0x10  Code  Gb  usart.o [1]
+usleep                  0x20'4e94    0x64  Code  Gb  timer.o [1]
+wdt_disable             0x20'85e4     0xc  Code  Gb  wdt.o [1]
+xdmac_disable_channel   0x20'6c28    0x38  Code  Gb  xdmac.o [1]
+xdmac_disable_channel_it
+                        0x20'6ca0    0x38  Code  Gb  xdmac.o [1]
+xdmac_disable_global_it
+                        0x20'6bdc     0x8  Code  Gb  xdmac.o [1]
+xdmac_enable_channel    0x20'6bec    0x3c  Code  Gb  xdmac.o [1]
+xdmac_enable_channel_it
+                        0x20'6c68    0x38  Code  Gb  xdmac.o [1]
+xdmac_enable_global_it  0x20'6bd4     0x8  Code  Gb  xdmac.o [1]
+xdmac_get_channel_isr   0x20'6d0c    0x34  Code  Gb  xdmac.o [1]
+xdmac_get_channel_it_mask
+                        0x20'6cd8    0x34  Code  Gb  xdmac.o [1]
+xdmac_get_global_channel_status
+                        0x20'6c60     0x8  Code  Gb  xdmac.o [1]
+xdmac_get_global_isr    0x20'6be4     0x8  Code  Gb  xdmac.o [1]
+xdmac_set_block_control
+                        0x20'6e64    0x38  Code  Gb  xdmac.o [1]
+xdmac_set_channel_config
+                        0x20'6e9c    0x38  Code  Gb  xdmac.o [1]
+xdmac_set_data_stride_mem_pattern
+                        0x20'6ed4    0x38  Code  Gb  xdmac.o [1]
+xdmac_set_descriptor_addr
+                        0x20'6db0    0x44  Code  Gb  xdmac.o [1]
+xdmac_set_descriptor_control
+                        0x20'6df4    0x38  Code  Gb  xdmac.o [1]
+xdmac_set_dest_addr     0x20'6d78    0x38  Code  Gb  xdmac.o [1]
+xdmac_set_dest_microblock_stride
+                        0x20'6f44    0x38  Code  Gb  xdmac.o [1]
+xdmac_set_microblock_control
+                        0x20'6e2c    0x38  Code  Gb  xdmac.o [1]
+xdmac_set_src_addr      0x20'6d40    0x38  Code  Gb  xdmac.o [1]
+xdmac_set_src_microblock_stride
+                        0x20'6f0c    0x38  Code  Gb  xdmac.o [1]
+xdmacd_configure_transfer
+                        0x20'70a4   0x250  Code  Gb  dma_xdmac.o [1]
+
+
+[1] = C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj
+[2] = dl7Sx_tln.a
+[3] = m7Sx_tlv.a
+[4] = rt7Sx_tl.a
+
+  37'398 bytes of readonly  code memory
+   8'254 bytes of readonly  data memory
+  34'300 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

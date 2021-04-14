@@ -1,0 +1,638 @@
+###############################################################################
+#
+# IAR ELF Linker V8.50.1.245/W32 for ARM                  24/Mar/2021  13:23:18
+# Copyright 2007-2020 IAR Systems AB.
+#
+#    Output file  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Exe\getting-started.out
+#    Map file     =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\List\getting-started.map
+#    Command line =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW62DA.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\aic5.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\board_console.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\board_led.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\board_sam9x60-ek.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\board_support.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\board_timer.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\bus.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\cache.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\callback.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\chip.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\chip_common.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\console.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\cstartup.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\dbgu.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\ddram.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\dma.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\dma_xdmac.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\fault_handlers.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\flexcom.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\intmath.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\irq.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\l1cache_cp15.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\led.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\main.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\matrix.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\mmu_cp15.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\mpddrc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\mutex.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\otpc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\pio3.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\pit.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\pmc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\pwmc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\rand.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\rstc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\rtc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\rtt.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\sdram.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\sdramc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\seriald.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\shdwc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\slowclock_sckc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\smc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\syscalls.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\tc.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\tcd.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\timer.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\trace.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\usart.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\usartd.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\wdt.o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\xdmac.o
+#        --redirect _Printf=_PrintfSmallNoMb --redirect _Scanf=_ScanfSmallNoMb
+#        --no_out_extension -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Exe\getting-started.out
+#        --map
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\List\getting-started.map
+#        --config
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sam9x60\toolchain\iar\sram.icf
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at start of [from 0x30'0000 to 0x30'ffff] { section .vectors };
+"P1":  place in [from 0x30'0000 to 0x30'ffff] { section .cstartup };
+"P2":  place in [from 0x30'0000 to 0x30'ffff] { ro };
+"P3":  place in [from 0x30'0000 to 0x30'ffff] { rw };
+define block CACHE_ALIGNED_CONST
+   with alignment = 32 { section .region_cache_aligned_const };
+"P4":  place in [from 0x30'0000 to 0x30'ffff] { block CACHE_ALIGNED_CONST };
+"P5":  place in [from 0x30'0000 to 0x30'ffff] { zi };
+define block CACHE_ALIGNED
+   with alignment = 32 { section .region_cache_aligned };
+"P6":  place in [from 0x30'0000 to 0x30'ffff] { block CACHE_ALIGNED };
+define block SRAM { section .region_sram };
+"P7":  place in [from 0x30'0000 to 0x30'ffff] { block SRAM };
+define block HEAP with size = 512, alignment = 4 { };
+"P8":  place in [from 0x30'0000 to 0x30'ffff] { block HEAP };
+define block IRQ_STACK with size = 96, alignment = 8 { };
+"P9":  place in [from 0x30'0000 to 0x30'ffff] { block IRQ_STACK };
+define block ABT_STACK with size = 64, alignment = 8 { };
+"P10": place in [from 0x30'0000 to 0x30'ffff] { block ABT_STACK };
+define block UND_STACK with size = 64, alignment = 8 { };
+"P11": place in [from 0x30'0000 to 0x30'ffff] { block UND_STACK };
+define block SYS_STACK with size = 64, alignment = 8 { };
+"P12": place in [from 0x30'0000 to 0x30'ffff] { block SYS_STACK };
+define block CSTACK with size = 2K, alignment = 8 { };
+"P13": place in [from 0x30'0000 to 0x30'ffff] { block CSTACK };
+define block DDR_CACHE_ALIGNED
+   with alignment = 32 { section .region_ddr_cache_aligned };
+"P14": place in [from 0x2000'0000 to 0x23ff'ffff] { block DDR_CACHE_ALIGNED };
+define block DDRAM { section .region_ddr };
+"P15": place in [from 0x2000'0000 to 0x23ff'ffff] { block DDRAM };
+do not initialize { section .region_ddr };
+do not initialize { section .region_cache_aligned };
+
+No sections matched the following patterns:
+
+  section .region_cache_aligned_const  in block CACHE_ALIGNED_CONST
+  section .region_ddr_cache_aligned    in block DDR_CACHE_ALIGNED
+  section .region_nocache              in block NO_CACHE
+  section .region_sram                 in block SRAM
+
+
+  Section                 Kind         Address    Size  Object
+  -------                 ----         -------    ----  ------
+"A0":                                             0x3c
+  .vectors                ro code    0x30'0000    0x3c  cstartup.o [1]
+                                   - 0x30'003c    0x3c
+
+"P1-P13", part 1 of 3:                          0x599c
+  SOFTPACK                ro code    0x30'003c  0x10d0  pmc.o [1]
+  .text                   ro code    0x30'110c    0x38  assert.o [2]
+  SOFTPACK                ro code    0x30'1144   0x1f4  timer.o [1]
+  .text                   ro code    0x30'1338    0x40  printf.o [2]
+  .text                   ro code    0x30'1378     0x8  ABImemclr4.o [3]
+  .text                   ro code    0x30'1380   0x1a8  I32DivMod.o [3]
+  SOFTPACK                ro code    0x30'1528    0x1c  slowclock_sckc.o [1]
+  SOFTPACK                ro code    0x30'1544    0x40  chip.o [1]
+  .text                   ro code    0x30'1584     0x8  abort.o [2]
+  SOFTPACK                ro code    0x30'158c   0x444  tc.o [1]
+  SOFTPACK                ro code    0x30'19d0    0x44  chip_common.o [1]
+  SOFTPACK                ro code    0x30'1a14   0x160  irq.o [1]
+  .text                   ro code    0x30'1b74   0x130  I64DivMod.o [3]
+  .text                   ro code    0x30'1ca4   0x841  xprintfsmall_nomb.o [2]
+  .text                   ro code    0x30'24e8    0x38  ABImemset48.o [3]
+  .text                   ro code    0x30'2520     0x4  IntDivZer.o [3]
+  .text                   ro code    0x30'2524    0x14  XXexit.o [3]
+  SOFTPACK                ro code    0x30'2538    0xb4  aic5.o [1]
+  .text                   ro code    0x30'25ec     0x4  I64DivZer.o [3]
+  .text                   ro code    0x30'25f0    0x20  strchr.o [3]
+  .text                   ro code    0x30'2610    0x60  xfail_s.o [2]
+  .text                   ro code    0x30'2670    0x54  strlen.o [3]
+  .text                   ro code    0x30'26c4    0x94  memchr.o [3]
+  SOFTPACK                ro code    0x30'2758   0x8f8  pio3.o [1]
+  SOFTPACK                ro code    0x30'3050   0x444  board_support.o [1]
+  SOFTPACK                ro code    0x30'3494    0x10  wdt.o [1]
+  .text                   ro code    0x30'34a4    0xd4  ABImemcpy.o [3]
+  SOFTPACK                ro code    0x30'3578    0x14  board_timer.o [1]
+  SOFTPACK                ro code    0x30'358c   0x29c  ddram.o [1]
+  SOFTPACK                ro code    0x30'3828    0x7c  mmu_cp15.o [1]
+  SOFTPACK                ro code    0x30'38a4   0x18c  l1cache_cp15.o [1]
+  SOFTPACK                ro code    0x30'3a30   0x36c  mpddrc.o [1]
+  SOFTPACK                ro code    0x30'3d9c   0x28c  main.o [1]
+  SOFTPACK                ro code    0x30'4028    0xec  led.o [1]
+  SOFTPACK                ro code    0x30'4114   0x284  tcd.o [1]
+  SOFTPACK                ro code    0x30'4398    0x54  callback.o [1]
+  SOFTPACK                ro code    0x30'43ec   0x1e0  console.o [1]
+  SOFTPACK                ro code    0x30'45cc    0x5c  mutex.o [1]
+  SOFTPACK                ro code    0x30'4628   0x1fc  seriald.o [1]
+  SOFTPACK                ro code    0x30'4824   0x130  dbgu.o [1]
+  .rodata                 const      0x30'4954   0x208  pmc.o [1]
+  SOFTPACK                ro code    0x30'4b5c   0x134  dma.o [1]
+  SOFTPACK                ro code    0x30'4c90    0x7c  xdmac.o [1]
+  .rodata                 const      0x30'4d0c   0x114  main.o [1]
+  .rodata                 const      0x30'4e20   0x110  pio3.o [1]
+  .rodata                 const      0x30'4f30    0xf0  board_support.o [1]
+  SOFTPACK                ro code    0x30'5020    0xd0  dma_xdmac.o [1]
+  .cstartup               ro code    0x30'50f0    0xc8  cstartup.o [1]
+  .text                   ro code    0x30'51b8    0x28  data_init.o [3]
+  SOFTPACK                ro code    0x30'51e0    0x50  matrix.o [1]
+  SOFTPACK                ro code    0x30'5230    0x3c  board_sam9x60-ek.o [1]
+  SOFTPACK                ro code    0x30'526c    0x50  cache.o [1]
+  SOFTPACK                ro code    0x30'52bc    0x80  board_console.o [1]
+  SOFTPACK                ro code    0x30'533c    0x10  board_led.o [1]
+  .rodata                 const      0x30'534c    0xbc  tc.o [1]
+  .rodata                 const      0x30'5408    0xb8  console.o [1]
+  .rodata                 const      0x30'54c0    0x98  xdmac.o [1]
+  .rodata                 const      0x30'5558    0x90  pmc.o [1]
+  .rodata                 const      0x30'55e8    0x70  pmc.o [1]
+  .text                   ro code    0x30'5658    0x64  cstartup.o [1]
+  .rodata                 const      0x30'56bc    0x4c  ddram.o [1]
+  .rodata                 const      0x30'5708    0x4c  l1cache_cp15.o [1]
+  .rodata                 const      0x30'5754    0x4c  seriald.o [1]
+  .rodata                 const      0x30'57a0    0x48  dbgu.o [1]
+  .rodata                 const      0x30'57e8    0x48  mmu_cp15.o [1]
+  .rodata                 const      0x30'5830    0x44  irq.o [1]
+  .text                   ro code    0x30'5874    0x3c  zero_init3.o [3]
+  .rodata                 const      0x30'58b0    0x24  seriald.o [1]
+  .text                   ro code    0x30'58d4    0x24  xprout.o [2]
+  SOFTPACK                ro code    0x30'58f8    0x18  syscalls.o [1]
+  .iar.init_table         const      0x30'5910    0x10  - Linker created -
+  .rodata                 const      0x30'5920    0x18  pio3.o [1]
+  .rodata                 const      0x30'5938    0x10  board_sam9x60-ek.o [1]
+  SOFTPACK                ro code    0x30'5948    0x10  fault_handlers.o [1]
+  .rodata                 const      0x30'5958     0xc  board_support.o [1]
+  .rodata                 const      0x30'5964     0x0  zero_init3.o [3]
+  .data                   rw data    0x30'5964    0x34  main.o [1]
+  .data                   rw data    0x30'5998    0x30  board_led.o [1]
+  .data                   rw data    0x30'59c8     0xc  pmc.o [1]
+  .data                   rw data    0x30'59d4     0x4  trace.o [1]
+                                   - 0x30'59d8  0x599c
+
+"P1-P13", part 2 of 3:                           0x89c
+  .bss                    zero       0x30'59d8   0x598  irq.o [1]
+  .bss                    zero       0x30'5f70   0x1cc  dma.o [1]
+  .bss                    zero       0x30'613c   0x104  pio3.o [1]
+  .bss                    zero       0x30'6240    0x10  console.o [1]
+  .bss                    zero       0x30'6250    0x10  timer.o [1]
+  .bss                    zero       0x30'6260     0x8  led.o [1]
+  .bss                    zero       0x30'6268     0x8  tcd.o [1]
+  .bss                    zero       0x30'6270     0x4  xfail_s.o [2]
+                                   - 0x30'6274   0x89c
+
+"P1-P13", part 3 of 3:                           0xd30
+  CACHE_ALIGNED                      0x30'6280   0x410  <Block>
+    .region_cache_aligned
+                          uninit     0x30'6280   0x410  dma.o [1]
+  IRQ_STACK                          0x30'6690    0x60  <Block>
+    IRQ_STACK             uninit     0x30'6690    0x60  <Block tail>
+  ABT_STACK                          0x30'66f0    0x40  <Block>
+    ABT_STACK             uninit     0x30'66f0    0x40  <Block tail>
+  UND_STACK                          0x30'6730    0x40  <Block>
+    UND_STACK             uninit     0x30'6730    0x40  <Block tail>
+  SYS_STACK                          0x30'6770    0x40  <Block>
+    SYS_STACK             uninit     0x30'6770    0x40  <Block tail>
+  CSTACK                             0x30'67b0   0x800  <Block>
+    CSTACK                uninit     0x30'67b0   0x800  <Block tail>
+                                   - 0x30'6fb0   0xd30
+
+"P14-P15":                                      0x4000
+  DDRAM                            0x2000'0000  0x4000  <Block>
+    .region_ddr           uninit   0x2000'0000  0x4000  board_support.o [1]
+                                 - 0x2000'4000  0x4000
+
+Unused ranges:
+
+         From           To        Size
+         ----           --        ----
+    0x30'6274    0x30'627f         0xc
+    0x30'6fb0    0x30'ffff      0x9050
+  0x2000'4000  0x23ff'ffff  0x3ff'c000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address    Size
+          -------    ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x89c:
+          0x30'59d8  0x89c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data
+    ------               -------  -------  -------
+command line/config:
+    ----------------------------------------------
+    Total:
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj: [1]
+    aic5.o                   180
+    board_console.o          128
+    board_led.o               16                48
+    board_sam9x60-ek.o        60       16
+    board_support.o        1'092      252   16'384
+    board_timer.o             20
+    cache.o                   80
+    callback.o                84
+    chip.o                    64
+    chip_common.o             68
+    console.o                480      184       16
+    cstartup.o               360
+    dbgu.o                   304       72
+    ddram.o                  668       76
+    dma.o                    308             1'500
+    dma_xdmac.o              208
+    fault_handlers.o          16
+    irq.o                    352       68    1'432
+    l1cache_cp15.o           396       76
+    led.o                    236                 8
+    main.o                   652      276       52
+    matrix.o                  80
+    mmu_cp15.o               124       72
+    mpddrc.o                 876
+    mutex.o                   92
+    pio3.o                 2'296      296      260
+    pmc.o                  4'304      776       12
+    seriald.o                508      112
+    slowclock_sckc.o          28
+    syscalls.o                24
+    tc.o                   1'092      188
+    tcd.o                    644                 8
+    timer.o                  500                16
+    trace.o                                      4
+    wdt.o                     16
+    xdmac.o                  124      152
+    ----------------------------------------------
+    Total:                16'480    2'616   19'740
+
+dl5E_aln.a: [2]
+    abort.o                    8
+    assert.o                  56
+    printf.o                  64
+    xfail_s.o                 96                 4
+    xprintfsmall_nomb.o    2'113
+    xprout.o                  36
+    ----------------------------------------------
+    Total:                 2'373                 4
+
+rt5E_al.a: [3]
+    ABImemclr4.o               8
+    ABImemcpy.o              212
+    ABImemset48.o             56
+    I32DivMod.o              424
+    I64DivMod.o              304
+    I64DivZer.o                4
+    IntDivZer.o                4
+    XXexit.o                  20
+    data_init.o               40
+    memchr.o                 148
+    strchr.o                  32
+    strlen.o                  84
+    zero_init3.o              60
+    ----------------------------------------------
+    Total:                 1'396
+
+    Gaps                       3
+    Linker created                     16    2'336
+--------------------------------------------------
+    Grand Total:          20'252    2'632   22'080
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base     0x30'5910           --   Gb  - Linker created -
+.iar.init_table$$Limit    0x30'5920           --   Gb  - Linker created -
+ABT_STACK$$Base           0x30'66f0           --   Gb  - Linker created -
+ABT_STACK$$Limit          0x30'6730           --   Gb  - Linker created -
+CACHE_ALIGNED$$Base       0x30'6280           --   Gb  - Linker created -
+CACHE_ALIGNED$$Limit      0x30'6690           --   Gb  - Linker created -
+CSTACK$$Base              0x30'67b0           --   Gb  - Linker created -
+CSTACK$$Limit             0x30'6fb0           --   Gb  - Linker created -
+DDRAM$$Base             0x2000'0000           --   Gb  - Linker created -
+DDRAM$$Limit            0x2000'4000           --   Gb  - Linker created -
+IRQ_STACK$$Base           0x30'6690           --   Gb  - Linker created -
+IRQ_STACK$$Limit          0x30'66f0           --   Gb  - Linker created -
+Region$$Table$$Base       0x30'5910           --   Gb  - Linker created -
+Region$$Table$$Limit      0x30'5920           --   Gb  - Linker created -
+SYS_STACK$$Base           0x30'6770           --   Gb  - Linker created -
+SYS_STACK$$Limit          0x30'67b0           --   Gb  - Linker created -
+UND_STACK$$Base           0x30'6730           --   Gb  - Linker created -
+UND_STACK$$Limit          0x30'6770           --   Gb  - Linker created -
+_LitobSmallNoMb           0x30'22b0   0x178  Code  Lc  xprintfsmall_nomb.o [2]
+_PrintfSmallNoMb          0x30'1ca4   0x608  Code  Gb  xprintfsmall_nomb.o [2]
+_Prout                    0x30'58d4    0x24  Code  Gb  xprout.o [2]
+_PutcharSmallNoMb         0x30'2428    0x40  Code  Lc  xprintfsmall_nomb.o [2]
+_PutcharsSmallNoMb        0x30'2468    0x58  Code  Lc  xprintfsmall_nomb.o [2]
+__aeabi_assert            0x30'110c    0x18  Code  Gb  assert.o [2]
+__aeabi_idiv              0x30'1380          Code  Gb  I32DivMod.o [3]
+__aeabi_idiv0             0x30'2520          Code  Gb  IntDivZer.o [3]
+__aeabi_idivmod           0x30'1380          Code  Gb  I32DivMod.o [3]
+__aeabi_ldiv0             0x30'25ec          Code  Gb  I64DivZer.o [3]
+__aeabi_memclr4           0x30'1378          Code  Gb  ABImemclr4.o [3]
+__aeabi_memcpy            0x30'34a4          Code  Gb  ABImemcpy.o [3]
+__aeabi_memcpy4           0x30'34c8          Code  Gb  ABImemcpy.o [3]
+__aeabi_memcpy8           0x30'34c8          Code  Gb  ABImemcpy.o [3]
+__aeabi_uidiv             0x30'13ac          Code  Gb  I32DivMod.o [3]
+__aeabi_uidivmod          0x30'13ac          Code  Gb  I32DivMod.o [3]
+__aeabi_uldivmod          0x30'1b74          Code  Gb  I64DivMod.o [3]
+__exit                    0x30'2524          Code  Gb  XXexit.o [3]
+__iar_Fail_s              0x30'2610    0x3c  Code  Gb  xfail_s.o [2]
+__iar_Memchr              0x30'26c4          Code  Gb  memchr.o [3]
+__iar_Memset4_word        0x30'24e8          Code  Gb  ABImemset48.o [3]
+__iar_Memset8_word        0x30'24e8          Code  Gb  ABImemset48.o [3]
+__iar_Strchr              0x30'25f0          Code  Gb  strchr.o [3]
+__iar_data_init3          0x30'51b9    0x28  Code  Gb  data_init.o [3]
+__iar_program_start       0x30'5110          Code  Gb  cstartup.o [1]
+__iar_zero_init3          0x30'5875    0x3c  Code  Gb  zero_init3.o [3]
+_default_irq_handler      0x30'1a14    0x4c  Code  Lc  irq.o [1]
+_dma_ctrl                 0x30'5f70   0x1cc  Data  Lc  dma.o [1]
+_dma_sg_pool              0x30'6280   0x410  Data  Lc  dma.o [1]
+_handler_push::i          0x30'623c     0x4  Data  Lc  pio3.o [1]
+_handlers                 0x30'613c   0x100  Data  Lc  pio3.o [1]
+_init_w972gg6kb           0x30'358c   0x1b8  Code  Lc  ddram.o [1]
+_pio_handle_interrupt     0x30'2758    0x50  Code  Lc  pio3.o [1]
+_pio_handler              0x30'27a8    0x9c  Code  Lc  pio3.o [1]
+_pmc_configure_pll        0x30'00ac   0x1c0  Code  Lc  pmc.o [1]
+_pmc_get_pll_clock        0x30'02f8    0xb0  Code  Lc  pmc.o [1]
+_pmc_get_pll_config       0x30'026c    0x8c  Code  Lc  pmc.o [1]
+_pmc_get_system_clock_bits
+                          0x30'003c    0x70  Code  Lc  pmc.o [1]
+_pmc_main_oscillators     0x30'59c8     0x8  Data  Lc  pmc.o [1]
+_pmc_mck                  0x30'59d0     0x4  Data  Lc  pmc.o [1]
+_reset_vector             0x30'0000          Data  Gb  cstartup.o [1]
+_send_ext_lmr_cmd         0x30'3a30    0x2c  Code  Lc  mpddrc.o [1]
+_tc_handler               0x30'3e20    0x54  Code  Lc  main.o [1]
+_tcd_counter_handler      0x30'4114    0x40  Code  Lc  tcd.o [1]
+_timer                    0x30'6250    0x10  Data  Lc  timer.o [1]
+_timer_get_tick           0x30'1174    0x3c  Code  Lc  timer.o [1]
+abort                     0x30'1584     0x8  Code  Gb  abort.o [2]
+aic_enable                0x30'25c0    0x1c  Code  Gb  aic5.o [1]
+aic_get_current_interrupt_source
+                          0x30'25dc    0x10  Code  Gb  aic5.o [1]
+aic_initialize            0x30'253c    0x84  Code  Gb  aic5.o [1]
+board_cfg_clocks_for_preset::plla_configs
+                          0x30'4f60    0xc0  Data  Lc  board_support.o [1]
+board_cfg_console         0x30'52bc    0x60  Code  Gb  board_console.o [1]
+board_cfg_console::rx_pin
+                          0x30'532c    0x10  Data  Lc  board_console.o [1]
+board_cfg_console::tx_pin
+                          0x30'531c    0x10  Data  Lc  board_console.o [1]
+board_cfg_led             0x30'533c    0x10  Code  Gb  board_led.o [1]
+board_cfg_lowlevel        0x30'3058   0x10c  Code  Gb  board_support.o [1]
+board_cfg_mmu             0x30'3164   0x314  Code  Gb  board_support.o [1]
+board_cfg_timer           0x30'3578    0x14  Code  Gb  board_timer.o [1]
+board_init                0x30'5230    0x3c  Code  Wk  board_sam9x60-ek.o [1]
+button_pins               0x30'4018    0x10  Data  Lc  main.o [1]
+cache_clean_region        0x30'5294    0x28  Code  Gb  cache.o [1]
+cache_invalidate_region
+                          0x30'526c    0x28  Code  Gb  cache.o [1]
+callback_call             0x30'43cc    0x20  Code  Gb  callback.o [1]
+callback_copy             0x30'43a8    0x24  Code  Gb  callback.o [1]
+callback_set              0x30'4398    0x10  Code  Gb  callback.o [1]
+console                   0x30'6240    0x10  Data  Lc  console.o [1]
+console_configure         0x30'43ec    0x84  Code  Gb  console.o [1]
+console_enable_rx_interrupt
+                          0x30'4488     0x8  Code  Gb  console.o [1]
+console_example_info      0x30'4490    0xe4  Code  Gb  console.o [1]
+console_handler           0x30'3e74    0x68  Code  Lc  main.o [1]
+console_put_char          0x30'4470     0xc  Code  Gb  console.o [1]
+console_set_rx_handler    0x30'447c     0xc  Code  Gb  console.o [1]
+data_abort_irq_handler    0x30'5950     0x4  Code  Gb  fault_handlers.o [1]
+dbgu_configure            0x30'4824    0xb8  Code  Gb  dbgu.o [1]
+dbgu_disable_it           0x30'492c     0x8  Code  Gb  dbgu.o [1]
+dbgu_enable_it            0x30'4924     0x8  Code  Gb  dbgu.o [1]
+dbgu_get_char             0x30'48f4    0x14  Code  Gb  dbgu.o [1]
+dbgu_is_rx_ready          0x30'4918     0xc  Code  Gb  dbgu.o [1]
+dbgu_is_tx_empty          0x30'4908    0x10  Code  Gb  dbgu.o [1]
+dbgu_put_char             0x30'48e0    0x14  Code  Gb  dbgu.o [1]
+dcache_clean_region       0x30'39bc    0x50  Code  Gb  l1cache_cp15.o [1]
+dcache_enable             0x30'38f8    0x3c  Code  Gb  l1cache_cp15.o [1]
+dcache_invalidate         0x30'3934    0x38  Code  Gb  l1cache_cp15.o [1]
+dcache_invalidate_region
+                          0x30'396c    0x50  Code  Gb  l1cache_cp15.o [1]
+dcache_is_enabled         0x30'38e0    0x18  Code  Gb  l1cache_cp15.o [1]
+ddram_configure           0x30'3788    0x38  Code  Gb  ddram.o [1]
+ddram_init_descriptor     0x30'3744    0x44  Code  Gb  ddram.o [1]
+dma_initialize            0x30'4b5c   0x128  Code  Gb  dma.o [1]
+dma_irq_handler           0x30'5020    0xd0  Code  Gb  dma_xdmac.o [1]
+fiqHandler                0x30'5658          Code  Gb  cstartup.o [1]
+get_board_name            0x30'3050     0x8  Code  Gb  board_support.o [1]
+get_chip_name             0x30'1544    0x24  Code  Gb  chip.o [1]
+get_peripheral_clock_matrix_div
+                          0x30'1568     0x8  Code  Gb  chip.o [1]
+get_tc_id_from_addr       0x30'19d0    0x28  Code  Gb  chip_common.o [1]
+get_xdmac_addr_from_id    0x30'1a00    0x14  Code  Gb  chip_common.o [1]
+handlers                  0x30'5ea4    0xcc  Data  Lc  irq.o [1]
+handlers_pool             0x30'59d8   0x4c8  Data  Lc  irq.o [1]
+icache_enable             0x30'38c0    0x20  Code  Gb  l1cache_cp15.o [1]
+icache_invalidate         0x30'38a4     0xc  Code  Gb  l1cache_cp15.o [1]
+icache_is_enabled         0x30'38b0    0x10  Code  Gb  l1cache_cp15.o [1]
+irqHandler                0x30'565c          Code  Gb  cstartup.o [1]
+irq_add_handler           0x30'1ac4    0x90  Code  Gb  irq.o [1]
+irq_enable                0x30'1b5c     0x4  Code  Gb  irq.o [1]
+irq_initialize            0x30'1a60    0x64  Code  Gb  irq.o [1]
+led_clear                 0x30'407c    0x44  Code  Gb  led.o [1]
+led_configure             0x30'4028    0x10  Code  Gb  led.o [1]
+led_count                 0x30'6264     0x4  Data  Lc  led.o [1]
+led_set                   0x30'4038    0x44  Code  Gb  led.o [1]
+led_status                0x30'5964     0x4  Data  Gb  main.o [1]
+led_toggle                0x30'40c0    0x50  Code  Gb  led.o [1]
+main                      0x30'3edc    0xf4  Code  Gb  main.o [1]
+matrix_remap_ram          0x30'51e0    0x40  Code  Gb  matrix.o [1]
+memchr                    0x30'26c4          Code  Gb  memchr.o [3]
+mmu_configure             0x30'3828    0x40  Code  Gb  mmu_cp15.o [1]
+mmu_enable                0x30'3878    0x18  Code  Gb  mmu_cp15.o [1]
+mmu_is_enabled            0x30'386c     0xc  Code  Gb  mmu_cp15.o [1]
+mpddrc_configure          0x30'3a5c   0x314  Code  Gb  mpddrc.o [1]
+msleep                    0x30'124c    0x34  Code  Gb  timer.o [1]
+mutex_is_locked           0x30'4614    0x14  Code  Gb  mutex.o [1]
+mutex_lock                0x30'45cc    0x24  Code  Gb  mutex.o [1]
+mutex_try_lock            0x30'45f0    0x18  Code  Gb  mutex.o [1]
+mutex_unlock              0x30'4608     0xc  Code  Gb  mutex.o [1]
+next_free_handler         0x30'5ea0     0x4  Data  Lc  irq.o [1]
+pin_sel_dbgu              0x30'5938    0x10  Data  Lc  board_sam9x60-ek.o [1]
+pins_leds                 0x30'5998    0x30  Data  Lc  board_led.o [1]
+pins_leds                 0x30'6260     0x4  Data  Lc  led.o [1]
+pio_add_handler_to_group
+                          0x30'2e20    0xc0  Code  Gb  pio3.o [1]
+pio_clear                 0x30'2c78    0x70  Code  Gb  pio3.o [1]
+pio_configure             0x30'2844   0x3c0  Code  Gb  pio3.o [1]
+pio_enable_it             0x30'2f78    0x94  Code  Gb  pio3.o [1]
+pio_get_output_data_status
+                          0x30'2cf4    0x74  Code  Gb  pio3.o [1]
+pio_handler               0x30'3de8    0x38  Code  Lc  main.o [1]
+pio_reset_all_it          0x30'2ee0    0x98  Code  Gb  pio3.o [1]
+pio_set                   0x30'2c04    0x74  Code  Gb  pio3.o [1]
+pio_set_debounce_filter
+                          0x30'2d74    0xac  Code  Gb  pio3.o [1]
+pmc_configure_gck         0x30'0cb4    0xe4  Code  Gb  pmc.o [1]
+pmc_configure_peripheral
+                          0x30'0adc    0x98  Code  Gb  pmc.o [1]
+pmc_configure_plla        0x30'0a58     0x4  Code  Gb  pmc.o [1]
+pmc_disable_gck           0x30'0f38    0x54  Code  Gb  pmc.o [1]
+pmc_disable_peripheral    0x30'0bc8    0x4c  Code  Gb  pmc.o [1]
+pmc_enable_gck            0x30'0d98   0x1a0  Code  Gb  pmc.o [1]
+pmc_enable_peripheral     0x30'0b74    0x50  Code  Gb  pmc.o [1]
+pmc_enable_system_clock
+                          0x30'0a5c    0x74  Code  Gb  pmc.o [1]
+pmc_get_gck_clock         0x30'0f94    0xe4  Code  Gb  pmc.o [1]
+pmc_get_main_oscillator_freq
+                          0x30'059c    0x14  Code  Gb  pmc.o [1]
+pmc_get_master_clock      0x30'05b0   0x118  Code  Gb  pmc.o [1]
+pmc_get_peripheral_clock
+                          0x30'0c64    0x44  Code  Gb  pmc.o [1]
+pmc_get_processor_clock
+                          0x30'06d0    0x44  Code  Gb  pmc.o [1]
+pmc_get_slow_clock        0x30'06c8     0x8  Code  Gb  pmc.o [1]
+pmc_is_gck_enabled        0x30'1078    0x48  Code  Gb  pmc.o [1]
+pmc_is_peripheral_enabled
+                          0x30'0c18    0x4c  Code  Gb  pmc.o [1]
+pmc_select_external_osc
+                          0x30'0714   0x170  Code  Gb  pmc.o [1]
+pmc_select_internal_osc
+                          0x30'0890    0xa0  Code  Gb  pmc.o [1]
+pmc_set_main_oscillator_freq
+                          0x30'03a8   0x1f4  Code  Gb  pmc.o [1]
+pmc_set_mck_divider       0x30'0a08    0x38  Code  Gb  pmc.o [1]
+pmc_set_mck_prescaler     0x30'09cc    0x3c  Code  Gb  pmc.o [1]
+pmc_switch_mck_to_main    0x30'0980    0x14  Code  Gb  pmc.o [1]
+pmc_switch_mck_to_new_source
+                          0x30'0930    0x38  Code  Gb  pmc.o [1]
+pmc_switch_mck_to_pll     0x30'0968    0x18  Code  Gb  pmc.o [1]
+pmc_switch_mck_to_slck    0x30'09b4    0x18  Code  Gb  pmc.o [1]
+prefetch_abort_irq_handler
+                          0x30'5954     0x4  Code  Gb  fault_handlers.o [1]
+printf                    0x30'1338    0x40  Code  Gb  printf.o [2]
+process_button_evt        0x30'3d9c    0x4c  Code  Lc  main.o [1]
+putchar                   0x30'58f8    0x18  Code  Wk  syscalls.o [1]
+sec_hand                  0x30'6270     0x4  Data  Lc  xfail_s.o [2]
+seriald_configure         0x30'465c    0x80  Code  Gb  seriald.o [1]
+seriald_enable_rx_interrupt
+                          0x30'47dc    0x48  Code  Gb  seriald.o [1]
+seriald_get_char          0x30'4748    0x44  Code  Gb  seriald.o [1]
+seriald_handler           0x30'4628    0x34  Code  Lc  seriald.o [1]
+seriald_is_rx_ready       0x30'4798    0x2c  Code  Gb  seriald.o [1]
+seriald_ops_dbgu          0x30'58b0    0x24  Data  Lc  seriald.o [1]
+seriald_put_char          0x30'46dc    0x28  Code  Gb  seriald.o [1]
+seriald_put_string        0x30'4704    0x44  Code  Gb  seriald.o [1]
+seriald_set_rx_handler    0x30'47c4    0x18  Code  Gb  seriald.o [1]
+slowclock_get_clock       0x30'1528    0x1c  Code  Gb  slowclock_sckc.o [1]
+software_interrupt_irq_handler
+                          0x30'594c     0x4  Code  Gb  fault_handlers.o [1]
+spurious_handler          0x30'2538     0x4  Code  Lc  aic5.o [1]
+strchr                    0x30'25f0          Code  Gb  strchr.o [3]
+strlen                    0x30'2670          Code  Gb  strlen.o [3]
+tc                        0x30'5968    0x30  Data  Gb  main.o [1]
+tc_configure              0x30'158c    0x4c  Code  Gb  tc.o [1]
+tc_enable_it              0x30'1648    0x38  Code  Gb  tc.o [1]
+tc_find_best_clock_source
+                          0x30'1680   0x10c  Code  Gb  tc.o [1]
+tc_find_best_clock_source::tcclks
+                          0x30'19bc    0x14  Data  Lc  tc.o [1]
+tc_get_available_freq     0x30'17c0    0x84  Code  Gb  tc.o [1]
+tc_get_channel_freq       0x30'1844    0x44  Code  Gb  tc.o [1]
+tc_get_cv                 0x30'1980    0x38  Code  Gb  tc.o [1]
+tc_get_ra_rb_rc           0x30'1918    0x68  Code  Gb  tc.o [1]
+tc_get_status             0x30'178c    0x34  Code  Gb  tc.o [1]
+tc_set_ra_rb_rc           0x30'1888    0x90  Code  Gb  tc.o [1]
+tc_start                  0x30'15d8    0x3c  Code  Gb  tc.o [1]
+tc_stop                   0x30'1614    0x34  Code  Gb  tc.o [1]
+tcd_configure_counter     0x30'4158    0xd8  Code  Gb  tcd.o [1]
+tcd_start                 0x30'4230   0x134  Code  Gb  tcd.o [1]
+tcd_stop                  0x30'4364    0x34  Code  Gb  tcd.o [1]
+timer_configure           0x30'11b0    0x9c  Code  Gb  timer.o [1]
+timer_irq_handler         0x30'1148     0x4  Code  Lc  timer.o [1]
+timer_update_upper_tick_counter
+                          0x30'1144     0x4  Code  Lc  timer.o [1]
+timetick                  0x30'6268     0x8  Data  Gb  tcd.o [1]
+tlb                     0x2000'0000  0x4000  Data  Lc  board_support.o [1]
+trace_level               0x30'59d4     0x4  Data  Gb  trace.o [1]
+undefined_instruction_irq_handler
+                          0x30'5948     0x4  Code  Gb  fault_handlers.o [1]
+usleep                    0x30'12bc    0x74  Code  Gb  timer.o [1]
+wdt_disable               0x30'3494    0x10  Code  Gb  wdt.o [1]
+xdmac_get_channel_isr     0x30'4cd4    0x34  Code  Gb  xdmac.o [1]
+xdmac_get_channel_it_mask
+                          0x30'4ca0    0x34  Code  Gb  xdmac.o [1]
+xdmac_get_global_channel_status
+                          0x30'4c98     0x8  Code  Gb  xdmac.o [1]
+xdmac_get_global_isr      0x30'4c90     0x8  Code  Gb  xdmac.o [1]
+
+
+[1] = C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj
+[2] = dl5E_aln.a
+[3] = rt5E_al.a
+
+  20'252 bytes of readonly  code memory
+   2'632 bytes of readonly  data memory
+  22'080 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

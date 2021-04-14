@@ -1,0 +1,1960 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         17/Feb/2021  15:29:21
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dma.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW3EAC.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dma.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_QSPI -D
+#        CONFIG_HAVE_QSPI_DMA -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_TRNG -D CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_OTPC -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List\dma.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\Obj\dma.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dma.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \file
+     31           *
+     32           * The DMA API features a generic layer on top of the supported DMA peripherals.
+     33           * The generic layer is device independent and provides the common API for
+     34           * low level driver and generic functionality.
+     35           */
+     36          
+     37          /*----------------------------------------------------------------------------
+     38           *        Headers
+     39           *----------------------------------------------------------------------------*/
+     40          
+     41          #include <assert.h>
+     42          #include <stdio.h>
+     43          #include <string.h>
+     44          
+     45          #include "callback.h"
+     46          #include "compiler.h"
+     47          #include "dma/dma.h"
+     48          #include "irq/irq.h"
+     49          #include "errno.h"
+     50          #include "mm/cache.h"
+     51          #include "mutex.h"
+     52          #include "peripherals/pmc.h"
+     53          
+     54          /*----------------------------------------------------------------------------
+     55           *        Macros
+     56           *----------------------------------------------------------------------------*/
+     57          
+     58          #if defined(CONFIG_HAVE_XDMAC)
+     59          #define DMA_MAX_BLOCK_LEN XDMAC_MAX_BLOCK_LEN
+     60          
+     61          #define DMA_SG_DESC_GET_NEXT(d) ((struct _dma_sg_desc*)(d)->desc.mbr_nda)
+     62          #define DMA_SG_DESC_SET_NEXT(d, next) (d)->desc.mbr_nda = (void*)(next)
+     63          #define DMA_SG_DESC_SET_SADDR(d, addr) (d)->desc.mbr_sa = (void*)(addr)
+     64          #define DMA_SG_DESC_SET_DADDR(d, addr) (d)->desc.mbr_da = (void*)(addr)
+     65          
+     66          #define DMA_DESC_SET_SADDR(d, addr) (d)->sa = (void*)(addr)
+     67          #define DMA_DESC_SET_DADDR(d, addr) (d)->da = (void*)(addr)
+     68          
+     69          #elif defined(CONFIG_HAVE_DMAC)
+     70          #define DMA_MAX_BLOCK_LEN DMAC_MAX_BLOCK_LEN
+     71          
+     72          #define DMA_SG_DESC_GET_NEXT(d) ((struct _dma_sg_desc*)(d)->desc.dscr)
+     73          #define DMA_SG_DESC_SET_NEXT(d, next) (d)->desc.dscr = (void*)(next)
+     74          #define DMA_SG_DESC_SET_SADDR(d, addr) (d)->desc.saddr = (void*)(addr)
+     75          #define DMA_SG_DESC_SET_DADDR(d, addr) (d)->desc.daddr = (void*)(addr)
+     76          
+     77          #define DMA_DESC_SET_SADDR(d, addr) (d)->saddr = (void*)(addr)
+     78          #define DMA_DESC_SET_DADDR(d, addr) (d)->daddr = (void*)(addr)
+     79          #endif
+     80          
+     81          /*----------------------------------------------------------------------------
+     82           *        Local constants
+     83           *----------------------------------------------------------------------------*/
+     84          
+
+   \                                 In section .data, align 4
+     85          static uint32_t controllers[] = {
+   \                     controllers:
+   \        0x0   0x0000'0014        DC32 20
+     86          #ifdef XDMAC0
+     87          	ID_XDMAC0,
+     88          #endif
+     89          #ifdef XDMAC1
+     90          	ID_XDMAC1,
+     91          #endif
+     92          #ifdef DMAC0
+     93          	ID_DMAC0,
+     94          #endif
+     95          #ifdef DMAC1
+     96          	ID_DMAC1,
+     97          #endif
+     98          };
+     99          
+    100          #define DMA_CONTROLLERS ARRAY_SIZE(controllers)
+    101          
+    102          /*----------------------------------------------------------------------------
+    103           *        Local definitions
+    104           *----------------------------------------------------------------------------*/
+    105          
+    106          /** Types for specifying a transfer of scattered data, or a transfer of
+    107           * contiguous data that may be reconfigured on a block-by-block basis. */
+    108          
+    109          /** Elementary transfer descriptor, AKA linked list item.
+    110           * Allocate the items, but do not access their members. Please use the dedicated
+    111           * functions defined below. */
+    112          struct _dma_sg_desc {
+    113          #ifdef CONFIG_HAVE_XDMAC
+    114          	struct _xdmac_desc_view1 desc;
+    115          #elif defined(CONFIG_HAVE_DMAC)
+    116          	struct _dmac_desc desc;
+    117          #endif
+    118          };
+    119          
+    120          struct _dma_sg_pool {
+    121          	struct _dma_sg_desc desc[DMA_SG_ITEM_POOL_SIZE];
+    122          	struct _dma_sg_desc* head;
+    123          	struct _dma_sg_desc* tail;
+    124          
+    125          	uint16_t count; /* Count elements in list  */
+    126          	mutex_t mutex;
+    127          };
+    128          
+    129          
+    130          /** DMA driver instance */
+    131          struct _dma_ctrl {
+    132          	struct _dma_controller controllers[DMA_CONTROLLERS];
+    133          	bool polling;
+    134          	uint8_t polling_timeout;
+    135          };
+    136          
+    137          /*----------------------------------------------------------------------------
+    138           *        Local variables
+    139           *----------------------------------------------------------------------------*/
+    140          
+
+   \                                 In section .region_cache_aligned, align 8
+    141          CACHE_ALIGNED static struct _dma_sg_pool _dma_sg_pool;
+   \                     _dma_sg_pool:
+   \        0x0                      DS8 1'040
+    142          
+
+   \                                 In section .bss, align 4
+    143          static struct _dma_ctrl _dma_ctrl;
+   \                     _dma_ctrl:
+   \        0x0                      DS8 460
+    144          
+    145          /*----------------------------------------------------------------------------
+    146           *        Local functions
+    147           *----------------------------------------------------------------------------*/
+    148          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    149          static inline bool is_source_periph(struct _dma_channel* channel)
+    150          {
+    151          	return ((channel->src_txif != 0xff) | (channel->src_rxif != 0xff));
+   \                     is_source_periph:
+   \        0x0   0xE5D0'1010        LDRB     R1,[R0, #+16]
+   \        0x4   0xE351'00FF        CMP      R1,#+255
+   \        0x8   0x0A00'0001        BEQ      ??is_source_periph_0
+   \        0xC   0xE3A0'1001        MOV      R1,#+1
+   \       0x10   0xEA00'0000        B        ??is_source_periph_1
+   \                     ??is_source_periph_0:
+   \       0x14   0xE3A0'1000        MOV      R1,#+0
+   \                     ??is_source_periph_1:
+   \       0x18   0xE5D0'0011        LDRB     R0,[R0, #+17]
+   \       0x1C   0xE350'00FF        CMP      R0,#+255
+   \       0x20   0x0A00'0001        BEQ      ??is_source_periph_2
+   \       0x24   0xE3A0'0001        MOV      R0,#+1
+   \       0x28   0xEA00'0000        B        ??is_source_periph_3
+   \                     ??is_source_periph_2:
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??is_source_periph_3:
+   \       0x30   0xE190'0001        ORRS     R0,R0,R1
+   \       0x34   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+    152          }
+    153          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    154          static inline bool is_dest_periph(struct _dma_channel* channel)
+    155          {
+    156          	return ((channel->dest_txif != 0xff) | (channel->dest_rxif != 0xff));
+   \                     is_dest_periph:
+   \        0x0   0xE5D0'1012        LDRB     R1,[R0, #+18]
+   \        0x4   0xE351'00FF        CMP      R1,#+255
+   \        0x8   0x0A00'0001        BEQ      ??is_dest_periph_0
+   \        0xC   0xE3A0'1001        MOV      R1,#+1
+   \       0x10   0xEA00'0000        B        ??is_dest_periph_1
+   \                     ??is_dest_periph_0:
+   \       0x14   0xE3A0'1000        MOV      R1,#+0
+   \                     ??is_dest_periph_1:
+   \       0x18   0xE5D0'0013        LDRB     R0,[R0, #+19]
+   \       0x1C   0xE350'00FF        CMP      R0,#+255
+   \       0x20   0x0A00'0001        BEQ      ??is_dest_periph_2
+   \       0x24   0xE3A0'0001        MOV      R0,#+1
+   \       0x28   0xEA00'0000        B        ??is_dest_periph_3
+   \                     ??is_dest_periph_2:
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??is_dest_periph_3:
+   \       0x30   0xE190'0001        ORRS     R0,R0,R1
+   \       0x34   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+    157          }
+    158          
+    159          /**
+    160           * \brief Preinitialize all descriptors and pool and link them together
+    161           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    162          static void _dma_sg_init(void)
+    163          {
+   \                     _dma_sg_init:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+    164          	uint32_t i;
+    165          
+    166          	memset(&_dma_sg_pool, 0, sizeof(_dma_sg_pool));
+   \        0x4   0xE3A0'4E41        MOV      R4,#+1040
+   \        0x8   0xE3A0'5000        MOV      R5,#+0
+   \        0xC   0x....'....        LDR      R6,??DataTable8
+   \       0x10   0xE1B0'7006        MOVS     R7,R6
+   \       0x14   0xE1B0'2005        MOVS     R2,R5
+   \       0x18   0xE1B0'1004        MOVS     R1,R4
+   \       0x1C   0xE1B0'0007        MOVS     R0,R7
+   \       0x20   0x....'....        BL       __aeabi_memset
+   \       0x24   0xE1B0'0007        MOVS     R0,R7
+    167          
+    168          	mutex_lock(&_dma_sg_pool.mutex);
+   \       0x28   0xE3A0'000C        MOV      R0,#+12
+   \       0x2C   0xE380'0E40        ORR      R0,R0,#0x400
+   \       0x30   0xE096'7000        ADDS     R7,R6,R0
+   \       0x34   0xE1B0'0007        MOVS     R0,R7
+   \       0x38   0x....'....        BL       mutex_lock
+    169          
+    170          	for (i = 0; i < ARRAY_SIZE(_dma_sg_pool.desc); i++)
+   \       0x3C   0xE3A0'0000        MOV      R0,#+0
+   \       0x40   0xE1B0'8000        MOVS     R8,R0
+   \                     ??_dma_sg_init_0:
+   \       0x44   0xE358'0040        CMP      R8,#+64
+   \       0x48   0x2A00'0006        BCS      ??_dma_sg_init_1
+    171          		DMA_SG_DESC_SET_NEXT(&_dma_sg_pool.desc[i], &_dma_sg_pool.desc[i + 1]);
+   \       0x4C   0xE1B0'1208        LSLS     R1,R8,#+4
+   \       0x50   0xE096'1001        ADDS     R1,R6,R1
+   \       0x54   0xE291'1010        ADDS     R1,R1,#+16
+   \       0x58   0xE1B0'2208        LSLS     R2,R8,#+4
+   \       0x5C   0xE786'1002        STR      R1,[R6, +R2]
+   \       0x60   0xE298'8001        ADDS     R8,R8,#+1
+   \       0x64   0xEAFF'FFF6        B        ??_dma_sg_init_0
+    172          	DMA_SG_DESC_SET_NEXT(&_dma_sg_pool.desc[i - 1], 0);
+   \                     ??_dma_sg_init_1:
+   \       0x68   0xE1B0'1208        LSLS     R1,R8,#+4
+   \       0x6C   0xE096'1001        ADDS     R1,R6,R1
+   \       0x70   0xE501'0010        STR      R0,[R1, #-16]
+    173          
+    174          	_dma_sg_pool.head = _dma_sg_pool.desc;
+   \       0x74   0xE586'6400        STR      R6,[R6, #+1024]
+    175          	_dma_sg_pool.tail = &_dma_sg_pool.desc[i - 1];
+   \       0x78   0xE1B0'0208        LSLS     R0,R8,#+4
+   \       0x7C   0xE096'0000        ADDS     R0,R6,R0
+   \       0x80   0xE250'0010        SUBS     R0,R0,#+16
+   \       0x84   0xE586'0404        STR      R0,[R6, #+1028]
+    176          	_dma_sg_pool.count = ARRAY_SIZE(_dma_sg_pool.desc);
+   \       0x88   0xE3A0'0040        MOV      R0,#+64
+   \       0x8C   0xE3A0'1008        MOV      R1,#+8
+   \       0x90   0xE381'1E40        ORR      R1,R1,#0x400
+   \       0x94   0xE186'00B1        STRH     R0,[R6, +R1]
+    177          
+    178          	mutex_unlock(&_dma_sg_pool.mutex);
+   \       0x98   0xE1B0'0007        MOVS     R0,R7
+   \       0x9C   0x....'....        BL       mutex_unlock
+    179          }
+   \       0xA0   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    180          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    181          static struct _dma_sg_desc* _dma_sg_desc_alloc(uint8_t count)
+    182          {
+   \                     _dma_sg_desc_alloc:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    183          	struct _dma_sg_desc* list_head;
+    184          	struct _dma_sg_desc* curr;
+    185          	struct _dma_sg_desc* next;
+    186          	uint8_t i;
+    187          
+    188          	if (count == 0)
+   \        0x8   0xE1B0'0004        MOVS     R0,R4
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x1A00'0001        BNE      ??_dma_sg_desc_alloc_0
+    189          		return NULL;
+   \       0x18   0xE3A0'0000        MOV      R0,#+0
+   \       0x1C   0xEA00'002E        B        ??_dma_sg_desc_alloc_1
+    190          	if (count > _dma_sg_pool.count)
+   \                     ??_dma_sg_desc_alloc_0:
+   \       0x20   0xE3A0'5008        MOV      R5,#+8
+   \       0x24   0xE385'5E40        ORR      R5,R5,#0x400
+   \       0x28   0x....'....        LDR      R6,??DataTable8
+   \       0x2C   0xE196'00B5        LDRH     R0,[R6, +R5]
+   \       0x30   0xE1B0'1004        MOVS     R1,R4
+   \       0x34   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x38   0xE1A0'1801        LSL      R1,R1,#+16
+   \       0x3C   0xE1B0'1821        LSRS     R1,R1,#+16
+   \       0x40   0xE150'0001        CMP      R0,R1
+   \       0x44   0x2A00'0001        BCS      ??_dma_sg_desc_alloc_2
+    191          		return NULL;
+   \       0x48   0xE3A0'0000        MOV      R0,#+0
+   \       0x4C   0xEA00'0022        B        ??_dma_sg_desc_alloc_1
+    192          
+    193          	mutex_lock(&_dma_sg_pool.mutex);
+   \                     ??_dma_sg_desc_alloc_2:
+   \       0x50   0xE3A0'000C        MOV      R0,#+12
+   \       0x54   0xE380'0E40        ORR      R0,R0,#0x400
+   \       0x58   0xE096'7000        ADDS     R7,R6,R0
+   \       0x5C   0xE1B0'0007        MOVS     R0,R7
+   \       0x60   0x....'....        BL       mutex_lock
+    194          
+    195          	list_head = _dma_sg_pool.head;
+   \       0x64   0xE596'8400        LDR      R8,[R6, #+1024]
+    196          	curr = list_head;
+   \       0x68   0xE1B0'9008        MOVS     R9,R8
+    197          	for (i = 0; i < (count - 1); i++) {
+   \       0x6C   0xE3A0'0000        MOV      R0,#+0
+   \       0x70   0xE1B0'A000        MOVS     R10,R0
+   \                     ??_dma_sg_desc_alloc_3:
+   \       0x74   0xE1B0'100A        MOVS     R1,R10
+   \       0x78   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x7C   0xE1B0'2004        MOVS     R2,R4
+   \       0x80   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x84   0xE252'2001        SUBS     R2,R2,#+1
+   \       0x88   0xE151'0002        CMP      R1,R2
+   \       0x8C   0xAA00'0002        BGE      ??_dma_sg_desc_alloc_4
+    198          		curr = DMA_SG_DESC_GET_NEXT(curr);
+   \       0x90   0xE599'9000        LDR      R9,[R9, #+0]
+    199          	}
+   \       0x94   0xE29A'A001        ADDS     R10,R10,#+1
+   \       0x98   0xEAFF'FFF5        B        ??_dma_sg_desc_alloc_3
+    200          		next = DMA_SG_DESC_GET_NEXT(curr);
+   \                     ??_dma_sg_desc_alloc_4:
+   \       0x9C   0xE599'B000        LDR      R11,[R9, #+0]
+    201          	DMA_SG_DESC_SET_NEXT(curr, 0);
+   \       0xA0   0xE589'0000        STR      R0,[R9, #+0]
+    202          
+    203          	_dma_sg_pool.count -= count;
+   \       0xA4   0xE196'10B5        LDRH     R1,[R6, +R5]
+   \       0xA8   0xE1B0'2004        MOVS     R2,R4
+   \       0xAC   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0xB0   0xE051'1002        SUBS     R1,R1,R2
+   \       0xB4   0xE186'10B5        STRH     R1,[R6, +R5]
+    204          	_dma_sg_pool.head = next;
+   \       0xB8   0xE586'B400        STR      R11,[R6, #+1024]
+    205          
+    206          	if (_dma_sg_pool.count == 0) {
+   \       0xBC   0xE196'10B5        LDRH     R1,[R6, +R5]
+   \       0xC0   0xE351'0000        CMP      R1,#+0
+   \       0xC4   0x1A00'0001        BNE      ??_dma_sg_desc_alloc_5
+    207          		_dma_sg_pool.head = NULL;
+   \       0xC8   0xE586'0400        STR      R0,[R6, #+1024]
+    208          		_dma_sg_pool.tail = NULL;
+   \       0xCC   0xE586'0404        STR      R0,[R6, #+1028]
+    209          	}
+    210          
+    211          	mutex_unlock(&_dma_sg_pool.mutex);
+   \                     ??_dma_sg_desc_alloc_5:
+   \       0xD0   0xE1B0'0007        MOVS     R0,R7
+   \       0xD4   0x....'....        BL       mutex_unlock
+    212          
+    213          	return list_head;
+   \       0xD8   0xE1B0'0008        MOVS     R0,R8
+   \                     ??_dma_sg_desc_alloc_1:
+   \       0xDC   0xE8BD'8FF2        POP      {R1,R4-R11,PC}   ;; return
+    214          }
+    215          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    216          static void _dma_sg_desc_free(struct _dma_sg_desc* list_head)
+    217          {
+   \                     _dma_sg_desc_free:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1B0'5000        MOVS     R5,R0
+    218          	struct _dma_sg_desc* curr = list_head;
+   \        0x8   0xE1B0'9005        MOVS     R9,R5
+    219          	struct _dma_sg_desc* tail;
+    220          
+    221          	if (list_head == NULL)
+   \        0xC   0xE355'0000        CMP      R5,#+0
+   \       0x10   0x0A00'001B        BEQ      ??_dma_sg_desc_free_0
+    222          		return;
+    223          
+    224          	do {
+    225          		tail = curr;
+   \                     ??_dma_sg_desc_free_1:
+   \       0x14   0xE1B0'4009        MOVS     R4,R9
+    226          		curr = DMA_SG_DESC_GET_NEXT(curr);
+   \       0x18   0xE599'9000        LDR      R9,[R9, #+0]
+    227          	} while ((curr != NULL) && (curr != list_head));
+   \       0x1C   0xE359'0000        CMP      R9,#+0
+   \       0x20   0x0A00'0001        BEQ      ??_dma_sg_desc_free_2
+   \       0x24   0xE159'0005        CMP      R9,R5
+   \       0x28   0x1AFF'FFF9        BNE      ??_dma_sg_desc_free_1
+    228          	curr = list_head;
+   \                     ??_dma_sg_desc_free_2:
+   \       0x2C   0xE1B0'6005        MOVS     R6,R5
+    229          
+    230          	mutex_lock(&_dma_sg_pool.mutex);
+   \       0x30   0x....'....        LDR      R7,??DataTable8
+   \       0x34   0xE3A0'000C        MOV      R0,#+12
+   \       0x38   0xE380'0E40        ORR      R0,R0,#0x400
+   \       0x3C   0xE097'8000        ADDS     R8,R7,R0
+   \       0x40   0xE1B0'0008        MOVS     R0,R8
+   \       0x44   0x....'....        BL       mutex_lock
+    231          
+    232          	if (_dma_sg_pool.head == NULL)
+   \       0x48   0xE597'0400        LDR      R0,[R7, #+1024]
+   \       0x4C   0xE350'0000        CMP      R0,#+0
+   \       0x50   0x1A00'0000        BNE      ??_dma_sg_desc_free_3
+    233          		_dma_sg_pool.head = list_head;
+   \       0x54   0xE587'5400        STR      R5,[R7, #+1024]
+    234          
+    235          	if (_dma_sg_pool.tail != NULL)
+   \                     ??_dma_sg_desc_free_3:
+   \       0x58   0xE597'0404        LDR      R0,[R7, #+1028]
+   \       0x5C   0xE350'0000        CMP      R0,#+0
+   \       0x60   0x0A00'0001        BEQ      ??_dma_sg_desc_free_4
+    236          		DMA_SG_DESC_SET_NEXT(_dma_sg_pool.tail, list_head);
+   \       0x64   0xE597'0404        LDR      R0,[R7, #+1028]
+   \       0x68   0xE580'5000        STR      R5,[R0, #+0]
+    237          	_dma_sg_pool.tail = tail;
+   \                     ??_dma_sg_desc_free_4:
+   \       0x6C   0xE587'4404        STR      R4,[R7, #+1028]
+    238          	DMA_SG_DESC_SET_NEXT(_dma_sg_pool.tail, 0);
+   \       0x70   0xE3A0'0000        MOV      R0,#+0
+   \       0x74   0xE597'1404        LDR      R1,[R7, #+1028]
+   \       0x78   0xE581'0000        STR      R0,[R1, #+0]
+    239          
+    240          	mutex_unlock(&_dma_sg_pool.mutex);
+   \       0x7C   0xE1B0'0008        MOVS     R0,R8
+   \       0x80   0x....'....        BL       mutex_unlock
+    241          }
+   \                     ??_dma_sg_desc_free_0:
+   \       0x84   0xE8BD'83F1        POP      {R0,R4-R9,PC}    ;; return
+    242          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    243          static int _dma_configure_transfer(struct _dma_channel* channel,
+    244          				   struct _dma_cfg* cfg_dma,
+    245          				   struct _dma_transfer_cfg *cfg)
+    246          {
+   \                     _dma_configure_transfer:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE24D'D020        SUB      SP,SP,#+32
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+   \        0xC   0xE1B0'5001        MOVS     R5,R1
+   \       0x10   0xE1B0'6002        MOVS     R6,R2
+    247          	bool src_is_periph, dst_is_periph;
+    248          	uint32_t divisor;
+    249          
+    250          #if defined(CONFIG_HAVE_XDMAC)
+    251          	struct _xdmacd_cfg desc;
+    252          #elif defined(CONFIG_HAVE_DMAC)
+    253          	struct _dmac_desc desc;
+    254          	struct _dmacd_cfg dma_cfg;
+    255          #endif
+    256          
+    257          	memset(&desc, 0, sizeof(desc));
+   \       0x14   0xE3A0'A020        MOV      R10,#+32
+   \       0x18   0xE3A0'B000        MOV      R11,#+0
+   \       0x1C   0xE1B0'700D        MOVS     R7,SP
+   \       0x20   0xE1B0'200B        MOVS     R2,R11
+   \       0x24   0xE1B0'100A        MOVS     R1,R10
+   \       0x28   0xE1B0'0007        MOVS     R0,R7
+   \       0x2C   0x....'....        BL       __aeabi_memset
+   \       0x30   0xE1B0'0007        MOVS     R0,R7
+    258          
+    259          	src_is_periph = is_source_periph(channel);
+   \       0x34   0xE1B0'0004        MOVS     R0,R4
+   \       0x38   0x....'....        BL       is_source_periph
+   \       0x3C   0xE1B0'7000        MOVS     R7,R0
+    260          	dst_is_periph = is_dest_periph(channel);
+   \       0x40   0xE1B0'0004        MOVS     R0,R4
+   \       0x44   0x....'....        BL       is_dest_periph
+   \       0x48   0xE1B0'8000        MOVS     R8,R0
+    261          
+    262          	if (cfg->len <= DMA_MAX_BT_SIZE) {
+   \       0x4C   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0x50   0xE350'0740        CMP      R0,#+16777216
+   \       0x54   0x2A00'0004        BCS      ??_dma_configure_transfer_0
+    263          		/* If len is <= 16,777,215, the driver will transfer a
+    264          		   single block, those size will be len data elements. */
+    265          #if defined(CONFIG_HAVE_XDMAC)
+    266          		desc.ubc = cfg->len;
+   \       0x58   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0x5C   0xE58D'0000        STR      R0,[SP, #+0]
+    267          		desc.bc = 0;
+   \       0x60   0xE3A0'0000        MOV      R0,#+0
+   \       0x64   0xE58D'0004        STR      R0,[SP, #+4]
+   \       0x68   0xEA00'001A        B        ??_dma_configure_transfer_1
+    268          #elif defined(CONFIG_HAVE_DMAC)
+    269          		desc.ctrla = cfg->len;
+    270          #endif
+    271          	} else {
+    272          		/* If len exceeds 16,777,215, split the transfer in
+    273          		   multiple blocks (microblocks), calculating and using the greatest block
+    274          		   size possible for this transfer. */
+    275          		for (divisor = DMA_MAX_BT_SIZE; divisor > 1; divisor--) {
+   \                     ??_dma_configure_transfer_0:
+   \       0x6C   0xE3E0'04FF        MVN      R0,#-16777216
+   \       0x70   0xE1B0'9000        MOVS     R9,R0
+   \                     ??_dma_configure_transfer_2:
+   \       0x74   0xE359'0002        CMP      R9,#+2
+   \       0x78   0x3A00'0012        BCC      ??_dma_configure_transfer_3
+    276          			if (cfg->len % divisor)
+   \       0x7C   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0x80   0xE1B0'1009        MOVS     R1,R9
+   \       0x84   0x....'....        BL       __aeabi_uidivmod
+   \       0x88   0xE351'0000        CMP      R1,#+0
+   \       0x8C   0x1A00'000B        BNE      ??_dma_configure_transfer_4
+    277          				continue;
+    278          			if ((cfg->len / divisor) <= DMA_MAX_BLOCK_LEN) {
+   \                     ??_dma_configure_transfer_5:
+   \       0x90   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0x94   0xE1B0'1009        MOVS     R1,R9
+   \       0x98   0x....'....        BL       __aeabi_uidiv
+   \       0x9C   0xE350'0D40        CMP      R0,#+4096
+   \       0xA0   0x2A00'0006        BCS      ??_dma_configure_transfer_4
+    279          #if defined(CONFIG_HAVE_XDMAC)
+    280          				desc.ubc = divisor;
+   \       0xA4   0xE58D'9000        STR      R9,[SP, #+0]
+    281          				desc.bc = (cfg->len / divisor) - 1;
+   \       0xA8   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0xAC   0xE1B0'1009        MOVS     R1,R9
+   \       0xB0   0x....'....        BL       __aeabi_uidiv
+   \       0xB4   0xE250'0001        SUBS     R0,R0,#+1
+   \       0xB8   0xE58D'0004        STR      R0,[SP, #+4]
+    282          #elif defined(CONFIG_HAVE_DMAC)
+    283          				desc.ctrla = divisor;
+    284          				dma_cfg.blocks = (cfg->len / divisor) - 1;
+    285          				dma_cfg.trans_auto = 1;
+    286          				dma_cfg.sa_rep = src_is_periph ? 1 : 0 ;
+    287          				dma_cfg.da_rep = dst_is_periph ? 1 : 0 ;
+    288          #endif
+    289          				break;
+   \       0xBC   0xEA00'0001        B        ??_dma_configure_transfer_3
+    290          			}
+    291          		}
+   \                     ??_dma_configure_transfer_4:
+   \       0xC0   0xE259'9001        SUBS     R9,R9,#+1
+   \       0xC4   0xEAFF'FFEA        B        ??_dma_configure_transfer_2
+    292          		if (divisor == 1)
+   \                     ??_dma_configure_transfer_3:
+   \       0xC8   0xE359'0001        CMP      R9,#+1
+   \       0xCC   0x1A00'0001        BNE      ??_dma_configure_transfer_1
+    293          			return -EINVAL;
+   \       0xD0   0xE3E0'001B        MVN      R0,#+27
+   \       0xD4   0xEA00'0063        B        ??_dma_configure_transfer_6
+    294          	}
+    295          
+    296          	DMA_DESC_SET_SADDR(&desc, cfg->saddr);
+   \                     ??_dma_configure_transfer_1:
+   \       0xD8   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0xDC   0xE58D'0014        STR      R0,[SP, #+20]
+    297          	DMA_DESC_SET_DADDR(&desc, cfg->daddr);
+   \       0xE0   0xE596'0004        LDR      R0,[R6, #+4]
+   \       0xE4   0xE58D'0018        STR      R0,[SP, #+24]
+    298          
+    299          #if defined(CONFIG_HAVE_XDMAC)
+    300          	if (src_is_periph || dst_is_periph)
+   \       0xE8   0xE1B0'0007        MOVS     R0,R7
+   \       0xEC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xF0   0xE350'0000        CMP      R0,#+0
+   \       0xF4   0x1A00'0003        BNE      ??_dma_configure_transfer_7
+   \       0xF8   0xE1B0'0008        MOVS     R0,R8
+   \       0xFC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x100   0xE350'0000        CMP      R0,#+0
+   \      0x104   0x0A00'0002        BEQ      ??_dma_configure_transfer_8
+    301          		desc.cfg = XDMAC_CC_TYPE_PER_TRAN;
+   \                     ??_dma_configure_transfer_7:
+   \      0x108   0xE3A0'0001        MOV      R0,#+1
+   \      0x10C   0xE58D'001C        STR      R0,[SP, #+28]
+   \      0x110   0xEA00'0001        B        ??_dma_configure_transfer_9
+    302          	else
+    303          		desc.cfg = XDMAC_CC_TYPE_MEM_TRAN;
+   \                     ??_dma_configure_transfer_8:
+   \      0x114   0xE3A0'0000        MOV      R0,#+0
+   \      0x118   0xE58D'001C        STR      R0,[SP, #+28]
+    304          	desc.cfg |= src_is_periph ? XDMAC_CC_DSYNC_PER2MEM : XDMAC_CC_DSYNC_MEM2PER;
+   \                     ??_dma_configure_transfer_9:
+   \      0x11C   0xE1B0'0007        MOVS     R0,R7
+   \      0x120   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x124   0xE350'0000        CMP      R0,#+0
+   \      0x128   0x0A00'0001        BEQ      ??_dma_configure_transfer_10
+   \      0x12C   0xE3A0'0000        MOV      R0,#+0
+   \      0x130   0xEA00'0000        B        ??_dma_configure_transfer_11
+   \                     ??_dma_configure_transfer_10:
+   \      0x134   0xE3A0'0010        MOV      R0,#+16
+   \                     ??_dma_configure_transfer_11:
+   \      0x138   0xE59D'101C        LDR      R1,[SP, #+28]
+   \      0x13C   0xE190'0001        ORRS     R0,R0,R1
+   \      0x140   0xE58D'001C        STR      R0,[SP, #+28]
+    305          	desc.cfg |= XDMAC_CC_CSIZE(cfg_dma->chunk_size);
+   \      0x144   0xE59D'001C        LDR      R0,[SP, #+28]
+   \      0x148   0xE595'1004        LDR      R1,[R5, #+4]
+   \      0x14C   0xE3A0'2E70        MOV      R2,#+1792
+   \      0x150   0xE012'1401        ANDS     R1,R2,R1, LSL #+8
+   \      0x154   0xE191'0000        ORRS     R0,R1,R0
+   \      0x158   0xE58D'001C        STR      R0,[SP, #+28]
+    306          	desc.cfg |= XDMAC_CC_DWIDTH(cfg_dma->data_width);
+   \      0x15C   0xE59D'001C        LDR      R0,[SP, #+28]
+   \      0x160   0xE595'1000        LDR      R1,[R5, #+0]
+   \      0x164   0xE3A0'2D60        MOV      R2,#+6144
+   \      0x168   0xE012'1581        ANDS     R1,R2,R1, LSL #+11
+   \      0x16C   0xE191'0000        ORRS     R0,R1,R0
+   \      0x170   0xE58D'001C        STR      R0,[SP, #+28]
+    307          	desc.cfg |= src_is_periph ? XDMAC_CC_SIF_AHB_IF1 : XDMAC_CC_SIF_AHB_IF0;
+   \      0x174   0xE1B0'0007        MOVS     R0,R7
+   \      0x178   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x17C   0xE350'0000        CMP      R0,#+0
+   \      0x180   0x0A00'0001        BEQ      ??_dma_configure_transfer_12
+   \      0x184   0xE3A0'0D80        MOV      R0,#+8192
+   \      0x188   0xEA00'0000        B        ??_dma_configure_transfer_13
+   \                     ??_dma_configure_transfer_12:
+   \      0x18C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??_dma_configure_transfer_13:
+   \      0x190   0xE59D'101C        LDR      R1,[SP, #+28]
+   \      0x194   0xE190'0001        ORRS     R0,R0,R1
+   \      0x198   0xE58D'001C        STR      R0,[SP, #+28]
+    308          	desc.cfg |= dst_is_periph ? XDMAC_CC_DIF_AHB_IF1 : XDMAC_CC_DIF_AHB_IF0;
+   \      0x19C   0xE1B0'0008        MOVS     R0,R8
+   \      0x1A0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x1A4   0xE350'0000        CMP      R0,#+0
+   \      0x1A8   0x0A00'0001        BEQ      ??_dma_configure_transfer_14
+   \      0x1AC   0xE3A0'0C40        MOV      R0,#+16384
+   \      0x1B0   0xEA00'0000        B        ??_dma_configure_transfer_15
+   \                     ??_dma_configure_transfer_14:
+   \      0x1B4   0xE3A0'0000        MOV      R0,#+0
+   \                     ??_dma_configure_transfer_15:
+   \      0x1B8   0xE59D'101C        LDR      R1,[SP, #+28]
+   \      0x1BC   0xE190'0001        ORRS     R0,R0,R1
+   \      0x1C0   0xE58D'001C        STR      R0,[SP, #+28]
+    309          	desc.cfg |= cfg_dma->incr_saddr ? XDMAC_CC_SAM_INCREMENTED_AM : XDMAC_CC_SAM_FIXED_AM;
+   \      0x1C4   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \      0x1C8   0xE350'0000        CMP      R0,#+0
+   \      0x1CC   0x0A00'0001        BEQ      ??_dma_configure_transfer_16
+   \      0x1D0   0xE3A0'0B40        MOV      R0,#+65536
+   \      0x1D4   0xEA00'0000        B        ??_dma_configure_transfer_17
+   \                     ??_dma_configure_transfer_16:
+   \      0x1D8   0xE3A0'0000        MOV      R0,#+0
+   \                     ??_dma_configure_transfer_17:
+   \      0x1DC   0xE59D'101C        LDR      R1,[SP, #+28]
+   \      0x1E0   0xE190'0001        ORRS     R0,R0,R1
+   \      0x1E4   0xE58D'001C        STR      R0,[SP, #+28]
+    310          	desc.cfg |= cfg_dma->incr_daddr ? XDMAC_CC_DAM_INCREMENTED_AM : XDMAC_CC_DAM_FIXED_AM;
+   \      0x1E8   0xE5D5'0009        LDRB     R0,[R5, #+9]
+   \      0x1EC   0xE350'0000        CMP      R0,#+0
+   \      0x1F0   0x0A00'0001        BEQ      ??_dma_configure_transfer_18
+   \      0x1F4   0xE3A0'0A40        MOV      R0,#+262144
+   \      0x1F8   0xEA00'0000        B        ??_dma_configure_transfer_19
+   \                     ??_dma_configure_transfer_18:
+   \      0x1FC   0xE3A0'0000        MOV      R0,#+0
+   \                     ??_dma_configure_transfer_19:
+   \      0x200   0xE59D'101C        LDR      R1,[SP, #+28]
+   \      0x204   0xE190'0001        ORRS     R0,R0,R1
+   \      0x208   0xE58D'001C        STR      R0,[SP, #+28]
+    311          	desc.cfg |= (src_is_periph || dst_is_periph) ? 0 : XDMAC_CC_SWREQ_SWR_CONNECTED;
+   \      0x20C   0xE1B0'0007        MOVS     R0,R7
+   \      0x210   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x214   0xE350'0000        CMP      R0,#+0
+   \      0x218   0x1A00'0003        BNE      ??_dma_configure_transfer_20
+   \      0x21C   0xE1B0'0008        MOVS     R0,R8
+   \      0x220   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x224   0xE350'0000        CMP      R0,#+0
+   \      0x228   0x0A00'0001        BEQ      ??_dma_configure_transfer_21
+   \                     ??_dma_configure_transfer_20:
+   \      0x22C   0xE3A0'0000        MOV      R0,#+0
+   \      0x230   0xEA00'0000        B        ??_dma_configure_transfer_22
+   \                     ??_dma_configure_transfer_21:
+   \      0x234   0xE3A0'0040        MOV      R0,#+64
+   \                     ??_dma_configure_transfer_22:
+   \      0x238   0xE59D'101C        LDR      R1,[SP, #+28]
+   \      0x23C   0xE190'0001        ORRS     R0,R0,R1
+   \      0x240   0xE58D'001C        STR      R0,[SP, #+28]
+    312          	desc.ds = 0;
+   \      0x244   0xE3A0'0000        MOV      R0,#+0
+   \      0x248   0xE58D'0008        STR      R0,[SP, #+8]
+    313          	desc.sus = 0;
+   \      0x24C   0xE58D'000C        STR      R0,[SP, #+12]
+    314          	desc.dus = 0;
+   \      0x250   0xE58D'0010        STR      R0,[SP, #+16]
+    315          
+    316          	return xdmacd_configure_transfer(channel, &desc, 0, 0);
+   \      0x254   0xE3A0'3000        MOV      R3,#+0
+   \      0x258   0xE3A0'2000        MOV      R2,#+0
+   \      0x25C   0xE1B0'100D        MOVS     R1,SP
+   \      0x260   0xE1B0'0004        MOVS     R0,R4
+   \      0x264   0x....'....        BL       xdmacd_configure_transfer
+   \                     ??_dma_configure_transfer_6:
+   \      0x268   0xE28D'D024        ADD      SP,SP,#+36
+   \      0x26C   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    317          #elif defined(CONFIG_HAVE_DMAC)
+    318          	dma_cfg.s_decr_fetch = 1;
+    319          	dma_cfg.d_decr_fetch = 1;
+    320          	dma_cfg.sa_rep = 0;
+    321          	dma_cfg.da_rep = 0;
+    322          	dma_cfg.trans_auto = 0;
+    323          	dma_cfg.blocks = 0;
+    324          
+    325          	dma_cfg.cfg = src_is_periph ? DMAC_CFG_SRC_H2SEL_HW : 0;
+    326          	dma_cfg.cfg |= dst_is_periph ? DMAC_CFG_DST_H2SEL_HW : 0;
+    327          
+    328          	desc.ctrla |= (cfg_dma->data_width << DMAC_CTRLA_SRC_WIDTH_Pos)
+    329          		| (cfg_dma->data_width << DMAC_CTRLA_DST_WIDTH_Pos)
+    330          		| (cfg_dma->chunk_size << DMAC_CTRLA_SCSIZE_Pos)
+    331          		| (cfg_dma->chunk_size << DMAC_CTRLA_DCSIZE_Pos);
+    332          
+    333          #if defined(CONFIG_SOC_SAMA5D3)
+    334          	desc.ctrlb = src_is_periph ? DMAC_CTRLB_SIF_AHB_IF2 : DMAC_CTRLB_SIF_AHB_IF0;
+    335          	desc.ctrlb |= dst_is_periph ? DMAC_CTRLB_DIF_AHB_IF2 : DMAC_CTRLB_DIF_AHB_IF0;
+    336          #elif defined(CONFIG_SOC_SAM9XX5)
+    337          	desc.ctrlb = src_is_periph ? DMAC_CTRLB_SIF_AHB_IF1 : DMAC_CTRLB_SIF_AHB_IF0;
+    338          	desc.ctrlb |= dst_is_periph ? DMAC_CTRLB_DIF_AHB_IF1 : DMAC_CTRLB_DIF_AHB_IF0;
+    339          #endif
+    340          	if (src_is_periph)
+    341          		desc.ctrlb |= DMAC_CTRLB_FC_PER2MEM_DMA_FC;
+    342          	else if (dst_is_periph)
+    343          		desc.ctrlb |= DMAC_CTRLB_FC_MEM2PER_DMA_FC;
+    344          	else
+    345          		desc.ctrlb |= DMAC_CTRLB_FC_MEM2MEM_DMA_FC;
+    346          	desc.ctrlb |= cfg_dma->incr_saddr ? DMAC_CTRLB_SRC_INCR_INCREMENTING : DMAC_CTRLB_SRC_INCR_FIXED;
+    347          	desc.ctrlb |= cfg_dma->incr_daddr ? DMAC_CTRLB_DST_INCR_INCREMENTING : DMAC_CTRLB_DST_INCR_FIXED;
+    348          	desc.ctrlb |= DMAC_CTRLB_SRC_DSCR_FETCH_DISABLE | DMAC_CTRLB_DST_DSCR_FETCH_DISABLE;
+    349          
+    350          	return dmacd_configure_transfer(channel, &dma_cfg, &desc);
+    351          #endif /* CONFIG_HAVE_DMAC */
+    352          }
+    353          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    354          static int _dma_sg_configure_transfer(struct _dma_channel* channel,
+    355          				      struct _dma_cfg* cfg_dma,
+    356          				      struct _dma_transfer_cfg* sg_list, uint8_t sg_list_size)
+    357          {
+   \                     _dma_sg_configure_transfer:
+   \        0x0   0xE92D'4FFD        PUSH     {R0,R2-R11,LR}
+   \        0x4   0xE24D'D028        SUB      SP,SP,#+40
+   \        0x8   0xE1B0'4001        MOVS     R4,R1
+    358          	struct _dma_sg_desc* _sg_head;
+    359          	struct _dma_sg_desc* curr;
+    360          	struct _dma_transfer_cfg* cfg;
+    361          	bool src_is_periph, dst_is_periph;
+    362          	uint8_t idx;
+    363          
+    364          	if ((sg_list == NULL) || (sg_list_size == 0))
+   \        0xC   0xE59D'002C        LDR      R0,[SP, #+44]
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x0A00'0002        BEQ      ??_dma_sg_configure_transfer_0
+   \       0x18   0xE5DD'0030        LDRB     R0,[SP, #+48]
+   \       0x1C   0xE350'0000        CMP      R0,#+0
+   \       0x20   0x1A00'0001        BNE      ??_dma_sg_configure_transfer_1
+    365          		return -EINVAL;
+   \                     ??_dma_sg_configure_transfer_0:
+   \       0x24   0xE3E0'001B        MVN      R0,#+27
+   \       0x28   0xEA00'009E        B        ??_dma_sg_configure_transfer_2
+    366          
+    367          	src_is_periph = is_source_periph(channel);
+   \                     ??_dma_sg_configure_transfer_1:
+   \       0x2C   0xE59D'0028        LDR      R0,[SP, #+40]
+   \       0x30   0x....'....        BL       is_source_periph
+   \       0x34   0xE5CD'0001        STRB     R0,[SP, #+1]
+    368          	dst_is_periph = is_dest_periph(channel);
+   \       0x38   0xE59D'0028        LDR      R0,[SP, #+40]
+   \       0x3C   0x....'....        BL       is_dest_periph
+   \       0x40   0xE5CD'0000        STRB     R0,[SP, #+0]
+    369          
+    370          	_sg_head = _dma_sg_desc_alloc(sg_list_size);
+   \       0x44   0xE5DD'0030        LDRB     R0,[SP, #+48]
+   \       0x48   0x....'....        BL       _dma_sg_desc_alloc
+   \       0x4C   0xE1B0'6000        MOVS     R6,R0
+    371          	if (_sg_head == NULL)
+   \       0x50   0xE356'0000        CMP      R6,#+0
+   \       0x54   0x1A00'0001        BNE      ??_dma_sg_configure_transfer_3
+    372          		return -ENOMEM;
+   \       0x58   0xE3E0'0030        MVN      R0,#+48
+   \       0x5C   0xEA00'0091        B        ??_dma_sg_configure_transfer_2
+    373          	curr = _sg_head;
+   \                     ??_dma_sg_configure_transfer_3:
+   \       0x60   0xE1B0'9006        MOVS     R9,R6
+    374          
+    375          	src_is_periph = is_source_periph(channel);
+   \       0x64   0xE59D'0028        LDR      R0,[SP, #+40]
+   \       0x68   0x....'....        BL       is_source_periph
+   \       0x6C   0xE1B0'7000        MOVS     R7,R0
+    376          	dst_is_periph = is_dest_periph(channel);
+   \       0x70   0xE59D'0028        LDR      R0,[SP, #+40]
+   \       0x74   0x....'....        BL       is_dest_periph
+   \       0x78   0xE1B0'8000        MOVS     R8,R0
+    377          
+    378          	/* Update linked list */
+    379          	for (idx = 0; idx < sg_list_size; idx++) {
+   \       0x7C   0xE3A0'B000        MOV      R11,#+0
+   \       0x80   0xE1B0'A00B        MOVS     R10,R11
+   \                     ??_dma_sg_configure_transfer_4:
+   \       0x84   0xE1B0'000A        MOVS     R0,R10
+   \       0x88   0xE5DD'1030        LDRB     R1,[SP, #+48]
+   \       0x8C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x90   0xE150'0001        CMP      R0,R1
+   \       0x94   0x2A00'0020        BCS      ??_dma_sg_configure_transfer_5
+    380          		cfg = &sg_list[idx];
+   \       0x98   0xE59D'002C        LDR      R0,[SP, #+44]
+   \       0x9C   0xE1B0'100A        MOVS     R1,R10
+   \       0xA0   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xA4   0xE081'2081        ADD      R2,R1,R1, LSL #+1
+   \       0xA8   0xE090'0102        ADDS     R0,R0,R2, LSL #+2
+   \       0xAC   0xE1B0'5000        MOVS     R5,R0
+    381          
+    382          		DMA_SG_DESC_SET_SADDR(curr, cfg->saddr);
+   \       0xB0   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0xB4   0xE589'0008        STR      R0,[R9, #+8]
+    383          		DMA_SG_DESC_SET_DADDR(curr, cfg->daddr);
+   \       0xB8   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0xBC   0xE589'000C        STR      R0,[R9, #+12]
+    384          
+    385          #if defined(CONFIG_HAVE_XDMAC)
+    386          		curr->desc.mbr_ubc = XDMA_UBC_NVIEW_NDV1
+    387          			| XDMA_UBC_NSEN_UPDATED
+    388          			| XDMA_UBC_NDEN_UPDATED
+    389          			| XDMA_UBC_NDE_FETCH_EN
+    390          			| XDMA_UBC_UBLEN(cfg->len);
+   \       0xC0   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0xC4   0xE3D0'04FF        BICS     R0,R0,#0xFF000000
+   \       0xC8   0xE390'06F0        ORRS     R0,R0,#0xF000000
+   \       0xCC   0xE589'0004        STR      R0,[R9, #+4]
+    391          
+    392          		if (!cfg_dma->loop) {
+   \       0xD0   0xE5D4'000A        LDRB     R0,[R4, #+10]
+   \       0xD4   0xE350'0000        CMP      R0,#+0
+   \       0xD8   0x1A00'0005        BNE      ??_dma_sg_configure_transfer_6
+    393          			if (DMA_SG_DESC_GET_NEXT(curr) == 0)
+   \       0xDC   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0xE0   0xE350'0000        CMP      R0,#+0
+   \       0xE4   0x1A00'0002        BNE      ??_dma_sg_configure_transfer_6
+    394          				curr->desc.mbr_ubc &= ~XDMA_UBC_NDE_FETCH_EN;
+   \       0xE8   0xE599'0004        LDR      R0,[R9, #+4]
+   \       0xEC   0xE3D0'0740        BICS     R0,R0,#0x1000000
+   \       0xF0   0xE589'0004        STR      R0,[R9, #+4]
+    395          		}
+    396          
+    397          #elif defined(CONFIG_HAVE_DMAC)
+    398          		curr->desc.ctrla = (cfg_dma->data_width << DMAC_CTRLA_SRC_WIDTH_Pos)
+    399          			| (cfg_dma->data_width << DMAC_CTRLA_DST_WIDTH_Pos)
+    400          			| (cfg_dma->chunk_size << DMAC_CTRLA_SCSIZE_Pos)
+    401          			| (cfg_dma->chunk_size << DMAC_CTRLA_DCSIZE_Pos)
+    402          			| DMAC_CTRLA_BTSIZE(cfg->len);
+    403          
+    404          #if defined(CONFIG_SOC_SAMA5D3)
+    405          		curr->desc.ctrlb = src_is_periph ? DMAC_CTRLB_SIF_AHB_IF2 : DMAC_CTRLB_SIF_AHB_IF0;
+    406          		curr->desc.ctrlb |= dst_is_periph ? DMAC_CTRLB_DIF_AHB_IF2 : DMAC_CTRLB_DIF_AHB_IF0;
+    407          #elif defined(CONFIG_SOC_SAM9XX5)
+    408          		curr->desc.ctrlb = src_is_periph ? DMAC_CTRLB_SIF_AHB_IF1 : DMAC_CTRLB_SIF_AHB_IF0;
+    409          		curr->desc.ctrlb |= dst_is_periph ? DMAC_CTRLB_DIF_AHB_IF1 : DMAC_CTRLB_DIF_AHB_IF0;
+    410          #endif
+    411          		if (src_is_periph)
+    412          			curr->desc.ctrlb |= DMAC_CTRLB_FC_PER2MEM_DMA_FC;
+    413          		else if (dst_is_periph)
+    414          			curr->desc.ctrlb |= DMAC_CTRLB_FC_MEM2PER_DMA_FC;
+    415          		else
+    416          			curr->desc.ctrlb |= DMAC_CTRLB_FC_MEM2MEM_DMA_FC;
+    417          
+    418          		curr->desc.ctrlb |= cfg_dma->incr_saddr ? DMAC_CTRLB_SRC_INCR_INCREMENTING : DMAC_CTRLB_SRC_INCR_FIXED;
+    419          		curr->desc.ctrlb |= cfg_dma->incr_daddr ? DMAC_CTRLB_DST_INCR_INCREMENTING : DMAC_CTRLB_DST_INCR_FIXED;
+    420          
+    421          		curr->desc.ctrlb |= DMAC_CTRLB_SRC_DSCR_FETCH_FROM_MEM | DMAC_CTRLB_DST_DSCR_FETCH_FROM_MEM;
+    422          
+    423          #endif
+    424          		if (DMA_SG_DESC_GET_NEXT(curr) == 0)
+   \                     ??_dma_sg_configure_transfer_6:
+   \       0xF4   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0xF8   0xE350'0000        CMP      R0,#+0
+   \       0xFC   0x1A00'0003        BNE      ??_dma_sg_configure_transfer_7
+    425          			if (cfg_dma->loop)
+   \      0x100   0xE5D4'000A        LDRB     R0,[R4, #+10]
+   \      0x104   0xE350'0000        CMP      R0,#+0
+   \      0x108   0x0A00'0000        BEQ      ??_dma_sg_configure_transfer_7
+    426          				DMA_SG_DESC_SET_NEXT(curr, _sg_head);
+   \      0x10C   0xE589'6000        STR      R6,[R9, #+0]
+    427          		curr = DMA_SG_DESC_GET_NEXT(curr);
+   \                     ??_dma_sg_configure_transfer_7:
+   \      0x110   0xE599'9000        LDR      R9,[R9, #+0]
+    428          	}
+   \      0x114   0xE29A'A001        ADDS     R10,R10,#+1
+   \      0x118   0xEAFF'FFD9        B        ??_dma_sg_configure_transfer_4
+    429          	channel->sg_list = _sg_head;
+   \                     ??_dma_sg_configure_transfer_5:
+   \      0x11C   0xE59D'0028        LDR      R0,[SP, #+40]
+   \      0x120   0xE580'6018        STR      R6,[R0, #+24]
+    430          
+    431          	cache_clean_region(_dma_sg_pool.desc, sizeof(_dma_sg_pool.desc));
+   \      0x124   0xE3A0'1E40        MOV      R1,#+1024
+   \      0x128   0x....'....        LDR      R0,??DataTable8
+   \      0x12C   0x....'....        BL       cache_clean_region
+    432          
+    433          	/* Update configuration */
+    434          #if defined(CONFIG_HAVE_XDMAC)
+    435          	struct _xdmacd_cfg xdmacd_cfg;
+    436          	uint32_t desc_ctrl;
+    437          
+    438          	xdmacd_cfg.cfg = (src_is_periph | dst_is_periph) ? XDMAC_CC_TYPE_PER_TRAN : XDMAC_CC_TYPE_MEM_TRAN;
+   \      0x130   0xE1B0'0007        MOVS     R0,R7
+   \      0x134   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x138   0xE1B0'1008        MOVS     R1,R8
+   \      0x13C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \      0x140   0xE191'0000        ORRS     R0,R1,R0
+   \      0x144   0xE350'0000        CMP      R0,#+0
+   \      0x148   0x0A00'0001        BEQ      ??_dma_sg_configure_transfer_8
+   \      0x14C   0xE3A0'0001        MOV      R0,#+1
+   \      0x150   0xEA00'0000        B        ??_dma_sg_configure_transfer_9
+   \                     ??_dma_sg_configure_transfer_8:
+   \      0x154   0xE1B0'000B        MOVS     R0,R11
+   \                     ??_dma_sg_configure_transfer_9:
+   \      0x158   0xE58D'0020        STR      R0,[SP, #+32]
+    439          	xdmacd_cfg.cfg |= src_is_periph ? XDMAC_CC_DSYNC_PER2MEM : XDMAC_CC_DSYNC_MEM2PER;
+   \      0x15C   0xE1B0'0007        MOVS     R0,R7
+   \      0x160   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x164   0xE350'0000        CMP      R0,#+0
+   \      0x168   0x0A00'0001        BEQ      ??_dma_sg_configure_transfer_10
+   \      0x16C   0xE1B0'000B        MOVS     R0,R11
+   \      0x170   0xEA00'0000        B        ??_dma_sg_configure_transfer_11
+   \                     ??_dma_sg_configure_transfer_10:
+   \      0x174   0xE3A0'0010        MOV      R0,#+16
+   \                     ??_dma_sg_configure_transfer_11:
+   \      0x178   0xE59D'1020        LDR      R1,[SP, #+32]
+   \      0x17C   0xE190'0001        ORRS     R0,R0,R1
+   \      0x180   0xE58D'0020        STR      R0,[SP, #+32]
+    440          	xdmacd_cfg.cfg |= XDMAC_CC_CSIZE(cfg_dma->chunk_size);
+   \      0x184   0xE59D'0020        LDR      R0,[SP, #+32]
+   \      0x188   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x18C   0xE3A0'2E70        MOV      R2,#+1792
+   \      0x190   0xE012'1401        ANDS     R1,R2,R1, LSL #+8
+   \      0x194   0xE191'0000        ORRS     R0,R1,R0
+   \      0x198   0xE58D'0020        STR      R0,[SP, #+32]
+    441          	xdmacd_cfg.cfg |= XDMAC_CC_DWIDTH(cfg_dma->data_width);
+   \      0x19C   0xE59D'0020        LDR      R0,[SP, #+32]
+   \      0x1A0   0xE594'1000        LDR      R1,[R4, #+0]
+   \      0x1A4   0xE3A0'2D60        MOV      R2,#+6144
+   \      0x1A8   0xE012'1581        ANDS     R1,R2,R1, LSL #+11
+   \      0x1AC   0xE191'0000        ORRS     R0,R1,R0
+   \      0x1B0   0xE58D'0020        STR      R0,[SP, #+32]
+    442          	xdmacd_cfg.cfg |= src_is_periph ? XDMAC_CC_SIF_AHB_IF1 : XDMAC_CC_SIF_AHB_IF0;
+   \      0x1B4   0xE1B0'0007        MOVS     R0,R7
+   \      0x1B8   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x1BC   0xE350'0000        CMP      R0,#+0
+   \      0x1C0   0x0A00'0001        BEQ      ??_dma_sg_configure_transfer_12
+   \      0x1C4   0xE3A0'0D80        MOV      R0,#+8192
+   \      0x1C8   0xEA00'0000        B        ??_dma_sg_configure_transfer_13
+   \                     ??_dma_sg_configure_transfer_12:
+   \      0x1CC   0xE1B0'000B        MOVS     R0,R11
+   \                     ??_dma_sg_configure_transfer_13:
+   \      0x1D0   0xE59D'1020        LDR      R1,[SP, #+32]
+   \      0x1D4   0xE190'0001        ORRS     R0,R0,R1
+   \      0x1D8   0xE58D'0020        STR      R0,[SP, #+32]
+    443          	xdmacd_cfg.cfg |= dst_is_periph ? XDMAC_CC_DIF_AHB_IF1 : XDMAC_CC_DIF_AHB_IF0;
+   \      0x1DC   0xE1B0'0008        MOVS     R0,R8
+   \      0x1E0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x1E4   0xE350'0000        CMP      R0,#+0
+   \      0x1E8   0x0A00'0001        BEQ      ??_dma_sg_configure_transfer_14
+   \      0x1EC   0xE3A0'0C40        MOV      R0,#+16384
+   \      0x1F0   0xEA00'0000        B        ??_dma_sg_configure_transfer_15
+   \                     ??_dma_sg_configure_transfer_14:
+   \      0x1F4   0xE1B0'000B        MOVS     R0,R11
+   \                     ??_dma_sg_configure_transfer_15:
+   \      0x1F8   0xE59D'1020        LDR      R1,[SP, #+32]
+   \      0x1FC   0xE190'0001        ORRS     R0,R0,R1
+   \      0x200   0xE58D'0020        STR      R0,[SP, #+32]
+    444          	xdmacd_cfg.cfg |= cfg_dma->incr_saddr ? XDMAC_CC_SAM_INCREMENTED_AM : XDMAC_CC_SAM_FIXED_AM;
+   \      0x204   0xE5D4'0008        LDRB     R0,[R4, #+8]
+   \      0x208   0xE350'0000        CMP      R0,#+0
+   \      0x20C   0x0A00'0001        BEQ      ??_dma_sg_configure_transfer_16
+   \      0x210   0xE3A0'0B40        MOV      R0,#+65536
+   \      0x214   0xEA00'0000        B        ??_dma_sg_configure_transfer_17
+   \                     ??_dma_sg_configure_transfer_16:
+   \      0x218   0xE1B0'000B        MOVS     R0,R11
+   \                     ??_dma_sg_configure_transfer_17:
+   \      0x21C   0xE59D'1020        LDR      R1,[SP, #+32]
+   \      0x220   0xE190'0001        ORRS     R0,R0,R1
+   \      0x224   0xE58D'0020        STR      R0,[SP, #+32]
+    445          	xdmacd_cfg.cfg |= cfg_dma->incr_daddr ? XDMAC_CC_DAM_INCREMENTED_AM : XDMAC_CC_DAM_FIXED_AM;
+   \      0x228   0xE5D4'0009        LDRB     R0,[R4, #+9]
+   \      0x22C   0xE350'0000        CMP      R0,#+0
+   \      0x230   0x0A00'0001        BEQ      ??_dma_sg_configure_transfer_18
+   \      0x234   0xE3A0'0A40        MOV      R0,#+262144
+   \      0x238   0xEA00'0000        B        ??_dma_sg_configure_transfer_19
+   \                     ??_dma_sg_configure_transfer_18:
+   \      0x23C   0xE1B0'000B        MOVS     R0,R11
+   \                     ??_dma_sg_configure_transfer_19:
+   \      0x240   0xE59D'1020        LDR      R1,[SP, #+32]
+   \      0x244   0xE190'0001        ORRS     R0,R0,R1
+   \      0x248   0xE58D'0020        STR      R0,[SP, #+32]
+    446          	xdmacd_cfg.cfg |= (src_is_periph | dst_is_periph) ? 0 : XDMAC_CC_SWREQ_SWR_CONNECTED;
+   \      0x24C   0xE1B0'0007        MOVS     R0,R7
+   \      0x250   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x254   0xE1B0'1008        MOVS     R1,R8
+   \      0x258   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \      0x25C   0xE191'0000        ORRS     R0,R1,R0
+   \      0x260   0xE350'0000        CMP      R0,#+0
+   \      0x264   0x0A00'0001        BEQ      ??_dma_sg_configure_transfer_20
+   \      0x268   0xE1B0'000B        MOVS     R0,R11
+   \      0x26C   0xEA00'0000        B        ??_dma_sg_configure_transfer_21
+   \                     ??_dma_sg_configure_transfer_20:
+   \      0x270   0xE3A0'0040        MOV      R0,#+64
+   \                     ??_dma_sg_configure_transfer_21:
+   \      0x274   0xE59D'1020        LDR      R1,[SP, #+32]
+   \      0x278   0xE190'0001        ORRS     R0,R0,R1
+   \      0x27C   0xE58D'0020        STR      R0,[SP, #+32]
+    447          	xdmacd_cfg.bc = 0;
+   \      0x280   0xE58D'B008        STR      R11,[SP, #+8]
+    448          	xdmacd_cfg.ds = 0;
+   \      0x284   0xE58D'B00C        STR      R11,[SP, #+12]
+    449          	xdmacd_cfg.sus = 0;
+   \      0x288   0xE58D'B010        STR      R11,[SP, #+16]
+    450          	xdmacd_cfg.dus = 0;
+   \      0x28C   0xE58D'B014        STR      R11,[SP, #+20]
+    451          
+    452          	desc_ctrl = XDMAC_CNDC_NDVIEW_NDV1
+    453          	           | XDMAC_CNDC_NDE_DSCR_FETCH_EN
+    454          	           | XDMAC_CNDC_NDSUP_SRC_PARAMS_UPDATED
+    455          	           | XDMAC_CNDC_NDDUP_DST_PARAMS_UPDATED;
+   \      0x290   0xE3A0'B00F        MOV      R11,#+15
+    456          
+    457          	return xdmacd_configure_transfer(channel, &xdmacd_cfg, desc_ctrl, (void *)_sg_head);
+   \      0x294   0xE1B0'3006        MOVS     R3,R6
+   \      0x298   0xE1B0'200B        MOVS     R2,R11
+   \      0x29C   0xE28D'1004        ADD      R1,SP,#+4
+   \      0x2A0   0xE59D'0028        LDR      R0,[SP, #+40]
+   \      0x2A4   0x....'....        BL       xdmacd_configure_transfer
+   \                     ??_dma_sg_configure_transfer_2:
+   \      0x2A8   0xE28D'D034        ADD      SP,SP,#+52
+   \      0x2AC   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    458          #elif defined(CONFIG_HAVE_DMAC)
+    459          	struct _dmacd_cfg dmacd_cfg;
+    460          
+    461          	dmacd_cfg.s_decr_fetch = 0;
+    462          	dmacd_cfg.d_decr_fetch = 0;
+    463          	dmacd_cfg.sa_rep = 0;
+    464          	dmacd_cfg.da_rep = 0;
+    465          	dmacd_cfg.trans_auto = 0;
+    466          	dmacd_cfg.blocks = 0;
+    467          	dmacd_cfg.s_pip = 0;
+    468          	dmacd_cfg.d_pip = 0;
+    469          	dmacd_cfg.cfg = src_is_periph ? DMAC_CFG_SRC_H2SEL_HW : 0;
+    470          	dmacd_cfg.cfg |= dst_is_periph ? DMAC_CFG_DST_H2SEL_HW : 0;
+    471          
+    472          	return dmacd_configure_transfer(channel, &dmacd_cfg, (void*)_sg_head);
+    473          #endif
+    474          }
+    475          
+    476          /*----------------------------------------------------------------------------
+    477           *        Exported functions
+    478           *----------------------------------------------------------------------------*/
+    479          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    480          void dma_initialize(bool polling)
+    481          {
+   \                     dma_initialize:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    482          	uint32_t ctrl, chan;
+    483          
+    484          	_dma_sg_init();
+   \        0x8   0x....'....        BL       _dma_sg_init
+    485          
+    486          	_dma_ctrl.polling = polling;
+   \        0xC   0x....'....        LDR      R6,??DataTable8_1
+   \       0x10   0xE5C6'41C8        STRB     R4,[R6, #+456]
+    487          
+    488          	for (ctrl = 0; ctrl < DMA_CONTROLLERS; ctrl++) {
+   \       0x14   0xE3A0'7000        MOV      R7,#+0
+   \       0x18   0xE1B0'8007        MOVS     R8,R7
+   \                     ??dma_initialize_0:
+   \       0x1C   0xE358'0000        CMP      R8,#+0
+   \       0x20   0x1A00'002D        BNE      ??dma_initialize_1
+    489          		struct _dma_controller* controller = &_dma_ctrl.controllers[ctrl];
+   \       0x24   0xE3A0'0F72        MOV      R0,#+456
+   \       0x28   0xE011'0890        MULS     R1,R0,R8
+   \       0x2C   0xE096'9001        ADDS     R9,R6,R1
+    490          		controller->pid = controllers[ctrl];
+   \       0x30   0x....'....        LDR      R0,??DataTable8_2
+   \       0x34   0xE1B0'1108        LSLS     R1,R8,#+2
+   \       0x38   0xE790'0001        LDR      R0,[R0, +R1]
+   \       0x3C   0xE589'0000        STR      R0,[R9, #+0]
+    491          #if defined(CONFIG_HAVE_XDMAC)
+    492          		controller->hw = get_xdmac_addr_from_id(controller->pid);
+   \       0x40   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0x44   0x....'....        BL       get_xdmac_addr_from_id
+   \       0x48   0xE589'0004        STR      R0,[R9, #+4]
+    493          #elif defined(CONFIG_HAVE_DMAC)
+    494          		controller->hw = get_dmac_addr_from_id(controller->pid);
+    495          #endif
+    496          		for (chan = 0; chan < DMA_CHANNELS; chan++) {
+   \       0x4C   0xE1B0'5007        MOVS     R5,R7
+   \                     ??dma_initialize_2:
+   \       0x50   0xE355'0010        CMP      R5,#+16
+   \       0x54   0x2A00'0014        BCS      ??dma_initialize_3
+    497          #if defined(CONFIG_HAVE_XDMAC)
+    498          			xdmac_get_channel_isr(controller->hw, chan);
+   \       0x58   0xE1B0'1005        MOVS     R1,R5
+   \       0x5C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x60   0xE599'0004        LDR      R0,[R9, #+4]
+   \       0x64   0x....'....        BL       xdmac_get_channel_isr
+    499          #endif
+    500          			struct _dma_channel* channel = &controller->channels[chan];
+   \       0x68   0xE065'0185        RSB      R0,R5,R5, LSL #+3
+   \       0x6C   0xE099'0100        ADDS     R0,R9,R0, LSL #+2
+   \       0x70   0xE290'A008        ADDS     R10,R0,#+8
+    501          			channel->hw = controller->hw;
+   \       0x74   0xE599'0004        LDR      R0,[R9, #+4]
+   \       0x78   0xE58A'0000        STR      R0,[R10, #+0]
+    502          			channel->id = chan;
+   \       0x7C   0xE58A'5004        STR      R5,[R10, #+4]
+    503          			callback_set(&channel->callback, NULL, NULL);
+   \       0x80   0xE3A0'2000        MOV      R2,#+0
+   \       0x84   0xE3A0'1000        MOV      R1,#+0
+   \       0x88   0xE29A'0008        ADDS     R0,R10,#+8
+   \       0x8C   0x....'....        BL       callback_set
+    504          			channel->src_txif = 0;
+   \       0x90   0xE5CA'7010        STRB     R7,[R10, #+16]
+    505          			channel->src_rxif = 0;
+   \       0x94   0xE5CA'7011        STRB     R7,[R10, #+17]
+    506          			channel->dest_txif = 0;
+   \       0x98   0xE5CA'7012        STRB     R7,[R10, #+18]
+    507          			channel->dest_rxif = 0;
+   \       0x9C   0xE5CA'7013        STRB     R7,[R10, #+19]
+    508          			channel->state = DMA_STATE_FREE;
+   \       0xA0   0xE5CA'7014        STRB     R7,[R10, #+20]
+    509          		}
+   \       0xA4   0xE295'5001        ADDS     R5,R5,#+1
+   \       0xA8   0xEAFF'FFE8        B        ??dma_initialize_2
+    510          
+    511          		if (!polling) {
+   \                     ??dma_initialize_3:
+   \       0xAC   0xE1B0'0004        MOVS     R0,R4
+   \       0xB0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xB4   0xE350'0000        CMP      R0,#+0
+   \       0xB8   0x1A00'0005        BNE      ??dma_initialize_4
+    512          			/* enable interrupts */
+    513          			irq_add_handler(controller->pid, dma_irq_handler, controller);
+   \       0xBC   0xE1B0'2009        MOVS     R2,R9
+   \       0xC0   0x....'....        LDR      R1,??DataTable8_3
+   \       0xC4   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0xC8   0x....'....        BL       irq_add_handler
+    514          			irq_enable(controller->pid);
+   \       0xCC   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0xD0   0x....'....        BL       irq_enable
+    515          		}
+    516          	}
+   \                     ??dma_initialize_4:
+   \       0xD4   0xE298'8001        ADDS     R8,R8,#+1
+   \       0xD8   0xEAFF'FFCF        B        ??dma_initialize_0
+    517          }
+   \                     ??dma_initialize_1:
+   \       0xDC   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    518          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    519          void dma_poll(void)
+    520          {
+   \                     dma_poll:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    521          	if (_dma_ctrl.polling) {
+   \        0x4   0x....'....        LDR      R4,??DataTable8_1
+   \        0x8   0xE5D4'01C8        LDRB     R0,[R4, #+456]
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x0A00'000A        BEQ      ??dma_poll_0
+    522          		uint32_t ctrl;
+    523          		for (ctrl = 0; ctrl < DMA_CONTROLLERS; ctrl++) {
+   \       0x14   0xE3A0'5000        MOV      R5,#+0
+   \                     ??dma_poll_1:
+   \       0x18   0xE355'0000        CMP      R5,#+0
+   \       0x1C   0x1A00'0007        BNE      ??dma_poll_0
+    524          			struct _dma_controller* controller = &_dma_ctrl.controllers[ctrl];
+   \       0x20   0xE3A0'0F72        MOV      R0,#+456
+   \       0x24   0xE011'0590        MULS     R1,R0,R5
+   \       0x28   0xE094'6001        ADDS     R6,R4,R1
+    525          			dma_irq_handler(controller->pid, controller);
+   \       0x2C   0xE1B0'1006        MOVS     R1,R6
+   \       0x30   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0x34   0x....'....        BL       dma_irq_handler
+    526          		}
+   \       0x38   0xE295'5001        ADDS     R5,R5,#+1
+   \       0x3C   0xEAFF'FFF5        B        ??dma_poll_1
+    527          	}
+    528          }
+   \                     ??dma_poll_0:
+   \       0x40   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    529          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    530          struct _dma_channel* dma_allocate_channel(uint8_t src, uint8_t dest)
+    531          {
+   \                     dma_allocate_channel:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    532          	uint32_t chan, ctrl;
+    533          
+    534          	/* Reject peripheral to peripheral transfers */
+    535          	if (src != DMA_PERIPH_MEMORY && dest != DMA_PERIPH_MEMORY)
+   \        0xC   0xE1B0'0004        MOVS     R0,R4
+   \       0x10   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x14   0xE350'00FF        CMP      R0,#+255
+   \       0x18   0x0A00'0005        BEQ      ??dma_allocate_channel_0
+   \       0x1C   0xE1B0'0005        MOVS     R0,R5
+   \       0x20   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x24   0xE350'00FF        CMP      R0,#+255
+   \       0x28   0x0A00'0001        BEQ      ??dma_allocate_channel_0
+    536          		return NULL;
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \       0x30   0xEA00'0048        B        ??dma_allocate_channel_1
+    537          
+    538          	for (ctrl = 0; ctrl < DMA_CONTROLLERS; ctrl++) {
+   \                     ??dma_allocate_channel_0:
+   \       0x34   0xE3A0'7000        MOV      R7,#+0
+   \       0x38   0xE1B0'8007        MOVS     R8,R7
+   \                     ??dma_allocate_channel_2:
+   \       0x3C   0xE358'0000        CMP      R8,#+0
+   \       0x40   0x1A00'0043        BNE      ??dma_allocate_channel_3
+    539          		for (chan = 0; chan < DMA_CHANNELS; chan++) {
+   \       0x44   0xE1B0'6007        MOVS     R6,R7
+   \                     ??dma_allocate_channel_4:
+   \       0x48   0xE356'0010        CMP      R6,#+16
+   \       0x4C   0x2A00'003E        BCS      ??dma_allocate_channel_5
+    540          			struct _dma_channel* channel = &_dma_ctrl.controllers[ctrl].channels[chan];
+   \       0x50   0x....'....        LDR      R0,??DataTable8_1
+   \       0x54   0xE3A0'1F72        MOV      R1,#+456
+   \       0x58   0xE012'0891        MULS     R2,R1,R8
+   \       0x5C   0xE090'0002        ADDS     R0,R0,R2
+   \       0x60   0xE066'1186        RSB      R1,R6,R6, LSL #+3
+   \       0x64   0xE090'0101        ADDS     R0,R0,R1, LSL #+2
+   \       0x68   0xE290'9008        ADDS     R9,R0,#+8
+    541          
+    542          			if (channel->state == DMA_STATE_FREE) {
+   \       0x6C   0xE5D9'0014        LDRB     R0,[R9, #+20]
+   \       0x70   0xE350'0000        CMP      R0,#+0
+   \       0x74   0x1A00'0032        BNE      ??dma_allocate_channel_6
+    543          				/* Check if source peripheral matches this channel controller */
+    544          				if (src != DMA_PERIPH_MEMORY)
+   \       0x78   0xE1B0'0004        MOVS     R0,R4
+   \       0x7C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x80   0xE350'00FF        CMP      R0,#+255
+   \       0x84   0x0A00'0005        BEQ      ??dma_allocate_channel_7
+    545          					if (!is_peripheral_on_dma_controller(src, channel->hw))
+   \       0x88   0xE599'1000        LDR      R1,[R9, #+0]
+   \       0x8C   0xE1B0'0004        MOVS     R0,R4
+   \       0x90   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x94   0x....'....        BL       is_peripheral_on_dma_controller
+   \       0x98   0xE350'0000        CMP      R0,#+0
+   \       0x9C   0x0A00'0028        BEQ      ??dma_allocate_channel_6
+    546          						continue;
+    547          
+    548          				/* Check if destination peripheral matches this channel controller */
+    549          				if (dest != DMA_PERIPH_MEMORY)
+   \                     ??dma_allocate_channel_7:
+   \       0xA0   0xE1B0'0005        MOVS     R0,R5
+   \       0xA4   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xA8   0xE350'00FF        CMP      R0,#+255
+   \       0xAC   0x0A00'0005        BEQ      ??dma_allocate_channel_8
+    550          					if (!is_peripheral_on_dma_controller(dest, channel->hw))
+   \       0xB0   0xE599'1000        LDR      R1,[R9, #+0]
+   \       0xB4   0xE1B0'0005        MOVS     R0,R5
+   \       0xB8   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xBC   0x....'....        BL       is_peripheral_on_dma_controller
+   \       0xC0   0xE350'0000        CMP      R0,#+0
+   \       0xC4   0x0A00'001E        BEQ      ??dma_allocate_channel_6
+    551          						continue;
+    552          
+    553          				/* Allocate the channel */
+    554          				channel->state = DMA_STATE_ALLOCATED;
+   \                     ??dma_allocate_channel_8:
+   \       0xC8   0xE3A0'0001        MOV      R0,#+1
+   \       0xCC   0xE5C9'0014        STRB     R0,[R9, #+20]
+    555          				channel->src_txif = get_peripheral_dma_channel(src, channel->hw, true);
+   \       0xD0   0xE3A0'2001        MOV      R2,#+1
+   \       0xD4   0xE599'1000        LDR      R1,[R9, #+0]
+   \       0xD8   0xE1B0'0004        MOVS     R0,R4
+   \       0xDC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xE0   0x....'....        BL       get_peripheral_dma_channel
+   \       0xE4   0xE5C9'0010        STRB     R0,[R9, #+16]
+    556          				channel->src_rxif = get_peripheral_dma_channel(src, channel->hw, false);
+   \       0xE8   0xE3A0'2000        MOV      R2,#+0
+   \       0xEC   0xE599'1000        LDR      R1,[R9, #+0]
+   \       0xF0   0xE1B0'0004        MOVS     R0,R4
+   \       0xF4   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xF8   0x....'....        BL       get_peripheral_dma_channel
+   \       0xFC   0xE5C9'0011        STRB     R0,[R9, #+17]
+    557          				channel->dest_txif = get_peripheral_dma_channel(dest, channel->hw, true);
+   \      0x100   0xE3A0'2001        MOV      R2,#+1
+   \      0x104   0xE599'1000        LDR      R1,[R9, #+0]
+   \      0x108   0xE1B0'0005        MOVS     R0,R5
+   \      0x10C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x110   0x....'....        BL       get_peripheral_dma_channel
+   \      0x114   0xE5C9'0012        STRB     R0,[R9, #+18]
+    558          				channel->dest_rxif = get_peripheral_dma_channel(dest, channel->hw, false);
+   \      0x118   0xE3A0'2000        MOV      R2,#+0
+   \      0x11C   0xE599'1000        LDR      R1,[R9, #+0]
+   \      0x120   0xE1B0'0005        MOVS     R0,R5
+   \      0x124   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x128   0x....'....        BL       get_peripheral_dma_channel
+   \      0x12C   0xE5C9'0013        STRB     R0,[R9, #+19]
+    559          				dma_prepare_channel(channel);
+   \      0x130   0xE1B0'0009        MOVS     R0,R9
+   \      0x134   0x....'....        BL       dma_prepare_channel
+    560          
+    561          				channel->sg_list = NULL;
+   \      0x138   0xE589'7018        STR      R7,[R9, #+24]
+    562          
+    563          				return channel;
+   \      0x13C   0xE1B0'0009        MOVS     R0,R9
+   \      0x140   0xEA00'0004        B        ??dma_allocate_channel_1
+    564          			}
+    565          		}
+   \                     ??dma_allocate_channel_6:
+   \      0x144   0xE296'6001        ADDS     R6,R6,#+1
+   \      0x148   0xEAFF'FFBE        B        ??dma_allocate_channel_4
+    566          	}
+   \                     ??dma_allocate_channel_5:
+   \      0x14C   0xE298'8001        ADDS     R8,R8,#+1
+   \      0x150   0xEAFF'FFB9        B        ??dma_allocate_channel_2
+    567          	return NULL;
+   \                     ??dma_allocate_channel_3:
+   \      0x154   0xE3A0'0000        MOV      R0,#+0
+   \                     ??dma_allocate_channel_1:
+   \      0x158   0xE8BD'83F2        POP      {R1,R4-R9,PC}    ;; return
+    568          }
+    569          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    570          int dma_reset_channel(struct _dma_channel* channel)
+    571          {
+   \                     dma_reset_channel:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    572          	if (channel->state == DMA_STATE_ALLOCATED)
+   \        0x8   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \        0xC   0xE350'0001        CMP      R0,#+1
+   \       0x10   0x1A00'0001        BNE      ??dma_reset_channel_0
+    573          		return 0;
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \       0x18   0xEA00'0014        B        ??dma_reset_channel_1
+    574          
+    575          	if (channel->state == DMA_STATE_STARTED)
+   \                     ??dma_reset_channel_0:
+   \       0x1C   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \       0x20   0xE350'0002        CMP      R0,#+2
+   \       0x24   0x1A00'0001        BNE      ??dma_reset_channel_2
+    576          		return -EBUSY;
+   \       0x28   0xE3E0'0009        MVN      R0,#+9
+   \       0x2C   0xEA00'000F        B        ??dma_reset_channel_1
+    577          
+    578          #if defined(CONFIG_HAVE_XDMAC)
+    579          	/* Disable interrupts */
+    580          	xdmac_disable_channel_it(channel->hw, channel->id, -1);
+   \                     ??dma_reset_channel_2:
+   \       0x30   0xE3E0'2000        MVN      R2,#+0
+   \       0x34   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x38   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x3C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x40   0x....'....        BL       xdmac_disable_channel_it
+    581          
+    582          	/* Disable channel */
+    583          	xdmac_disable_channel(channel->hw, channel->id);
+   \       0x44   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x48   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x4C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x50   0x....'....        BL       xdmac_disable_channel
+    584          #elif defined(CONFIG_HAVE_DMAC)
+    585          	/* Disable interrupts */
+    586          	dmac_disable_global_it(channel->hw, (DMAC_EBCIDR_CBTC0 | DMAC_EBCIER_BTC0 | DMAC_EBCIER_ERR0) << channel->id);
+    587          
+    588          	/* Disable channel */
+    589          	dmac_disable_channel(channel->hw, channel->id);
+    590          #endif
+    591          
+    592          	_dma_sg_desc_free(channel->sg_list);
+   \       0x54   0xE594'0018        LDR      R0,[R4, #+24]
+   \       0x58   0x....'....        BL       _dma_sg_desc_free
+    593          	channel->sg_list = NULL;
+   \       0x5C   0xE3A0'0000        MOV      R0,#+0
+   \       0x60   0xE584'0018        STR      R0,[R4, #+24]
+    594          
+    595          	/* Change state to 'allocated' */
+    596          	channel->state = DMA_STATE_ALLOCATED;
+   \       0x64   0xE3A0'0001        MOV      R0,#+1
+   \       0x68   0xE5C4'0014        STRB     R0,[R4, #+20]
+    597          
+    598          	return 0;
+   \       0x6C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??dma_reset_channel_1:
+   \       0x70   0xE8BD'8010        POP      {R4,PC}          ;; return
+    599          }
+    600          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    601          int dma_free_channel(struct _dma_channel* channel)
+    602          {
+   \                     dma_free_channel:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    603          	switch (channel->state) {
+   \        0x8   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \        0xC   0xE350'0001        CMP      R0,#+1
+   \       0x10   0x0A00'0005        BEQ      ??dma_free_channel_0
+   \       0x14   0x3A00'0009        BCC      ??dma_free_channel_1
+   \       0x18   0xE350'0003        CMP      R0,#+3
+   \       0x1C   0x0A00'0002        BEQ      ??dma_free_channel_0
+   \       0x20   0x2A00'0006        BCS      ??dma_free_channel_1
+    604          	case DMA_STATE_STARTED:
+    605          		return -EBUSY;
+   \                     ??dma_free_channel_2:
+   \       0x24   0xE3E0'0009        MVN      R0,#+9
+   \       0x28   0xEA00'0005        B        ??dma_free_channel_3
+    606          	case DMA_STATE_ALLOCATED:
+    607          	case DMA_STATE_DONE:
+    608          		channel->state = DMA_STATE_FREE;
+   \                     ??dma_free_channel_0:
+   \       0x2C   0xE3A0'5000        MOV      R5,#+0
+   \       0x30   0xE5C4'5014        STRB     R5,[R4, #+20]
+    609          		_dma_sg_desc_free(channel->sg_list);
+   \       0x34   0xE594'0018        LDR      R0,[R4, #+24]
+   \       0x38   0x....'....        BL       _dma_sg_desc_free
+    610          		channel->sg_list = NULL;
+   \       0x3C   0xE584'5018        STR      R5,[R4, #+24]
+    611          		break;
+    612          	}
+    613          	return 0;
+   \                     ??dma_free_channel_1:
+   \       0x40   0xE3A0'0000        MOV      R0,#+0
+   \                     ??dma_free_channel_3:
+   \       0x44   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    614          }
+    615          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    616          int dma_start_transfer(struct _dma_channel* channel)
+    617          {
+   \                     dma_start_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    618          	if (channel->state == DMA_STATE_FREE)
+   \        0x8   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x1A00'0001        BNE      ??dma_start_transfer_0
+    619          		return -EPERM;
+   \       0x14   0xE3E0'0042        MVN      R0,#+66
+   \       0x18   0xEA00'0014        B        ??dma_start_transfer_1
+    620          	else if (channel->state == DMA_STATE_STARTED)
+   \                     ??dma_start_transfer_0:
+   \       0x1C   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \       0x20   0xE350'0002        CMP      R0,#+2
+   \       0x24   0x1A00'0001        BNE      ??dma_start_transfer_2
+    621          		return -EBUSY;
+   \       0x28   0xE3E0'0009        MVN      R0,#+9
+   \       0x2C   0xEA00'000F        B        ??dma_start_transfer_1
+    622          
+    623          	/* Change state to 'started' */
+    624          	channel->state = DMA_STATE_STARTED;
+   \                     ??dma_start_transfer_2:
+   \       0x30   0xE3A0'0002        MOV      R0,#+2
+   \       0x34   0xE5C4'0014        STRB     R0,[R4, #+20]
+    625          
+    626          	/* Start DMA transfer */
+    627          	if (!_dma_ctrl.polling) {
+   \       0x38   0x....'....        LDR      R0,??DataTable8_1
+   \       0x3C   0xE5D0'01C8        LDRB     R0,[R0, #+456]
+   \       0x40   0xE350'0000        CMP      R0,#+0
+   \       0x44   0x1A00'0004        BNE      ??dma_start_transfer_3
+    628          #if defined(CONFIG_HAVE_XDMAC)
+    629          		xdmac_enable_global_it(channel->hw, 1 << channel->id);
+   \       0x48   0xE3A0'0001        MOV      R0,#+1
+   \       0x4C   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x50   0xE1B0'1110        LSLS     R1,R0,R1
+   \       0x54   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x58   0x....'....        BL       xdmac_enable_global_it
+    630          #elif defined(CONFIG_HAVE_DMAC)
+    631          		dmac_enable_global_it(channel->hw, (DMAC_EBCIDR_CBTC0 | DMAC_EBCIER_BTC0 | DMAC_EBCIER_ERR0) << channel->id);
+    632          #endif
+    633          	}
+    634          #if defined(CONFIG_HAVE_XDMAC)
+    635          	xdmac_enable_channel(channel->hw, channel->id);
+   \                     ??dma_start_transfer_3:
+   \       0x5C   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x60   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x64   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x68   0x....'....        BL       xdmac_enable_channel
+    636          #elif defined(CONFIG_HAVE_DMAC)
+    637          	dmac_enable_channel(channel->hw, channel->id);
+    638          #endif
+    639          	return 0;
+   \       0x6C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??dma_start_transfer_1:
+   \       0x70   0xE8BD'8010        POP      {R4,PC}          ;; return
+    640          }
+    641          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    642          int dma_stop_transfer(struct _dma_channel* channel)
+    643          {
+   \                     dma_stop_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    644          #if defined(CONFIG_HAVE_XDMAC)
+    645          	/* Disable channel */
+    646          	xdmac_disable_channel(channel->hw, channel->id);
+   \        0x8   0xE594'1004        LDR      R1,[R4, #+4]
+   \        0xC   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0x....'....        BL       xdmac_disable_channel
+    647          	/* Disable interrupts */
+    648          	xdmac_disable_channel_it(channel->hw, channel->id, -1);
+   \       0x18   0xE3E0'2000        MVN      R2,#+0
+   \       0x1C   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x20   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x24   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x28   0x....'....        BL       xdmac_disable_channel_it
+    649          	/* Clear pending status */
+    650          	xdmac_get_channel_isr(channel->hw, channel->id);
+   \       0x2C   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x30   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x34   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x38   0x....'....        BL       xdmac_get_channel_isr
+    651          	xdmac_get_global_channel_status(channel->hw);
+   \       0x3C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x40   0x....'....        BL       xdmac_get_global_channel_status
+    652          #elif defined(CONFIG_HAVE_DMAC)
+    653          	/* Disable channel */
+    654          	dmac_disable_channel(channel->hw, channel->id);
+    655          	/* Clear pending status */
+    656          	dmac_get_global_isr(channel->hw);
+    657          #endif
+    658          
+    659          	/* Change state to 'allocated' */
+    660          	channel->state = DMA_STATE_ALLOCATED;
+   \       0x44   0xE3A0'0001        MOV      R0,#+1
+   \       0x48   0xE5C4'0014        STRB     R0,[R4, #+20]
+    661          
+    662          	return 0;
+   \       0x4C   0xE3A0'0000        MOV      R0,#+0
+   \       0x50   0xE8BD'8010        POP      {R4,PC}          ;; return
+    663          }
+    664          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    665          int dma_suspend_transfer(struct _dma_channel* channel)
+    666          {
+   \                     dma_suspend_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    667          	/* Suspend channel */
+    668          #if defined(CONFIG_HAVE_XDMAC)
+    669          	xdmac_suspend_channel(channel->hw, channel->id);
+   \        0x8   0xE594'1004        LDR      R1,[R4, #+4]
+   \        0xC   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0x....'....        BL       xdmac_suspend_channel
+    670          #elif defined(CONFIG_HAVE_DMAC)
+    671          	dmac_suspend_channel(channel->hw, channel->id);
+    672          #endif
+    673          	/* Change state to 'suspended' */
+    674          	channel->state = DMA_STATE_SUSPENDED;
+   \       0x18   0xE3A0'0004        MOV      R0,#+4
+   \       0x1C   0xE5C4'0014        STRB     R0,[R4, #+20]
+    675          
+    676          	return 0;
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \       0x24   0xE8BD'8010        POP      {R4,PC}          ;; return
+    677          }
+    678          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    679          int dma_resume_transfer(struct _dma_channel* channel)
+    680          {
+   \                     dma_resume_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    681          	/* Resume channel */
+    682          #if defined(CONFIG_HAVE_XDMAC)
+    683          	xdmac_resume_read_write_channel(channel->hw, channel->id);
+   \        0x8   0xE594'1004        LDR      R1,[R4, #+4]
+   \        0xC   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0x....'....        BL       xdmac_resume_read_write_channel
+    684          #elif defined(CONFIG_HAVE_DMAC)
+    685          	dmac_resume_channel(channel->hw, channel->id);
+    686          #endif
+    687          	/* Change state to 'started */
+    688          	channel->state = DMA_STATE_STARTED;
+   \       0x18   0xE3A0'0002        MOV      R0,#+2
+   \       0x1C   0xE5C4'0014        STRB     R0,[R4, #+20]
+    689          
+    690          	return 0;
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \       0x24   0xE8BD'8010        POP      {R4,PC}          ;; return
+    691          }
+    692          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    693          void dma_fifo_flush(struct _dma_channel* channel)
+    694          {
+   \                     dma_fifo_flush:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    695          #if defined(CONFIG_HAVE_XDMAC)
+    696          	xdmac_fifo_flush(channel->hw, channel->id);
+   \        0x8   0xE594'1004        LDR      R1,[R4, #+4]
+   \        0xC   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0x....'....        BL       xdmac_fifo_flush
+    697          #elif defined(CONFIG_HAVE_DMAC)
+    698          	dmac_fifo_flush(channel->hw, channel->id);
+    699          #endif
+    700          }
+   \       0x18   0xE8BD'8010        POP      {R4,PC}          ;; return
+    701          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    702          int dma_configure_transfer(struct _dma_channel* channel,
+    703          			   struct _dma_cfg* cfg_dma,
+    704          			   struct _dma_transfer_cfg* list, uint8_t list_size)
+    705          {
+   \                     dma_configure_transfer:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+    706          	if (list_size == 0)
+   \       0x14   0xE1B0'0007        MOVS     R0,R7
+   \       0x18   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x1C   0xE350'0000        CMP      R0,#+0
+   \       0x20   0x1A00'0001        BNE      ??dma_configure_transfer_0
+    707          		return -EINVAL;
+   \       0x24   0xE3E0'001B        MVN      R0,#+27
+   \       0x28   0xEA00'0011        B        ??dma_configure_transfer_1
+    708          
+    709          	if ((list_size == 1) && (!cfg_dma->loop))
+   \                     ??dma_configure_transfer_0:
+   \       0x2C   0xE1B0'0007        MOVS     R0,R7
+   \       0x30   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x34   0xE350'0001        CMP      R0,#+1
+   \       0x38   0x1A00'0007        BNE      ??dma_configure_transfer_2
+   \       0x3C   0xE5D5'000A        LDRB     R0,[R5, #+10]
+   \       0x40   0xE350'0000        CMP      R0,#+0
+   \       0x44   0x1A00'0004        BNE      ??dma_configure_transfer_2
+    710          		return _dma_configure_transfer(channel, cfg_dma, list);
+   \       0x48   0xE1B0'2006        MOVS     R2,R6
+   \       0x4C   0xE1B0'1005        MOVS     R1,R5
+   \       0x50   0xE1B0'0004        MOVS     R0,R4
+   \       0x54   0x....'....        BL       _dma_configure_transfer
+   \       0x58   0xEA00'0005        B        ??dma_configure_transfer_1
+    711          	else
+    712          		return _dma_sg_configure_transfer(channel, cfg_dma, list, list_size);
+   \                     ??dma_configure_transfer_2:
+   \       0x5C   0xE1B0'3007        MOVS     R3,R7
+   \       0x60   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x64   0xE1B0'2006        MOVS     R2,R6
+   \       0x68   0xE1B0'1005        MOVS     R1,R5
+   \       0x6C   0xE1B0'0004        MOVS     R0,R4
+   \       0x70   0x....'....        BL       _dma_sg_configure_transfer
+   \                     ??dma_configure_transfer_1:
+   \       0x74   0xE8BD'80F2        POP      {R1,R4-R7,PC}    ;; return
+    713          }
+    714          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    715          uint32_t dma_get_transferred_data_len(struct _dma_channel* channel, uint8_t chunk_size, uint32_t len)
+    716          {
+   \                     dma_get_transferred_data_len:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    717          #if defined(CONFIG_HAVE_XDMAC)
+    718          	return len - xdmac_get_microblock_control(channel->hw, channel->id) * (1 << chunk_size);
+   \       0x10   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x14   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x18   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x1C   0x....'....        BL       xdmac_get_microblock_control
+   \       0x20   0xE3A0'1001        MOV      R1,#+1
+   \       0x24   0xE1B0'1511        LSLS     R1,R1,R5
+   \       0x28   0xE010'0091        MULS     R0,R1,R0
+   \       0x2C   0xE056'0000        SUBS     R0,R6,R0
+   \       0x30   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    719          #elif defined(CONFIG_HAVE_DMAC)
+    720          	return dmac_get_btsize(channel->hw, channel->id) * (1 << chunk_size);
+    721          #endif
+    722          }
+    723          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    724          int dma_set_callback(struct _dma_channel* channel, struct _callback* cb)
+    725          {
+   \                     dma_set_callback:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    726          	if (channel->state == DMA_STATE_FREE)
+   \        0xC   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x1A00'0001        BNE      ??dma_set_callback_0
+    727          		return -EPERM;
+   \       0x18   0xE3E0'0042        MVN      R0,#+66
+   \       0x1C   0xEA00'0008        B        ??dma_set_callback_1
+    728          	else if (channel->state == DMA_STATE_STARTED)
+   \                     ??dma_set_callback_0:
+   \       0x20   0xE5D4'0014        LDRB     R0,[R4, #+20]
+   \       0x24   0xE350'0002        CMP      R0,#+2
+   \       0x28   0x1A00'0001        BNE      ??dma_set_callback_2
+    729          		return -EBUSY;
+   \       0x2C   0xE3E0'0009        MVN      R0,#+9
+   \       0x30   0xEA00'0003        B        ??dma_set_callback_1
+    730          
+    731          	callback_copy(&channel->callback, cb);
+   \                     ??dma_set_callback_2:
+   \       0x34   0xE1B0'1005        MOVS     R1,R5
+   \       0x38   0xE294'0008        ADDS     R0,R4,#+8
+   \       0x3C   0x....'....        BL       callback_copy
+    732          
+    733          	return 0;
+   \       0x40   0xE3A0'0000        MOV      R0,#+0
+   \                     ??dma_set_callback_1:
+   \       0x44   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    734          }
+    735          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    736          bool dma_is_transfer_done(struct _dma_channel* channel)
+    737          {
+    738          	return ((channel->state != DMA_STATE_STARTED)
+    739          		&& (channel->state != DMA_STATE_SUSPENDED));
+   \                     dma_is_transfer_done:
+   \        0x0   0xE5D0'1014        LDRB     R1,[R0, #+20]
+   \        0x4   0xE351'0002        CMP      R1,#+2
+   \        0x8   0x0A00'0004        BEQ      ??dma_is_transfer_done_0
+   \        0xC   0xE5D0'0014        LDRB     R0,[R0, #+20]
+   \       0x10   0xE350'0004        CMP      R0,#+4
+   \       0x14   0x0A00'0001        BEQ      ??dma_is_transfer_done_0
+   \       0x18   0xE3A0'0001        MOV      R0,#+1
+   \       0x1C   0xEA00'0000        B        ??dma_is_transfer_done_1
+   \                     ??dma_is_transfer_done_0:
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \                     ??dma_is_transfer_done_1:
+   \       0x24   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+    740          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable8:
+   \        0x0   0x....'....        DC32     _dma_sg_pool
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable8_1:
+   \        0x0   0x....'....        DC32     _dma_ctrl
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable8_2:
+   \        0x0   0x....'....        DC32     controllers
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable8_3:
+   \        0x0   0x....'....        DC32     dma_irq_handler
+    741          
+    742          /**@}*/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      72   _dma_configure_transfer
+        72   -> __aeabi_memset
+        72   -> is_dest_periph
+        72   -> is_source_periph
+        72   -> xdmacd_configure_transfer
+        72 __aeabi_uidiv
+        72 __aeabi_uidivmod
+      88   _dma_sg_configure_transfer
+        88   -> _dma_sg_desc_alloc
+        88   -> cache_clean_region
+        88   -> is_dest_periph
+        88   -> is_source_periph
+        88   -> xdmacd_configure_transfer
+      40   _dma_sg_desc_alloc
+        40   -> mutex_lock
+        40   -> mutex_unlock
+      32   _dma_sg_desc_free
+        32   -> mutex_lock
+        32   -> mutex_unlock
+      24   _dma_sg_init
+        24   -> __aeabi_memset
+        24   -> mutex_lock
+        24   -> mutex_unlock
+      32   dma_allocate_channel
+        32   -> dma_prepare_channel
+        32   -> get_peripheral_dma_channel
+        32   -> is_peripheral_on_dma_controller
+      24   dma_configure_transfer
+        24   -> _dma_configure_transfer
+        24   -> _dma_sg_configure_transfer
+       8   dma_fifo_flush
+         8   -> xdmac_fifo_flush
+      16   dma_free_channel
+        16   -> _dma_sg_desc_free
+      16   dma_get_transferred_data_len
+        16   -> xdmac_get_microblock_control
+      32   dma_initialize
+        32   -> _dma_sg_init
+        32   -> callback_set
+        32   -> get_xdmac_addr_from_id
+        32   -> irq_add_handler
+        32   -> irq_enable
+        32   -> xdmac_get_channel_isr
+       0   dma_is_transfer_done
+      16   dma_poll
+        16   -> dma_irq_handler
+       8   dma_reset_channel
+         8   -> _dma_sg_desc_free
+         8   -> xdmac_disable_channel
+         8   -> xdmac_disable_channel_it
+       8   dma_resume_transfer
+         8   -> xdmac_resume_read_write_channel
+      16   dma_set_callback
+        16   -> callback_copy
+       8   dma_start_transfer
+         8   -> xdmac_enable_channel
+         8   -> xdmac_enable_global_it
+       8   dma_stop_transfer
+         8   -> xdmac_disable_channel
+         8   -> xdmac_disable_channel_it
+         8   -> xdmac_get_channel_isr
+         8   -> xdmac_get_global_channel_status
+       8   dma_suspend_transfer
+         8   -> xdmac_suspend_channel
+       0   is_dest_periph
+       0   is_source_periph
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable8
+       4  ??DataTable8_1
+       4  ??DataTable8_2
+       4  ??DataTable8_3
+     624  _dma_configure_transfer
+     460  _dma_ctrl
+     688  _dma_sg_configure_transfer
+     224  _dma_sg_desc_alloc
+     136  _dma_sg_desc_free
+     164  _dma_sg_init
+   1'040  _dma_sg_pool
+       4  controllers
+     348  dma_allocate_channel
+     120  dma_configure_transfer
+      28  dma_fifo_flush
+      72  dma_free_channel
+      52  dma_get_transferred_data_len
+     224  dma_initialize
+      44  dma_is_transfer_done
+      68  dma_poll
+     116  dma_reset_channel
+      40  dma_resume_transfer
+      72  dma_set_callback
+     116  dma_start_transfer
+      84  dma_stop_transfer
+      40  dma_suspend_transfer
+      60  is_dest_periph
+      60  is_source_periph
+
+ 
+   460 bytes in section .bss
+     4 bytes in section .data
+ 1'040 bytes in section .region_cache_aligned
+ 3'396 bytes in section SOFTPACK
+ 
+ 3'396 bytes of CODE memory
+ 1'504 bytes of DATA memory
+
+Errors: none
+Warnings: none

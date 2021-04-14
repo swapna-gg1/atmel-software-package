@@ -1,0 +1,384 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         22/Jul/2020  10:36:48
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\matrix.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW2C18.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\matrix.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_GENERIC -D
+#        CONFIG_HAVE_AIC5 -D CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D
+#        CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_ADC_LOW_RES -D CONFIG_HAVE_PMC_FAST_STARTUP -D
+#        CONFIG_HAVE_PMC_GENERATED_CLOCKS -D CONFIG_HAVE_SCKC -D
+#        CONFIG_TIMER_POLLING -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC
+#        -D CONFIG_HAVE_PWMC -D CONFIG_HAVE_SDRAM_W9864G6KH -D
+#        CONFIG_HAVE_DDR2_MT47H64M16 -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_SERIALD_USART -D
+#        CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\flash_loaders\applets\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\flash_loaders\applets\common\framework2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List\matrix.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\Obj\matrix.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\matrix.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          #include "chip.h"
+     31          
+     32          #include "peripherals/matrix.h"
+     33          
+     34          #include "mm/cache.h"
+     35          #include "mm/l1cache.h"
+     36          
+     37          #include <assert.h>
+     38          
+     39          #if defined(CONFIG_SOC_SAMA5D2) || defined(CONFIG_SOC_SAMA5D4)
+     40          void matrix_configure_master(Matrix* mtx, uint8_t id, uint32_t val)
+     41          {
+     42          	mtx->MATRIX_MCFG[id] = val;
+     43          }
+     44          
+     45          void matrix_configure_slave(Matrix* mtx, uint8_t id, uint32_t val)
+     46          {
+     47          	mtx->MATRIX_SCFG[id] = val;
+     48          }
+     49          
+     50          void matrix_master_priority_for_slave(Matrix* mtx,
+     51          	uint8_t s_id, uint8_t m_id, uint8_t priority)
+     52          {
+     53          	if (m_id <= 7) {
+     54          		m_id <<= 2;
+     55          		mtx->MATRIX_PR[s_id].MATRIX_PRAS = (mtx->MATRIX_PR[s_id].MATRIX_PRAS &
+     56          			(~(MATRIX_PRAS_M0PR_Msk << m_id))) | (priority << m_id);
+     57          	} else {
+     58          		assert(m_id < 16);
+     59          		m_id = (m_id - 8) << 2;
+     60          		mtx->MATRIX_PR[s_id].MATRIX_PRBS = (mtx->MATRIX_PR[s_id].MATRIX_PRBS &
+     61          			(~(MATRIX_PRAS_M0PR_Msk << m_id))) | (priority << m_id);
+     62          	}
+     63          }
+     64          #endif
+     65          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     66          void matrix_configure_slave_sec(Matrix* mtx, uint8_t slave_id,
+     67          				uint8_t sel_mask, uint8_t read_mask,
+     68          				uint8_t write_mask)
+     69          {
+     70          #ifdef CONFIG_HAVE_SECURE_MATRIX
+     71          	mtx->MATRIX_SSR[slave_id] = sel_mask | (read_mask << 8) |
+     72          		(write_mask << 16);
+     73          #endif
+     74          }
+   \                     matrix_configure_slave_sec:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+     75          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     76          void matrix_set_slave_split_addr(Matrix* mtx, uint8_t slave_id,
+     77          				 uint8_t area_size, uint8_t mask)
+     78          {
+     79          #ifdef CONFIG_HAVE_SECURE_MATRIX
+     80          	uint8_t i = mask, j = 0;
+     81          	uint32_t value = 0;
+     82          	for (i = 1; (i <= mask) && (j < 32); i <<= 1, j += 4) {
+     83          		if (i & mask)
+     84          			value |= area_size << j;
+     85          	}
+     86          	mtx->MATRIX_SASSR[slave_id] = value;
+     87          #endif
+     88          }
+   \                     matrix_set_slave_split_addr:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+     89          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     90          void matrix_set_slave_region_size(Matrix* mtx, uint8_t slave_id,
+     91          				  uint8_t area_size, uint8_t mask)
+     92          {
+     93          #ifdef CONFIG_HAVE_SECURE_MATRIX
+     94          	assert(slave_id != 0);
+     95          	uint8_t i = mask, j = 0;
+     96          	uint32_t value = 0;
+     97          	for (i = 1; (i <= mask) && (j < 32 ); i <<= 1, j += 4) {
+     98          		if (i & mask)
+     99          			value |= area_size << j;
+    100          	}
+    101          	mtx->MATRIX_SRTSR[slave_id] = value;
+    102          #endif
+    103          }
+   \                     matrix_set_slave_region_size:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    104          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    105          bool matrix_is_peripheral_secured(Matrix* mtx, uint32_t periph_id)
+    106          {
+    107          #ifdef CONFIG_HAVE_SECURE_MATRIX
+    108          	if (mtx->MATRIX_SPSELR[periph_id / 32] & (1 << (periph_id % 32))) {
+    109          		return false;
+    110          	} else
+    111          #endif
+    112          	{
+    113          		return true;
+   \                     matrix_is_peripheral_secured:
+   \        0x0   0xE3A0'0001        MOV      R0,#+1
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    114          	}
+    115          }
+    116          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    117          void matrix_remove_write_protection(Matrix* mtx)
+    118          {
+    119          	mtx->MATRIX_WPMR = MATRIX_WPMR_WPKEY_PASSWD;
+   \                     matrix_remove_write_protection:
+   \        0x0   0x....'....        LDR      R1,??DataTable1  ;; 0x4d415400
+   \        0x4   0xE580'11E4        STR      R1,[R0, #+484]
+    120          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    121          
+    122          /**
+    123           * \brief Changes the mapping of the chip so that the remap area mirrors the
+    124           * internal ROM or the EBI CS0.
+    125           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    126          void matrix_remap_rom(void)
+    127          {
+   \                     matrix_remap_rom:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    128          	volatile int i;
+    129          #if defined(CONFIG_SOC_SAM9XX5) || defined(CONFIG_SOC_SAM9X60)
+    130          	MATRIX->MATRIX_MRCR = 0;
+   \        0x4   0xE3E0'10FF        MVN      R1,#+255
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0xE3C1'1D80        BIC      R1,R1,#0x2000
+   \       0x10   0xE581'0000        STR      R0,[R1, #+0]
+    131          #elif defined(CONFIG_SOC_SAMA5D3)
+    132          	MATRIX->MATRIX_MRCR = 0;
+    133          	AXIMX->AXIMX_REMAP = 0;
+    134          #elif defined(CONFIG_SOC_SAMA5D2) || defined(CONFIG_SOC_SAMA5D4)
+    135          	AXIMX->AXIMX_REMAP = 0;
+    136          #endif
+    137          	for (i = 200; i--; ) {}
+   \       0x14   0xE3A0'20C8        MOV      R2,#+200
+   \       0x18   0xE58D'2000        STR      R2,[SP, #+0]
+   \                     ??matrix_remap_rom_0:
+   \       0x1C   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x20   0xE240'1001        SUB      R1,R0,#+1
+   \       0x24   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x1AFF'FFFA        BNE      ??matrix_remap_rom_0
+    138          	icache_invalidate();
+   \       0x30   0x....'....        BL       icache_invalidate
+    139          
+    140          	/* If caching is enabled, invalidate the remap area */
+    141          	cache_invalidate_region((void*)0, IRAM_SIZE);
+   \       0x34   0x....'....        B        ?Subroutine0
+    142          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE8BD'4004        POP      {R2,LR}
+   \        0x4   0xE3A0'1B80        MOV      R1,#+131072
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0x....'....        B        cache_invalidate_region  ;; tailcall
+    143          
+    144          /**
+    145           * \brief Changes the mapping of the chip so that the remap area mirrors the
+    146           * internal RAM.
+    147           */
+    148          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    149          void matrix_remap_ram(void)
+    150          {
+   \                     matrix_remap_ram:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    151          	volatile int i;
+    152          #if defined(CONFIG_SOC_SAM9XX5) || defined(CONFIG_SOC_SAM9X60)
+    153          	MATRIX->MATRIX_MRCR = MATRIX_MRCR_RCB0 | MATRIX_MRCR_RCB1;
+   \        0x4   0xE3E0'10FF        MVN      R1,#+255
+   \        0x8   0xE3A0'0003        MOV      R0,#+3
+   \        0xC   0xE3C1'1D80        BIC      R1,R1,#0x2000
+   \       0x10   0xE581'0000        STR      R0,[R1, #+0]
+    154          #elif defined(CONFIG_SOC_SAMA5D3)
+    155          	MATRIX->MATRIX_MRCR = MATRIX_MRCR_RCB0;
+    156          	AXIMX->AXIMX_REMAP = AXIMX_REMAP_REMAP0;
+    157          #elif defined(CONFIG_SOC_SAMA5D2) || defined(CONFIG_SOC_SAMA5D4)
+    158          	AXIMX->AXIMX_REMAP = AXIMX_REMAP_REMAP0;
+    159          #endif
+    160          	for (i = 200; i--; ) {}
+   \       0x14   0xE3A0'20C8        MOV      R2,#+200
+   \       0x18   0xE58D'2000        STR      R2,[SP, #+0]
+   \                     ??matrix_remap_ram_0:
+   \       0x1C   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x20   0xE240'1001        SUB      R1,R0,#+1
+   \       0x24   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x1AFF'FFFA        BNE      ??matrix_remap_ram_0
+    161          	icache_invalidate();
+   \       0x30   0x....'....        BL       icache_invalidate
+    162          
+    163          	/* If caching is enabled, clean the SRAM region and invalidate remap
+    164          	 * area */
+    165          	cache_clean_region((void*)IRAM_ADDR, IRAM_SIZE);
+   \       0x34   0xE3A0'1B80        MOV      R1,#+131072
+   \       0x38   0xE3A0'09C0        MOV      R0,#+3145728
+   \       0x3C   0x....'....        BL       cache_clean_region
+    166          	cache_invalidate_region((void*)0, IRAM_SIZE);
+   \       0x40                      REQUIRE ?Subroutine0
+   \       0x40                      ;; // Fall through to label ?Subroutine0
+    167          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0x4D41'5400        DC32     0x4d415400
+    168          
+    169          #if defined(CONFIG_SOC_SAMA5D2) || defined(CONFIG_SOC_SAMA5D4)
+    170          void matrix_set_default_config(void)
+    171          {
+    172          	uint32_t m_id;
+    173          	uint32_t s_id;
+    174          
+    175          	/* Disable write protection */
+    176          	matrix_remove_write_protection(MATRIX0);
+    177          
+    178          	for (m_id = 0; m_id < H64MX_MASTER_COUNT; m_id++)
+    179          		matrix_configure_master(MATRIX0, m_id, MATRIX_MCFG_ULBT_16_BEAT);
+    180          
+    181          	for (s_id = 0; s_id < H64MX_SLAVE_COUNT; s_id++) {
+    182          		matrix_configure_slave(MATRIX0, s_id, MATRIX_SCFG_FIXED_DEFMSTR(0) |
+    183          			MATRIX_SCFG_DEFMSTR_TYPE_NONE | MATRIX_SCFG_SLOT_CYCLE_Msk);
+    184          		for (m_id = 0; m_id < H64MX_MASTER_COUNT; m_id++)
+    185          			matrix_master_priority_for_slave(MATRIX0, s_id, m_id, 0);
+    186          		matrix_configure_slave_sec(MATRIX0, s_id, 0xFF, 0xFF, 0xFF);
+    187          	}
+    188          
+    189          	/* Disable write protection */
+    190          	matrix_remove_write_protection(MATRIX1);
+    191          
+    192          	for (m_id = 0; m_id <= H32MX_MASTER_COUNT; m_id++)
+    193          		matrix_configure_master(MATRIX1, m_id, MATRIX_MCFG_ULBT_16_BEAT);
+    194          
+    195          	for (s_id = 0; s_id <= H32MX_SLAVE_COUNT; s_id++) {
+    196          		matrix_configure_slave(MATRIX1, s_id, MATRIX_SCFG_FIXED_DEFMSTR(0) |
+    197          			MATRIX_SCFG_DEFMSTR_TYPE_NONE | MATRIX_SCFG_SLOT_CYCLE_Msk);
+    198          		for (m_id = 0; m_id <= H32MX_MASTER_COUNT; m_id++)
+    199          			matrix_master_priority_for_slave(MATRIX1, s_id, m_id, 0);
+    200          		matrix_configure_slave_sec(MATRIX1, s_id, 0xFF, 0xFF, 0xFF);
+    201          	}
+    202          }
+    203          #endif
+    204          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   matrix_configure_slave_sec
+       0   matrix_is_peripheral_secured
+       8   matrix_remap_ram
+         8   -> cache_clean_region
+         0   -> cache_invalidate_region
+         8   -> icache_invalidate
+       8   matrix_remap_rom
+         0   -> cache_invalidate_region
+         8   -> icache_invalidate
+       0   matrix_remove_write_protection
+       0   matrix_set_slave_region_size
+       0   matrix_set_slave_split_addr
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+      16  ?Subroutine0
+       4  matrix_configure_slave_sec
+       8  matrix_is_peripheral_secured
+      64  matrix_remap_ram
+      56  matrix_remap_rom
+      12  matrix_remove_write_protection
+       4  matrix_set_slave_region_size
+       4  matrix_set_slave_split_addr
+
+ 
+ 172 bytes in section SOFTPACK
+ 
+ 172 bytes of CODE memory
+
+Errors: none
+Warnings: none

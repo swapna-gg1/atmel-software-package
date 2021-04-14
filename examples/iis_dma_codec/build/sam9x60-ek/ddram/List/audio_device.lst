@@ -1,0 +1,1040 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Nov/2020  13:24:50
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\audio_device.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW424F.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\audio_device.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\List\audio_device.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\Obj\audio_device.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\audio_device.c
+      1          /* ---------------------------------------------------------------------------- */
+      2          /*                  Atmel Microcontroller Software Support                      */
+      3          /*                       SAM Software Package License                           */
+      4          /* ---------------------------------------------------------------------------- */
+      5          /* Copyright (c) 2016, Atmel Corporation                                        */
+      6          /*                                                                              */
+      7          /* All rights reserved.                                                         */
+      8          /*                                                                              */
+      9          /* Redistribution and use in source and binary forms, with or without           */
+     10          /* modification, are permitted provided that the following condition is met:    */
+     11          /*                                                                              */
+     12          /* - Redistributions of source code must retain the above copyright notice,     */
+     13          /* this list of conditions and the disclaimer below.                            */
+     14          /*                                                                              */
+     15          /* Atmel's name may not be used to endorse or promote products derived from     */
+     16          /* this software without specific prior written permission.                     */
+     17          /*                                                                              */
+     18          /* DISCLAIMER:  THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR   */
+     19          /* IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF */
+     20          /* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE   */
+     21          /* DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,      */
+     22          /* INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT */
+     23          /* LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,  */
+     24          /* OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF    */
+     25          /* LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING         */
+     26          /* NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, */
+     27          /* EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                           */
+     28          /* ---------------------------------------------------------------------------- */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <stdbool.h>
+     35          #include <stdio.h>
+     36          #include <string.h>
+     37          
+     38          #include "audio_device.h"
+     39          #include "callback.h"
+     40          #include "chip.h"
+     41          #include "dma/dma.h"
+     42          #include "mm/cache.h"
+     43          #include "trace.h"
+     44          
+     45          /*----------------------------------------------------------------------------
+     46           *        Local functions
+     47           *----------------------------------------------------------------------------*/
+     48          
+     49          #if defined(CONFIG_HAVE_CLASSD)
+     50          /**
+     51           * Configure the CLASSD for audio output.
+     52           */
+     53          static void _configure_classd(struct _audio_desc* desc)
+     54          {
+     55          	/* Configure Class D */
+     56          	if (desc->num_channels == 1) {
+     57          		desc->device.classd.desc.swap_channels = true,
+     58          		desc->device.classd.desc.left_enable = false;
+     59          		desc->device.classd.desc.right_enable = true;
+     60          	} else {
+     61          		desc->device.classd.desc.swap_channels = false;
+     62          		desc->device.classd.desc.left_enable = true;
+     63          		desc->device.classd.desc.right_enable = true;
+     64          	}
+     65          	desc->device.classd.desc.addr = desc->device.classd.addr;
+     66          	classd_configure(&desc->device.classd.desc);
+     67          	classd_set_left_attenuation(&desc->device.classd.desc, 30);
+     68          	classd_set_right_attenuation(&desc->device.classd.desc, 30);
+     69          	classd_volume_unmute(&desc->device.classd.desc, true, true);
+     70          	classd_enable_channels(&desc->device.classd.desc, true, true);
+     71          }
+     72          #endif
+     73          
+     74          #if defined(CONFIG_HAVE_SSC)
+     75          /**
+     76           * Configure the SSC for audio output.
+     77           */
+     78          static void _configure_ssc(struct _audio_desc *desc)
+     79          {
+     80          	desc->device.ssc.desc.addr = desc->device.ssc.addr;
+     81          	desc->device.ssc.desc.sample_rate = desc->sample_rate;
+     82          	desc->device.ssc.desc.slot_num = desc->num_channels;
+     83          	desc->device.ssc.desc.slot_length = desc->bits_per_sample;
+     84          
+     85          	ssc_configure(&desc->device.ssc.desc);
+     86          	ssc_disable_transmitter(&desc->device.ssc.desc);
+     87          	ssc_disable_receiver(&desc->device.ssc.desc);
+     88          
+     89          	switch (desc->device.ssc.codec->type) {
+     90          	case AUDIO_CODEC_NONE:
+     91          		trace_warning("SSC: no codec defined\r\n");
+     92          		break;
+     93          #ifdef CONFIG_HAVE_AUDIO_WM8904
+     94          	case AUDIO_CODEC_WM8904:
+     95          		wm8904_configure(&desc->device.ssc.codec->wm8904);
+     96          		break;
+     97          #endif
+     98          #ifdef CONFIG_HAVE_AUDIO_WM8731
+     99          	case AUDIO_CODEC_WM8731:
+    100          		wm8731_configure(&desc->device.ssc.codec->wm8731);
+    101          		break;
+    102          #endif
+    103          #ifdef CONFIG_HAVE_AUDIO_AD1934
+    104          	case AUDIO_CODEC_AD1934:
+    105          		ad1934_configure(&desc->device.ssc.codec->ad1934);
+    106          		ad1934_set_sample_rate(&desc->device.ssc.codec->ad1934,
+    107          				desc->device.ssc.desc.sample_rate);
+    108          		/* walk around setting */
+    109          		ad1934_set_tdm_slot(&desc->device.ssc.codec->ad1934,
+    110          				desc->device.ssc.desc.slot_num * 2);
+    111          		ad1934_set_word_width(&desc->device.ssc.codec->ad1934,
+    112          				desc->device.ssc.desc.slot_length);
+    113          		break;
+    114          #endif
+    115          	default:
+    116          		trace_fatal("SSC: no supported codec defined\r\n");
+    117          	}
+    118          
+    119          	/* Mute */
+    120          	audio_enable(desc, false);
+    121          }
+    122          
+    123          #endif /* CONFIG_HAVE_SSC */
+    124          
+    125          #if defined(CONFIG_HAVE_PDMIC)
+    126          static void _configure_pdmic(struct _audio_desc *desc)
+    127          {
+    128          	/* configure PIO muxing for pdmic */
+    129          	desc->device.pdmic.desc.sample_rate = desc->sample_rate;
+    130          	desc->device.pdmic.desc.channels = desc->num_channels;
+    131          	desc->device.pdmic.desc.dsp_size = desc->bits_per_sample;
+    132          
+    133          	pdmic_init(&desc->device.pdmic.desc);
+    134          }
+    135          #endif
+    136          
+    137          /**
+    138           * Configure audio play/record
+    139           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    140          void audio_configure(struct _audio_desc *desc)
+    141          {
+   \                     audio_configure:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    142          	switch (desc->type) {
+   \        0x8   0xE5D4'0001        LDRB     R0,[R4, #+1]
+   \        0xC   0xE350'0001        CMP      R0,#+1
+   \       0x10   0x0A00'0002        BEQ      ??audio_configure_0
+   \       0x14   0xE350'0002        CMP      R0,#+2
+   \       0x18   0x0A00'001D        BEQ      ??audio_configure_1
+   \       0x1C   0xE8BD'8010        POP      {R4,PC}
+    143          #if defined(CONFIG_HAVE_CLASSD)
+    144          	case AUDIO_DEVICE_CLASSD:
+    145          		_configure_classd(desc);
+   \                     ??audio_configure_0:
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \       0x24   0xE1D4'29B4        LDRH     R2,[R4, #+148]
+   \       0x28   0xE3A0'1001        MOV      R1,#+1
+   \       0x2C   0xE5C4'1017        STRB     R1,[R4, #+23]
+   \       0x30   0xE352'0001        CMP      R2,#+1
+   \       0x34   0x05C4'0016        STRBEQ   R0,[R4, #+22]
+   \       0x38   0x15C4'0013        STRBNE   R0,[R4, #+19]
+   \       0x3C   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x40   0x05C4'1013        STRBEQ   R1,[R4, #+19]
+   \       0x44   0xE584'0008        STR      R0,[R4, #+8]
+   \       0x48   0x15C4'1016        STRBNE   R1,[R4, #+22]
+   \       0x4C   0xE284'0008        ADD      R0,R4,#+8
+   \       0x50   0x....'....        BL       classd_configure
+   \       0x54   0xE3A0'101E        MOV      R1,#+30
+   \       0x58   0xE284'0008        ADD      R0,R4,#+8
+   \       0x5C   0x....'....        BL       classd_set_left_attenuation
+   \       0x60   0xE3A0'101E        MOV      R1,#+30
+   \       0x64   0xE284'0008        ADD      R0,R4,#+8
+   \       0x68   0x....'....        BL       classd_set_right_attenuation
+   \       0x6C   0xE3A0'2001        MOV      R2,#+1
+   \       0x70   0xE3A0'1001        MOV      R1,#+1
+   \       0x74   0xE284'0008        ADD      R0,R4,#+8
+   \       0x78   0x....'....        BL       classd_volume_unmute
+   \       0x7C   0xE284'0008        ADD      R0,R4,#+8
+   \       0x80   0xE8BD'4010        POP      {R4,LR}
+   \       0x84   0xE3A0'2001        MOV      R2,#+1
+   \       0x88   0xE3A0'1001        MOV      R1,#+1
+   \       0x8C   0x....'....        B        classd_enable_channels  ;; tailcall
+    146          		break;
+    147          #endif
+    148          #if defined(CONFIG_HAVE_SSC)
+    149          	case AUDIO_DEVICE_SSC:
+    150          		_configure_ssc(desc);
+    151          		break;
+    152          #endif
+    153          #if defined(CONFIG_HAVE_PDMIC)
+    154          	case AUDIO_DEVICE_PDMIC:
+    155          		_configure_pdmic(desc);
+    156          		break;
+    157          #endif
+    158          	default:
+    159          		return;
+    160          	}
+    161          }
+   \                     ??audio_configure_2:
+   \       0x90   0xE8BD'8010        POP      {R4,PC}          ;; return
+   \                     ??audio_configure_1:
+   \       0x94   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x98   0xE594'1090        LDR      R1,[R4, #+144]
+   \       0x9C   0xE584'0008        STR      R0,[R4, #+8]
+   \       0xA0   0xE584'1010        STR      R1,[R4, #+16]
+   \       0xA4   0xE1D4'09B4        LDRH     R0,[R4, #+148]
+   \       0xA8   0xE1D4'19B6        LDRH     R1,[R4, #+150]
+   \       0xAC   0xE5C4'0015        STRB     R0,[R4, #+21]
+   \       0xB0   0xE5C4'1014        STRB     R1,[R4, #+20]
+   \       0xB4   0xE284'0008        ADD      R0,R4,#+8
+   \       0xB8   0x....'....        BL       ssc_configure
+   \       0xBC   0xE284'0008        ADD      R0,R4,#+8
+   \       0xC0   0x....'....        BL       ssc_disable_transmitter
+   \       0xC4   0xE284'0008        ADD      R0,R4,#+8
+   \       0xC8   0x....'....        BL       ssc_disable_receiver
+   \       0xCC   0xE594'108C        LDR      R1,[R4, #+140]
+   \       0xD0   0x....'....        LDR      R0,??DataTable5
+   \       0xD4   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0xD8   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0xDC   0xE352'0000        CMP      R2,#+0
+   \       0xE0   0x0A00'0004        BEQ      ??audio_configure_3
+   \       0xE4   0xE350'0000        CMP      R0,#+0
+   \       0xE8   0x0A00'0001        BEQ      ??audio_configure_4
+   \       0xEC   0x....'....        LDR      R0,??DataTable5_1
+   \       0xF0   0x....'....        BL       printf
+   \                     ??audio_configure_4:
+   \       0xF4   0xEAFF'FFFE        B        ??audio_configure_4
+   \                     ??audio_configure_3:
+   \       0xF8   0xE350'0003        CMP      R0,#+3
+   \       0xFC   0x3A00'0001        BCC      ??audio_configure_5
+   \      0x100   0x....'....        ADR      R0,?_1
+   \      0x104   0x....'....        BL       printf
+   \                     ??audio_configure_5:
+   \      0x108   0xE5D4'0001        LDRB     R0,[R4, #+1]
+   \      0x10C   0xE350'0001        CMP      R0,#+1
+   \      0x110   0x0A00'000C        BEQ      ??audio_configure_6
+   \      0x114   0xE350'0002        CMP      R0,#+2
+   \      0x118   0x1AFF'FFDC        BNE      ??audio_configure_2
+   \      0x11C   0xE5D4'2000        LDRB     R2,[R4, #+0]
+   \      0x120   0xE352'0000        CMP      R2,#+0
+   \      0x124   0x0A00'0004        BEQ      ??audio_configure_7
+   \      0x128   0xE352'0001        CMP      R2,#+1
+   \      0x12C   0x1AFF'FFD7        BNE      ??audio_configure_2
+   \      0x130   0xE284'0008        ADD      R0,R4,#+8
+   \      0x134   0xE8BD'4010        POP      {R4,LR}
+   \      0x138   0x....'....        B        ssc_disable_receiver  ;; tailcall
+   \                     ??audio_configure_7:
+   \      0x13C   0xE284'0008        ADD      R0,R4,#+8
+   \      0x140   0xE8BD'4010        POP      {R4,LR}
+   \      0x144   0x....'....        B        ssc_disable_transmitter  ;; tailcall
+   \                     ??audio_configure_6:
+   \      0x148   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \      0x14C   0xE350'0000        CMP      R0,#+0
+   \      0x150   0x1AFF'FFCE        BNE      ??audio_configure_2
+   \      0x154   0xE284'0008        ADD      R0,R4,#+8
+   \      0x158   0xE8BD'4010        POP      {R4,LR}
+   \      0x15C   0xE3A0'2001        MOV      R2,#+1
+   \      0x160   0xE3A0'1001        MOV      R1,#+1
+   \      0x164   0x....'....        B        classd_disable_channels  ;; tailcall
+    162          
+    163          /**
+    164           * Enable/Disable audio channels
+    165           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    166          void audio_enable(struct _audio_desc *desc, bool enable)
+    167          {
+    168          	switch (desc->type) {
+   \                     audio_enable:
+   \        0x0   0xE5D0'2001        LDRB     R2,[R0, #+1]
+   \        0x4   0xE352'0001        CMP      R2,#+1
+   \        0x8   0x0A00'0002        BEQ      ??audio_enable_0
+   \        0xC   0xE352'0002        CMP      R2,#+2
+   \       0x10   0x0A00'000A        BEQ      ??audio_enable_1
+   \       0x14   0xE12F'FF1E        BX       LR
+    169          #if defined(CONFIG_HAVE_CLASSD)
+    170          	case AUDIO_DEVICE_CLASSD:
+    171          		switch (desc->direction) {
+   \                     ??audio_enable_0:
+   \       0x18   0xE5D0'C000        LDRB     R12,[R0, #+0]
+   \       0x1C   0xE35C'0000        CMP      R12,#+0
+   \       0x20   0x1A00'0004        BNE      ??audio_enable_2
+    172          		case AUDIO_DEVICE_PLAY:
+    173          			if (enable)
+   \       0x24   0xE351'0000        CMP      R1,#+0
+   \       0x28   0xE3A0'1001        MOV      R1,#+1
+   \       0x2C   0xE280'0008        ADD      R0,R0,#+8
+   \       0x30   0x0A00'0001        BEQ      ??audio_enable_3
+    174          				classd_enable_channels(&desc->device.classd.desc, true, true);
+   \       0x34   0x....'....        B        classd_enable_channels  ;; tailcall
+    175          			else
+    176          				classd_disable_channels(&desc->device.classd.desc, true, true);
+    177          			break;
+    178          		case AUDIO_DEVICE_RECORD:
+    179          			return;
+    180          		}
+    181          		break;
+    182          #endif
+    183          #if defined(CONFIG_HAVE_SSC)
+    184          	case AUDIO_DEVICE_SSC:
+    185          		switch (desc->direction) {
+    186          		case AUDIO_DEVICE_PLAY:
+    187          			if (enable)
+    188          				ssc_enable_transmitter(&desc->device.ssc.desc);
+    189          			else
+    190          				ssc_disable_transmitter(&desc->device.ssc.desc);
+    191          			break;
+    192          		case AUDIO_DEVICE_RECORD:
+    193          			if (enable)
+    194          				ssc_enable_receiver(&desc->device.ssc.desc);
+    195          			else
+    196          				ssc_disable_receiver(&desc->device.ssc.desc);
+    197          			break;
+    198          		}
+    199          		break;
+    200          #endif
+    201          #if defined(CONFIG_HAVE_PDMIC)
+    202          	case AUDIO_DEVICE_PDMIC:
+    203          		switch (desc->direction) {
+    204          		case AUDIO_DEVICE_PLAY:
+    205          			return;
+    206          		case AUDIO_DEVICE_RECORD:
+    207          			pdmic_stream_convert(&desc->device.pdmic.desc, enable);
+    208          			break;
+    209          		}
+    210          		break;
+    211          #endif
+    212          	default:
+    213          		return;
+    214          	}
+    215          }
+   \                     ??audio_enable_2:
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+   \                     ??audio_enable_3:
+   \       0x3C   0x....'....        B        classd_disable_channels  ;; tailcall
+   \                     ??audio_enable_1:
+   \       0x40   0xE5D0'2000        LDRB     R2,[R0, #+0]
+   \       0x44   0xE352'0000        CMP      R2,#+0
+   \       0x48   0x0A00'0002        BEQ      ??audio_enable_4
+   \       0x4C   0xE352'0001        CMP      R2,#+1
+   \       0x50   0x0A00'0004        BEQ      ??audio_enable_5
+   \       0x54   0xE12F'FF1E        BX       LR
+   \                     ??audio_enable_4:
+   \       0x58   0xE351'0000        CMP      R1,#+0
+   \       0x5C   0xE280'0008        ADD      R0,R0,#+8
+   \       0x60   0x....'....        BNE      ssc_enable_transmitter  ;; tailcall
+   \       0x64   0x....'....        B        ssc_disable_transmitter  ;; tailcall
+   \                     ??audio_enable_5:
+   \       0x68   0xE351'0000        CMP      R1,#+0
+   \       0x6C   0xE280'0008        ADD      R0,R0,#+8
+   \       0x70   0x....'....        BNE      ssc_enable_receiver  ;; tailcall
+   \       0x74   0x....'....        B        ssc_disable_receiver  ;; tailcall
+    216          
+    217          /**
+    218           * Mute/Unmute audio channels
+    219           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    220          void audio_mute(struct _audio_desc *desc, bool mute)
+    221          {
+    222          	if (mute) {
+   \                     audio_mute:
+   \        0x0   0xE5D0'2001        LDRB     R2,[R0, #+1]
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0x0A00'0005        BEQ      ??audio_mute_0
+    223          		switch (desc->type) {
+   \        0xC   0xE352'0001        CMP      R2,#+1
+   \       0x10   0x1A00'0002        BNE      ??audio_mute_1
+    224          #if defined(CONFIG_HAVE_CLASSD)
+    225          		case AUDIO_DEVICE_CLASSD:
+    226          			classd_volume_mute(&desc->device.classd.desc, true, true);
+   \       0x14   0xE3A0'1001        MOV      R1,#+1
+   \       0x18   0xE280'0008        ADD      R0,R0,#+8
+   \       0x1C   0x....'....        B        classd_volume_mute  ;; tailcall
+    227          			break;
+    228          #endif
+    229          #if defined(CONFIG_HAVE_SSC)
+    230          		case AUDIO_DEVICE_SSC:
+    231          			switch (desc->device.ssc.codec->type) {
+    232          #ifdef CONFIG_HAVE_AUDIO_WM8904
+    233          			case AUDIO_CODEC_WM8904:
+    234          				wm8904_volume_mute(&desc->device.ssc.codec->wm8904, true, true);
+    235          				break;
+    236          #endif
+    237          #ifdef CONFIG_HAVE_AUDIO_WM8731
+    238          			case AUDIO_CODEC_WM8731:
+    239          				wm8731_volume_mute(&desc->device.ssc.codec->wm8731, true);
+    240          				break;
+    241          #endif
+    242          #ifdef CONFIG_HAVE_AUDIO_AD1934
+    243          			case AUDIO_CODEC_AD1934:
+    244          				ad1934_master_volume_mute(&desc->device.ssc.codec->ad1934, true);
+    245          				break;
+    246          #endif
+    247          			default:
+    248          				return;
+    249          			};
+    250          			break;
+    251          #endif
+    252          		default:
+    253          			return;
+    254          		}
+    255          	} else {
+    256          		switch (desc->type) {
+    257          #if defined(CONFIG_HAVE_CLASSD)
+    258          		case AUDIO_DEVICE_CLASSD:
+    259          			classd_volume_unmute(&desc->device.classd.desc, true, true);
+    260          			break;
+    261          #endif
+    262          #if defined(CONFIG_HAVE_SSC)
+    263          		case AUDIO_DEVICE_SSC:
+    264          			switch (desc->device.ssc.codec->type) {
+    265          #ifdef CONFIG_HAVE_AUDIO_WM8904
+    266          			case AUDIO_CODEC_WM8904:
+    267          				wm8904_volume_mute(&desc->device.ssc.codec->wm8904, false, false);
+    268          				break;
+    269          #endif
+    270          #ifdef CONFIG_HAVE_AUDIO_WM8731
+    271          			case AUDIO_CODEC_WM8731:
+    272          				wm8731_volume_mute(&desc->device.ssc.codec->wm8731, false);
+    273          				break;
+    274          #endif
+    275          #ifdef CONFIG_HAVE_AUDIO_AD1934
+    276          			case AUDIO_CODEC_AD1934:
+    277          				ad1934_master_volume_mute(&desc->device.ssc.codec->ad1934, false);
+    278          				break;
+    279          #endif
+    280          			default:
+    281          				return;
+    282          			};
+    283          			break;
+    284          #endif
+    285          		default:
+    286          			return;
+    287          		}
+    288          	}
+    289          }
+   \                     ??audio_mute_1:
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+   \                     ??audio_mute_0:
+   \       0x24   0xE352'0001        CMP      R2,#+1
+   \       0x28   0x1AFF'FFFC        BNE      ??audio_mute_1
+   \       0x2C   0xE3A0'1001        MOV      R1,#+1
+   \       0x30   0xE280'0008        ADD      R0,R0,#+8
+   \       0x34   0x....'....        B        classd_volume_unmute  ;; tailcall
+    290          
+    291          /**
+    292           * Set audio volume
+    293           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    294          void audio_set_volume(struct _audio_desc *desc, uint8_t vol)
+    295          {
+   \                     audio_set_volume:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    296          	/* unify the volume value for different codec chip */
+    297          	/* vol=0 means min volume, vol=100 means max volume */
+    298          	uint8_t val;
+    299          	if (vol <= AUDIO_PLAY_MAX_VOLUME) {
+   \        0x8   0xE351'0064        CMP      R1,#+100
+   \        0xC   0xCA00'0010        BGT      ??audio_set_volume_0
+    300          		switch (desc->type) {
+   \       0x10   0xE5D4'0001        LDRB     R0,[R4, #+1]
+   \       0x14   0xE350'0001        CMP      R0,#+1
+   \       0x18   0x1A00'000D        BNE      ??audio_set_volume_0
+    301          #if defined(CONFIG_HAVE_CLASSD)
+    302          		case AUDIO_DEVICE_CLASSD:
+    303          			/* classd attenuation range 0~-77db*/
+    304          			val = (AUDIO_PLAY_MAX_VOLUME - vol) * 77 / AUDIO_PLAY_MAX_VOLUME;
+   \       0x1C   0xE261'1064        RSB      R1,R1,#+100
+   \       0x20   0xE3A0'304D        MOV      R3,#+77
+   \       0x24   0xE16C'0183        SMULBB   R12,R3,R1
+   \       0x28   0x....'....        LDR      R0,??DataTable5_2  ;; 0x51eb851f
+   \       0x2C   0xE0C0'209C        SMULL    R2,R0,R12,R0
+   \       0x30   0xE1A0'52C0        ASR      R5,R0,#+5
+   \       0x34   0xE085'5FA5        ADD      R5,R5,R5, LSR #+31
+    305          			classd_set_left_attenuation(&desc->device.classd.desc, val);
+   \       0x38   0xE205'10FF        AND      R1,R5,#0xFF
+   \       0x3C   0xE284'0008        ADD      R0,R4,#+8
+   \       0x40   0x....'....        BL       classd_set_left_attenuation
+    306          			classd_set_right_attenuation(&desc->device.classd.desc, val);
+   \       0x44   0xE205'10FF        AND      R1,R5,#0xFF
+   \       0x48   0xE284'0008        ADD      R0,R4,#+8
+   \       0x4C   0xE8BD'4034        POP      {R2,R4,R5,LR}
+   \       0x50   0x....'....        B        classd_set_right_attenuation  ;; tailcall
+    307          			break;
+    308          #endif
+    309          
+    310          #if defined(CONFIG_HAVE_SSC)
+    311          		case AUDIO_DEVICE_SSC:
+    312          			switch (desc->device.ssc.codec->type) {
+    313          #ifdef CONFIG_HAVE_AUDIO_WM8904
+    314          			case AUDIO_CODEC_WM8904:
+    315          				/* wm8904 heardphone output volume range -57db~6db */
+    316          				val = (vol * 63) / AUDIO_PLAY_MAX_VOLUME;
+    317          				wm8904_set_left_volume(&desc->device.ssc.codec->wm8904, val);
+    318          				wm8904_set_right_volume(&desc->device.ssc.codec->wm8904, val);
+    319          				break;
+    320          #endif
+    321          #ifdef CONFIG_HAVE_AUDIO_WM8731
+    322          			case AUDIO_CODEC_WM8731:
+    323          				/* wm8731 heardphone output volume range -73~6db */
+    324          				val = (vol * 79) / AUDIO_PLAY_MAX_VOLUME;
+    325          				wm8731_set_left_volume(&desc->device.ssc.codec->wm8731, val);
+    326          				wm8731_set_right_volume(&desc->device.ssc.codec->wm8731, val);
+    327          				break;
+    328          #endif
+    329          #ifdef CONFIG_HAVE_AUDIO_AD1934
+    330          			case AUDIO_CODEC_AD1934:
+    331          				/* AD1934 channel volume control, 1 to 254 -> -3/8dB per  step */
+    332          				val = (AUDIO_PLAY_MAX_VOLUME-vol)*255/AUDIO_PLAY_MAX_VOLUME;
+    333          				ad1934_set_channel_volume(&desc->device.ssc.codec->ad1934, AD1934_DAC_L1_CHANNEL, val);
+    334          				ad1934_set_channel_volume(&desc->device.ssc.codec->ad1934, AD1934_DAC_R1_CHANNEL, val);
+    335          				break;
+    336          #endif
+    337          			default:
+    338          				return;
+    339          			};
+    340          			break;
+    341          #endif
+    342          		default:
+    343          			return;
+    344          		}
+    345          	}
+    346          }
+   \                     ??audio_set_volume_0:
+   \       0x54   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    347          
+    348          /**
+    349           * Stop audio data transfer
+    350           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    351          void audio_stop(struct _audio_desc *desc)
+    352          {
+    353          	switch (desc->type) {
+   \                     audio_stop:
+   \        0x0   0xE5D0'1001        LDRB     R1,[R0, #+1]
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x0A00'0002        BEQ      ??audio_stop_0
+   \        0xC   0xE351'0002        CMP      R1,#+2
+   \       0x10   0x0A00'0002        BEQ      ??audio_stop_1
+   \       0x14   0xE12F'FF1E        BX       LR
+    354          #if defined(CONFIG_HAVE_CLASSD)
+    355          	case AUDIO_DEVICE_CLASSD:
+    356          		classd_tx_stop(&desc->device.classd.desc);
+   \                     ??audio_stop_0:
+   \       0x18   0xE280'0008        ADD      R0,R0,#+8
+   \       0x1C   0x....'....        B        classd_tx_stop   ;; tailcall
+    357          		break;
+    358          #endif
+    359          #if defined(CONFIG_HAVE_SSC)
+    360          	case AUDIO_DEVICE_SSC:
+    361          		switch (desc->direction) {
+   \                     ??audio_stop_1:
+   \       0x20   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \       0x24   0xE351'0000        CMP      R1,#+0
+   \       0x28   0x0A00'0002        BEQ      ??audio_stop_2
+   \       0x2C   0xE351'0001        CMP      R1,#+1
+   \       0x30   0x0A00'0002        BEQ      ??audio_stop_3
+   \       0x34   0xE12F'FF1E        BX       LR
+    362          		case AUDIO_DEVICE_PLAY:
+    363          			ssc_tx_stop(&desc->device.ssc.desc);
+   \                     ??audio_stop_2:
+   \       0x38   0xE280'0008        ADD      R0,R0,#+8
+   \       0x3C   0x....'....        B        ssc_tx_stop      ;; tailcall
+    364          			break;
+    365          		case AUDIO_DEVICE_RECORD:
+    366          			ssc_rx_stop(&desc->device.ssc.desc);
+   \                     ??audio_stop_3:
+   \       0x40   0xE280'0008        ADD      R0,R0,#+8
+   \       0x44   0x....'....        B        ssc_rx_stop      ;; tailcall
+    367          			break;
+    368          		}
+    369          		break;
+    370          #endif
+    371          #if defined(CONFIG_HAVE_PDMIC)
+    372          	case AUDIO_DEVICE_PDMIC:
+    373          		pdmic_rx_stop(&desc->device.pdmic.desc);
+    374          		break;
+    375          #endif
+    376          	default:
+    377          		return;
+    378          	}
+    379          }
+    380          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    381          void audio_transfer(struct _audio_desc *desc, void *buffer, uint32_t size, struct _callback* cb)
+    382          {
+   \                     audio_transfer:
+   \        0x0   0xE92D'40F0        PUSH     {R4-R7,LR}
+   \        0x4   0xE1A0'C002        MOV      R12,R2
+   \        0x8   0xE24D'D00C        SUB      SP,SP,#+12
+   \        0xC   0xE1A0'2003        MOV      R2,R3
+    383          	switch (desc->type) {
+   \       0x10   0xE5D0'3001        LDRB     R3,[R0, #+1]
+   \       0x14   0xE353'0001        CMP      R3,#+1
+   \       0x18   0x0A00'0003        BEQ      ??audio_transfer_0
+   \       0x1C   0xE353'0002        CMP      R3,#+2
+   \       0x20   0x0A00'000F        BEQ      ??audio_transfer_1
+    384          #if defined(CONFIG_HAVE_CLASSD)
+    385          	case AUDIO_DEVICE_CLASSD:
+    386          		switch (desc->direction) {
+    387          		case AUDIO_DEVICE_PLAY:
+    388          			{
+    389          				struct _buffer _tx = {
+    390          					.data = (uint8_t*)buffer,
+    391          					.size = size,
+    392          					.attr = CLASSD_BUF_ATTR_WRITE,
+    393          				};
+    394          
+    395          				classd_transfer(&desc->device.classd.desc, &_tx, cb);
+    396          			}
+    397          			break;
+    398          
+    399          		case AUDIO_DEVICE_RECORD:
+    400          			/* Do not supported */
+    401          			return;
+    402          		}
+    403          		break;
+    404          #endif
+    405          #if defined(CONFIG_HAVE_SSC)
+    406          	case AUDIO_DEVICE_SSC:
+    407          		switch (desc->direction) {
+    408          		case AUDIO_DEVICE_PLAY:
+    409          			{
+    410          				struct _buffer tx = {
+    411          					.data = (uint8_t*)buffer,
+    412          					.size = size,
+    413          					.attr = SSC_BUF_ATTR_WRITE,
+    414          				};
+    415          
+    416          				ssc_transfer(&desc->device.ssc.desc, &tx, cb);
+    417          			}
+    418          			break;
+    419          
+    420          		case AUDIO_DEVICE_RECORD:
+    421          			{
+    422          				struct _buffer rx = {
+    423          					.data = (uint8_t*)buffer,
+    424          					.size = size,
+    425          					.attr = SSC_BUF_ATTR_READ,
+    426          				};
+    427          
+    428          				ssc_transfer(&desc->device.ssc.desc, &rx, cb);
+    429          			}
+    430          			break;
+    431          		}
+    432          		break;
+    433          #endif
+    434          #if defined(CONFIG_HAVE_PDMIC)
+    435          	case AUDIO_DEVICE_PDMIC:
+    436          		switch (desc->direction) {
+    437          		case AUDIO_DEVICE_PLAY:
+    438          			/* Do not supported */
+    439          			return;
+    440          
+    441          		case AUDIO_DEVICE_RECORD:
+    442          			{
+    443          				struct _buffer rx = {
+    444          					.data = (uint8_t*)buffer,
+    445          					.size = size,
+    446          					.attr = PDMIC_BUF_ATTR_READ,
+    447          				};
+    448          
+    449          				pdmic_transfer(&desc->device.pdmic.desc, &rx, cb);
+    450          			}
+    451          			break;
+    452          		}
+    453          		break;
+    454          #endif
+    455          	default:
+    456          		/* No audio device */
+    457          		return;
+    458          	}
+    459          }
+   \       0x24   0xE28D'D00C        ADD      SP,SP,#+12
+   \       0x28   0xE8BD'80F0        POP      {R4-R7,PC}
+   \                     ??audio_transfer_0:
+   \       0x2C   0xE5D0'4000        LDRB     R4,[R0, #+0]
+   \       0x30   0xE354'0000        CMP      R4,#+0
+   \       0x34   0x1A00'0008        BNE      ??audio_transfer_2
+   \       0x38   0x....'....        ADR      LR,?_2
+   \       0x3C   0xE1A0'300D        MOV      R3,SP
+   \       0x40   0xE89E'00E0        LDM      LR,{R5-R7}
+   \       0x44   0xE280'0008        ADD      R0,R0,#+8
+   \       0x48   0xE883'00E0        STM      R3,{R5-R7}
+   \       0x4C   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x50   0xE58D'C004        STR      R12,[SP, #+4]
+   \       0x54   0xE1A0'100D        MOV      R1,SP
+   \       0x58   0x....'....        BL       classd_transfer
+   \                     ??audio_transfer_2:
+   \       0x5C   0xE28D'D00C        ADD      SP,SP,#+12
+   \       0x60   0xE8BD'80F0        POP      {R4-R7,PC}       ;; return
+   \                     ??audio_transfer_1:
+   \       0x64   0xE5D0'3000        LDRB     R3,[R0, #+0]
+   \       0x68   0xE353'0000        CMP      R3,#+0
+   \       0x6C   0x0A00'0003        BEQ      ??audio_transfer_3
+   \       0x70   0xE353'0001        CMP      R3,#+1
+   \       0x74   0x0A00'000C        BEQ      ??audio_transfer_4
+   \       0x78   0xE28D'D00C        ADD      SP,SP,#+12
+   \       0x7C   0xE8BD'80F0        POP      {R4-R7,PC}
+   \                     ??audio_transfer_3:
+   \       0x80   0x....'....        ADR      R4,?_3
+   \       0x84   0xE1A0'E00D        MOV      LR,SP
+   \       0x88   0xE894'00E0        LDM      R4,{R5-R7}
+   \       0x8C   0xE88E'00E0        STM      LR,{R5-R7}
+   \                     ??audio_transfer_5:
+   \       0x90   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x94   0xE58D'C004        STR      R12,[SP, #+4]
+   \       0x98   0xE1A0'100D        MOV      R1,SP
+   \       0x9C   0xE280'0008        ADD      R0,R0,#+8
+   \       0xA0   0x....'....        BL       ssc_transfer
+   \       0xA4   0xE28D'D00C        ADD      SP,SP,#+12
+   \       0xA8   0xE8BD'80F0        POP      {R4-R7,PC}
+   \                     ??audio_transfer_4:
+   \       0xAC   0x....'....        ADR      LR,?_4
+   \       0xB0   0xE1A0'300D        MOV      R3,SP
+   \       0xB4   0xE89E'0070        LDM      LR,{R4-R6}
+   \       0xB8   0xE883'0070        STM      R3,{R4-R6}
+   \       0xBC   0xEAFF'FFF3        B        ??audio_transfer_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_2:
+   \        0x0   0x0000'0000        DC32 0x0, 0, 1
+
+   \              0x0000'0000  
+
+   \              0x0000'0001
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_3:
+   \        0x0   0x0000'0000        DC32 0x0, 0, 1
+
+   \              0x0000'0000  
+
+   \              0x0000'0001
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_4:
+   \        0x0   0x0000'0000        DC32 0x0, 0, 2
+
+   \              0x0000'0000  
+
+   \              0x0000'0002
+    460          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    461          bool audio_transfer_is_done(struct _audio_desc *desc)
+    462          {
+    463          	switch (desc->type) {
+   \                     audio_transfer_is_done:
+   \        0x0   0xE5D0'1001        LDRB     R1,[R0, #+1]
+   \        0x4   0xE351'0001        CMP      R1,#+1
+   \        0x8   0x0A00'0002        BEQ      ??audio_transfer_is_done_0
+   \        0xC   0xE351'0002        CMP      R1,#+2
+   \       0x10   0x0A00'0002        BEQ      ??audio_transfer_is_done_1
+   \       0x14   0xEA00'000B        B        ??audio_transfer_is_done_2
+    464          #if defined(CONFIG_HAVE_CLASSD)
+    465          	case AUDIO_DEVICE_CLASSD:
+    466          		return classd_tx_transfer_is_done(&desc->device.classd.desc);
+   \                     ??audio_transfer_is_done_0:
+   \       0x18   0xE280'0008        ADD      R0,R0,#+8
+   \       0x1C   0x....'....        B        classd_tx_transfer_is_done  ;; tailcall
+    467          #endif
+    468          #if defined(CONFIG_HAVE_SSC)
+    469          	case AUDIO_DEVICE_SSC:
+    470          		switch (desc->direction) {
+   \                     ??audio_transfer_is_done_1:
+   \       0x20   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \       0x24   0xE351'0000        CMP      R1,#+0
+   \       0x28   0x0A00'0002        BEQ      ??audio_transfer_is_done_3
+   \       0x2C   0xE351'0001        CMP      R1,#+1
+   \       0x30   0x0A00'0002        BEQ      ??audio_transfer_is_done_4
+   \       0x34   0xEA00'0003        B        ??audio_transfer_is_done_2
+    471          		case AUDIO_DEVICE_PLAY:
+    472          			return ssc_tx_transfer_is_done(&desc->device.ssc.desc);
+   \                     ??audio_transfer_is_done_3:
+   \       0x38   0xE280'0008        ADD      R0,R0,#+8
+   \       0x3C   0x....'....        B        ssc_tx_transfer_is_done  ;; tailcall
+    473          
+    474          		case AUDIO_DEVICE_RECORD:
+    475          			return ssc_rx_transfer_is_done(&desc->device.ssc.desc);
+   \                     ??audio_transfer_is_done_4:
+   \       0x40   0xE280'0008        ADD      R0,R0,#+8
+   \       0x44   0x....'....        B        ssc_rx_transfer_is_done  ;; tailcall
+    476          		default:
+    477          			return true;
+    478          		}
+    479          		break;
+    480          #endif
+    481          #if defined(CONFIG_HAVE_PDMIC)
+    482          	case AUDIO_DEVICE_PDMIC:
+    483          		return pdmic_rx_transfer_is_done(&desc->device.pdmic.desc);
+    484          #endif
+    485          	default:
+    486          		return true;
+   \                     ??audio_transfer_is_done_2:
+   \       0x48   0xE3A0'0001        MOV      R0,#+1
+   \       0x4C   0xE12F'FF1E        BX       LR               ;; return
+    487          	}
+    488          }
+    489          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    490          void audio_sync_adjust(struct _audio_desc *desc, int32_t adjust)
+    491          {
+    492          #if defined(CONFIG_HAVE_SSC)
+    493          #if defined(CONFIG_HAVE_AUDIO_WM8904)
+    494          	wm8904_sync(&desc->device.ssc.codec->wm8904, adjust);
+    495          #endif
+    496          #endif
+    497          }
+   \                     audio_sync_adjust:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \        0x0   0x51EB'851F        DC32     0x51eb851f
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x46          DC8 "-F- SSC: no supported codec defined\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x53 0x53    
+
+   \              0x43 0x3A    
+
+   \              0x20 0x6E    
+
+   \              0x6F 0x20    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70    
+
+   \              0x6F 0x72    
+
+   \              0x74 0x65    
+
+   \              0x64 0x20    
+
+   \              0x63 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x63 0x20    
+
+   \              0x64 0x65    
+
+   \              0x66 0x69    
+
+   \              0x6E 0x65    
+
+   \              0x64 0x0D    
+
+   \              0x0A 0x00
+   \       0x26   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x2D 0x57          DC8 "-W- SSC: no codec defined\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x53 0x53    
+
+   \              0x43 0x3A    
+
+   \              0x20 0x6E    
+
+   \              0x6F 0x20    
+
+   \              0x63 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x63 0x20    
+
+   \              0x64 0x65    
+
+   \              0x66 0x69    
+
+   \              0x6E 0x65    
+
+   \              0x64 0x0D    
+
+   \              0x0A 0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   audio_configure
+         8   -> classd_configure
+         0   -> classd_disable_channels
+         0   -> classd_enable_channels
+         8   -> classd_set_left_attenuation
+         8   -> classd_set_right_attenuation
+         8   -> classd_volume_unmute
+         8   -> printf
+         8   -> ssc_configure
+         0   -> ssc_disable_receiver
+         8   -> ssc_disable_receiver
+         0   -> ssc_disable_transmitter
+         8   -> ssc_disable_transmitter
+       0   audio_enable
+         0   -> classd_disable_channels
+         0   -> classd_enable_channels
+         0   -> ssc_disable_receiver
+         0   -> ssc_disable_transmitter
+         0   -> ssc_enable_receiver
+         0   -> ssc_enable_transmitter
+       0   audio_mute
+         0   -> classd_volume_mute
+         0   -> classd_volume_unmute
+      16   audio_set_volume
+        16   -> classd_set_left_attenuation
+         0   -> classd_set_right_attenuation
+       0   audio_stop
+         0   -> classd_tx_stop
+         0   -> ssc_rx_stop
+         0   -> ssc_tx_stop
+       0   audio_sync_adjust
+      32   audio_transfer
+        32   -> classd_transfer
+        32   -> ssc_transfer
+       0   audio_transfer_is_done
+         0   -> classd_tx_transfer_is_done
+         0   -> ssc_rx_transfer_is_done
+         0   -> ssc_tx_transfer_is_done
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+      40  ?_0
+      28  ?_1
+      12  ?_2
+      12  ?_3
+      12  ?_4
+     360  audio_configure
+     120  audio_enable
+      56  audio_mute
+      88  audio_set_volume
+      72  audio_stop
+       4  audio_sync_adjust
+     192  audio_transfer
+      80  audio_transfer_is_done
+
+ 
+    40 bytes in section .rodata
+ 1'048 bytes in section SOFTPACK
+ 
+ 1'048 bytes of CODE  memory
+    40 bytes of CONST memory
+
+Errors: none
+Warnings: none

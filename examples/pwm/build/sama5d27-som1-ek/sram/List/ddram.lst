@@ -1,0 +1,1581 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         26/May/2020  15:07:48
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\ddram.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW1AD.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\ddram.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D27_SOM1_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR2_W971GG6SB -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_UART -D CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sama5d27-som1-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sama5d27-som1-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sama5d27-som1-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sama5d27-som1-ek\sram\List\ddram.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\pwm\build\sama5d27-som1-ek\sram\Obj\ddram.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\ddram.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*------------------------------------------------------------------------------
+     31           *        Header
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "chip.h"
+     35          #include "trace.h"
+     36          
+     37          #include "extram/ddram.h"
+     38          
+     39          #include "peripherals/matrix.h"
+     40          #include "extram/mpddrc.h"
+     41          #include "peripherals/pmc.h"
+     42          
+     43          #include "mm/l1cache.h"
+     44          
+     45          #include <assert.h>
+     46          #include <string.h>
+     47          
+     48          /*------------------------------------------------------------------------------
+     49           *        Macro
+     50           *----------------------------------------------------------------------------*/
+     51          
+     52          #ifndef MAX
+     53          #define MAX(x, y) (((x) > (y)) ? (x) : (y))
+     54          #endif
+     55          
+     56          /* Convert nanoseconds to clock cycles for given master clock in MHz */
+     57          #define NS2CYCLES(ns, clk) ((((ns) * (clk)) + 999) / 1000)
+     58          
+     59          #define TZQIO_CYCLES(mck) (NS2CYCLES(MPDDRC_TZQIO_DELAY, mck) + 1)
+     60          
+     61          /* For compatibility with older DDR controller IP */
+     62          #ifndef MPDDRC_CR_NDQS_DISABLED
+     63          #define MPDDRC_CR_NDQS_DISABLED 0
+     64          #endif
+     65          #ifndef MPDDRC_CR_UNAL_SUPPORTED
+     66          #define MPDDRC_CR_UNAL_SUPPORTED 0
+     67          #endif
+     68          
+     69          /*------------------------------------------------------------------------------
+     70           *        Exported Functions
+     71           *----------------------------------------------------------------------------*/
+     72          
+     73          #ifdef CONFIG_HAVE_MPDDRC_DDR3
+     74          
+     75          #ifdef CONFIG_HAVE_DDR3_MT41K128M16
+     76          static void _init_mt41k128m16(struct _mpddrc_desc* desc, uint8_t bus_width)
+     77          {
+     78          	uint32_t mck = pmc_get_master_clock() / 1000000;
+     79          
+     80          	desc->type = MPDDRC_TYPE_DDR3;
+     81          
+     82          #ifdef MPDDRC_MD_DBW_DBW_32_BITS
+     83          	if (bus_width == 16) {
+     84          #ifdef MPDDRC_MD_DBW_DBW_16_BITS
+     85          		desc->mode = MPDDRC_MD_MD_DDR3_SDRAM
+     86          		           | MPDDRC_MD_DBW_DBW_16_BITS;
+     87          #endif
+     88          	} else {
+     89          		desc->mode = MPDDRC_MD_MD_DDR3_SDRAM
+     90          		           | MPDDRC_MD_DBW_DBW_32_BITS;
+     91          	}
+     92          #else
+     93          	desc->mode = MPDDRC_MD_MD_DDR3_SDRAM
+     94          	           | MPDDRC_MD_DBW_DBW_16_BITS;
+     95          #endif
+     96          
+     97          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+     98          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_TWO_CYCLES;
+     99          #endif
+    100          
+    101          	desc->control = MPDDRC_CR_NC_DDR_10_COL_BITS
+    102          	              | MPDDRC_CR_NR_14_ROW_BITS
+    103          	              | MPDDRC_CR_CAS_DDR_CAS5
+    104          	              | MPDDRC_CR_DIS_DLL
+    105          	              | MPDDRC_CR_NB_8_BANKS
+    106          	              | MPDDRC_CR_DIC_DS_DDR3_RZQ7
+    107          	              | MPDDRC_CR_DECOD_INTERLEAVED
+    108          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    109          
+    110          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    111          	desc->io_calibr = MPDDRC_IO_CALIBR_TZQIO(TZQIO_CYCLES(mck));
+    112          #ifdef MPDDRC_IO_CALIBR_RDIV
+    113          	desc->io_calibr |= MPDDRC_IO_CALIBR_RDIV(4);
+    114          #endif
+    115          #endif
+    116          
+    117          	/* timings */
+    118          
+    119          	memset(&desc->timings, 0, sizeof(desc->timings));
+    120          	desc->timings.tras  = NS2CYCLES(35, mck);          // 35ns
+    121          	desc->timings.trcd  = NS2CYCLES(14, mck);          // 13.75ns
+    122          	desc->timings.twr   = NS2CYCLES(15, mck);          // 15ns
+    123          	desc->timings.trc   = NS2CYCLES(49, mck);          // 48.75ns
+    124          	desc->timings.trp   = NS2CYCLES(14, mck);          // 13.75ns
+    125          	desc->timings.trrd  = MAX(NS2CYCLES(6, mck), 4);   // max(6ns, 4ck)
+    126          	desc->timings.twtr  = MAX(NS2CYCLES(8, mck), 4);   // max(7.5ns, 4ck)
+    127          	desc->timings.tmrd  = 4;                           // min 4ck
+    128          	desc->timings.trfc  = NS2CYCLES(160, mck);         // 160ns
+    129          	desc->timings.txsnr = NS2CYCLES(170, mck);         // tRFC+10ns
+    130          	desc->timings.txp   = MAX(NS2CYCLES(14, mck), 10); // max(24ns, 10ck)
+    131          	desc->timings.trtp  = MAX(NS2CYCLES(8, mck), 4);   // mac(7.5ns, 4ck)
+    132          	desc->timings.tfaw  = NS2CYCLES(40, mck);          // 40ns
+    133          
+    134          	desc->refresh_window = 64;
+    135          	desc->refresh_cycles = 8192;
+    136          }
+    137          #endif /* CONFIG_HAVE_DDR3_MT41K128M16 */
+    138          
+    139          #endif /* CONFIG_HAVE_MPDDRC_DDR3 */
+    140          
+    141          #ifdef CONFIG_HAVE_MPDDRC_LPDDR3
+    142          
+    143          #ifdef CONFIG_HAVE_LPDDR3_EDF8164A3MA
+    144          static void _init_edf8164a3ma(struct _mpddrc_desc* desc)
+    145          {
+    146          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    147          
+    148          	desc->type = MPDDRC_TYPE_LPDDR3;
+    149          
+    150          	desc->mode = MPDDRC_MD_MD_LPDDR3_SDRAM
+    151          	           | MPDDRC_MD_DBW_DBW_32_BITS;
+    152          
+    153          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    154          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_TWO_CYCLES;
+    155          #endif
+    156          
+    157          	desc->control = MPDDRC_CR_NC_DDR_10_COL_BITS
+    158          	              | MPDDRC_CR_NR_14_ROW_BITS
+    159          	              | MPDDRC_CR_CAS_DDR_CAS3
+    160          	              | MPDDRC_CR_NB_8_BANKS
+    161          	              | MPDDRC_CR_DIC_DS_DDR3_RZQ6
+    162          	              | MPDDRC_CR_DECOD_SEQUENTIAL
+    163          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    164          
+    165          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    166          	desc->io_calibr = 0;
+    167          #ifdef MPDDRC_IO_CALIBR_RDIV
+    168          	desc->io_calibr |= MPDDRC_IO_CALIBR_RDIV(4);
+    169          #endif
+    170          #endif
+    171          
+    172          	/* timings */
+    173          
+    174          	memset(&desc->timings, 0, sizeof(desc->timings));
+    175          	desc->timings.tras  = NS2CYCLES(42, mck);          // 42ns
+    176          	desc->timings.trcd  = MAX(NS2CYCLES(18, mck), 3);  // max(18ns, 3ck)
+    177          	desc->timings.twr   = MAX(NS2CYCLES(15, mck), 3);  // max(15ns, 3ck)
+    178          	desc->timings.trc   = NS2CYCLES(55, mck);          // 55ns
+    179          	desc->timings.trp   = MAX(NS2CYCLES(8, mck), 4);   // max(7.5ns, 4ck)
+    180          	desc->timings.trrd  = MAX(NS2CYCLES(10, mck), 2);  // max(10ns, 2ck)
+    181          	desc->timings.twtr  = MAX(NS2CYCLES(8, mck), 4);   // max(7.5ns, 4ck)
+    182          	desc->timings.tmrd  = MAX(NS2CYCLES(14, mck), 10); // max(14ns, 10ck)
+    183          	desc->timings.trfc  = NS2CYCLES(130, mck);         // 130ns
+    184          	desc->timings.txsnr = NS2CYCLES(140, mck);         // 140ns
+    185          	desc->timings.txp   = MAX(NS2CYCLES(8, mck), 2);   // max(7.5ns, 2ck)
+    186          	desc->timings.trtp  = MAX(NS2CYCLES(8, mck), 4);   // max(7.5ns, 4ck)
+    187          	desc->timings.tfaw  = MAX(NS2CYCLES(50, mck), 8);  // max(50ns, 8ck)
+    188          
+    189          	desc->refresh_window = 32;
+    190          	desc->refresh_cycles = 8192;
+    191          }
+    192          #endif /* CONFIG_HAVE_LPDDR3_EDF8164A3MA */
+    193          
+    194          #endif /* CONFIG_HAVE_MPDDRC_LPDDR3 */
+    195          
+    196          #ifdef CONFIG_HAVE_MPDDRC_DDR2
+    197          
+    198          #ifdef CONFIG_HAVE_DDR2_W971GG6SB
+    199          /* Configuring the Multiport DDR-SDRAM Controller for Winbond W971GG6SB25I */
+    200          static void _init_w971gg6sb(struct _mpddrc_desc* desc)
+    201          {
+    202          	/* SAMA5D2's General Clock Block Diagram shows that DDRCK is 2 x MCK / 2 */
+    203          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    204          
+    205          	/* Verify that tCK ranges from 5 to 8 ns */
+    206          	assert(mck >= 125 && mck <= 200);
+    207          
+    208          	desc->type = MPDDRC_TYPE_DDR2;
+    209          
+    210          	desc->mode = MPDDRC_MD_MD_DDR2_SDRAM
+    211          	           | MPDDRC_MD_DBW_DBW_16_BITS;
+    212          
+    213          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    214          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    215          #endif
+    216          
+    217          	/* Refer to the description of memory address signals A[12:0] */
+    218          	desc->control = MPDDRC_CR_NR_13_ROW_BITS
+    219          	              | MPDDRC_CR_NC_DDR_10_COL_BITS
+    220          	              | MPDDRC_CR_CAS_DDR_CAS3
+    221          	              | MPDDRC_CR_DIC_DS_DDR2_WEAKSTRENGTH
+    222          	              | MPDDRC_CR_NB_8_BANKS
+    223          	              | MPDDRC_CR_DECOD_INTERLEAVED
+    224          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    225          
+    226          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    227          	desc->io_calibr = MPDDRC_IO_CALIBR_TZQIO(TZQIO_CYCLES(mck));
+    228          #ifdef MPDDRC_IO_CALIBR_RDIV
+    229          	/* Serial impedance line: 52 Ohms */
+    230          	desc->io_calibr |= MPDDRC_IO_CALIBR_RDIV(4);
+    231          #endif
+    232          #endif
+    233          
+    234          	/* timings */
+    235          	memset(&desc->timings, 0, sizeof(desc->timings));
+    236          	desc->timings.tras   = NS2CYCLES(40, mck);  /* 40 ns */
+    237          	desc->timings.trcd   = NS2CYCLES(13, mck);  /* 12.5 ns */
+    238          	desc->timings.twr    = NS2CYCLES(15, mck);  /* 15 ns */
+    239          	desc->timings.trc    = NS2CYCLES(53, mck);  /* 52.5 ns */
+    240          	desc->timings.trp    = NS2CYCLES(13, mck);  /* 12.5 ns */
+    241          	/* Satisfy both tRRD >= 10 ns and tRRD >= 2 nCK */
+    242          	desc->timings.trrd   = MAX(NS2CYCLES(10, mck), 2);
+    243          	/* Satisfy both tWTR >= 7.5 ns and tWTR >= 2 nCK */
+    244          	desc->timings.twtr   = MAX(NS2CYCLES(8, mck), 2);
+    245          	desc->timings.tmrd   = 2;                   /* 2 nCK */
+    246          	desc->timings.trfc   = NS2CYCLES(128, mck); /* 127.5 ns */
+    247          	desc->timings.txsnr  = NS2CYCLES(138, mck); /* tRFC + 10 ns */
+    248          	desc->timings.txsrd  = 200;                 /* 200 nCK */
+    249          	desc->timings.txp    = 2;                   /* 2 nCK */
+    250          	desc->timings.txard  = 2;                   /* 2 nCK */
+    251          	desc->timings.txards = 8;                   /* 8 - AL = 8 nCK */
+    252          	desc->timings.trpa   = 1 + desc->timings.trp; /* tRPall = tRP + 1 nCK */
+    253          	/* MPDDRC implements tRTP >= AL + BL/2
+    254          	 * Satisfy tRTP >= tRTP(min) i.e. tRTP >= 7.5 ns */
+    255          	desc->timings.trtp   = NS2CYCLES(8, mck);
+    256          	desc->timings.tfaw   = NS2CYCLES(45, mck);  /* 45 ns */
+    257          
+    258          	/* Rolling refresh window: 64 ms */
+    259          	desc->refresh_window = 64;
+    260          	/* Periodic auto-refresh interval: tREFI = 7.8 usec
+    261          	 * Within a refresh window at least 8205 REFRESH commands shall be issued */
+    262          	desc->refresh_cycles = 8205;
+    263          }
+    264          #endif /* CONFIG_HAVE_DDR2_W971GG6SB */
+    265          
+    266          #ifdef CONFIG_HAVE_DDR2_W972GG6KB
+    267          /* Configuring the Multiport DDR-SDRAM Controller for Winbond W972GG6KB-25 */
+    268          static void _init_w972gg6kb(struct _mpddrc_desc* desc, uint8_t bus_width)
+    269          {
+    270          	/* The General Clock Distribution Block Diagram shows that DDRCK is MCK_2X
+    271          	 * divided by 2 */
+    272          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    273          
+    274          	/* Verify that tCK ranges from 5 to 8 ns */
+    275          	assert(mck >= 125 && mck <= 200);
+    276          
+    277          	desc->type = MPDDRC_TYPE_DDR2;
+    278          #ifdef MPDDRC_MD_DBW_DBW_32_BITS
+    279          	if (bus_width == 16) {
+    280          #ifdef MPDDRC_MD_DBW_DBW_16_BITS
+    281          		desc->mode = MPDDRC_MD_MD_DDR2_SDRAM
+    282          		           | MPDDRC_MD_DBW_DBW_16_BITS;
+    283          #endif
+    284          	} else {
+    285          		desc->mode = MPDDRC_MD_MD_DDR2_SDRAM
+    286          		           | MPDDRC_MD_DBW_DBW_32_BITS;
+    287          	}
+    288          #else
+    289          	desc->mode = MPDDRC_MD_MD_DDR2_SDRAM
+    290          	           | MPDDRC_MD_DBW_DBW_16_BITS;
+    291          #endif
+    292          
+    293          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    294          	desc->data_path = mck > 170
+    295          	  ? MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_TWO_CYCLES
+    296          	  : MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    297          #endif
+    298          
+    299          	/* Refer to the description of memory address signals A[13:0] */
+    300          	desc->control = MPDDRC_CR_NR_14_ROW_BITS
+    301          	              | MPDDRC_CR_NC_DDR_10_COL_BITS
+    302          	              | MPDDRC_CR_CAS_DDR_CAS3
+    303          	              | MPDDRC_CR_DIC_DS_DDR2_WEAKSTRENGTH
+    304          	              | MPDDRC_CR_NB_8_BANKS
+    305          	              | MPDDRC_CR_DECOD_INTERLEAVED
+    306          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    307          
+    308          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    309          	desc->io_calibr = MPDDRC_IO_CALIBR_TZQIO(TZQIO_CYCLES(mck));
+    310          #ifdef MPDDRC_IO_CALIBR_RDIV
+    311          	/* Serial impedance line: 52 Ohms */
+    312          	desc->io_calibr |= MPDDRC_IO_CALIBR_RDIV(4);
+    313          #endif
+    314          #ifdef MPDDRC_IO_CALIBR_EN_CALIB_ENABLE_CALIBRATION
+    315          	desc->io_calibr |= MPDDRC_IO_CALIBR_EN_CALIB_ENABLE_CALIBRATION;
+    316          #endif
+    317          #ifdef MPDDRC_IO_CALIBR_CK_F_RANGE
+    318          	desc->io_calibr |= MPDDRC_IO_CALIBR_CK_F_RANGE(7);
+    319          #endif
+    320          #endif
+    321          
+    322          	/* timings */
+    323          	memset(&desc->timings, 0, sizeof(desc->timings));
+    324          	desc->timings.tras   = NS2CYCLES(45, mck);  /* 45 ns */
+    325          	desc->timings.trcd   = NS2CYCLES(13, mck);  /* 12.5 ns */
+    326          	desc->timings.twr    = NS2CYCLES(15, mck);  /* 15 ns */
+    327          	desc->timings.trc    = NS2CYCLES(58, mck);  /* 57.5 ns */
+    328          	desc->timings.trp    = NS2CYCLES(13, mck);  /* 12.5 ns */
+    329          	/* Satisfy both tRRD >= 10 ns and tRRD >= 2 nCK */
+    330          	desc->timings.trrd   = MAX(NS2CYCLES(10, mck), 2);
+    331          	/* Satisfy both tWTR >= 7.5 ns and tWTR >= 2 nCK */
+    332          	desc->timings.twtr   = MAX(NS2CYCLES(8, mck), 2);
+    333          	desc->timings.tmrd   = 2;                   /* 2 nCK */
+    334          	desc->timings.trfc   = NS2CYCLES(195, mck); /* 195 ns */
+    335          	desc->timings.txsnr  = NS2CYCLES(205, mck); /* tRFC + 10 ns */
+    336          	desc->timings.txsrd  = 200;                 /* 200 nCK */
+    337          	desc->timings.txp    = 2;                   /* 2 nCK */
+    338          	desc->timings.txard  = 2;                   /* 2 nCK */
+    339          	desc->timings.txards = 8;                   /* 8 - AL = 8 nCK */
+    340          	desc->timings.trpa   = 1 + NS2CYCLES(13, mck);  /* tRPall = tRP + 1 nCK */
+    341          	/* MPDDRC implements tRTP >= AL + BL/2
+    342          	 * Satisfy tRTP >= tRTP(min) i.e. tRTP >= 7.5 ns */
+    343          	desc->timings.trtp   = NS2CYCLES(8, mck);
+    344          	desc->timings.tfaw   = NS2CYCLES(45, mck);  /* 45 ns */
+    345          
+    346          	/* Rolling refresh window: 64 ms */
+    347          	desc->refresh_window = 64;
+    348          	/* Periodic auto-refresh interval: tREFI = 7.8 usec
+    349          	 * Within a refresh window at least 8205 REFRESH commands shall be issued */
+    350          	desc->refresh_cycles = 8205;
+    351          }
+    352          #endif /* CONFIG_HAVE_DDR2_W972GG6KB */
+    353          
+    354          #ifdef CONFIG_HAVE_DDR2_W9712G6KB
+    355          
+    356          static void _init_w9712g6kb(struct _mpddrc_desc* desc)
+    357          {
+    358          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    359          
+    360          	desc->type = MPDDRC_TYPE_DDR2;
+    361          
+    362          	desc->mode = MPDDRC_MD_MD_DDR2_SDRAM
+    363          	           | MPDDRC_MD_DBW_DBW_16_BITS;
+    364          
+    365          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    366          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    367          #endif
+    368          
+    369          	desc->control = MPDDRC_CR_NR_12_ROW_BITS
+    370          	              | MPDDRC_CR_NC_DDR_9_COL_BITS
+    371          	              | MPDDRC_CR_CAS_DDR_CAS3
+    372          	              | MPDDRC_CR_DIC_DS_DDR2_WEAKSTRENGTH
+    373          	              | MPDDRC_CR_NB_4_BANKS
+    374          	              | MPDDRC_CR_DECOD_INTERLEAVED
+    375          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    376          
+    377          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    378          	desc->io_calibr = MPDDRC_IO_CALIBR_TZQIO(TZQIO_CYCLES(mck));
+    379          #ifdef MPDDRC_IO_CALIBR_RDIV
+    380          	desc->io_calibr |= MPDDRC_IO_CALIBR_RDIV(4);
+    381          #endif
+    382          #endif
+    383          
+    384          	/* timings */
+    385          
+    386          	memset(&desc->timings, 0, sizeof(desc->timings));
+    387          	desc->timings.tras   = NS2CYCLES(45, mck);  // 45ns
+    388          	desc->timings.trcd   = NS2CYCLES(13, mck);  // 12.5ns
+    389          	desc->timings.twr    = NS2CYCLES(15, mck);  // 15ns
+    390          	desc->timings.trc    = NS2CYCLES(58, mck);  // 57.5ns
+    391          	desc->timings.trp    = NS2CYCLES(13, mck);  // 12.5ns
+    392          	desc->timings.trrd   = NS2CYCLES(8, mck);   // 7.5ns
+    393          	desc->timings.twtr   = NS2CYCLES(8, mck);   // 7.5ns
+    394          	desc->timings.tmrd   = 2;                   // 2ck
+    395          	desc->timings.trfc   = NS2CYCLES(75, mck);  // 75ns
+    396          	desc->timings.txsnr  = NS2CYCLES(85, mck); // tRFC+10ns
+    397          	desc->timings.txsrd  = 200;                 // 200ck
+    398          	desc->timings.txp    = 2;                   // 2ck
+    399          	desc->timings.txard  = 2;                   // 2ck
+    400          	desc->timings.txards = 8;                   // 8ck
+    401          	desc->timings.trpa   = desc->timings.trp + 1; // tRP+1ck
+    402          	desc->timings.trtp   = NS2CYCLES(8, mck);   // 7.5ns
+    403          	desc->timings.tfaw   = NS2CYCLES(35, mck);  // 35ns
+    404          
+    405          	desc->refresh_window = 64;
+    406          	desc->refresh_cycles = 8192;
+    407          }
+    408          
+    409          #endif /* CONFIG_HAVE_DDR2_W9712G6KB */
+    410          
+    411          
+    412          #ifdef CONFIG_HAVE_DDR2_W9751G6KB
+    413          static void _init_w9751g6kb(struct _mpddrc_desc* desc)
+    414          {
+    415          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    416          
+    417          	desc->type = MPDDRC_TYPE_DDR2;
+    418          
+    419          	desc->mode = MPDDRC_MD_MD_DDR2_SDRAM
+    420          	           | MPDDRC_MD_DBW_DBW_16_BITS;
+    421          
+    422          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    423          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    424          #endif
+    425          
+    426          	desc->control = MPDDRC_CR_NR_13_ROW_BITS
+    427          	              | MPDDRC_CR_NC_DDR_10_COL_BITS
+    428          	              | MPDDRC_CR_CAS_DDR_CAS3
+    429          	              | MPDDRC_CR_DIC_DS_DDR2_WEAKSTRENGTH
+    430          	              | MPDDRC_CR_NB_4_BANKS
+    431          	              | MPDDRC_CR_DECOD_INTERLEAVED
+    432          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    433          
+    434          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    435          	desc->io_calibr = MPDDRC_IO_CALIBR_TZQIO(TZQIO_CYCLES(mck));
+    436          #ifdef MPDDRC_IO_CALIBR_RDIV
+    437          	desc->io_calibr |= MPDDRC_IO_CALIBR_RDIV(4);
+    438          #endif
+    439          #endif
+    440          
+    441          	/* timings */
+    442          
+    443          	memset(&desc->timings, 0, sizeof(desc->timings));
+    444          	desc->timings.tras   = NS2CYCLES(45, mck);  // 45ns
+    445          	desc->timings.trcd   = NS2CYCLES(14, mck);  // 13.5ns
+    446          	desc->timings.twr    = NS2CYCLES(15, mck);  // 15ns
+    447          	desc->timings.trc    = NS2CYCLES(59, mck);  // 58.5ns
+    448          	desc->timings.trp    = NS2CYCLES(14, mck);  // 13.5ns
+    449          	desc->timings.trrd   = NS2CYCLES(10, mck);  // 10ns
+    450          	desc->timings.twtr   = 4;                   // 4 clk
+    451          	desc->timings.tmrd   = 4;                   // 4ck
+    452          	desc->timings.trfc   = NS2CYCLES(105, mck); // 105ns
+    453          	desc->timings.txsnr  = NS2CYCLES(115, mck); // tRFC+10ns
+    454          	desc->timings.txsrd  = 200;                 // 200ck
+    455          	desc->timings.txp    = 4;                   // 4ck
+    456          	desc->timings.txard  = 4;                   // 4ck
+    457          	desc->timings.txards = 12;                  // 12ck
+    458          	desc->timings.trpa   = desc->timings.trp + 1; // tRP+1ck
+    459          	desc->timings.trtp   = 4;                   // 4 clk
+    460          	desc->timings.tfaw   = NS2CYCLES(45, mck);  // 45ns
+    461          
+    462          	desc->refresh_window = 64;
+    463          	desc->refresh_cycles = 8192;
+    464          }
+    465          #endif /* CONFIG_HAVE_DDR2_W9751G6KB */
+    466          
+    467          
+    468          #ifdef CONFIG_HAVE_DDR2_MT47H128M8
+    469          static void _init_mt47h128m8(struct _mpddrc_desc* desc)
+    470          {
+    471          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    472          
+    473          	desc->type = MPDDRC_TYPE_DDR2;
+    474          
+    475          	desc->mode = MPDDRC_MD_MD_DDR2_SDRAM
+    476          	           | MPDDRC_MD_DBW_DBW_32_BITS;
+    477          
+    478          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    479          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    480          #endif
+    481          
+    482          	desc->control = MPDDRC_CR_NR_14_ROW_BITS
+    483          	              | MPDDRC_CR_NC_DDR_10_COL_BITS
+    484          	              | MPDDRC_CR_CAS_DDR_CAS3
+    485          	              | MPDDRC_CR_NB_8_BANKS
+    486          	              | MPDDRC_CR_NDQS_DISABLED
+    487          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    488          
+    489          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    490          	desc->io_calibr = MPDDRC_IO_CALIBR_TZQIO(TZQIO_CYCLES(mck));
+    491          #ifdef MPDDRC_IO_CALIBR_RDIV
+    492          	desc->io_calibr |= MPDDRC_IO_CALIBR_RDIV(4);
+    493          #endif
+    494          #ifdef MPDDRC_IO_CALIBR_EN_CALIB_ENABLE_CALIBRATION
+    495          	desc->io_calibr |= MPDDRC_IO_CALIBR_EN_CALIB_ENABLE_CALIBRATION;
+    496          #endif
+    497          #endif
+    498          
+    499          	/* timings */
+    500          
+    501          	memset(&desc->timings, 0, sizeof(desc->timings));
+    502          	desc->timings.tras   = NS2CYCLES(40, mck);  // 40ns
+    503          	desc->timings.trcd   = NS2CYCLES(13, mck);  // 12.5ns
+    504          	desc->timings.twr    = NS2CYCLES(15, mck);  // 15ns
+    505          	desc->timings.trc    = NS2CYCLES(55, mck);  // 55ns
+    506          	desc->timings.trp    = NS2CYCLES(13, mck);  // 12.5ns
+    507          	desc->timings.trrd   = NS2CYCLES(8, mck);   // 7.5ns
+    508          	desc->timings.twtr   = NS2CYCLES(10, mck);  // 10ns
+    509          	desc->timings.tmrd   = 2;                   // 2ck
+    510          	desc->timings.trfc   = NS2CYCLES(128, mck); // 127.5ns
+    511          	desc->timings.txsnr  = NS2CYCLES(138, mck); // tRFC+10ns
+    512          	desc->timings.txsrd  = 200;                 // 200ck
+    513          	desc->timings.txp    = 2;                   // 2ck
+    514          	desc->timings.txard  = 8;                   // 8ck
+    515          	desc->timings.txards = 2;                   // 2ck
+    516          	desc->timings.trpa   = NS2CYCLES(15, mck);  // 15ns
+    517          	desc->timings.trtp   = NS2CYCLES(8, mck);   // 7.5ns
+    518          	desc->timings.tfaw   = NS2CYCLES(35, mck);  // 35ns
+    519          
+    520          	desc->refresh_window = 64;
+    521          	desc->refresh_cycles = 8192;
+    522          }
+    523          #endif /* CONFIG_HAVE_DDR2_MT47H128M8 */
+    524          
+    525          #ifdef CONFIG_HAVE_DDR2_MT47H64M16
+    526          static void _init_mt47h64m16(struct _mpddrc_desc* desc)
+    527          {
+    528          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    529          
+    530          	desc->type = MPDDRC_TYPE_DDR2;
+    531          
+    532          	desc->mode = MPDDRC_MD_MD_DDR2_SDRAM
+    533          	           | MPDDRC_MD_DBW_DBW_16_BITS;
+    534          
+    535          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    536          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    537          #endif
+    538          
+    539          	desc->control = MPDDRC_CR_NR_13_ROW_BITS
+    540          	              | MPDDRC_CR_NC_DDR_10_COL_BITS
+    541          	              | MPDDRC_CR_CAS_DDR_CAS3
+    542          	              | MPDDRC_CR_NB_8_BANKS
+    543          	              | MPDDRC_CR_DECOD_INTERLEAVED
+    544          	              | MPDDRC_CR_NDQS_DISABLED
+    545          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    546          
+    547          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    548          	desc->io_calibr = MPDDRC_IO_CALIBR_TZQIO(TZQIO_CYCLES(mck));
+    549          #ifdef MPDDRC_IO_CALIBR_RDIV
+    550          	desc->io_calibr |= MPDDRC_IO_CALIBR_RDIV(4);
+    551          #endif
+    552          #ifdef MPDDRC_IO_CALIBR_EN_CALIB_ENABLE_CALIBRATION
+    553          	desc->io_calibr |= MPDDRC_IO_CALIBR_EN_CALIB_ENABLE_CALIBRATION;
+    554          #endif
+    555          #endif
+    556          
+    557          	/* timings */
+    558          
+    559          	memset(&desc->timings, 0, sizeof(desc->timings));
+    560          	desc->timings.tras   = NS2CYCLES(45, mck);  // 45ns
+    561          	desc->timings.trcd   = NS2CYCLES(15, mck);  // 15ns
+    562          	desc->timings.twr    = NS2CYCLES(15, mck);  // 15ns
+    563          	desc->timings.trc    = NS2CYCLES(55, mck);  // 55ns
+    564          	desc->timings.trp    = NS2CYCLES(15, mck);  // 15ns
+    565          	desc->timings.trrd   = NS2CYCLES(13, mck);  // 12.5ns
+    566          	desc->timings.twtr   = NS2CYCLES(10, mck);  // 10ns
+    567          	desc->timings.tmrd   = NS2CYCLES(8, mck);   // 8ns
+    568          	desc->timings.trfc   = NS2CYCLES(198, mck); // 198ns
+    569          	desc->timings.txsnr  = NS2CYCLES(208, mck); // tRFC+10ns
+    570          	desc->timings.txsrd  = 200;                 // 200ck
+    571          	desc->timings.txp    = 2;                   // 2ck
+    572          	desc->timings.txard  = 8;                   // 8ck
+    573          	desc->timings.txards = 2;                   // 2ck
+    574          	desc->timings.trpa   = NS2CYCLES(15, mck);  // 15ns
+    575          	desc->timings.trtp   = NS2CYCLES(8, mck);   // 8ns
+    576          	desc->timings.tfaw   = NS2CYCLES(45, mck);  // 45ns
+    577          
+    578          	desc->refresh_window = 64;
+    579          	desc->refresh_cycles = 8192;
+    580          }
+    581          #endif /* CONFIG_HAVE_DDR2_MT47H64M16 */
+    582          
+    583          #ifdef CONFIG_HAVE_DDR2_MT47H128M16
+    584          static void _init_mt47h128m16(struct _mpddrc_desc* desc)
+    585          {
+    586          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    587          
+    588          	desc->type = MPDDRC_TYPE_DDR2;
+    589          
+    590          	desc->mode = MPDDRC_MD_MD_DDR2_SDRAM
+    591          	           | MPDDRC_MD_DBW_DBW_32_BITS;
+    592          
+    593          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    594          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    595          #endif
+    596          
+    597          	desc->control = MPDDRC_CR_NR_14_ROW_BITS
+    598          	              | MPDDRC_CR_NC_DDR_10_COL_BITS
+    599          	              | MPDDRC_CR_CAS_DDR_CAS3
+    600          	              | MPDDRC_CR_NB_8_BANKS
+    601          	              | MPDDRC_CR_NDQS_DISABLED
+    602          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    603          
+    604          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    605          	desc->io_calibr = MPDDRC_IO_CALIBR_TZQIO(TZQIO_CYCLES(mck));
+    606          #ifdef MPDDRC_IO_CALIBR_RDIV
+    607          	desc->io_calibr |= MPDDRC_IO_CALIBR_RDIV(4);
+    608          #endif
+    609          #ifdef MPDDRC_IO_CALIBR_EN_CALIB_ENABLE_CALIBRATION
+    610          	desc->io_calibr |= MPDDRC_IO_CALIBR_EN_CALIB_ENABLE_CALIBRATION;
+    611          #endif
+    612          #endif
+    613          
+    614          	/* timings */
+    615          
+    616          	memset(&desc->timings, 0, sizeof(desc->timings));
+    617          	desc->timings.tras   = NS2CYCLES(45, mck);  // 45ns
+    618          	desc->timings.trcd   = NS2CYCLES(15, mck);  // 15ns
+    619          	desc->timings.twr    = NS2CYCLES(15, mck);  // 15ns
+    620          	desc->timings.trc    = NS2CYCLES(55, mck);  // 55ns
+    621          	desc->timings.trp    = NS2CYCLES(15, mck);  // 15ns
+    622          	desc->timings.trrd   = NS2CYCLES(13, mck);  // 12.5ns
+    623          	desc->timings.twtr   = NS2CYCLES(10, mck);  // 10ns
+    624          	desc->timings.tmrd   = NS2CYCLES(8, mck);   // 8ns
+    625          	desc->timings.trfc   = NS2CYCLES(186, mck); // 186ns
+    626          	desc->timings.txsnr  = NS2CYCLES(208, mck); // tRFC+10s
+    627          	desc->timings.txsrd  = 202;                 // 202ck
+    628          	desc->timings.txp    = 3;                   // 3ck
+    629          	desc->timings.txard  = 3;                   // 3ck
+    630          	desc->timings.txards = 10;                  // 10ck
+    631          	desc->timings.trpa   = NS2CYCLES(15, mck);  // 15ns
+    632          	desc->timings.trtp   = NS2CYCLES(8, mck);   // 8ns
+    633          	desc->timings.tfaw   = NS2CYCLES(45, mck);  // 45ns
+    634          
+    635          	desc->refresh_window = 64;
+    636          	desc->refresh_cycles = 8192;
+    637          }
+    638          #endif /* CONFIG_HAVE_DDR2_MT47H128M16 */
+    639          
+    640          #endif /* CONFIG_HAVE_MPDDRC_DDR2 */
+    641          
+    642          #ifdef CONFIG_HAVE_MPDDRC_LPDDR2
+    643          
+    644          #ifdef CONFIG_HAVE_LPDDR2_MT42L128M16
+    645          static void _init_mt42l128m16(struct _mpddrc_desc* desc)
+    646          {
+    647          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    648          
+    649          	desc->type = MPDDRC_TYPE_LPDDR2;
+    650          
+    651          	desc->mode = MPDDRC_MD_MD_LPDDR2_SDRAM
+    652          	           | MPDDRC_MD_DBW_DBW_32_BITS;
+    653          
+    654          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    655          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    656          #endif
+    657          
+    658          	desc->control = MPDDRC_CR_NR_14_ROW_BITS
+    659          	              | MPDDRC_CR_NC_DDR_10_COL_BITS
+    660          	              | MPDDRC_CR_CAS_DDR_CAS3
+    661          	              | MPDDRC_CR_NB_8_BANKS
+    662          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    663          
+    664          #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    665          	desc->io_calibr = 0;
+    666          #ifdef MPDDRC_IO_CALIBR_RDIV
+    667          	desc->io_calibr |= MPDDRC_IO_CALIBR_RDIV(4);
+    668          #endif
+    669          #endif
+    670          
+    671          	/* timings */
+    672          
+    673          	memset(&desc->timings, 0, sizeof(desc->timings));
+    674          	desc->timings.tras   = NS2CYCLES(40, mck);  // 40ns
+    675          	desc->timings.trcd   = NS2CYCLES(15, mck);  // 15ns
+    676          	desc->timings.twr    = NS2CYCLES(15, mck);  // 15ns
+    677          	desc->timings.trc    = NS2CYCLES(60, mck);  // 60ns
+    678          	desc->timings.trp    = NS2CYCLES(15, mck);  // 15ns
+    679          	desc->timings.trrd   = NS2CYCLES(11, mck);  // 11ns
+    680          	desc->timings.twtr   = NS2CYCLES(8, mck);   // 7.5ns
+    681          	desc->timings.tmrd   = 2;                   // 2ck
+    682          	desc->timings.trfc   = NS2CYCLES(130, mck); // 130ns
+    683          	desc->timings.txsnr  = NS2CYCLES(140, mck); // 140ns
+    684          	desc->timings.txp    = 2;                   // 2ck
+    685          	desc->timings.trtp   = NS2CYCLES(8, mck);   // 8ns
+    686          	desc->timings.tfaw   = NS2CYCLES(50, mck);  // 50ns
+    687          
+    688          	desc->refresh_window = 32;
+    689          	desc->refresh_cycles = 8192;
+    690          }
+    691          #endif /* CONFIG_HAVE_LPDDR2_MT42L128M16 */
+    692          
+    693          #ifdef CONFIG_HAVE_LPDDR2_AD220032D
+    694          static void _init_ad220032d(struct _mpddrc_desc* desc)
+    695          {
+    696          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    697          
+    698          	desc->type = MPDDRC_TYPE_LPDDR2;
+    699          
+    700          	desc->mode = MPDDRC_MD_MD_LPDDR2_SDRAM
+    701          	           | MPDDRC_MD_DBW_DBW_32_BITS;
+    702          
+    703            #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    704          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    705            #endif
+    706          
+    707          	desc->control = MPDDRC_CR_NR_14_ROW_BITS
+    708          	              | MPDDRC_CR_NC_DDR_9_COL_BITS
+    709          	              | MPDDRC_CR_CAS_DDR_CAS3
+    710          	              | MPDDRC_CR_NB_8_BANKS
+    711          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    712          
+    713            #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    714          	desc->io_calibr = MPDDRC_IO_CALIBR_RDIV(4);
+    715            #endif
+    716          
+    717          	/* timings */
+    718          
+    719          	memset(&desc->timings, 0, sizeof(desc->timings));
+    720          	desc->timings.tras   = NS2CYCLES( 42, mck); //  42ns
+    721          	desc->timings.trcd   = NS2CYCLES( 18, mck); //  18ns
+    722          	desc->timings.twr    = NS2CYCLES( 15, mck); //  15ns
+    723          	desc->timings.trc    = NS2CYCLES( 63, mck); //  63ns
+    724          	desc->timings.trp    = NS2CYCLES( 21, mck); //  21ns
+    725          	desc->timings.trrd   = NS2CYCLES( 10, mck); //  10ns
+    726          	desc->timings.twtr   = NS2CYCLES( 10, mck); //  10ns
+    727          	desc->timings.tmrd   = 5;                   //   5ck
+    728          	desc->timings.trfc   = NS2CYCLES(130, mck); // 130ns 
+    729          	desc->timings.txsnr  = NS2CYCLES(140, mck); // 140ns 
+    730          	desc->timings.txp    = 8;                   //   8ck
+    731          	desc->timings.trtp   = NS2CYCLES(  8, mck); //   8ns
+    732          	desc->timings.tfaw   = NS2CYCLES( 60, mck); //  60ns
+    733          
+    734          	desc->refresh_window = 32;                  //  32ms
+    735          	desc->refresh_cycles = 8192;                // 8K ck
+    736          }
+    737          #endif /* CONFIG_HAVE_LPDDR2_AD220032D */
+    738          
+    739          #ifdef CONFIG_HAVE_LPDDR2_AD210032D
+    740          static void _init_ad210032d(struct _mpddrc_desc* desc)
+    741          {
+    742          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    743          
+    744          	desc->type = MPDDRC_TYPE_LPDDR2;
+    745          
+    746          	desc->mode = MPDDRC_MD_MD_LPDDR2_SDRAM
+    747          	           | MPDDRC_MD_DBW_DBW_32_BITS;
+    748          
+    749            #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    750          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    751            #endif
+    752          
+    753          	desc->control = MPDDRC_CR_NR_13_ROW_BITS
+    754          	              | MPDDRC_CR_NC_DDR_9_COL_BITS
+    755          	              | MPDDRC_CR_CAS_DDR_CAS3
+    756          	              | MPDDRC_CR_NB_8_BANKS
+    757          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    758          
+    759            #ifdef CONFIG_HAVE_MPDDRC_IO_CALIBRATION
+    760          	desc->io_calibr = MPDDRC_IO_CALIBR_RDIV(4);
+    761            #endif
+    762          
+    763          	/* timings */
+    764          
+    765          	memset(&desc->timings, 0, sizeof(desc->timings));
+    766          	desc->timings.tras   = NS2CYCLES( 42, mck); //  42ns
+    767          	desc->timings.trcd   = NS2CYCLES( 18, mck); //  18ns
+    768          	desc->timings.twr    = NS2CYCLES( 15, mck); //  15ns
+    769          	desc->timings.trc    = NS2CYCLES( 63, mck); //  63ns
+    770          	desc->timings.trp    = NS2CYCLES( 21, mck); //  21ns
+    771          	desc->timings.trrd   = NS2CYCLES( 10, mck); //  10ns
+    772          	desc->timings.twtr   = NS2CYCLES( 10, mck); //  10ns
+    773          	desc->timings.tmrd   = 5;                   //   5ck
+    774          	desc->timings.trfc   = NS2CYCLES(130, mck); // 130ns 
+    775          	desc->timings.txsnr  = NS2CYCLES(140, mck); // 140ns 
+    776          	desc->timings.txp    = 8;                   //   8ck
+    777          	desc->timings.trtp   = NS2CYCLES(  8, mck); //   8ns
+    778          	desc->timings.tfaw   = NS2CYCLES( 60, mck); //  60ns
+    779          
+    780          	desc->refresh_window = 32;                  //  32ms
+    781          	desc->refresh_cycles = 8192;                // 8K ck
+    782          }
+    783          #endif /* CONFIG_HAVE_LPDDR2_AD210032D */
+    784          
+    785          #endif /* CONFIG_HAVE_MPDDRC_LPDDR2 */
+    786          
+    787          #ifdef CONFIG_HAVE_MPDDRC_LPDDR
+    788          
+    789          #ifdef CONFIG_HAVE_LPDDR_MT46H64M16
+    790          static void _init_mt46h64m16(struct _mpddrc_desc *desc)
+    791          {
+    792          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    793          
+    794          	desc->type = MPDDRC_TYPE_LPDDR;
+    795          
+    796          	desc->mode = MPDDRC_MD_MD_LPDDR_SDRAM
+    797          	           | MPDDRC_MD_DBW_DBW_16_BITS;
+    798          
+    799          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    800          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    801          #endif
+    802          
+    803          	desc->control = MPDDRC_CR_NR_14_ROW_BITS
+    804          	              | MPDDRC_CR_NC_DDR_10_COL_BITS
+    805          	              | MPDDRC_CR_CAS_DDR_CAS3
+    806          	              | MPDDRC_CR_NB_4_BANKS
+    807          	              | MPDDRC_CR_DECOD_INTERLEAVED
+    808          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    809          
+    810          	/* timings -5 (MCK = 200MHz) */
+    811          
+    812          	memset(&desc->timings, 0, sizeof(desc->timings));
+    813          	desc->timings.tras   = NS2CYCLES(40, mck);  // 40ns
+    814          	desc->timings.trcd   = NS2CYCLES(15, mck);  // 15ns
+    815          	desc->timings.twr    = NS2CYCLES(15, mck);  // 15ns
+    816          	desc->timings.trc    = NS2CYCLES(55, mck);  // 55ns
+    817          	desc->timings.trp    = NS2CYCLES(15, mck);  // 15ns
+    818          	desc->timings.trrd   = NS2CYCLES(10, mck);  // 10ns
+    819          	desc->timings.twtr   = 2;                   // 2ck
+    820          	desc->timings.tmrd   = 2;                   // 2ck
+    821          	desc->timings.trfc   = NS2CYCLES(72, mck);  // 72ns
+    822          	desc->timings.txsnr  = NS2CYCLES(113, mck); // 112.5ns
+    823          	desc->timings.txp    = 2;                   // 2ck
+    824          	desc->timings.trtp   = 2;                   // 2ck
+    825          
+    826          	desc->refresh_window = 64;   /* tref = 64ms */
+    827          	desc->refresh_cycles = 8192; /* REFRESH count = 8K */
+    828          }
+    829          #endif /* CONFIG_HAVE_LPDDR_MT46H64M16 */
+    830          
+    831          #ifdef CONFIG_HAVE_LPDDR_MT46H16M32
+    832          static void _init_mt46h16m32(struct _mpddrc_desc *desc)
+    833          {
+    834          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    835          
+    836          	desc->type = MPDDRC_TYPE_LPDDR;
+    837          
+    838          	desc->mode = MPDDRC_MD_MD_LPDDR_SDRAM
+    839          	           | MPDDRC_MD_DBW_DBW_32_BITS;
+    840          
+    841          #ifdef CONFIG_HAVE_MPDDRC_DATA_PATH
+    842          	desc->data_path = MPDDRC_RD_DATA_PATH_SHIFT_SAMPLING_SHIFT_ONE_CYCLE;
+    843          #endif
+    844          
+    845          	desc->control = MPDDRC_CR_NR_13_ROW_BITS
+    846          	              | MPDDRC_CR_NC_DDR_10_COL_BITS
+    847          	              | MPDDRC_CR_CAS_DDR_CAS3
+    848          	              | MPDDRC_CR_NB_4_BANKS
+    849          	              | MPDDRC_CR_DECOD_INTERLEAVED
+    850          	              | MPDDRC_CR_UNAL_SUPPORTED;
+    851          
+    852          	/* timings -5 (MCK = 200MHz) */
+    853          
+    854          	memset(&desc->timings, 0, sizeof(desc->timings));
+    855          	desc->timings.tras   = NS2CYCLES(40, mck);  // 40ns
+    856          	desc->timings.trcd   = NS2CYCLES(15, mck);  // 15ns
+    857          	desc->timings.twr    = NS2CYCLES(15, mck);  // 15ns
+    858          	desc->timings.trc    = NS2CYCLES(55, mck);  // 55ns
+    859          	desc->timings.trp    = NS2CYCLES(15, mck);  // 15ns
+    860          	desc->timings.trrd   = NS2CYCLES(10, mck);  // 10ns
+    861          	desc->timings.twtr   = 2;                   // 2ck
+    862          	desc->timings.tmrd   = 2;                   // 2ck
+    863          	desc->timings.trfc   = NS2CYCLES(72, mck);  // 72ns
+    864          	desc->timings.txsnr  = NS2CYCLES(113, mck); // 112.5ns
+    865          	desc->timings.txp    = 2;                   // 2ck
+    866          	desc->timings.trtp   = 2;                   // 2ck
+    867          
+    868          	desc->refresh_window = 64;   /* tref = 64ms */
+    869          	desc->refresh_cycles = 8192; /* REFRESH count = 8K */
+    870          }
+    871          #endif /* CONFIG_HAVE_LPDDR_MT46H16M32 */
+    872          
+    873          #endif /* CONFIG_HAVE_MPDDR_LPDDR */
+    874          
+    875          #ifdef CONFIG_HAVE_MPDDRC_SDRAM
+    876          
+    877          #ifdef CONFIG_HAVE_SDRAM_AS4C16M16SA
+    878          static void _init_as4c16m16sa(struct _mpddrc_desc* desc)
+    879          {
+    880          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    881          
+    882          	desc->type = MPDDRC_TYPE_SDRAM;
+    883          
+    884          	desc->mode = MPDDRC_MD_MD_SDRAM;
+    885          
+    886          	desc->control = MPDDRC_CR_NC_SDRAM_9_COL_BITS
+    887          	              | MPDDRC_CR_NR_13_ROW_BITS
+    888          	              | MPDDRC_CR_CAS_SDRAM_CAS3
+    889          	              | MPDDRC_CR_NB_BANK4
+    890          	              | MPDDRC_CR_DBW;
+    891          
+    892          	/* timings */
+    893          
+    894          	memset(&desc->timings, 0, sizeof(desc->timings));
+    895          	desc->timings.twr   = NS2CYCLES(12, mck) + 2; // tRP+2ck (tDAL)
+    896          	desc->timings.trc   = NS2CYCLES(65, mck);     // 65ns
+    897          	desc->timings.trfc  = desc->timings.trc;      // same as tRC
+    898          	desc->timings.trp   = NS2CYCLES(20, mck);     // 20ns
+    899          	desc->timings.trcd  = NS2CYCLES(20, mck);     // 20ns
+    900          	desc->timings.tras  = NS2CYCLES(45, mck);     // 45ns
+    901          	desc->timings.txsrd = NS2CYCLES(3, mck) + 1;  // 3ns+1ck (tCKA)
+    902          	desc->timings.txsnr = desc->timings.txsrd;    // same as tXSRD
+    903          
+    904          	desc->refresh_window = 64;
+    905          	desc->refresh_cycles = 8192;
+    906          }
+    907          #endif /* CONFIG_HAVE_SDRAM_AS4C416M16SA */
+    908          
+    909          #ifdef CONFIG_HAVE_SDRAM_IS42S16100E
+    910          static void _init_is42s16100e(struct _mpddrc_desc* desc)
+    911          {
+    912          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    913          
+    914          	desc->type = MPDDRC_TYPE_SDRAM;
+    915          
+    916          	desc->mode = MPDDRC_MD_MD_SDRAM;
+    917          
+    918          	desc->control = MPDDRC_CR_NC_SDRAM_8_COL_BITS
+    919          	              | MPDDRC_CR_NR_11_ROW_BITS
+    920          	              | MPDDRC_CR_CAS_SDRAM_CAS3
+    921          	              | MPDDRC_CR_NB_BANK2
+    922          	              | MPDDRC_CR_DBW;
+    923          
+    924          	/* timings */
+    925          
+    926          	memset(&desc->timings, 0, sizeof(desc->timings));
+    927          	desc->timings.twr   = NS2CYCLES(20, mck) + 2; // tRP+2ck (tDAL)
+    928          	desc->timings.trc   = NS2CYCLES(63, mck);     // 63ns
+    929          	desc->timings.trfc  = desc->timings.trc;      // same as tRC
+    930          	desc->timings.trp   = NS2CYCLES(20, mck);     // 20ns
+    931          	desc->timings.trcd  = NS2CYCLES(16, mck);     // 16ns
+    932          	desc->timings.tras  = NS2CYCLES(42, mck);     // 42ns
+    933          	desc->timings.txsrd = NS2CYCLES(3, mck) + 1;  // 3ns+1ck (tCKA)
+    934          	desc->timings.txsnr = desc->timings.txsrd;    // same as tXSRD
+    935          
+    936          	desc->refresh_window = 32;
+    937          	desc->refresh_cycles = 2048;
+    938          }
+    939          #endif /* CONFIG_HAVE_SDRAM_IS42S16100E */
+    940          
+    941          
+    942          #ifdef CONFIG_HAVE_SDRAM_W981216BH
+    943          static void _init_w981216bh(struct _mpddrc_desc* desc)
+    944          {
+    945          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    946          
+    947          	desc->type = MPDDRC_TYPE_SDRAM;
+    948          
+    949          	desc->mode = MPDDRC_MD_MD_SDRAM;
+    950          
+    951          	desc->control = MPDDRC_CR_NC_SDRAM_9_COL_BITS
+    952          	              | MPDDRC_CR_NR_12_ROW_BITS
+    953          	              | MPDDRC_CR_CAS_SDRAM_CAS3
+    954          	              | MPDDRC_CR_NB_BANK4
+    955          	              | MPDDRC_CR_DBW;
+    956          
+    957          	/* timings */
+    958          
+    959          	memset(&desc->timings, 0, sizeof(desc->timings));
+    960          	desc->timings.twr   = NS2CYCLES(10, mck) + 2; // tRP+2ck (tDAL)
+    961          	desc->timings.trc   = NS2CYCLES(65, mck);     // 65ns
+    962          	desc->timings.trfc  = desc->timings.trc;      // same as tRC
+    963          	desc->timings.trp   = NS2CYCLES(20, mck);     // 20ns
+    964          	desc->timings.trcd  = NS2CYCLES(20, mck);     // 20ns
+    965          	desc->timings.tras  = NS2CYCLES(45, mck);     // 45ns
+    966          	desc->timings.txsrd = NS2CYCLES(3, mck) + 1;  // 3ns+1ck (tCKA)
+    967          	desc->timings.txsnr = desc->timings.txsrd;    // same as tXSRD
+    968          
+    969          	desc->refresh_window = 64;
+    970          	desc->refresh_cycles = 4096;
+    971          }
+    972          #endif /* CONFIG_HAVE_SDRAM_W981216BH */
+    973          
+    974          
+    975          #ifdef CONFIG_HAVE_SDRAM_MT48LC16M16
+    976          static void _init_mt48lc16m16(struct _mpddrc_desc* desc)
+    977          {
+    978          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    979          
+    980          	desc->type = MPDDRC_TYPE_SDRAM;
+    981          
+    982          	desc->mode = MPDDRC_MD_MD_SDR_SDRAM
+    983          	           | MPDDRC_MD_DBW_DBW_16_BITS;
+    984          
+    985          	desc->control = MPDDRC_CR_NC_SDR_9_COL_BITS
+    986          	              | MPDDRC_CR_NR_13_ROW_BITS
+    987          	              | MPDDRC_CR_CAS_SDR_CAS3
+    988          	              | MPDDRC_CR_NB_4_BANKS
+    989          	              | MPDDRC_CR_DECOD_INTERLEAVED;
+    990          
+    991          	/* timings */
+    992          
+    993          	memset(&desc->timings, 0, sizeof(desc->timings));
+    994          	desc->timings.twr   = NS2CYCLES(15, mck) + 2; // tRP+2ck (tDAL)
+    995          	desc->timings.trc   = NS2CYCLES(66, mck);     // 66ns
+    996          	desc->timings.trfc  = desc->timings.trc;      // same as tRC
+    997          	desc->timings.trp   = NS2CYCLES(20, mck);     // 20ns
+    998          	desc->timings.trcd  = NS2CYCLES(20, mck);     // 20ns
+    999          	desc->timings.tras  = NS2CYCLES(44, mck);     // 44ns
+   1000          	desc->timings.txsrd = NS2CYCLES(75, mck);     // 75ns
+   1001          	desc->timings.txsnr = desc->timings.txsrd;    // same as tXSRD
+   1002          	desc->timings.trrd  = NS2CYCLES(15, mck);     // 15ns
+   1003          	desc->timings.tmrd =  2;                      // 2 cycles
+   1004          
+   1005          	desc->refresh_window = 64;
+   1006          	desc->refresh_cycles = 8192;
+   1007          }
+   1008          #endif /* CONFIG_HAVE_SDRAM_MT48LC16M16 */
+   1009          
+   1010          #endif /* CONFIG_HAVE_MPDDRC_SDRAM */
+   1011          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1012          void ddram_init_descriptor(struct _mpddrc_desc* desc,
+   1013          			   enum _ddram_devices device)
+   1014          {
+   \                     ddram_init_descriptor:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   1015          	switch(device) {
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0x1A00'006C        BNE      ??ddram_init_descriptor_0
+   1016          #ifdef CONFIG_HAVE_MPDDRC_SDRAM
+   1017            #ifdef CONFIG_HAVE_SDRAM_AS4C16M16SA
+   1018          	case AS4C16M16SA:
+   1019          		_init_as4c16m16sa(desc);
+   1020          		break;
+   1021            #endif
+   1022            #ifdef CONFIG_HAVE_SDRAM_IS42S16100E
+   1023          	case IS42S16100E:
+   1024          		_init_is42s16100e(desc);
+   1025          		break;
+   1026            #endif
+   1027            #ifdef CONFIG_HAVE_SDRAM_W981216BH
+   1028          	case W981216BH:
+   1029          		_init_w981216bh(desc);
+   1030          		break;
+   1031            #endif
+   1032            #ifdef CONFIG_HAVE_SDRAM_MT48LC16M16
+   1033          	case MT48LC16M16:
+   1034          		_init_mt48lc16m16(desc);
+   1035          		break;
+   1036            #endif
+   1037          #endif
+   1038          #ifdef CONFIG_HAVE_MPDDRC_LPDDR
+   1039            #ifdef CONFIG_HAVE_LPDDR_MT46H64M16
+   1040          	case MT46H64M16:
+   1041          		_init_mt46h64m16(desc);
+   1042          		break;
+   1043            #endif
+   1044            #ifdef CONFIG_HAVE_LPDDR_MT46H16M32
+   1045          	case MT46H16M32:
+   1046          		_init_mt46h16m32(desc);
+   1047          		break;
+   1048            #endif
+   1049          #endif
+   1050          #ifdef CONFIG_HAVE_MPDDRC_DDR2
+   1051            #ifdef CONFIG_HAVE_DDR2_MT47H128M8
+   1052          	case MT47H128M8:
+   1053          		_init_mt47h128m8(desc);
+   1054          		break;
+   1055            #endif
+   1056            #ifdef CONFIG_HAVE_DDR2_MT47H64M16
+   1057          	case MT47H64M16:
+   1058          		_init_mt47h64m16(desc);
+   1059          		break;
+   1060            #endif
+   1061            #ifdef CONFIG_HAVE_DDR2_MT47H128M16
+   1062          	case MT47H128M16:
+   1063          		_init_mt47h128m16(desc);
+   1064          		break;
+   1065            #endif
+   1066            #ifdef CONFIG_HAVE_DDR2_W9712G6KB
+   1067          	case W9712G6KB:
+   1068          		_init_w9712g6kb(desc);
+   1069          		break;
+   1070            #endif
+   1071            #ifdef CONFIG_HAVE_DDR2_W971GG6SB
+   1072          	case W971GG6SB:
+   1073          		_init_w971gg6sb(desc);
+   \       0x10   0x....'....        BL       pmc_get_master_clock
+   \       0x14   0x....'....        LDR      R2,??DataTable4  ;; 0x8637bd06
+   \       0x18   0xE081'2290        UMULL    R2,R1,R0,R2
+   \       0x1C   0xE1A0'59A1        LSR      R5,R1,#+19
+   \       0x20   0xE245'007D        SUB      R0,R5,#+125
+   \       0x24   0xE350'004C        CMP      R0,#+76
+   \       0x28   0x3A00'0004        BCC      ??ddram_init_descriptor_1
+   \       0x2C   0xE3A0'20CE        MOV      R2,#+206
+   \       0x30   0x....'....        LDR      R1,??DataTable4_1
+   \       0x34   0x....'....        ADR      R0,?_1
+   \       0x38   0x....'....        BL       __aeabi_assert
+   \       0x3C   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??ddram_init_descriptor_1:
+   \       0x40   0xE3A0'0000        MOV      R0,#+0
+   \       0x44   0xE3A0'1016        MOV      R1,#+22
+   \       0x48   0xE5C4'0000        STRB     R0,[R4, #+0]
+   \       0x4C   0xE584'100C        STR      R1,[R4, #+12]
+   \       0x50   0xE300'63E7        MOVW     R6,#+999
+   \       0x54   0xE3A0'0F96        MOV      R0,#+600
+   \       0x58   0xE101'6580        SMLABB   R1,R0,R5,R6
+   \       0x5C   0xE3A0'2001        MOV      R2,#+1
+   \       0x60   0xE584'2008        STR      R2,[R4, #+8]
+   \       0x64   0x....'....        LDR      R12,??DataTable4_2  ;; 0x83126e98
+   \       0x68   0xE082'CC91        UMULL    R12,R2,R1,R12
+   \       0x6C   0x....'....        LDR      R3,??DataTable4_3  ;; 0xd00139
+   \       0x70   0xE3A0'E001        MOV      LR,#+1
+   \       0x74   0xE584'3010        STR      R3,[R4, #+16]
+   \       0x78   0xE08E'E4A2        ADD      LR,LR,R2, LSR #+9
+   \       0x7C   0xE3A0'3C7F        MOV      R3,#+32512
+   \       0x80   0xE3A0'1011        MOV      R1,#+17
+   \       0x84   0xE284'0014        ADD      R0,R4,#+20
+   \       0x88   0xE003'340E        AND      R3,R3,LR, LSL #+8
+   \       0x8C   0xE065'8205        RSB      R8,R5,R5, LSL #+4
+   \       0x90   0x....'....        LDR      R9,??DataTable4_2  ;; 0x83126e98
+   \       0x94   0xE383'7004        ORR      R7,R3,#0x4
+   \       0x98   0xE086'8008        ADD      R8,R6,R8
+   \       0x9C   0xE584'7004        STR      R7,[R4, #+4]
+   \       0xA0   0x....'....        BL       __aeabi_memclr4
+   \       0xA4   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0xA8   0xE3A0'300D        MOV      R3,#+13
+   \       0xAC   0xE10C'6583        SMLABB   R12,R3,R5,R6
+   \       0xB0   0x....'....        LDR      R2,??DataTable4_2  ;; 0x83126e98
+   \       0xB4   0xE086'0180        ADD      R0,R6,R0, LSL #+3
+   \       0xB8   0x....'....        LDR      R7,??DataTable4_2  ;; 0x83126e98
+   \       0xBC   0xE08E'779C        UMULL    R7,LR,R12,R7
+   \       0xC0   0xE3A0'3035        MOV      R3,#+53
+   \       0xC4   0xE081'2290        UMULL    R2,R1,R0,R2
+   \       0xC8   0x....'....        LDR      R7,??DataTable4_2  ;; 0x83126e98
+   \       0xCC   0xE10C'6583        SMLABB   R12,R3,R5,R6
+   \       0xD0   0xE1A0'04AE        LSR      R0,LR,#+9
+   \       0xD4   0xE08E'779C        UMULL    R7,LR,R12,R7
+   \       0xD8   0xE5C4'001A        STRB     R0,[R4, #+26]
+   \       0xDC   0xE1A0'14A1        LSR      R1,R1,#+9
+   \       0xE0   0x....'....        LDR      R2,??DataTable4_2  ;; 0x83126e98
+   \       0xE4   0xE5C4'101B        STRB     R1,[R4, #+27]
+   \       0xE8   0xE081'2298        UMULL    R2,R1,R8,R2
+   \       0xEC   0xE5C4'0017        STRB     R0,[R4, #+23]
+   \       0xF0   0xE085'0105        ADD      R0,R5,R5, LSL #+2
+   \       0xF4   0x....'....        LDR      R2,??DataTable4_2  ;; 0x83126e98
+   \       0xF8   0xE1A0'14A1        LSR      R1,R1,#+9
+   \       0xFC   0xE1A0'E4AE        LSR      LR,LR,#+9
+   \      0x100   0xE086'0080        ADD      R0,R6,R0, LSL #+1
+   \      0x104   0xE5C4'1019        STRB     R1,[R4, #+25]
+   \      0x108   0xE081'2290        UMULL    R2,R1,R0,R2
+   \      0x10C   0xE5C4'E018        STRB     LR,[R4, #+24]
+   \      0x110   0x....'....        LDR      R2,??DataTable4_2  ;; 0x83126e98
+   \      0x114   0xE1A0'04A1        LSR      R0,R1,#+9
+   \      0x118   0x....'....        LDR      R12,??DataTable4_2  ;; 0x83126e98
+   \      0x11C   0xE350'0003        CMP      R0,#+3
+   \      0x120   0xE3A0'E08A        MOV      LR,#+138
+   \      0x124   0xE107'658E        SMLABB   R7,LR,R5,R6
+   \      0x128   0x33A0'0002        MOVCC    R0,#+2
+   \      0x12C   0xE088'9997        UMULL    R9,R8,R7,R9
+   \      0x130   0xE5C4'0016        STRB     R0,[R4, #+22]
+   \      0x134   0xE086'0185        ADD      R0,R6,R5, LSL #+3
+   \      0x138   0x....'....        LDR      LR,??DataTable4_2  ;; 0x83126e98
+   \      0x13C   0xE081'2290        UMULL    R2,R1,R0,R2
+   \      0x140   0xE1A0'84A8        LSR      R8,R8,#+9
+   \      0x144   0xE086'2385        ADD      R2,R6,R5, LSL #+7
+   \      0x148   0xE5C4'801E        STRB     R8,[R4, #+30]
+   \      0x14C   0xE083'CC92        UMULL    R12,R3,R2,R12
+   \      0x150   0xE1A0'04A1        LSR      R0,R1,#+9
+   \      0x154   0xE350'0003        CMP      R0,#+3
+   \      0x158   0xE3A0'20C8        MOV      R2,#+200
+   \      0x15C   0x21A0'1000        MOVCS    R1,R0
+   \      0x160   0xE5C4'201D        STRB     R2,[R4, #+29]
+   \      0x164   0x33A0'1002        MOVCC    R1,#+2
+   \      0x168   0xE5D4'2017        LDRB     R2,[R4, #+23]
+   \      0x16C   0xE5C4'1015        STRB     R1,[R4, #+21]
+   \      0x170   0xE3A0'1002        MOV      R1,#+2
+   \      0x174   0xE5C4'0021        STRB     R0,[R4, #+33]
+   \      0x178   0xE5C4'1014        STRB     R1,[R4, #+20]
+   \      0x17C   0xE5C4'101C        STRB     R1,[R4, #+28]
+   \      0x180   0xE5C4'1024        STRB     R1,[R4, #+36]
+   \      0x184   0xE3A0'1008        MOV      R1,#+8
+   \      0x188   0xE1A0'34A3        LSR      R3,R3,#+9
+   \      0x18C   0xE5C4'1023        STRB     R1,[R4, #+35]
+   \      0x190   0xE3A0'002D        MOV      R0,#+45
+   \      0x194   0xE5C4'301F        STRB     R3,[R4, #+31]
+   \      0x198   0xE101'6580        SMLABB   R1,R0,R5,R6
+   \      0x19C   0xE282'3001        ADD      R3,R2,#+1
+   \      0x1A0   0xE08C'EE91        UMULL    LR,R12,R1,LR
+   \      0x1A4   0xE5C4'3022        STRB     R3,[R4, #+34]
+   \      0x1A8   0xE3A0'2040        MOV      R2,#+64
+   \      0x1AC   0xE302'300D        MOVW     R3,#+8205
+   \      0x1B0   0xE1A0'C4AC        LSR      R12,R12,#+9
+   \      0x1B4   0xE584'2028        STR      R2,[R4, #+40]
+   \      0x1B8   0xE5C4'C020        STRB     R12,[R4, #+32]
+   \      0x1BC   0xE584'302C        STR      R3,[R4, #+44]
+   1074          		break;
+   1075            #endif
+   1076            #ifdef CONFIG_HAVE_DDR2_W9751G6KB
+   1077          	case W9751G6KB:
+   1078          		_init_w9751g6kb(desc);
+   1079          		break;
+   1080            #endif
+   1081            #ifdef CONFIG_HAVE_DDR2_W972GG6KB
+   1082          	case W972GG6KB:
+   1083          		_init_w972gg6kb(desc, 32);
+   1084          		break;
+   1085          	case W972GG6KB_16:
+   1086          		_init_w972gg6kb(desc, 16);
+   1087          		break;
+   1088            #endif
+   1089          #endif
+   1090          #ifdef CONFIG_HAVE_MPDDRC_LPDDR2
+   1091            #ifdef CONFIG_HAVE_LPDDR2_MT42L128M16
+   1092          	case MT42L128M16:
+   1093          		_init_mt42l128m16(desc);
+   1094          		break;
+   1095            #endif
+   1096            #ifdef CONFIG_HAVE_LPDDR2_AD220032D
+   1097          	case AD220032D:
+   1098          		_init_ad220032d(desc);
+   1099          		break;
+   1100            #endif
+   1101            #ifdef CONFIG_HAVE_LPDDR2_AD210032D
+   1102          	case AD210032D:
+   1103          		_init_ad210032d(desc);
+   1104          		break;
+   1105            #endif
+   1106          #endif
+   1107          #ifdef CONFIG_HAVE_MPDDRC_DDR3
+   1108            #ifdef CONFIG_HAVE_DDR3_MT41K128M16
+   1109          	case MT41K128M16:
+   1110          		_init_mt41k128m16(desc, 32);
+   1111          		break;
+   1112          	case MT41K128M16_16:
+   1113          		_init_mt41k128m16(desc, 16);
+   1114          		break;
+   1115            #endif
+   1116          #endif
+   1117          #ifdef CONFIG_HAVE_MPDDRC_LPDDR3
+   1118            #ifdef CONFIG_HAVE_LPDDR3_EDF8164A3MA
+   1119          	case EDF8164A3MA:
+   1120          		_init_edf8164a3ma(desc);
+   1121          		break;
+   1122            #endif
+   1123          #endif
+   1124          	default:
+   1125          		trace_fatal("Unsupported DDRAM type\r\n");
+   1126          		break;
+   1127          	}
+   1128          }
+   \      0x1C0   0xE8BD'83F1        POP      {R0,R4-R9,PC}    ;; return
+   \                     ??ddram_init_descriptor_0:
+   \      0x1C4   0x....'....        LDR      R0,??DataTable4_4
+   \      0x1C8   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x1CC   0xE351'0000        CMP      R1,#+0
+   \      0x1D0   0x0A00'0001        BEQ      ??ddram_init_descriptor_2
+   \      0x1D4   0x....'....        ADR      R0,?_2
+   \      0x1D8   0x....'....        BL       printf
+   \                     ??ddram_init_descriptor_2:
+   \      0x1DC   0xEAFF'FFFE        B        ??ddram_init_descriptor_2
+   1129          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1130          void ddram_configure(struct _mpddrc_desc* desc)
+   1131          {
+   \                     ddram_configure:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   1132          	assert(!dcache_is_enabled());
+   \        0x8   0x....'....        BL       dcache_is_enabled
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x0A00'0004        BEQ      ??ddram_configure_0
+   \       0x14   0xE300'246C        MOVW     R2,#+1132
+   \       0x18   0x....'....        LDR      R1,??DataTable4_1
+   \       0x1C   0x....'....        ADR      R0,?_3
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+   1133          	mpddrc_configure(desc);
+   \                     ??ddram_configure_0:
+   \       0x28   0xE1A0'0004        MOV      R0,R4
+   \       0x2C   0xE8BD'4010        POP      {R4,LR}
+   \       0x30   0x....'....        B        mpddrc_configure  ;; tailcall
+   1134          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4:
+   \        0x0   0x8637'BD06        DC32     0x8637bd06
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_2:
+   \        0x0   0x8312'6E98        DC32     0x83126e98
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_3:
+   \        0x0   0x00D0'0139        DC32     0xd00139
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_4:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x65, 0x78, 0x74, 0x72, 0x61, 0x6D
+
+   \              0x65 0x78    
+
+   \              0x74 0x72    
+
+   \              0x61 0x6D
+   \       0x40   0x5C 0x64          DC8 0x5C, 0x64, 0x64, 0x72, 0x61, 0x6D, 0x2E, 0x63
+
+   \              0x64 0x72    
+
+   \              0x61 0x6D    
+
+   \              0x2E 0x63
+   \       0x48   0x00               DC8 0
+   \       0x49   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x6D 0x63          DC8 "mck >= 125 && mck <= 200"
+
+   \              0x6B 0x20    
+
+   \              0x3E 0x3D    
+
+   \              0x20 0x31    
+
+   \              0x32 0x35    
+
+   \              0x20 0x26    
+
+   \              0x26 0x20    
+
+   \              0x6D 0x63    
+
+   \              0x6B 0x20    
+
+   \              0x3C 0x3D    
+
+   \              0x20 0x32    
+
+   \              0x30 0x30    
+
+   \              0x00
+   \       0x19   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_2:
+   \        0x0   0x2D 0x46          DC8 "-F- Unsupported DDRAM type\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70    
+
+   \              0x6F 0x72    
+
+   \              0x74 0x65    
+
+   \              0x64 0x20    
+
+   \              0x44 0x44    
+
+   \              0x52 0x41    
+
+   \              0x4D 0x20    
+
+   \              0x74 0x79    
+
+   \              0x70 0x65    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x1D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_3:
+   \        0x0   0x21 0x64          DC8 "!dcache_is_enabled()"
+
+   \              0x63 0x61    
+
+   \              0x63 0x68    
+
+   \              0x65 0x5F    
+
+   \              0x69 0x73    
+
+   \              0x5F 0x65    
+
+   \              0x6E 0x61    
+
+   \              0x62 0x6C    
+
+   \              0x65 0x64    
+
+   \              0x28 0x29    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   ddram_configure
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         8   -> dcache_is_enabled
+         0   -> mpddrc_configure
+      32   ddram_init_descriptor
+        32   -> __aeabi_assert
+        32   -> __aeabi_memclr4
+        32   -> __iar_EmptyStepPoint
+        32   -> pmc_get_master_clock
+        32   -> printf
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_2
+       4  ??DataTable4_3
+       4  ??DataTable4_4
+      76  ?_0
+      28  ?_1
+      32  ?_2
+      24  ?_3
+      52  ddram_configure
+     480  ddram_init_descriptor
+
+ 
+  76 bytes in section .rodata
+ 636 bytes in section SOFTPACK
+ 
+ 636 bytes of CODE  memory
+  76 bytes of CONST memory
+
+Errors: none
+Warnings: none

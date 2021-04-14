@@ -1,0 +1,1750 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         22/Jul/2020  11:01:13
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\mm\l2cache_l2cc.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW8755.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\mm\l2cache_l2cc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_GENERIC -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_TIMER_POLLING -D CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D
+#        CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SECUMOD -D
+#        CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D CONFIG_HAVE_SECURE_MATRIX -D
+#        CONFIG_HAVE_DDR2_MT47H128M8 -D CONFIG_HAVE_DDR2_MT47H64M16 -D
+#        CONFIG_HAVE_DDR2_MT47H128M16 -D CONFIG_HAVE_DDR2_W971GG6SB -D
+#        CONFIG_HAVE_DDR2_W972GG6KB -D CONFIG_HAVE_DDR2_W9712G6KB -D
+#        CONFIG_HAVE_DDR2_W9751G6KB -D CONFIG_HAVE_LPDDR2_MT42L128M16 -D
+#        CONFIG_HAVE_LPDDR2_AD220032D -D CONFIG_HAVE_LPDDR2_AD210032D -D
+#        CONFIG_HAVE_DDR3_MT41K128M16 -D CONFIG_HAVE_LPDDR3_EDF8164A3MA -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_SERIALD_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sama5d2-generic\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sama5d2-generic\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sama5d2-generic\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\flash_loaders\applets\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\flash_loaders\applets\common\framework2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sama5d2-generic\sram\List\l2cache_l2cc.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sama5d2-generic\sram\Obj\l2cache_l2cc.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\mm\l2cache_l2cc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "chip.h"
+     35          #include "barriers.h"
+     36          
+     37          #include "mm/l2cache.h"
+     38          #include "mm/l2cache_l2cc.h"
+     39          
+     40          #include <assert.h>
+     41          #include <stdbool.h>
+     42          
+     43          /*----------------------------------------------------------------------------
+     44           *        Definitions
+     45           *----------------------------------------------------------------------------*/
+     46          
+     47          #define L2CC_OFFSET_BIT 5
+     48          #define L2CC_INDEX_BIT  9
+     49          #define L2CC_TAG_BIT    18
+     50          
+     51          /*----------------------------------------------------------------------------
+     52           *        Functions
+     53           *----------------------------------------------------------------------------*/
+     54          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     55          bool l2cache_is_enabled(void)
+     56          {
+     57          	return (L2CC->L2CC_CR & L2CC_CR_L2CEN) != 0;
+   \                     l2cache_is_enabled:
+   \        0x0   0xE3A0'08A0        MOV      R0,#+10485760
+   \        0x4   0xE380'0F40        ORR      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE201'0001        AND      R0,R1,#0x1
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+     58          }
+     59          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     60          void l2cache_enable(void)
+     61          {
+     62          #ifdef SFR_L2CC_HRAMC_SRAM_SEL
+     63          	SFR->SFR_L2CC_HRAMC = SFR_L2CC_HRAMC_SRAM_SEL;
+   \                     l2cache_enable:
+   \        0x0   0xE3A0'0001        MOV      R0,#+1
+   \        0x4   0x....'....        LDR      R1,??DataTable21  ;; 0xf8030058
+   \        0x8   0xE581'0000        STR      R0,[R1, #+0]
+     64          #endif
+     65          	L2CC->L2CC_CR |= L2CC_CR_L2CEN;
+   \        0xC   0xE3A0'08A0        MOV      R0,#+10485760
+   \       0x10   0xE380'0F40        ORR      R0,R0,#0x100
+   \       0x14   0xE590'2000        LDR      R2,[R0, #+0]
+   \       0x18   0xE382'3001        ORR      R3,R2,#0x1
+   \       0x1C   0xE580'3000        STR      R3,[R0, #+0]
+     66          	dsb();
+   \       0x20   0xF57F'F04F        dsb
+     67          	isb();
+   \       0x24   0xF57F'F06F        isb
+     68          }
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+     69          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     70          void l2cache_disable(void)
+     71          {
+     72          	L2CC->L2CC_CR &= ~L2CC_CR_L2CEN;
+   \                     l2cache_disable:
+   \        0x0   0xE3A0'08A0        MOV      R0,#+10485760
+   \        0x4   0xE380'0F40        ORR      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE3C1'2001        BIC      R2,R1,#0x1
+   \       0x10   0xE580'2000        STR      R2,[R0, #+0]
+     73          	dsb();
+   \       0x14   0xF57F'F04F        dsb
+     74          	isb();
+   \       0x18   0xF57F'F06F        isb
+     75          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+     76          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     77          void l2cache_set_exclusive(void)
+     78          {
+   \                     l2cache_set_exclusive:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+     79          	assert(!l2cache_is_enabled());
+   \        0x4   0xE3A0'48A0        MOV      R4,#+10485760
+   \        0x8   0xE384'4F40        ORR      R4,R4,#0x100
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0xE310'0001        TST      R0,#0x1
+   \       0x14   0x0A00'0004        BEQ      ??l2cache_set_exclusive_0
+   \       0x18   0xE3A0'204F        MOV      R2,#+79
+   \       0x1C   0x....'....        LDR      R1,??DataTable21_1
+   \       0x20   0x....'....        LDR      R0,??DataTable21_2
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+     80          	L2CC->L2CC_ACR |= L2CC_ACR_EXCC;
+   \                     ??l2cache_set_exclusive_0:
+   \       0x2C   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x30   0xE380'1D40        ORR      R1,R0,#0x1000
+   \       0x34   0x....'....        B        ?Subroutine7
+     81          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine7:
+   \        0x0   0xE584'1004        STR      R1,[R4, #+4]
+   \        0x4   0xE8BD'8010        POP      {R4,PC}          ;; return
+     82          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     83          void l2cache_set_non_exclusive(void)
+     84          {
+   \                     l2cache_set_non_exclusive:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+     85          	assert(!l2cache_is_enabled());
+   \        0x4   0xE3A0'48A0        MOV      R4,#+10485760
+   \        0x8   0xE384'4F40        ORR      R4,R4,#0x100
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0xE310'0001        TST      R0,#0x1
+   \       0x14   0x0A00'0004        BEQ      ??l2cache_set_non_exclusive_0
+   \       0x18   0xE3A0'2055        MOV      R2,#+85
+   \       0x1C   0x....'....        LDR      R1,??DataTable21_1
+   \       0x20   0x....'....        LDR      R0,??DataTable21_2
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+     86          	L2CC->L2CC_ACR &= ~L2CC_ACR_EXCC;
+   \                     ??l2cache_set_non_exclusive_0:
+   \       0x2C   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x30   0xE3C0'1D40        BIC      R1,R0,#0x1000
+   \       0x34                      REQUIRE ?Subroutine7
+   \       0x34                      ;; // Fall through to label ?Subroutine7
+     87          }
+     88          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     89          void l2cc_set_tag_ram_latency(const struct _l2cc_ram_latency *latency)
+     90          {
+   \                     l2cc_set_tag_ram_latency:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+     91          	assert(!l2cache_is_enabled());
+   \        0x4   0xE3A0'48A0        MOV      R4,#+10485760
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+   \        0xC   0xE384'4F40        ORR      R4,R4,#0x100
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0xE310'0001        TST      R0,#0x1
+   \       0x18   0x0A00'0004        BEQ      ??l2cc_set_tag_ram_latency_0
+   \       0x1C   0xE3A0'205B        MOV      R2,#+91
+   \       0x20   0x....'....        LDR      R1,??DataTable21_1
+   \       0x24   0x....'....        LDR      R0,??DataTable21_2
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+     92          
+     93          	L2CC->L2CC_TRCR = L2CC_TRCR_TSETLAT(latency->setup) |
+     94          	                  L2CC_TRCR_TRDLAT(latency->read) |
+     95          	                  L2CC_TRCR_TWRLAT(latency->write);
+   \                     ??l2cc_set_tag_ram_latency_0:
+   \       0x30   0xE5D5'2001        LDRB     R2,[R5, #+1]
+   \       0x34   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x38   0xE3A0'3070        MOV      R3,#+112
+   \       0x3C   0xE003'3202        AND      R3,R3,R2, LSL #+4
+   \       0x40   0xE200'1007        AND      R1,R0,#0x7
+   \       0x44   0xE5D5'0002        LDRB     R0,[R5, #+2]
+   \       0x48   0xE183'3001        ORR      R3,R3,R1
+   \       0x4C   0xE3A0'1E70        MOV      R1,#+1792
+   \       0x50   0xE001'1400        AND      R1,R1,R0, LSL #+8
+   \       0x54   0xE181'1003        ORR      R1,R1,R3
+   \       0x58   0xE584'1008        STR      R1,[R4, #+8]
+     96          };
+   \       0x5C   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+     97          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     98          void l2cc_set_data_ram_latency(const struct _l2cc_ram_latency *latency)
+     99          {
+   \                     l2cc_set_data_ram_latency:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    100          	assert(!l2cache_is_enabled());
+   \        0x4   0xE3A0'48A0        MOV      R4,#+10485760
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+   \        0xC   0xE384'4F40        ORR      R4,R4,#0x100
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0xE310'0001        TST      R0,#0x1
+   \       0x18   0x0A00'0004        BEQ      ??l2cc_set_data_ram_latency_0
+   \       0x1C   0xE3A0'2064        MOV      R2,#+100
+   \       0x20   0x....'....        LDR      R1,??DataTable21_1
+   \       0x24   0x....'....        LDR      R0,??DataTable21_2
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    101          
+    102          	L2CC->L2CC_DRCR = L2CC_DRCR_DSETLAT(latency->setup) |
+    103          	                  L2CC_DRCR_DRDLAT(latency->read) |
+    104          	                  L2CC_DRCR_DWRLAT(latency->write);
+   \                     ??l2cc_set_data_ram_latency_0:
+   \       0x30   0xE5D5'2001        LDRB     R2,[R5, #+1]
+   \       0x34   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x38   0xE3A0'3070        MOV      R3,#+112
+   \       0x3C   0xE003'3202        AND      R3,R3,R2, LSL #+4
+   \       0x40   0xE200'1007        AND      R1,R0,#0x7
+   \       0x44   0xE5D5'0002        LDRB     R0,[R5, #+2]
+   \       0x48   0xE183'3001        ORR      R3,R3,R1
+   \       0x4C   0xE3A0'1E70        MOV      R1,#+1792
+   \       0x50   0xE001'1400        AND      R1,R1,R0, LSL #+8
+   \       0x54   0xE181'1003        ORR      R1,R1,R3
+   \       0x58   0xE584'100C        STR      R1,[R4, #+12]
+    105          }
+   \       0x5C   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    106          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    107          void l2cc_set_config(const struct _l2cc_config* cfg)
+    108          {
+   \                     l2cc_set_config:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    109          	assert(cfg->offset <= 7 ||
+    110          	       cfg->offset == 15 ||
+    111          	       cfg->offset == 23 ||
+    112          	       cfg->offset == 31);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0xE7E4'06D0        UBFX     R0,R0,#+13,#+5
+   \       0x10   0xE350'0008        CMP      R0,#+8
+   \       0x14   0xBA00'0010        BLT      ??l2cc_set_config_0
+   \       0x18   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x1C   0xE7E4'06D0        UBFX     R0,R0,#+13,#+5
+   \       0x20   0xE350'000F        CMP      R0,#+15
+   \       0x24   0x0A00'000C        BEQ      ??l2cc_set_config_0
+   \       0x28   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x2C   0xE7E4'06D0        UBFX     R0,R0,#+13,#+5
+   \       0x30   0xE350'0017        CMP      R0,#+23
+   \       0x34   0x0A00'0008        BEQ      ??l2cc_set_config_0
+   \       0x38   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x3C   0xE7E4'06D0        UBFX     R0,R0,#+13,#+5
+   \       0x40   0xE350'001F        CMP      R0,#+31
+   \       0x44   0x0A00'0004        BEQ      ??l2cc_set_config_0
+   \       0x48   0x....'....        LDR      R1,??DataTable21_1
+   \       0x4C   0xE3A0'2070        MOV      R2,#+112
+   \       0x50   0xE281'004C        ADD      R0,R1,#+76
+   \       0x54   0x....'....        BL       __aeabi_assert
+   \       0x58   0x....'....        BL       __iar_EmptyStepPoint
+    113          	assert(!l2cache_is_enabled());
+   \                     ??l2cc_set_config_0:
+   \       0x5C   0xE3A0'58A0        MOV      R5,#+10485760
+   \       0x60   0xE385'5F40        ORR      R5,R5,#0x100
+   \       0x64   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x68   0xE310'0001        TST      R0,#0x1
+   \       0x6C   0x0A00'0004        BEQ      ??l2cc_set_config_1
+   \       0x70   0xE3A0'2071        MOV      R2,#+113
+   \       0x74   0x....'....        LDR      R1,??DataTable21_1
+   \       0x78   0x....'....        LDR      R0,??DataTable21_2
+   \       0x7C   0x....'....        BL       __aeabi_assert
+   \       0x80   0x....'....        BL       __iar_EmptyStepPoint
+    114          
+    115          	L2CC->L2CC_ACR = (cfg->high_prior_so ? L2CC_ACR_HPSO : 0) |
+    116          	                 (cfg->store_buff_dev_limit ? L2CC_ACR_SBDLE : 0) |
+    117          	                 (cfg->shared_attr_invalidate ? L2CC_ACR_SAIE : 0) |
+    118          	                 (cfg->evt_mon_bus ? L2CC_ACR_EMBEN : 0) |
+    119          	                 (cfg->parity ? L2CC_ACR_PEN : 0) |
+    120          	                 (cfg->shared_attr_override ? L2CC_ACR_SAOEN : 0) |
+    121          	                 L2CC_ACR_FWA(cfg->force_write_alloc) |
+    122          	                 (cfg->cache_replacement ? L2CC_ACR_CRPOL : 0) |
+    123          	                 (cfg->non_sec_lockdown ? L2CC_ACR_NSLEN : 0) |
+    124          	                 (cfg->it_acces_non_sec ? L2CC_ACR_NSIAC : 0) |
+    125          	                 (cfg->data_prefetch ? L2CC_ACR_DPEN : 0) |
+    126          	                 (cfg->instruct_prefetch ? L2CC_ACR_IPEN : 0);
+   \                     ??l2cc_set_config_1:
+   \       0x84   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0x88   0xE594'2000        LDR      R2,[R4, #+0]
+   \       0x8C   0xE311'0001        TST      R1,#0x1
+   \       0x90   0xE7E0'10D1        UBFX     R1,R1,#+1,#+1
+   \       0x94   0x13A0'0E40        MOVNE    R0,#+1024
+   \       0x98   0xE594'6000        LDR      R6,[R4, #+0]
+   \       0x9C   0x03A0'0000        MOVEQ    R0,#+0
+   \       0xA0   0xE351'0000        CMP      R1,#+0
+   \       0xA4   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0xA8   0x1380'0E80        ORRNE    R0,R0,#0x800
+   \       0xAC   0xE594'3000        LDR      R3,[R4, #+0]
+   \       0xB0   0xE7E0'24D2        UBFX     R2,R2,#+9,#+1
+   \       0xB4   0xE594'C000        LDR      R12,[R4, #+0]
+   \       0xB8   0xE7E0'1151        UBFX     R1,R1,#+2,#+1
+   \       0xBC   0xE1A0'7326        LSR      R7,R6,#+6
+   \       0xC0   0xE351'0000        CMP      R1,#+0
+   \       0xC4   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0xC8   0x1380'0D80        ORRNE    R0,R0,#0x2000
+   \       0xCC   0xE3A0'8760        MOV      R8,#+25165824
+   \       0xD0   0xE7E0'11D1        UBFX     R1,R1,#+3,#+1
+   \       0xD4   0xE7E0'3553        UBFX     R3,R3,#+10,#+1
+   \       0xD8   0xE351'0000        CMP      R1,#+0
+   \       0xDC   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0xE0   0x1380'0940        ORRNE    R0,R0,#0x100000
+   \       0xE4   0xE008'8B87        AND      R8,R8,R7, LSL #+23
+   \       0xE8   0xE7E0'1251        UBFX     R1,R1,#+4,#+1
+   \       0xEC   0xE594'E000        LDR      LR,[R4, #+0]
+   \       0xF0   0xE351'0000        CMP      R1,#+0
+   \       0xF4   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0xF8   0x1380'0980        ORRNE    R0,R0,#0x200000
+   \       0xFC   0xE7E0'C5DC        UBFX     R12,R12,#+11,#+1
+   \      0x100   0xE7E0'12D1        UBFX     R1,R1,#+5,#+1
+   \      0x104   0xE7E0'E65E        UBFX     LR,LR,#+12,#+1
+   \      0x108   0xE351'0000        CMP      R1,#+0
+   \      0x10C   0xE594'1000        LDR      R1,[R4, #+0]
+   \      0x110   0x1380'0840        ORRNE    R0,R0,#0x400000
+   \      0x114   0xE7E0'1451        UBFX     R1,R1,#+8,#+1
+   \      0x118   0xE188'0000        ORR      R0,R8,R0
+   \      0x11C   0xE351'0000        CMP      R1,#+0
+   \      0x120   0x13A0'1780        MOVNE    R1,#+33554432
+   \      0x124   0xE352'0000        CMP      R2,#+0
+   \      0x128   0x13A0'2640        MOVNE    R2,#+67108864
+   \      0x12C   0xE353'0000        CMP      R3,#+0
+   \      0x130   0x13A0'3680        MOVNE    R3,#+134217728
+   \      0x134   0xE35C'0000        CMP      R12,#+0
+   \      0x138   0xE181'0000        ORR      R0,R1,R0
+   \      0x13C   0x13A0'C540        MOVNE    R12,#+268435456
+   \      0x140   0xE182'0000        ORR      R0,R2,R0
+   \      0x144   0xE35E'0000        CMP      LR,#+0
+   \      0x148   0xE183'0000        ORR      R0,R3,R0
+   \      0x14C   0x13A0'E580        MOVNE    LR,#+536870912
+   \      0x150   0xE18C'0000        ORR      R0,R12,R0
+   \      0x154   0xE18E'0000        ORR      R0,LR,R0
+   \      0x158   0xE585'0004        STR      R0,[R5, #+4]
+    127          
+    128          	L2CC->L2CC_DCR = (cfg->no_cache_linefill ? L2CC_DCR_DCL : 0) |
+    129          	                 (cfg->no_write_back ? L2CC_DCR_DWB : 0);
+   \      0x15C   0xE594'1000        LDR      R1,[R4, #+0]
+   \      0x160   0xE7E0'0CD1        UBFX     R0,R1,#+25,#+1
+   \      0x164   0xE7E0'1D51        UBFX     R1,R1,#+26,#+1
+   \      0x168   0xE351'0000        CMP      R1,#+0
+   \      0x16C   0x1380'0002        ORRNE    R0,R0,#0x2
+   \      0x170   0xE585'0E40        STR      R0,[R5, #+3648]
+    130          
+    131          	L2CC->L2CC_PCR = L2CC_PCR_OFFSET(cfg->offset) |
+    132          	                 (cfg->exclusive_seq_same_id ? L2CC_PCR_NSIDEN : 0) |
+    133          	                 (cfg->incr_double_linefill ? L2CC_PCR_IDLEN : 0) |
+    134          	                 (cfg->prefetch_drop ? L2CC_PCR_PDEN : 0) |
+    135          	                 (cfg->DLFWRDIS << 27) |
+    136          	                 (cfg->data_prefetch ? L2CC_PCR_DATPEN : 0) |
+    137          	                 (cfg->instruct_prefetch ? L2CC_PCR_INSPEN : 0) |
+    138          	                 (cfg->double_linefill ? L2CC_PCR_DLEN : 0);
+   \      0x174   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x178   0xE594'1000        LDR      R1,[R4, #+0]
+   \      0x17C   0xE7E0'0950        UBFX     R0,R0,#+18,#+1
+   \      0x180   0xE594'2000        LDR      R2,[R4, #+0]
+   \      0x184   0xE350'0000        CMP      R0,#+0
+   \      0x188   0xE594'6000        LDR      R6,[R4, #+0]
+   \      0x18C   0x13A0'0980        MOVNE    R0,#+2097152
+   \      0x190   0xE7E0'19D1        UBFX     R1,R1,#+19,#+1
+   \      0x194   0xE351'0000        CMP      R1,#+0
+   \      0x198   0xE594'3000        LDR      R3,[R4, #+0]
+   \      0x19C   0x13A0'1880        MOVNE    R1,#+8388608
+   \      0x1A0   0xE7E0'2A52        UBFX     R2,R2,#+20,#+1
+   \      0x1A4   0xE352'0000        CMP      R2,#+0
+   \      0x1A8   0xE594'C000        LDR      R12,[R4, #+0]
+   \      0x1AC   0xE7E4'66D6        UBFX     R6,R6,#+13,#+5
+   \      0x1B0   0x13A0'2740        MOVNE    R2,#+16777216
+   \      0x1B4   0xE7E0'35D3        UBFX     R3,R3,#+11,#+1
+   \      0x1B8   0xE180'0006        ORR      R0,R0,R6
+   \      0x1BC   0xE353'0000        CMP      R3,#+0
+   \      0x1C0   0xE181'0000        ORR      R0,R1,R0
+   \      0x1C4   0xE594'1000        LDR      R1,[R4, #+0]
+   \      0x1C8   0xE594'E000        LDR      LR,[R4, #+0]
+   \      0x1CC   0x13A0'3540        MOVNE    R3,#+268435456
+   \      0x1D0   0xE7E0'C65C        UBFX     R12,R12,#+12,#+1
+   \      0x1D4   0xE182'0000        ORR      R0,R2,R0
+   \      0x1D8   0xE7E0'1AD1        UBFX     R1,R1,#+21,#+1
+   \      0x1DC   0xE35C'0000        CMP      R12,#+0
+   \      0x1E0   0xE180'0D81        ORR      R0,R0,R1, LSL #+27
+   \      0x1E4   0x13A0'C580        MOVNE    R12,#+536870912
+   \      0x1E8   0xE7E0'EB5E        UBFX     LR,LR,#+22,#+1
+   \      0x1EC   0xE35E'0000        CMP      LR,#+0
+   \      0x1F0   0xE183'0000        ORR      R0,R3,R0
+   \      0x1F4   0x13A0'E440        MOVNE    LR,#+1073741824
+   \      0x1F8   0xE18C'0000        ORR      R0,R12,R0
+   \      0x1FC   0xE18E'0000        ORR      R0,LR,R0
+   \      0x200   0xE585'0E60        STR      R0,[R5, #+3680]
+    139          
+    140          	L2CC->L2CC_POWCR = (cfg->standby_mode ? L2CC_POWCR_STBYEN : 0) |
+    141          	                   (cfg->dyn_clock_gating ? L2CC_POWCR_DCKGATEN : 0);
+   \      0x204   0xE594'1000        LDR      R1,[R4, #+0]
+   \      0x208   0xE7E0'0BD1        UBFX     R0,R1,#+23,#+1
+   \      0x20C   0xE7E0'1C51        UBFX     R1,R1,#+24,#+1
+   \      0x210   0xE351'0000        CMP      R1,#+0
+   \      0x214   0x1380'0002        ORRNE    R0,R0,#0x2
+   \      0x218   0xE585'0E80        STR      R0,[R5, #+3712]
+    142          }
+   \      0x21C   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    143          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    144          void l2cc_data_prefetch_enable(void)
+    145          {
+    146          	L2CC->L2CC_PCR |= L2CC_PCR_DATPEN;
+   \                     l2cc_data_prefetch_enable:
+   \        0x0   0xE3A0'08A0        MOV      R0,#+10485760
+   \        0x4   0xE380'0EF6        ORR      R0,R0,#0xF60
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE381'2540        ORR      R2,R1,#0x10000000
+   \       0x10   0x....'....        B        ?Subroutine5
+    147          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine5:
+   \        0x0   0xE580'2000        STR      R2,[R0, #+0]
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    148          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    149          void l2cc_inst_prefetch_enable(void)
+    150          {
+    151          	L2CC->L2CC_PCR |= L2CC_PCR_INSPEN;
+   \                     l2cc_inst_prefetch_enable:
+   \        0x0   0xE3A0'08A0        MOV      R0,#+10485760
+   \        0x4   0xE380'0EF6        ORR      R0,R0,#0xF60
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE381'2580        ORR      R2,R1,#0x20000000
+   \       0x10                      REQUIRE ?Subroutine5
+   \       0x10                      ;; // Fall through to label ?Subroutine5
+    152          }
+    153          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    154          void l2cc_enable_event_counter(uint8_t event_counter)
+    155          {
+   \                     l2cc_enable_event_counter:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    156          	assert(event_counter < 2);
+   \        0x4   0xE350'0002        CMP      R0,#+2
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xBA00'0004        BLT      ??l2cc_enable_event_counter_0
+   \       0x10   0xE3A0'209C        MOV      R2,#+156
+   \       0x14   0x....'....        LDR      R1,??DataTable21_1
+   \       0x18   0x....'....        LDR      R0,??DataTable21_3
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    157          
+    158          	switch (event_counter) {
+   \                     ??l2cc_enable_event_counter_0:
+   \       0x24   0xE354'0000        CMP      R4,#+0
+   \       0x28   0x0A00'0002        BEQ      ??l2cc_enable_event_counter_1
+   \       0x2C   0xE354'0001        CMP      R4,#+1
+   \       0x30   0x0A00'0005        BEQ      ??l2cc_enable_event_counter_2
+   \       0x34   0xE8BD'8010        POP      {R4,PC}
+    159          	case 0:
+    160          		L2CC->L2CC_ECR = L2CC_ECR_EVCEN | L2CC_ECR_EVC0RST;
+   \                     ??l2cc_enable_event_counter_1:
+   \       0x38   0xE3A0'18A0        MOV      R1,#+10485760
+   \       0x3C   0xE3A0'0003        MOV      R0,#+3
+   \       0x40   0xE381'1F80        ORR      R1,R1,#0x200
+   \       0x44   0xE581'0000        STR      R0,[R1, #+0]
+    161          		break;
+   \       0x48   0xE8BD'8010        POP      {R4,PC}
+    162          	case 1:
+    163          		L2CC->L2CC_ECR = L2CC_ECR_EVCEN | L2CC_ECR_EVC1RST;
+   \                     ??l2cc_enable_event_counter_2:
+   \       0x4C   0xE3A0'38A0        MOV      R3,#+10485760
+   \       0x50   0xE3A0'2005        MOV      R2,#+5
+   \       0x54   0xE383'3F80        ORR      R3,R3,#0x200
+   \       0x58   0xE583'2000        STR      R2,[R3, #+0]
+    164          		break;
+    165          	default:
+    166          		break;
+    167          	}
+    168          }
+   \       0x5C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    169          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    170          void l2cc_event_config(uint8_t event_counter, uint8_t source, uint8_t it)
+    171          {
+   \                     l2cc_event_config:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+    172          	assert(event_counter < 2);
+   \        0x4   0xE350'0002        CMP      R0,#+2
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+   \        0xC   0xE1A0'6001        MOV      R6,R1
+   \       0x10   0xE1A0'7002        MOV      R7,R2
+   \       0x14   0xBA00'0004        BLT      ??l2cc_event_config_0
+   \       0x18   0xE3A0'20AC        MOV      R2,#+172
+   \       0x1C   0x....'....        LDR      R1,??DataTable21_1
+   \       0x20   0x....'....        LDR      R0,??DataTable21_3
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    173          	assert(!l2cache_is_enabled());
+   \                     ??l2cc_event_config_0:
+   \       0x2C   0xE3A0'48A0        MOV      R4,#+10485760
+   \       0x30   0xE384'4F40        ORR      R4,R4,#0x100
+   \       0x34   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x38   0xE310'0001        TST      R0,#0x1
+   \       0x3C   0x0A00'0004        BEQ      ??l2cc_event_config_1
+   \       0x40   0xE3A0'20AD        MOV      R2,#+173
+   \       0x44   0x....'....        LDR      R1,??DataTable21_1
+   \       0x48   0x....'....        LDR      R0,??DataTable21_2
+   \       0x4C   0x....'....        BL       __aeabi_assert
+   \       0x50   0x....'....        BL       __iar_EmptyStepPoint
+    174          
+    175          	switch (event_counter) {
+   \                     ??l2cc_event_config_1:
+   \       0x54   0xE355'0000        CMP      R5,#+0
+   \       0x58   0x0A00'0002        BEQ      ??l2cc_event_config_2
+   \       0x5C   0xE355'0001        CMP      R5,#+1
+   \       0x60   0x0A00'0005        BEQ      ??l2cc_event_config_3
+   \       0x64   0xE8BD'80F1        POP      {R0,R4-R7,PC}
+    176          	case 0:
+    177          		L2CC->L2CC_ECFGR0 = (source & L2CC_ECFGR0_ESRC_Msk) |
+    178          		                    (it & L2CC_ECFGR0_EIGEN_Msk);
+   \                     ??l2cc_event_config_2:
+   \       0x68   0xE206'003C        AND      R0,R6,#0x3C
+   \       0x6C   0xE207'1003        AND      R1,R7,#0x3
+   \       0x70   0xE181'1000        ORR      R1,R1,R0
+   \       0x74   0xE584'1108        STR      R1,[R4, #+264]
+    179          		break;
+   \       0x78   0xE8BD'80F1        POP      {R0,R4-R7,PC}
+    180          	case 1:
+    181          		L2CC->L2CC_ECFGR1 = (source & L2CC_ECFGR1_ESRC_Msk) |
+    182          		                    (it & L2CC_ECFGR1_EIGEN_Msk);
+   \                     ??l2cc_event_config_3:
+   \       0x7C   0xE206'203C        AND      R2,R6,#0x3C
+   \       0x80   0xE207'3003        AND      R3,R7,#0x3
+   \       0x84   0xE183'3002        ORR      R3,R3,R2
+   \       0x88   0xE584'3104        STR      R3,[R4, #+260]
+    183          		break;
+    184          	default:
+    185          		break;
+    186          	}
+    187          
+    188          }
+   \       0x8C   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    189          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    190          uint32_t l2cc_event_counter_value(uint8_t event_counter)
+    191          {
+   \                     l2cc_event_counter_value:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    192          	assert(event_counter < 2);
+   \        0x4   0xE350'0002        CMP      R0,#+2
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xBA00'0004        BLT      ??l2cc_event_counter_value_0
+   \       0x10   0xE3A0'20C0        MOV      R2,#+192
+   \       0x14   0x....'....        LDR      R1,??DataTable21_1
+   \       0x18   0x....'....        LDR      R0,??DataTable21_3
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    193          
+    194          	switch (event_counter) {
+   \                     ??l2cc_event_counter_value_0:
+   \       0x24   0xE354'0000        CMP      R4,#+0
+   \       0x28   0x0A00'0002        BEQ      ??l2cc_event_counter_value_1
+   \       0x2C   0xE354'0001        CMP      R4,#+1
+   \       0x30   0x0A00'0004        BEQ      ??l2cc_event_counter_value_2
+   \       0x34   0xEA00'0007        B        ??l2cc_event_counter_value_3
+    195          	case 0:
+    196          		return L2CC->L2CC_EVR0;
+   \                     ??l2cc_event_counter_value_1:
+   \       0x38   0xE3A0'08A0        MOV      R0,#+10485760
+   \       0x3C   0xE380'0F83        ORR      R0,R0,#0x20C
+   \       0x40   0xE590'0004        LDR      R0,[R0, #+4]
+   \       0x44   0xE8BD'8010        POP      {R4,PC}
+    197          	case 1:
+    198          		return L2CC->L2CC_EVR1;
+   \                     ??l2cc_event_counter_value_2:
+   \       0x48   0xE3A0'18A0        MOV      R1,#+10485760
+   \       0x4C   0xE381'1F83        ORR      R1,R1,#0x20C
+   \       0x50   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x54   0xE8BD'8010        POP      {R4,PC}
+    199          	default:
+    200          		return 0;
+   \                     ??l2cc_event_counter_value_3:
+   \       0x58   0xE3A0'0000        MOV      R0,#+0
+   \       0x5C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    201          	}
+    202          }
+    203          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    204          void l2cc_enable_it(uint32_t sources)
+    205          {
+    206          	L2CC->L2CC_IMR |= sources;
+   \                     l2cc_enable_it:
+   \        0x0   0xE3A0'18A0        MOV      R1,#+10485760
+   \        0x4   0xE381'1F85        ORR      R1,R1,#0x214
+   \        0x8   0x....'....        B        ?Subroutine2
+    207          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0x4   0xE180'0002        ORR      R0,R0,R2
+   \        0x8                      REQUIRE ??Subroutine8_0
+   \        0x8                      ;; // Fall through to label ??Subroutine8_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??Subroutine8_0:
+   \        0x0   0xE581'0000        STR      R0,[R1, #+0]
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    208          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    209          void l2cc_disable_it(uint32_t sources)
+    210          {
+    211          	L2CC->L2CC_IMR &= ~sources;
+   \                     l2cc_disable_it:
+   \        0x0   0xE3A0'18A0        MOV      R1,#+10485760
+   \        0x4   0xE381'1F85        ORR      R1,R1,#0x214
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0xC   0xE1C2'0000        BIC      R0,R2,R0
+   \       0x10   0x....'....        B        ??Subroutine8_0
+    212          }
+    213          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    214          uint32_t l2cc_it_status(uint32_t sources)
+    215          {
+    216          	return L2CC->L2CC_RISR & sources;
+   \                     l2cc_it_status:
+   \        0x0   0xE3A0'18A0        MOV      R1,#+10485760
+   \        0x4   0xE381'1F87        ORR      R1,R1,#0x21C
+   \        0x8   0x....'....        B        ?Subroutine4
+    217          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine4:
+   \        0x0   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0x4   0xE000'0002        AND      R0,R0,R2
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    218          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    219          uint32_t l2cc_it_status_mask(uint32_t sources)
+    220          {
+    221          	return L2CC->L2CC_MISR & sources;
+   \                     l2cc_it_status_mask:
+   \        0x0   0xE3A0'18A0        MOV      R1,#+10485760
+   \        0x4   0xE381'1F86        ORR      R1,R1,#0x218
+   \        0x8                      REQUIRE ?Subroutine4
+   \        0x8                      ;; // Fall through to label ?Subroutine4
+    222          }
+    223          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    224          void l2cc_it_clear(uint32_t sources)
+    225          {
+    226          	L2CC->L2CC_ICR |= sources;
+   \                     l2cc_it_clear:
+   \        0x0   0xE3A0'18A0        MOV      R1,#+10485760
+   \        0x4   0xE381'1F88        ORR      R1,R1,#0x220
+   \        0x8                      REQUIRE ?Subroutine2
+   \        0x8                      ;; // Fall through to label ?Subroutine2
+    227          }
+    228          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    229          bool l2cc_get_spniden()
+    230          {
+    231          	return (L2CC->L2CC_DCR & L2CC_DCR_SPNIDEN) != 0;
+   \                     l2cc_get_spniden:
+   \        0x0   0xE3A0'08A0        MOV      R0,#+10485760
+   \        0x4   0xE380'0EF4        ORR      R0,R0,#0xF40
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE1A0'2121        LSR      R2,R1,#+2
+   \       0x10   0xE202'0001        AND      R0,R2,#0x1
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    232          }
+    233          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    234          void l2cc_cache_sync()
+    235          {
+   \                     l2cc_cache_sync:
+   \        0x0   0xE3A0'08A0        MOV      R0,#+10485760
+   \        0x4   0xE380'0E73        ORR      R0,R0,#0x730
+    236          	while (L2CC->L2CC_CSR & L2CC_CSR_C) {}
+   \                     ??l2cc_cache_sync_0:
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE311'0001        TST      R1,#0x1
+   \       0x10   0x1AFF'FFFC        BNE      ??l2cc_cache_sync_0
+    237          	L2CC->L2CC_CSR = L2CC_CSR_C;
+   \       0x14   0xE3A0'2001        MOV      R2,#+1
+   \       0x18   0xE580'2000        STR      R2,[R0, #+0]
+    238          	while (L2CC->L2CC_CSR & L2CC_CSR_C) {}
+   \                     ??l2cc_cache_sync_1:
+   \       0x1C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x20   0xE311'0001        TST      R1,#0x1
+   \       0x24   0x1AFF'FFFC        BNE      ??l2cc_cache_sync_1
+    239          }
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+    240          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    241          void l2cc_invalidate_pal(uint32_t phys_addr)
+    242          {
+    243          	uint32_t tag, index;
+    244          
+    245          	tag = phys_addr >> (L2CC_OFFSET_BIT + L2CC_INDEX_BIT);
+    246          	index = (phys_addr >> L2CC_OFFSET_BIT) & ((1 << L2CC_INDEX_BIT) - 1);
+    247          	L2CC->L2CC_IPALR = L2CC_IPALR_TAG(tag) | L2CC_IPALR_IDX(index) | L2CC_IPALR_C;
+   \                     l2cc_invalidate_pal:
+   \        0x0   0xE3A0'18A0        MOV      R1,#+10485760
+   \        0x4   0xE3C0'001F        BIC      R0,R0,#0x1F
+   \        0x8   0xE381'1E77        ORR      R1,R1,#0x770
+   \        0xC   0x....'....        B        ?Subroutine0
+    248          	while (L2CC->L2CC_IPALR & L2CC_IPALR_C) {}
+    249          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE380'2001        ORR      R2,R0,#0x1
+   \        0x4   0xE581'2000        STR      R2,[R1, #+0]
+   \                     ??Subroutine0_0:
+   \        0x8   0xE591'3000        LDR      R3,[R1, #+0]
+   \        0xC   0xE313'0001        TST      R3,#0x1
+   \       0x10   0x1AFF'FFFC        BNE      ??Subroutine0_0
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    250          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    251          void l2cc_clean_pal(uint32_t phys_addr)
+    252          {
+    253          	uint32_t tag, index;
+    254          
+    255          	tag = phys_addr >> (L2CC_OFFSET_BIT + L2CC_INDEX_BIT);
+    256          	index = (phys_addr >> L2CC_OFFSET_BIT) & ((1 << L2CC_INDEX_BIT) - 1);
+    257          	L2CC->L2CC_CPALR = L2CC_CPALR_TAG(tag) | L2CC_CPALR_IDX(index) | L2CC_CPALR_C;
+   \                     l2cc_clean_pal:
+   \        0x0   0xE3A0'18A0        MOV      R1,#+10485760
+   \        0x4   0xE3C0'001F        BIC      R0,R0,#0x1F
+   \        0x8   0xE381'1E7B        ORR      R1,R1,#0x7B0
+   \        0xC                      REQUIRE ?Subroutine0
+   \        0xC                      ;; // Fall through to label ?Subroutine0
+    258          	while (L2CC->L2CC_CPALR & L2CC_CPALR_C) {}
+    259          }
+    260          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    261          void l2cc_clean_invalidate_pal(uint32_t phys_addr)
+    262          {
+    263          	uint32_t tag, index;
+    264          
+    265          	tag = phys_addr >> (L2CC_OFFSET_BIT + L2CC_INDEX_BIT);
+    266          	index = (phys_addr >> L2CC_OFFSET_BIT) & ((1 << L2CC_INDEX_BIT) - 1);
+    267          	L2CC->L2CC_CIPALR = L2CC_CIPALR_TAG(tag) | L2CC_CIPALR_IDX(index) | L2CC_CIPALR_C;
+   \                     l2cc_clean_invalidate_pal:
+   \        0x0   0xE3A0'18A0        MOV      R1,#+10485760
+   \        0x4   0xE3C0'001F        BIC      R0,R0,#0x1F
+   \        0x8   0xE381'1E7F        ORR      R1,R1,#0x7F0
+   \        0xC   0x....'....        B        ?Subroutine0
+    268          	while (L2CC->L2CC_CIPALR & L2CC_CIPALR_C) {}
+    269          }
+    270          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    271          void l2cc_invalidate_way(uint8_t way)
+    272          {
+    273          	L2CC->L2CC_IWR = way;
+   \                     l2cc_invalidate_way:
+   \        0x0   0x....'....        LDR      R1,??DataTable21_4  ;; 0xa0077c
+   \        0x4   0x....'....        B        ?Subroutine1
+    274          	while (L2CC->L2CC_IWR & way) {}
+    275          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE581'0000        STR      R0,[R1, #+0]
+   \                     ??Subroutine1_0:
+   \        0x4   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0x8   0xE110'0002        TST      R0,R2
+   \        0xC   0x1AFF'FFFC        BNE      ??Subroutine1_0
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    276          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    277          void l2cc_clean_way(uint8_t way)
+    278          {
+    279          	L2CC->L2CC_CWR = way;
+   \                     l2cc_clean_way:
+   \        0x0   0x....'....        LDR      R1,??DataTable21_5  ;; 0xa007bc
+   \        0x4                      REQUIRE ?Subroutine1
+   \        0x4                      ;; // Fall through to label ?Subroutine1
+    280          	while (L2CC->L2CC_CWR & way) {}
+    281          }
+    282          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    283          void l2cc_clean_invalidate_way(uint8_t way)
+    284          {
+    285          	L2CC->L2CC_CIWR = way;
+   \                     l2cc_clean_invalidate_way:
+   \        0x0   0x....'....        LDR      R1,??DataTable21_6  ;; 0xa007fc
+   \        0x4   0x....'....        B        ?Subroutine1
+    286          	while (L2CC->L2CC_CIWR & way) {}
+    287          }
+    288          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    289          void l2cc_clean_index(uint32_t phys_addr, uint8_t way)
+    290          {
+    291          	uint32_t index;
+    292          
+    293          	index = (phys_addr >> L2CC_OFFSET_BIT) & ((1 << L2CC_INDEX_BIT) - 1);
+    294          	L2CC->L2CC_CIR = L2CC_CIR_IDX(index) | L2CC_CIR_WAY(way) | L2CC_CIR_C;
+   \                     l2cc_clean_index:
+   \        0x0   0xE3A0'C470        MOV      R12,#+1879048192
+   \        0x4   0xE303'3FE0        MOVW     R3,#+16352
+   \        0x8   0xE92D'4010        PUSH     {R4,LR}
+   \        0xC   0xE00C'1E01        AND      R1,R12,R1, LSL #+28
+   \       0x10   0xE003'0000        AND      R0,R3,R0
+   \       0x14   0x....'....        LDR      R2,??DataTable21_7  ;; 0xa007b8
+   \       0x18   0x....'....        B        ?Subroutine6
+    295          	while (L2CC->L2CC_CIR & L2CC_CIR_C) {}
+    296          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine6:
+   \        0x0   0xE181'1000        ORR      R1,R1,R0
+   \        0x4   0xE381'E001        ORR      LR,R1,#0x1
+   \        0x8   0xE582'E000        STR      LR,[R2, #+0]
+   \                     ??Subroutine6_0:
+   \        0xC   0xE592'4000        LDR      R4,[R2, #+0]
+   \       0x10   0xE314'0001        TST      R4,#0x1
+   \       0x14   0x1AFF'FFFC        BNE      ??Subroutine6_0
+   \       0x18   0xE8BD'8010        POP      {R4,PC}          ;; return
+    297          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    298          void l2cc_clean_invalidate_index(uint32_t phys_addr, uint8_t way)
+    299          {
+    300          	uint32_t index;
+    301          
+    302          	index = (phys_addr >> L2CC_OFFSET_BIT) & ((1 << L2CC_INDEX_BIT) - 1);
+    303          	L2CC->L2CC_CIIR = L2CC_CIIR_IDX(index) | L2CC_CIIR_WAY(way) | L2CC_CIIR_C;
+   \                     l2cc_clean_invalidate_index:
+   \        0x0   0xE3A0'C470        MOV      R12,#+1879048192
+   \        0x4   0xE303'3FE0        MOVW     R3,#+16352
+   \        0x8   0xE92D'4010        PUSH     {R4,LR}
+   \        0xC   0xE00C'1E01        AND      R1,R12,R1, LSL #+28
+   \       0x10   0xE003'0000        AND      R0,R3,R0
+   \       0x14   0x....'....        LDR      R2,??DataTable21_8  ;; 0xa007f8
+   \       0x18                      REQUIRE ?Subroutine6
+   \       0x18                      ;; // Fall through to label ?Subroutine6
+    304          	while (L2CC->L2CC_CIIR & L2CC_CIIR_C) {}
+    305          }
+    306          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    307          void l2cc_data_lockdown(uint8_t way)
+    308          {
+    309          	L2CC->L2CC_DLKR = way;
+   \                     l2cc_data_lockdown:
+   \        0x0   0xE3A0'18A0        MOV      R1,#+10485760
+   \        0x4   0xE381'1E73        ORR      R1,R1,#0x730
+   \        0x8   0xE581'01D0        STR      R0,[R1, #+464]
+   \        0xC   0x....'....        B        ?Subroutine3
+    310          	while (L2CC->L2CC_CSR & L2CC_CSR_C) {}
+    311          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine3:
+   \        0x0   0xE591'0000        LDR      R0,[R1, #+0]
+   \        0x4   0xE310'0001        TST      R0,#0x1
+   \        0x8   0x1AFF'FFFC        BNE      ?Subroutine3
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    312          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    313          void l2cc_instruction_lockdown(uint8_t way)
+    314          {
+    315          	L2CC->L2CC_ILKR = way;
+   \                     l2cc_instruction_lockdown:
+   \        0x0   0xE3A0'18A0        MOV      R1,#+10485760
+   \        0x4   0xE381'1E73        ORR      R1,R1,#0x730
+   \        0x8   0xE581'01D4        STR      R0,[R1, #+468]
+   \        0xC                      REQUIRE ?Subroutine3
+   \        0xC                      ;; // Fall through to label ?Subroutine3
+    316          	while (L2CC->L2CC_CSR & L2CC_CSR_C) {}
+    317          }
+    318          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    319          void l2cache_clean(void)
+    320          {
+    321          	if (l2cache_is_enabled()) {
+   \                     l2cache_clean:
+   \        0x0   0xE3A0'08A0        MOV      R0,#+10485760
+   \        0x4   0xE380'0F40        ORR      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE311'0001        TST      R1,#0x1
+   \       0x10   0x0A00'000C        BEQ      ??l2cache_clean_0
+    322          		// forces the address out past level 2
+    323          		l2cc_clean_way(0xFF);
+   \       0x14   0xE3A0'10FF        MOV      R1,#+255
+   \       0x18   0xE580'16BC        STR      R1,[R0, #+1724]
+   \                     ??l2cache_clean_1:
+   \       0x1C   0xE590'26BC        LDR      R2,[R0, #+1724]
+   \       0x20   0xE312'00FF        TST      R2,#0xFF
+   \       0x24   0x1AFF'FFFC        BNE      ??l2cache_clean_1
+   \                     ??l2cache_clean_2:
+   \       0x28   0xE590'1630        LDR      R1,[R0, #+1584]
+   \       0x2C   0xE311'0001        TST      R1,#0x1
+   \       0x30   0x1AFF'FFFC        BNE      ??l2cache_clean_2
+   \       0x34   0xE3A0'2001        MOV      R2,#+1
+   \       0x38   0xE580'2630        STR      R2,[R0, #+1584]
+   \                     ??l2cache_clean_3:
+   \       0x3C   0xE590'1630        LDR      R1,[R0, #+1584]
+   \       0x40   0xE311'0001        TST      R1,#0x1
+   \       0x44   0x1AFF'FFFC        BNE      ??l2cache_clean_3
+    324          		// Ensures completion of the L2 clean
+    325          		l2cc_cache_sync();
+    326          	}
+    327          }
+   \                     ??l2cache_clean_0:
+   \       0x48   0xE12F'FF1E        BX       LR               ;; return
+    328          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    329          void l2cache_invalidate(void)
+    330          {
+    331          	if (l2cache_is_enabled()) {
+   \                     l2cache_invalidate:
+   \        0x0   0xE3A0'08A0        MOV      R0,#+10485760
+   \        0x4   0xE380'0F40        ORR      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE311'0001        TST      R1,#0x1
+   \       0x10   0x0A00'000C        BEQ      ??l2cache_invalidate_0
+    332          		// forces the address out past level 2
+    333          		l2cc_invalidate_way(0xFF);
+   \       0x14   0xE3A0'10FF        MOV      R1,#+255
+   \       0x18   0xE580'167C        STR      R1,[R0, #+1660]
+   \                     ??l2cache_invalidate_1:
+   \       0x1C   0xE590'267C        LDR      R2,[R0, #+1660]
+   \       0x20   0xE312'00FF        TST      R2,#0xFF
+   \       0x24   0x1AFF'FFFC        BNE      ??l2cache_invalidate_1
+   \                     ??l2cache_invalidate_2:
+   \       0x28   0xE590'1630        LDR      R1,[R0, #+1584]
+   \       0x2C   0xE311'0001        TST      R1,#0x1
+   \       0x30   0x1AFF'FFFC        BNE      ??l2cache_invalidate_2
+   \       0x34   0xE3A0'2001        MOV      R2,#+1
+   \       0x38   0xE580'2630        STR      R2,[R0, #+1584]
+   \                     ??l2cache_invalidate_3:
+   \       0x3C   0xE590'1630        LDR      R1,[R0, #+1584]
+   \       0x40   0xE311'0001        TST      R1,#0x1
+   \       0x44   0x1AFF'FFFC        BNE      ??l2cache_invalidate_3
+    334          		// Ensures completion of the L2 inval
+    335          		l2cc_cache_sync();
+    336          	}
+    337          }
+   \                     ??l2cache_invalidate_0:
+   \       0x48   0xE12F'FF1E        BX       LR               ;; return
+    338          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    339          void l2cache_clean_invalidate(void)
+    340          {
+    341          	if (l2cache_is_enabled()) {
+   \                     l2cache_clean_invalidate:
+   \        0x0   0xE3A0'08A0        MOV      R0,#+10485760
+   \        0x4   0xE380'0F40        ORR      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE311'0001        TST      R1,#0x1
+   \       0x10   0x0A00'000C        BEQ      ??l2cache_clean_invalidate_0
+    342          		/* forces the address out past level 2 */
+    343          		l2cc_clean_invalidate_way(0xFF);
+   \       0x14   0xE3A0'10FF        MOV      R1,#+255
+   \       0x18   0xE580'16FC        STR      R1,[R0, #+1788]
+   \                     ??l2cache_clean_invalidate_1:
+   \       0x1C   0xE590'26FC        LDR      R2,[R0, #+1788]
+   \       0x20   0xE312'00FF        TST      R2,#0xFF
+   \       0x24   0x1AFF'FFFC        BNE      ??l2cache_clean_invalidate_1
+   \                     ??l2cache_clean_invalidate_2:
+   \       0x28   0xE590'1630        LDR      R1,[R0, #+1584]
+   \       0x2C   0xE311'0001        TST      R1,#0x1
+   \       0x30   0x1AFF'FFFC        BNE      ??l2cache_clean_invalidate_2
+   \       0x34   0xE3A0'2001        MOV      R2,#+1
+   \       0x38   0xE580'2630        STR      R2,[R0, #+1584]
+   \                     ??l2cache_clean_invalidate_3:
+   \       0x3C   0xE590'1630        LDR      R1,[R0, #+1584]
+   \       0x40   0xE311'0001        TST      R1,#0x1
+   \       0x44   0x1AFF'FFFC        BNE      ??l2cache_clean_invalidate_3
+    344          		/* Ensures completion of the L2 inval */
+    345          		l2cc_cache_sync();
+    346          	}
+    347          }
+   \                     ??l2cache_clean_invalidate_0:
+   \       0x48   0xE12F'FF1E        BX       LR               ;; return
+    348          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    349          void l2cache_invalidate_region(uint32_t start, uint32_t end)
+    350          {
+   \                     l2cache_invalidate_region:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    351          	assert(start < end);
+   \        0xC   0xE154'0005        CMP      R4,R5
+   \       0x10   0x3A00'0004        BCC      ??l2cache_invalidate_region_0
+   \       0x14   0xE300'215F        MOVW     R2,#+351
+   \       0x18   0x....'....        LDR      R1,??DataTable21_1
+   \       0x1C   0x....'....        ADR      R0,?_4
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    352          	uint32_t current = start & ~0x1f;
+    353          	if (l2cache_is_enabled()) {
+   \                     ??l2cache_invalidate_region_0:
+   \       0x28   0xE3A0'18A0        MOV      R1,#+10485760
+   \       0x2C   0xE3C4'001F        BIC      R0,R4,#0x1F
+   \       0x30   0xE381'1F40        ORR      R1,R1,#0x100
+   \       0x34   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x38   0xE312'0001        TST      R2,#0x1
+   \       0x3C   0x0A00'0010        BEQ      ??l2cache_invalidate_region_1
+   \       0x40   0xE155'0000        CMP      R5,R0
+   \       0x44   0x3A00'0008        BCC      ??l2cache_invalidate_region_2
+    354          		while (current <= end) {
+    355          			l2cc_invalidate_pal(current);
+   \                     ??l2cache_invalidate_region_3:
+   \       0x48   0xE3C0'201F        BIC      R2,R0,#0x1F
+   \       0x4C   0xE382'3001        ORR      R3,R2,#0x1
+   \       0x50   0xE581'3670        STR      R3,[R1, #+1648]
+   \                     ??l2cache_invalidate_region_4:
+   \       0x54   0xE591'C670        LDR      R12,[R1, #+1648]
+   \       0x58   0xE31C'0001        TST      R12,#0x1
+   \       0x5C   0x1AFF'FFFC        BNE      ??l2cache_invalidate_region_4
+    356          			current += 32;
+   \       0x60   0xE280'0020        ADD      R0,R0,#+32
+    357          		}
+   \       0x64   0xE155'0000        CMP      R5,R0
+   \       0x68   0x2AFF'FFF6        BCS      ??l2cache_invalidate_region_3
+    358          		l2cc_invalidate_pal(end);
+   \                     ??l2cache_invalidate_region_2:
+   \       0x6C   0xE3C5'001F        BIC      R0,R5,#0x1F
+   \       0x70   0xE380'2001        ORR      R2,R0,#0x1
+   \       0x74   0xE581'2670        STR      R2,[R1, #+1648]
+   \                     ??l2cache_invalidate_region_5:
+   \       0x78   0xE591'3670        LDR      R3,[R1, #+1648]
+   \       0x7C   0xE313'0001        TST      R3,#0x1
+   \       0x80   0x1AFF'FFFC        BNE      ??l2cache_invalidate_region_5
+    359          	}
+    360          }
+   \                     ??l2cache_invalidate_region_1:
+   \       0x84   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    361          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    362          void l2cache_clean_region(uint32_t start, uint32_t end)
+    363          {
+   \                     l2cache_clean_region:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    364          	assert(start < end);
+   \        0xC   0xE154'0005        CMP      R4,R5
+   \       0x10   0x3A00'0004        BCC      ??l2cache_clean_region_0
+   \       0x14   0xE3A0'2F5B        MOV      R2,#+364
+   \       0x18   0x....'....        LDR      R1,??DataTable21_1
+   \       0x1C   0x....'....        ADR      R0,?_4
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    365          	uint32_t current = start & ~0x1f;
+    366          	if (l2cache_is_enabled()) {
+   \                     ??l2cache_clean_region_0:
+   \       0x28   0xE3A0'18A0        MOV      R1,#+10485760
+   \       0x2C   0xE3C4'001F        BIC      R0,R4,#0x1F
+   \       0x30   0xE381'1F40        ORR      R1,R1,#0x100
+   \       0x34   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x38   0xE312'0001        TST      R2,#0x1
+   \       0x3C   0x0A00'0010        BEQ      ??l2cache_clean_region_1
+   \       0x40   0xE155'0000        CMP      R5,R0
+   \       0x44   0x3A00'0008        BCC      ??l2cache_clean_region_2
+    367          		while (current <= end) {
+    368          			l2cc_clean_pal(current);
+   \                     ??l2cache_clean_region_3:
+   \       0x48   0xE3C0'201F        BIC      R2,R0,#0x1F
+   \       0x4C   0xE382'3001        ORR      R3,R2,#0x1
+   \       0x50   0xE581'36B0        STR      R3,[R1, #+1712]
+   \                     ??l2cache_clean_region_4:
+   \       0x54   0xE591'C6B0        LDR      R12,[R1, #+1712]
+   \       0x58   0xE31C'0001        TST      R12,#0x1
+   \       0x5C   0x1AFF'FFFC        BNE      ??l2cache_clean_region_4
+    369          			current += 32;
+   \       0x60   0xE280'0020        ADD      R0,R0,#+32
+    370          		}
+   \       0x64   0xE155'0000        CMP      R5,R0
+   \       0x68   0x2AFF'FFF6        BCS      ??l2cache_clean_region_3
+    371          		l2cc_clean_pal(end);
+   \                     ??l2cache_clean_region_2:
+   \       0x6C   0xE3C5'001F        BIC      R0,R5,#0x1F
+   \       0x70   0xE380'2001        ORR      R2,R0,#0x1
+   \       0x74   0xE581'26B0        STR      R2,[R1, #+1712]
+   \                     ??l2cache_clean_region_5:
+   \       0x78   0xE591'36B0        LDR      R3,[R1, #+1712]
+   \       0x7C   0xE313'0001        TST      R3,#0x1
+   \       0x80   0x1AFF'FFFC        BNE      ??l2cache_clean_region_5
+    372          	}
+    373          }
+   \                     ??l2cache_clean_region_1:
+   \       0x84   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    374          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    375          void l2cache_clean_invalidate_region(uint32_t start, uint32_t end)
+    376          {
+   \                     l2cache_clean_invalidate_region:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    377          	assert(start < end);
+   \        0xC   0xE154'0005        CMP      R4,R5
+   \       0x10   0x3A00'0004        BCC      ??l2cache_clean_invalidate_region_0
+   \       0x14   0xE300'2179        MOVW     R2,#+377
+   \       0x18   0x....'....        LDR      R1,??DataTable21_1
+   \       0x1C   0x....'....        ADR      R0,?_4
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    378          	uint32_t current = start & ~0x1f;
+    379          	if (l2cache_is_enabled()) {
+   \                     ??l2cache_clean_invalidate_region_0:
+   \       0x28   0xE3A0'18A0        MOV      R1,#+10485760
+   \       0x2C   0xE3C4'001F        BIC      R0,R4,#0x1F
+   \       0x30   0xE381'1F40        ORR      R1,R1,#0x100
+   \       0x34   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x38   0xE312'0001        TST      R2,#0x1
+   \       0x3C   0x0A00'0010        BEQ      ??l2cache_clean_invalidate_region_1
+   \       0x40   0xE155'0000        CMP      R5,R0
+   \       0x44   0x3A00'0008        BCC      ??l2cache_clean_invalidate_region_2
+    380          		while (current <= end) {
+    381          			l2cc_clean_invalidate_pal(current);
+   \                     ??l2cache_clean_invalidate_region_3:
+   \       0x48   0xE3C0'201F        BIC      R2,R0,#0x1F
+   \       0x4C   0xE382'3001        ORR      R3,R2,#0x1
+   \       0x50   0xE581'36F0        STR      R3,[R1, #+1776]
+   \                     ??l2cache_clean_invalidate_region_4:
+   \       0x54   0xE591'C6F0        LDR      R12,[R1, #+1776]
+   \       0x58   0xE31C'0001        TST      R12,#0x1
+   \       0x5C   0x1AFF'FFFC        BNE      ??l2cache_clean_invalidate_region_4
+    382          			current += 32;
+   \       0x60   0xE280'0020        ADD      R0,R0,#+32
+    383          		}
+   \       0x64   0xE155'0000        CMP      R5,R0
+   \       0x68   0x2AFF'FFF6        BCS      ??l2cache_clean_invalidate_region_3
+    384          		l2cc_clean_invalidate_pal(end);
+   \                     ??l2cache_clean_invalidate_region_2:
+   \       0x6C   0xE3C5'001F        BIC      R0,R5,#0x1F
+   \       0x70   0xE380'2001        ORR      R2,R0,#0x1
+   \       0x74   0xE581'26F0        STR      R2,[R1, #+1776]
+   \                     ??l2cache_clean_invalidate_region_5:
+   \       0x78   0xE591'36F0        LDR      R3,[R1, #+1776]
+   \       0x7C   0xE313'0001        TST      R3,#0x1
+   \       0x80   0x1AFF'FFFC        BNE      ??l2cache_clean_invalidate_region_5
+    385          	}
+    386          }
+   \                     ??l2cache_clean_invalidate_region_1:
+   \       0x84   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    387          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    388          void l2cc_configure(const struct _l2cc_config* cfg)
+    389          {
+   \                     l2cc_configure:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    390          	assert(!l2cache_is_enabled());
+   \        0x4   0xE3A0'48A0        MOV      R4,#+10485760
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+   \        0xC   0xE384'4F40        ORR      R4,R4,#0x100
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0xE310'0001        TST      R0,#0x1
+   \       0x18   0x0A00'0004        BEQ      ??l2cc_configure_0
+   \       0x1C   0xE300'2186        MOVW     R2,#+390
+   \       0x20   0x....'....        LDR      R1,??DataTable21_1
+   \       0x24   0x....'....        ADR      R0,?_2
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    391          
+    392          	l2cc_event_config(0, L2CC_ECFGR0_ESRC_SRC_DRHIT,
+    393          	                  L2CC_ECFGR0_EIGEN_INT_DIS);
+   \                     ??l2cc_configure_0:
+   \       0x30   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x34   0xE310'0001        TST      R0,#0x1
+   \       0x38   0x0A00'0004        BEQ      ??l2cc_configure_1
+   \       0x3C   0xE3A0'20AD        MOV      R2,#+173
+   \       0x40   0x....'....        LDR      R1,??DataTable21_1
+   \       0x44   0x....'....        ADR      R0,?_2
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??l2cc_configure_1:
+   \       0x50   0xE3A0'0008        MOV      R0,#+8
+   \       0x54   0xE584'0108        STR      R0,[R4, #+264]
+    394          	l2cc_event_config(1, L2CC_ECFGR0_ESRC_SRC_DWHIT,
+    395          	                  L2CC_ECFGR0_EIGEN_INT_DIS);
+   \       0x58   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x5C   0xE310'0001        TST      R0,#0x1
+   \       0x60   0x0A00'0004        BEQ      ??l2cc_configure_2
+   \       0x64   0xE3A0'20AD        MOV      R2,#+173
+   \       0x68   0x....'....        LDR      R1,??DataTable21_1
+   \       0x6C   0x....'....        ADR      R0,?_2
+   \       0x70   0x....'....        BL       __aeabi_assert
+   \       0x74   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??l2cc_configure_2:
+   \       0x78   0xE3A0'0010        MOV      R0,#+16
+    396          	l2cc_enable_event_counter(0);
+   \       0x7C   0xE3A0'1003        MOV      R1,#+3
+   \       0x80   0xE584'0104        STR      R0,[R4, #+260]
+   \       0x84   0xE584'1100        STR      R1,[R4, #+256]
+    397          	l2cc_enable_event_counter(1);
+   \       0x88   0xE3A0'2005        MOV      R2,#+5
+    398          
+    399          	/* Set configuration */
+    400          	l2cc_set_config(cfg);
+   \       0x8C   0xE1A0'0005        MOV      R0,R5
+   \       0x90   0xE584'2100        STR      R2,[R4, #+256]
+   \       0x94   0x....'....        BL       l2cc_set_config
+    401          
+    402          	/* Enable Prefetch */
+    403          	l2cc_inst_prefetch_enable();
+   \       0x98   0xE594'0E60        LDR      R0,[R4, #+3680]
+   \       0x9C   0xE380'1580        ORR      R1,R0,#0x20000000
+    404          	l2cc_data_prefetch_enable();
+    405          
+    406          	/* Invalidate whole L2CC */
+    407          	l2cc_invalidate_way(0xFF);
+   \       0xA0   0xE3A0'00FF        MOV      R0,#+255
+   \       0xA4   0xE584'1E60        STR      R1,[R4, #+3680]
+   \       0xA8   0xE594'2E60        LDR      R2,[R4, #+3680]
+   \       0xAC   0xE382'3540        ORR      R3,R2,#0x10000000
+   \       0xB0   0xE584'3E60        STR      R3,[R4, #+3680]
+   \       0xB4   0xE584'067C        STR      R0,[R4, #+1660]
+   \                     ??l2cc_configure_3:
+   \       0xB8   0xE594'167C        LDR      R1,[R4, #+1660]
+   \       0xBC   0xE311'00FF        TST      R1,#0xFF
+   \       0xC0   0x1AFF'FFFC        BNE      ??l2cc_configure_3
+    408          
+    409          	/* Disable all L2CC Interrupt */
+    410          	l2cc_disable_it(0x1FF);
+   \       0xC4   0xE594'0114        LDR      R0,[R4, #+276]
+   \       0xC8   0xE1A0'14A0        LSR      R1,R0,#+9
+   \       0xCC   0xE1A0'1481        LSL      R1,R1,#+9
+   \       0xD0   0xE584'1114        STR      R1,[R4, #+276]
+    411          
+    412          	/* Clear all L2CC Interrupt */
+    413          	l2cc_it_clear(0xFF);
+   \       0xD4   0xE594'2120        LDR      R2,[R4, #+288]
+   \       0xD8   0xE382'30FF        ORR      R3,R2,#0xFF
+   \       0xDC   0xE584'3120        STR      R3,[R4, #+288]
+    414          
+    415          	/* Set exclusive mode */
+    416          	l2cache_set_exclusive();
+   \       0xE0   0x....'....        BL       l2cache_set_exclusive
+    417          
+    418          	/* Enable L2CC */
+    419          	l2cache_enable();
+   \       0xE4   0xE3A0'0001        MOV      R0,#+1
+   \       0xE8   0x....'....        LDR      R1,??DataTable21  ;; 0xf8030058
+   \       0xEC   0xE581'0000        STR      R0,[R1, #+0]
+   \       0xF0   0xE594'2000        LDR      R2,[R4, #+0]
+   \       0xF4   0xE382'3001        ORR      R3,R2,#0x1
+   \       0xF8   0xE584'3000        STR      R3,[R4, #+0]
+   \       0xFC   0xF57F'F04F        dsb
+   \      0x100   0xF57F'F06F        isb
+    420          }
+   \      0x104   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable21:
+   \        0x0   0xF803'0058        DC32     0xf8030058
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable21_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable21_2:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable21_3:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable21_4:
+   \        0x0   0x00A0'077C        DC32     0xa0077c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable21_5:
+   \        0x0   0x00A0'07BC        DC32     0xa007bc
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable21_6:
+   \        0x0   0x00A0'07FC        DC32     0xa007fc
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable21_7:
+   \        0x0   0x00A0'07B8        DC32     0xa007b8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable21_8:
+   \        0x0   0x00A0'07F8        DC32     0xa007f8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_2:
+   \        0x0   0x21 0x6C          DC8 "!l2cache_is_enabled()"
+
+   \              0x32 0x63    
+
+   \              0x61 0x63    
+
+   \              0x68 0x65    
+
+   \              0x5F 0x69    
+
+   \              0x73 0x5F    
+
+   \              0x65 0x6E    
+
+   \              0x61 0x62    
+
+   \              0x6C 0x65    
+
+   \              0x64 0x28    
+
+   \              0x29 0x00
+   \       0x16   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x6D, 0x6D, 0x5C, 0x6C, 0x32, 0x63
+
+   \              0x6D 0x6D    
+
+   \              0x5C 0x6C    
+
+   \              0x32 0x63
+   \       0x40   0x61 0x63          DC8 0x61, 0x63, 0x68, 0x65, 0x5F, 0x6C, 0x32, 0x63
+
+   \              0x68 0x65    
+
+   \              0x5F 0x6C    
+
+   \              0x32 0x63
+   \       0x48   0x63 0x2E          DC8 0x63, 0x2E, 0x63, 0
+
+   \              0x63 0x00
+   \       0x4C   0x63 0x66          DC8 0x63, 0x66, 0x67, 0x2D, 0x3E, 0x6F, 0x66, 0x66
+
+   \              0x67 0x2D    
+
+   \              0x3E 0x6F    
+
+   \              0x66 0x66
+   \       0x54   0x73 0x65          DC8 0x73, 0x65, 0x74, 0x20, 0x3C, 0x3D, 0x20, 0x37
+
+   \              0x74 0x20    
+
+   \              0x3C 0x3D    
+
+   \              0x20 0x37
+   \       0x5C   0x20 0x7C          DC8 0x20, 0x7C, 0x7C, 0x20, 0x63, 0x66, 0x67, 0x2D
+
+   \              0x7C 0x20    
+
+   \              0x63 0x66    
+
+   \              0x67 0x2D
+   \       0x64   0x3E 0x6F          DC8 0x3E, 0x6F, 0x66, 0x66, 0x73, 0x65, 0x74, 0x20
+
+   \              0x66 0x66    
+
+   \              0x73 0x65    
+
+   \              0x74 0x20
+   \       0x6C   0x3D 0x3D          DC8 0x3D, 0x3D, 0x20, 0x31, 0x35, 0x20, 0x7C, 0x7C
+
+   \              0x20 0x31    
+
+   \              0x35 0x20    
+
+   \              0x7C 0x7C
+   \       0x74   0x20 0x63          DC8 0x20, 0x63, 0x66, 0x67, 0x2D, 0x3E, 0x6F, 0x66
+
+   \              0x66 0x67    
+
+   \              0x2D 0x3E    
+
+   \              0x6F 0x66
+   \       0x7C   0x66 0x73          DC8 0x66, 0x73, 0x65, 0x74, 0x20, 0x3D, 0x3D, 0x20
+
+   \              0x65 0x74    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x20
+   \       0x84   0x32 0x33          DC8 0x32, 0x33, 0x20, 0x7C, 0x7C, 0x20, 0x63, 0x66
+
+   \              0x20 0x7C    
+
+   \              0x7C 0x20    
+
+   \              0x63 0x66
+   \       0x8C   0x67 0x2D          DC8 0x67, 0x2D, 0x3E, 0x6F, 0x66, 0x66, 0x73, 0x65
+
+   \              0x3E 0x6F    
+
+   \              0x66 0x66    
+
+   \              0x73 0x65
+   \       0x94   0x74 0x20          DC8 0x74, 0x20, 0x3D, 0x3D, 0x20, 0x33, 0x31, 0
+
+   \              0x3D 0x3D    
+
+   \              0x20 0x33    
+
+   \              0x31 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_3:
+   \        0x0   0x65 0x76          DC8 "event_counter < 2"
+
+   \              0x65 0x6E    
+
+   \              0x74 0x5F    
+
+   \              0x63 0x6F    
+
+   \              0x75 0x6E    
+
+   \              0x74 0x65    
+
+   \              0x72 0x20    
+
+   \              0x3C 0x20    
+
+   \              0x32 0x00
+   \       0x12   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_4:
+   \        0x0   0x73 0x74          DC8 "start < end"
+
+   \              0x61 0x72    
+
+   \              0x74 0x20    
+
+   \              0x3C 0x20    
+
+   \              0x65 0x6E    
+
+   \              0x64 0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   l2cache_clean
+       0   l2cache_clean_invalidate
+      16   l2cache_clean_invalidate_region
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   l2cache_clean_region
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       0   l2cache_disable
+       0   l2cache_enable
+       0   l2cache_invalidate
+      16   l2cache_invalidate_region
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       0   l2cache_is_enabled
+       8   l2cache_set_exclusive
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   l2cache_set_non_exclusive
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       0   l2cc_cache_sync
+       8   l2cc_clean_index
+       8   l2cc_clean_invalidate_index
+       0   l2cc_clean_invalidate_pal
+       0   l2cc_clean_invalidate_way
+       0   l2cc_clean_pal
+       0   l2cc_clean_way
+      16   l2cc_configure
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+        16   -> l2cache_set_exclusive
+        16   -> l2cc_set_config
+       0   l2cc_data_lockdown
+       0   l2cc_data_prefetch_enable
+       0   l2cc_disable_it
+       8   l2cc_enable_event_counter
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       0   l2cc_enable_it
+      24   l2cc_event_config
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+       8   l2cc_event_counter_value
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       0   l2cc_get_spniden
+       0   l2cc_inst_prefetch_enable
+       0   l2cc_instruction_lockdown
+       0   l2cc_invalidate_pal
+       0   l2cc_invalidate_way
+       0   l2cc_it_clear
+       0   l2cc_it_status
+       0   l2cc_it_status_mask
+      24   l2cc_set_config
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+      16   l2cc_set_data_ram_latency
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   l2cc_set_tag_ram_latency
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable21
+       4  ??DataTable21_1
+       4  ??DataTable21_2
+       4  ??DataTable21_3
+       4  ??DataTable21_4
+       4  ??DataTable21_5
+       4  ??DataTable21_6
+       4  ??DataTable21_7
+       4  ??DataTable21_8
+       8  ??Subroutine8_0
+      24  ?Subroutine0
+      20  ?Subroutine1
+       8  ?Subroutine2
+      16  ?Subroutine3
+      12  ?Subroutine4
+       8  ?Subroutine5
+      28  ?Subroutine6
+       8  ?Subroutine7
+     156  ?_0
+      24  ?_2
+      20  ?_3
+      12  ?_4
+      76  l2cache_clean
+      76  l2cache_clean_invalidate
+     136  l2cache_clean_invalidate_region
+     136  l2cache_clean_region
+      32  l2cache_disable
+      44  l2cache_enable
+      76  l2cache_invalidate
+     136  l2cache_invalidate_region
+      20  l2cache_is_enabled
+      56  l2cache_set_exclusive
+      52  l2cache_set_non_exclusive
+      44  l2cc_cache_sync
+      28  l2cc_clean_index
+      24  l2cc_clean_invalidate_index
+      16  l2cc_clean_invalidate_pal
+       8  l2cc_clean_invalidate_way
+      12  l2cc_clean_pal
+       4  l2cc_clean_way
+     264  l2cc_configure
+      16  l2cc_data_lockdown
+      20  l2cc_data_prefetch_enable
+      20  l2cc_disable_it
+      96  l2cc_enable_event_counter
+      12  l2cc_enable_it
+     144  l2cc_event_config
+      96  l2cc_event_counter_value
+      24  l2cc_get_spniden
+      16  l2cc_inst_prefetch_enable
+      12  l2cc_instruction_lockdown
+      16  l2cc_invalidate_pal
+       8  l2cc_invalidate_way
+       8  l2cc_it_clear
+      12  l2cc_it_status
+       8  l2cc_it_status_mask
+     544  l2cc_set_config
+      96  l2cc_set_data_ram_latency
+      96  l2cc_set_tag_ram_latency
+
+ 
+   176 bytes in section .rodata
+ 2'688 bytes in section SOFTPACK
+ 
+ 2'688 bytes of CODE  memory
+   176 bytes of CONST memory
+
+Errors: none
+Warnings: none

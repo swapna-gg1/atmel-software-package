@@ -1,0 +1,823 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         18/Feb/2021  16:03:16
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\main.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWA667.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\main.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D27_SOM1_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_QSPI -D CONFIG_HAVE_QSPI_DMA -D CONFIG_HAVE_NFC -D
+#        CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D
+#        CONFIG_HAVE_GMAC_QUEUES -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_MPDDRC_DDR3 -D CONFIG_HAVE_MPDDRC_LPDDR3 -D
+#        CONFIG_HAVE_ADC_SETTLING_TIME -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_FAST_STARTUP -D
+#        CONFIG_HAVE_PMC_GENERATED_CLOCKS -D CONFIG_HAVE_PMC_AUDIO_CLOCK -D
+#        CONFIG_HAVE_PMC_PLLADIV2 -D CONFIG_HAVE_PMC_H32MXDIV -D
+#        CONFIG_HAVE_PMC_UPLL_BIAS -D CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA
+#        -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ
+#        -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_SFRBU
+#        -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_TRNG -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR2_W971GG6SB -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D
+#        CONFIG_HAVE_UART -D CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-A5 -e --fpu=VFPv4_D16 --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\List\main.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\Obj\main.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#      __iar_require _Printf      =  flags,widths
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\main.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           * \page qspi_flash QSPI Example
+     32           *
+     33           * \section Purpose
+     34           *
+     35           * This example indicates how to use the spi_nor driver in order to
+     36           * access data on a QSPI device.
+     37           *
+     38           * \section Requirements
+     39           *
+     40           * This package can be used with SAMA5D2-PTC-EK, SAMA5D2-XPLAINED, SAMA5D27-SOM1-EK.
+     41           *
+     42           * \section Descriptions
+     43           *
+     44           * This example shows how to use current spi driver package which composed of 
+     45           * low-level functions for spi-nor devices to access QSPI device. All external API 
+     46           * functions that support the unified interface of functions and operations for 
+     47           * all supported QSPI Devices. 
+     48           *
+     49           * \section Usage
+     50           *
+     51           * -# Compile the application and connect the DBGU port of the evaluation board
+     52           *    to the computer.
+     53           * -# Open and configure a terminal application on PC
+     54           *    (e.g. HyperTerminal on Microsoft Windows) with these settings:
+     55           *   - 115200 bauds
+     56           *   - 8 bits of data
+     57           *   - No parity
+     58           *   - 1 stop bit
+     59           *   - No flow control
+     60           * -# Download the program inside the evaluation board and run it. Please refer to
+     61           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/6421B.pdf">
+     62           *    SAM-BA User Guide</a>, the
+     63           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">
+     64           *    GNU-Based Software Development</a> application note or to the
+     65           *    <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">
+     66           *    IAR EWARM User Guide</a>, depending on your chosen solution.
+     67           * -# Upon startup, the application will output the following line on the DBGU:
+     68           *    \code
+     69           *     -- QSPI Example xxx --
+     70           *     -- SAMxxxxx-xx
+     71           *     -- Compiled: xxx xx xxxx xx:xx:xx --
+     72           *    \endcode
+     73           * -# Choose an item in the menu to test.
+     74           *
+     75           * \section References
+     76           * - qspi_flash/main.c
+     77           */
+     78          
+     79          /*----------------------------------------------------------------------------
+     80           *        Headers
+     81           *----------------------------------------------------------------------------*/
+     82          
+     83          #include <stdbool.h>
+     84          #include <stdio.h>
+     85          #include <string.h>
+     86          
+     87          #include "board.h"
+     88          #include "board_spi.h"
+     89          #include "chip.h"
+     90          #include "compiler.h"
+     91          #include "crypto/trng.h"
+     92          #include "gpio/pio.h"
+     93          #include "mm/cache.h"
+     94          #include "nvm/spi-nor/spi-nor.h"
+     95          #include "peripherals/pmc.h"
+     96          #include "serial/console.h"
+     97          #include "spi/qspi.h"
+     98          #include "trace.h"
+     99          
+    100          /*----------------------------------------------------------------------------
+    101           *        Local variables
+    102           *----------------------------------------------------------------------------*/
+    103          
+
+   \                                 In section .region_cache_aligned, align 32
+    104          CACHE_ALIGNED static uint8_t buf[768];
+   \                     buf:
+   \        0x0                      DS8 768
+    105          
+    106          
+    107          CACHE_ALIGNED static uint8_t buffer[768];
+    108          CACHE_ALIGNED static uint8_t buffer_read[768];
+    109          /*----------------------------------------------------------------------------
+    110           *        Local functions
+    111           *----------------------------------------------------------------------------*/
+    112          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    113          static void _display_buf(uint8_t *buffer, uint32_t size)
+    114          {
+   \                     _display_buf:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    115          	int i;
+    116          	for (i = 0; i < size; i++) {
+   \        0xC   0xE3A0'6000        MOV      R6,#+0
+   \                     ??_display_buf_0:
+   \       0x10   0xE156'0005        CMP      R6,R5
+   \       0x14   0x2A00'000F        BCS      ??_display_buf_1
+    117          		printf("%02x ", buffer[i]);
+   \       0x18   0xE7D4'1006        LDRB     R1,[R4, +R6]
+   \       0x1C   0x....'....        LDR      R0,??DataTable1_2
+   \       0x20   0x....'....        BL       printf
+    118          		if ((i & 31) == 31)
+   \       0x24   0xE216'001F        ANDS     R0,R6,#0x1F
+   \       0x28   0xE350'001F        CMP      R0,#+31
+   \       0x2C   0x1A00'0002        BNE      ??_display_buf_2
+    119          			printf("\r\n");
+   \       0x30   0x....'....        ADR      R0,??DataTable1  ;; 0x0D, 0x0A, 0x00, 0x00
+   \       0x34   0x....'....        BL       printf
+   \       0x38   0xEA00'0004        B        ??_display_buf_3
+    120          		else if ((i & 3) == 3)
+   \                     ??_display_buf_2:
+   \       0x3C   0xE216'0003        ANDS     R0,R6,#0x3
+   \       0x40   0xE350'0003        CMP      R0,#+3
+   \       0x44   0x1A00'0001        BNE      ??_display_buf_3
+    121          			printf(" ");
+   \       0x48   0x....'....        ADR      R0,??DataTable1_1  ;; " "
+   \       0x4C   0x....'....        BL       printf
+    122          	}
+   \                     ??_display_buf_3:
+   \       0x50   0xE296'6001        ADDS     R6,R6,#+1
+   \       0x54   0xEAFF'FFED        B        ??_display_buf_0
+    123          	printf("\r\n");
+   \                     ??_display_buf_1:
+   \       0x58   0x....'....        ADR      R0,??DataTable1  ;; 0x0D, 0x0A, 0x00, 0x00
+   \       0x5C   0x....'....        BL       printf
+    124          }
+   \       0x60   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    125          
+    126          /*----------------------------------------------------------------------------
+    127           *        Global functions
+    128           *----------------------------------------------------------------------------*/
+    129          
+    130          #define BOARD_SPI_FLASH_QSPI0 0
+    131          #if 1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    132          int main(void)
+    133          {
+   \                     main:
+   \        0x0   0xE92D'4FFE        PUSH     {R1-R11,LR}
+    134          	uint32_t start = 0x280000;
+   \        0x4   0xE3A0'49A0        MOV      R4,#+2621440
+    135          	struct spi_flash* flash = board_get_spi_flash(BOARD_SPI_FLASH_QSPI0);
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0x....'....        BL       board_get_spi_flash
+   \       0x10   0xE1B0'5000        MOVS     R5,R0
+    136          	int rc;
+    137                  uint32_t idx;
+                                  ^
+Warning[Pe177]: variable "idx" was declared but never referenced
+    138                  bool verify_failed = 0;
+                              ^
+Warning[Pe177]: variable "verify_failed" was declared but never referenced
+   \       0x14   0xE3A0'9000        MOV      R9,#+0
+   \       0x18   0xE5CD'9001        STRB     R9,[SP, #+1]
+    139          	/* Initialize TRNG */
+    140          	trng_enable();
+   \       0x1C   0x....'....        BL       trng_enable
+    141          
+    142          	/* Output example information */
+    143          	console_example_info("QSPI Example");
+   \       0x20   0x....'....        LDR      R0,??DataTable1_3
+   \       0x24   0x....'....        BL       console_example_info
+    144          
+    145          	printf("erasing block at 0x%08x\r\n", (int)start);
+   \       0x28   0xE1B0'1004        MOVS     R1,R4
+   \       0x2C   0x....'....        LDR      R0,??DataTable1_4
+   \       0x30   0x....'....        BL       printf
+    146          	rc = spi_nor_erase(flash, start, 4 * 1024);
+   \       0x34   0xE3A0'2D40        MOV      R2,#+4096
+   \       0x38   0xE1B0'1004        MOVS     R1,R4
+   \       0x3C   0xE1B0'0005        MOVS     R0,R5
+   \       0x40   0x....'....        BL       spi_nor_erase
+   \       0x44   0xE58D'0004        STR      R0,[SP, #+4]
+    147          	printf("erase returns %d\r\n", rc);
+   \       0x48   0xE59D'1004        LDR      R1,[SP, #+4]
+   \       0x4C   0x....'....        LDR      R0,??DataTable1_5
+   \       0x50   0x....'....        BL       printf
+    148          
+    149          	printf("reading %d bytes at 0x%08x\r\n", sizeof(buf), (int)start);
+   \       0x54   0x....'....        LDR      R6,??DataTable1_6
+   \       0x58   0xE1B0'2004        MOVS     R2,R4
+   \       0x5C   0xE3A0'1FC0        MOV      R1,#+768
+   \       0x60   0xE1B0'0006        MOVS     R0,R6
+   \       0x64   0x....'....        BL       printf
+    150          	memset(buf, 0, sizeof(buf));
+   \       0x68   0xE3A0'AFC0        MOV      R10,#+768
+   \       0x6C   0xE3A0'B000        MOV      R11,#+0
+   \       0x70   0x....'....        LDR      R7,??DataTable1_7
+   \       0x74   0xE1B0'8007        MOVS     R8,R7
+   \       0x78   0xE1B0'200B        MOVS     R2,R11
+   \       0x7C   0xE1B0'100A        MOVS     R1,R10
+   \       0x80   0xE1B0'0008        MOVS     R0,R8
+   \       0x84   0x....'....        BL       __aeabi_memset
+   \       0x88   0xE1B0'0008        MOVS     R0,R8
+    151          	rc = spi_nor_read(flash, start, buf, sizeof(buf));
+   \       0x8C   0xE3A0'3FC0        MOV      R3,#+768
+   \       0x90   0xE1B0'2007        MOVS     R2,R7
+   \       0x94   0xE1B0'1004        MOVS     R1,R4
+   \       0x98   0xE1B0'0005        MOVS     R0,R5
+   \       0x9C   0x....'....        BL       spi_nor_read
+   \       0xA0   0xE58D'0004        STR      R0,[SP, #+4]
+    152          	printf("read returns %d\r\n", rc);
+   \       0xA4   0xE59D'1004        LDR      R1,[SP, #+4]
+   \       0xA8   0x....'....        LDR      R0,??DataTable1_8
+   \       0xAC   0x....'....        BL       printf
+    153          	_display_buf(buf, sizeof(buf));
+   \       0xB0   0xE3A0'1FC0        MOV      R1,#+768
+   \       0xB4   0xE1B0'0007        MOVS     R0,R7
+   \       0xB8   0x....'....        BL       _display_buf
+    154          
+    155          	printf("preparing write buffer\r\n");
+   \       0xBC   0x....'....        LDR      R0,??DataTable1_9
+   \       0xC0   0x....'....        BL       printf
+    156          	uint8_t r = trng_get_random_data() & 0xff;
+   \       0xC4   0x....'....        BL       trng_get_random_data
+   \       0xC8   0xE5CD'0000        STRB     R0,[SP, #+0]
+    157          	uint32_t i = 0;
+   \       0xCC   0xE1B0'8009        MOVS     R8,R9
+    158          	while (i * 32 < sizeof(buf)) {
+   \                     ??main_0:
+   \       0xD0   0xE1B0'0288        LSLS     R0,R8,#+5
+   \       0xD4   0xE350'0FC0        CMP      R0,#+768
+   \       0xD8   0x2A00'000B        BCS      ??main_1
+    159          		memset(buf + i * 32, r + i, 32);
+   \       0xDC   0xE3A0'9020        MOV      R9,#+32
+   \       0xE0   0xE5DD'0000        LDRB     R0,[SP, #+0]
+   \       0xE4   0xE6E8'A070        UXTAB    R10,R8,R0
+   \       0xE8   0xE1B0'0288        LSLS     R0,R8,#+5
+   \       0xEC   0xE097'B000        ADDS     R11,R7,R0
+   \       0xF0   0xE1B0'200A        MOVS     R2,R10
+   \       0xF4   0xE1B0'1009        MOVS     R1,R9
+   \       0xF8   0xE1B0'000B        MOVS     R0,R11
+   \       0xFC   0x....'....        BL       __aeabi_memset
+   \      0x100   0xE1B0'000B        MOVS     R0,R11
+    160          		i++;
+   \      0x104   0xE298'8001        ADDS     R8,R8,#+1
+   \      0x108   0xEAFF'FFF0        B        ??main_0
+    161          	}
+    162          	_display_buf(buf, sizeof(buf));
+   \                     ??main_1:
+   \      0x10C   0xE3A0'1FC0        MOV      R1,#+768
+   \      0x110   0xE1B0'0007        MOVS     R0,R7
+   \      0x114   0x....'....        BL       _display_buf
+    163          
+    164          	printf("writing %d bytes at 0x%08x\r\n", sizeof(buf), (int)start);
+   \      0x118   0xE1B0'2004        MOVS     R2,R4
+   \      0x11C   0xE3A0'1FC0        MOV      R1,#+768
+   \      0x120   0x....'....        LDR      R0,??DataTable1_10
+   \      0x124   0x....'....        BL       printf
+    165          	rc = spi_nor_write(flash, start, buf, sizeof(buf));
+   \      0x128   0xE3A0'3FC0        MOV      R3,#+768
+   \      0x12C   0xE1B0'2007        MOVS     R2,R7
+   \      0x130   0xE1B0'1004        MOVS     R1,R4
+   \      0x134   0xE1B0'0005        MOVS     R0,R5
+   \      0x138   0x....'....        BL       spi_nor_write
+   \      0x13C   0xE1B0'9000        MOVS     R9,R0
+    166          	printf("write returns %d\r\n", rc);
+   \      0x140   0xE1B0'1009        MOVS     R1,R9
+   \      0x144   0x....'....        LDR      R0,??DataTable1_11
+   \      0x148   0x....'....        BL       printf
+    167          
+    168          	printf("reading %d bytes at 0x%08x\r\n", sizeof(buf), (int)start);
+   \      0x14C   0xE1B0'2004        MOVS     R2,R4
+   \      0x150   0xE3A0'1FC0        MOV      R1,#+768
+   \      0x154   0xE1B0'0006        MOVS     R0,R6
+   \      0x158   0x....'....        BL       printf
+    169          	memset(buf, 0, sizeof(buf));
+   \      0x15C   0xE3A0'6FC0        MOV      R6,#+768
+   \      0x160   0xE3A0'A000        MOV      R10,#+0
+   \      0x164   0xE1B0'B007        MOVS     R11,R7
+   \      0x168   0xE1B0'200A        MOVS     R2,R10
+   \      0x16C   0xE1B0'1006        MOVS     R1,R6
+   \      0x170   0xE1B0'000B        MOVS     R0,R11
+   \      0x174   0x....'....        BL       __aeabi_memset
+   \      0x178   0xE1B0'000B        MOVS     R0,R11
+    170          	rc = spi_nor_read(flash, start, buf, sizeof(buf));
+   \      0x17C   0xE3A0'3FC0        MOV      R3,#+768
+   \      0x180   0xE1B0'2007        MOVS     R2,R7
+   \      0x184   0xE1B0'1004        MOVS     R1,R4
+   \      0x188   0xE1B0'0005        MOVS     R0,R5
+   \      0x18C   0x....'....        BL       spi_nor_read
+   \      0x190   0xE1B0'B000        MOVS     R11,R0
+    171          	printf("read returns %d\r\n", rc);
+   \      0x194   0xE1B0'100B        MOVS     R1,R11
+   \      0x198   0x....'....        LDR      R0,??DataTable1_8
+   \      0x19C   0x....'....        BL       printf
+    172          	_display_buf(buf, sizeof(buf));
+   \      0x1A0   0xE3A0'1FC0        MOV      R1,#+768
+   \      0x1A4   0xE1B0'0007        MOVS     R0,R7
+   \      0x1A8   0x....'....        BL       _display_buf
+    173          
+    174          	while (1) { }
+   \                     ??main_2:
+   \      0x1AC   0xEAFF'FFFE        B        ??main_2
+    175          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0x0D 0x0A          DC8      0x0D, 0x0A, 0x00, 0x00
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \        0x0   0x20 0x00          DC8      " ",0x0,0x0
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_2:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_3:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_4:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_5:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_6:
+   \        0x0   0x....'....        DC32     ?_6
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_7:
+   \        0x0   0x....'....        DC32     buf
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_8:
+   \        0x0   0x....'....        DC32     ?_7
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_9:
+   \        0x0   0x....'....        DC32     ?_8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_10:
+   \        0x0   0x....'....        DC32     ?_9
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_11:
+   \        0x0   0x....'....        DC32     ?_10
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x25 0x30          DC8 "%02x "
+
+   \              0x32 0x78    
+
+   \              0x20 0x00
+   \        0x6   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \        0x0   0x0D 0x0A          DC8 "\015\012"
+
+   \              0x00
+   \        0x3   0x00               DC8 0
+
+   \                                 In section .rodata, align 2
+   \        0x0   0x20 0x00          DC8 " "
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x51 0x53          DC8 "QSPI Example"
+
+   \              0x50 0x49    
+
+   \              0x20 0x45    
+
+   \              0x78 0x61    
+
+   \              0x6D 0x70    
+
+   \              0x6C 0x65    
+
+   \              0x00
+   \        0xD   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_4:
+   \        0x0   0x65 0x72          DC8 "erasing block at 0x%08x\015\012"
+
+   \              0x61 0x73    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x20    
+
+   \              0x62 0x6C    
+
+   \              0x6F 0x63    
+
+   \              0x6B 0x20    
+
+   \              0x61 0x74    
+
+   \              0x20 0x30    
+
+   \              0x78 0x25    
+
+   \              0x30 0x38    
+
+   \              0x78 0x0D    
+
+   \              0x0A 0x00
+   \       0x1A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_5:
+   \        0x0   0x65 0x72          DC8 "erase returns %d\015\012"
+
+   \              0x61 0x73    
+
+   \              0x65 0x20    
+
+   \              0x72 0x65    
+
+   \              0x74 0x75    
+
+   \              0x72 0x6E    
+
+   \              0x73 0x20    
+
+   \              0x25 0x64    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x13   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_6:
+   \        0x0   0x72 0x65          DC8 "reading %d bytes at 0x%08x\015\012"
+
+   \              0x61 0x64    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x20    
+
+   \              0x25 0x64    
+
+   \              0x20 0x62    
+
+   \              0x79 0x74    
+
+   \              0x65 0x73    
+
+   \              0x20 0x61    
+
+   \              0x74 0x20    
+
+   \              0x30 0x78    
+
+   \              0x25 0x30    
+
+   \              0x38 0x78    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x1D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_7:
+   \        0x0   0x72 0x65          DC8 "read returns %d\015\012"
+
+   \              0x61 0x64    
+
+   \              0x20 0x72    
+
+   \              0x65 0x74    
+
+   \              0x75 0x72    
+
+   \              0x6E 0x73    
+
+   \              0x20 0x25    
+
+   \              0x64 0x0D    
+
+   \              0x0A 0x00
+   \       0x12   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_8:
+   \        0x0   0x70 0x72          DC8 "preparing write buffer\015\012"
+
+   \              0x65 0x70    
+
+   \              0x61 0x72    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x20    
+
+   \              0x77 0x72    
+
+   \              0x69 0x74    
+
+   \              0x65 0x20    
+
+   \              0x62 0x75    
+
+   \              0x66 0x66    
+
+   \              0x65 0x72    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x19   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_9:
+   \        0x0   0x77 0x72          DC8 "writing %d bytes at 0x%08x\015\012"
+
+   \              0x69 0x74    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x20    
+
+   \              0x25 0x64    
+
+   \              0x20 0x62    
+
+   \              0x79 0x74    
+
+   \              0x65 0x73    
+
+   \              0x20 0x61    
+
+   \              0x74 0x20    
+
+   \              0x30 0x78    
+
+   \              0x25 0x30    
+
+   \              0x38 0x78    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x1D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_10:
+   \        0x0   0x77 0x72          DC8 "write returns %d\015\012"
+
+   \              0x69 0x74    
+
+   \              0x65 0x20    
+
+   \              0x72 0x65    
+
+   \              0x74 0x75    
+
+   \              0x72 0x6E    
+
+   \              0x73 0x20    
+
+   \              0x25 0x64    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x13   0x00               DC8 0
+    176          #endif
+    177          
+    178          
+    179          #if 0
+    180          int main(void)
+    181          {
+    182          	uint32_t start = 0x280000;
+    183          	struct spi_flash* flash = board_get_spi_flash(BOARD_SPI_FLASH_QSPI0);
+    184          	int rc;
+    185                  uint32_t idx;
+    186                  bool verify_failed = 0;
+    187          	/* Initialize TRNG */
+    188          	trng_enable();
+    189          
+    190          	/* Output example information */
+    191          	console_example_info("QSPI Example");
+    192          
+    193          	printf("erasing block at 0x%08x\r\n", (int)start);
+    194          	rc = spi_nor_erase(flash, start, 4 * 1024);
+    195          	printf("erase returns %d\r\n", rc);
+    196          
+    197          	//printf("reading %d bytes at 0x%08x\r\n", sizeof(buf), (int)start);
+    198          	//memset(buf, 0, sizeof(buf));
+    199          	//rc = spi_nor_read(flash, start, buf, sizeof(buf));
+    200          	//printf("read returns %d\r\n", rc);
+    201          	//_display_buf(buf, sizeof(buf));
+    202          
+    203          	printf("preparing write buffer\r\n");
+    204          	uint8_t r = trng_get_random_data() & 0xff;
+    205          	uint32_t i = 0;
+    206          	while (i * 32 < sizeof(buf)) {
+    207          		memset(buffer + i * 32, r + i, 32);
+    208          		i++;
+    209          	}
+    210          	//_display_buf(buf, sizeof(buf));
+    211          
+    212          	printf("writing %d bytes at 0x%08x\r\n", sizeof(buffer), (int)start);
+    213          	rc = spi_nor_write(flash, start, buffer, sizeof(buffer));
+    214          	printf("write returns %d\r\n", rc);
+    215          
+    216          	printf("reading %d bytes at 0x%08x\r\n", sizeof(buf), (int)start);
+    217          	memset(buffer_read, 0, sizeof(buffer_read));
+    218          	rc = spi_nor_read(flash, start, buffer_read, sizeof(buffer_read));
+    219          	printf("read returns %d\r\n", rc);
+    220          	//_display_buf(buf, sizeof(buf));
+    221                  verify_failed = false;
+    222                  for (idx = 0; idx < ARRAY_SIZE(buffer_read); idx++) {
+    223          		if (buffer_read[idx] != buffer[idx]) {
+    224          			verify_failed = true;
+    225          			printf("-E- Data does not match at 0x%x (0x%02x != 0x%02x)\n\r",
+    226          				   (unsigned)(buffer_read + idx), buffer_read[idx], buffer[idx]);
+    227          			break;
+    228          		}
+    229          	}
+    230                  
+    231                  
+    232                  if(verify_failed == true)
+    233                    printf("test failed\r\n");
+    234                  else
+    235                    printf("test passed\r\n");
+    236          	while (1) { }
+    237          }
+    238          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   _display_buf
+        16   -> printf
+      48   main
+        48   -> __aeabi_memset
+        48   -> _display_buf
+        48   -> board_get_spi_flash
+        48   -> console_example_info
+        48   -> printf
+        48   -> spi_nor_erase
+        48   -> spi_nor_read
+        48   -> spi_nor_write
+        48   -> trng_enable
+        48   -> trng_get_random_data
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+       4  ??DataTable1_10
+       4  ??DataTable1_11
+       4  ??DataTable1_2
+       4  ??DataTable1_3
+       4  ??DataTable1_4
+       4  ??DataTable1_5
+       4  ??DataTable1_6
+       4  ??DataTable1_7
+       4  ??DataTable1_8
+       4  ??DataTable1_9
+       8  ?_0
+       4  ?_1
+      20  ?_10
+       2  ?_2
+      16  ?_3
+      28  ?_4
+      20  ?_5
+      32  ?_6
+      20  ?_7
+      28  ?_8
+      32  ?_9
+     100  _display_buf
+     768  buf
+     432  main
+
+ 
+ 768 bytes in section .region_cache_aligned
+ 210 bytes in section .rodata
+ 580 bytes in section SOFTPACK
+ 
+ 580 bytes of CODE  memory
+ 210 bytes of CONST memory
+ 768 bytes of DATA  memory
+
+Errors: none
+Warnings: 2

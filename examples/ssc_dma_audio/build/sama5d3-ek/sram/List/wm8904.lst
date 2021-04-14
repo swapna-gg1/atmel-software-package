@@ -1,0 +1,1309 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         08/Dec/2020  16:47:07
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\wm8904.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW57A7.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\wm8904.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D3 -D
+#        CONFIG_CHIP_SAMA5D36 -D CONFIG_BOARD_SAMA5D3_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_INPUT_OFFSET -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_PLLA_CHARGE_PUMP -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_PMC_PERIPH_DIV -D CONFIG_HAVE_SCKC -D
+#        CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_DMAC
+#        -D CONFIG_HAVE_DMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SMD -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_MT47H128M16 -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_TC_FAULT_MODE -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC
+#        -D CONFIG_HAVE_AUDIO_WM8904 -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sama5d3\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List\wm8904.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj\wm8904.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\wm8904.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "audio/wm8904.h"
+     35          #include "audio/wm8904_regs.h"
+     36          #include "i2c/twid.h"
+     37          #include "peripherals/bus.h"
+     38          #include "peripherals/pmc.h"
+     39          #include "timer.h"
+     40          #include "trace.h"
+     41          
+     42          /*----------------------------------------------------------------------------
+     43           *        Type
+     44           *----------------------------------------------------------------------------*/
+     45          
+     46          struct _wm8904_para {
+     47          	uint8_t  address;
+     48          	uint16_t value;
+     49          	uint8_t  delay;
+     50          };
+     51          
+     52          /*----------------------------------------------------------------------------
+     53           *        Local constants
+     54           *----------------------------------------------------------------------------*/
+     55          
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x46          DC8 "-F- wm8904: device not detected!\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x77 0x6D    
+
+   \              0x38 0x39    
+
+   \              0x30 0x34    
+
+   \              0x3A 0x20    
+
+   \              0x64 0x65    
+
+   \              0x76 0x69    
+
+   \              0x63 0x65    
+
+   \              0x20 0x6E    
+
+   \              0x6F 0x74    
+
+   \              0x20 0x64    
+
+   \              0x65 0x74    
+
+   \              0x65 0x63    
+
+   \              0x74 0x65    
+
+   \              0x64 0x21    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x23   0x00               DC8 0
+   \       0x24   0x2D 0x46          DC8 "-F- wm8904: PCK not supported!\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x77 0x6D    
+
+   \              0x38 0x39    
+
+   \              0x30 0x34    
+
+   \              0x3A 0x20    
+
+   \              0x50 0x43    
+
+   \              0x4B 0x20    
+
+   \              0x6E 0x6F    
+
+   \              0x74 0x20    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70    
+
+   \              0x6F 0x72    
+
+   \              0x74 0x65    
+
+   \              0x64 0x21    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x45   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0x48   0x2D 0x46          DC8 "-F- wm8904: invalid left input path\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x77 0x6D    
+
+   \              0x38 0x39    
+
+   \              0x30 0x34    
+
+   \              0x3A 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x6C 0x65    
+
+   \              0x66 0x74    
+
+   \              0x20 0x69    
+
+   \              0x6E 0x70    
+
+   \              0x75 0x74    
+
+   \              0x20 0x70    
+
+   \              0x61 0x74    
+
+   \              0x68 0x0D    
+
+   \              0x0A 0x00
+   \       0x6E   0x00 0x00          DC8 0, 0
+   \       0x70   0x2D 0x46          DC8 "-F- wm8904: invalid right input path\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x77 0x6D    
+
+   \              0x38 0x39    
+
+   \              0x30 0x34    
+
+   \              0x3A 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x72 0x69    
+
+   \              0x67 0x68    
+
+   \              0x74 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x70 0x75    
+
+   \              0x74 0x20    
+
+   \              0x70 0x61    
+
+   \              0x74 0x68    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x97   0x00               DC8 0
+   \       0x98   0x00 0x00          DC8 0, 0
+   \       0x9A   0x0000             DC16 0
+   \       0x9C   0x00 0x00          DC8 0, 0, 4, 0
+
+   \              0x04 0x00
+   \       0xA0   0x001A             DC16 26
+   \       0xA2   0x00 0x00          DC8 0, 0, 5, 0
+
+   \              0x05 0x00
+   \       0xA6   0x0047             DC16 71
+   \       0xA8   0x05 0x00          DC8 5, 0, 5, 0
+
+   \              0x05 0x00
+   \       0xAC   0x0043             DC16 67
+   \       0xAE   0x00 0x00          DC8 0, 0, 4, 0
+
+   \              0x04 0x00
+   \       0xB2   0x000B             DC16 11
+   \       0xB4   0x00 0x00          DC8 0, 0, 12, 0
+
+   \              0x0C 0x00
+   \       0xB8   0x0003             DC16 3
+   \       0xBA   0x00 0x00          DC8 0, 0, 14, 0
+
+   \              0x0E 0x00
+   \       0xBE   0x0003             DC16 3
+   \       0xC0   0x00 0x00          DC8 0, 0, 18, 0
+
+   \              0x12 0x00
+   \       0xC4   0x000C             DC16 12
+   \       0xC6   0x00 0x00          DC8 0, 0, 33, 0
+
+   \              0x21 0x00
+   \       0xCA   0x0000             DC16 0
+   \       0xCC   0x00 0x00          DC8 0, 0, 61, 0
+
+   \              0x3D 0x00
+   \       0xD0   0x0000             DC16 0
+   \       0xD2   0x00 0x00          DC8 0, 0, 98, 0
+
+   \              0x62 0x00
+   \       0xD6   0x0001             DC16 1
+   \       0xD8   0x00 0x00          DC8 0, 0, 104, 0
+
+   \              0x68 0x00
+   \       0xDC   0x0005             DC16 5
+   \       0xDE   0x00 0x00          DC8 0, 0, 116, 0
+
+   \              0x74 0x00
+   \       0xE2   0x0000             DC16 0
+   \       0xE4   0x00 0x00          DC8 0, 0, 117, 0
+
+   \              0x75 0x00
+   \       0xE8   0x0704             DC16 1'796
+   \       0xEA   0x00 0x00          DC8 0, 0, 118, 0
+
+   \              0x76 0x00
+   \       0xEE   0x8000             DC16 32'768
+   \       0xF0   0x00 0x00          DC8 0, 0, 119, 0
+
+   \              0x77 0x00
+   \       0xF4   0x1760             DC16 5'984
+   \       0xF6   0x00 0x00          DC8 0, 0, 116, 0
+
+   \              0x74 0x00
+   \       0xFA   0x0005             DC16 5
+   \       0xFC   0x05 0x00          DC8 5, 0, 21, 0
+
+   \              0x15 0x00
+   \      0x100   0x0C05             DC16 3'077
+   \      0x102   0x00 0x00          DC8 0, 0, 20, 0
+
+   \              0x14 0x00
+   \      0x106   0x845E             DC16 33'886
+   \      0x108   0x00 0x00          DC8 0, 0, 22, 0
+
+   \              0x16 0x00
+   \      0x10C   0x4006             DC16 16'390
+   \      0x10E   0x00 0x00          DC8 0, 0, 25, 0
+
+   \              0x19 0x00
+   \      0x112   0x0042             DC16 66
+   \      0x114   0x00 0x00          DC8 0, 0, 26, 0
+
+   \              0x1A 0x00
+   \      0x118   0x00E8             DC16 232
+   \      0x11A   0x00 0x00          DC8 0, 0, 27, 0
+
+   \              0x1B 0x00
+   \      0x11E   0x0820             DC16 2'080
+   \      0x120   0x00 0x00          DC8 0, 0, 12, 0
+
+   \              0x0C 0x00
+   \      0x124   0x0003             DC16 3
+   \      0x126   0x00 0x00          DC8 0, 0, 18, 0
+
+   \              0x12 0x00
+   \      0x12A   0x000F             DC16 15
+   \      0x12C   0x05 0x00          DC8 5, 0, 44, 0
+
+   \              0x2C 0x00
+   \      0x130   0x0010             DC16 16
+   \      0x132   0x00 0x00          DC8 0, 0, 45, 0
+
+   \              0x2D 0x00
+   \      0x136   0x0010             DC16 16
+   \      0x138   0x00 0x00          DC8 0, 0, 46, 0
+
+   \              0x2E 0x00
+   \      0x13C   0x0004             DC16 4
+   \      0x13E   0x00 0x00          DC8 0, 0, 47, 0
+
+   \              0x2F 0x00
+   \      0x142   0x0004             DC16 4
+   \      0x144   0x00 0x00          DC8 0, 0, 90, 0
+
+   \              0x5A 0x00
+   \      0x148   0x0011             DC16 17
+   \      0x14A   0x00 0x00          DC8 0, 0, 90, 0
+
+   \              0x5A 0x00
+   \      0x14E   0x0033             DC16 51
+   \      0x150   0x00 0x00          DC8 0, 0, 67, 0
+
+   \              0x43 0x00
+   \      0x154   0x000F             DC16 15
+   \      0x156   0x00 0x00          DC8 0, 0, 68, 0
+
+   \              0x44 0x00
+   \      0x15A   0x00F0             DC16 240
+   \      0x15C   0x64 0x00          DC8 100, 0, 90, 0
+
+   \              0x5A 0x00
+   \      0x160   0x0077             DC16 119
+   \      0x162   0x00 0x00          DC8 0, 0, 90, 0
+
+   \              0x5A 0x00
+   \      0x166   0x00FF             DC16 255
+   \      0x168   0x00 0x00          DC8 0, 0, 57, 0
+
+   \              0x39 0x00
+   \      0x16C   0x00B9             DC16 185
+   \      0x16E   0x00 0x00          DC8 0, 0, 58, 0
+
+   \              0x3A 0x00
+   \      0x172   0x00B9             DC16 185
+   \      0x174   0x64 0x00          DC8 100, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x178   0x04 0x00          DC8 4, 0
+   \      0x17A   0x0018             DC16 24
+   \      0x17C   0x00 0x00          DC8 0, 0, 5, 0
+
+   \              0x05 0x00
+   \      0x180   0x0043             DC16 67
+   \      0x182   0x00 0x00          DC8 0, 0, 12, 0
+
+   \              0x0C 0x00
+   \      0x186   0x0003             DC16 3
+   \      0x188   0x00 0x00          DC8 0, 0, 14, 0
+
+   \              0x0E 0x00
+   \      0x18C   0x0003             DC16 3
+   \      0x18E   0x00 0x00          DC8 0, 0, 18, 0
+
+   \              0x12 0x00
+   \      0x192   0x000F             DC16 15
+   \      0x194   0x00 0x00          DC8 0, 0, 20, 0
+
+   \              0x14 0x00
+   \      0x198   0x845E             DC16 33'886
+   \      0x19A   0x00 0x00          DC8 0, 0, 22, 0
+
+   \              0x16 0x00
+   \      0x19E   0x0006             DC16 6
+   \      0x1A0   0x00 0x00          DC8 0, 0, 25, 0
+
+   \              0x19 0x00
+   \      0x1A4   0x404A             DC16 16'458
+   \      0x1A6   0x00 0x00          DC8 0, 0, 27, 0
+
+   \              0x1B 0x00
+   \      0x1AA   0x0840             DC16 2'112
+   \      0x1AC   0x00 0x00          DC8 0, 0, 33, 0
+
+   \              0x21 0x00
+   \      0x1B0   0x0000             DC16 0
+   \      0x1B2   0x00 0x00          DC8 0, 0, 44, 0
+
+   \              0x2C 0x00
+   \      0x1B6   0x0005             DC16 5
+   \      0x1B8   0x00 0x00          DC8 0, 0, 45, 0
+
+   \              0x2D 0x00
+   \      0x1BC   0x0005             DC16 5
+   \      0x1BE   0x00 0x00          DC8 0, 0, 46, 0
+
+   \              0x2E 0x00
+   \      0x1C2   0x0000             DC16 0
+   \      0x1C4   0x00 0x00          DC8 0, 0, 47, 0
+
+   \              0x2F 0x00
+   \      0x1C8   0x0000             DC16 0
+   \      0x1CA   0x00 0x00          DC8 0, 0, 58, 0
+
+   \              0x3A 0x00
+   \      0x1CE   0x00AD             DC16 173
+   \      0x1D0   0x00 0x00          DC8 0, 0, 67, 0
+
+   \              0x43 0x00
+   \      0x1D4   0x0003             DC16 3
+   \      0x1D6   0x00 0x00          DC8 0, 0, 90, 0
+
+   \              0x5A 0x00
+   \      0x1DA   0x00FF             DC16 255
+   \      0x1DC   0x00 0x00          DC8 0, 0, 98, 0
+
+   \              0x62 0x00
+   \      0x1E0   0x0001             DC16 1
+   \      0x1E2   0x00 0x00          DC8 0, 0, 104, 0
+
+   \              0x68 0x00
+   \      0x1E6   0x0005             DC16 5
+   \      0x1E8   0x00 0x00          DC8 0, 0, 116, 0
+
+   \              0x74 0x00
+   \      0x1EC   0x0004             DC16 4
+   \      0x1EE   0x00 0x00          DC8 0, 0, 117, 0
+
+   \              0x75 0x00
+   \      0x1F2   0x0704             DC16 1'796
+   \      0x1F4   0x00 0x00          DC8 0, 0, 118, 0
+
+   \              0x76 0x00
+   \      0x1F8   0x8000             DC16 32'768
+   \      0x1FA   0x00 0x00          DC8 0, 0, 119, 0
+
+   \              0x77 0x00
+   \      0x1FE   0x1760             DC16 5'984
+   \      0x200   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+     56          static const struct _wm8904_para wm8904_access_slow[] = {
+     57          	{ WM8904_REG_RESET, 0x0000, 0 },   /** R0   - SW Reset and ID */
+     58          	{ WM8904_REG_BIAS_CTRL0, 0x001a, 0 },   /** R4   - Bias Control 0 */
+     59          	{ WM8904_REG_VMID_CTRL0, 0x0047, 5 },   /** R5   - VMID Control 0 */
+     60          	{ WM8904_REG_VMID_CTRL0, 0x0043, 0 },   /** R5   - VMID Control 0 */
+     61          	{ WM8904_REG_BIAS_CTRL0, 0x000b, 0 },   /** R4   - Bias Control 0 */
+     62          	{ WM8904_REG_POWER_MANG0, 0x0003, 0 },   /** R12  - Power Management 0 CC */
+     63          	{ WM8904_REG_POWER_MANG2, 0x0003, 0 },   /** R14  - Power Management 2 */
+     64          	{ WM8904_REG_POWER_MANG6, 0x000c, 0 },   /** R18  - Power Management 6 */
+     65          	{ WM8904_REG_ADC_DIG1, 0x0000, 0 },   /** R33  - DAC Digital 1 */
+     66          	{ WM8904_REG_ANALOGUE_OUT12ZC, 0x0000, 0 },   /** R61  - Analogue OUT12 ZC */
+     67          	{ WM8904_REG_CHARGE_PUMP0, 0x0001, 0 },   /** R98  - Charge Pump 0 */
+     68          	{ WM8904_REG_CLASS0, 0x0005, 0 },   /** R104 - Class W 0 */
+     69          	/* FLL setting,32.768KHZ MCLK input,12.288M output. */
+     70          	{ WM8904_REG_FLL_CRTL1, 0x0000, 0 },   /** R116 - FLL Control 1 */
+     71          	{ WM8904_REG_FLL_CRTL2, 0x0704, 0 },   /** R117 - FLL Control 2 */
+     72          	{ WM8904_REG_FLL_CRTL3, 0x8000, 0 },   /** R118 - FLL Control 3 */
+     73          	{ WM8904_REG_FLL_CRTL4, 0x1760, 0 },   /** R119 - FLL Control 4 */
+     74          	{ WM8904_REG_FLL_CRTL1, 0x0005, 5 },   /** R116 - FLL Control 1 */
+     75          	{ WM8904_REG_CLOCK_RATE1, 0x0c05, 0 },   /** R21  - Clock Rates 1 */
+     76          	{ WM8904_REG_CLOCK_RATE0, 0x845e, 0 },   /** R20  - Clock Rates 0 */
+     77          	{ WM8904_REG_CLOCK_RATE2, 0x4006, 0 },   /** R22  - Clock Rates 2 */
+     78          	/* wm8904 IIS master BCLK=12.288MHz/8=1.536MHz LRCK=1.536MHz/32=48KHz */
+     79          	{ WM8904_REG_AUD_INF1, 0x0042, 0 },   /** R25  - Audio Interface 1 */
+     80          	{ WM8904_REG_AUD_INF2, 0x00e8, 0 },   /** R26  - Audio Interface 2 */
+     81          	{ WM8904_REG_AUD_INF3, 0x0820, 0 },   /** R27  - Audio Interface 3 */
+     82          	{ WM8904_REG_POWER_MANG0, 0x0003, 0 },   /** R12  - Power Management 0 */
+     83          	{ WM8904_REG_POWER_MANG6, 0x000f, 5 },   /** R18  - Power Management 6 */
+     84          	{ WM8904_REG_ANALOGUE_LIN0, 0x0010, 0 },   /** R44  - Analogue Left Input 0 */
+     85          	{ WM8904_REG_ANALOGUE_RIN0, 0x0010, 0 },   /** R45  - Analogue Right Input 0 */
+     86          	{ WM8904_REG_ANALOGUE_LIN1, 0x0004, 0 },   /** R46  - Analogue Left Input 1 */
+     87          	{ WM8904_REG_ANALOGUE_RIN1, 0x0004, 0 },   /** R47  - Analogue Right Input 1 */
+     88          	{ WM8904_REG_ANALOGUE_HP0, 0x0011, 0 },   /** R90  - Analogue HP 0 */
+     89          	{ WM8904_REG_ANALOGUE_HP0, 0x0033, 0 },   /** R90  - Analogue HP 0 */
+     90          	{ WM8904_REG_DC_SERVO0, 0x000f, 0 },   /** R67  - DC Servo 0 */
+     91          	{ WM8904_REG_DC_SERVO1, 0x00f0, 100 }, /** R68  - DC Servo 1 */
+     92          	{ WM8904_REG_ANALOGUE_HP0, 0x0077, 0 },   /** R90  - Analogue HP 0 */
+     93          	{ WM8904_REG_ANALOGUE_HP0, 0x00ff, 0 },   /** R90  - Analogue HP 0 */
+     94          	{ WM8904_REG_ANALOGUE_LOUT1, 0x00b9, 0 },   /** R57  - Analogue OUT1 Left */
+     95          	{ WM8904_REG_ANALOGUE_ROUT1, 0x00b9, 100 }, /** R58  - Analogue OUT1 Right */
+     96          };
+     97          
+     98          static const struct _wm8904_para wm8904_access_main[] = {
+     99          	{ WM8904_REG_BIAS_CTRL0, 0x0018, 0 }, /** R2   - Bias Control 0 */
+    100          	{ WM8904_REG_VMID_CTRL0, 0x0043, 0 }, /** R5   - VMID Control 0 */
+    101          	{ WM8904_REG_POWER_MANG0, 0x0003, 0 }, /** R12  - Power Management 0 */
+    102          	{ WM8904_REG_POWER_MANG2, 0x0003, 0 }, /** R14  - Power Management 2 */
+    103          	{ WM8904_REG_POWER_MANG6, 0x000f, 0 }, /** R18  - Power Management 6 */
+    104          	{ WM8904_REG_CLOCK_RATE0, 0x845e, 0 }, /** R20  - Clock Rates 0 */
+    105          	{ WM8904_REG_CLOCK_RATE2, 0x0006, 0 }, /** R22  - Clock Rates 2 */
+    106          	{ WM8904_REG_AUD_INF1, 0x404a, 0 }, /** R25  - Audio Interface 1 */
+    107          	{ WM8904_REG_AUD_INF3, 0x0840, 0 }, /** R27  - Audio Interface 3 */
+    108          	{ WM8904_REG_ADC_DIG1, 0x0000, 0 }, /** R33  - DAC Digital 1 */
+    109          	{ WM8904_REG_ANALOGUE_LIN0, 0x0005, 0 }, /** R44  - Analogue Left Input 0 */
+    110          	{ WM8904_REG_ANALOGUE_RIN0, 0x0005, 0 }, /** R45  - Analogue Right Input 0 */
+    111          	{ WM8904_REG_ANALOGUE_LIN1, 0x0000, 0 }, /** R46  - Analogue Left Input 1 */
+    112          	{ WM8904_REG_ANALOGUE_RIN1, 0x0000, 0 }, /** R47  - Analogue Right Input 1 */
+    113          	{ WM8904_REG_ANALOGUE_ROUT1, 0x00ad, 0 }, /** R58  - Analogue OUT1 Right */
+    114          	{ WM8904_REG_DC_SERVO0, 0x0003, 0 }, /** R67  - DC Servo 0 */
+    115          	{ WM8904_REG_ANALOGUE_HP0, 0x00ff, 0 }, /** R90  - Analogue HP 0 */
+    116          	{ WM8904_REG_CHARGE_PUMP0, 0x0001, 0 }, /** R98  - Charge Pump 0 */
+    117          	{ WM8904_REG_CLASS0, 0x0005, 0 }, /** R104 - Class W 0 */
+    118          	{ WM8904_REG_FLL_CRTL1, 0x0004, 0 }, /** R116 - FLL Control 1 */
+    119          	{ WM8904_REG_FLL_CRTL2, 0x0704, 0 }, /** R117 - FLL Control 2 */
+    120          	{ WM8904_REG_FLL_CRTL3, 0x8000, 0 }, /** R118 - FLL Control 3 */
+    121          	{ WM8904_REG_FLL_CRTL4, 0x1760, 0 }, /** R119 - FLL Control 4 */
+    122          };
+    123          
+    124          /*----------------------------------------------------------------------------
+    125           *        Local functions
+    126           *----------------------------------------------------------------------------*/
+    127          
+    128          /**
+    129           * \brief Read data from WM8904 Register.
+    130           *
+    131           * \param wm8904   Descriptor of WM8904
+    132           * \param reg_addr Register address to read.
+    133           * \return value in the given register.
+    134           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    135          static int wm8904_read(struct _wm8904_desc *wm8904, uint8_t reg_addr)
+    136          {
+   \                     wm8904_read:
+   \        0x0   0xE92D'42F3        PUSH     {R0,R1,R4-R7,R9,LR}
+   \        0x4   0xE24D'D020        SUB      SP,SP,#+32
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE3A0'2002        MOV      R2,#+2
+   \       0x10   0xE3A0'1000        MOV      R1,#+0
+   \       0x14   0xE28D'0004        ADD      R0,SP,#+4
+    137          	int err;
+    138          	uint8_t temp_data[2] = { 0, 0 };
+    139          	struct _buffer buf[2] = {
+    140          		{
+    141          			.data = &reg_addr,
+    142          			.size = 1,
+    143          			.attr = BUS_I2C_BUF_ATTR_START | BUS_BUF_ATTR_TX | BUS_I2C_BUF_ATTR_STOP,
+    144          		},
+    145          		{
+    146          			.data = temp_data,
+    147          			.size = 2,
+    148          			.attr = BUS_I2C_BUF_ATTR_START | BUS_BUF_ATTR_RX | BUS_I2C_BUF_ATTR_STOP,
+    149          		},
+    150          	};
+   \       0x18   0xE28D'9004        ADD      R9,SP,#+4
+   \       0x1C   0x....'....        BL       memset
+   \       0x20   0x....'....        LDR      R2,??DataTable4
+   \       0x24   0xE892'50E8        LDM      R2,{R3,R5-R7,R12,LR}
+   \       0x28   0xE28D'0008        ADD      R0,SP,#+8
+   \       0x2C   0xE28D'1024        ADD      R1,SP,#+36
+   \       0x30   0xE880'50E8        STM      R0,{R3,R5-R7,R12,LR}
+   \       0x34   0xE58D'1008        STR      R1,[SP, #+8]
+   \       0x38   0xE58D'9014        STR      R9,[SP, #+20]
+    151          
+    152          	bus_start_transaction(wm8904->twi.bus);
+   \       0x3C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x40   0x....'....        BL       bus_start_transaction
+    153          	err = bus_transfer(wm8904->twi.bus, wm8904->twi.addr, buf, 2, NULL);
+   \       0x44   0xE3A0'0000        MOV      R0,#+0
+   \       0x48   0xE3A0'3002        MOV      R3,#+2
+   \       0x4C   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x50   0xE5D4'1001        LDRB     R1,[R4, #+1]
+   \       0x54   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x58   0xE28D'2008        ADD      R2,SP,#+8
+   \       0x5C   0x....'....        BL       bus_transfer
+   \       0x60   0xE1A0'5000        MOV      R5,R0
+    154          	bus_stop_transaction(wm8904->twi.bus);
+   \       0x64   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x68   0x....'....        BL       bus_stop_transaction
+    155          
+    156          	if (err < 0)
+   \       0x6C   0xE355'0000        CMP      R5,#+0
+    157          		return err;
+    158          
+    159          	return (temp_data[0] << 8) | temp_data[1];
+   \       0x70   0x55DD'1004        LDRBPL   R1,[SP, #+4]
+   \       0x74   0x55DD'3005        LDRBPL   R3,[SP, #+5]
+   \       0x78   0x41A0'0005        MOVMI    R0,R5
+   \       0x7C   0xE28D'D028        ADD      SP,SP,#+40
+   \       0x80   0x5183'0401        ORRPL    R0,R3,R1, LSL #+8
+   \       0x84   0xE8BD'82F0        POP      {R4-R7,R9,PC}    ;; return
+    160          }
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_4:
+   \        0x0   0x0000'0000        DC32 0x0, 1, 12'290, 0x0, 2, 12'289
+
+   \              0x0000'0001  
+
+   \              0x0000'3002  
+
+   \              0x0000'0000  
+
+   \              0x0000'0002  
+
+   \              0x0000'3001
+    161          
+    162          /**
+    163           * \brief  Write data to WM8904 Register.
+    164           * \param wm8904   Descriptor of WM8904
+    165           * \param reg_addr Register address to read.
+    166           * \param data    Data to write
+    167           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    168          static int wm8904_write(struct _wm8904_desc *wm8904, uint8_t reg_addr, uint16_t data)
+    169          {
+   \                     wm8904_write:
+   \        0x0   0xE92D'45F2        PUSH     {R1,R4-R8,R10,LR}
+   \        0x4   0xE24D'D020        SUB      SP,SP,#+32
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'5002        MOV      R5,R2
+   \       0x10   0xE3A0'2002        MOV      R2,#+2
+   \       0x14   0xE3A0'1000        MOV      R1,#+0
+   \       0x18   0xE28D'0004        ADD      R0,SP,#+4
+   \       0x1C   0x....'....        BL       memset
+    170          	int err;
+    171          	uint8_t tmp_data[2] = { 0, 0 };
+    172          	struct _buffer buf[2] = {
+    173          		{
+    174          			.data = &reg_addr,
+    175          			.size = 1,
+    176          			.attr = BUS_I2C_BUF_ATTR_START | BUS_BUF_ATTR_TX,
+    177          		},
+    178          		{
+    179          			.data = tmp_data,
+    180          			.size = 2,
+    181          			.attr = BUS_BUF_ATTR_TX | BUS_I2C_BUF_ATTR_STOP,
+    182          		},
+    183          	};
+   \       0x20   0x....'....        LDR      R2,??DataTable4_1
+   \       0x24   0xE892'51C8        LDM      R2,{R3,R6-R8,R12,LR}
+   \       0x28   0xE28D'0008        ADD      R0,SP,#+8
+   \       0x2C   0xE28D'1020        ADD      R1,SP,#+32
+   \       0x30   0xE880'51C8        STM      R0,{R3,R6-R8,R12,LR}
+   \       0x34   0xE28D'A004        ADD      R10,SP,#+4
+    184          
+    185          	tmp_data[0] = (data & 0xff00) >> 8;
+   \       0x38   0xE1A0'0425        LSR      R0,R5,#+8
+   \       0x3C   0xE58D'1008        STR      R1,[SP, #+8]
+   \       0x40   0xE58D'A014        STR      R10,[SP, #+20]
+   \       0x44   0xE5CD'0004        STRB     R0,[SP, #+4]
+    186          	tmp_data[1] = data & 0xff;
+   \       0x48   0xE5CD'5005        STRB     R5,[SP, #+5]
+    187          
+    188          	bus_start_transaction(wm8904->twi.bus);
+   \       0x4C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x50   0x....'....        BL       bus_start_transaction
+    189          	err = bus_transfer(wm8904->twi.bus, wm8904->twi.addr, buf, 2, NULL);
+   \       0x54   0xE3A0'0000        MOV      R0,#+0
+   \       0x58   0xE3A0'3002        MOV      R3,#+2
+   \       0x5C   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x60   0xE5D4'1001        LDRB     R1,[R4, #+1]
+   \       0x64   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x68   0xE28D'2008        ADD      R2,SP,#+8
+   \       0x6C   0x....'....        BL       bus_transfer
+   \       0x70   0xE1A0'5000        MOV      R5,R0
+    190          	bus_stop_transaction(wm8904->twi.bus);
+   \       0x74   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x78   0x....'....        BL       bus_stop_transaction
+    191          
+    192          	return err;
+   \       0x7C   0xE1A0'0005        MOV      R0,R5
+   \       0x80   0x....'....        B        ?Subroutine0
+    193          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE28D'D024        ADD      SP,SP,#+36
+   \        0x4   0xE8BD'85F0        POP      {R4-R8,R10,PC}   ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x0000'0000        DC32 0x0, 1, 4'098, 0x0, 2, 8'194
+
+   \              0x0000'0001  
+
+   \              0x0000'1002  
+
+   \              0x0000'0000  
+
+   \              0x0000'0002  
+
+   \              0x0000'2002
+    194          
+    195          /*----------------------------------------------------------------------------
+    196           *        Exported functions
+    197           *----------------------------------------------------------------------------*/
+    198          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    199          void wm8904_configure(struct _wm8904_desc *wm8904)
+    200          {
+   \                     wm8904_configure:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    201          	const struct _wm8904_para *params;
+    202          	uint8_t i, count;
+    203          
+    204          	/* configure codec master clock */
+    205          	pmc_disable_pck(wm8904->mclk_pck);
+   \        0x8   0xE594'0004        LDR      R0,[R4, #+4]
+   \        0xC   0x....'....        BL       pmc_disable_pck
+    206          	pmc_configure_pck(wm8904->mclk_pck, wm8904->mclk_pck_src, 0);
+   \       0x10   0xE594'1008        LDR      R1,[R4, #+8]
+   \       0x14   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x18   0xE3A0'2000        MOV      R2,#+0
+   \       0x1C   0x....'....        BL       pmc_configure_pck
+    207          	pmc_enable_pck(wm8904->mclk_pck);
+   \       0x20   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x24   0x....'....        BL       pmc_enable_pck
+    208          	pio_configure(&wm8904->mclk_pin, 1);
+   \       0x28   0xE3A0'1001        MOV      R1,#+1
+   \       0x2C   0xE284'000C        ADD      R0,R4,#+12
+   \       0x30   0x....'....        BL       pio_configure
+    209          
+    210          	/* check that WM8904 is present */
+    211          	if (!wm8904_detect(wm8904))
+   \       0x34   0xE3A0'000A        MOV      R0,#+10
+   \       0x38   0x....'....        BL       msleep
+   \       0x3C   0xE3A0'2000        MOV      R2,#+0
+   \       0x40   0xE3A0'1000        MOV      R1,#+0
+   \       0x44   0xE1A0'0004        MOV      R0,R4
+   \       0x48   0x....'....        BL       wm8904_write
+   \       0x4C   0xE3A0'000A        MOV      R0,#+10
+   \       0x50   0x....'....        BL       msleep
+   \       0x54   0xE3A0'1000        MOV      R1,#+0
+   \       0x58   0xE1A0'0004        MOV      R0,R4
+   \       0x5C   0x....'....        BL       wm8904_read
+   \       0x60   0xE308'1904        MOVW     R1,#+35076
+   \       0x64   0xE150'0001        CMP      R0,R1
+   \       0x68   0x0A00'0006        BEQ      ??wm8904_configure_0
+    212          		trace_fatal("wm8904: device not detected!\r\n");
+   \       0x6C   0x....'....        LDR      R0,??DataTable4_2
+   \       0x70   0xE590'2000        LDR      R2,[R0, #+0]
+   \       0x74   0xE352'0000        CMP      R2,#+0
+   \       0x78   0x0A00'0001        BEQ      ??wm8904_configure_1
+   \       0x7C   0x....'....        LDR      R0,??DataTable4_3
+   \       0x80   0x....'....        BL       printf
+   \                     ??wm8904_configure_1:
+   \       0x84   0xEAFF'FFFE        B        ??wm8904_configure_1
+    213          
+    214          	wm8904_reset(wm8904);
+   \                     ??wm8904_configure_0:
+   \       0x88   0xE1A0'0004        MOV      R0,R4
+   \       0x8C   0x....'....        BL       wm8904_reset
+    215          
+    216          	switch (wm8904->mclk_pck_src) {
+   \       0x90   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x94   0xE350'0000        CMP      R0,#+0
+   \       0x98   0x0A00'0002        BEQ      ??wm8904_configure_2
+   \       0x9C   0xE350'0001        CMP      R0,#+1
+   \       0xA0   0x0A00'0018        BEQ      ??wm8904_configure_3
+   \       0xA4   0xEA00'001A        B        ??wm8904_configure_4
+    217          	case PMC_PCK_CSS_SLOW_CLK:
+    218          		params = wm8904_access_slow;
+   \                     ??wm8904_configure_2:
+   \       0xA8   0x....'....        LDR      R5,??DataTable4_4
+    219          		count = ARRAY_SIZE(wm8904_access_slow);
+   \       0xAC   0xE3A0'6025        MOV      R6,#+37
+    220          		break;
+    221          
+    222          	case PMC_PCK_CSS_MAIN_CLK:
+    223          		params = wm8904_access_main;
+    224          		count = ARRAY_SIZE(wm8904_access_main);
+    225          		break;
+    226          
+    227          	default:
+    228          		trace_fatal("wm8904: PCK not supported!\r\n");
+    229          	}
+    230          
+    231          	for (i = 0; i < count; i++) {
+    232          		wm8904_write(wm8904, params[i].address, params[i].value);
+   \                     ??wm8904_configure_5:
+   \       0xB0   0xE1D5'20B2        LDRH     R2,[R5, #+2]
+   \       0xB4   0xE5D5'1000        LDRB     R1,[R5, #+0]
+   \       0xB8   0xE1A0'0004        MOV      R0,R4
+   \       0xBC   0x....'....        BL       wm8904_write
+    233          		if (params[i].delay > 0)
+   \       0xC0   0xE5D5'0004        LDRB     R0,[R5, #+4]
+   \       0xC4   0xE350'0000        CMP      R0,#+0
+   \       0xC8   0x0A00'0000        BEQ      ??wm8904_configure_6
+    234          			msleep(params[i].delay);
+   \       0xCC   0x....'....        BL       msleep
+    235          	}
+   \                     ??wm8904_configure_6:
+   \       0xD0   0xE256'6001        SUBS     R6,R6,#+1
+   \       0xD4   0xE285'5006        ADD      R5,R5,#+6
+   \       0xD8   0x1AFF'FFF4        BNE      ??wm8904_configure_5
+    236          
+    237          	if ((wm8904->input_path & (WM8904_INPUT_PATH_IN1L | WM8904_INPUT_PATH_IN2L)) == (WM8904_INPUT_PATH_IN1L | WM8904_INPUT_PATH_IN2L))
+   \       0xDC   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \       0xE0   0xE200'2005        AND      R2,R0,#0x5
+   \       0xE4   0xE352'0005        CMP      R2,#+5
+   \       0xE8   0x1A00'0010        BNE      ??wm8904_configure_7
+    238          		trace_fatal("wm8904: invalid left input path\r\n");
+   \       0xEC   0x....'....        LDR      R0,??DataTable4_2
+   \       0xF0   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0xF4   0xE353'0000        CMP      R3,#+0
+   \       0xF8   0x0A00'0001        BEQ      ??wm8904_configure_8
+   \       0xFC   0x....'....        LDR      R0,??DataTable4_5
+   \      0x100   0x....'....        BL       printf
+   \                     ??wm8904_configure_8:
+   \      0x104   0xEAFF'FFFE        B        ??wm8904_configure_8
+   \                     ??wm8904_configure_3:
+   \      0x108   0x....'....        LDR      R5,??DataTable4_6
+   \      0x10C   0xE3A0'6017        MOV      R6,#+23
+   \      0x110   0xEAFF'FFE6        B        ??wm8904_configure_5
+   \                     ??wm8904_configure_4:
+   \      0x114   0x....'....        LDR      R0,??DataTable4_2
+   \      0x118   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x11C   0xE351'0000        CMP      R1,#+0
+   \      0x120   0x0A00'0001        BEQ      ??wm8904_configure_9
+   \      0x124   0x....'....        LDR      R0,??DataTable4_7
+   \      0x128   0x....'....        BL       printf
+   \                     ??wm8904_configure_9:
+   \      0x12C   0xEAFF'FFFE        B        ??wm8904_configure_9
+    239          
+    240          	if (wm8904->input_path & WM8904_INPUT_PATH_IN1L) {
+   \                     ??wm8904_configure_7:
+   \      0x130   0xE310'0001        TST      R0,#0x1
+    241          		/* IN1L */
+    242          		wm8904_write(wm8904, WM8904_REG_ANALOGUE_LIN1, WM8904_L_IP_SEL_P_IN1L);
+    243          	} else {
+    244          		/* IN2L */
+    245          		wm8904_write(wm8904, WM8904_REG_ANALOGUE_LIN1, WM8904_L_IP_SEL_P_IN2L);
+   \      0x134   0xE3A0'102E        MOV      R1,#+46
+   \      0x138   0x13A0'2000        MOVNE    R2,#+0
+   \      0x13C   0xE1A0'0004        MOV      R0,R4
+   \      0x140   0x03A0'2004        MOVEQ    R2,#+4
+   \      0x144   0x....'....        BL       wm8904_write
+    246          	}
+    247          
+    248          	if ((wm8904->input_path & (WM8904_INPUT_PATH_IN1R | WM8904_INPUT_PATH_IN2R)) == (WM8904_INPUT_PATH_IN1R | WM8904_INPUT_PATH_IN2R))
+   \      0x148   0xE5D4'0002        LDRB     R0,[R4, #+2]
+   \      0x14C   0xE200'200A        AND      R2,R0,#0xA
+   \      0x150   0xE352'000A        CMP      R2,#+10
+   \      0x154   0x1A00'0006        BNE      ??wm8904_configure_10
+    249          		trace_fatal("wm8904: invalid right input path\r\n");
+   \      0x158   0x....'....        LDR      R0,??DataTable4_2
+   \      0x15C   0xE590'3000        LDR      R3,[R0, #+0]
+   \      0x160   0xE353'0000        CMP      R3,#+0
+   \      0x164   0x0A00'0001        BEQ      ??wm8904_configure_11
+   \      0x168   0x....'....        LDR      R0,??DataTable4_8
+   \      0x16C   0x....'....        BL       printf
+   \                     ??wm8904_configure_11:
+   \      0x170   0xEAFF'FFFE        B        ??wm8904_configure_11
+    250          
+    251          	if (wm8904->input_path & WM8904_INPUT_PATH_IN1R) {
+   \                     ??wm8904_configure_10:
+   \      0x174   0xE310'0002        TST      R0,#0x2
+    252          		/* IN1R*/
+    253          		wm8904_write(wm8904, WM8904_REG_ANALOGUE_RIN1, WM8904_R_IP_SEL_P_IN1R);
+    254          	} else {
+    255          		/* IN2R*/
+    256          		wm8904_write(wm8904, WM8904_REG_ANALOGUE_RIN1, WM8904_R_IP_SEL_P_IN2R);
+   \      0x178   0xE1A0'0004        MOV      R0,R4
+   \      0x17C   0xE8BD'4070        POP      {R4-R6,LR}
+   \      0x180   0x13A0'2000        MOVNE    R2,#+0
+   \      0x184   0xE3A0'102F        MOV      R1,#+47
+   \      0x188   0x03A0'2004        MOVEQ    R2,#+4
+   \      0x18C   0x....'....        B        wm8904_write     ;; tailcall
+    257          	}
+    258          }
+    259          
+    260          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    261          void wm8904_set_left_volume(struct _wm8904_desc *wm8904, uint8_t vol)
+    262          {
+   \                     wm8904_set_left_volume:
+   \        0x0   0xE92D'45F8        PUSH     {R3-R8,R10,LR}
+   \        0x4   0xE1A0'4001        MOV      R4,R1
+   \        0x8   0xE24D'D020        SUB      SP,SP,#+32
+    263          	if (vol > WM8904_HPOUT_MAX_VOLUME)
+   \        0xC   0xE354'0040        CMP      R4,#+64
+   \       0x10   0xE1A0'5000        MOV      R5,R0
+   \       0x14   0xAA00'001C        BGE      ??wm8904_set_left_volume_0
+    264          		return;
+    265          	/** R57 (0x39) - Analogue OUT1 Left */
+    266          	wm8904_write(wm8904, WM8904_REG_ANALOGUE_LOUT1, WM8904_HPOUT_VU | WM8904_HPOUTZC | vol);
+   \       0x18   0xE3A0'0039        MOV      R0,#+57
+   \       0x1C   0xE3A0'2002        MOV      R2,#+2
+   \       0x20   0xE5CD'0006        STRB     R0,[SP, #+6]
+   \       0x24   0xE3A0'1000        MOV      R1,#+0
+   \       0x28   0xE28D'0004        ADD      R0,SP,#+4
+   \       0x2C   0x....'....        BL       memset
+   \       0x30   0x....'....        ADR      R1,?_5
+   \       0x34   0xE891'50CC        LDM      R1,{R2,R3,R6,R7,R12,LR}
+   \       0x38   0xE28D'0008        ADD      R0,SP,#+8
+   \       0x3C   0xE28D'8006        ADD      R8,SP,#+6
+   \       0x40   0xE880'50CC        STM      R0,{R2,R3,R6,R7,R12,LR}
+   \       0x44   0xE28D'A004        ADD      R10,SP,#+4
+   \       0x48   0xE3A0'0000        MOV      R0,#+0
+   \       0x4C   0xE384'20C0        ORR      R2,R4,#0xC0
+   \       0x50   0xE58D'8008        STR      R8,[SP, #+8]
+   \       0x54   0xE58D'A014        STR      R10,[SP, #+20]
+   \       0x58   0xE5CD'0004        STRB     R0,[SP, #+4]
+   \       0x5C   0xE5CD'2005        STRB     R2,[SP, #+5]
+   \       0x60   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x64   0x....'....        BL       bus_start_transaction
+   \       0x68   0xE3A0'0000        MOV      R0,#+0
+   \       0x6C   0xE3A0'3002        MOV      R3,#+2
+   \       0x70   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x74   0xE5D5'1001        LDRB     R1,[R5, #+1]
+   \       0x78   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x7C   0xE28D'2008        ADD      R2,SP,#+8
+   \       0x80   0x....'....        BL       bus_transfer
+   \       0x84   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x88   0x....'....        BL       bus_stop_transaction
+    267          }
+   \                     ??wm8904_set_left_volume_0:
+   \       0x8C                      REQUIRE ?Subroutine0
+   \       0x8C                      ;; // Fall through to label ?Subroutine0
+    268          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    269          void wm8904_set_right_volume(struct _wm8904_desc *wm8904, uint8_t vol)
+    270          {
+   \                     wm8904_set_right_volume:
+   \        0x0   0xE92D'45F8        PUSH     {R3-R8,R10,LR}
+   \        0x4   0xE1A0'4001        MOV      R4,R1
+   \        0x8   0xE24D'D020        SUB      SP,SP,#+32
+    271          	if (vol > WM8904_HPOUT_MAX_VOLUME)
+   \        0xC   0xE354'0040        CMP      R4,#+64
+   \       0x10   0xE1A0'5000        MOV      R5,R0
+   \       0x14   0xAA00'001C        BGE      ??wm8904_set_right_volume_0
+    272          		return;
+    273          	/** R58 (0x3a) Analogue OUT1 Right */
+    274          	wm8904_write(wm8904, WM8904_REG_ANALOGUE_ROUT1, WM8904_HPOUT_VU | WM8904_HPOUTZC | vol);
+   \       0x18   0xE3A0'003A        MOV      R0,#+58
+   \       0x1C   0xE3A0'2002        MOV      R2,#+2
+   \       0x20   0xE5CD'0006        STRB     R0,[SP, #+6]
+   \       0x24   0xE3A0'1000        MOV      R1,#+0
+   \       0x28   0xE28D'0004        ADD      R0,SP,#+4
+   \       0x2C   0x....'....        BL       memset
+   \       0x30   0x....'....        ADR      R1,?_5
+   \       0x34   0xE891'50CC        LDM      R1,{R2,R3,R6,R7,R12,LR}
+   \       0x38   0xE28D'0008        ADD      R0,SP,#+8
+   \       0x3C   0xE28D'8006        ADD      R8,SP,#+6
+   \       0x40   0xE880'50CC        STM      R0,{R2,R3,R6,R7,R12,LR}
+   \       0x44   0xE28D'A004        ADD      R10,SP,#+4
+   \       0x48   0xE3A0'0000        MOV      R0,#+0
+   \       0x4C   0xE384'20C0        ORR      R2,R4,#0xC0
+   \       0x50   0xE58D'8008        STR      R8,[SP, #+8]
+   \       0x54   0xE58D'A014        STR      R10,[SP, #+20]
+   \       0x58   0xE5CD'0004        STRB     R0,[SP, #+4]
+   \       0x5C   0xE5CD'2005        STRB     R2,[SP, #+5]
+   \       0x60   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x64   0x....'....        BL       bus_start_transaction
+   \       0x68   0xE3A0'0000        MOV      R0,#+0
+   \       0x6C   0xE3A0'3002        MOV      R3,#+2
+   \       0x70   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x74   0xE5D5'1001        LDRB     R1,[R5, #+1]
+   \       0x78   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x7C   0xE28D'2008        ADD      R2,SP,#+8
+   \       0x80   0x....'....        BL       bus_transfer
+   \       0x84   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x88   0x....'....        BL       bus_stop_transaction
+    275          }
+   \                     ??wm8904_set_right_volume_0:
+   \       0x8C   0x....'....        B        ?Subroutine0
+    276          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    277          void wm8904_volume_mute(struct _wm8904_desc *wm8904, bool left, bool right)
+    278          {
+   \                     wm8904_volume_mute:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+    279          	uint16_t left_val = wm8904_read(wm8904, WM8904_REG_ANALOGUE_LOUT1);
+   \       0x10   0xE3A0'1039        MOV      R1,#+57
+   \       0x14   0x....'....        BL       wm8904_read
+   \       0x18   0xE1A0'7000        MOV      R7,R0
+    280          	uint16_t right_val = wm8904_read(wm8904, WM8904_REG_ANALOGUE_ROUT1);
+   \       0x1C   0xE3A0'103A        MOV      R1,#+58
+   \       0x20   0xE1A0'0004        MOV      R0,R4
+   \       0x24   0x....'....        BL       wm8904_read
+   \       0x28   0xE1A0'8000        MOV      R8,R0
+    281          
+    282          	if (left) {
+   \       0x2C   0xE355'0000        CMP      R5,#+0
+    283          		/** R57 (0x39) - Analogue OUT1 Left Mute */
+    284          		wm8904_write(wm8904, WM8904_REG_ANALOGUE_LOUT1, WM8904_HPOUT_MUTE | WM8904_HPOUT_VU | left_val);
+    285          	} else {
+    286          		left_val &= ~WM8904_HPOUT_MUTE;
+    287          		/** R57 (0x39) - Analogue OUT1 Left Unmute */
+    288          		wm8904_write(wm8904, WM8904_REG_ANALOGUE_LOUT1, WM8904_HPOUT_VU | left_val);
+   \       0x30   0x030F'0EFF        MOVWEQ   R0,#+65279
+   \       0x34   0x1387'2F60        ORRNE    R2,R7,#0x180
+   \       0x38   0x0000'0007        ANDEQ    R0,R0,R7
+   \       0x3C   0x16FF'2072        UXTHNE   R2,R2
+   \       0x40   0x0380'2080        ORREQ    R2,R0,#0x80
+   \       0x44   0xE3A0'1039        MOV      R1,#+57
+   \       0x48   0xE1A0'0004        MOV      R0,R4
+   \       0x4C   0x....'....        BL       wm8904_write
+    289          	}
+    290          
+    291          	if (right) {
+   \       0x50   0xE356'0000        CMP      R6,#+0
+    292          		/** R58 (0x3a) Analogue OUT1 Right Mute */
+    293          		wm8904_write(wm8904, WM8904_REG_ANALOGUE_ROUT1, WM8904_HPOUT_MUTE | WM8904_HPOUT_VU | right_val);
+    294          	} else {
+    295          		right_val &= ~WM8904_HPOUT_MUTE;
+    296          		/** R58 (0x3a) Analogue OUT1 Right Unmute */
+    297          		wm8904_write(wm8904, WM8904_REG_ANALOGUE_ROUT1, WM8904_HPOUT_VU | right_val);
+   \       0x54   0xE3A0'103A        MOV      R1,#+58
+   \       0x58   0x030F'0EFF        MOVWEQ   R0,#+65279
+   \       0x5C   0x1388'2F60        ORRNE    R2,R8,#0x180
+   \       0x60   0x0000'0008        ANDEQ    R0,R0,R8
+   \       0x64   0x16FF'2072        UXTHNE   R2,R2
+   \       0x68   0x0380'2080        ORREQ    R2,R0,#0x80
+   \       0x6C   0xE1A0'0004        MOV      R0,R4
+   \       0x70   0xE8BD'41F0        POP      {R4-R8,LR}
+   \       0x74   0x....'....        B        wm8904_write     ;; tailcall
+    298          	}
+    299          }
+    300          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    301          bool wm8904_detect(struct _wm8904_desc *wm8904)
+    302          {
+   \                     wm8904_detect:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    303          	/* Wait for pck out clock is ready */
+    304          	msleep(10);
+   \        0x8   0xE3A0'000A        MOV      R0,#+10
+   \        0xC   0x....'....        BL       msleep
+    305          	/* Check that WM8904 is there */
+    306          	wm8904_write(wm8904, WM8904_REG_RESET, 0);
+   \       0x10   0xE3A0'2000        MOV      R2,#+0
+   \       0x14   0xE3A0'1000        MOV      R1,#+0
+   \       0x18   0xE1A0'0004        MOV      R0,R4
+   \       0x1C   0x....'....        BL       wm8904_write
+    307          	msleep(10);
+   \       0x20   0xE3A0'000A        MOV      R0,#+10
+   \       0x24   0x....'....        BL       msleep
+    308          	return (wm8904_read(wm8904, 0) == WM8904_DEVICE_ID);
+   \       0x28   0xE3A0'1000        MOV      R1,#+0
+   \       0x2C   0xE1A0'0004        MOV      R0,R4
+   \       0x30   0x....'....        BL       wm8904_read
+   \       0x34   0xE308'1904        MOVW     R1,#+35076
+   \       0x38   0xE150'0001        CMP      R0,R1
+   \       0x3C   0x03A0'0001        MOVEQ    R0,#+1
+   \       0x40   0x13A0'0000        MOVNE    R0,#+0
+   \       0x44   0xE8BD'8010        POP      {R4,PC}          ;; return
+    309          }
+    310          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    311          void wm8904_reset(struct _wm8904_desc *wm8904)
+    312          {
+   \                     wm8904_reset:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    313          	/* Writing to this register resets all registers to their default state. */
+    314          	wm8904_write(wm8904, WM8904_REG_RESET, 0xFFFF);
+   \        0x4   0xE3A0'20FF        MOV      R2,#+255
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE382'2CFF        ORR      R2,R2,#0xFF00
+   \       0x10   0xE3A0'1000        MOV      R1,#+0
+   \       0x14   0x....'....        BL       wm8904_write
+    315          	msleep(10);
+   \       0x18   0xE3A0'000A        MOV      R0,#+10
+   \       0x1C   0xE308'5904        MOVW     R5,#+35076
+   \       0x20   0x....'....        BL       msleep
+    316          	/* Wait until codec is ready */
+    317          	while (wm8904_read(wm8904, 0) != WM8904_DEVICE_ID);
+   \                     ??wm8904_reset_0:
+   \       0x24   0xE3A0'1000        MOV      R1,#+0
+   \       0x28   0xE1A0'0004        MOV      R0,R4
+   \       0x2C   0x....'....        BL       wm8904_read
+   \       0x30   0xE150'0005        CMP      R0,R5
+   \       0x34   0x1AFF'FFFA        BNE      ??wm8904_reset_0
+    318          }
+   \       0x38   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    319          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    320          void wm8904_sync(struct _wm8904_desc *wm8904, int32_t adjust)
+    321          {
+    322          	if (adjust > 0) {
+   \                     wm8904_sync:
+   \        0x0   0xE351'0000        CMP      R1,#+0
+    323          		/* Fractional multiply for FLL_K, Fref = 0x8000 (1/2) */
+    324          		wm8904_write(wm8904, WM8904_REG_FLL_CRTL3, 0xFF00);
+   \        0x4   0xC3A0'2CFF        MOVGT    R2,#+65280
+   \        0x8   0xCA00'0001        BGT      ??wm8904_sync_0
+    325          	} else if (adjust < 0) {
+    326          		/* Fractional multiply for FLL_K, Fref = 0x8000 (1/2) */
+    327          		wm8904_write(wm8904, WM8904_REG_FLL_CRTL3, 0x5000);
+   \        0xC   0x43A0'2C50        MOVMI    R2,#+20480
+    328          	} else {
+    329          		/* Default: 32K -> 48K*256, FLL: 32768*187.5/16/8 */
+    330          		/* FLL_FRATIO=4 (/16), FLL_OUTDIV= 7 (/8) */
+    331          		/* Fractional multiply for FLL_K, Fref = 0x8000 (1/2) */
+    332          		wm8904_write(wm8904, WM8904_REG_FLL_CRTL3, 0x8000 + 0x3000);
+   \       0x10   0x53A0'2CB0        MOVPL    R2,#+45056
+   \                     ??wm8904_sync_0:
+   \       0x14   0xE3A0'1076        MOV      R1,#+118
+   \       0x18   0x....'....        B        wm8904_write     ;; tailcall
+    333          	}
+    334          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_2:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_3:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_4:
+   \        0x0   0x....'....        DC32     ?_0+0x98
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_5:
+   \        0x0   0x....'....        DC32     ?_0+0x48
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_6:
+   \        0x0   0x....'....        DC32     ?_0+0x178
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_7:
+   \        0x0   0x....'....        DC32     ?_0+0x24
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_8:
+   \        0x0   0x....'....        DC32     ?_0+0x70
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   wm8904_configure
+        16   -> msleep
+        16   -> pio_configure
+        16   -> pmc_configure_pck
+        16   -> pmc_disable_pck
+        16   -> pmc_enable_pck
+        16   -> printf
+        16   -> wm8904_read
+        16   -> wm8904_reset
+         0   -> wm8904_write
+        16   -> wm8904_write
+       8   wm8904_detect
+         8   -> msleep
+         8   -> wm8904_read
+         8   -> wm8904_write
+      64   wm8904_read
+        64   -> bus_start_transaction
+        64   -> bus_stop_transaction
+        64   -> bus_transfer
+        64   -> memset
+      16   wm8904_reset
+        16   -> msleep
+        16   -> wm8904_read
+        16   -> wm8904_write
+      64   wm8904_set_left_volume
+        64   -> bus_start_transaction
+        64   -> bus_stop_transaction
+        64   -> bus_transfer
+        64   -> memset
+      64   wm8904_set_right_volume
+        64   -> bus_start_transaction
+        64   -> bus_stop_transaction
+        64   -> bus_transfer
+        64   -> memset
+       0   wm8904_sync
+         0   -> wm8904_write
+      24   wm8904_volume_mute
+        24   -> wm8904_read
+         0   -> wm8904_write
+        24   -> wm8904_write
+      64   wm8904_write
+        64   -> bus_start_transaction
+        64   -> bus_stop_transaction
+        64   -> bus_transfer
+        64   -> memset
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_2
+       4  ??DataTable4_3
+       4  ??DataTable4_4
+       4  ??DataTable4_5
+       4  ??DataTable4_6
+       4  ??DataTable4_7
+       4  ??DataTable4_8
+       8  ?Subroutine0
+      24  ?_4
+      24  ?_5
+     516  wm8904_access_slow
+          wm8904_access_main
+     400  wm8904_configure
+      72  wm8904_detect
+     136  wm8904_read
+      60  wm8904_reset
+     140  wm8904_set_left_volume
+     144  wm8904_set_right_volume
+      28  wm8904_sync
+     120  wm8904_volume_mute
+     132  wm8904_write
+
+ 
+   540 bytes in section .rodata
+ 1'300 bytes in section SOFTPACK
+ 
+ 1'300 bytes of CODE  memory
+   540 bytes of CONST memory
+
+Errors: none
+Warnings: none

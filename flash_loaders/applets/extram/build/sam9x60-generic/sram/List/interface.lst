@@ -1,0 +1,380 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         22/Jul/2020  10:36:47
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\common\interface.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW2B0A.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\common\interface.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_GENERIC -D
+#        CONFIG_HAVE_AIC5 -D CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D
+#        CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_ADC_LOW_RES -D CONFIG_HAVE_PMC_FAST_STARTUP -D
+#        CONFIG_HAVE_PMC_GENERATED_CLOCKS -D CONFIG_HAVE_SCKC -D
+#        CONFIG_TIMER_POLLING -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC
+#        -D CONFIG_HAVE_PWMC -D CONFIG_HAVE_SDRAM_W9864G6KH -D
+#        CONFIG_HAVE_DDR2_MT47H64M16 -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_SERIALD_USART -D
+#        CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\flash_loaders\applets\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\flash_loaders\applets\common\framework2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\..\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\List\interface.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\extram\build\sam9x60-generic\sram\Obj\interface.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\flash_loaders\applets\common\interface.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         ATMEL Microcontroller Software Support
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2009, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          #include <stdio.h>
+     31          #include <stdlib.h>
+     32          #include <string.h>
+     33          #include <yfuns.h>
+     34          
+     35          //------------------------------------------------------------------------------
+     36          /// The function looks for the specified option in the argument array argv.
+     37          /// \param option string to find.
+     38          /// \param withValue Specifies if the function is used to see if an option 
+     39          ///                  exists in argv or if the value of the option should be returned
+     40          /// \param argc Number of arguments
+     41          /// \param argv An array of string pointers.
+     42          //------------------------------------------------------------------------------
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     43          const char* findOption(char* option, int withValue, int argc, char const* argv[])
+     44          {
+   \                     findOption:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1A0'6002        MOV      R6,R2
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'5001        MOV      R5,R1
+   \       0x10   0xE1A0'7003        MOV      R7,R3
+     45              int i;
+     46              for (i = 0; i < argc; i++) {
+   \       0x14   0xE3A0'8000        MOV      R8,#+0
+   \       0x18   0xE356'0000        CMP      R6,#+0
+   \       0x1C   0xDA00'0008        BLE      ??findOption_0
+   \       0x20   0xE1A0'9007        MOV      R9,R7
+     47                  if (strcmp(option, argv[i]) == 0){
+   \                     ??findOption_1:
+   \       0x24   0xE499'1004        LDR      R1,[R9], #+4
+   \       0x28   0xE1A0'0004        MOV      R0,R4
+   \       0x2C   0x....'....        BL       strcmp
+   \       0x30   0xE350'0000        CMP      R0,#+0
+   \       0x34   0x0A00'0004        BEQ      ??findOption_2
+   \       0x38   0xE288'8001        ADD      R8,R8,#+1
+   \       0x3C   0xE158'0006        CMP      R8,R6
+   \       0x40   0xBAFF'FFF7        BLT      ??findOption_1
+     48                      if (withValue) {
+     49                          if (i + 1 < argc) {
+     50                              // The next argument is the value.
+     51                              return argv[i + 1]; 
+     52                          }
+     53                          else {
+     54                              // The option was found but there is no value to return.
+     55                              return 0; 
+     56                          }
+     57                      }
+     58                      else
+     59                      {
+     60                          // Return the flag argument itself just to get a non-zero pointer.
+     61                          return argv[i]; 
+     62                      }
+     63                  }
+     64              }
+     65              return 0;
+   \                     ??findOption_0:
+   \       0x44   0xE3A0'0000        MOV      R0,#+0
+   \       0x48   0xE8BD'83F2        POP      {R1,R4-R9,PC}    ;; return
+   \                     ??findOption_2:
+   \       0x4C   0xE355'0000        CMP      R5,#+0
+   \       0x50   0x0A00'0005        BEQ      ??findOption_3
+   \       0x54   0xE288'0001        ADD      R0,R8,#+1
+   \       0x58   0xE150'0006        CMP      R0,R6
+   \       0x5C   0xAAFF'FFF8        BGE      ??findOption_0
+   \       0x60   0xE087'1108        ADD      R1,R7,R8, LSL #+2
+   \       0x64   0xE591'0004        LDR      R0,[R1, #+4]
+   \       0x68   0xE8BD'83F2        POP      {R1,R4-R9,PC}
+   \                     ??findOption_3:
+   \       0x6C   0xE797'0108        LDR      R0,[R7, +R8, LSL #+2]
+   \       0x70   0xE8BD'83F2        POP      {R1,R4-R9,PC}
+     66          }
+     67          
+     68          //------------------------------------------------------------------------------
+     69          // C-SPY will display a message box window with the text given by the msg parameter.
+     70          // Text may be split on multiple lines by embedding newlines (\n) in the message string.
+     71          // The flash loader execution will halt until the message box OK button is pressed.
+     72          //------------------------------------------------------------------------------
+     73          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     74          void cSpyMessageBox(char* msg)
+     75          {
+   \                     cSpyMessageBox:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     76              int log_fd;
+     77              log_fd = __open("$MESSAGE_BOX$", _LLIO_CREAT | _LLIO_TRUNC | _LLIO_WRONLY);
+   \        0x8   0xE3A0'1001        MOV      R1,#+1
+   \        0xC   0xE381'1FC0        ORR      R1,R1,#0x300
+   \       0x10   0x....'....        ADR      R0,?_0
+   \       0x14   0x....'....        BL       __open
+   \       0x18   0xE1A0'5000        MOV      R5,R0
+     78              if (log_fd == -1){
+   \       0x1C   0xE375'0001        CMN      R5,#+1
+   \       0x20   0x1A00'0000        BNE      ??cSpyMessageBox_0
+     79                   exit(1);
+   \       0x24   0x....'....        B        ??Subroutine2_0
+     80              }
+     81              __write(log_fd, (unsigned char *)msg, strlen(msg));
+   \                     ??cSpyMessageBox_0:
+   \       0x28   0x....'....        B        ?Subroutine0
+     82              __close(log_fd);
+     83          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??Subroutine2_0:
+   \        0x0   0xE3A0'0001        MOV      R0,#+1
+   \        0x4   0x....'....        BL       exit
+   \        0x8   0xE1A0'0000        Nop
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE1A0'0004        MOV      R0,R4
+   \        0x4   0x....'....        BL       strlen
+   \        0x8   0xE1A0'2000        MOV      R2,R0
+   \        0xC   0xE1A0'1004        MOV      R1,R4
+   \       0x10   0xE1A0'0005        MOV      R0,R5
+   \       0x14   0x....'....        BL       __write
+   \       0x18   0xE1A0'0005        MOV      R0,R5
+   \       0x1C   0xE8BD'4032        POP      {R1,R4,R5,LR}
+   \       0x20   0x....'....        B        __close          ;; tailcall
+     84          
+     85          //------------------------------------------------------------------------------
+     86          // C-SPY will display a message box window with the text given by the msg parameter.
+     87          // Text may be split on multiple lines by embedding newlines (\n) in the message string.
+     88          // The flash loader execution will halt until the message box OK button is pressed.
+     89          // The flash loader will then terminate and notify C-SPY that the flash download failed.
+     90          //------------------------------------------------------------------------------
+     91          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     92          void cSpyFatalError(char* msg)
+     93          {
+     94              cSpyMessageBox(msg);
+   \                     cSpyFatalError:
+   \        0x0   0xE1A0'0000        Nop
+   \        0x4                      REQUIRE ?Subroutine1
+   \        0x4                      ;; // Fall through to label ?Subroutine1
+     95              exit(1);
+     96          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0x....'....        BL       cSpyMessageBox
+   \        0x4                      REQUIRE ??Subroutine2_0
+   \        0x4                      ;; // Fall through to label ??Subroutine2_0
+     97          
+     98          //------------------------------------------------------------------------------
+     99          // C-SPY will display a log message given by msg in the debug log window.
+    100          // Text may be split on multiple lines by embedding newlines (\n) in the message string.
+    101          //------------------------------------------------------------------------------
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    102          void cSpyMessageLog(char* msg)
+    103          {
+   \                     cSpyMessageLog:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    104              int messageLogFile = -1;
+    105              messageLogFile = __open("$DEBUG_LOG$", _LLIO_CREAT | _LLIO_TRUNC | _LLIO_WRONLY);
+   \        0x8   0xE3A0'1001        MOV      R1,#+1
+   \        0xC   0xE381'1FC0        ORR      R1,R1,#0x300
+   \       0x10   0x....'....        ADR      R0,?_1
+   \       0x14   0x....'....        BL       __open
+   \       0x18   0xE1A0'5000        MOV      R5,R0
+    106              if (messageLogFile == -1) {
+   \       0x1C   0xE375'0001        CMN      R5,#+1
+   \       0x20   0x1A00'0001        BNE      ??cSpyMessageLog_0
+    107                  cSpyFatalError("Flash loader failed");
+   \       0x24   0x....'....        ADR      R0,?_2
+   \       0x28   0x....'....        B        ?Subroutine1
+    108              }
+    109               __write(messageLogFile, (unsigned char *)msg, strlen(msg));
+   \                     ??cSpyMessageLog_0:
+   \       0x2C                      REQUIRE ?Subroutine0
+   \       0x2C                      ;; // Fall through to label ?Subroutine0
+    110               __close(messageLogFile);
+    111          }    
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_0:
+   \        0x0   0x24 0x4D          DC8 "$MESSAGE_BOX$"
+
+   \              0x45 0x53    
+
+   \              0x53 0x41    
+
+   \              0x47 0x45    
+
+   \              0x5F 0x42    
+
+   \              0x4F 0x58    
+
+   \              0x24 0x00
+   \        0xE   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x24 0x44          DC8 "$DEBUG_LOG$"
+
+   \              0x45 0x42    
+
+   \              0x55 0x47    
+
+   \              0x5F 0x4C    
+
+   \              0x4F 0x47    
+
+   \              0x24 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_2:
+   \        0x0   0x46 0x6C          DC8 "Flash loader failed"
+
+   \              0x61 0x73    
+
+   \              0x68 0x20    
+
+   \              0x6C 0x6F    
+
+   \              0x61 0x64    
+
+   \              0x65 0x72    
+
+   \              0x20 0x66    
+
+   \              0x61 0x69    
+
+   \              0x6C 0x65    
+
+   \              0x64 0x00
+    112          
+    113          
+    114          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   cSpyFatalError
+         0   -> cSpyMessageBox
+         0   -> exit
+      16   cSpyMessageBox
+         0   -> __close
+        16   -> __open
+        16   -> __write
+        16   -> exit
+        16   -> strlen
+      16   cSpyMessageLog
+         0   -> __close
+        16   -> __open
+        16   -> __write
+        16   -> cSpyMessageBox
+        16   -> exit
+        16   -> strlen
+      32   findOption
+        32   -> strcmp
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ??Subroutine2_0
+      36  ?Subroutine0
+       4  ?Subroutine1
+      16  ?_0
+      12  ?_1
+      20  ?_2
+       4  cSpyFatalError
+      44  cSpyMessageBox
+      44  cSpyMessageLog
+     116  findOption
+
+ 
+ 308 bytes in section SOFTPACK
+ 
+ 308 bytes of CODE memory
+
+Errors: none
+Warnings: none

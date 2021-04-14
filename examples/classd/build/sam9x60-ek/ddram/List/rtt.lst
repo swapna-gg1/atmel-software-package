@@ -1,0 +1,403 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         23/Nov/2020  15:08:24
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\rtt.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWD4CC.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\rtt.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\build\sam9x60-ek\ddram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\build\sam9x60-ek\ddram\List\rtt.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\classd\build\sam9x60-ek\ddram\Obj\rtt.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\rtt.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2018, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29           
+     30          /**
+     31           * \file
+     32           *
+     33           * \brief Real-time Timer (RTT) driver.
+     34           *
+     35           */
+     36          
+     37          
+     38          /*----------------------------------------------------------------------------
+     39           *        Headers
+     40           *----------------------------------------------------------------------------*/
+     41          
+     42          #include "chip.h"
+     43          #include "peripherals/rtt.h"
+     44          #include "trace.h"
+     45          #include <stdint.h>
+     46          #include <assert.h>
+     47          
+     48          /*----------------------------------------------------------------------------
+     49           *        Exported functions
+     50           *----------------------------------------------------------------------------*/
+     51          
+     52          /**
+     53           * \brief Initialize the given RTT.
+     54           *
+     55           * \note This function restarts the real-time timer. If w_prescaler is equal to zero,
+     56           *  the prescaler period is equal to 2^16 * SCLK period. If not, the prescaler period
+     57           *  is equal to us_prescaler * SCLK period.
+     58           *
+     59           * \param prescaler Prescaler value for the RTT.
+     60           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     61          void rtt_init(uint16_t prescaler)
+     62          {
+     63          	RTT->RTT_MR = (prescaler | RTT_MR_RTTRST);
+   \                     rtt_init:
+   \        0x0   0xE3E0'10DF        MVN      R1,#+223
+   \        0x4   0xE380'0A40        ORR      R0,R0,#0x40000
+   \        0x8   0xE3C1'1F40        BIC      R1,R1,#0x100
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+     64          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+     65          
+     66          /**
+     67           * \brief Enable RTT.
+     68           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     69          void rtt_enable(void)
+     70          {
+     71          	RTT->RTT_MR  &= ~RTT_MR_RTTDIS;
+   \                     rtt_enable:
+   \        0x0   0xE3E0'00DF        MVN      R0,#+223
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE3C1'2940        BIC      R2,R1,#0x100000
+   \       0x10   0xE580'2000        STR      R2,[R0, #+0]
+     72          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+     73          
+     74          /**
+     75           * \brief Disable RTT.
+     76           *
+     77           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     78          void rtt_disable(void)
+     79          {
+     80          	RTT->RTT_MR |= RTT_MR_RTTDIS;
+   \                     rtt_disable:
+   \        0x0   0xE3E0'00DF        MVN      R0,#+223
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE381'2940        ORR      R2,R1,#0x100000
+   \       0x10   0xE580'2000        STR      R2,[R0, #+0]
+     81          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+     82          
+     83          /**
+     84           * \brief Select RTT clock.
+     85           *
+     86           * \param is_one_hz RTT 1Hz Clock Selection.
+     87           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     88          void rtt_sel_clk(bool is_one_hz)
+     89          {
+     90          	if(is_one_hz) {
+   \                     rtt_sel_clk:
+   \        0x0   0xE3E0'10DF        MVN      R1,#+223
+   \        0x4   0xE3C1'1F40        BIC      R1,R1,#0x100
+   \        0x8   0xE350'0000        CMP      R0,#+0
+     91          		RTT->RTT_MR |= RTT_MR_RTC1HZ;
+   \        0xC   0x1591'0000        LDRNE    R0,[R1, #+0]
+   \       0x10   0x1380'2740        ORRNE    R2,R0,#0x1000000
+   \       0x14   0x1581'2000        STRNE    R2,[R1, #+0]
+     92          	} else {
+     93          		RTT->RTT_MR &= ~RTT_MR_RTC1HZ;
+   \       0x18   0x0591'3000        LDREQ    R3,[R1, #+0]
+   \       0x1C   0x03C3'0740        BICEQ    R0,R3,#0x1000000
+   \       0x20   0x0581'0000        STREQ    R0,[R1, #+0]
+     94          	}
+     95          }
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+     96          
+     97          /**
+     98           * \brief Get the status register value of the given RTT.
+     99           *
+    100           * \return The Real-time Timer status.
+    101           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    102          uint32_t rtt_get_status(void)
+    103          {
+    104          	return RTT->RTT_SR;
+   \                     rtt_get_status:
+   \        0x0   0xE3E0'00D3        MVN      R0,#+211
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    105          }
+    106          
+    107          /**
+    108           * \brief Read the current value of the RTT timer value.
+    109           *
+    110           * \return The current Real-time Timer value.
+    111           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    112          uint32_t rtt_get_timer(void)
+    113          {
+    114          	uint32_t rtt_val = RTT->RTT_VR;
+   \                     rtt_get_timer:
+   \        0x0   0xE3E0'10D7        MVN      R1,#+215
+   \        0x4   0xE3C1'1F40        BIC      R1,R1,#0x100
+    115          
+    116          	/* As CRTV can be updated asynchronously, it must be read twice at the same value. */
+    117          	while (rtt_val != RTT->RTT_VR) {
+    118          		rtt_val = RTT->RTT_VR;
+   \                     ??rtt_get_timer_0:
+   \        0x8   0xE591'0000        LDR      R0,[R1, #+0]
+    119          	}
+   \        0xC   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x10   0xE150'0002        CMP      R0,R2
+   \       0x14   0x1AFF'FFFB        BNE      ??rtt_get_timer_0
+    120          	return rtt_val;
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+    121          }
+    122          
+    123          /**
+    124           * \brief Enable RTT alarm interrupt.
+    125           *
+    126           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    127          void rtt_enable_alarm_it(void)
+    128          {
+    129          	RTT->RTT_MR |= RTT_MR_ALMIEN;
+   \                     rtt_enable_alarm_it:
+   \        0x0   0xE3E0'00DF        MVN      R0,#+223
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE381'2B40        ORR      R2,R1,#0x10000
+   \       0x10   0xE580'2000        STR      R2,[R0, #+0]
+    130          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    131          
+    132          /**
+    133           * \brief Disable RTT alarm interrupt.
+    134           *
+    135           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    136          void rtt_disable_alarm_it(void)
+    137          {
+    138          	RTT->RTT_MR &= ~RTT_MR_ALMIEN;
+   \                     rtt_disable_alarm_it:
+   \        0x0   0xE3E0'00DF        MVN      R0,#+223
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE3C1'2B40        BIC      R2,R1,#0x10000
+   \       0x10   0xE580'2000        STR      R2,[R0, #+0]
+    139          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    140          
+    141          /**
+    142           * \brief Enable RTT real-time interrupt.
+    143           *
+    144           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    145          void rtt_enable_timer_it(void)
+    146          {
+    147          	RTT->RTT_MR |= RTT_MR_RTTINCIEN;
+   \                     rtt_enable_timer_it:
+   \        0x0   0xE3E0'00DF        MVN      R0,#+223
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE381'2B80        ORR      R2,R1,#0x20000
+   \       0x10   0xE580'2000        STR      R2,[R0, #+0]
+    148          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    149          
+    150          /**
+    151           * \brief Disable RTT real-time interrupt.
+    152           *
+    153           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    154          void rtt_disable_timer_it(void)
+    155          {
+    156          	RTT->RTT_MR &= ~RTT_MR_RTTINCIEN;
+   \                     rtt_disable_timer_it:
+   \        0x0   0xE3E0'00DF        MVN      R0,#+223
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE3C1'2B80        BIC      R2,R1,#0x20000
+   \       0x10   0xE580'2000        STR      R2,[R0, #+0]
+    157          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    158          
+    159          /**
+    160           * \brief Configure the RTT to generate an alarm at the given time.
+    161           * alarm happens when CRTV value equals ALMV+1, so RTT_AR should be alarmtime - 1.
+    162           * if you want to get alarm when rtt hit 0 , ALMV should be set to 0xFFFFFFFF.
+    163           *
+    164           * \param alarm_time Alarm time,Alarm time = ALMV + 1.
+    165           *
+    166           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    167          void rtt_set_time_alarm(uint32_t alarm_time)
+    168          {
+    169          	uint32_t flag;
+    170          
+    171          	flag = RTT->RTT_MR & RTT_MR_ALMIEN;
+   \                     rtt_set_time_alarm:
+   \        0x0   0xE3E0'10DF        MVN      R1,#+223
+   \        0x4   0xE3C1'1F40        BIC      R1,R1,#0x100
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+    172          
+    173          	/* The alarm interrupt must be disabled (ALMIEN must be cleared in RTT_MR) when writing a new ALMV value. */
+    174          	rtt_disable_alarm_it();
+   \        0xC   0xE591'3000        LDR      R3,[R1, #+0]
+    175          
+    176          	/**
+    177          	 * Alarm time = ALMV + 1,If the incoming parameter 
+    178          	 * is 0, the ALMV is set to 0xFFFFFFFF.
+    179          	*/
+    180          	if(alarm_time == 0) {
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0xE3C3'CB40        BIC      R12,R3,#0x10000
+   \       0x18   0xE581'C000        STR      R12,[R1, #+0]
+    181          		RTT->RTT_AR = 0xFFFFFFFF;
+   \       0x1C   0x03E0'0000        MVNEQ    R0,#+0
+    182          	}
+    183          	else {
+    184          		RTT->RTT_AR = alarm_time - 1;
+   \       0x20   0x1240'0001        SUBNE    R0,R0,#+1
+   \       0x24   0xE581'0004        STR      R0,[R1, #+4]
+    185          	}
+    186          
+    187          	if (flag) {
+   \       0x28   0xE312'0B40        TST      R2,#0x10000
+    188          		rtt_enable_alarm_it();
+   \       0x2C   0x1591'0000        LDRNE    R0,[R1, #+0]
+   \       0x30   0x1380'2B40        ORRNE    R2,R0,#0x10000
+   \       0x34   0x1581'2000        STRNE    R2,[R1, #+0]
+    189          	}
+    190          }
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   rtt_disable
+       0   rtt_disable_alarm_it
+       0   rtt_disable_timer_it
+       0   rtt_enable
+       0   rtt_enable_alarm_it
+       0   rtt_enable_timer_it
+       0   rtt_get_status
+       0   rtt_get_timer
+       0   rtt_init
+       0   rtt_sel_clk
+       0   rtt_set_time_alarm
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      24  rtt_disable
+      24  rtt_disable_alarm_it
+      24  rtt_disable_timer_it
+      24  rtt_enable
+      24  rtt_enable_alarm_it
+      24  rtt_enable_timer_it
+      16  rtt_get_status
+      28  rtt_get_timer
+      20  rtt_init
+      40  rtt_sel_clk
+      60  rtt_set_time_alarm
+
+ 
+ 308 bytes in section SOFTPACK
+ 
+ 308 bytes of CODE memory
+
+Errors: none
+Warnings: none

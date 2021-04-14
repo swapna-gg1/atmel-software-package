@@ -1,0 +1,429 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         17/Feb/2021  15:29:23
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\pit.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW4745.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\pit.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_QSPI -D
+#        CONFIG_HAVE_QSPI_DMA -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_TRNG -D CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_OTPC -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List\pit.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\Obj\pit.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\pit.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup pit_module Working with PIT
+     31           * \section Purpose
+     32           * The PIT driver provides the Interface for configuration the Periodic
+     33           *  Interval Timer (PIT) peripheral.
+     34           *
+     35           * \section Usage
+     36           * <ul>
+     37           * <li>  Initialize the PIT with the desired period using pit_init().
+     38           *    Alternatively, the Periodic Interval Value (PIV) can be configured
+     39           *    manually using pit_set_piv(). </li>
+     40           * <li>  Start the PIT counting using pit_enable().
+     41           * <li>  Enable & disable the PIT interrupt using pit_enable_it() and
+     42           *    pit_disable_it(). </li>
+     43           * <li>  Retrieve the current status of the PIT using pit_get_status(). </li>
+     44           * <li>  To get the current value of the internal counter and the number of ticks
+     45           *    that have occurred, use either pit_get_pivr() or pit_get_piir() depending
+     46           *    on whether you want the values to be cleared or not. </li>
+     47           *
+     48           * </ul>
+     49           * For more accurate information, please look at the PIT section of the
+     50           * Datasheet.
+     51           *
+     52           * Related files :\n
+     53           * \ref pit.c\n
+     54           * \ref pit.h.\n
+     55          */
+     56          /*@{*/
+     57          /*@}*/
+     58          
+     59          /**
+     60           * \file
+     61           *
+     62           * Implementation of PIT (Periodic Interval Timer) controller.
+     63           *
+     64           */
+     65          /*------------------------------------------------------------------------------
+     66           *         Headers
+     67           *------------------------------------------------------------------------------*/
+     68          
+     69          #include "chip.h"
+     70          #include "compiler.h"
+     71          #include "peripherals/pit.h"
+     72          #include "peripherals/pmc.h"
+     73          #include "irq/irq.h"
+     74          
+
+   \                                 In section .bss, align 4
+     75          volatile uint32_t   tickCounter = 0;
+   \                     tickCounter:
+   \        0x0                      DS8 4
+     76          
+     77          /*------------------------------------------------------------------------------
+     78           *         Exported functions
+     79           *------------------------------------------------------------------------------*/
+     80          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     81          void pit_init(uint32_t period)
+     82          {
+   \                     pit_init:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+     83          	uint32_t pit_frequency = pmc_get_peripheral_clock(ID_PIT) / 1000000;
+   \        0x8   0xE3A0'0001        MOV      R0,#+1
+   \        0xC   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x10   0xE3A0'1AF4        MOV      R1,#+999424
+   \       0x14   0xE381'1F90        ORR      R1,R1,#0x240
+   \       0x18   0x....'....        BL       __aeabi_uidiv
+     84          	PIT->PIT_MR = period ? ROUND_INT_DIV(period * pit_frequency, 16) : 0;
+   \       0x1C   0xE354'0000        CMP      R4,#+0
+   \       0x20   0x0A00'0015        BEQ      ??pit_init_0
+   \       0x24   0xE011'0490        MULS     R1,R0,R4
+   \       0x28   0xE351'0000        CMP      R1,#+0
+   \       0x2C   0x1A00'0001        BNE      ??pit_init_1
+   \       0x30   0xE3A0'1000        MOV      R1,#+0
+   \       0x34   0xEA00'0011        B        ??pit_init_2
+   \                     ??pit_init_1:
+   \       0x38   0xE011'0490        MULS     R1,R0,R4
+   \       0x3C   0xE351'0000        CMP      R1,#+0
+   \       0x40   0x1A00'0001        BNE      ??pit_init_3
+   \       0x44   0xE3A0'1001        MOV      R1,#+1
+   \       0x48   0xEA00'0000        B        ??pit_init_4
+   \                     ??pit_init_3:
+   \       0x4C   0xE3A0'1000        MOV      R1,#+0
+   \                     ??pit_init_4:
+   \       0x50   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x54   0xE351'0000        CMP      R1,#+0
+   \       0x58   0x0A00'0003        BEQ      ??pit_init_5
+   \       0x5C   0xE3E0'1007        MVN      R1,#+7
+   \       0x60   0xE021'1490        MLA      R1,R0,R4,R1
+   \       0x64   0xE1B0'1221        LSRS     R1,R1,#+4
+   \       0x68   0xEA00'0004        B        ??pit_init_2
+   \                     ??pit_init_5:
+   \       0x6C   0xE011'0490        MULS     R1,R0,R4
+   \       0x70   0xE291'1008        ADDS     R1,R1,#+8
+   \       0x74   0xE1B0'1221        LSRS     R1,R1,#+4
+   \       0x78   0xEA00'0000        B        ??pit_init_2
+   \                     ??pit_init_0:
+   \       0x7C   0xE3A0'1000        MOV      R1,#+0
+   \                     ??pit_init_2:
+   \       0x80   0xE3E0'20BF        MVN      R2,#+191
+   \       0x84   0xE3C2'2F40        BIC      R2,R2,#0x100
+   \       0x88   0xE582'1000        STR      R1,[R2, #+0]
+     85          	PIT->PIT_MR |= PIT_MR_PITEN;
+   \       0x8C   0xE592'1000        LDR      R1,[R2, #+0]
+   \       0x90   0xE391'1740        ORRS     R1,R1,#0x1000000
+   \       0x94   0xE582'1000        STR      R1,[R2, #+0]
+     86          }
+   \       0x98   0xE8BD'8010        POP      {R4,PC}          ;; return
+     87          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     88          void pit_set_piv(uint32_t piv)
+     89          {
+     90          	uint32_t mr = PIT->PIT_MR & ~PIT_MR_PIV_Msk;
+   \                     pit_set_piv:
+   \        0x0   0xE3E0'20BF        MVN      R2,#+191
+   \        0x4   0xE3C2'2F40        BIC      R2,R2,#0x100
+   \        0x8   0xE592'1000        LDR      R1,[R2, #+0]
+   \        0xC   0xE1B0'1A21        LSRS     R1,R1,#+20
+   \       0x10   0xE1B0'1A01        LSLS     R1,R1,#+20
+     91          	PIT->PIT_MR = mr | PIT_MR_PIV(piv);
+   \       0x14   0xE1B0'3600        LSLS     R3,R0,#+12
+   \       0x18   0xE191'3623        ORRS     R3,R1,R3, LSR #+12
+   \       0x1C   0xE582'3000        STR      R3,[R2, #+0]
+     92          }
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+     93          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     94          void pit_enable(void)
+     95          {
+     96          	PIT->PIT_MR |= PIT_MR_PITEN;
+   \                     pit_enable:
+   \        0x0   0xE3E0'00BF        MVN      R0,#+191
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE391'1740        ORRS     R1,R1,#0x1000000
+   \       0x10   0xE580'1000        STR      R1,[R0, #+0]
+     97          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+     98          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     99          void pit_disable(void)
+    100          {
+    101          	PIT->PIT_MR &= ~PIT_MR_PITEN;
+   \                     pit_disable:
+   \        0x0   0xE3E0'00BF        MVN      R0,#+191
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE3D1'1740        BICS     R1,R1,#0x1000000
+   \       0x10   0xE580'1000        STR      R1,[R0, #+0]
+    102          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    103          static void _pit_handler(uint32_t source, void* user_arg)
+    104          {
+   \                     _pit_handler:
+   \        0x0   0xE92D'407C        PUSH     {R2-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    105          	uint32_t interruptStatus = pit_get_status();
+   \        0xC   0x....'....        BL       pit_get_status
+   \       0x10   0xE1B0'6000        MOVS     R6,R0
+    106                  if( interruptStatus ) {
+   \       0x14   0xE356'0000        CMP      R6,#+0
+   \       0x18   0x0A00'0006        BEQ      ??_pit_handler_0
+    107                    volatile uint32_t reg = pit_get_pivr();
+   \       0x1C   0x....'....        BL       pit_get_pivr
+   \       0x20   0xE58D'0000        STR      R0,[SP, #+0]
+    108                    (void)reg;
+   \       0x24   0xE59D'0000        LDR      R0,[SP, #+0]
+    109                    tickCounter++;
+   \       0x28   0x....'....        LDR      R0,??DataTable2
+   \       0x2C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x30   0xE291'1001        ADDS     R1,R1,#+1
+   \       0x34   0xE580'1000        STR      R1,[R0, #+0]
+    110                  }
+    111              
+    112          }
+   \                     ??_pit_handler_0:
+   \       0x38   0xE8BD'8073        POP      {R0,R1,R4-R6,PC}  ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    113          void pit_enable_it(void)
+    114          {
+   \                     pit_enable_it:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    115                  irq_add_handler(ID_PIT, _pit_handler, NULL);
+   \        0x4   0xE3A0'2000        MOV      R2,#+0
+   \        0x8   0x....'....        ADR      R1,_pit_handler
+   \        0xC   0xE3A0'0001        MOV      R0,#+1
+   \       0x10   0x....'....        BL       irq_add_handler
+    116          	irq_enable(ID_PIT);
+   \       0x14   0xE3A0'0001        MOV      R0,#+1
+   \       0x18   0x....'....        BL       irq_enable
+    117                          
+    118          	PIT->PIT_MR |= PIT_MR_PITIEN;
+   \       0x1C   0xE3E0'00BF        MVN      R0,#+191
+   \       0x20   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \       0x24   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x28   0xE391'1780        ORRS     R1,R1,#0x2000000
+   \       0x2C   0xE580'1000        STR      R1,[R0, #+0]
+    119          }
+   \       0x30   0xE8BD'8001        POP      {R0,PC}          ;; return
+    120          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    121          void pit_disable_it(void)
+    122          {
+    123          	PIT->PIT_MR &= ~PIT_MR_PITIEN;
+   \                     pit_disable_it:
+   \        0x0   0xE3E0'00BF        MVN      R0,#+191
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE3D1'1780        BICS     R1,R1,#0x2000000
+   \       0x10   0xE580'1000        STR      R1,[R0, #+0]
+    124          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    125          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    126          uint32_t pit_get_mode(void)
+    127          {
+    128          	return PIT->PIT_MR;
+   \                     pit_get_mode:
+   \        0x0   0xE3E0'00BF        MVN      R0,#+191
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    129          }
+    130          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    131          uint32_t pit_get_status(void)
+    132          {
+    133          	return PIT->PIT_SR;
+   \                     pit_get_status:
+   \        0x0   0xE3E0'00BB        MVN      R0,#+187
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    134          }
+    135          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    136          uint32_t pit_get_piir(void)
+    137          {
+    138          	return PIT->PIT_PIIR;
+   \                     pit_get_piir:
+   \        0x0   0xE3E0'00B3        MVN      R0,#+179
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    139          }
+    140          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    141          uint32_t pit_get_pivr(void)
+    142          {
+    143          	return PIT->PIT_PIVR;
+   \                     pit_get_pivr:
+   \        0x0   0xE3E0'00B7        MVN      R0,#+183
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    144          }
+    145          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    146          uint32_t gettick(void)
+    147          {
+    148            return tickCounter;
+   \                     gettick:
+   \        0x0   0x....'....        LDR      R0,??DataTable2
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    149          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0x....'....        DC32     tickCounter
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   _pit_handler
+        24   -> pit_get_pivr
+        24   -> pit_get_status
+       0   gettick
+       0   pit_disable
+       0   pit_disable_it
+       0   pit_enable
+       8   pit_enable_it
+         8   -> irq_add_handler
+         8   -> irq_enable
+       0   pit_get_mode
+       0   pit_get_piir
+       0   pit_get_pivr
+       0   pit_get_status
+       8   pit_init
+         8   -> pmc_get_peripheral_clock
+         8 __aeabi_uidiv
+       0   pit_set_piv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+      60  _pit_handler
+      12  gettick
+      24  pit_disable
+      24  pit_disable_it
+      24  pit_enable
+      52  pit_enable_it
+      16  pit_get_mode
+      16  pit_get_piir
+      16  pit_get_pivr
+      16  pit_get_status
+     156  pit_init
+      36  pit_set_piv
+       4  tickCounter
+
+ 
+   4 bytes in section .bss
+ 456 bytes in section SOFTPACK
+ 
+ 456 bytes of CODE memory
+   4 bytes of DATA memory
+
+Errors: none
+Warnings: none

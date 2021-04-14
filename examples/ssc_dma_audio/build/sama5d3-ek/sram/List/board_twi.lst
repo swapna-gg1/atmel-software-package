@@ -1,0 +1,261 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         08/Dec/2020  16:47:01
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_twi.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW40F4.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_twi.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D3 -D
+#        CONFIG_CHIP_SAMA5D36 -D CONFIG_BOARD_SAMA5D3_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_INPUT_OFFSET -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_PLLA_CHARGE_PUMP -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_PMC_PERIPH_DIV -D CONFIG_HAVE_SCKC -D
+#        CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_DMAC
+#        -D CONFIG_HAVE_DMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SMD -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_MT47H128M16 -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_TC_FAULT_MODE -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC
+#        -D CONFIG_HAVE_AUDIO_WM8904 -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sama5d3\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List\board_twi.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj\board_twi.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_twi.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "board_twi.h"
+     35          
+     36          #include "peripherals/bus.h"
+     37          
+     38          #include "gpio/pio.h"
+     39          
+     40          #include "nvm/i2c/at24.h"
+     41          
+     42          /*----------------------------------------------------------------------------
+     43           *        Local variables
+     44           *----------------------------------------------------------------------------*/
+     45          
+     46          #ifdef CONFIG_HAVE_TWI_AT24
+     47          static struct _at24 at24;
+     48          #endif
+     49          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     50          void board_cfg_twi_bus(void)
+     51          {
+   \                     board_cfg_twi_bus:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+   \        0x4   0xE24D'D010        SUB      SP,SP,#+16
+     52          	struct _bus_iface iface;
+     53          
+     54          	iface.type = BUS_TYPE_I2C;
+   \        0x8   0xE3A0'0001        MOV      R0,#+1
+   \        0xC   0xE5CD'0000        STRB     R0,[SP, #+0]
+     55          #ifdef BOARD_TWI_BUS0
+     56          	const struct _pin pins_twi_bus0[] = BOARD_TWI_BUS0_PINS;
+     57          	pio_configure(pins_twi_bus0, ARRAY_SIZE(pins_twi_bus0));
+   \       0x10   0xE3A0'1002        MOV      R1,#+2
+   \       0x14   0x....'....        ADR      R0,`board_cfg_twi_bus::pins_twi_bus0`
+   \       0x18   0x....'....        BL       pio_configure
+     58          	iface.i2c.hw = BOARD_TWI_BUS0;
+   \       0x1C   0xE3A0'24F0        MOV      R2,#-268435456
+     59          	iface.i2c.freq = BOARD_TWI_BUS0_FREQ;
+   \       0x20   0xE3A0'0A49        MOV      R0,#+299008
+   \       0x24   0xE382'2B60        ORR      R2,R2,#0x18000
+   \       0x28   0xE380'0FF8        ORR      R0,R0,#0x3E0
+   \       0x2C   0xE58D'2004        STR      R2,[SP, #+4]
+   \       0x30   0xE58D'0008        STR      R0,[SP, #+8]
+     60          	iface.transfer_mode = BOARD_TWI_BUS0_MODE;
+   \       0x34   0xE3A0'2002        MOV      R2,#+2
+     61          	bus_configure(BUS(BUS_TYPE_I2C, 0), &iface);
+   \       0x38   0xE1A0'100D        MOV      R1,SP
+   \       0x3C   0xE5CD'200C        STRB     R2,[SP, #+12]
+   \       0x40   0xE3A0'0002        MOV      R0,#+2
+   \       0x44   0x....'....        BL       bus_configure
+     62          #endif
+     63          #ifdef BOARD_TWI_BUS1
+     64          	const struct _pin pins_twi_bus1[] = BOARD_TWI_BUS1_PINS;
+     65          	pio_configure(pins_twi_bus1, ARRAY_SIZE(pins_twi_bus1));
+     66          	iface.i2c.hw = BOARD_TWI_BUS1;
+     67          	iface.i2c.freq = BOARD_TWI_BUS1_FREQ;
+     68          	iface.transfer_mode = BOARD_TWI_BUS1_MODE;
+     69          	bus_configure(BUS(BUS_TYPE_I2C, 1), &iface);
+     70          #endif
+     71          #ifdef BOARD_TWI_BUS2
+     72          	const struct _pin pins_twi_bus2[] = BOARD_TWI_BUS2_PINS;
+     73          	pio_configure(pins_twi_bus2, ARRAY_SIZE(pins_twi_bus2));
+     74          	iface.i2c.hw = BOARD_TWI_BUS2;
+     75          	iface.i2c.freq = BOARD_TWI_BUS2_FREQ;
+     76          	iface.transfer_mode = BOARD_TWI_BUS2_MODE;
+     77          	bus_configure(BUS(BUS_TYPE_I2C, 2), &iface);
+     78          #endif
+     79          #ifdef BOARD_TWI_BUS3
+     80          	const struct _pin pins_twi_bus3[] = BOARD_TWI_BUS3_PINS;
+     81          	pio_configure(pins_twi_bus3, ARRAY_SIZE(pins_twi_bus3));
+     82          	iface.i2c.hw = BOARD_TWI_BUS3;
+     83          	iface.i2c.freq = BOARD_TWI_BUS3_FREQ;
+     84          	iface.transfer_mode = BOARD_TWI_BUS3_MODE;
+     85          	bus_configure(BUS(BUS_TYPE_I2C, 3), &iface);
+     86          #endif
+     87          #ifdef BOARD_TWI_BUS4
+     88          	const struct _pin pins_twi_bus4[] = BOARD_TWI_BUS4_PINS;
+     89          	pio_configure(pins_twi_bus4, ARRAY_SIZE(pins_twi_bus4));
+     90          	iface.i2c.hw = BOARD_TWI_BUS4;
+     91          	iface.i2c.freq = BOARD_TWI_BUS4_FREQ;
+     92          	iface.transfer_mode = BOARD_TWI_BUS4_MODE;
+     93          	bus_configure(BUS(BUS_TYPE_I2C, 4), &iface;
+     94          #endif
+     95          #ifdef BOARD_TWI_BUS5
+     96          	const struct _pin pins_twi_bus5[] = BOARD_TWI_BUS5_PINS;
+     97          	pio_configure(pins_twi_bus5, ARRAY_SIZE(pins_twi_bus2));
+     98          	iface.i2c.hw = BOARD_TWI_BUS5;
+     99          	iface.i2c.freq = BOARD_TWI_BUS5_FREQ;
+    100          	iface.transfer_mode = BOARD_TWI_BUS5_MODE;
+    101          	bus_configure(BUS(BUS_TYPE_I2C, 5), &iface);
+    102          #endif
+    103          #ifdef BOARD_TWI_BUS6
+    104          	const struct _pin pins_twi_bus6[] = BOARD_TWI_BUS6_PINS;
+    105          	pio_configure(pins_twi_bus6, ARRAY_SIZE(pins_twi_bus6));
+    106          	iface.i2c.hw = BOARD_TWI_BUS6;
+    107          	iface.i2c.freq = BOARD_TWI_BUS6_FREQ;
+    108          	iface.transfer_mode = BOARD_TWI_BUS6_MODE;
+    109          	bus_configure(BUS(BUS_TYPE_I2C, 6), &iface);
+    110          #endif
+    111          }
+   \       0x48   0xE28D'D014        ADD      SP,SP,#+20
+   \       0x4C   0xE8BD'8000        POP      {PC}             ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     `board_cfg_twi_bus::pins_twi_bus0`:
+   \        0x0   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0400'0000        DC32 67'108'864
+   \        0x8   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+   \       0x10   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x14   0x0800'0000        DC32 134'217'728
+   \       0x18   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x1C   0x0000'0000        DC32 0
+    112          
+    113          #ifdef CONFIG_HAVE_TWI_AT24
+    114          void board_cfg_at24(void)
+    115          {
+    116          	const struct _at24_config at24_device_cfg = {
+    117          		.bus = BOARD_AT24_TWI_BUS,
+    118          		.addr = BOARD_AT24_ADDR,
+    119          		.model = BOARD_AT24_MODEL,
+    120          	};
+    121          	at24_configure(&at24, &at24_device_cfg);
+    122          }
+    123          
+    124          struct _at24 * board_get_at24(void)
+    125          {
+    126          	return &at24;
+    127          }
+    128          #endif /* CONFIG_HAVE_TWI_AT24 */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   board_cfg_twi_bus
+        24   -> bus_configure
+        24   -> pio_configure
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      80  board_cfg_twi_bus
+      32  pins_twi_bus0
+
+ 
+ 112 bytes in section SOFTPACK
+ 
+ 112 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,469 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         20/Jan/2021  09:41:43
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\sdram.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWDE50.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\sdram.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_LCD -D CONFIG_HAVE_LCDC -D CONFIG_HAVE_LCDC_OVR1 -D
+#        CONFIG_HAVE_LCDC_OVR2 -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_DDR2_W972GG6KB -D CONFIG_HAVE_RSTC_EXTERNAL_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_RTT -D
+#        CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\List\sdram.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\Obj\sdram.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\sdram.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2018, Microchip Technology
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*------------------------------------------------------------------------------
+     31           *        Header
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "chip.h"
+     35          #include "trace.h"
+     36          
+     37          #include "extram/sdram.h"
+     38          
+     39          #include "extram/sdramc.h"
+     40          #include "peripherals/pmc.h"
+     41          
+     42          #include "mm/l1cache.h"
+     43          
+     44          #include <assert.h>
+     45          #include <string.h>
+     46          
+     47          /*------------------------------------------------------------------------------
+     48           *        Macro
+     49           *----------------------------------------------------------------------------*/
+     50          
+     51          /* Convert nanoseconds to clock cycles for given master clock in MHz */
+     52          #define NS2CYCLES(ns, clk) ((((ns) * (clk)) + 999) / 1000)
+     53          
+     54          /*---------------------------------------------------------------------------
+     55           *      Local functions
+     56           *---------------------------------------------------------------------------*/
+     57          
+     58          #ifdef CONFIG_HAVE_SDRAM_MT48LC16M16
+     59          static void _init_mt48lc16m16(struct _sdramc_desc *desc)
+     60          {
+     61          	uint32_t mck = pmc_get_master_clock() / 1000000;
+     62          
+     63          	desc->is_lpsdr = false;
+     64          	desc->nb_columns = 9;
+     65          	desc->nb_rows = 13;
+     66          	desc->nb_banks = 4;
+     67          	desc->data_bus_width = 16;
+     68          	desc->cas_latency = 3;
+     69          	desc->shift_sampling = 3;
+     70          
+     71          	/* timings for 166MHz */
+     72          
+     73          	memset(&desc->timings, 0, sizeof(desc->timings));
+     74          	desc->timings.tmrd = 2;                     // 2ck
+     75          	desc->timings.twr  = NS2CYCLES(12, mck);    // 12ns
+     76          	desc->timings.trc  = NS2CYCLES(60, mck);    // 60ns
+     77          	desc->timings.trfc = NS2CYCLES(60, mck);    // 60ns
+     78          	desc->timings.trp  = NS2CYCLES(18, mck);    // 18ns
+     79          	desc->timings.trcd = NS2CYCLES(18, mck);    // 18ns
+     80          	desc->timings.tras = NS2CYCLES(42, mck);    // 42ns
+     81          	desc->timings.txsr = NS2CYCLES(67, mck);    // 67ns
+     82          
+     83          	desc->refresh_window = 64;
+     84          	desc->refresh_cycles = 8192;
+     85          }
+     86          
+     87          static void _init_mt48lc16m16x2(struct _sdramc_desc *desc)
+     88          {
+     89          	_init_mt48lc16m16(desc);
+     90          	desc->data_bus_width = 32; /* 2 x 16-bit chips */
+     91          }
+     92          #endif /* CONFIG_HAVE_SDRAM_MT48LC16M16 */
+     93          
+     94          #ifdef CONFIG_HAVE_LPSDR_MT48H32M16
+     95          static void _init_mt48h32m16(struct _sdramc_desc *desc)
+     96          {
+     97          	uint32_t mck = pmc_get_master_clock() / 1000000;
+     98          
+     99          	desc->is_lpsdr = true;
+    100          	desc->nb_columns = 10;
+    101          	desc->nb_rows = 13;
+    102          	desc->nb_banks = 4;
+    103          	desc->data_bus_width = 16;
+    104          	desc->cas_latency = 3;
+    105          	desc->shift_sampling = 3;
+    106          
+    107          	/* timings for 166MHz */
+    108          
+    109          	memset(&desc->timings, 0, sizeof(desc->timings));
+    110          	desc->timings.tmrd = 2;                     // 2ck
+    111          	desc->timings.twr  = NS2CYCLES(15, mck);    // 15ns
+    112          	desc->timings.trc  = NS2CYCLES(60, mck);    // 60ns
+    113          	desc->timings.trfc = NS2CYCLES(72, mck);    // 72ns
+    114          	desc->timings.trp  = NS2CYCLES(18, mck);    // 18ns
+    115          	desc->timings.trcd = NS2CYCLES(18, mck);    // 18ns
+    116          	desc->timings.tras = NS2CYCLES(42, mck);    // 42ns
+    117          	desc->timings.txsr = NS2CYCLES(120, mck);   // 120ns
+    118          
+    119          	desc->refresh_window = 64;
+    120          	desc->refresh_cycles = 8192;
+    121          }
+    122          #endif /* CONFIG_HAVE_LPSDR_MT48H32M16 */
+    123          
+    124          #ifdef CONFIG_HAVE_SDRAM_W9864G6KH
+    125          static void _init_w9864g6kh(struct _sdramc_desc *desc)
+    126          {
+    127          	uint32_t mck = pmc_get_master_clock() / 1000000;
+    128          
+    129          	desc->is_lpsdr = false;
+    130          	desc->nb_columns = 8;
+    131          	desc->nb_rows = 12;
+    132          	desc->nb_banks = 4;
+    133          	desc->data_bus_width = 16;
+    134          	desc->cas_latency = 3;
+    135          	desc->shift_sampling = 3;
+    136          
+    137          	memset(&desc->timings, 0, sizeof(desc->timings));
+    138          	desc->timings.tmrd = 2;                     // 2ck
+    139          	desc->timings.twr  = 2;                     // min 2ck
+    140          	desc->timings.trc  = NS2CYCLES(60, mck);    // 60ns
+    141          	desc->timings.trfc = NS2CYCLES(72, mck);    // 72ns
+    142          	desc->timings.trp  = NS2CYCLES(18, mck);    // 18ns
+    143          	desc->timings.trcd = NS2CYCLES(20, mck);    // 20ns
+    144          	desc->timings.tras = NS2CYCLES(45, mck);    // 45ns
+    145          	desc->timings.txsr = NS2CYCLES(75, mck);    // 75ns
+    146          
+    147          	desc->refresh_window = 64;
+    148          	desc->refresh_cycles = 8192;
+    149          }
+    150          #endif /* CONFIG_HAVE_SDRAM_W9864G6KH */
+    151          
+    152          /*------------------------------------------------------------------------------
+    153           *        Exported Functions
+    154           *----------------------------------------------------------------------------*/
+    155          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    156          void sdram_init_descriptor(struct _sdramc_desc *desc,
+    157          			   enum _sdram_devices device)
+    158          {
+   \                     sdram_init_descriptor:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    159          	switch (device) {
+    160          #ifdef CONFIG_HAVE_SDRAM_MT48LC16M16
+    161          	case MT48LC16M16:
+    162          		_init_mt48lc16m16(desc);
+    163          		break;
+    164          	case MT48LC16M16X2:
+    165          		_init_mt48lc16m16x2(desc);
+    166          		break;
+    167          #endif
+    168          #ifdef CONFIG_HAVE_LPSDR_MT48H32M16
+    169          	case MT48H32M16:
+    170          		_init_mt48h32m16(desc);
+    171          		break;
+    172          #endif
+    173          #ifdef CONFIG_HAVE_SDRAM_W9864G6KH
+    174          	case W9864G6KH:
+    175          		_init_w9864g6kh(desc);
+    176          		break;
+    177          #endif
+    178          	default:
+    179          		trace_fatal("Unsupported SDRAM type\r\n");
+   \        0xC   0x....'....        LDR      R0,??DataTable1
+   \       0x10   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x0A00'0001        BEQ      ??sdram_init_descriptor_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable1_1
+   \       0x20   0x....'....        BL       printf
+   \                     ??sdram_init_descriptor_0:
+   \       0x24   0xEAFF'FFFE        B        ??sdram_init_descriptor_0
+    180          		break;
+    181          	}
+    182          }
+    183          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    184          void sdram_configure(const struct _sdramc_desc *desc)
+    185          {
+   \                     sdram_configure:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    186          	assert(!dcache_is_enabled());
+   \        0x8   0x....'....        BL       dcache_is_enabled
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x0A00'0004        BEQ      ??sdram_configure_0
+   \       0x14   0xE3A0'20BA        MOV      R2,#+186
+   \       0x18   0x....'....        LDR      R1,??DataTable1_2
+   \       0x1C   0x....'....        LDR      R0,??DataTable1_3
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    187          	sdramc_configure(desc);
+   \                     ??sdram_configure_0:
+   \       0x28   0xE1B0'0004        MOVS     R0,R4
+   \       0x2C   0x....'....        BL       sdramc_configure
+    188          }
+   \       0x30   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_2:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_3:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x46          DC8 "-F- Unsupported SDRAM type\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70    
+
+   \              0x6F 0x72    
+
+   \              0x74 0x65    
+
+   \              0x64 0x20    
+
+   \              0x53 0x44    
+
+   \              0x52 0x41    
+
+   \              0x4D 0x20    
+
+   \              0x74 0x79    
+
+   \              0x70 0x65    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x1D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x21 0x64          DC8 "!dcache_is_enabled()"
+
+   \              0x63 0x61    
+
+   \              0x63 0x68    
+
+   \              0x65 0x5F    
+
+   \              0x69 0x73    
+
+   \              0x5F 0x65    
+
+   \              0x6E 0x61    
+
+   \              0x62 0x6C    
+
+   \              0x65 0x64    
+
+   \              0x28 0x29    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x65, 0x78, 0x74, 0x72, 0x61, 0x6D
+
+   \              0x65 0x78    
+
+   \              0x74 0x72    
+
+   \              0x61 0x6D
+   \       0x40   0x5C 0x73          DC8 0x5C, 0x73, 0x64, 0x72, 0x61, 0x6D, 0x2E, 0x63
+
+   \              0x64 0x72    
+
+   \              0x61 0x6D    
+
+   \              0x2E 0x63
+   \       0x48   0x00               DC8 0
+   \       0x49   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   sdram_configure
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         8   -> dcache_is_enabled
+         8   -> sdramc_configure
+      16   sdram_init_descriptor
+        16   -> printf
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+       4  ??DataTable1_2
+       4  ??DataTable1_3
+      32  ?_0
+      24  ?_1
+      76  ?_2
+      52  sdram_configure
+      40  sdram_init_descriptor
+
+ 
+ 132 bytes in section .rodata
+ 108 bytes in section SOFTPACK
+ 
+ 108 bytes of CODE  memory
+ 132 bytes of CONST memory
+
+Errors: none
+Warnings: none

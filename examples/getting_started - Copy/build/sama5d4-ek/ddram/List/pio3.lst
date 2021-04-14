@@ -1,0 +1,2389 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         24/Nov/2020  13:57:08
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\gpio\pio3.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWF3F8.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\gpio\pio3.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D4 -D
+#        CONFIG_CHIP_SAMA5D44 -D CONFIG_BOARD_SAMA5D4_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_ADC_LOW_RES -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D
+#        CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SFC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_SECURE_MATRIX -D
+#        CONFIG_HAVE_DDR2_MT47H128M8 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_TC_FAULT_MODE -D
+#        CONFIG_HAVE_RTC_CALIBRATION -D CONFIG_HAVE_RTC_MODE_PERSIAN -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_SPI_MODE -D CONFIG_HAVE_SERIALD_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sama5d4\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\List\pio3.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\Obj\pio3.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\gpio\pio3.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup pio_module Working with PIO
+     31           * \section Purpose
+     32           * The PIO driver provides the Interface for configuration the Parallel Input/Output
+     33           *  Controller (PIO).
+     34           *
+     35           * \section Usage
+     36           * <ul>
+     37           * <li>  Initialize the PIO with the desired period using pio_configure().
+     38           * <li>  Set a high or low output level on the given PIO using pio_set() or pio_clear().
+     39           * <li>  Get the level of the given PIOs using pio_get() or pio_get_output_date_status().
+     40           * <li>  Configures Glitch or Debouncing filter for given input PIO using pio_set_debounce_filter().
+     41           * <li>  Enable & disable write protect of the given PIOs using pio_enable_write_protect() or pio_disable_write_protect().
+     42           * <li>  Get write protect violation information of given PIO using pio_get_write_protect_violation_info().
+     43           * </ul>
+     44           *
+     45           * For more accurate information, please look at the PIO section of the Datasheet.
+     46           *
+     47           * Related files:\n
+     48           * \ref pio.h\n
+     49          */
+     50          /*@{*/
+     51          /*@}*/
+     52          
+     53          /**
+     54           * \file
+     55           *
+     56           * Implementation of PIO V3 (Parallel Input/Output) controller.
+     57           *
+     58           */
+     59          /*----------------------------------------------------------------------------
+     60           *        Headers
+     61           *----------------------------------------------------------------------------*/
+     62          
+     63          #include "chip.h"
+     64          #include "irq/irq.h"
+     65          #include "gpio/pio.h"
+     66          #include "peripherals/pmc.h"
+     67          
+     68          #include "trace.h"
+     69          #include "compiler.h"
+     70          
+     71          #include <assert.h>
+     72          
+     73          /*----------------------------------------------------------------------------
+     74           *        Local types
+     75           *----------------------------------------------------------------------------*/
+     76          
+     77          struct _handler {
+     78          	uint32_t      group;
+     79          	uint32_t      mask;
+     80          	pio_handler_t handler;
+     81          	void         *user_arg;
+     82          };
+     83          
+     84          /*----------------------------------------------------------------------------
+     85           *        Local variables
+     86           *----------------------------------------------------------------------------*/
+     87          
+
+   \                                 In section .bss, align 4
+     88          static struct _handler _handlers[IRQ_PIO_HANDLERS_SIZE];
+   \                     _handlers:
+   \        0x0                      DS8 256
+   \      0x100                      DS8 4
+     89          
+     90          /*----------------------------------------------------------------------------
+     91           *        Local functions
+     92           *----------------------------------------------------------------------------*/
+     93          
+     94          static bool _pio_has_group(uint32_t group)
+     95          {
+     96          #ifdef ID_PIOA
+     97          	if (group == 0)
+     98          		return true;
+     99          #endif
+    100          #ifdef ID_PIOB
+    101          	if (group == 1)
+    102          		return true;
+    103          #endif
+    104          #ifdef ID_PIOC
+    105          	if (group == 2)
+    106          		return true;
+    107          #endif
+    108          #ifdef ID_PIOD
+    109          	if (group == 3)
+    110          		return true;
+    111          #endif
+    112          #ifdef ID_PIOE
+    113          	if (group == 4)
+    114          		return true;
+    115          #endif
+    116          	return false;
+    117          }
+    118          
+    119          static uint32_t _pio_get_group_mask(uint32_t id)
+    120          {
+    121          	uint32_t group = 0;
+    122          
+    123          #ifdef ID_PIOA
+    124          	if (id == ID_PIOA)
+    125          		group |= (1 << PIO_GROUP_A);
+    126          #endif
+    127          #ifdef ID_PIOB
+    128          	if (id == ID_PIOB)
+    129          		group |= (1 << PIO_GROUP_B);
+    130          #endif
+    131          #ifdef ID_PIOC
+    132          	if (id == ID_PIOC)
+    133          		group |= (1 << PIO_GROUP_C);
+    134          #endif
+    135          #ifdef ID_PIOD
+    136          	if (id == ID_PIOD)
+    137          		group |= (1 << PIO_GROUP_D);
+    138          #endif
+    139          #ifdef ID_PIOE
+    140          	if (id == ID_PIOE)
+    141          		group |= (1 << PIO_GROUP_E);
+    142          #endif
+    143          
+    144          	return group;
+    145          }
+    146          
+    147          static Pio* _pio_get_instance(uint32_t group)
+    148          {
+    149          	switch (group) {
+    150          #ifdef PIOA
+    151          	case PIO_GROUP_A:
+    152          		return PIOA;
+    153          #endif
+    154          #ifdef PIOB
+    155          	case PIO_GROUP_B:
+    156          		return PIOB;
+    157          #endif
+    158          #ifdef PIOC
+    159          	case PIO_GROUP_C:
+    160          		return PIOC;
+    161          #endif
+    162          #ifdef PIOD
+    163          	case PIO_GROUP_D:
+    164          		return PIOD;
+    165          #endif
+    166          #ifdef PIOE
+    167          	case PIO_GROUP_E:
+    168          		return PIOE;
+    169          #endif
+    170          	default:
+    171          		trace_fatal("Invalid PIO group!");
+    172          	}
+    173          }
+    174          
+    175          static uint32_t _pio_get_periph_id(uint32_t group)
+    176          {
+    177          	switch (group) {
+    178          #ifdef ID_PIOA
+    179          	case PIO_GROUP_A:
+    180          		return ID_PIOA;
+    181          #endif
+    182          #ifdef ID_PIOB
+    183          	case PIO_GROUP_B:
+    184          		return ID_PIOB;
+    185          #endif
+    186          #ifdef ID_PIOC
+    187          	case PIO_GROUP_C:
+    188          		return ID_PIOC;
+    189          #endif
+    190          #ifdef ID_PIOD
+    191          	case PIO_GROUP_D:
+    192          		return ID_PIOD;
+    193          #endif
+    194          #ifdef ID_PIOE
+    195          	case PIO_GROUP_E:
+    196          		return ID_PIOE;
+    197          #endif
+    198          	default:
+    199          		trace_fatal("Invalid PIO group!");
+    200          	}
+    201          }
+    202          
+    203          static void _handler_push(uint32_t group, uint32_t mask, pio_handler_t handler, void* user_arg)
+    204          {
+    205          	static int i = 0;
+    206          	assert(i < (ARRAY_SIZE(_handlers) - 1));
+    207          	_handlers[i].group = group;
+    208          	_handlers[i].mask = mask;
+    209          	_handlers[i].handler = handler;
+    210          	_handlers[i].user_arg = user_arg;
+    211          	i++;
+    212          }
+    213          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    214          static void _pio_handle_interrupt(uint32_t group, Pio* pio)
+    215          {
+   \                     _pio_handle_interrupt:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+    216          	int i;
+    217          	uint32_t status = pio->PIO_ISR;
+   \        0x4   0xE591'504C        LDR      R5,[R1, #+76]
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    218          	for (i = 0; i < ARRAY_SIZE(_handlers); i++) {
+   \        0xC   0x....'....        LDR      R6,??DataTable18
+   \       0x10   0xE3A0'7010        MOV      R7,#+16
+    219          		if (_handlers[i].group == group && (_handlers[i].mask & status))
+   \                     ??_pio_handle_interrupt_0:
+   \       0x14   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0x18   0xE150'0004        CMP      R0,R4
+   \       0x1C   0x1A00'0007        BNE      ??_pio_handle_interrupt_1
+   \       0x20   0xE596'1004        LDR      R1,[R6, #+4]
+   \       0x24   0xE115'0001        TST      R5,R1
+   \       0x28   0x0A00'0004        BEQ      ??_pio_handle_interrupt_1
+    220          			_handlers[i].handler(group, status, _handlers[i].user_arg);
+   \       0x2C   0xE596'200C        LDR      R2,[R6, #+12]
+   \       0x30   0xE596'3008        LDR      R3,[R6, #+8]
+   \       0x34   0xE1A0'1005        MOV      R1,R5
+   \       0x38   0xE1A0'0004        MOV      R0,R4
+   \       0x3C   0xE12F'FF33        BLX      R3
+    221          	}
+   \                     ??_pio_handle_interrupt_1:
+   \       0x40   0xE257'7001        SUBS     R7,R7,#+1
+   \       0x44   0xE286'6010        ADD      R6,R6,#+16
+   \       0x48   0x1AFF'FFF1        BNE      ??_pio_handle_interrupt_0
+    222          }
+   \       0x4C   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    223          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    224          static void _pio_handler(uint32_t source, void* user_arg)
+    225          {
+   \                     _pio_handler:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    226          	uint32_t group_mask = _pio_get_group_mask(source);
+   \        0x4   0xE3A0'4000        MOV      R4,#+0
+   \        0x8   0xE350'0017        CMP      R0,#+23
+   \        0xC   0x03A0'4001        MOVEQ    R4,#+1
+   \       0x10   0x0A00'000A        BEQ      ??_pio_handler_0
+   \       0x14   0xE350'0018        CMP      R0,#+24
+   \       0x18   0x03A0'4002        MOVEQ    R4,#+2
+   \       0x1C   0x0A00'0007        BEQ      ??_pio_handler_0
+   \       0x20   0xE350'0019        CMP      R0,#+25
+   \       0x24   0x03A0'4004        MOVEQ    R4,#+4
+   \       0x28   0x0A00'0004        BEQ      ??_pio_handler_0
+   \       0x2C   0xE350'0005        CMP      R0,#+5
+   \       0x30   0x03A0'4008        MOVEQ    R4,#+8
+   \       0x34   0x0A00'0001        BEQ      ??_pio_handler_0
+   \       0x38   0xE350'001A        CMP      R0,#+26
+   \       0x3C   0x03A0'4010        MOVEQ    R4,#+16
+    227          
+    228          #ifdef PIOA
+    229          	if (group_mask & (1 << PIO_GROUP_A))
+   \                     ??_pio_handler_0:
+   \       0x40   0xE314'0001        TST      R4,#0x1
+   \       0x44   0x0A00'0003        BEQ      ??_pio_handler_1
+    230          		_pio_handle_interrupt(PIO_GROUP_A, PIOA);
+   \       0x48   0xE3A0'14FC        MOV      R1,#-67108864
+   \       0x4C   0xE3A0'0000        MOV      R0,#+0
+   \       0x50   0xE381'1A6A        ORR      R1,R1,#0x6A000
+   \       0x54   0x....'....        BL       _pio_handle_interrupt
+    231          #endif
+    232          #ifdef PIOB
+    233          	if (group_mask & (1 << PIO_GROUP_B))
+   \                     ??_pio_handler_1:
+   \       0x58   0xE314'0002        TST      R4,#0x2
+   \       0x5C   0x0A00'0003        BEQ      ??_pio_handler_2
+    234          		_pio_handle_interrupt(PIO_GROUP_B, PIOB);
+   \       0x60   0xE3A0'14FC        MOV      R1,#-67108864
+   \       0x64   0xE3A0'0001        MOV      R0,#+1
+   \       0x68   0xE381'1A6B        ORR      R1,R1,#0x6B000
+   \       0x6C   0x....'....        BL       _pio_handle_interrupt
+    235          #endif
+    236          #ifdef PIOC
+    237          	if (group_mask & (1 << PIO_GROUP_C))
+   \                     ??_pio_handler_2:
+   \       0x70   0xE314'0004        TST      R4,#0x4
+   \       0x74   0x0A00'0003        BEQ      ??_pio_handler_3
+    238          		_pio_handle_interrupt(PIO_GROUP_C, PIOC);
+   \       0x78   0xE3A0'14FC        MOV      R1,#-67108864
+   \       0x7C   0xE3A0'0002        MOV      R0,#+2
+   \       0x80   0xE381'1A6C        ORR      R1,R1,#0x6C000
+   \       0x84   0x....'....        BL       _pio_handle_interrupt
+    239          #endif
+    240          #ifdef PIOD
+    241          	if (group_mask & (1 << PIO_GROUP_D))
+   \                     ??_pio_handler_3:
+   \       0x88   0xE314'0008        TST      R4,#0x8
+   \       0x8C   0x0A00'0003        BEQ      ??_pio_handler_4
+    242          		_pio_handle_interrupt(PIO_GROUP_D, PIOD);
+   \       0x90   0xE3A0'14FC        MOV      R1,#-67108864
+   \       0x94   0xE3A0'0003        MOV      R0,#+3
+   \       0x98   0xE381'1A68        ORR      R1,R1,#0x68000
+   \       0x9C   0x....'....        BL       _pio_handle_interrupt
+    243          #endif
+    244          #ifdef PIOE
+    245          	if (group_mask & (1 << PIO_GROUP_E))
+   \                     ??_pio_handler_4:
+   \       0xA0   0xE314'0010        TST      R4,#0x10
+   \       0xA4   0x0A00'0004        BEQ      ??_pio_handler_5
+    246          		_pio_handle_interrupt(PIO_GROUP_E, PIOE);
+   \       0xA8   0xE8BD'4010        POP      {R4,LR}
+   \       0xAC   0xE3A0'14FC        MOV      R1,#-67108864
+   \       0xB0   0xE3A0'0004        MOV      R0,#+4
+   \       0xB4   0xE381'1A6D        ORR      R1,R1,#0x6D000
+   \       0xB8   0x....'....        B        _pio_handle_interrupt  ;; tailcall
+    247          #endif
+    248          }
+   \                     ??_pio_handler_5:
+   \       0xBC   0xE8BD'8010        POP      {R4,PC}          ;; return
+    249          
+    250          /*----------------------------------------------------------------------------
+    251           *         Exported functions
+    252           *----------------------------------------------------------------------------*/
+    253          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    254          void pio_configure(const struct _pin *pin_list, uint32_t size)
+    255          {
+   \                     pio_configure:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+    256          	int i;
+    257          
+    258          	for (i = 0; i < size; i++) {
+   \        0x4   0xE3A0'54FC        MOV      R5,#-67108864
+   \        0x8   0xE3A0'A000        MOV      R10,#+0
+   \        0xC   0xE385'5A6B        ORR      R5,R5,#0x6B000
+   \       0x10   0xE280'B004        ADD      R11,R0,#+4
+   \       0x14   0x....'....        LDR      R4,??DataTable18_2
+   \       0x18   0xE285'6D40        ADD      R6,R5,#+4096
+   \       0x1C   0xE3C5'7DC0        BIC      R7,R5,#0x3000
+   \       0x20   0xE285'8D80        ADD      R8,R5,#+8192
+   \       0x24   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x28   0xEA00'0071        B        ??pio_configure_3
+   \                     ??pio_configure_4:
+   \       0x2C   0xE1A0'9008        MOV      R9,R8
+   \       0x30   0xEA00'007C        B        ??pio_configure_5
+   \                     ??pio_configure_6:
+   \       0x34   0xE1A0'9007        MOV      R9,R7
+   \       0x38   0xEA00'007A        B        ??pio_configure_5
+   \                     ??pio_configure_7:
+   \       0x3C   0xE1A0'9006        MOV      R9,R6
+   \       0x40   0xEA00'0078        B        ??pio_configure_5
+   \                     ??pio_configure_8:
+   \       0x44   0xE1A0'9005        MOV      R9,R5
+   \       0x48   0xEA00'0076        B        ??pio_configure_5
+   \                     ??pio_configure_9:
+   \       0x4C   0x....'....        LDR      R1,??DataTable18_3
+   \       0x50   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x54   0xE352'0000        CMP      R2,#+0
+   \       0x58   0x0A00'0001        BEQ      ??pio_configure_10
+   \       0x5C   0x....'....        LDR      R0,??DataTable18_4
+   \       0x60   0x....'....        BL       printf
+   \                     ??pio_configure_10:
+   \       0x64   0xEAFF'FFFE        B        ??pio_configure_10
+   \                     ??pio_configure_11:
+   \       0x68   0xE3A0'001A        MOV      R0,#+26
+   \       0x6C   0xEA00'007C        B        ??pio_configure_12
+   \                     ??pio_configure_13:
+   \       0x70   0xE3A0'0005        MOV      R0,#+5
+   \       0x74   0xEA00'007A        B        ??pio_configure_12
+   \                     ??pio_configure_14:
+   \       0x78   0xE3A0'0019        MOV      R0,#+25
+   \       0x7C   0xEA00'0078        B        ??pio_configure_12
+   \                     ??pio_configure_15:
+   \       0x80   0xE3A0'0018        MOV      R0,#+24
+   \       0x84   0xEA00'0076        B        ??pio_configure_12
+    259          		const struct _pin *pin = &pin_list[i];
+    260          		Pio* pio = _pio_get_instance(pin->group);
+    261          
+    262          		/* Disable interrupts */
+    263          		pio->PIO_IDR = pin->mask;
+    264          
+    265          		/* The PIO input logic requires the peripheral clock */
+    266          		if (pin->type == PIO_INPUT)
+    267          			pmc_configure_peripheral(_pio_get_periph_id(pin->group), NULL, true);
+    268          
+    269          		/* Disable pull-down and pull-up resistors */
+    270          		assert((pin->attribute & (PIO_PULLUP | PIO_PULLDOWN)) != (PIO_PULLUP | PIO_PULLDOWN));
+    271          		pio->PIO_PPDDR = pin->mask;
+    272          		pio->PIO_PUDR = pin->mask;
+    273          
+    274          		/* Enable pull-up resistors as requested */
+    275          		if (pin->attribute & PIO_PULLUP)
+    276          			pio->PIO_PUER = pin->mask;
+    277          
+    278          		/* Enable pull-down resistors as requested */
+    279          		if (pin->attribute & PIO_PULLDOWN)
+    280          			pio->PIO_PPDER = pin->mask;
+    281          
+    282          		/* Select open-drain output stage as requested */
+    283          		if (pin->attribute & PIO_OPENDRAIN)
+    284          			pio->PIO_MDER = pin->mask;
+    285          		else
+    286          			pio->PIO_MDDR = pin->mask;
+    287          
+    288          		/* Enable the input filter if requested */
+    289          		if (pin->attribute & (PIO_DEGLITCH | PIO_DEBOUNCE))
+    290          			pio->PIO_IFER = pin->mask;
+    291          		else
+    292          			pio->PIO_IFDR = pin->mask;
+    293          
+    294          		/* The de-bounce input filter depends on the slow clock */
+    295          		if (pin->attribute & PIO_DEBOUNCE)
+    296          			pio->PIO_IFSCER = pin->mask;
+    297          		else
+    298          			pio->PIO_IFSCDR = pin->mask;
+    299          
+    300          		if (pin->attribute & PIO_NO_SCHMITT_TRIG)
+    301          			pio->PIO_SCHMITT |= pin->mask;
+    302          		else
+    303          			pio->PIO_SCHMITT &= ~pin->mask;
+   \                     ??pio_configure_16:
+   \       0x88   0xE589'0100        STR      R0,[R9, #+256]
+    304          
+    305          		/* Control slew rate if requested */
+    306          		if (pin->attribute & PIO_CRTL_SLEWR)
+   \       0x8C   0xE59B'0008        LDR      R0,[R11, #+8]
+   \       0x90   0xE310'0F80        TST      R0,#0x200
+   \       0x94   0x1A00'0025        BNE      ??pio_configure_17
+    307          #ifdef PIO_SLEWR_SR0
+    308          			pio->PIO_SLEWR |= pin->mask;
+    309          		else
+    310          			pio->PIO_SLEWR &= ~pin->mask;
+    311          #else
+    312          			trace_fatal("Invalid slew rate setting\r\n");
+    313          #endif
+    314          
+    315          		switch (pin->attribute & PIO_DRVSTR_MASK) {
+   \       0x98   0xE310'0EC0        TST      R0,#0xC00
+   \       0x9C   0x1A00'0031        BNE      ??pio_configure_18
+    316          		case PIO_DRVSTR_LO:
+    317          #ifdef PIO_DRIVER_DR0
+    318          			pio->PIO_DRIVER &= ~pin->mask;
+    319          #endif
+    320          			break;
+    321          #ifdef PIO_DRIVER_DR0
+    322          		case PIO_DRVSTR_HI:
+    323          			pio->PIO_DRIVER |= pin->mask;
+    324          			break;
+    325          #endif
+    326          		default:
+    327          			trace_fatal("Invalid pin drive strength\r\n");
+    328          			break;
+    329          		}
+    330          
+    331          		switch (pin->attribute & PIO_IT_MASK) {
+   \       0xA0   0xE210'0F70        ANDS     R0,R0,#0x1C0
+   \       0xA4   0x0A00'0008        BEQ      ??pio_configure_19
+   \       0xA8   0xE350'0040        CMP      R0,#+64
+   \       0xAC   0x0A00'0034        BEQ      ??pio_configure_20
+   \       0xB0   0xE350'0080        CMP      R0,#+128
+   \       0xB4   0x0A00'0039        BEQ      ??pio_configure_21
+   \       0xB8   0xE350'00C0        CMP      R0,#+192
+   \       0xBC   0x0A00'003A        BEQ      ??pio_configure_22
+   \       0xC0   0xE350'0F40        CMP      R0,#+256
+   \       0xC4   0x0A00'003D        BEQ      ??pio_configure_23
+   \       0xC8   0xEA00'001F        B        ??pio_configure_24
+    332          		case PIO_IT_FALL_EDGE:
+    333          			pio->PIO_AIMER = pin->mask;
+   \                     ??pio_configure_19:
+   \       0xCC   0xE59B'2000        LDR      R2,[R11, #+0]
+   \       0xD0   0xE589'20B0        STR      R2,[R9, #+176]
+    334          			pio->PIO_ESR = pin->mask;
+   \       0xD4   0xE59B'3000        LDR      R3,[R11, #+0]
+   \       0xD8   0xE589'30C0        STR      R3,[R9, #+192]
+    335          			pio->PIO_FELLSR = pin->mask;
+   \                     ??pio_configure_25:
+   \       0xDC   0xE59B'0000        LDR      R0,[R11, #+0]
+   \       0xE0   0xE589'00D0        STR      R0,[R9, #+208]
+    336          			break;
+    337          		case PIO_IT_RISE_EDGE:
+    338          			pio->PIO_AIMER = pin->mask;
+    339          			pio->PIO_ESR = pin->mask;
+    340          			pio->PIO_REHLSR = pin->mask;
+    341          			break;
+    342          		case PIO_IT_BOTH_EDGE:
+    343          			pio->PIO_AIMDR = pin->mask;
+    344          			break;
+    345          		case PIO_IT_LOW_LEVEL:
+    346          			pio->PIO_AIMER = pin->mask;
+    347          			pio->PIO_LSR = pin->mask;
+    348          			pio->PIO_FELLSR = pin->mask;
+    349          			break;
+    350          		case PIO_IT_HIGH_LEVEL:
+    351          			pio->PIO_AIMER = pin->mask;
+    352          			pio->PIO_LSR = pin->mask;
+    353          			pio->PIO_REHLSR = pin->mask;
+    354          			break;
+    355          		default:
+    356          			trace_fatal("Invalid pin interrupt type\r\n");
+    357          			break;
+    358          		}
+    359          
+    360          		switch (pin->type) {
+   \                     ??pio_configure_26:
+   \       0xE4   0xE5DB'1004        LDRB     R1,[R11, #+4]
+   \       0xE8   0xE351'0009        CMP      R1,#+9
+   \       0xEC   0x8A00'00B8        BHI      ??pio_configure_27
+   \       0xF0   0xE7DF'2001        LDRB     R2,[PC, R1]
+   \       0xF4   0xE08F'F102        ADD      PC,PC,R2, LSL #+2
+   \                     ??pio_configure_0:
+   \       0xF8   0x02 0x90          DC8      0x2,0x90,0x99,0xA4
+
+   \              0x99 0xA4
+   \       0xFC   0xB6 0xB6          DC8      0xB6,0xB6,0xB6,0xAD
+
+   \              0xB6 0xAD
+   \      0x100   0xB2 0xB2          DC8      0xB2,0xB2,0x0,0x0
+
+   \              0x00 0x00
+    361          		case PIO_PERIPH_A:
+    362          			pio->PIO_ABCDSR[0] &= ~pin->mask;
+   \                     ??pio_configure_28:
+   \      0x104   0xE599'0070        LDR      R0,[R9, #+112]
+   \      0x108   0xE59B'3000        LDR      R3,[R11, #+0]
+   \      0x10C   0xE1C0'3003        BIC      R3,R0,R3
+   \      0x110   0xE589'3070        STR      R3,[R9, #+112]
+    363          			pio->PIO_ABCDSR[1] &= ~pin->mask;
+   \      0x114   0xE599'1074        LDR      R1,[R9, #+116]
+   \      0x118   0xE59B'2000        LDR      R2,[R11, #+0]
+   \      0x11C   0xE1C1'2002        BIC      R2,R1,R2
+   \      0x120   0xE589'2074        STR      R2,[R9, #+116]
+    364          			pio->PIO_PDR = pin->mask;
+   \                     ??pio_configure_29:
+   \      0x124   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x128   0xE589'0004        STR      R0,[R9, #+4]
+    365          			break;
+   \      0x12C   0xEA00'002E        B        ??pio_configure_30
+   \                     ??pio_configure_17:
+   \      0x130   0x....'....        LDR      R1,??DataTable18_3
+   \      0x134   0xE591'2000        LDR      R2,[R1, #+0]
+   \      0x138   0xE352'0000        CMP      R2,#+0
+   \      0x13C   0x0A00'0001        BEQ      ??pio_configure_31
+   \      0x140   0x....'....        LDR      R0,??DataTable18_5
+   \      0x144   0x....'....        BL       printf
+   \                     ??pio_configure_31:
+   \      0x148   0xEAFF'FFFE        B        ??pio_configure_31
+   \                     ??pio_configure_24:
+   \      0x14C   0x....'....        LDR      R0,??DataTable18_3
+   \      0x150   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x154   0xE351'0000        CMP      R1,#+0
+   \      0x158   0x0A00'0001        BEQ      ??pio_configure_32
+   \      0x15C   0xE284'00EC        ADD      R0,R4,#+236
+   \      0x160   0x....'....        BL       printf
+   \                     ??pio_configure_32:
+   \      0x164   0xEAFF'FFFE        B        ??pio_configure_32
+   \                     ??pio_configure_18:
+   \      0x168   0x....'....        LDR      R0,??DataTable18_3
+   \      0x16C   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x170   0xE351'0000        CMP      R1,#+0
+   \      0x174   0x0A00'0001        BEQ      ??pio_configure_33
+   \      0x178   0xE284'00C8        ADD      R0,R4,#+200
+   \      0x17C   0x....'....        BL       printf
+   \                     ??pio_configure_33:
+   \      0x180   0xEAFF'FFFE        B        ??pio_configure_33
+   \                     ??pio_configure_20:
+   \      0x184   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x188   0xE589'00B0        STR      R0,[R9, #+176]
+   \      0x18C   0xE59B'1000        LDR      R1,[R11, #+0]
+   \      0x190   0xE589'10C0        STR      R1,[R9, #+192]
+   \      0x194   0xE59B'2000        LDR      R2,[R11, #+0]
+   \      0x198   0xE589'20D4        STR      R2,[R9, #+212]
+   \      0x19C   0xEAFF'FFD0        B        ??pio_configure_26
+   \                     ??pio_configure_21:
+   \      0x1A0   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x1A4   0xE589'00B4        STR      R0,[R9, #+180]
+   \      0x1A8   0xEAFF'FFCD        B        ??pio_configure_26
+   \                     ??pio_configure_22:
+   \      0x1AC   0xE59B'1000        LDR      R1,[R11, #+0]
+   \      0x1B0   0xE589'10B0        STR      R1,[R9, #+176]
+   \      0x1B4   0xE59B'2000        LDR      R2,[R11, #+0]
+   \      0x1B8   0xE589'20C4        STR      R2,[R9, #+196]
+   \      0x1BC   0xEAFF'FFC6        B        ??pio_configure_25
+   \                     ??pio_configure_23:
+   \      0x1C0   0xE59B'1000        LDR      R1,[R11, #+0]
+   \      0x1C4   0xE589'10B0        STR      R1,[R9, #+176]
+   \      0x1C8   0xE59B'2000        LDR      R2,[R11, #+0]
+   \      0x1CC   0xE589'20C4        STR      R2,[R9, #+196]
+   \      0x1D0   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x1D4   0xE589'00D4        STR      R0,[R9, #+212]
+   \      0x1D8   0xEAFF'FFC1        B        ??pio_configure_26
+    366          		case PIO_PERIPH_B:
+    367          			pio->PIO_ABCDSR[0] |= pin->mask;
+    368          			pio->PIO_ABCDSR[1] &= ~pin->mask;
+    369          			pio->PIO_PDR = pin->mask;
+    370          			break;
+    371          		case PIO_PERIPH_C:
+    372          			pio->PIO_ABCDSR[0] &= ~pin->mask;
+    373          			pio->PIO_ABCDSR[1] |= pin->mask;
+    374          			pio->PIO_PDR = pin->mask;
+    375          			break;
+    376          		case PIO_PERIPH_D:
+    377          			pio->PIO_ABCDSR[0] |= pin->mask;
+    378          			pio->PIO_ABCDSR[1] |= pin->mask;
+    379          			pio->PIO_PDR = pin->mask;
+    380          			break;
+    381          		case PIO_INPUT:
+    382          			pio->PIO_ODR = pin->mask;
+    383          			pio->PIO_PER = pin->mask;
+    384          			break;
+    385          		case PIO_OUTPUT_0:
+    386          		case PIO_OUTPUT_1:
+    387          			/* Select the logic level to be driven */
+    388          			if (pin->type == PIO_OUTPUT_1)
+    389          				pio->PIO_SODR = pin->mask;
+    390          			else
+    391          				pio->PIO_CODR = pin->mask;
+    392          			/* Give control of the pin(s) to the PIO (vs to the
+    393          			 * peripheral), and enable the output stage */
+    394          			pio->PIO_OER = pin->mask;
+   \                     ??pio_configure_34:
+   \      0x1DC   0xE59B'1000        LDR      R1,[R11, #+0]
+   \      0x1E0   0xE589'1010        STR      R1,[R9, #+16]
+    395          			pio->PIO_PER = pin->mask;
+   \      0x1E4   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x1E8   0xE589'0000        STR      R0,[R9, #+0]
+    396          			break;
+   \                     ??pio_configure_30:
+   \      0x1EC   0xE28A'A001        ADD      R10,R10,#+1
+   \      0x1F0   0xE28B'B010        ADD      R11,R11,#+16
+   \                     ??pio_configure_3:
+   \      0x1F4   0xE59D'0000        LDR      R0,[SP, #+0]
+   \      0x1F8   0xE15A'0000        CMP      R10,R0
+   \      0x1FC   0x2A00'007B        BCS      ??pio_configure_35
+   \      0x200   0xE55B'2004        LDRB     R2,[R11, #-4]
+   \      0x204   0xE352'0004        CMP      R2,#+4
+   \      0x208   0x8A00'0044        BHI      ??pio_configure_36
+   \      0x20C   0xE1A0'2082        MOV      R2,R2, LSL #+1
+   \      0x210   0xE19F'30F2        LDRSH    R3,[PC, R2]
+   \      0x214   0xE08F'F103        ADD      PC,PC,R3, LSL #+2
+   \                     ??pio_configure_1:
+   \      0x218   0x0002 0xFF8A      DC16     0x2,0xFF8A,0xFF88,0xFF86
+
+   \               0xFF88 0xFF8
+
+   \              6
+   \      0x220   0xFF84 0x0000      DC16     0xFF84,0x0
+   \                     ??pio_configure_37:
+   \      0x224   0xE3C5'9D40        BIC      R9,R5,#0x1000
+   \                     ??pio_configure_5:
+   \      0x228   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x22C   0xE589'0044        STR      R0,[R9, #+68]
+   \      0x230   0xE5DB'1004        LDRB     R1,[R11, #+4]
+   \      0x234   0xE351'0007        CMP      R1,#+7
+   \      0x238   0x1A00'000C        BNE      ??pio_configure_38
+   \      0x23C   0xE55B'0004        LDRB     R0,[R11, #-4]
+   \      0x240   0xE350'0004        CMP      R0,#+4
+   \      0x244   0x8AFF'FF80        BHI      ??pio_configure_9
+   \      0x248   0xE1A0'0080        MOV      R0,R0, LSL #+1
+   \      0x24C   0xE19F'20F0        LDRSH    R2,[PC, R0]
+   \      0x250   0xE08F'F102        ADD      PC,PC,R2, LSL #+2
+   \                     ??pio_configure_2:
+   \      0x254   0x0002 0xFF8A      DC16     0x2,0xFF8A,0xFF88,0xFF86
+
+   \               0xFF88 0xFF8
+
+   \              6
+   \      0x25C   0xFF84 0x0000      DC16     0xFF84,0x0
+   \                     ??pio_configure_39:
+   \      0x260   0xE3A0'0017        MOV      R0,#+23
+   \                     ??pio_configure_12:
+   \      0x264   0xE3A0'2001        MOV      R2,#+1
+   \      0x268   0xE3A0'1000        MOV      R1,#+0
+   \      0x26C   0x....'....        BL       pmc_configure_peripheral
+   \                     ??pio_configure_38:
+   \      0x270   0xE5DB'0008        LDRB     R0,[R11, #+8]
+   \      0x274   0xE200'1003        AND      R1,R0,#0x3
+   \      0x278   0xE351'0003        CMP      R1,#+3
+   \      0x27C   0x1A00'0004        BNE      ??pio_configure_40
+   \      0x280   0xE300'210E        MOVW     R2,#+270
+   \      0x284   0xE284'1038        ADD      R1,R4,#+56
+   \      0x288   0xE284'0080        ADD      R0,R4,#+128
+   \      0x28C   0x....'....        BL       __aeabi_assert
+   \      0x290   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??pio_configure_40:
+   \      0x294   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x298   0xE589'0090        STR      R0,[R9, #+144]
+   \      0x29C   0xE59B'1000        LDR      R1,[R11, #+0]
+   \      0x2A0   0xE589'1060        STR      R1,[R9, #+96]
+   \      0x2A4   0xE5DB'2008        LDRB     R2,[R11, #+8]
+   \      0x2A8   0xE312'0001        TST      R2,#0x1
+   \      0x2AC   0x159B'0000        LDRNE    R0,[R11, #+0]
+   \      0x2B0   0x1589'0064        STRNE    R0,[R9, #+100]
+   \      0x2B4   0xE5DB'1008        LDRB     R1,[R11, #+8]
+   \      0x2B8   0xE311'0002        TST      R1,#0x2
+   \      0x2BC   0x159B'0000        LDRNE    R0,[R11, #+0]
+   \      0x2C0   0x1589'0094        STRNE    R0,[R9, #+148]
+   \      0x2C4   0xE5DB'1008        LDRB     R1,[R11, #+8]
+   \      0x2C8   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x2CC   0xE311'0004        TST      R1,#0x4
+   \      0x2D0   0x1589'0050        STRNE    R0,[R9, #+80]
+   \      0x2D4   0x0589'0054        STREQ    R0,[R9, #+84]
+   \      0x2D8   0xE5DB'1008        LDRB     R1,[R11, #+8]
+   \      0x2DC   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x2E0   0xE311'0018        TST      R1,#0x18
+   \      0x2E4   0x1589'0020        STRNE    R0,[R9, #+32]
+   \      0x2E8   0x0589'0024        STREQ    R0,[R9, #+36]
+   \      0x2EC   0xE5DB'1008        LDRB     R1,[R11, #+8]
+   \      0x2F0   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x2F4   0xE311'0010        TST      R1,#0x10
+   \      0x2F8   0x1589'0084        STRNE    R0,[R9, #+132]
+   \      0x2FC   0x0589'0080        STREQ    R0,[R9, #+128]
+   \      0x300   0xE5DB'1008        LDRB     R1,[R11, #+8]
+   \      0x304   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x308   0xE311'0020        TST      R1,#0x20
+   \      0x30C   0x1599'2100        LDRNE    R2,[R9, #+256]
+   \      0x310   0x0599'1100        LDREQ    R1,[R9, #+256]
+   \      0x314   0x1180'0002        ORRNE    R0,R0,R2
+   \      0x318   0x01C1'0000        BICEQ    R0,R1,R0
+   \      0x31C   0xEAFF'FF59        B        ??pio_configure_16
+   \                     ??pio_configure_36:
+   \      0x320   0x....'....        LDR      R1,??DataTable18_3
+   \      0x324   0xE591'3000        LDR      R3,[R1, #+0]
+   \      0x328   0xE353'0000        CMP      R3,#+0
+   \      0x32C   0x0A00'0001        BEQ      ??pio_configure_41
+   \      0x330   0x....'....        LDR      R0,??DataTable18_4
+   \      0x334   0x....'....        BL       printf
+   \                     ??pio_configure_41:
+   \      0x338   0xEAFF'FFFE        B        ??pio_configure_41
+   \                     ??pio_configure_42:
+   \      0x33C   0xE599'0070        LDR      R0,[R9, #+112]
+   \      0x340   0xE59B'1000        LDR      R1,[R11, #+0]
+   \      0x344   0xE181'1000        ORR      R1,R1,R0
+   \      0x348   0xE589'1070        STR      R1,[R9, #+112]
+   \      0x34C   0xE599'2074        LDR      R2,[R9, #+116]
+   \      0x350   0xE59B'3000        LDR      R3,[R11, #+0]
+   \      0x354   0xE1C2'3003        BIC      R3,R2,R3
+   \      0x358   0xE589'3074        STR      R3,[R9, #+116]
+   \      0x35C   0xEAFF'FF70        B        ??pio_configure_29
+   \                     ??pio_configure_43:
+   \      0x360   0xE599'1070        LDR      R1,[R9, #+112]
+   \      0x364   0xE59B'2000        LDR      R2,[R11, #+0]
+   \      0x368   0xE1C1'2002        BIC      R2,R1,R2
+   \      0x36C   0xE589'2070        STR      R2,[R9, #+112]
+   \      0x370   0xE599'0074        LDR      R0,[R9, #+116]
+   \      0x374   0xE59B'3000        LDR      R3,[R11, #+0]
+   \      0x378   0xE183'3000        ORR      R3,R3,R0
+   \      0x37C   0xE589'3074        STR      R3,[R9, #+116]
+   \      0x380   0xE59B'1000        LDR      R1,[R11, #+0]
+   \      0x384   0xE589'1004        STR      R1,[R9, #+4]
+   \      0x388   0xEAFF'FF97        B        ??pio_configure_30
+   \                     ??pio_configure_44:
+   \      0x38C   0xE599'0070        LDR      R0,[R9, #+112]
+   \      0x390   0xE59B'2000        LDR      R2,[R11, #+0]
+   \      0x394   0xE182'2000        ORR      R2,R2,R0
+   \      0x398   0xE589'2070        STR      R2,[R9, #+112]
+   \      0x39C   0xE599'1074        LDR      R1,[R9, #+116]
+   \      0x3A0   0xE59B'3000        LDR      R3,[R11, #+0]
+   \      0x3A4   0xE183'3001        ORR      R3,R3,R1
+   \      0x3A8   0xE589'3074        STR      R3,[R9, #+116]
+   \      0x3AC   0xEAFF'FF5C        B        ??pio_configure_29
+   \                     ??pio_configure_45:
+   \      0x3B0   0xE59B'1000        LDR      R1,[R11, #+0]
+   \      0x3B4   0xE589'1014        STR      R1,[R9, #+20]
+   \      0x3B8   0xE59B'2000        LDR      R2,[R11, #+0]
+   \      0x3BC   0xE589'2000        STR      R2,[R9, #+0]
+   \      0x3C0   0xEAFF'FF89        B        ??pio_configure_30
+   \                     ??pio_configure_46:
+   \      0x3C4   0xE59B'1000        LDR      R1,[R11, #+0]
+   \      0x3C8   0x0589'1030        STREQ    R1,[R9, #+48]
+   \      0x3CC   0x1589'1034        STRNE    R1,[R9, #+52]
+   \      0x3D0   0xEAFF'FF81        B        ??pio_configure_34
+    397          		default:
+    398          			trace_fatal("Invalid pin type\r\n");
+   \                     ??pio_configure_27:
+   \      0x3D4   0x....'....        LDR      R0,??DataTable18_3
+   \      0x3D8   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x3DC   0xE351'0000        CMP      R1,#+0
+   \      0x3E0   0x0A00'0001        BEQ      ??pio_configure_47
+   \      0x3E4   0x....'....        LDR      R0,??DataTable18_6
+   \      0x3E8   0x....'....        BL       printf
+   \                     ??pio_configure_47:
+   \      0x3EC   0xEAFF'FFFE        B        ??pio_configure_47
+    399          		}
+    400          	}
+    401          }
+   \                     ??pio_configure_35:
+   \      0x3F0   0xE8BD'8FF1        POP      {R0,R4-R11,PC}   ;; return
+    402          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    403          void pio_set(const struct _pin *pin)
+    404          {
+   \                     pio_set:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    405          	Pio* pio = _pio_get_instance(pin->group);
+   \        0x4   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \        0x8   0xE351'0004        CMP      R1,#+4
+   \        0xC   0x8A00'0003        BHI      ??pio_set_1
+   \       0x10   0xE7DF'2001        LDRB     R2,[PC, R1]
+   \       0x14   0xE08F'F102        ADD      PC,PC,R2, LSL #+2
+   \                     ??pio_set_0:
+   \       0x18   0x10 0x0E          DC8      0x10,0xE,0xC,0xA
+
+   \              0x0C 0x0A
+   \       0x1C   0x08 0x00          DC8      0x8,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_set_1:
+   \       0x20   0x....'....        LDR      R0,??DataTable18_3
+   \       0x24   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0x28   0xE353'0000        CMP      R3,#+0
+   \       0x2C   0x0A00'0001        BEQ      ??pio_set_2
+   \       0x30   0x....'....        LDR      R0,??DataTable18_4
+   \       0x34   0x....'....        BL       printf
+   \                     ??pio_set_2:
+   \       0x38   0xEAFF'FFFE        B        ??pio_set_2
+   \                     ??pio_set_3:
+   \       0x3C   0x....'....        LDR      R1,??DataTable18_7  ;; 0xfc06d030
+   \       0x40   0xEA00'0006        B        ??pio_set_4
+   \                     ??pio_set_5:
+   \       0x44   0x....'....        LDR      R1,??DataTable18_8  ;; 0xfc068030
+   \       0x48   0xEA00'0004        B        ??pio_set_4
+   \                     ??pio_set_6:
+   \       0x4C   0x....'....        LDR      R1,??DataTable18_9  ;; 0xfc06c030
+   \       0x50   0xEA00'0002        B        ??pio_set_4
+   \                     ??pio_set_7:
+   \       0x54   0x....'....        LDR      R1,??DataTable18_10  ;; 0xfc06b030
+   \       0x58   0xEA00'0000        B        ??pio_set_4
+   \                     ??pio_set_8:
+   \       0x5C   0x....'....        LDR      R1,??DataTable18_11  ;; 0xfc06a030
+    406          	pio->PIO_SODR = pin->mask;
+   \                     ??pio_set_4:
+   \       0x60   0x....'....        B        ?Subroutine1
+    407          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE590'0004        LDR      R0,[R0, #+4]
+   \        0x4   0xE581'0000        STR      R0,[R1, #+0]
+   \        0x8   0xE8BD'8001        POP      {R0,PC}          ;; return
+    408          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    409          void pio_clear(const struct _pin *pin)
+    410          {
+   \                     pio_clear:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    411          	Pio* pio = _pio_get_instance(pin->group);
+   \        0x4   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \        0x8   0xE351'0004        CMP      R1,#+4
+   \        0xC   0x8A00'0003        BHI      ??pio_clear_1
+   \       0x10   0xE7DF'2001        LDRB     R2,[PC, R1]
+   \       0x14   0xE08F'F102        ADD      PC,PC,R2, LSL #+2
+   \                     ??pio_clear_0:
+   \       0x18   0x10 0x0E          DC8      0x10,0xE,0xC,0xA
+
+   \              0x0C 0x0A
+   \       0x1C   0x08 0x00          DC8      0x8,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_clear_1:
+   \       0x20   0x....'....        LDR      R0,??DataTable18_3
+   \       0x24   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0x28   0xE353'0000        CMP      R3,#+0
+   \       0x2C   0x0A00'0001        BEQ      ??pio_clear_2
+   \       0x30   0x....'....        LDR      R0,??DataTable18_4
+   \       0x34   0x....'....        BL       printf
+   \                     ??pio_clear_2:
+   \       0x38   0xEAFF'FFFE        B        ??pio_clear_2
+   \                     ??pio_clear_3:
+   \       0x3C   0x....'....        LDR      R1,??DataTable18_12  ;; 0xfc06d034
+   \       0x40   0xEA00'0006        B        ??pio_clear_4
+   \                     ??pio_clear_5:
+   \       0x44   0x....'....        LDR      R1,??DataTable18_13  ;; 0xfc068034
+   \       0x48   0xEA00'0004        B        ??pio_clear_4
+   \                     ??pio_clear_6:
+   \       0x4C   0x....'....        LDR      R1,??DataTable18_14  ;; 0xfc06c034
+   \       0x50   0xEA00'0002        B        ??pio_clear_4
+   \                     ??pio_clear_7:
+   \       0x54   0x....'....        LDR      R1,??DataTable18_15  ;; 0xfc06b034
+   \       0x58   0xEA00'0000        B        ??pio_clear_4
+   \                     ??pio_clear_8:
+   \       0x5C   0x....'....        LDR      R1,??DataTable18_16  ;; 0xfc06a034
+    412          	pio->PIO_CODR = pin->mask;
+   \                     ??pio_clear_4:
+   \       0x60                      REQUIRE ?Subroutine1
+   \       0x60                      ;; // Fall through to label ?Subroutine1
+    413          }
+    414          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    415          uint32_t pio_get(const struct _pin *pin)
+    416          {
+   \                     pio_get:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    417          	Pio* pio = _pio_get_instance(pin->group);
+   \        0x4   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \        0x8   0xE351'0004        CMP      R1,#+4
+   \        0xC   0x8A00'0003        BHI      ??pio_get_1
+   \       0x10   0xE7DF'2001        LDRB     R2,[PC, R1]
+   \       0x14   0xE08F'F102        ADD      PC,PC,R2, LSL #+2
+   \                     ??pio_get_0:
+   \       0x18   0x14 0x11          DC8      0x14,0x11,0xE,0xB
+
+   \              0x0E 0x0B
+   \       0x1C   0x08 0x00          DC8      0x8,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_get_1:
+   \       0x20   0x....'....        LDR      R0,??DataTable18_3
+   \       0x24   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0x28   0xE353'0000        CMP      R3,#+0
+   \       0x2C   0x0A00'0001        BEQ      ??pio_get_2
+   \       0x30   0x....'....        LDR      R0,??DataTable18_4
+   \       0x34   0x....'....        BL       printf
+   \                     ??pio_get_2:
+   \       0x38   0xEAFF'FFFE        B        ??pio_get_2
+   \                     ??pio_get_3:
+   \       0x3C   0xE3A0'14FC        MOV      R1,#-67108864
+   \       0x40   0xE381'1A6D        ORR      R1,R1,#0x6D000
+   \       0x44   0xEA00'000A        B        ??pio_get_4
+   \                     ??pio_get_5:
+   \       0x48   0xE3A0'14FC        MOV      R1,#-67108864
+   \       0x4C   0xE381'1A68        ORR      R1,R1,#0x68000
+   \       0x50   0xEA00'0007        B        ??pio_get_4
+   \                     ??pio_get_6:
+   \       0x54   0xE3A0'14FC        MOV      R1,#-67108864
+   \       0x58   0xE381'1A6C        ORR      R1,R1,#0x6C000
+   \       0x5C   0xEA00'0004        B        ??pio_get_4
+   \                     ??pio_get_7:
+   \       0x60   0xE3A0'14FC        MOV      R1,#-67108864
+   \       0x64   0xE381'1A6B        ORR      R1,R1,#0x6B000
+   \       0x68   0xEA00'0001        B        ??pio_get_4
+   \                     ??pio_get_8:
+   \       0x6C   0xE3A0'14FC        MOV      R1,#-67108864
+   \       0x70   0xE381'1A6A        ORR      R1,R1,#0x6A000
+    418          	if ((pin->type == PIO_OUTPUT_0) || (pin->type == PIO_OUTPUT_1))
+   \                     ??pio_get_4:
+   \       0x74   0xE5D0'2008        LDRB     R2,[R0, #+8]
+   \       0x78   0xE352'0008        CMP      R2,#+8
+   \       0x7C   0x0A00'0001        BEQ      ??pio_get_9
+   \       0x80   0xE352'0009        CMP      R2,#+9
+   \       0x84   0x1A00'0001        BNE      ??pio_get_10
+    419          		return pio->PIO_ODSR & pin->mask;
+   \                     ??pio_get_9:
+   \       0x88   0xE591'1038        LDR      R1,[R1, #+56]
+   \       0x8C   0x....'....        B        ?Subroutine2
+    420          	else
+    421          		return pio->PIO_PDSR & pin->mask;
+   \                     ??pio_get_10:
+   \       0x90   0xE591'203C        LDR      R2,[R1, #+60]
+   \       0x94   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x98   0xE001'0002        AND      R0,R1,R2
+   \       0x9C   0xE8BD'8002        POP      {R1,PC}          ;; return
+    422          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE590'0004        LDR      R0,[R0, #+4]
+   \        0x4   0xE000'0001        AND      R0,R0,R1
+   \        0x8   0xE8BD'8002        POP      {R1,PC}
+    423          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    424          uint32_t pio_get_output_data_status(const struct _pin *pin)
+    425          {
+   \                     pio_get_output_data_status:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    426          	Pio* pio = _pio_get_instance(pin->group);
+   \        0x4   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \        0x8   0xE351'0004        CMP      R1,#+4
+   \        0xC   0x8A00'0003        BHI      ??pio_get_output_data_status_1
+   \       0x10   0xE7DF'2001        LDRB     R2,[PC, R1]
+   \       0x14   0xE08F'F102        ADD      PC,PC,R2, LSL #+2
+   \                     ??pio_get_output_data_status_0:
+   \       0x18   0x10 0x0E          DC8      0x10,0xE,0xC,0xA
+
+   \              0x0C 0x0A
+   \       0x1C   0x08 0x00          DC8      0x8,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_get_output_data_status_1:
+   \       0x20   0x....'....        LDR      R0,??DataTable18_3
+   \       0x24   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0x28   0xE353'0000        CMP      R3,#+0
+   \       0x2C   0x0A00'0001        BEQ      ??pio_get_output_data_status_2
+   \       0x30   0x....'....        LDR      R0,??DataTable18_4
+   \       0x34   0x....'....        BL       printf
+   \                     ??pio_get_output_data_status_2:
+   \       0x38   0xEAFF'FFFE        B        ??pio_get_output_data_status_2
+   \                     ??pio_get_output_data_status_3:
+   \       0x3C   0x....'....        LDR      R1,??DataTable18_17  ;; 0xfc06d038
+   \       0x40   0xEA00'0006        B        ??pio_get_output_data_status_4
+   \                     ??pio_get_output_data_status_5:
+   \       0x44   0x....'....        LDR      R1,??DataTable18_18  ;; 0xfc068038
+   \       0x48   0xEA00'0004        B        ??pio_get_output_data_status_4
+   \                     ??pio_get_output_data_status_6:
+   \       0x4C   0x....'....        LDR      R1,??DataTable18_19  ;; 0xfc06c038
+   \       0x50   0xEA00'0002        B        ??pio_get_output_data_status_4
+   \                     ??pio_get_output_data_status_7:
+   \       0x54   0x....'....        LDR      R1,??DataTable18_20  ;; 0xfc06b038
+   \       0x58   0xEA00'0000        B        ??pio_get_output_data_status_4
+   \                     ??pio_get_output_data_status_8:
+   \       0x5C   0x....'....        LDR      R1,??DataTable18_21  ;; 0xfc06a038
+    427          	return pio->PIO_ODSR & pin->mask;
+   \                     ??pio_get_output_data_status_4:
+   \       0x60   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x64                      REQUIRE ?Subroutine2
+   \       0x64                      ;; // Fall through to label ?Subroutine2
+    428          }
+    429          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    430          void pio_set_debounce_filter(uint32_t cutoff)
+    431          {
+   \                     pio_set_debounce_filter:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    432          	int i;
+    433          	cutoff = ((pmc_get_slow_clock() / (2 * cutoff)) - 1) & 0x3FFF;
+   \        0x8   0x....'....        BL       pmc_get_slow_clock
+   \        0xC   0xE1A0'1084        LSL      R1,R4,#+1
+   \       0x10   0x....'....        BL       __aeabi_uidiv
+   \       0x14   0xE240'0001        SUB      R0,R0,#+1
+    434          	for (i = 0; i < PIO_GROUP_LENGTH; i++) {
+   \       0x18   0x....'....        LDR      R2,??DataTable18_22  ;; 0xfc06a08c
+   \       0x1C   0xE1A0'1900        LSL      R1,R0,#+18
+   \       0x20   0xE382'3D40        ORR      R3,R2,#0x1000
+   \       0x24   0xE1A0'0921        LSR      R0,R1,#+18
+   \       0x28   0xE3A0'1000        MOV      R1,#+0
+   \       0x2C   0xE282'CD80        ADD      R12,R2,#+8192
+   \       0x30   0xE3C2'ED80        BIC      LR,R2,#0x2000
+   \       0x34   0xE282'4DC0        ADD      R4,R2,#+12288
+    435          		if (!_pio_has_group(i))
+   \                     ??pio_set_debounce_filter_1:
+   \       0x38   0xE1B0'5001        MOVS     R5,R1
+   \       0x3C   0x0A00'0007        BEQ      ??pio_set_debounce_filter_2
+   \       0x40   0xE355'0001        CMP      R5,#+1
+   \       0x44   0x0A00'0005        BEQ      ??pio_set_debounce_filter_2
+   \       0x48   0xE355'0002        CMP      R5,#+2
+   \       0x4C   0x0A00'0003        BEQ      ??pio_set_debounce_filter_2
+   \       0x50   0xE355'0003        CMP      R5,#+3
+   \       0x54   0x0A00'0001        BEQ      ??pio_set_debounce_filter_2
+   \       0x58   0xE355'0004        CMP      R5,#+4
+   \       0x5C   0x1A00'0007        BNE      ??pio_set_debounce_filter_3
+    436          			continue;
+    437          		Pio* pio = _pio_get_instance(i);
+   \                     ??pio_set_debounce_filter_2:
+   \       0x60   0xE355'0004        CMP      R5,#+4
+   \       0x64   0x8A00'0009        BHI      ??pio_set_debounce_filter_4
+   \       0x68   0xE7DF'6005        LDRB     R6,[PC, R5]
+   \       0x6C   0xE08F'F106        ADD      PC,PC,R6, LSL #+2
+   \                     ??pio_set_debounce_filter_0:
+   \       0x70   0x01 0x14          DC8      0x1,0x14,0x12,0x10
+
+   \              0x12 0x10
+   \       0x74   0x0E 0x00          DC8      0xE,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_set_debounce_filter_5:
+   \       0x78   0xE1A0'5002        MOV      R5,R2
+    438          		pio->PIO_SCDR = cutoff;
+   \                     ??pio_set_debounce_filter_6:
+   \       0x7C   0xE585'0000        STR      R0,[R5, #+0]
+   \                     ??pio_set_debounce_filter_3:
+   \       0x80   0xE281'1001        ADD      R1,R1,#+1
+   \       0x84   0xE351'0005        CMP      R1,#+5
+   \       0x88   0xBAFF'FFEA        BLT      ??pio_set_debounce_filter_1
+    439          	}
+    440          }
+   \       0x8C   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+   \                     ??pio_set_debounce_filter_4:
+   \       0x90   0x....'....        LDR      R0,??DataTable18_3
+   \       0x94   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x98   0xE351'0000        CMP      R1,#+0
+   \       0x9C   0x0A00'0001        BEQ      ??pio_set_debounce_filter_7
+   \       0xA0   0x....'....        LDR      R0,??DataTable18_4
+   \       0xA4   0x....'....        BL       printf
+   \                     ??pio_set_debounce_filter_7:
+   \       0xA8   0xEAFF'FFFE        B        ??pio_set_debounce_filter_7
+   \                     ??pio_set_debounce_filter_8:
+   \       0xAC   0xE1A0'5004        MOV      R5,R4
+   \       0xB0   0xEAFF'FFF1        B        ??pio_set_debounce_filter_6
+   \                     ??pio_set_debounce_filter_9:
+   \       0xB4   0xE1A0'500E        MOV      R5,LR
+   \       0xB8   0xEAFF'FFEF        B        ??pio_set_debounce_filter_6
+   \                     ??pio_set_debounce_filter_10:
+   \       0xBC   0xE1A0'500C        MOV      R5,R12
+   \       0xC0   0xEAFF'FFED        B        ??pio_set_debounce_filter_6
+   \                     ??pio_set_debounce_filter_11:
+   \       0xC4   0xE1A0'5003        MOV      R5,R3
+   \       0xC8   0xEAFF'FFEB        B        ??pio_set_debounce_filter_6
+    441          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    442          void pio_enable_write_protect(void)
+    443          {
+   \                     pio_enable_write_protect:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    444          	int i;
+    445          	for (i = 0; i < PIO_GROUP_LENGTH; i++) {
+   \        0x4   0x....'....        LDR      R2,??DataTable18_23  ;; 0xfc06a0e4
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0x....'....        LDR      R1,??DataTable18_24  ;; 0x50494f01
+   \       0x10   0xE382'3D40        ORR      R3,R2,#0x1000
+   \       0x14   0xE282'CD80        ADD      R12,R2,#+8192
+   \       0x18   0xE3C2'ED80        BIC      LR,R2,#0x2000
+   \       0x1C   0xE282'4DC0        ADD      R4,R2,#+12288
+    446          		if (!_pio_has_group(i))
+   \                     ??pio_enable_write_protect_1:
+   \       0x20   0xE1B0'5000        MOVS     R5,R0
+   \       0x24   0x0A00'0007        BEQ      ??pio_enable_write_protect_2
+   \       0x28   0xE355'0001        CMP      R5,#+1
+   \       0x2C   0x0A00'0005        BEQ      ??pio_enable_write_protect_2
+   \       0x30   0xE355'0002        CMP      R5,#+2
+   \       0x34   0x0A00'0003        BEQ      ??pio_enable_write_protect_2
+   \       0x38   0xE355'0003        CMP      R5,#+3
+   \       0x3C   0x0A00'0001        BEQ      ??pio_enable_write_protect_2
+   \       0x40   0xE355'0004        CMP      R5,#+4
+   \       0x44   0x1A00'0007        BNE      ??pio_enable_write_protect_3
+    447          			continue;
+    448          		Pio* pio = _pio_get_instance(i);
+   \                     ??pio_enable_write_protect_2:
+   \       0x48   0xE355'0004        CMP      R5,#+4
+   \       0x4C   0x8A00'0009        BHI      ??pio_enable_write_protect_4
+   \       0x50   0xE7DF'6005        LDRB     R6,[PC, R5]
+   \       0x54   0xE08F'F106        ADD      PC,PC,R6, LSL #+2
+   \                     ??pio_enable_write_protect_0:
+   \       0x58   0x01 0x14          DC8      0x1,0x14,0x12,0x10
+
+   \              0x12 0x10
+   \       0x5C   0x0E 0x00          DC8      0xE,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_enable_write_protect_5:
+   \       0x60   0xE1A0'5002        MOV      R5,R2
+    449          		pio->PIO_WPMR = PIO_WPMR_WPKEY_PASSWD | PIO_WPMR_WPEN;
+   \                     ??pio_enable_write_protect_6:
+   \       0x64   0xE585'1000        STR      R1,[R5, #+0]
+   \                     ??pio_enable_write_protect_3:
+   \       0x68   0xE280'0001        ADD      R0,R0,#+1
+   \       0x6C   0xE350'0005        CMP      R0,#+5
+   \       0x70   0xBAFF'FFEA        BLT      ??pio_enable_write_protect_1
+    450          	}
+    451          }
+   \       0x74   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+   \                     ??pio_enable_write_protect_4:
+   \       0x78   0x....'....        LDR      R0,??DataTable18_3
+   \       0x7C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x80   0xE351'0000        CMP      R1,#+0
+   \       0x84   0x0A00'0001        BEQ      ??pio_enable_write_protect_7
+   \       0x88   0x....'....        LDR      R0,??DataTable18_4
+   \       0x8C   0x....'....        BL       printf
+   \                     ??pio_enable_write_protect_7:
+   \       0x90   0xEAFF'FFFE        B        ??pio_enable_write_protect_7
+   \                     ??pio_enable_write_protect_8:
+   \       0x94   0xE1A0'5004        MOV      R5,R4
+   \       0x98   0xEAFF'FFF1        B        ??pio_enable_write_protect_6
+   \                     ??pio_enable_write_protect_9:
+   \       0x9C   0xE1A0'500E        MOV      R5,LR
+   \       0xA0   0xEAFF'FFEF        B        ??pio_enable_write_protect_6
+   \                     ??pio_enable_write_protect_10:
+   \       0xA4   0xE1A0'500C        MOV      R5,R12
+   \       0xA8   0xEAFF'FFED        B        ??pio_enable_write_protect_6
+   \                     ??pio_enable_write_protect_11:
+   \       0xAC   0xE1A0'5003        MOV      R5,R3
+   \       0xB0   0xEAFF'FFEB        B        ??pio_enable_write_protect_6
+    452          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    453          void pio_disable_write_protect(void)
+    454          {
+   \                     pio_disable_write_protect:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    455          	int i;
+    456          	for (i = 0; i < PIO_GROUP_LENGTH; i++) {
+   \        0x4   0x....'....        LDR      R2,??DataTable18_23  ;; 0xfc06a0e4
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0x....'....        LDR      R1,??DataTable18_25  ;; 0x50494f00
+   \       0x10   0xE382'3D40        ORR      R3,R2,#0x1000
+   \       0x14   0xE282'CD80        ADD      R12,R2,#+8192
+   \       0x18   0xE3C2'ED80        BIC      LR,R2,#0x2000
+   \       0x1C   0xE282'4DC0        ADD      R4,R2,#+12288
+    457          		if (!_pio_has_group(i))
+   \                     ??pio_disable_write_protect_1:
+   \       0x20   0xE1B0'5000        MOVS     R5,R0
+   \       0x24   0x0A00'0007        BEQ      ??pio_disable_write_protect_2
+   \       0x28   0xE355'0001        CMP      R5,#+1
+   \       0x2C   0x0A00'0005        BEQ      ??pio_disable_write_protect_2
+   \       0x30   0xE355'0002        CMP      R5,#+2
+   \       0x34   0x0A00'0003        BEQ      ??pio_disable_write_protect_2
+   \       0x38   0xE355'0003        CMP      R5,#+3
+   \       0x3C   0x0A00'0001        BEQ      ??pio_disable_write_protect_2
+   \       0x40   0xE355'0004        CMP      R5,#+4
+   \       0x44   0x1A00'0007        BNE      ??pio_disable_write_protect_3
+    458          			continue;
+    459          		Pio* pio = _pio_get_instance(i);
+   \                     ??pio_disable_write_protect_2:
+   \       0x48   0xE355'0004        CMP      R5,#+4
+   \       0x4C   0x8A00'0009        BHI      ??pio_disable_write_protect_4
+   \       0x50   0xE7DF'6005        LDRB     R6,[PC, R5]
+   \       0x54   0xE08F'F106        ADD      PC,PC,R6, LSL #+2
+   \                     ??pio_disable_write_protect_0:
+   \       0x58   0x01 0x14          DC8      0x1,0x14,0x12,0x10
+
+   \              0x12 0x10
+   \       0x5C   0x0E 0x00          DC8      0xE,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_disable_write_protect_5:
+   \       0x60   0xE1A0'5002        MOV      R5,R2
+    460          		pio->PIO_WPMR = PIO_WPMR_WPKEY_PASSWD;
+   \                     ??pio_disable_write_protect_6:
+   \       0x64   0xE585'1000        STR      R1,[R5, #+0]
+   \                     ??pio_disable_write_protect_3:
+   \       0x68   0xE280'0001        ADD      R0,R0,#+1
+   \       0x6C   0xE350'0005        CMP      R0,#+5
+   \       0x70   0xBAFF'FFEA        BLT      ??pio_disable_write_protect_1
+    461          	}
+    462          }
+   \       0x74   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+   \                     ??pio_disable_write_protect_4:
+   \       0x78   0x....'....        LDR      R0,??DataTable18_3
+   \       0x7C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x80   0xE351'0000        CMP      R1,#+0
+   \       0x84   0x0A00'0001        BEQ      ??pio_disable_write_protect_7
+   \       0x88   0x....'....        LDR      R0,??DataTable18_4
+   \       0x8C   0x....'....        BL       printf
+   \                     ??pio_disable_write_protect_7:
+   \       0x90   0xEAFF'FFFE        B        ??pio_disable_write_protect_7
+   \                     ??pio_disable_write_protect_8:
+   \       0x94   0xE1A0'5004        MOV      R5,R4
+   \       0x98   0xEAFF'FFF1        B        ??pio_disable_write_protect_6
+   \                     ??pio_disable_write_protect_9:
+   \       0x9C   0xE1A0'500E        MOV      R5,LR
+   \       0xA0   0xEAFF'FFEF        B        ??pio_disable_write_protect_6
+   \                     ??pio_disable_write_protect_10:
+   \       0xA4   0xE1A0'500C        MOV      R5,R12
+   \       0xA8   0xEAFF'FFED        B        ??pio_disable_write_protect_6
+   \                     ??pio_disable_write_protect_11:
+   \       0xAC   0xE1A0'5003        MOV      R5,R3
+   \       0xB0   0xEAFF'FFEB        B        ??pio_disable_write_protect_6
+    463          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    464          uint32_t pio_get_write_protect_violation_info(void)
+    465          {
+   \                     pio_get_write_protect_violation_info:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    466          	int i;
+    467          	uint32_t wpsr = 0;
+    468          	for (i = 0; i < PIO_GROUP_LENGTH; i++) {
+   \        0x4   0x....'....        LDR      R2,??DataTable18_26  ;; 0xfc06a0e8
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0xE3A0'1000        MOV      R1,#+0
+   \       0x10   0xE382'3D40        ORR      R3,R2,#0x1000
+   \       0x14   0xE282'CD80        ADD      R12,R2,#+8192
+   \       0x18   0xE3C2'ED80        BIC      LR,R2,#0x2000
+   \       0x1C   0xE282'4DC0        ADD      R4,R2,#+12288
+    469          		if (!_pio_has_group(i))
+   \                     ??pio_get_write_protect_violation_info_1:
+   \       0x20   0xE1B0'5001        MOVS     R5,R1
+   \       0x24   0x0A00'0007        BEQ      ??pio_get_write_protect_violation_info_2
+   \       0x28   0xE355'0001        CMP      R5,#+1
+   \       0x2C   0x0A00'0005        BEQ      ??pio_get_write_protect_violation_info_2
+   \       0x30   0xE355'0002        CMP      R5,#+2
+   \       0x34   0x0A00'0003        BEQ      ??pio_get_write_protect_violation_info_2
+   \       0x38   0xE355'0003        CMP      R5,#+3
+   \       0x3C   0x0A00'0001        BEQ      ??pio_get_write_protect_violation_info_2
+   \       0x40   0xE355'0004        CMP      R5,#+4
+   \       0x44   0x1A00'0008        BNE      ??pio_get_write_protect_violation_info_3
+    470          			continue;
+    471          		Pio* pio = _pio_get_instance(i);
+   \                     ??pio_get_write_protect_violation_info_2:
+   \       0x48   0xE355'0004        CMP      R5,#+4
+   \       0x4C   0x8A00'000A        BHI      ??pio_get_write_protect_violation_info_4
+   \       0x50   0xE7DF'6005        LDRB     R6,[PC, R5]
+   \       0x54   0xE08F'F106        ADD      PC,PC,R6, LSL #+2
+   \                     ??pio_get_write_protect_violation_info_0:
+   \       0x58   0x01 0x15          DC8      0x1,0x15,0x13,0x11
+
+   \              0x13 0x11
+   \       0x5C   0x0F 0x00          DC8      0xF,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_get_write_protect_violation_info_5:
+   \       0x60   0xE1A0'5002        MOV      R5,R2
+    472          		wpsr |= pio->PIO_WPSR;
+   \                     ??pio_get_write_protect_violation_info_6:
+   \       0x64   0xE595'5000        LDR      R5,[R5, #+0]
+   \       0x68   0xE185'0000        ORR      R0,R5,R0
+   \                     ??pio_get_write_protect_violation_info_3:
+   \       0x6C   0xE281'1001        ADD      R1,R1,#+1
+   \       0x70   0xE351'0005        CMP      R1,#+5
+   \       0x74   0xBAFF'FFE9        BLT      ??pio_get_write_protect_violation_info_1
+    473          	}
+    474          	return wpsr;
+   \       0x78   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+   \                     ??pio_get_write_protect_violation_info_4:
+   \       0x7C   0x....'....        LDR      R0,??DataTable18_3
+   \       0x80   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x84   0xE351'0000        CMP      R1,#+0
+   \       0x88   0x0A00'0001        BEQ      ??pio_get_write_protect_violation_info_7
+   \       0x8C   0x....'....        LDR      R0,??DataTable18_4
+   \       0x90   0x....'....        BL       printf
+   \                     ??pio_get_write_protect_violation_info_7:
+   \       0x94   0xEAFF'FFFE        B        ??pio_get_write_protect_violation_info_7
+   \                     ??pio_get_write_protect_violation_info_8:
+   \       0x98   0xE1A0'5004        MOV      R5,R4
+   \       0x9C   0xEAFF'FFF0        B        ??pio_get_write_protect_violation_info_6
+   \                     ??pio_get_write_protect_violation_info_9:
+   \       0xA0   0xE1A0'500E        MOV      R5,LR
+   \       0xA4   0xEAFF'FFEE        B        ??pio_get_write_protect_violation_info_6
+   \                     ??pio_get_write_protect_violation_info_10:
+   \       0xA8   0xE1A0'500C        MOV      R5,R12
+   \       0xAC   0xEAFF'FFEC        B        ??pio_get_write_protect_violation_info_6
+   \                     ??pio_get_write_protect_violation_info_11:
+   \       0xB0   0xE1A0'5003        MOV      R5,R3
+   \       0xB4   0xEAFF'FFEA        B        ??pio_get_write_protect_violation_info_6
+    475          }
+    476          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    477          void pio_output_low(uint32_t group, uint32_t mask)
+    478          {
+   \                     pio_output_low:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    479          	Pio* pio = _pio_get_instance(group);
+   \        0x4   0xE350'0004        CMP      R0,#+4
+   \        0x8   0xE1A0'4001        MOV      R4,R1
+   \        0xC   0x8A00'0003        BHI      ??pio_output_low_1
+   \       0x10   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \       0x14   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??pio_output_low_0:
+   \       0x18   0x18 0x14          DC8      0x18,0x14,0x10,0xC
+
+   \              0x10 0x0C
+   \       0x1C   0x08 0x00          DC8      0x8,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_output_low_1:
+   \       0x20   0x....'....        LDR      R0,??DataTable18_3
+   \       0x24   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x28   0xE351'0000        CMP      R1,#+0
+   \       0x2C   0x0A00'0001        BEQ      ??pio_output_low_2
+   \       0x30   0x....'....        LDR      R0,??DataTable18_4
+   \       0x34   0x....'....        BL       printf
+   \                     ??pio_output_low_2:
+   \       0x38   0xEAFF'FFFE        B        ??pio_output_low_2
+   \                     ??pio_output_low_3:
+   \       0x3C   0xE3A0'54FC        MOV      R5,#-67108864
+   \       0x40   0xE3A0'001A        MOV      R0,#+26
+   \       0x44   0xE385'5A6D        ORR      R5,R5,#0x6D000
+   \       0x48   0xEA00'000E        B        ??pio_output_low_4
+   \                     ??pio_output_low_5:
+   \       0x4C   0xE3A0'54FC        MOV      R5,#-67108864
+   \       0x50   0xE3A0'0005        MOV      R0,#+5
+   \       0x54   0xE385'5A68        ORR      R5,R5,#0x68000
+   \       0x58   0xEA00'000A        B        ??pio_output_low_4
+   \                     ??pio_output_low_6:
+   \       0x5C   0xE3A0'54FC        MOV      R5,#-67108864
+   \       0x60   0xE3A0'0019        MOV      R0,#+25
+   \       0x64   0xE385'5A6C        ORR      R5,R5,#0x6C000
+   \       0x68   0xEA00'0006        B        ??pio_output_low_4
+   \                     ??pio_output_low_7:
+   \       0x6C   0xE3A0'54FC        MOV      R5,#-67108864
+   \       0x70   0xE3A0'0018        MOV      R0,#+24
+   \       0x74   0xE385'5A6B        ORR      R5,R5,#0x6B000
+   \       0x78   0xEA00'0002        B        ??pio_output_low_4
+   \                     ??pio_output_low_8:
+   \       0x7C   0xE3A0'54FC        MOV      R5,#-67108864
+   \       0x80   0xE3A0'0017        MOV      R0,#+23
+   \       0x84   0xE385'5A6A        ORR      R5,R5,#0x6A000
+   \                     ??pio_output_low_4:
+   \       0x88   0xE3A0'2001        MOV      R2,#+1
+   \       0x8C   0xE3A0'1000        MOV      R1,#+0
+   \       0x90   0x....'....        BL       pmc_configure_peripheral
+    480          	pmc_configure_peripheral(_pio_get_periph_id(group), NULL, true);
+    481          	pio->PIO_PUDR = mask;	// all Pull-up Disable
+   \       0x94   0xE585'4060        STR      R4,[R5, #+96]
+    482          	pio->PIO_PPDDR = mask;	// all Pull-down Disable
+   \       0x98   0xE585'4090        STR      R4,[R5, #+144]
+    483          	pio->PIO_PER = mask;	// all PIO enable
+   \       0x9C   0xE585'4000        STR      R4,[R5, #+0]
+    484          	pio->PIO_OER = mask;	// all PIO output mode
+   \       0xA0   0xE585'4010        STR      R4,[R5, #+16]
+    485          	pio->PIO_CODR = mask;	// all PIO clear output
+   \       0xA4   0xE585'4034        STR      R4,[R5, #+52]
+    486          }
+   \       0xA8   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    487          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    488          void pio_add_handler_to_group(uint32_t group, uint32_t mask,
+    489          			      pio_handler_t handler, void* user_arg)
+    490          {
+   \                     pio_add_handler_to_group:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+    491          	uint32_t periph_id = _pio_get_periph_id(group);
+   \        0x4   0xE350'0004        CMP      R0,#+4
+   \        0x8   0xE1A0'9000        MOV      R9,R0
+   \        0xC   0xE1A0'6001        MOV      R6,R1
+   \       0x10   0xE1A0'7002        MOV      R7,R2
+   \       0x14   0xE1A0'8003        MOV      R8,R3
+   \       0x18   0x8A00'0003        BHI      ??pio_add_handler_to_group_1
+   \       0x1C   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \       0x20   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??pio_add_handler_to_group_0:
+   \       0x24   0x10 0x0E          DC8      0x10,0xE,0xC,0xA
+
+   \              0x0C 0x0A
+   \       0x28   0x08 0x00          DC8      0x8,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_add_handler_to_group_1:
+   \       0x2C   0x....'....        LDR      R0,??DataTable18_3
+   \       0x30   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x34   0xE351'0000        CMP      R1,#+0
+   \       0x38   0x0A00'0001        BEQ      ??pio_add_handler_to_group_2
+   \       0x3C   0x....'....        ADR      R0,?_5
+   \       0x40   0x....'....        BL       printf
+   \                     ??pio_add_handler_to_group_2:
+   \       0x44   0xEAFF'FFFE        B        ??pio_add_handler_to_group_2
+   \                     ??pio_add_handler_to_group_3:
+   \       0x48   0xE3A0'401A        MOV      R4,#+26
+   \       0x4C   0xEA00'0006        B        ??pio_add_handler_to_group_4
+   \                     ??pio_add_handler_to_group_5:
+   \       0x50   0xE3A0'4005        MOV      R4,#+5
+   \       0x54   0xEA00'0004        B        ??pio_add_handler_to_group_4
+   \                     ??pio_add_handler_to_group_6:
+   \       0x58   0xE3A0'4019        MOV      R4,#+25
+   \       0x5C   0xEA00'0002        B        ??pio_add_handler_to_group_4
+   \                     ??pio_add_handler_to_group_7:
+   \       0x60   0xE3A0'4018        MOV      R4,#+24
+   \       0x64   0xEA00'0000        B        ??pio_add_handler_to_group_4
+   \                     ??pio_add_handler_to_group_8:
+   \       0x68   0xE3A0'4017        MOV      R4,#+23
+    492          
+    493          	_handler_push(group, mask, handler, user_arg);
+   \                     ??pio_add_handler_to_group_4:
+   \       0x6C   0x....'....        LDR      R5,??DataTable18
+   \       0x70   0xE595'0100        LDR      R0,[R5, #+256]
+   \       0x74   0xE350'000F        CMP      R0,#+15
+   \       0x78   0x3A00'0004        BCC      ??pio_add_handler_to_group_9
+   \       0x7C   0x....'....        LDR      R0,??DataTable18_2
+   \       0x80   0xE3A0'20CE        MOV      R2,#+206
+   \       0x84   0xE280'1038        ADD      R1,R0,#+56
+   \       0x88   0x....'....        BL       __aeabi_assert
+   \       0x8C   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??pio_add_handler_to_group_9:
+   \       0x90   0xE595'0100        LDR      R0,[R5, #+256]
+   \       0x94   0xE785'9200        STR      R9,[R5, +R0, LSL #+4]
+    494          
+    495          	irq_add_handler(periph_id, _pio_handler, NULL);
+   \       0x98   0xE3A0'2000        MOV      R2,#+0
+   \       0x9C   0xE085'1200        ADD      R1,R5,R0, LSL #+4
+   \       0xA0   0xE280'0001        ADD      R0,R0,#+1
+   \       0xA4   0xE581'6004        STR      R6,[R1, #+4]
+   \       0xA8   0xE581'7008        STR      R7,[R1, #+8]
+   \       0xAC   0xE581'800C        STR      R8,[R1, #+12]
+   \       0xB0   0xE585'0100        STR      R0,[R5, #+256]
+   \       0xB4   0x....'....        LDR      R1,??DataTable18_27
+   \       0xB8   0xE1A0'0004        MOV      R0,R4
+   \       0xBC   0x....'....        BL       irq_add_handler
+    496          	irq_enable(periph_id);
+   \       0xC0   0xE1A0'0004        MOV      R0,R4
+   \       0xC4   0xE8BD'43F2        POP      {R1,R4-R9,LR}
+   \       0xC8   0x....'....        B        irq_enable       ;; tailcall
+    497          }
+    498          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    499          void pio_reset_all_it(void)
+    500          {
+   \                     pio_reset_all_it:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    501          	int i;
+    502          	for (i = 0; i < PIO_GROUP_LENGTH; i++) {
+   \        0x4   0xE3A0'24FC        MOV      R2,#-67108864
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0xE382'2A6A        ORR      R2,R2,#0x6A000
+   \       0x10   0xE1E0'1000        MVN      R1,R0
+   \       0x14   0xE382'3D40        ORR      R3,R2,#0x1000
+   \       0x18   0xE282'CD80        ADD      R12,R2,#+8192
+   \       0x1C   0xE3C2'ED80        BIC      LR,R2,#0x2000
+   \       0x20   0xE282'4DC0        ADD      R4,R2,#+12288
+    503          		if (!_pio_has_group(i))
+   \                     ??pio_reset_all_it_1:
+   \       0x24   0xE1B0'5000        MOVS     R5,R0
+   \       0x28   0x0A00'0007        BEQ      ??pio_reset_all_it_2
+   \       0x2C   0xE355'0001        CMP      R5,#+1
+   \       0x30   0x0A00'0005        BEQ      ??pio_reset_all_it_2
+   \       0x34   0xE355'0002        CMP      R5,#+2
+   \       0x38   0x0A00'0003        BEQ      ??pio_reset_all_it_2
+   \       0x3C   0xE355'0003        CMP      R5,#+3
+   \       0x40   0x0A00'0001        BEQ      ??pio_reset_all_it_2
+   \       0x44   0xE355'0004        CMP      R5,#+4
+   \       0x48   0x1A00'0008        BNE      ??pio_reset_all_it_3
+    504          			continue;
+    505          		Pio* pio = _pio_get_instance(i);
+   \                     ??pio_reset_all_it_2:
+   \       0x4C   0xE355'0004        CMP      R5,#+4
+   \       0x50   0x8A00'000A        BHI      ??pio_reset_all_it_4
+   \       0x54   0xE7DF'6005        LDRB     R6,[PC, R5]
+   \       0x58   0xE08F'F106        ADD      PC,PC,R6, LSL #+2
+   \                     ??pio_reset_all_it_0:
+   \       0x5C   0x01 0x15          DC8      0x1,0x15,0x13,0x11
+
+   \              0x13 0x11
+   \       0x60   0x0F 0x00          DC8      0xF,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_reset_all_it_5:
+   \       0x64   0xE1A0'5002        MOV      R5,R2
+    506          		pio->PIO_ISR;
+   \                     ??pio_reset_all_it_6:
+   \       0x68   0xE595'604C        LDR      R6,[R5, #+76]
+    507          		pio->PIO_IDR = ~0u;
+   \       0x6C   0xE585'1044        STR      R1,[R5, #+68]
+   \                     ??pio_reset_all_it_3:
+   \       0x70   0xE280'0001        ADD      R0,R0,#+1
+   \       0x74   0xE350'0005        CMP      R0,#+5
+   \       0x78   0xBAFF'FFE9        BLT      ??pio_reset_all_it_1
+    508          	}
+    509          }
+   \       0x7C   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+   \                     ??pio_reset_all_it_4:
+   \       0x80   0x....'....        LDR      R0,??DataTable18_3
+   \       0x84   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x88   0xE351'0000        CMP      R1,#+0
+   \       0x8C   0x0A00'0001        BEQ      ??pio_reset_all_it_7
+   \       0x90   0x....'....        ADR      R0,?_5
+   \       0x94   0x....'....        BL       printf
+   \                     ??pio_reset_all_it_7:
+   \       0x98   0xEAFF'FFFE        B        ??pio_reset_all_it_7
+   \                     ??pio_reset_all_it_8:
+   \       0x9C   0xE1A0'5004        MOV      R5,R4
+   \       0xA0   0xEAFF'FFF0        B        ??pio_reset_all_it_6
+   \                     ??pio_reset_all_it_9:
+   \       0xA4   0xE1A0'500E        MOV      R5,LR
+   \       0xA8   0xEAFF'FFEE        B        ??pio_reset_all_it_6
+   \                     ??pio_reset_all_it_10:
+   \       0xAC   0xE1A0'500C        MOV      R5,R12
+   \       0xB0   0xEAFF'FFEC        B        ??pio_reset_all_it_6
+   \                     ??pio_reset_all_it_11:
+   \       0xB4   0xE1A0'5003        MOV      R5,R3
+   \       0xB8   0xEAFF'FFEA        B        ??pio_reset_all_it_6
+    510          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    511          void pio_enable_it(const struct _pin *pin)
+    512          {
+   \                     pio_enable_it:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    513          	assert(pin);
+   \        0x8   0x1A00'0004        BNE      ??pio_enable_it_1
+   \        0xC   0xE300'2201        MOVW     R2,#+513
+   \       0x10   0x....'....        LDR      R1,??DataTable18_28
+   \       0x14   0x....'....        ADR      R0,??DataTable18_1  ;; "pin"
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    514          	Pio* pio = _pio_get_instance(pin->group);
+   \                     ??pio_enable_it_1:
+   \       0x20   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x24   0xE350'0004        CMP      R0,#+4
+   \       0x28   0x8A00'0003        BHI      ??pio_enable_it_2
+   \       0x2C   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \       0x30   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??pio_enable_it_0:
+   \       0x34   0x10 0x0E          DC8      0x10,0xE,0xC,0xA
+
+   \              0x0C 0x0A
+   \       0x38   0x08 0x00          DC8      0x8,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_enable_it_2:
+   \       0x3C   0x....'....        LDR      R2,??DataTable18_3
+   \       0x40   0xE592'3000        LDR      R3,[R2, #+0]
+   \       0x44   0xE353'0000        CMP      R3,#+0
+   \       0x48   0x0A00'0001        BEQ      ??pio_enable_it_3
+   \       0x4C   0x....'....        ADR      R0,?_5
+   \       0x50   0x....'....        BL       printf
+   \                     ??pio_enable_it_3:
+   \       0x54   0xEAFF'FFFE        B        ??pio_enable_it_3
+   \                     ??pio_enable_it_4:
+   \       0x58   0x....'....        LDR      R0,??DataTable18_29  ;; 0xfc06d040
+   \       0x5C   0xEA00'0006        B        ??pio_enable_it_5
+   \                     ??pio_enable_it_6:
+   \       0x60   0x....'....        LDR      R0,??DataTable18_30  ;; 0xfc068040
+   \       0x64   0xEA00'0004        B        ??pio_enable_it_5
+   \                     ??pio_enable_it_7:
+   \       0x68   0x....'....        LDR      R0,??DataTable18_31  ;; 0xfc06c040
+   \       0x6C   0xEA00'0002        B        ??pio_enable_it_5
+   \                     ??pio_enable_it_8:
+   \       0x70   0x....'....        LDR      R0,??DataTable18_32  ;; 0xfc06b040
+   \       0x74   0xEA00'0000        B        ??pio_enable_it_5
+   \                     ??pio_enable_it_9:
+   \       0x78   0x....'....        LDR      R0,??DataTable18_33  ;; 0xfc06a040
+    515          	pio->PIO_IER = pin->mask;
+   \                     ??pio_enable_it_5:
+   \       0x7C   0x....'....        B        ?Subroutine0
+    516          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE594'1004        LDR      R1,[R4, #+4]
+   \        0x4   0xE580'1000        STR      R1,[R0, #+0]
+   \        0x8   0xE8BD'8010        POP      {R4,PC}          ;; return
+    517          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    518          void pio_disable_it(const struct _pin *pin)
+    519          {
+   \                     pio_disable_it:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    520          	assert(pin);
+   \        0x8   0x1A00'0004        BNE      ??pio_disable_it_1
+   \        0xC   0xE3A0'2F82        MOV      R2,#+520
+   \       0x10   0x....'....        LDR      R1,??DataTable18_28
+   \       0x14   0x....'....        ADR      R0,??DataTable18_1  ;; "pin"
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    521          	Pio* pio = _pio_get_instance(pin->group);
+   \                     ??pio_disable_it_1:
+   \       0x20   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x24   0xE350'0004        CMP      R0,#+4
+   \       0x28   0x8A00'0003        BHI      ??pio_disable_it_2
+   \       0x2C   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \       0x30   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??pio_disable_it_0:
+   \       0x34   0x10 0x0E          DC8      0x10,0xE,0xC,0xA
+
+   \              0x0C 0x0A
+   \       0x38   0x08 0x00          DC8      0x8,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??pio_disable_it_2:
+   \       0x3C   0x....'....        LDR      R2,??DataTable18_3
+   \       0x40   0xE592'3000        LDR      R3,[R2, #+0]
+   \       0x44   0xE353'0000        CMP      R3,#+0
+   \       0x48   0x0A00'0001        BEQ      ??pio_disable_it_3
+   \       0x4C   0x....'....        ADR      R0,?_5
+   \       0x50   0x....'....        BL       printf
+   \                     ??pio_disable_it_3:
+   \       0x54   0xEAFF'FFFE        B        ??pio_disable_it_3
+   \                     ??pio_disable_it_4:
+   \       0x58   0x....'....        LDR      R0,??DataTable18_34  ;; 0xfc06d044
+   \       0x5C   0xEA00'0006        B        ??pio_disable_it_5
+   \                     ??pio_disable_it_6:
+   \       0x60   0x....'....        LDR      R0,??DataTable18_35  ;; 0xfc068044
+   \       0x64   0xEA00'0004        B        ??pio_disable_it_5
+   \                     ??pio_disable_it_7:
+   \       0x68   0x....'....        LDR      R0,??DataTable18_36  ;; 0xfc06c044
+   \       0x6C   0xEA00'0002        B        ??pio_disable_it_5
+   \                     ??pio_disable_it_8:
+   \       0x70   0x....'....        LDR      R0,??DataTable18_37  ;; 0xfc06b044
+   \       0x74   0xEA00'0000        B        ??pio_disable_it_5
+   \                     ??pio_disable_it_9:
+   \       0x78   0x....'....        LDR      R0,??DataTable18_38  ;; 0xfc06a044
+    522          	pio->PIO_IDR = pin->mask;
+   \                     ??pio_disable_it_5:
+   \       0x7C                      REQUIRE ?Subroutine0
+   \       0x7C                      ;; // Fall through to label ?Subroutine0
+    523          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18:
+   \        0x0   0x....'....        DC32     _handlers
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_1:
+   \        0x0   0x70 0x69          DC8      "pin"
+
+   \              0x6E 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_2:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_3:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_4:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_5:
+   \        0x0   0x....'....        DC32     ?_6
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_6:
+   \        0x0   0x....'....        DC32     ?_7
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_7:
+   \        0x0   0xFC06'D030        DC32     0xfc06d030
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_8:
+   \        0x0   0xFC06'8030        DC32     0xfc068030
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_9:
+   \        0x0   0xFC06'C030        DC32     0xfc06c030
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_10:
+   \        0x0   0xFC06'B030        DC32     0xfc06b030
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_11:
+   \        0x0   0xFC06'A030        DC32     0xfc06a030
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_12:
+   \        0x0   0xFC06'D034        DC32     0xfc06d034
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_13:
+   \        0x0   0xFC06'8034        DC32     0xfc068034
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_14:
+   \        0x0   0xFC06'C034        DC32     0xfc06c034
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_15:
+   \        0x0   0xFC06'B034        DC32     0xfc06b034
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_16:
+   \        0x0   0xFC06'A034        DC32     0xfc06a034
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_17:
+   \        0x0   0xFC06'D038        DC32     0xfc06d038
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_18:
+   \        0x0   0xFC06'8038        DC32     0xfc068038
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_19:
+   \        0x0   0xFC06'C038        DC32     0xfc06c038
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_20:
+   \        0x0   0xFC06'B038        DC32     0xfc06b038
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_21:
+   \        0x0   0xFC06'A038        DC32     0xfc06a038
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_22:
+   \        0x0   0xFC06'A08C        DC32     0xfc06a08c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_23:
+   \        0x0   0xFC06'A0E4        DC32     0xfc06a0e4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_24:
+   \        0x0   0x5049'4F01        DC32     0x50494f01
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_25:
+   \        0x0   0x5049'4F00        DC32     0x50494f00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_26:
+   \        0x0   0xFC06'A0E8        DC32     0xfc06a0e8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_27:
+   \        0x0   0x....'....        DC32     _pio_handler
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_28:
+   \        0x0   0x....'....        DC32     ?_0+0x38
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_29:
+   \        0x0   0xFC06'D040        DC32     0xfc06d040
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_30:
+   \        0x0   0xFC06'8040        DC32     0xfc068040
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_31:
+   \        0x0   0xFC06'C040        DC32     0xfc06c040
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_32:
+   \        0x0   0xFC06'B040        DC32     0xfc06b040
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_33:
+   \        0x0   0xFC06'A040        DC32     0xfc06a040
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_34:
+   \        0x0   0xFC06'D044        DC32     0xfc06d044
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_35:
+   \        0x0   0xFC06'8044        DC32     0xfc068044
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_36:
+   \        0x0   0xFC06'C044        DC32     0xfc06c044
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_37:
+   \        0x0   0xFC06'B044        DC32     0xfc06b044
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable18_38:
+   \        0x0   0xFC06'A044        DC32     0xfc06a044
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x2D 0x46          DC8 "-F- Invalid PIO group!"
+
+   \              0x2D 0x20    
+
+   \              0x49 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x50 0x49    
+
+   \              0x4F 0x20    
+
+   \              0x67 0x72    
+
+   \              0x6F 0x75    
+
+   \              0x70 0x21    
+
+   \              0x00
+   \       0x17   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x69 0x20          DC8 0x69, 0x20, 0x3C, 0x20, 0x28, 0x28, 0x73, 0x69
+
+   \              0x3C 0x20    
+
+   \              0x28 0x28    
+
+   \              0x73 0x69
+   \        0x8   0x7A 0x65          DC8 0x7A, 0x65, 0x6F, 0x66, 0x20, 0x28, 0x28, 0x5F
+
+   \              0x6F 0x66    
+
+   \              0x20 0x28    
+
+   \              0x28 0x5F
+   \       0x10   0x68 0x61          DC8 0x68, 0x61, 0x6E, 0x64, 0x6C, 0x65, 0x72, 0x73
+
+   \              0x6E 0x64    
+
+   \              0x6C 0x65    
+
+   \              0x72 0x73
+   \       0x18   0x29 0x29          DC8 0x29, 0x29, 0x20, 0x2F, 0x20, 0x73, 0x69, 0x7A
+
+   \              0x20 0x2F    
+
+   \              0x20 0x73    
+
+   \              0x69 0x7A
+   \       0x20   0x65 0x6F          DC8 0x65, 0x6F, 0x66, 0x28, 0x2A, 0x28, 0x5F, 0x68
+
+   \              0x66 0x28    
+
+   \              0x2A 0x28    
+
+   \              0x5F 0x68
+   \       0x28   0x61 0x6E          DC8 0x61, 0x6E, 0x64, 0x6C, 0x65, 0x72, 0x73, 0x29
+
+   \              0x64 0x6C    
+
+   \              0x65 0x72    
+
+   \              0x73 0x29
+   \       0x30   0x29 0x29          DC8 0x29, 0x29, 0x20, 0x2D, 0x20, 0x31, 0x29, 0
+
+   \              0x20 0x2D    
+
+   \              0x20 0x31    
+
+   \              0x29 0x00
+   \       0x38   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \       0x40   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x48   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x50   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x58   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x60   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x68   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x70   0x73 0x5C          DC8 0x73, 0x5C, 0x67, 0x70, 0x69, 0x6F, 0x5C, 0x70
+
+   \              0x67 0x70    
+
+   \              0x69 0x6F    
+
+   \              0x5C 0x70
+   \       0x78   0x69 0x6F          DC8 0x69, 0x6F, 0x33, 0x2E, 0x63, 0
+
+   \              0x33 0x2E    
+
+   \              0x63 0x00
+   \       0x7E   0x00 0x00          DC8 0, 0
+   \       0x80   0x28 0x70          DC8 0x28, 0x70, 0x69, 0x6E, 0x2D, 0x3E, 0x61, 0x74
+
+   \              0x69 0x6E    
+
+   \              0x2D 0x3E    
+
+   \              0x61 0x74
+   \       0x88   0x74 0x72          DC8 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x20
+
+   \              0x69 0x62    
+
+   \              0x75 0x74    
+
+   \              0x65 0x20
+   \       0x90   0x26 0x20          DC8 0x26, 0x20, 0x28, 0x28, 0x31, 0x75, 0x20, 0x3C
+
+   \              0x28 0x28    
+
+   \              0x31 0x75    
+
+   \              0x20 0x3C
+   \       0x98   0x3C 0x20          DC8 0x3C, 0x20, 0x30, 0x29, 0x20, 0x7C, 0x20, 0x28
+
+   \              0x30 0x29    
+
+   \              0x20 0x7C    
+
+   \              0x20 0x28
+   \       0xA0   0x31 0x75          DC8 0x31, 0x75, 0x20, 0x3C, 0x3C, 0x20, 0x31, 0x29
+
+   \              0x20 0x3C    
+
+   \              0x3C 0x20    
+
+   \              0x31 0x29
+   \       0xA8   0x29 0x29          DC8 0x29, 0x29, 0x20, 0x21, 0x3D, 0x20, 0x28, 0x28
+
+   \              0x20 0x21    
+
+   \              0x3D 0x20    
+
+   \              0x28 0x28
+   \       0xB0   0x31 0x75          DC8 0x31, 0x75, 0x20, 0x3C, 0x3C, 0x20, 0x30, 0x29
+
+   \              0x20 0x3C    
+
+   \              0x3C 0x20    
+
+   \              0x30 0x29
+   \       0xB8   0x20 0x7C          DC8 0x20, 0x7C, 0x20, 0x28, 0x31, 0x75, 0x20, 0x3C
+
+   \              0x20 0x28    
+
+   \              0x31 0x75    
+
+   \              0x20 0x3C
+   \       0xC0   0x3C 0x20          DC8 0x3C, 0x20, 0x31, 0x29, 0x29, 0
+
+   \              0x31 0x29    
+
+   \              0x29 0x00
+   \       0xC6   0x00 0x00          DC8 0, 0
+   \       0xC8   0x2D 0x46          DC8 "-F- Invalid pin drive strength\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x49 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x70 0x69    
+
+   \              0x6E 0x20    
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x20    
+
+   \              0x73 0x74    
+
+   \              0x72 0x65    
+
+   \              0x6E 0x67    
+
+   \              0x74 0x68    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0xE9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0xEC   0x2D 0x46          DC8 "-F- Invalid pin interrupt type\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x49 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x70 0x69    
+
+   \              0x6E 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x74 0x65    
+
+   \              0x72 0x72    
+
+   \              0x75 0x70    
+
+   \              0x74 0x20    
+
+   \              0x74 0x79    
+
+   \              0x70 0x65    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \      0x10D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_6:
+   \        0x0   0x2D 0x46          DC8 "-F- Invalid slew rate setting\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x49 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x73 0x6C    
+
+   \              0x65 0x77    
+
+   \              0x20 0x72    
+
+   \              0x61 0x74    
+
+   \              0x65 0x20    
+
+   \              0x73 0x65    
+
+   \              0x74 0x74    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_7:
+   \        0x0   0x2D 0x46          DC8 "-F- Invalid pin type\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x49 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x70 0x69    
+
+   \              0x6E 0x20    
+
+   \              0x74 0x79    
+
+   \              0x70 0x65    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x17   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_8:
+   \        0x0   0x70 0x69          DC8 "pin"
+
+   \              0x6E 0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   _pio_handle_interrupt
+        24   -- Indirect call
+       8   _pio_handler
+         0   -> _pio_handle_interrupt
+         8   -> _pio_handle_interrupt
+      32   pio_add_handler_to_group
+        32   -> __aeabi_assert
+        32   -> __iar_EmptyStepPoint
+        32   -> irq_add_handler
+         0   -> irq_enable
+        32   -> printf
+       8   pio_clear
+         8   -> printf
+      40   pio_configure
+        40   -> __aeabi_assert
+        40   -> __iar_EmptyStepPoint
+        40   -> pmc_configure_peripheral
+        40   -> printf
+       8   pio_disable_it
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         8   -> printf
+      16   pio_disable_write_protect
+        16   -> printf
+       8   pio_enable_it
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         8   -> printf
+      16   pio_enable_write_protect
+        16   -> printf
+       8   pio_get
+         8   -> printf
+       8   pio_get_output_data_status
+         8   -> printf
+      16   pio_get_write_protect_violation_info
+        16   -> printf
+      16   pio_output_low
+        16   -> pmc_configure_peripheral
+        16   -> printf
+      16   pio_reset_all_it
+        16   -> printf
+       8   pio_set
+         8   -> printf
+      16   pio_set_debounce_filter
+        16   -> pmc_get_slow_clock
+        16   -> printf
+        16 __aeabi_uidiv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable18
+       4  ??DataTable18_1
+       4  ??DataTable18_10
+       4  ??DataTable18_11
+       4  ??DataTable18_12
+       4  ??DataTable18_13
+       4  ??DataTable18_14
+       4  ??DataTable18_15
+       4  ??DataTable18_16
+       4  ??DataTable18_17
+       4  ??DataTable18_18
+       4  ??DataTable18_19
+       4  ??DataTable18_2
+       4  ??DataTable18_20
+       4  ??DataTable18_21
+       4  ??DataTable18_22
+       4  ??DataTable18_23
+       4  ??DataTable18_24
+       4  ??DataTable18_25
+       4  ??DataTable18_26
+       4  ??DataTable18_27
+       4  ??DataTable18_28
+       4  ??DataTable18_29
+       4  ??DataTable18_3
+       4  ??DataTable18_30
+       4  ??DataTable18_31
+       4  ??DataTable18_32
+       4  ??DataTable18_33
+       4  ??DataTable18_34
+       4  ??DataTable18_35
+       4  ??DataTable18_36
+       4  ??DataTable18_37
+       4  ??DataTable18_38
+       4  ??DataTable18_4
+       4  ??DataTable18_5
+       4  ??DataTable18_6
+       4  ??DataTable18_7
+       4  ??DataTable18_8
+       4  ??DataTable18_9
+      12  ?Subroutine0
+      12  ?Subroutine1
+      12  ?Subroutine2
+     272  ?_0
+      24  ?_5
+      32  ?_6
+      24  ?_7
+       4  ?_8
+     260  _handlers
+          i
+      80  _pio_handle_interrupt
+     192  _pio_handler
+     204  pio_add_handler_to_group
+      96  pio_clear
+   1'012  pio_configure
+     124  pio_disable_it
+     180  pio_disable_write_protect
+     128  pio_enable_it
+     180  pio_enable_write_protect
+     160  pio_get
+     100  pio_get_output_data_status
+     184  pio_get_write_protect_violation_info
+     172  pio_output_low
+     188  pio_reset_all_it
+     100  pio_set
+     204  pio_set_debounce_filter
+
+ 
+   260 bytes in section .bss
+   332 bytes in section .rodata
+ 3'520 bytes in section SOFTPACK
+ 
+ 3'520 bytes of CODE  memory
+   332 bytes of CONST memory
+   260 bytes of DATA  memory
+
+Errors: none
+Warnings: none

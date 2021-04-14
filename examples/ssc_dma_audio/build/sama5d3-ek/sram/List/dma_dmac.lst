@@ -1,0 +1,548 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         08/Dec/2020  16:47:02
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dma_dmac.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW45EF.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dma_dmac.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D3 -D
+#        CONFIG_CHIP_SAMA5D36 -D CONFIG_BOARD_SAMA5D3_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_INPUT_OFFSET -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_PLLA_CHARGE_PUMP -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_PMC_PERIPH_DIV -D CONFIG_HAVE_SCKC -D
+#        CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_DMAC
+#        -D CONFIG_HAVE_DMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SMD -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_MT47H128M16 -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_TC_FAULT_MODE -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC
+#        -D CONFIG_HAVE_AUDIO_WM8904 -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sama5d3\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List\dma_dmac.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj\dma_dmac.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\dma\dma_dmac.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <assert.h>
+     35          
+     36          #include "compiler.h"
+     37          #include "dma/dma.h"
+     38          #include "dma/dma_dmac.h"
+     39          #include "errno.h"
+     40          #include "irq/irq.h"
+     41          #include "peripherals/pmc.h"
+     42          
+     43          /*----------------------------------------------------------------------------
+     44           *        Local definitions
+     45           *----------------------------------------------------------------------------*/
+     46          
+     47          #ifdef CONFIG_SOC_SAM9XX5
+     48          #define DMAC_CFG_SRC_PER_MSB_Msk 0
+     49          #define DMAC_CFG_DST_PER_MSB_Msk 0
+     50          #define DMAC_CFG_SRC_PER_MSB(x) 0
+     51          #define DMAC_CFG_DST_PER_MSB(x) 0
+     52          #endif
+     53          
+     54          /*----------------------------------------------------------------------------
+     55           *        Exported functions
+     56           *----------------------------------------------------------------------------*/
+     57          
+     58          /**
+     59           * \brief Enable clock of the DMA peripheral, Enable the peripheral,
+     60           * setup configuration register for transfer.
+     61           * \param channel Channel pointer
+     62           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     63          int dma_prepare_channel(struct _dma_channel* channel)
+     64          {
+   \                     dma_prepare_channel:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     65          	Dmac *dmac = channel->hw;
+   \        0x8   0xE594'5000        LDR      R5,[R4, #+0]
+     66          
+     67          	if (channel->state == DMA_STATE_FREE)
+   \        0xC   0xE5D4'0018        LDRB     R0,[R4, #+24]
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x1A00'0001        BNE      ??dma_prepare_channel_0
+     68          		return -EPERM;
+   \       0x18   0xE3E0'0042        MVN      R0,#+66
+   \       0x1C   0xE8BD'8032        POP      {R1,R4,R5,PC}
+     69          	else if (channel->state == DMA_STATE_STARTED)
+   \                     ??dma_prepare_channel_0:
+   \       0x20   0xE5D4'0018        LDRB     R0,[R4, #+24]
+   \       0x24   0xE350'0002        CMP      R0,#+2
+   \       0x28   0x1A00'0001        BNE      ??dma_prepare_channel_1
+     70          		return -EBUSY;
+   \       0x2C   0xE3E0'0009        MVN      R0,#+9
+   \       0x30   0xE8BD'8032        POP      {R1,R4,R5,PC}
+     71          
+     72          	/* Clear status */
+     73          	dmac_get_global_isr(dmac);
+   \                     ??dma_prepare_channel_1:
+   \       0x34   0xE1A0'0005        MOV      R0,R5
+   \       0x38   0x....'....        BL       dmac_get_global_isr
+     74          
+     75          	/* Enable clock of the DMA peripheral */
+     76          	pmc_configure_peripheral(get_dmac_id_from_addr(dmac), NULL, true);
+   \       0x3C   0xE1A0'0005        MOV      R0,R5
+   \       0x40   0x....'....        BL       get_dmac_id_from_addr
+   \       0x44   0xE3A0'2001        MOV      R2,#+1
+   \       0x48   0xE3A0'1000        MOV      R1,#+0
+   \       0x4C   0x....'....        BL       pmc_configure_peripheral
+     77          
+     78          	/* Clear status */
+     79          	dmac_get_channel_status(dmac);
+   \       0x50   0xE1A0'0005        MOV      R0,R5
+   \       0x54   0x....'....        BL       dmac_get_channel_status
+     80          
+     81          	/* Disables DMAC interrupt for the given channel */
+     82          	dmac_disable_global_it(dmac, -1);
+   \       0x58   0xE3E0'1000        MVN      R1,#+0
+   \       0x5C   0xE1A0'0005        MOV      R0,R5
+   \       0x60   0x....'....        BL       dmac_disable_global_it
+     83          
+     84          	dmac_enable(dmac);
+   \       0x64   0xE1A0'0005        MOV      R0,R5
+   \       0x68   0x....'....        BL       dmac_enable
+     85          	/* Disable the given dma channel */
+     86          	dmac_disable_channel(dmac, channel->id);
+   \       0x6C   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x70   0xE1A0'0005        MOV      R0,R5
+   \       0x74   0xE6EF'1071        UXTB     R1,R1
+   \       0x78   0x....'....        BL       dmac_disable_channel
+     87          	dmac_set_src_addr(dmac, channel->id, 0);
+   \       0x7C   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x80   0xE3A0'2000        MOV      R2,#+0
+   \       0x84   0xE1A0'0005        MOV      R0,R5
+   \       0x88   0xE6EF'1071        UXTB     R1,R1
+   \       0x8C   0x....'....        BL       dmac_set_src_addr
+     88          	dmac_set_dest_addr(dmac, channel->id, 0);
+   \       0x90   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x94   0xE3A0'2000        MOV      R2,#+0
+   \       0x98   0xE1A0'0005        MOV      R0,R5
+   \       0x9C   0xE6EF'1071        UXTB     R1,R1
+   \       0xA0   0x....'....        BL       dmac_set_dest_addr
+     89          
+     90          	dmac_set_channel_config(dmac, channel->id, 0);
+   \       0xA4   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xA8   0xE3A0'2000        MOV      R2,#+0
+   \       0xAC   0xE1A0'0005        MOV      R0,R5
+   \       0xB0   0xE6EF'1071        UXTB     R1,R1
+   \       0xB4   0x....'....        BL       dmac_set_channel_config
+     91          	dmac_set_descriptor_addr(dmac, channel->id, 0, 0);
+   \       0xB8   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xBC   0xE3A0'3000        MOV      R3,#+0
+   \       0xC0   0xE3A0'2000        MOV      R2,#+0
+   \       0xC4   0xE1A0'0005        MOV      R0,R5
+   \       0xC8   0xE6EF'1071        UXTB     R1,R1
+   \       0xCC   0x....'....        BL       dmac_set_descriptor_addr
+     92          
+     93          	return 0;
+   \       0xD0   0xE3A0'0000        MOV      R0,#+0
+   \       0xD4   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+     94          }
+     95          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     96          int dmacd_configure_transfer(struct _dma_channel* channel,
+     97          			     struct _dmacd_cfg* cfg,
+     98          			     struct _dmac_desc* desc)
+     99          {
+   \                     dmacd_configure_transfer:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'7001        MOV      R7,R1
+   \        0xC   0xE1A0'8002        MOV      R8,R2
+    100          	Dmac *dmac = channel->hw;
+   \       0x10   0xE594'5000        LDR      R5,[R4, #+0]
+    101          	uint32_t ctrlb;
+    102          
+    103          	if (channel->state == DMA_STATE_FREE)
+   \       0x14   0xE5D4'0018        LDRB     R0,[R4, #+24]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x1A00'0001        BNE      ??dmacd_configure_transfer_0
+    104          		return -EPERM;
+   \       0x20   0xE3E0'0042        MVN      R0,#+66
+   \       0x24   0xE8BD'81F0        POP      {R4-R8,PC}
+    105          	else if (channel->state == DMA_STATE_STARTED)
+   \                     ??dmacd_configure_transfer_0:
+   \       0x28   0xE5D4'0018        LDRB     R0,[R4, #+24]
+   \       0x2C   0xE350'0002        CMP      R0,#+2
+   \       0x30   0x1A00'0001        BNE      ??dmacd_configure_transfer_1
+    106          		return -EBUSY;
+   \       0x34   0xE3E0'0009        MVN      R0,#+9
+   \       0x38   0xE8BD'81F0        POP      {R4-R8,PC}
+    107          
+    108          	ctrlb = desc->ctrlb;
+    109          
+    110          	cfg->cfg &= ~(DMAC_CFG_SRC_PER_Msk | DMAC_CFG_SRC_PER_MSB_Msk |
+    111          	              DMAC_CFG_DST_PER_Msk | DMAC_CFG_DST_PER_MSB_Msk);
+   \                     ??dmacd_configure_transfer_1:
+   \       0x3C   0xE597'0010        LDR      R0,[R7, #+16]
+   \       0x40   0xE3E0'10FF        MVN      R1,#+255
+   \       0x44   0xE598'600C        LDR      R6,[R8, #+12]
+   \       0x48   0xE3C1'1CCC        BIC      R1,R1,#0xCC00
+    112          
+    113          	if ((ctrlb & DMAC_CTRLB_FC_Msk) == DMAC_CTRLB_FC_PER2MEM_DMA_FC) {
+   \       0x4C   0xE206'28E0        AND      R2,R6,#0xE00000
+   \       0x50   0xE001'0000        AND      R0,R1,R0
+   \       0x54   0xE352'0840        CMP      R2,#+4194304
+   \       0x58   0xE587'0010        STR      R0,[R7, #+16]
+   \       0x5C   0x1A00'0009        BNE      ??dmacd_configure_transfer_2
+    114          		cfg->cfg |= DMAC_CFG_SRC_PER(channel->src_rxif);
+   \       0x60   0xE5D4'1011        LDRB     R1,[R4, #+17]
+   \       0x64   0xE201'300F        AND      R3,R1,#0xF
+    115          		cfg->cfg |= DMAC_CFG_SRC_PER_MSB(channel->src_rxif >> 4);
+   \       0x68   0xE3A0'1EC0        MOV      R1,#+3072
+   \       0x6C   0xE183'0000        ORR      R0,R3,R0
+   \       0x70   0xE587'0010        STR      R0,[R7, #+16]
+   \       0x74   0xE5D4'2011        LDRB     R2,[R4, #+17]
+   \       0x78   0xE1A0'C222        LSR      R12,R2,#+4
+   \       0x7C   0xE001'150C        AND      R1,R1,R12, LSL #+10
+   \       0x80   0xE181'0000        ORR      R0,R1,R0
+   \       0x84   0xEA00'000B        B        ??dmacd_configure_transfer_3
+    116          	}
+    117          
+    118          	if ((ctrlb & DMAC_CTRLB_FC_Msk) == DMAC_CTRLB_FC_MEM2PER_DMA_FC) {
+   \                     ??dmacd_configure_transfer_2:
+   \       0x88   0xE352'0980        CMP      R2,#+2097152
+   \       0x8C   0x1A00'000A        BNE      ??dmacd_configure_transfer_4
+    119          		cfg->cfg |= DMAC_CFG_DST_PER(channel->dest_txif);
+   \       0x90   0xE5D4'1012        LDRB     R1,[R4, #+18]
+   \       0x94   0xE3A0'20F0        MOV      R2,#+240
+   \       0x98   0xE002'2201        AND      R2,R2,R1, LSL #+4
+   \       0x9C   0xE182'0000        ORR      R0,R2,R0
+    120          		cfg->cfg |= DMAC_CFG_DST_PER_MSB(channel->dest_txif >> 4);
+   \       0xA0   0xE3A0'2CC0        MOV      R2,#+49152
+   \       0xA4   0xE587'0010        STR      R0,[R7, #+16]
+   \       0xA8   0xE5D4'3012        LDRB     R3,[R4, #+18]
+   \       0xAC   0xE1A0'1223        LSR      R1,R3,#+4
+   \       0xB0   0xE002'2701        AND      R2,R2,R1, LSL #+14
+   \       0xB4   0xE182'0000        ORR      R0,R2,R0
+   \                     ??dmacd_configure_transfer_3:
+   \       0xB8   0xE587'0010        STR      R0,[R7, #+16]
+    121          	}
+    122          
+    123          	dmac_get_global_isr(dmac);
+   \                     ??dmacd_configure_transfer_4:
+   \       0xBC   0xE1A0'0005        MOV      R0,R5
+   \       0xC0   0x....'....        BL       dmac_get_global_isr
+    124          	dmac_get_channel_status(dmac);
+   \       0xC4   0xE1A0'0005        MOV      R0,R5
+   \       0xC8   0x....'....        BL       dmac_get_channel_status
+    125          
+    126          	/* if DMAC_CTRLBx.AUTO bit is enabled, and source or destination is not fetched
+    127          		from linker list, set the channel with AUTO mode, in this mode, the hardware
+    128          		sets the Buffer Transfer Completed Interrupt when the buffer transfer has
+    129          		completed, It then stalls until STALx bit of DMAC_CHSR is cleared by writing
+    130          		in the KEEPx bit of DMAC_CHER */
+    131          	if (cfg->trans_auto) {
+   \       0xCC   0xE5D7'0000        LDRB     R0,[R7, #+0]
+    132          		if ((cfg->s_decr_fetch) && (cfg->d_decr_fetch)){
+    133          			ctrlb |= DMAC_CTRLB_AUTO_ENABLE;
+    134          			channel->rep_count = cfg->blocks;
+    135          		}
+    136          	}
+    137          
+    138          	dmac_set_descriptor_addr(dmac, channel->id, 0, 0);
+   \       0xD0   0xE3A0'3000        MOV      R3,#+0
+   \       0xD4   0xE3A0'2000        MOV      R2,#+0
+   \       0xD8   0xE200'1013        AND      R1,R0,#0x13
+   \       0xDC   0xE351'0013        CMP      R1,#+19
+   \       0xE0   0x0597'0004        LDREQ    R0,[R7, #+4]
+   \       0xE4   0x0386'6480        ORREQ    R6,R6,#0x80000000
+   \       0xE8   0x0584'0014        STREQ    R0,[R4, #+20]
+   \       0xEC   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xF0   0xE1A0'0005        MOV      R0,R5
+   \       0xF4   0xE6EF'1071        UXTB     R1,R1
+   \       0xF8   0x....'....        BL       dmac_set_descriptor_addr
+    139          
+    140          	if (cfg->s_decr_fetch)
+   \       0xFC   0xE5D7'0000        LDRB     R0,[R7, #+0]
+   \      0x100   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x104   0xE310'0001        TST      R0,#0x1
+   \      0x108   0x0A00'0004        BEQ      ??dmacd_configure_transfer_5
+    141          		/* *Buffer Descriptor fetch operation is disabled for the source */
+    142          		dmac_set_src_addr(dmac, channel->id, desc->saddr);
+   \      0x10C   0xE598'2000        LDR      R2,[R8, #+0]
+   \      0x110   0xE6EF'1071        UXTB     R1,R1
+   \      0x114   0xE1A0'0005        MOV      R0,R5
+   \      0x118   0x....'....        BL       dmac_set_src_addr
+   \      0x11C   0xEA00'0004        B        ??dmacd_configure_transfer_6
+    143          	else
+    144          		/* Source address is updated when the descriptor is fetched from the memory */
+    145          		dmac_set_descriptor_addr(dmac, channel->id, desc, 0);
+   \                     ??dmacd_configure_transfer_5:
+   \      0x120   0xE3A0'3000        MOV      R3,#+0
+   \      0x124   0xE1A0'2008        MOV      R2,R8
+   \      0x128   0xE6EF'1071        UXTB     R1,R1
+   \      0x12C   0xE1A0'0005        MOV      R0,R5
+   \      0x130   0x....'....        BL       dmac_set_descriptor_addr
+    146          
+    147          	if (cfg->d_decr_fetch)
+   \                     ??dmacd_configure_transfer_6:
+   \      0x134   0xE5D7'0000        LDRB     R0,[R7, #+0]
+   \      0x138   0xE7E0'00D0        UBFX     R0,R0,#+1,#+1
+   \      0x13C   0xE350'0000        CMP      R0,#+0
+   \      0x140   0x0A00'0005        BEQ      ??dmacd_configure_transfer_7
+    148          		/* *Buffer Descriptor fetch operation is disabled for the destination */
+    149          		dmac_set_dest_addr(dmac, channel->id, desc->daddr);
+   \      0x144   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x148   0xE598'2004        LDR      R2,[R8, #+4]
+   \      0x14C   0xE1A0'0005        MOV      R0,R5
+   \      0x150   0xE6EF'1071        UXTB     R1,R1
+   \      0x154   0x....'....        BL       dmac_set_dest_addr
+   \      0x158   0xEA00'0005        B        ??dmacd_configure_transfer_8
+    150          	else
+    151          		/* destination address is updated when the descriptor is fetched from the memory */
+    152          		dmac_set_descriptor_addr(dmac, channel->id, desc, 0);
+   \                     ??dmacd_configure_transfer_7:
+   \      0x15C   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x160   0xE3A0'3000        MOV      R3,#+0
+   \      0x164   0xE1A0'2008        MOV      R2,R8
+   \      0x168   0xE1A0'0005        MOV      R0,R5
+   \      0x16C   0xE6EF'1071        UXTB     R1,R1
+   \      0x170   0x....'....        BL       dmac_set_descriptor_addr
+    153          
+    154          	dmac_set_control_a(dmac, channel->id, desc->ctrla);
+   \                     ??dmacd_configure_transfer_8:
+   \      0x174   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x178   0xE598'2008        LDR      R2,[R8, #+8]
+   \      0x17C   0xE1A0'0005        MOV      R0,R5
+   \      0x180   0xE6EF'1071        UXTB     R1,R1
+   \      0x184   0x....'....        BL       dmac_set_control_a
+    155          	dmac_set_control_b(dmac, channel->id, ctrlb);
+   \      0x188   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x18C   0xE1A0'2006        MOV      R2,R6
+   \      0x190   0xE1A0'0005        MOV      R0,R5
+   \      0x194   0xE6EF'1071        UXTB     R1,R1
+   \      0x198   0x....'....        BL       dmac_set_control_b
+    156          	dmac_set_channel_config(dmac, channel->id, cfg->cfg);
+   \      0x19C   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x1A0   0xE597'2010        LDR      R2,[R7, #+16]
+   \      0x1A4   0xE1A0'0005        MOV      R0,R5
+   \      0x1A8   0xE6EF'1071        UXTB     R1,R1
+   \      0x1AC   0x....'....        BL       dmac_set_channel_config
+    157          
+    158          	return 0;
+   \      0x1B0   0xE3A0'0000        MOV      R0,#+0
+   \      0x1B4   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    159          }
+    160          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    161          void dma_irq_handler(uint32_t source, void* user_arg)
+    162          {
+   \                     dma_irq_handler:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE1A0'7001        MOV      R7,R1
+    163          	uint32_t chan, gis;
+    164          	struct _dma_controller* ctrl = (struct _dma_controller*)user_arg;
+    165          	Dmac* dmac = ctrl->hw;
+   \        0x8   0xE597'4004        LDR      R4,[R7, #+4]
+    166          
+    167          	gis = dmac_get_global_isr(dmac);
+   \        0xC   0xE1A0'0004        MOV      R0,R4
+   \       0x10   0x....'....        BL       dmac_get_global_isr
+   \       0x14   0xE1B0'5000        MOVS     R5,R0
+    168          	if ((gis & 0xFFFFFFFF) == 0)
+   \       0x18   0x0A00'0023        BEQ      ??dma_irq_handler_0
+    169          		return;
+    170          
+    171          	for (chan = 0; chan < DMA_CHANNELS; chan++) {
+   \       0x1C   0xE287'A008        ADD      R10,R7,#+8
+   \       0x20   0xE3A0'6000        MOV      R6,#+0
+   \       0x24   0xE3A0'7003        MOV      R7,#+3
+   \       0x28   0xE3A0'8F40        MOV      R8,#+256
+   \       0x2C   0x....'....        LDR      R9,??DataTable1  ;; 0x10101
+    172          		struct _dma_channel* channel = &ctrl->channels[chan];
+    173          		bool exec = false;
+    174          		if (!(gis & ((DMAC_EBCISR_BTC0 | DMAC_EBCISR_CBTC0 | DMAC_EBCISR_ERR0) << chan)))
+   \                     ??dma_irq_handler_1:
+   \       0x30   0xE115'0619        TST      R5,R9, LSL R6
+   \       0x34   0x0A00'0018        BEQ      ??dma_irq_handler_2
+    175          			continue;
+    176          		if (channel->state == DMA_STATE_FREE)
+   \       0x38   0xE5DA'0018        LDRB     R0,[R10, #+24]
+   \       0x3C   0xE350'0000        CMP      R0,#+0
+   \       0x40   0x0A00'0015        BEQ      ??dma_irq_handler_2
+    177          			continue;
+    178          		if (gis & (DMAC_EBCISR_CBTC0 << chan)) {
+   \       0x44   0xE115'0618        TST      R5,R8, LSL R6
+   \       0x48   0x0A00'0013        BEQ      ??dma_irq_handler_2
+    179          			if (channel->rep_count) {
+   \       0x4C   0xE59A'0014        LDR      R0,[R10, #+20]
+   \       0x50   0xE350'0000        CMP      R0,#+0
+   \       0x54   0x0A00'000C        BEQ      ??dma_irq_handler_3
+    180          				if (channel->rep_count == 1) {
+   \       0x58   0xE59A'1014        LDR      R1,[R10, #+20]
+   \       0x5C   0xE351'0001        CMP      R1,#+1
+   \       0x60   0x1A00'0002        BNE      ??dma_irq_handler_4
+    181          					dmac_auto_clear(dmac, chan);
+   \       0x64   0xE6EF'1076        UXTB     R1,R6
+   \       0x68   0xE1A0'0004        MOV      R0,R4
+   \       0x6C   0x....'....        BL       dmac_auto_clear
+    182          				}
+    183          				dmac_resume_channel(dmac, chan);
+   \                     ??dma_irq_handler_4:
+   \       0x70   0xE6EF'1076        UXTB     R1,R6
+   \       0x74   0xE1A0'0004        MOV      R0,R4
+   \       0x78   0x....'....        BL       dmac_resume_channel
+    184          				channel->rep_count--;
+   \       0x7C   0xE59A'0014        LDR      R0,[R10, #+20]
+   \       0x80   0xE240'1001        SUB      R1,R0,#+1
+   \       0x84   0xE58A'1014        STR      R1,[R10, #+20]
+   \       0x88   0xEA00'0003        B        ??dma_irq_handler_2
+    185          
+    186          			} else {
+    187          				channel->state = DMA_STATE_DONE;
+   \                     ??dma_irq_handler_3:
+   \       0x8C   0xE5CA'7018        STRB     R7,[R10, #+24]
+    188          				exec = 1;
+    189          			}
+    190          		}
+    191          		/* Execute callback */
+    192          		if (exec)
+    193          			callback_call(&channel->callback, NULL);
+   \       0x90   0xE3A0'1000        MOV      R1,#+0
+   \       0x94   0xE28A'0008        ADD      R0,R10,#+8
+   \       0x98   0x....'....        BL       callback_call
+    194          	}
+   \                     ??dma_irq_handler_2:
+   \       0x9C   0xE286'6001        ADD      R6,R6,#+1
+   \       0xA0   0xE28A'A020        ADD      R10,R10,#+32
+   \       0xA4   0xE356'0008        CMP      R6,#+8
+   \       0xA8   0x3AFF'FFE0        BCC      ??dma_irq_handler_1
+    195          }
+   \                     ??dma_irq_handler_0:
+   \       0xAC   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0x0001'0101        DC32     0x10101
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   dma_irq_handler
+        32   -> callback_call
+        32   -> dmac_auto_clear
+        32   -> dmac_get_global_isr
+        32   -> dmac_resume_channel
+      16   dma_prepare_channel
+        16   -> dmac_disable_channel
+        16   -> dmac_disable_global_it
+        16   -> dmac_enable
+        16   -> dmac_get_channel_status
+        16   -> dmac_get_global_isr
+        16   -> dmac_set_channel_config
+        16   -> dmac_set_descriptor_addr
+        16   -> dmac_set_dest_addr
+        16   -> dmac_set_src_addr
+        16   -> get_dmac_id_from_addr
+        16   -> pmc_configure_peripheral
+      24   dmacd_configure_transfer
+        24   -> dmac_get_channel_status
+        24   -> dmac_get_global_isr
+        24   -> dmac_set_channel_config
+        24   -> dmac_set_control_a
+        24   -> dmac_set_control_b
+        24   -> dmac_set_descriptor_addr
+        24   -> dmac_set_dest_addr
+        24   -> dmac_set_src_addr
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+     176  dma_irq_handler
+     216  dma_prepare_channel
+     440  dmacd_configure_transfer
+
+ 
+ 836 bytes in section SOFTPACK
+ 
+ 836 bytes of CODE memory
+
+Errors: none
+Warnings: none

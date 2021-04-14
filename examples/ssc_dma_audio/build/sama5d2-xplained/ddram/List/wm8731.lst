@@ -1,0 +1,616 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         01/Dec/2020  16:43:01
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\wm8731.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW8A1A.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\wm8731.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_AUDIO -D
+#        CONFIG_HAVE_AUDIO_WM8731 -D CONFIG_HAVE_SSC -D CONFIG_HAVE_CLASSD -D
+#        CONFIG_HAVE_PDMIC -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_I2C_BUS --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\List\wm8731.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\Obj\wm8731.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\wm8731.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           * \file
+     32           *
+     33           * Implementation of wm8731 driver.
+     34           *
+     35           */
+     36          
+     37          /*----------------------------------------------------------------------------
+     38           *        Headers
+     39           *----------------------------------------------------------------------------*/
+     40          
+     41          #include "trace.h"
+     42          #include "audio/wm8731.h"
+     43          #include "peripherals/bus.h"
+     44          #include "i2c/twid.h"
+     45          #include "peripherals/pmc.h"
+     46          
+     47          #include "timer.h"
+     48          
+     49          #include <stdio.h>
+     50          
+     51          /*----------------------------------------------------------------------------
+     52           *         Definitions
+     53           *----------------------------------------------------------------------------*/
+     54          
+     55          /** Reset register*/
+     56          #define WM8731_REG_RESET                           0x1E
+     57          
+     58          /** Left Line in register*/
+     59          #define WM8731_REG_LEFT_lINEIN                     0x0
+     60          /** Left line input volume control*/
+     61          #define WM8731_LINVOL_BITS                         (0x1f << 0)
+     62          /** Left line input mute to ADC*/
+     63          #define WM8731_LINMUTE_BIT                         (0x1 << 7)
+     64          /** Left to right channel line input volume and mute data load control*/
+     65          #define WM8731_LRINBOTH_BIT                        (0x0 << 8)
+     66          
+     67          /** Right Line in register*/
+     68          #define WM8731_REG_RIGHT_lINEIN                     0x1
+     69          /** Right line input volume control*/
+     70          #define WM8731_RINVOL_BITS                         (0x1f << 0)
+     71          /** Right line input mute to ADC*/
+     72          #define WM8731_RINMUTE_BIT                         (0x1 << 7)
+     73          /** Right to right channel line input volume and mute data load control*/
+     74          #define WM8731_RLINBOTH_BIT                        (0x0 << 8)
+     75          
+     76          /** Left Headphone out register*/
+     77          #define WM8731_REG_LEFT_HPOUT                      0x2
+     78          /** Left chnnel headphone output volume control*/
+     79          #define WM8731_LHPVOL_BITS                         (0x7f << 0)
+     80          /** Left chnnel headphone output volume base */
+     81          #define WM8731_LHPVOL_BASE                         (0x30 << 0)
+     82          /** Left channel zero cross detect enable*/
+     83          #define WM8731_LZCEN_BIT                           (0x1 << 7)
+     84          /** Left to right channel headphone volume, mute and zero cross data load control*/
+     85          #define WM8731_LRHPBOTH_BIT                        (0x1 << 8)
+     86          
+     87          /** Right Headphone out register*/
+     88          #define WM8731_REG_RIGHT_HPOUT                      0x3
+     89          /** Right chnnel headphone output volume control*/
+     90          #define WM8731_RHPVOL_BITS                         (0x7f << 0)
+     91          /** Right chnnel headphone output volume base */
+     92          #define WM8731_RHPVOL_BASE                         (0x30 << 0)
+     93          /** Right channel zero cross detect enable*/
+     94          #define WM8731_RZCEN_BIT                           (0x1 << 7)
+     95          /** Right to right channel headphone volume, mute and zero cross data load control*/
+     96          #define WM8731_RLHPBOTH_BIT                        (0x1 << 8)
+     97          
+     98          /** Analogue audio path control register*/
+     99          #define WM8731_REG_ANALOGUE_PATH_CTRL              0x4
+    100          
+    101          /** Digital audio path control register*/
+    102          #define WM8731_REG_DIGITAL_PATH_CTRL               0x5
+    103          /* DAC soft mute control */
+    104          #define WM8731_DAC_SOFT_MUTE                        (0x1 << 3)
+    105          #define WM8731_DAC_SOFT_UNMUTE                      (0x0 << 3)
+    106          
+    107          /** Power down control register*/
+    108          #define WM8731_REG_PWDOWN_CTRL                     0x6
+    109          /** LineIn power down*/
+    110          #define WM8731_LINEINPD_BIT                        (0x1 << 0)
+    111          #define WM8731_ENABLE_LINEINPD                     (0x1 << 0)
+    112          #define WM8731_DISABLE_LINEINPD                    (0x0 << 0)
+    113          /** Mic power down*/
+    114          #define WM8731_MICPD_BIT                           (0x1 << 1)
+    115          #define WM8731_ENABLE_MICPD                        (0x1 << 1)
+    116          #define WM8731_DISABLE_MICPD                       (0x0 << 1)
+    117          /** ADC power down*/
+    118          #define WM8731_ADCPD_BIT                           (0x1 << 2)
+    119          #define WM8731_ENABLE_ADCPD                        (0x1 << 2)
+    120          #define WM8731_DISABLE_ADCPD                       (0x0 << 2)
+    121          /** DAC power down*/
+    122          #define WM8731_DACPD_BIT                           (0x1 << 3)
+    123          #define WM8731_ENABLE_DACPD                        (0x1 << 3)
+    124          #define WM8731_DISABLE_DACPD                       (0x0 << 3)
+    125          /** OUT power down*/
+    126          #define WM8731_OUTPD_BIT                           (0x1 << 4)
+    127          #define WM8731_ENABLE_OUTPD                        (0x1 << 4)
+    128          #define WM8731_DISABLE_OUTPD                       (0x0 << 4)
+    129          /** OSC power down*/
+    130          #define WM8731_OSCBIT                              (0x1 << 5)
+    131          #define WM8731_ENABLE_OSCPD                        (0x1 << 5)
+    132          #define WM8731_DISABLE_OSCPD                       (0x0 << 5)
+    133          /** CLKOUT powerdown*/
+    134          #define WM8731_CLKOUTPD_BIT                        (0x1 << 6)
+    135          #define WM8731_ENABLE_CLKOUTPD                     (0x1 << 6)
+    136          #define WM8731_DISABLE_CLKOUTPD                    (0x0 << 6)
+    137          /** Power off device*/
+    138          #define WM8731_POWEROFF_BIT                        (0x1 << 7)
+    139          #define WM8731_DEV_POWER_OFF                       (0x1 << 7)
+    140          #define WM8731_DEV_POWER_ON                        (0x0 << 7)
+    141          
+    142          /** Interface format register*/
+    143          #define WM8731_REG_DA_INTERFACE_FORMAT             0x7
+    144          /** Format*/
+    145          #define WM8731_FORMAT_BITS                         (0x3 << 0)
+    146          #define WM8731_FORMAT_MSB_LEFT_JUSTIFIED           (0x0 << 0)
+    147          #define WM8731_FORMAT_MSB_RIGHT_JUSTIFIED          (0x1 << 0)
+    148          #define WM8731_FORMAT_I2S                          (0x2 << 0)
+    149          #define WM8731_FORMAT_DSP                          (0x3 << 0)
+    150          /** Input audio data bit length select*/
+    151          #define WM8731_IWL_BITS                            (0x3 << 2)
+    152          #define WM8731_IWL_16_BIT                          (0x0 << 2)
+    153          #define WM8731_IWL_20_BIT                          (0x1 << 2)
+    154          #define WM8731_IWL_24_BIT                          (0x2 << 2)
+    155          #define WM8731_IWL_32_BIT                          (0x3 << 2)
+    156          /** DACLRC phase control*/
+    157          #define WM8731_IRP_BITS                            (0x1 << 4)
+    158          /** DAC Left right clock swap*/
+    159          #define WM8731_LRSWAP_BIT                          (0x1 << 5)
+    160          /** Master slave mode control*/
+    161          #define WM8731_MS_BIT                              (0x1 << 6)
+    162          #define WM8731_ENABLE_MASTER_MODE                  (0x1 << 6)
+    163          #define WM8731_ENABLE_SLAVE_MODE                   (0x0 << 6)
+    164          /** Bit clock invert*/
+    165          #define WM8731_BCLKINV_BIT                         (0x1 << 7)
+    166          
+    167          /** Sampling control*/
+    168          #define WM8731_REG_SAMPLECTRL                      0x8
+    169          /** Mode select, usb mode, normal mode*/
+    170          #define WM8731_USBNORMAL_BIT                       (0x1 << 0)
+    171          #define WM8731_NORMAL_MODE                         (0x1 << 0)
+    172          #define WM8731_USB_MODE                            (0x1 << 1)
+    173          /** Base over-sampling rate*/
+    174          #define WM8731_BOSR_BIT                            (0x1 << 1)
+    175          #define WM8731_USB_250FS                           (0x0 << 1)
+    176          #define WM8731_USB_272FS                           (0x1 << 1)
+    177          #define WM8731_NORMAL_256FS                        (0x0 << 1)
+    178          #define WM8731_NORMAL_128_192_384_FS               (0x1 << 1)
+    179          /** Sample rate control*/
+    180          #define WM8731_SR_BITS                             (0xf << 2)
+    181          #define WM8731_CLKIDIV2_BIT                        (0x1 << 6)
+    182          #define WM8731_CLKODIV2_BIT                        (0x1 << 7)
+    183          
+    184          /** Active control register*/
+    185          #define WM8731_REG_ACTIVE_CTRL                     0x9
+    186          /** Activate interface*/
+    187          #define WM8731_ACTIVE_BIT                          (0x1 << 0)
+    188          #define WM8731_ACTIVE_INTERFACE_ACTIVE             (0x1 << 1)
+    189          #define WM8731_ACTIVE_INTERFACE_INACTIVE           (0x0 << 1)
+    190          
+    191          /*----------------------------------------------------------------------------
+    192           *        Local functions
+    193           *----------------------------------------------------------------------------*/
+    194          
+    195          /**
+    196           * \brief  Write data to WM8731 Register.
+    197           * \param wm8731   Descriptor of WM8731
+    198           * \param reg_addr Register address to read.
+    199           * \param data    Data to write
+    200           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    201          static void wm8731_write(struct _wm8731_desc *wm8731, uint8_t reg_addr, uint16_t data)
+    202          {
+   \                     wm8731_write:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    203          	uint16_t tmp = ((reg_addr & 0x7f) << 9) | (data & 0x1ff);
+   \        0x8   0xE1A0'0B82        LSL      R0,R2,#+23
+   \        0xC   0xE1A0'0BA0        LSR      R0,R0,#+23
+   \       0x10   0xE24D'D020        SUB      SP,SP,#+32
+    204          	uint8_t tmp_data[2] = {(tmp & 0xff00) >> 8, tmp & 0xff};
+    205          
+    206          	struct _buffer buf[2] = {
+    207          		{
+    208          			.data = &tmp_data[0],
+    209          			.size = 1,
+    210          			.attr = BUS_I2C_BUF_ATTR_START | BUS_BUF_ATTR_TX,
+    211          		},
+    212          		{
+    213          			.data = &tmp_data[1],
+    214          			.size = 1,
+    215          			.attr = BUS_BUF_ATTR_TX | BUS_I2C_BUF_ATTR_STOP,
+    216          		},
+    217          	};
+   \       0x14   0xE28D'E008        ADD      LR,SP,#+8
+   \       0x18   0xE180'0481        ORR      R0,R0,R1, LSL #+9
+   \       0x1C   0xE28D'C005        ADD      R12,SP,#+5
+   \       0x20   0xE5CD'0005        STRB     R0,[SP, #+5]
+   \       0x24   0xE1A0'1800        LSL      R1,R0,#+16
+   \       0x28   0x....'....        ADR      R0,?_0
+   \       0x2C   0xE1A0'2C21        LSR      R2,R1,#+24
+   \       0x30   0xE890'03E2        LDM      R0,{R1,R5-R9}
+   \       0x34   0xE88E'03E2        STM      LR,{R1,R5-R9}
+   \       0x38   0xE5CD'2004        STRB     R2,[SP, #+4]
+   \       0x3C   0xE28D'2004        ADD      R2,SP,#+4
+   \       0x40   0xE58D'C014        STR      R12,[SP, #+20]
+   \       0x44   0xE58D'2008        STR      R2,[SP, #+8]
+    218          
+    219          	bus_start_transaction(wm8731->twi.bus);
+   \       0x48   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x4C   0x....'....        BL       bus_start_transaction
+    220          	bus_transfer(wm8731->twi.bus, wm8731->twi.addr, buf, 2, NULL);
+   \       0x50   0xE3A0'0000        MOV      R0,#+0
+   \       0x54   0xE3A0'3002        MOV      R3,#+2
+   \       0x58   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x5C   0xE5D4'1001        LDRB     R1,[R4, #+1]
+   \       0x60   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x64   0xE28D'2008        ADD      R2,SP,#+8
+   \       0x68   0x....'....        BL       bus_transfer
+    221          	bus_stop_transaction(wm8731->twi.bus);
+   \       0x6C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x70   0x....'....        BL       bus_stop_transaction
+    222          }
+   \       0x74   0x....'....        B        ?Subroutine0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE28D'D024        ADD      SP,SP,#+36
+   \        0x4   0xE8BD'83F0        POP      {R4-R9,PC}       ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_0:
+   \        0x0   0x0000'0000        DC32 0x0, 1, 4'098, 0x0, 1, 8'194
+
+   \              0x0000'0001  
+
+   \              0x0000'1002  
+
+   \              0x0000'0000  
+
+   \              0x0000'0001  
+
+   \              0x0000'2002
+    223          
+    224          /*----------------------------------------------------------------------------
+    225           *        Exported functions
+    226           *----------------------------------------------------------------------------*/
+    227          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    228          void wm8731_configure(struct _wm8731_desc *wm8731)
+    229          {
+   \                     wm8731_configure:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    230          	/* configure codec master clock */
+    231          	//pmc_disable_pck(wm8731->mclk_pck);
+    232          	//pmc_configure_pck(wm8731->mclk_pck, wm8731->mclk_pck_src, 0);
+    233          	//pmc_enable_pck(wm8731->mclk_pck);
+    234          	//pio_configure(&wm8731->mclk_pin, 1);
+    235          
+    236          	/* Reset (R15: write 0x0 to reset) */
+    237          	wm8731_write(wm8731, WM8731_REG_RESET, 0);
+   \        0x8   0xE3A0'2000        MOV      R2,#+0
+   \        0xC   0xE3A0'101E        MOV      R1,#+30
+   \       0x10   0x....'....        BL       wm8731_write
+    238          
+    239          	/* Left  Linein */
+    240          	wm8731_write(wm8731, WM8731_REG_LEFT_lINEIN, 0x1A);
+   \       0x14   0xE3A0'201A        MOV      R2,#+26
+   \       0x18   0xE3A0'1000        MOV      R1,#+0
+   \       0x1C   0xE1A0'0004        MOV      R0,R4
+   \       0x20   0x....'....        BL       wm8731_write
+    241          	/* Right Linein */
+    242          	wm8731_write(wm8731, WM8731_REG_RIGHT_lINEIN, 0x1A);
+   \       0x24   0xE3A0'201A        MOV      R2,#+26
+   \       0x28   0xE3A0'1001        MOV      R1,#+1
+   \       0x2C   0xE1A0'0004        MOV      R0,R4
+   \       0x30   0x....'....        BL       wm8731_write
+    243          
+    244          	/* Left  Headphone Out (R2: default 0x79) */
+    245          	wm8731_write(wm8731, WM8731_REG_LEFT_HPOUT, 0x60);
+   \       0x34   0xE3A0'2060        MOV      R2,#+96
+   \       0x38   0xE3A0'1002        MOV      R1,#+2
+   \       0x3C   0xE1A0'0004        MOV      R0,R4
+   \       0x40   0x....'....        BL       wm8731_write
+    246          	/* Right Headphone Out (R3: default 0x79) */
+    247          	wm8731_write(wm8731, WM8731_REG_RIGHT_HPOUT, 0x60);
+   \       0x44   0xE3A0'2060        MOV      R2,#+96
+   \       0x48   0xE3A0'1003        MOV      R1,#+3
+   \       0x4C   0xE1A0'0004        MOV      R0,R4
+   \       0x50   0x....'....        BL       wm8731_write
+    248          
+    249          	/* Analogue Audio Path Control (R4: default 0x0A ) */
+    250          	wm8731_write(wm8731, WM8731_REG_ANALOGUE_PATH_CTRL, 0x12);
+   \       0x54   0xE3A0'2012        MOV      R2,#+18
+   \       0x58   0xE3A0'1004        MOV      R1,#+4
+   \       0x5C   0xE1A0'0004        MOV      R0,R4
+   \       0x60   0x....'....        BL       wm8731_write
+    251          
+    252          	/* Digital Audio Path Control  (R5: default 0x08 ) */
+    253          	wm8731_write(wm8731, WM8731_REG_DIGITAL_PATH_CTRL, 0);
+   \       0x64   0xE3A0'2000        MOV      R2,#+0
+   \       0x68   0xE3A0'1005        MOV      R1,#+5
+   \       0x6C   0xE1A0'0004        MOV      R0,R4
+   \       0x70   0x....'....        BL       wm8731_write
+    254          
+    255          	/* Digital audio interface format (R7: default 0x0A) */
+    256          	wm8731_write(wm8731, WM8731_REG_DA_INTERFACE_FORMAT, WM8731_FORMAT_I2S | WM8731_MS_BIT);
+   \       0x74   0xE3A0'2042        MOV      R2,#+66
+   \       0x78   0xE3A0'1007        MOV      R1,#+7
+   \       0x7C   0xE1A0'0004        MOV      R0,R4
+   \       0x80   0x....'....        BL       wm8731_write
+    257          
+    258          	/* Sampling Control (R8: default 0x00) */
+    259          	wm8731_write(wm8731, WM8731_REG_SAMPLECTRL, WM8731_USBNORMAL_BIT | WM8731_CLKIDIV2_BIT);
+   \       0x84   0xE3A0'2041        MOV      R2,#+65
+   \       0x88   0xE3A0'1008        MOV      R1,#+8
+   \       0x8C   0xE1A0'0004        MOV      R0,R4
+   \       0x90   0x....'....        BL       wm8731_write
+    260          
+    261          	/* Power Down Control (R6: default 0x9F) */
+    262          	wm8731_write(wm8731, WM8731_REG_PWDOWN_CTRL, 0x0);
+   \       0x94   0xE3A0'2000        MOV      R2,#+0
+   \       0x98   0xE3A0'1006        MOV      R1,#+6
+   \       0x9C   0xE1A0'0004        MOV      R0,R4
+   \       0xA0   0x....'....        BL       wm8731_write
+    263          
+    264          	/* Active control (R9: default 0x00 )*/
+    265          	wm8731_write(wm8731, WM8731_REG_ACTIVE_CTRL, 0x01);
+   \       0xA4   0xE1A0'0004        MOV      R0,R4
+   \       0xA8   0xE3A0'2001        MOV      R2,#+1
+   \       0xAC   0xE8BD'4010        POP      {R4,LR}
+   \       0xB0   0xE3A0'1009        MOV      R1,#+9
+   \       0xB4   0x....'....        B        wm8731_write     ;; tailcall
+    266          
+    267          }
+    268          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    269          void wm8731_set_left_volume(struct _wm8731_desc *wm8731, uint8_t vol)
+    270          {
+    271          	uint16_t reg_value;
+    272          	vol &= WM8731_LHPVOL_BITS;
+   \                     wm8731_set_left_volume:
+   \        0x0   0xE201'107F        AND      R1,R1,#0x7F
+    273          	vol = (vol * 80 / 63 + WM8731_LHPVOL_BASE) > WM8731_LHPVOL_BITS
+    274          		  ? WM8731_LHPVOL_BITS : (vol * 80 / 63 + WM8731_LHPVOL_BASE);
+   \        0x4   0x....'....        LDR      R3,??DataTable3  ;; 0x82082083
+   \        0x8   0xE92D'5000        PUSH     {R12,LR}
+   \        0xC   0xE081'2101        ADD      R2,R1,R1, LSL #+2
+   \       0x10   0xE1A0'1202        LSL      R1,R2,#+4
+   \       0x14   0xE0C3'C391        SMULL    R12,R3,R1,R3
+   \       0x18   0xE083'3001        ADD      R3,R3,R1
+   \       0x1C   0xE1A0'12C3        ASR      R1,R3,#+5
+   \       0x20   0xE081'1FA1        ADD      R1,R1,R1, LSR #+31
+   \       0x24   0xE281'E030        ADD      LR,R1,#+48
+   \       0x28   0xE35E'0080        CMP      LR,#+128
+   \       0x2C   0xB281'1030        ADDLT    R1,R1,#+48
+   \       0x30   0xA300'21FF        MOVWGE   R2,#+511
+   \       0x34   0xB6EF'1071        UXTBLT   R1,R1
+    275          	reg_value = WM8731_LRHPBOTH_BIT | WM8731_LZCEN_BIT | vol;
+    276          	wm8731_write(wm8731, WM8731_REG_LEFT_HPOUT, reg_value);
+   \       0x38   0xE8BD'4008        POP      {R3,LR}
+   \       0x3C   0xB381'2F60        ORRLT    R2,R1,#0x180
+   \       0x40   0xE3A0'1002        MOV      R1,#+2
+   \       0x44   0x....'....        B        wm8731_write     ;; tailcall
+    277          }
+    278          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    279          void wm8731_set_right_volume(struct _wm8731_desc *wm8731, uint8_t vol)
+    280          {
+    281          	uint16_t reg_value;
+    282          	vol &= WM8731_RHPVOL_BITS;
+   \                     wm8731_set_right_volume:
+   \        0x0   0xE201'107F        AND      R1,R1,#0x7F
+    283          	vol = (vol * 80 / 63 + WM8731_RHPVOL_BASE) > WM8731_RHPVOL_BITS
+    284          		  ? WM8731_RHPVOL_BITS : (vol * 80 / 63 + WM8731_RHPVOL_BASE);
+   \        0x4   0x....'....        LDR      R3,??DataTable3  ;; 0x82082083
+   \        0x8   0xE92D'5000        PUSH     {R12,LR}
+   \        0xC   0xE081'2101        ADD      R2,R1,R1, LSL #+2
+   \       0x10   0xE1A0'1202        LSL      R1,R2,#+4
+   \       0x14   0xE0C3'C391        SMULL    R12,R3,R1,R3
+   \       0x18   0xE083'3001        ADD      R3,R3,R1
+   \       0x1C   0xE1A0'12C3        ASR      R1,R3,#+5
+   \       0x20   0xE081'1FA1        ADD      R1,R1,R1, LSR #+31
+   \       0x24   0xE281'E030        ADD      LR,R1,#+48
+   \       0x28   0xE35E'0080        CMP      LR,#+128
+   \       0x2C   0xB281'1030        ADDLT    R1,R1,#+48
+   \       0x30   0xA300'21FF        MOVWGE   R2,#+511
+   \       0x34   0xB6EF'1071        UXTBLT   R1,R1
+    285          	reg_value = WM8731_RZCEN_BIT | WM8731_RLHPBOTH_BIT | vol ;
+    286          	wm8731_write(wm8731, WM8731_REG_RIGHT_HPOUT, reg_value);
+   \       0x38   0xE8BD'4008        POP      {R3,LR}
+   \       0x3C   0xB381'2F60        ORRLT    R2,R1,#0x180
+   \       0x40   0xE3A0'1003        MOV      R1,#+3
+   \       0x44   0x....'....        B        wm8731_write     ;; tailcall
+    287          }
+    288          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    289          void wm8731_volume_mute(struct _wm8731_desc *wm8731, bool mute)
+    290          {
+    291          	if (mute) {
+   \                     wm8731_volume_mute:
+   \        0x0   0xE351'0000        CMP      R1,#+0
+    292          		wm8731_write(wm8731, WM8731_REG_DIGITAL_PATH_CTRL, WM8731_DAC_SOFT_MUTE);
+    293          	} else {
+    294          		wm8731_write(wm8731, WM8731_REG_DIGITAL_PATH_CTRL, WM8731_DAC_SOFT_UNMUTE);
+   \        0x4   0xE3A0'1005        MOV      R1,#+5
+   \        0x8   0x13A0'2008        MOVNE    R2,#+8
+   \        0xC   0x03A0'2000        MOVEQ    R2,#+0
+   \       0x10   0x....'....        B        wm8731_write     ;; tailcall
+    295          	}
+    296          }
+    297          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    298          void wm8731_reset(struct _wm8731_desc *wm8731)
+    299          {
+   \                     wm8731_reset:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE24D'D020        SUB      SP,SP,#+32
+    300          	wm8731_write(wm8731, WM8731_REG_RESET, 0);
+   \        0xC   0xE3A0'003C        MOV      R0,#+60
+   \       0x10   0xE28D'C008        ADD      R12,SP,#+8
+   \       0x14   0xE5CD'0004        STRB     R0,[SP, #+4]
+   \       0x18   0x....'....        ADR      R0,?_0
+   \       0x1C   0xE890'43E0        LDM      R0,{R5-R9,LR}
+   \       0x20   0xE88C'43E0        STM      R12,{R5-R9,LR}
+   \       0x24   0xE3A0'2000        MOV      R2,#+0
+   \       0x28   0xE28D'1004        ADD      R1,SP,#+4
+   \       0x2C   0xE28D'3005        ADD      R3,SP,#+5
+   \       0x30   0xE5CD'2005        STRB     R2,[SP, #+5]
+   \       0x34   0xE58D'1008        STR      R1,[SP, #+8]
+   \       0x38   0xE58D'3014        STR      R3,[SP, #+20]
+   \       0x3C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x40   0x....'....        BL       bus_start_transaction
+   \       0x44   0xE3A0'0000        MOV      R0,#+0
+   \       0x48   0xE3A0'3002        MOV      R3,#+2
+   \       0x4C   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x50   0xE5D4'1001        LDRB     R1,[R4, #+1]
+   \       0x54   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x58   0xE28D'2008        ADD      R2,SP,#+8
+   \       0x5C   0x....'....        BL       bus_transfer
+   \       0x60   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x64   0x....'....        BL       bus_stop_transaction
+    301          	msleep(10);
+   \       0x68   0xE3A0'000A        MOV      R0,#+10
+   \       0x6C   0x....'....        BL       msleep
+    302          }
+   \       0x70                      REQUIRE ?Subroutine0
+   \       0x70                      ;; // Fall through to label ?Subroutine0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3:
+   \        0x0   0x8208'2083        DC32     0x82082083
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   wm8731_configure
+         0   -> wm8731_write
+         8   -> wm8731_write
+      64   wm8731_reset
+        64   -> bus_start_transaction
+        64   -> bus_stop_transaction
+        64   -> bus_transfer
+        64   -> msleep
+       8   wm8731_set_left_volume
+         0   -> wm8731_write
+       8   wm8731_set_right_volume
+         0   -> wm8731_write
+       0   wm8731_volume_mute
+         0   -> wm8731_write
+      64   wm8731_write
+        64   -> bus_start_transaction
+        64   -> bus_stop_transaction
+        64   -> bus_transfer
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       8  ?Subroutine0
+      24  ?_0
+     184  wm8731_configure
+     112  wm8731_reset
+      72  wm8731_set_left_volume
+      72  wm8731_set_right_volume
+      20  wm8731_volume_mute
+     120  wm8731_write
+
+ 
+ 616 bytes in section SOFTPACK
+ 
+ 616 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,781 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         13/Jan/2021  09:45:21
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\seriald.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW8275.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\seriald.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-A5 -e --fpu=VFPv4_D16 --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\List\seriald.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\Obj\seriald.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\seriald.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31          *        Headers
+     32          *----------------------------------------------------------------------------*/
+     33          
+     34          #include <assert.h>
+     35          #include <stdio.h>
+     36          #include <string.h>
+     37          
+     38          #include "board.h"
+     39          #include "chip.h"
+     40          #include "gpio/pio.h"
+     41          #include "irq/irq.h"
+     42          #ifdef CONFIG_HAVE_L1CACHE
+     43          #include "mm/l1cache.h"
+     44          #endif
+     45          #ifdef CONFIG_HAVE_L2CACHE
+     46          #include "mm/l2cache.h"
+     47          #endif
+     48          #ifdef CONFIG_HAVE_MMU
+     49          #include "mm/mmu.h"
+     50          #endif
+     51          #ifdef CONFIG_HAVE_FLEXCOM
+     52          #include "peripherals/flexcom.h"
+     53          #endif
+     54          #include "peripherals/pmc.h"
+     55          #ifdef CONFIG_HAVE_DBGU
+     56          #include "serial/dbgu.h"
+     57          #endif
+     58          #include "serial/uart.h"
+     59          #include "serial/usart.h"
+     60          #include "seriald.h"
+     61          
+     62          /*----------------------------------------------------------------------------
+     63           *        Local Types
+     64           *----------------------------------------------------------------------------*/
+     65          
+     66          typedef void (*init_handler_t)(void*, uint32_t, uint32_t);
+     67          typedef void (*put_char_handler_t)(void*, uint8_t);
+     68          typedef bool (*tx_empty_handler_t)(void*);
+     69          typedef uint8_t (*get_char_handler_t)(void*);
+     70          typedef bool (*rx_ready_handler_t)(void*);
+     71          typedef void (*enable_it_handler_t)(void*, uint32_t);
+     72          typedef void (*disable_it_handler_t)(void*, uint32_t);
+     73          
+     74          struct _seriald_ops {
+     75          	uint32_t             mode;
+     76          	uint32_t             rx_int_mask;
+     77          	init_handler_t       init;
+     78          	put_char_handler_t   put_char;
+     79          	tx_empty_handler_t   tx_empty;
+     80          	get_char_handler_t   get_char;
+     81          	rx_ready_handler_t   rx_ready;
+     82          	enable_it_handler_t  enable_it;
+     83          	disable_it_handler_t disable_it;
+     84          };
+     85          
+     86          /*----------------------------------------------------------------------------
+     87           *        Variables
+     88           *----------------------------------------------------------------------------*/
+     89          
+     90          #ifdef CONFIG_HAVE_SERIALD_USART
+     91          static const struct _seriald_ops seriald_ops_usart = {
+     92          	.mode = US_MR_CHMODE_NORMAL | US_MR_PAR_NO | US_MR_CHRL_8_BIT,
+     93          	.rx_int_mask = US_IER_RXRDY,
+     94          	.init = (init_handler_t)usart_configure,
+     95          	.put_char = (put_char_handler_t)usart_put_char,
+     96          	.tx_empty = (tx_empty_handler_t)usart_is_tx_empty,
+     97          	.get_char = (get_char_handler_t)usart_get_char,
+     98          	.rx_ready = (rx_ready_handler_t)usart_is_rx_ready,
+     99          	.enable_it = (enable_it_handler_t)usart_enable_it,
+    100          	.disable_it = (disable_it_handler_t)usart_disable_it,
+    101          };
+    102          #endif
+    103          
+    104          #ifdef CONFIG_HAVE_SERIALD_UART
+
+   \                                 In section .rodata, align 4
+    105          static const struct _seriald_ops seriald_ops_uart = {
+   \                     seriald_ops_uart:
+   \        0x0   0x0000'0800        DC32 2'048, 1, uart_configure, uart_put_char, uart_is_tx_empty
+
+   \              0x0000'0001  
+
+   \              0x....'....  
+
+   \              0x....'....  
+
+   \              0x....'....
+   \       0x14   0x....'....        DC32 uart_get_char, uart_is_rx_ready, uart_enable_it, uart_disable_it
+
+   \              0x....'....  
+
+   \              0x....'....  
+
+   \              0x....'....
+    106          	.mode = UART_MR_CHMODE_NORMAL | UART_MR_PAR_NO,
+    107          	.rx_int_mask = UART_IER_RXRDY,
+    108          	.init = (init_handler_t)uart_configure,
+    109          	.put_char = (put_char_handler_t)uart_put_char,
+    110          	.tx_empty = (tx_empty_handler_t)uart_is_tx_empty,
+    111          	.get_char = (get_char_handler_t)uart_get_char,
+    112          	.rx_ready = (rx_ready_handler_t)uart_is_rx_ready,
+    113          	.enable_it = (enable_it_handler_t)uart_enable_it,
+    114          	.disable_it = (disable_it_handler_t)uart_disable_it,
+    115          };
+    116          #endif
+    117          
+    118          #ifdef CONFIG_HAVE_SERIALD_DBGU
+    119          static const struct _seriald_ops seriald_ops_dbgu = {
+    120          	.mode = DBGU_MR_CHMODE_NORM | DBGU_MR_PAR_NONE,
+    121          	.rx_int_mask = DBGU_IER_RXRDY,
+    122          	.init = (init_handler_t)dbgu_configure,
+    123          	.put_char = (put_char_handler_t)dbgu_put_char,
+    124          	.tx_empty = (tx_empty_handler_t)dbgu_is_tx_empty,
+    125          	.get_char = (get_char_handler_t)dbgu_get_char,
+    126          	.rx_ready = (rx_ready_handler_t)dbgu_is_rx_ready,
+    127          	.enable_it = (enable_it_handler_t)dbgu_enable_it,
+    128          	.disable_it = (disable_it_handler_t)dbgu_disable_it,
+    129          };
+    130          #endif
+    131          
+    132          /*------------------------------------------------------------------------------
+    133           *         Local functions
+    134           *------------------------------------------------------------------------------*/
+    135          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    136          static void seriald_handler(uint32_t source, void* user_arg)
+    137          {
+   \                     seriald_handler:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    138          	const struct _seriald* serial = (struct _seriald*)user_arg;
+   \        0xC   0xE1B0'6005        MOVS     R6,R5
+    139          	uint8_t c;
+    140          
+    141          	if (!seriald_is_rx_ready(serial))
+   \       0x10   0xE1B0'0006        MOVS     R0,R6
+   \       0x14   0x....'....        BL       seriald_is_rx_ready
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x0A00'0009        BEQ      ??seriald_handler_0
+    142          		return;
+    143          
+    144          	c = seriald_get_char(serial);
+   \                     ??seriald_handler_1:
+   \       0x20   0xE1B0'0006        MOVS     R0,R6
+   \       0x24   0x....'....        BL       seriald_get_char
+   \       0x28   0xE1B0'7000        MOVS     R7,R0
+    145          	if (serial->rx_handler)
+   \       0x2C   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0x30   0xE350'0000        CMP      R0,#+0
+   \       0x34   0x0A00'0003        BEQ      ??seriald_handler_2
+    146          		serial->rx_handler(c);
+   \       0x38   0xE1B0'0007        MOVS     R0,R7
+   \       0x3C   0xE6EF'0070        UXTB     R0,R0
+   \       0x40   0xE596'1008        LDR      R1,[R6, #+8]
+   \       0x44   0xE12F'FF31        BLX      R1
+    147          }
+   \                     ??seriald_handler_2:
+   \                     ??seriald_handler_0:
+   \       0x48   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    148          
+    149          /*------------------------------------------------------------------------------
+    150           *         Exported functions
+    151           *------------------------------------------------------------------------------*/
+    152          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    153          int seriald_configure(struct _seriald* serial, void* addr, uint32_t baudrate)
+    154          {
+   \                     seriald_configure:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    155          	uint32_t id = ID_PERIPH_COUNT;
+   \       0x10   0xE3A0'704F        MOV      R7,#+79
+    156          	const struct _seriald_ops* ops = NULL;
+   \       0x14   0xE3A0'8000        MOV      R8,#+0
+    157          
+    158          	if (!serial)
+   \       0x18   0xE354'0000        CMP      R4,#+0
+   \       0x1C   0x1A00'0001        BNE      ??seriald_configure_0
+    159          		return -EINVAL;
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+   \       0x24   0xEA00'0021        B        ??seriald_configure_1
+    160          
+    161          #ifdef CONFIG_HAVE_SERIALD_USART
+    162          	id = get_usart_id_from_addr((Usart*)addr);
+    163          	if (id != ID_PERIPH_COUNT) {
+    164          		ops = &seriald_ops_usart;
+    165          #ifdef CONFIG_HAVE_FLEXCOM
+    166          		Flexcom* flexcom = get_flexcom_addr_from_id(id);
+    167          		if (flexcom)
+    168          			flexcom_select(flexcom, FLEX_MR_OPMODE_USART);
+    169          #endif
+    170          	}
+    171          #endif
+    172          #ifdef CONFIG_HAVE_SERIALD_UART
+    173          	if (!ops) {
+   \                     ??seriald_configure_0:
+   \       0x28   0xE358'0000        CMP      R8,#+0
+   \       0x2C   0x1A00'0006        BNE      ??seriald_configure_2
+    174          		id = get_uart_id_from_addr((Uart*)addr);
+   \       0x30   0xE1B0'0005        MOVS     R0,R5
+   \       0x34   0x....'....        BL       get_uart_id_from_addr
+   \       0x38   0xE1B0'7000        MOVS     R7,R0
+    175          		if (id != ID_PERIPH_COUNT)
+   \       0x3C   0xE357'004F        CMP      R7,#+79
+   \       0x40   0x0A00'0001        BEQ      ??seriald_configure_2
+    176          			ops = &seriald_ops_uart;
+   \       0x44   0x....'....        LDR      R0,??DataTable2_1
+   \       0x48   0xE1B0'8000        MOVS     R8,R0
+    177          	}
+    178          #endif
+    179          #ifdef CONFIG_HAVE_SERIALD_DBGU
+    180          	if (!ops) {
+    181          		if (addr == DBGU) {
+    182          			id = ID_DBGU;
+    183          			ops = &seriald_ops_dbgu;
+    184          		}
+    185          	}
+    186          #endif
+    187          	if (!ops)
+   \                     ??seriald_configure_2:
+   \       0x4C   0xE358'0000        CMP      R8,#+0
+   \       0x50   0x1A00'0001        BNE      ??seriald_configure_3
+    188          		return -ENODEV;
+   \       0x54   0xE3E0'002B        MVN      R0,#+43
+   \       0x58   0xEA00'0014        B        ??seriald_configure_1
+    189          
+    190          	/* Save serial peripheral address and ID */
+    191          	memset(serial, 0, sizeof(*serial));
+   \                     ??seriald_configure_3:
+   \       0x5C   0xE3A0'9010        MOV      R9,#+16
+   \       0x60   0xE3A0'A000        MOV      R10,#+0
+   \       0x64   0xE1B0'B004        MOVS     R11,R4
+   \       0x68   0xE1B0'200A        MOVS     R2,R10
+   \       0x6C   0xE1B0'1009        MOVS     R1,R9
+   \       0x70   0xE1B0'000B        MOVS     R0,R11
+   \       0x74   0x....'....        BL       __aeabi_memset
+   \       0x78   0xE1B0'000B        MOVS     R0,R11
+    192          	serial->id = id;
+   \       0x7C   0xE584'7000        STR      R7,[R4, #+0]
+    193          	serial->addr = addr;
+   \       0x80   0xE584'5004        STR      R5,[R4, #+4]
+    194          	serial->ops = ops;
+   \       0x84   0xE584'800C        STR      R8,[R4, #+12]
+    195          
+    196          	/* Initialize driver to use */
+    197          	pmc_configure_peripheral(id, NULL, true);
+   \       0x88   0xE3A0'2001        MOV      R2,#+1
+   \       0x8C   0xE3A0'1000        MOV      R1,#+0
+   \       0x90   0xE1B0'0007        MOVS     R0,R7
+   \       0x94   0x....'....        BL       pmc_configure_peripheral
+    198          	ops->init(addr, ops->mode, baudrate);
+   \       0x98   0xE1B0'2006        MOVS     R2,R6
+   \       0x9C   0xE598'1000        LDR      R1,[R8, #+0]
+   \       0xA0   0xE1B0'0005        MOVS     R0,R5
+   \       0xA4   0xE598'3008        LDR      R3,[R8, #+8]
+   \       0xA8   0xE12F'FF33        BLX      R3
+    199          
+    200          	return 0;
+   \       0xAC   0xE3A0'0000        MOV      R0,#+0
+   \                     ??seriald_configure_1:
+   \       0xB0   0xE8BD'8FF2        POP      {R1,R4-R11,PC}   ;; return
+    201          }
+    202          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    203          void seriald_put_char(const struct _seriald* serial, uint8_t c)
+    204          {
+   \                     seriald_put_char:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    205          	if (!serial || !serial->id)
+   \        0xC   0xE354'0000        CMP      R4,#+0
+   \       0x10   0x0A00'0002        BEQ      ??seriald_put_char_0
+   \       0x14   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x1A00'0000        BNE      ??seriald_put_char_1
+    206          		return;
+   \                     ??seriald_put_char_0:
+   \       0x20   0xEA00'0005        B        ??seriald_put_char_2
+    207          
+    208          	serial->ops->put_char(serial->addr, c);
+   \                     ??seriald_put_char_1:
+   \       0x24   0xE1B0'1005        MOVS     R1,R5
+   \       0x28   0xE6EF'1071        UXTB     R1,R1
+   \       0x2C   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x30   0xE594'200C        LDR      R2,[R4, #+12]
+   \       0x34   0xE592'200C        LDR      R2,[R2, #+12]
+   \       0x38   0xE12F'FF32        BLX      R2
+    209          }
+   \                     ??seriald_put_char_2:
+   \       0x3C   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    210          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    211          void seriald_put_string(const struct _seriald* serial, const uint8_t* str)
+    212          {
+   \                     seriald_put_string:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    213          	if (!serial || !serial->id)
+   \        0xC   0xE354'0000        CMP      R4,#+0
+   \       0x10   0x0A00'0002        BEQ      ??seriald_put_string_0
+   \       0x14   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x1A00'0000        BNE      ??seriald_put_string_1
+    214          		return;
+   \                     ??seriald_put_string_0:
+   \       0x20   0xEA00'0009        B        ??seriald_put_string_2
+    215          
+    216          	while (*str)
+   \                     ??seriald_put_string_1:
+   \       0x24   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x0A00'0006        BEQ      ??seriald_put_string_3
+    217          		serial->ops->put_char(serial->addr, *str++);
+   \       0x30   0xE5D5'1000        LDRB     R1,[R5, #+0]
+   \       0x34   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x38   0xE594'200C        LDR      R2,[R4, #+12]
+   \       0x3C   0xE592'200C        LDR      R2,[R2, #+12]
+   \       0x40   0xE12F'FF32        BLX      R2
+   \       0x44   0xE295'5001        ADDS     R5,R5,#+1
+   \       0x48   0xEAFF'FFF5        B        ??seriald_put_string_1
+    218          }
+   \                     ??seriald_put_string_3:
+   \                     ??seriald_put_string_2:
+   \       0x4C   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    219          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    220          bool seriald_is_tx_empty(const struct _seriald* serial)
+    221          {
+   \                     seriald_is_tx_empty:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    222          	if (!serial || !serial->id)
+   \        0x8   0xE354'0000        CMP      R4,#+0
+   \        0xC   0x0A00'0002        BEQ      ??seriald_is_tx_empty_0
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x1A00'0001        BNE      ??seriald_is_tx_empty_1
+    223          		return true;
+   \                     ??seriald_is_tx_empty_0:
+   \       0x1C   0xE3A0'0001        MOV      R0,#+1
+   \       0x20   0xEA00'0003        B        ??seriald_is_tx_empty_2
+    224          
+    225          	return serial->ops->tx_empty(serial->addr);
+   \                     ??seriald_is_tx_empty_1:
+   \       0x24   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x28   0xE594'100C        LDR      R1,[R4, #+12]
+   \       0x2C   0xE591'1010        LDR      R1,[R1, #+16]
+   \       0x30   0xE12F'FF31        BLX      R1
+   \                     ??seriald_is_tx_empty_2:
+   \       0x34   0xE8BD'8010        POP      {R4,PC}          ;; return
+    226          }
+    227          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    228          uint8_t seriald_get_char(const struct _seriald* serial)
+    229          {
+   \                     seriald_get_char:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    230          	if (!serial || !serial->id) {
+   \        0x8   0xE354'0000        CMP      R4,#+0
+   \        0xC   0x0A00'0002        BEQ      ??seriald_get_char_0
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x1A00'0005        BNE      ??seriald_get_char_1
+    231          		assert(0);
+   \                     ??seriald_get_char_0:
+   \       0x1C   0xE3A0'20E7        MOV      R2,#+231
+   \       0x20   0x....'....        LDR      R1,??DataTable2_2
+   \       0x24   0x....'....        ADR      R0,??DataTable2  ;; "0"
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    232          		while(1);
+   \                     ??seriald_get_char_2:
+   \       0x30   0xEAFF'FFFE        B        ??seriald_get_char_2
+    233          	}
+    234          
+    235          	return serial->ops->get_char(serial->addr);
+   \                     ??seriald_get_char_1:
+   \       0x34   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x38   0xE594'100C        LDR      R1,[R4, #+12]
+   \       0x3C   0xE591'1014        LDR      R1,[R1, #+20]
+   \       0x40   0xE12F'FF31        BLX      R1
+   \       0x44   0xE8BD'8010        POP      {R4,PC}          ;; return
+    236          }
+    237          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    238          bool seriald_is_rx_ready(const struct _seriald* serial)
+    239          {
+   \                     seriald_is_rx_ready:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    240          	if (!serial || !serial->id)
+   \        0x8   0xE354'0000        CMP      R4,#+0
+   \        0xC   0x0A00'0002        BEQ      ??seriald_is_rx_ready_0
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x1A00'0001        BNE      ??seriald_is_rx_ready_1
+    241          		return false;
+   \                     ??seriald_is_rx_ready_0:
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \       0x20   0xEA00'0003        B        ??seriald_is_rx_ready_2
+    242          
+    243          	return serial->ops->rx_ready(serial->addr);
+   \                     ??seriald_is_rx_ready_1:
+   \       0x24   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x28   0xE594'100C        LDR      R1,[R4, #+12]
+   \       0x2C   0xE591'1018        LDR      R1,[R1, #+24]
+   \       0x30   0xE12F'FF31        BLX      R1
+   \                     ??seriald_is_rx_ready_2:
+   \       0x34   0xE8BD'8010        POP      {R4,PC}          ;; return
+    244          }
+    245          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    246          void seriald_set_rx_handler(struct _seriald* serial, seriald_rx_handler_t handler)
+    247          {
+    248          	if (!serial || !serial->id)
+   \                     seriald_set_rx_handler:
+   \        0x0   0xE350'0000        CMP      R0,#+0
+   \        0x4   0x0A00'0002        BEQ      ??seriald_set_rx_handler_0
+   \        0x8   0xE590'2000        LDR      R2,[R0, #+0]
+   \        0xC   0xE352'0000        CMP      R2,#+0
+   \       0x10   0x1A00'0000        BNE      ??seriald_set_rx_handler_1
+    249          		return;
+   \                     ??seriald_set_rx_handler_0:
+   \       0x14   0xEA00'0000        B        ??seriald_set_rx_handler_2
+    250          
+    251          	serial->rx_handler = handler;
+   \                     ??seriald_set_rx_handler_1:
+   \       0x18   0xE580'1008        STR      R1,[R0, #+8]
+    252          }
+   \                     ??seriald_set_rx_handler_2:
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    253          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    254          void seriald_enable_rx_interrupt(const struct _seriald* serial)
+    255          {
+   \                     seriald_enable_rx_interrupt:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    256          	if (!serial || !serial->id)
+   \        0x8   0xE354'0000        CMP      R4,#+0
+   \        0xC   0x0A00'0002        BEQ      ??seriald_enable_rx_interrupt_0
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x1A00'0000        BNE      ??seriald_enable_rx_interrupt_1
+    257          		return;
+   \                     ??seriald_enable_rx_interrupt_0:
+   \       0x1C   0xEA00'000B        B        ??seriald_enable_rx_interrupt_2
+    258          
+    259          	irq_add_handler(serial->id, seriald_handler, (void*)serial);
+   \                     ??seriald_enable_rx_interrupt_1:
+   \       0x20   0xE1B0'2004        MOVS     R2,R4
+   \       0x24   0x....'....        ADR      R1,seriald_handler
+   \       0x28   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x2C   0x....'....        BL       irq_add_handler
+    260          	irq_enable(serial->id);
+   \       0x30   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x34   0x....'....        BL       irq_enable
+    261          	serial->ops->enable_it(serial->addr, serial->ops->rx_int_mask);
+   \       0x38   0xE594'000C        LDR      R0,[R4, #+12]
+   \       0x3C   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x40   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x44   0xE594'200C        LDR      R2,[R4, #+12]
+   \       0x48   0xE592'201C        LDR      R2,[R2, #+28]
+   \       0x4C   0xE12F'FF32        BLX      R2
+    262          }
+   \                     ??seriald_enable_rx_interrupt_2:
+   \       0x50   0xE8BD'8010        POP      {R4,PC}          ;; return
+    263          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    264          void seriald_disable_rx_interrupt(const struct _seriald* serial)
+    265          {
+   \                     seriald_disable_rx_interrupt:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    266          	if (!serial || !serial->id)
+   \        0x8   0xE354'0000        CMP      R4,#+0
+   \        0xC   0x0A00'0002        BEQ      ??seriald_disable_rx_interrupt_0
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x1A00'0000        BNE      ??seriald_disable_rx_interrupt_1
+    267          		return;
+   \                     ??seriald_disable_rx_interrupt_0:
+   \       0x1C   0xEA00'000A        B        ??seriald_disable_rx_interrupt_2
+    268          
+    269          	serial->ops->disable_it(serial->addr, serial->ops->rx_int_mask);
+   \                     ??seriald_disable_rx_interrupt_1:
+   \       0x20   0xE594'000C        LDR      R0,[R4, #+12]
+   \       0x24   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x28   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x2C   0xE594'200C        LDR      R2,[R4, #+12]
+   \       0x30   0xE592'2020        LDR      R2,[R2, #+32]
+   \       0x34   0xE12F'FF32        BLX      R2
+    270          	irq_disable(serial->id);
+   \       0x38   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x3C   0x....'....        BL       irq_disable
+    271          	irq_remove_handler(serial->id, seriald_handler);
+   \       0x40   0x....'....        ADR      R1,seriald_handler
+   \       0x44   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x48   0x....'....        BL       irq_remove_handler
+    272          }
+   \                     ??seriald_disable_rx_interrupt_2:
+   \       0x4C   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0x30 0x00          DC8      "0",0x0,0x0
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \        0x0   0x....'....        DC32     seriald_ops_uart
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section .rodata, align 2
+   \        0x0   0x30 0x00          DC8 "0"
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6C
+
+   \              0x73 0x65    
+
+   \              0x72 0x69    
+
+   \              0x61 0x6C
+   \       0x40   0x5C 0x73          DC8 0x5C, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6C, 0x64
+
+   \              0x65 0x72    
+
+   \              0x69 0x61    
+
+   \              0x6C 0x64
+   \       0x48   0x2E 0x63          DC8 0x2E, 0x63, 0
+
+   \              0x00
+   \       0x4B   0x00               DC8 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      40   seriald_configure
+        40   -- Indirect call
+        40   -> __aeabi_memset
+        40   -> get_uart_id_from_addr
+        40   -> pmc_configure_peripheral
+       8   seriald_disable_rx_interrupt
+         8   -- Indirect call
+         8   -> irq_disable
+         8   -> irq_remove_handler
+       8   seriald_enable_rx_interrupt
+         8   -- Indirect call
+         8   -> irq_add_handler
+         8   -> irq_enable
+       8   seriald_get_char
+         8   -- Indirect call
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+      24   seriald_handler
+        24   -- Indirect call
+        24   -> seriald_get_char
+        24   -> seriald_is_rx_ready
+       8   seriald_is_rx_ready
+         8   -- Indirect call
+       8   seriald_is_tx_empty
+         8   -- Indirect call
+      16   seriald_put_char
+        16   -- Indirect call
+      16   seriald_put_string
+        16   -- Indirect call
+       0   seriald_set_rx_handler
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       2  ?_0
+      76  ?_1
+     180  seriald_configure
+      80  seriald_disable_rx_interrupt
+      84  seriald_enable_rx_interrupt
+      72  seriald_get_char
+      76  seriald_handler
+      56  seriald_is_rx_ready
+      56  seriald_is_tx_empty
+      36  seriald_ops_uart
+      64  seriald_put_char
+      80  seriald_put_string
+      32  seriald_set_rx_handler
+
+ 
+ 114 bytes in section .rodata
+ 792 bytes in section SOFTPACK
+ 
+ 792 bytes of CODE  memory
+ 114 bytes of CONST memory
+
+Errors: none
+Warnings: none

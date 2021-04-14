@@ -1,0 +1,280 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Apr/2020  11:05:16
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sam9x60\board_sam9x60-ek.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW27B8.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sam9x60\board_sam9x60-ek.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\lib\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\List\board_sam9x60-ek.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\Obj\board_sam9x60-ek.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sam9x60\board_sam9x60-ek.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2018, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "chip.h"
+     35          #include "board.h"
+     36          #include "board_can.h"
+     37          #include "board_console.h"
+     38          #include "board_lcd.h"
+     39          #include "board_led.h"
+     40          #include "board_eth.h"
+     41          #include "board_isi.h"
+     42          #include "board_spi.h"
+     43          #include "board_twi.h"
+     44          #include "board_audio.h"
+     45          
+     46          #include "dma/dma.h"
+     47          #include "gpio/pio.h"
+     48          #include "peripherals/pmc.h"
+     49          
+     50          #include "board_support.h"
+     51          
+     52          /*----------------------------------------------------------------------------
+     53           *        Exported functions
+     54           *----------------------------------------------------------------------------*/
+     55          #ifdef CONFIG_HAVE_SERIALD_DBGU
+
+   \                                 In section .rodata, align 4
+     56          static const struct _pin pin_sel_dbgu = SEL_PD20_DBGU;
+   \                     pin_sel_dbgu:
+   \        0x0   0x03 0x00          DC8 3, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0010'0000        DC32 1'048'576
+   \        0x8   0x09 0x00          DC8 9, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+     57          #endif
+     58          
+     59          #ifdef CONFIG_HAVE_CAN_BUS
+     60          static const struct _pin pin_can0 = SEL_PD20_CAN0;
+     61          static const struct _pin pin_can1 = SEL_PD19_CAN1;
+     62          static const struct _pin pin_can_stby = CAN_STBY_PD21;
+     63          #endif
+     64          
+
+   \                                 In section SOFTPACK, align 4
+     65          WEAK void board_init(void)
+     66          {
+   \                     board_init:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+     67          #ifdef VARIANT_DDRAM
+     68          	bool ddram = false;
+   \        0x4   0xE3A0'5000        MOV      R5,#+0
+   \        0x8   0xE1B0'4005        MOVS     R4,R5
+     69          #else
+     70          	bool ddram = true;
+     71          #endif
+     72          
+     73          #ifdef VARIANT_SRAM
+     74          	bool clocks = true;
+     75          #else
+     76          	bool clocks = false;
+     77          #endif
+     78          
+     79          	/* Configure misc low-level stuff */
+     80          	board_cfg_lowlevel(clocks, ddram, true);
+   \        0xC   0xE3A0'2001        MOV      R2,#+1
+   \       0x10   0xE1B0'1004        MOVS     R1,R4
+   \       0x14   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x18   0xE1B0'0005        MOVS     R0,R5
+   \       0x1C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x20   0x....'....        BL       board_cfg_lowlevel
+     81          
+     82          #ifdef CONFIG_HAVE_SERIALD_DBGU
+     83          	/* Configure PD20 to select DBUG function */
+     84          	pio_configure(&pin_sel_dbgu, 1);
+   \       0x24   0xE3A0'1001        MOV      R1,#+1
+   \       0x28   0xE59F'0018        LDR      R0,??board_init_0
+   \       0x2C   0x....'....        BL       pio_configure
+     85          #endif
+     86          
+     87          	/* Configure console */
+     88          	board_cfg_console(0);
+   \       0x30   0xE3A0'0000        MOV      R0,#+0
+   \       0x34   0x....'....        BL       board_cfg_console
+     89          
+     90          	/* DMA Driver init */
+     91          	dma_initialize(false);
+   \       0x38   0xE3A0'0000        MOV      R0,#+0
+   \       0x3C   0x....'....        BL       dma_initialize
+     92          
+     93          #ifdef CONFIG_HAVE_SPI_BUS
+     94          	/* Configure SPI bus */
+     95          	board_cfg_spi_bus();
+     96          #endif
+     97          
+     98          #ifdef CONFIG_HAVE_LCDC
+     99          	/* Configure LCD controller/display */
+    100          	board_cfg_lcd();
+    101          #endif
+    102          
+    103          #ifdef CONFIG_HAVE_LED
+    104          	/* Configure LEDs */
+    105          	board_cfg_led();
+   \       0x40   0x....'....        BL       board_cfg_led
+    106          #endif
+    107          
+    108          #ifdef CONFIG_HAVE_ETH
+    109          	board_cfg_net(0, NULL, true);
+    110          #endif
+    111          
+    112          #ifdef CONFIG_HAVE_I2C_BUS
+    113          	/* Configure TWI bus */
+    114          	board_cfg_twi_bus();
+    115          
+    116          #ifdef CONFIG_HAVE_TWI_AT24
+    117          	board_cfg_at24();
+    118          #endif
+    119          #endif
+    120          
+    121          #ifdef CONFIG_HAVE_SPI_NOR
+    122          	/* Configure SPI NOR flash memory */
+    123          	board_cfg_spi_flash();
+    124          #endif
+    125          
+    126          #ifdef CONFIG_HAVE_ISI
+    127          #if BOARD_ISI_MCK_PCK_SRC == PMC_PCK_CSS_UPLL_CLK
+    128          	pmc_enable_upll_clock();
+    129          #endif
+    130          
+    131          	/* Configure image sensor */
+    132          	board_cfg_isi();
+    133          #endif
+    134          
+    135          #ifdef CONFIG_HAVE_NAND_FLASH
+    136          	/* Configure NAND flash */
+    137          	board_cfg_nand_flash();
+    138          #endif
+    139          
+    140          #ifdef CONFIG_HAVE_CAN_BUS
+    141          	pio_configure(&pin_can0, 1);
+    142          	pio_configure(&pin_can1, 1);
+    143          	pio_configure(&pin_can_stby, 1);
+    144          	
+    145          	/* Configure CAN bus */
+    146          	board_cfg_can_bus();
+    147          #endif
+    148          
+    149          #ifdef CONFIG_HAVE_CLASSD
+    150          	/* Configure PDMIC interface */
+    151          	board_cfg_classd();
+    152          #endif
+    153          }
+   \       0x44   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+   \                     ??board_init_0:
+   \       0x48   0x....'....        DC32     pin_sel_dbgu
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   board_init
+        16   -> board_cfg_console
+        16   -> board_cfg_led
+        16   -> board_cfg_lowlevel
+        16   -> dma_initialize
+        16   -> pio_configure
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      76  board_init
+      16  pin_sel_dbgu
+
+ 
+ 16 bytes in section .rodata
+ 76 bytes in section SOFTPACK
+ 
+  0 bytes of CODE  memory (+ 76 bytes shared)
+ 16 bytes of CONST memory
+
+Errors: none
+Warnings: none

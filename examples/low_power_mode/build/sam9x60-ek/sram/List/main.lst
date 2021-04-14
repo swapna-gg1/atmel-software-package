@@ -1,0 +1,2984 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         05/Jan/2021  12:18:32
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\main.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW9F43.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\main.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List\main.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\Obj\main.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf  =  unknown
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\main.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           *  \page low_power_mode Low Power Mode Example
+     32           *
+     33           *  \section Purpose
+     34           *  This example will help new users get familiar with device Low-power modes.
+     35           *
+     36           *  \section Requirements
+     37           *  This package can be used with SAMA5D2-XULT.
+     38           *
+     39           *  - Note
+     40           *  Due to the power consumption results can be affected by IOs setting, the
+     41           *  value in datasheet is measured with most IOs disconnected from external
+     42           *  devices.
+     43           *  For boards with the chip can't disconnected from other devices, user can
+     44           *  change the IOs setting to get lower power consumption. For SAMA5D2-XULT
+     45           *  board, put IOs to the state described in board_restore_pio_reset_state() can
+     46           *  achieve lower power consumption.
+     47           *
+     48           *  \section Description
+     49           *  The demonstration program offers methods to make the device enter low power
+     50           *  mode, users can also change the settings of clock and DDR.
+     51           *  Power consumptions could be measured by ammeters connected between the
+     52           *  jumpers of VDDCORE or VDDBU.
+     53           *
+     54           *  \section Usage
+     55           *  -# Build the program and download it inside the evaluation board. Please
+     56           *     refer to the
+     57           *     <a href="http://www.atmel.com/dyn/resources/prod_documents/6421B.pdf">
+     58           *     SAM-BA User Guide</a>, the
+     59           *     <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">
+     60           *     GNU-Based Software Development</a>
+     61           *     application note or to the
+     62           *     <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">
+     63           *     IAR EWARM User Guide</a>,
+     64           *     depending on your chosen solution.
+     65           *  -# On the computer, open and configure a terminal application
+     66           *     (e.g. HyperTerminal on Microsoft Windows) with these settings:
+     67           *    - 115200 bauds
+     68           *    - 8 bits of data
+     69           *    - No parity
+     70           *    - 1 stop bit
+     71           *    - No flow control
+     72           *  -# Start the application.
+     73           *  -# In the terminal window, the following text should appear (values depend on
+     74           *     the board and chip used):
+     75           *     \code
+     76           *      -- Low Power mode --
+     77           *      -- SAMxxxxx-xx
+     78           *      -- Compiled: xxx xx xxxx xx:xx:xx --
+     79           *      -- Select an option :
+     80           *      -- 0 -> Enter BackUp mode
+     81           *      -- 1 -> Enter Low Power mode
+     82           *      -- A -> Init DDR
+     83           *      -- B -> Write data in DDR
+     84           *      -- C -> Check data in DDR
+     85           *      -- D -> Set DDR self-refresh mode and isolate Pads
+     86           *      -- E -> Reset DDR to normal mode and reconnect Pads
+     87           *     \endcode
+     88           *  -# When setting DDR to self-refresh mode
+     89           *
+     90           *
+     91           *  \section References
+     92           *  - low_power_mode/main.c
+     93           *  - pio.h
+     94           *  - pio_it.h
+     95           */
+     96          
+     97          /** \file
+     98           *
+     99           *  This file contains all the specific code for the getting-started example.
+    100           *
+    101           */
+    102          
+    103          /*----------------------------------------------------------------------------
+    104           *        Headers
+    105           *----------------------------------------------------------------------------
+    106           */
+    107          
+    108          #include <assert.h>
+    109          #include <stdbool.h>
+    110          #include <stdio.h>
+    111          #include <string.h>
+    112          
+    113          #include "board.h"
+    114          #include "board_console.h"
+    115          #include "board_led.h"
+    116          #include "board_twi.h"
+    117          #include "chip.h"
+    118          #include "extram/mpddrc.h"
+    119          #include "irq/irq.h"
+    120          #include "led/led.h"
+    121          #include "serial/console.h"
+    122          #include "mm/l2cache.h"
+    123          #include "peripherals/shdwc.h"
+    124          #include "peripherals/wdt.h"
+    125          #include "serial/console.h"
+    126          
+    127          #include "clk-config.h"
+    128          #include "event-config.h"
+    129          #include "low-power-config.h"
+    130          
+    131          /*----------------------------------------------------------------------------
+    132           *        Local variables
+    133           *----------------------------------------------------------------------------
+    134           */
+    135          
+
+   \                                 In section .bss, align 4
+    136          volatile unsigned int MenuChoice;
+   \                     MenuChoice:
+   \        0x0                      DS8 4
+
+   \                                 In section .bss, align 1
+    137          uint8_t modechoice, test_setting_size, eventchoice, eventchoice_bak;
+   \                     modechoice:
+   \        0x0                      DS8 1
+
+   \                                 In section .bss, align 1
+   \                     test_setting_size:
+   \        0x0                      DS8 1
+
+   \                                 In section .bss, align 1
+   \                     eventchoice:
+   \        0x0                      DS8 1
+
+   \                                 In section .bss, align 1
+   \                     eventchoice_bak:
+   \        0x0                      DS8 1
+
+   \                                 In section .bss, align 4
+    138          static char message[100] = { 0 };
+   \                     message:
+   \        0x0                      DS8 100
+    139          
+    140          /*----------------------------------------------------------------------------
+    141           *        Local functions
+    142           *----------------------------------------------------------------------------
+    143           */
+    144          
+    145          /**
+    146           *  \brief Handler for DBGU input.
+    147           *
+    148           */
+    149          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    150          static void _console_handler(uint8_t c)
+    151          {
+    152          	MenuChoice = c;
+   \                     _console_handler:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+   \        0x4   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \        0x8   0x....'....        LDR      R2,??DataTable9_2
+   \        0xC   0xE582'1000        STR      R1,[R2, #+0]
+    153          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    154          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    155          static void _restore_console(void)
+    156          {
+   \                     _restore_console:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    157          	board_cfg_console(0);
+   \        0x4   0xE3A0'0000        MOV      R0,#+0
+   \        0x8   0x....'....        BL       board_cfg_console
+    158          
+    159          	/* Initializing console interrupts */
+    160          	console_set_rx_handler(_console_handler);
+   \        0xC   0x....'....        ADR      R0,_console_handler
+   \       0x10   0x....'....        BL       console_set_rx_handler
+    161          	console_enable_rx_interrupt();
+   \       0x14   0x....'....        BL       console_enable_rx_interrupt
+    162          }
+   \       0x18   0xE8BD'8001        POP      {R0,PC}          ;; return
+    163          
+    164          #ifdef VARIANT_SRAM
+    165          /**
+    166           * \brief Test SDRAM access
+    167           * \param base_addr Base address of SDRAM
+    168           * \param size  Size of memory in byte
+    169           * \return 1: OK, 0: Error
+    170           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    171          static uint32_t _sdram_access(uint32_t base_addr, uint32_t size)
+    172          {
+   \                     _sdram_access:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    173          	uint32_t i;
+    174          	uint32_t ret = 1;
+   \        0xC   0xE3A0'6001        MOV      R6,#+1
+    175          	uint32_t *ptr32 = (uint32_t *) base_addr;
+   \       0x10   0xE1B0'7004        MOVS     R7,R4
+    176          
+    177          	check_ddr_ready();
+   \       0x14   0x....'....        BL       check_ddr_ready
+    178          
+    179          	/* Test for DWORD accessing */
+    180          	printf(" Test for DWORD accessing...\n\r");
+   \       0x18   0x....'....        LDR      R0,??DataTable9_3
+   \       0x1C   0x....'....        BL       printf
+    181          	for (i = 0; i < size / 4 ; i++)
+   \       0x20   0xE3A0'1000        MOV      R1,#+0
+   \                     ??_sdram_access_0:
+   \       0x24   0xE151'0125        CMP      R1,R5, LSR #+2
+   \       0x28   0x2A00'0003        BCS      ??_sdram_access_1
+    182          		ptr32[i] = (uint32_t)(i & 0xFFFFFFFF);
+   \       0x2C   0xE1B0'0101        LSLS     R0,R1,#+2
+   \       0x30   0xE787'1000        STR      R1,[R7, +R0]
+   \       0x34   0xE291'1001        ADDS     R1,R1,#+1
+   \       0x38   0xEAFF'FFF9        B        ??_sdram_access_0
+    183          	return ret;
+   \                     ??_sdram_access_1:
+   \       0x3C   0xE1B0'0006        MOVS     R0,R6
+   \       0x40   0xE8BD'80F2        POP      {R1,R4-R7,PC}    ;; return
+    184          }
+    185          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    186          static uint32_t _sdram_check(uint32_t base_addr, uint32_t size)
+    187          {
+   \                     _sdram_check:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    188          	uint32_t i;
+    189          	uint32_t ret = 1;
+   \        0xC   0xE3A0'6001        MOV      R6,#+1
+    190          	uint32_t *ptr32 = (uint32_t *) base_addr;
+   \       0x10   0xE1B0'7004        MOVS     R7,R4
+    191          
+    192          	check_ddr_ready();
+   \       0x14   0x....'....        BL       check_ddr_ready
+    193          
+    194          	/* Test for DWORD accessing */
+    195          	printf("Test for DWORD accessing...\n\r");
+   \       0x18   0x....'....        LDR      R0,??DataTable9_4
+   \       0x1C   0x....'....        BL       printf
+    196          	for (i = 0; i <  size / 4 ;  i++) {
+   \       0x20   0xE3A0'8000        MOV      R8,#+0
+   \                     ??_sdram_check_0:
+   \       0x24   0xE158'0125        CMP      R8,R5, LSR #+2
+   \       0x28   0x2A00'000D        BCS      ??_sdram_check_1
+    197          		if (ptr32[i] != (uint32_t)(i & 0xFFFFFFFF)) {
+   \       0x2C   0xE1B0'0108        LSLS     R0,R8,#+2
+   \       0x30   0xE797'0000        LDR      R0,[R7, +R0]
+   \       0x34   0xE150'0008        CMP      R0,R8
+   \       0x38   0x0A00'0007        BEQ      ??_sdram_check_2
+    198          		printf("-E- Expected:%x, read %x @ %x\n\r",
+    199          			(unsigned)(i & 0xFFFFFFFF),
+    200          			(unsigned)(ptr32[i]),
+    201          			(unsigned)(base_addr + i));
+   \       0x3C   0xE098'3004        ADDS     R3,R8,R4
+   \       0x40   0xE1B0'0108        LSLS     R0,R8,#+2
+   \       0x44   0xE797'2000        LDR      R2,[R7, +R0]
+   \       0x48   0xE1B0'1008        MOVS     R1,R8
+   \       0x4C   0x....'....        LDR      R0,??DataTable9_5
+   \       0x50   0x....'....        BL       printf
+    202          			ret = 0;
+   \       0x54   0xE3A0'0000        MOV      R0,#+0
+   \       0x58   0xE1B0'6000        MOVS     R6,R0
+    203          		}
+    204          	}
+   \                     ??_sdram_check_2:
+   \       0x5C   0xE298'8001        ADDS     R8,R8,#+1
+   \       0x60   0xEAFF'FFEF        B        ??_sdram_check_0
+    205          
+    206          	return ret;
+   \                     ??_sdram_check_1:
+   \       0x64   0xE1B0'0006        MOVS     R0,R6
+   \       0x68   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    207          }
+    208          #endif
+    209          
+    210          /* ---------------------------------------------------------------------------
+    211           * Function Name       : _print_menu
+    212           * Object              :
+    213           * ---------------------------------------------------------------------------
+    214           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    215          static void _print_menu(void)
+    216          {
+   \                     _print_menu:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    217          	printf(" ------------------------------------------\n\r"
+    218          	       " Select an option :\n\r"
+    219          	       " 0 -> Enter BackUp mode\n\r"
+    220          	       " 1 -> Enter Low Power mode\n\r"
+    221          #ifdef VARIANT_SRAM
+    222          	       " A -> Init DDR\n\r"
+    223          	       " B -> Write data in DDR\n\r"
+    224          	       " C -> Check data in DDR\n\r"
+    225          	       " D -> Set DDR self-refresh mode and isolate Pads\n\r"
+    226          	       " E -> Reset DDR to normal mode and reconnect Pads\n\r"
+    227          #endif
+    228          	       " =>");
+   \        0x4   0x....'....        LDR      R0,??DataTable9_6
+   \        0x8   0x....'....        BL       printf
+    229          }
+   \        0xC   0xE8BD'8001        POP      {R0,PC}          ;; return
+    230          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    231          static void menu_backup(void)
+    232          {
+   \                     menu_backup:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    233          	printf("\n\r\n\r");
+   \        0x4   0x....'....        LDR      R0,??DataTable9_7
+   \        0x8   0x....'....        BL       printf
+    234          	printf("  =========== Enter Backup mode ===========\n\r");
+   \        0xC   0x....'....        LDR      R0,??DataTable9_8
+   \       0x10   0x....'....        BL       printf
+    235          
+    236          	/* config the wakeup */
+    237          	shdwc_configure_wakeup();
+   \       0x14   0x....'....        BL       shdwc_configure_wakeup
+    238          	/* clear status */
+    239          	(void)shdwc_get_status();
+   \       0x18   0x....'....        BL       shdwc_get_status
+    240          	/* enter backup mode */
+    241          	shdwc_do_shutdown();
+   \       0x1C   0x....'....        BL       shdwc_do_shutdown
+    242          
+    243          	printf("\n\r ! ! ! ! ! ! ! Enter Backup FAILED ! ! ! ! ! ! ! !");
+   \       0x20   0x....'....        LDR      R0,??DataTable9_9
+   \       0x24   0x....'....        BL       printf
+    244          }
+   \       0x28   0xE8BD'8001        POP      {R0,PC}          ;; return
+    245          
+    246          #ifdef CONFIG_RAMCODE
+    247          #if defined(__GNUC__)
+    248          	extern uint32_t _ramcode_lma, _sramcode, _eramcode;
+    249          	extern uint32_t _ramdata_lma, _sramdata, _eramdata;
+    250          #elif defined(__ICCARM__)
+    251          	#pragma section = ".ramcode_section"
+    252          	#pragma section = ".ramcode_section_init"
+    253          	#pragma section = ".ramdata_section"
+    254          	#pragma section = ".ramdata_section_init"
+    255          #endif
+    256          static void ramcode_init(void)
+    257          {
+    258          #if defined(__GNUC__)
+    259          	memcpy(&_sramcode, &_ramcode_lma, (uint32_t)&_eramcode - (uint32_t)&_sramcode);
+    260          	memcpy(&_sramdata, &_ramdata_lma, (uint32_t)&_eramdata - (uint32_t)&_sramdata);
+    261          #elif defined(__ICCARM__)
+    262          	memcpy(__section_begin(".ramcode_section"),
+    263          	    __section_begin(".ramcode_section_init"),
+    264          	    __section_size(".ramcode_section_init"));
+    265          	memcpy(__section_begin(".ramdata_section"),
+    266          	    __section_begin(".ramdata_section_init"),
+    267          	    __section_size(".ramdata_section_init"));
+    268          #endif
+    269          }
+    270          #endif
+    271          
+    272          #ifdef VARIANT_DDRAM
+    273          RAMDATA static uint32_t tmp_stack[128];
+    274          #if defined(__GNUC__)
+    275          	__attribute__((optimize("O0")))
+    276          #elif defined(__ICCARM__)
+    277          	#pragma optimize=none
+    278          #endif
+    279          #endif
+    280          /**
+    281           *  \brief Run low power mode in sram.
+    282           *  \param mode   select test setting.
+    283           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    284          RAMCODE static void _low_power_run(uint8_t mode)
+    285          {
+   \                     _low_power_run:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    286          #ifdef VARIANT_DDRAM
+    287          	uint32_t sp = (uint32_t)&tmp_stack[128];
+    288          	asm("mov r3, %0" : : "r"(sp));
+    289          	asm("mov r0, sp");
+    290          	asm("mov sp, r3");
+    291          	asm("push {r0}");
+    292          	{
+    293          #endif /* VARIANT_DDRAM */
+    294          		RAMDATA static struct pck_mck_cfg clock_cfg;
+    295          		RAMDATA static uint32_t i;
+    296          		RAMDATA static uint32_t value;
+    297          		value = test_setting[mode].mode;
+   \        0x8   0x....'....        LDR      R5,??DataTable9_10
+   \        0xC   0x....'....        LDR      R1,??DataTable9_11
+   \       0x10   0xE1B0'0004        MOVS     R0,R4
+   \       0x14   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x18   0xE080'2080        ADD      R2,R0,R0, LSL #+1
+   \       0x1C   0xE091'0202        ADDS     R0,R1,R2, LSL #+4
+   \       0x20   0xE5D0'0004        LDRB     R0,[R0, #+4]
+   \       0x24   0xE585'0000        STR      R0,[R5, #+0]
+    298          		i = 0;
+   \       0x28   0x....'....        LDR      R2,??DataTable9_12
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \       0x30   0xE582'0000        STR      R0,[R2, #+0]
+    299          		do {
+    300          			*(uint8_t *)(((uint32_t)&clock_cfg) + i) =
+    301          				*(uint8_t *)(((uint32_t)&test_setting[mode].clock_test_setting) + i);
+   \                     ??_low_power_run_0:
+   \       0x34   0x....'....        LDR      R0,??DataTable9_13
+   \       0x38   0xE1B0'3004        MOVS     R3,R4
+   \       0x3C   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x40   0xE083'C083        ADD      R12,R3,R3, LSL #+1
+   \       0x44   0xE091'320C        ADDS     R3,R1,R12, LSL #+4
+   \       0x48   0xE293'3008        ADDS     R3,R3,#+8
+   \       0x4C   0xE592'C000        LDR      R12,[R2, #+0]
+   \       0x50   0xE09C'3003        ADDS     R3,R12,R3
+   \       0x54   0xE5D3'3000        LDRB     R3,[R3, #+0]
+   \       0x58   0xE592'C000        LDR      R12,[R2, #+0]
+   \       0x5C   0xE09C'C000        ADDS     R12,R12,R0
+   \       0x60   0xE5CC'3000        STRB     R3,[R12, #+0]
+    302          		} while(++i < sizeof(struct pck_mck_cfg));
+   \       0x64   0xE592'3000        LDR      R3,[R2, #+0]
+   \       0x68   0xE293'3001        ADDS     R3,R3,#+1
+   \       0x6C   0xE582'3000        STR      R3,[R2, #+0]
+   \       0x70   0xE592'3000        LDR      R3,[R2, #+0]
+   \       0x74   0xE353'0028        CMP      R3,#+40
+   \       0x78   0x3AFF'FFED        BCC      ??_low_power_run_0
+    303          
+    304          		/* get board ext32k bypass state */
+    305          #if defined(CKGR_MOR_XT32KFME) && defined(SCKC_CR_OSC32BYP)
+    306          		clock_cfg.ext32k_bypass = clock_setting_backup.ext32k_bypass;
+   \       0x7C   0x....'....        LDR      R6,??DataTable9_14
+   \       0x80   0xE5D6'1007        LDRB     R1,[R6, #+7]
+   \       0x84   0xE5C0'1007        STRB     R1,[R0, #+7]
+    307          #endif
+    308          
+    309          #ifdef VARIANT_DDRAM
+    310          		_ddr_active_needed = 1;
+    311          		ddr_self_refresh();
+    312          #endif /* VARIANT_DDRAM */
+    313          		/* config PCK and MCK */
+    314          		pmc_set_custom_pck_mck(&clock_cfg);
+   \       0x88   0x....'....        BL       pmc_set_custom_pck_mck
+    315          		processor_ulp(value);
+   \       0x8C   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x90   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x94   0x....'....        BL       processor_ulp
+    316          		/* wait for the PMC_SR.MCKRDY bit to be set. */
+    317          		while ((PMC->PMC_SR & PMC_SR_MCKRDY) == 0);
+   \                     ??_low_power_run_1:
+   \       0x98   0xE3E0'0097        MVN      R0,#+151
+   \       0x9C   0xE3C0'0FC0        BIC      R0,R0,#0x300
+   \       0xA0   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0xA4   0xE310'0008        TST      R0,#0x8
+   \       0xA8   0x0AFF'FFFA        BEQ      ??_low_power_run_1
+    318          #ifdef VARIANT_DDRAM
+    319          		if (_ddr_active_needed == 1) {
+    320          			pmc_set_custom_pck_mck(&clock_setting_backup);
+    321          			check_ddr_ready();
+    322          	}
+    323          #endif
+    324          		/* To capture wakeup time */
+    325          		led_toggle(0);
+   \       0xAC   0xE3A0'0000        MOV      R0,#+0
+   \       0xB0   0x....'....        BL       led_toggle
+    326          #ifdef VARIANT_SRAM
+    327          		/* Restore default PCK and MCK */
+    328          		pmc_set_custom_pck_mck(&clock_setting_backup);
+   \       0xB4   0xE1B0'0006        MOVS     R0,R6
+   \       0xB8   0x....'....        BL       pmc_set_custom_pck_mck
+    329          #endif
+    330          #ifdef VARIANT_DDRAM
+    331          		_ddr_active_needed = 0;
+    332          	}
+    333          	asm("pop {r0}");
+    334          	asm("mov sp, r0");
+    335          #endif /* VARIANT_DDRAM */
+    336          }
+   \       0xBC   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+
+   \                                 In section .bss, align 4
+   \                     `_low_power_run::clock_cfg`:
+   \        0x0                      DS8 40
+
+   \                                 In section .bss, align 4
+   \                     `_low_power_run::i`:
+   \        0x0                      DS8 4
+
+   \                                 In section .bss, align 4
+   \                     `_low_power_run::value`:
+   \        0x0                      DS8 4
+    337          
+    338          /**
+    339           *  \brief Configure low power mode option.
+    340           *  \param modechoice   select test settings.
+    341           *  \param eventchoice   select wake up event.
+    342           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    343          static void _low_power_configure(uint8_t mode, uint8_t event)
+    344          {
+   \                     _low_power_configure:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    345          #ifdef CONFIG_HAVE_LED
+    346          	/* config a led for indicator to capture wake-up time */
+    347          	board_cfg_led();
+   \        0xC   0x....'....        BL       board_cfg_led
+    348          #endif
+    349          	if(test_setting[mode].mode == IDLE) {
+   \       0x10   0x....'....        LDR      R6,??DataTable9_11
+   \       0x14   0xE1B0'0004        MOVS     R0,R4
+   \       0x18   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x1C   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \       0x20   0xE096'0201        ADDS     R0,R6,R1, LSL #+4
+   \       0x24   0xE5D0'0004        LDRB     R0,[R0, #+4]
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x1A00'0004        BNE      ??_low_power_configure_0
+    350          		wakeup_event(event);
+   \       0x30   0xE1B0'0005        MOVS     R0,R5
+   \       0x34   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x38   0x....'....        BL       wakeup_event
+    351          		processor_idle();
+   \       0x3C   0x....'....        BL       processor_idle
+   \       0x40   0xEA00'0012        B        ??_low_power_configure_1
+    352          	} else {
+    353          		low_power_cfg(test_setting[mode].mode);
+   \                     ??_low_power_configure_0:
+   \       0x44   0xE1B0'0004        MOVS     R0,R4
+   \       0x48   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x4C   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \       0x50   0xE096'0201        ADDS     R0,R6,R1, LSL #+4
+   \       0x54   0xE5D0'0004        LDRB     R0,[R0, #+4]
+   \       0x58   0x....'....        BL       low_power_cfg
+    354          		wakeup_event(event);
+   \       0x5C   0xE1B0'0005        MOVS     R0,R5
+   \       0x60   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x64   0x....'....        BL       wakeup_event
+    355          		_low_power_run(mode);
+   \       0x68   0xE1B0'0004        MOVS     R0,R4
+   \       0x6C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x70   0x....'....        BL       _low_power_run
+    356          		_restore_console();
+   \       0x74   0x....'....        BL       _restore_console
+    357          		low_power_exit(test_setting[mode].mode);
+   \       0x78   0xE1B0'0004        MOVS     R0,R4
+   \       0x7C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x80   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \       0x84   0xE096'0201        ADDS     R0,R6,R1, LSL #+4
+   \       0x88   0xE5D0'0004        LDRB     R0,[R0, #+4]
+   \       0x8C   0x....'....        BL       low_power_exit
+    358          	}
+    359          
+    360          #ifdef CONFIG_HAVE_LED
+    361          	/* config a led for indicator to capture wake-up time */
+    362          	board_cfg_led();
+   \                     ??_low_power_configure_1:
+   \       0x90   0x....'....        BL       board_cfg_led
+    363          #endif
+    364          }
+   \       0x94   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    365          
+    366          /**
+    367           *  \brief Print test menu.
+    368           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    369          static void _low_power_menu(void)
+    370          {
+   \                     _low_power_menu:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE24D'D020        SUB      SP,SP,#+32
+    371          	uint8_t m[32], i = 0, a = 0;
+   \        0x8   0xE3A0'4000        MOV      R4,#+0
+   \        0xC   0xE1B0'6004        MOVS     R6,R4
+   \       0x10   0xE1B0'7004        MOVS     R7,R4
+    372          	printf("\n\rLow Power Mode Menu :\n\r");
+   \       0x14   0x....'....        LDR      R0,??DataTable9_15
+   \       0x18   0x....'....        BL       printf
+    373          	printf("\n\r=>Press [0|1|2|... ] to select low power mode \n\r\n\r");
+   \       0x1C   0x....'....        LDR      R0,??DataTable9_16
+   \       0x20   0x....'....        BL       printf
+    374          	while(test_setting[i].name != NULL) {
+   \                     ??_low_power_menu_0:
+   \       0x24   0x....'....        LDR      R0,??DataTable9_11
+   \       0x28   0xE1B0'1006        MOVS     R1,R6
+   \       0x2C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x30   0xE081'2081        ADD      R2,R1,R1, LSL #+1
+   \       0x34   0xE790'1202        LDR      R1,[R0, +R2, LSL #+4]
+   \       0x38   0xE351'0000        CMP      R1,#+0
+   \       0x3C   0x0A00'0023        BEQ      ??_low_power_menu_1
+    375          		if (modechoice == i) {
+   \       0x40   0x....'....        LDR      R1,??DataTable9_17
+   \       0x44   0xE5D1'1000        LDRB     R1,[R1, #+0]
+   \       0x48   0xE1B0'2006        MOVS     R2,R6
+   \       0x4C   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x50   0xE151'0002        CMP      R1,R2
+   \       0x54   0x1A00'0005        BNE      ??_low_power_menu_2
+    376          			m[i] = 'X';
+   \       0x58   0xE3A0'1058        MOV      R1,#+88
+   \       0x5C   0xE1B0'200D        MOVS     R2,SP
+   \       0x60   0xE1B0'3006        MOVS     R3,R6
+   \       0x64   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x68   0xE7C2'1003        STRB     R1,[R2, +R3]
+   \       0x6C   0xEA00'0004        B        ??_low_power_menu_3
+    377          		} else {
+    378          			m[i] = ' ';
+   \                     ??_low_power_menu_2:
+   \       0x70   0xE3A0'1020        MOV      R1,#+32
+   \       0x74   0xE1B0'200D        MOVS     R2,SP
+   \       0x78   0xE1B0'3006        MOVS     R3,R6
+   \       0x7C   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x80   0xE7C2'1003        STRB     R1,[R2, +R3]
+    379          		}
+    380          		sprintf(message, "%s %s \n\r", "[%c] %x: ", test_setting[i].name);
+   \                     ??_low_power_menu_3:
+   \       0x84   0x....'....        LDR      R5,??DataTable9_18
+   \       0x88   0xE1B0'1006        MOVS     R1,R6
+   \       0x8C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x90   0xE081'2081        ADD      R2,R1,R1, LSL #+1
+   \       0x94   0xE790'3202        LDR      R3,[R0, +R2, LSL #+4]
+   \       0x98   0x....'....        LDR      R2,??DataTable9_19
+   \       0x9C   0x....'....        LDR      R1,??DataTable9_20
+   \       0xA0   0xE1B0'0005        MOVS     R0,R5
+   \       0xA4   0x....'....        BL       sprintf
+    381          		printf(message, m[i], i);
+   \       0xA8   0xE1B0'2006        MOVS     R2,R6
+   \       0xAC   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0xB0   0xE1B0'000D        MOVS     R0,SP
+   \       0xB4   0xE1B0'1006        MOVS     R1,R6
+   \       0xB8   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xBC   0xE7D0'1001        LDRB     R1,[R0, +R1]
+   \       0xC0   0xE1B0'0005        MOVS     R0,R5
+   \       0xC4   0x....'....        BL       printf
+    382          		i++;
+   \       0xC8   0xE296'6001        ADDS     R6,R6,#+1
+   \       0xCC   0xEAFF'FFD4        B        ??_low_power_menu_0
+    383          	}
+    384          
+    385          	/* save test_setting size*/
+    386          	test_setting_size = i;
+   \                     ??_low_power_menu_1:
+   \       0xD0   0x....'....        LDR      R1,??DataTable9_21
+   \       0xD4   0xE5C1'6000        STRB     R6,[R1, #+0]
+    387          
+    388          	i = 0;
+   \       0xD8   0xE1B0'8004        MOVS     R8,R4
+    389          	a = 0;
+   \       0xDC   0xE1B0'5004        MOVS     R5,R4
+    390          	while(event_menu[i] != NULL) {
+   \                     ??_low_power_menu_4:
+   \       0xE0   0x....'....        LDR      R6,??DataTable9_22
+   \       0xE4   0xE1B0'1008        MOVS     R1,R8
+   \       0xE8   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xEC   0xE1B0'1101        LSLS     R1,R1,#+2
+   \       0xF0   0xE796'1001        LDR      R1,[R6, +R1]
+   \       0xF4   0xE351'0000        CMP      R1,#+0
+   \       0xF8   0x0A00'000F        BEQ      ??_low_power_menu_5
+    391          		if (test_setting[(int)modechoice].event & (1 << i)) {
+   \       0xFC   0x....'....        LDR      R1,??DataTable9_17
+   \      0x100   0xE5D1'1000        LDRB     R1,[R1, #+0]
+   \      0x104   0xE081'2081        ADD      R2,R1,R1, LSL #+1
+   \      0x108   0xE090'1202        ADDS     R1,R0,R2, LSL #+4
+   \      0x10C   0xE5D1'1005        LDRB     R1,[R1, #+5]
+   \      0x110   0xE3A0'2001        MOV      R2,#+1
+   \      0x114   0xE1B0'2812        LSLS     R2,R2,R8
+   \      0x118   0xE112'0001        TST      R2,R1
+   \      0x11C   0x0A00'0004        BEQ      ??_low_power_menu_6
+    392          			m[a++] = i;
+   \      0x120   0xE1B0'100D        MOVS     R1,SP
+   \      0x124   0xE1B0'2005        MOVS     R2,R5
+   \      0x128   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \      0x12C   0xE7C1'8002        STRB     R8,[R1, +R2]
+   \      0x130   0xE295'5001        ADDS     R5,R5,#+1
+    393          		}
+    394          		i++;
+   \                     ??_low_power_menu_6:
+   \      0x134   0xE298'8001        ADDS     R8,R8,#+1
+   \      0x138   0xEAFF'FFE8        B        ??_low_power_menu_4
+    395          	}
+    396          
+    397          	i = 0;
+    398          	printf("\n\r=>Press [a|b....] to set wake-up event\n\r\n\r");
+   \                     ??_low_power_menu_5:
+   \      0x13C   0x....'....        LDR      R0,??DataTable9_23
+   \      0x140   0x....'....        BL       printf
+    399          	while(i < a) {
+   \                     ??_low_power_menu_7:
+   \      0x144   0xE1B0'0004        MOVS     R0,R4
+   \      0x148   0xE1B0'1005        MOVS     R1,R5
+   \      0x14C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x150   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \      0x154   0xE150'0001        CMP      R0,R1
+   \      0x158   0x2A00'0024        BCS      ??_low_power_menu_8
+    400          		printf("%c: ", (char)(i + 'a'));
+   \      0x15C   0xE294'1061        ADDS     R1,R4,#+97
+   \      0x160   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \      0x164   0x....'....        LDR      R0,??DataTable9_24
+   \      0x168   0x....'....        BL       printf
+    401          		sprintf(message, "%s %s \n\r", "[%c] ", event_menu[m[i]]);		
+   \      0x16C   0x....'....        LDR      R7,??DataTable9_18
+   \      0x170   0xE1B0'800D        MOVS     R8,SP
+   \      0x174   0xE1B0'0004        MOVS     R0,R4
+   \      0x178   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x17C   0xE7D8'0000        LDRB     R0,[R8, +R0]
+   \      0x180   0xE1B0'0100        LSLS     R0,R0,#+2
+   \      0x184   0xE796'3000        LDR      R3,[R6, +R0]
+   \      0x188   0x....'....        LDR      R2,??DataTable9_25
+   \      0x18C   0x....'....        LDR      R1,??DataTable9_20
+   \      0x190   0xE1B0'0007        MOVS     R0,R7
+   \      0x194   0x....'....        BL       sprintf
+    402          		if(eventchoice == i) {
+   \      0x198   0x....'....        LDR      R0,??DataTable9_26
+   \      0x19C   0xE5D0'0000        LDRB     R0,[R0, #+0]
+   \      0x1A0   0xE1B0'1004        MOVS     R1,R4
+   \      0x1A4   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \      0x1A8   0xE150'0001        CMP      R0,R1
+   \      0x1AC   0x1A00'000A        BNE      ??_low_power_menu_9
+    403          			printf(message, 'x');
+   \      0x1B0   0xE3A0'1078        MOV      R1,#+120
+   \      0x1B4   0xE1B0'0007        MOVS     R0,R7
+   \      0x1B8   0x....'....        BL       printf
+    404          			eventchoice_bak = 1 << m[i];
+   \      0x1BC   0xE3A0'0001        MOV      R0,#+1
+   \      0x1C0   0xE1B0'1004        MOVS     R1,R4
+   \      0x1C4   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \      0x1C8   0xE198'10D1        LDRSB    R1,[R8, +R1]
+   \      0x1CC   0xE1B0'0110        LSLS     R0,R0,R1
+   \      0x1D0   0x....'....        LDR      R1,??DataTable9_27
+   \      0x1D4   0xE5C1'0000        STRB     R0,[R1, #+0]
+   \      0x1D8   0xEA00'0002        B        ??_low_power_menu_10
+    405          		} else {
+    406          			printf(message, ' ');
+   \                     ??_low_power_menu_9:
+   \      0x1DC   0xE3A0'1020        MOV      R1,#+32
+   \      0x1E0   0xE1B0'0007        MOVS     R0,R7
+   \      0x1E4   0x....'....        BL       printf
+    407          		}
+    408          		i++;
+   \                     ??_low_power_menu_10:
+   \      0x1E8   0xE294'4001        ADDS     R4,R4,#+1
+   \      0x1EC   0xEAFF'FFD4        B        ??_low_power_menu_7
+    409          	}
+    410          	printf("\n\r=>Press 't' to run\n\r");
+   \                     ??_low_power_menu_8:
+   \      0x1F0   0x....'....        LDR      R0,??DataTable9_28
+   \      0x1F4   0x....'....        BL       printf
+    411          	printf("\n\r=>Press 'u' to auto-run\n\r");
+   \      0x1F8   0x....'....        LDR      R0,??DataTable9_29
+   \      0x1FC   0x....'....        BL       printf
+    412          }
+   \      0x200   0xE28D'D020        ADD      SP,SP,#+32
+   \      0x204   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    413          
+    414          /**
+    415           *  \brief Select test menu.
+    416           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    417          static void _low_power_main(void){
+   \                     _low_power_main:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    418          	/* Display menu */
+    419          	_low_power_menu();
+   \        0x4   0x....'....        BL       _low_power_menu
+    420          	MenuChoice = 0;
+   \        0x8   0x....'....        LDR      R4,??DataTable9_2
+   \        0xC   0xE3A0'0000        MOV      R0,#+0
+   \       0x10   0xE584'0000        STR      R0,[R4, #+0]
+    421          	while (1) {
+    422          		if (MenuChoice >= '0' && MenuChoice < (test_setting_size + 0x30)){
+   \                     ??_low_power_main_0:
+   \       0x14   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x18   0xE350'0030        CMP      R0,#+48
+   \       0x1C   0x3A00'000D        BCC      ??_low_power_main_1
+   \       0x20   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x24   0x....'....        LDR      R1,??DataTable9_21
+   \       0x28   0xE5D1'1000        LDRB     R1,[R1, #+0]
+   \       0x2C   0xE291'1030        ADDS     R1,R1,#+48
+   \       0x30   0xE150'0001        CMP      R0,R1
+   \       0x34   0x2A00'0007        BCS      ??_low_power_main_1
+    423          			modechoice = MenuChoice - '0';
+   \       0x38   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x3C   0xE250'0030        SUBS     R0,R0,#+48
+   \       0x40   0x....'....        LDR      R1,??DataTable9_17
+   \       0x44   0xE5C1'0000        STRB     R0,[R1, #+0]
+    424          			_low_power_menu();
+   \       0x48   0x....'....        BL       _low_power_menu
+    425          			MenuChoice = ' ';
+   \       0x4C   0xE3A0'0020        MOV      R0,#+32
+   \       0x50   0xE584'0000        STR      R0,[R4, #+0]
+   \       0x54   0xEAFF'FFEE        B        ??_low_power_main_0
+    426          		} else if (MenuChoice >= 'a' && MenuChoice <= 'f') {
+   \                     ??_low_power_main_1:
+   \       0x58   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x5C   0xE350'0061        CMP      R0,#+97
+   \       0x60   0x3A00'000A        BCC      ??_low_power_main_2
+   \       0x64   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x68   0xE350'0067        CMP      R0,#+103
+   \       0x6C   0x2A00'0007        BCS      ??_low_power_main_2
+    427          			eventchoice = MenuChoice - 'a';
+   \       0x70   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x74   0xE250'0061        SUBS     R0,R0,#+97
+   \       0x78   0x....'....        LDR      R1,??DataTable9_26
+   \       0x7C   0xE5C1'0000        STRB     R0,[R1, #+0]
+    428          			_low_power_menu();
+   \       0x80   0x....'....        BL       _low_power_menu
+    429          			MenuChoice = ' ';
+   \       0x84   0xE3A0'0020        MOV      R0,#+32
+   \       0x88   0xE584'0000        STR      R0,[R4, #+0]
+   \       0x8C   0xEAFF'FFE0        B        ??_low_power_main_0
+    430          		} else if (MenuChoice == 't') {
+   \                     ??_low_power_main_2:
+   \       0x90   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x94   0xE350'0074        CMP      R0,#+116
+   \       0x98   0x1A00'000C        BNE      ??_low_power_main_3
+    431          			printf("\n\rWaiting for event to exit the low power mode\n\r");
+   \       0x9C   0x....'....        LDR      R0,??DataTable9_30
+   \       0xA0   0x....'....        BL       printf
+    432          			while(!console_is_tx_empty());
+   \                     ??_low_power_main_4:
+   \       0xA4   0x....'....        BL       console_is_tx_empty
+   \       0xA8   0xE350'0000        CMP      R0,#+0
+   \       0xAC   0x0AFF'FFFC        BEQ      ??_low_power_main_4
+    433          			_low_power_configure(modechoice, eventchoice_bak);
+   \       0xB0   0x....'....        LDR      R0,??DataTable9_27
+   \       0xB4   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \       0xB8   0x....'....        LDR      R0,??DataTable9_17
+   \       0xBC   0xE5D0'0000        LDRB     R0,[R0, #+0]
+   \       0xC0   0x....'....        BL       _low_power_configure
+    434          			printf("Leave low power mode\n\r\n\r");
+   \       0xC4   0x....'....        LDR      R0,??DataTable9_31
+   \       0xC8   0x....'....        BL       printf
+    435          			break;
+   \       0xCC   0xEA00'002E        B        ??_low_power_main_5
+    436          		} else if (MenuChoice == 'u') {
+   \                     ??_low_power_main_3:
+   \       0xD0   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0xD4   0xE350'0075        CMP      R0,#+117
+   \       0xD8   0x1AFF'FFCD        BNE      ??_low_power_main_0
+    437          			printf("\n\rAuto run all setting items with the selected event:\n\r");
+   \       0xDC   0x....'....        LDR      R0,??DataTable9_32
+   \       0xE0   0x....'....        BL       printf
+    438          			while(!console_is_tx_empty());
+   \                     ??_low_power_main_6:
+   \       0xE4   0x....'....        BL       console_is_tx_empty
+   \       0xE8   0xE350'0000        CMP      R0,#+0
+   \       0xEC   0x0AFF'FFFC        BEQ      ??_low_power_main_6
+    439          			int i = 0;
+   \       0xF0   0xE3A0'4000        MOV      R4,#+0
+    440          			while(test_setting[i].name != NULL) {
+   \                     ??_low_power_main_7:
+   \       0xF4   0x....'....        LDR      R0,??DataTable9_11
+   \       0xF8   0xE084'1084        ADD      R1,R4,R4, LSL #+1
+   \       0xFC   0xE790'1201        LDR      R1,[R0, +R1, LSL #+4]
+   \      0x100   0xE351'0000        CMP      R1,#+0
+   \      0x104   0x0A00'001E        BEQ      ??_low_power_main_8
+    441          				if ((test_setting[i].event & eventchoice_bak) != eventchoice_bak) {
+   \      0x108   0x....'....        LDR      R5,??DataTable9_27
+   \      0x10C   0xE084'1084        ADD      R1,R4,R4, LSL #+1
+   \      0x110   0xE090'1201        ADDS     R1,R0,R1, LSL #+4
+   \      0x114   0xE5D1'1005        LDRB     R1,[R1, #+5]
+   \      0x118   0xE5D5'2000        LDRB     R2,[R5, #+0]
+   \      0x11C   0xE012'1001        ANDS     R1,R2,R1
+   \      0x120   0xE5D5'2000        LDRB     R2,[R5, #+0]
+   \      0x124   0xE151'0002        CMP      R1,R2
+   \      0x128   0x0A00'0001        BEQ      ??_low_power_main_9
+    442          					i++;
+   \      0x12C   0xE294'4001        ADDS     R4,R4,#+1
+    443          					continue;
+   \      0x130   0xEAFF'FFEF        B        ??_low_power_main_7
+    444          				} 
+    445          				sprintf(message, "%d: %s Please waiting...\n\r", i, test_setting[i].name);
+   \                     ??_low_power_main_9:
+   \      0x134   0x....'....        LDR      R6,??DataTable9_18
+   \      0x138   0xE084'1084        ADD      R1,R4,R4, LSL #+1
+   \      0x13C   0xE790'3201        LDR      R3,[R0, +R1, LSL #+4]
+   \      0x140   0xE1B0'2004        MOVS     R2,R4
+   \      0x144   0x....'....        LDR      R1,??DataTable9_33
+   \      0x148   0xE1B0'0006        MOVS     R0,R6
+   \      0x14C   0x....'....        BL       sprintf
+    446          				printf(message);
+   \      0x150   0xE1B0'0006        MOVS     R0,R6
+   \      0x154   0x....'....        BL       printf
+    447          				while(!console_is_tx_empty());
+   \                     ??_low_power_main_10:
+   \      0x158   0x....'....        BL       console_is_tx_empty
+   \      0x15C   0xE350'0000        CMP      R0,#+0
+   \      0x160   0x0AFF'FFFC        BEQ      ??_low_power_main_10
+    448          				_low_power_configure(i++, eventchoice_bak);
+   \      0x164   0xE5D5'1000        LDRB     R1,[R5, #+0]
+   \      0x168   0xE1B0'0004        MOVS     R0,R4
+   \      0x16C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x170   0x....'....        BL       _low_power_configure
+   \      0x174   0xE294'4001        ADDS     R4,R4,#+1
+    449          				printf("->Passed\n\r");
+   \      0x178   0x....'....        LDR      R0,??DataTable9_34
+   \      0x17C   0x....'....        BL       printf
+   \      0x180   0xEAFF'FFDB        B        ??_low_power_main_7
+    450          			}
+    451          			printf("Leave low power mode\n\r");
+   \                     ??_low_power_main_8:
+   \      0x184   0x....'....        LDR      R0,??DataTable9_35
+   \      0x188   0x....'....        BL       printf
+    452          			break;
+    453          		}
+    454          	}
+    455          }
+   \                     ??_low_power_main_5:
+   \      0x18C   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    456          
+    457          /*----------------------------------------------------------------------------
+    458           *        Global functions
+    459           *----------------------------------------------------------------------------
+    460           */
+    461          
+    462          /* override default board_init */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    463          void board_init(void)
+    464          {
+   \                     board_init:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    465          #ifdef CONFIG_RAMCODE
+    466          	ramcode_init();
+    467          #endif
+    468          
+    469          	/* Configure low-level peripherals */
+    470          #ifdef VARIANT_DDRAM
+    471          	board_cfg_lowlevel(false, false, false);
+    472          #else
+    473          	board_cfg_lowlevel(true, false, false);
+   \        0x4   0xE3A0'2000        MOV      R2,#+0
+   \        0x8   0xE3A0'1000        MOV      R1,#+0
+   \        0xC   0xE3A0'0001        MOV      R0,#+1
+   \       0x10   0x....'....        BL       board_cfg_lowlevel
+    474          #endif
+    475          	/* Configure console */
+    476          	board_cfg_console(0);
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \       0x18   0x....'....        BL       board_cfg_console
+    477          
+    478          	/* Configure DMA with interrupt */
+    479          	dma_initialize(false);
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \       0x20   0x....'....        BL       dma_initialize
+    480          
+    481          #ifdef CONFIG_HAVE_I2C_BUS
+    482          	/* Configure TWI bus */
+    483          	board_cfg_twi_bus();
+   \       0x24   0x....'....        BL       board_cfg_twi_bus
+    484          
+    485          #if defined(CONFIG_HAVE_PMIC_ACT8865) || \
+    486              defined(CONFIG_HAVE_PMIC_ACT8945A)
+    487          	/* Configure PMIC */
+    488          	board_cfg_pmic();
+    489          #endif
+    490          #endif /* CONFIG_HAVE_I2C_BUS */
+    491          }
+   \       0x28   0xE8BD'8001        POP      {R0,PC}          ;; return
+    492          
+    493          /**
+    494           *  \brief Application entry point.
+    495           *
+    496           *  \return Unused (ANSI-C compatibility).
+    497           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    498          int main(void)
+    499          {
+   \                     main:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE24D'D028        SUB      SP,SP,#+40
+    500          	/* Output example information */
+    501          	console_example_info("Low Power Mode Example");
+   \        0x8   0x....'....        LDR      R0,??DataTable9_36
+   \        0xC   0x....'....        BL       console_example_info
+    502          	while(!console_is_tx_empty());
+   \                     ??main_0:
+   \       0x10   0x....'....        BL       console_is_tx_empty
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x0AFF'FFFC        BEQ      ??main_0
+    503          
+    504          #ifdef CONFIG_HAVE_L2CC
+    505          	/* set a default state at the beginning to save power */
+    506          	/* Enable L2 cache clock gating */
+    507          	board_cfg_l2cc();
+    508          
+    509          	/* Disable L2 cache */
+    510          	l2cache_disable();
+    511          #endif
+    512          
+    513          	/* Set the I/Os to an appropriate state */
+    514          	board_restore_pio_reset_state();
+   \       0x1C   0x....'....        BL       board_restore_pio_reset_state
+    515          
+    516          	/* Disable the USB transceivers and all peripheral clocks */
+    517          	board_save_misc_power();
+   \       0x20   0x....'....        BL       board_save_misc_power
+    518          
+    519          	/* Get PMC configuration */
+    520          	clock_setting_backup = pmc_get_pck_mck_cfg();
+   \       0x24   0xE1B0'000D        MOVS     R0,SP
+   \       0x28   0x....'....        BL       pmc_get_pck_mck_cfg
+   \       0x2C   0x....'....        LDR      R0,??DataTable9_14
+   \       0x30   0xE1B0'100D        MOVS     R1,SP
+   \       0x34   0xE3A0'2028        MOV      R2,#+40
+   \       0x38   0x....'....        BL       __aeabi_memcpy4
+    521          
+    522          	/* Disable all AIC interrupt sources */
+    523          	unsigned int i;
+    524          
+    525          	for (i = 0; i < 128; i++)
+   \       0x3C   0xE3A0'5000        MOV      R5,#+0
+   \       0x40   0xE1B0'4005        MOVS     R4,R5
+   \                     ??main_1:
+   \       0x44   0xE354'0080        CMP      R4,#+128
+   \       0x48   0x2A00'0003        BCS      ??main_2
+    526          		irq_disable(i);
+   \       0x4C   0xE1B0'0004        MOVS     R0,R4
+   \       0x50   0x....'....        BL       irq_disable
+   \       0x54   0xE294'4001        ADDS     R4,R4,#+1
+   \       0x58   0xEAFF'FFF9        B        ??main_1
+    527          
+    528          	/* Initialize console again */
+    529          	_restore_console();
+   \                     ??main_2:
+   \       0x5C   0x....'....        BL       _restore_console
+    530          
+    531          	_print_menu();
+   \       0x60   0x....'....        BL       _print_menu
+    532          	MenuChoice = ' ';
+   \       0x64   0x....'....        LDR      R6,??DataTable9_2
+   \       0x68   0xE3A0'7020        MOV      R7,#+32
+   \       0x6C   0xE586'7000        STR      R7,[R6, #+0]
+    533          	while (1) {
+    534          		switch (MenuChoice) {
+   \                     ??main_3:
+   \       0x70   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0x74   0xE350'0030        CMP      R0,#+48
+   \       0x78   0x0A00'0016        BEQ      ??main_4
+   \       0x7C   0xE350'0031        CMP      R0,#+49
+   \       0x80   0x0A00'0019        BEQ      ??main_5
+   \       0x84   0xE350'0041        CMP      R0,#+65
+   \       0x88   0x0A00'001C        BEQ      ??main_6
+   \       0x8C   0xE350'0042        CMP      R0,#+66
+   \       0x90   0x0A00'0021        BEQ      ??main_7
+   \       0x94   0xE350'0043        CMP      R0,#+67
+   \       0x98   0x0A00'002A        BEQ      ??main_8
+   \       0x9C   0xE350'0044        CMP      R0,#+68
+   \       0xA0   0x0A00'0038        BEQ      ??main_9
+   \       0xA4   0xE350'0045        CMP      R0,#+69
+   \       0xA8   0x0A00'003D        BEQ      ??main_10
+   \       0xAC   0xE350'0061        CMP      R0,#+97
+   \       0xB0   0x0A00'0012        BEQ      ??main_6
+   \       0xB4   0xE350'0062        CMP      R0,#+98
+   \       0xB8   0x0A00'0017        BEQ      ??main_7
+   \       0xBC   0xE350'0063        CMP      R0,#+99
+   \       0xC0   0x0A00'0020        BEQ      ??main_8
+   \       0xC4   0xE350'0064        CMP      R0,#+100
+   \       0xC8   0x0A00'002E        BEQ      ??main_9
+   \       0xCC   0xE350'0065        CMP      R0,#+101
+   \       0xD0   0x0A00'0033        BEQ      ??main_10
+   \       0xD4   0xEA00'0039        B        ??main_11
+    535          		case '0':
+    536          			printf("0");
+   \                     ??main_4:
+   \       0xD8   0x....'....        ADR      R0,??DataTable9  ;; "0"
+   \       0xDC   0x....'....        BL       printf
+    537          			menu_backup();
+   \       0xE0   0x....'....        BL       menu_backup
+    538          			MenuChoice = 0;
+   \       0xE4   0xE586'5000        STR      R5,[R6, #+0]
+    539          			break;
+   \       0xE8   0xEAFF'FFE0        B        ??main_3
+    540          		case '1':
+    541          			printf("1");
+   \                     ??main_5:
+   \       0xEC   0x....'....        ADR      R0,??DataTable9_1  ;; "1"
+   \       0xF0   0x....'....        BL       printf
+    542          			_low_power_main();
+   \       0xF4   0x....'....        BL       _low_power_main
+    543          			MenuChoice = 0;
+   \       0xF8   0xE586'5000        STR      R5,[R6, #+0]
+    544          			break;
+   \       0xFC   0xEAFF'FFDB        B        ??main_3
+    545          #ifdef VARIANT_SRAM
+    546          		case 'a':
+    547          		case 'A':
+    548          			printf("a\n\r\n\r");
+   \                     ??main_6:
+   \      0x100   0x....'....        LDR      R0,??DataTable9_37
+   \      0x104   0x....'....        BL       printf
+    549          			printf("  =========== Init DDR ===========\n\r");
+   \      0x108   0x....'....        LDR      R0,??DataTable9_38
+   \      0x10C   0x....'....        BL       printf
+    550          
+    551          			/* init DDR Memory */
+    552          			board_cfg_ddram();
+   \      0x110   0x....'....        BL       board_cfg_ddram
+    553          			MenuChoice = 0;
+   \      0x114   0xE586'5000        STR      R5,[R6, #+0]
+    554          			break;
+   \      0x118   0xEAFF'FFD4        B        ??main_3
+    555          		case 'b':
+    556          		case 'B':
+    557          			printf("b\n\r\n\r");
+   \                     ??main_7:
+   \      0x11C   0x....'....        LDR      R0,??DataTable9_39
+   \      0x120   0x....'....        BL       printf
+    558          			printf("=========== Write data into DDR ===========\n\r");
+   \      0x124   0x....'....        LDR      R0,??DataTable9_40
+   \      0x128   0x....'....        BL       printf
+    559          			
+    560          			_sdram_access(DDR_CS_ADDR, BOARD_DDR_MEMORY_SIZE);
+   \      0x12C   0xE3A0'1540        MOV      R1,#+268435456
+   \      0x130   0xE3A0'0580        MOV      R0,#+536870912
+   \      0x134   0x....'....        BL       _sdram_access
+    561          			printf("end of init\n\r");
+   \      0x138   0x....'....        LDR      R0,??DataTable9_41
+   \      0x13C   0x....'....        BL       printf
+    562          			MenuChoice = 0;
+   \      0x140   0xE586'5000        STR      R5,[R6, #+0]
+    563          			break;
+   \      0x144   0xEAFF'FFC9        B        ??main_3
+    564          		case 'c':
+    565          		case 'C':
+    566          			printf("c\n\r\n\r");
+   \                     ??main_8:
+   \      0x148   0x....'....        LDR      R0,??DataTable9_42
+   \      0x14C   0x....'....        BL       printf
+    567          			printf("=========== Verify data in DDR ===========\n\r");
+   \      0x150   0x....'....        LDR      R0,??DataTable9_43
+   \      0x154   0x....'....        BL       printf
+    568          			if (_sdram_check(DDR_CS_ADDR, BOARD_DDR_MEMORY_SIZE))
+   \      0x158   0xE3A0'1540        MOV      R1,#+268435456
+   \      0x15C   0xE3A0'0580        MOV      R0,#+536870912
+   \      0x160   0x....'....        BL       _sdram_check
+   \      0x164   0xE350'0000        CMP      R0,#+0
+   \      0x168   0x0A00'0002        BEQ      ??main_12
+    569          			printf("data OK\n\r");
+   \      0x16C   0x....'....        LDR      R0,??DataTable9_44
+   \      0x170   0x....'....        BL       printf
+   \      0x174   0xEA00'0001        B        ??main_13
+    570          			else
+    571          			printf("data KO\n\r");
+   \                     ??main_12:
+   \      0x178   0x....'....        LDR      R0,??DataTable9_45
+   \      0x17C   0x....'....        BL       printf
+    572          			MenuChoice = 0;
+   \                     ??main_13:
+   \      0x180   0xE586'5000        STR      R5,[R6, #+0]
+    573          			break;
+   \      0x184   0xEAFF'FFB9        B        ??main_3
+    574          		case 'd':
+    575          		case 'D':
+    576          			printf("d\n\r\n\r");
+   \                     ??main_9:
+   \      0x188   0x....'....        LDR      R0,??DataTable9_46
+   \      0x18C   0x....'....        BL       printf
+    577          			printf("=========== Set DDR into self-refresh ===========\n\r");
+   \      0x190   0x....'....        LDR      R0,??DataTable9_47
+   \      0x194   0x....'....        BL       printf
+    578          
+    579          			ddr_self_refresh();
+   \      0x198   0x....'....        BL       ddr_self_refresh
+    580          			MenuChoice = 0;
+   \      0x19C   0xE586'5000        STR      R5,[R6, #+0]
+    581          			break;
+   \      0x1A0   0xEAFF'FFB2        B        ??main_3
+    582          		case 'e':
+    583          		case 'E':
+    584          			printf("e\n\r\n\r");
+   \                     ??main_10:
+   \      0x1A4   0x....'....        LDR      R0,??DataTable9_48
+   \      0x1A8   0x....'....        BL       printf
+    585          			printf("=========== Out of DDR Self refresh state  ===========\n\r");
+   \      0x1AC   0x....'....        LDR      R0,??DataTable9_49
+   \      0x1B0   0x....'....        BL       printf
+    586          
+    587          			check_ddr_ready();
+   \      0x1B4   0x....'....        BL       check_ddr_ready
+    588          			MenuChoice = 0;
+   \      0x1B8   0xE586'5000        STR      R5,[R6, #+0]
+    589          			break;
+   \      0x1BC   0xEAFF'FFAB        B        ??main_3
+    590          #endif
+    591          		default:
+    592          			if (MenuChoice == 0) {
+   \                     ??main_11:
+   \      0x1C0   0xE596'0000        LDR      R0,[R6, #+0]
+   \      0x1C4   0xE350'0000        CMP      R0,#+0
+   \      0x1C8   0x1A00'0001        BNE      ??main_14
+    593          				MenuChoice = ' ';
+   \      0x1CC   0xE586'7000        STR      R7,[R6, #+0]
+    594          				_print_menu();
+   \      0x1D0   0x....'....        BL       _print_menu
+    595          			}
+    596          			break;
+   \                     ??main_14:
+   \      0x1D4   0xEAFF'FFA5        B        ??main_3
+    597          		}
+    598          	}
+    599          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9:
+   \        0x0   0x30 0x00          DC8      "0",0x0,0x0
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_1:
+   \        0x0   0x31 0x00          DC8      "1",0x0,0x0
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_2:
+   \        0x0   0x....'....        DC32     MenuChoice
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_3:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_4:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_5:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_6:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_7:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_8:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_9:
+   \        0x0   0x....'....        DC32     ?_6
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_10:
+   \        0x0   0x....'....        DC32     `_low_power_run::value`
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_11:
+   \        0x0   0x....'....        DC32     test_setting
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_12:
+   \        0x0   0x....'....        DC32     `_low_power_run::i`
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_13:
+   \        0x0   0x....'....        DC32     `_low_power_run::clock_cfg`
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_14:
+   \        0x0   0x....'....        DC32     clock_setting_backup
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_15:
+   \        0x0   0x....'....        DC32     ?_7
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_16:
+   \        0x0   0x....'....        DC32     ?_8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_17:
+   \        0x0   0x....'....        DC32     modechoice
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_18:
+   \        0x0   0x....'....        DC32     message
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_19:
+   \        0x0   0x....'....        DC32     ?_10
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_20:
+   \        0x0   0x....'....        DC32     ?_9
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_21:
+   \        0x0   0x....'....        DC32     test_setting_size
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_22:
+   \        0x0   0x....'....        DC32     event_menu
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_23:
+   \        0x0   0x....'....        DC32     ?_11
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_24:
+   \        0x0   0x....'....        DC32     ?_12
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_25:
+   \        0x0   0x....'....        DC32     ?_13
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_26:
+   \        0x0   0x....'....        DC32     eventchoice
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_27:
+   \        0x0   0x....'....        DC32     eventchoice_bak
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_28:
+   \        0x0   0x....'....        DC32     ?_14
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_29:
+   \        0x0   0x....'....        DC32     ?_15
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_30:
+   \        0x0   0x....'....        DC32     ?_16
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_31:
+   \        0x0   0x....'....        DC32     ?_17
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_32:
+   \        0x0   0x....'....        DC32     ?_18
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_33:
+   \        0x0   0x....'....        DC32     ?_19
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_34:
+   \        0x0   0x....'....        DC32     ?_20
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_35:
+   \        0x0   0x....'....        DC32     ?_21
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_36:
+   \        0x0   0x....'....        DC32     ?_22
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_37:
+   \        0x0   0x....'....        DC32     ?_25
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_38:
+   \        0x0   0x....'....        DC32     ?_26
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_39:
+   \        0x0   0x....'....        DC32     ?_27
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_40:
+   \        0x0   0x....'....        DC32     ?_28
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_41:
+   \        0x0   0x....'....        DC32     ?_29
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_42:
+   \        0x0   0x....'....        DC32     ?_30
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_43:
+   \        0x0   0x....'....        DC32     ?_31
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_44:
+   \        0x0   0x....'....        DC32     ?_32
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_45:
+   \        0x0   0x....'....        DC32     ?_33
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_46:
+   \        0x0   0x....'....        DC32     ?_34
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_47:
+   \        0x0   0x....'....        DC32     ?_35
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_48:
+   \        0x0   0x....'....        DC32     ?_36
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_49:
+   \        0x0   0x....'....        DC32     ?_37
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x20 0x54          DC8 " Test for DWORD accessing...\012\015"
+
+   \              0x65 0x73    
+
+   \              0x74 0x20    
+
+   \              0x66 0x6F    
+
+   \              0x72 0x20    
+
+   \              0x44 0x57    
+
+   \              0x4F 0x52    
+
+   \              0x44 0x20    
+
+   \              0x61 0x63    
+
+   \              0x63 0x65    
+
+   \              0x73 0x73    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x2E    
+
+   \              0x2E 0x2E    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x1F   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x54 0x65          DC8 "Test for DWORD accessing...\012\015"
+
+   \              0x73 0x74    
+
+   \              0x20 0x66    
+
+   \              0x6F 0x72    
+
+   \              0x20 0x44    
+
+   \              0x57 0x4F    
+
+   \              0x52 0x44    
+
+   \              0x20 0x61    
+
+   \              0x63 0x63    
+
+   \              0x65 0x73    
+
+   \              0x73 0x69    
+
+   \              0x6E 0x67    
+
+   \              0x2E 0x2E    
+
+   \              0x2E 0x0A    
+
+   \              0x0D 0x00
+   \       0x1E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x2D 0x45          DC8 "-E- Expected:%x, read %x @ %x\012\015"
+
+   \              0x2D 0x20    
+
+   \              0x45 0x78    
+
+   \              0x70 0x65    
+
+   \              0x63 0x74    
+
+   \              0x65 0x64    
+
+   \              0x3A 0x25    
+
+   \              0x78 0x2C    
+
+   \              0x20 0x72    
+
+   \              0x65 0x61    
+
+   \              0x64 0x20    
+
+   \              0x25 0x78    
+
+   \              0x20 0x40    
+
+   \              0x20 0x25    
+
+   \              0x78 0x0A    
+
+   \              0x0D 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x20 0x2D          DC8 0x20, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D
+   \        0x8   0x2D 0x2D          DC8 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D
+   \       0x10   0x2D 0x2D          DC8 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D
+   \       0x18   0x2D 0x2D          DC8 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D
+   \       0x20   0x2D 0x2D          DC8 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D
+   \       0x28   0x2D 0x2D          DC8 0x2D, 0x2D, 0x2D, 0x0A, 0x0D, 0x20, 0x53, 0x65
+
+   \              0x2D 0x0A    
+
+   \              0x0D 0x20    
+
+   \              0x53 0x65
+   \       0x30   0x6C 0x65          DC8 0x6C, 0x65, 0x63, 0x74, 0x20, 0x61, 0x6E, 0x20
+
+   \              0x63 0x74    
+
+   \              0x20 0x61    
+
+   \              0x6E 0x20
+   \       0x38   0x6F 0x70          DC8 0x6F, 0x70, 0x74, 0x69, 0x6F, 0x6E, 0x20, 0x3A
+
+   \              0x74 0x69    
+
+   \              0x6F 0x6E    
+
+   \              0x20 0x3A
+   \       0x40   0x0A 0x0D          DC8 0x0A, 0x0D, 0x20, 0x30, 0x20, 0x2D, 0x3E, 0x20
+
+   \              0x20 0x30    
+
+   \              0x20 0x2D    
+
+   \              0x3E 0x20
+   \       0x48   0x45 0x6E          DC8 0x45, 0x6E, 0x74, 0x65, 0x72, 0x20, 0x42, 0x61
+
+   \              0x74 0x65    
+
+   \              0x72 0x20    
+
+   \              0x42 0x61
+   \       0x50   0x63 0x6B          DC8 0x63, 0x6B, 0x55, 0x70, 0x20, 0x6D, 0x6F, 0x64
+
+   \              0x55 0x70    
+
+   \              0x20 0x6D    
+
+   \              0x6F 0x64
+   \       0x58   0x65 0x0A          DC8 0x65, 0x0A, 0x0D, 0x20, 0x31, 0x20, 0x2D, 0x3E
+
+   \              0x0D 0x20    
+
+   \              0x31 0x20    
+
+   \              0x2D 0x3E
+   \       0x60   0x20 0x45          DC8 0x20, 0x45, 0x6E, 0x74, 0x65, 0x72, 0x20, 0x4C
+
+   \              0x6E 0x74    
+
+   \              0x65 0x72    
+
+   \              0x20 0x4C
+   \       0x68   0x6F 0x77          DC8 0x6F, 0x77, 0x20, 0x50, 0x6F, 0x77, 0x65, 0x72
+
+   \              0x20 0x50    
+
+   \              0x6F 0x77    
+
+   \              0x65 0x72
+   \       0x70   0x20 0x6D          DC8 0x20, 0x6D, 0x6F, 0x64, 0x65, 0x0A, 0x0D, 0x20
+
+   \              0x6F 0x64    
+
+   \              0x65 0x0A    
+
+   \              0x0D 0x20
+   \       0x78   0x41 0x20          DC8 0x41, 0x20, 0x2D, 0x3E, 0x20, 0x49, 0x6E, 0x69
+
+   \              0x2D 0x3E    
+
+   \              0x20 0x49    
+
+   \              0x6E 0x69
+   \       0x80   0x74 0x20          DC8 0x74, 0x20, 0x44, 0x44, 0x52, 0x0A, 0x0D, 0x20
+
+   \              0x44 0x44    
+
+   \              0x52 0x0A    
+
+   \              0x0D 0x20
+   \       0x88   0x42 0x20          DC8 0x42, 0x20, 0x2D, 0x3E, 0x20, 0x57, 0x72, 0x69
+
+   \              0x2D 0x3E    
+
+   \              0x20 0x57    
+
+   \              0x72 0x69
+   \       0x90   0x74 0x65          DC8 0x74, 0x65, 0x20, 0x64, 0x61, 0x74, 0x61, 0x20
+
+   \              0x20 0x64    
+
+   \              0x61 0x74    
+
+   \              0x61 0x20
+   \       0x98   0x69 0x6E          DC8 0x69, 0x6E, 0x20, 0x44, 0x44, 0x52, 0x0A, 0x0D
+
+   \              0x20 0x44    
+
+   \              0x44 0x52    
+
+   \              0x0A 0x0D
+   \       0xA0   0x20 0x43          DC8 0x20, 0x43, 0x20, 0x2D, 0x3E, 0x20, 0x43, 0x68
+
+   \              0x20 0x2D    
+
+   \              0x3E 0x20    
+
+   \              0x43 0x68
+   \       0xA8   0x65 0x63          DC8 0x65, 0x63, 0x6B, 0x20, 0x64, 0x61, 0x74, 0x61
+
+   \              0x6B 0x20    
+
+   \              0x64 0x61    
+
+   \              0x74 0x61
+   \       0xB0   0x20 0x69          DC8 0x20, 0x69, 0x6E, 0x20, 0x44, 0x44, 0x52, 0x0A
+
+   \              0x6E 0x20    
+
+   \              0x44 0x44    
+
+   \              0x52 0x0A
+   \       0xB8   0x0D 0x20          DC8 0x0D, 0x20, 0x44, 0x20, 0x2D, 0x3E, 0x20, 0x53
+
+   \              0x44 0x20    
+
+   \              0x2D 0x3E    
+
+   \              0x20 0x53
+   \       0xC0   0x65 0x74          DC8 0x65, 0x74, 0x20, 0x44, 0x44, 0x52, 0x20, 0x73
+
+   \              0x20 0x44    
+
+   \              0x44 0x52    
+
+   \              0x20 0x73
+   \       0xC8   0x65 0x6C          DC8 0x65, 0x6C, 0x66, 0x2D, 0x72, 0x65, 0x66, 0x72
+
+   \              0x66 0x2D    
+
+   \              0x72 0x65    
+
+   \              0x66 0x72
+   \       0xD0   0x65 0x73          DC8 0x65, 0x73, 0x68, 0x20, 0x6D, 0x6F, 0x64, 0x65
+
+   \              0x68 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65
+   \       0xD8   0x20 0x61          DC8 0x20, 0x61, 0x6E, 0x64, 0x20, 0x69, 0x73, 0x6F
+
+   \              0x6E 0x64    
+
+   \              0x20 0x69    
+
+   \              0x73 0x6F
+   \       0xE0   0x6C 0x61          DC8 0x6C, 0x61, 0x74, 0x65, 0x20, 0x50, 0x61, 0x64
+
+   \              0x74 0x65    
+
+   \              0x20 0x50    
+
+   \              0x61 0x64
+   \       0xE8   0x73 0x0A          DC8 0x73, 0x0A, 0x0D, 0x20, 0x45, 0x20, 0x2D, 0x3E
+
+   \              0x0D 0x20    
+
+   \              0x45 0x20    
+
+   \              0x2D 0x3E
+   \       0xF0   0x20 0x52          DC8 0x20, 0x52, 0x65, 0x73, 0x65, 0x74, 0x20, 0x44
+
+   \              0x65 0x73    
+
+   \              0x65 0x74    
+
+   \              0x20 0x44
+   \       0xF8   0x44 0x52          DC8 0x44, 0x52, 0x20, 0x74, 0x6F, 0x20, 0x6E, 0x6F
+
+   \              0x20 0x74    
+
+   \              0x6F 0x20    
+
+   \              0x6E 0x6F
+   \      0x100   0x72 0x6D          DC8 0x72, 0x6D, 0x61, 0x6C, 0x20, 0x6D, 0x6F, 0x64
+
+   \              0x61 0x6C    
+
+   \              0x20 0x6D    
+
+   \              0x6F 0x64
+   \      0x108   0x65 0x20          DC8 0x65, 0x20, 0x61, 0x6E, 0x64, 0x20, 0x72, 0x65
+
+   \              0x61 0x6E    
+
+   \              0x64 0x20    
+
+   \              0x72 0x65
+   \      0x110   0x63 0x6F          DC8 0x63, 0x6F, 0x6E, 0x6E, 0x65, 0x63, 0x74, 0x20
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x63    
+
+   \              0x74 0x20
+   \      0x118   0x50 0x61          DC8 0x50, 0x61, 0x64, 0x73, 0x0A, 0x0D, 0x20, 0x3D
+
+   \              0x64 0x73    
+
+   \              0x0A 0x0D    
+
+   \              0x20 0x3D
+   \      0x120   0x3E 0x00          DC8 0x3E, 0
+   \      0x122   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_4:
+   \        0x0   0x0A 0x0D          DC8 "\012\015\012\015"
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \        0x5   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_5:
+   \        0x0   0x20 0x20          DC8 "  =========== Enter Backup mode ===========\012\015"
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x20    
+
+   \              0x45 0x6E    
+
+   \              0x74 0x65    
+
+   \              0x72 0x20    
+
+   \              0x42 0x61    
+
+   \              0x63 0x6B    
+
+   \              0x75 0x70    
+
+   \              0x20 0x6D    
+
+   \              0x6F 0x64    
+
+   \              0x65 0x20    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x0A    
+
+   \              0x0D 0x00
+   \       0x2E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_6:
+   \        0x0   0x0A 0x0D          DC8 0x0A, 0x0D, 0x20, 0x21, 0x20, 0x21, 0x20, 0x21
+
+   \              0x20 0x21    
+
+   \              0x20 0x21    
+
+   \              0x20 0x21
+   \        0x8   0x20 0x21          DC8 0x20, 0x21, 0x20, 0x21, 0x20, 0x21, 0x20, 0x21
+
+   \              0x20 0x21    
+
+   \              0x20 0x21    
+
+   \              0x20 0x21
+   \       0x10   0x20 0x45          DC8 0x20, 0x45, 0x6E, 0x74, 0x65, 0x72, 0x20, 0x42
+
+   \              0x6E 0x74    
+
+   \              0x65 0x72    
+
+   \              0x20 0x42
+   \       0x18   0x61 0x63          DC8 0x61, 0x63, 0x6B, 0x75, 0x70, 0x20, 0x46, 0x41
+
+   \              0x6B 0x75    
+
+   \              0x70 0x20    
+
+   \              0x46 0x41
+   \       0x20   0x49 0x4C          DC8 0x49, 0x4C, 0x45, 0x44, 0x20, 0x21, 0x20, 0x21
+
+   \              0x45 0x44    
+
+   \              0x20 0x21    
+
+   \              0x20 0x21
+   \       0x28   0x20 0x21          DC8 0x20, 0x21, 0x20, 0x21, 0x20, 0x21, 0x20, 0x21
+
+   \              0x20 0x21    
+
+   \              0x20 0x21    
+
+   \              0x20 0x21
+   \       0x30   0x20 0x21          DC8 0x20, 0x21, 0x20, 0x21, 0
+
+   \              0x20 0x21    
+
+   \              0x00
+   \       0x35   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_7:
+   \        0x0   0x0A 0x0D          DC8 "\012\015Low Power Mode Menu :\012\015"
+
+   \              0x4C 0x6F    
+
+   \              0x77 0x20    
+
+   \              0x50 0x6F    
+
+   \              0x77 0x65    
+
+   \              0x72 0x20    
+
+   \              0x4D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x20 0x4D    
+
+   \              0x65 0x6E    
+
+   \              0x75 0x20    
+
+   \              0x3A 0x0A    
+
+   \              0x0D 0x00
+   \       0x1A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_8:
+   \        0x0   0x0A 0x0D          DC8 0x0A, 0x0D, 0x3D, 0x3E, 0x50, 0x72, 0x65, 0x73
+
+   \              0x3D 0x3E    
+
+   \              0x50 0x72    
+
+   \              0x65 0x73
+   \        0x8   0x73 0x20          DC8 0x73, 0x20, 0x5B, 0x30, 0x7C, 0x31, 0x7C, 0x32
+
+   \              0x5B 0x30    
+
+   \              0x7C 0x31    
+
+   \              0x7C 0x32
+   \       0x10   0x7C 0x2E          DC8 0x7C, 0x2E, 0x2E, 0x2E, 0x20, 0x5D, 0x20, 0x74
+
+   \              0x2E 0x2E    
+
+   \              0x20 0x5D    
+
+   \              0x20 0x74
+   \       0x18   0x6F 0x20          DC8 0x6F, 0x20, 0x73, 0x65, 0x6C, 0x65, 0x63, 0x74
+
+   \              0x73 0x65    
+
+   \              0x6C 0x65    
+
+   \              0x63 0x74
+   \       0x20   0x20 0x6C          DC8 0x20, 0x6C, 0x6F, 0x77, 0x20, 0x70, 0x6F, 0x77
+
+   \              0x6F 0x77    
+
+   \              0x20 0x70    
+
+   \              0x6F 0x77
+   \       0x28   0x65 0x72          DC8 0x65, 0x72, 0x20, 0x6D, 0x6F, 0x64, 0x65, 0x20
+
+   \              0x20 0x6D    
+
+   \              0x6F 0x64    
+
+   \              0x65 0x20
+   \       0x30   0x0A 0x0D          DC8 0x0A, 0x0D, 0x0A, 0x0D, 0
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x35   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_9:
+   \        0x0   0x25 0x73          DC8 "%s %s \012\015"
+
+   \              0x20 0x25    
+
+   \              0x73 0x20    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \        0x9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_10:
+   \        0x0   0x5B 0x25          DC8 "[%c] %x: "
+
+   \              0x63 0x5D    
+
+   \              0x20 0x25    
+
+   \              0x78 0x3A    
+
+   \              0x20 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_11:
+   \        0x0   0x0A 0x0D          DC8 "\012\015=>Press [a|b....] to set wake-up event\012\015\012\015"
+
+   \              0x3D 0x3E    
+
+   \              0x50 0x72    
+
+   \              0x65 0x73    
+
+   \              0x73 0x20    
+
+   \              0x5B 0x61    
+
+   \              0x7C 0x62    
+
+   \              0x2E 0x2E    
+
+   \              0x2E 0x2E    
+
+   \              0x5D 0x20    
+
+   \              0x74 0x6F    
+
+   \              0x20 0x73    
+
+   \              0x65 0x74    
+
+   \              0x20 0x77    
+
+   \              0x61 0x6B    
+
+   \              0x65 0x2D    
+
+   \              0x75 0x70    
+
+   \              0x20 0x65    
+
+   \              0x76 0x65    
+
+   \              0x6E 0x74    
+
+   \              0x0A 0x0D    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x2D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_12:
+   \        0x0   0x25 0x63          DC8 "%c: "
+
+   \              0x3A 0x20    
+
+   \              0x00
+   \        0x5   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_13:
+   \        0x0   0x5B 0x25          DC8 "[%c] "
+
+   \              0x63 0x5D    
+
+   \              0x20 0x00
+   \        0x6   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_14:
+   \        0x0   0x0A 0x0D          DC8 "\012\015=>Press 't' to run\012\015"
+
+   \              0x3D 0x3E    
+
+   \              0x50 0x72    
+
+   \              0x65 0x73    
+
+   \              0x73 0x20    
+
+   \              0x27 0x74    
+
+   \              0x27 0x20    
+
+   \              0x74 0x6F    
+
+   \              0x20 0x72    
+
+   \              0x75 0x6E    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x17   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_15:
+   \        0x0   0x0A 0x0D          DC8 "\012\015=>Press 'u' to auto-run\012\015"
+
+   \              0x3D 0x3E    
+
+   \              0x50 0x72    
+
+   \              0x65 0x73    
+
+   \              0x73 0x20    
+
+   \              0x27 0x75    
+
+   \              0x27 0x20    
+
+   \              0x74 0x6F    
+
+   \              0x20 0x61    
+
+   \              0x75 0x74    
+
+   \              0x6F 0x2D    
+
+   \              0x72 0x75    
+
+   \              0x6E 0x0A    
+
+   \              0x0D 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_16:
+   \        0x0   0x0A 0x0D          DC8 "\012\015Waiting for event to exit the low power mode\012\015"
+
+   \              0x57 0x61    
+
+   \              0x69 0x74    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x20    
+
+   \              0x66 0x6F    
+
+   \              0x72 0x20    
+
+   \              0x65 0x76    
+
+   \              0x65 0x6E    
+
+   \              0x74 0x20    
+
+   \              0x74 0x6F    
+
+   \              0x20 0x65    
+
+   \              0x78 0x69    
+
+   \              0x74 0x20    
+
+   \              0x74 0x68    
+
+   \              0x65 0x20    
+
+   \              0x6C 0x6F    
+
+   \              0x77 0x20    
+
+   \              0x70 0x6F    
+
+   \              0x77 0x65    
+
+   \              0x72 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x31   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_17:
+   \        0x0   0x4C 0x65          DC8 "Leave low power mode\012\015\012\015"
+
+   \              0x61 0x76    
+
+   \              0x65 0x20    
+
+   \              0x6C 0x6F    
+
+   \              0x77 0x20    
+
+   \              0x70 0x6F    
+
+   \              0x77 0x65    
+
+   \              0x72 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x0A 0x0D    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x19   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_18:
+   \        0x0   0x0A 0x0D          DC8 0x0A, 0x0D, 0x41, 0x75, 0x74, 0x6F, 0x20, 0x72
+
+   \              0x41 0x75    
+
+   \              0x74 0x6F    
+
+   \              0x20 0x72
+   \        0x8   0x75 0x6E          DC8 0x75, 0x6E, 0x20, 0x61, 0x6C, 0x6C, 0x20, 0x73
+
+   \              0x20 0x61    
+
+   \              0x6C 0x6C    
+
+   \              0x20 0x73
+   \       0x10   0x65 0x74          DC8 0x65, 0x74, 0x74, 0x69, 0x6E, 0x67, 0x20, 0x69
+
+   \              0x74 0x69    
+
+   \              0x6E 0x67    
+
+   \              0x20 0x69
+   \       0x18   0x74 0x65          DC8 0x74, 0x65, 0x6D, 0x73, 0x20, 0x77, 0x69, 0x74
+
+   \              0x6D 0x73    
+
+   \              0x20 0x77    
+
+   \              0x69 0x74
+   \       0x20   0x68 0x20          DC8 0x68, 0x20, 0x74, 0x68, 0x65, 0x20, 0x73, 0x65
+
+   \              0x74 0x68    
+
+   \              0x65 0x20    
+
+   \              0x73 0x65
+   \       0x28   0x6C 0x65          DC8 0x6C, 0x65, 0x63, 0x74, 0x65, 0x64, 0x20, 0x65
+
+   \              0x63 0x74    
+
+   \              0x65 0x64    
+
+   \              0x20 0x65
+   \       0x30   0x76 0x65          DC8 0x76, 0x65, 0x6E, 0x74, 0x3A, 0x0A, 0x0D, 0
+
+   \              0x6E 0x74    
+
+   \              0x3A 0x0A    
+
+   \              0x0D 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_19:
+   \        0x0   0x25 0x64          DC8 "%d: %s Please waiting...\012\015"
+
+   \              0x3A 0x20    
+
+   \              0x25 0x73    
+
+   \              0x20 0x50    
+
+   \              0x6C 0x65    
+
+   \              0x61 0x73    
+
+   \              0x65 0x20    
+
+   \              0x77 0x61    
+
+   \              0x69 0x74    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x2E    
+
+   \              0x2E 0x2E    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x1B   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_20:
+   \        0x0   0x2D 0x3E          DC8 "->Passed\012\015"
+
+   \              0x50 0x61    
+
+   \              0x73 0x73    
+
+   \              0x65 0x64    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_21:
+   \        0x0   0x4C 0x65          DC8 "Leave low power mode\012\015"
+
+   \              0x61 0x76    
+
+   \              0x65 0x20    
+
+   \              0x6C 0x6F    
+
+   \              0x77 0x20    
+
+   \              0x70 0x6F    
+
+   \              0x77 0x65    
+
+   \              0x72 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x17   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_22:
+   \        0x0   0x4C 0x6F          DC8 "Low Power Mode Example"
+
+   \              0x77 0x20    
+
+   \              0x50 0x6F    
+
+   \              0x77 0x65    
+
+   \              0x72 0x20    
+
+   \              0x4D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x20 0x45    
+
+   \              0x78 0x61    
+
+   \              0x6D 0x70    
+
+   \              0x6C 0x65    
+
+   \              0x00
+   \       0x17   0x00               DC8 0
+
+   \                                 In section .rodata, align 2
+   \        0x0   0x30 0x00          DC8 "0"
+
+   \                                 In section .rodata, align 2
+   \        0x0   0x31 0x00          DC8 "1"
+
+   \                                 In section .rodata, align 4
+   \                     ?_25:
+   \        0x0   0x61 0x0A          DC8 "a\012\015\012\015"
+
+   \              0x0D 0x0A    
+
+   \              0x0D 0x00
+   \        0x6   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_26:
+   \        0x0   0x20 0x20          DC8 "  =========== Init DDR ===========\012\015"
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x20    
+
+   \              0x49 0x6E    
+
+   \              0x69 0x74    
+
+   \              0x20 0x44    
+
+   \              0x44 0x52    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x25   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_27:
+   \        0x0   0x62 0x0A          DC8 "b\012\015\012\015"
+
+   \              0x0D 0x0A    
+
+   \              0x0D 0x00
+   \        0x6   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_28:
+   \        0x0   0x3D 0x3D          DC8 "=========== Write data into DDR ===========\012\015"
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x20    
+
+   \              0x57 0x72    
+
+   \              0x69 0x74    
+
+   \              0x65 0x20    
+
+   \              0x64 0x61    
+
+   \              0x74 0x61    
+
+   \              0x20 0x69    
+
+   \              0x6E 0x74    
+
+   \              0x6F 0x20    
+
+   \              0x44 0x44    
+
+   \              0x52 0x20    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x0A    
+
+   \              0x0D 0x00
+   \       0x2E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_29:
+   \        0x0   0x65 0x6E          DC8 "end of init\012\015"
+
+   \              0x64 0x20    
+
+   \              0x6F 0x66    
+
+   \              0x20 0x69    
+
+   \              0x6E 0x69    
+
+   \              0x74 0x0A    
+
+   \              0x0D 0x00
+   \        0xE   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_30:
+   \        0x0   0x63 0x0A          DC8 "c\012\015\012\015"
+
+   \              0x0D 0x0A    
+
+   \              0x0D 0x00
+   \        0x6   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_31:
+   \        0x0   0x3D 0x3D          DC8 "=========== Verify data in DDR ===========\012\015"
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x20    
+
+   \              0x56 0x65    
+
+   \              0x72 0x69    
+
+   \              0x66 0x79    
+
+   \              0x20 0x64    
+
+   \              0x61 0x74    
+
+   \              0x61 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x20 0x44    
+
+   \              0x44 0x52    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x2D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_32:
+   \        0x0   0x64 0x61          DC8 "data OK\012\015"
+
+   \              0x74 0x61    
+
+   \              0x20 0x4F    
+
+   \              0x4B 0x0A    
+
+   \              0x0D 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_33:
+   \        0x0   0x64 0x61          DC8 "data KO\012\015"
+
+   \              0x74 0x61    
+
+   \              0x20 0x4B    
+
+   \              0x4F 0x0A    
+
+   \              0x0D 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_34:
+   \        0x0   0x64 0x0A          DC8 "d\012\015\012\015"
+
+   \              0x0D 0x0A    
+
+   \              0x0D 0x00
+   \        0x6   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_35:
+   \        0x0   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \        0x8   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x20, 0x53, 0x65, 0x74, 0x20
+
+   \              0x3D 0x20    
+
+   \              0x53 0x65    
+
+   \              0x74 0x20
+   \       0x10   0x44 0x44          DC8 0x44, 0x44, 0x52, 0x20, 0x69, 0x6E, 0x74, 0x6F
+
+   \              0x52 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x74 0x6F
+   \       0x18   0x20 0x73          DC8 0x20, 0x73, 0x65, 0x6C, 0x66, 0x2D, 0x72, 0x65
+
+   \              0x65 0x6C    
+
+   \              0x66 0x2D    
+
+   \              0x72 0x65
+   \       0x20   0x66 0x72          DC8 0x66, 0x72, 0x65, 0x73, 0x68, 0x20, 0x3D, 0x3D
+
+   \              0x65 0x73    
+
+   \              0x68 0x20    
+
+   \              0x3D 0x3D
+   \       0x28   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x30   0x3D 0x0A          DC8 0x3D, 0x0A, 0x0D, 0
+
+   \              0x0D 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_36:
+   \        0x0   0x65 0x0A          DC8 "e\012\015\012\015"
+
+   \              0x0D 0x0A    
+
+   \              0x0D 0x00
+   \        0x6   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_37:
+   \        0x0   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \        0x8   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x20, 0x4F, 0x75, 0x74, 0x20
+
+   \              0x3D 0x20    
+
+   \              0x4F 0x75    
+
+   \              0x74 0x20
+   \       0x10   0x6F 0x66          DC8 0x6F, 0x66, 0x20, 0x44, 0x44, 0x52, 0x20, 0x53
+
+   \              0x20 0x44    
+
+   \              0x44 0x52    
+
+   \              0x20 0x53
+   \       0x18   0x65 0x6C          DC8 0x65, 0x6C, 0x66, 0x20, 0x72, 0x65, 0x66, 0x72
+
+   \              0x66 0x20    
+
+   \              0x72 0x65    
+
+   \              0x66 0x72
+   \       0x20   0x65 0x73          DC8 0x65, 0x73, 0x68, 0x20, 0x73, 0x74, 0x61, 0x74
+
+   \              0x68 0x20    
+
+   \              0x73 0x74    
+
+   \              0x61 0x74
+   \       0x28   0x65 0x20          DC8 0x65, 0x20, 0x20, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x30   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x0A, 0x0D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x0A 0x0D
+   \       0x38   0x00               DC8 0
+   \       0x39   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   _console_handler
+      16   _low_power_configure
+        16   -> _low_power_run
+        16   -> _restore_console
+        16   -> board_cfg_led
+        16   -> low_power_cfg
+        16   -> low_power_exit
+        16   -> processor_idle
+        16   -> wakeup_event
+      16   _low_power_main
+        16   -> _low_power_configure
+        16   -> _low_power_menu
+        16   -> console_is_tx_empty
+        16   -> printf
+        16   -> sprintf
+      56   _low_power_menu
+        56   -> printf
+        56   -> sprintf
+      16   _low_power_run
+        16   -> led_toggle
+        16   -> pmc_set_custom_pck_mck
+        16   -> processor_ulp
+       8   _print_menu
+         8   -> printf
+       8   _restore_console
+         8   -> board_cfg_console
+         8   -> console_enable_rx_interrupt
+         8   -> console_set_rx_handler
+      24   _sdram_access
+        24   -> check_ddr_ready
+        24   -> printf
+      24   _sdram_check
+        24   -> check_ddr_ready
+        24   -> printf
+       8   board_init
+         8   -> board_cfg_console
+         8   -> board_cfg_lowlevel
+         8   -> board_cfg_twi_bus
+         8   -> dma_initialize
+      64   main
+        64   -> __aeabi_memcpy4
+        64   -> _low_power_main
+        64   -> _print_menu
+        64   -> _restore_console
+        64   -> _sdram_access
+        64   -> _sdram_check
+        64   -> board_cfg_ddram
+        64   -> board_restore_pio_reset_state
+        64   -> board_save_misc_power
+        64   -> check_ddr_ready
+        64   -> console_example_info
+        64   -> console_is_tx_empty
+        64   -> ddr_self_refresh
+        64   -> irq_disable
+        64   -> menu_backup
+        64   -> pmc_get_pck_mck_cfg
+        64   -> printf
+       8   menu_backup
+         8   -> printf
+         8   -> shdwc_configure_wakeup
+         8   -> shdwc_do_shutdown
+         8   -> shdwc_get_status
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable9
+       4  ??DataTable9_1
+       4  ??DataTable9_10
+       4  ??DataTable9_11
+       4  ??DataTable9_12
+       4  ??DataTable9_13
+       4  ??DataTable9_14
+       4  ??DataTable9_15
+       4  ??DataTable9_16
+       4  ??DataTable9_17
+       4  ??DataTable9_18
+       4  ??DataTable9_19
+       4  ??DataTable9_2
+       4  ??DataTable9_20
+       4  ??DataTable9_21
+       4  ??DataTable9_22
+       4  ??DataTable9_23
+       4  ??DataTable9_24
+       4  ??DataTable9_25
+       4  ??DataTable9_26
+       4  ??DataTable9_27
+       4  ??DataTable9_28
+       4  ??DataTable9_29
+       4  ??DataTable9_3
+       4  ??DataTable9_30
+       4  ??DataTable9_31
+       4  ??DataTable9_32
+       4  ??DataTable9_33
+       4  ??DataTable9_34
+       4  ??DataTable9_35
+       4  ??DataTable9_36
+       4  ??DataTable9_37
+       4  ??DataTable9_38
+       4  ??DataTable9_39
+       4  ??DataTable9_4
+       4  ??DataTable9_40
+       4  ??DataTable9_41
+       4  ??DataTable9_42
+       4  ??DataTable9_43
+       4  ??DataTable9_44
+       4  ??DataTable9_45
+       4  ??DataTable9_46
+       4  ??DataTable9_47
+       4  ??DataTable9_48
+       4  ??DataTable9_49
+       4  ??DataTable9_5
+       4  ??DataTable9_6
+       4  ??DataTable9_7
+       4  ??DataTable9_8
+       4  ??DataTable9_9
+      32  ?_0
+      32  ?_1
+      12  ?_10
+      48  ?_11
+       8  ?_12
+       8  ?_13
+      24  ?_14
+      28  ?_15
+      52  ?_16
+      28  ?_17
+      56  ?_18
+      28  ?_19
+      32  ?_2
+      12  ?_20
+      24  ?_21
+      24  ?_22
+       2  ?_23
+       2  ?_24
+       8  ?_25
+      40  ?_26
+       8  ?_27
+      48  ?_28
+      16  ?_29
+     292  ?_3
+       8  ?_30
+      48  ?_31
+      12  ?_32
+      12  ?_33
+       8  ?_34
+      52  ?_35
+       8  ?_36
+      60  ?_37
+       8  ?_4
+      48  ?_5
+      56  ?_6
+      28  ?_7
+      56  ?_8
+      12  ?_9
+       4  MenuChoice
+      20  _console_handler
+     152  _low_power_configure
+     400  _low_power_main
+     520  _low_power_menu
+     192  _low_power_run
+      16  _print_menu
+      28  _restore_console
+      68  _sdram_access
+     108  _sdram_check
+      44  board_init
+      40  clock_cfg
+       1  eventchoice
+       1  eventchoice_bak
+       4  i
+     472  main
+      44  menu_backup
+     100  message
+       1  modechoice
+       1  test_setting_size
+       4  value
+
+ 
+   156 bytes in section .bss
+ 1'280 bytes in section .rodata
+ 2'264 bytes in section SOFTPACK
+ 
+ 2'264 bytes of CODE  memory
+ 1'280 bytes of CONST memory
+   156 bytes of DATA  memory
+
+Errors: none
+Warnings: none

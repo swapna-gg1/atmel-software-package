@@ -1,0 +1,2821 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         20/Jan/2021  09:41:40
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\lcd_draw.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWD48A.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\lcd_draw.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_LCD -D CONFIG_HAVE_LCDC -D CONFIG_HAVE_LCDC_OVR1 -D
+#        CONFIG_HAVE_LCDC_OVR2 -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_DDR2_W972GG6KB -D CONFIG_HAVE_RSTC_EXTERNAL_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_RTT -D
+#        CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\List\lcd_draw.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\sram\Obj\lcd_draw.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\lcd_draw.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup lcd_draw
+     31           *
+     32           * Implementation of draw function on LCD, Include draw text, image
+     33           * and basic shapes (line, rectangle, circle).
+     34           *
+     35           */
+     36          
+     37          /** \file */
+     38          
+     39          /*----------------------------------------------------------------------------
+     40           *        Headers
+     41           *----------------------------------------------------------------------------*/
+     42          
+     43          #include "board.h"
+     44          #include "compiler.h"
+     45          
+     46          #include "display/lcdc.h"
+     47          
+     48          #include "lcd_draw.h"
+     49          #include "lcd_font.h"
+     50          #include "font.h"
+     51          
+     52          #include <string.h>
+     53          #include <stdlib.h>
+     54          #include <assert.h>
+     55          
+     56          /*----------------------------------------------------------------------------
+     57           *        Local variable
+     58           *----------------------------------------------------------------------------*/
+     59          
+     60          /** Front color cache */
+
+   \                                 In section .bss, align 4
+     61          static uint32_t front_color;
+   \                     front_color:
+   \        0x0                      DS8 4
+     62          
+     63          /*----------------------------------------------------------------------------
+     64           *        Local functions
+     65           *----------------------------------------------------------------------------*/
+     66          
+     67          /**
+     68           * Hide canvas layer
+     69           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     70          static void _hide_canvas(void)
+     71          {
+     72          	//lcdc_enable_layer(lcdc_get_canvas()->layer_id, false);
+     73          }
+   \                     _hide_canvas:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+     74          
+     75          /**
+     76           * Update canvas
+     77           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     78          static void _show_canvas(void)
+     79          {
+     80          	//lcdc_enable_layer(lcdc_get_canvas()->layer_id, true);
+     81          }
+   \                     _show_canvas:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+     82          
+     83          /**
+     84           * Set front color
+     85           * \param color Pixel color.
+     86           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     87          static void _set_front_color(uint32_t color)
+     88          {
+     89          	front_color = color;
+   \                     _set_front_color:
+   \        0x0   0x....'....        LDR      R1,??DataTable3
+   \        0x4   0xE581'0000        STR      R0,[R1, #+0]
+     90          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+     91          
+     92          /**
+     93           * \brief Draw a pixel on LCD of front color.
+     94           *
+     95           * \param dwX       X-coordinate of pixel.
+     96           * \param dwY       Y-coordinate of pixel.
+     97           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     98          static void _draw_pixel(uint32_t dwX, uint32_t dwY)
+     99          {
+   \                     _draw_pixel:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    100          	struct _lcdc_layer *pDisp = lcdc_get_canvas();
+   \        0xC   0x....'....        BL       lcdc_get_canvas
+   \       0x10   0xE1B0'6000        MOVS     R6,R0
+    101          	uint8_t *buffer = pDisp->buffer;
+   \       0x14   0xE596'7000        LDR      R7,[R6, #+0]
+    102          	uint16_t w = pDisp->width;
+   \       0x18   0xE1D6'80B4        LDRH     R8,[R6, #+4]
+    103          	//uint16_t h = pDisp->height;
+    104          	uint16_t cw = pDisp->bpp / 8;	/* color width */
+   \       0x1C   0xE5D6'0008        LDRB     R0,[R6, #+8]
+   \       0x20   0xE3A0'1008        MOV      R1,#+8
+   \       0x24   0x....'....        BL       __aeabi_idiv
+    105          	uint32_t rw = w * cw;	/* row width in bytes */
+   \       0x28   0xE1B0'1008        MOVS     R1,R8
+   \       0x2C   0xE1A0'1801        LSL      R1,R1,#+16
+   \       0x30   0xE1B0'1821        LSRS     R1,R1,#+16
+   \       0x34   0xE1B0'2000        MOVS     R2,R0
+   \       0x38   0xE1A0'2802        LSL      R2,R2,#+16
+   \       0x3C   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0x40   0xE011'0192        MULS     R1,R2,R1
+    106          	//uint8_t  r, g, b;
+    107          	uint8_t *pPix;
+    108          
+    109          	if (buffer == NULL)
+   \       0x44   0xE357'0000        CMP      R7,#+0
+   \       0x48   0x0A00'002E        BEQ      ??_draw_pixel_0
+    110          		return;
+    111          
+    112          	if (rw & 0x3)
+   \                     ??_draw_pixel_1:
+   \       0x4C   0xE311'0003        TST      R1,#0x3
+   \       0x50   0x0A00'0001        BEQ      ??_draw_pixel_2
+    113          		rw = (rw | 0x3) + 1;	/* 4-byte aligned rows */
+   \       0x54   0xE391'1003        ORRS     R1,R1,#0x3
+   \       0x58   0xE291'1001        ADDS     R1,R1,#+1
+    114          	pPix = &buffer[dwY * rw + cw * dwX];
+   \                     ??_draw_pixel_2:
+   \       0x5C   0xE1B0'2000        MOVS     R2,R0
+   \       0x60   0xE1A0'2802        LSL      R2,R2,#+16
+   \       0x64   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0x68   0xE012'0294        MULS     R2,R4,R2
+   \       0x6C   0xE022'2591        MLA      R2,R1,R5,R2
+   \       0x70   0xE097'2002        ADDS     R2,R7,R2
+    115          
+    116          	switch (pDisp->bpp) {
+   \       0x74   0xE5D6'3008        LDRB     R3,[R6, #+8]
+   \       0x78   0xE353'0010        CMP      R3,#+16
+   \       0x7C   0x0A00'0004        BEQ      ??_draw_pixel_3
+   \       0x80   0xE353'0018        CMP      R3,#+24
+   \       0x84   0x0A00'0009        BEQ      ??_draw_pixel_4
+   \       0x88   0xE353'0020        CMP      R3,#+32
+   \       0x8C   0x0A00'0011        BEQ      ??_draw_pixel_5
+   \       0x90   0xEA00'001C        B        ??_draw_pixel_6
+    117          	case 16:		/* TRGB 1555 */
+    118          		pPix[0] = (front_color) & 0xFF;
+   \                     ??_draw_pixel_3:
+   \       0x94   0x....'....        LDR      R3,??DataTable3
+   \       0x98   0xE593'C000        LDR      R12,[R3, #+0]
+   \       0x9C   0xE5C2'C000        STRB     R12,[R2, #+0]
+    119          		pPix[1] = (front_color >> 8) & 0xFF;
+   \       0xA0   0xE593'3000        LDR      R3,[R3, #+0]
+   \       0xA4   0xE1B0'3423        LSRS     R3,R3,#+8
+   \       0xA8   0xE5C2'3001        STRB     R3,[R2, #+1]
+    120          		break;
+   \       0xAC   0xEA00'0015        B        ??_draw_pixel_6
+    121          	case 24:		/*  RGB  888 */
+    122          		pPix[0] = (front_color) & 0xFF;
+   \                     ??_draw_pixel_4:
+   \       0xB0   0x....'....        LDR      R3,??DataTable3
+   \       0xB4   0xE593'C000        LDR      R12,[R3, #+0]
+   \       0xB8   0xE5C2'C000        STRB     R12,[R2, #+0]
+    123          		pPix[1] = (front_color >> 8) & 0xFF;
+   \       0xBC   0xE593'C000        LDR      R12,[R3, #+0]
+   \       0xC0   0xE1B0'C42C        LSRS     R12,R12,#+8
+   \       0xC4   0xE5C2'C001        STRB     R12,[R2, #+1]
+    124          		pPix[2] = (front_color >> 16) & 0xFF;
+   \       0xC8   0xE593'3000        LDR      R3,[R3, #+0]
+   \       0xCC   0xE1B0'3823        LSRS     R3,R3,#+16
+   \       0xD0   0xE5C2'3002        STRB     R3,[R2, #+2]
+    125          		break;
+   \       0xD4   0xEA00'000B        B        ??_draw_pixel_6
+    126          	case 32:		/* ARGB 8888 */
+    127          		pPix[0] = (front_color) & 0xFF;
+   \                     ??_draw_pixel_5:
+   \       0xD8   0x....'....        LDR      R3,??DataTable3
+   \       0xDC   0xE593'C000        LDR      R12,[R3, #+0]
+   \       0xE0   0xE5C2'C000        STRB     R12,[R2, #+0]
+    128          		pPix[1] = (front_color >> 8) & 0xFF;
+   \       0xE4   0xE593'C000        LDR      R12,[R3, #+0]
+   \       0xE8   0xE1B0'C42C        LSRS     R12,R12,#+8
+   \       0xEC   0xE5C2'C001        STRB     R12,[R2, #+1]
+    129          		pPix[2] = (front_color >> 16) & 0xFF;
+   \       0xF0   0xE593'C000        LDR      R12,[R3, #+0]
+   \       0xF4   0xE1B0'C82C        LSRS     R12,R12,#+16
+   \       0xF8   0xE5C2'C002        STRB     R12,[R2, #+2]
+    130          		pPix[3] = (front_color >> 24) & 0xFF;
+   \       0xFC   0xE593'3000        LDR      R3,[R3, #+0]
+   \      0x100   0xE1B0'3C23        LSRS     R3,R3,#+24
+   \      0x104   0xE5C2'3003        STRB     R3,[R2, #+3]
+    131          		break;
+    132          	}
+    133          }
+   \                     ??_draw_pixel_6:
+   \                     ??_draw_pixel_0:
+   \      0x108   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    134          
+    135          /**
+    136           * \brief Fill rectangle with front color.
+    137           * \param dwX1  X-coordinate of top left.
+    138           * \param dwY1  Y-coordinate of top left.
+    139           * \param dwX2  X-coordinate of bottom right.
+    140           * \param dwY1  Y-coordinate of bottom right.
+    141           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    142          static void _fill_rect(uint32_t dwX1, uint32_t dwY1, uint32_t dwX2, uint32_t dwY2)
+    143          {
+   \                     _fill_rect:
+   \        0x0   0xE92D'4FFD        PUSH     {R0,R2-R11,LR}
+   \        0x4   0xE24D'D018        SUB      SP,SP,#+24
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    144          	struct _lcdc_layer *pDisp = lcdc_get_canvas();
+   \        0xC   0x....'....        BL       lcdc_get_canvas
+   \       0x10   0xE58D'0004        STR      R0,[SP, #+4]
+    145          	uint16_t w = pDisp->width;
+   \       0x14   0xE59D'1004        LDR      R1,[SP, #+4]
+   \       0x18   0xE1D1'10B4        LDRH     R1,[R1, #+4]
+   \       0x1C   0xE1CD'10B0        STRH     R1,[SP, #+0]
+    146          	uint16_t cw = pDisp->bpp / 8;	/* color width */
+   \       0x20   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x24   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0x28   0xE3A0'1008        MOV      R1,#+8
+   \       0x2C   0x....'....        BL       __aeabi_idiv
+   \       0x30   0xE1B0'6000        MOVS     R6,R0
+    147          	uint32_t rw = w * cw;	/* row width in bytes */
+   \       0x34   0xE1DD'00B0        LDRH     R0,[SP, #+0]
+   \       0x38   0xE1B0'1006        MOVS     R1,R6
+   \       0x3C   0xE1A0'1801        LSL      R1,R1,#+16
+   \       0x40   0xE1B0'1821        LSRS     R1,R1,#+16
+   \       0x44   0xE017'0091        MULS     R7,R1,R0
+    148          	uint8_t *base;
+    149          	uint8_t *buffer = pDisp->buffer;
+   \       0x48   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x4C   0xE590'0000        LDR      R0,[R0, #+0]
+    150          	uint32_t fillStart, fillEnd;
+    151          	uint32_t i;
+    152          	if (buffer == NULL)
+   \       0x50   0xE350'0000        CMP      R0,#+0
+   \       0x54   0x0A00'002D        BEQ      ??_fill_rect_0
+    153          		return;
+    154          
+    155          	/* 4-byte aligned rows */
+    156          	if (rw & 0x3)
+   \                     ??_fill_rect_1:
+   \       0x58   0xE317'0003        TST      R7,#0x3
+   \       0x5C   0x0A00'0001        BEQ      ??_fill_rect_2
+    157          		rw = (rw | 0x3) + 1;
+   \       0x60   0xE397'1003        ORRS     R1,R7,#0x3
+   \       0x64   0xE291'7001        ADDS     R7,R1,#+1
+    158          	/* Buffer address for the starting row */
+    159          	base = &buffer[dwY1 * rw];
+   \                     ??_fill_rect_2:
+   \       0x68   0xE012'0597        MULS     R2,R7,R5
+   \       0x6C   0xE090'2002        ADDS     R2,R0,R2
+   \       0x70   0xE58D'2010        STR      R2,[SP, #+16]
+    160          
+    161          	fillStart = dwX1 * cw;
+   \       0x74   0xE59D'2018        LDR      R2,[SP, #+24]
+   \       0x78   0xE1B0'3006        MOVS     R3,R6
+   \       0x7C   0xE1A0'3803        LSL      R3,R3,#+16
+   \       0x80   0xE1B0'3823        LSRS     R3,R3,#+16
+   \       0x84   0xE012'0293        MULS     R2,R3,R2
+   \       0x88   0xE58D'200C        STR      R2,[SP, #+12]
+    162          	fillEnd = dwX2 * cw;
+   \       0x8C   0xE59D'201C        LDR      R2,[SP, #+28]
+   \       0x90   0xE1B0'3006        MOVS     R3,R6
+   \       0x94   0xE1A0'3803        LSL      R3,R3,#+16
+   \       0x98   0xE1B0'3823        LSRS     R3,R3,#+16
+   \       0x9C   0xE012'0293        MULS     R2,R3,R2
+   \       0xA0   0xE58D'2008        STR      R2,[SP, #+8]
+    163          
+    164          #if 1				/* Memcopy pixel */
+    165          	buffer = base;
+   \       0xA4   0xE59D'8010        LDR      R8,[SP, #+16]
+    166          	for (; dwY1 <= dwY2; dwY1++) {
+   \                     ??_fill_rect_3:
+   \       0xA8   0xE59D'0020        LDR      R0,[SP, #+32]
+   \       0xAC   0xE150'0005        CMP      R0,R5
+   \       0xB0   0x3A00'0016        BCC      ??_fill_rect_4
+    167          		for (i = fillStart; i <= fillEnd; i += cw) {
+   \       0xB4   0xE59D'000C        LDR      R0,[SP, #+12]
+   \       0xB8   0xE1B0'4000        MOVS     R4,R0
+   \                     ??_fill_rect_5:
+   \       0xBC   0xE59D'0008        LDR      R0,[SP, #+8]
+   \       0xC0   0xE150'0004        CMP      R0,R4
+   \       0xC4   0x3A00'000E        BCC      ??_fill_rect_6
+    168          			memcpy(&buffer[i], &front_color, cw);
+   \       0xC8   0xE1B0'9006        MOVS     R9,R6
+   \       0xCC   0xE1A0'9809        LSL      R9,R9,#+16
+   \       0xD0   0xE1B0'9829        LSRS     R9,R9,#+16
+   \       0xD4   0x....'....        LDR      R10,??DataTable3
+   \       0xD8   0xE098'B004        ADDS     R11,R8,R4
+   \       0xDC   0xE1B0'2009        MOVS     R2,R9
+   \       0xE0   0xE1B0'100A        MOVS     R1,R10
+   \       0xE4   0xE1B0'000B        MOVS     R0,R11
+   \       0xE8   0x....'....        BL       __aeabi_memcpy
+   \       0xEC   0xE1B0'000B        MOVS     R0,R11
+    169          		}
+   \       0xF0   0xE1B0'0006        MOVS     R0,R6
+   \       0xF4   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0xF8   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0xFC   0xE090'4004        ADDS     R4,R0,R4
+   \      0x100   0xEAFF'FFED        B        ??_fill_rect_5
+    170          		buffer = &buffer[rw];
+   \                     ??_fill_rect_6:
+   \      0x104   0xE098'8007        ADDS     R8,R8,R7
+    171          	}
+   \      0x108   0xE295'5001        ADDS     R5,R5,#+1
+   \      0x10C   0xEAFF'FFE5        B        ??_fill_rect_3
+    172          #endif
+    173          
+    174          #if 0				/* Pixel by pixel */
+    175          	for (; dwY1 <= dwY2; dwY1++) {
+    176          		for (i = dwX1; i <= dwX2; i++) {
+    177          			_draw_pixel(i, dwY1);
+    178          		}
+    179          	}
+    180          #endif
+    181          
+    182          #if 0				/* Optimized */
+    183          	/* First row */
+    184          	for (i = fillStart; i <= fillEnd; i += cw) {
+    185          		memcpy(&base[i], &front_color, cw);
+    186          	}
+    187          	/* Next rows, copy first */
+    188          	buffer = &base[rw + fillStart];
+    189          	for (i = dwY1 + 1; i <= dwY2; i++) {
+    190          		memcpy(buffer, &base[fillStart], fillEnd - fillStart + cw);
+    191          		buffer = &buffer[rw];
+    192          	}
+    193          #endif
+    194          }
+   \                     ??_fill_rect_4:
+   \                     ??_fill_rect_0:
+   \      0x110   0xE28D'D024        ADD      SP,SP,#+36
+   \      0x114   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    195          
+    196          /**
+    197           * \brief Draw a line on LCD, which is not horizontal or vertical.
+    198           *
+    199           * \param dwX1       X-coordinate of line start.
+    200           * \param dwY1       Y-coordinate of line start.
+    201           * \param dwX2       X-coordinate of line end.
+    202           * \param dwY2       Y-coordinate of line end.
+    203           */
+    204          
+    205          /*
+    206          static uint32_t _draw_line_bresenham (uint32_t dwX1, uint32_t dwY1, uint32_t dwX2, uint32_t dwY2)
+    207          {
+    208          	int dx, dy;
+    209          	int i;
+    210          	int xinc, yinc, cumul;
+    211          	int x, y;
+    212          
+    213          	x = dwX1;
+    214          	y = dwY1;
+    215          	dx = dwX2 - dwX1;
+    216          	dy = dwY2 - dwY1;
+    217          
+    218          	xinc = (dx > 0) ? 1 : -1;
+    219          	yinc = (dy > 0) ? 1 : -1;
+    220          	dx = (dx > 0) ? dx : -dx;
+    221          	dy = (dy > 0) ? dy : -dy;
+    222          
+    223          	_draw_pixel(x, y);
+    224          
+    225          	if (dx > dy) {
+    226          		cumul = dx / 2;
+    227          		for (i = 1; i <= dx; i++) {
+    228          			x += xinc;
+    229          			cumul += dy;
+    230          
+    231          			if (cumul >= dx) {
+    232          				cumul -= dx;
+    233          				y += yinc;
+    234          			}
+    235          			_draw_pixel(x, y);
+    236          		}
+    237          	} else {
+    238          		cumul = dy / 2;
+    239          		for (i = 1; i <= dy; i++) {
+    240          			y += yinc;
+    241          			cumul += dx;
+    242          
+    243          			if (cumul >= dy) {
+    244          				cumul -= dy;
+    245          				x += xinc;
+    246          			}
+    247          
+    248          			_draw_pixel(x, y);
+    249          		}
+    250          	}
+    251          
+    252          	return 0;
+    253          }
+    254          */
+    255          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    256          static uint32_t _draw_line_bresenham (uint32_t dwX1, uint32_t dwY1, uint32_t dwX2, uint32_t dwY2)
+    257          {
+   \                     _draw_line_bresenham:
+   \        0x0   0xE92D'4FFE        PUSH     {R1-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    258              int dx = abs(dwX2 - dwX1);
+   \        0xC   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x10   0xE050'0004        SUBS     R0,R0,R4
+   \       0x14   0x....'....        BL       abs
+   \       0x18   0xE1B0'6000        MOVS     R6,R0
+    259              int dy = abs(dwY2 - dwY1);
+   \       0x1C   0xE59D'0008        LDR      R0,[SP, #+8]
+   \       0x20   0xE050'0005        SUBS     R0,R0,R5
+   \       0x24   0x....'....        BL       abs
+   \       0x28   0xE1B0'7000        MOVS     R7,R0
+    260              int sx = (dwX1 < dwX2) ? 1 : -1;
+   \       0x2C   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x30   0xE154'0000        CMP      R4,R0
+   \       0x34   0x2A00'0001        BCS      ??_draw_line_bresenham_0
+   \       0x38   0xE3A0'8001        MOV      R8,#+1
+   \       0x3C   0xEA00'0000        B        ??_draw_line_bresenham_1
+   \                     ??_draw_line_bresenham_0:
+   \       0x40   0xE3E0'8000        MVN      R8,#+0
+    261              int sy = (dwY1 < dwY2) ? 1 : -1;
+   \                     ??_draw_line_bresenham_1:
+   \       0x44   0xE59D'0008        LDR      R0,[SP, #+8]
+   \       0x48   0xE155'0000        CMP      R5,R0
+   \       0x4C   0x2A00'0001        BCS      ??_draw_line_bresenham_2
+   \       0x50   0xE3A0'9001        MOV      R9,#+1
+   \       0x54   0xEA00'0000        B        ??_draw_line_bresenham_3
+   \                     ??_draw_line_bresenham_2:
+   \       0x58   0xE3E0'9000        MVN      R9,#+0
+    262              int err = dx - dy;
+   \                     ??_draw_line_bresenham_3:
+   \       0x5C   0xE056'A007        SUBS     R10,R6,R7
+    263              int e2 ;
+    264          
+    265              while (1) {
+    266                _draw_pixel(dwX1, dwY1);
+   \                     ??_draw_line_bresenham_4:
+   \       0x60   0xE1B0'1005        MOVS     R1,R5
+   \       0x64   0xE1B0'0004        MOVS     R0,R4
+   \       0x68   0x....'....        BL       _draw_pixel
+    267                if ((dwX1 == dwX2) && (dwY1 == dwY2))
+   \       0x6C   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x70   0xE154'0000        CMP      R4,R0
+   \       0x74   0x1A00'0004        BNE      ??_draw_line_bresenham_5
+   \       0x78   0xE59D'0008        LDR      R0,[SP, #+8]
+   \       0x7C   0xE155'0000        CMP      R5,R0
+   \       0x80   0x1A00'0001        BNE      ??_draw_line_bresenham_5
+    268                  break;
+    269                e2 = 2 * err;
+    270          	  if (e2 > -dy) {
+    271          		  err -= dy; dwX1 += sx;
+    272          	  }
+    273                if (e2 < dx) {
+    274          		  err += dx; dwY1 += sy;
+    275          	  }
+    276              }
+    277          	return 0;
+   \       0x84   0xE3A0'0000        MOV      R0,#+0
+   \       0x88   0xEA00'000B        B        ??_draw_line_bresenham_6
+   \                     ??_draw_line_bresenham_5:
+   \       0x8C   0xE1B0'008A        LSLS     R0,R10,#+1
+   \       0x90   0xE1B0'B000        MOVS     R11,R0
+   \       0x94   0xE277'0000        RSBS     R0,R7,#+0
+   \       0x98   0xE150'000B        CMP      R0,R11
+   \       0x9C   0xAA00'0001        BGE      ??_draw_line_bresenham_7
+   \       0xA0   0xE05A'A007        SUBS     R10,R10,R7
+   \       0xA4   0xE098'4004        ADDS     R4,R8,R4
+   \                     ??_draw_line_bresenham_7:
+   \       0xA8   0xE15B'0006        CMP      R11,R6
+   \       0xAC   0xAAFF'FFEB        BGE      ??_draw_line_bresenham_4
+   \       0xB0   0xE096'A00A        ADDS     R10,R6,R10
+   \       0xB4   0xE099'5005        ADDS     R5,R9,R5
+   \       0xB8   0xEAFF'FFE8        B        ??_draw_line_bresenham_4
+   \                     ??_draw_line_bresenham_6:
+   \       0xBC   0xE8BD'8FFE        POP      {R1-R11,PC}      ;; return
+    278          }
+    279          
+    280          /*----------------------------------------------------------------------------
+    281           *        Exported functions
+    282           *----------------------------------------------------------------------------*/
+    283          
+    284          /**
+    285           * \brief Fills the given LCD buffer with a particular color.
+    286           *
+    287           * \param color  Fill color.
+    288           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    289          void lcd_fill(uint32_t color)
+    290          {
+   \                     lcd_fill:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    291          	struct _lcdc_layer *pDisp = lcdc_get_canvas();
+   \        0x8   0x....'....        BL       lcdc_get_canvas
+   \        0xC   0xE1B0'5000        MOVS     R5,R0
+    292          	_set_front_color(color);
+   \       0x10   0xE1B0'0004        MOVS     R0,R4
+   \       0x14   0x....'....        BL       _set_front_color
+    293          	_hide_canvas();
+   \       0x18   0x....'....        BL       _hide_canvas
+    294          	_fill_rect(0, 0, pDisp->width, pDisp->height);
+   \       0x1C   0xE1D5'30B6        LDRH     R3,[R5, #+6]
+   \       0x20   0xE1D5'20B4        LDRH     R2,[R5, #+4]
+   \       0x24   0xE3A0'1000        MOV      R1,#+0
+   \       0x28   0xE3A0'0000        MOV      R0,#+0
+   \       0x2C   0x....'....        BL       _fill_rect
+    295          	_show_canvas();
+   \       0x30   0x....'....        BL       _show_canvas
+    296          }
+   \       0x34   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    297          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    298          void lcd_fill_white(void)
+    299          {
+   \                     lcd_fill_white:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+    300          	struct _lcdc_layer *pDisp = lcdc_get_canvas();
+   \        0x4   0x....'....        BL       lcdc_get_canvas
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+    301          	_hide_canvas();
+   \        0xC   0x....'....        BL       _hide_canvas
+    302          	_set_front_color(0x0000FF);
+   \       0x10   0xE3A0'00FF        MOV      R0,#+255
+   \       0x14   0x....'....        BL       _set_front_color
+    303          	_fill_rect(0, 0, pDisp->width / 3, pDisp->height);
+   \       0x18   0xE3A0'5003        MOV      R5,#+3
+   \       0x1C   0xE1D4'30B6        LDRH     R3,[R4, #+6]
+   \       0x20   0xE1B0'6003        MOVS     R6,R3
+   \       0x24   0xE1D4'00B4        LDRH     R0,[R4, #+4]
+   \       0x28   0xE1B0'1005        MOVS     R1,R5
+   \       0x2C   0x....'....        BL       __aeabi_idiv
+   \       0x30   0xE1B0'2000        MOVS     R2,R0
+   \       0x34   0xE1B0'3006        MOVS     R3,R6
+   \       0x38   0xE3A0'1000        MOV      R1,#+0
+   \       0x3C   0xE3A0'0000        MOV      R0,#+0
+   \       0x40   0x....'....        BL       _fill_rect
+    304          	_set_front_color(0xFFFFFF);
+   \       0x44   0xE3E0'04FF        MVN      R0,#-16777216
+   \       0x48   0x....'....        BL       _set_front_color
+    305          	_fill_rect(pDisp->width/3, 0, pDisp->width/3+pDisp->width/3, pDisp->height);
+   \       0x4C   0xE1D4'30B6        LDRH     R3,[R4, #+6]
+   \       0x50   0xE1B0'6003        MOVS     R6,R3
+   \       0x54   0xE1D4'00B4        LDRH     R0,[R4, #+4]
+   \       0x58   0xE1B0'1005        MOVS     R1,R5
+   \       0x5C   0x....'....        BL       __aeabi_idiv
+   \       0x60   0xE1B0'7000        MOVS     R7,R0
+   \       0x64   0xE1D4'00B4        LDRH     R0,[R4, #+4]
+   \       0x68   0xE1B0'1005        MOVS     R1,R5
+   \       0x6C   0x....'....        BL       __aeabi_idiv
+   \       0x70   0xE090'2007        ADDS     R2,R0,R7
+   \       0x74   0xE1B0'3006        MOVS     R3,R6
+   \       0x78   0xE3A0'1000        MOV      R1,#+0
+   \       0x7C   0xE1B0'6001        MOVS     R6,R1
+   \       0x80   0xE1B0'7002        MOVS     R7,R2
+   \       0x84   0xE1B0'8003        MOVS     R8,R3
+   \       0x88   0xE1D4'00B4        LDRH     R0,[R4, #+4]
+   \       0x8C   0xE1B0'1005        MOVS     R1,R5
+   \       0x90   0x....'....        BL       __aeabi_idiv
+   \       0x94   0xE1B0'3008        MOVS     R3,R8
+   \       0x98   0xE1B0'2007        MOVS     R2,R7
+   \       0x9C   0xE1B0'1006        MOVS     R1,R6
+   \       0xA0   0x....'....        BL       _fill_rect
+    306          	_set_front_color(0xFF0000);
+   \       0xA4   0xE3A0'08FF        MOV      R0,#+16711680
+   \       0xA8   0x....'....        BL       _set_front_color
+    307          	_fill_rect(pDisp->width/3+pDisp->width/3, 0, pDisp->width-1, pDisp->height);
+   \       0xAC   0xE1D4'30B6        LDRH     R3,[R4, #+6]
+   \       0xB0   0xE1D4'00B4        LDRH     R0,[R4, #+4]
+   \       0xB4   0xE250'2001        SUBS     R2,R0,#+1
+   \       0xB8   0xE3A0'1000        MOV      R1,#+0
+   \       0xBC   0xE1B0'6001        MOVS     R6,R1
+   \       0xC0   0xE1B0'7002        MOVS     R7,R2
+   \       0xC4   0xE1B0'8003        MOVS     R8,R3
+   \       0xC8   0xE1D4'00B4        LDRH     R0,[R4, #+4]
+   \       0xCC   0xE1B0'1005        MOVS     R1,R5
+   \       0xD0   0x....'....        BL       __aeabi_idiv
+   \       0xD4   0xE1B0'9000        MOVS     R9,R0
+   \       0xD8   0xE1D4'00B4        LDRH     R0,[R4, #+4]
+   \       0xDC   0xE1B0'1005        MOVS     R1,R5
+   \       0xE0   0x....'....        BL       __aeabi_idiv
+   \       0xE4   0xE090'0009        ADDS     R0,R0,R9
+   \       0xE8   0xE1B0'3008        MOVS     R3,R8
+   \       0xEC   0xE1B0'2007        MOVS     R2,R7
+   \       0xF0   0xE1B0'1006        MOVS     R1,R6
+   \       0xF4   0x....'....        BL       _fill_rect
+    308          	_show_canvas();
+   \       0xF8   0x....'....        BL       _show_canvas
+    309          }
+   \       0xFC   0xE8BD'83F1        POP      {R0,R4-R9,PC}    ;; return
+    310          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    311          void lcd_fill_yuv422(void)
+    312          {
+   \                     lcd_fill_yuv422:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+    313          	struct _lcdc_layer *pDisp = lcdc_get_canvas();
+   \        0x4   0x....'....        BL       lcdc_get_canvas
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+    314          	uint8_t *buffur = pDisp->buffer;
+   \        0xC   0xE594'5000        LDR      R5,[R4, #+0]
+    315          	uint32_t i;
+    316          	uint32_t h = pDisp->width;
+   \       0x10   0xE1D4'60B4        LDRH     R6,[R4, #+4]
+    317          	uint32_t v = pDisp->height;
+   \       0x14   0xE1D4'70B6        LDRH     R7,[R4, #+6]
+    318          	for(i=0;i<h*v*2/8;) {
+   \       0x18   0xE3A0'9000        MOV      R9,#+0
+   \                     ??lcd_fill_yuv422_0:
+   \       0x1C   0xE010'0697        MULS     R0,R7,R6
+   \       0x20   0xE1B0'0080        LSLS     R0,R0,#+1
+   \       0x24   0xE159'01A0        CMP      R9,R0, LSR #+3
+   \       0x28   0x2A00'001C        BCS      ??lcd_fill_yuv422_1
+    319          		if(((i/h)%2)==0) {
+   \       0x2C   0xE1B0'0009        MOVS     R0,R9
+   \       0x30   0xE1B0'1006        MOVS     R1,R6
+   \       0x34   0x....'....        BL       __aeabi_uidiv
+   \       0x38   0xE310'0001        TST      R0,#0x1
+   \       0x3C   0x1A00'000B        BNE      ??lcd_fill_yuv422_2
+    320          			buffur[i++]=81; buffur[i++]=239;buffur[i++]=81;buffur[i++]=90;
+   \       0x40   0xE3A0'1051        MOV      R1,#+81
+   \       0x44   0xE7C5'1009        STRB     R1,[R5, +R9]
+   \       0x48   0xE299'0001        ADDS     R0,R9,#+1
+   \       0x4C   0xE3A0'20EF        MOV      R2,#+239
+   \       0x50   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \       0x54   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x58   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \       0x5C   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x60   0xE3A0'105A        MOV      R1,#+90
+   \       0x64   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \       0x68   0xE290'9001        ADDS     R9,R0,#+1
+   \       0x6C   0xEAFF'FFEA        B        ??lcd_fill_yuv422_0
+    321          		} else {
+    322          			buffur[i++]=165;buffur[i++]=180;buffur[i++]=165;buffur[i++]=42;
+   \                     ??lcd_fill_yuv422_2:
+   \       0x70   0xE3A0'10A5        MOV      R1,#+165
+   \       0x74   0xE7C5'1009        STRB     R1,[R5, +R9]
+   \       0x78   0xE299'0001        ADDS     R0,R9,#+1
+   \       0x7C   0xE3A0'20B4        MOV      R2,#+180
+   \       0x80   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \       0x84   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x88   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \       0x8C   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x90   0xE3A0'102A        MOV      R1,#+42
+   \       0x94   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \       0x98   0xE290'9001        ADDS     R9,R0,#+1
+   \       0x9C   0xEAFF'FFDE        B        ??lcd_fill_yuv422_0
+    323          		}
+    324          	}
+    325          	for(i=h*v*2/8;i<h*v*2/8*2;) {
+   \                     ??lcd_fill_yuv422_1:
+   \       0xA0   0xE010'0697        MULS     R0,R7,R6
+   \       0xA4   0xE1B0'0080        LSLS     R0,R0,#+1
+   \       0xA8   0xE1B0'81A0        LSRS     R8,R0,#+3
+   \                     ??lcd_fill_yuv422_3:
+   \       0xAC   0xE010'0697        MULS     R0,R7,R6
+   \       0xB0   0xE1B0'0080        LSLS     R0,R0,#+1
+   \       0xB4   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \       0xB8   0xE1B0'0080        LSLS     R0,R0,#+1
+   \       0xBC   0xE158'0000        CMP      R8,R0
+   \       0xC0   0x2A00'001C        BCS      ??lcd_fill_yuv422_4
+    326          		if(((i/h)%2)==0) {
+   \       0xC4   0xE1B0'0008        MOVS     R0,R8
+   \       0xC8   0xE1B0'1006        MOVS     R1,R6
+   \       0xCC   0x....'....        BL       __aeabi_uidiv
+   \       0xD0   0xE310'0001        TST      R0,#0x1
+   \       0xD4   0x1A00'000B        BNE      ??lcd_fill_yuv422_5
+    327          			buffur[i++]=107; buffur[i++]=202;buffur[i++]=107;buffur[i++]=222;
+   \       0xD8   0xE3A0'106B        MOV      R1,#+107
+   \       0xDC   0xE7C5'1008        STRB     R1,[R5, +R8]
+   \       0xE0   0xE298'0001        ADDS     R0,R8,#+1
+   \       0xE4   0xE3A0'20CA        MOV      R2,#+202
+   \       0xE8   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \       0xEC   0xE290'0001        ADDS     R0,R0,#+1
+   \       0xF0   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \       0xF4   0xE290'0001        ADDS     R0,R0,#+1
+   \       0xF8   0xE3A0'10DE        MOV      R1,#+222
+   \       0xFC   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x100   0xE290'8001        ADDS     R8,R0,#+1
+   \      0x104   0xEAFF'FFE8        B        ??lcd_fill_yuv422_3
+    328          		} else {
+    329          			buffur[i++]=127;buffur[i++]=134;buffur[i++]=127;buffur[i++]=102;
+   \                     ??lcd_fill_yuv422_5:
+   \      0x108   0xE3A0'107F        MOV      R1,#+127
+   \      0x10C   0xE7C5'1008        STRB     R1,[R5, +R8]
+   \      0x110   0xE298'0001        ADDS     R0,R8,#+1
+   \      0x114   0xE3A0'2086        MOV      R2,#+134
+   \      0x118   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x11C   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x120   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x124   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x128   0xE3A0'1066        MOV      R1,#+102
+   \      0x12C   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x130   0xE290'8001        ADDS     R8,R0,#+1
+   \      0x134   0xEAFF'FFDC        B        ??lcd_fill_yuv422_3
+    330          		}
+    331          	}
+    332          	for(i=h*v*2/8*2;i<h*v*2/8*3;) {
+   \                     ??lcd_fill_yuv422_4:
+   \      0x138   0xE010'0697        MULS     R0,R7,R6
+   \      0x13C   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x140   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x144   0xE1B0'9080        LSLS     R9,R0,#+1
+   \                     ??lcd_fill_yuv422_6:
+   \      0x148   0xE010'0697        MULS     R0,R7,R6
+   \      0x14C   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x150   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x154   0xE080'0080        ADD      R0,R0,R0, LSL #+1
+   \      0x158   0xE159'0000        CMP      R9,R0
+   \      0x15C   0x2A00'001C        BCS      ??lcd_fill_yuv422_7
+    333          		if(((i/h)%2)==0) {
+   \      0x160   0xE1B0'0009        MOVS     R0,R9
+   \      0x164   0xE1B0'1006        MOVS     R1,R6
+   \      0x168   0x....'....        BL       __aeabi_uidiv
+   \      0x16C   0xE310'0001        TST      R0,#0x1
+   \      0x170   0x1A00'000B        BNE      ??lcd_fill_yuv422_8
+    334          			buffur[i++]=170; buffur[i++]=16;buffur[i++]=170;buffur[i++]=166;
+   \      0x174   0xE3A0'10AA        MOV      R1,#+170
+   \      0x178   0xE7C5'1009        STRB     R1,[R5, +R9]
+   \      0x17C   0xE299'0001        ADDS     R0,R9,#+1
+   \      0x180   0xE3A0'2010        MOV      R2,#+16
+   \      0x184   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x188   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x18C   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x190   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x194   0xE3A0'10A6        MOV      R1,#+166
+   \      0x198   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x19C   0xE290'9001        ADDS     R9,R0,#+1
+   \      0x1A0   0xEAFF'FFE8        B        ??lcd_fill_yuv422_6
+    335          		} else {
+    336          			buffur[i++]=40;buffur[i++]=109;buffur[i++]=40;buffur[i++]=239;
+   \                     ??lcd_fill_yuv422_8:
+   \      0x1A4   0xE3A0'1028        MOV      R1,#+40
+   \      0x1A8   0xE7C5'1009        STRB     R1,[R5, +R9]
+   \      0x1AC   0xE299'0001        ADDS     R0,R9,#+1
+   \      0x1B0   0xE3A0'206D        MOV      R2,#+109
+   \      0x1B4   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x1B8   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x1BC   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x1C0   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x1C4   0xE3A0'10EF        MOV      R1,#+239
+   \      0x1C8   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x1CC   0xE290'9001        ADDS     R9,R0,#+1
+   \      0x1D0   0xEAFF'FFDC        B        ??lcd_fill_yuv422_6
+    337          		}
+    338          	}
+    339          	for(i=h*v*2/8*3;i<h*v*2/8*4;) {
+   \                     ??lcd_fill_yuv422_7:
+   \      0x1D4   0xE010'0697        MULS     R0,R7,R6
+   \      0x1D8   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x1DC   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x1E0   0xE080'A080        ADD      R10,R0,R0, LSL #+1
+   \                     ??lcd_fill_yuv422_9:
+   \      0x1E4   0xE010'0697        MULS     R0,R7,R6
+   \      0x1E8   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x1EC   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x1F0   0xE1B0'0100        LSLS     R0,R0,#+2
+   \      0x1F4   0xE15A'0000        CMP      R10,R0
+   \      0x1F8   0x2A00'001C        BCS      ??lcd_fill_yuv422_10
+    340          		if(((i/h)%2)==0) {
+   \      0x1FC   0xE1B0'000A        MOVS     R0,R10
+   \      0x200   0xE1B0'1006        MOVS     R1,R6
+   \      0x204   0x....'....        BL       __aeabi_uidiv
+   \      0x208   0xE310'0001        TST      R0,#0x1
+   \      0x20C   0x1A00'000B        BNE      ??lcd_fill_yuv422_11
+    341          			buffur[i++]=144;buffur[i++]=34;buffur[i++]=144;buffur[i++]=53;
+   \      0x210   0xE3A0'1090        MOV      R1,#+144
+   \      0x214   0xE7C5'100A        STRB     R1,[R5, +R10]
+   \      0x218   0xE29A'0001        ADDS     R0,R10,#+1
+   \      0x21C   0xE3A0'2022        MOV      R2,#+34
+   \      0x220   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x224   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x228   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x22C   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x230   0xE3A0'1035        MOV      R1,#+53
+   \      0x234   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x238   0xE290'A001        ADDS     R10,R0,#+1
+   \      0x23C   0xEAFF'FFE8        B        ??lcd_fill_yuv422_9
+    342          		} else {
+    343          			buffur[i++]=81; buffur[i++]=239;buffur[i++]=81;buffur[i++]=90;
+   \                     ??lcd_fill_yuv422_11:
+   \      0x240   0xE3A0'1051        MOV      R1,#+81
+   \      0x244   0xE7C5'100A        STRB     R1,[R5, +R10]
+   \      0x248   0xE29A'0001        ADDS     R0,R10,#+1
+   \      0x24C   0xE3A0'20EF        MOV      R2,#+239
+   \      0x250   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x254   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x258   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x25C   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x260   0xE3A0'105A        MOV      R1,#+90
+   \      0x264   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x268   0xE290'A001        ADDS     R10,R0,#+1
+   \      0x26C   0xEAFF'FFDC        B        ??lcd_fill_yuv422_9
+    344          		}
+    345          	}
+    346          	for(i=h*v*2/8*4;i<h*v*2/8*5;) {
+   \                     ??lcd_fill_yuv422_10:
+   \      0x270   0xE010'0697        MULS     R0,R7,R6
+   \      0x274   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x278   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x27C   0xE1B0'8100        LSLS     R8,R0,#+2
+   \                     ??lcd_fill_yuv422_12:
+   \      0x280   0xE010'0697        MULS     R0,R7,R6
+   \      0x284   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x288   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x28C   0xE080'0100        ADD      R0,R0,R0, LSL #+2
+   \      0x290   0xE158'0000        CMP      R8,R0
+   \      0x294   0x2A00'001C        BCS      ??lcd_fill_yuv422_13
+    347          		if(((i/h)%2)==0) {
+   \      0x298   0xE1B0'0008        MOVS     R0,R8
+   \      0x29C   0xE1B0'1006        MOVS     R1,R6
+   \      0x2A0   0x....'....        BL       __aeabi_uidiv
+   \      0x2A4   0xE310'0001        TST      R0,#0x1
+   \      0x2A8   0x1A00'000B        BNE      ??lcd_fill_yuv422_14
+    348          			buffur[i++]=40;buffur[i++]=109;buffur[i++]=40;buffur[i++]=239;
+   \      0x2AC   0xE3A0'1028        MOV      R1,#+40
+   \      0x2B0   0xE7C5'1008        STRB     R1,[R5, +R8]
+   \      0x2B4   0xE298'0001        ADDS     R0,R8,#+1
+   \      0x2B8   0xE3A0'206D        MOV      R2,#+109
+   \      0x2BC   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x2C0   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x2C4   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x2C8   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x2CC   0xE3A0'10EF        MOV      R1,#+239
+   \      0x2D0   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x2D4   0xE290'8001        ADDS     R8,R0,#+1
+   \      0x2D8   0xEAFF'FFE8        B        ??lcd_fill_yuv422_12
+    349          		} else {
+    350          			buffur[i++]=107; buffur[i++]=202;buffur[i++]=107;buffur[i++]=222;
+   \                     ??lcd_fill_yuv422_14:
+   \      0x2DC   0xE3A0'106B        MOV      R1,#+107
+   \      0x2E0   0xE7C5'1008        STRB     R1,[R5, +R8]
+   \      0x2E4   0xE298'0001        ADDS     R0,R8,#+1
+   \      0x2E8   0xE3A0'20CA        MOV      R2,#+202
+   \      0x2EC   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x2F0   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x2F4   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x2F8   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x2FC   0xE3A0'10DE        MOV      R1,#+222
+   \      0x300   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x304   0xE290'8001        ADDS     R8,R0,#+1
+   \      0x308   0xEAFF'FFDC        B        ??lcd_fill_yuv422_12
+    351          		}
+    352          	}
+    353          	for(i=h*v*2/8*5;i<h*v*2/8*6;) {
+   \                     ??lcd_fill_yuv422_13:
+   \      0x30C   0xE010'0697        MULS     R0,R7,R6
+   \      0x310   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x314   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x318   0xE080'9100        ADD      R9,R0,R0, LSL #+2
+   \                     ??lcd_fill_yuv422_15:
+   \      0x31C   0xE010'0697        MULS     R0,R7,R6
+   \      0x320   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x324   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x328   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \      0x32C   0xE159'0081        CMP      R9,R1, LSL #+1
+   \      0x330   0x2A00'001C        BCS      ??lcd_fill_yuv422_16
+    354          		if(((i/h)%2)==0) {
+   \      0x334   0xE1B0'0009        MOVS     R0,R9
+   \      0x338   0xE1B0'1006        MOVS     R1,R6
+   \      0x33C   0x....'....        BL       __aeabi_uidiv
+   \      0x340   0xE310'0001        TST      R0,#0x1
+   \      0x344   0x1A00'000B        BNE      ??lcd_fill_yuv422_17
+    355          			buffur[i++]=211;buffur[i++]=146;buffur[i++]=211;buffur[i++]=15;
+   \      0x348   0xE3A0'10D3        MOV      R1,#+211
+   \      0x34C   0xE7C5'1009        STRB     R1,[R5, +R9]
+   \      0x350   0xE299'0001        ADDS     R0,R9,#+1
+   \      0x354   0xE3A0'2092        MOV      R2,#+146
+   \      0x358   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x35C   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x360   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x364   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x368   0xE3A0'100F        MOV      R1,#+15
+   \      0x36C   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x370   0xE290'9001        ADDS     R9,R0,#+1
+   \      0x374   0xEAFF'FFE8        B        ??lcd_fill_yuv422_15
+    356          		} else {
+    357          			buffur[i++]=127;buffur[i++]=134;buffur[i++]=127;buffur[i++]=102;
+   \                     ??lcd_fill_yuv422_17:
+   \      0x378   0xE3A0'107F        MOV      R1,#+127
+   \      0x37C   0xE7C5'1009        STRB     R1,[R5, +R9]
+   \      0x380   0xE299'0001        ADDS     R0,R9,#+1
+   \      0x384   0xE3A0'2086        MOV      R2,#+134
+   \      0x388   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x38C   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x390   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x394   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x398   0xE3A0'1066        MOV      R1,#+102
+   \      0x39C   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x3A0   0xE290'9001        ADDS     R9,R0,#+1
+   \      0x3A4   0xEAFF'FFDC        B        ??lcd_fill_yuv422_15
+    358          		}
+    359          	}
+    360          	for(i=h*v*2/8*6;i<h*v*2/8*7;) {
+   \                     ??lcd_fill_yuv422_16:
+   \      0x3A8   0xE010'0697        MULS     R0,R7,R6
+   \      0x3AC   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x3B0   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x3B4   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \      0x3B8   0xE1B0'8081        LSLS     R8,R1,#+1
+   \                     ??lcd_fill_yuv422_18:
+   \      0x3BC   0xE010'0697        MULS     R0,R7,R6
+   \      0x3C0   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x3C4   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x3C8   0xE060'0180        RSB      R0,R0,R0, LSL #+3
+   \      0x3CC   0xE158'0000        CMP      R8,R0
+   \      0x3D0   0x2A00'001C        BCS      ??lcd_fill_yuv422_19
+    361          		if(((i/h)%2)==0) {
+   \      0x3D4   0xE1B0'0008        MOVS     R0,R8
+   \      0x3D8   0xE1B0'1006        MOVS     R1,R6
+   \      0x3DC   0x....'....        BL       __aeabi_uidiv
+   \      0x3E0   0xE310'0001        TST      R0,#0x1
+   \      0x3E4   0x1A00'000B        BNE      ??lcd_fill_yuv422_20
+    362          			buffur[i++]=165;buffur[i++]=180;buffur[i++]=165;buffur[i++]=42;
+   \      0x3E8   0xE3A0'10A5        MOV      R1,#+165
+   \      0x3EC   0xE7C5'1008        STRB     R1,[R5, +R8]
+   \      0x3F0   0xE298'0001        ADDS     R0,R8,#+1
+   \      0x3F4   0xE3A0'20B4        MOV      R2,#+180
+   \      0x3F8   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x3FC   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x400   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x404   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x408   0xE3A0'102A        MOV      R1,#+42
+   \      0x40C   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x410   0xE290'8001        ADDS     R8,R0,#+1
+   \      0x414   0xEAFF'FFE8        B        ??lcd_fill_yuv422_18
+    363          		} else {
+    364          			buffur[i++]=144;buffur[i++]=34;buffur[i++]=144;buffur[i++]=53;
+   \                     ??lcd_fill_yuv422_20:
+   \      0x418   0xE3A0'1090        MOV      R1,#+144
+   \      0x41C   0xE7C5'1008        STRB     R1,[R5, +R8]
+   \      0x420   0xE298'0001        ADDS     R0,R8,#+1
+   \      0x424   0xE3A0'2022        MOV      R2,#+34
+   \      0x428   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x42C   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x430   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x434   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x438   0xE3A0'1035        MOV      R1,#+53
+   \      0x43C   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x440   0xE290'8001        ADDS     R8,R0,#+1
+   \      0x444   0xEAFF'FFDC        B        ??lcd_fill_yuv422_18
+    365          		}
+    366          	}
+    367          	for(i=h*v*2/8*7;i<h*v*2/8*8;) {
+   \                     ??lcd_fill_yuv422_19:
+   \      0x448   0xE010'0697        MULS     R0,R7,R6
+   \      0x44C   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x450   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x454   0xE060'9180        RSB      R9,R0,R0, LSL #+3
+   \                     ??lcd_fill_yuv422_21:
+   \      0x458   0xE010'0697        MULS     R0,R7,R6
+   \      0x45C   0xE1B0'0080        LSLS     R0,R0,#+1
+   \      0x460   0xE1B0'01A0        LSRS     R0,R0,#+3
+   \      0x464   0xE1B0'0180        LSLS     R0,R0,#+3
+   \      0x468   0xE159'0000        CMP      R9,R0
+   \      0x46C   0x2A00'001C        BCS      ??lcd_fill_yuv422_22
+    368          		if(((i/h)%2)==0) {
+   \      0x470   0xE1B0'0009        MOVS     R0,R9
+   \      0x474   0xE1B0'1006        MOVS     R1,R6
+   \      0x478   0x....'....        BL       __aeabi_uidiv
+   \      0x47C   0xE310'0001        TST      R0,#0x1
+   \      0x480   0x1A00'000B        BNE      ??lcd_fill_yuv422_23
+    369          			buffur[i++]=127;buffur[i++]=134;buffur[i++]=127;buffur[i++]=102;
+   \      0x484   0xE3A0'107F        MOV      R1,#+127
+   \      0x488   0xE7C5'1009        STRB     R1,[R5, +R9]
+   \      0x48C   0xE299'0001        ADDS     R0,R9,#+1
+   \      0x490   0xE3A0'2086        MOV      R2,#+134
+   \      0x494   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x498   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x49C   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x4A0   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x4A4   0xE3A0'1066        MOV      R1,#+102
+   \      0x4A8   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x4AC   0xE290'9001        ADDS     R9,R0,#+1
+   \      0x4B0   0xEAFF'FFE8        B        ??lcd_fill_yuv422_21
+    370          		} else {
+    371          			buffur[i++]=170; buffur[i++]=16;buffur[i++]=170;buffur[i++]=166;
+   \                     ??lcd_fill_yuv422_23:
+   \      0x4B4   0xE3A0'10AA        MOV      R1,#+170
+   \      0x4B8   0xE7C5'1009        STRB     R1,[R5, +R9]
+   \      0x4BC   0xE299'0001        ADDS     R0,R9,#+1
+   \      0x4C0   0xE3A0'2010        MOV      R2,#+16
+   \      0x4C4   0xE7C5'2000        STRB     R2,[R5, +R0]
+   \      0x4C8   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x4CC   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x4D0   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x4D4   0xE3A0'10A6        MOV      R1,#+166
+   \      0x4D8   0xE7C5'1000        STRB     R1,[R5, +R0]
+   \      0x4DC   0xE290'9001        ADDS     R9,R0,#+1
+   \      0x4E0   0xEAFF'FFDC        B        ??lcd_fill_yuv422_21
+    372          		}
+    373          	}
+    374          }
+   \                     ??lcd_fill_yuv422_22:
+   \      0x4E4   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    375          
+    376          /**
+    377           * \brief Draw a pixel on LCD of given color.
+    378           *
+    379           * \param x  X-coordinate of pixel.
+    380           * \param y  Y-coordinate of pixel.
+    381           * \param color  Pixel color.
+    382           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    383          void lcd_draw_pixel(uint32_t x, uint32_t y, uint32_t color)
+    384          {
+   \                     lcd_draw_pixel:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    385          	_set_front_color(color);
+   \       0x10   0xE1B0'0006        MOVS     R0,R6
+   \       0x14   0x....'....        BL       _set_front_color
+    386          	_hide_canvas();
+   \       0x18   0x....'....        BL       _hide_canvas
+    387          	_draw_pixel(x, y);
+   \       0x1C   0xE1B0'1005        MOVS     R1,R5
+   \       0x20   0xE1B0'0004        MOVS     R0,R4
+   \       0x24   0x....'....        BL       _draw_pixel
+    388          	_show_canvas();
+   \       0x28   0x....'....        BL       _show_canvas
+    389          }
+   \       0x2C   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    390          
+    391          /**
+    392           * \brief Read a pixel from LCD.
+    393           *
+    394           * \param x  X-coordinate of pixel.
+    395           * \param y  Y-coordinate of pixel.
+    396           *
+    397           * \return color  Readed pixel color.
+    398           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    399          extern uint32_t lcd_read_pixel(uint32_t x, uint32_t y)
+    400          {
+   \                     lcd_read_pixel:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    401          	struct _lcdc_layer *pDisp = lcdc_get_canvas();
+   \        0xC   0x....'....        BL       lcdc_get_canvas
+   \       0x10   0xE1B0'6000        MOVS     R6,R0
+    402          	uint8_t *buffer = pDisp->buffer;
+   \       0x14   0xE596'7000        LDR      R7,[R6, #+0]
+    403          	uint16_t w = pDisp->width;
+   \       0x18   0xE1D6'80B4        LDRH     R8,[R6, #+4]
+    404          	//uint16_t h = pDisp->height;
+    405          	uint16_t cw = pDisp->bpp / 8;	/* color width */
+   \       0x1C   0xE5D6'0008        LDRB     R0,[R6, #+8]
+   \       0x20   0xE3A0'1008        MOV      R1,#+8
+   \       0x24   0x....'....        BL       __aeabi_idiv
+   \       0x28   0xE1B0'1000        MOVS     R1,R0
+    406          	uint32_t rw = w * cw;	/* row width in bytes */
+   \       0x2C   0xE1B0'0008        MOVS     R0,R8
+   \       0x30   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x34   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x38   0xE1B0'2001        MOVS     R2,R1
+   \       0x3C   0xE1A0'2802        LSL      R2,R2,#+16
+   \       0x40   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0x44   0xE013'0092        MULS     R3,R2,R0
+    407          	uint8_t *pPix;
+    408          	uint32_t color = 0;
+   \       0x48   0xE3A0'2000        MOV      R2,#+0
+    409          
+    410          	if (buffer == NULL)
+   \       0x4C   0xE357'0000        CMP      R7,#+0
+   \       0x50   0x1A00'0001        BNE      ??lcd_read_pixel_0
+    411          		return 0;
+   \       0x54   0xE3A0'0000        MOV      R0,#+0
+   \       0x58   0xEA00'0026        B        ??lcd_read_pixel_1
+    412          
+    413          	if (rw & 0x3)
+   \                     ??lcd_read_pixel_0:
+   \       0x5C   0xE313'0003        TST      R3,#0x3
+   \       0x60   0x0A00'0001        BEQ      ??lcd_read_pixel_2
+    414          		rw = (rw | 0x3) + 1;	/* 4-byte aligned rows */
+   \       0x64   0xE393'0003        ORRS     R0,R3,#0x3
+   \       0x68   0xE290'3001        ADDS     R3,R0,#+1
+    415          	pPix = &buffer[x * rw + cw * y];
+   \                     ??lcd_read_pixel_2:
+   \       0x6C   0xE1B0'0001        MOVS     R0,R1
+   \       0x70   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x74   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x78   0xE010'0095        MULS     R0,R5,R0
+   \       0x7C   0xE020'0493        MLA      R0,R3,R4,R0
+   \       0x80   0xE097'C000        ADDS     R12,R7,R0
+    416          
+    417          	switch (pDisp->bpp) {
+   \       0x84   0xE5D6'0008        LDRB     R0,[R6, #+8]
+   \       0x88   0xE350'0010        CMP      R0,#+16
+   \       0x8C   0x0A00'0004        BEQ      ??lcd_read_pixel_3
+   \       0x90   0xE350'0018        CMP      R0,#+24
+   \       0x94   0x0A00'0007        BEQ      ??lcd_read_pixel_4
+   \       0x98   0xE350'0020        CMP      R0,#+32
+   \       0x9C   0x0A00'000C        BEQ      ??lcd_read_pixel_5
+   \       0xA0   0xEA00'0013        B        ??lcd_read_pixel_6
+    418          	case 16:		/* TRGB 1555 */
+    419          		color = pPix[0] | (pPix[1] << 8);
+   \                     ??lcd_read_pixel_3:
+   \       0xA4   0xE5DC'0000        LDRB     R0,[R12, #+0]
+   \       0xA8   0xE5DC'E001        LDRB     LR,[R12, #+1]
+   \       0xAC   0xE190'040E        ORRS     R0,R0,LR, LSL #+8
+   \       0xB0   0xE1B0'2000        MOVS     R2,R0
+    420          		break;
+   \       0xB4   0xEA00'000E        B        ??lcd_read_pixel_6
+    421          	case 24:		/*  RGB  888 */
+    422          		color = pPix[0] | (pPix[1] << 8) | (pPix[2] << 16);
+   \                     ??lcd_read_pixel_4:
+   \       0xB8   0xE5DC'0000        LDRB     R0,[R12, #+0]
+   \       0xBC   0xE5DC'E001        LDRB     LR,[R12, #+1]
+   \       0xC0   0xE190'040E        ORRS     R0,R0,LR, LSL #+8
+   \       0xC4   0xE5DC'E002        LDRB     LR,[R12, #+2]
+   \       0xC8   0xE190'080E        ORRS     R0,R0,LR, LSL #+16
+   \       0xCC   0xE1B0'2000        MOVS     R2,R0
+    423          		break;
+   \       0xD0   0xEA00'0007        B        ??lcd_read_pixel_6
+    424          	case 32:		/* ARGB 8888 */
+    425          		color =
+    426          			pPix[0] | (pPix[1] << 8) | (pPix[2] << 16) | (pPix[3] <<
+    427          								      24);
+   \                     ??lcd_read_pixel_5:
+   \       0xD4   0xE5DC'0000        LDRB     R0,[R12, #+0]
+   \       0xD8   0xE5DC'E001        LDRB     LR,[R12, #+1]
+   \       0xDC   0xE190'040E        ORRS     R0,R0,LR, LSL #+8
+   \       0xE0   0xE5DC'E002        LDRB     LR,[R12, #+2]
+   \       0xE4   0xE190'080E        ORRS     R0,R0,LR, LSL #+16
+   \       0xE8   0xE5DC'E003        LDRB     LR,[R12, #+3]
+   \       0xEC   0xE190'0C0E        ORRS     R0,R0,LR, LSL #+24
+   \       0xF0   0xE1B0'2000        MOVS     R2,R0
+    428          		break;
+    429          	}
+    430          	return color;
+   \                     ??lcd_read_pixel_6:
+   \       0xF4   0xE1B0'0002        MOVS     R0,R2
+   \                     ??lcd_read_pixel_1:
+   \       0xF8   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    431          }
+    432          
+    433          /**
+    434           * \brief Draw a line on LCD, horizontal and vertical line are supported.
+    435           *
+    436           * \param x1        X-coordinate of line start.
+    437           * \param y1        Y-coordinate of line start.
+    438           * \param x2        X-coordinate of line end.
+    439           * \param y2        Y-coordinate of line end.
+    440           * \param color     Pixel color.
+    441           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    442          void lcd_draw_line(uint32_t x1, uint32_t y1, uint32_t x2, uint32_t y2,
+    443          		    uint32_t color)
+    444          {
+   \                     lcd_draw_line:
+   \        0x0   0xE92D'4FFF        PUSH     {R0-R11,LR}
+   \        0x4   0xE24D'D00C        SUB      SP,SP,#+12
+   \        0x8   0xE59D'4040        LDR      R4,[SP, #+64]
+    445          	_set_front_color(color);
+   \        0xC   0xE1B0'0004        MOVS     R0,R4
+   \       0x10   0x....'....        BL       _set_front_color
+    446          
+    447          	if ((x1 == x2) && (y1 > y2)) {
+   \       0x14   0xE59D'000C        LDR      R0,[SP, #+12]
+   \       0x18   0xE59D'1014        LDR      R1,[SP, #+20]
+   \       0x1C   0xE150'0001        CMP      R0,R1
+   \       0x20   0x1A00'001B        BNE      ??lcd_draw_line_0
+   \       0x24   0xE59D'0018        LDR      R0,[SP, #+24]
+   \       0x28   0xE59D'1010        LDR      R1,[SP, #+16]
+   \       0x2C   0xE150'0001        CMP      R0,R1
+   \       0x30   0x2A00'0017        BCS      ??lcd_draw_line_0
+    448          		SWAP(y1, y2);
+   \       0x34   0xE3A0'5004        MOV      R5,#+4
+   \       0x38   0xE28D'6010        ADD      R6,SP,#+16
+   \       0x3C   0xE28D'7004        ADD      R7,SP,#+4
+   \       0x40   0xE1B0'2005        MOVS     R2,R5
+   \       0x44   0xE1B0'1006        MOVS     R1,R6
+   \       0x48   0xE1B0'0007        MOVS     R0,R7
+   \       0x4C   0x....'....        BL       __aeabi_memcpy
+   \       0x50   0xE1B0'0007        MOVS     R0,R7
+   \       0x54   0xE3A0'7004        MOV      R7,#+4
+   \       0x58   0xE28D'8018        ADD      R8,SP,#+24
+   \       0x5C   0xE28D'9010        ADD      R9,SP,#+16
+   \       0x60   0xE1B0'2007        MOVS     R2,R7
+   \       0x64   0xE1B0'1008        MOVS     R1,R8
+   \       0x68   0xE1B0'0009        MOVS     R0,R9
+   \       0x6C   0x....'....        BL       __aeabi_memcpy
+   \       0x70   0xE1B0'0009        MOVS     R0,R9
+   \       0x74   0xE3A0'9004        MOV      R9,#+4
+   \       0x78   0xE28D'A004        ADD      R10,SP,#+4
+   \       0x7C   0xE28D'B018        ADD      R11,SP,#+24
+   \       0x80   0xE1B0'2009        MOVS     R2,R9
+   \       0x84   0xE1B0'100A        MOVS     R1,R10
+   \       0x88   0xE1B0'000B        MOVS     R0,R11
+   \       0x8C   0x....'....        BL       __aeabi_memcpy
+   \       0x90   0xE1B0'000B        MOVS     R0,R11
+    449          	}
+    450          	if ((x1 > x2) & (y1 == y2)) {
+   \                     ??lcd_draw_line_0:
+   \       0x94   0xE59D'0014        LDR      R0,[SP, #+20]
+   \       0x98   0xE59D'100C        LDR      R1,[SP, #+12]
+   \       0x9C   0xE150'0001        CMP      R0,R1
+   \       0xA0   0x2A00'0001        BCS      ??lcd_draw_line_1
+   \       0xA4   0xE3A0'0001        MOV      R0,#+1
+   \       0xA8   0xEA00'0000        B        ??lcd_draw_line_2
+   \                     ??lcd_draw_line_1:
+   \       0xAC   0xE3A0'0000        MOV      R0,#+0
+   \                     ??lcd_draw_line_2:
+   \       0xB0   0xE59D'1010        LDR      R1,[SP, #+16]
+   \       0xB4   0xE59D'2018        LDR      R2,[SP, #+24]
+   \       0xB8   0xE151'0002        CMP      R1,R2
+   \       0xBC   0x1A00'0001        BNE      ??lcd_draw_line_3
+   \       0xC0   0xE3A0'1001        MOV      R1,#+1
+   \       0xC4   0xEA00'0000        B        ??lcd_draw_line_4
+   \                     ??lcd_draw_line_3:
+   \       0xC8   0xE3A0'1000        MOV      R1,#+0
+   \                     ??lcd_draw_line_4:
+   \       0xCC   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xD0   0xE111'0000        TST      R1,R0
+   \       0xD4   0x0A00'0017        BEQ      ??lcd_draw_line_5
+    451          		SWAP(x1, x2);
+   \       0xD8   0xE3A0'5004        MOV      R5,#+4
+   \       0xDC   0xE28D'600C        ADD      R6,SP,#+12
+   \       0xE0   0xE1B0'700D        MOVS     R7,SP
+   \       0xE4   0xE1B0'2005        MOVS     R2,R5
+   \       0xE8   0xE1B0'1006        MOVS     R1,R6
+   \       0xEC   0xE1B0'0007        MOVS     R0,R7
+   \       0xF0   0x....'....        BL       __aeabi_memcpy
+   \       0xF4   0xE1B0'0007        MOVS     R0,R7
+   \       0xF8   0xE3A0'7004        MOV      R7,#+4
+   \       0xFC   0xE28D'8014        ADD      R8,SP,#+20
+   \      0x100   0xE28D'900C        ADD      R9,SP,#+12
+   \      0x104   0xE1B0'2007        MOVS     R2,R7
+   \      0x108   0xE1B0'1008        MOVS     R1,R8
+   \      0x10C   0xE1B0'0009        MOVS     R0,R9
+   \      0x110   0x....'....        BL       __aeabi_memcpy
+   \      0x114   0xE1B0'0009        MOVS     R0,R9
+   \      0x118   0xE3A0'9004        MOV      R9,#+4
+   \      0x11C   0xE1B0'A00D        MOVS     R10,SP
+   \      0x120   0xE28D'B014        ADD      R11,SP,#+20
+   \      0x124   0xE1B0'2009        MOVS     R2,R9
+   \      0x128   0xE1B0'100A        MOVS     R1,R10
+   \      0x12C   0xE1B0'000B        MOVS     R0,R11
+   \      0x130   0x....'....        BL       __aeabi_memcpy
+   \      0x134   0xE1B0'000B        MOVS     R0,R11
+    452          	}
+    453          
+    454          	if ((x1 == x2) || (y1 == y2)) {
+   \                     ??lcd_draw_line_5:
+   \      0x138   0xE59D'000C        LDR      R0,[SP, #+12]
+   \      0x13C   0xE59D'1014        LDR      R1,[SP, #+20]
+   \      0x140   0xE150'0001        CMP      R0,R1
+   \      0x144   0x0A00'0003        BEQ      ??lcd_draw_line_6
+   \      0x148   0xE59D'0010        LDR      R0,[SP, #+16]
+   \      0x14C   0xE59D'1018        LDR      R1,[SP, #+24]
+   \      0x150   0xE150'0001        CMP      R0,R1
+   \      0x154   0x1A00'0006        BNE      ??lcd_draw_line_7
+    455          		lcd_draw_filled_rectangle(x1, y1, x2, y2, color);
+   \                     ??lcd_draw_line_6:
+   \      0x158   0xE58D'4000        STR      R4,[SP, #+0]
+   \      0x15C   0xE59D'3018        LDR      R3,[SP, #+24]
+   \      0x160   0xE59D'2014        LDR      R2,[SP, #+20]
+   \      0x164   0xE59D'1010        LDR      R1,[SP, #+16]
+   \      0x168   0xE59D'000C        LDR      R0,[SP, #+12]
+   \      0x16C   0x....'....        BL       lcd_draw_filled_rectangle
+   \      0x170   0xEA00'0006        B        ??lcd_draw_line_8
+    456          	} else {
+    457          		_hide_canvas();
+   \                     ??lcd_draw_line_7:
+   \      0x174   0x....'....        BL       _hide_canvas
+    458          		_draw_line_bresenham(x1, y1, x2, y2);
+   \      0x178   0xE59D'3018        LDR      R3,[SP, #+24]
+   \      0x17C   0xE59D'2014        LDR      R2,[SP, #+20]
+   \      0x180   0xE59D'1010        LDR      R1,[SP, #+16]
+   \      0x184   0xE59D'000C        LDR      R0,[SP, #+12]
+   \      0x188   0x....'....        BL       _draw_line_bresenham
+    459          		_show_canvas();
+   \      0x18C   0x....'....        BL       _show_canvas
+    460          	}
+    461          }
+   \                     ??lcd_draw_line_8:
+   \      0x190   0xE28D'D01C        ADD      SP,SP,#+28
+   \      0x194   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    462          
+    463          /**
+    464           * \brief Draws a rectangle on LCD, at the given coordinates.
+    465           *
+    466           * \param x      X-coordinate of upper-left rectangle corner.
+    467           * \param y      Y-coordinate of upper-left rectangle corner.
+    468           * \param width  Rectangle width in pixels.
+    469           * \param height  Rectangle height in pixels.
+    470           * \param color  Rectangle color.
+    471           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    472          void lcd_draw_rectangle(uint32_t x, uint32_t y, uint32_t width, uint32_t height,
+    473          			 uint32_t color)
+    474          {
+   \                     lcd_draw_rectangle:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE59D'8020        LDR      R8,[SP, #+32]
+    475          	uint32_t x1 = x + width - 1;
+   \       0x18   0xE096'0004        ADDS     R0,R6,R4
+   \       0x1C   0xE250'9001        SUBS     R9,R0,#+1
+    476          	uint32_t y1 = y + height - 1;
+   \       0x20   0xE097'0005        ADDS     R0,R7,R5
+   \       0x24   0xE250'A001        SUBS     R10,R0,#+1
+    477          
+    478          	_set_front_color(color);
+   \       0x28   0xE1B0'0008        MOVS     R0,R8
+   \       0x2C   0x....'....        BL       _set_front_color
+    479          	_hide_canvas();
+   \       0x30   0x....'....        BL       _hide_canvas
+    480          	_fill_rect(x, y, x1, y);
+   \       0x34   0xE1B0'3005        MOVS     R3,R5
+   \       0x38   0xE1B0'2009        MOVS     R2,R9
+   \       0x3C   0xE1B0'1005        MOVS     R1,R5
+   \       0x40   0xE1B0'0004        MOVS     R0,R4
+   \       0x44   0x....'....        BL       _fill_rect
+    481          	_fill_rect(x1, y, x1, y1);
+   \       0x48   0xE1B0'300A        MOVS     R3,R10
+   \       0x4C   0xE1B0'2009        MOVS     R2,R9
+   \       0x50   0xE1B0'1005        MOVS     R1,R5
+   \       0x54   0xE1B0'0009        MOVS     R0,R9
+   \       0x58   0x....'....        BL       _fill_rect
+    482          	_fill_rect(x, y, x, y1);
+   \       0x5C   0xE1B0'300A        MOVS     R3,R10
+   \       0x60   0xE1B0'2004        MOVS     R2,R4
+   \       0x64   0xE1B0'1005        MOVS     R1,R5
+   \       0x68   0xE1B0'0004        MOVS     R0,R4
+   \       0x6C   0x....'....        BL       _fill_rect
+    483          	_fill_rect(x, y1, x1, y1);
+   \       0x70   0xE1B0'300A        MOVS     R3,R10
+   \       0x74   0xE1B0'2009        MOVS     R2,R9
+   \       0x78   0xE1B0'100A        MOVS     R1,R10
+   \       0x7C   0xE1B0'0004        MOVS     R0,R4
+   \       0x80   0x....'....        BL       _fill_rect
+    484          	_show_canvas();
+   \       0x84   0x....'....        BL       _show_canvas
+    485          }
+   \       0x88   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    486          
+    487          /**
+    488           * \brief Draws a rectangle with fill inside on LCD, at the given coordinates.
+    489           *
+    490           * \param dwX1   X-coordinate of upper-left rectangle corner.
+    491           * \param dwY1   Y-coordinate of upper-left rectangle corner.
+    492           * \param dwX2   X-coordinate of down-right rectangle corner.
+    493           * \param dwY2   Y-coordinate of down-right rectangle corner.
+    494           * \param color Rectangle color.
+    495           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    496          void lcd_draw_filled_rectangle(uint32_t dwX1, uint32_t dwY1,
+    497          				uint32_t dwX2, uint32_t dwY2, uint32_t color)
+    498          {
+   \                     lcd_draw_filled_rectangle:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE59D'8018        LDR      R8,[SP, #+24]
+    499          	_set_front_color(color);
+   \       0x18   0xE1B0'0008        MOVS     R0,R8
+   \       0x1C   0x....'....        BL       _set_front_color
+    500          	_hide_canvas();
+   \       0x20   0x....'....        BL       _hide_canvas
+    501          	_fill_rect(dwX1, dwY1, dwX2, dwY2);
+   \       0x24   0xE1B0'3007        MOVS     R3,R7
+   \       0x28   0xE1B0'2006        MOVS     R2,R6
+   \       0x2C   0xE1B0'1005        MOVS     R1,R5
+   \       0x30   0xE1B0'0004        MOVS     R0,R4
+   \       0x34   0x....'....        BL       _fill_rect
+    502          	_show_canvas();
+   \       0x38   0x....'....        BL       _show_canvas
+    503          }
+   \       0x3C   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    504          
+    505          /**
+    506           * \brief Draws a circle on LCD, at the given coordinates.
+    507           *
+    508           * \param dwX     X-coordinate of circle center.
+    509           * \param dwY     Y-coordinate of circle center.
+    510           * \param dwR     circle radius.
+    511           * \param color circle color.
+    512           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    513          void lcd_draw_circle(uint32_t dwX, uint32_t dwY, uint32_t dwR, uint32_t color)
+    514          {
+   \                     lcd_draw_circle:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+    515          	int32_t d;		/* Decision Variable */
+    516          	uint32_t curX;		/* Current X Value */
+    517          	uint32_t curY;		/* Current Y Value */
+    518          
+    519          	if (dwR == 0)
+   \       0x14   0xE356'0000        CMP      R6,#+0
+   \       0x18   0x0A00'002C        BEQ      ??lcd_draw_circle_0
+    520          		return;
+    521          	_set_front_color(color);
+   \                     ??lcd_draw_circle_1:
+   \       0x1C   0xE1B0'0007        MOVS     R0,R7
+   \       0x20   0x....'....        BL       _set_front_color
+    522          
+    523          	d = 3 - (dwR << 1);
+   \       0x24   0xE3A0'0003        MOV      R0,#+3
+   \       0x28   0xE050'A086        SUBS     R10,R0,R6, LSL #+1
+    524          	curX = 0;
+   \       0x2C   0xE3A0'8000        MOV      R8,#+0
+    525          	curY = dwR;
+   \       0x30   0xE1B0'9006        MOVS     R9,R6
+    526          
+    527          	_hide_canvas();
+   \       0x34   0x....'....        BL       _hide_canvas
+    528          	while (curX <= curY) {
+   \                     ??lcd_draw_circle_2:
+   \       0x38   0xE159'0008        CMP      R9,R8
+   \       0x3C   0x3A00'0022        BCC      ??lcd_draw_circle_3
+    529          		_draw_pixel(dwX + curX, dwY + curY);
+   \       0x40   0xE099'1005        ADDS     R1,R9,R5
+   \       0x44   0xE098'0004        ADDS     R0,R8,R4
+   \       0x48   0x....'....        BL       _draw_pixel
+    530          		_draw_pixel(dwX + curX, dwY - curY);
+   \       0x4C   0xE055'1009        SUBS     R1,R5,R9
+   \       0x50   0xE098'0004        ADDS     R0,R8,R4
+   \       0x54   0x....'....        BL       _draw_pixel
+    531          		_draw_pixel(dwX - curX, dwY + curY);
+   \       0x58   0xE099'1005        ADDS     R1,R9,R5
+   \       0x5C   0xE054'0008        SUBS     R0,R4,R8
+   \       0x60   0x....'....        BL       _draw_pixel
+    532          		_draw_pixel(dwX - curX, dwY - curY);
+   \       0x64   0xE055'1009        SUBS     R1,R5,R9
+   \       0x68   0xE054'0008        SUBS     R0,R4,R8
+   \       0x6C   0x....'....        BL       _draw_pixel
+    533          		_draw_pixel(dwX + curY, dwY + curX);
+   \       0x70   0xE098'1005        ADDS     R1,R8,R5
+   \       0x74   0xE099'0004        ADDS     R0,R9,R4
+   \       0x78   0x....'....        BL       _draw_pixel
+    534          		_draw_pixel(dwX + curY, dwY - curX);
+   \       0x7C   0xE055'1008        SUBS     R1,R5,R8
+   \       0x80   0xE099'0004        ADDS     R0,R9,R4
+   \       0x84   0x....'....        BL       _draw_pixel
+    535          		_draw_pixel(dwX - curY, dwY + curX);
+   \       0x88   0xE098'1005        ADDS     R1,R8,R5
+   \       0x8C   0xE054'0009        SUBS     R0,R4,R9
+   \       0x90   0x....'....        BL       _draw_pixel
+    536          		_draw_pixel(dwX - curY, dwY - curX);
+   \       0x94   0xE055'1008        SUBS     R1,R5,R8
+   \       0x98   0xE054'0009        SUBS     R0,R4,R9
+   \       0x9C   0x....'....        BL       _draw_pixel
+    537          
+    538          		if (d < 0) {
+   \       0xA0   0xE35A'0000        CMP      R10,#+0
+   \       0xA4   0x5A00'0002        BPL      ??lcd_draw_circle_4
+    539          			d += (curX << 2) + 6;
+   \       0xA8   0xE09A'0108        ADDS     R0,R10,R8, LSL #+2
+   \       0xAC   0xE290'A006        ADDS     R10,R0,#+6
+   \       0xB0   0xEA00'0003        B        ??lcd_draw_circle_5
+    540          		} else {
+    541          			d += ((curX - curY) << 2) + 10;
+   \                     ??lcd_draw_circle_4:
+   \       0xB4   0xE058'0009        SUBS     R0,R8,R9
+   \       0xB8   0xE09A'0100        ADDS     R0,R10,R0, LSL #+2
+   \       0xBC   0xE290'A00A        ADDS     R10,R0,#+10
+    542          			curY--;
+   \       0xC0   0xE259'9001        SUBS     R9,R9,#+1
+    543          		}
+    544          		curX++;
+   \                     ??lcd_draw_circle_5:
+   \       0xC4   0xE298'8001        ADDS     R8,R8,#+1
+   \       0xC8   0xEAFF'FFDA        B        ??lcd_draw_circle_2
+    545          	}
+    546          	_show_canvas();
+   \                     ??lcd_draw_circle_3:
+   \       0xCC   0x....'....        BL       _show_canvas
+    547          }
+   \                     ??lcd_draw_circle_0:
+   \       0xD0   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    548          
+    549          /**
+    550           * \brief Draws a filled circle on LCD, at the given coordinates.
+    551           *
+    552           * \param dwX     X-coordinate of circle center.
+    553           * \param dwY     Y-coordinate of circle center.
+    554           * \param dwR     circle radius.
+    555           * \param color circle color.
+    556           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    557          void lcd_draw_filled_circle(uint32_t dwX, uint32_t dwY, uint32_t dwR,
+    558          			     uint32_t color)
+    559          {
+   \                     lcd_draw_filled_circle:
+   \        0x0   0xE92D'4FFE        PUSH     {R1-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    560          	signed int d;		// Decision Variable
+    561          	uint32_t dwCurX;	// Current X Value
+    562          	uint32_t dwCurY;	// Current Y Value
+    563          	uint32_t dwXmin, dwYmin;
+    564          
+    565          	if (dwR == 0)
+   \        0xC   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x0A00'003E        BEQ      ??lcd_draw_filled_circle_0
+    566          		return;
+    567          	_set_front_color(color);
+   \                     ??lcd_draw_filled_circle_1:
+   \       0x18   0xE59D'0008        LDR      R0,[SP, #+8]
+   \       0x1C   0x....'....        BL       _set_front_color
+    568          
+    569          	d = 3 - (dwR << 1);
+   \       0x20   0xE3A0'0003        MOV      R0,#+3
+   \       0x24   0xE59D'1004        LDR      R1,[SP, #+4]
+   \       0x28   0xE050'6081        SUBS     R6,R0,R1, LSL #+1
+    570          	dwCurX = 0;
+   \       0x2C   0xE3A0'7000        MOV      R7,#+0
+   \       0x30   0xE1B0'8007        MOVS     R8,R7
+    571          	dwCurY = dwR;
+   \       0x34   0xE59D'9004        LDR      R9,[SP, #+4]
+    572          
+    573          	_hide_canvas();
+   \       0x38   0x....'....        BL       _hide_canvas
+    574          	while (dwCurX <= dwCurY) {
+   \                     ??lcd_draw_filled_circle_2:
+   \       0x3C   0xE159'0008        CMP      R9,R8
+   \       0x40   0x3A00'0032        BCC      ??lcd_draw_filled_circle_3
+    575          		dwXmin = (dwCurX > dwX) ? 0 : dwX - dwCurX;
+   \       0x44   0xE154'0008        CMP      R4,R8
+   \       0x48   0x2A00'0001        BCS      ??lcd_draw_filled_circle_4
+   \       0x4C   0xE1B0'A007        MOVS     R10,R7
+   \       0x50   0xEA00'0000        B        ??lcd_draw_filled_circle_5
+   \                     ??lcd_draw_filled_circle_4:
+   \       0x54   0xE054'A008        SUBS     R10,R4,R8
+    576          		dwYmin = (dwCurY > dwY) ? 0 : dwY - dwCurY;
+   \                     ??lcd_draw_filled_circle_5:
+   \       0x58   0xE155'0009        CMP      R5,R9
+   \       0x5C   0x2A00'0001        BCS      ??lcd_draw_filled_circle_6
+   \       0x60   0xE1B0'B007        MOVS     R11,R7
+   \       0x64   0xEA00'0000        B        ??lcd_draw_filled_circle_7
+   \                     ??lcd_draw_filled_circle_6:
+   \       0x68   0xE055'B009        SUBS     R11,R5,R9
+    577          		_fill_rect(dwXmin, dwYmin, dwX + dwCurX, dwYmin);
+   \                     ??lcd_draw_filled_circle_7:
+   \       0x6C   0xE1B0'300B        MOVS     R3,R11
+   \       0x70   0xE098'2004        ADDS     R2,R8,R4
+   \       0x74   0xE1B0'100B        MOVS     R1,R11
+   \       0x78   0xE1B0'000A        MOVS     R0,R10
+   \       0x7C   0x....'....        BL       _fill_rect
+    578          		_fill_rect(dwXmin, dwY + dwCurY, dwX + dwCurX, dwY + dwCurY);
+   \       0x80   0xE099'3005        ADDS     R3,R9,R5
+   \       0x84   0xE098'2004        ADDS     R2,R8,R4
+   \       0x88   0xE099'1005        ADDS     R1,R9,R5
+   \       0x8C   0xE1B0'000A        MOVS     R0,R10
+   \       0x90   0x....'....        BL       _fill_rect
+    579          		dwXmin = (dwCurY > dwX) ? 0 : dwX - dwCurY;
+   \       0x94   0xE154'0009        CMP      R4,R9
+   \       0x98   0x2A00'0001        BCS      ??lcd_draw_filled_circle_8
+   \       0x9C   0xE1B0'A007        MOVS     R10,R7
+   \       0xA0   0xEA00'0000        B        ??lcd_draw_filled_circle_9
+   \                     ??lcd_draw_filled_circle_8:
+   \       0xA4   0xE054'A009        SUBS     R10,R4,R9
+    580          		dwYmin = (dwCurX > dwY) ? 0 : dwY - dwCurX;
+   \                     ??lcd_draw_filled_circle_9:
+   \       0xA8   0xE155'0008        CMP      R5,R8
+   \       0xAC   0x2A00'0001        BCS      ??lcd_draw_filled_circle_10
+   \       0xB0   0xE1B0'B007        MOVS     R11,R7
+   \       0xB4   0xEA00'0000        B        ??lcd_draw_filled_circle_11
+   \                     ??lcd_draw_filled_circle_10:
+   \       0xB8   0xE055'B008        SUBS     R11,R5,R8
+    581          		_fill_rect(dwXmin, dwYmin, dwX + dwCurY, dwYmin);
+   \                     ??lcd_draw_filled_circle_11:
+   \       0xBC   0xE1B0'300B        MOVS     R3,R11
+   \       0xC0   0xE099'2004        ADDS     R2,R9,R4
+   \       0xC4   0xE1B0'100B        MOVS     R1,R11
+   \       0xC8   0xE1B0'000A        MOVS     R0,R10
+   \       0xCC   0x....'....        BL       _fill_rect
+    582          		_fill_rect(dwXmin, dwY + dwCurX, dwX + dwCurY, dwY + dwCurX);
+   \       0xD0   0xE098'3005        ADDS     R3,R8,R5
+   \       0xD4   0xE099'2004        ADDS     R2,R9,R4
+   \       0xD8   0xE098'1005        ADDS     R1,R8,R5
+   \       0xDC   0xE1B0'000A        MOVS     R0,R10
+   \       0xE0   0x....'....        BL       _fill_rect
+    583          
+    584          		if (d < 0) {
+   \       0xE4   0xE356'0000        CMP      R6,#+0
+   \       0xE8   0x5A00'0002        BPL      ??lcd_draw_filled_circle_12
+    585          			d += (dwCurX << 2) + 6;
+   \       0xEC   0xE096'0108        ADDS     R0,R6,R8, LSL #+2
+   \       0xF0   0xE290'6006        ADDS     R6,R0,#+6
+   \       0xF4   0xEA00'0003        B        ??lcd_draw_filled_circle_13
+    586          		} else {
+    587          			d += ((dwCurX - dwCurY) << 2) + 10;
+   \                     ??lcd_draw_filled_circle_12:
+   \       0xF8   0xE058'0009        SUBS     R0,R8,R9
+   \       0xFC   0xE096'0100        ADDS     R0,R6,R0, LSL #+2
+   \      0x100   0xE290'600A        ADDS     R6,R0,#+10
+    588          			dwCurY--;
+   \      0x104   0xE259'9001        SUBS     R9,R9,#+1
+    589          		}
+    590          
+    591          		dwCurX++;
+   \                     ??lcd_draw_filled_circle_13:
+   \      0x108   0xE298'8001        ADDS     R8,R8,#+1
+   \      0x10C   0xEAFF'FFCA        B        ??lcd_draw_filled_circle_2
+    592          	}
+    593          	_show_canvas();
+   \                     ??lcd_draw_filled_circle_3:
+   \      0x110   0x....'....        BL       _show_canvas
+    594          }
+   \                     ??lcd_draw_filled_circle_0:
+   \      0x114   0xE8BD'8FF7        POP      {R0-R2,R4-R11,PC}  ;; return
+    595          
+    596          /**
+    597           * \brief Draws a string inside a LCD buffer, at the given coordinates. Line breaks
+    598           * will be honored.
+    599           *
+    600           * \param x        X-coordinate of string top-left corner.
+    601           * \param y        Y-coordinate of string top-left corner.
+    602           * \param p_string  String to display.
+    603           * \param color    String color.
+    604           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    605          void lcd_draw_string(uint32_t x, uint32_t y, const char *p_string, uint32_t color)
+    606          {
+   \                     lcd_draw_string:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    607          	uint32_t xorg = x;
+   \       0x10   0xE1B0'7004        MOVS     R7,R4
+    608          	uint8_t font_sel = lcd_get_selected_font();
+   \       0x14   0x....'....        BL       lcd_get_selected_font
+   \       0x18   0xE1B0'8000        MOVS     R8,R0
+    609          	uint8_t width = font_param[font_sel].width ;
+   \       0x1C   0x....'....        LDR      R0,??DataTable6
+   \       0x20   0xE1B0'1008        MOVS     R1,R8
+   \       0x24   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x28   0xE1B0'1181        LSLS     R1,R1,#+3
+   \       0x2C   0xE7D0'9001        LDRB     R9,[R0, +R1]
+    610          	uint8_t height = font_param[font_sel].height;
+   \       0x30   0xE1B0'1008        MOVS     R1,R8
+   \       0x34   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x38   0xE1B0'1181        LSLS     R1,R1,#+3
+   \       0x3C   0xE090'1001        ADDS     R1,R0,R1
+   \       0x40   0xE5D1'A001        LDRB     R10,[R1, #+1]
+    611          	uint8_t char_space = font_param[font_sel].char_space;
+   \       0x44   0xE1B0'1008        MOVS     R1,R8
+   \       0x48   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x4C   0xE1B0'1181        LSLS     R1,R1,#+3
+   \       0x50   0xE090'1001        ADDS     R1,R0,R1
+   \       0x54   0xE5D1'B002        LDRB     R11,[R1, #+2]
+    612          
+    613          	/* Font 10*8 reverse height and width */
+    614          	if (font_sel == FONT10x8) {
+   \       0x58   0xE1B0'1008        MOVS     R1,R8
+   \       0x5C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x60   0xE351'0001        CMP      R1,#+1
+   \       0x64   0x1A00'000A        BNE      ??lcd_draw_string_0
+    615          		width = font_param[font_sel].height ;
+   \       0x68   0xE1B0'1008        MOVS     R1,R8
+   \       0x6C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x70   0xE1B0'1181        LSLS     R1,R1,#+3
+   \       0x74   0xE090'1001        ADDS     R1,R0,R1
+   \       0x78   0xE5D1'1001        LDRB     R1,[R1, #+1]
+   \       0x7C   0xE1B0'9001        MOVS     R9,R1
+    616          		height = font_param[font_sel].width;
+   \       0x80   0xE1B0'1008        MOVS     R1,R8
+   \       0x84   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x88   0xE1B0'1181        LSLS     R1,R1,#+3
+   \       0x8C   0xE7D0'0001        LDRB     R0,[R0, +R1]
+   \       0x90   0xE1B0'A000        MOVS     R10,R0
+    617          	}
+    618          
+    619          	while (*p_string) {
+   \                     ??lcd_draw_string_0:
+   \       0x94   0xE5D6'0000        LDRB     R0,[R6, #+0]
+   \       0x98   0xE350'0000        CMP      R0,#+0
+   \       0x9C   0x0A00'0017        BEQ      ??lcd_draw_string_1
+    620          		if (*p_string == '\n') {
+   \       0xA0   0xE5D6'0000        LDRB     R0,[R6, #+0]
+   \       0xA4   0xE350'000A        CMP      R0,#+10
+   \       0xA8   0x1A00'0007        BNE      ??lcd_draw_string_2
+    621          			y += height + char_space;
+   \       0xAC   0xE1B0'000A        MOVS     R0,R10
+   \       0xB0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xB4   0xE1B0'100B        MOVS     R1,R11
+   \       0xB8   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xBC   0xE091'0000        ADDS     R0,R1,R0
+   \       0xC0   0xE090'5005        ADDS     R5,R0,R5
+    622          			x = xorg;
+   \       0xC4   0xE1B0'4007        MOVS     R4,R7
+   \       0xC8   0xEA00'000A        B        ??lcd_draw_string_3
+    623          		} else {
+    624          			lcd_draw_char(x, y, *p_string, color);
+   \                     ??lcd_draw_string_2:
+   \       0xCC   0xE59D'3000        LDR      R3,[SP, #+0]
+   \       0xD0   0xE5D6'2000        LDRB     R2,[R6, #+0]
+   \       0xD4   0xE1B0'1005        MOVS     R1,R5
+   \       0xD8   0xE1B0'0004        MOVS     R0,R4
+   \       0xDC   0x....'....        BL       lcd_draw_char
+    625          			x += width + char_space;
+   \       0xE0   0xE1B0'0009        MOVS     R0,R9
+   \       0xE4   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xE8   0xE1B0'100B        MOVS     R1,R11
+   \       0xEC   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xF0   0xE091'0000        ADDS     R0,R1,R0
+   \       0xF4   0xE090'4004        ADDS     R4,R0,R4
+    626          		}
+    627          		p_string++;
+   \                     ??lcd_draw_string_3:
+   \       0xF8   0xE296'6001        ADDS     R6,R6,#+1
+   \       0xFC   0xEAFF'FFE4        B        ??lcd_draw_string_0
+    628          	}
+    629          }
+   \                     ??lcd_draw_string_1:
+   \      0x100   0xE8BD'8FF1        POP      {R0,R4-R11,PC}   ;; return
+    630          
+    631          /**
+    632           * \brief Draws a string inside a LCD buffer, at the given coordinates
+    633           * with given background color. Line breaks will be honored.
+    634           *
+    635           * \param x         X-coordinate of string top-left corner.
+    636           * \param y         Y-coordinate of string top-left corner.
+    637           * \param p_string  String to display.
+    638           * \param fontColor String color.
+    639           * \param bgColor   Background color.
+    640           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    641          void lcd_draw_string_with_bgcolor(uint32_t x, uint32_t y,
+    642          								   const char *p_string,
+    643          								   uint32_t fontColor,
+    644          								   uint32_t bgColor)
+    645          {
+   \                     lcd_draw_string_with_bgcolor:
+   \        0x0   0xE92D'4FFE        PUSH     {R1-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    646          	uint32_t xorg = x;
+   \       0x10   0xE1B0'7004        MOVS     R7,R4
+    647          	uint8_t font_sel = lcd_get_selected_font();
+   \       0x14   0x....'....        BL       lcd_get_selected_font
+   \       0x18   0xE1B0'8000        MOVS     R8,R0
+    648          	uint8_t width = font_param[font_sel].width ;
+   \       0x1C   0x....'....        LDR      R0,??DataTable6
+   \       0x20   0xE1B0'1008        MOVS     R1,R8
+   \       0x24   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x28   0xE1B0'1181        LSLS     R1,R1,#+3
+   \       0x2C   0xE7D0'9001        LDRB     R9,[R0, +R1]
+    649          	uint8_t height = font_param[font_sel].height;
+   \       0x30   0xE1B0'1008        MOVS     R1,R8
+   \       0x34   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x38   0xE1B0'1181        LSLS     R1,R1,#+3
+   \       0x3C   0xE090'1001        ADDS     R1,R0,R1
+   \       0x40   0xE5D1'A001        LDRB     R10,[R1, #+1]
+    650          	uint8_t char_space = font_param[font_sel].char_space;
+   \       0x44   0xE1B0'1008        MOVS     R1,R8
+   \       0x48   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x4C   0xE1B0'1181        LSLS     R1,R1,#+3
+   \       0x50   0xE090'1001        ADDS     R1,R0,R1
+   \       0x54   0xE5D1'B002        LDRB     R11,[R1, #+2]
+    651          
+    652          	/* Font 10*8 reverse height and width */
+    653          	if (font_sel == FONT10x8) {
+   \       0x58   0xE1B0'1008        MOVS     R1,R8
+   \       0x5C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x60   0xE351'0001        CMP      R1,#+1
+   \       0x64   0x1A00'000A        BNE      ??lcd_draw_string_with_bgcolor_0
+    654          		width = font_param[font_sel].height ;
+   \       0x68   0xE1B0'1008        MOVS     R1,R8
+   \       0x6C   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x70   0xE1B0'1181        LSLS     R1,R1,#+3
+   \       0x74   0xE090'1001        ADDS     R1,R0,R1
+   \       0x78   0xE5D1'1001        LDRB     R1,[R1, #+1]
+   \       0x7C   0xE1B0'9001        MOVS     R9,R1
+    655          		height = font_param[font_sel].width;
+   \       0x80   0xE1B0'1008        MOVS     R1,R8
+   \       0x84   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x88   0xE1B0'1181        LSLS     R1,R1,#+3
+   \       0x8C   0xE7D0'0001        LDRB     R0,[R0, +R1]
+   \       0x90   0xE1B0'A000        MOVS     R10,R0
+    656          	}
+    657          
+    658          	while (*p_string) {
+   \                     ??lcd_draw_string_with_bgcolor_0:
+   \       0x94   0xE5D6'0000        LDRB     R0,[R6, #+0]
+   \       0x98   0xE350'0000        CMP      R0,#+0
+   \       0x9C   0x0A00'0019        BEQ      ??lcd_draw_string_with_bgcolor_1
+    659          		if (*p_string == '\n') {
+   \       0xA0   0xE5D6'0000        LDRB     R0,[R6, #+0]
+   \       0xA4   0xE350'000A        CMP      R0,#+10
+   \       0xA8   0x1A00'0007        BNE      ??lcd_draw_string_with_bgcolor_2
+    660          			y += height + char_space;;
+   \       0xAC   0xE1B0'000A        MOVS     R0,R10
+   \       0xB0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xB4   0xE1B0'100B        MOVS     R1,R11
+   \       0xB8   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xBC   0xE091'0000        ADDS     R0,R1,R0
+   \       0xC0   0xE090'5005        ADDS     R5,R0,R5
+    661          			x = xorg;
+   \       0xC4   0xE1B0'4007        MOVS     R4,R7
+   \       0xC8   0xEA00'000C        B        ??lcd_draw_string_with_bgcolor_3
+    662          		} else {
+    663          			lcd_draw_char_with_bgcolor(x, y, *p_string, fontColor, bgColor);
+   \                     ??lcd_draw_string_with_bgcolor_2:
+   \       0xCC   0xE59D'0030        LDR      R0,[SP, #+48]
+   \       0xD0   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0xD4   0xE59D'3008        LDR      R3,[SP, #+8]
+   \       0xD8   0xE5D6'2000        LDRB     R2,[R6, #+0]
+   \       0xDC   0xE1B0'1005        MOVS     R1,R5
+   \       0xE0   0xE1B0'0004        MOVS     R0,R4
+   \       0xE4   0x....'....        BL       lcd_draw_char_with_bgcolor
+    664          			x += width + char_space;;
+   \       0xE8   0xE1B0'0009        MOVS     R0,R9
+   \       0xEC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xF0   0xE1B0'100B        MOVS     R1,R11
+   \       0xF4   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xF8   0xE091'0000        ADDS     R0,R1,R0
+   \       0xFC   0xE090'4004        ADDS     R4,R0,R4
+    665          		}
+    666          		p_string++;
+   \                     ??lcd_draw_string_with_bgcolor_3:
+   \      0x100   0xE296'6001        ADDS     R6,R6,#+1
+   \      0x104   0xEAFF'FFE2        B        ??lcd_draw_string_with_bgcolor_0
+    667          	}
+    668          }
+   \                     ??lcd_draw_string_with_bgcolor_1:
+   \      0x108   0xE8BD'8FF7        POP      {R0-R2,R4-R11,PC}  ;; return
+    669          
+    670          /**
+    671           * \brief Returns the width & height in pixels that a string will occupy on the screen
+    672           * if drawn using lcd_draw_string.
+    673           *
+    674           * \param p_string  String.
+    675           * \param p_width   Pointer for storing the string width (optional).
+    676           * \param p_height  Pointer for storing the string height (optional).
+    677           *
+    678           * \return String width in pixels.
+    679           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    680          void lcd_get_string_size(const char *p_string, uint32_t * p_width, uint32_t * p_height)
+    681          {
+   \                     lcd_get_string_size:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    682          	uint8_t font_sel = lcd_get_selected_font();
+   \       0x10   0x....'....        BL       lcd_get_selected_font
+    683          	uint8_t width = font_param[font_sel].width;
+   \       0x14   0x....'....        LDR      R1,??DataTable6
+   \       0x18   0xE1B0'2000        MOVS     R2,R0
+   \       0x1C   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0x20   0xE1B0'2182        LSLS     R2,R2,#+3
+   \       0x24   0xE7D1'2002        LDRB     R2,[R1, +R2]
+    684          	uint8_t height = font_param[font_sel].height;
+   \       0x28   0xE1B0'3000        MOVS     R3,R0
+   \       0x2C   0xE213'30FF        ANDS     R3,R3,#0xFF      ;; Zero extend
+   \       0x30   0xE1B0'3183        LSLS     R3,R3,#+3
+   \       0x34   0xE091'3003        ADDS     R3,R1,R3
+   \       0x38   0xE5D3'3001        LDRB     R3,[R3, #+1]
+    685          	uint8_t char_space = font_param[font_sel].char_space;
+   \       0x3C   0xE1B0'C000        MOVS     R12,R0
+   \       0x40   0xE21C'C0FF        ANDS     R12,R12,#0xFF    ;; Zero extend
+   \       0x44   0xE1B0'C18C        LSLS     R12,R12,#+3
+   \       0x48   0xE091'C00C        ADDS     R12,R1,R12
+   \       0x4C   0xE5DC'C002        LDRB     R12,[R12, #+2]
+    686          	uint32_t str_width = 0;
+   \       0x50   0xE3A0'E000        MOV      LR,#+0
+    687          
+    688          	/* Font 10*8 reverse height and width */
+    689          	if (font_sel == FONT10x8) {
+   \       0x54   0xE1B0'7000        MOVS     R7,R0
+   \       0x58   0xE217'70FF        ANDS     R7,R7,#0xFF      ;; Zero extend
+   \       0x5C   0xE357'0001        CMP      R7,#+1
+   \       0x60   0x1A00'000A        BNE      ??lcd_get_string_size_0
+    690          		width = font_param[font_sel].height ;
+   \       0x64   0xE1B0'7000        MOVS     R7,R0
+   \       0x68   0xE217'70FF        ANDS     R7,R7,#0xFF      ;; Zero extend
+   \       0x6C   0xE1B0'7187        LSLS     R7,R7,#+3
+   \       0x70   0xE091'7007        ADDS     R7,R1,R7
+   \       0x74   0xE5D7'7001        LDRB     R7,[R7, #+1]
+   \       0x78   0xE1B0'2007        MOVS     R2,R7
+    691          		height = font_param[font_sel].width;
+   \       0x7C   0xE1B0'7000        MOVS     R7,R0
+   \       0x80   0xE217'70FF        ANDS     R7,R7,#0xFF      ;; Zero extend
+   \       0x84   0xE1B0'7187        LSLS     R7,R7,#+3
+   \       0x88   0xE7D1'1007        LDRB     R1,[R1, +R7]
+   \       0x8C   0xE1B0'3001        MOVS     R3,R1
+    692          	}
+    693          
+    694          	while (*p_string) {
+   \                     ??lcd_get_string_size_0:
+   \       0x90   0xE5D4'1000        LDRB     R1,[R4, #+0]
+   \       0x94   0xE351'0000        CMP      R1,#+0
+   \       0x98   0x0A00'000D        BEQ      ??lcd_get_string_size_1
+    695          		if (*p_string == '\n')
+   \       0x9C   0xE5D4'1000        LDRB     R1,[R4, #+0]
+   \       0xA0   0xE351'000A        CMP      R1,#+10
+   \       0xA4   0x1A00'0002        BNE      ??lcd_get_string_size_2
+    696          			height += height + char_space;
+   \       0xA8   0xE09C'1003        ADDS     R1,R12,R3
+   \       0xAC   0xE091'3003        ADDS     R3,R1,R3
+   \       0xB0   0xEA00'0005        B        ??lcd_get_string_size_3
+    697          		else
+    698          			str_width += width + char_space;
+   \                     ??lcd_get_string_size_2:
+   \       0xB4   0xE1B0'1002        MOVS     R1,R2
+   \       0xB8   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xBC   0xE1B0'700C        MOVS     R7,R12
+   \       0xC0   0xE217'70FF        ANDS     R7,R7,#0xFF      ;; Zero extend
+   \       0xC4   0xE097'1001        ADDS     R1,R7,R1
+   \       0xC8   0xE091'E00E        ADDS     LR,R1,LR
+    699          		p_string++;
+   \                     ??lcd_get_string_size_3:
+   \       0xCC   0xE294'4001        ADDS     R4,R4,#+1
+   \       0xD0   0xEAFF'FFEE        B        ??lcd_get_string_size_0
+    700          	}
+    701          	if (width > 0)
+   \                     ??lcd_get_string_size_1:
+   \       0xD4   0xE1B0'1002        MOVS     R1,R2
+   \       0xD8   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xDC   0xE351'0000        CMP      R1,#+0
+   \       0xE0   0x0A00'0002        BEQ      ??lcd_get_string_size_4
+    702          		str_width -= char_space;
+   \       0xE4   0xE1B0'100C        MOVS     R1,R12
+   \       0xE8   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0xEC   0xE05E'E001        SUBS     LR,LR,R1
+    703          
+    704          	if (p_width != NULL)
+   \                     ??lcd_get_string_size_4:
+   \       0xF0   0xE355'0000        CMP      R5,#+0
+   \       0xF4   0x0A00'0000        BEQ      ??lcd_get_string_size_5
+    705          		*p_width = str_width;
+   \       0xF8   0xE585'E000        STR      LR,[R5, #+0]
+    706          	if (p_height != NULL)
+   \                     ??lcd_get_string_size_5:
+   \       0xFC   0xE356'0000        CMP      R6,#+0
+   \      0x100   0x0A00'0002        BEQ      ??lcd_get_string_size_6
+    707          		*p_height = height;
+   \      0x104   0xE1B0'1003        MOVS     R1,R3
+   \      0x108   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \      0x10C   0xE586'1000        STR      R1,[R6, #+0]
+    708          }
+   \                     ??lcd_get_string_size_6:
+   \      0x110   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    709          
+    710          /**
+    711           * \brief Draw a raw image at given position on LCD.
+    712           *
+    713           * \param dwX       X-coordinate of image start.
+    714           * \param dwY       Y-coordinate of image start.
+    715           * \param pImage    Image buffer.
+    716           * \param width     Image width.
+    717           * \param height    Image height.
+    718           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    719          void lcd_draw_image(uint32_t dwX, uint32_t dwY, const uint8_t * pImage,
+    720          		     uint32_t width, uint32_t height)
+    721          {
+   \                     lcd_draw_image:
+   \        0x0   0xE92D'4FFF        PUSH     {R0-R11,LR}
+   \        0x4   0xE24D'D014        SUB      SP,SP,#+20
+    722          	struct _lcdc_layer *pDisp = lcdc_get_canvas();
+   \        0x8   0x....'....        BL       lcdc_get_canvas
+   \        0xC   0xE1B0'4000        MOVS     R4,R0
+    723          	uint16_t cw = pDisp->bpp / 8;	/* color width */
+   \       0x10   0xE5D4'0008        LDRB     R0,[R4, #+8]
+   \       0x14   0xE3A0'1008        MOV      R1,#+8
+   \       0x18   0x....'....        BL       __aeabi_idiv
+   \       0x1C   0xE1B0'5000        MOVS     R5,R0
+    724          	uint32_t rw = pDisp->width * cw;	/* Row width in bytes */
+   \       0x20   0xE1D4'10B4        LDRH     R1,[R4, #+4]
+   \       0x24   0xE1B0'2005        MOVS     R2,R5
+   \       0x28   0xE1A0'2802        LSL      R2,R2,#+16
+   \       0x2C   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0x30   0xE011'0192        MULS     R1,R2,R1
+   \       0x34   0xE58D'1000        STR      R1,[SP, #+0]
+    725          	uint32_t rws = width * cw;	/* Source Row Width */
+   \       0x38   0xE59D'0020        LDR      R0,[SP, #+32]
+   \       0x3C   0xE1B0'1005        MOVS     R1,R5
+   \       0x40   0xE1A0'1801        LSL      R1,R1,#+16
+   \       0x44   0xE1B0'1821        LSRS     R1,R1,#+16
+   \       0x48   0xE016'0091        MULS     R6,R1,R0
+    726          	uint32_t rl = (rw & 0x3) ? ((rw | 0x3) + 1) : rw;	/* Aligned length */
+   \       0x4C   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x50   0xE310'0003        TST      R0,#0x3
+   \       0x54   0x0A00'0003        BEQ      ??lcd_draw_image_0
+   \       0x58   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x5C   0xE390'0003        ORRS     R0,R0,#0x3
+   \       0x60   0xE290'7001        ADDS     R7,R0,#+1
+   \       0x64   0xEA00'0000        B        ??lcd_draw_image_1
+   \                     ??lcd_draw_image_0:
+   \       0x68   0xE59D'7000        LDR      R7,[SP, #+0]
+    727          	uint32_t rls = (rws & 0x3) ? ((rws | 0x3) + 1) : rws;	/* Aligned length */
+   \                     ??lcd_draw_image_1:
+   \       0x6C   0xE316'0003        TST      R6,#0x3
+   \       0x70   0x0A00'0003        BEQ      ??lcd_draw_image_2
+   \       0x74   0xE396'1003        ORRS     R1,R6,#0x3
+   \       0x78   0xE291'1001        ADDS     R1,R1,#+1
+   \       0x7C   0xE58D'1004        STR      R1,[SP, #+4]
+   \       0x80   0xEA00'0000        B        ??lcd_draw_image_3
+   \                     ??lcd_draw_image_2:
+   \       0x84   0xE58D'6004        STR      R6,[SP, #+4]
+    728          	uint8_t *pSrc, *pDst;
+    729          	uint32_t i;
+    730          
+    731          	pSrc = (uint8_t *) pImage;
+   \                     ??lcd_draw_image_3:
+   \       0x88   0xE59D'801C        LDR      R8,[SP, #+28]
+    732          	pDst = pDisp->buffer;
+   \       0x8C   0xE594'0000        LDR      R0,[R4, #+0]
+    733          	pDst = &pDst[dwX * cw + dwY * rl];
+   \       0x90   0xE59D'1014        LDR      R1,[SP, #+20]
+   \       0x94   0xE1B0'2005        MOVS     R2,R5
+   \       0x98   0xE1A0'2802        LSL      R2,R2,#+16
+   \       0x9C   0xE1B0'2822        LSRS     R2,R2,#+16
+   \       0xA0   0xE59D'3018        LDR      R3,[SP, #+24]
+   \       0xA4   0xE013'0397        MULS     R3,R7,R3
+   \       0xA8   0xE021'3192        MLA      R1,R2,R1,R3
+   \       0xAC   0xE090'9001        ADDS     R9,R0,R1
+    734          
+    735          	for (i = 0; i < height; i++) {
+   \       0xB0   0xE3A0'A000        MOV      R10,#+0
+   \                     ??lcd_draw_image_4:
+   \       0xB4   0xE59D'0048        LDR      R0,[SP, #+72]
+   \       0xB8   0xE15A'0000        CMP      R10,R0
+   \       0xBC   0x2A00'000C        BCS      ??lcd_draw_image_5
+    736          		memcpy(pDst, pSrc, rws);
+   \       0xC0   0xE58D'600C        STR      R6,[SP, #+12]
+   \       0xC4   0xE58D'8008        STR      R8,[SP, #+8]
+   \       0xC8   0xE1B0'B009        MOVS     R11,R9
+   \       0xCC   0xE59D'200C        LDR      R2,[SP, #+12]
+   \       0xD0   0xE59D'1008        LDR      R1,[SP, #+8]
+   \       0xD4   0xE1B0'000B        MOVS     R0,R11
+   \       0xD8   0x....'....        BL       __aeabi_memcpy
+   \       0xDC   0xE1B0'000B        MOVS     R0,R11
+    737          		pSrc = &pSrc[rls];
+   \       0xE0   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0xE4   0xE098'8000        ADDS     R8,R8,R0
+    738          		pDst = &pDst[rl];
+   \       0xE8   0xE099'9007        ADDS     R9,R9,R7
+    739          	}
+   \       0xEC   0xE29A'A001        ADDS     R10,R10,#+1
+   \       0xF0   0xEAFF'FFEF        B        ??lcd_draw_image_4
+    740          }
+   \                     ??lcd_draw_image_5:
+   \       0xF4   0xE28D'D024        ADD      SP,SP,#+36
+   \       0xF8   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    741          
+    742          /**
+    743           * \brief Clear a window with an color.
+    744           *
+    745           * \param dwX         X-coordinate of the window.
+    746           * \param dwY         Y-coordinate of the window.
+    747           * \param width     window width.
+    748           * \param height    window height.
+    749           * \param color     background color
+    750           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    751          void lcd_clear_window(uint32_t dwX, uint32_t dwY, uint32_t width,
+    752          		       uint32_t height, uint32_t color)
+    753          {
+   \                     lcd_clear_window:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE59D'8018        LDR      R8,[SP, #+24]
+    754          	_set_front_color(color);
+   \       0x18   0xE1B0'0008        MOVS     R0,R8
+   \       0x1C   0x....'....        BL       _set_front_color
+    755          	_hide_canvas();
+   \       0x20   0x....'....        BL       _hide_canvas
+    756          	_fill_rect(0, 0, dwX + width - 1, dwY + height - 1);
+   \       0x24   0xE097'0005        ADDS     R0,R7,R5
+   \       0x28   0xE250'3001        SUBS     R3,R0,#+1
+   \       0x2C   0xE096'0004        ADDS     R0,R6,R4
+   \       0x30   0xE250'2001        SUBS     R2,R0,#+1
+   \       0x34   0xE3A0'1000        MOV      R1,#+0
+   \       0x38   0xE3A0'0000        MOV      R0,#+0
+   \       0x3C   0x....'....        BL       _fill_rect
+    757          	_show_canvas();
+   \       0x40   0x....'....        BL       _show_canvas
+    758          }
+   \       0x44   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    759          
+    760          /*----------------------------------------------------------------------------
+    761           *        Local functions
+    762           *----------------------------------------------------------------------------*/
+    763          
+    764          /**
+    765           * Draw fast vertical line
+    766           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    767          void lcd_draw_fast_vline (uint32_t x, uint32_t y, uint32_t h, uint32_t color)
+    768          {
+   \                     lcd_draw_fast_vline:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+    769          	lcd_draw_line(x, y, x, y+h-1, color);
+   \       0x14   0xE58D'7000        STR      R7,[SP, #+0]
+   \       0x18   0xE096'0005        ADDS     R0,R6,R5
+   \       0x1C   0xE250'3001        SUBS     R3,R0,#+1
+   \       0x20   0xE1B0'2004        MOVS     R2,R4
+   \       0x24   0xE1B0'1005        MOVS     R1,R5
+   \       0x28   0xE1B0'0004        MOVS     R0,R4
+   \       0x2C   0x....'....        BL       lcd_draw_line
+    770          }
+   \       0x30   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    771          /**
+    772           * Draw fast horizontal line
+    773           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    774          void lcd_draw_fast_hline (uint32_t x, uint32_t y, uint32_t w, uint32_t color)
+    775          {
+   \                     lcd_draw_fast_hline:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+    776          	lcd_draw_line(x, y, x+w-1, y, color);
+   \       0x14   0xE58D'7000        STR      R7,[SP, #+0]
+   \       0x18   0xE1B0'3005        MOVS     R3,R5
+   \       0x1C   0xE096'0004        ADDS     R0,R6,R4
+   \       0x20   0xE250'2001        SUBS     R2,R0,#+1
+   \       0x24   0xE1B0'1005        MOVS     R1,R5
+   \       0x28   0xE1B0'0004        MOVS     R0,R4
+   \       0x2C   0x....'....        BL       lcd_draw_line
+    777          }
+   \       0x30   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    778          /**
+    779           * Fill rectangle with color
+    780           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    781          static void _lcd_fill_rectangle (uint32_t x, uint32_t y, uint32_t w, uint32_t h, uint32_t color)
+    782          {
+   \                     _lcd_fill_rectangle:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE59D'8020        LDR      R8,[SP, #+32]
+    783          	uint32_t i;
+    784          	for (i=x; i<x+w; i++) lcd_draw_fast_vline(i, y, h, color);
+   \       0x18   0xE1B0'9004        MOVS     R9,R4
+   \                     ??_lcd_fill_rectangle_0:
+   \       0x1C   0xE096'0004        ADDS     R0,R6,R4
+   \       0x20   0xE159'0000        CMP      R9,R0
+   \       0x24   0x2A00'0006        BCS      ??_lcd_fill_rectangle_1
+   \       0x28   0xE1B0'3008        MOVS     R3,R8
+   \       0x2C   0xE1B0'2007        MOVS     R2,R7
+   \       0x30   0xE1B0'1005        MOVS     R1,R5
+   \       0x34   0xE1B0'0009        MOVS     R0,R9
+   \       0x38   0x....'....        BL       lcd_draw_fast_vline
+   \       0x3C   0xE299'9001        ADDS     R9,R9,#+1
+   \       0x40   0xEAFF'FFF5        B        ??_lcd_fill_rectangle_0
+    785          }
+   \                     ??_lcd_fill_rectangle_1:
+   \       0x44   0xE8BD'83F1        POP      {R0,R4-R9,PC}    ;; return
+    786          /**
+    787           * Draw a circle
+    788           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    789          static void _lcd_draw_circle (uint32_t x0, uint32_t y0, uint32_t r, uint8_t corner, uint32_t color)
+    790          {
+   \                     _lcd_draw_circle:
+   \        0x0   0xE92D'4FF4        PUSH     {R2,R4-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6003        MOVS     R6,R3
+    791          	int32_t f = 1 - r;
+   \       0x10   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x14   0xE270'7001        RSBS     R7,R0,#+1
+    792          	int32_t ddF_x = 1;
+   \       0x18   0xE3A0'8001        MOV      R8,#+1
+    793          	int32_t ddF_y = -2 * (int32_t)r;
+   \       0x1C   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x20   0xE040'1080        SUB      R1,R0,R0, LSL #+1
+   \       0x24   0xE1B0'9081        LSLS     R9,R1,#+1
+    794          	int32_t x = 0;
+   \       0x28   0xE3A0'A000        MOV      R10,#+0
+    795          	int32_t y = r;
+   \       0x2C   0xE59D'B000        LDR      R11,[SP, #+0]
+    796          
+    797          	while (x<y) {
+   \                     ??_lcd_draw_circle_0:
+   \       0x30   0xE15A'000B        CMP      R10,R11
+   \       0x34   0xAA00'0028        BGE      ??_lcd_draw_circle_1
+    798          		if (f >= 0)
+   \       0x38   0xE357'0000        CMP      R7,#+0
+   \       0x3C   0x4A00'0002        BMI      ??_lcd_draw_circle_2
+    799          		{
+    800          			y--;
+   \       0x40   0xE25B'B001        SUBS     R11,R11,#+1
+    801          			ddF_y += 2;
+   \       0x44   0xE299'9002        ADDS     R9,R9,#+2
+    802          			f     += ddF_y;
+   \       0x48   0xE099'7007        ADDS     R7,R9,R7
+    803          		}
+    804          		x++;
+   \                     ??_lcd_draw_circle_2:
+   \       0x4C   0xE29A'A001        ADDS     R10,R10,#+1
+    805          		ddF_x += 2;
+   \       0x50   0xE298'8002        ADDS     R8,R8,#+2
+    806          		f     += ddF_x;
+   \       0x54   0xE098'7007        ADDS     R7,R8,R7
+    807          		if (corner & 0x4) {
+   \       0x58   0xE316'0004        TST      R6,#0x4
+   \       0x5C   0x0A00'0005        BEQ      ??_lcd_draw_circle_3
+    808          			_draw_pixel(x0 + x, y0 + y);
+   \       0x60   0xE09B'1005        ADDS     R1,R11,R5
+   \       0x64   0xE09A'0004        ADDS     R0,R10,R4
+   \       0x68   0x....'....        BL       _draw_pixel
+    809          			_draw_pixel(x0 + y, y0 + x);
+   \       0x6C   0xE09A'1005        ADDS     R1,R10,R5
+   \       0x70   0xE09B'0004        ADDS     R0,R11,R4
+   \       0x74   0x....'....        BL       _draw_pixel
+    810          		}
+    811          		if (corner & 0x2) {
+   \                     ??_lcd_draw_circle_3:
+   \       0x78   0xE316'0002        TST      R6,#0x2
+   \       0x7C   0x0A00'0005        BEQ      ??_lcd_draw_circle_4
+    812          			_draw_pixel(x0 + x, y0 - y);
+   \       0x80   0xE055'100B        SUBS     R1,R5,R11
+   \       0x84   0xE09A'0004        ADDS     R0,R10,R4
+   \       0x88   0x....'....        BL       _draw_pixel
+    813          			_draw_pixel(x0 + y, y0 - x);
+   \       0x8C   0xE055'100A        SUBS     R1,R5,R10
+   \       0x90   0xE09B'0004        ADDS     R0,R11,R4
+   \       0x94   0x....'....        BL       _draw_pixel
+    814          		}
+    815          		if (corner & 0x8) {
+   \                     ??_lcd_draw_circle_4:
+   \       0x98   0xE316'0008        TST      R6,#0x8
+   \       0x9C   0x0A00'0005        BEQ      ??_lcd_draw_circle_5
+    816          			_draw_pixel(x0 - y, y0 + x);
+   \       0xA0   0xE09A'1005        ADDS     R1,R10,R5
+   \       0xA4   0xE054'000B        SUBS     R0,R4,R11
+   \       0xA8   0x....'....        BL       _draw_pixel
+    817          			_draw_pixel(x0 - x, y0 + y);
+   \       0xAC   0xE09B'1005        ADDS     R1,R11,R5
+   \       0xB0   0xE054'000A        SUBS     R0,R4,R10
+   \       0xB4   0x....'....        BL       _draw_pixel
+    818          		}
+    819          		if (corner & 0x1) {
+   \                     ??_lcd_draw_circle_5:
+   \       0xB8   0xE316'0001        TST      R6,#0x1
+   \       0xBC   0x0AFF'FFDB        BEQ      ??_lcd_draw_circle_0
+    820          			_draw_pixel(x0 - y, y0 - x);
+   \       0xC0   0xE055'100A        SUBS     R1,R5,R10
+   \       0xC4   0xE054'000B        SUBS     R0,R4,R11
+   \       0xC8   0x....'....        BL       _draw_pixel
+    821          			_draw_pixel(x0 - x, y0 - y);
+   \       0xCC   0xE055'100B        SUBS     R1,R5,R11
+   \       0xD0   0xE054'000A        SUBS     R0,R4,R10
+   \       0xD4   0x....'....        BL       _draw_pixel
+   \       0xD8   0xEAFF'FFD4        B        ??_lcd_draw_circle_0
+    822          		}
+    823          	}
+    824          }
+   \                     ??_lcd_draw_circle_1:
+   \       0xDC   0xE8BD'8FF1        POP      {R0,R4-R11,PC}   ;; return
+    825          /**
+    826           * Fill a circle
+    827           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    828          static void _lcd_fill_circle (uint32_t x0, uint32_t y0, uint32_t r, uint8_t corner, uint32_t delta, uint32_t color)
+    829          {
+   \                     _lcd_fill_circle:
+   \        0x0   0xE92D'4FFD        PUSH     {R0,R2-R11,LR}
+   \        0x4   0xE1B0'4001        MOVS     R4,R1
+   \        0x8   0xE59D'5030        LDR      R5,[SP, #+48]
+   \        0xC   0xE59D'6034        LDR      R6,[SP, #+52]
+    830          	int32_t f = 1 - r;
+   \       0x10   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x14   0xE270'B001        RSBS     R11,R0,#+1
+    831          	int32_t ddF_x = 1;
+   \       0x18   0xE3A0'A001        MOV      R10,#+1
+    832          	int32_t ddF_y = -2 * (int32_t)r;
+   \       0x1C   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x20   0xE040'1080        SUB      R1,R0,R0, LSL #+1
+   \       0x24   0xE1B0'8081        LSLS     R8,R1,#+1
+    833          	int32_t x = 0;
+   \       0x28   0xE3A0'9000        MOV      R9,#+0
+    834          	int32_t y = r;
+   \       0x2C   0xE59D'7004        LDR      R7,[SP, #+4]
+    835          
+    836          	while (x<y) {
+   \                     ??_lcd_fill_circle_0:
+   \       0x30   0xE159'0007        CMP      R9,R7
+   \       0x34   0xAA00'0032        BGE      ??_lcd_fill_circle_1
+    837          		if (f >= 0) {
+   \       0x38   0xE35B'0000        CMP      R11,#+0
+   \       0x3C   0x4A00'0002        BMI      ??_lcd_fill_circle_2
+    838          			y--;
+   \       0x40   0xE257'7001        SUBS     R7,R7,#+1
+    839          			ddF_y += 2;
+   \       0x44   0xE298'8002        ADDS     R8,R8,#+2
+    840          			f += ddF_y;
+   \       0x48   0xE098'B00B        ADDS     R11,R8,R11
+    841          		}
+    842          		x++;
+   \                     ??_lcd_fill_circle_2:
+   \       0x4C   0xE299'9001        ADDS     R9,R9,#+1
+    843          		ddF_x += 2;
+   \       0x50   0xE29A'A002        ADDS     R10,R10,#+2
+    844          		f += ddF_x;
+   \       0x54   0xE09A'B00B        ADDS     R11,R10,R11
+    845          
+    846          		if (corner & 0x1) {
+   \       0x58   0xE5DD'0008        LDRB     R0,[SP, #+8]
+   \       0x5C   0xE310'0001        TST      R0,#0x1
+   \       0x60   0x0A00'0011        BEQ      ??_lcd_fill_circle_3
+    847          			lcd_draw_fast_vline(x0+x, y0-y, 2*y+1+delta, color);
+   \       0x64   0xE1B0'3006        MOVS     R3,R6
+   \       0x68   0xE3A0'0002        MOV      R0,#+2
+   \       0x6C   0xE011'0790        MULS     R1,R0,R7
+   \       0x70   0xE291'0001        ADDS     R0,R1,#+1
+   \       0x74   0xE095'2000        ADDS     R2,R5,R0
+   \       0x78   0xE054'1007        SUBS     R1,R4,R7
+   \       0x7C   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x80   0xE099'0000        ADDS     R0,R9,R0
+   \       0x84   0x....'....        BL       lcd_draw_fast_vline
+    848          			lcd_draw_fast_vline(x0+y, y0-x, 2*x+1+delta, color);
+   \       0x88   0xE1B0'3006        MOVS     R3,R6
+   \       0x8C   0xE3A0'0002        MOV      R0,#+2
+   \       0x90   0xE011'0990        MULS     R1,R0,R9
+   \       0x94   0xE291'0001        ADDS     R0,R1,#+1
+   \       0x98   0xE095'2000        ADDS     R2,R5,R0
+   \       0x9C   0xE054'1009        SUBS     R1,R4,R9
+   \       0xA0   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0xA4   0xE097'0000        ADDS     R0,R7,R0
+   \       0xA8   0x....'....        BL       lcd_draw_fast_vline
+    849          		}
+    850          		if (corner & 0x2) {
+   \                     ??_lcd_fill_circle_3:
+   \       0xAC   0xE5DD'0008        LDRB     R0,[SP, #+8]
+   \       0xB0   0xE310'0002        TST      R0,#0x2
+   \       0xB4   0x0AFF'FFDD        BEQ      ??_lcd_fill_circle_0
+    851          			lcd_draw_fast_vline(x0-x, y0-y, 2*y+1+delta, color);
+   \       0xB8   0xE1B0'3006        MOVS     R3,R6
+   \       0xBC   0xE3A0'0002        MOV      R0,#+2
+   \       0xC0   0xE011'0790        MULS     R1,R0,R7
+   \       0xC4   0xE291'0001        ADDS     R0,R1,#+1
+   \       0xC8   0xE095'2000        ADDS     R2,R5,R0
+   \       0xCC   0xE054'1007        SUBS     R1,R4,R7
+   \       0xD0   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0xD4   0xE050'0009        SUBS     R0,R0,R9
+   \       0xD8   0x....'....        BL       lcd_draw_fast_vline
+    852          			lcd_draw_fast_vline(x0-y, y0-x, 2*x+1+delta, color);
+   \       0xDC   0xE1B0'3006        MOVS     R3,R6
+   \       0xE0   0xE3A0'0002        MOV      R0,#+2
+   \       0xE4   0xE011'0990        MULS     R1,R0,R9
+   \       0xE8   0xE291'0001        ADDS     R0,R1,#+1
+   \       0xEC   0xE095'2000        ADDS     R2,R5,R0
+   \       0xF0   0xE054'1009        SUBS     R1,R4,R9
+   \       0xF4   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0xF8   0xE050'0007        SUBS     R0,R0,R7
+   \       0xFC   0x....'....        BL       lcd_draw_fast_vline
+   \      0x100   0xEAFF'FFCA        B        ??_lcd_fill_circle_0
+    853          		}
+    854          	}
+    855          }
+   \                     ??_lcd_fill_circle_1:
+   \      0x104   0xE8BD'8FF7        POP      {R0-R2,R4-R11,PC}  ;; return
+    856          
+    857          /*----------------------------------------------------------------------------
+    858           *        Global functions
+    859           *----------------------------------------------------------------------------*/
+    860          
+    861          /**
+    862           * Draw a rectangle with rounded corners
+    863           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    864          void lcd_draw_rounded_rect (uint32_t x, uint32_t y, uint32_t w, uint32_t h, uint32_t r, uint32_t color)
+    865          {
+   \                     lcd_draw_rounded_rect:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE59D'8020        LDR      R8,[SP, #+32]
+   \       0x18   0xE59D'9024        LDR      R9,[SP, #+36]
+    866          	_set_front_color(color);
+   \       0x1C   0xE1B0'0009        MOVS     R0,R9
+   \       0x20   0x....'....        BL       _set_front_color
+    867          	_hide_canvas();
+   \       0x24   0x....'....        BL       _hide_canvas
+    868          	// smarter version
+    869          	lcd_draw_fast_hline(x+r, y, w-2*r, color); // Top
+   \       0x28   0xE1B0'3009        MOVS     R3,R9
+   \       0x2C   0xE1B0'0088        LSLS     R0,R8,#+1
+   \       0x30   0xE056'2000        SUBS     R2,R6,R0
+   \       0x34   0xE1B0'1005        MOVS     R1,R5
+   \       0x38   0xE098'0004        ADDS     R0,R8,R4
+   \       0x3C   0x....'....        BL       lcd_draw_fast_hline
+    870          	lcd_draw_fast_hline(x+r, y+h-1, w-2*r, color); // Bottom
+   \       0x40   0xE1B0'3009        MOVS     R3,R9
+   \       0x44   0xE1B0'0088        LSLS     R0,R8,#+1
+   \       0x48   0xE056'2000        SUBS     R2,R6,R0
+   \       0x4C   0xE097'0005        ADDS     R0,R7,R5
+   \       0x50   0xE250'1001        SUBS     R1,R0,#+1
+   \       0x54   0xE098'0004        ADDS     R0,R8,R4
+   \       0x58   0x....'....        BL       lcd_draw_fast_hline
+    871          	lcd_draw_fast_vline(x, y+r, h-2*r, color); // Left
+   \       0x5C   0xE1B0'3009        MOVS     R3,R9
+   \       0x60   0xE1B0'0088        LSLS     R0,R8,#+1
+   \       0x64   0xE057'2000        SUBS     R2,R7,R0
+   \       0x68   0xE098'1005        ADDS     R1,R8,R5
+   \       0x6C   0xE1B0'0004        MOVS     R0,R4
+   \       0x70   0x....'....        BL       lcd_draw_fast_vline
+    872          	lcd_draw_fast_vline(x+w-1, y+r, h-2*r, color); // Right
+   \       0x74   0xE1B0'3009        MOVS     R3,R9
+   \       0x78   0xE1B0'0088        LSLS     R0,R8,#+1
+   \       0x7C   0xE057'2000        SUBS     R2,R7,R0
+   \       0x80   0xE098'1005        ADDS     R1,R8,R5
+   \       0x84   0xE096'0004        ADDS     R0,R6,R4
+   \       0x88   0xE250'0001        SUBS     R0,R0,#+1
+   \       0x8C   0x....'....        BL       lcd_draw_fast_vline
+    873          	// draw four corners
+    874          	_lcd_draw_circle(x+r, y+r, r, 1, color);
+   \       0x90   0xE58D'9000        STR      R9,[SP, #+0]
+   \       0x94   0xE3A0'3001        MOV      R3,#+1
+   \       0x98   0xE1B0'2008        MOVS     R2,R8
+   \       0x9C   0xE098'1005        ADDS     R1,R8,R5
+   \       0xA0   0xE098'0004        ADDS     R0,R8,R4
+   \       0xA4   0x....'....        BL       _lcd_draw_circle
+    875          	_lcd_draw_circle(x+w-r-1, y+r, r, 2, color);
+   \       0xA8   0xE58D'9000        STR      R9,[SP, #+0]
+   \       0xAC   0xE3A0'3002        MOV      R3,#+2
+   \       0xB0   0xE1B0'2008        MOVS     R2,R8
+   \       0xB4   0xE098'1005        ADDS     R1,R8,R5
+   \       0xB8   0xE096'0004        ADDS     R0,R6,R4
+   \       0xBC   0xE050'0008        SUBS     R0,R0,R8
+   \       0xC0   0xE250'0001        SUBS     R0,R0,#+1
+   \       0xC4   0x....'....        BL       _lcd_draw_circle
+    876          	_lcd_draw_circle(x+w-r-1, y+h-r-1, r, 4, color);
+   \       0xC8   0xE58D'9000        STR      R9,[SP, #+0]
+   \       0xCC   0xE3A0'3004        MOV      R3,#+4
+   \       0xD0   0xE1B0'2008        MOVS     R2,R8
+   \       0xD4   0xE097'0005        ADDS     R0,R7,R5
+   \       0xD8   0xE050'0008        SUBS     R0,R0,R8
+   \       0xDC   0xE250'1001        SUBS     R1,R0,#+1
+   \       0xE0   0xE096'0004        ADDS     R0,R6,R4
+   \       0xE4   0xE050'0008        SUBS     R0,R0,R8
+   \       0xE8   0xE250'0001        SUBS     R0,R0,#+1
+   \       0xEC   0x....'....        BL       _lcd_draw_circle
+    877          	_lcd_draw_circle(x+r, y+h-r-1, r, 8, color);
+   \       0xF0   0xE58D'9000        STR      R9,[SP, #+0]
+   \       0xF4   0xE3A0'3008        MOV      R3,#+8
+   \       0xF8   0xE1B0'2008        MOVS     R2,R8
+   \       0xFC   0xE097'0005        ADDS     R0,R7,R5
+   \      0x100   0xE050'0008        SUBS     R0,R0,R8
+   \      0x104   0xE250'1001        SUBS     R1,R0,#+1
+   \      0x108   0xE098'0004        ADDS     R0,R8,R4
+   \      0x10C   0x....'....        BL       _lcd_draw_circle
+    878          	_show_canvas();
+   \      0x110   0x....'....        BL       _show_canvas
+    879          }
+   \      0x114   0xE8BD'83F1        POP      {R0,R4-R9,PC}    ;; return
+    880          /**
+    881           * Fill a rectangle with rounded corners
+    882           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    883          void lcd_fill_rounded_rect(uint32_t x, uint32_t y, uint32_t w, uint32_t h, uint32_t r, uint32_t color)
+    884          {
+   \                     lcd_fill_rounded_rect:
+   \        0x0   0xE92D'43FE        PUSH     {R1-R9,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE59D'8028        LDR      R8,[SP, #+40]
+   \       0x18   0xE59D'902C        LDR      R9,[SP, #+44]
+    885          	_set_front_color(color);
+   \       0x1C   0xE1B0'0009        MOVS     R0,R9
+   \       0x20   0x....'....        BL       _set_front_color
+    886          	_hide_canvas();
+   \       0x24   0x....'....        BL       _hide_canvas
+    887          	if (w>(2*r)) {
+   \       0x28   0xE1B0'0088        LSLS     R0,R8,#+1
+   \       0x2C   0xE150'0006        CMP      R0,R6
+   \       0x30   0x2A00'001C        BCS      ??lcd_fill_rounded_rect_0
+    888          		_lcd_fill_rectangle(x+r, y, w-(2*r), h, color);
+   \       0x34   0xE58D'9000        STR      R9,[SP, #+0]
+   \       0x38   0xE1B0'3007        MOVS     R3,R7
+   \       0x3C   0xE1B0'0088        LSLS     R0,R8,#+1
+   \       0x40   0xE056'2000        SUBS     R2,R6,R0
+   \       0x44   0xE1B0'1005        MOVS     R1,R5
+   \       0x48   0xE098'0004        ADDS     R0,R8,R4
+   \       0x4C   0x....'....        BL       _lcd_fill_rectangle
+    889          		// draw four corners
+    890          		_lcd_fill_circle(x+w-r-1, y+r, r, 1, h-2*r-1, color);
+   \       0x50   0xE58D'9004        STR      R9,[SP, #+4]
+   \       0x54   0xE1B0'0088        LSLS     R0,R8,#+1
+   \       0x58   0xE057'0000        SUBS     R0,R7,R0
+   \       0x5C   0xE250'0001        SUBS     R0,R0,#+1
+   \       0x60   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x64   0xE3A0'3001        MOV      R3,#+1
+   \       0x68   0xE1B0'2008        MOVS     R2,R8
+   \       0x6C   0xE098'1005        ADDS     R1,R8,R5
+   \       0x70   0xE096'0004        ADDS     R0,R6,R4
+   \       0x74   0xE050'0008        SUBS     R0,R0,R8
+   \       0x78   0xE250'0001        SUBS     R0,R0,#+1
+   \       0x7C   0x....'....        BL       _lcd_fill_circle
+    891          		_lcd_fill_circle(x+r, y+r, r, 2, h-2*r-1, color);
+   \       0x80   0xE58D'9004        STR      R9,[SP, #+4]
+   \       0x84   0xE1B0'0088        LSLS     R0,R8,#+1
+   \       0x88   0xE057'0000        SUBS     R0,R7,R0
+   \       0x8C   0xE250'0001        SUBS     R0,R0,#+1
+   \       0x90   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x94   0xE3A0'3002        MOV      R3,#+2
+   \       0x98   0xE1B0'2008        MOVS     R2,R8
+   \       0x9C   0xE098'1005        ADDS     R1,R8,R5
+   \       0xA0   0xE098'0004        ADDS     R0,R8,R4
+   \       0xA4   0x....'....        BL       _lcd_fill_circle
+    892          	}
+    893          	_show_canvas();
+   \                     ??lcd_fill_rounded_rect_0:
+   \       0xA8   0x....'....        BL       _show_canvas
+    894          }
+   \       0xAC   0xE8BD'83F7        POP      {R0-R2,R4-R9,PC}  ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3:
+   \        0x0   0x....'....        DC32     front_color
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6:
+   \        0x0   0x....'....        DC32     font_param
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      48   _draw_line_bresenham
+        48   -> _draw_pixel
+        48   -> abs
+      24   _draw_pixel
+        24   -> lcdc_get_canvas
+        24 __aeabi_idiv
+      72   _fill_rect
+        72   -> __aeabi_memcpy
+        72   -> lcdc_get_canvas
+        72 __aeabi_idiv
+       0   _hide_canvas
+      40   _lcd_draw_circle
+        40   -> _draw_pixel
+      48   _lcd_fill_circle
+        48   -> lcd_draw_fast_vline
+      32   _lcd_fill_rectangle
+        32   -> lcd_draw_fast_vline
+       0   _set_front_color
+       0   _show_canvas
+      24   lcd_clear_window
+        24   -> _fill_rect
+        24   -> _hide_canvas
+        24   -> _set_front_color
+        24   -> _show_canvas
+      32   lcd_draw_circle
+        32   -> _draw_pixel
+        32   -> _hide_canvas
+        32   -> _set_front_color
+        32   -> _show_canvas
+      24   lcd_draw_fast_hline
+        24   -> lcd_draw_line
+      24   lcd_draw_fast_vline
+        24   -> lcd_draw_line
+      48   lcd_draw_filled_circle
+        48   -> _fill_rect
+        48   -> _hide_canvas
+        48   -> _set_front_color
+        48   -> _show_canvas
+      24   lcd_draw_filled_rectangle
+        24   -> _fill_rect
+        24   -> _hide_canvas
+        24   -> _set_front_color
+        24   -> _show_canvas
+      72   lcd_draw_image
+        72   -> __aeabi_memcpy
+        72   -> lcdc_get_canvas
+        72 __aeabi_idiv
+      64   lcd_draw_line
+        64   -> __aeabi_memcpy
+        64   -> _draw_line_bresenham
+        64   -> _hide_canvas
+        64   -> _set_front_color
+        64   -> _show_canvas
+        64   -> lcd_draw_filled_rectangle
+      16   lcd_draw_pixel
+        16   -> _draw_pixel
+        16   -> _hide_canvas
+        16   -> _set_front_color
+        16   -> _show_canvas
+      32   lcd_draw_rectangle
+        32   -> _fill_rect
+        32   -> _hide_canvas
+        32   -> _set_front_color
+        32   -> _show_canvas
+      32   lcd_draw_rounded_rect
+        32   -> _hide_canvas
+        32   -> _lcd_draw_circle
+        32   -> _set_front_color
+        32   -> _show_canvas
+        32   -> lcd_draw_fast_hline
+        32   -> lcd_draw_fast_vline
+      40   lcd_draw_string
+        40   -> lcd_draw_char
+        40   -> lcd_get_selected_font
+      48   lcd_draw_string_with_bgcolor
+        48   -> lcd_draw_char_with_bgcolor
+        48   -> lcd_get_selected_font
+      16   lcd_fill
+        16   -> _fill_rect
+        16   -> _hide_canvas
+        16   -> _set_front_color
+        16   -> _show_canvas
+        16   -> lcdc_get_canvas
+      40   lcd_fill_rounded_rect
+        40   -> _hide_canvas
+        40   -> _lcd_fill_circle
+        40   -> _lcd_fill_rectangle
+        40   -> _set_front_color
+        40   -> _show_canvas
+      32   lcd_fill_white
+        32   -> _fill_rect
+        32   -> _hide_canvas
+        32   -> _set_front_color
+        32   -> _show_canvas
+        32   -> lcdc_get_canvas
+        32 __aeabi_idiv
+      32   lcd_fill_yuv422
+        32   -> lcdc_get_canvas
+        32 __aeabi_uidiv
+      24   lcd_get_string_size
+        24   -> lcd_get_selected_font
+      24   lcd_read_pixel
+        24   -> lcdc_get_canvas
+        24 __aeabi_idiv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable6
+     192  _draw_line_bresenham
+     268  _draw_pixel
+     280  _fill_rect
+       4  _hide_canvas
+     224  _lcd_draw_circle
+     264  _lcd_fill_circle
+      72  _lcd_fill_rectangle
+      12  _set_front_color
+       4  _show_canvas
+       4  front_color
+      72  lcd_clear_window
+     212  lcd_draw_circle
+      52  lcd_draw_fast_hline
+      52  lcd_draw_fast_vline
+     280  lcd_draw_filled_circle
+      64  lcd_draw_filled_rectangle
+     252  lcd_draw_image
+     408  lcd_draw_line
+      48  lcd_draw_pixel
+     140  lcd_draw_rectangle
+     280  lcd_draw_rounded_rect
+     260  lcd_draw_string
+     268  lcd_draw_string_with_bgcolor
+      56  lcd_fill
+     176  lcd_fill_rounded_rect
+     256  lcd_fill_white
+   1'256  lcd_fill_yuv422
+     276  lcd_get_string_size
+     252  lcd_read_pixel
+
+ 
+     4 bytes in section .bss
+ 5'988 bytes in section SOFTPACK
+ 
+ 5'988 bytes of CODE memory
+     4 bytes of DATA memory
+
+Errors: none
+Warnings: none

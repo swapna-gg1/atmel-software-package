@@ -1,0 +1,849 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         01/Dec/2020  16:42:54
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\ad1934.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW6C38.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\ad1934.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_AUDIO -D
+#        CONFIG_HAVE_AUDIO_WM8731 -D CONFIG_HAVE_SSC -D CONFIG_HAVE_CLASSD -D
+#        CONFIG_HAVE_PDMIC -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_I2C_BUS --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\List\ad1934.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\Obj\ad1934.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\ad1934.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "board.h"
+     35          #include "chip.h"
+     36          #include "trace.h"
+     37          #include "compiler.h"
+     38          
+     39          #include "audio/ad1934.h"
+     40          #include "peripherals/pmc.h"
+     41          #include "gpio/pio.h"
+     42          #include "spi/spid.h"
+     43          #include "peripherals/bus.h"
+     44          
+     45          #include <stdbool.h>
+     46          #include <stdio.h>
+     47          #include <string.h>
+     48          
+     49          /*----------------------------------------------------------------------------
+     50           *         Definitions
+     51           *----------------------------------------------------------------------------*/
+     52          
+     53          #define AD1934_PLL_CLK_CTRL0    0x00
+     54          #define AD1934_PLL_CLK_CTRL1    0x01
+     55          #define AD1934_DAC_CTRL0        0x02
+     56          #define AD1934_DAC_CTRL1        0x03
+     57          #define AD1934_DAC_CTRL2        0x04
+     58          #define AD1934_DAC_CHNL_MUTE    0x05
+     59          #define AD1934_DAC_L1_VOL       0x06
+     60          #define AD1934_DAC_R1_VOL       0x07
+     61          #define AD1934_DAC_L2_VOL       0x08
+     62          #define AD1934_DAC_R2_VOL       0x09
+     63          #define AD1934_DAC_L3_VOL       0x0a
+     64          #define AD1934_DAC_R3_VOL       0x0b
+     65          #define AD1934_DAC_L4_VOL       0x0c
+     66          #define AD1934_DAC_R4_VOL       0x0d
+     67          #define AD1934_ADC_CTRL0        0x0f
+     68          #define AD1934_ADC_CTRL1        0x10
+     69          
+     70          /* This is the chip address 4 shifted left one bit plus the Read bit set to read */
+     71          #define AD1934_GLOBAL_ADDRESS_READ 0x09
+     72          
+     73          /* This is the chip address 4 shifted left one bit plus the Write bit set to write */
+     74          #define AD1934_GLOBAL_ADDRESS_WRITE 0x08
+     75          
+     76          #define AD1934_PLL_NORMAL_OPERATION 0x00
+     77          #define AD1934_PLL_POWERDOWN        0x01
+     78          
+     79          #define AD1934_PLL_INPUT_MASK   0x6
+     80          #define AD1934_PLL_INPUT_256    (0 << 1)
+     81          #define AD1934_PLL_INPUT_384    (1 << 1)
+     82          #define AD1934_PLL_INPUT_512    (2 << 1)
+     83          #define AD1934_PLL_INPUT_768    (3 << 1)
+     84          
+     85          #define AD1934_PLL_MCLKO_OFF    (3 << 3)
+     86          #define AD1934_PLL_INPUT_MCLK   (0 << 5)
+     87          
+     88          #define AD1934_PLL_DAC_ACTIVE   (1 << 7)
+     89          
+     90          #define AD1934_DAC_POWERDOWN            0x01
+     91          #define AD1934_DAC_SERFMT_MASK          0xC0
+     92          #define AD1934_DAC_SERFMT_STEREO        (0 << 6)
+     93          #define AD1934_DAC_SERFMT_TDM           (1 << 6)
+     94          
+     95          #define AD1934_CTRL1_BCLK_ACTIVE_EDGE_NORMAL (0 << 0)
+     96          #define AD1934_CTRL1_LRCLK_LEFT_LOW          (0 << 3)
+     97          #define AD1934_CTRL1_LRCLK_MODE_MASTER       (1 << 4)
+     98          #define AD1934_CTRL1_BCLK_MODE_MASTER        (1 << 5)
+     99          #define AD1934_CTRL1_BCLK_SOURCE_INTERNAL    (1 << 6)
+    100          #define AD1934_CTRL1_BCLK_POLARITY_NORMAL    (0 << 7)
+    101          
+    102          #define AD1934_DAC_CTRL0_SAMPLE_RATE_SHFT    (1)
+    103          #define AD1934_DAC_CTRL0_SAMPLE_RATE_MASK    (3 << AD1934_DAC_CTRL0_SAMPLE_RATE_SHFT)
+    104          
+    105          #define AD1934_DAC_WORD_LEN_SHFT         3
+    106          #define AD1934_DAC_WORD_LEN_MASK        (3 << AD1934_DAC_WORD_LEN_SHFT)
+    107          #define AD1934_DAC_MASTER_MUTE  1
+    108          
+    109          #define AD1934_DACL1_MUTE       0
+    110          #define AD1934_DACR1_MUTE       1
+    111          #define AD1934_DACL2_MUTE       2
+    112          #define AD1934_DACR2_MUTE       3
+    113          #define AD1934_DACL3_MUTE       4
+    114          #define AD1934_DACR3_MUTE       5
+    115          #define AD1934_DACL4_MUTE       6
+    116          #define AD1934_DACR4_MUTE       7
+    117          
+    118          #define AD1934_DAC_CHAN_SHFT    1
+    119          #define AD1934_DAC_CHAN_MASK    (3 << AD1934_DAC_CHAN_SHFT)
+    120          #define AD1934_DAC_LCR_MASTER   (1 << 4)
+    121          #define AD1934_DAC_BCLK_MASTER  (1 << 5)
+    122          #define AD1934_DAC_LEFT_HIGH    (1 << 3)
+    123          #define AD1934_DAC_BCLK_INV     (1 << 7)
+    124          #define AD1934_DAC_FMT_MASK     (AD1934_DAC_LCR_MASTER | \
+    125                   AD1934_DAC_BCLK_MASTER | AD1934_DAC_LEFT_HIGH | AD1934_DAC_BCLK_INV)
+    126          
+    127          #define AD1934_2_CHANNELS   0
+    128          #define AD1934_4_CHANNELS   1
+    129          #define AD1934_8_CHANNELS   2
+    130          #define AD1934_16_CHANNELS  3
+    131          
+    132          /*----------------------------------------------------------------------------
+    133           *        Local functions
+    134           *----------------------------------------------------------------------------*/
+    135          
+    136          /**
+    137           * \brief Read data from AD1934 Register.
+    138           *
+    139           * \param spid   Pointer to spi driver structure
+    140           * \param reg_addr Register address to read.
+    141           * \return value in the given register.
+    142           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    143          static uint8_t ad1934_read_reg(struct _ad1934_desc* ad1934, uint8_t reg_addr)
+    144          {
+    145          	uint8_t spi_in_message[1], spi_out_message[2];
+    146          
+    147          	/* Global Address[23:17] R/W[16] Register Address[15:8] Data[7:0] */
+    148          	spi_out_message[0] = AD1934_GLOBAL_ADDRESS_READ;
+    149          	spi_out_message[1] = reg_addr;
+    150          
+    151          	struct _buffer buf[2] = {
+    152          		{
+    153          			.data = spi_out_message,
+    154          			.size = sizeof(spi_out_message),
+    155          			.attr = BUS_BUF_ATTR_TX,
+    156          		},
+    157          		{
+    158          			.data = spi_in_message,
+    159          			.size = sizeof(spi_in_message),
+    160          			.attr = BUS_BUF_ATTR_RX | BUS_SPI_BUF_ATTR_RELEASE_CS,
+    161          		},
+    162          	};
+   \                     ad1934_read_reg:
+   \        0x0   0x....'....        LDR      R12,??DataTable2
+   \        0x4   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x8   0xE89C'43E0        LDM      R12,{R5-R9,LR}
+   \        0xC   0xE1A0'4000        MOV      R4,R0
+   \       0x10   0xE24D'D020        SUB      SP,SP,#+32
+   \       0x14   0xE5CD'1007        STRB     R1,[SP, #+7]
+   \       0x18   0xE28D'1008        ADD      R1,SP,#+8
+   \       0x1C   0xE3A0'0009        MOV      R0,#+9
+   \       0x20   0xE881'43E0        STM      R1,{R5-R9,LR}
+   \       0x24   0xE5CD'0006        STRB     R0,[SP, #+6]
+   \       0x28   0xE28D'0006        ADD      R0,SP,#+6
+   \       0x2C   0xE28D'3004        ADD      R3,SP,#+4
+   \       0x30   0xE58D'0008        STR      R0,[SP, #+8]
+   \       0x34   0xE58D'3014        STR      R3,[SP, #+20]
+    163          
+    164          	bus_start_transaction(ad1934->bus);
+   \       0x38   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x3C   0x....'....        BL       bus_start_transaction
+    165          	bus_transfer(ad1934->bus, ad1934->dev->spi_dev.chip_select, buf, 2, NULL);
+   \       0x40   0xE3A0'0000        MOV      R0,#+0
+   \       0x44   0xE3A0'3002        MOV      R3,#+2
+   \       0x48   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x4C   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x50   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x54   0xE28D'2008        ADD      R2,SP,#+8
+   \       0x58   0xE5D1'1004        LDRB     R1,[R1, #+4]
+   \       0x5C   0x....'....        BL       bus_transfer
+    166          	bus_stop_transaction(ad1934->bus);
+   \       0x60   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x64   0x....'....        BL       bus_stop_transaction
+    167          
+    168          	return spi_in_message[0];
+   \       0x68   0xE5DD'0004        LDRB     R0,[SP, #+4]
+   \       0x6C   0xE28D'D024        ADD      SP,SP,#+36
+   \       0x70   0xE8BD'83F0        POP      {R4-R9,PC}       ;; return
+    169          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_0:
+   \        0x0   0x0000'0000        DC32 0x0, 2, 2, 0x0, 1, 2'049
+
+   \              0x0000'0002  
+
+   \              0x0000'0002  
+
+   \              0x0000'0000  
+
+   \              0x0000'0001  
+
+   \              0x0000'0801
+    170          
+    171          /**
+    172           * \brief  Write data to AD1934 Register.
+    173           *
+    174           * \param spid   Pointer to spi driver structure
+    175           * \param reg_addr Register address to read.
+    176           * \param data    Data to write
+    177           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    178          static void ad1934_write_reg(struct _ad1934_desc* ad1934, uint8_t reg_addr, uint8_t data)
+    179          {
+   \                     ad1934_write_reg:
+   \        0x0   0xE92D'4030        PUSH     {R4,R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE24D'D014        SUB      SP,SP,#+20
+    180          	uint8_t spi_out_message[3];
+    181          
+    182          	/* Global Address[23:17] R/W[16] Register Address[15:8] Data[7:0] */
+    183          	spi_out_message[0] = AD1934_GLOBAL_ADDRESS_WRITE;
+    184          	spi_out_message[1] = reg_addr;
+    185          	spi_out_message[2] = data;
+   \        0xC   0xE5CD'2006        STRB     R2,[SP, #+6]
+    186          
+    187          	struct _buffer out = {
+    188          		.data = spi_out_message,
+    189          		.size = 3,
+    190          		.attr = BUS_BUF_ATTR_TX | BUS_SPI_BUF_ATTR_RELEASE_CS,
+    191          	};
+   \       0x10   0x....'....        ADR      R2,?_1
+   \       0x14   0xE892'4028        LDM      R2,{R3,R5,LR}
+   \       0x18   0xE3A0'0008        MOV      R0,#+8
+   \       0x1C   0xE28D'C004        ADD      R12,SP,#+4
+   \       0x20   0xE5CD'0004        STRB     R0,[SP, #+4]
+   \       0x24   0xE28D'0008        ADD      R0,SP,#+8
+   \       0x28   0xE5CD'1005        STRB     R1,[SP, #+5]
+   \       0x2C   0xE880'4028        STM      R0,{R3,R5,LR}
+   \       0x30   0xE58D'C008        STR      R12,[SP, #+8]
+    192          
+    193          	bus_start_transaction(ad1934->bus);
+   \       0x34   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x38   0x....'....        BL       bus_start_transaction
+    194          	bus_transfer(ad1934->bus, ad1934->dev->spi_dev.chip_select, &out, 1, NULL);
+   \       0x3C   0xE3A0'0000        MOV      R0,#+0
+   \       0x40   0xE3A0'3001        MOV      R3,#+1
+   \       0x44   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x48   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x4C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x50   0xE28D'2008        ADD      R2,SP,#+8
+   \       0x54   0xE5D1'1004        LDRB     R1,[R1, #+4]
+   \       0x58   0x....'....        BL       bus_transfer
+    195          	bus_stop_transaction(ad1934->bus);
+   \       0x5C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x60   0x....'....        BL       bus_stop_transaction
+    196          
+    197          	return;
+   \       0x64   0xE28D'D014        ADD      SP,SP,#+20
+   \       0x68   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+    198          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x0000'0000        DC32 0x0, 3, 2'050
+
+   \              0x0000'0003  
+
+   \              0x0000'0802
+    199          
+    200          /*----------------------------------------------------------------------------
+    201           *        Exported functions
+    202           *----------------------------------------------------------------------------*/
+    203          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    204          void ad1934_configure(struct _ad1934_desc* ad1934)
+    205          {
+   \                     ad1934_configure:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    206          	/* Configure spi chip select */
+    207          	bus_configure_slave(ad1934->dev->bus, ad1934->dev);
+   \        0x8   0xE594'1004        LDR      R1,[R4, #+4]
+   \        0xC   0xE5D1'0000        LDRB     R0,[R1, #+0]
+   \       0x10   0x....'....        BL       bus_configure_slave
+    208          
+    209          	/* unmute all dac channels */
+    210          	ad1934_write_reg(ad1934, AD1934_DAC_CHNL_MUTE, 0x0);
+   \       0x14   0xE3A0'2000        MOV      R2,#+0
+   \       0x18   0xE3A0'1005        MOV      R1,#+5
+   \       0x1C   0xE1A0'0004        MOV      R0,R4
+   \       0x20   0x....'....        BL       ad1934_write_reg
+    211          
+    212          	/* mclk=12.288Mhz fs=48Khz, 256*fs mode */
+    213          	ad1934_write_reg(ad1934, AD1934_PLL_CLK_CTRL0,
+    214          		AD1934_PLL_NORMAL_OPERATION | AD1934_PLL_INPUT_256 | AD1934_PLL_MCLKO_OFF |
+    215          		AD1934_PLL_INPUT_MCLK | AD1934_PLL_DAC_ACTIVE);
+   \       0x24   0xE3A0'2098        MOV      R2,#+152
+   \       0x28   0xE3A0'1000        MOV      R1,#+0
+   \       0x2C   0xE1A0'0004        MOV      R0,R4
+   \       0x30   0x....'....        BL       ad1934_write_reg
+    216          
+    217          	/* Serial format in tdm mode, fs=48K, SDATA=1*/
+    218          	ad1934_write_reg(ad1934, AD1934_DAC_CTRL0, AD1934_DAC_SERFMT_TDM);
+   \       0x34   0xE3A0'2040        MOV      R2,#+64
+   \       0x38   0xE3A0'1002        MOV      R1,#+2
+   \       0x3C   0xE1A0'0004        MOV      R0,R4
+   \       0x40   0x....'....        BL       ad1934_write_reg
+    219          
+    220          	/* LRCLK polarity left low, BCLK source internally generated, master mode */
+    221          	ad1934_write_reg(ad1934, AD1934_DAC_CTRL1,
+    222          		AD1934_CTRL1_BCLK_ACTIVE_EDGE_NORMAL | AD1934_CTRL1_LRCLK_LEFT_LOW |
+    223          		AD1934_CTRL1_LRCLK_MODE_MASTER | AD1934_CTRL1_BCLK_MODE_MASTER |
+    224          		AD1934_CTRL1_BCLK_SOURCE_INTERNAL | AD1934_CTRL1_BCLK_POLARITY_NORMAL);
+   \       0x44   0xE1A0'0004        MOV      R0,R4
+   \       0x48   0xE3A0'2070        MOV      R2,#+112
+   \       0x4C   0xE8BD'4010        POP      {R4,LR}
+   \       0x50   0xE3A0'1003        MOV      R1,#+3
+   \       0x54   0x....'....        B        ad1934_write_reg  ;; tailcall
+    225          }
+    226          
+    227          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    228          void ad1934_master_volume_mute(struct _ad1934_desc* ad1934, bool mute)
+    229          {
+   \                     ad1934_master_volume_mute:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    230          	uint8_t val = ad1934_read_reg(ad1934, AD1934_DAC_CTRL2);
+   \        0xC   0xE3A0'1004        MOV      R1,#+4
+   \       0x10   0x....'....        BL       ad1934_read_reg
+    231          	if (mute)
+   \       0x14   0xE355'0000        CMP      R5,#+0
+    232          		ad1934_write_reg(ad1934, AD1934_DAC_CTRL2, val | AD1934_DAC_MASTER_MUTE);
+    233          	else
+    234          		ad1934_write_reg(ad1934, AD1934_DAC_CTRL2, val & ~AD1934_DAC_MASTER_MUTE);
+   \       0x18   0xE3A0'1004        MOV      R1,#+4
+   \       0x1C   0x1380'2001        ORRNE    R2,R0,#0x1
+   \       0x20   0x0200'20FE        ANDEQ    R2,R0,#0xFE
+   \       0x24   0xE1A0'0004        MOV      R0,R4
+   \       0x28   0xE8BD'4038        POP      {R3-R5,LR}
+   \       0x2C   0x....'....        B        ad1934_write_reg  ;; tailcall
+    235          }
+    236          
+    237          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    238          bool ad1934_set_tdm_slot(struct _ad1934_desc* ad1934, int slots)
+    239          {
+   \                     ad1934_set_tdm_slot:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+    240          	uint32_t channels;
+    241          	uint8_t val;
+    242          
+    243          	switch (slots) {
+   \        0x4   0xE351'0002        CMP      R1,#+2
+   \        0x8   0xE24D'D020        SUB      SP,SP,#+32
+   \        0xC   0xE1A0'4000        MOV      R4,R0
+   \       0x10   0x0A00'0006        BEQ      ??ad1934_set_tdm_slot_0
+   \       0x14   0xE351'0004        CMP      R1,#+4
+   \       0x18   0x0A00'0039        BEQ      ??ad1934_set_tdm_slot_1
+   \       0x1C   0xE351'0008        CMP      R1,#+8
+   \       0x20   0x0A00'0039        BEQ      ??ad1934_set_tdm_slot_2
+   \       0x24   0xE351'0010        CMP      R1,#+16
+   \       0x28   0x0A00'0039        BEQ      ??ad1934_set_tdm_slot_3
+   \       0x2C   0xEA00'003A        B        ??ad1934_set_tdm_slot_4
+    244          	case 2:
+    245          		channels = AD1934_2_CHANNELS;
+   \                     ??ad1934_set_tdm_slot_0:
+   \       0x30   0xE3A0'5000        MOV      R5,#+0
+    246          		break;
+    247          	case 4:
+    248          		channels = AD1934_4_CHANNELS;
+    249          		break;
+    250          	case 8:
+    251          		channels = AD1934_8_CHANNELS;
+    252          		break;
+    253          	case 16:
+    254          		channels = AD1934_16_CHANNELS;
+    255          		break;
+    256          	default:
+    257          		return false;
+    258          	}
+    259          
+    260          	val = ad1934_read_reg(ad1934, AD1934_DAC_CTRL1);
+   \                     ??ad1934_set_tdm_slot_5:
+   \       0x34   0xE3A0'0009        MOV      R0,#+9
+   \       0x38   0xE28D'3008        ADD      R3,SP,#+8
+   \       0x3C   0xE5CD'0006        STRB     R0,[SP, #+6]
+   \       0x40   0x....'....        ADR      R0,?_0
+   \       0x44   0xE890'5780        LDM      R0,{R7-R10,R12,LR}
+   \       0x48   0xE883'5780        STM      R3,{R7-R10,R12,LR}
+   \       0x4C   0xE3A0'6003        MOV      R6,#+3
+   \       0x50   0xE28D'1006        ADD      R1,SP,#+6
+   \       0x54   0xE28D'2004        ADD      R2,SP,#+4
+   \       0x58   0xE5CD'6007        STRB     R6,[SP, #+7]
+   \       0x5C   0xE58D'1008        STR      R1,[SP, #+8]
+   \       0x60   0xE58D'2014        STR      R2,[SP, #+20]
+   \       0x64   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x68   0x....'....        BL       bus_start_transaction
+   \       0x6C   0xE3A0'1000        MOV      R1,#+0
+   \       0x70   0xE3A0'3002        MOV      R3,#+2
+   \       0x74   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x78   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x7C   0xE28D'2008        ADD      R2,SP,#+8
+   \       0x80   0xE5D0'1004        LDRB     R1,[R0, #+4]
+   \       0x84   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x88   0x....'....        BL       bus_transfer
+   \       0x8C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0x90   0x....'....        BL       bus_stop_transaction
+   \       0x94   0xE5DD'0004        LDRB     R0,[SP, #+4]
+    261          	ad1934_write_reg(ad1934, AD1934_DAC_CTRL1,
+    262          			(val & ~AD1934_DAC_CHAN_MASK) | (channels << AD1934_DAC_CHAN_SHFT));
+   \       0x98   0xE3A0'1008        MOV      R1,#+8
+   \       0x9C   0x....'....        ADR      R2,?_1
+   \       0xA0   0xE5CD'1004        STRB     R1,[SP, #+4]
+   \       0xA4   0xE892'5008        LDM      R2,{R3,R12,LR}
+   \       0xA8   0xE200'00F9        AND      R0,R0,#0xF9
+   \       0xAC   0xE28D'1004        ADD      R1,SP,#+4
+   \       0xB0   0xE185'0000        ORR      R0,R5,R0
+   \       0xB4   0xE5C1'6001        STRB     R6,[R1, #+1]
+   \       0xB8   0xE5C1'0002        STRB     R0,[R1, #+2]
+   \       0xBC   0xE28D'1008        ADD      R1,SP,#+8
+   \       0xC0   0xE28D'5004        ADD      R5,SP,#+4
+   \       0xC4   0xE881'5008        STM      R1,{R3,R12,LR}
+   \       0xC8   0xE58D'5008        STR      R5,[SP, #+8]
+   \       0xCC   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0xD0   0x....'....        BL       bus_start_transaction
+   \       0xD4   0xE3A0'0000        MOV      R0,#+0
+   \       0xD8   0xE3A0'3001        MOV      R3,#+1
+   \       0xDC   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0xE0   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xE4   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0xE8   0xE28D'2008        ADD      R2,SP,#+8
+   \       0xEC   0xE5D1'1004        LDRB     R1,[R1, #+4]
+   \       0xF0   0x....'....        BL       bus_transfer
+   \       0xF4   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0xF8   0x....'....        BL       bus_stop_transaction
+    263          
+    264          	return true;
+   \       0xFC   0xE3A0'0001        MOV      R0,#+1
+   \      0x100   0x....'....        B        ?Subroutine0
+   \                     ??ad1934_set_tdm_slot_1:
+   \      0x104   0xE3A0'5002        MOV      R5,#+2
+   \      0x108   0xEAFF'FFC9        B        ??ad1934_set_tdm_slot_5
+   \                     ??ad1934_set_tdm_slot_2:
+   \      0x10C   0xE3A0'5004        MOV      R5,#+4
+   \      0x110   0xEAFF'FFC7        B        ??ad1934_set_tdm_slot_5
+   \                     ??ad1934_set_tdm_slot_3:
+   \      0x114   0xE3A0'5006        MOV      R5,#+6
+   \      0x118   0xEAFF'FFC5        B        ??ad1934_set_tdm_slot_5
+   \                     ??ad1934_set_tdm_slot_4:
+   \      0x11C   0xE3A0'0000        MOV      R0,#+0
+   \      0x120                      REQUIRE ?Subroutine0
+   \      0x120                      ;; // Fall through to label ?Subroutine0
+    265          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE28D'D020        ADD      SP,SP,#+32
+   \        0x4   0xE8BD'87F0        POP      {R4-R10,PC}
+    266          
+    267          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    268          bool ad1934_set_sample_rate(struct _ad1934_desc* ad1934, uint32_t sample_rate)
+    269          {
+   \                     ad1934_set_sample_rate:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    270          	uint8_t val, fs;
+    271          	switch (sample_rate) {
+   \        0x4   0xE251'1C7D        SUBS     R1,R1,#+32000
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0x0A00'0016        BEQ      ??ad1934_set_sample_rate_0
+   \       0x10   0xE241'1044        SUB      R1,R1,#+68
+   \       0x14   0xE251'1DBC        SUBS     R1,R1,#+12032
+   \       0x18   0x0A00'0013        BEQ      ??ad1934_set_sample_rate_0
+   \       0x1C   0xE241'103C        SUB      R1,R1,#+60
+   \       0x20   0xE251'1EF0        SUBS     R1,R1,#+3840
+   \       0x24   0x0A00'0010        BEQ      ??ad1934_set_sample_rate_0
+   \       0x28   0xE251'1DFA        SUBS     R1,R1,#+16000
+   \       0x2C   0x0A00'0014        BEQ      ??ad1934_set_sample_rate_1
+   \       0x30   0xE241'1088        SUB      R1,R1,#+136
+   \       0x34   0xE251'1C5E        SUBS     R1,R1,#+24064
+   \       0x38   0x0A00'0011        BEQ      ??ad1934_set_sample_rate_1
+   \       0x3C   0xE241'1078        SUB      R1,R1,#+120
+   \       0x40   0xE251'1D78        SUBS     R1,R1,#+7680
+   \       0x44   0x0A00'000E        BEQ      ??ad1934_set_sample_rate_1
+   \       0x48   0xE251'1C7D        SUBS     R1,R1,#+32000
+   \       0x4C   0x0A00'000E        BEQ      ??ad1934_set_sample_rate_2
+   \       0x50   0xE241'1010        SUB      R1,R1,#+16
+   \       0x54   0xE251'1CBD        SUBS     R1,R1,#+48384
+   \       0x58   0x0A00'000B        BEQ      ??ad1934_set_sample_rate_2
+   \       0x5C   0xE241'10F0        SUB      R1,R1,#+240
+   \       0x60   0xE251'1DF0        SUBS     R1,R1,#+15360
+   \       0x64   0x0A00'0008        BEQ      ??ad1934_set_sample_rate_2
+   \       0x68   0xEA00'0009        B        ??ad1934_set_sample_rate_3
+    272          	case 32000:
+    273          	case 44100:
+    274          	case 48000:
+    275          		fs = 0x0;
+   \                     ??ad1934_set_sample_rate_0:
+   \       0x6C   0xE3A0'5000        MOV      R5,#+0
+    276          		break;
+    277          	case 64000:
+    278          	case 88200:
+    279          	case 96000:
+    280          		fs = 0x1;
+    281          		break;
+    282          	case 128000:
+    283          	case 176400:
+    284          	case 192000:
+    285          		fs = 0x10;
+    286          		break;
+    287          	default:
+    288          		return false;
+    289          	}
+    290          
+    291          	val = ad1934_read_reg(ad1934, AD1934_DAC_CTRL0);
+   \                     ??ad1934_set_sample_rate_4:
+   \       0x70   0xE3A0'1002        MOV      R1,#+2
+   \       0x74   0x....'....        BL       ad1934_read_reg
+    292          	ad1934_write_reg(ad1934, AD1934_DAC_CTRL0,
+    293          			(val & ~AD1934_DAC_CTRL0_SAMPLE_RATE_MASK)
+    294          				| (fs << AD1934_DAC_CTRL0_SAMPLE_RATE_SHFT));
+   \       0x78   0xE200'00F9        AND      R0,R0,#0xF9
+   \       0x7C   0xE3A0'1002        MOV      R1,#+2
+   \       0x80   0x....'....        B        ?Subroutine1
+   \                     ??ad1934_set_sample_rate_1:
+   \       0x84   0xE3A0'5002        MOV      R5,#+2
+   \       0x88   0xEAFF'FFF8        B        ??ad1934_set_sample_rate_4
+   \                     ??ad1934_set_sample_rate_2:
+   \       0x8C   0xE3A0'5020        MOV      R5,#+32
+   \       0x90   0xEAFF'FFF6        B        ??ad1934_set_sample_rate_4
+   \                     ??ad1934_set_sample_rate_3:
+   \       0x94   0x....'....        B        ?Subroutine2
+    295          	return true;
+    296          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0xE8BD'8032        POP      {R1,R4,R5,PC}
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE185'2000        ORR      R2,R5,R0
+   \        0x4   0xE1A0'0004        MOV      R0,R4
+   \        0x8   0x....'....        BL       ad1934_write_reg
+   \        0xC   0xE3A0'0001        MOV      R0,#+1
+   \       0x10   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    297          
+    298          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    299          bool ad1934_set_word_width(struct _ad1934_desc* ad1934, uint8_t word_len)
+    300          {
+   \                     ad1934_set_word_width:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    301          	uint8_t val;
+    302          
+    303          	 /* bit size */
+    304          	switch (word_len) {
+   \        0x4   0xE351'0010        CMP      R1,#+16
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0x0A00'0006        BEQ      ??ad1934_set_word_width_0
+   \       0x10   0xE351'0014        CMP      R1,#+20
+   \       0x14   0x0A00'000A        BEQ      ??ad1934_set_word_width_1
+   \       0x18   0xE351'0018        CMP      R1,#+24
+   \       0x1C   0x0A00'000A        BEQ      ??ad1934_set_word_width_2
+   \       0x20   0xE351'0020        CMP      R1,#+32
+   \       0x24   0x0A00'0008        BEQ      ??ad1934_set_word_width_2
+   \       0x28   0xEA00'0009        B        ??ad1934_set_word_width_3
+    305          	case 16:
+    306          		word_len = 3;
+   \                     ??ad1934_set_word_width_0:
+   \       0x2C   0xE3A0'5018        MOV      R5,#+24
+    307          		break;
+    308          	case 20:
+    309          		word_len = 1;
+    310          		break;
+    311          	case 24:
+    312          	case 32:
+    313          		word_len = 0;
+    314          		break;
+    315          	default:
+    316          		return false;
+    317          	}
+    318          
+    319          	val = ad1934_read_reg(ad1934, AD1934_DAC_CTRL2);
+   \                     ??ad1934_set_word_width_4:
+   \       0x30   0xE3A0'1004        MOV      R1,#+4
+   \       0x34   0x....'....        BL       ad1934_read_reg
+    320          	ad1934_write_reg(ad1934, AD1934_DAC_CTRL2,
+    321          			(val & ~AD1934_DAC_WORD_LEN_MASK) | (word_len << AD1934_DAC_WORD_LEN_SHFT));
+   \       0x38   0xE200'00E7        AND      R0,R0,#0xE7
+   \       0x3C   0xE3A0'1004        MOV      R1,#+4
+   \       0x40   0x....'....        B        ?Subroutine1
+   \                     ??ad1934_set_word_width_1:
+   \       0x44   0xE3A0'5008        MOV      R5,#+8
+   \       0x48   0xEAFF'FFF8        B        ??ad1934_set_word_width_4
+   \                     ??ad1934_set_word_width_2:
+   \       0x4C   0xE3A0'5000        MOV      R5,#+0
+   \       0x50   0xEAFF'FFF6        B        ??ad1934_set_word_width_4
+   \                     ??ad1934_set_word_width_3:
+   \       0x54                      REQUIRE ?Subroutine2
+   \       0x54                      ;; // Fall through to label ?Subroutine2
+    322          
+    323          	return true;
+    324          }
+    325          
+    326          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    327          void ad1934_set_channel_volume(struct _ad1934_desc* ad1934, enum _ad1934_dac_channel channel, uint8_t volume)
+    328          {
+    329          	uint8_t chan_reg;
+    330          
+    331          	switch (channel) {
+   \                     ad1934_set_channel_volume:
+   \        0x0   0xE351'0007        CMP      R1,#+7
+   \        0x4   0x8A00'0005        BHI      ??ad1934_set_channel_volume_1
+   \        0x8   0xE7DF'3001        LDRB     R3,[PC, R1]
+   \        0xC   0xE08F'F103        ADD      PC,PC,R3, LSL #+2
+   \                     ??ad1934_set_channel_volume_0:
+   \       0x10   0x01 0x04          DC8      0x1,0x4,0x6,0x8
+
+   \              0x06 0x08
+   \       0x14   0x0A 0x0C          DC8      0xA,0xC,0xE,0x10
+
+   \              0x0E 0x10
+    332          	case AD1934_DAC_L1_CHANNEL:
+    333          		chan_reg = AD1934_DAC_L1_VOL;
+   \                     ??ad1934_set_channel_volume_2:
+   \       0x18   0xE3A0'1006        MOV      R1,#+6
+    334          		break;
+    335          	case AD1934_DAC_R1_CHANNEL:
+    336          		chan_reg = AD1934_DAC_R1_VOL;
+    337          		break;
+    338          	case AD1934_DAC_L2_CHANNEL:
+    339          		chan_reg = AD1934_DAC_L2_VOL;
+    340          		break;
+    341          	case AD1934_DAC_R2_CHANNEL:
+    342          		chan_reg = AD1934_DAC_R2_VOL;
+    343          		break;
+    344          	case AD1934_DAC_L3_CHANNEL:
+    345          		chan_reg = AD1934_DAC_L3_VOL;
+    346          		break;
+    347          	case AD1934_DAC_R3_CHANNEL:
+    348          		chan_reg = AD1934_DAC_R3_VOL;
+    349          		break;
+    350          	case AD1934_DAC_L4_CHANNEL:
+    351          		chan_reg = AD1934_DAC_L4_VOL;
+    352          		break;
+    353          	case AD1934_DAC_R4_CHANNEL:
+    354          		chan_reg = AD1934_DAC_R4_VOL;
+    355          		break;
+    356          	default:
+    357          		return;
+    358          	}
+    359          
+    360          	/* 0 -> No attenuation, 1 to 254 -> -3/8 db per step, 255->Full attenuation */
+    361          	ad1934_write_reg(ad1934, chan_reg, volume);
+   \       0x1C   0x....'....        B        ad1934_write_reg  ;; tailcall
+   \                     ??ad1934_set_channel_volume_1:
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+   \                     ??ad1934_set_channel_volume_3:
+   \       0x24   0xE3A0'1007        MOV      R1,#+7
+   \       0x28   0x....'....        B        ad1934_write_reg  ;; tailcall
+   \                     ??ad1934_set_channel_volume_4:
+   \       0x2C   0xE3A0'1008        MOV      R1,#+8
+   \       0x30   0x....'....        B        ad1934_write_reg  ;; tailcall
+   \                     ??ad1934_set_channel_volume_5:
+   \       0x34   0xE3A0'1009        MOV      R1,#+9
+   \       0x38   0x....'....        B        ad1934_write_reg  ;; tailcall
+   \                     ??ad1934_set_channel_volume_6:
+   \       0x3C   0xE3A0'100A        MOV      R1,#+10
+   \       0x40   0x....'....        B        ad1934_write_reg  ;; tailcall
+   \                     ??ad1934_set_channel_volume_7:
+   \       0x44   0xE3A0'100B        MOV      R1,#+11
+   \       0x48   0x....'....        B        ad1934_write_reg  ;; tailcall
+   \                     ??ad1934_set_channel_volume_8:
+   \       0x4C   0xE3A0'100C        MOV      R1,#+12
+   \       0x50   0x....'....        B        ad1934_write_reg  ;; tailcall
+   \                     ??ad1934_set_channel_volume_9:
+   \       0x54   0xE3A0'100D        MOV      R1,#+13
+   \       0x58   0x....'....        B        ad1934_write_reg  ;; tailcall
+    362          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0x....'....        DC32     ?_0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   ad1934_configure
+         0   -> ad1934_write_reg
+         8   -> ad1934_write_reg
+         8   -> bus_configure_slave
+      16   ad1934_master_volume_mute
+        16   -> ad1934_read_reg
+         0   -> ad1934_write_reg
+      64   ad1934_read_reg
+        64   -> bus_start_transaction
+        64   -> bus_stop_transaction
+        64   -> bus_transfer
+       0   ad1934_set_channel_volume
+         0   -> ad1934_write_reg
+      16   ad1934_set_sample_rate
+        16   -> ad1934_read_reg
+        16   -> ad1934_write_reg
+      64   ad1934_set_tdm_slot
+        64   -> bus_start_transaction
+        64   -> bus_stop_transaction
+        64   -> bus_transfer
+      16   ad1934_set_word_width
+        16   -> ad1934_read_reg
+        16   -> ad1934_write_reg
+      32   ad1934_write_reg
+        32   -> bus_start_transaction
+        32   -> bus_stop_transaction
+        32   -> bus_transfer
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       8  ?Subroutine0
+      20  ?Subroutine1
+       8  ?Subroutine2
+      24  ?_0
+      12  ?_1
+      88  ad1934_configure
+      48  ad1934_master_volume_mute
+     116  ad1934_read_reg
+      92  ad1934_set_channel_volume
+     152  ad1934_set_sample_rate
+     288  ad1934_set_tdm_slot
+      84  ad1934_set_word_width
+     108  ad1934_write_reg
+
+ 
+ 1'052 bytes in section SOFTPACK
+ 
+ 1'052 bytes of CODE memory
+
+Errors: none
+Warnings: none

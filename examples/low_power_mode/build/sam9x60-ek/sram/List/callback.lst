@@ -1,0 +1,219 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         05/Jan/2021  12:18:30
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\utils\callback.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW985C.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\utils\callback.c -D
+#        "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List\callback.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\Obj\callback.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\utils\callback.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *         Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <stdlib.h>
+     35          
+     36          #include "callback.h"
+     37          #include "errno.h"
+     38          
+     39          /*----------------------------------------------------------------------------
+     40           *         Public methods
+     41           *----------------------------------------------------------------------------*/
+     42          
+     43          /**
+     44           * \brief Define a callback
+     45           *
+     46           * \param cb     Pointer to a callback object
+     47           * \param method Pointer to the callback function
+     48           * \param arg    Pointer to a user argument for the callback
+     49           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     50          void callback_set(struct _callback* cb, callback_method_t method, void* arg)
+     51          {
+     52          	if (cb) {
+   \                     callback_set:
+   \        0x0   0xE350'0000        CMP      R0,#+0
+   \        0x4   0x0A00'0001        BEQ      ??callback_set_0
+     53          		cb->method = method;
+   \        0x8   0xE580'1000        STR      R1,[R0, #+0]
+     54          		cb->arg = arg;
+   \        0xC   0xE580'2004        STR      R2,[R0, #+4]
+     55          	}
+     56          }
+   \                     ??callback_set_0:
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+     57          
+     58          /**
+     59           * \brief Copy a callback
+     60           *
+     61           * \param cb     Pointer to a callback object
+     62           * \param orig   Pointer to the callback to copy in \cb
+     63           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     64          void callback_copy(struct _callback* cb, struct _callback* orig)
+     65          {
+     66          	if (cb) {
+   \                     callback_copy:
+   \        0x0   0xE350'0000        CMP      R0,#+0
+   \        0x4   0x0A00'0009        BEQ      ??callback_copy_0
+     67          		if (orig == NULL) {
+   \        0x8   0xE351'0000        CMP      R1,#+0
+   \        0xC   0x1A00'0003        BNE      ??callback_copy_1
+     68          			cb->method = NULL;
+   \       0x10   0xE3A0'2000        MOV      R2,#+0
+   \       0x14   0xE580'2000        STR      R2,[R0, #+0]
+     69          			cb->arg = NULL;
+   \       0x18   0xE580'2004        STR      R2,[R0, #+4]
+   \       0x1C   0xEA00'0003        B        ??callback_copy_0
+     70          		} else {
+     71          			cb->method = orig->method;
+   \                     ??callback_copy_1:
+   \       0x20   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x24   0xE580'2000        STR      R2,[R0, #+0]
+     72          			cb->arg = orig->arg;
+   \       0x28   0xE591'2004        LDR      R2,[R1, #+4]
+   \       0x2C   0xE580'2004        STR      R2,[R0, #+4]
+     73          		}
+     74          	}
+     75          }
+   \                     ??callback_copy_0:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+     76          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     77          int callback_call(struct _callback* cb, void* arg2)
+     78          {
+   \                     callback_call:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     79          	if (cb && cb->method)
+   \        0xC   0xE354'0000        CMP      R4,#+0
+   \       0x10   0x0A00'0007        BEQ      ??callback_call_0
+   \       0x14   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x0A00'0004        BEQ      ??callback_call_0
+     80          		return cb->method(cb->arg, arg2);
+   \       0x20   0xE1B0'1005        MOVS     R1,R5
+   \       0x24   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x28   0xE594'2000        LDR      R2,[R4, #+0]
+   \       0x2C   0xE12F'FF32        BLX      R2
+   \       0x30   0xEA00'0000        B        ??callback_call_1
+     81          	else
+     82          		return -ENOSYS;
+   \                     ??callback_call_0:
+   \       0x34   0xE3E0'0036        MVN      R0,#+54
+   \                     ??callback_call_1:
+   \       0x38   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+     83          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   callback_call
+        16   -- Indirect call
+       0   callback_copy
+       0   callback_set
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      60  callback_call
+      52  callback_copy
+      20  callback_set
+
+ 
+ 132 bytes in section SOFTPACK
+ 
+ 132 bytes of CODE memory
+
+Errors: none
+Warnings: none

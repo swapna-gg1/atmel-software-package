@@ -1,0 +1,1350 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         23/Oct/2020  09:46:37
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\main.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWB771.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\main.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_QSPI -D CONFIG_HAVE_QSPI_DMA -D CONFIG_HAVE_NFC -D
+#        CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D
+#        CONFIG_HAVE_GMAC_QUEUES -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_MPDDRC_DDR3 -D CONFIG_HAVE_MPDDRC_LPDDR3 -D
+#        CONFIG_HAVE_ADC_SETTLING_TIME -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_FAST_STARTUP -D
+#        CONFIG_HAVE_PMC_GENERATED_CLOCKS -D CONFIG_HAVE_PMC_AUDIO_CLOCK -D
+#        CONFIG_HAVE_PMC_PLLADIV2 -D CONFIG_HAVE_PMC_H32MXDIV -D
+#        CONFIG_HAVE_PMC_UPLL_BIAS -D CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA
+#        -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ
+#        -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_SFRBU
+#        -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_AESB -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D
+#        CONFIG_HAVE_UART -D CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\List\main.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\main.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#      __iar_require _Printf      =  flags,widths
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\main.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          /**
+     30           * \page qspi_aesb Advanced Encryption Standard Example with sama5 Microcontrollers
+     31           *
+     32           * \section Purpose
+     33           * This application demonstrates the Advanced Encryption Standard Bridge (AESB) 
+     34           * peripheral integrated in some SAMA5 microcontrollers. 
+     35           * The AESB supports three confidentiality modes of operation for symmetrical key 
+     36           * block cipher algorithms (ECB, CBC and CTR), as specified in the NIST Special 
+     37           * Publication 800-38A Recommendation.
+     38           *
+     39           * \section Requirements
+     40           *
+     41           * This package can be used with SAMA5D2 xPlained board.
+     42           *
+     43           * \section Description
+     44           * This example shows how to configure AESB to protect electronic data. 
+     45           * The Automatic Bridge mode, when the AESB block is connected between the system bus 
+     46           * and a QSPI memory space , provides automatic encryption/decryption to/from a QSPI 
+     47           * space without any action on the part of the user.
+     48           *
+     49           * \section Usage
+     50           *
+     51           * -# Build the program and download it inside the evaluation board. Please
+     52           *    refer to the
+     53           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/6421B.pdf">
+     54           *    SAM-BA User Guide</a>, the
+     55           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">
+     56           *    GNU-Based Software Development</a>
+     57           *    application note or to the
+     58           *    <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">
+     59           *    IAR EWARM User Guide</a>,
+     60           *    depending on your chosen solution.
+     61           * -# On the computer, open and configure a terminal application
+     62           *    (e.g. HyperTerminal on Microsoft Windows) with these settings:
+     63           *   - 115200 bauds
+     64           *   - 8 bits of data
+     65           *   - No parity
+     66           *   - 1 stop bit
+     67           *   - No flow control
+     68           * -# In the terminal window, the
+     69           *    following text should appear (values depend on the board and chip used):
+     70           *    \code
+     71           *     -- AESB Example xxx --
+     72           *     -- SAMxxxxxx-xx
+     73           *     -- Compiled: xxx xx xxxx xx:xx:xx --
+     74           *     \endcode
+     75           * -# Input command according to the menu.
+     76           *
+     77           * \section References
+     78           * - aesb/main.c
+     79           * - aesb.c
+     80           * - aesb.h
+     81           */
+     82          
+     83          /** \file
+     84           *
+     85           *  This file contains all the specific code for the qspi_aesb example.
+     86           *
+     87           */
+     88          
+     89          /*----------------------------------------------------------------------------
+     90           *        Headers
+     91           *----------------------------------------------------------------------------*/
+     92          
+     93          #include <stdbool.h>
+     94          #include <stdio.h>
+     95          #include <string.h>
+     96          
+     97          #include "board.h"
+     98          #include "board_spi.h"
+     99          #include "chip.h"
+    100          #include "compiler.h"
+    101          #include "crypto/aesb.h"
+    102          #include "gpio/pio.h"
+    103          #include "nvm/spi-nor/spi-flash.h"
+    104          #include "peripherals/pmc.h"
+    105          #include "serial/console.h"
+    106          #include "spi/qspi.h"
+    107          #include "trace.h"
+    108          
+    109          /*----------------------------------------------------------------------------
+    110           *        Constants
+    111           *----------------------------------------------------------------------------*/
+    112          
+    113          #define BOARD_SPI_FLASH_QSPI0 0
+    114          
+    115          /*----------------------------------------------------------------------------
+    116           *        Local variables
+    117           *----------------------------------------------------------------------------*/
+    118          
+
+   \                                 In section .bss, align 4
+    119          static uint8_t buffer[4096];
+   \                     buffer:
+   \        0x0                      DS8 4'096
+   \     0x1000                      DS8 4'096
+    120          static uint8_t buffer_read[4096];
+    121          
+    122          /*----------------------------------------------------------------------------
+    123           *        Global functions
+    124           *----------------------------------------------------------------------------*/
+    125          
+    126          /**
+    127           *  \brief CRYPTO_QSPI_AESB Application entry point.
+    128           *
+    129           *  \return Unused (ANSI-C compatibility).
+    130           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    131          int main(void)
+    132          {
+   \                     main:
+   \        0x0   0xE92D'45F8        PUSH     {R3-R8,R10,LR}
+    133          	bool verify_failed = 0;
+    134          	uint32_t idx;
+    135          	struct spi_flash* flash = board_get_spi_flash(BOARD_SPI_FLASH_QSPI0);
+   \        0x4   0xE3A0'0000        MOV      R0,#+0
+   \        0x8   0x....'....        LDR      R5,??DataTable1
+   \        0xC   0x....'....        BL       board_get_spi_flash
+   \       0x10   0xE1A0'4000        MOV      R4,R0
+    136          
+    137          	/* Output example information */
+    138          	console_example_info("QSPI AESB Example");
+   \       0x14   0x....'....        ADR      R0,?_14
+   \       0x18   0x....'....        BL       console_example_info
+    139          
+    140          	/* Enable peripheral clock */
+    141          	pmc_configure_peripheral(ID_AESB, NULL, true);
+   \       0x1C   0xE3A0'2001        MOV      R2,#+1
+   \       0x20   0xE3A0'1000        MOV      R1,#+0
+   \       0x24   0xE3A0'000A        MOV      R0,#+10
+   \       0x28   0x....'....        LDR      R6,??DataTable1_1
+   \       0x2C   0x....'....        BL       pmc_configure_peripheral
+    142          
+    143          	/* Perform a software-triggered hardware reset of the AES interface */
+    144          	aesb_swrst();
+   \       0x30   0x....'....        BL       aesb_swrst
+    145          
+    146          	/* Enable AESB automatic bridge mode */
+    147          	printf("-I- Configure AESB in automatic bridge mode: AES CTR selected\n\r");
+   \       0x34   0xE1A0'0005        MOV      R0,R5
+   \       0x38   0xE3A0'7000        MOV      R7,#+0
+   \       0x3C   0x....'....        BL       printf
+    148          	aesb_configure(AESB_MR_AAHB | AESB_MR_DUALBUFF_ACTIVE | AESB_MR_PROCDLY(0) |
+    149          	               AESB_MR_SMOD_AUTO_START | AESB_MR_OPMOD_CTR | AESB_MR_CKEY_PASSWD);
+   \       0x40   0x....'....        LDR      R0,??DataTable1_2  ;; 0xe0410c
+   \       0x44   0x....'....        BL       aesb_configure
+    150          
+    151          	printf("-I- Enable QSPI AESB IP scope (0x900000000-0x980000000)\n\r");
+   \       0x48   0xE285'0040        ADD      R0,R5,#+64
+   \       0x4C   0x....'....        BL       printf
+    152          	spi_flash_use_aesb(flash, true);
+   \       0x50   0xE3A0'1001        MOV      R1,#+1
+   \       0x54   0xE1A0'0004        MOV      R0,R4
+   \       0x58   0x....'....        BL       spi_flash_use_aesb
+    153          
+    154          	/* Write 64 word buffer with walking bit pattern (0x01, 0x02, ...) */
+    155          	for (idx = 0; idx < ARRAY_SIZE(buffer); idx++)
+   \       0x5C   0xE3A0'2000        MOV      R2,#+0
+   \       0x60   0xE1A0'1006        MOV      R1,R6
+    156          		buffer[idx] = 1 << (idx % 8);
+   \                     ??main_0:
+   \       0x64   0xE3A0'0001        MOV      R0,#+1
+   \       0x68   0xE202'E007        AND      LR,R2,#0x7
+   \       0x6C   0xE282'2001        ADD      R2,R2,#+1
+   \       0x70   0xE1A0'EE10        LSL      LR,R0,LR
+   \       0x74   0xE202'A007        AND      R10,R2,#0x7
+   \       0x78   0xE282'2001        ADD      R2,R2,#+1
+   \       0x7C   0xE4C1'E001        STRB     LR,[R1], #+1
+   \       0x80   0xE1A0'AA10        LSL      R10,R0,R10
+   \       0x84   0xE202'3007        AND      R3,R2,#0x7
+   \       0x88   0xE282'2001        ADD      R2,R2,#+1
+   \       0x8C   0xE4C1'A001        STRB     R10,[R1], #+1
+   \       0x90   0xE1A0'3310        LSL      R3,R0,R3
+   \       0x94   0xE202'E007        AND      LR,R2,#0x7
+   \       0x98   0xE282'2001        ADD      R2,R2,#+1
+   \       0x9C   0xE4C1'3001        STRB     R3,[R1], #+1
+   \       0xA0   0xE352'0D40        CMP      R2,#+4096
+   \       0xA4   0xE1A0'0E10        LSL      R0,R0,LR
+   \       0xA8   0xE4C1'0001        STRB     R0,[R1], #+1
+   \       0xAC   0x3AFF'FFEC        BCC      ??main_0
+    157          
+    158          	if (spi_flash_erase(flash, 0, 4096) < 0)
+   \       0xB0   0xE3A0'2D40        MOV      R2,#+4096
+   \       0xB4   0xE3A0'1000        MOV      R1,#+0
+   \       0xB8   0xE1A0'0004        MOV      R0,R4
+   \       0xBC   0x....'....        BL       spi_flash_erase
+   \       0xC0   0xE350'0000        CMP      R0,#+0
+   \       0xC4   0x5A00'0006        BPL      ??main_1
+    159          		trace_fatal("QSPI Flash block erase failed!\n\r");
+   \       0xC8   0x....'....        LDR      R0,??DataTable1_3
+   \       0xCC   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xD0   0xE351'0000        CMP      R1,#+0
+   \       0xD4   0x0A00'0001        BEQ      ??main_2
+   \       0xD8   0xE285'007C        ADD      R0,R5,#+124
+   \       0xDC   0x....'....        BL       printf
+   \                     ??main_2:
+   \       0xE0   0xEAFF'FFFE        B        ??main_2
+    160          
+    161          	printf("-I- Writing to address of QSPI AESB IP scope, the data is encrypted automatically\n\r");
+   \                     ??main_1:
+   \       0xE4   0xE285'00A4        ADD      R0,R5,#+164
+   \       0xE8   0x....'....        BL       printf
+    162          	if (spi_flash_write(flash, 0, buffer, ARRAY_SIZE(buffer)) < 0)
+   \       0xEC   0xE3A0'3D40        MOV      R3,#+4096
+   \       0xF0   0xE1A0'2006        MOV      R2,R6
+   \       0xF4   0xE3A0'1000        MOV      R1,#+0
+   \       0xF8   0xE1A0'0004        MOV      R0,R4
+   \       0xFC   0x....'....        BL       spi_flash_write
+   \      0x100   0xE350'0000        CMP      R0,#+0
+   \      0x104   0x5A00'0006        BPL      ??main_3
+    163          		trace_fatal("QSPI Flash writing failed!\n\r");
+   \      0x108   0x....'....        LDR      R0,??DataTable1_3
+   \      0x10C   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x110   0xE351'0000        CMP      R1,#+0
+   \      0x114   0x0A00'0001        BEQ      ??main_4
+   \      0x118   0xE285'00F8        ADD      R0,R5,#+248
+   \      0x11C   0x....'....        BL       printf
+   \                     ??main_4:
+   \      0x120   0xEAFF'FFFE        B        ??main_4
+    164          
+    165          	printf("-I- Read from address of QSPI AESB IP scope\n\r");
+   \                     ??main_3:
+   \      0x124   0xE285'0F47        ADD      R0,R5,#+284
+   \      0x128   0xE286'8D40        ADD      R8,R6,#+4096
+   \      0x12C   0x....'....        BL       printf
+    166          	memset(buffer_read, 0, ARRAY_SIZE(buffer_read));
+   \      0x130   0xE3A0'1D40        MOV      R1,#+4096
+   \      0x134   0xE1A0'0008        MOV      R0,R8
+   \      0x138   0x....'....        BL       __aeabi_memclr4
+    167          	if (spi_flash_read(flash, 0, buffer_read, ARRAY_SIZE(buffer_read)) < 0)
+   \      0x13C   0xE3A0'3D40        MOV      R3,#+4096
+   \      0x140   0xE1A0'2008        MOV      R2,R8
+   \      0x144   0xE3A0'1000        MOV      R1,#+0
+   \      0x148   0xE1A0'0004        MOV      R0,R4
+   \      0x14C   0x....'....        BL       spi_flash_read
+   \      0x150   0xE350'0000        CMP      R0,#+0
+   \      0x154   0x5A00'0006        BPL      ??main_5
+    168          			trace_fatal("Read the code from QSPI Flash failed!\n\r");
+   \      0x158   0x....'....        LDR      R0,??DataTable1_3
+   \      0x15C   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x160   0xE351'0000        CMP      R1,#+0
+   \      0x164   0x0A00'0001        BEQ      ??main_6
+   \      0x168   0xE285'0F53        ADD      R0,R5,#+332
+   \      0x16C   0x....'....        BL       printf
+   \                     ??main_6:
+   \      0x170   0xEAFF'FFFE        B        ??main_6
+    169          	verify_failed = false;
+    170          	printf("-I- Read and verify data from address of AESB IP scope\r\n");
+   \                     ??main_5:
+   \      0x174   0xE285'0F5E        ADD      R0,R5,#+376
+   \      0x178   0x....'....        BL       printf
+    171          	for (idx = 0; idx < ARRAY_SIZE(buffer_read); idx++) {
+   \      0x17C   0xE3A0'0000        MOV      R0,#+0
+   \      0x180   0xE1A0'1008        MOV      R1,R8
+   \      0x184   0xE1A0'2006        MOV      R2,R6
+    172          		if (buffer_read[idx] != buffer[idx]) {
+   \                     ??main_7:
+   \      0x188   0xE4D1'3001        LDRB     R3,[R1], #+1
+   \      0x18C   0xE4D2'C001        LDRB     R12,[R2], #+1
+   \      0x190   0xE153'000C        CMP      R3,R12
+   \      0x194   0x1A00'0005        BNE      ??main_8
+   \      0x198   0xE280'0001        ADD      R0,R0,#+1
+   \      0x19C   0xE350'0D40        CMP      R0,#+4096
+   \      0x1A0   0x3AFF'FFF8        BCC      ??main_7
+    173          			verify_failed = true;
+    174          			printf("-E- Data does not match at 0x%x (0x%02x != 0x%02x)\n\r",
+    175          				   (unsigned)(buffer_read + idx), buffer_read[idx], buffer[idx]);
+    176          			break;
+    177          		}
+    178          	}
+    179          	if (!verify_failed)
+    180          		printf("\r\n-I- As expected, it automatically decrypts the data read from the target slave before putting it on the system bus\r\n");
+   \      0x1A4   0xE285'0F7B        ADD      R0,R5,#+492
+   \      0x1A8   0x....'....        BL       printf
+   \      0x1AC   0xEA00'0004        B        ??main_9
+   \                     ??main_8:
+   \      0x1B0   0xE7D6'3000        LDRB     R3,[R6, +R0]
+   \      0x1B4   0xE7D8'2000        LDRB     R2,[R8, +R0]
+   \      0x1B8   0xE088'1000        ADD      R1,R8,R0
+   \      0x1BC   0xE285'0F6D        ADD      R0,R5,#+436
+   \      0x1C0   0x....'....        BL       printf
+    181          	printf("\r\n-I- Read data from address outside of AESB IP scope. This test is expeted to fail.\r\n");
+   \                     ??main_9:
+   \      0x1C4   0xE285'0F99        ADD      R0,R5,#+612
+   \      0x1C8   0x....'....        BL       printf
+    182          
+    183          	spi_flash_use_aesb(flash, false);
+   \      0x1CC   0xE3A0'1000        MOV      R1,#+0
+   \      0x1D0   0xE1A0'0004        MOV      R0,R4
+   \      0x1D4   0x....'....        BL       spi_flash_use_aesb
+    184          
+    185          	printf("-I- Read buffer without using AESB IP scope\n\r");
+   \      0x1D8   0xE285'0FAF        ADD      R0,R5,#+700
+   \      0x1DC   0x....'....        BL       printf
+    186          	memset(buffer_read, 0, ARRAY_SIZE(buffer_read));
+   \      0x1E0   0xE3A0'1D40        MOV      R1,#+4096
+   \      0x1E4   0xE1A0'0008        MOV      R0,R8
+   \      0x1E8   0x....'....        BL       __aeabi_memclr4
+    187          	if (spi_flash_read(flash, 0, buffer_read, ARRAY_SIZE(buffer_read)) < 0)
+   \      0x1EC   0xE3A0'3D40        MOV      R3,#+4096
+   \      0x1F0   0xE1A0'2008        MOV      R2,R8
+   \      0x1F4   0xE3A0'1000        MOV      R1,#+0
+   \      0x1F8   0xE1A0'0004        MOV      R0,R4
+   \      0x1FC   0x....'....        BL       spi_flash_read
+   \      0x200   0xE350'0000        CMP      R0,#+0
+   \      0x204   0x5A00'0006        BPL      ??main_10
+    188          			trace_fatal("Read the code from QSPI Flash failed!\n\r");
+   \      0x208   0x....'....        LDR      R0,??DataTable1_3
+   \      0x20C   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x210   0xE351'0000        CMP      R1,#+0
+   \      0x214   0x0A00'0001        BEQ      ??main_11
+   \      0x218   0xE285'0F53        ADD      R0,R5,#+332
+   \      0x21C   0x....'....        BL       printf
+   \                     ??main_11:
+   \      0x220   0xEAFF'FFFE        B        ??main_11
+    189          
+    190          	verify_failed = false;
+    191          	printf("-I- Read and verify data from address 0xD00000000 \r\n");
+   \                     ??main_10:
+   \      0x224   0xE285'0FBB        ADD      R0,R5,#+748
+   \      0x228   0x....'....        BL       printf
+    192          	for (idx = 0; idx < ARRAY_SIZE(buffer_read); idx++) {
+   \      0x22C   0xE1A0'0008        MOV      R0,R8
+   \      0x230   0xE1A0'1006        MOV      R1,R6
+    193          		if (buffer_read[idx] != buffer[idx]) {
+   \                     ??main_12:
+   \      0x234   0xE4D0'2001        LDRB     R2,[R0], #+1
+   \      0x238   0xE4D1'3001        LDRB     R3,[R1], #+1
+   \      0x23C   0xE152'0003        CMP      R2,R3
+   \      0x240   0x1A00'0003        BNE      ??main_13
+   \      0x244   0xE287'7001        ADD      R7,R7,#+1
+   \      0x248   0xE357'0D40        CMP      R7,#+4096
+   \      0x24C   0x3AFF'FFF8        BCC      ??main_12
+    194          			verify_failed = true;
+    195          			printf("-E- Data does not match at 0x%x (0x%02x != 0x%02x)\n\r",
+    196          				   (unsigned)(buffer_read + idx), buffer_read[idx], buffer[idx]);
+    197          			break;
+    198          		}
+    199          	}
+    200          	if (verify_failed)
+    201          		printf("\r\n-I- As expected, data cannot be decrypted from address outside of AESB IP scope\r\n");
+    202          
+    203          	while (1);
+   \      0x250   0xEA00'0006        B        ??main_14
+   \                     ??main_13:
+   \      0x254   0xE7D6'3007        LDRB     R3,[R6, +R7]
+   \      0x258   0xE7D8'2007        LDRB     R2,[R8, +R7]
+   \      0x25C   0xE088'1007        ADD      R1,R8,R7
+   \      0x260   0xE285'0F6D        ADD      R0,R5,#+436
+   \      0x264   0x....'....        BL       printf
+   \      0x268   0xE285'0FC9        ADD      R0,R5,#+804
+   \      0x26C   0x....'....        BL       printf
+   \                     ??main_14:
+   \      0x270   0xEAFF'FFFE        B        ??main_14
+    204          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \        0x0   0x....'....        DC32     buffer
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_2:
+   \        0x0   0x00E0'410C        DC32     0xe0410c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_3:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x49          DC8 0x2D, 0x49, 0x2D, 0x20, 0x43, 0x6F, 0x6E, 0x66
+
+   \              0x2D 0x20    
+
+   \              0x43 0x6F    
+
+   \              0x6E 0x66
+   \        0x8   0x69 0x67          DC8 0x69, 0x67, 0x75, 0x72, 0x65, 0x20, 0x41, 0x45
+
+   \              0x75 0x72    
+
+   \              0x65 0x20    
+
+   \              0x41 0x45
+   \       0x10   0x53 0x42          DC8 0x53, 0x42, 0x20, 0x69, 0x6E, 0x20, 0x61, 0x75
+
+   \              0x20 0x69    
+
+   \              0x6E 0x20    
+
+   \              0x61 0x75
+   \       0x18   0x74 0x6F          DC8 0x74, 0x6F, 0x6D, 0x61, 0x74, 0x69, 0x63, 0x20
+
+   \              0x6D 0x61    
+
+   \              0x74 0x69    
+
+   \              0x63 0x20
+   \       0x20   0x62 0x72          DC8 0x62, 0x72, 0x69, 0x64, 0x67, 0x65, 0x20, 0x6D
+
+   \              0x69 0x64    
+
+   \              0x67 0x65    
+
+   \              0x20 0x6D
+   \       0x28   0x6F 0x64          DC8 0x6F, 0x64, 0x65, 0x3A, 0x20, 0x41, 0x45, 0x53
+
+   \              0x65 0x3A    
+
+   \              0x20 0x41    
+
+   \              0x45 0x53
+   \       0x30   0x20 0x43          DC8 0x20, 0x43, 0x54, 0x52, 0x20, 0x73, 0x65, 0x6C
+
+   \              0x54 0x52    
+
+   \              0x20 0x73    
+
+   \              0x65 0x6C
+   \       0x38   0x65 0x63          DC8 0x65, 0x63, 0x74, 0x65, 0x64, 0x0A, 0x0D, 0
+
+   \              0x74 0x65    
+
+   \              0x64 0x0A    
+
+   \              0x0D 0x00
+   \       0x40   0x2D 0x49          DC8 0x2D, 0x49, 0x2D, 0x20, 0x45, 0x6E, 0x61, 0x62
+
+   \              0x2D 0x20    
+
+   \              0x45 0x6E    
+
+   \              0x61 0x62
+   \       0x48   0x6C 0x65          DC8 0x6C, 0x65, 0x20, 0x51, 0x53, 0x50, 0x49, 0x20
+
+   \              0x20 0x51    
+
+   \              0x53 0x50    
+
+   \              0x49 0x20
+   \       0x50   0x41 0x45          DC8 0x41, 0x45, 0x53, 0x42, 0x20, 0x49, 0x50, 0x20
+
+   \              0x53 0x42    
+
+   \              0x20 0x49    
+
+   \              0x50 0x20
+   \       0x58   0x73 0x63          DC8 0x73, 0x63, 0x6F, 0x70, 0x65, 0x20, 0x28, 0x30
+
+   \              0x6F 0x70    
+
+   \              0x65 0x20    
+
+   \              0x28 0x30
+   \       0x60   0x78 0x39          DC8 0x78, 0x39, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30
+
+   \              0x30 0x30    
+
+   \              0x30 0x30    
+
+   \              0x30 0x30
+   \       0x68   0x30 0x30          DC8 0x30, 0x30, 0x2D, 0x30, 0x78, 0x39, 0x38, 0x30
+
+   \              0x2D 0x30    
+
+   \              0x78 0x39    
+
+   \              0x38 0x30
+   \       0x70   0x30 0x30          DC8 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x29, 0x0A
+
+   \              0x30 0x30    
+
+   \              0x30 0x30    
+
+   \              0x29 0x0A
+   \       0x78   0x0D 0x00          DC8 0x0D, 0
+   \       0x7A   0x00 0x00          DC8 0, 0
+   \       0x7C   0x2D 0x46          DC8 "-F- QSPI Flash block erase failed!\012\015"
+
+   \              0x2D 0x20    
+
+   \              0x51 0x53    
+
+   \              0x50 0x49    
+
+   \              0x20 0x46    
+
+   \              0x6C 0x61    
+
+   \              0x73 0x68    
+
+   \              0x20 0x62    
+
+   \              0x6C 0x6F    
+
+   \              0x63 0x6B    
+
+   \              0x20 0x65    
+
+   \              0x72 0x61    
+
+   \              0x73 0x65    
+
+   \              0x20 0x66    
+
+   \              0x61 0x69    
+
+   \              0x6C 0x65    
+
+   \              0x64 0x21    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0xA1   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0xA4   0x2D 0x49          DC8 0x2D, 0x49, 0x2D, 0x20, 0x57, 0x72, 0x69, 0x74
+
+   \              0x2D 0x20    
+
+   \              0x57 0x72    
+
+   \              0x69 0x74
+   \       0xAC   0x69 0x6E          DC8 0x69, 0x6E, 0x67, 0x20, 0x74, 0x6F, 0x20, 0x61
+
+   \              0x67 0x20    
+
+   \              0x74 0x6F    
+
+   \              0x20 0x61
+   \       0xB4   0x64 0x64          DC8 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x20, 0x6F
+
+   \              0x72 0x65    
+
+   \              0x73 0x73    
+
+   \              0x20 0x6F
+   \       0xBC   0x66 0x20          DC8 0x66, 0x20, 0x51, 0x53, 0x50, 0x49, 0x20, 0x41
+
+   \              0x51 0x53    
+
+   \              0x50 0x49    
+
+   \              0x20 0x41
+   \       0xC4   0x45 0x53          DC8 0x45, 0x53, 0x42, 0x20, 0x49, 0x50, 0x20, 0x73
+
+   \              0x42 0x20    
+
+   \              0x49 0x50    
+
+   \              0x20 0x73
+   \       0xCC   0x63 0x6F          DC8 0x63, 0x6F, 0x70, 0x65, 0x2C, 0x20, 0x74, 0x68
+
+   \              0x70 0x65    
+
+   \              0x2C 0x20    
+
+   \              0x74 0x68
+   \       0xD4   0x65 0x20          DC8 0x65, 0x20, 0x64, 0x61, 0x74, 0x61, 0x20, 0x69
+
+   \              0x64 0x61    
+
+   \              0x74 0x61    
+
+   \              0x20 0x69
+   \       0xDC   0x73 0x20          DC8 0x73, 0x20, 0x65, 0x6E, 0x63, 0x72, 0x79, 0x70
+
+   \              0x65 0x6E    
+
+   \              0x63 0x72    
+
+   \              0x79 0x70
+   \       0xE4   0x74 0x65          DC8 0x74, 0x65, 0x64, 0x20, 0x61, 0x75, 0x74, 0x6F
+
+   \              0x64 0x20    
+
+   \              0x61 0x75    
+
+   \              0x74 0x6F
+   \       0xEC   0x6D 0x61          DC8 0x6D, 0x61, 0x74, 0x69, 0x63, 0x61, 0x6C, 0x6C
+
+   \              0x74 0x69    
+
+   \              0x63 0x61    
+
+   \              0x6C 0x6C
+   \       0xF4   0x79 0x0A          DC8 0x79, 0x0A, 0x0D, 0
+
+   \              0x0D 0x00
+   \       0xF8   0x2D 0x46          DC8 "-F- QSPI Flash writing failed!\012\015"
+
+   \              0x2D 0x20    
+
+   \              0x51 0x53    
+
+   \              0x50 0x49    
+
+   \              0x20 0x46    
+
+   \              0x6C 0x61    
+
+   \              0x73 0x68    
+
+   \              0x20 0x77    
+
+   \              0x72 0x69    
+
+   \              0x74 0x69    
+
+   \              0x6E 0x67    
+
+   \              0x20 0x66    
+
+   \              0x61 0x69    
+
+   \              0x6C 0x65    
+
+   \              0x64 0x21    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \      0x119   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \      0x11C   0x2D 0x49          DC8 "-I- Read from address of QSPI AESB IP scope\012\015"
+
+   \              0x2D 0x20    
+
+   \              0x52 0x65    
+
+   \              0x61 0x64    
+
+   \              0x20 0x66    
+
+   \              0x72 0x6F    
+
+   \              0x6D 0x20    
+
+   \              0x61 0x64    
+
+   \              0x64 0x72    
+
+   \              0x65 0x73    
+
+   \              0x73 0x20    
+
+   \              0x6F 0x66    
+
+   \              0x20 0x51    
+
+   \              0x53 0x50    
+
+   \              0x49 0x20    
+
+   \              0x41 0x45    
+
+   \              0x53 0x42    
+
+   \              0x20 0x49    
+
+   \              0x50 0x20    
+
+   \              0x73 0x63    
+
+   \              0x6F 0x70    
+
+   \              0x65 0x0A    
+
+   \              0x0D 0x00
+   \      0x14A   0x00 0x00          DC8 0, 0
+   \      0x14C   0x2D 0x46          DC8 "-F- Read the code from QSPI Flash failed!\012\015"
+
+   \              0x2D 0x20    
+
+   \              0x52 0x65    
+
+   \              0x61 0x64    
+
+   \              0x20 0x74    
+
+   \              0x68 0x65    
+
+   \              0x20 0x63    
+
+   \              0x6F 0x64    
+
+   \              0x65 0x20    
+
+   \              0x66 0x72    
+
+   \              0x6F 0x6D    
+
+   \              0x20 0x51    
+
+   \              0x53 0x50    
+
+   \              0x49 0x20    
+
+   \              0x46 0x6C    
+
+   \              0x61 0x73    
+
+   \              0x68 0x20    
+
+   \              0x66 0x61    
+
+   \              0x69 0x6C    
+
+   \              0x65 0x64    
+
+   \              0x21 0x0A    
+
+   \              0x0D 0x00
+   \      0x178   0x2D 0x49          DC8 0x2D, 0x49, 0x2D, 0x20, 0x52, 0x65, 0x61, 0x64
+
+   \              0x2D 0x20    
+
+   \              0x52 0x65    
+
+   \              0x61 0x64
+   \      0x180   0x20 0x61          DC8 0x20, 0x61, 0x6E, 0x64, 0x20, 0x76, 0x65, 0x72
+
+   \              0x6E 0x64    
+
+   \              0x20 0x76    
+
+   \              0x65 0x72
+   \      0x188   0x69 0x66          DC8 0x69, 0x66, 0x79, 0x20, 0x64, 0x61, 0x74, 0x61
+
+   \              0x79 0x20    
+
+   \              0x64 0x61    
+
+   \              0x74 0x61
+   \      0x190   0x20 0x66          DC8 0x20, 0x66, 0x72, 0x6F, 0x6D, 0x20, 0x61, 0x64
+
+   \              0x72 0x6F    
+
+   \              0x6D 0x20    
+
+   \              0x61 0x64
+   \      0x198   0x64 0x72          DC8 0x64, 0x72, 0x65, 0x73, 0x73, 0x20, 0x6F, 0x66
+
+   \              0x65 0x73    
+
+   \              0x73 0x20    
+
+   \              0x6F 0x66
+   \      0x1A0   0x20 0x41          DC8 0x20, 0x41, 0x45, 0x53, 0x42, 0x20, 0x49, 0x50
+
+   \              0x45 0x53    
+
+   \              0x42 0x20    
+
+   \              0x49 0x50
+   \      0x1A8   0x20 0x73          DC8 0x20, 0x73, 0x63, 0x6F, 0x70, 0x65, 0x0D, 0x0A
+
+   \              0x63 0x6F    
+
+   \              0x70 0x65    
+
+   \              0x0D 0x0A
+   \      0x1B0   0x00               DC8 0
+   \      0x1B1   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \      0x1B4   0x2D 0x45          DC8 0x2D, 0x45, 0x2D, 0x20, 0x44, 0x61, 0x74, 0x61
+
+   \              0x2D 0x20    
+
+   \              0x44 0x61    
+
+   \              0x74 0x61
+   \      0x1BC   0x20 0x64          DC8 0x20, 0x64, 0x6F, 0x65, 0x73, 0x20, 0x6E, 0x6F
+
+   \              0x6F 0x65    
+
+   \              0x73 0x20    
+
+   \              0x6E 0x6F
+   \      0x1C4   0x74 0x20          DC8 0x74, 0x20, 0x6D, 0x61, 0x74, 0x63, 0x68, 0x20
+
+   \              0x6D 0x61    
+
+   \              0x74 0x63    
+
+   \              0x68 0x20
+   \      0x1CC   0x61 0x74          DC8 0x61, 0x74, 0x20, 0x30, 0x78, 0x25, 0x78, 0x20
+
+   \              0x20 0x30    
+
+   \              0x78 0x25    
+
+   \              0x78 0x20
+   \      0x1D4   0x28 0x30          DC8 0x28, 0x30, 0x78, 0x25, 0x30, 0x32, 0x78, 0x20
+
+   \              0x78 0x25    
+
+   \              0x30 0x32    
+
+   \              0x78 0x20
+   \      0x1DC   0x21 0x3D          DC8 0x21, 0x3D, 0x20, 0x30, 0x78, 0x25, 0x30, 0x32
+
+   \              0x20 0x30    
+
+   \              0x78 0x25    
+
+   \              0x30 0x32
+   \      0x1E4   0x78 0x29          DC8 0x78, 0x29, 0x0A, 0x0D, 0
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \      0x1E9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \      0x1EC   0x0D 0x0A          DC8 0x0D, 0x0A, 0x2D, 0x49, 0x2D, 0x20, 0x41, 0x73
+
+   \              0x2D 0x49    
+
+   \              0x2D 0x20    
+
+   \              0x41 0x73
+   \      0x1F4   0x20 0x65          DC8 0x20, 0x65, 0x78, 0x70, 0x65, 0x63, 0x74, 0x65
+
+   \              0x78 0x70    
+
+   \              0x65 0x63    
+
+   \              0x74 0x65
+   \      0x1FC   0x64 0x2C          DC8 0x64, 0x2C, 0x20, 0x69, 0x74, 0x20, 0x61, 0x75
+
+   \              0x20 0x69    
+
+   \              0x74 0x20    
+
+   \              0x61 0x75
+   \      0x204   0x74 0x6F          DC8 0x74, 0x6F, 0x6D, 0x61, 0x74, 0x69, 0x63, 0x61
+
+   \              0x6D 0x61    
+
+   \              0x74 0x69    
+
+   \              0x63 0x61
+   \      0x20C   0x6C 0x6C          DC8 0x6C, 0x6C, 0x79, 0x20, 0x64, 0x65, 0x63, 0x72
+
+   \              0x79 0x20    
+
+   \              0x64 0x65    
+
+   \              0x63 0x72
+   \      0x214   0x79 0x70          DC8 0x79, 0x70, 0x74, 0x73, 0x20, 0x74, 0x68, 0x65
+
+   \              0x74 0x73    
+
+   \              0x20 0x74    
+
+   \              0x68 0x65
+   \      0x21C   0x20 0x64          DC8 0x20, 0x64, 0x61, 0x74, 0x61, 0x20, 0x72, 0x65
+
+   \              0x61 0x74    
+
+   \              0x61 0x20    
+
+   \              0x72 0x65
+   \      0x224   0x61 0x64          DC8 0x61, 0x64, 0x20, 0x66, 0x72, 0x6F, 0x6D, 0x20
+
+   \              0x20 0x66    
+
+   \              0x72 0x6F    
+
+   \              0x6D 0x20
+   \      0x22C   0x74 0x68          DC8 0x74, 0x68, 0x65, 0x20, 0x74, 0x61, 0x72, 0x67
+
+   \              0x65 0x20    
+
+   \              0x74 0x61    
+
+   \              0x72 0x67
+   \      0x234   0x65 0x74          DC8 0x65, 0x74, 0x20, 0x73, 0x6C, 0x61, 0x76, 0x65
+
+   \              0x20 0x73    
+
+   \              0x6C 0x61    
+
+   \              0x76 0x65
+   \      0x23C   0x20 0x62          DC8 0x20, 0x62, 0x65, 0x66, 0x6F, 0x72, 0x65, 0x20
+
+   \              0x65 0x66    
+
+   \              0x6F 0x72    
+
+   \              0x65 0x20
+   \      0x244   0x70 0x75          DC8 0x70, 0x75, 0x74, 0x74, 0x69, 0x6E, 0x67, 0x20
+
+   \              0x74 0x74    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x20
+   \      0x24C   0x69 0x74          DC8 0x69, 0x74, 0x20, 0x6F, 0x6E, 0x20, 0x74, 0x68
+
+   \              0x20 0x6F    
+
+   \              0x6E 0x20    
+
+   \              0x74 0x68
+   \      0x254   0x65 0x20          DC8 0x65, 0x20, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6D
+
+   \              0x73 0x79    
+
+   \              0x73 0x74    
+
+   \              0x65 0x6D
+   \      0x25C   0x20 0x62          DC8 0x20, 0x62, 0x75, 0x73, 0x0D, 0x0A, 0
+
+   \              0x75 0x73    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \      0x263   0x00               DC8 0
+   \      0x264   0x0D 0x0A          DC8 0x0D, 0x0A, 0x2D, 0x49, 0x2D, 0x20, 0x52, 0x65
+
+   \              0x2D 0x49    
+
+   \              0x2D 0x20    
+
+   \              0x52 0x65
+   \      0x26C   0x61 0x64          DC8 0x61, 0x64, 0x20, 0x64, 0x61, 0x74, 0x61, 0x20
+
+   \              0x20 0x64    
+
+   \              0x61 0x74    
+
+   \              0x61 0x20
+   \      0x274   0x66 0x72          DC8 0x66, 0x72, 0x6F, 0x6D, 0x20, 0x61, 0x64, 0x64
+
+   \              0x6F 0x6D    
+
+   \              0x20 0x61    
+
+   \              0x64 0x64
+   \      0x27C   0x72 0x65          DC8 0x72, 0x65, 0x73, 0x73, 0x20, 0x6F, 0x75, 0x74
+
+   \              0x73 0x73    
+
+   \              0x20 0x6F    
+
+   \              0x75 0x74
+   \      0x284   0x73 0x69          DC8 0x73, 0x69, 0x64, 0x65, 0x20, 0x6F, 0x66, 0x20
+
+   \              0x64 0x65    
+
+   \              0x20 0x6F    
+
+   \              0x66 0x20
+   \      0x28C   0x41 0x45          DC8 0x41, 0x45, 0x53, 0x42, 0x20, 0x49, 0x50, 0x20
+
+   \              0x53 0x42    
+
+   \              0x20 0x49    
+
+   \              0x50 0x20
+   \      0x294   0x73 0x63          DC8 0x73, 0x63, 0x6F, 0x70, 0x65, 0x2E, 0x20, 0x54
+
+   \              0x6F 0x70    
+
+   \              0x65 0x2E    
+
+   \              0x20 0x54
+   \      0x29C   0x68 0x69          DC8 0x68, 0x69, 0x73, 0x20, 0x74, 0x65, 0x73, 0x74
+
+   \              0x73 0x20    
+
+   \              0x74 0x65    
+
+   \              0x73 0x74
+   \      0x2A4   0x20 0x69          DC8 0x20, 0x69, 0x73, 0x20, 0x65, 0x78, 0x70, 0x65
+
+   \              0x73 0x20    
+
+   \              0x65 0x78    
+
+   \              0x70 0x65
+   \      0x2AC   0x74 0x65          DC8 0x74, 0x65, 0x64, 0x20, 0x74, 0x6F, 0x20, 0x66
+
+   \              0x64 0x20    
+
+   \              0x74 0x6F    
+
+   \              0x20 0x66
+   \      0x2B4   0x61 0x69          DC8 0x61, 0x69, 0x6C, 0x2E, 0x0D, 0x0A, 0
+
+   \              0x6C 0x2E    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \      0x2BB   0x00               DC8 0
+   \      0x2BC   0x2D 0x49          DC8 "-I- Read buffer without using AESB IP scope\012\015"
+
+   \              0x2D 0x20    
+
+   \              0x52 0x65    
+
+   \              0x61 0x64    
+
+   \              0x20 0x62    
+
+   \              0x75 0x66    
+
+   \              0x66 0x65    
+
+   \              0x72 0x20    
+
+   \              0x77 0x69    
+
+   \              0x74 0x68    
+
+   \              0x6F 0x75    
+
+   \              0x74 0x20    
+
+   \              0x75 0x73    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x20    
+
+   \              0x41 0x45    
+
+   \              0x53 0x42    
+
+   \              0x20 0x49    
+
+   \              0x50 0x20    
+
+   \              0x73 0x63    
+
+   \              0x6F 0x70    
+
+   \              0x65 0x0A    
+
+   \              0x0D 0x00
+   \      0x2EA   0x00 0x00          DC8 0, 0
+   \      0x2EC   0x2D 0x49          DC8 0x2D, 0x49, 0x2D, 0x20, 0x52, 0x65, 0x61, 0x64
+
+   \              0x2D 0x20    
+
+   \              0x52 0x65    
+
+   \              0x61 0x64
+   \      0x2F4   0x20 0x61          DC8 0x20, 0x61, 0x6E, 0x64, 0x20, 0x76, 0x65, 0x72
+
+   \              0x6E 0x64    
+
+   \              0x20 0x76    
+
+   \              0x65 0x72
+   \      0x2FC   0x69 0x66          DC8 0x69, 0x66, 0x79, 0x20, 0x64, 0x61, 0x74, 0x61
+
+   \              0x79 0x20    
+
+   \              0x64 0x61    
+
+   \              0x74 0x61
+   \      0x304   0x20 0x66          DC8 0x20, 0x66, 0x72, 0x6F, 0x6D, 0x20, 0x61, 0x64
+
+   \              0x72 0x6F    
+
+   \              0x6D 0x20    
+
+   \              0x61 0x64
+   \      0x30C   0x64 0x72          DC8 0x64, 0x72, 0x65, 0x73, 0x73, 0x20, 0x30, 0x78
+
+   \              0x65 0x73    
+
+   \              0x73 0x20    
+
+   \              0x30 0x78
+   \      0x314   0x44 0x30          DC8 0x44, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30
+
+   \              0x30 0x30    
+
+   \              0x30 0x30    
+
+   \              0x30 0x30
+   \      0x31C   0x30 0x20          DC8 0x30, 0x20, 0x0D, 0x0A, 0
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \      0x321   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \      0x324   0x0D 0x0A          DC8 0x0D, 0x0A, 0x2D, 0x49, 0x2D, 0x20, 0x41, 0x73
+
+   \              0x2D 0x49    
+
+   \              0x2D 0x20    
+
+   \              0x41 0x73
+   \      0x32C   0x20 0x65          DC8 0x20, 0x65, 0x78, 0x70, 0x65, 0x63, 0x74, 0x65
+
+   \              0x78 0x70    
+
+   \              0x65 0x63    
+
+   \              0x74 0x65
+   \      0x334   0x64 0x2C          DC8 0x64, 0x2C, 0x20, 0x64, 0x61, 0x74, 0x61, 0x20
+
+   \              0x20 0x64    
+
+   \              0x61 0x74    
+
+   \              0x61 0x20
+   \      0x33C   0x63 0x61          DC8 0x63, 0x61, 0x6E, 0x6E, 0x6F, 0x74, 0x20, 0x62
+
+   \              0x6E 0x6E    
+
+   \              0x6F 0x74    
+
+   \              0x20 0x62
+   \      0x344   0x65 0x20          DC8 0x65, 0x20, 0x64, 0x65, 0x63, 0x72, 0x79, 0x70
+
+   \              0x64 0x65    
+
+   \              0x63 0x72    
+
+   \              0x79 0x70
+   \      0x34C   0x74 0x65          DC8 0x74, 0x65, 0x64, 0x20, 0x66, 0x72, 0x6F, 0x6D
+
+   \              0x64 0x20    
+
+   \              0x66 0x72    
+
+   \              0x6F 0x6D
+   \      0x354   0x20 0x61          DC8 0x20, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73
+
+   \              0x64 0x64    
+
+   \              0x72 0x65    
+
+   \              0x73 0x73
+   \      0x35C   0x20 0x6F          DC8 0x20, 0x6F, 0x75, 0x74, 0x73, 0x69, 0x64, 0x65
+
+   \              0x75 0x74    
+
+   \              0x73 0x69    
+
+   \              0x64 0x65
+   \      0x364   0x20 0x6F          DC8 0x20, 0x6F, 0x66, 0x20, 0x41, 0x45, 0x53, 0x42
+
+   \              0x66 0x20    
+
+   \              0x41 0x45    
+
+   \              0x53 0x42
+   \      0x36C   0x20 0x49          DC8 0x20, 0x49, 0x50, 0x20, 0x73, 0x63, 0x6F, 0x70
+
+   \              0x50 0x20    
+
+   \              0x73 0x63    
+
+   \              0x6F 0x70
+   \      0x374   0x65 0x0D          DC8 0x65, 0x0D, 0x0A, 0
+
+   \              0x0A 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_14:
+   \        0x0   0x51 0x53          DC8 "QSPI AESB Example"
+
+   \              0x50 0x49    
+
+   \              0x20 0x41    
+
+   \              0x45 0x53    
+
+   \              0x42 0x20    
+
+   \              0x45 0x78    
+
+   \              0x61 0x6D    
+
+   \              0x70 0x6C    
+
+   \              0x65 0x00
+   \       0x12   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   main
+        32   -> __aeabi_memclr4
+        32   -> aesb_configure
+        32   -> aesb_swrst
+        32   -> board_get_spi_flash
+        32   -> console_example_info
+        32   -> pmc_configure_peripheral
+        32   -> printf
+        32   -> spi_flash_erase
+        32   -> spi_flash_read
+        32   -> spi_flash_use_aesb
+        32   -> spi_flash_write
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+       4  ??DataTable1_2
+       4  ??DataTable1_3
+     888  ?_0
+      20  ?_14
+   8'192  buffer
+          buffer_read
+     628  main
+
+ 
+ 8'192 bytes in section .bss
+   888 bytes in section .rodata
+   664 bytes in section SOFTPACK
+ 
+   664 bytes of CODE  memory
+   888 bytes of CONST memory
+ 8'192 bytes of DATA  memory
+
+Errors: none
+Warnings: none

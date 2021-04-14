@@ -1,0 +1,787 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         18/Feb/2021  16:03:16
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\nand\nfc.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWA9A9.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\nand\nfc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D27_SOM1_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_QSPI -D CONFIG_HAVE_QSPI_DMA -D CONFIG_HAVE_NFC -D
+#        CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D
+#        CONFIG_HAVE_GMAC_QUEUES -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_MPDDRC_DDR3 -D CONFIG_HAVE_MPDDRC_LPDDR3 -D
+#        CONFIG_HAVE_ADC_SETTLING_TIME -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_FAST_STARTUP -D
+#        CONFIG_HAVE_PMC_GENERATED_CLOCKS -D CONFIG_HAVE_PMC_AUDIO_CLOCK -D
+#        CONFIG_HAVE_PMC_PLLADIV2 -D CONFIG_HAVE_PMC_H32MXDIV -D
+#        CONFIG_HAVE_PMC_UPLL_BIAS -D CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA
+#        -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ
+#        -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_SFRBU
+#        -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_TRNG -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR2_W971GG6SB -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D
+#        CONFIG_HAVE_UART -D CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-A5 -e --fpu=VFPv4_D16 --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\List\nfc.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\Obj\nfc.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\nand\nfc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31            *  \file
+     32            *
+     33            *  Implementation of SMC NFC functions.
+     34            */
+     35          
+     36          /*----------------------------------------------------------------------------
+     37           *        Headers
+     38           *----------------------------------------------------------------------------*/
+     39          
+     40          #include "chip.h"
+     41          #include "trace.h"
+     42          #include "intmath.h"
+     43          
+     44          #include "nvm/nand/nfc.h"
+     45          #include "peripherals/pmc.h"
+     46          
+     47          #include <assert.h>
+     48          
+     49          /*----------------------------------------------------------------------------
+     50           *        Local functions
+     51           *----------------------------------------------------------------------------*/
+     52          
+     53          /* Reading the NFC Command Register (to any address) will give the status of
+     54           * the NFC. */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     55          static uint32_t _nfc_read_status(void)
+     56          {
+     57          	return *(volatile uint32_t*)(NFC_CMD_ADDR);
+   \                     _nfc_read_status:
+   \        0x0   0xE3A0'04C0        MOV      R0,#-1073741824
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+     58          }
+     59          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     60          static void _nfc_write_cmd(uint32_t cmd, uint32_t value)
+     61          {
+     62          	*(volatile uint32_t*)(NFC_CMD_ADDR + cmd) = value;
+   \                     _nfc_write_cmd:
+   \        0x0   0xE290'24C0        ADDS     R2,R0,#-1073741824
+   \        0x4   0xE582'1000        STR      R1,[R2, #+0]
+     63          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+     64          
+     65          /*----------------------------------------------------------------------------
+     66           *        Exported functions
+     67           *----------------------------------------------------------------------------*/
+     68          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     69          void nfc_configure(uint32_t data_size, uint32_t spare_size,
+     70          		bool read_spare, bool write_spare)
+     71          {
+   \                     nfc_configure:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+     72          	uint32_t cfg;
+     73          
+     74          	/* cannot read and write spare at the same time */
+     75          	assert(!read_spare || !write_spare);
+   \       0x14   0xE1B0'0006        MOVS     R0,R6
+   \       0x18   0xE6EF'0070        UXTB     R0,R0
+   \       0x1C   0xE350'0000        CMP      R0,#+0
+   \       0x20   0x0A00'0008        BEQ      ??nfc_configure_0
+   \       0x24   0xE1B0'0007        MOVS     R0,R7
+   \       0x28   0xE6EF'0070        UXTB     R0,R0
+   \       0x2C   0xE350'0000        CMP      R0,#+0
+   \       0x30   0x0A00'0004        BEQ      ??nfc_configure_0
+   \       0x34   0xE3A0'204B        MOV      R2,#+75
+   \       0x38   0x....'....        LDR      R1,??DataTable11_1
+   \       0x3C   0x....'....        LDR      R0,??DataTable11_2
+   \       0x40   0x....'....        BL       __aeabi_assert
+   \       0x44   0x....'....        BL       __iar_EmptyStepPoint
+     76          
+     77          	cfg = NFC_CFG_NFCSPARESIZE(CEIL_INT_DIV(spare_size, 4) - 1) |
+     78          	      NFC_CFG_DTOCYC(0xF) |
+     79          	      NFC_CFG_DTOMUL_X1048576 |
+     80          	      NFC_CFG_RBEDGE;
+   \                     ??nfc_configure_0:
+   \       0x48   0xE295'0003        ADDS     R0,R5,#+3
+   \       0x4C   0xE3E0'1000        MVN      R1,#+0
+   \       0x50   0xE091'0120        ADDS     R0,R1,R0, LSR #+2
+   \       0x54   0xE3A0'147F        MOV      R1,#+2130706432
+   \       0x58   0xE011'0C00        ANDS     R0,R1,R0, LSL #+24
+   \       0x5C   0xE390'8AF2        ORRS     R8,R0,#0xF2000
+   \       0x60   0xE398'8870        ORRS     R8,R8,#0x700000
+     81          
+     82          	if (read_spare)
+   \       0x64   0xE1B0'0006        MOVS     R0,R6
+   \       0x68   0xE6EF'0070        UXTB     R0,R0
+   \       0x6C   0xE350'0000        CMP      R0,#+0
+   \       0x70   0x0A00'0000        BEQ      ??nfc_configure_1
+     83          		cfg |= NFC_CFG_RSPARE;
+   \       0x74   0xE398'8F80        ORRS     R8,R8,#0x200
+     84          
+     85          	if (write_spare)
+   \                     ??nfc_configure_1:
+   \       0x78   0xE1B0'0007        MOVS     R0,R7
+   \       0x7C   0xE6EF'0070        UXTB     R0,R0
+   \       0x80   0xE350'0000        CMP      R0,#+0
+   \       0x84   0x0A00'0000        BEQ      ??nfc_configure_2
+     86          		cfg |= NFC_CFG_WSPARE;
+   \       0x88   0xE398'8F40        ORRS     R8,R8,#0x100
+     87          
+     88          	switch (data_size) {
+   \                     ??nfc_configure_2:
+   \       0x8C   0xE1B0'0004        MOVS     R0,R4
+   \       0x90   0xE350'0F80        CMP      R0,#+512
+   \       0x94   0x0A00'0008        BEQ      ??nfc_configure_3
+   \       0x98   0xE350'0E40        CMP      R0,#+1024
+   \       0x9C   0x0A00'0007        BEQ      ??nfc_configure_4
+   \       0xA0   0xE350'0E80        CMP      R0,#+2048
+   \       0xA4   0x0A00'0007        BEQ      ??nfc_configure_5
+   \       0xA8   0xE350'0D40        CMP      R0,#+4096
+   \       0xAC   0x0A00'0007        BEQ      ??nfc_configure_6
+   \       0xB0   0xE350'0D80        CMP      R0,#+8192
+   \       0xB4   0x0A00'0007        BEQ      ??nfc_configure_7
+   \       0xB8   0xEA00'0008        B        ??nfc_configure_8
+     89          	case 512:
+     90          		cfg |= NFC_CFG_PAGESIZE_PS512;
+     91          		break;
+   \                     ??nfc_configure_3:
+   \       0xBC   0xEA00'000F        B        ??nfc_configure_9
+     92          	case 1024:
+     93          		cfg |= NFC_CFG_PAGESIZE_PS1024;
+   \                     ??nfc_configure_4:
+   \       0xC0   0xE398'8001        ORRS     R8,R8,#0x1
+     94          		break;
+   \       0xC4   0xEA00'000D        B        ??nfc_configure_9
+     95          	case 2048:
+     96          		cfg |= NFC_CFG_PAGESIZE_PS2048;
+   \                     ??nfc_configure_5:
+   \       0xC8   0xE398'8002        ORRS     R8,R8,#0x2
+     97          		break;
+   \       0xCC   0xEA00'000B        B        ??nfc_configure_9
+     98          	case 4096:
+     99          		cfg |= NFC_CFG_PAGESIZE_PS4096;
+   \                     ??nfc_configure_6:
+   \       0xD0   0xE398'8003        ORRS     R8,R8,#0x3
+    100          		break;
+   \       0xD4   0xEA00'0009        B        ??nfc_configure_9
+    101          #ifdef NFC_CFG_PAGESIZE_PS8192
+    102          	case 8192:
+    103          		cfg |= NFC_CFG_PAGESIZE_PS8192;
+   \                     ??nfc_configure_7:
+   \       0xD8   0xE398'8004        ORRS     R8,R8,#0x4
+    104          		break;
+   \       0xDC   0xEA00'0007        B        ??nfc_configure_9
+    105          #endif
+    106          	default:
+    107          		trace_fatal("Data size %d unsupported!\r\n",
+    108          				(unsigned)data_size);
+   \                     ??nfc_configure_8:
+   \       0xE0   0x....'....        LDR      R0,??DataTable11_3
+   \       0xE4   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0xE8   0xE350'0000        CMP      R0,#+0
+   \       0xEC   0x0A00'0002        BEQ      ??nfc_configure_10
+   \       0xF0   0xE1B0'1004        MOVS     R1,R4
+   \       0xF4   0x....'....        LDR      R0,??DataTable11_4
+   \       0xF8   0x....'....        BL       printf
+   \                     ??nfc_configure_10:
+   \       0xFC   0xEAFF'FFFE        B        ??nfc_configure_10
+    109          	}
+    110          
+    111          	NFC->NFC_CFG = cfg;
+   \                     ??nfc_configure_9:
+   \      0x100   0xE3A0'04F8        MOV      R0,#-134217728
+   \      0x104   0xE380'0B50        ORR      R0,R0,#0x14000
+   \      0x108   0xE580'8000        STR      R8,[R0, #+0]
+    112          }
+   \      0x10C   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    113          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    114          void nfc_enable(void)
+    115          {
+    116          	NFC->NFC_CTRL |= NFC_CTRL_NFCEN;
+   \                     nfc_enable:
+   \        0x0   0x....'....        LDR      R0,??DataTable11_5  ;; 0xf8014004
+   \        0x4   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0x8   0xE391'1001        ORRS     R1,R1,#0x1
+   \        0xC   0xE580'1000        STR      R1,[R0, #+0]
+    117          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    118          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    119          void nfc_disable(void)
+    120          {
+    121          	NFC->NFC_CTRL |= NFC_CTRL_NFCDIS;
+   \                     nfc_disable:
+   \        0x0   0x....'....        LDR      R0,??DataTable11_5  ;; 0xf8014004
+   \        0x4   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0x8   0xE391'1002        ORRS     R1,R1,#0x2
+   \        0xC   0xE580'1000        STR      R1,[R0, #+0]
+    122          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    123          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    124          uint32_t nfc_get_status(void)
+    125          {
+    126          	return NFC->NFC_SR;
+   \                     nfc_get_status:
+   \        0x0   0x....'....        LDR      R0,??DataTable11_6  ;; 0xf8014008
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    127          }
+    128          
+    129          /**
+    130           * \brief Check if the host controller is busy.
+    131           * \return Returns 1 if the host controller is busy, otherwise returns 0.
+    132           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    133          static bool nfc_is_host_busy(void)
+    134          {
+   \                     nfc_is_host_busy:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    135          	return (_nfc_read_status() & NFCDATA_STATUS_NFCBUSY) == NFCDATA_STATUS_NFCBUSY;
+   \        0x4   0x....'....        BL       _nfc_read_status
+   \        0x8   0xE1B0'0DA0        LSRS     R0,R0,#+27
+   \        0xC   0xE210'0001        ANDS     R0,R0,#0x1
+   \       0x10   0xE8BD'8002        POP      {R1,PC}          ;; return
+    136          }
+    137          
+    138          /**
+    139           * \brief Wait for NFC command has done.
+    140           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    141          void nfc_wait_cmd_done(void)
+    142          {
+    143          	while ((NFC->NFC_SR & NFC_SR_CMDDONE) != NFC_SR_CMDDONE);
+   \                     nfc_wait_cmd_done:
+   \                     ??nfc_wait_cmd_done_0:
+   \        0x0   0x....'....        LDR      R0,??DataTable11_6  ;; 0xf8014008
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE310'0B80        TST      R0,#0x20000
+   \        0xC   0x0AFF'FFFB        BEQ      ??nfc_wait_cmd_done_0
+    144          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    145          
+    146          /**
+    147           * \brief Wait for NFC Data Transfer Terminated.
+    148           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    149          void nfc_wait_xfr_done(void)
+    150          {
+    151          	while ((NFC->NFC_SR & NFC_SR_XFRDONE) != NFC_SR_XFRDONE);
+   \                     nfc_wait_xfr_done:
+   \                     ??nfc_wait_xfr_done_0:
+   \        0x0   0x....'....        LDR      R0,??DataTable11_6  ;; 0xf8014008
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE310'0B40        TST      R0,#0x10000
+   \        0xC   0x0AFF'FFFB        BEQ      ??nfc_wait_xfr_done_0
+    152          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    153          
+    154          /**
+    155           * \brief Wait for NFC Ready/Busy Line 0 Edge Detected.
+    156           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    157          void nfc_wait_rb_busy(void)
+    158          {
+    159          	while ((NFC->NFC_SR & NFC_SR_RB_EDGE0) != NFC_SR_RB_EDGE0);
+   \                     nfc_wait_rb_busy:
+   \                     ??nfc_wait_rb_busy_0:
+   \        0x0   0x....'....        LDR      R0,??DataTable11_6  ;; 0xf8014008
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE310'0740        TST      R0,#0x1000000
+   \        0xC   0x0AFF'FFFB        BEQ      ??nfc_wait_rb_busy_0
+    160          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    161          
+    162          /**
+    163           * \brief Uses the HOST NANDFLASH controller to send a command to the NFC.
+    164           * \param cmd  command to send.
+    165           * \param address_cycle address cycle when command access id decoded.
+    166           * \param cycle0 address at first cycle.
+    167           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    168          void nfc_send_cmd(uint32_t cmd, uint8_t *cycle_bytes)
+    169          {
+   \                     nfc_send_cmd:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    170          	int cycle_offset = 0;
+   \        0xC   0xE3A0'6000        MOV      R6,#+0
+    171          	uint32_t nfcdata_addr = 0;
+   \       0x10   0xE3A0'7000        MOV      R7,#+0
+    172          
+    173          	/* Wait until host controller is not busy. */
+    174          	while (nfc_is_host_busy());
+   \                     ??nfc_send_cmd_0:
+   \       0x14   0x....'....        BL       nfc_is_host_busy
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x1AFF'FFFC        BNE      ??nfc_send_cmd_0
+    175          
+    176          	/* Send the command */
+    177          	switch (cmd & NFCADDR_CMD_ACYCLE_Msk) {
+   \       0x20   0xE214'09E0        ANDS     R0,R4,#0x380000
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x0A00'001A        BEQ      ??nfc_send_cmd_1
+   \       0x2C   0xE350'0A80        CMP      R0,#+524288
+   \       0x30   0x0A00'0015        BEQ      ??nfc_send_cmd_2
+   \       0x34   0xE350'0940        CMP      R0,#+1048576
+   \       0x38   0x0A00'0010        BEQ      ??nfc_send_cmd_3
+   \       0x3C   0xE350'0960        CMP      R0,#+1572864
+   \       0x40   0x0A00'000B        BEQ      ??nfc_send_cmd_4
+   \       0x44   0xE350'0980        CMP      R0,#+2097152
+   \       0x48   0x0A00'0006        BEQ      ??nfc_send_cmd_5
+   \       0x4C   0xE350'09A0        CMP      R0,#+2621440
+   \       0x50   0x1A00'0011        BNE      ??nfc_send_cmd_6
+    178          	case NFCADDR_CMD_ACYCLE_FIVE:
+    179          		NFC->NFC_ADDR = cycle_bytes[0];
+   \                     ??nfc_send_cmd_7:
+   \       0x54   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x58   0x....'....        LDR      R1,??DataTable11_7  ;; 0xf8014018
+   \       0x5C   0xE581'0000        STR      R0,[R1, #+0]
+    180          		cycle_offset = 1;
+   \       0x60   0xE3A0'0001        MOV      R0,#+1
+   \       0x64   0xE1B0'6000        MOVS     R6,R0
+    181          		// fall-through
+    182          	case NFCADDR_CMD_ACYCLE_FOUR:
+    183          		nfcdata_addr |= NFCDATA_ADDR_ACYCLE4(cycle_bytes[cycle_offset + 3]);
+   \                     ??nfc_send_cmd_5:
+   \       0x68   0xE095'0006        ADDS     R0,R5,R6
+   \       0x6C   0xE5D0'0003        LDRB     R0,[R0, #+3]
+   \       0x70   0xE197'7C00        ORRS     R7,R7,R0, LSL #+24
+    184          		// fall-through
+    185          	case NFCADDR_CMD_ACYCLE_THREE:
+    186          		nfcdata_addr |= NFCDATA_ADDR_ACYCLE3(cycle_bytes[cycle_offset + 2]);
+   \                     ??nfc_send_cmd_4:
+   \       0x74   0xE095'0006        ADDS     R0,R5,R6
+   \       0x78   0xE5D0'0002        LDRB     R0,[R0, #+2]
+   \       0x7C   0xE197'7800        ORRS     R7,R7,R0, LSL #+16
+    187          		// fall-through
+    188          	case NFCADDR_CMD_ACYCLE_TWO:
+    189          		nfcdata_addr |= NFCDATA_ADDR_ACYCLE2(cycle_bytes[cycle_offset + 1]);
+   \                     ??nfc_send_cmd_3:
+   \       0x80   0xE095'0006        ADDS     R0,R5,R6
+   \       0x84   0xE5D0'0001        LDRB     R0,[R0, #+1]
+   \       0x88   0xE197'7400        ORRS     R7,R7,R0, LSL #+8
+    190          		// fall-through
+    191          	case NFCADDR_CMD_ACYCLE_ONE:
+    192          		nfcdata_addr |= NFCDATA_ADDR_ACYCLE1(cycle_bytes[cycle_offset + 0]);
+   \                     ??nfc_send_cmd_2:
+   \       0x8C   0xE7D5'0006        LDRB     R0,[R5, +R6]
+   \       0x90   0xE190'7007        ORRS     R7,R0,R7
+    193          		break;
+   \       0x94   0xEA00'0005        B        ??nfc_send_cmd_8
+    194          	case NFCADDR_CMD_ACYCLE_NONE:
+    195          		break;
+   \                     ??nfc_send_cmd_1:
+   \       0x98   0xEA00'0004        B        ??nfc_send_cmd_8
+    196          	default:
+    197          		assert(0);
+   \                     ??nfc_send_cmd_6:
+   \       0x9C   0xE3A0'20C5        MOV      R2,#+197
+   \       0xA0   0x....'....        LDR      R1,??DataTable11_1
+   \       0xA4   0x....'....        ADR      R0,??DataTable11  ;; "0"
+   \       0xA8   0x....'....        BL       __aeabi_assert
+   \       0xAC   0x....'....        BL       __iar_EmptyStepPoint
+    198          		break;
+    199          	}
+    200          	_nfc_write_cmd(cmd, nfcdata_addr);
+   \                     ??nfc_send_cmd_8:
+   \       0xB0   0xE1B0'1007        MOVS     R1,R7
+   \       0xB4   0xE1B0'0004        MOVS     R0,R4
+   \       0xB8   0x....'....        BL       _nfc_write_cmd
+    201          
+    202          	/* Wait for command completion */
+    203          	nfc_wait_cmd_done();
+   \       0xBC   0x....'....        BL       nfc_wait_cmd_done
+    204          }
+   \       0xC0   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    205          
+    206          #ifdef CONFIG_HAVE_SMC_SCRAMBLING
+    207          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    208          void nfc_sram_scrambling_enable(void)
+    209          {
+    210          	SMC->SMC_OCMS |= SMC_OCMS_SRSE;
+   \                     nfc_sram_scrambling_enable:
+   \        0x0   0x....'....        LDR      R0,??DataTable11_8  ;; 0xf80147a0
+   \        0x4   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0x8   0xE391'1002        ORRS     R1,R1,#0x2
+   \        0xC   0xE580'1000        STR      R1,[R0, #+0]
+    211          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    212          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    213          void nfc_sram_scrambling_disable(void)
+    214          {
+    215          	SMC->SMC_OCMS &= ~SMC_OCMS_SRSE;
+   \                     nfc_sram_scrambling_disable:
+   \        0x0   0x....'....        LDR      R0,??DataTable11_8  ;; 0xf80147a0
+   \        0x4   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0x8   0xE3D1'1002        BICS     R1,R1,#0x2
+   \        0xC   0xE580'1000        STR      R1,[R0, #+0]
+    216          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    217          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    218          bool nfc_sram_scrambling_is_enabled(void)
+    219          {
+    220          	return SMC->SMC_OCMS & SMC_OCMS_SRSE;
+   \                     nfc_sram_scrambling_is_enabled:
+   \        0x0   0x....'....        LDR      R0,??DataTable11_8  ;; 0xf80147a0
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE1B0'00A0        LSRS     R0,R0,#+1
+   \        0xC   0xE210'0001        ANDS     R0,R0,#0x1
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    221          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable11:
+   \        0x0   0x30 0x00          DC8      "0",0x0,0x0
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable11_1:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable11_2:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable11_3:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable11_4:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable11_5:
+   \        0x0   0xF801'4004        DC32     0xf8014004
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable11_6:
+   \        0x0   0xF801'4008        DC32     0xf8014008
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable11_7:
+   \        0x0   0xF801'4018        DC32     0xf8014018
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable11_8:
+   \        0x0   0xF801'47A0        DC32     0xf80147a0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x21 0x72          DC8 "!read_spare || !write_spare"
+
+   \              0x65 0x61    
+
+   \              0x64 0x5F    
+
+   \              0x73 0x70    
+
+   \              0x61 0x72    
+
+   \              0x65 0x20    
+
+   \              0x7C 0x7C    
+
+   \              0x20 0x21    
+
+   \              0x77 0x72    
+
+   \              0x69 0x74    
+
+   \              0x65 0x5F    
+
+   \              0x73 0x70    
+
+   \              0x61 0x72    
+
+   \              0x65 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x6E, 0x76, 0x6D, 0x5C, 0x6E, 0x61
+
+   \              0x6E 0x76    
+
+   \              0x6D 0x5C    
+
+   \              0x6E 0x61
+   \       0x40   0x6E 0x64          DC8 0x6E, 0x64, 0x5C, 0x6E, 0x66, 0x63, 0x2E, 0x63
+
+   \              0x5C 0x6E    
+
+   \              0x66 0x63    
+
+   \              0x2E 0x63
+   \       0x48   0x00               DC8 0
+   \       0x49   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x2D 0x46          DC8 "-F- Data size %d unsupported!\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x44 0x61    
+
+   \              0x74 0x61    
+
+   \              0x20 0x73    
+
+   \              0x69 0x7A    
+
+   \              0x65 0x20    
+
+   \              0x25 0x64    
+
+   \              0x20 0x75    
+
+   \              0x6E 0x73    
+
+   \              0x75 0x70    
+
+   \              0x70 0x6F    
+
+   \              0x72 0x74    
+
+   \              0x65 0x64    
+
+   \              0x21 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section .rodata, align 2
+   \        0x0   0x30 0x00          DC8 "0"
+    222          
+    223          #endif /* CONFIG_HAVE_SMC_SCRAMBLING */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   _nfc_read_status
+       0   _nfc_write_cmd
+      24   nfc_configure
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+        24   -> printf
+       0   nfc_disable
+       0   nfc_enable
+       0   nfc_get_status
+       8   nfc_is_host_busy
+         8   -> _nfc_read_status
+      24   nfc_send_cmd
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+        24   -> _nfc_write_cmd
+        24   -> nfc_is_host_busy
+        24   -> nfc_wait_cmd_done
+       0   nfc_sram_scrambling_disable
+       0   nfc_sram_scrambling_enable
+       0   nfc_sram_scrambling_is_enabled
+       0   nfc_wait_cmd_done
+       0   nfc_wait_rb_busy
+       0   nfc_wait_xfr_done
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable11
+       4  ??DataTable11_1
+       4  ??DataTable11_2
+       4  ??DataTable11_3
+       4  ??DataTable11_4
+       4  ??DataTable11_5
+       4  ??DataTable11_6
+       4  ??DataTable11_7
+       4  ??DataTable11_8
+      28  ?_0
+      76  ?_1
+      32  ?_2
+       2  ?_3
+      12  _nfc_read_status
+      12  _nfc_write_cmd
+     272  nfc_configure
+      20  nfc_disable
+      20  nfc_enable
+      12  nfc_get_status
+      20  nfc_is_host_busy
+     196  nfc_send_cmd
+      20  nfc_sram_scrambling_disable
+      20  nfc_sram_scrambling_enable
+      20  nfc_sram_scrambling_is_enabled
+      20  nfc_wait_cmd_done
+      20  nfc_wait_rb_busy
+      20  nfc_wait_xfr_done
+
+ 
+ 138 bytes in section .rodata
+ 720 bytes in section SOFTPACK
+ 
+ 720 bytes of CODE  memory
+ 138 bytes of CONST memory
+
+Errors: none
+Warnings: none

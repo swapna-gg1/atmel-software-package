@@ -1,0 +1,91 @@
+#Generating source browse information for project low_power_mode_sam9x60-ek
+
+
+#Abbreviations
+cc = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\SourceIndexer.exe
+ll = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\PbdLink.exe
+bd = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\makeBrowseData.exe
+
+
+
+#Rules
+rule index
+  depfile = $out.dep
+  command = $cc -out=$out -f $in
+rule link
+  command = $ll -M $out $in
+rule browsedata
+  command = $bd $in -output  $out
+
+
+
+#Build steps
+build fault_handlers.pbi : index fault_handlers.xcl
+build l1cache_cp15.pbi : index l1cache_cp15.xcl
+build mmu_cp15.pbi : index mmu_cp15.xcl
+build mutex.pbi : index mutex.xcl
+build aic5.pbi : index aic5.xcl
+build bus.pbi : index bus.xcl
+build cache.pbi : index cache.xcl
+build console.pbi : index console.xcl
+build dbgu.pbi : index dbgu.xcl
+build ddram.pbi : index ddram.xcl
+build dma.pbi : index dma.xcl
+build dma_xdmac.pbi : index dma_xdmac.xcl
+build flexcom.pbi : index flexcom.xcl
+build irq.pbi : index irq.xcl
+build led.pbi : index led.xcl
+build matrix.pbi : index matrix.xcl
+build mpddrc.pbi : index mpddrc.xcl
+build otpc.pbi : index otpc.xcl
+build pio3.pbi : index pio3.xcl
+build pit.pbi : index pit.xcl
+build pmc.pbi : index pmc.xcl
+build pwmc.pbi : index pwmc.xcl
+build rstc.pbi : index rstc.xcl
+build rtc.pbi : index rtc.xcl
+build rtt.pbi : index rtt.xcl
+build sdram.pbi : index sdram.xcl
+build sdramc.pbi : index sdramc.xcl
+build seriald.pbi : index seriald.xcl
+build shdwc.pbi : index shdwc.xcl
+build slowclock_sckc.pbi : index slowclock_sckc.xcl
+build smc.pbi : index smc.xcl
+build tc.pbi : index tc.xcl
+build tcd.pbi : index tcd.xcl
+build twi.pbi : index twi.xcl
+build twid.pbi : index twid.xcl
+build usart.pbi : index usart.xcl
+build usartd.pbi : index usartd.xcl
+build wdt.pbi : index wdt.xcl
+build xdmac.pbi : index xdmac.xcl
+build board_console.pbi : index board_console.xcl
+build board_led.pbi : index board_led.xcl
+build board_sam9x60-ek.pbi : index board_sam9x60-ek.xcl
+build board_support.pbi : index board_support.xcl
+build board_timer.pbi : index board_timer.xcl
+build board_twi.pbi : index board_twi.xcl
+build chip.pbi : index chip.xcl
+build chip_common.pbi : index chip_common.xcl
+build callback.pbi : index callback.xcl
+build intmath.pbi : index intmath.xcl
+build rand.pbi : index rand.xcl
+build syscalls.pbi : index syscalls.xcl
+build timer.pbi : index timer.xcl
+build trace.pbi : index trace.xcl
+build clk-config.pbi : index clk-config.xcl
+build event-config.pbi : index event-config.xcl
+build low-power-config_sam9x60.pbi : index low-power-config_sam9x60.xcl
+build main.pbi : index main.xcl
+build low_power_mode_sam9x60-ek_part0.pbi : link fault_handlers.pbi l1cache_cp15.pbi mmu_cp15.pbi mutex.pbi aic5.pbi bus.pbi cache.pbi console.pbi
+build low_power_mode_sam9x60-ek_part1.pbi : link dbgu.pbi ddram.pbi dma.pbi dma_xdmac.pbi flexcom.pbi irq.pbi led.pbi matrix.pbi
+build low_power_mode_sam9x60-ek_part2.pbi : link mpddrc.pbi otpc.pbi pio3.pbi pit.pbi pmc.pbi pwmc.pbi rstc.pbi rtc.pbi
+build low_power_mode_sam9x60-ek_part3.pbi : link rtt.pbi sdram.pbi sdramc.pbi seriald.pbi shdwc.pbi slowclock_sckc.pbi smc.pbi tc.pbi
+build low_power_mode_sam9x60-ek_part4.pbi : link tcd.pbi twi.pbi twid.pbi usart.pbi usartd.pbi wdt.pbi xdmac.pbi board_console.pbi
+build low_power_mode_sam9x60-ek_part5.pbi : link board_led.pbi board_sam9x60-ek.pbi board_support.pbi board_timer.pbi board_twi.pbi chip.pbi chip_common.pbi callback.pbi
+build low_power_mode_sam9x60-ek_part6.pbi : link intmath.pbi rand.pbi syscalls.pbi timer.pbi trace.pbi clk-config.pbi event-config.pbi low-power-config_sam9x60.pbi
+build low_power_mode_sam9x60-ek_part7.pbi : link main.pbi
+build low_power_mode_sam9x60-ek.pbd : link low_power_mode_sam9x60-ek_part0.pbi low_power_mode_sam9x60-ek_part1.pbi low_power_mode_sam9x60-ek_part2.pbi low_power_mode_sam9x60-ek_part3.pbi low_power_mode_sam9x60-ek_part4.pbi low_power_mode_sam9x60-ek_part5.pbi low_power_mode_sam9x60-ek_part6.pbi low_power_mode_sam9x60-ek_part7.pbi
+build low_power_mode_sam9x60-ek.pbw : browsedata low_power_mode_sam9x60-ek.pbd
+
+

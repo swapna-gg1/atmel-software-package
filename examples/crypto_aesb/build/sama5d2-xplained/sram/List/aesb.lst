@@ -1,0 +1,402 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         22/Oct/2020  11:45:02
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\crypto\aesb.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWCAB6.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\crypto\aesb.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_AESB -D CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_SECURE_MATRIX -D
+#        CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\build\sama5d2-xplained\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\build\sama5d2-xplained\sram\List\aesb.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_aesb\build\sama5d2-xplained\sram\Obj\aesb.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\crypto\aesb.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           * \file
+     32           *
+     33           * Implementation of Advanced Encryption Standard Bridge (AESB)
+     34           *
+     35           */
+     36          
+     37          /*----------------------------------------------------------------------------
+     38           *        Headers
+     39           *----------------------------------------------------------------------------*/
+     40          
+     41          #include "chip.h"
+     42          #include "crypto/aesb.h"
+     43          
+     44          /*----------------------------------------------------------------------------
+     45           *        Exported functions
+     46           *----------------------------------------------------------------------------*/
+     47          
+     48          /**
+     49           * \brief Starts Manual encryption/decryption process.
+     50           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     51          void aesb_start(void)
+     52          {
+     53          	AESB->AESB_CR = AESB_CR_START;
+   \                     aesb_start:
+   \        0x0   0xE3A0'14F0        MOV      R1,#-268435456
+   \        0x4   0xE3A0'0001        MOV      R0,#+1
+   \        0x8   0x....'....        B        ?Subroutine1
+     54          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE381'1B70        ORR      R1,R1,#0x1C000
+   \                     ??Subroutine1_0:
+   \        0x4   0xE581'0000        STR      R0,[R1, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+     55          
+     56          /**
+     57           * \brief Resets the AESB. A software triggered hardware reset of the AESB interface is performed.
+     58           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     59          void aesb_swrst(void)
+     60          {
+     61          	AESB->AESB_CR = AESB_CR_SWRST;
+   \                     aesb_swrst:
+   \        0x0   0xE3A0'14F0        MOV      R1,#-268435456
+   \        0x4   0xE3A0'0F40        MOV      R0,#+256
+   \        0x8                      REQUIRE ?Subroutine1
+   \        0x8                      ;; // Fall through to label ?Subroutine1
+     62          }
+     63          
+     64          /**
+     65           * \brief Configures an AESB peripheral with the specified parameters.
+     66           *  \param mode  Desired value for the AESB mode register (see the datasheet).
+     67           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     68          void aesb_configure(uint32_t mode)
+     69          {
+     70          	AESB->AESB_MR = mode;
+   \                     aesb_configure:
+   \        0x0   0xE3A0'124F        MOV      R1,#-268435452
+   \        0x4   0x....'....        B        ?Subroutine1
+     71          }
+     72          
+     73          /**
+     74           * \brief Enables the selected interrupts sources on a AESB peripheral.
+     75           * \param sources  Bitwise OR of selected interrupt sources.
+     76           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     77          void aesb_enable_it(uint32_t sources)
+     78          {
+     79          	AESB->AESB_IER = sources;
+   \                     aesb_enable_it:
+   \        0x0   0x....'....        LDR      R1,??DataTable7  ;; 0xf001c010
+   \        0x4   0x....'....        B        ??Subroutine1_0
+     80          }
+     81          
+     82          /**
+     83           * \brief Disables the selected interrupts sources on a AESB peripheral.
+     84           * \param sources  Bitwise OR of selected interrupt sources.
+     85           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     86          void aesb_disable_it(uint32_t sources)
+     87          {
+     88          	AESB->AESB_IDR = sources;
+   \                     aesb_disable_it:
+   \        0x0   0x....'....        LDR      R1,??DataTable7_1  ;; 0xf001c014
+   \        0x4   0x....'....        B        ??Subroutine1_0
+     89          }
+     90          
+     91          /**
+     92           * \brief Get the current status register of the given AESB peripheral.
+     93           * \return  AESB status register.
+     94           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     95          uint32_t aesb_get_status(void)
+     96          {
+     97          	return AESB->AESB_ISR;
+   \                     aesb_get_status:
+   \        0x0   0x....'....        LDR      R0,??DataTable7_2  ;; 0xf001c01c
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+     98          }
+     99          
+    100          /**
+    101           * \brief Set the 128-bit cryptographic key used for encryption/decryption.
+    102           * \param pKey Pointer to a 16 bytes cipher key.
+    103           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    104          void aesb_write_key(const uint32_t * pKey)
+    105          {
+    106          	AESB->AESB_KEYWR[0] = pKey[0];
+   \                     aesb_write_key:
+   \        0x0   0xE590'2000        LDR      R2,[R0, #+0]
+   \        0x4   0x....'....        LDR      R1,??DataTable7_3  ;; 0xf001c020
+   \        0x8   0x....'....        B        ?Subroutine0
+    107          	AESB->AESB_KEYWR[1] = pKey[1];
+    108          	AESB->AESB_KEYWR[2] = pKey[2];
+    109          	AESB->AESB_KEYWR[3] = pKey[3];
+    110          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE581'2000        STR      R2,[R1, #+0]
+   \        0x4   0xE590'3004        LDR      R3,[R0, #+4]
+   \        0x8   0xE581'3004        STR      R3,[R1, #+4]
+   \        0xC   0xE590'C008        LDR      R12,[R0, #+8]
+   \       0x10   0xE581'C008        STR      R12,[R1, #+8]
+   \       0x14   0xE590'000C        LDR      R0,[R0, #+12]
+   \       0x18   0xE581'000C        STR      R0,[R1, #+12]
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    111          
+    112          /**
+    113           * \brief Set the for 32-bit input Data allow to set the 128-bit data block used for encryption/decryption.
+    114           * \param data Pointer to the 16-bytes data to cipher/decipher.
+    115           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    116          void aesb_set_input(uint32_t * data)
+    117          {
+   \                     aesb_set_input:
+   \        0x0   0xE24D'D004        SUB      SP,SP,#+4
+    118          	uint8_t i;
+    119          	for (i = 0; i < 4; i++)
+    120          		AESB->AESB_IDATAR[i] = data[i];
+   \        0x4   0xE590'2000        LDR      R2,[R0, #+0]
+   \        0x8   0x....'....        LDR      R1,??DataTable7_4  ;; 0xf001c040
+   \        0xC   0xE581'2000        STR      R2,[R1, #+0]
+   \       0x10   0xE590'2004        LDR      R2,[R0, #+4]
+   \       0x14   0xE58D'2000        STR      R2,[SP, #+0]
+   \       0x18   0xE581'2004        STR      R2,[R1, #+4]
+   \       0x1C   0xE590'2008        LDR      R2,[R0, #+8]
+   \       0x20   0xE58D'2000        STR      R2,[SP, #+0]
+   \       0x24   0xE581'2008        STR      R2,[R1, #+8]
+   \       0x28   0xE590'200C        LDR      R2,[R0, #+12]
+   \       0x2C   0xE581'200C        STR      R2,[R1, #+12]
+    121          }
+   \       0x30   0x....'....        B        ?Subroutine2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE28D'D004        ADD      SP,SP,#+4
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    122          
+    123          /**
+    124           * \brief Get the four 32-bit data contain the 128-bit data block which has been encrypted/decrypted.
+    125           * \param data pointer to the word that has been encrypted/decrypted..
+    126           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    127          void aesb_get_output(uint32_t * data)
+    128          {
+    129          	uint8_t i;
+    130          	for (i = 0; i < 4; i++)
+    131          		data[i] = AESB->AESB_ODATAR[i];
+   \                     aesb_get_output:
+   \        0x0   0x....'....        LDR      R1,??DataTable7_5  ;; 0xf001c050
+   \        0x4   0xE24D'D004        SUB      SP,SP,#+4
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0xC   0xE580'2000        STR      R2,[R0, #+0]
+   \       0x10   0xE591'2004        LDR      R2,[R1, #+4]
+   \       0x14   0xE58D'2000        STR      R2,[SP, #+0]
+   \       0x18   0xE580'2004        STR      R2,[R0, #+4]
+   \       0x1C   0xE591'2008        LDR      R2,[R1, #+8]
+   \       0x20   0xE58D'2000        STR      R2,[SP, #+0]
+   \       0x24   0xE580'2008        STR      R2,[R0, #+8]
+   \       0x28   0xE591'200C        LDR      R2,[R1, #+12]
+   \       0x2C   0xE580'200C        STR      R2,[R0, #+12]
+    132          }
+   \       0x30                      REQUIRE ?Subroutine2
+   \       0x30                      ;; // Fall through to label ?Subroutine2
+    133          
+    134          /**
+    135           * \brief Set four 64-bit initialization vector data block, which is used by some
+    136           * modes of operation as an additional initial input.
+    137           * \param vector point to the word of the initialization vector.
+    138           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    139          void aesb_set_vector(const uint32_t * vector)
+    140          {
+    141          	AESB->AESB_IVR[0] = vector[0];
+   \                     aesb_set_vector:
+   \        0x0   0xE590'2000        LDR      R2,[R0, #+0]
+   \        0x4   0x....'....        LDR      R1,??DataTable7_6  ;; 0xf001c060
+   \        0x8                      REQUIRE ?Subroutine0
+   \        0x8                      ;; // Fall through to label ?Subroutine0
+    142          	AESB->AESB_IVR[1] = vector[1];
+    143          	AESB->AESB_IVR[2] = vector[2];
+    144          	AESB->AESB_IVR[3] = vector[3];
+    145          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7:
+   \        0x0   0xF001'C010        DC32     0xf001c010
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_1:
+   \        0x0   0xF001'C014        DC32     0xf001c014
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_2:
+   \        0x0   0xF001'C01C        DC32     0xf001c01c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_3:
+   \        0x0   0xF001'C020        DC32     0xf001c020
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_4:
+   \        0x0   0xF001'C040        DC32     0xf001c040
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_5:
+   \        0x0   0xF001'C050        DC32     0xf001c050
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_6:
+   \        0x0   0xF001'C060        DC32     0xf001c060
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   aesb_configure
+       0   aesb_disable_it
+       0   aesb_enable_it
+       4   aesb_get_output
+       0   aesb_get_status
+       4   aesb_set_input
+       0   aesb_set_vector
+       0   aesb_start
+       0   aesb_swrst
+       0   aesb_write_key
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable7
+       4  ??DataTable7_1
+       4  ??DataTable7_2
+       4  ??DataTable7_3
+       4  ??DataTable7_4
+       4  ??DataTable7_5
+       4  ??DataTable7_6
+      32  ?Subroutine0
+      12  ?Subroutine1
+       8  ?Subroutine2
+       8  aesb_configure
+       8  aesb_disable_it
+       8  aesb_enable_it
+      48  aesb_get_output
+      12  aesb_get_status
+      52  aesb_set_input
+       8  aesb_set_vector
+      12  aesb_start
+       8  aesb_swrst
+      12  aesb_write_key
+
+ 
+ 256 bytes in section SOFTPACK
+ 
+ 256 bytes of CODE memory
+
+Errors: none
+Warnings: none

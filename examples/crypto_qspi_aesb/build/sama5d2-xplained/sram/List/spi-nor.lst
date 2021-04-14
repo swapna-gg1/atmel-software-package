@@ -1,0 +1,2655 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         23/Oct/2020  09:46:38
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\spi-nor\spi-nor.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWBAC2.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\spi-nor\spi-nor.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_QSPI -D CONFIG_HAVE_QSPI_DMA -D CONFIG_HAVE_NFC -D
+#        CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D
+#        CONFIG_HAVE_GMAC_QUEUES -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_MPDDRC_DDR3 -D CONFIG_HAVE_MPDDRC_LPDDR3 -D
+#        CONFIG_HAVE_ADC_SETTLING_TIME -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_FAST_STARTUP -D
+#        CONFIG_HAVE_PMC_GENERATED_CLOCKS -D CONFIG_HAVE_PMC_AUDIO_CLOCK -D
+#        CONFIG_HAVE_PMC_PLLADIV2 -D CONFIG_HAVE_PMC_H32MXDIV -D
+#        CONFIG_HAVE_PMC_UPLL_BIAS -D CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA
+#        -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ
+#        -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_SFRBU
+#        -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_AESB -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D
+#        CONFIG_HAVE_UART -D CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\List\spi-nor.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\crypto_qspi_aesb\build\sama5d2-xplained\sram\Obj\spi-nor.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#      __iar_require _Printf         
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\spi-nor\spi-nor.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         ATMEL Microcontroller Software Support
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2017, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           */
+     28          
+     29          /*----------------------------------------------------------------------------
+     30           *        Headers
+     31           *----------------------------------------------------------------------------*/
+     32          
+     33          #include "board.h"
+     34          #include "errno.h"
+     35          #include "intmath.h"
+     36          #include "mm/cache.h"
+     37          #include "nvm/spi-nor/spi-nor.h"
+     38          #include "peripherals/bus.h"
+     39          #include "timer.h"
+     40          #include "trace.h"
+     41          
+     42          /*----------------------------------------------------------------------------
+     43           *        Debug Constants
+     44           *----------------------------------------------------------------------------*/
+     45          
+     46          //#define SPI_NOR_VERBOSE_DEBUG
+     47          
+     48          /*----------------------------------------------------------------------------
+     49           *        Local Variables
+     50           *----------------------------------------------------------------------------*/
+     51          
+
+   \                                 In section .bss, align 4
+     52          static struct spi_flash_parameters params;
+   \                     params:
+   \        0x0                      DS8 112
+     53          
+
+   \                                 In section .bss, align 4
+     54          static CACHE_ALIGNED uint8_t _spi_flash_hdr[16];
+                        ^
+Warning[Pe606]: this pragma must immediately precede a declaration
+
+  static CACHE_ALIGNED uint8_t _spi_flash_hdr[16];
+         ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\spi-nor\spi-nor.c",54  Warning[Pe606]: 
+          this pragma must immediately precede a declaration
+     55          static struct _buffer _bus_exec_buffer[2];
+   \                     _bus_exec_buffer:
+   \        0x0                      DS8 24
+   \       0x18                      DS8 16
+     56          
+
+   \                                 In section .rodata, align 4, keep-with-next
+     57          static const char flash_name[] = "unknown";
+   \                     flash_name:
+   \        0x0   0x75 0x6E          DC8 "unknown"
+
+   \              0x6B 0x6E    
+
+   \              0x6F 0x77    
+
+   \              0x6E 0x00
+     58          
+     59          /*----------------------------------------------------------------------------
+     60           *        Local Functions
+     61           *----------------------------------------------------------------------------*/
+     62          
+     63          static const struct spi_nor_info *spi_nor_read_id(struct spi_flash *flash)
+     64          {
+     65          	const struct spi_nor_info *info;
+     66          	char id_str[8], *p;
+     67          	int i, rc;
+     68          
+     69          #ifdef SPI_NOR_VERBOSE_DEBUG
+     70          	trace_debug("spi-nor: cmd: 0x%02x\r\n", SFLASH_INST_READ_ID);
+     71          #endif
+     72          	rc = spi_flash_read_reg(flash, SFLASH_INST_READ_ID, flash->id, sizeof(flash->id));
+     73          	if (rc < 0)
+     74          		return NULL;
+     75          
+     76          	p = id_str;
+     77          	for (i = 0; i < 3; i++) {
+     78          		uint8_t lo = (flash->id[i] & 0x0f) >> 0;
+     79          		uint8_t hi = (flash->id[i] & 0xf0) >> 4;
+     80          
+     81          		*p++ = (hi < 10) ? ('0' + hi) : ('a' + hi - 10);
+     82          		*p++ = (lo < 10) ? ('0' + lo) : ('a' + lo - 10);
+     83          	}
+     84          	*p = '\0';
+     85          	trace_info("SF: Got Manufacturer and Device ID: %s\r\n", id_str);
+     86          
+     87          	for (info = spi_nor_ids; info->name; info++) {
+     88          		if (!memcmp(info->id, flash->id, info->id_len))
+     89          			return info;
+     90          	}
+     91          
+     92          	return NULL;
+     93          }
+     94          
+     95          static int spi_nor_init_params(struct spi_flash *flash, const struct spi_nor_info *info, struct spi_flash_parameters *fparams)
+     96          {
+     97          	struct spi_flash_erase_map *map = &flash->erase_map;
+     98          	uint32_t erase_mask = 0;
+     99          	uint32_t erase_offset = 0;
+    100          
+    101          	if (info && info->params)
+    102          		memcpy(fparams, info->params, sizeof(*fparams));
+    103          	else
+    104          		memset(fparams, 0, sizeof(*fparams));
+    105          
+    106          	/* Set SPI NOR sizes. */
+    107          	if (info) {
+    108          		fparams->size = info->sector_size * info->n_sectors;
+    109          		fparams->page_size = info->page_size;
+    110          	} else {
+    111          		flash->page_size = 256;
+    112          	}
+    113          
+    114          	/* Set legacy flash parameters as default. */
+    115          	if (info && info->params)
+    116          		goto set_erase_map;
+    117          
+    118          	/* (Fast) Read settings. */
+    119          	fparams->hwcaps.mask |= SFLASH_HWCAPS_READ;
+    120          	spi_flash_set_read_settings(&fparams->reads[SFLASH_CMD_READ], 0, 0, SFLASH_INST_READ, SFLASH_PROTO_1_1_1);
+    121          	if (!info || !(info->flags & SNOR_NO_FR)) {
+    122          		fparams->hwcaps.mask |= SFLASH_HWCAPS_READ_FAST;
+    123          		spi_flash_set_read_settings(&fparams->reads[SFLASH_CMD_READ_FAST], 0, 8, SFLASH_INST_FAST_READ, SFLASH_PROTO_1_1_1);
+    124          	}
+    125          
+    126          	/* Page Program settings. */
+    127          	fparams->hwcaps.mask |= SFLASH_HWCAPS_PP;
+    128          	spi_flash_set_pp_settings(&fparams->page_programs[SFLASH_CMD_PP], SFLASH_INST_PAGE_PROGRAM, SFLASH_PROTO_1_1_1);
+    129          
+    130          	/* Sector Erase settings. */
+    131          set_erase_map:
+    132          	if (info && info->flags & SNOR_SECT_4K_ONLY) {
+    133          		erase_mask |= (0x1UL << erase_offset);
+    134          		spi_flash_set_erase_command(&map->commands[erase_offset], 4096u, SFLASH_INST_ERASE_4K);
+    135          		erase_offset++;
+    136          	} else {
+    137          		/* 64KB erase is always supported */
+    138          		erase_mask |= (0x1UL << erase_offset);
+    139          		spi_flash_set_erase_command(&map->commands[erase_offset], info ? info->sector_size : 65536u, SFLASH_INST_ERASE_64K);
+    140          		erase_offset++;
+    141          
+    142          		if (info && info->flags & SNOR_SECT_4K) {
+    143          			erase_mask |= (0x1UL << erase_offset);
+    144          			spi_flash_set_erase_command(&map->commands[erase_offset], 4096u, SFLASH_INST_ERASE_4K);
+    145          			erase_offset++;
+    146          		}
+    147          
+    148          		if (info && info->flags & SNOR_SECT_32K) {
+    149          			erase_mask |= (0x1UL << erase_offset);
+    150          			spi_flash_set_erase_command(&map->commands[erase_offset], 32768u, SFLASH_INST_ERASE_32K);
+    151          			erase_offset++;
+    152          		}
+    153          	}
+    154          	spi_flash_init_uniform_erase_map(map, erase_mask, fparams->size);
+    155          
+    156          	/* Quad Enable Requirements & 0-4-4 Mode Entry Method. */
+    157          	flash->enable_0_4_4 = NULL;
+    158          	switch (spi_flash_get_mfr(flash)) {
+    159          	case SFLASH_MFR_MICRON:
+    160          		fparams->quad_enable = NULL;
+    161          		flash->enable_0_4_4 = micron_enable_0_4_4;
+    162          		flash->xip_mode = 0x00u;
+    163          		break;
+    164          
+    165          	case SFLASH_MFR_MACRONIX:
+    166          		fparams->quad_enable = macronix_quad_enable;
+    167          		break;
+    168          
+    169          	case SFLASH_MFR_ATMEL:
+    170          		flash->set_protection = at25_set_protection;
+    171          		break;
+    172          
+    173          	case SFLASH_MFR_SST:
+    174          		flash->xip_mode = 0xa0u;
+    175          		fparams->hwcaps.mask |= SFLASH_HWCAPS_READ_1_4_4;
+    176          		fparams->reads[SFLASH_CMD_READ_1_4_4].num_mode_cycles = 2;
+    177          		fparams->reads[SFLASH_CMD_READ_1_4_4].num_wait_states = 4;
+    178          		fparams->reads[SFLASH_CMD_READ_1_4_4].inst = SFLASH_INST_FAST_READ_1_4_4;
+    179          		fparams->reads[SFLASH_CMD_READ_1_4_4].proto = SFLASH_PROTO_1_4_4;
+    180          		fparams->quad_enable = spansion_new_quad_enable;
+    181          		break;
+    182          
+    183          	default:
+    184          		fparams->quad_enable = spansion_quad_enable;
+    185          		break;
+    186          	}
+    187          
+    188          	/* Override the parameters with data read from SFDP tables. */
+    189          	if (!info || !(info->flags & SNOR_SKIP_SFDP))
+    190          		spi_flash_parse_sfdp(flash, fparams);
+    191          
+    192          	return 0;
+    193          }
+    194          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    195          static uint8_t spi_nor_convert_inst(uint8_t inst, const uint8_t table[][2], size_t size)
+    196          {
+   \                     spi_nor_convert_inst:
+   \        0x0   0xE92D'4000        PUSH     {LR}
+    197          	size_t i;
+    198          
+    199          	for (i = 0; i < size; i++)
+   \        0x4   0xE3A0'3000        MOV      R3,#+0
+   \        0x8   0xE1A0'C001        MOV      R12,R1
+   \        0xC   0xEA00'0000        B        ??spi_nor_convert_inst_0
+   \                     ??spi_nor_convert_inst_1:
+   \       0x10   0xE283'3001        ADD      R3,R3,#+1
+   \                     ??spi_nor_convert_inst_0:
+   \       0x14   0xE153'0002        CMP      R3,R2
+   \       0x18   0x2A00'0004        BCS      ??spi_nor_convert_inst_2
+    200          		if (table[i][0] == inst)
+   \       0x1C   0xE4DC'E002        LDRB     LR,[R12], #+2
+   \       0x20   0xE15E'0000        CMP      LR,R0
+   \       0x24   0x1AFF'FFF9        BNE      ??spi_nor_convert_inst_1
+    201          			return table[i][1];
+   \       0x28   0xE081'0083        ADD      R0,R1,R3, LSL #+1
+   \       0x2C   0xE5D0'0001        LDRB     R0,[R0, #+1]
+   \                     ??spi_nor_convert_inst_2:
+   \       0x30   0xE8BD'8000        POP      {PC}             ;; return
+    202          
+    203          	/* No conversion found, keep input op code. */
+    204          	return inst;
+    205          }
+    206          
+    207          static inline uint8_t spi_nor_convert_3to4_read(uint8_t inst)
+    208          {
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    209          	static const uint8_t spi_nor_3to4_read[][2] = {
+   \                     `spi_nor_convert_3to4_read::spi_nor_3to4_read`:
+   \        0x0   0x03 0x13          DC8 3, 19, 11, 12, 59, 60, 187, 188, 107, 108, 235, 236
+
+   \              0x0B 0x0C    
+
+   \              0x3B 0x3C    
+
+   \              0xBB 0xBC    
+
+   \              0x6B 0x6C    
+
+   \              0xEB 0xEC
+    210          		{ SFLASH_INST_READ,		SFLASH_INST_READ_4B },
+    211          		{ SFLASH_INST_FAST_READ,	SFLASH_INST_FAST_READ_4B },
+    212          		{ SFLASH_INST_FAST_READ_1_1_2,	SFLASH_INST_FAST_READ_1_1_2_4B },
+    213          		{ SFLASH_INST_FAST_READ_1_2_2,	SFLASH_INST_FAST_READ_1_2_2_4B },
+    214          		{ SFLASH_INST_FAST_READ_1_1_4,	SFLASH_INST_FAST_READ_1_1_4_4B },
+    215          		{ SFLASH_INST_FAST_READ_1_4_4,	SFLASH_INST_FAST_READ_1_4_4_4B },
+    216          	};
+    217          
+    218          	return spi_nor_convert_inst(inst, spi_nor_3to4_read,
+    219          				    ARRAY_SIZE(spi_nor_3to4_read));
+    220          }
+    221          
+    222          static inline uint8_t spi_nor_convert_3to4_write(uint8_t inst)
+    223          {
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    224          	static const uint8_t spi_nor_3to4_program[][2] = {
+   \                     `spi_nor_convert_3to4_write::spi_nor_3to4_program`:
+   \        0x0   0x02 0x12          DC8 2, 18, 50, 52, 56, 62, 0, 0
+
+   \              0x32 0x34    
+
+   \              0x38 0x3E    
+
+   \              0x00 0x00
+    225          		{ SFLASH_INST_PAGE_PROGRAM,		SFLASH_INST_PAGE_PROGRAM_4B },
+    226          		{ SFLASH_INST_PAGE_PROGRAM_1_1_4,	SFLASH_INST_PAGE_PROGRAM_1_1_4_4B },
+    227          		{ SFLASH_INST_PAGE_PROGRAM_1_4_4,	SFLASH_INST_PAGE_PROGRAM_1_4_4_4B },
+    228          	};
+    229          
+    230          	return spi_nor_convert_inst(inst, spi_nor_3to4_program,
+    231          				    ARRAY_SIZE(spi_nor_3to4_program));
+    232          }
+    233          
+    234          static inline uint8_t spi_nor_convert_3to4_erase(uint8_t inst)
+    235          {
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    236          	static const uint8_t spi_nor_3to4_erase[][2] = {
+   \                     `spi_nor_convert_3to4_erase::spi_nor_3to4_erase`:
+   \        0x0   0x20 0x21          DC8 32, 33, 82, 92, 216, 220, 0, 0
+
+   \              0x52 0x5C    
+
+   \              0xD8 0xDC    
+
+   \              0x00 0x00
+    237          		{ SFLASH_INST_ERASE_4K,		SFLASH_INST_ERASE_4K_4B },
+    238          		{ SFLASH_INST_ERASE_32K,	SFLASH_INST_ERASE_32K_4B },
+    239          		{ SFLASH_INST_ERASE_64K,	SFLASH_INST_ERASE_64K_4B },
+    240          	};
+    241          
+    242          	return spi_nor_convert_inst(inst, spi_nor_3to4_erase,
+    243          				    ARRAY_SIZE(spi_nor_3to4_erase));
+    244          }
+    245          
+    246          static void spi_nor_set_4bais(struct spi_flash *flash)
+    247          {
+    248          	struct spi_flash_erase_map *map = &flash->erase_map;
+    249          	int i;
+    250          
+    251          	flash->read_inst = spi_nor_convert_3to4_read(flash->read_inst);
+    252          	flash->write_inst = spi_nor_convert_3to4_write(flash->write_inst);
+    253          
+    254          	for (i = 0; i < SFLASH_CMD_ERASE_MAX; i++) {
+    255          		struct spi_flash_erase_command *cmd = &map->commands[i];
+    256          
+    257          		cmd->inst = spi_nor_convert_3to4_erase(cmd->inst);
+    258          	}
+    259          
+    260          	flash->addr_len = 4;
+    261          }
+    262          
+    263          static int sst26_unlock_block_protection(struct spi_flash *flash)
+    264          {
+    265          	int rc;
+    266          
+    267          	rc = spi_flash_write_enable(flash);
+    268          	rc = rc < 0 ? rc : spi_flash_write_reg(flash, SFLASH_INST_ULBPR, NULL, 0);
+    269          	return rc < 0 ? rc : spi_flash_wait_till_ready(flash);
+    270          }
+    271          
+    272          static int spi_nor_clear_sr_bp(struct spi_flash *flash)
+    273          {
+    274          	uint8_t sr = 0;
+    275          	int rc;
+    276          
+    277          	rc = spi_flash_write_enable(flash);
+    278          	rc = rc < 0 ? rc : spi_flash_write_reg(flash, SFLASH_INST_WRITE_SR, &sr, 1);
+    279          	return rc < 0 ? rc : spi_flash_wait_till_ready(flash);
+    280          }
+    281          
+    282          static int spi_nor_probe(struct spi_flash *flash)
+    283          {
+    284          	const struct spi_nor_info *info;
+    285          	int rc;
+    286          
+    287          	/* Check minimum requirement. */
+    288          	if (!flash->ops)
+    289          		return -EINVAL;
+    290          
+    291          	/*
+    292          	 * Reset the SPI flash memory:
+    293          	 * exit the 4-byte address and/or the 4-4-4 modes.
+    294          	 */
+    295          	if (flash->hwcaps.mask & (SFLASH_HWCAPS_READ_4_4_4 | SFLASH_HWCAPS_PP_4_4_4)) {
+    296          		flash->reg_proto = SFLASH_PROTO_4_4_4;
+    297          		spi_flash_reset(flash);
+    298          	}
+    299          	flash->reg_proto = SFLASH_PROTO_1_1_1;
+    300          	spi_flash_reset(flash);
+    301          	usleep(50);
+    302          
+    303          	/* Set default settings. */
+    304          	flash->read_proto = SFLASH_PROTO_1_1_1;
+    305          	flash->write_proto = SFLASH_PROTO_1_1_1;
+    306          	flash->read = spi_nor_read;
+    307          	flash->write = spi_nor_write;
+    308          	flash->erase = spi_nor_erase;
+    309          	flash->flags = 0;
+    310          	flash->normal_mode = 0xFFu;
+    311          	flash->xip_mode = 0xA5u;
+    312          
+    313          	/* Get the static SPI flash info (might by NULL). */
+    314          	info = spi_nor_read_id(flash);
+    315          	if (!info) {
+    316          		flash->name = flash_name;
+    317          		goto init_params;
+    318          	}
+    319          
+    320          	if (info->flags & SNOR_HAS_FSR)
+    321          		flash->flags |= SFLASH_FLG_HAS_FSR;
+    322          
+    323          	if (info->flags & SNOR_SST_ULBPR)
+    324          		if (sst26_unlock_block_protection(flash))
+    325          			trace_info("SF: WARNING: SST26 - can't unlock block protection\r\n");
+    326          
+    327          	if (info->flags & SNOR_CLEAR_SR_BP)
+    328          		if (spi_nor_clear_sr_bp(flash))
+    329          			trace_warning("SF: WARNING: can't clear Block Protection bits in Status Register\r\n");
+    330          
+    331          	flash->name = info->name;
+    332          
+    333          	/* Parse the Serial Flash Discoverable Parameter tables. */
+    334          init_params:
+    335          	rc = spi_nor_init_params(flash, info, &params);
+    336          	if (rc < 0)
+    337          		return rc;
+    338          
+    339          	if (params.size == 0)
+    340          		return -ENODEV;
+    341          
+    342          	flash->size = params.size;
+    343          	if (params.page_size > 0)
+    344          		flash->page_size = params.page_size;
+    345          
+    346          	/*
+    347          	 * Configure the SPI memory:
+    348          	 * - select instructions for (Fast) Read, Page Program and Sector Erase.
+    349          	 * - set the number of mode & wait state cycles.
+    350          	 * - set the SPI protocols for register and memory accesses.
+    351          	 * - set the Quad Enable bit if needed (required by SPI x-y-4 protos).
+    352          	 */
+    353          	rc = spi_flash_setup(flash, &params);
+    354          	if (rc < 0)
+    355          		return rc;
+    356          
+    357          	if (info && info->addr_len) {
+    358          		flash->addr_len = info->addr_len;
+    359          	} else {
+    360          		flash->addr_len = 3;
+    361          		if (flash->size > 0x01000000u) {
+    362          			if (!info || !(info->flags & SNOR_NO_4BAIS))
+    363          				spi_nor_set_4bais(flash);
+    364          			else
+    365          				trace_info("SF: WARNING: can't read above 16MiB\r\n");
+    366          		}
+    367          	}
+    368          
+    369          	return 0;
+    370          }
+    371          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    372          static int _bus_init(union spi_flash_priv* priv)
+    373          {
+    374          	return 0;
+   \                     _bus_init:
+   \        0x0   0x....'....        B        ?Subroutine0
+    375          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    376          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    377          static int _bus_cleanup(union spi_flash_priv* priv)
+    378          {
+    379          	return 0;
+   \                     _bus_cleanup:
+   \        0x0   0xE320'F000        Nop
+   \        0x4                      REQUIRE ?Subroutine0
+   \        0x4                      ;; // Fall through to label ?Subroutine0
+    380          }
+    381          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    382          static int _bus_set_freq(union spi_flash_priv* priv, uint32_t freq)
+    383          {
+    384          	priv->spi.spi_dev.bitrate = freq;
+   \                     _bus_set_freq:
+   \        0x0   0xE580'1008        STR      R1,[R0, #+8]
+    385          	return bus_configure_slave(priv->spi.bus, &priv->spi);
+   \        0x4   0x....'....        B        ?Subroutine1
+    386          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE1A0'1000        MOV      R1,R0
+   \        0x4   0xE5D0'0000        LDRB     R0,[R0, #+0]
+   \        0x8   0x....'....        B        bus_configure_slave  ;; tailcall
+    387          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    388          static int _bus_set_mode(union spi_flash_priv* priv, uint8_t mode)
+    389          {
+    390          	priv->spi.spi_dev.spi_mode = mode;
+                 	                           ^
+Warning[Pe188]: enumerated type mixed with another type
+   \                     _bus_set_mode:
+   \        0x0   0xE5C0'1014        STRB     R1,[R0, #+20]
+    391          	return bus_configure_slave(priv->spi.bus, &priv->spi);
+   \        0x4                      REQUIRE ?Subroutine1
+   \        0x4                      ;; // Fall through to label ?Subroutine1
+    392          }
+    393          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    394          static int _bus_exec(union spi_flash_priv* priv, const struct spi_flash_command *cmd)
+    395          {
+   \                     _bus_exec:
+   \        0x0   0xE92D'41FC        PUSH     {R2-R8,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    396          	int rc;
+    397          	uint8_t buffers = 2;
+    398          	uint8_t *data = _spi_flash_hdr;
+    399          
+    400          
+    401          	*data++ = cmd->inst;
+   \        0xC   0x....'....        LDR      R7,??DataTable7
+   \       0x10   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \       0x14   0xE3A0'8002        MOV      R8,#+2
+   \       0x18   0xE3A0'6002        MOV      R6,#+2
+   \       0x1C   0xE5C7'0018        STRB     R0,[R7, #+24]
+    402          	switch (cmd->addr_len) {
+   \       0x20   0xE5D5'100C        LDRB     R1,[R5, #+12]
+   \       0x24   0xE287'0019        ADD      R0,R7,#+25
+   \       0x28   0xE351'0003        CMP      R1,#+3
+   \       0x2C   0x0A00'0005        BEQ      ??_bus_exec_1
+   \       0x30   0xE351'0004        CMP      R1,#+4
+   \       0x34   0x1A00'000B        BNE      ??_bus_exec_2
+    403          	case 4:
+    404          		*data++ = (cmd->addr >> 24) & 0xff;
+   \       0x38   0xE595'0010        LDR      R0,[R5, #+16]
+   \       0x3C   0xE1A0'3C20        LSR      R3,R0,#+24
+   \       0x40   0xE287'001A        ADD      R0,R7,#+26
+   \       0x44   0xE5C7'3019        STRB     R3,[R7, #+25]
+    405          	case 3:
+    406          		*data++ = (cmd->addr >> 16) & 0xff;
+   \                     ??_bus_exec_1:
+   \       0x48   0xE595'1010        LDR      R1,[R5, #+16]
+   \       0x4C   0xE1A0'2821        LSR      R2,R1,#+16
+   \       0x50   0xE4C0'2001        STRB     R2,[R0], #+1
+    407          		*data++ = (cmd->addr >> 8) & 0xff;
+   \       0x54   0xE595'3010        LDR      R3,[R5, #+16]
+   \       0x58   0xE1A0'C423        LSR      R12,R3,#+8
+   \       0x5C   0xE4C0'C001        STRB     R12,[R0], #+1
+    408          		*data++ = (cmd->addr >> 0) & 0xff;
+   \       0x60   0xE595'1010        LDR      R1,[R5, #+16]
+   \       0x64   0xE4C0'1001        STRB     R1,[R0], #+1
+    409          		break;
+    410          	case 0:
+    411          	default:
+    412          		break;
+    413          	}
+    414          	if (cmd->num_mode_cycles / 8)
+   \                     ??_bus_exec_2:
+   \       0x68   0xE5D5'300A        LDRB     R3,[R5, #+10]
+   \       0x6C   0xE1B0'11A3        LSRS     R1,R3,#+3
+   \       0x70   0x0A00'0001        BEQ      ??_bus_exec_3
+    415          		memset(data, cmd->mode, cmd->num_mode_cycles / 8);
+   \       0x74   0xE5D5'2009        LDRB     R2,[R5, #+9]
+   \       0x78   0x....'....        BL       __aeabi_memset
+    416          
+    417          	_bus_exec_buffer[0].data = _spi_flash_hdr;
+   \                     ??_bus_exec_3:
+   \       0x7C   0xE287'0018        ADD      R0,R7,#+24
+    418          	_bus_exec_buffer[0].attr = BUS_BUF_ATTR_TX;
+   \       0x80   0xE587'8008        STR      R8,[R7, #+8]
+   \       0x84   0xE587'0000        STR      R0,[R7, #+0]
+    419          	_bus_exec_buffer[0].size = 1 + cmd->addr_len + cmd->num_mode_cycles / 8 + cmd->num_wait_states / 8;
+   \       0x88   0xE5D5'100C        LDRB     R1,[R5, #+12]
+   \       0x8C   0xE5D5'200A        LDRB     R2,[R5, #+10]
+   \       0x90   0xE5D5'300B        LDRB     R3,[R5, #+11]
+   \       0x94   0xE081'01A2        ADD      R0,R1,R2, LSR #+3
+   \       0x98   0xE080'11A3        ADD      R1,R0,R3, LSR #+3
+   \       0x9C   0xE281'C001        ADD      R12,R1,#+1
+   \       0xA0   0xE587'C004        STR      R12,[R7, #+4]
+    420          
+    421          	switch (cmd->flags) {
+   \       0xA4   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0xA8   0xE350'0004        CMP      R0,#+4
+   \       0xAC   0x8A00'002A        BHI      ??_bus_exec_4
+   \       0xB0   0xE7DF'2000        LDRB     R2,[PC, R0]
+   \       0xB4   0xE08F'F102        ADD      PC,PC,R2, LSL #+2
+   \                     ??_bus_exec_0:
+   \       0xB8   0x01 0x1C          DC8      0x1,0x1C,0x24,0x1
+
+   \              0x24 0x01
+   \       0xBC   0x1C 0x00          DC8      0x1C,0x0,0x0,0x0
+
+   \              0x00 0x00
+    422          	case SFLASH_TYPE_READ:
+    423          	case SFLASH_TYPE_READ_REG:
+    424          #ifdef SPI_NOR_VERBOSE_DEBUG
+    425          		trace_debug("spi-nor: READ*\r\n");
+    426          #endif
+    427          		_bus_exec_buffer[1].data = cmd->rx_data;
+   \                     ??_bus_exec_5:
+   \       0xC0   0xE595'101C        LDR      R1,[R5, #+28]
+    428          		_bus_exec_buffer[1].size = cmd->data_len;
+    429          		_bus_exec_buffer[1].attr = BUS_BUF_ATTR_RX;
+   \       0xC4   0xE3A0'2001        MOV      R2,#+1
+   \       0xC8   0xE587'100C        STR      R1,[R7, #+12]
+   \       0xCC   0xE595'0014        LDR      R0,[R5, #+20]
+   \       0xD0   0xE587'2014        STR      R2,[R7, #+20]
+   \       0xD4   0xE587'0010        STR      R0,[R7, #+16]
+    430          		if (cmd->data_len)
+   \       0xD8   0xE595'1014        LDR      R1,[R5, #+20]
+   \       0xDC   0xE351'0000        CMP      R1,#+0
+   \       0xE0   0x0A00'0001        BEQ      ??_bus_exec_6
+    431          			_bus_exec_buffer[1].attr |= BUS_SPI_BUF_ATTR_RELEASE_CS;
+   \       0xE4   0xE382'0E80        ORR      R0,R2,#0x800
+   \                     ??_bus_exec_7:
+   \       0xE8   0xE587'0014        STR      R0,[R7, #+20]
+    432          		break;
+    433          	case SFLASH_TYPE_WRITE:
+    434          	case SFLASH_TYPE_WRITE_REG:
+    435          #ifdef SPI_NOR_VERBOSE_DEBUG
+    436          		trace_debug("spi-nor: WRITE*\r\n");
+    437          #endif
+    438          		if (cmd->data_len) {
+    439          			_bus_exec_buffer[1].data = (uint8_t*)cmd->tx_data;
+    440          			_bus_exec_buffer[1].size = cmd->data_len;
+    441          			_bus_exec_buffer[1].attr = BUS_BUF_ATTR_TX | BUS_SPI_BUF_ATTR_RELEASE_CS;
+    442          		} else {
+    443          			buffers = 1;
+    444          			_bus_exec_buffer[0].attr |= BUS_SPI_BUF_ATTR_RELEASE_CS;
+    445          		}
+    446          		break;
+    447          	case SFLASH_TYPE_ERASE:
+    448          #ifdef SPI_NOR_VERBOSE_DEBUG
+    449          		trace_debug("spi-nor: ERASE\r\n");
+    450          #endif
+    451          		buffers = 1;
+    452          		_bus_exec_buffer[0].attr |= BUS_SPI_BUF_ATTR_RELEASE_CS;
+    453          		break;
+    454          	default:
+    455          		return -EINVAL;
+    456          	}
+    457          
+    458          #ifdef SPI_NOR_VERBOSE_DEBUG
+    459          	trace_debug("spi-nor: inst: 0x%02x\r\n", cmd->inst);
+    460          	if (cmd->addr_len) {
+    461          		trace_debug("spi-nor: addr_len: %u\r\n", cmd->addr_len);
+    462          		trace_debug("spi-nor: addr: %x\r\n", cmd->addr);
+    463          	}
+    464          	if (cmd->data_len) {
+    465          		trace_debug("spi-nor: len: 0x%x\r\n", cmd->data_len);
+    466          		trace_debug("spi-nor: buffer: %p\r\n", _bus_exec_buffer[1].data);
+    467          	}
+    468          #endif
+    469          
+    470          	bus_start_transaction(priv->spi.bus);
+   \                     ??_bus_exec_6:
+   \       0xEC   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \       0xF0   0x....'....        BL       bus_start_transaction
+    471          	rc = bus_transfer(priv->spi.bus, priv->spi.spi_dev.chip_select, _bus_exec_buffer, buffers, NULL);
+   \       0xF4   0xE3A0'0000        MOV      R0,#+0
+   \       0xF8   0xE1A0'3006        MOV      R3,R6
+   \       0xFC   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x100   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \      0x104   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \      0x108   0xE1A0'2007        MOV      R2,R7
+   \      0x10C   0x....'....        BL       bus_transfer
+   \      0x110   0xE1A0'5000        MOV      R5,R0
+    472          	bus_wait_transfer(priv->spi.bus);
+   \      0x114   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \      0x118   0x....'....        BL       bus_wait_transfer
+    473          	bus_stop_transaction(priv->spi.bus);
+   \      0x11C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \      0x120   0x....'....        BL       bus_stop_transaction
+    474          
+    475          	return rc;
+   \      0x124   0xE1A0'0005        MOV      R0,R5
+   \      0x128   0xE8BD'81F6        POP      {R1,R2,R4-R8,PC}  ;; return
+   \                     ??_bus_exec_8:
+   \      0x12C   0xE595'0014        LDR      R0,[R5, #+20]
+   \      0x130   0xE350'0000        CMP      R0,#+0
+   \      0x134   0x0A00'0004        BEQ      ??_bus_exec_9
+   \      0x138   0xE595'1018        LDR      R1,[R5, #+24]
+   \      0x13C   0xE587'0010        STR      R0,[R7, #+16]
+   \      0x140   0xE386'0E80        ORR      R0,R6,#0x800
+   \      0x144   0xE587'100C        STR      R1,[R7, #+12]
+   \      0x148   0xEAFF'FFE6        B        ??_bus_exec_7
+   \                     ??_bus_exec_9:
+   \      0x14C   0xE388'1E80        ORR      R1,R8,#0x800
+   \      0x150   0xE3A0'6001        MOV      R6,#+1
+   \      0x154   0xE587'1008        STR      R1,[R7, #+8]
+   \      0x158   0xEAFF'FFE3        B        ??_bus_exec_6
+   \                     ??_bus_exec_4:
+   \      0x15C   0xE3E0'001B        MVN      R0,#+27
+   \      0x160   0xE8BD'81F6        POP      {R1,R2,R4-R8,PC}
+    476          }
+    477          
+
+   \                                 In section .rodata, align 4, keep-with-next
+    478          static const struct spi_ops _spi_bus_ops = {
+   \                     _spi_bus_ops:
+   \        0x0   0x....'....        DC32 _bus_init, _bus_cleanup, _bus_set_freq, _bus_set_mode, _bus_exec
+
+   \              0x....'....  
+
+   \              0x....'....  
+
+   \              0x....'....  
+
+   \              0x....'....
+    479          	.init		= _bus_init,
+    480          	.cleanup	= _bus_cleanup,
+    481          	.set_freq	= _bus_set_freq,
+    482          	.set_mode	= _bus_set_mode,
+    483          	.exec		= _bus_exec,
+    484          };
+    485          
+    486          /*----------------------------------------------------------------------------
+    487           *        Exported Functions
+    488           *----------------------------------------------------------------------------*/
+    489          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    490          int spansion_quad_enable(struct spi_flash *flash)
+    491          {
+   \                     spansion_quad_enable:
+   \        0x0   0xE92D'401C        PUSH     {R2-R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    492          	uint8_t sr[2];
+    493          	int rc;
+    494          
+    495          	/* Keep the current value of the Status Register. */
+    496          	rc = spi_flash_read_sr(flash, &sr[0]);
+   \        0x8   0xE1A0'100D        MOV      R1,SP
+   \        0xC   0x....'....        BL       spi_flash_read_sr
+    497          	if (rc < 0)
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x4A00'000E        BMI      ??spansion_quad_enable_0
+    498          		return rc;
+    499          
+    500          	/* Set the Status and Control/Status 2 Registers. */
+    501          	sr[1] = CR_QE_SPAN;
+   \       0x18   0xE3A0'0002        MOV      R0,#+2
+   \       0x1C   0xE5CD'0001        STRB     R0,[SP, #+1]
+    502          	rc = spi_flash_write_enable(flash);
+   \       0x20   0xE1A0'0004        MOV      R0,R4
+   \       0x24   0x....'....        BL       spi_flash_write_enable
+    503          	rc = rc < 0 ? rc : spi_flash_write_reg(flash, SFLASH_INST_WRITE_SR, sr, 2);
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x4A00'0004        BMI      ??spansion_quad_enable_1
+   \       0x30   0xE3A0'3002        MOV      R3,#+2
+   \       0x34   0xE1A0'200D        MOV      R2,SP
+   \       0x38   0xE3A0'1001        MOV      R1,#+1
+   \       0x3C   0xE1A0'0004        MOV      R0,R4
+   \       0x40   0x....'....        BL       spi_flash_write_reg
+    504          	return rc < 0 ? rc : spi_flash_wait_till_ready(flash);
+   \                     ??spansion_quad_enable_1:
+   \       0x44   0xE350'0000        CMP      R0,#+0
+   \       0x48   0x4A00'0001        BMI      ??spansion_quad_enable_0
+   \       0x4C   0xE1A0'0004        MOV      R0,R4
+   \       0x50   0x....'....        BL       spi_flash_wait_till_ready
+   \                     ??spansion_quad_enable_0:
+   \       0x54   0xE8BD'8016        POP      {R1,R2,R4,PC}    ;; return
+    505          }
+    506          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    507          int spansion_new_quad_enable(struct spi_flash *flash)
+    508          {
+   \                     spansion_new_quad_enable:
+   \        0x0   0xE92D'401C        PUSH     {R2-R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    509          	uint8_t sr[2];
+    510          	int rc;
+    511          
+    512          	/* Check the current Quand Enable bit value. */
+    513          	rc = spi_flash_read_reg(flash, SFLASH_INST_READ_CR, &sr[1], 1);
+   \        0x8   0xE3A0'3001        MOV      R3,#+1
+   \        0xC   0xE28D'2001        ADD      R2,SP,#+1
+   \       0x10   0xE3A0'1035        MOV      R1,#+53
+   \       0x14   0x....'....        BL       spi_flash_read_reg
+    514          	if (rc < 0)
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x4A00'0025        BMI      ??spansion_new_quad_enable_0
+    515          		return rc;
+    516          
+    517          	if (sr[1] & CR_QE_SPAN)
+   \       0x20   0xE5DD'0001        LDRB     R0,[SP, #+1]
+   \       0x24   0xE310'0002        TST      R0,#0x2
+   \       0x28   0x1A00'0020        BNE      ??spansion_new_quad_enable_1
+    518          		return 0;
+    519          
+    520          	/* Keep the current value of the Status Register. */
+    521          	rc = spi_flash_read_sr(flash, &sr[0]);
+   \       0x2C   0xE1A0'100D        MOV      R1,SP
+   \       0x30   0xE1A0'0004        MOV      R0,R4
+   \       0x34   0x....'....        BL       spi_flash_read_sr
+    522          	if (rc < 0)
+   \       0x38   0xE350'0000        CMP      R0,#+0
+   \       0x3C   0x4A00'001D        BMI      ??spansion_new_quad_enable_0
+    523          		return rc;
+    524          
+    525          	/* Set the Status and Control/Status 2 Registers. */
+    526          	sr[1] |= CR_QE_SPAN;
+   \       0x40   0xE5DD'0001        LDRB     R0,[SP, #+1]
+   \       0x44   0xE380'1002        ORR      R1,R0,#0x2
+    527          	rc = spi_flash_write_enable(flash);
+   \       0x48   0xE1A0'0004        MOV      R0,R4
+   \       0x4C   0xE5CD'1001        STRB     R1,[SP, #+1]
+   \       0x50   0x....'....        BL       spi_flash_write_enable
+    528          	rc = rc < 0 ? rc : spi_flash_write_reg(flash, SFLASH_INST_WRITE_SR, sr, 2);
+   \       0x54   0xE350'0000        CMP      R0,#+0
+   \       0x58   0x4A00'0004        BMI      ??spansion_new_quad_enable_2
+   \       0x5C   0xE3A0'3002        MOV      R3,#+2
+   \       0x60   0xE1A0'200D        MOV      R2,SP
+   \       0x64   0xE3A0'1001        MOV      R1,#+1
+   \       0x68   0xE1A0'0004        MOV      R0,R4
+   \       0x6C   0x....'....        BL       spi_flash_write_reg
+    529          	rc = rc < 0 ? rc : spi_flash_wait_till_ready(flash);
+   \                     ??spansion_new_quad_enable_2:
+   \       0x70   0xE350'0000        CMP      R0,#+0
+   \       0x74   0x4A00'0001        BMI      ??spansion_new_quad_enable_3
+   \       0x78   0xE1A0'0004        MOV      R0,R4
+   \       0x7C   0x....'....        BL       spi_flash_wait_till_ready
+    530          	if (rc < 0)
+   \                     ??spansion_new_quad_enable_3:
+   \       0x80   0xE350'0000        CMP      R0,#+0
+   \       0x84   0x4A00'000B        BMI      ??spansion_new_quad_enable_0
+    531          		return rc;
+    532          
+    533          	/* Read back and check. */
+    534          	rc = spi_flash_read_reg(flash, SFLASH_INST_READ_CR, &sr[1], 1);
+   \       0x88   0xE3A0'3001        MOV      R3,#+1
+   \       0x8C   0xE28D'2001        ADD      R2,SP,#+1
+   \       0x90   0xE3A0'1035        MOV      R1,#+53
+   \       0x94   0xE1A0'0004        MOV      R0,R4
+   \       0x98   0x....'....        BL       spi_flash_read_reg
+    535          	if (rc < 0)
+   \       0x9C   0xE350'0000        CMP      R0,#+0
+   \       0xA0   0x4A00'0004        BMI      ??spansion_new_quad_enable_0
+    536          		return rc;
+    537          
+    538          	return (sr[1] & CR_QE_SPAN) ? 0 : -1;
+   \       0xA4   0xE5DD'0001        LDRB     R0,[SP, #+1]
+   \       0xA8   0xE310'0002        TST      R0,#0x2
+   \       0xAC   0x0A00'0000        BEQ      ??spansion_new_quad_enable_4
+   \                     ??spansion_new_quad_enable_1:
+   \       0xB0   0x....'....        B        ?Subroutine2
+   \                     ??spansion_new_quad_enable_4:
+   \       0xB4   0xE3E0'0000        MVN      R0,#+0
+   \                     ??spansion_new_quad_enable_0:
+   \       0xB8   0xE8BD'8016        POP      {R1,R2,R4,PC}    ;; return
+    539          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0xE8BD'8016        POP      {R1,R2,R4,PC}
+    540          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    541          int macronix_quad_enable(struct spi_flash *flash)
+    542          {
+   \                     macronix_quad_enable:
+   \        0x0   0xE92D'401C        PUSH     {R2-R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    543          	uint8_t sr;
+    544          	int rc;
+    545          
+    546          	/* Check the current Quand Enable bit value. */
+    547          	rc = spi_flash_read_sr(flash, &sr);
+   \        0x8   0xE1A0'100D        MOV      R1,SP
+   \        0xC   0x....'....        BL       spi_flash_read_sr
+    548          	if (rc < 0)
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x4A00'001D        BMI      ??macronix_quad_enable_0
+    549          		return rc;
+    550          
+    551          	if (sr & SR_QE_MX)
+   \       0x18   0xE5DD'1000        LDRB     R1,[SP, #+0]
+   \       0x1C   0xE311'0040        TST      R1,#0x40
+   \       0x20   0x1A00'0018        BNE      ??macronix_quad_enable_1
+    552          		return 0;
+    553          
+    554          	/* Set the Status and Control/Status 2 Registers. */
+    555          	sr |= SR_QE_MX;
+   \       0x24   0xE381'2040        ORR      R2,R1,#0x40
+    556          	rc = spi_flash_write_enable(flash);
+   \       0x28   0xE1A0'0004        MOV      R0,R4
+   \       0x2C   0xE5CD'2000        STRB     R2,[SP, #+0]
+   \       0x30   0x....'....        BL       spi_flash_write_enable
+    557          	rc = rc < 0 ? rc : spi_flash_write_reg(flash, SFLASH_INST_WRITE_SR, &sr, 1);
+   \       0x34   0xE350'0000        CMP      R0,#+0
+   \       0x38   0x4A00'0004        BMI      ??macronix_quad_enable_2
+   \       0x3C   0xE3A0'3001        MOV      R3,#+1
+   \       0x40   0xE1A0'200D        MOV      R2,SP
+   \       0x44   0xE3A0'1001        MOV      R1,#+1
+   \       0x48   0xE1A0'0004        MOV      R0,R4
+   \       0x4C   0x....'....        BL       spi_flash_write_reg
+    558          	rc = rc < 0 ? rc : spi_flash_wait_till_ready(flash);
+   \                     ??macronix_quad_enable_2:
+   \       0x50   0xE350'0000        CMP      R0,#+0
+   \       0x54   0x4A00'0001        BMI      ??macronix_quad_enable_3
+   \       0x58   0xE1A0'0004        MOV      R0,R4
+   \       0x5C   0x....'....        BL       spi_flash_wait_till_ready
+    559          	if (rc < 0)
+   \                     ??macronix_quad_enable_3:
+   \       0x60   0xE350'0000        CMP      R0,#+0
+   \       0x64   0x4A00'0009        BMI      ??macronix_quad_enable_0
+    560          		return rc;
+    561          
+    562          	/* Read back and check. */
+    563          	rc = spi_flash_read_sr(flash, &sr);
+   \       0x68   0xE1A0'100D        MOV      R1,SP
+   \       0x6C   0xE1A0'0004        MOV      R0,R4
+   \       0x70   0x....'....        BL       spi_flash_read_sr
+    564          	if (rc < 0)
+   \       0x74   0xE350'0000        CMP      R0,#+0
+   \       0x78   0x4A00'0004        BMI      ??macronix_quad_enable_0
+    565          		return rc;
+    566          
+    567          	return (sr & SR_QE_MX) ? 0 : -1;
+   \       0x7C   0xE5DD'1000        LDRB     R1,[SP, #+0]
+   \       0x80   0xE311'0040        TST      R1,#0x40
+   \       0x84   0x0A00'0000        BEQ      ??macronix_quad_enable_4
+   \                     ??macronix_quad_enable_1:
+   \       0x88   0x....'....        B        ?Subroutine2
+   \                     ??macronix_quad_enable_4:
+   \       0x8C   0xE3E0'0000        MVN      R0,#+0
+   \                     ??macronix_quad_enable_0:
+   \       0x90   0xE8BD'8016        POP      {R1,R2,R4,PC}    ;; return
+    568          }
+    569          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    570          int sr2_bit7_quad_enable(struct spi_flash *flash)
+    571          {
+   \                     sr2_bit7_quad_enable:
+   \        0x0   0xE92D'401C        PUSH     {R2-R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    572          	uint8_t sr2;
+    573          	int rc;
+    574          
+    575          	/* Check the current Quand Enable bit value. */
+    576          	rc = spi_flash_read_reg(flash, SFLASH_INST_READ_SR2, &sr2, 1);
+   \        0x8   0xE3A0'3001        MOV      R3,#+1
+   \        0xC   0xE1A0'200D        MOV      R2,SP
+   \       0x10   0xE3A0'103F        MOV      R1,#+63
+   \       0x14   0x....'....        BL       spi_flash_read_reg
+    577          	if (rc < 0)
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x4A00'001F        BMI      ??sr2_bit7_quad_enable_0
+    578          		return rc;
+    579          
+    580          	if (sr2 & SR2_QE_BIT7)
+   \       0x20   0xE5DD'1000        LDRB     R1,[SP, #+0]
+   \       0x24   0xE311'0080        TST      R1,#0x80
+   \       0x28   0x1A00'001A        BNE      ??sr2_bit7_quad_enable_1
+    581          		return 0;
+    582          
+    583          	/* Set the Status and Control/Status 2 Registers. */
+    584          	sr2 |= SR2_QE_BIT7;
+   \       0x2C   0xE381'2080        ORR      R2,R1,#0x80
+    585          	rc = spi_flash_write_enable(flash);
+   \       0x30   0xE1A0'0004        MOV      R0,R4
+   \       0x34   0xE5CD'2000        STRB     R2,[SP, #+0]
+   \       0x38   0x....'....        BL       spi_flash_write_enable
+    586          	rc = rc < 0 ? rc : spi_flash_write_reg(flash, SFLASH_INST_WRITE_SR2, &sr2, 1);
+   \       0x3C   0xE350'0000        CMP      R0,#+0
+   \       0x40   0x4A00'0004        BMI      ??sr2_bit7_quad_enable_2
+   \       0x44   0xE3A0'3001        MOV      R3,#+1
+   \       0x48   0xE1A0'200D        MOV      R2,SP
+   \       0x4C   0xE3A0'103E        MOV      R1,#+62
+   \       0x50   0xE1A0'0004        MOV      R0,R4
+   \       0x54   0x....'....        BL       spi_flash_write_reg
+    587          	rc = rc < 0 ? rc : spi_flash_wait_till_ready(flash);
+   \                     ??sr2_bit7_quad_enable_2:
+   \       0x58   0xE350'0000        CMP      R0,#+0
+   \       0x5C   0x4A00'0001        BMI      ??sr2_bit7_quad_enable_3
+   \       0x60   0xE1A0'0004        MOV      R0,R4
+   \       0x64   0x....'....        BL       spi_flash_wait_till_ready
+    588          	if (rc < 0)
+   \                     ??sr2_bit7_quad_enable_3:
+   \       0x68   0xE350'0000        CMP      R0,#+0
+   \       0x6C   0x4A00'000B        BMI      ??sr2_bit7_quad_enable_0
+    589          		return rc;
+    590          
+    591          	/* Read back and check. */
+    592          	rc = spi_flash_read_reg(flash, SFLASH_INST_READ_SR2, &sr2, 1);
+   \       0x70   0xE3A0'3001        MOV      R3,#+1
+   \       0x74   0xE1A0'200D        MOV      R2,SP
+   \       0x78   0xE3A0'103F        MOV      R1,#+63
+   \       0x7C   0xE1A0'0004        MOV      R0,R4
+   \       0x80   0x....'....        BL       spi_flash_read_reg
+    593          	if (rc < 0)
+   \       0x84   0xE350'0000        CMP      R0,#+0
+   \       0x88   0x4A00'0004        BMI      ??sr2_bit7_quad_enable_0
+    594          		return rc;
+    595          
+    596          	return (sr2 & SR2_QE_BIT7) ? 0 : -1;
+   \       0x8C   0xE5DD'1000        LDRB     R1,[SP, #+0]
+   \       0x90   0xE311'0080        TST      R1,#0x80
+   \       0x94   0x0A00'0000        BEQ      ??sr2_bit7_quad_enable_4
+   \                     ??sr2_bit7_quad_enable_1:
+   \       0x98   0x....'....        B        ?Subroutine2
+   \                     ??sr2_bit7_quad_enable_4:
+   \       0x9C   0xE3E0'0000        MVN      R0,#+0
+   \                     ??sr2_bit7_quad_enable_0:
+   \       0xA0   0xE8BD'8016        POP      {R1,R2,R4,PC}    ;; return
+    597          }
+    598          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    599          int micron_enable_0_4_4(struct spi_flash *flash, bool enable)
+    600          {
+   \                     micron_enable_0_4_4:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    601          	uint8_t vcr, mask, value;
+    602          	int rc;
+    603          
+    604          	mask = VCR_XIP;
+    605          	value = (enable) ? 0 : VCR_XIP;
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0x13A0'5000        MOVNE    R5,#+0
+    606          
+    607          	/* Check the current XIP bit value. */
+    608          	rc = spi_flash_read_reg(flash, SFLASH_INST_READ_VCR, &vcr, 1);
+   \       0x10   0xE3A0'3001        MOV      R3,#+1
+   \       0x14   0x03A0'5008        MOVEQ    R5,#+8
+   \       0x18   0xE1A0'200D        MOV      R2,SP
+   \       0x1C   0xE3A0'1085        MOV      R1,#+133
+   \       0x20   0x....'....        BL       spi_flash_read_reg
+    609          	if (rc < 0)
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x4A00'0023        BMI      ??micron_enable_0_4_4_0
+    610          		return rc;
+    611          
+    612          	if ((vcr & mask) == value)
+   \       0x2C   0xE5DD'1000        LDRB     R1,[SP, #+0]
+   \       0x30   0xE201'2008        AND      R2,R1,#0x8
+   \       0x34   0xE152'0005        CMP      R2,R5
+   \       0x38   0x0A00'001C        BEQ      ??micron_enable_0_4_4_1
+    613          		return 0;
+    614          
+    615          	/* Update the XIP bit value. */
+    616          	vcr = (vcr & ~mask) | value;
+   \       0x3C   0xE201'20F7        AND      R2,R1,#0xF7
+    617          	rc = spi_flash_write_enable(flash);
+   \       0x40   0xE1A0'0004        MOV      R0,R4
+   \       0x44   0xE185'2002        ORR      R2,R5,R2
+   \       0x48   0xE5CD'2000        STRB     R2,[SP, #+0]
+   \       0x4C   0x....'....        BL       spi_flash_write_enable
+    618          	rc = rc < 0 ? rc : spi_flash_write_reg(flash, SFLASH_INST_WRITE_VCR, &vcr, 1);
+   \       0x50   0xE350'0000        CMP      R0,#+0
+   \       0x54   0x4A00'0004        BMI      ??micron_enable_0_4_4_2
+   \       0x58   0xE3A0'3001        MOV      R3,#+1
+   \       0x5C   0xE1A0'200D        MOV      R2,SP
+   \       0x60   0xE3A0'1081        MOV      R1,#+129
+   \       0x64   0xE1A0'0004        MOV      R0,R4
+   \       0x68   0x....'....        BL       spi_flash_write_reg
+    619          	rc = rc < 0 ? rc : spi_flash_wait_till_ready(flash);
+   \                     ??micron_enable_0_4_4_2:
+   \       0x6C   0xE350'0000        CMP      R0,#+0
+   \       0x70   0x4A00'0001        BMI      ??micron_enable_0_4_4_3
+   \       0x74   0xE1A0'0004        MOV      R0,R4
+   \       0x78   0x....'....        BL       spi_flash_wait_till_ready
+    620          	if (rc < 0)
+   \                     ??micron_enable_0_4_4_3:
+   \       0x7C   0xE350'0000        CMP      R0,#+0
+   \       0x80   0x4A00'000D        BMI      ??micron_enable_0_4_4_0
+    621          		return rc;
+    622          
+    623          	/* Read back and check. */
+    624          	rc = spi_flash_read_reg(flash, SFLASH_INST_READ_VCR, &vcr, 1);
+   \       0x84   0xE3A0'3001        MOV      R3,#+1
+   \       0x88   0xE1A0'200D        MOV      R2,SP
+   \       0x8C   0xE3A0'1085        MOV      R1,#+133
+   \       0x90   0xE1A0'0004        MOV      R0,R4
+   \       0x94   0x....'....        BL       spi_flash_read_reg
+    625          	if (rc < 0)
+   \       0x98   0xE350'0000        CMP      R0,#+0
+   \       0x9C   0x4A00'0006        BMI      ??micron_enable_0_4_4_0
+    626          		return rc;
+    627          
+    628          	return ((vcr & mask) == value) ? 0 : -1;
+   \       0xA0   0xE5DD'1000        LDRB     R1,[SP, #+0]
+   \       0xA4   0xE201'2008        AND      R2,R1,#0x8
+   \       0xA8   0xE152'0005        CMP      R2,R5
+   \       0xAC   0x1A00'0001        BNE      ??micron_enable_0_4_4_4
+   \                     ??micron_enable_0_4_4_1:
+   \       0xB0   0xE3A0'0000        MOV      R0,#+0
+   \       0xB4   0xE8BD'8032        POP      {R1,R4,R5,PC}
+   \                     ??micron_enable_0_4_4_4:
+   \       0xB8   0xE3E0'0000        MVN      R0,#+0
+   \                     ??micron_enable_0_4_4_0:
+   \       0xBC   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    629          }
+    630          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    631          int at25_set_protection(struct spi_flash *flash, bool protect)
+    632          {
+   \                     at25_set_protection:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    633          	uint8_t sr;
+    634          	int rc;
+    635          
+    636          	rc = spi_flash_read_sr(flash, &sr);
+   \        0xC   0xE1A0'100D        MOV      R1,SP
+   \       0x10   0x....'....        BL       spi_flash_read_sr
+    637          	if (rc < 0)
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x4A00'0010        BMI      ??at25_set_protection_0
+    638          		return rc;
+    639          #ifdef SPI_NOR_VERBOSE_DEBUG
+    640          	trace_info("spi-nor: protection: %s\r\n", sr & SR_SWP ? "on" : "off");
+    641          #endif
+    642          
+    643          	rc = spi_flash_write_enable(flash);
+   \       0x1C   0xE1A0'0004        MOV      R0,R4
+   \       0x20   0x....'....        BL       spi_flash_write_enable
+    644          	if (rc < 0)
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x4A00'000C        BMI      ??at25_set_protection_0
+    645          		return rc;
+    646          
+    647          	if (protect) {
+   \       0x2C   0xE355'0000        CMP      R5,#+0
+   \       0x30   0xE5DD'1000        LDRB     R1,[SP, #+0]
+   \       0x34   0x0A00'000A        BEQ      ??at25_set_protection_1
+    648          #ifdef SPI_NOR_VERBOSE_DEBUG
+    649          		trace_info("spi-nor: lock all\r\n");
+    650          #endif
+    651          		/* Perform a global protect command */
+    652          		sr |= SR_SWP_PROTECT_ALL;
+   \       0x38   0xE381'200C        ORR      R2,R1,#0xC
+    653          		rc = spi_flash_write_reg(flash, SFLASH_INST_WRITE_SR, &sr, 1);
+   \       0x3C   0xE3A0'3001        MOV      R3,#+1
+   \       0x40   0xE5CD'2000        STRB     R2,[SP, #+0]
+   \       0x44   0xE1A0'200D        MOV      R2,SP
+   \       0x48   0xE3A0'1001        MOV      R1,#+1
+   \       0x4C   0xE1A0'0004        MOV      R0,R4
+   \       0x50   0x....'....        BL       spi_flash_write_reg
+    654          		if (rc < 0)
+   \       0x54   0xE350'0000        CMP      R0,#+0
+   \       0x58   0x4A00'0000        BMI      ??at25_set_protection_0
+    655          			return rc;
+    656          	} else {
+    657          #ifdef SPI_NOR_VERBOSE_DEBUG
+    658          		trace_info("spi-nor: unlock all\r\n");
+    659          #endif
+    660          		/* Get the status register value to check the current protection */
+    661          		if ((sr & SR_SWP) == SR_SWP_PROTECT_NONE)
+    662          			return 0;
+    663          
+    664          		/* Perform a global unprotect command */
+    665          		sr = 0;
+    666          		rc = spi_flash_write_reg(flash, SFLASH_INST_WRITE_SR, &sr, 1);
+    667          		if (rc < 0)
+    668          			return rc;
+    669          
+    670          		/* Check the new status */
+    671          		rc = spi_flash_read_sr(flash, &sr);
+    672          		if (rc < 0)
+    673          			return rc;
+    674          		if (sr & (SR_SPRL_LOCKED | SR_SWP))
+    675          			return -EPERM;
+    676          	}
+    677          
+    678          #ifdef SPI_NOR_VERBOSE_DEBUG
+    679          	trace_info("spi-nor: protection: %s\r\n", sr & SR_SWP ? "on" : "off");
+    680          #endif
+    681          
+    682          	return 0;
+   \                     ??at25_set_protection_2:
+   \       0x5C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??at25_set_protection_0:
+   \       0x60   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+   \                     ??at25_set_protection_1:
+   \       0x64   0xE311'000C        TST      R1,#0xC
+   \       0x68   0x0AFF'FFFB        BEQ      ??at25_set_protection_2
+   \       0x6C   0xE3A0'2000        MOV      R2,#+0
+   \       0x70   0xE3A0'3001        MOV      R3,#+1
+   \       0x74   0xE5CD'2000        STRB     R2,[SP, #+0]
+   \       0x78   0xE1A0'200D        MOV      R2,SP
+   \       0x7C   0xE3A0'1001        MOV      R1,#+1
+   \       0x80   0xE1A0'0004        MOV      R0,R4
+   \       0x84   0x....'....        BL       spi_flash_write_reg
+   \       0x88   0xE350'0000        CMP      R0,#+0
+   \       0x8C   0x4AFF'FFF3        BMI      ??at25_set_protection_0
+   \       0x90   0xE1A0'100D        MOV      R1,SP
+   \       0x94   0xE1A0'0004        MOV      R0,R4
+   \       0x98   0x....'....        BL       spi_flash_read_sr
+   \       0x9C   0xE350'0000        CMP      R0,#+0
+   \       0xA0   0x4AFF'FFEE        BMI      ??at25_set_protection_0
+   \       0xA4   0xE5DD'1000        LDRB     R1,[SP, #+0]
+   \       0xA8   0xE311'008C        TST      R1,#0x8C
+   \       0xAC   0x0AFF'FFEA        BEQ      ??at25_set_protection_2
+   \       0xB0   0xE3E0'0042        MVN      R0,#+66
+   \       0xB4   0xE8BD'8032        POP      {R1,R4,R5,PC}
+    683          }
+    684          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    685          int spi_nor_configure(struct spi_flash *flash, const struct spi_flash_cfg *cfg)
+    686          {
+   \                     spi_nor_configure:
+   \        0x0   0xE92D'47FC        PUSH     {R2-R10,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    687          	int rc;
+    688          
+    689          	memset(flash, 0, sizeof(struct spi_flash));
+   \        0xC   0xE3A0'10C0        MOV      R1,#+192
+   \       0x10   0x....'....        BL       __aeabi_memclr4
+    690          
+    691          	switch (cfg->type) {
+   \       0x14   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x18   0xE350'0001        CMP      R0,#+1
+   \       0x1C   0x0A00'0002        BEQ      ??spi_nor_configure_0
+   \       0x20   0xE350'0002        CMP      R0,#+2
+   \       0x24   0x0A00'0013        BEQ      ??spi_nor_configure_1
+   \       0x28   0xEA00'0016        B        ??spi_nor_configure_2
+    692          #ifdef CONFIG_HAVE_SPI_BUS
+    693          	case SPI_FLASH_TYPE_SPI:
+    694          		/* SPI bus already initialized in board_cfg_spi_bus() */
+    695          		flash->ops = &_spi_bus_ops;
+   \                     ??spi_nor_configure_0:
+   \       0x2C   0x....'....        LDR      R2,??DataTable7_1
+   \       0x30   0xE584'20A0        STR      R2,[R4, #+160]
+    696          		flash->priv.spi = cfg->spi.bus_cfg;
+   \       0x34   0xE285'300C        ADD      R3,R5,#+12
+    697          		flash->hwcaps.mask = (SFLASH_HWCAPS_READ | SFLASH_HWCAPS_READ_FAST | SFLASH_HWCAPS_PP);
+   \       0x38   0xE3A0'A003        MOV      R10,#+3
+   \       0x3C   0xE893'53C0        LDM      R3,{R6-R9,R12,LR}
+   \       0x40   0xE884'53C0        STM      R4,{R6-R9,R12,LR}
+   \       0x44   0xE38A'AB40        ORR      R10,R10,#0x10000
+   \       0x48   0xE584'A018        STR      R10,[R4, #+24]
+    698          		break;
+    699          #endif
+    700          #ifdef CONFIG_HAVE_QSPI
+    701          	case SPI_FLASH_TYPE_QSPI:
+    702          		qspi_configure(flash, cfg);
+    703          		break;
+    704          #endif
+    705          	default:
+    706          		return -EINVAL;
+    707          	}
+    708          
+    709          	/* Init the SPI controller. */
+    710          	rc = spi_flash_init(flash);
+   \                     ??spi_nor_configure_3:
+   \       0x4C   0xE1A0'0004        MOV      R0,R4
+   \       0x50   0x....'....        BL       spi_flash_init
+   \       0x54   0xE1B0'6000        MOVS     R6,R0
+    711          	if (rc < 0) {
+   \       0x58   0x5A00'000C        BPL      ??spi_nor_configure_4
+    712          		trace_info("SF: Fail to initialize spi\r\n");
+   \       0x5C   0x....'....        LDR      R0,??DataTable7_2
+   \       0x60   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x64   0xE351'0004        CMP      R1,#+4
+   \       0x68   0x3A00'0012        BCC      ??spi_nor_configure_5
+   \       0x6C   0x....'....        LDR      R0,??DataTable7_3
+   \       0x70   0x....'....        BL       printf
+   \       0x74   0xEA00'000F        B        ??spi_nor_configure_5
+    713          		return rc;
+    714          	}
+   \                     ??spi_nor_configure_1:
+   \       0x78   0xE1A0'1005        MOV      R1,R5
+   \       0x7C   0xE1A0'0004        MOV      R0,R4
+   \       0x80   0x....'....        BL       qspi_configure
+   \       0x84   0xEAFF'FFF0        B        ??spi_nor_configure_3
+   \                     ??spi_nor_configure_2:
+   \       0x88   0xE3E0'001B        MVN      R0,#+27
+   \       0x8C   0xE8BD'87F6        POP      {R1,R2,R4-R10,PC}
+    715          
+    716          	/* Set the SPI mode. */
+    717          	rc = spi_flash_set_mode(flash, cfg->mode);
+   \                     ??spi_nor_configure_4:
+   \       0x90   0xE5D5'1008        LDRB     R1,[R5, #+8]
+   \       0x94   0xE1A0'0004        MOV      R0,R4
+   \       0x98   0x....'....        BL       spi_flash_set_mode
+   \       0x9C   0xE1B0'6000        MOVS     R6,R0
+    718          	if (rc < 0)
+   \       0xA0   0x4A00'0004        BMI      ??spi_nor_configure_5
+    719          		return rc;
+    720          
+    721          	/* Set the new baudrate. */
+    722          	rc = spi_flash_set_freq(flash, cfg->baudrate);
+   \       0xA4   0xE595'1004        LDR      R1,[R5, #+4]
+   \       0xA8   0xE1A0'0004        MOV      R0,R4
+   \       0xAC   0x....'....        BL       spi_flash_set_freq
+   \       0xB0   0xE1B0'6000        MOVS     R6,R0
+    723          	if (rc < 0)
+   \       0xB4   0x5A00'0001        BPL      ??spi_nor_configure_6
+    724          		return rc;
+   \                     ??spi_nor_configure_5:
+   \       0xB8   0xE1A0'0006        MOV      R0,R6
+   \       0xBC   0xE8BD'87F6        POP      {R1,R2,R4-R10,PC}
+    725          
+    726          	/* Probe the SPI flash memory. */
+    727          	rc = spi_nor_probe(flash);
+   \                     ??spi_nor_configure_6:
+   \       0xC0   0xE594'00A0        LDR      R0,[R4, #+160]
+   \       0xC4   0xE350'0000        CMP      R0,#+0
+   \       0xC8   0x1A00'000A        BNE      ??spi_nor_configure_7
+   \       0xCC   0xE3E0'501B        MVN      R5,#+27
+    728          	if (rc < 0) {
+    729          		trace_info("SF: Fail to probe SPI flash\r\n");
+   \                     ??spi_nor_configure_8:
+   \       0xD0   0x....'....        LDR      R1,??DataTable7_2
+   \       0xD4   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0xD8   0xE350'0004        CMP      R0,#+4
+   \       0xDC   0x3A00'0001        BCC      ??spi_nor_configure_9
+   \       0xE0   0x....'....        LDR      R0,??DataTable7_4
+   \       0xE4   0x....'....        BL       printf
+    730          		spi_flash_cleanup(flash);
+   \                     ??spi_nor_configure_9:
+   \       0xE8   0xE1A0'0004        MOV      R0,R4
+   \       0xEC   0x....'....        BL       spi_flash_cleanup
+    731          		return rc;
+   \       0xF0   0xE1A0'0005        MOV      R0,R5
+   \       0xF4   0xE8BD'87F6        POP      {R1,R2,R4-R10,PC}  ;; return
+    732          	}
+   \                     ??spi_nor_configure_7:
+   \       0xF8   0xE594'0018        LDR      R0,[R4, #+24]
+   \       0xFC   0xE3A0'1080        MOV      R1,#+128
+   \      0x100   0xE381'1A80        ORR      R1,R1,#0x80000
+   \      0x104   0xE111'0000        TST      R1,R0
+   \      0x108   0x0A00'0003        BEQ      ??spi_nor_configure_10
+   \      0x10C   0x....'....        LDR      R2,??DataTable7_5  ;; 0x40404
+   \      0x110   0xE584'2028        STR      R2,[R4, #+40]
+   \      0x114   0xE1A0'0004        MOV      R0,R4
+   \      0x118   0x....'....        BL       spi_flash_reset
+   \                     ??spi_nor_configure_10:
+   \      0x11C   0x....'....        LDR      R8,??DataTable7_6  ;; 0x10101
+   \      0x120   0xE584'8028        STR      R8,[R4, #+40]
+   \      0x124   0xE1A0'0004        MOV      R0,R4
+   \      0x128   0xE3A0'5000        MOV      R5,#+0
+   \      0x12C   0x....'....        BL       spi_flash_reset
+   \      0x130   0xE3A0'0032        MOV      R0,#+50
+   \      0x134   0x....'....        LDR      R6,??DataTable7_7
+   \      0x138   0x....'....        BL       usleep
+   \      0x13C   0x....'....        LDR      R0,??DataTable7_8
+   \      0x140   0x....'....        LDR      R1,??DataTable7_9
+   \      0x144   0xE584'00A8        STR      R0,[R4, #+168]
+   \      0x148   0xE584'10AC        STR      R1,[R4, #+172]
+   \      0x14C   0x....'....        LDR      R2,??DataTable7_10
+   \      0x150   0xE3A0'00FF        MOV      R0,#+255
+   \      0x154   0xE3A0'10A5        MOV      R1,#+165
+   \      0x158   0xE584'20B0        STR      R2,[R4, #+176]
+   \      0x15C   0xE5C4'002F        STRB     R0,[R4, #+47]
+   \      0x160   0xE5C4'1030        STRB     R1,[R4, #+48]
+   \      0x164   0xE584'8020        STR      R8,[R4, #+32]
+   \      0x168   0xE584'8024        STR      R8,[R4, #+36]
+   \      0x16C   0xE584'501C        STR      R5,[R4, #+28]
+   \      0x170   0xE3A0'3006        MOV      R3,#+6
+   \      0x174   0xE284'2033        ADD      R2,R4,#+51
+   \      0x178   0xE3A0'109F        MOV      R1,#+159
+   \      0x17C   0xE1A0'0004        MOV      R0,R4
+   \      0x180   0x....'....        BL       spi_flash_read_reg
+   \      0x184   0xE350'0000        CMP      R0,#+0
+   \      0x188   0x4A00'002B        BMI      ??spi_nor_configure_11
+   \      0x18C   0xE1A0'000D        MOV      R0,SP
+   \      0x190   0xE284'2033        ADD      R2,R4,#+51
+   \      0x194   0xE3A0'3003        MOV      R3,#+3
+   \                     ??spi_nor_configure_12:
+   \      0x198   0xE5D2'1000        LDRB     R1,[R2, #+0]
+   \      0x19C   0xE201'C00F        AND      R12,R1,#0xF
+   \      0x1A0   0xE282'2001        ADD      R2,R2,#+1
+   \      0x1A4   0xE1A0'E221        LSR      LR,R1,#+4
+   \      0x1A8   0xE280'1001        ADD      R1,R0,#+1
+   \      0x1AC   0xE35E'000A        CMP      LR,#+10
+   \      0x1B0   0xB28E'E030        ADDLT    LR,LR,#+48
+   \      0x1B4   0xA28E'E057        ADDGE    LR,LR,#+87
+   \      0x1B8   0xE35C'000A        CMP      R12,#+10
+   \      0x1BC   0xE5C0'E000        STRB     LR,[R0, #+0]
+   \      0x1C0   0xB28C'C030        ADDLT    R12,R12,#+48
+   \      0x1C4   0xE281'0001        ADD      R0,R1,#+1
+   \      0x1C8   0xA28C'C057        ADDGE    R12,R12,#+87
+   \      0x1CC   0xE253'3001        SUBS     R3,R3,#+1
+   \      0x1D0   0xE5C1'C000        STRB     R12,[R1, #+0]
+   \      0x1D4   0x1AFF'FFEF        BNE      ??spi_nor_configure_12
+   \      0x1D8   0x....'....        LDR      R9,??DataTable7_2
+   \      0x1DC   0xE5C0'5000        STRB     R5,[R0, #+0]
+   \      0x1E0   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x1E4   0xE350'0004        CMP      R0,#+4
+   \      0x1E8   0x3A00'0002        BCC      ??spi_nor_configure_13
+   \      0x1EC   0xE1A0'100D        MOV      R1,SP
+   \      0x1F0   0x....'....        LDR      R0,??DataTable7_11
+   \      0x1F4   0x....'....        BL       printf
+   \                     ??spi_nor_configure_13:
+   \      0x1F8   0x....'....        LDR      R7,??DataTable7_12
+   \      0x1FC   0xEA00'0000        B        ??spi_nor_configure_14
+   \                     ??spi_nor_configure_15:
+   \      0x200   0xE287'701C        ADD      R7,R7,#+28
+   \                     ??spi_nor_configure_14:
+   \      0x204   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x208   0xE350'0000        CMP      R0,#+0
+   \      0x20C   0x0A00'000A        BEQ      ??spi_nor_configure_11
+   \      0x210   0xE5D7'200A        LDRB     R2,[R7, #+10]
+   \      0x214   0xE284'1033        ADD      R1,R4,#+51
+   \      0x218   0xE287'0004        ADD      R0,R7,#+4
+   \      0x21C   0x....'....        BL       memcmp
+   \      0x220   0xE350'0000        CMP      R0,#+0
+   \      0x224   0x1AFF'FFF5        BNE      ??spi_nor_configure_15
+   \      0x228   0xE357'0000        CMP      R7,#+0
+   \      0x22C   0x1A00'000D        BNE      ??spi_nor_configure_16
+   \      0x230   0x....'....        LDR      R0,??DataTable7_13
+   \      0x234   0xE584'003C        STR      R0,[R4, #+60]
+   \      0x238   0xEA00'0002        B        ??spi_nor_configure_17
+   \                     ??spi_nor_configure_11:
+   \      0x23C   0x....'....        LDR      R1,??DataTable7_13
+   \      0x240   0xE3A0'7000        MOV      R7,#+0
+   \      0x244   0xE584'103C        STR      R1,[R4, #+60]
+   \                     ??spi_nor_configure_17:
+   \      0x248   0xE3A0'1070        MOV      R1,#+112
+   \      0x24C   0xE1A0'0006        MOV      R0,R6
+   \      0x250   0x....'....        BL       __aeabi_memclr4
+   \      0x254   0xE357'0000        CMP      R7,#+0
+   \      0x258   0x1A00'003F        BNE      ??spi_nor_configure_18
+   \      0x25C   0xE3A0'0F40        MOV      R0,#+256
+   \      0x260   0xE584'0044        STR      R0,[R4, #+68]
+   \      0x264   0xEA00'0045        B        ??spi_nor_configure_19
+   \                     ??spi_nor_configure_16:
+   \      0x268   0xE1D7'01B6        LDRH     R0,[R7, #+22]
+   \      0x26C   0xE310'0004        TST      R0,#0x4
+   \      0x270   0x1594'101C        LDRNE    R1,[R4, #+28]
+   \      0x274   0x1381'2001        ORRNE    R2,R1,#0x1
+   \      0x278   0x1584'201C        STRNE    R2,[R4, #+28]
+   \      0x27C   0xE310'0040        TST      R0,#0x40
+   \      0x280   0x0A00'0013        BEQ      ??spi_nor_configure_20
+   \      0x284   0xE1A0'0004        MOV      R0,R4
+   \      0x288   0x....'....        BL       spi_flash_write_enable
+   \      0x28C   0xE350'0000        CMP      R0,#+0
+   \      0x290   0x4A00'0004        BMI      ??spi_nor_configure_21
+   \      0x294   0xE3A0'3000        MOV      R3,#+0
+   \      0x298   0xE3A0'2000        MOV      R2,#+0
+   \      0x29C   0xE3A0'1098        MOV      R1,#+152
+   \      0x2A0   0xE1A0'0004        MOV      R0,R4
+   \      0x2A4   0x....'....        BL       spi_flash_write_reg
+   \                     ??spi_nor_configure_21:
+   \      0x2A8   0xE350'0000        CMP      R0,#+0
+   \      0x2AC   0x4A00'0003        BMI      ??spi_nor_configure_22
+   \      0x2B0   0xE1A0'0004        MOV      R0,R4
+   \      0x2B4   0x....'....        BL       spi_flash_wait_till_ready
+   \      0x2B8   0xE350'0000        CMP      R0,#+0
+   \      0x2BC   0x0A00'0004        BEQ      ??spi_nor_configure_20
+   \                     ??spi_nor_configure_22:
+   \      0x2C0   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x2C4   0xE350'0004        CMP      R0,#+4
+   \      0x2C8   0x3A00'0001        BCC      ??spi_nor_configure_20
+   \      0x2CC   0x....'....        LDR      R0,??DataTable7_14
+   \      0x2D0   0x....'....        BL       printf
+   \                     ??spi_nor_configure_20:
+   \      0x2D4   0xE1D7'01B6        LDRH     R0,[R7, #+22]
+   \      0x2D8   0xE310'0F40        TST      R0,#0x100
+   \      0x2DC   0x0597'1000        LDREQ    R1,[R7, #+0]
+   \      0x2E0   0x0584'103C        STREQ    R1,[R4, #+60]
+   \      0x2E4   0x0A00'0016        BEQ      ??spi_nor_configure_23
+   \      0x2E8   0xE5CD'5000        STRB     R5,[SP, #+0]
+   \      0x2EC   0xE1A0'0004        MOV      R0,R4
+   \      0x2F0   0x....'....        BL       spi_flash_write_enable
+   \      0x2F4   0xE350'0000        CMP      R0,#+0
+   \      0x2F8   0x4A00'0004        BMI      ??spi_nor_configure_24
+   \      0x2FC   0xE3A0'3001        MOV      R3,#+1
+   \      0x300   0xE1A0'200D        MOV      R2,SP
+   \      0x304   0xE3A0'1001        MOV      R1,#+1
+   \      0x308   0xE1A0'0004        MOV      R0,R4
+   \      0x30C   0x....'....        BL       spi_flash_write_reg
+   \                     ??spi_nor_configure_24:
+   \      0x310   0xE350'0000        CMP      R0,#+0
+   \      0x314   0x4A00'0003        BMI      ??spi_nor_configure_25
+   \      0x318   0xE1A0'0004        MOV      R0,R4
+   \      0x31C   0x....'....        BL       spi_flash_wait_till_ready
+   \      0x320   0xE350'0000        CMP      R0,#+0
+   \      0x324   0x0A00'0004        BEQ      ??spi_nor_configure_26
+   \                     ??spi_nor_configure_25:
+   \      0x328   0xE599'1000        LDR      R1,[R9, #+0]
+   \      0x32C   0xE351'0003        CMP      R1,#+3
+   \      0x330   0x3A00'0001        BCC      ??spi_nor_configure_26
+   \      0x334   0x....'....        LDR      R0,??DataTable7_15
+   \      0x338   0x....'....        BL       printf
+   \                     ??spi_nor_configure_26:
+   \      0x33C   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x340   0xE584'003C        STR      R0,[R4, #+60]
+   \                     ??spi_nor_configure_23:
+   \      0x344   0xE597'1018        LDR      R1,[R7, #+24]
+   \      0x348   0xE351'0000        CMP      R1,#+0
+   \      0x34C   0x0AFF'FFBD        BEQ      ??spi_nor_configure_17
+   \      0x350   0xE3A0'2070        MOV      R2,#+112
+   \      0x354   0xE1A0'0006        MOV      R0,R6
+   \      0x358   0x....'....        BL       __aeabi_memcpy4
+   \                     ??spi_nor_configure_18:
+   \      0x35C   0xE1D7'11B0        LDRH     R1,[R7, #+16]
+   \      0x360   0xE597'000C        LDR      R0,[R7, #+12]
+   \      0x364   0xE002'0091        MUL      R2,R1,R0
+   \      0x368   0xE586'2000        STR      R2,[R6, #+0]
+   \      0x36C   0xE1D7'31B2        LDRH     R3,[R7, #+18]
+   \      0x370   0xE586'3004        STR      R3,[R6, #+4]
+   \      0x374   0xE597'0018        LDR      R0,[R7, #+24]
+   \      0x378   0xE350'0000        CMP      R0,#+0
+   \      0x37C   0x1A00'0057        BNE      ??spi_nor_configure_27
+   \                     ??spi_nor_configure_19:
+   \      0x380   0xE596'1008        LDR      R1,[R6, #+8]
+   \      0x384   0xE357'0000        CMP      R7,#+0
+   \      0x388   0xE3A0'2003        MOV      R2,#+3
+   \      0x38C   0xE1C6'50BC        STRH     R5,[R6, #+12]
+   \      0x390   0xE381'0001        ORR      R0,R1,#0x1
+   \      0x394   0xE5C6'200E        STRB     R2,[R6, #+14]
+   \      0x398   0xE586'0008        STR      R0,[R6, #+8]
+   \      0x39C   0xE586'8010        STR      R8,[R6, #+16]
+   \      0x3A0   0x0A00'0002        BEQ      ??spi_nor_configure_28
+   \      0x3A4   0xE5D7'1016        LDRB     R1,[R7, #+22]
+   \      0x3A8   0xE311'0002        TST      R1,#0x2
+   \      0x3AC   0x1A00'0007        BNE      ??spi_nor_configure_29
+   \                     ??spi_nor_configure_28:
+   \      0x3B0   0xE380'0002        ORR      R0,R0,#0x2
+   \      0x3B4   0xE3A0'1008        MOV      R1,#+8
+   \      0x3B8   0xE3A0'200B        MOV      R2,#+11
+   \      0x3BC   0xE586'0008        STR      R0,[R6, #+8]
+   \      0x3C0   0xE5C6'5014        STRB     R5,[R6, #+20]
+   \      0x3C4   0xE5C6'1015        STRB     R1,[R6, #+21]
+   \      0x3C8   0xE5C6'2016        STRB     R2,[R6, #+22]
+   \      0x3CC   0xE586'8018        STR      R8,[R6, #+24]
+   \                     ??spi_nor_configure_29:
+   \      0x3D0   0xE596'0008        LDR      R0,[R6, #+8]
+   \      0x3D4   0xE357'0000        CMP      R7,#+0
+   \      0x3D8   0xE3A0'2002        MOV      R2,#+2
+   \      0x3DC   0xE5C6'204C        STRB     R2,[R6, #+76]
+   \      0x3E0   0xE380'1B40        ORR      R1,R0,#0x10000
+   \      0x3E4   0xE586'8050        STR      R8,[R6, #+80]
+   \      0x3E8   0xE586'1008        STR      R1,[R6, #+8]
+   \      0x3EC   0x1A00'003B        BNE      ??spi_nor_configure_27
+   \      0x3F0   0xE3A0'8001        MOV      R8,#+1
+   \      0x3F4   0xE3A0'1B40        MOV      R1,#+65536
+   \                     ??spi_nor_configure_30:
+   \      0x3F8   0xE3A0'20D8        MOV      R2,#+216
+   \      0x3FC   0xE284'0048        ADD      R0,R4,#+72
+   \      0x400   0x....'....        BL       spi_flash_set_erase_command
+   \      0x404   0xE357'0000        CMP      R7,#+0
+   \      0x408   0xE3A0'9001        MOV      R9,#+1
+   \      0x40C   0xE3A0'0001        MOV      R0,#+1
+   \      0x410   0x0A00'0011        BEQ      ??spi_nor_configure_31
+   \      0x414   0xE5D7'1016        LDRB     R1,[R7, #+22]
+   \      0x418   0xE311'0001        TST      R1,#0x1
+   \      0x41C   0x0A00'0005        BEQ      ??spi_nor_configure_32
+   \      0x420   0xE3A0'2020        MOV      R2,#+32
+   \      0x424   0xE3A0'1D40        MOV      R1,#+4096
+   \      0x428   0xE284'0058        ADD      R0,R4,#+88
+   \      0x42C   0xE3A0'8003        MOV      R8,#+3
+   \      0x430   0x....'....        BL       spi_flash_set_erase_command
+   \      0x434   0xE3A0'0002        MOV      R0,#+2
+   \                     ??spi_nor_configure_32:
+   \      0x438   0xE5D7'1016        LDRB     R1,[R7, #+22]
+   \      0x43C   0xE311'0080        TST      R1,#0x80
+   \      0x440   0x0A00'0005        BEQ      ??spi_nor_configure_31
+   \      0x444   0xE188'8019        ORR      R8,R8,R9, LSL R0
+   \      0x448   0xE284'C048        ADD      R12,R4,#+72
+   \      0x44C   0xE3A0'2052        MOV      R2,#+82
+   \      0x450   0xE3A0'1C80        MOV      R1,#+32768
+   \      0x454   0xE08C'0200        ADD      R0,R12,R0, LSL #+4
+   \                     ??spi_nor_configure_33:
+   \      0x458   0x....'....        BL       spi_flash_set_erase_command
+   \                     ??spi_nor_configure_31:
+   \      0x45C   0xE596'2000        LDR      R2,[R6, #+0]
+   \      0x460   0xE3A0'3000        MOV      R3,#+0
+   \      0x464   0xE1A0'1008        MOV      R1,R8
+   \      0x468   0xE284'0048        ADD      R0,R4,#+72
+   \      0x46C   0x....'....        BL       spi_flash_init_uniform_erase_map
+   \      0x470   0xE584'50B4        STR      R5,[R4, #+180]
+   \      0x474   0xE1A0'0004        MOV      R0,R4
+   \      0x478   0x....'....        BL       spi_flash_get_mfr
+   \      0x47C   0xE350'001F        CMP      R0,#+31
+   \      0x480   0x0A00'001F        BEQ      ??spi_nor_configure_34
+   \      0x484   0xE350'0020        CMP      R0,#+32
+   \      0x488   0x0A00'0022        BEQ      ??spi_nor_configure_35
+   \      0x48C   0xE350'00BF        CMP      R0,#+191
+   \      0x490   0x0A00'0002        BEQ      ??spi_nor_configure_36
+   \      0x494   0xE350'00C2        CMP      R0,#+194
+   \      0x498   0x0A00'001C        BEQ      ??spi_nor_configure_37
+   \      0x49C   0xEA00'0022        B        ??spi_nor_configure_38
+   \                     ??spi_nor_configure_36:
+   \      0x4A0   0xE3A0'00A0        MOV      R0,#+160
+   \      0x4A4   0xE3A0'3004        MOV      R3,#+4
+   \      0x4A8   0xE5C4'0030        STRB     R0,[R4, #+48]
+   \      0x4AC   0xE596'1008        LDR      R1,[R6, #+8]
+   \      0x4B0   0xE3A0'0002        MOV      R0,#+2
+   \      0x4B4   0xE5C6'303D        STRB     R3,[R6, #+61]
+   \      0x4B8   0xE5C6'003C        STRB     R0,[R6, #+60]
+   \      0x4BC   0xE381'2040        ORR      R2,R1,#0x40
+   \      0x4C0   0xE3A0'10EB        MOV      R1,#+235
+   \      0x4C4   0xE586'2008        STR      R2,[R6, #+8]
+   \      0x4C8   0xE383'0B41        ORR      R0,R3,#0x10400
+   \      0x4CC   0x....'....        LDR      R2,??DataTable7_16
+   \      0x4D0   0xE5C6'103E        STRB     R1,[R6, #+62]
+   \      0x4D4   0xE586'0040        STR      R0,[R6, #+64]
+   \      0x4D8   0xE586'206C        STR      R2,[R6, #+108]
+   \      0x4DC   0xEA00'0014        B        ??spi_nor_configure_39
+   \                     ??spi_nor_configure_27:
+   \      0x4E0   0xE5D7'0016        LDRB     R0,[R7, #+22]
+   \      0x4E4   0xE3A0'8001        MOV      R8,#+1
+   \      0x4E8   0xE310'0020        TST      R0,#0x20
+   \      0x4EC   0x0597'100C        LDREQ    R1,[R7, #+12]
+   \      0x4F0   0x0AFF'FFC0        BEQ      ??spi_nor_configure_30
+   \      0x4F4   0xE3A0'2020        MOV      R2,#+32
+   \      0x4F8   0xE3A0'1D40        MOV      R1,#+4096
+   \      0x4FC   0xE284'0048        ADD      R0,R4,#+72
+   \      0x500   0xEAFF'FFD4        B        ??spi_nor_configure_33
+   \                     ??spi_nor_configure_34:
+   \      0x504   0x....'....        LDR      R0,??DataTable7_17
+   \      0x508   0xE584'00B8        STR      R0,[R4, #+184]
+   \      0x50C   0xEA00'0008        B        ??spi_nor_configure_39
+   \                     ??spi_nor_configure_37:
+   \      0x510   0x....'....        LDR      R1,??DataTable7_18
+   \      0x514   0xEA00'0005        B        ??spi_nor_configure_40
+   \                     ??spi_nor_configure_35:
+   \      0x518   0xE586'506C        STR      R5,[R6, #+108]
+   \      0x51C   0x....'....        LDR      R0,??DataTable7_19
+   \      0x520   0xE584'00B4        STR      R0,[R4, #+180]
+   \      0x524   0xE5C4'5030        STRB     R5,[R4, #+48]
+   \      0x528   0xEA00'0001        B        ??spi_nor_configure_39
+   \                     ??spi_nor_configure_38:
+   \      0x52C   0x....'....        LDR      R1,??DataTable7_20
+   \                     ??spi_nor_configure_40:
+   \      0x530   0xE586'106C        STR      R1,[R6, #+108]
+   \                     ??spi_nor_configure_39:
+   \      0x534   0xE357'0000        CMP      R7,#+0
+   \      0x538   0x0A00'0002        BEQ      ??spi_nor_configure_41
+   \      0x53C   0xE5D7'0016        LDRB     R0,[R7, #+22]
+   \      0x540   0xE310'0010        TST      R0,#0x10
+   \      0x544   0x1A00'0002        BNE      ??spi_nor_configure_42
+   \                     ??spi_nor_configure_41:
+   \      0x548   0xE1A0'1006        MOV      R1,R6
+   \      0x54C   0xE1A0'0004        MOV      R0,R4
+   \      0x550   0x....'....        BL       spi_flash_parse_sfdp
+   \                     ??spi_nor_configure_42:
+   \      0x554   0xE596'0000        LDR      R0,[R6, #+0]
+   \      0x558   0xE350'0000        CMP      R0,#+0
+   \      0x55C   0x03E0'502B        MVNEQ    R5,#+43
+   \      0x560   0x0AFF'FEDA        BEQ      ??spi_nor_configure_8
+   \      0x564   0xE584'0040        STR      R0,[R4, #+64]
+   \      0x568   0xE596'0004        LDR      R0,[R6, #+4]
+   \      0x56C   0xE1A0'1006        MOV      R1,R6
+   \      0x570   0xE350'0000        CMP      R0,#+0
+   \      0x574   0x1584'0044        STRNE    R0,[R4, #+68]
+   \      0x578   0xE1A0'0004        MOV      R0,R4
+   \      0x57C   0x....'....        BL       spi_flash_setup
+   \      0x580   0xE1B0'5000        MOVS     R5,R0
+   \      0x584   0x4AFF'FED1        BMI      ??spi_nor_configure_8
+   \      0x588   0xE357'0000        CMP      R7,#+0
+   \      0x58C   0x0A00'0002        BEQ      ??spi_nor_configure_43
+   \      0x590   0xE1D7'01B4        LDRH     R0,[R7, #+20]
+   \      0x594   0xE350'0000        CMP      R0,#+0
+   \      0x598   0x1A00'0031        BNE      ??spi_nor_configure_44
+   \                     ??spi_nor_configure_43:
+   \      0x59C   0xE594'1040        LDR      R1,[R4, #+64]
+   \      0x5A0   0xE3A0'2001        MOV      R2,#+1
+   \      0x5A4   0xE3A0'0003        MOV      R0,#+3
+   \      0x5A8   0xE382'2740        ORR      R2,R2,#0x1000000
+   \      0x5AC   0xE5C4'002C        STRB     R0,[R4, #+44]
+   \      0x5B0   0xE151'0002        CMP      R1,R2
+   \      0x5B4   0x3A00'002B        BCC      ??spi_nor_configure_45
+   \      0x5B8   0xE357'0000        CMP      R7,#+0
+   \      0x5BC   0x0A00'0009        BEQ      ??spi_nor_configure_46
+   \      0x5C0   0xE5D7'0016        LDRB     R0,[R7, #+22]
+   \      0x5C4   0xE310'0008        TST      R0,#0x8
+   \      0x5C8   0x0A00'0006        BEQ      ??spi_nor_configure_46
+   \      0x5CC   0x....'....        LDR      R1,??DataTable7_2
+   \      0x5D0   0xE591'2000        LDR      R2,[R1, #+0]
+   \      0x5D4   0xE352'0004        CMP      R2,#+4
+   \      0x5D8   0x3A00'0022        BCC      ??spi_nor_configure_45
+   \      0x5DC   0x....'....        LDR      R0,??DataTable7_21
+   \      0x5E0   0x....'....        BL       printf
+   \      0x5E4   0xEA00'001F        B        ??spi_nor_configure_45
+   \                     ??spi_nor_configure_46:
+   \      0x5E8   0xE5D4'002D        LDRB     R0,[R4, #+45]
+   \      0x5EC   0xE3A0'2006        MOV      R2,#+6
+   \      0x5F0   0x....'....        ADR      R1,`spi_nor_convert_3to4_read::spi_nor_3to4_read`
+   \      0x5F4   0x....'....        BL       spi_nor_convert_inst
+   \      0x5F8   0xE5C4'002D        STRB     R0,[R4, #+45]
+   \      0x5FC   0xE5D4'002E        LDRB     R0,[R4, #+46]
+   \      0x600   0xE3A0'2003        MOV      R2,#+3
+   \      0x604   0x....'....        ADR      R1,`spi_nor_convert_3to4_write::spi_nor_3to4_program`
+   \      0x608   0x....'....        BL       spi_nor_convert_inst
+   \      0x60C   0xE5C4'002E        STRB     R0,[R4, #+46]
+   \      0x610   0xE3A0'0000        MOV      R0,#+0
+   \      0x614   0xE284'1048        ADD      R1,R4,#+72
+   \      0x618   0x....'....        ADR      R2,`spi_nor_convert_3to4_erase::spi_nor_3to4_erase`
+   \                     ??spi_nor_configure_47:
+   \      0x61C   0xE5D1'300C        LDRB     R3,[R1, #+12]
+   \      0x620   0xE3A0'C000        MOV      R12,#+0
+   \      0x624   0xE353'0020        CMP      R3,#+32
+   \      0x628   0x0A00'0005        BEQ      ??spi_nor_configure_48
+   \      0x62C   0xE353'0052        CMP      R3,#+82
+   \      0x630   0xE3A0'C001        MOV      R12,#+1
+   \      0x634   0x0A00'0002        BEQ      ??spi_nor_configure_48
+   \      0x638   0xE353'00D8        CMP      R3,#+216
+   \      0x63C   0xE3A0'C002        MOV      R12,#+2
+   \      0x640   0x1A00'0001        BNE      ??spi_nor_configure_49
+   \                     ??spi_nor_configure_48:
+   \      0x644   0xE082'308C        ADD      R3,R2,R12, LSL #+1
+   \      0x648   0xE5D3'3001        LDRB     R3,[R3, #+1]
+   \                     ??spi_nor_configure_49:
+   \      0x64C   0xE280'0001        ADD      R0,R0,#+1
+   \      0x650   0xE5C1'300C        STRB     R3,[R1, #+12]
+   \      0x654   0xE350'0004        CMP      R0,#+4
+   \      0x658   0xE281'1010        ADD      R1,R1,#+16
+   \      0x65C   0xBAFF'FFEE        BLT      ??spi_nor_configure_47
+   \      0x660   0xE3A0'0004        MOV      R0,#+4
+   \                     ??spi_nor_configure_44:
+   \      0x664   0xE5C4'002C        STRB     R0,[R4, #+44]
+    733          
+    734          	return 0;
+   \                     ??spi_nor_configure_45:
+   \      0x668   0xE3A0'0000        MOV      R0,#+0
+   \      0x66C   0xE8BD'87F6        POP      {R1,R2,R4-R10,PC}
+    735          }
+    736          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    737          int spi_nor_read(struct spi_flash *flash, size_t from, uint8_t* buf, size_t len)
+    738          {
+   \                     spi_nor_read:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE24D'D028        SUB      SP,SP,#+40
+   \        0xC   0xE1A0'7001        MOV      R7,R1
+   \       0x10   0xE1A0'5002        MOV      R5,R2
+    739          	struct spi_flash_command cmd;
+    740          
+    741          	spi_flash_command_init(&cmd, flash->read_inst, flash->addr_len, SFLASH_TYPE_READ);
+   \       0x14   0xE5D4'202C        LDRB     R2,[R4, #+44]
+   \       0x18   0xE5D4'102D        LDRB     R1,[R4, #+45]
+   \       0x1C   0xE1A0'6003        MOV      R6,R3
+   \       0x20   0xE3A0'3000        MOV      R3,#+0
+   \       0x24   0xE1A0'000D        MOV      R0,SP
+   \       0x28   0x....'....        BL       spi_flash_command_init
+    742          	cmd.proto = flash->read_proto;
+   \       0x2C   0xE594'0020        LDR      R0,[R4, #+32]
+    743          	cmd.addr = from;
+   \       0x30   0xE58D'7010        STR      R7,[SP, #+16]
+    744          	cmd.mode = buf ? flash->normal_mode : flash->xip_mode;
+   \       0x34   0xE355'0000        CMP      R5,#+0
+   \       0x38   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x3C   0x15D4'002F        LDRBNE   R0,[R4, #+47]
+   \       0x40   0x05D4'0030        LDRBEQ   R0,[R4, #+48]
+   \       0x44   0xE5CD'0009        STRB     R0,[SP, #+9]
+    745          	cmd.num_mode_cycles = flash->num_mode_cycles;
+   \       0x48   0xE5D4'0031        LDRB     R0,[R4, #+49]
+   \       0x4C   0xE5CD'000A        STRB     R0,[SP, #+10]
+    746          	cmd.num_wait_states = flash->num_wait_states;
+   \       0x50   0xE5D4'1032        LDRB     R1,[R4, #+50]
+    747          	cmd.data_len = len;
+   \       0x54   0xE58D'6014        STR      R6,[SP, #+20]
+    748          	cmd.rx_data = buf;
+   \       0x58   0xE58D'501C        STR      R5,[SP, #+28]
+    749          #ifdef CONFIG_HAVE_AESB
+    750          	cmd.use_aesb = flash->use_aesb;
+    751          #endif
+    752          	return spi_flash_exec(flash, &cmd);
+   \       0x5C   0xE1A0'0004        MOV      R0,R4
+   \       0x60   0xE5CD'100B        STRB     R1,[SP, #+11]
+   \       0x64   0xE5D4'10A4        LDRB     R1,[R4, #+164]
+   \       0x68   0xE5CD'1024        STRB     R1,[SP, #+36]
+   \       0x6C   0xE1A0'100D        MOV      R1,SP
+   \       0x70   0x....'....        BL       spi_flash_exec
+   \       0x74   0xE28D'D02C        ADD      SP,SP,#+44
+   \       0x78   0xE8BD'80F0        POP      {R4-R7,PC}       ;; return
+    753          }
+    754          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    755          int spi_nor_write(struct spi_flash *flash, size_t to, const uint8_t* buf, size_t len)
+    756          {
+   \                     spi_nor_write:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1A0'6001        MOV      R6,R1
+   \        0x8   0xE24D'D028        SUB      SP,SP,#+40
+   \        0xC   0xE1A0'8000        MOV      R8,R0
+   \       0x10   0xE1A0'5002        MOV      R5,R2
+   \       0x14   0xE1A0'9003        MOV      R9,R3
+    757          	struct spi_flash_command cmd;
+    758          	int rc = 0;
+    759          
+    760          	rc = spi_flash_set_protection(flash, false);
+   \       0x18   0xE3A0'1000        MOV      R1,#+0
+   \       0x1C   0x....'....        BL       spi_flash_set_protection
+   \       0x20   0xE1B0'4000        MOVS     R4,R0
+    761          	if (rc < 0)
+   \       0x24   0x4A00'0028        BMI      ??spi_nor_write_0
+    762          		return rc;
+    763          
+    764          	spi_flash_command_init(&cmd, flash->write_inst, flash->addr_len, SFLASH_TYPE_WRITE);
+   \       0x28   0xE5D8'202C        LDRB     R2,[R8, #+44]
+   \       0x2C   0xE5D8'102E        LDRB     R1,[R8, #+46]
+   \       0x30   0xE3A0'3001        MOV      R3,#+1
+   \       0x34   0xE1A0'000D        MOV      R0,SP
+   \       0x38   0xE3A0'7FC8        MOV      R7,#+800
+   \       0x3C   0x....'....        BL       spi_flash_command_init
+    765          	cmd.proto = flash->write_proto;
+   \       0x40   0xE598'0024        LDR      R0,[R8, #+36]
+   \       0x44   0xE58D'0000        STR      R0,[SP, #+0]
+    766          #ifdef CONFIG_HAVE_AESB
+    767          	cmd.use_aesb = flash->use_aesb;
+   \       0x48   0xE5D8'20A4        LDRB     R2,[R8, #+164]
+   \       0x4C   0xE1A0'0004        MOV      R0,R4
+   \       0x50   0xE5CD'2024        STRB     R2,[SP, #+36]
+   \       0x54   0xEA00'0002        B        ??spi_nor_write_1
+    768          #endif
+    769          	while (len) {
+    770          		size_t page_offset, page_remain;
+    771          
+    772          		page_offset = to & (flash->page_size - 1);
+    773          		page_remain = min_u32(flash->page_size - page_offset, len);
+    774          
+    775          		cmd.addr = to;
+    776          		cmd.data_len = page_remain;
+    777          		cmd.tx_data = buf;
+    778          		cmd.timeout = TIMEOUT_WRITE;
+    779          		
+    780          		rc = spi_flash_write_enable(flash);
+    781          		if (rc < 0)
+    782          			break;
+    783          
+    784          		rc = spi_flash_exec(flash, &cmd);
+    785          		if (rc < 0)
+    786          			break;
+    787          
+    788          		rc = spi_flash_wait_till_ready(flash);
+    789          		if (rc < 0)
+    790          			break;
+    791          
+    792          		buf += page_remain;
+   \                     ??spi_nor_write_2:
+   \       0x58   0xE085'5004        ADD      R5,R5,R4
+    793          		to += page_remain;
+   \       0x5C   0xE084'6006        ADD      R6,R4,R6
+    794          		len -= page_remain;
+   \       0x60   0xE049'9004        SUB      R9,R9,R4
+   \                     ??spi_nor_write_1:
+   \       0x64   0xE359'0000        CMP      R9,#+0
+   \       0x68   0x0A00'0016        BEQ      ??spi_nor_write_3
+   \       0x6C   0xE598'0044        LDR      R0,[R8, #+68]
+   \       0x70   0xE58D'6010        STR      R6,[SP, #+16]
+   \       0x74   0xE58D'5018        STR      R5,[SP, #+24]
+   \       0x78   0xE240'1001        SUB      R1,R0,#+1
+   \       0x7C   0xE58D'7020        STR      R7,[SP, #+32]
+   \       0x80   0xE001'1006        AND      R1,R1,R6
+   \       0x84   0xE040'4001        SUB      R4,R0,R1
+   \       0x88   0xE1A0'0008        MOV      R0,R8
+   \       0x8C   0xE154'0009        CMP      R4,R9
+   \       0x90   0x81A0'4009        MOVHI    R4,R9
+   \       0x94   0xE58D'4014        STR      R4,[SP, #+20]
+   \       0x98   0x....'....        BL       spi_flash_write_enable
+   \       0x9C   0xE350'0000        CMP      R0,#+0
+   \       0xA0   0x4A00'0008        BMI      ??spi_nor_write_3
+   \       0xA4   0xE1A0'100D        MOV      R1,SP
+   \       0xA8   0xE1A0'0008        MOV      R0,R8
+   \       0xAC   0x....'....        BL       spi_flash_exec
+   \       0xB0   0xE350'0000        CMP      R0,#+0
+   \       0xB4   0x4A00'0003        BMI      ??spi_nor_write_3
+   \       0xB8   0xE1A0'0008        MOV      R0,R8
+   \       0xBC   0x....'....        BL       spi_flash_wait_till_ready
+   \       0xC0   0xE350'0000        CMP      R0,#+0
+   \       0xC4   0x5AFF'FFE3        BPL      ??spi_nor_write_2
+   \                     ??spi_nor_write_3:
+   \       0xC8   0xE1A0'4000        MOV      R4,R0
+    795          	}
+    796          
+    797          	return rc;
+   \                     ??spi_nor_write_0:
+   \       0xCC   0xE1A0'0004        MOV      R0,R4
+   \       0xD0   0x....'....        B        ?Subroutine3
+    798          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine3:
+   \        0x0   0xE28D'D02C        ADD      SP,SP,#+44
+   \        0x4   0xE8BD'83F0        POP      {R4-R9,PC}       ;; return
+    799          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    800          int spi_nor_erase(struct spi_flash *flash, size_t offset, size_t len)
+    801          {
+   \                     spi_nor_erase:
+   \        0x0   0xE92D'43F0        PUSH     {R4-R9,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE24D'D02C        SUB      SP,SP,#+44
+   \        0xC   0xE1A0'4000        MOV      R4,R0
+   \       0x10   0xE1A0'9002        MOV      R9,R2
+    802          	const struct spi_flash_erase_map *map = &flash->erase_map;
+    803          	struct spi_flash_command cmd;
+    804          	int rc = 0;
+    805          
+    806          	rc = spi_flash_set_protection(flash, false);
+   \       0x14   0xE3A0'1000        MOV      R1,#+0
+   \       0x18   0x....'....        BL       spi_flash_set_protection
+   \       0x1C   0xE1B0'7000        MOVS     R7,R0
+    807          	if (rc < 0)
+   \       0x20   0x4A00'0049        BMI      ??spi_nor_erase_0
+    808          		return rc;
+    809          
+    810          	if (!spi_flash_has_uniform_erase(flash)) {
+   \       0x24   0xE1A0'0004        MOV      R0,R4
+   \       0x28   0x....'....        BL       spi_flash_has_uniform_erase
+   \       0x2C   0xE350'0000        CMP      R0,#+0
+    811          		/* @TODO: add support to non uniform erase map. */
+    812          		return -ENOTSUP;
+   \       0x30   0x03E0'003C        MVNEQ    R0,#+60
+   \       0x34   0x0A00'0045        BEQ      ??spi_nor_erase_1
+    813          	}
+    814          
+    815          	rc = spi_flash_set_protection(flash, false);
+   \       0x38   0xE3A0'1000        MOV      R1,#+0
+   \       0x3C   0xE1A0'0004        MOV      R0,R4
+   \       0x40   0x....'....        BL       spi_flash_set_protection
+   \       0x44   0xE1B0'7000        MOVS     R7,R0
+    816          	if (rc < 0)
+   \       0x48   0x4A00'003F        BMI      ??spi_nor_erase_0
+    817          		return rc;
+    818          
+    819          	spi_flash_command_init(&cmd, 0, flash->addr_len, SFLASH_TYPE_ERASE);
+   \       0x4C   0xE5D4'202C        LDRB     R2,[R4, #+44]
+   \       0x50   0xE3A0'3002        MOV      R3,#+2
+   \       0x54   0xE3A0'1000        MOV      R1,#+0
+   \       0x58   0xE28D'0004        ADD      R0,SP,#+4
+   \       0x5C   0x....'....        BL       spi_flash_command_init
+    820          	cmd.proto = flash->reg_proto;
+   \       0x60   0xE594'0028        LDR      R0,[R4, #+40]
+   \       0x64   0xE58D'0004        STR      R0,[SP, #+4]
+    821          #ifdef CONFIG_HAVE_AESB
+    822          	cmd.use_aesb = flash->use_aesb;
+   \       0x68   0xE5D4'20A4        LDRB     R2,[R4, #+164]
+    823          #endif
+    824          	cmd.timeout = TIMEOUT_ERASE;
+   \       0x6C   0xE300'0BB8        MOVW     R0,#+3000
+   \       0x70   0xE58D'0024        STR      R0,[SP, #+36]
+   \       0x74   0xE5CD'2028        STRB     R2,[SP, #+40]
+   \       0x78   0xEA00'0012        B        ??spi_nor_erase_2
+    825          	while (len) {
+    826          		const struct spi_flash_erase_command *erase = NULL;
+    827          		size_t i;
+    828          
+    829          		for (i = 0; i < SFLASH_CMD_ERASE_MAX; i++) {
+    830          			const struct spi_flash_erase_command *e;
+    831          			uint32_t rem;
+    832          
+    833          			if ((map->uniform_region.cmd_mask & (0x1UL << i))) {
+    834          				e = &map->commands[i];
+    835          				spi_flash_div_by_erase_size(e, offset, &rem);
+    836          				if (rem)
+    837          					continue;
+    838          
+    839          				if (e->size <= len && (!erase || erase->size < e->size))
+    840          					erase = e;
+    841          			}
+    842          		}
+    843          		if (!erase)
+    844          			return -1;
+    845          
+    846          #ifdef SPI_NOR_VERBOSE_DEBUG
+    847          		trace_info("spi-nor: erase params: inst=0x%x\r\n", erase->inst);
+    848          		trace_info("spi-nor: erase params: size=%lu\r\n", erase->size);
+    849          		trace_info("spi-nor: erase params: size_shift=%ld\r\n", erase->size_shift);
+    850          		trace_info("spi-nor: erase params: size_mask=0x%lx\r\n", erase->size_mask);
+    851          #endif
+    852          		rc = spi_flash_write_enable(flash);
+   \                     ??spi_nor_erase_3:
+   \       0x7C   0xE1A0'0004        MOV      R0,R4
+   \       0x80   0x....'....        BL       spi_flash_write_enable
+   \       0x84   0xE1B0'7000        MOVS     R7,R0
+    853          		if (rc < 0)
+   \       0x88   0x4A00'002F        BMI      ??spi_nor_erase_0
+    854          			break;
+    855          
+    856          		cmd.inst = erase->inst;
+   \       0x8C   0xE5D6'000C        LDRB     R0,[R6, #+12]
+    857          		cmd.addr = offset;
+   \       0x90   0xE58D'5014        STR      R5,[SP, #+20]
+    858          		rc = spi_flash_exec(flash, &cmd);
+   \       0x94   0xE28D'1004        ADD      R1,SP,#+4
+   \       0x98   0xE5CD'000C        STRB     R0,[SP, #+12]
+   \       0x9C   0xE1A0'0004        MOV      R0,R4
+   \       0xA0   0x....'....        BL       spi_flash_exec
+   \       0xA4   0xE1B0'7000        MOVS     R7,R0
+    859          		if (rc < 0)
+   \       0xA8   0x4A00'0027        BMI      ??spi_nor_erase_0
+    860          			break;
+    861          
+    862          		rc = spi_flash_wait_till_ready(flash);
+   \       0xAC   0xE1A0'0004        MOV      R0,R4
+   \       0xB0   0x....'....        BL       spi_flash_wait_till_ready
+   \       0xB4   0xE1B0'7000        MOVS     R7,R0
+    863          		if (rc < 0)
+   \       0xB8   0x4A00'0023        BMI      ??spi_nor_erase_0
+    864          			break;
+    865          
+    866          		offset += erase->size;
+   \       0xBC   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0xC0   0xE080'5005        ADD      R5,R0,R5
+    867          		len -= erase->size;
+   \       0xC4   0xE049'9000        SUB      R9,R9,R0
+   \                     ??spi_nor_erase_2:
+   \       0xC8   0xE359'0000        CMP      R9,#+0
+   \       0xCC   0x0A00'001E        BEQ      ??spi_nor_erase_0
+   \       0xD0   0xE3A0'6000        MOV      R6,#+0
+   \       0xD4   0xE3A0'7000        MOV      R7,#+0
+   \       0xD8   0xE284'8048        ADD      R8,R4,#+72
+   \                     ??spi_nor_erase_4:
+   \       0xDC   0xE594'0088        LDR      R0,[R4, #+136]
+   \       0xE0   0xE3A0'1001        MOV      R1,#+1
+   \       0xE4   0xE111'0730        TST      R1,R0, LSR R7
+   \       0xE8   0x0A00'000F        BEQ      ??spi_nor_erase_5
+   \       0xEC   0xE1A0'200D        MOV      R2,SP
+   \       0xF0   0xE1A0'1005        MOV      R1,R5
+   \       0xF4   0xE1A0'0008        MOV      R0,R8
+   \       0xF8   0x....'....        BL       spi_flash_div_by_erase_size
+   \       0xFC   0xE59D'1000        LDR      R1,[SP, #+0]
+   \      0x100   0xE351'0000        CMP      R1,#+0
+   \      0x104   0x1A00'0008        BNE      ??spi_nor_erase_5
+   \      0x108   0xE598'0000        LDR      R0,[R8, #+0]
+   \      0x10C   0xE159'0000        CMP      R9,R0
+   \      0x110   0x3A00'0005        BCC      ??spi_nor_erase_5
+   \      0x114   0xE356'0000        CMP      R6,#+0
+   \      0x118   0x0A00'0002        BEQ      ??spi_nor_erase_6
+   \      0x11C   0xE596'1000        LDR      R1,[R6, #+0]
+   \      0x120   0xE151'0000        CMP      R1,R0
+   \      0x124   0x2A00'0000        BCS      ??spi_nor_erase_5
+   \                     ??spi_nor_erase_6:
+   \      0x128   0xE1A0'6008        MOV      R6,R8
+   \                     ??spi_nor_erase_5:
+   \      0x12C   0xE287'7001        ADD      R7,R7,#+1
+   \      0x130   0xE288'8010        ADD      R8,R8,#+16
+   \      0x134   0xE357'0004        CMP      R7,#+4
+   \      0x138   0x3AFF'FFE7        BCC      ??spi_nor_erase_4
+   \      0x13C   0xE356'0000        CMP      R6,#+0
+   \      0x140   0x1AFF'FFCD        BNE      ??spi_nor_erase_3
+   \      0x144   0xE3E0'0000        MVN      R0,#+0
+   \      0x148   0x....'....        B        ?Subroutine3
+    868          	}
+    869          
+    870          	return rc;
+   \                     ??spi_nor_erase_0:
+   \      0x14C   0xE1A0'0007        MOV      R0,R7
+   \                     ??spi_nor_erase_1:
+   \      0x150                      REQUIRE ?Subroutine3
+   \      0x150                      ;; // Fall through to label ?Subroutine3
+    871          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7:
+   \        0x0   0x....'....        DC32     _bus_exec_buffer
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_1:
+   \        0x0   0x....'....        DC32     _spi_bus_ops
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_2:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_3:
+   \        0x0   0x....'....        DC32     ?_0+0xE0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_4:
+   \        0x0   0x....'....        DC32     ?_0+0x104
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_5:
+   \        0x0   0x0004'0404        DC32     0x40404
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_6:
+   \        0x0   0x0001'0101        DC32     0x10101
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_7:
+   \        0x0   0x....'....        DC32     params
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_8:
+   \        0x0   0x....'....        DC32     spi_nor_read
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_9:
+   \        0x0   0x....'....        DC32     spi_nor_write
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_10:
+   \        0x0   0x....'....        DC32     spi_nor_erase
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_11:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_12:
+   \        0x0   0x....'....        DC32     spi_nor_ids
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_13:
+   \        0x0   0x....'....        DC32     flash_name
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_14:
+   \        0x0   0x....'....        DC32     ?_0+0x30
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_15:
+   \        0x0   0x....'....        DC32     ?_0+0x6C
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_16:
+   \        0x0   0x....'....        DC32     spansion_new_quad_enable
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_17:
+   \        0x0   0x....'....        DC32     at25_set_protection
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_18:
+   \        0x0   0x....'....        DC32     macronix_quad_enable
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_19:
+   \        0x0   0x....'....        DC32     micron_enable_0_4_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_20:
+   \        0x0   0x....'....        DC32     spansion_quad_enable
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable7_21:
+   \        0x0   0x....'....        DC32     ?_0+0xB4
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x49          DC8 "-I- SF: Got Manufacturer and Device ID: %s\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x53 0x46    
+
+   \              0x3A 0x20    
+
+   \              0x47 0x6F    
+
+   \              0x74 0x20    
+
+   \              0x4D 0x61    
+
+   \              0x6E 0x75    
+
+   \              0x66 0x61    
+
+   \              0x63 0x74    
+
+   \              0x75 0x72    
+
+   \              0x65 0x72    
+
+   \              0x20 0x61    
+
+   \              0x6E 0x64    
+
+   \              0x20 0x44    
+
+   \              0x65 0x76    
+
+   \              0x69 0x63    
+
+   \              0x65 0x20    
+
+   \              0x49 0x44    
+
+   \              0x3A 0x20    
+
+   \              0x25 0x73    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x2D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0x30   0x2D 0x49          DC8 0x2D, 0x49, 0x2D, 0x20, 0x53, 0x46, 0x3A, 0x20
+
+   \              0x2D 0x20    
+
+   \              0x53 0x46    
+
+   \              0x3A 0x20
+   \       0x38   0x57 0x41          DC8 0x57, 0x41, 0x52, 0x4E, 0x49, 0x4E, 0x47, 0x3A
+
+   \              0x52 0x4E    
+
+   \              0x49 0x4E    
+
+   \              0x47 0x3A
+   \       0x40   0x20 0x53          DC8 0x20, 0x53, 0x53, 0x54, 0x32, 0x36, 0x20, 0x2D
+
+   \              0x53 0x54    
+
+   \              0x32 0x36    
+
+   \              0x20 0x2D
+   \       0x48   0x20 0x63          DC8 0x20, 0x63, 0x61, 0x6E, 0x27, 0x74, 0x20, 0x75
+
+   \              0x61 0x6E    
+
+   \              0x27 0x74    
+
+   \              0x20 0x75
+   \       0x50   0x6E 0x6C          DC8 0x6E, 0x6C, 0x6F, 0x63, 0x6B, 0x20, 0x62, 0x6C
+
+   \              0x6F 0x63    
+
+   \              0x6B 0x20    
+
+   \              0x62 0x6C
+   \       0x58   0x6F 0x63          DC8 0x6F, 0x63, 0x6B, 0x20, 0x70, 0x72, 0x6F, 0x74
+
+   \              0x6B 0x20    
+
+   \              0x70 0x72    
+
+   \              0x6F 0x74
+   \       0x60   0x65 0x63          DC8 0x65, 0x63, 0x74, 0x69, 0x6F, 0x6E, 0x0D, 0x0A
+
+   \              0x74 0x69    
+
+   \              0x6F 0x6E    
+
+   \              0x0D 0x0A
+   \       0x68   0x00               DC8 0
+   \       0x69   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0x6C   0x2D 0x57          DC8 0x2D, 0x57, 0x2D, 0x20, 0x53, 0x46, 0x3A, 0x20
+
+   \              0x2D 0x20    
+
+   \              0x53 0x46    
+
+   \              0x3A 0x20
+   \       0x74   0x57 0x41          DC8 0x57, 0x41, 0x52, 0x4E, 0x49, 0x4E, 0x47, 0x3A
+
+   \              0x52 0x4E    
+
+   \              0x49 0x4E    
+
+   \              0x47 0x3A
+   \       0x7C   0x20 0x63          DC8 0x20, 0x63, 0x61, 0x6E, 0x27, 0x74, 0x20, 0x63
+
+   \              0x61 0x6E    
+
+   \              0x27 0x74    
+
+   \              0x20 0x63
+   \       0x84   0x6C 0x65          DC8 0x6C, 0x65, 0x61, 0x72, 0x20, 0x42, 0x6C, 0x6F
+
+   \              0x61 0x72    
+
+   \              0x20 0x42    
+
+   \              0x6C 0x6F
+   \       0x8C   0x63 0x6B          DC8 0x63, 0x6B, 0x20, 0x50, 0x72, 0x6F, 0x74, 0x65
+
+   \              0x20 0x50    
+
+   \              0x72 0x6F    
+
+   \              0x74 0x65
+   \       0x94   0x63 0x74          DC8 0x63, 0x74, 0x69, 0x6F, 0x6E, 0x20, 0x62, 0x69
+
+   \              0x69 0x6F    
+
+   \              0x6E 0x20    
+
+   \              0x62 0x69
+   \       0x9C   0x74 0x73          DC8 0x74, 0x73, 0x20, 0x69, 0x6E, 0x20, 0x53, 0x74
+
+   \              0x20 0x69    
+
+   \              0x6E 0x20    
+
+   \              0x53 0x74
+   \       0xA4   0x61 0x74          DC8 0x61, 0x74, 0x75, 0x73, 0x20, 0x52, 0x65, 0x67
+
+   \              0x75 0x73    
+
+   \              0x20 0x52    
+
+   \              0x65 0x67
+   \       0xAC   0x69 0x73          DC8 0x69, 0x73, 0x74, 0x65, 0x72, 0x0D, 0x0A, 0
+
+   \              0x74 0x65    
+
+   \              0x72 0x0D    
+
+   \              0x0A 0x00
+   \       0xB4   0x2D 0x49          DC8 "-I- SF: WARNING: can't read above 16MiB\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x53 0x46    
+
+   \              0x3A 0x20    
+
+   \              0x57 0x41    
+
+   \              0x52 0x4E    
+
+   \              0x49 0x4E    
+
+   \              0x47 0x3A    
+
+   \              0x20 0x63    
+
+   \              0x61 0x6E    
+
+   \              0x27 0x74    
+
+   \              0x20 0x72    
+
+   \              0x65 0x61    
+
+   \              0x64 0x20    
+
+   \              0x61 0x62    
+
+   \              0x6F 0x76    
+
+   \              0x65 0x20    
+
+   \              0x31 0x36    
+
+   \              0x4D 0x69    
+
+   \              0x42 0x0D    
+
+   \              0x0A 0x00
+   \       0xDE   0x00 0x00          DC8 0, 0
+   \       0xE0   0x2D 0x49          DC8 "-I- SF: Fail to initialize spi\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x53 0x46    
+
+   \              0x3A 0x20    
+
+   \              0x46 0x61    
+
+   \              0x69 0x6C    
+
+   \              0x20 0x74    
+
+   \              0x6F 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x69 0x74    
+
+   \              0x69 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x7A 0x65    
+
+   \              0x20 0x73    
+
+   \              0x70 0x69    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \      0x101   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \      0x104   0x2D 0x49          DC8 "-I- SF: Fail to probe SPI flash\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x53 0x46    
+
+   \              0x3A 0x20    
+
+   \              0x46 0x61    
+
+   \              0x69 0x6C    
+
+   \              0x20 0x74    
+
+   \              0x6F 0x20    
+
+   \              0x70 0x72    
+
+   \              0x6F 0x62    
+
+   \              0x65 0x20    
+
+   \              0x53 0x50    
+
+   \              0x49 0x20    
+
+   \              0x66 0x6C    
+
+   \              0x61 0x73    
+
+   \              0x68 0x0D    
+
+   \              0x0A 0x00
+   \      0x126   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   _bus_cleanup
+      32   _bus_exec
+        32   -> __aeabi_memset
+        32   -> bus_start_transaction
+        32   -> bus_stop_transaction
+        32   -> bus_transfer
+        32   -> bus_wait_transfer
+       0   _bus_init
+       0   _bus_set_freq
+         0   -> bus_configure_slave
+       0   _bus_set_mode
+         0   -> bus_configure_slave
+      16   at25_set_protection
+        16   -> spi_flash_read_sr
+        16   -> spi_flash_write_enable
+        16   -> spi_flash_write_reg
+      16   macronix_quad_enable
+        16   -> spi_flash_read_sr
+        16   -> spi_flash_wait_till_ready
+        16   -> spi_flash_write_enable
+        16   -> spi_flash_write_reg
+      16   micron_enable_0_4_4
+        16   -> spi_flash_read_reg
+        16   -> spi_flash_wait_till_ready
+        16   -> spi_flash_write_enable
+        16   -> spi_flash_write_reg
+      16   spansion_new_quad_enable
+        16   -> spi_flash_read_reg
+        16   -> spi_flash_read_sr
+        16   -> spi_flash_wait_till_ready
+        16   -> spi_flash_write_enable
+        16   -> spi_flash_write_reg
+      16   spansion_quad_enable
+        16   -> spi_flash_read_sr
+        16   -> spi_flash_wait_till_ready
+        16   -> spi_flash_write_enable
+        16   -> spi_flash_write_reg
+      40   spi_nor_configure
+        40   -> __aeabi_memclr4
+        40   -> __aeabi_memcpy4
+        40   -> memcmp
+        40   -> printf
+        40   -> qspi_configure
+        40   -> spi_flash_cleanup
+        40   -> spi_flash_get_mfr
+        40   -> spi_flash_init
+        40   -> spi_flash_init_uniform_erase_map
+        40   -> spi_flash_parse_sfdp
+        40   -> spi_flash_read_reg
+        40   -> spi_flash_reset
+        40   -> spi_flash_set_erase_command
+        40   -> spi_flash_set_freq
+        40   -> spi_flash_set_mode
+        40   -> spi_flash_setup
+        40   -> spi_flash_wait_till_ready
+        40   -> spi_flash_write_enable
+        40   -> spi_flash_write_reg
+        40   -> spi_nor_convert_inst
+        40   -> usleep
+       4   spi_nor_convert_inst
+      72   spi_nor_erase
+        72   -> spi_flash_command_init
+        72   -> spi_flash_div_by_erase_size
+        72   -> spi_flash_exec
+        72   -> spi_flash_has_uniform_erase
+        72   -> spi_flash_set_protection
+        72   -> spi_flash_wait_till_ready
+        72   -> spi_flash_write_enable
+      64   spi_nor_read
+        64   -> spi_flash_command_init
+        64   -> spi_flash_exec
+      72   spi_nor_write
+        72   -> spi_flash_command_init
+        72   -> spi_flash_exec
+        72   -> spi_flash_set_protection
+        72   -> spi_flash_wait_till_ready
+        72   -> spi_flash_write_enable
+      16   sr2_bit7_quad_enable
+        16   -> spi_flash_read_reg
+        16   -> spi_flash_wait_till_ready
+        16   -> spi_flash_write_enable
+        16   -> spi_flash_write_reg
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable7
+       4  ??DataTable7_1
+       4  ??DataTable7_10
+       4  ??DataTable7_11
+       4  ??DataTable7_12
+       4  ??DataTable7_13
+       4  ??DataTable7_14
+       4  ??DataTable7_15
+       4  ??DataTable7_16
+       4  ??DataTable7_17
+       4  ??DataTable7_18
+       4  ??DataTable7_19
+       4  ??DataTable7_2
+       4  ??DataTable7_20
+       4  ??DataTable7_21
+       4  ??DataTable7_3
+       4  ??DataTable7_4
+       4  ??DataTable7_5
+       4  ??DataTable7_6
+       4  ??DataTable7_7
+       4  ??DataTable7_8
+       4  ??DataTable7_9
+       8  ?Subroutine0
+      12  ?Subroutine1
+       8  ?Subroutine2
+       8  ?Subroutine3
+     296  ?_0
+       4  _bus_cleanup
+     356  _bus_exec
+      40  _bus_exec_buffer
+          _spi_flash_hdr
+       4  _bus_init
+       8  _bus_set_freq
+       4  _bus_set_mode
+      20  _spi_bus_ops
+     184  at25_set_protection
+       8  flash_name
+     148  macronix_quad_enable
+     192  micron_enable_0_4_4
+     112  params
+     188  spansion_new_quad_enable
+      88  spansion_quad_enable
+       8  spi_nor_3to4_erase
+       8  spi_nor_3to4_program
+      12  spi_nor_3to4_read
+   1'648  spi_nor_configure
+      52  spi_nor_convert_inst
+     336  spi_nor_erase
+     124  spi_nor_read
+     212  spi_nor_write
+     164  sr2_bit7_quad_enable
+
+ 
+   152 bytes in section .bss
+   324 bytes in section .rodata
+ 3'864 bytes in section SOFTPACK
+ 
+ 3'864 bytes of CODE  memory
+   324 bytes of CONST memory
+   152 bytes of DATA  memory
+
+Errors: none
+Warnings: 3

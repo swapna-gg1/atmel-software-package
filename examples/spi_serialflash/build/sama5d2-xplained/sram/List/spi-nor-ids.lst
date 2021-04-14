@@ -1,0 +1,2984 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         19/Aug/2020  13:39:18
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\spi-nor\spi-nor-ids.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW684B.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\spi-nor\spi-nor-ids.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_SPI_AT25 -D CONFIG_DRV_AT25 -D
+#        CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\List\spi-nor-ids.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\Obj\spi-nor-ids.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\spi-nor\spi-nor-ids.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         ATMEL Microcontroller Software Support
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2017, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           */
+     28          
+     29          /*----------------------------------------------------------------------------
+     30           *        Headers
+     31           *----------------------------------------------------------------------------*/
+     32          
+     33          #include "nvm/spi-nor/spi-nor.h"
+     34          
+     35          /*----------------------------------------------------------------------------
+     36           *        Macros
+     37           *----------------------------------------------------------------------------*/
+     38          
+     39          #define ID5(_jedec_id, _ext_id)			\
+     40          	.id = {					\
+     41          		((_jedec_id) >> 16) & 0xff,	\
+     42          		((_jedec_id) >>  8) & 0xff,	\
+     43          		((_jedec_id) >>  0) & 0xff,	\
+     44          		((_ext_id) >> 8) & 0xff,	\
+     45          		((_ext_id) >> 0) & 0xff,	\
+     46          	},					\
+     47          	.id_len = ((_ext_id) ? 5 : 3)
+     48          
+     49          #define SST25(_name, _jedec_id, _n_sectors)	\
+     50          	.name = _name,				\
+     51          	ID5(_jedec_id, 0),			\
+     52          	.sector_size = 65536U,			\
+     53          	.n_sectors = (_n_sectors),		\
+     54          	.page_size = 256,			\
+     55          	.flags = SNOR_SECT_4K | SNOR_NO_4BAIS | SNOR_SKIP_SFDP | SNOR_CLEAR_SR_BP
+     56          
+     57          #define SST26(_name, _jedec_id, _n_sectors)	\
+     58          	.name = _name,				\
+     59          	ID5(_jedec_id, 0),			\
+     60          	.sector_size = 4096U,			\
+     61          	.n_sectors = (_n_sectors),		\
+     62          	.page_size = 256,			\
+     63          	.flags = SNOR_SECT_4K_ONLY | SNOR_SST_ULBPR | SNOR_SKIP_SFDP
+     64          
+     65          #define N25Q(_name, _jedec_id, _n_sectors)	\
+     66          	.name = _name,				\
+     67          	ID5(_jedec_id, 0),			\
+     68          	.sector_size = 65536U,			\
+     69          	.n_sectors = (_n_sectors),		\
+     70          	.page_size = 256,			\
+     71          	.flags = SNOR_HAS_FSR | SNOR_SECT_4K | SNOR_NO_4BAIS
+     72          
+     73          #define AT25(_name, _jedec_id, _n_sectors)	\
+     74          	.name = _name,				\
+     75          	ID5(_jedec_id, 0),			\
+     76          	.sector_size = 65536U,			\
+     77          	.n_sectors = (_n_sectors),		\
+     78          	.page_size = 256,			\
+     79          	.flags = SNOR_SECT_4K | SNOR_NO_4BAIS | SNOR_SKIP_SFDP | SNOR_SECT_32K
+     80          
+     81          #define M25P(_name, _jedec_id, _n_sectors, _s_sector)	\
+     82          	.name = _name,					\
+     83          	ID5(_jedec_id, 0),				\
+     84          	.sector_size = (_s_sector),			\
+     85          	.n_sectors = (_n_sectors),			\
+     86          	.page_size = 256,				\
+     87          	.flags = SNOR_NO_4BAIS | SNOR_SKIP_SFDP
+     88          
+     89          #define W25(_name, _jedec_id, _n_sectors)	\
+     90          	.name = _name,				\
+     91          	ID5(_jedec_id, 0),			\
+     92          	.sector_size = 65536U,			\
+     93          	.n_sectors = (_n_sectors),		\
+     94          	.page_size = 256,			\
+     95          	.flags = SNOR_SECT_4K | SNOR_NO_4BAIS | SNOR_SKIP_SFDP
+     96          
+     97          #define MX25(_name, _jedec_id, _n_sectors)	\
+     98          	.name = _name,				\
+     99          	ID5(_jedec_id, 0),			\
+    100          	.sector_size = 65536U,			\
+    101          	.n_sectors = (_n_sectors),		\
+    102          	.page_size = 256,			\
+    103          	.flags = SNOR_SECT_4K | SNOR_NO_4BAIS
+    104          
+    105          #define MX25L(_name, _jedec_id, _n_sectors)	\
+    106          	.name = _name,				\
+    107          	ID5(_jedec_id, 0),			\
+    108          	.sector_size = 65536U,			\
+    109          	.n_sectors = (_n_sectors),		\
+    110          	.page_size = 256,			\
+    111          	.flags = SNOR_SECT_4K
+    112          
+    113          #define MX66L(_name, _jedec_id, _n_sectors)	\
+    114          	.name = _name,				\
+    115          	ID5(_jedec_id, 0),			\
+    116          	.sector_size = 65536U,			\
+    117          	.n_sectors = (_n_sectors),		\
+    118          	.page_size = 256,			\
+    119          	.flags = SNOR_SECT_4K
+    120          
+    121          #define S25FL(_name, _jedec_id, _n_sectors, _s_sector, _flags)	\
+    122          	.name = _name,					\
+    123          	ID5(_jedec_id, 0),				\
+    124          	.sector_size = (_s_sector),			\
+    125          	.n_sectors = (_n_sectors),			\
+    126          	.page_size = 256,				\
+    127          	.flags = (_flags)
+    128          
+    129          #define IS25(_name, _jedec_id, _n_sectors, _s_sector)	\
+    130          	.name = _name,					\
+    131          	ID5(_jedec_id, 0),				\
+    132          	.sector_size = (_s_sector),			\
+    133          	.n_sectors = (_n_sectors),			\
+    134          	.page_size = 256,				\
+    135          	.flags = SNOR_SECT_4K
+    136          
+    137          /*----------------------------------------------------------------------------
+    138           *        Exported Variables
+    139           *----------------------------------------------------------------------------*/
+    140          
+
+   \                                 In section .rodata, align 4
+    141          const struct spi_nor_info spi_nor_ids[] = {
+   \                     spi_nor_ids:
+   \        0x0   0x....'....        DC32 ?_0
+   \        0x4   0x1F 0x43          DC8 31, 67, 0, 0, 0, 0, 3, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \        0xC   0x0001'0000        DC32 65'536
+   \       0x10   0x0004 0x0100      DC16 4, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \       0x18   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x1C   0x....'....        DC32 ?_1
+   \       0x20   0x1F 0x44          DC8 31, 68, 1, 0, 0, 0, 3, 0
+
+   \              0x01 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \       0x28   0x0001'0000        DC32 65'536
+   \       0x2C   0x0008 0x0100      DC16 8, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \       0x34   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x38   0x....'....        DC32 ?_2
+   \       0x3C   0x1F 0x45          DC8 31, 69, 1, 0, 0, 0, 3, 0
+
+   \              0x01 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \       0x44   0x0001'0000        DC32 65'536
+   \       0x48   0x0010 0x0100      DC16 16, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \       0x50   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x54   0x....'....        DC32 ?_3
+   \       0x58   0x1F 0x46          DC8 31, 70, 1, 0, 0, 0, 3, 0
+
+   \              0x01 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \       0x60   0x0001'0000        DC32 65'536
+   \       0x64   0x0020 0x0100      DC16 32, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \       0x6C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x70   0x....'....        DC32 ?_4
+   \       0x74   0x1F 0x46          DC8 31, 70, 2, 0, 0, 0, 3, 0
+
+   \              0x02 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \       0x7C   0x0001'0000        DC32 65'536
+   \       0x80   0x0020 0x0100      DC16 32, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \       0x88   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x8C   0x....'....        DC32 ?_5
+   \       0x90   0x1F 0x47          DC8 31, 71, 0, 0, 0, 0, 3, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \       0x98   0x0001'0000        DC32 65'536
+   \       0x9C   0x0040 0x0100      DC16 64, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \       0xA4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0xA8   0x....'....        DC32 ?_6
+   \       0xAC   0x1F 0x47          DC8 31, 71, 1, 0, 0, 0, 3, 0
+
+   \              0x01 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \       0xB4   0x0001'0000        DC32 65'536
+   \       0xB8   0x0040 0x0100      DC16 64, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \       0xC0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0xC4   0x....'....        DC32 ?_5
+   \       0xC8   0x1F 0x47          DC8 31, 71, 0, 0, 0, 0, 3, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \       0xD0   0x0001'0000        DC32 65'536
+   \       0xD4   0x0040 0x0100      DC16 64, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \       0xDC   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0xE0   0x....'....        DC32 ?_6
+   \       0xE4   0x1F 0x47          DC8 31, 71, 1, 0, 0, 0, 3, 0
+
+   \              0x01 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \       0xEC   0x0001'0000        DC32 65'536
+   \       0xF0   0x0040 0x0100      DC16 64, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \       0xF8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0xFC   0x....'....        DC32 ?_7
+   \      0x100   0x1F 0x4B          DC8 31, 75, 0, 0, 0, 0, 3, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x108   0x0001'0000        DC32 65'536
+   \      0x10C   0x0080 0x0100      DC16 128, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \      0x114   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x118   0x....'....        DC32 ?_8
+   \      0x11C   0x1F 0x65          DC8 31, 101, 0, 0, 0, 0, 3, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x124   0x0001'0000        DC32 65'536
+   \      0x128   0x0001 0x0100      DC16 1, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \      0x130   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x134   0x....'....        DC32 ?_8
+   \      0x138   0x1F 0x65          DC8 31, 101, 1, 0, 0, 0, 3, 0
+
+   \              0x01 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x140   0x0001'0000        DC32 65'536
+   \      0x144   0x0001 0x0100      DC16 1, 256, 0, 153
+
+   \               0x0000 0x009
+
+   \              9
+   \      0x14C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x150   0x....'....        DC32 ?_9
+   \      0x154   0x20 0x20          DC8 32, 32, 16, 0, 0, 0, 3, 0
+
+   \              0x10 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x15C   0x0000'8000        DC32 32'768
+   \      0x160   0x0002 0x0100      DC16 2, 256, 0, 24
+
+   \               0x0000 0x001
+
+   \              8
+   \      0x168   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x16C   0x....'....        DC32 ?_10
+   \      0x170   0x20 0x20          DC8 32, 32, 17, 0, 0, 0, 3, 0
+
+   \              0x11 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x178   0x0000'8000        DC32 32'768
+   \      0x17C   0x0004 0x0100      DC16 4, 256, 0, 24
+
+   \               0x0000 0x001
+
+   \              8
+   \      0x184   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x188   0x....'....        DC32 ?_11
+   \      0x18C   0x20 0x20          DC8 32, 32, 18, 0, 0, 0, 3, 0
+
+   \              0x12 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x194   0x0001'0000        DC32 65'536
+   \      0x198   0x0004 0x0100      DC16 4, 256, 0, 24
+
+   \               0x0000 0x001
+
+   \              8
+   \      0x1A0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x1A4   0x....'....        DC32 ?_12
+   \      0x1A8   0x20 0x20          DC8 32, 32, 19, 0, 0, 0, 3, 0
+
+   \              0x13 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x1B0   0x0001'0000        DC32 65'536
+   \      0x1B4   0x0008 0x0100      DC16 8, 256, 0, 24
+
+   \               0x0000 0x001
+
+   \              8
+   \      0x1BC   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x1C0   0x....'....        DC32 ?_13
+   \      0x1C4   0x20 0x20          DC8 32, 32, 20, 0, 0, 0, 3, 0
+
+   \              0x14 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x1CC   0x0001'0000        DC32 65'536
+   \      0x1D0   0x0010 0x0100      DC16 16, 256, 0, 24
+
+   \               0x0000 0x001
+
+   \              8
+   \      0x1D8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x1DC   0x....'....        DC32 ?_14
+   \      0x1E0   0x20 0x20          DC8 32, 32, 21, 0, 0, 0, 3, 0
+
+   \              0x15 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x1E8   0x0001'0000        DC32 65'536
+   \      0x1EC   0x0020 0x0100      DC16 32, 256, 0, 24
+
+   \               0x0000 0x001
+
+   \              8
+   \      0x1F4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x1F8   0x....'....        DC32 ?_15
+   \      0x1FC   0x20 0x20          DC8 32, 32, 22, 0, 0, 0, 3, 0
+
+   \              0x16 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x204   0x0001'0000        DC32 65'536
+   \      0x208   0x0040 0x0100      DC16 64, 256, 0, 24
+
+   \               0x0000 0x001
+
+   \              8
+   \      0x210   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x214   0x....'....        DC32 ?_16
+   \      0x218   0x20 0x20          DC8 32, 32, 23, 0, 0, 0, 3, 0
+
+   \              0x17 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x220   0x0001'0000        DC32 65'536
+   \      0x224   0x0080 0x0100      DC16 128, 256, 0, 24
+
+   \               0x0000 0x001
+
+   \              8
+   \      0x22C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x230   0x....'....        DC32 ?_17
+   \      0x234   0x20 0xBB          DC8 32, 187, 22, 0, 0, 0, 3, 0
+
+   \              0x16 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x23C   0x0001'0000        DC32 65'536
+   \      0x240   0x0040 0x0100      DC16 64, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x248   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x24C   0x....'....        DC32 ?_18
+   \      0x250   0x20 0xBA          DC8 32, 186, 22, 0, 0, 0, 3, 0
+
+   \              0x16 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x258   0x0001'0000        DC32 65'536
+   \      0x25C   0x0040 0x0100      DC16 64, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x264   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x268   0x....'....        DC32 ?_19
+   \      0x26C   0x20 0xBB          DC8 32, 187, 23, 0, 0, 0, 3, 0
+
+   \              0x17 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x274   0x0001'0000        DC32 65'536
+   \      0x278   0x0080 0x0100      DC16 128, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x280   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x284   0x....'....        DC32 ?_20
+   \      0x288   0x20 0xBA          DC8 32, 186, 23, 0, 0, 0, 3, 0
+
+   \              0x17 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x290   0x0001'0000        DC32 65'536
+   \      0x294   0x0080 0x0100      DC16 128, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x29C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x2A0   0x....'....        DC32 ?_21
+   \      0x2A4   0x20 0xBB          DC8 32, 187, 24, 0, 0, 0, 3, 0
+
+   \              0x18 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x2AC   0x0001'0000        DC32 65'536
+   \      0x2B0   0x0100 0x0100      DC16 256, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x2B8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x2BC   0x....'....        DC32 ?_22
+   \      0x2C0   0x20 0xBA          DC8 32, 186, 24, 0, 0, 0, 3, 0
+
+   \              0x18 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x2C8   0x0001'0000        DC32 65'536
+   \      0x2CC   0x0100 0x0100      DC16 256, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x2D4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x2D8   0x....'....        DC32 ?_23
+   \      0x2DC   0x20 0xBB          DC8 32, 187, 25, 0, 0, 0, 3, 0
+
+   \              0x19 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x2E4   0x0001'0000        DC32 65'536
+   \      0x2E8   0x0200 0x0100      DC16 512, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x2F0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x2F4   0x....'....        DC32 ?_24
+   \      0x2F8   0x20 0xBA          DC8 32, 186, 25, 0, 0, 0, 3, 0
+
+   \              0x19 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x300   0x0001'0000        DC32 65'536
+   \      0x304   0x0200 0x0100      DC16 512, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x30C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x310   0x....'....        DC32 ?_25
+   \      0x314   0x20 0xBB          DC8 32, 187, 32, 0, 0, 0, 3, 0
+
+   \              0x20 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x31C   0x0001'0000        DC32 65'536
+   \      0x320   0x0400 0x0100      DC16 1'024, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x328   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x32C   0x....'....        DC32 ?_26
+   \      0x330   0x20 0xBA          DC8 32, 186, 32, 0, 0, 0, 3, 0
+
+   \              0x20 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x338   0x0001'0000        DC32 65'536
+   \      0x33C   0x0400 0x0100      DC16 1'024, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x344   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x348   0x....'....        DC32 ?_27
+   \      0x34C   0x20 0xBB          DC8 32, 187, 33, 0, 0, 0, 3, 0
+
+   \              0x21 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x354   0x0001'0000        DC32 65'536
+   \      0x358   0x0800 0x0100      DC16 2'048, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x360   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x364   0x....'....        DC32 ?_28
+   \      0x368   0x20 0xBA          DC8 32, 186, 33, 0, 0, 0, 3, 0
+
+   \              0x21 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x370   0x0001'0000        DC32 65'536
+   \      0x374   0x0800 0x0100      DC16 2'048, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x37C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x380   0x....'....        DC32 ?_29
+   \      0x384   0x20 0xBB          DC8 32, 187, 34, 0, 0, 0, 3, 0
+
+   \              0x22 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x38C   0x0001'0000        DC32 65'536
+   \      0x390   0x1000 0x0100      DC16 4'096, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x398   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x39C   0x....'....        DC32 ?_30
+   \      0x3A0   0x20 0xBA          DC8 32, 186, 34, 0, 0, 0, 3, 0
+
+   \              0x22 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x3A8   0x0001'0000        DC32 65'536
+   \      0x3AC   0x1000 0x0100      DC16 4'096, 256, 0, 13
+
+   \               0x0000 0x000
+
+   \              D
+   \      0x3B4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x3B8   0x....'....        DC32 ?_31
+   \      0x3BC   0xEF 0x30          DC8 239, 48, 16, 0, 0, 0, 3, 0
+
+   \              0x10 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x3C4   0x0001'0000        DC32 65'536
+   \      0x3C8   0x0001 0x0100      DC16 1, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x3D0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x3D4   0x....'....        DC32 ?_32
+   \      0x3D8   0xEF 0x30          DC8 239, 48, 17, 0, 0, 0, 3, 0
+
+   \              0x11 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x3E0   0x0001'0000        DC32 65'536
+   \      0x3E4   0x0002 0x0100      DC16 2, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x3EC   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x3F0   0x....'....        DC32 ?_33
+   \      0x3F4   0xEF 0x30          DC8 239, 48, 18, 0, 0, 0, 3, 0
+
+   \              0x12 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x3FC   0x0001'0000        DC32 65'536
+   \      0x400   0x0004 0x0100      DC16 4, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x408   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x40C   0x....'....        DC32 ?_34
+   \      0x410   0xEF 0x30          DC8 239, 48, 19, 0, 0, 0, 3, 0
+
+   \              0x13 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x418   0x0001'0000        DC32 65'536
+   \      0x41C   0x0008 0x0100      DC16 8, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x424   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x428   0x....'....        DC32 ?_35
+   \      0x42C   0xEF 0x30          DC8 239, 48, 20, 0, 0, 0, 3, 0
+
+   \              0x14 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x434   0x0001'0000        DC32 65'536
+   \      0x438   0x0010 0x0100      DC16 16, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x440   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x444   0x....'....        DC32 ?_36
+   \      0x448   0xEF 0x30          DC8 239, 48, 21, 0, 0, 0, 3, 0
+
+   \              0x15 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x450   0x0001'0000        DC32 65'536
+   \      0x454   0x0020 0x0100      DC16 32, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x45C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x460   0x....'....        DC32 ?_37
+   \      0x464   0xEF 0x30          DC8 239, 48, 22, 0, 0, 0, 3, 0
+
+   \              0x16 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x46C   0x0001'0000        DC32 65'536
+   \      0x470   0x0040 0x0100      DC16 64, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x478   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x47C   0x....'....        DC32 ?_38
+   \      0x480   0xEF 0x30          DC8 239, 48, 23, 0, 0, 0, 3, 0
+
+   \              0x17 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x488   0x0001'0000        DC32 65'536
+   \      0x48C   0x0080 0x0100      DC16 128, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x494   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x498   0x....'....        DC32 ?_39
+   \      0x49C   0xEF 0x40          DC8 239, 64, 18, 0, 0, 0, 3, 0
+
+   \              0x12 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x4A4   0x0001'0000        DC32 65'536
+   \      0x4A8   0x0004 0x0100      DC16 4, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x4B0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x4B4   0x....'....        DC32 ?_40
+   \      0x4B8   0xEF 0x40          DC8 239, 64, 19, 0, 0, 0, 3, 0
+
+   \              0x13 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x4C0   0x0001'0000        DC32 65'536
+   \      0x4C4   0x0008 0x0100      DC16 8, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x4CC   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x4D0   0x....'....        DC32 ?_41
+   \      0x4D4   0xEF 0x40          DC8 239, 64, 20, 0, 0, 0, 3, 0
+
+   \              0x14 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x4DC   0x0001'0000        DC32 65'536
+   \      0x4E0   0x0010 0x0100      DC16 16, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x4E8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x4EC   0x....'....        DC32 ?_42
+   \      0x4F0   0xEF 0x40          DC8 239, 64, 21, 0, 0, 0, 3, 0
+
+   \              0x15 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x4F8   0x0001'0000        DC32 65'536
+   \      0x4FC   0x0020 0x0100      DC16 32, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x504   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x508   0x....'....        DC32 ?_43
+   \      0x50C   0xEF 0x40          DC8 239, 64, 22, 0, 0, 0, 3, 0
+
+   \              0x16 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x514   0x0001'0000        DC32 65'536
+   \      0x518   0x0040 0x0100      DC16 64, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x520   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x524   0x....'....        DC32 ?_44
+   \      0x528   0xEF 0x40          DC8 239, 64, 23, 0, 0, 0, 3, 0
+
+   \              0x17 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x530   0x0001'0000        DC32 65'536
+   \      0x534   0x0080 0x0100      DC16 128, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x53C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x540   0x....'....        DC32 ?_45
+   \      0x544   0xEF 0x40          DC8 239, 64, 24, 0, 0, 0, 3, 0
+
+   \              0x18 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x54C   0x0001'0000        DC32 65'536
+   \      0x550   0x0100 0x0100      DC16 256, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x558   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x55C   0x....'....        DC32 ?_46
+   \      0x560   0xEF 0x40          DC8 239, 64, 25, 0, 0, 0, 3, 0
+
+   \              0x19 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x568   0x0001'0000        DC32 65'536
+   \      0x56C   0x0200 0x0100      DC16 512, 256, 0, 25
+
+   \               0x0000 0x001
+
+   \              9
+   \      0x574   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x578   0x....'....        DC32 ?_47
+   \      0x57C   0xC2 0x20          DC8 194, 32, 16, 0, 0, 0, 3, 0
+
+   \              0x10 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x584   0x0001'0000        DC32 65'536
+   \      0x588   0x0001 0x0100      DC16 1, 256, 0, 9
+
+   \               0x0000 0x000
+
+   \              9
+   \      0x590   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x594   0x....'....        DC32 ?_48
+   \      0x598   0xC2 0x20          DC8 194, 32, 19, 0, 0, 0, 3, 0
+
+   \              0x13 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x5A0   0x0001'0000        DC32 65'536
+   \      0x5A4   0x0008 0x0100      DC16 8, 256, 0, 9
+
+   \               0x0000 0x000
+
+   \              9
+   \      0x5AC   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x5B0   0x....'....        DC32 ?_49
+   \      0x5B4   0xC2 0x20          DC8 194, 32, 20, 0, 0, 0, 3, 0
+
+   \              0x14 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x5BC   0x0001'0000        DC32 65'536
+   \      0x5C0   0x0010 0x0100      DC16 16, 256, 0, 9
+
+   \               0x0000 0x000
+
+   \              9
+   \      0x5C8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x5CC   0x....'....        DC32 ?_50
+   \      0x5D0   0xC2 0x20          DC8 194, 32, 22, 0, 0, 0, 3, 0
+
+   \              0x16 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x5D8   0x0001'0000        DC32 65'536
+   \      0x5DC   0x0040 0x0100      DC16 64, 256, 0, 9
+
+   \               0x0000 0x000
+
+   \              9
+   \      0x5E4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x5E8   0x....'....        DC32 ?_51
+   \      0x5EC   0xC2 0x20          DC8 194, 32, 23, 0, 0, 0, 3, 0
+
+   \              0x17 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x5F4   0x0001'0000        DC32 65'536
+   \      0x5F8   0x0080 0x0100      DC16 128, 256, 0, 9
+
+   \               0x0000 0x000
+
+   \              9
+   \      0x600   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x604   0x....'....        DC32 ?_52
+   \      0x608   0xC2 0x20          DC8 194, 32, 24, 0, 0, 0, 3, 0
+
+   \              0x18 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x610   0x0001'0000        DC32 65'536
+   \      0x614   0x0100 0x0100      DC16 256, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x61C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x620   0x....'....        DC32 ?_53
+   \      0x624   0xC2 0x20          DC8 194, 32, 25, 0, 0, 0, 3, 0
+
+   \              0x19 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x62C   0x0001'0000        DC32 65'536
+   \      0x630   0x0200 0x0100      DC16 512, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x638   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x63C   0x....'....        DC32 ?_54
+   \      0x640   0xC2 0x20          DC8 194, 32, 26, 0, 0, 0, 3, 0
+
+   \              0x1A 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x648   0x0001'0000        DC32 65'536
+   \      0x64C   0x0400 0x0100      DC16 1'024, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x654   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x658   0x....'....        DC32 ?_55
+   \      0x65C   0xC2 0x20          DC8 194, 32, 27, 0, 0, 0, 3, 0
+
+   \              0x1B 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x664   0x0001'0000        DC32 65'536
+   \      0x668   0x0800 0x0100      DC16 2'048, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x670   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x674   0x....'....        DC32 ?_56
+   \      0x678   0xC2 0x20          DC8 194, 32, 28, 0, 0, 0, 3, 0
+
+   \              0x1C 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x680   0x0001'0000        DC32 65'536
+   \      0x684   0x1000 0x0100      DC16 4'096, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x68C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x690   0x....'....        DC32 ?_57
+   \      0x694   0xC2 0x35          DC8 194, 53, 37, 0, 0, 0, 3, 0
+
+   \              0x25 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x69C   0x0001'0000        DC32 65'536
+   \      0x6A0   0x0020 0x0100      DC16 32, 256, 0, 9
+
+   \               0x0000 0x000
+
+   \              9
+   \      0x6A8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x6AC   0x....'....        DC32 ?_58
+   \      0x6B0   0xBF 0x25          DC8 191, 37, 74, 0, 0, 0, 3, 0
+
+   \              0x4A 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x6B8   0x0001'0000        DC32 65'536
+   \      0x6BC   0x0040 0x0100      DC16 64, 256, 0, 281
+
+   \               0x0000 0x011
+
+   \              9
+   \      0x6C4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x6C8   0x....'....        DC32 ?_59
+   \      0x6CC   0xBF 0x25          DC8 191, 37, 75, 0, 0, 0, 3, 0
+
+   \              0x4B 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x6D4   0x0001'0000        DC32 65'536
+   \      0x6D8   0x0080 0x0100      DC16 128, 256, 0, 281
+
+   \               0x0000 0x011
+
+   \              9
+   \      0x6E0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x6E4   0x....'....        DC32 ?_60
+   \      0x6E8   0xBF 0x25          DC8 191, 37, 140, 0, 0, 0, 3, 0
+
+   \              0x8C 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x6F0   0x0001'0000        DC32 65'536
+   \      0x6F4   0x0004 0x0100      DC16 4, 256, 0, 281
+
+   \               0x0000 0x011
+
+   \              9
+   \      0x6FC   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x700   0x....'....        DC32 ?_61
+   \      0x704   0xBF 0x25          DC8 191, 37, 141, 0, 0, 0, 3, 0
+
+   \              0x8D 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x70C   0x0001'0000        DC32 65'536
+   \      0x710   0x0008 0x0100      DC16 8, 256, 0, 281
+
+   \               0x0000 0x011
+
+   \              9
+   \      0x718   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x71C   0x....'....        DC32 ?_62
+   \      0x720   0xBF 0x25          DC8 191, 37, 142, 0, 0, 0, 3, 0
+
+   \              0x8E 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x728   0x0001'0000        DC32 65'536
+   \      0x72C   0x0010 0x0100      DC16 16, 256, 0, 281
+
+   \               0x0000 0x011
+
+   \              9
+   \      0x734   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x738   0x....'....        DC32 ?_63
+   \      0x73C   0x62 0x06          DC8 98, 6, 19, 0, 0, 0, 3, 0
+
+   \              0x13 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x744   0x0001'0000        DC32 65'536
+   \      0x748   0x0008 0x0100      DC16 8, 256, 0, 281
+
+   \               0x0000 0x011
+
+   \              9
+   \      0x750   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x754   0x....'....        DC32 ?_64
+   \      0x758   0x62 0x16          DC8 98, 22, 18, 0, 0, 0, 3, 0
+
+   \              0x12 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x760   0x0001'0000        DC32 65'536
+   \      0x764   0x0004 0x0100      DC16 4, 256, 0, 281
+
+   \               0x0000 0x011
+
+   \              9
+   \      0x76C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x770   0x....'....        DC32 ?_65
+   \      0x774   0x62 0x16          DC8 98, 22, 19, 0, 0, 0, 3, 0
+
+   \              0x13 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x77C   0x0001'0000        DC32 65'536
+   \      0x780   0x0008 0x0100      DC16 8, 256, 0, 281
+
+   \               0x0000 0x011
+
+   \              9
+   \      0x788   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x78C   0x....'....        DC32 ?_66
+   \      0x790   0xBF 0x26          DC8 191, 38, 65, 0, 0, 0, 3, 0
+
+   \              0x41 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x798   0x0000'1000        DC32 4'096
+   \      0x79C   0x0200 0x0100      DC16 512, 256, 0, 112
+
+   \               0x0000 0x007
+
+   \              0
+   \      0x7A4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x7A8   0x....'....        DC32 ?_67
+   \      0x7AC   0xBF 0x26          DC8 191, 38, 66, 0, 0, 0, 3, 0
+
+   \              0x42 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x7B4   0x0000'1000        DC32 4'096
+   \      0x7B8   0x0400 0x0100      DC16 1'024, 256, 0, 112
+
+   \               0x0000 0x007
+
+   \              0
+   \      0x7C0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x7C4   0x....'....        DC32 ?_68
+   \      0x7C8   0xBF 0x26          DC8 191, 38, 67, 0, 0, 0, 3, 0
+
+   \              0x43 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x7D0   0x0000'1000        DC32 4'096
+   \      0x7D4   0x0800 0x0100      DC16 2'048, 256, 0, 112
+
+   \               0x0000 0x007
+
+   \              0
+   \      0x7DC   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x7E0   0x....'....        DC32 ?_69
+   \      0x7E4   0xBF 0x26          DC8 191, 38, 84, 0, 0, 0, 3, 0
+
+   \              0x54 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x7EC   0x0000'1000        DC32 4'096
+   \      0x7F0   0x0080 0x0100      DC16 128, 256, 0, 112
+
+   \               0x0000 0x007
+
+   \              0
+   \      0x7F8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x7FC   0x....'....        DC32 ?_70
+   \      0x800   0xBF 0x26          DC8 191, 38, 88, 0, 0, 0, 3, 0
+
+   \              0x58 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x808   0x0000'1000        DC32 4'096
+   \      0x80C   0x0100 0x0100      DC16 256, 256, 0, 112
+
+   \               0x0000 0x007
+
+   \              0
+   \      0x814   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x818   0x....'....        DC32 ?_71
+   \      0x81C   0x01 0x02          DC8 1, 2, 21, 0, 0, 0, 3, 0
+
+   \              0x15 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x824   0x0001'0000        DC32 65'536
+   \      0x828   0x0080 0x0100      DC16 128, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x830   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x834   0x....'....        DC32 ?_71
+   \      0x838   0x01 0x02          DC8 1, 2, 22, 0, 0, 0, 3, 0
+
+   \              0x16 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x840   0x0001'0000        DC32 65'536
+   \      0x844   0x0100 0x0100      DC16 256, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x84C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x850   0x....'....        DC32 ?_72
+   \      0x854   0x01 0x42          DC8 1, 66, 21, 0, 0, 0, 3, 0
+
+   \              0x15 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x85C   0x0001'0000        DC32 65'536
+   \      0x860   0x0020 0x0100      DC16 32, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x868   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x86C   0x....'....        DC32 ?_73
+   \      0x870   0x01 0x42          DC8 1, 66, 22, 0, 0, 0, 3, 0
+
+   \              0x16 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x878   0x0001'0000        DC32 65'536
+   \      0x87C   0x0040 0x0100      DC16 64, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x884   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x888   0x....'....        DC32 ?_74
+   \      0x88C   0x01 0x42          DC8 1, 66, 23, 0, 0, 0, 3, 0
+
+   \              0x17 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x894   0x0001'0000        DC32 65'536
+   \      0x898   0x0080 0x0100      DC16 128, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x8A0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x8A4   0x....'....        DC32 ?_75
+   \      0x8A8   0x01 0x20          DC8 1, 32, 24, 0, 0, 0, 3, 0
+
+   \              0x18 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x8B0   0x0001'0000        DC32 65'536
+   \      0x8B4   0x0100 0x0100      DC16 256, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x8BC   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x8C0   0x....'....        DC32 ?_76
+   \      0x8C4   0x01 0x02          DC8 1, 2, 25, 0, 0, 0, 3, 0
+
+   \              0x19 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x8CC   0x0001'0000        DC32 65'536
+   \      0x8D0   0x0200 0x0100      DC16 512, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x8D8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x8DC   0x....'....        DC32 ?_77
+   \      0x8E0   0x01 0x02          DC8 1, 2, 32, 0, 0, 0, 3, 0
+
+   \              0x20 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x8E8   0x0004'0000        DC32 262'144
+   \      0x8EC   0x0400 0x0100      DC16 1'024, 256, 0, 0
+
+   \               0x0000 0x000
+
+   \              0
+   \      0x8F4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x8F8   0x....'....        DC32 ?_78
+   \      0x8FC   0x7F 0x9D          DC8 127, 157, 32, 0, 0, 0, 3, 0
+
+   \              0x20 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x904   0x0000'8000        DC32 32'768
+   \      0x908   0x0002 0x0100      DC16 2, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x910   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x914   0x....'....        DC32 ?_79
+   \      0x918   0x9D 0x40          DC8 157, 64, 19, 0, 0, 0, 3, 0
+
+   \              0x13 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x920   0x0001'0000        DC32 65'536
+   \      0x924   0x0008 0x0100      DC16 8, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x92C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x930   0x....'....        DC32 ?_80
+   \      0x934   0x9D 0x60          DC8 157, 96, 20, 0, 0, 0, 3, 0
+
+   \              0x14 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x93C   0x0001'0000        DC32 65'536
+   \      0x940   0x0010 0x0100      DC16 16, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x948   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x94C   0x....'....        DC32 ?_81
+   \      0x950   0x9D 0x60          DC8 157, 96, 24, 0, 0, 0, 3, 0
+
+   \              0x18 0x00    
+
+   \              0x00 0x00    
+
+   \              0x03 0x00
+   \      0x958   0x0001'0000        DC32 65'536
+   \      0x95C   0x0100 0x0100      DC16 256, 256, 0, 1
+
+   \               0x0000 0x000
+
+   \              1
+   \      0x964   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x968   0x0000'0000        DC32 0x0
+   \      0x96C   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \      0x97C   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x61 0x74          DC8 "at25df021"
+
+   \              0x32 0x35    
+
+   \              0x64 0x66    
+
+   \              0x30 0x32    
+
+   \              0x31 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x61 0x74          DC8 "at25df041a"
+
+   \              0x32 0x35    
+
+   \              0x64 0x66    
+
+   \              0x30 0x34    
+
+   \              0x31 0x61    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x61 0x74          DC8 "at25df018a"
+
+   \              0x32 0x35    
+
+   \              0x64 0x66    
+
+   \              0x30 0x31    
+
+   \              0x38 0x61    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x61 0x74          DC8 "at25df0161a"
+
+   \              0x32 0x35    
+
+   \              0x64 0x66    
+
+   \              0x30 0x31    
+
+   \              0x36 0x31    
+
+   \              0x61 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_4:
+   \        0x0   0x61 0x74          DC8 "at25df0161"
+
+   \              0x32 0x35    
+
+   \              0x64 0x66    
+
+   \              0x30 0x31    
+
+   \              0x36 0x31    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_5:
+   \        0x0   0x61 0x74          DC8 "at25df321"
+
+   \              0x32 0x35    
+
+   \              0x64 0x66    
+
+   \              0x33 0x32    
+
+   \              0x31 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_6:
+   \        0x0   0x61 0x74          DC8 "at25df321a"
+
+   \              0x32 0x35    
+
+   \              0x64 0x66    
+
+   \              0x33 0x32    
+
+   \              0x31 0x61    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_7:
+   \        0x0   0x61 0x74          DC8 "at25df641"
+
+   \              0x32 0x35    
+
+   \              0x64 0x66    
+
+   \              0x36 0x34    
+
+   \              0x31 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_8:
+   \        0x0   0x61 0x74          DC8 "at25df512b"
+
+   \              0x32 0x35    
+
+   \              0x64 0x66    
+
+   \              0x35 0x31    
+
+   \              0x32 0x62    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_9:
+   \        0x0   0x6D 0x32          DC8 "m25p05"
+
+   \              0x35 0x70    
+
+   \              0x30 0x35    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_10:
+   \        0x0   0x6D 0x32          DC8 "m25p10"
+
+   \              0x35 0x70    
+
+   \              0x31 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_11:
+   \        0x0   0x6D 0x32          DC8 "m25p20"
+
+   \              0x35 0x70    
+
+   \              0x32 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_12:
+   \        0x0   0x6D 0x32          DC8 "m25p40"
+
+   \              0x35 0x70    
+
+   \              0x34 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_13:
+   \        0x0   0x6D 0x32          DC8 "m25p80"
+
+   \              0x35 0x70    
+
+   \              0x38 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_14:
+   \        0x0   0x6D 0x32          DC8 "m25p16"
+
+   \              0x35 0x70    
+
+   \              0x31 0x36    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_15:
+   \        0x0   0x6D 0x32          DC8 "m25p32"
+
+   \              0x35 0x70    
+
+   \              0x33 0x32    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_16:
+   \        0x0   0x6D 0x32          DC8 "m25p64"
+
+   \              0x35 0x70    
+
+   \              0x36 0x34    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_17:
+   \        0x0   0x6E 0x32          DC8 "n25q032ax1"
+
+   \              0x35 0x71    
+
+   \              0x30 0x33    
+
+   \              0x32 0x61    
+
+   \              0x78 0x31    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_18:
+   \        0x0   0x6E 0x32          DC8 "n25q032ax3"
+
+   \              0x35 0x71    
+
+   \              0x30 0x33    
+
+   \              0x32 0x61    
+
+   \              0x78 0x33    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_19:
+   \        0x0   0x6E 0x32          DC8 "n25q064ax1"
+
+   \              0x35 0x71    
+
+   \              0x30 0x36    
+
+   \              0x34 0x61    
+
+   \              0x78 0x31    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_20:
+   \        0x0   0x6E 0x32          DC8 "n25q064ax3"
+
+   \              0x35 0x71    
+
+   \              0x30 0x36    
+
+   \              0x34 0x61    
+
+   \              0x78 0x33    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_21:
+   \        0x0   0x6E 0x32          DC8 "n25q128ax1"
+
+   \              0x35 0x71    
+
+   \              0x31 0x32    
+
+   \              0x38 0x61    
+
+   \              0x78 0x31    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_22:
+   \        0x0   0x6E 0x32          DC8 "n25q128ax3"
+
+   \              0x35 0x71    
+
+   \              0x31 0x32    
+
+   \              0x38 0x61    
+
+   \              0x78 0x33    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_23:
+   \        0x0   0x6E 0x32          DC8 "n25q256ax1"
+
+   \              0x35 0x71    
+
+   \              0x32 0x35    
+
+   \              0x36 0x61    
+
+   \              0x78 0x31    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_24:
+   \        0x0   0x6E 0x32          DC8 "n25q256ax3"
+
+   \              0x35 0x71    
+
+   \              0x32 0x35    
+
+   \              0x36 0x61    
+
+   \              0x78 0x33    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_25:
+   \        0x0   0x6E 0x32          DC8 "n25q512ax1"
+
+   \              0x35 0x71    
+
+   \              0x35 0x31    
+
+   \              0x32 0x61    
+
+   \              0x78 0x31    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_26:
+   \        0x0   0x6E 0x32          DC8 "n25q512ax3"
+
+   \              0x35 0x71    
+
+   \              0x35 0x31    
+
+   \              0x32 0x61    
+
+   \              0x78 0x33    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_27:
+   \        0x0   0x6E 0x32          DC8 "n25q00ax1"
+
+   \              0x35 0x71    
+
+   \              0x30 0x30    
+
+   \              0x61 0x78    
+
+   \              0x31 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_28:
+   \        0x0   0x6E 0x32          DC8 "n25q00ax3"
+
+   \              0x35 0x71    
+
+   \              0x30 0x30    
+
+   \              0x61 0x78    
+
+   \              0x33 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_29:
+   \        0x0   0x6D 0x74          DC8 "mt25qu02g"
+
+   \              0x32 0x35    
+
+   \              0x71 0x75    
+
+   \              0x30 0x32    
+
+   \              0x67 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_30:
+   \        0x0   0x6D 0x74          DC8 "mt25ql02g"
+
+   \              0x32 0x35    
+
+   \              0x71 0x6C    
+
+   \              0x30 0x32    
+
+   \              0x67 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_31:
+   \        0x0   0x77 0x32          DC8 "w25x05"
+
+   \              0x35 0x78    
+
+   \              0x30 0x35    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_32:
+   \        0x0   0x77 0x32          DC8 "w25x10"
+
+   \              0x35 0x78    
+
+   \              0x31 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_33:
+   \        0x0   0x77 0x32          DC8 "w25x20"
+
+   \              0x35 0x78    
+
+   \              0x32 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_34:
+   \        0x0   0x77 0x32          DC8 "w25x40"
+
+   \              0x35 0x78    
+
+   \              0x34 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_35:
+   \        0x0   0x77 0x32          DC8 "w25x80"
+
+   \              0x35 0x78    
+
+   \              0x38 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_36:
+   \        0x0   0x77 0x32          DC8 "w25x16"
+
+   \              0x35 0x78    
+
+   \              0x31 0x36    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_37:
+   \        0x0   0x77 0x32          DC8 "w25x32"
+
+   \              0x35 0x78    
+
+   \              0x33 0x32    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_38:
+   \        0x0   0x77 0x32          DC8 "w25x64"
+
+   \              0x35 0x78    
+
+   \              0x36 0x34    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_39:
+   \        0x0   0x77 0x32          DC8 "w25q20"
+
+   \              0x35 0x71    
+
+   \              0x32 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_40:
+   \        0x0   0x77 0x32          DC8 "w25q40"
+
+   \              0x35 0x71    
+
+   \              0x34 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_41:
+   \        0x0   0x77 0x32          DC8 "w25q80"
+
+   \              0x35 0x71    
+
+   \              0x38 0x30    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_42:
+   \        0x0   0x77 0x32          DC8 "w25q16"
+
+   \              0x35 0x71    
+
+   \              0x31 0x36    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_43:
+   \        0x0   0x77 0x32          DC8 "w25q32"
+
+   \              0x35 0x71    
+
+   \              0x33 0x32    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_44:
+   \        0x0   0x77 0x32          DC8 "w25q64"
+
+   \              0x35 0x71    
+
+   \              0x36 0x34    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_45:
+   \        0x0   0x77 0x32          DC8 "w25q128"
+
+   \              0x35 0x71    
+
+   \              0x31 0x32    
+
+   \              0x38 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_46:
+   \        0x0   0x77 0x32          DC8 "w25q256"
+
+   \              0x35 0x71    
+
+   \              0x32 0x35    
+
+   \              0x36 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_47:
+   \        0x0   0x6D 0x78          DC8 "mx25l512"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x35    
+
+   \              0x31 0x32    
+
+   \              0x00
+   \        0x9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_48:
+   \        0x0   0x6D 0x78          DC8 "mx25l4005"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x34    
+
+   \              0x30 0x30    
+
+   \              0x35 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_49:
+   \        0x0   0x6D 0x78          DC8 "mx25l8005"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x38    
+
+   \              0x30 0x30    
+
+   \              0x35 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_50:
+   \        0x0   0x6D 0x78          DC8 "mx25l3205"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x33    
+
+   \              0x32 0x30    
+
+   \              0x35 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_51:
+   \        0x0   0x6D 0x78          DC8 "mx25l6405"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x36    
+
+   \              0x34 0x30    
+
+   \              0x35 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_52:
+   \        0x0   0x6D 0x78          DC8 "mx25l12835f"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x31    
+
+   \              0x32 0x38    
+
+   \              0x33 0x35    
+
+   \              0x66 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_53:
+   \        0x0   0x6D 0x78          DC8 "mx25l25673f"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x32    
+
+   \              0x35 0x36    
+
+   \              0x37 0x33    
+
+   \              0x66 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_54:
+   \        0x0   0x6D 0x78          DC8 "mx25l51245f"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x35    
+
+   \              0x31 0x32    
+
+   \              0x34 0x35    
+
+   \              0x66 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_55:
+   \        0x0   0x6D 0x78          DC8 "mx66l1g45g"
+
+   \              0x36 0x36    
+
+   \              0x6C 0x31    
+
+   \              0x67 0x34    
+
+   \              0x35 0x67    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_56:
+   \        0x0   0x6D 0x78          DC8 "mx66l2g45g"
+
+   \              0x36 0x36    
+
+   \              0x6C 0x32    
+
+   \              0x67 0x34    
+
+   \              0x35 0x67    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_57:
+   \        0x0   0x6D 0x78          DC8 "mx25u1635f"
+
+   \              0x32 0x35    
+
+   \              0x75 0x31    
+
+   \              0x36 0x33    
+
+   \              0x35 0x66    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_58:
+   \        0x0   0x73 0x73          DC8 "sst25vf032"
+
+   \              0x74 0x32    
+
+   \              0x35 0x76    
+
+   \              0x66 0x30    
+
+   \              0x33 0x32    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_59:
+   \        0x0   0x73 0x73          DC8 "sst25vf064"
+
+   \              0x74 0x32    
+
+   \              0x35 0x76    
+
+   \              0x66 0x30    
+
+   \              0x36 0x34    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_60:
+   \        0x0   0x73 0x73          DC8 "sst25vf020b"
+
+   \              0x74 0x32    
+
+   \              0x35 0x76    
+
+   \              0x66 0x30    
+
+   \              0x32 0x30    
+
+   \              0x62 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_61:
+   \        0x0   0x73 0x73          DC8 "sst25vf040b"
+
+   \              0x74 0x32    
+
+   \              0x35 0x76    
+
+   \              0x66 0x30    
+
+   \              0x34 0x30    
+
+   \              0x62 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_62:
+   \        0x0   0x73 0x73          DC8 "sst25vf080b"
+
+   \              0x74 0x32    
+
+   \              0x35 0x76    
+
+   \              0x66 0x30    
+
+   \              0x38 0x30    
+
+   \              0x62 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_63:
+   \        0x0   0x73 0x73          DC8 "sst25pf040c"
+
+   \              0x74 0x32    
+
+   \              0x35 0x70    
+
+   \              0x66 0x30    
+
+   \              0x34 0x30    
+
+   \              0x63 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_64:
+   \        0x0   0x73 0x73          DC8 "sst25wf020a"
+
+   \              0x74 0x32    
+
+   \              0x35 0x77    
+
+   \              0x66 0x30    
+
+   \              0x32 0x30    
+
+   \              0x61 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_65:
+   \        0x0   0x73 0x73          DC8 "sst25wf040b"
+
+   \              0x74 0x32    
+
+   \              0x35 0x77    
+
+   \              0x66 0x30    
+
+   \              0x34 0x30    
+
+   \              0x62 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_66:
+   \        0x0   0x73 0x73          DC8 "sst26vf016b"
+
+   \              0x74 0x32    
+
+   \              0x36 0x76    
+
+   \              0x66 0x30    
+
+   \              0x31 0x36    
+
+   \              0x62 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_67:
+   \        0x0   0x73 0x73          DC8 "sst26vf032b"
+
+   \              0x74 0x32    
+
+   \              0x36 0x76    
+
+   \              0x66 0x30    
+
+   \              0x33 0x32    
+
+   \              0x62 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_68:
+   \        0x0   0x73 0x73          DC8 "sst26vf064b"
+
+   \              0x74 0x32    
+
+   \              0x36 0x76    
+
+   \              0x66 0x30    
+
+   \              0x36 0x34    
+
+   \              0x62 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_69:
+   \        0x0   0x73 0x73          DC8 "sst26wf040b"
+
+   \              0x74 0x32    
+
+   \              0x36 0x77    
+
+   \              0x66 0x30    
+
+   \              0x34 0x30    
+
+   \              0x62 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_70:
+   \        0x0   0x73 0x73          DC8 "sst26wf080b"
+
+   \              0x74 0x32    
+
+   \              0x36 0x77    
+
+   \              0x66 0x30    
+
+   \              0x38 0x30    
+
+   \              0x62 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_71:
+   \        0x0   0x73 0x32          DC8 "s25fl032p"
+
+   \              0x35 0x66    
+
+   \              0x6C 0x30    
+
+   \              0x33 0x32    
+
+   \              0x70 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_72:
+   \        0x0   0x73 0x32          DC8 "s25fl116k"
+
+   \              0x35 0x66    
+
+   \              0x6C 0x31    
+
+   \              0x31 0x36    
+
+   \              0x6B 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_73:
+   \        0x0   0x73 0x32          DC8 "s25fl132k"
+
+   \              0x35 0x66    
+
+   \              0x6C 0x31    
+
+   \              0x33 0x32    
+
+   \              0x6B 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_74:
+   \        0x0   0x73 0x32          DC8 "s25fl164k"
+
+   \              0x35 0x66    
+
+   \              0x6C 0x31    
+
+   \              0x36 0x34    
+
+   \              0x6B 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_75:
+   \        0x0   0x73 0x32          DC8 "s25fl128s"
+
+   \              0x35 0x66    
+
+   \              0x6C 0x31    
+
+   \              0x32 0x38    
+
+   \              0x73 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_76:
+   \        0x0   0x73 0x32          DC8 "s25fl256s"
+
+   \              0x35 0x66    
+
+   \              0x6C 0x32    
+
+   \              0x35 0x36    
+
+   \              0x73 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_77:
+   \        0x0   0x73 0x32          DC8 "s25fl512s"
+
+   \              0x35 0x66    
+
+   \              0x6C 0x35    
+
+   \              0x31 0x32    
+
+   \              0x73 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_78:
+   \        0x0   0x69 0x73          DC8 "is25cd512"
+
+   \              0x32 0x35    
+
+   \              0x63 0x64    
+
+   \              0x35 0x31    
+
+   \              0x32 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_79:
+   \        0x0   0x69 0x73          DC8 "is25lq040b"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x71    
+
+   \              0x30 0x34    
+
+   \              0x30 0x62    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_80:
+   \        0x0   0x69 0x73          DC8 "is25lp080d"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x70    
+
+   \              0x30 0x38    
+
+   \              0x30 0x64    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_81:
+   \        0x0   0x69 0x73          DC8 "is25lp128"
+
+   \              0x32 0x35    
+
+   \              0x6C 0x70    
+
+   \              0x31 0x32    
+
+   \              0x38 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+    142          	/* Atmel */
+    143          	{ AT25("at25df021",   0x1f4300,    4), },
+    144          	{ AT25("at25df041a",  0x1f4401,    8), },
+    145          	{ AT25("at25df018a",  0x1f4501,   16), },
+    146          	{ AT25("at25df0161a", 0x1f4601,   32), },
+    147          	{ AT25("at25df0161",  0x1f4602,   32), },
+    148          	{ AT25("at25df321",   0x1f4700,   64), },
+    149          	{ AT25("at25df321a",  0x1f4701,   64), },
+    150          	{ AT25("at25df321",   0x1f4700,   64), },
+    151          	{ AT25("at25df321a",  0x1f4701,   64), },
+    152          	{ AT25("at25df641",   0x1f4b00,  128), },
+    153          	{ AT25("at25df512b",  0x1f6500,    1), },
+    154          	{ AT25("at25df512b",  0x1f6501,    1), },
+    155          
+    156          	/* Micron */
+    157          	{ M25P("m25p05",     0x202010,    2, 32768U), },
+    158          	{ M25P("m25p10",     0x202011,    4, 32768U), },
+    159          	{ M25P("m25p20",     0x202012,    4, 65536U), },
+    160          	{ M25P("m25p40",     0x202013,    8, 65536U), },
+    161          	{ M25P("m25p80",     0x202014,   16, 65536U), },
+    162          	{ M25P("m25p16",     0x202015,   32, 65536U), },
+    163          	{ M25P("m25p32",     0x202016,   64, 65536U), },
+    164          	{ M25P("m25p64",     0x202017,  128, 65536U), },
+    165          	{ N25Q("n25q032ax1", 0x20bb16,   64), },
+    166          	{ N25Q("n25q032ax3", 0x20ba16,   64), },
+    167          	{ N25Q("n25q064ax1", 0x20bb17,  128), },
+    168          	{ N25Q("n25q064ax3", 0x20ba17,  128), },
+    169          	{ N25Q("n25q128ax1", 0x20bb18,  256), },
+    170          	{ N25Q("n25q128ax3", 0x20ba18,  256), },
+    171          	{ N25Q("n25q256ax1", 0x20bb19,  512), },
+    172          	{ N25Q("n25q256ax3", 0x20ba19,  512), },
+    173          	{ N25Q("n25q512ax1", 0x20bb20, 1024), },
+    174          	{ N25Q("n25q512ax3", 0x20ba20, 1024), },
+    175          	{ N25Q("n25q00ax1",  0x20bb21, 2048), },
+    176          	{ N25Q("n25q00ax3",  0x20ba21, 2048), },
+    177          	{ N25Q("mt25qu02g",  0x20bb22, 4096), },
+    178          	{ N25Q("mt25ql02g",  0x20ba22, 4096), },
+    179          
+    180          	/* Winbond */
+    181          	{ W25("w25x05",  0xef3010,   1), },
+    182          	{ W25("w25x10",  0xef3011,   2), },
+    183          	{ W25("w25x20",  0xef3012,   4), },
+    184          	{ W25("w25x40",  0xef3013,   8), },
+    185          	{ W25("w25x80",  0xef3014,  16), },
+    186          	{ W25("w25x16",  0xef3015,  32), },
+    187          	{ W25("w25x32",  0xef3016,  64), },
+    188          	{ W25("w25x64",  0xef3017, 128), },
+    189          	{ W25("w25q20",  0xef4012,   4), },
+    190          	{ W25("w25q40",  0xef4013,   8), },
+    191          	{ W25("w25q80",  0xef4014,  16), },
+    192          	{ W25("w25q16",  0xef4015,  32), },
+    193          	{ W25("w25q32",  0xef4016,  64), },
+    194          	{ W25("w25q64",  0xef4017, 128), },
+    195          	{ W25("w25q128", 0xef4018, 256), },
+    196          	{ W25("w25q256", 0xef4019, 512), },
+    197          
+    198          	/* Macronix */
+    199          	{ MX25("mx25l512",     0xc22010,    1), },
+    200          	{ MX25("mx25l4005",    0xc22013,    8), },
+    201          	{ MX25("mx25l8005",    0xc22014,   16), },
+    202          	{ MX25("mx25l3205",    0xc22016,   64), },
+    203          	{ MX25("mx25l6405",    0xc22017,  128), },
+    204          	{ MX25L("mx25l12835f", 0xc22018,  256), },
+    205          	{ MX25L("mx25l25673f", 0xc22019,  512), },
+    206          	{ MX25L("mx25l51245f", 0xc2201a, 1024), },
+    207          	{ MX66L("mx66l1g45g",  0xc2201b, 2048), },
+    208          	{ MX66L("mx66l2g45g",  0xc2201c, 4096), },
+    209          	{ MX25("mx25u1635f",   0xc23525,   32), },
+    210          
+    211          	/* SST */
+    212          	{ SST25("sst25vf032",  0xbf254a,   64), },
+    213          	{ SST25("sst25vf064",  0xbf254b,  128), },
+    214          	{ SST25("sst25vf020b", 0xbf258c,    4), },
+    215          	{ SST25("sst25vf040b", 0xbf258d,    8), },
+    216          	{ SST25("sst25vf080b", 0xbf258e,   16), },
+    217          	{ SST25("sst25pf040c", 0x620613,    8), },
+    218          	{ SST25("sst25wf020a", 0x621612,    4), },
+    219          	{ SST25("sst25wf040b", 0x621613,    8), },
+    220          	{ SST26("sst26vf016b", 0xbf2641,  512), },
+    221          	{ SST26("sst26vf032b", 0xbf2642, 1024), },
+    222          	{ SST26("sst26vf064b", 0xbf2643, 2048), },
+    223          	{ SST26("sst26wf040b", 0xbf2654,  128), },
+    224          	{ SST26("sst26wf080b", 0xbf2658,  256), },
+    225          
+    226          	/* Spansion */
+    227          	{ S25FL("s25fl032p", 0x010215,  128, 65536U, SNOR_SECT_4K), },
+    228          	{ S25FL("s25fl032p", 0x010216,  256, 65536U, SNOR_SECT_4K), },
+    229          	{ S25FL("s25fl116k", 0x014215,   32, 65536U, SNOR_SECT_4K), },
+    230          	{ S25FL("s25fl132k", 0x014216,   64, 65536U, SNOR_SECT_4K), },
+    231          	{ S25FL("s25fl164k", 0x014217,  128, 65536U, SNOR_SECT_4K), },
+    232          	{ S25FL("s25fl128s", 0x012018,  256, 65536U, SNOR_SECT_4K), },
+    233          	{ S25FL("s25fl256s", 0x010219,  512, 65536U, SNOR_SECT_4K), },
+    234          	{ S25FL("s25fl512s", 0x010220, 1024, 262144U, 0), },
+    235          
+    236          	/* ISSI */
+    237          	{ IS25("is25cd512",  0x7f9d20,   2, 32768U), },
+    238          	{ IS25("is25lq040b", 0x9d4013,   8, 65536U), },
+    239          	{ IS25("is25lp080d", 0x9d6014,  16, 65536U), },
+    240          	{ IS25("is25lp128",  0x9d6018, 256, 65536U), },
+    241          
+    242          	{ 0 }	/* Sentinel */
+    243          };
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?_0
+      12  ?_1
+       8  ?_10
+       8  ?_11
+       8  ?_12
+       8  ?_13
+       8  ?_14
+       8  ?_15
+       8  ?_16
+      12  ?_17
+      12  ?_18
+      12  ?_19
+      12  ?_2
+      12  ?_20
+      12  ?_21
+      12  ?_22
+      12  ?_23
+      12  ?_24
+      12  ?_25
+      12  ?_26
+      12  ?_27
+      12  ?_28
+      12  ?_29
+      12  ?_3
+      12  ?_30
+       8  ?_31
+       8  ?_32
+       8  ?_33
+       8  ?_34
+       8  ?_35
+       8  ?_36
+       8  ?_37
+       8  ?_38
+       8  ?_39
+      12  ?_4
+       8  ?_40
+       8  ?_41
+       8  ?_42
+       8  ?_43
+       8  ?_44
+       8  ?_45
+       8  ?_46
+      12  ?_47
+      12  ?_48
+      12  ?_49
+      12  ?_5
+      12  ?_50
+      12  ?_51
+      12  ?_52
+      12  ?_53
+      12  ?_54
+      12  ?_55
+      12  ?_56
+      12  ?_57
+      12  ?_58
+      12  ?_59
+      12  ?_6
+      12  ?_60
+      12  ?_61
+      12  ?_62
+      12  ?_63
+      12  ?_64
+      12  ?_65
+      12  ?_66
+      12  ?_67
+      12  ?_68
+      12  ?_69
+      12  ?_7
+      12  ?_70
+      12  ?_71
+      12  ?_72
+      12  ?_73
+      12  ?_74
+      12  ?_75
+      12  ?_76
+      12  ?_77
+      12  ?_78
+      12  ?_79
+      12  ?_8
+      12  ?_80
+      12  ?_81
+       8  ?_9
+   2'436  spi_nor_ids
+
+ 
+ 3'324 bytes in section .rodata
+ 
+ 3'324 bytes of CONST memory
+
+Errors: none
+Warnings: none

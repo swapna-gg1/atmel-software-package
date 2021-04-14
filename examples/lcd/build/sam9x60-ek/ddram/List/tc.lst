@@ -1,0 +1,973 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         14/Jan/2021  23:03:18
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\tc.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWF50F.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\tc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_LCD -D CONFIG_HAVE_LCDC -D CONFIG_HAVE_LCDC_OVR1 -D
+#        CONFIG_HAVE_LCDC_OVR2 -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_DDR2_W972GG6KB -D CONFIG_HAVE_RSTC_EXTERNAL_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_RTT -D
+#        CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List\tc.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\Obj\tc.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\tc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup tc_module
+     31           * \section Purpose
+     32           * The TC driver provides the Interface to configure the Timer Counter (TC).
+     33           *
+     34           * \section Usage
+     35           * <ul>
+     36           *  <li> Optionally, use tc_find_best_clock_source() to let the program find the best
+     37           *     TCCLKS field value automatically.</li>
+     38           *  <li> Configure a Timer Counter in the desired mode using tc_configure().</li>
+     39           *  <li> Start or stop the timer clock using tc_start() and tc_stop().</li>
+     40           *  </li>
+     41           * </ul>
+     42           * For more accurate information, please look at the TC section of the Datasheet.
+     43           *
+     44           * Related files :\n
+     45           * \ref tc.c\n
+     46           * \ref tc.h.\n
+     47          */
+     48          
+     49          /**
+     50          *  \file
+     51          *
+     52          *  \section Purpose
+     53          *
+     54          *  Interface for configuring and using Timer Counter (TC) peripherals.
+     55          *
+     56          *  \section Usage
+     57          *  -# Optionally, use tc_find_best_clock_source() to let the program find the best
+     58          *     TCCLKS field value automatically.
+     59          *  -# Configure a Timer Counter in the desired mode using tc_configure().
+     60          *  -# Start or stop the timer clock using tc_start() and tc_stop().
+     61          */
+     62          
+     63          /**
+     64           * \file
+     65           *
+     66           * Implementation of Timer Counter (TC).
+     67           *
+     68           */
+     69          
+     70          /*------------------------------------------------------------------------------
+     71           *         Headers
+     72           *------------------------------------------------------------------------------*/
+     73          
+     74          #include <assert.h>
+     75          
+     76          #include "chip.h"
+     77          #include "compiler.h"
+     78          #include "peripherals/tc.h"
+     79          #include "peripherals/pmc.h"
+     80          
+     81          /*------------------------------------------------------------------------------
+     82           *         Global functions
+     83           *------------------------------------------------------------------------------*/
+     84          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     85          void tc_configure(Tc *tc, uint32_t channel, uint32_t mode)
+     86          {
+   \                     tc_configure:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+     87          	TcChannel *ch;
+     88          
+     89          	assert(channel < ARRAY_SIZE(tc->TC_CHANNEL));
+   \       0x10   0xE355'0002        CMP      R5,#+2
+   \       0x14   0x9A00'0004        BLS      ??tc_configure_0
+   \       0x18   0x....'....        LDR      R0,??DataTable10
+   \       0x1C   0xE3A0'2059        MOV      R2,#+89
+   \       0x20   0xE280'1044        ADD      R1,R0,#+68
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+     90          
+     91          	ch = &tc->TC_CHANNEL[channel];
+     92          
+     93          	/*  Disable TC clock */
+     94          	ch->TC_CCR = TC_CCR_CLKDIS;
+   \                     ??tc_configure_0:
+   \       0x2C   0xE3A0'0002        MOV      R0,#+2
+   \       0x30   0xE784'0305        STR      R0,[R4, +R5, LSL #+6]
+     95          
+     96          	/*  Disable interrupts */
+     97          	ch->TC_IDR = ch->TC_IMR;
+   \       0x34   0xE084'0305        ADD      R0,R4,R5, LSL #+6
+   \       0x38   0xE590'102C        LDR      R1,[R0, #+44]
+   \       0x3C   0xE580'1028        STR      R1,[R0, #+40]
+     98          
+     99          	/*  Clear status register */
+    100          	ch->TC_SR;
+   \       0x40   0xE590'2020        LDR      R2,[R0, #+32]
+    101          
+    102          	/*  Set mode */
+    103          	ch->TC_CMR = mode;
+   \       0x44   0xE580'6004        STR      R6,[R0, #+4]
+    104          }
+   \       0x48   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    105          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    106          void tc_start(Tc *tc, uint32_t channel)
+    107          {
+   \                     tc_start:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    108          	TcChannel *ch;
+    109          
+    110          	assert(channel < ARRAY_SIZE(tc->TC_CHANNEL));
+   \        0xC   0xE355'0003        CMP      R5,#+3
+   \       0x10   0x3A00'0004        BCC      ??tc_start_0
+   \       0x14   0x....'....        LDR      R0,??DataTable10
+   \       0x18   0xE3A0'206E        MOV      R2,#+110
+   \       0x1C   0xE280'1044        ADD      R1,R0,#+68
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    111          
+    112          	ch = &tc->TC_CHANNEL[channel];
+    113          
+    114          	/*  Clear status register */
+    115          	ch->TC_SR;
+   \                     ??tc_start_0:
+   \       0x28   0xE084'0305        ADD      R0,R4,R5, LSL #+6
+   \       0x2C   0xE590'1020        LDR      R1,[R0, #+32]
+    116          
+    117          	ch->TC_CCR = TC_CCR_CLKEN | TC_CCR_SWTRG;
+   \       0x30   0xE3A0'2005        MOV      R2,#+5
+   \       0x34   0xE784'2305        STR      R2,[R4, +R5, LSL #+6]
+    118          }
+   \       0x38   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    119          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    120          void tc_stop(Tc *tc, uint32_t channel)
+    121          {
+   \                     tc_stop:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    122          	TcChannel *ch;
+    123          
+    124          	assert(channel < ARRAY_SIZE(tc->TC_CHANNEL));
+   \        0xC   0xE355'0002        CMP      R5,#+2
+   \       0x10   0x9A00'0004        BLS      ??tc_stop_0
+   \       0x14   0x....'....        LDR      R0,??DataTable10
+   \       0x18   0xE3A0'207C        MOV      R2,#+124
+   \       0x1C   0xE280'1044        ADD      R1,R0,#+68
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    125          
+    126          	ch = &tc->TC_CHANNEL[channel];
+    127          
+    128          	ch->TC_CCR = TC_CCR_CLKDIS;
+   \                     ??tc_stop_0:
+   \       0x28   0xE3A0'0002        MOV      R0,#+2
+   \       0x2C   0xE784'0305        STR      R0,[R4, +R5, LSL #+6]
+    129          }
+   \       0x30   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    130          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    131          void tc_enable_it(Tc *tc, uint32_t channel, uint32_t mask)
+    132          {
+   \                     tc_enable_it:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+    133          	TcChannel *ch;
+    134          
+    135          	assert(channel < ARRAY_SIZE(tc->TC_CHANNEL));
+   \       0x10   0xE355'0003        CMP      R5,#+3
+   \       0x14   0x3A00'0004        BCC      ??tc_enable_it_0
+   \       0x18   0x....'....        LDR      R0,??DataTable10
+   \       0x1C   0xE3A0'2087        MOV      R2,#+135
+   \       0x20   0xE280'1044        ADD      R1,R0,#+68
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    136          
+    137          	ch = &tc->TC_CHANNEL[channel];
+    138          
+    139          	ch->TC_IER = mask;
+   \                     ??tc_enable_it_0:
+   \       0x2C   0xE084'0305        ADD      R0,R4,R5, LSL #+6
+   \       0x30   0xE580'6024        STR      R6,[R0, #+36]
+    140          }
+   \       0x34   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    141          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    142          void tc_disable_it(Tc *tc, uint32_t channel, uint32_t mask)
+    143          {
+   \                     tc_disable_it:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+    144          	TcChannel *ch;
+    145          
+    146          	assert(channel < ARRAY_SIZE(tc->TC_CHANNEL));
+   \       0x10   0xE355'0003        CMP      R5,#+3
+   \       0x14   0x3A00'0004        BCC      ??tc_disable_it_0
+   \       0x18   0x....'....        LDR      R0,??DataTable10
+   \       0x1C   0xE3A0'2092        MOV      R2,#+146
+   \       0x20   0xE280'1044        ADD      R1,R0,#+68
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    147          
+    148          	ch = &tc->TC_CHANNEL[channel];
+    149          
+    150          	ch->TC_IDR = mask;
+   \                     ??tc_disable_it_0:
+   \       0x2C   0xE084'0305        ADD      R0,R4,R5, LSL #+6
+   \       0x30   0xE580'6028        STR      R6,[R0, #+40]
+    151          }
+   \       0x34   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    152          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    153          uint32_t tc_find_best_clock_source(Tc *tc, uint8_t channel, uint32_t freq)
+    154          {
+   \                     tc_find_best_clock_source:
+   \        0x0   0xE92D'4FFE        PUSH     {R1-R11,LR}
+    155          	const int tcclks[] = {
+    156          		TC_CMR_TCCLKS_TIMER_CLOCK1,
+    157          		TC_CMR_TCCLKS_TIMER_CLOCK2,
+    158          		TC_CMR_TCCLKS_TIMER_CLOCK3,
+    159          		TC_CMR_TCCLKS_TIMER_CLOCK4,
+    160          		TC_CMR_TCCLKS_TIMER_CLOCK5,
+    161          	};
+    162          	int i, best, higher;
+    163          	int best_freq, higher_freq;
+    164          
+    165          	best = higher = -1;
+   \        0x4   0xE3E0'5000        MVN      R5,#+0
+   \        0x8   0xE1A0'4005        MOV      R4,R5
+    166          	best_freq = higher_freq = 0;
+   \        0xC   0xE3A0'7000        MOV      R7,#+0
+   \       0x10   0xE3A0'8000        MOV      R8,#+0
+    167          	for (i = 0 ; i < ARRAY_SIZE(tcclks) ; i++) {
+   \       0x14   0x....'....        ADR      R9,`tc_find_best_clock_source::tcclks`
+   \       0x18   0xE3A0'A005        MOV      R10,#+5
+   \       0x1C   0xE58D'0004        STR      R0,[SP, #+4]
+   \       0x20   0xE5CD'1000        STRB     R1,[SP, #+0]
+   \       0x24   0xE1A0'6002        MOV      R6,R2
+    168          		uint32_t f = tc_get_available_freq(tc, channel, tcclks[i]);
+   \                     ??tc_find_best_clock_source_1:
+   \       0x28   0xE5DD'1000        LDRB     R1,[SP, #+0]
+   \       0x2C   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x30   0x....'....        BL       get_tc_id_from_addr
+   \       0x34   0xE1A0'B000        MOV      R11,R0
+   \       0x38   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0x3C   0xE200'00FF        AND      R0,R0,#0xFF
+   \       0x40   0xE350'0004        CMP      R0,#+4
+   \       0x44   0x8A00'0018        BHI      ??tc_find_best_clock_source_2
+   \       0x48   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \       0x4C   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??tc_find_best_clock_source_0:
+   \       0x50   0x0F 0x0B          DC8      0xF,0xB,0x7,0x3
+
+   \              0x07 0x03
+   \       0x54   0x01 0x00          DC8      0x1,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??tc_find_best_clock_source_3:
+   \       0x58   0x....'....        BL       pmc_get_slow_clock
+   \       0x5C   0xEA00'0013        B        ??tc_find_best_clock_source_4
+   \                     ??tc_find_best_clock_source_5:
+   \       0x60   0xE1A0'000B        MOV      R0,R11
+   \       0x64   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x68   0xE1A0'03A0        LSR      R0,R0,#+7
+   \       0x6C   0xEA00'000F        B        ??tc_find_best_clock_source_4
+   \                     ??tc_find_best_clock_source_6:
+   \       0x70   0xE1A0'000B        MOV      R0,R11
+   \       0x74   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x78   0xE1A0'02A0        LSR      R0,R0,#+5
+   \       0x7C   0xEA00'000B        B        ??tc_find_best_clock_source_4
+   \                     ??tc_find_best_clock_source_7:
+   \       0x80   0xE1A0'000B        MOV      R0,R11
+   \       0x84   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x88   0xE1A0'01A0        LSR      R0,R0,#+3
+   \       0x8C   0xEA00'0007        B        ??tc_find_best_clock_source_4
+   \                     ??tc_find_best_clock_source_8:
+   \       0x90   0xE1A0'000B        MOV      R0,R11
+   \       0x94   0x....'....        BL       pmc_is_gck_enabled
+   \       0x98   0xE350'0000        CMP      R0,#+0
+   \       0x9C   0x0A00'0003        BEQ      ??tc_find_best_clock_source_4
+   \       0xA0   0xE1A0'000B        MOV      R0,R11
+   \       0xA4   0x....'....        BL       pmc_get_gck_clock
+   \       0xA8   0xEA00'0000        B        ??tc_find_best_clock_source_4
+   \                     ??tc_find_best_clock_source_2:
+   \       0xAC   0xE3A0'0000        MOV      R0,#+0
+    169          		if (higher < 0 || f > higher_freq) {
+   \                     ??tc_find_best_clock_source_4:
+   \       0xB0   0xE355'0000        CMP      R5,#+0
+   \       0xB4   0x4A00'0001        BMI      ??tc_find_best_clock_source_9
+   \       0xB8   0xE157'0000        CMP      R7,R0
+   \       0xBC   0x2A00'0001        BCS      ??tc_find_best_clock_source_10
+    170          			higher_freq = f;
+   \                     ??tc_find_best_clock_source_9:
+   \       0xC0   0xE1A0'7000        MOV      R7,R0
+    171          			higher = tcclks[i];
+   \       0xC4   0xE599'5000        LDR      R5,[R9, #+0]
+    172          		}
+    173          		if (f > freq) {
+   \                     ??tc_find_best_clock_source_10:
+   \       0xC8   0xE156'0000        CMP      R6,R0
+   \       0xCC   0x2A00'0007        BCS      ??tc_find_best_clock_source_11
+    174          			if (best < 0 || (f - freq) < (f - best_freq)) {
+   \       0xD0   0xE354'0000        CMP      R4,#+0
+   \       0xD4   0x4A00'0003        BMI      ??tc_find_best_clock_source_12
+   \       0xD8   0xE040'1006        SUB      R1,R0,R6
+   \       0xDC   0xE040'2008        SUB      R2,R0,R8
+   \       0xE0   0xE151'0002        CMP      R1,R2
+   \       0xE4   0x2A00'0001        BCS      ??tc_find_best_clock_source_11
+    175          				best_freq = f;
+   \                     ??tc_find_best_clock_source_12:
+   \       0xE8   0xE1A0'8000        MOV      R8,R0
+    176          				best = tcclks[i];
+   \       0xEC   0xE599'4000        LDR      R4,[R9, #+0]
+    177          			}
+    178          		}
+    179          	}
+   \                     ??tc_find_best_clock_source_11:
+   \       0xF0   0xE289'9004        ADD      R9,R9,#+4
+   \       0xF4   0xE25A'A001        SUBS     R10,R10,#+1
+   \       0xF8   0x1AFF'FFCA        BNE      ??tc_find_best_clock_source_1
+   \       0xFC   0xE1B0'0004        MOVS     R0,R4
+    180          
+    181          	if (best < 0)
+    182          		best = higher;
+   \      0x100   0x41A0'0005        MOVMI    R0,R5
+    183          
+    184          	return best;
+   \      0x104   0xE28D'D00C        ADD      SP,SP,#+12
+   \      0x108   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    185          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     `tc_find_best_clock_source::tcclks`:
+   \        0x0   0x0000'0000        DC32 0, 1, 2, 3, 4
+
+   \              0x0000'0001  
+
+   \              0x0000'0002  
+
+   \              0x0000'0003  
+
+   \              0x0000'0004
+    186          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    187          uint32_t tc_get_status(Tc *tc, uint32_t channel)
+    188          {
+   \                     tc_get_status:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    189          	assert(channel < ARRAY_SIZE(tc->TC_CHANNEL));
+   \        0xC   0xE355'0003        CMP      R5,#+3
+   \       0x10   0x3A00'0004        BCC      ??tc_get_status_0
+   \       0x14   0x....'....        LDR      R0,??DataTable10
+   \       0x18   0xE3A0'20BD        MOV      R2,#+189
+   \       0x1C   0xE280'1044        ADD      R1,R0,#+68
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    190          
+    191          	return tc->TC_CHANNEL[channel].TC_SR;
+   \                     ??tc_get_status_0:
+   \       0x28   0xE084'0305        ADD      R0,R4,R5, LSL #+6
+   \       0x2C   0xE590'0020        LDR      R0,[R0, #+32]
+   \       0x30   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    192          }
+    193          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    194          uint32_t tc_get_available_freq(Tc *tc, uint8_t channel, uint8_t tc_clks)
+    195          {
+   \                     tc_get_available_freq:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4002        MOV      R4,R2
+    196          	uint32_t tc_id = get_tc_id_from_addr(tc, channel);
+   \        0x8   0x....'....        BL       get_tc_id_from_addr
+   \        0xC   0xE1A0'5000        MOV      R5,R0
+    197          
+    198          	switch (tc_clks) {
+   \       0x10   0xE354'0004        CMP      R4,#+4
+   \       0x14   0x8A00'0018        BHI      ??tc_get_available_freq_1
+   \       0x18   0xE7DF'0004        LDRB     R0,[PC, R4]
+   \       0x1C   0xE08F'F100        ADD      PC,PC,R0, LSL #+2
+   \                     ??tc_get_available_freq_0:
+   \       0x20   0x01 0x08          DC8      0x1,0x8,0xC,0x10
+
+   \              0x0C 0x10
+   \       0x24   0x14 0x00          DC8      0x14,0x0,0x0,0x0
+
+   \              0x00 0x00
+    199          	case TC_CMR_TCCLKS_TIMER_CLOCK1:
+    200          #ifdef CONFIG_HAVE_PMC_GENERATED_CLOCKS
+    201          		if (pmc_is_gck_enabled(tc_id))
+   \                     ??tc_get_available_freq_2:
+   \       0x28   0xE1A0'0005        MOV      R0,R5
+   \       0x2C   0x....'....        BL       pmc_is_gck_enabled
+   \       0x30   0xE350'0000        CMP      R0,#+0
+   \       0x34   0x0A00'0011        BEQ      ??tc_get_available_freq_3
+    202          			return pmc_get_gck_clock(tc_id);
+   \       0x38   0xE1A0'0005        MOV      R0,R5
+   \       0x3C   0xE8BD'4032        POP      {R1,R4,R5,LR}
+   \       0x40   0x....'....        B        pmc_get_gck_clock  ;; tailcall
+    203          		else
+    204          			return 0;
+    205          #else
+    206          		return pmc_get_peripheral_clock(tc_id) >> 1;
+    207          #endif
+    208          	case TC_CMR_TCCLKS_TIMER_CLOCK2:
+    209          		return pmc_get_peripheral_clock(tc_id) >> 3;
+   \                     ??tc_get_available_freq_4:
+   \       0x44   0xE1A0'0005        MOV      R0,R5
+   \       0x48   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x4C   0xE1A0'01A0        LSR      R0,R0,#+3
+   \       0x50   0xE8BD'8032        POP      {R1,R4,R5,PC}
+    210          	case TC_CMR_TCCLKS_TIMER_CLOCK3:
+    211          		return pmc_get_peripheral_clock(tc_id) >> 5;
+   \                     ??tc_get_available_freq_5:
+   \       0x54   0xE1A0'0005        MOV      R0,R5
+   \       0x58   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x5C   0xE1A0'02A0        LSR      R0,R0,#+5
+   \       0x60   0xE8BD'8032        POP      {R1,R4,R5,PC}
+    212          	case TC_CMR_TCCLKS_TIMER_CLOCK4:
+    213          		return pmc_get_peripheral_clock(tc_id) >> 7;
+   \                     ??tc_get_available_freq_6:
+   \       0x64   0xE1A0'0005        MOV      R0,R5
+   \       0x68   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x6C   0xE1A0'03A0        LSR      R0,R0,#+7
+   \       0x70   0xE8BD'8032        POP      {R1,R4,R5,PC}
+    214          	case TC_CMR_TCCLKS_TIMER_CLOCK5:
+    215          		return pmc_get_slow_clock();
+   \                     ??tc_get_available_freq_7:
+   \       0x74   0xE8BD'4031        POP      {R0,R4,R5,LR}
+   \       0x78   0x....'....        B        pmc_get_slow_clock  ;; tailcall
+    216          	default:
+    217          		return 0;
+   \                     ??tc_get_available_freq_1:
+   \       0x7C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??tc_get_available_freq_3:
+   \       0x80   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    218          	}
+    219          }
+    220          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    221          uint32_t tc_get_channel_freq(Tc *tc, uint32_t channel)
+    222          {
+   \                     tc_get_channel_freq:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    223          	TcChannel* ch;
+    224          
+    225          	assert(channel < ARRAY_SIZE(tc->TC_CHANNEL));
+   \        0xC   0xE355'0003        CMP      R5,#+3
+   \       0x10   0x3A00'0004        BCC      ??tc_get_channel_freq_0
+   \       0x14   0x....'....        LDR      R0,??DataTable10
+   \       0x18   0xE3A0'20E1        MOV      R2,#+225
+   \       0x1C   0xE280'1044        ADD      R1,R0,#+68
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    226          
+    227          	ch = &tc->TC_CHANNEL[channel];
+    228          
+    229          	return tc_get_available_freq(tc, channel, ch->TC_CMR & TC_CMR_TCCLKS_Msk);
+   \                     ??tc_get_channel_freq_0:
+   \       0x28   0xE084'0305        ADD      R0,R4,R5, LSL #+6
+   \       0x2C   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x30   0xE1A0'0004        MOV      R0,R4
+   \       0x34   0xE201'2007        AND      R2,R1,#0x7
+   \       0x38   0xE205'10FF        AND      R1,R5,#0xFF
+   \       0x3C   0xE8BD'4038        POP      {R3-R5,LR}
+   \       0x40   0x....'....        B        tc_get_available_freq  ;; tailcall
+    230          }
+    231          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    232          void tc_set_ra_rb_rc(Tc *tc, uint32_t channel,
+    233          	uint32_t *ra, uint32_t *rb, uint32_t *rc)
+    234          {
+   \                     tc_set_ra_rb_rc:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'6001        MOV      R6,R1
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+   \        0xC   0xE1A0'7002        MOV      R7,R2
+   \       0x10   0xE1A0'4003        MOV      R4,R3
+    235          	TcChannel* ch;
+    236          
+    237          	assert(channel < ARRAY_SIZE(tc->TC_CHANNEL));
+   \       0x14   0xE356'0003        CMP      R6,#+3
+   \       0x18   0x3A00'0004        BCC      ??tc_set_ra_rb_rc_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable10
+   \       0x20   0xE3A0'20ED        MOV      R2,#+237
+   \       0x24   0xE280'1044        ADD      R1,R0,#+68
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    238          
+    239          	ch = &tc->TC_CHANNEL[channel];
+    240          
+    241          	assert(!(ra && rb) || (ch->TC_CMR & TC_CMR_WAVE));
+   \                     ??tc_set_ra_rb_rc_0:
+   \       0x30   0xE085'5306        ADD      R5,R5,R6, LSL #+6
+   \       0x34   0xE357'0000        CMP      R7,#+0
+   \       0x38   0x0A00'000C        BEQ      ??tc_set_ra_rb_rc_1
+   \       0x3C   0xE354'0000        CMP      R4,#+0
+   \       0x40   0x0A00'0008        BEQ      ??tc_set_ra_rb_rc_2
+   \       0x44   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x48   0xE310'0C80        TST      R0,#0x8000
+   \       0x4C   0x1A00'0005        BNE      ??tc_set_ra_rb_rc_2
+   \       0x50   0x....'....        LDR      R0,??DataTable10
+   \       0x54   0xE3A0'20F1        MOV      R2,#+241
+   \       0x58   0xE280'1044        ADD      R1,R0,#+68
+   \       0x5C   0xE280'0090        ADD      R0,R0,#+144
+   \       0x60   0x....'....        BL       __aeabi_assert
+   \       0x64   0x....'....        BL       __iar_EmptyStepPoint
+    242          
+    243          	if (ra)
+    244          		ch->TC_RA = *ra;
+   \                     ??tc_set_ra_rb_rc_2:
+   \       0x68   0xE597'0000        LDR      R0,[R7, #+0]
+   \       0x6C   0xE585'0014        STR      R0,[R5, #+20]
+    245          	if (rb)
+   \                     ??tc_set_ra_rb_rc_1:
+   \       0x70   0xE354'0000        CMP      R4,#+0
+    246          		ch->TC_RB = *rb;
+   \       0x74   0x1594'0000        LDRNE    R0,[R4, #+0]
+   \       0x78   0x1585'0018        STRNE    R0,[R5, #+24]
+   \       0x7C   0xE59D'0018        LDR      R0,[SP, #+24]
+    247          	if (rc)
+   \       0x80   0xE350'0000        CMP      R0,#+0
+    248          		ch->TC_RC = *rc;
+   \       0x84   0x1590'0000        LDRNE    R0,[R0, #+0]
+   \       0x88   0x1585'001C        STRNE    R0,[R5, #+28]
+    249          }
+   \       0x8C   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    250          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    251          void tc_get_ra_rb_rc(Tc *tc, uint32_t channel,
+    252          	uint32_t *ra, uint32_t *rb, uint32_t *rc)
+    253          {
+   \                     tc_get_ra_rb_rc:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'4001        MOV      R4,R1
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+   \        0xC   0xE1A0'7002        MOV      R7,R2
+   \       0x10   0xE1A0'6003        MOV      R6,R3
+    254          	TcChannel* ch;
+    255          
+    256          	assert(channel < ARRAY_SIZE(tc->TC_CHANNEL));
+   \       0x14   0xE354'0003        CMP      R4,#+3
+   \       0x18   0x3A00'0004        BCC      ??tc_get_ra_rb_rc_0
+   \       0x1C   0x....'....        LDR      R0,??DataTable10
+   \       0x20   0xE3A0'2F40        MOV      R2,#+256
+   \       0x24   0xE280'1044        ADD      R1,R0,#+68
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    257          
+    258          	ch = &tc->TC_CHANNEL[channel];
+    259          
+    260          	if (ra)
+   \                     ??tc_get_ra_rb_rc_0:
+   \       0x30   0xE357'0000        CMP      R7,#+0
+    261          		*ra = ch->TC_RA;
+   \       0x34   0x1085'0304        ADDNE    R0,R5,R4, LSL #+6
+   \       0x38   0x1590'1014        LDRNE    R1,[R0, #+20]
+   \       0x3C   0x1587'1000        STRNE    R1,[R7, #+0]
+    262          	if (rb)
+   \       0x40   0xE356'0000        CMP      R6,#+0
+    263          		*rb = ch->TC_RB;
+   \       0x44   0x1085'0304        ADDNE    R0,R5,R4, LSL #+6
+   \       0x48   0x1590'1018        LDRNE    R1,[R0, #+24]
+   \       0x4C   0x1586'1000        STRNE    R1,[R6, #+0]
+   \       0x50   0xE59D'0018        LDR      R0,[SP, #+24]
+    264          	if (rc)
+   \       0x54   0xE350'0000        CMP      R0,#+0
+    265          		*rc = ch->TC_RC;
+   \       0x58   0x1085'1304        ADDNE    R1,R5,R4, LSL #+6
+   \       0x5C   0x1591'201C        LDRNE    R2,[R1, #+28]
+   \       0x60   0x1580'2000        STRNE    R2,[R0, #+0]
+    266          }
+   \       0x64   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    267          
+    268          #ifdef CONFIG_HAVE_TC_FAULT_MODE
+    269          
+    270          void tc_set_fault_mode(Tc *tc, uint32_t mode)
+    271          {
+    272          	tc->TC_FMR = mode;
+    273          }
+    274          
+    275          #endif /* CONFIG_HAVE_TC_FAULT_MODE */
+    276          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    277          uint32_t tc_get_cv(Tc* tc, uint32_t channel)
+    278          {
+   \                     tc_get_cv:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    279          	TcChannel* ch;
+    280          
+    281          	assert(channel < ARRAY_SIZE(tc->TC_CHANNEL));
+   \        0xC   0xE355'0003        CMP      R5,#+3
+   \       0x10   0x3A00'0005        BCC      ??tc_get_cv_0
+   \       0x14   0x....'....        LDR      R0,??DataTable10
+   \       0x18   0xE3A0'2019        MOV      R2,#+25
+   \       0x1C   0xE382'2F40        ORR      R2,R2,#0x100
+   \       0x20   0xE280'1044        ADD      R1,R0,#+68
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    282          
+    283          	ch = &tc->TC_CHANNEL[channel];
+    284          
+    285          	return ch->TC_CV;
+   \                     ??tc_get_cv_0:
+   \       0x2C   0xE084'0305        ADD      R0,R4,R5, LSL #+6
+   \       0x30   0xE590'0010        LDR      R0,[R0, #+16]
+   \       0x34   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    286          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x63 0x68          DC8 0x63, 0x68, 0x61, 0x6E, 0x6E, 0x65, 0x6C, 0x20
+
+   \              0x61 0x6E    
+
+   \              0x6E 0x65    
+
+   \              0x6C 0x20
+   \        0x8   0x3C 0x20          DC8 0x3C, 0x20, 0x28, 0x73, 0x69, 0x7A, 0x65, 0x6F
+
+   \              0x28 0x73    
+
+   \              0x69 0x7A    
+
+   \              0x65 0x6F
+   \       0x10   0x66 0x20          DC8 0x66, 0x20, 0x28, 0x28, 0x74, 0x63, 0x2D, 0x3E
+
+   \              0x28 0x28    
+
+   \              0x74 0x63    
+
+   \              0x2D 0x3E
+   \       0x18   0x54 0x43          DC8 0x54, 0x43, 0x5F, 0x43, 0x48, 0x41, 0x4E, 0x4E
+
+   \              0x5F 0x43    
+
+   \              0x48 0x41    
+
+   \              0x4E 0x4E
+   \       0x20   0x45 0x4C          DC8 0x45, 0x4C, 0x29, 0x29, 0x20, 0x2F, 0x20, 0x73
+
+   \              0x29 0x29    
+
+   \              0x20 0x2F    
+
+   \              0x20 0x73
+   \       0x28   0x69 0x7A          DC8 0x69, 0x7A, 0x65, 0x6F, 0x66, 0x28, 0x2A, 0x28
+
+   \              0x65 0x6F    
+
+   \              0x66 0x28    
+
+   \              0x2A 0x28
+   \       0x30   0x74 0x63          DC8 0x74, 0x63, 0x2D, 0x3E, 0x54, 0x43, 0x5F, 0x43
+
+   \              0x2D 0x3E    
+
+   \              0x54 0x43    
+
+   \              0x5F 0x43
+   \       0x38   0x48 0x41          DC8 0x48, 0x41, 0x4E, 0x4E, 0x45, 0x4C, 0x29, 0x29
+
+   \              0x4E 0x4E    
+
+   \              0x45 0x4C    
+
+   \              0x29 0x29
+   \       0x40   0x29 0x00          DC8 0x29, 0
+   \       0x42   0x00 0x00          DC8 0, 0
+   \       0x44   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \       0x4C   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x54   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x5C   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x64   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x6C   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x74   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x7C   0x73 0x5C          DC8 0x73, 0x5C, 0x70, 0x65, 0x72, 0x69, 0x70, 0x68
+
+   \              0x70 0x65    
+
+   \              0x72 0x69    
+
+   \              0x70 0x68
+   \       0x84   0x65 0x72          DC8 0x65, 0x72, 0x61, 0x6C, 0x73, 0x5C, 0x74, 0x63
+
+   \              0x61 0x6C    
+
+   \              0x73 0x5C    
+
+   \              0x74 0x63
+   \       0x8C   0x2E 0x63          DC8 0x2E, 0x63, 0
+
+   \              0x00
+   \       0x8F   0x00               DC8 0
+   \       0x90   0x21 0x28          DC8 "!(ra && rb) || (ch->TC_CMR & (0x1u << 15))"
+
+   \              0x72 0x61    
+
+   \              0x20 0x26    
+
+   \              0x26 0x20    
+
+   \              0x72 0x62    
+
+   \              0x29 0x20    
+
+   \              0x7C 0x7C    
+
+   \              0x20 0x28    
+
+   \              0x63 0x68    
+
+   \              0x2D 0x3E    
+
+   \              0x54 0x43    
+
+   \              0x5F 0x43    
+
+   \              0x4D 0x52    
+
+   \              0x20 0x26    
+
+   \              0x20 0x28    
+
+   \              0x30 0x78    
+
+   \              0x31 0x75    
+
+   \              0x20 0x3C    
+
+   \              0x3C 0x20    
+
+   \              0x31 0x35    
+
+   \              0x29 0x29    
+
+   \              0x00
+   \       0xBB   0x00               DC8 0
+    287          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   tc_configure
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   tc_disable_it
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   tc_enable_it
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      48   tc_find_best_clock_source
+        48   -> get_tc_id_from_addr
+        48   -> pmc_get_gck_clock
+        48   -> pmc_get_peripheral_clock
+        48   -> pmc_get_slow_clock
+        48   -> pmc_is_gck_enabled
+      16   tc_get_available_freq
+        16   -> get_tc_id_from_addr
+         0   -> pmc_get_gck_clock
+        16   -> pmc_get_peripheral_clock
+         0   -> pmc_get_slow_clock
+        16   -> pmc_is_gck_enabled
+      16   tc_get_channel_freq
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+         0   -> tc_get_available_freq
+      16   tc_get_cv
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      24   tc_get_ra_rb_rc
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+      16   tc_get_status
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      24   tc_set_ra_rb_rc
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+      16   tc_start
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   tc_stop
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+     188  ?_0
+      76  tc_configure
+      56  tc_disable_it
+      56  tc_enable_it
+     268  tc_find_best_clock_source
+     132  tc_get_available_freq
+      68  tc_get_channel_freq
+      56  tc_get_cv
+     104  tc_get_ra_rb_rc
+      52  tc_get_status
+     144  tc_set_ra_rb_rc
+      60  tc_start
+      52  tc_stop
+      20  tcclks
+
+ 
+   188 bytes in section .rodata
+ 1'148 bytes in section SOFTPACK
+ 
+ 1'148 bytes of CODE  memory
+   188 bytes of CONST memory
+
+Errors: none
+Warnings: none

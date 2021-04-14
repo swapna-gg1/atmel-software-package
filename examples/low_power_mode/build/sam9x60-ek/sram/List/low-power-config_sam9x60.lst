@@ -1,0 +1,493 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         05/Jan/2021  12:18:32
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\low-power-config_sam9x60.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW9F42.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\low-power-config_sam9x60.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List\low-power-config_sam9x60.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\Obj\low-power-config_sam9x60.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\low-power-config_sam9x60.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29           
+     30           /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "assert.h"
+     35          #include <stdio.h>
+     36          
+     37          #include "board.h"
+     38          #include "peripherals/pmc.h"
+     39          #include "extram/mpddrc.h"
+     40          #include "low-power-config.h"
+     41          #include "clk-config.h"
+     42          
+     43          /*----------------------------------------------------------------------------
+     44           *         Local variables
+     45           *----------------------------------------------------------------------------*/
+     46          
+
+   \                                 In section .bss, align 4
+     47          static unsigned int read_reg[5];
+   \                     read_reg:
+   \        0x0                      DS8 20
+     48          
+     49          /*----------------------------------------------------------------------------
+     50           *        Exported functions
+     51           *----------------------------------------------------------------------------*/
+     52          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     53          void low_power_cfg(uint8_t mode) {
+   \                     low_power_cfg:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+     54          	assert(mode <= ULP1);
+   \        0x8   0xE1B0'0004        MOVS     R0,R4
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0003        CMP      R0,#+3
+   \       0x14   0xBA00'0004        BLT      ??low_power_cfg_0
+   \       0x18   0xE3A0'2036        MOV      R2,#+54
+   \       0x1C   0x....'....        LDR      R1,??DataTable2
+   \       0x20   0x....'....        LDR      R0,??DataTable2_1
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+     55          	/* Back up peripheral clock state */
+     56          	read_reg[0] = PMC->PMC_CSR[0];
+   \                     ??low_power_cfg_0:
+   \       0x2C   0x....'....        LDR      R0,??DataTable2_2
+   \       0x30   0xE3E0'105F        MVN      R1,#+95
+   \       0x34   0xE3C1'1FC0        BIC      R1,R1,#0x300
+   \       0x38   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x3C   0xE580'1000        STR      R1,[R0, #+0]
+     57          	read_reg[1] = PMC->PMC_CSR[1];
+   \       0x40   0xE3E0'105B        MVN      R1,#+91
+   \       0x44   0xE3C1'1FC0        BIC      R1,R1,#0x300
+   \       0x48   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x4C   0xE580'1004        STR      R1,[R0, #+4]
+     58          	read_reg[2] = PMC->PMC_GCSR[0];
+   \       0x50   0xE3E0'103F        MVN      R1,#+63
+   \       0x54   0xE3C1'1FC0        BIC      R1,R1,#0x300
+   \       0x58   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x5C   0xE580'1008        STR      R1,[R0, #+8]
+     59          	read_reg[3] = PMC->PMC_GCSR[1];
+   \       0x60   0xE3E0'103B        MVN      R1,#+59
+   \       0x64   0xE3C1'1FC0        BIC      R1,R1,#0x300
+   \       0x68   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x6C   0xE580'100C        STR      R1,[R0, #+12]
+     60          	read_reg[4] = PMC->PMC_SCSR;
+   \       0x70   0xE3E0'10F7        MVN      R1,#+247
+   \       0x74   0xE3C1'1FC0        BIC      R1,R1,#0x300
+   \       0x78   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x7C   0xE580'1010        STR      R1,[R0, #+16]
+     61          
+     62          	/* Set the I/Os to an appropriate state */
+     63          	board_restore_pio_reset_state();
+   \       0x80   0x....'....        BL       board_restore_pio_reset_state
+     64          
+     65          	/* Disable the USB transceivers and all peripheral clocks */
+     66          	board_save_misc_power();
+   \       0x84   0x....'....        BL       board_save_misc_power
+     67          }
+   \       0x88   0xE8BD'8010        POP      {R4,PC}          ;; return
+     68          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     69          void low_power_exit(uint8_t mode) {
+   \                     low_power_exit:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+     70          	int i = 0;
+   \        0x8   0xE3A0'6000        MOV      R6,#+0
+     71          	assert(mode <= ULP1);
+   \        0xC   0xE1B0'0004        MOVS     R0,R4
+   \       0x10   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x14   0xE350'0003        CMP      R0,#+3
+   \       0x18   0xBA00'0004        BLT      ??low_power_exit_0
+   \       0x1C   0xE3A0'2047        MOV      R2,#+71
+   \       0x20   0x....'....        LDR      R1,??DataTable2
+   \       0x24   0x....'....        LDR      R0,??DataTable2_1
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+     72          	/* Restore peripheral clock */
+     73          	for(i = 0; i < ID_PERIPH_COUNT; i++) {
+   \                     ??low_power_exit_0:
+   \       0x30   0xE3A0'5000        MOV      R5,#+0
+   \                     ??low_power_exit_1:
+   \       0x34   0xE355'0033        CMP      R5,#+51
+   \       0x38   0xAA00'0022        BGE      ??low_power_exit_2
+     74          		if(i < 32) {
+   \       0x3C   0xE355'0020        CMP      R5,#+32
+   \       0x40   0xAA00'000D        BGE      ??low_power_exit_3
+     75          			if(read_reg[0] & (1 << i)) {
+   \       0x44   0x....'....        LDR      R6,??DataTable2_2
+   \       0x48   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0x4C   0xE3A0'1001        MOV      R1,#+1
+   \       0x50   0xE111'0530        TST      R1,R0, LSR R5
+   \       0x54   0x0A00'0001        BEQ      ??low_power_exit_4
+     76          				pmc_enable_peripheral(i);
+   \       0x58   0xE1B0'0005        MOVS     R0,R5
+   \       0x5C   0x....'....        BL       pmc_enable_peripheral
+     77          			}
+     78          			if(read_reg[2] & (1 << i)) {
+   \                     ??low_power_exit_4:
+   \       0x60   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0x64   0xE3A0'1001        MOV      R1,#+1
+   \       0x68   0xE111'0530        TST      R1,R0, LSR R5
+   \       0x6C   0x0A00'0013        BEQ      ??low_power_exit_5
+     79          				pmc_enable_gck(i);
+   \       0x70   0xE1B0'0005        MOVS     R0,R5
+   \       0x74   0x....'....        BL       pmc_enable_gck
+   \       0x78   0xEA00'0010        B        ??low_power_exit_5
+     80          			}
+     81          		} else {
+     82          			if(read_reg[1] & (1 << (i - 32))) {
+   \                     ??low_power_exit_3:
+   \       0x7C   0x....'....        LDR      R6,??DataTable2_2
+   \       0x80   0xE596'0004        LDR      R0,[R6, #+4]
+   \       0x84   0xE1B0'1005        MOVS     R1,R5
+   \       0x88   0xE251'1020        SUBS     R1,R1,#+32
+   \       0x8C   0xE3A0'2001        MOV      R2,#+1
+   \       0x90   0xE112'0130        TST      R2,R0, LSR R1
+   \       0x94   0x0A00'0001        BEQ      ??low_power_exit_6
+     83          				pmc_enable_peripheral(i);
+   \       0x98   0xE1B0'0005        MOVS     R0,R5
+   \       0x9C   0x....'....        BL       pmc_enable_peripheral
+     84          			}
+     85          			if(read_reg[3] & (1 << (i - 32))) {
+   \                     ??low_power_exit_6:
+   \       0xA0   0xE596'000C        LDR      R0,[R6, #+12]
+   \       0xA4   0xE1B0'1005        MOVS     R1,R5
+   \       0xA8   0xE251'1020        SUBS     R1,R1,#+32
+   \       0xAC   0xE3A0'2001        MOV      R2,#+1
+   \       0xB0   0xE112'0130        TST      R2,R0, LSR R1
+   \       0xB4   0x0A00'0001        BEQ      ??low_power_exit_5
+     86          				pmc_enable_gck(i);
+   \       0xB8   0xE1B0'0005        MOVS     R0,R5
+   \       0xBC   0x....'....        BL       pmc_enable_gck
+     87          			}
+     88          		}
+     89          	}
+   \                     ??low_power_exit_5:
+   \       0xC0   0xE295'5001        ADDS     R5,R5,#+1
+   \       0xC4   0xEAFF'FFDA        B        ??low_power_exit_1
+     90          	PMC->PMC_SCER  = read_reg[4];
+   \                     ??low_power_exit_2:
+   \       0xC8   0x....'....        LDR      R0,??DataTable2_2
+   \       0xCC   0xE590'0010        LDR      R0,[R0, #+16]
+   \       0xD0   0xE3E0'10FF        MVN      R1,#+255
+   \       0xD4   0xE3C1'1FC0        BIC      R1,R1,#0x300
+   \       0xD8   0xE581'0000        STR      R0,[R1, #+0]
+     91          }
+   \       0xDC   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+     92          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     93          RAMCODE void processor_idle(void) {
+     94          	/* drain write buffer */
+     95          	asm("mcr p15, 0, %0, c7, c10, 4" :: "r"(0) : "memory");
+   \                     processor_idle:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0xEE07'0F9A        mcr p15, 0, R0, c7, c10, 4
+     96          	/* wait for interrupt */
+     97          	asm("mcr p15, 0, %0, c7, c0, 4" :: "r"(0) : "memory");
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0xEE07'0F90        mcr p15, 0, R0, c7, c0, 4
+     98          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+     99          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    100          RAMCODE void processor_ulp(uint8_t mode) {
+   \                     processor_ulp:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    101          	assert(mode <= ULP1);
+   \        0x8   0xE1B0'0004        MOVS     R0,R4
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0003        CMP      R0,#+3
+   \       0x14   0xBA00'0004        BLT      ??processor_ulp_0
+   \       0x18   0xE3A0'2065        MOV      R2,#+101
+   \       0x1C   0x....'....        LDR      R1,??DataTable2
+   \       0x20   0x....'....        LDR      R0,??DataTable2_1
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    102          	if(mode == ULP1) {
+   \                     ??processor_ulp_0:
+   \       0x2C   0xE1B0'0004        MOVS     R0,R4
+   \       0x30   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x34   0xE350'0002        CMP      R0,#+2
+   \       0x38   0x1A00'0004        BNE      ??processor_ulp_1
+    103          		pmc_disable_external_osc();
+   \       0x3C   0x....'....        BL       pmc_disable_external_osc
+    104          		pmc_enable_external_osc(false);
+   \       0x40   0xE3A0'0000        MOV      R0,#+0
+   \       0x44   0x....'....        BL       pmc_enable_external_osc
+    105          		pmc_enable_ulp1();
+   \       0x48   0x....'....        BL       pmc_enable_ulp1
+   \       0x4C   0xEA00'0000        B        ??processor_ulp_2
+    106          	#ifdef VARIANT_DDRAM
+    107          		/* Restore default PCK and MCK */
+    108          		pmc_set_custom_pck_mck(&clock_setting_backup);
+    109          		check_ddr_ready();
+    110          	#endif
+    111          	} else {
+    112          		processor_idle();
+   \                     ??processor_ulp_1:
+   \       0x50   0x....'....        BL       processor_idle
+    113          	}
+    114          }
+   \                     ??processor_ulp_2:
+   \       0x54   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \        0x0   0x....'....        DC32     read_reg
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x6D 0x6F          DC8 "mode <= 2"
+
+   \              0x64 0x65    
+
+   \              0x20 0x3C    
+
+   \              0x3D 0x20    
+
+   \              0x32 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x65, 0x78, 0x61, 0x6D, 0x70, 0x6C
+
+   \              0x65 0x78    
+
+   \              0x61 0x6D    
+
+   \              0x70 0x6C
+   \       0x38   0x65 0x73          DC8 0x65, 0x73, 0x5C, 0x6C, 0x6F, 0x77, 0x5F, 0x70
+
+   \              0x5C 0x6C    
+
+   \              0x6F 0x77    
+
+   \              0x5F 0x70
+   \       0x40   0x6F 0x77          DC8 0x6F, 0x77, 0x65, 0x72, 0x5F, 0x6D, 0x6F, 0x64
+
+   \              0x65 0x72    
+
+   \              0x5F 0x6D    
+
+   \              0x6F 0x64
+   \       0x48   0x65 0x5C          DC8 0x65, 0x5C, 0x6C, 0x6F, 0x77, 0x2D, 0x70, 0x6F
+
+   \              0x6C 0x6F    
+
+   \              0x77 0x2D    
+
+   \              0x70 0x6F
+   \       0x50   0x77 0x65          DC8 0x77, 0x65, 0x72, 0x2D, 0x63, 0x6F, 0x6E, 0x66
+
+   \              0x72 0x2D    
+
+   \              0x63 0x6F    
+
+   \              0x6E 0x66
+   \       0x58   0x69 0x67          DC8 0x69, 0x67, 0x5F, 0x73, 0x61, 0x6D, 0x39, 0x78
+
+   \              0x5F 0x73    
+
+   \              0x61 0x6D    
+
+   \              0x39 0x78
+   \       0x60   0x36 0x30          DC8 0x36, 0x30, 0x2E, 0x63, 0
+
+   \              0x2E 0x63    
+
+   \              0x00
+   \       0x65   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   low_power_cfg
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         8   -> board_restore_pio_reset_state
+         8   -> board_save_misc_power
+      16   low_power_exit
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+        16   -> pmc_enable_gck
+        16   -> pmc_enable_peripheral
+       0   processor_idle
+       8   processor_ulp
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         8   -> pmc_disable_external_osc
+         8   -> pmc_enable_external_osc
+         8   -> pmc_enable_ulp1
+         8   -> processor_idle
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+      12  ?_0
+     104  ?_1
+     140  low_power_cfg
+     224  low_power_exit
+      20  processor_idle
+      88  processor_ulp
+      20  read_reg
+
+ 
+  20 bytes in section .bss
+ 116 bytes in section .rodata
+ 484 bytes in section SOFTPACK
+ 
+ 484 bytes of CODE  memory
+ 116 bytes of CONST memory
+  20 bytes of DATA  memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1529 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Nov/2020  16:11:12
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\classd.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW95A7.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\classd.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\List\classd.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\Obj\classd.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf  =  int_specials
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\classd.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <assert.h>
+     35          #include <stdio.h>
+     36          #include <string.h>
+     37          
+     38          #include "audio/classd.h"
+     39          #include "callback.h"
+     40          #include "chip.h"
+     41          #include "errno.h"
+     42          #include "io.h"
+     43          #include "mm/cache.h"
+     44          #include "peripherals/pmc.h"
+     45          #include "trace.h"
+     46          
+     47          /*----------------------------------------------------------------------------
+     48           *        Local constants
+     49           *----------------------------------------------------------------------------*/
+     50          
+     51          static const struct {
+     52          	uint32_t rate;
+     53          	uint32_t sample_rate;
+     54          	uint32_t dsp_clk;
+
+   \                                 In section .rodata, align 4
+     55          } audio_info[] = {
+   \                     audio_info:
+   \        0x0   0x0000'1F40        DC32 8'000, 0, 0, 16'000, 1'048'576, 0, 32'000, 2'097'152, 0, 48'000
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'3E80  
+
+   \              0x0010'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'7D00  
+
+   \              0x0020'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'BB80
+   \       0x28   0x0030'0000        DC32 3'145'728, 0, 96'000, 4'194'304, 0, 22'050, 5'242'880, 65'536
+
+   \              0x0000'0000  
+
+   \              0x0001'7700  
+
+   \              0x0040'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'5622  
+
+   \              0x0050'0000  
+
+   \              0x0001'0000
+   \       0x48   0x0000'AC44        DC32 44'100, 6'291'456, 65'536, 88'200, 7'340'032, 65'536
+
+   \              0x0060'0000  
+
+   \              0x0001'0000  
+
+   \              0x0001'5888  
+
+   \              0x0070'0000  
+
+   \              0x0001'0000
+   \       0x60   0x2D 0x57          DC8 "-W- classd: invalid mono mode %u\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x63 0x6C    
+
+   \              0x61 0x73    
+
+   \              0x73 0x64    
+
+   \              0x3A 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x6E 0x6F    
+
+   \              0x20 0x6D    
+
+   \              0x6F 0x64    
+
+   \              0x65 0x20    
+
+   \              0x25 0x75    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x83   0x00               DC8 0
+   \       0x84   0x2D 0x57          DC8 "-W- classd: invalid non overlap value %u\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x63 0x6C    
+
+   \              0x61 0x73    
+
+   \              0x73 0x64    
+
+   \              0x3A 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x6E 0x6F    
+
+   \              0x6E 0x20    
+
+   \              0x6F 0x76    
+
+   \              0x65 0x72    
+
+   \              0x6C 0x61    
+
+   \              0x70 0x20    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x75    
+
+   \              0x65 0x20    
+
+   \              0x25 0x75    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0xAF   0x00               DC8 0
+   \       0xB0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \       0xB8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0xC0   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0xC8   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0xD0   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0xD8   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0xE0   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0xE8   0x73 0x5C          DC8 0x73, 0x5C, 0x61, 0x75, 0x64, 0x69, 0x6F, 0x5C
+
+   \              0x61 0x75    
+
+   \              0x64 0x69    
+
+   \              0x6F 0x5C
+   \       0xF0   0x63 0x6C          DC8 0x63, 0x6C, 0x61, 0x73, 0x73, 0x64, 0x2E, 0x63
+
+   \              0x61 0x73    
+
+   \              0x73 0x64    
+
+   \              0x2E 0x63
+   \       0xF8   0x00               DC8 0
+   \       0xF9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+     56          	{ 8000,  CLASSD_INTPMR_FRAME_FRAME_8K,  CLASSD_INTPMR_DSPCLKFREQ_12M288 },
+     57          	{ 16000, CLASSD_INTPMR_FRAME_FRAME_16K, CLASSD_INTPMR_DSPCLKFREQ_12M288 },
+     58          	{ 32000, CLASSD_INTPMR_FRAME_FRAME_32K, CLASSD_INTPMR_DSPCLKFREQ_12M288 },
+     59          	{ 48000, CLASSD_INTPMR_FRAME_FRAME_48K, CLASSD_INTPMR_DSPCLKFREQ_12M288 },
+     60          	{ 96000, CLASSD_INTPMR_FRAME_FRAME_96K, CLASSD_INTPMR_DSPCLKFREQ_12M288 },
+     61          	{ 22050, CLASSD_INTPMR_FRAME_FRAME_22K, CLASSD_INTPMR_DSPCLKFREQ_11M2896 },
+     62          	{ 44100, CLASSD_INTPMR_FRAME_FRAME_44K, CLASSD_INTPMR_DSPCLKFREQ_11M2896 },
+     63          	{ 88200, CLASSD_INTPMR_FRAME_FRAME_88K, CLASSD_INTPMR_DSPCLKFREQ_11M2896 },
+     64          };
+     65          
+     66          /*----------------------------------------------------------------------------
+     67           *        Local functions
+     68           *----------------------------------------------------------------------------*/
+     69          
+     70          #ifdef CONFIG_HAVE_PMC_AUDIO_CLOCK
+     71          static bool _dspclk_configure(uint32_t dsp_clk)
+     72          {
+     73          	struct _pmc_audio_cfg cfg;
+     74          
+     75          	/* Pad Clock: not used */
+     76          	cfg.div = 0;
+     77          	cfg.qdaudio = 0;
+     78          
+     79          	/* PMC Clock: */
+     80          	/* 12Mhz * (ND + 1 + FRACR/2^22) / (QDPMC + 1) = 8 * DSPCLK */
+     81          	switch (dsp_clk) {
+     82          	case CLASSD_INTPMR_DSPCLKFREQ_12M288:
+     83          		/* 12Mhz * (56 + 1 + 1442841/2^22) / (6 + 1) = 8 * 12.288Mhz */
+     84          		cfg.nd = 56;
+     85          		cfg.fracr = 1442841;
+     86          		cfg.qdpmc = 6;
+     87          		break;
+     88          	case CLASSD_INTPMR_DSPCLKFREQ_11M2896:
+     89          		/* 12Mhz * (59 + 1 + 885837/2^22) / (7 + 1) = 8 * 11.2896Mhz */
+     90          		cfg.nd = 59;
+     91          		cfg.fracr = 885837;
+     92          		cfg.qdpmc = 7;
+     93          		break;
+     94          	default:
+     95          		return false;
+     96          	}
+     97          
+     98          	pmc_configure_audio(&cfg);
+     99          	pmc_enable_audio(true, false);
+    100          
+    101          #if (TRACE_LEVEL >= TRACE_LEVEL_DEBUG)
+    102          	{
+    103          		uint32_t clk;
+    104          		clk = pmc_get_audio_pmc_clock();
+    105          		trace_debug("Configured Audio PLL PMC Clock: %u (= 8 * %u)\r\n",
+    106          			    (unsigned)clk, (unsigned)(clk >> 3));
+    107          	}
+    108          #endif
+    109          	return true;
+    110          }
+    111          #endif
+    112          
+    113          static bool _set_eqcfg_bits(enum _classd_eqcfg eqcfg, volatile uint32_t *intpmr)
+    114          {
+    115          	uint32_t mask = CLASSD_INTPMR_EQCFG_Msk;
+    116          	uint32_t bits = 0;
+    117          
+    118          	switch (eqcfg) {
+    119          	case CLASSD_EQCFG_FLAT:
+    120          		bits = CLASSD_INTPMR_EQCFG_FLAT;
+    121          		break;
+    122          	case CLASSD_EQCFG_BBOOST12:
+    123          		bits = CLASSD_INTPMR_EQCFG_BBOOST12;
+    124          		break;
+    125          	case CLASSD_EQCFG_BBOOST6:
+    126          		bits = CLASSD_INTPMR_EQCFG_BBOOST6;
+    127          		break;
+    128          	case CLASSD_EQCFG_BCUT12:
+    129          		bits = CLASSD_INTPMR_EQCFG_BCUT12;
+    130          		break;
+    131          	case CLASSD_EQCFG_BCUT6:
+    132          		bits = CLASSD_INTPMR_EQCFG_BCUT6;
+    133          		break;
+    134          	case CLASSD_EQCFG_MBOOST3:
+    135          		bits = CLASSD_INTPMR_EQCFG_MBOOST3;
+    136          		break;
+    137          	case CLASSD_EQCFG_MBOOST8:
+    138          		bits = CLASSD_INTPMR_EQCFG_MBOOST8;
+    139          		break;
+    140          	case CLASSD_EQCFG_MCUT3:
+    141          		bits = CLASSD_INTPMR_EQCFG_MCUT3;
+    142          		break;
+    143          	case CLASSD_EQCFG_MCUT8:
+    144          		bits = CLASSD_INTPMR_EQCFG_MCUT8;
+    145          		break;
+    146          	case CLASSD_EQCFG_TBOOST12:
+    147          		bits = CLASSD_INTPMR_EQCFG_TBOOST12;
+    148          		break;
+    149          	case CLASSD_EQCFG_TBOOST6:
+    150          		bits = CLASSD_INTPMR_EQCFG_TBOOST6;
+    151          		break;
+    152          	case CLASSD_EQCFG_TCUT12:
+    153          		bits = CLASSD_INTPMR_EQCFG_TCUT12;
+    154          		break;
+    155          	case CLASSD_EQCFG_TCUT6:
+    156          		bits = CLASSD_INTPMR_EQCFG_TCUT6;
+    157          		break;
+    158          	default:
+    159          		trace_warning("classd: invalid equalizer config %u\r\n",
+    160          			      (unsigned)eqcfg);
+    161          		return false;
+    162          	};
+    163          
+    164          	*intpmr = (*intpmr & ~mask) | bits;
+    165          	return true;
+    166          }
+    167          
+    168          static bool _set_mono_bits(bool mono, enum _classd_mono mono_mode, volatile uint32_t *intpmr)
+    169          {
+    170          	uint32_t mask = CLASSD_INTPMR_MONO_ENABLED | CLASSD_INTPMR_MONOMODE_Msk;
+    171          	uint32_t bits = 0;
+    172          
+    173          	if (mono) {
+    174          		bits = CLASSD_INTPMR_MONO_ENABLED;
+    175          		switch (mono_mode) {
+    176          		case CLASSD_MONO_MIXED:
+    177          			bits |= CLASSD_INTPMR_MONOMODE_MONOMIX;
+    178          			break;
+    179          		case CLASSD_MONO_SAT:
+    180          			bits |= CLASSD_INTPMR_MONOMODE_MONOSAT;
+    181          			break;
+    182          		case CLASSD_MONO_LEFT:
+    183          			bits |= CLASSD_INTPMR_MONOMODE_MONOLEFT;
+    184          			break;
+    185          		case CLASSD_MONO_RIGHT:
+    186          			bits |= CLASSD_INTPMR_MONOMODE_MONORIGHT;
+    187          			break;
+    188          		default:
+    189          			trace_warning("classd: invalid mono mode %u\r\n",
+    190          				      (unsigned)mono_mode);
+    191          			return false;
+    192          		}
+    193          	}
+    194          
+    195          	*intpmr = (*intpmr & ~mask) | bits;
+    196          	return true;
+    197          }
+    198          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    199          static int _classd_dma_transfer_callback(void* arg, void* arg2)
+    200          {
+   \                     _classd_dma_transfer_callback:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    201          	struct _classd_desc* desc = (struct _classd_desc*)arg;
+    202          
+    203          	dma_reset_channel(desc->tx.dma.channel);
+   \        0x8   0xE594'002C        LDR      R0,[R4, #+44]
+   \        0xC   0x....'....        BL       dma_reset_channel
+    204          
+    205          	mutex_unlock(&desc->tx.mutex);
+   \       0x10   0xE284'0010        ADD      R0,R4,#+16
+   \       0x14   0x....'....        BL       mutex_unlock
+    206          
+    207          	return callback_call(&desc->tx.callback, NULL);
+   \       0x18   0xE284'0024        ADD      R0,R4,#+36
+   \       0x1C   0xE8BD'4010        POP      {R4,LR}
+   \       0x20   0xE3A0'1000        MOV      R1,#+0
+   \       0x24   0x....'....        B        callback_call    ;; tailcall
+    208          }
+    209          
+    210          static void _classd_dma_transfer(struct _classd_desc* desc, struct _buffer* buffer)
+    211          {
+    212          	struct _callback _cb;
+    213          
+    214          	memset(&desc->tx.dma.cfg, 0x0, sizeof(desc->tx.dma.cfg));
+    215          
+    216          	desc->tx.dma.cfg.saddr = buffer->data;
+    217          	desc->tx.dma.cfg.daddr = (void*)&desc->addr->CLASSD_THR;
+    218          
+    219          	if (desc->left_enable && desc->right_enable) {
+    220          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_WORD;
+    221          		desc->tx.dma.cfg.len = buffer->size / 4;
+    222          	} else {
+    223          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_HALF_WORD;
+    224          		desc->tx.dma.cfg.len = buffer->size / 2;
+    225          	}
+    226          	dma_configure_transfer(desc->tx.dma.channel, &desc->tx.dma.cfg_dma, &desc->tx.dma.cfg, 1);
+    227          	callback_set(&_cb, _classd_dma_transfer_callback, (void*)desc);
+    228          	dma_set_callback(desc->tx.dma.channel, &_cb);
+    229          	cache_clean_region(desc->tx.dma.cfg.saddr, desc->tx.dma.cfg.len);
+    230          	dma_start_transfer(desc->tx.dma.channel);
+    231          }
+    232          
+    233          static void _classd_polling_transfer(struct _classd_desc* desc, struct _buffer* buffer)
+    234          {
+    235          	uint16_t* start = (uint16_t*)buffer->data;
+    236          	uint32_t  length = buffer->size / sizeof(uint16_t);
+    237          	uint16_t* end = start + length;
+    238          	uint16_t* current = start;
+    239          
+    240          	while (1) {
+    241          		if (desc->addr->CLASSD_ISR & CLASSD_ISR_DATRDY) {
+    242          			uint16_t left = 0, right = 0;
+    243          			if (desc->left_enable)
+    244          				left = *current++;
+    245          			if (desc->right_enable)
+    246          				right = *current++;
+    247          			desc->addr->CLASSD_THR = CLASSD_THR_RDATA(right)
+    248          			                       | CLASSD_THR_LDATA(left);
+    249          		}
+    250          		if (current >= end)
+    251          			break;
+    252          	}
+    253          
+    254          	mutex_unlock(&desc->tx.mutex);
+    255          
+    256          	callback_call(&desc->tx.callback, NULL);
+    257          }
+    258          
+    259          /*----------------------------------------------------------------------------
+    260           *        Exported functions
+    261           *----------------------------------------------------------------------------*/
+    262          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    263          int classd_configure(struct _classd_desc *desc)
+    264          {
+   \                     classd_configure:
+   \        0x0   0xE92D'47FC        PUSH     {R2-R10,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    265          	uint8_t i;
+    266          	uint32_t mr, intpmr, dsp_clk_set, frame_set;
+    267          	uint32_t id = get_classd_id_from_addr(desc->addr);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_classd_id_from_addr
+   \       0x10   0xE1A0'8000        MOV      R8,R0
+    268          
+    269          	if (!desc->left_enable && !desc->right_enable)
+   \       0x14   0xE5D4'000E        LDRB     R0,[R4, #+14]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x1A00'0002        BNE      ??classd_configure_3
+   \       0x20   0xE5D4'000F        LDRB     R0,[R4, #+15]
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x0A00'000C        BEQ      ??classd_configure_4
+    270          		return -EINVAL;
+    271          
+    272          	for (i = 0; i < ARRAY_SIZE(audio_info); i++) {
+   \                     ??classd_configure_3:
+   \       0x2C   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x30   0xE3A0'0000        MOV      R0,#+0
+    273          		if (audio_info[i].rate == desc->sample_rate) {
+   \       0x34   0xE351'0D7D        CMP      R1,#+8000
+   \       0x38   0x1A00'000A        BNE      ??classd_configure_5
+    274          			dsp_clk_set  = audio_info[i].dsp_clk;
+   \                     ??classd_configure_6:
+   \       0x3C   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \       0x40   0x....'....        LDR      R5,??DataTable6
+   \       0x44   0xE1A0'1101        LSL      R1,R1,#+2
+   \       0x48   0xE085'2001        ADD      R2,R5,R1
+    275          			frame_set = audio_info[i].sample_rate;
+   \       0x4C   0xE285'3004        ADD      R3,R5,#+4
+   \       0x50   0xE592'9008        LDR      R9,[R2, #+8]
+   \       0x54   0xE793'A001        LDR      R10,[R3, +R1]
+    276          			break;
+    277          		}
+    278          	}
+    279          	if (i == ARRAY_SIZE(audio_info))
+   \       0x58   0xE350'0008        CMP      R0,#+8
+   \       0x5C   0x1A00'001E        BNE      ??classd_configure_7
+    280          		return -EINVAL;
+    281          #ifdef CONFIG_HAVE_PMC_AUDIO_CLOCK
+    282          	if (!_dspclk_configure(dsp_clk_set))
+    283          		return -EINVAL;
+    284          #endif
+    285          	struct _pmc_periph_cfg cfg = {
+    286          		.gck = {
+    287          #ifdef CONFIG_HAVE_PMC_AUDIO_CLOCK
+    288          			.css = PMC_PCR_GCKCSS_AUDIO_CLK,
+    289          			.div = 1,
+    290          #else
+    291          			.css = PMC_PCR_GCKCSS_MCK_CLK,
+    292          			.div = 2,
+    293          #endif	
+    294          		},
+    295          	};
+    296          	pmc_configure_peripheral(id, &cfg, true);
+    297          
+    298          	/* perform soft reset */
+    299          	desc->addr->CLASSD_CR  = CLASSD_CR_SWRST;
+    300          	desc->addr->CLASSD_IDR = CLASSD_IDR_DATRDY;
+    301          
+    302          	/* initial MR/INTPMR values */
+    303          	mr = 0;
+    304          	intpmr = dsp_clk_set | frame_set;
+    305          
+    306          	/* configure output mode */
+    307          	switch (desc->mode) {
+    308          	case CLASSD_OUTPUT_SINGLE_ENDED:
+    309          		break;
+    310          	case CLASSD_OUTPUT_DIFFERENTIAL:
+    311          		mr |= CLASSD_MR_PWMTYP;
+    312          		break;
+    313          	case CLASSD_OUTPUT_HALF_BRIDGE:
+    314          		mr |= CLASSD_MR_NON_OVERLAP;
+    315          		break;
+    316          	case CLASSD_OUTPUT_FULL_BRIDGE:
+    317          		mr |= CLASSD_MR_PWMTYP | CLASSD_MR_NON_OVERLAP;
+    318          		break;
+    319          	default:
+    320          		trace_warning("classd: invalid mode %u\n", (unsigned)desc->mode);
+    321          		return -EINVAL;
+    322          	}
+    323          
+    324          	/* configure non-overlapping time */
+    325          	if (mr & CLASSD_MR_NON_OVERLAP) {
+    326          		switch (desc->non_ovr) {
+    327          		case CLASSD_NONOVR_5NS:
+    328          			mr |= CLASSD_MR_NOVRVAL_5NS;
+    329          			break;
+    330          		case CLASSD_NONOVR_10NS:
+    331          			mr |= CLASSD_MR_NOVRVAL_10NS;
+    332          			break;
+    333          		case CLASSD_NONOVR_15NS:
+    334          			mr |= CLASSD_MR_NOVRVAL_15NS;
+    335          			break;
+    336          		case CLASSD_NONOVR_20NS:
+    337          			mr |= CLASSD_MR_NOVRVAL_20NS;
+    338          			break;
+    339          		default:
+    340          			trace_warning("classd: invalid non overlap value %u\r\n",
+    341          				      (unsigned)desc->non_ovr);
+    342          			return -EINVAL;
+    343          		}
+    344          	}
+    345          
+    346          	/* configure mono/stereo */
+    347          	if (desc->swap_channels)
+    348          		intpmr |= CLASSD_INTPMR_SWAP;
+    349          	if (!_set_mono_bits(desc->mono, desc->mono_mode, &intpmr))
+    350          		return -EINVAL;
+   \                     ??classd_configure_4:
+   \       0x60   0xE3E0'001B        MVN      R0,#+27
+   \       0x64   0xE8BD'87F6        POP      {R1,R2,R4-R10,PC}
+   \                     ??classd_configure_5:
+   \       0x68   0xE3A0'0001        MOV      R0,#+1
+   \       0x6C   0xE351'0DFA        CMP      R1,#+16000
+   \       0x70   0x0AFF'FFF1        BEQ      ??classd_configure_6
+   \       0x74   0xE3A0'0002        MOV      R0,#+2
+   \       0x78   0xE351'0C7D        CMP      R1,#+32000
+   \       0x7C   0x0AFF'FFEE        BEQ      ??classd_configure_6
+   \       0x80   0xE3A0'2080        MOV      R2,#+128
+   \       0x84   0xE382'2CBB        ORR      R2,R2,#0xBB00
+   \       0x88   0xE3A0'0003        MOV      R0,#+3
+   \       0x8C   0xE151'0002        CMP      R1,R2
+   \       0x90   0x0AFF'FFE9        BEQ      ??classd_configure_6
+   \       0x94   0xE1A0'3082        MOV      R3,R2, LSL #+1
+   \       0x98   0xE3A0'0004        MOV      R0,#+4
+   \       0x9C   0xE151'0003        CMP      R1,R3
+   \       0xA0   0x0AFF'FFE5        BEQ      ??classd_configure_6
+   \       0xA4   0xE3A0'2022        MOV      R2,#+34
+   \       0xA8   0xE382'2C56        ORR      R2,R2,#0x5600
+   \       0xAC   0xE3A0'0005        MOV      R0,#+5
+   \       0xB0   0xE151'0002        CMP      R1,R2
+   \       0xB4   0x0AFF'FFE0        BEQ      ??classd_configure_6
+   \       0xB8   0xE1A0'3082        MOV      R3,R2, LSL #+1
+   \       0xBC   0xE3A0'0006        MOV      R0,#+6
+   \       0xC0   0xE151'0003        CMP      R1,R3
+   \       0xC4   0x0AFF'FFDC        BEQ      ??classd_configure_6
+   \       0xC8   0xE1A0'2102        MOV      R2,R2, LSL #+2
+   \       0xCC   0xE3A0'0007        MOV      R0,#+7
+   \       0xD0   0xE151'0002        CMP      R1,R2
+   \       0xD4   0x1AFF'FFE1        BNE      ??classd_configure_4
+   \       0xD8   0xEAFF'FFD7        B        ??classd_configure_6
+   \                     ??classd_configure_7:
+   \       0xDC   0x....'....        LDR      R3,??DataTable6_1
+   \       0xE0   0xE1A0'200D        MOV      R2,SP
+   \       0xE4   0xE893'0003        LDM      R3,{R0,R1}
+   \       0xE8   0xE3A0'6001        MOV      R6,#+1
+   \       0xEC   0xE3A0'7000        MOV      R7,#+0
+   \       0xF0   0xE882'0003        STM      R2,{R0,R1}
+   \       0xF4   0xE3A0'2001        MOV      R2,#+1
+   \       0xF8   0xE1A0'100D        MOV      R1,SP
+   \       0xFC   0xE1A0'0008        MOV      R0,R8
+   \      0x100   0x....'....        BL       pmc_configure_peripheral
+   \      0x104   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x108   0xE18A'2009        ORR      R2,R10,R9
+   \      0x10C   0xE580'6000        STR      R6,[R0, #+0]
+   \      0x110   0xE594'1000        LDR      R1,[R4, #+0]
+   \      0x114   0xE3A0'0000        MOV      R0,#+0
+   \      0x118   0xE581'6018        STR      R6,[R1, #+24]
+   \      0x11C   0xE5D4'1009        LDRB     R1,[R4, #+9]
+   \      0x120   0xE1A0'3001        MOV      R3,R1
+   \      0x124   0xE353'0003        CMP      R3,#+3
+   \      0x128   0x8A00'0048        BHI      ??classd_configure_8
+   \      0x12C   0xE7DF'C003        LDRB     R12,[PC, R3]
+   \      0x130   0xE08F'F10C        ADD      PC,PC,R12, LSL #+2
+   \                     ??classd_configure_0:
+   \      0x134   0x01 0x00          DC8      0x1,0x0,0x41,0x43
+
+   \              0x41 0x43
+   \                     ??classd_configure_9:
+   \      0x138   0xE3A0'0F40        MOV      R0,#+256
+   \                     ??classd_configure_10:
+   \      0x13C   0xE310'0B40        TST      R0,#0x10000
+   \      0x140   0x0A00'0007        BEQ      ??classd_configure_11
+   \      0x144   0xE5D4'100A        LDRB     R1,[R4, #+10]
+   \      0x148   0xE1A0'3001        MOV      R3,R1
+   \      0x14C   0xE353'0003        CMP      R3,#+3
+   \      0x150   0x8A00'0049        BHI      ??classd_configure_12
+   \      0x154   0xE7DF'C003        LDRB     R12,[PC, R3]
+   \      0x158   0xE08F'F10C        ADD      PC,PC,R12, LSL #+2
+   \                     ??classd_configure_1:
+   \      0x15C   0x01 0x00          DC8      0x1,0x0,0x43,0x45
+
+   \              0x43 0x45
+   \                     ??classd_configure_13:
+   \      0x160   0xE380'0940        ORR      R0,R0,#0x100000
+   \                     ??classd_configure_11:
+   \      0x164   0xE5D4'100B        LDRB     R1,[R4, #+11]
+   \      0x168   0xE5D4'C00C        LDRB     R12,[R4, #+12]
+   \      0x16C   0xE3A0'3000        MOV      R3,#+0
+   \      0x170   0xE351'0000        CMP      R1,#+0
+   \      0x174   0x1382'2A80        ORRNE    R2,R2,#0x80000
+   \      0x178   0xE5D4'100D        LDRB     R1,[R4, #+13]
+   \      0x17C   0xE35C'0000        CMP      R12,#+0
+   \      0x180   0x0A00'0007        BEQ      ??classd_configure_14
+   \      0x184   0xE1A0'E001        MOV      LR,R1
+   \      0x188   0xE3A0'3540        MOV      R3,#+268435456
+   \      0x18C   0xE35E'0003        CMP      LR,#+3
+   \      0x190   0x8A00'0043        BHI      ??classd_configure_15
+   \      0x194   0xE7DF'900E        LDRB     R9,[PC, LR]
+   \      0x198   0xE08F'F109        ADD      PC,PC,R9, LSL #+2
+   \                     ??classd_configure_2:
+   \      0x19C   0x01 0x3F          DC8      0x1,0x3F,0x3D,0x0
+
+   \              0x3D 0x00
+   \                     ??classd_configure_16:
+   \      0x1A0   0xE3A0'3470        MOV      R3,#+1879048192
+   \                     ??classd_configure_14:
+   \      0x1A4   0xE3C2'1470        BIC      R1,R2,#0x70000000
+    351          
+    352          	/* configure left channel (muted, max attn) */
+    353          	if (desc->left_enable)
+   \      0x1A8   0xE5D4'200E        LDRB     R2,[R4, #+14]
+   \      0x1AC   0xE183'1001        ORR      R1,R3,R1
+    354          		mr |= CLASSD_MR_LEN;
+    355          	mr |= CLASSD_MR_LMUTE;
+    356          	intpmr |= CLASSD_INTPMR_ATTL(CLASSD_INTPMR_ATTL_Msk);
+   \      0x1B0   0xE381'107F        ORR      R1,R1,#0x7F
+   \      0x1B4   0xE352'0000        CMP      R2,#+0
+    357          
+    358          	/* configure right channel (muted, max attn)  */
+    359          	if (desc->right_enable)
+   \      0x1B8   0xE5D4'200F        LDRB     R2,[R4, #+15]
+   \      0x1BC   0x1380'0001        ORRNE    R0,R0,#0x1
+   \      0x1C0   0xE380'0002        ORR      R0,R0,#0x2
+   \      0x1C4   0xE352'0000        CMP      R2,#+0
+    360          		mr |= CLASSD_MR_REN;
+   \      0x1C8   0x1380'0010        ORRNE    R0,R0,#0x10
+    361          	mr |= CLASSD_MR_RMUTE;
+    362          	intpmr |= CLASSD_INTPMR_ATTR(CLASSD_INTPMR_ATTL_Msk);
+    363          
+    364          	/* write configuration */
+    365          	desc->addr->CLASSD_MR = mr;
+   \      0x1CC   0xE594'2000        LDR      R2,[R4, #+0]
+   \      0x1D0   0xE380'0020        ORR      R0,R0,#0x20
+   \      0x1D4   0xE582'0004        STR      R0,[R2, #+4]
+    366          	desc->addr->CLASSD_INTPMR = intpmr;
+   \      0x1D8   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x1DC   0xE381'1C7F        ORR      R1,R1,#0x7F00
+   \      0x1E0   0xE580'1008        STR      R1,[R0, #+8]
+    367          
+    368          	desc->tx.dma.channel = dma_allocate_channel(DMA_PERIPH_MEMORY, id);
+   \      0x1E4   0xE208'10FF        AND      R1,R8,#0xFF
+   \      0x1E8   0xE3A0'00FF        MOV      R0,#+255
+   \      0x1EC   0x....'....        BL       dma_allocate_channel
+   \      0x1F0   0xE584'002C        STR      R0,[R4, #+44]
+    369          	assert(desc->tx.dma.channel != NULL);
+   \      0x1F4   0xE350'0000        CMP      R0,#+0
+   \      0x1F8   0x1A00'0004        BNE      ??classd_configure_17
+   \      0x1FC   0xE386'2F5C        ORR      R2,R6,#0x170
+   \      0x200   0xE285'10B0        ADD      R1,R5,#+176
+   \      0x204   0x....'....        LDR      R0,??DataTable6_2
+   \      0x208   0x....'....        BL       __aeabi_assert
+   \      0x20C   0x....'....        BL       __iar_EmptyStepPoint
+    370          
+    371          	desc->tx.dma.cfg_dma.incr_saddr = true;
+   \                     ??classd_configure_17:
+   \      0x210   0xE5C4'6038        STRB     R6,[R4, #+56]
+    372          	desc->tx.dma.cfg_dma.incr_daddr = false;
+   \      0x214   0xE5C4'7039        STRB     R7,[R4, #+57]
+    373          	desc->tx.dma.cfg_dma.loop = false;
+   \      0x218   0xE5C4'703A        STRB     R7,[R4, #+58]
+    374          	desc->tx.dma.cfg_dma.chunk_size = DMA_CHUNK_SIZE_1;
+   \      0x21C   0xE584'7034        STR      R7,[R4, #+52]
+    375          
+    376          	desc->tx.mutex = 0;
+   \      0x220   0xE584'7010        STR      R7,[R4, #+16]
+    377          
+    378          	if ((desc->addr->CLASSD_INTSR & CLASSD_INTSR_CFGERR) != 0)
+   \      0x224   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x228   0xE590'100C        LDR      R1,[R0, #+12]
+   \      0x22C   0xE311'0001        TST      R1,#0x1
+    379          		return -ENODEV;
+    380          
+    381          	return 0;
+   \      0x230   0x03A0'0000        MOVEQ    R0,#+0
+   \      0x234   0x13E0'002B        MVNNE    R0,#+43
+   \      0x238   0xE8BD'87F6        POP      {R1,R2,R4-R10,PC}
+   \                     ??classd_configure_18:
+   \      0x23C   0xE3A0'0B40        MOV      R0,#+65536
+   \      0x240   0xEAFF'FFBD        B        ??classd_configure_10
+   \                     ??classd_configure_19:
+   \      0x244   0xE3A0'0B40        MOV      R0,#+65536
+   \      0x248   0xE380'0F40        ORR      R0,R0,#0x100
+   \      0x24C   0xEAFF'FFBA        B        ??classd_configure_10
+   \                     ??classd_configure_8:
+   \      0x250   0x....'....        LDR      R0,??DataTable6_3
+   \      0x254   0xE590'2000        LDR      R2,[R0, #+0]
+   \      0x258   0xE352'0002        CMP      R2,#+2
+   \      0x25C   0x9AFF'FF7F        BLS      ??classd_configure_4
+   \      0x260   0x....'....        LDR      R0,??DataTable6_4
+   \                     ??classd_configure_20:
+   \      0x264   0x....'....        BL       printf
+   \      0x268   0xEAFF'FF7C        B        ??classd_configure_4
+   \                     ??classd_configure_21:
+   \      0x26C   0xE380'0980        ORR      R0,R0,#0x200000
+   \      0x270   0xEAFF'FFBB        B        ??classd_configure_11
+   \                     ??classd_configure_22:
+   \      0x274   0xE380'09C0        ORR      R0,R0,#0x300000
+   \      0x278   0xEAFF'FFB9        B        ??classd_configure_11
+   \                     ??classd_configure_12:
+   \      0x27C   0x....'....        LDR      R0,??DataTable6_3
+   \      0x280   0xE590'2000        LDR      R2,[R0, #+0]
+   \      0x284   0xE352'0002        CMP      R2,#+2
+   \      0x288   0x9AFF'FF74        BLS      ??classd_configure_4
+   \      0x28C   0xE285'0084        ADD      R0,R5,#+132
+   \      0x290   0xEAFF'FFF3        B        ??classd_configure_20
+   \                     ??classd_configure_23:
+   \      0x294   0xE3A0'3450        MOV      R3,#+1342177280
+   \      0x298   0xEAFF'FFC1        B        ??classd_configure_14
+   \                     ??classd_configure_24:
+   \      0x29C   0xE3A0'35C0        MOV      R3,#+805306368
+   \      0x2A0   0xEAFF'FFBF        B        ??classd_configure_14
+   \                     ??classd_configure_15:
+   \      0x2A4   0x....'....        LDR      R0,??DataTable6_3
+   \      0x2A8   0xE590'2000        LDR      R2,[R0, #+0]
+   \      0x2AC   0xE352'0002        CMP      R2,#+2
+   \      0x2B0   0x9AFF'FF6A        BLS      ??classd_configure_4
+   \      0x2B4   0xE285'0060        ADD      R0,R5,#+96
+   \      0x2B8   0xEAFF'FFE9        B        ??classd_configure_20
+    382          }
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_6:
+   \        0x0   0x0000'0300        DC32 768, 2
+
+   \              0x0000'0002
+    383          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    384          void classd_disable(struct _classd_desc *desc)
+    385          {
+   \                     classd_disable:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    386          	uint32_t id = get_classd_id_from_addr(desc->addr);
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0x....'....        BL       get_classd_id_from_addr
+   \        0xC   0xE1A0'4000        MOV      R4,R0
+    387          #ifdef CONFIG_HAVE_PMC_AUDIO_CLOCK
+    388          	pmc_disable_audio();
+    389          #endif
+    390          	pmc_disable_gck(id);
+   \       0x10   0x....'....        BL       pmc_disable_gck
+    391          	pmc_disable_peripheral(id);
+   \       0x14   0xE1A0'0004        MOV      R0,R4
+   \       0x18   0xE8BD'4010        POP      {R4,LR}
+   \       0x1C   0x....'....        B        pmc_disable_peripheral  ;; tailcall
+    392          }
+    393          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    394          void classd_swap_channels(struct _classd_desc *desc, bool swap)
+    395          {
+    396          	if (swap) {
+   \                     classd_swap_channels:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0xE590'1008        LDR      R1,[R0, #+8]
+    397          		desc->addr->CLASSD_INTPMR |= CLASSD_INTPMR_SWAP;
+   \        0xC   0x1381'2A80        ORRNE    R2,R1,#0x80000
+    398          	} else {
+    399          		desc->addr->CLASSD_INTPMR &= ~CLASSD_INTPMR_SWAP;
+   \       0x10   0x03C1'2A80        BICEQ    R2,R1,#0x80000
+   \       0x14   0xE580'2008        STR      R2,[R0, #+8]
+    400          	}
+    401          }
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+    402          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    403          void classd_set_equalizer(struct _classd_desc *desc, enum _classd_eqcfg eqcfg)
+    404          {
+    405          	_set_eqcfg_bits(eqcfg, &desc->addr->CLASSD_INTPMR);
+   \                     classd_set_equalizer:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE1A0'3001        MOV      R3,R1
+   \        0x8   0xE280'0008        ADD      R0,R0,#+8
+   \        0xC   0xE3A0'2000        MOV      R2,#+0
+   \       0x10   0xE353'000C        CMP      R3,#+12
+   \       0x14   0x8A00'0021        BHI      ??classd_set_equalizer_1
+   \       0x18   0xE7DF'C003        LDRB     R12,[PC, R3]
+   \       0x1C   0xE08F'F10C        ADD      PC,PC,R12, LSL #+2
+   \                     ??classd_set_equalizer_0:
+   \       0x20   0x1A 0x19          DC8      0x1A,0x19,0x17,0x15
+
+   \              0x17 0x15
+   \       0x24   0x13 0x11          DC8      0x13,0x11,0xF,0xD
+
+   \              0x0F 0x0D
+   \       0x28   0x0B 0x09          DC8      0xB,0x9,0x7,0x5
+
+   \              0x07 0x05
+   \       0x2C   0x03 0x00          DC8      0x3,0x0,0x0,0x0
+
+   \              0x00 0x00
+   \                     ??classd_set_equalizer_2:
+   \       0x30   0xE3A0'26C0        MOV      R2,#+201326592
+   \       0x34   0xEA00'0014        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_4:
+   \       0x38   0xE3A0'26B0        MOV      R2,#+184549376
+   \       0x3C   0xEA00'0012        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_5:
+   \       0x40   0xE3A0'26A0        MOV      R2,#+167772160
+   \       0x44   0xEA00'0010        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_6:
+   \       0x48   0xE3A0'2690        MOV      R2,#+150994944
+   \       0x4C   0xEA00'000E        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_7:
+   \       0x50   0xE3A0'2680        MOV      R2,#+134217728
+   \       0x54   0xEA00'000C        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_8:
+   \       0x58   0xE3A0'2670        MOV      R2,#+117440512
+   \       0x5C   0xEA00'000A        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_9:
+   \       0x60   0xE3A0'2660        MOV      R2,#+100663296
+   \       0x64   0xEA00'0008        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_10:
+   \       0x68   0xE3A0'2650        MOV      R2,#+83886080
+   \       0x6C   0xEA00'0006        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_11:
+   \       0x70   0xE3A0'2640        MOV      R2,#+67108864
+   \       0x74   0xEA00'0004        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_12:
+   \       0x78   0xE3A0'27C0        MOV      R2,#+50331648
+   \       0x7C   0xEA00'0002        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_13:
+   \       0x80   0xE3A0'2780        MOV      R2,#+33554432
+   \       0x84   0xEA00'0000        B        ??classd_set_equalizer_3
+   \                     ??classd_set_equalizer_14:
+   \       0x88   0xE3A0'2740        MOV      R2,#+16777216
+   \                     ??classd_set_equalizer_3:
+   \       0x8C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x90   0xE3C1'36F0        BIC      R3,R1,#0xF000000
+   \       0x94   0xE182'2003        ORR      R2,R2,R3
+   \       0x98   0xE580'2000        STR      R2,[R0, #+0]
+   \       0x9C   0xE12F'FF1E        BX       LR
+   \                     ??classd_set_equalizer_1:
+   \       0xA0   0x....'....        LDR      R0,??DataTable6_3
+   \       0xA4   0xE590'C000        LDR      R12,[R0, #+0]
+   \       0xA8   0xE35C'0003        CMP      R12,#+3
+   \       0xAC   0x....'....        LDRCS    R0,??DataTable6_5
+   \       0xB0   0x....'....        BCS      printf           ;; tailcall
+    406          }
+   \       0xB4   0xE12F'FF1E        BX       LR               ;; return
+    407          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    408          void classd_enable_channels(struct _classd_desc *desc, bool left, bool right)
+    409          {
+    410          	uint32_t bits = 0;
+   \                     classd_enable_channels:
+   \        0x0   0xE3A0'3000        MOV      R3,#+0
+    411          	if (left)
+   \        0x4   0xE351'0000        CMP      R1,#+0
+    412          		bits |= CLASSD_MR_LEN;
+    413          	if (right)
+    414          		bits |= CLASSD_MR_REN;
+    415          	desc->addr->CLASSD_MR |= bits;
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0x13A0'3001        MOVNE    R3,#+1
+   \       0x10   0xE352'0000        CMP      R2,#+0
+   \       0x14   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x18   0x1383'3010        ORRNE    R3,R3,#0x10
+   \       0x1C   0x....'....        B        ?Subroutine0
+    416          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE183'1001        ORR      R1,R3,R1
+   \                     ??Subroutine0_0:
+   \        0x4   0xE580'1004        STR      R1,[R0, #+4]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    417          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    418          void classd_disable_channels(struct _classd_desc *desc, bool left, bool right)
+    419          {
+    420          	uint32_t bits = 0;
+   \                     classd_disable_channels:
+   \        0x0   0xE3A0'3000        MOV      R3,#+0
+    421          	if (left)
+   \        0x4   0xE351'0000        CMP      R1,#+0
+    422          		bits |= CLASSD_MR_LEN;
+    423          	if (right)
+    424          		bits |= CLASSD_MR_REN;
+    425          	desc->addr->CLASSD_MR &= ~bits;
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0x13A0'3001        MOVNE    R3,#+1
+   \       0x10   0xE352'0000        CMP      R2,#+0
+   \       0x14   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x18   0x1383'3010        ORRNE    R3,R3,#0x10
+   \       0x1C   0xE1C1'1003        BIC      R1,R1,R3
+   \       0x20   0x....'....        B        ??Subroutine0_0
+    426          }
+    427          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    428          void classd_set_left_attenuation(struct _classd_desc *desc, uint8_t attn)
+    429          {
+    430          	if (attn > (CLASSD_INTPMR_ATTL_Msk >> CLASSD_INTPMR_ATTL_Pos))
+    431          		attn = (CLASSD_INTPMR_ATTL_Msk >> CLASSD_INTPMR_ATTL_Pos);
+    432          
+    433          	uint32_t intpmr = desc->addr->CLASSD_INTPMR & ~CLASSD_INTPMR_ATTL_Msk;
+   \                     classd_set_left_attenuation:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE351'007F        CMP      R1,#+127
+   \        0x8   0xE590'2008        LDR      R2,[R0, #+8]
+   \        0xC   0x83A0'107F        MOVHI    R1,#+127
+    434          	desc->addr->CLASSD_INTPMR = intpmr | CLASSD_INTPMR_ATTL(attn);
+   \       0x10   0xE1A0'23A2        LSR      R2,R2,#+7
+   \       0x14   0xE201'107F        AND      R1,R1,#0x7F
+   \       0x18   0xE181'1382        ORR      R1,R1,R2, LSL #+7
+   \       0x1C   0xE580'1008        STR      R1,[R0, #+8]
+    435          }
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    436          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    437          void classd_set_right_attenuation(struct _classd_desc *desc, uint8_t attn)
+    438          {
+    439          	if (attn > (CLASSD_INTPMR_ATTL_Msk >> CLASSD_INTPMR_ATTL_Pos))
+    440          		attn = (CLASSD_INTPMR_ATTL_Msk >> CLASSD_INTPMR_ATTL_Pos);
+    441          
+    442          	uint32_t intpmr = desc->addr->CLASSD_INTPMR & ~CLASSD_INTPMR_ATTR_Msk;
+   \                     classd_set_right_attenuation:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE351'0080        CMP      R1,#+128
+   \        0x8   0xE590'2008        LDR      R2,[R0, #+8]
+   \        0xC   0x23A0'107F        MOVCS    R1,#+127
+    443          	desc->addr->CLASSD_INTPMR = intpmr | CLASSD_INTPMR_ATTR(attn);
+   \       0x10   0xE3A0'3C7F        MOV      R3,#+32512
+   \       0x14   0xE3C2'2C7F        BIC      R2,R2,#0x7F00
+   \       0x18   0xE003'1401        AND      R1,R3,R1, LSL #+8
+   \       0x1C   0xE181'1002        ORR      R1,R1,R2
+   \       0x20   0xE580'1008        STR      R1,[R0, #+8]
+    444          }
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    445          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    446          void classd_volume_mute(struct _classd_desc *desc, bool left, bool right)
+    447          {
+    448          	uint32_t bits = 0;
+   \                     classd_volume_mute:
+   \        0x0   0xE3A0'3000        MOV      R3,#+0
+    449          	if (left)
+   \        0x4   0xE351'0000        CMP      R1,#+0
+    450          		bits |= CLASSD_MR_LMUTE;
+    451          	if (right)
+    452          		bits |= CLASSD_MR_RMUTE;
+    453          	desc->addr->CLASSD_MR |= bits;
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0x13A0'3002        MOVNE    R3,#+2
+   \       0x10   0xE352'0000        CMP      R2,#+0
+   \       0x14   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x18   0x1383'3020        ORRNE    R3,R3,#0x20
+   \       0x1C                      REQUIRE ?Subroutine0
+   \       0x1C                      ;; // Fall through to label ?Subroutine0
+    454          }
+    455          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    456          void classd_volume_unmute(struct _classd_desc *desc, bool left, bool right)
+    457          {
+    458          	uint32_t bits = 0;
+   \                     classd_volume_unmute:
+   \        0x0   0xE3A0'3000        MOV      R3,#+0
+    459          	if (left)
+   \        0x4   0xE351'0000        CMP      R1,#+0
+    460          		bits |= CLASSD_MR_LMUTE;
+    461          	if (right)
+    462          		bits |= CLASSD_MR_RMUTE;
+    463          	desc->addr->CLASSD_MR &= ~bits;
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0x13A0'3002        MOVNE    R3,#+2
+   \       0x10   0xE352'0000        CMP      R2,#+0
+   \       0x14   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x18   0x1383'3020        ORRNE    R3,R3,#0x20
+   \       0x1C   0xE1C1'1003        BIC      R1,R1,R3
+   \       0x20   0x....'....        B        ??Subroutine0_0
+    464          }
+    465          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    466          int classd_transfer(struct _classd_desc* desc, struct _buffer* buf, struct _callback* cb)
+    467          {
+   \                     classd_transfer:
+   \        0x0   0xE92D'41FC        PUSH     {R2-R8,LR}
+   \        0x4   0xE1A0'5000        MOV      R5,R0
+   \        0x8   0xE1B0'6001        MOVS     R6,R1
+   \        0xC   0xE1A0'8002        MOV      R8,R2
+    468          	uint8_t tmode;
+    469          
+    470          	tmode = desc->transfer_mode;
+   \       0x10   0xE5D5'7008        LDRB     R7,[R5, #+8]
+    471          
+    472          	if ((buf == NULL) || (buf->size == 0))
+   \       0x14   0x0A00'0002        BEQ      ??classd_transfer_0
+   \       0x18   0xE596'0004        LDR      R0,[R6, #+4]
+   \       0x1C   0xE350'0000        CMP      R0,#+0
+   \       0x20   0x1A00'0001        BNE      ??classd_transfer_1
+    473          		return -EINVAL;
+   \                     ??classd_transfer_0:
+   \       0x24   0xE3E0'001B        MVN      R0,#+27
+   \       0x28   0xE8BD'81F6        POP      {R1,R2,R4-R8,PC}
+    474          
+    475          	if (buf->attr & CLASSD_BUF_ATTR_WRITE) {
+   \                     ??classd_transfer_1:
+   \       0x2C   0xE5D6'0008        LDRB     R0,[R6, #+8]
+   \       0x30   0xE310'0001        TST      R0,#0x1
+   \       0x34   0x0A00'0057        BEQ      ??classd_transfer_2
+    476          		mutex_lock(&desc->tx.mutex);
+   \       0x38   0xE285'0010        ADD      R0,R5,#+16
+   \       0x3C   0x....'....        BL       mutex_lock
+    477          
+    478          		desc->tx.transferred = 0;
+   \       0x40   0xE3A0'4000        MOV      R4,#+0
+   \       0x44   0xE1C5'42B0        STRH     R4,[R5, #+32]
+    479          		desc->tx.buffer.data = buf->data;
+   \       0x48   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0x4C   0xE585'0014        STR      R0,[R5, #+20]
+    480          		desc->tx.buffer.size = buf->size;
+   \       0x50   0xE596'1004        LDR      R1,[R6, #+4]
+   \       0x54   0xE585'1018        STR      R1,[R5, #+24]
+    481          		desc->tx.buffer.attr = buf->attr;
+   \       0x58   0xE596'0008        LDR      R0,[R6, #+8]
+    482          
+    483          		callback_copy(&desc->tx.callback, cb);
+   \       0x5C   0xE1A0'1008        MOV      R1,R8
+   \       0x60   0xE585'001C        STR      R0,[R5, #+28]
+   \       0x64   0xE285'0024        ADD      R0,R5,#+36
+   \       0x68   0x....'....        BL       callback_copy
+    484          
+    485          		if (tmode == CLASSD_MODE_DMA)
+   \       0x6C   0xE357'0001        CMP      R7,#+1
+   \       0x70   0x1A00'002C        BNE      ??classd_transfer_3
+    486          			_classd_dma_transfer(desc, buf);
+   \       0x74   0xE3A0'3000        MOV      R3,#+0
+   \       0x78   0xE3A0'2000        MOV      R2,#+0
+   \       0x7C   0xE285'003C        ADD      R0,R5,#+60
+   \       0x80   0xE3A0'1000        MOV      R1,#+0
+   \       0x84   0xE880'000E        STM      R0,{R1-R3}
+   \       0x88   0xE596'1000        LDR      R1,[R6, #+0]
+   \       0x8C   0xE585'103C        STR      R1,[R5, #+60]
+   \       0x90   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x94   0xE280'2010        ADD      R2,R0,#+16
+   \       0x98   0xE5D5'000E        LDRB     R0,[R5, #+14]
+   \       0x9C   0xE585'2040        STR      R2,[R5, #+64]
+   \       0xA0   0xE350'0000        CMP      R0,#+0
+   \       0xA4   0x0A00'0008        BEQ      ??classd_transfer_4
+   \       0xA8   0xE5D5'000F        LDRB     R0,[R5, #+15]
+   \       0xAC   0xE350'0000        CMP      R0,#+0
+   \       0xB0   0x0A00'0005        BEQ      ??classd_transfer_4
+   \       0xB4   0xE3A0'1002        MOV      R1,#+2
+   \       0xB8   0xE585'1030        STR      R1,[R5, #+48]
+   \       0xBC   0xE596'0004        LDR      R0,[R6, #+4]
+   \       0xC0   0xE1A0'1120        LSR      R1,R0,#+2
+   \       0xC4   0xE585'1044        STR      R1,[R5, #+68]
+   \       0xC8   0xEA00'0004        B        ??classd_transfer_5
+   \                     ??classd_transfer_4:
+   \       0xCC   0xE3A0'0001        MOV      R0,#+1
+   \       0xD0   0xE585'0030        STR      R0,[R5, #+48]
+   \       0xD4   0xE596'1004        LDR      R1,[R6, #+4]
+   \       0xD8   0xE1A0'00A1        LSR      R0,R1,#+1
+   \       0xDC   0xE585'0044        STR      R0,[R5, #+68]
+   \                     ??classd_transfer_5:
+   \       0xE0   0xE3A0'3001        MOV      R3,#+1
+   \       0xE4   0xE285'203C        ADD      R2,R5,#+60
+   \       0xE8   0xE285'1030        ADD      R1,R5,#+48
+   \       0xEC   0xE595'002C        LDR      R0,[R5, #+44]
+   \       0xF0   0x....'....        BL       dma_configure_transfer
+   \       0xF4   0xE1A0'2005        MOV      R2,R5
+   \       0xF8   0x....'....        LDR      R1,??DataTable6_6
+   \       0xFC   0xE1A0'000D        MOV      R0,SP
+   \      0x100   0x....'....        BL       callback_set
+   \      0x104   0xE1A0'100D        MOV      R1,SP
+   \      0x108   0xE595'002C        LDR      R0,[R5, #+44]
+   \      0x10C   0x....'....        BL       dma_set_callback
+   \      0x110   0xE595'1044        LDR      R1,[R5, #+68]
+   \      0x114   0xE595'003C        LDR      R0,[R5, #+60]
+   \      0x118   0x....'....        BL       cache_clean_region
+   \      0x11C   0xE595'002C        LDR      R0,[R5, #+44]
+   \      0x120   0x....'....        BL       dma_start_transfer
+   \      0x124   0xEA00'001B        B        ??classd_transfer_2
+    487          		else if (tmode == CLASSD_MODE_POLLING)
+   \                     ??classd_transfer_3:
+   \      0x128   0xE357'0000        CMP      R7,#+0
+   \      0x12C   0x1A00'0019        BNE      ??classd_transfer_2
+    488          			_classd_polling_transfer(desc, buf);
+   \      0x130   0xE596'1004        LDR      R1,[R6, #+4]
+   \      0x134   0xE596'0000        LDR      R0,[R6, #+0]
+   \      0x138   0xE1A0'20A1        LSR      R2,R1,#+1
+   \      0x13C   0xE080'1082        ADD      R1,R0,R2, LSL #+1
+   \                     ??classd_transfer_6:
+   \      0x140   0xE595'2000        LDR      R2,[R5, #+0]
+   \      0x144   0xE592'3020        LDR      R3,[R2, #+32]
+   \      0x148   0xE313'0001        TST      R3,#0x1
+   \      0x14C   0x0A00'000A        BEQ      ??classd_transfer_7
+   \      0x150   0xE5D5'E00E        LDRB     LR,[R5, #+14]
+   \      0x154   0xE3A0'3000        MOV      R3,#+0
+   \      0x158   0xE3A0'C000        MOV      R12,#+0
+   \      0x15C   0xE35E'0000        CMP      LR,#+0
+   \      0x160   0xE5D5'E00F        LDRB     LR,[R5, #+15]
+   \      0x164   0x10D0'30B2        LDRHNE   R3,[R0], #+2
+   \      0x168   0xE35E'0000        CMP      LR,#+0
+   \      0x16C   0x10D0'C0B2        LDRHNE   R12,[R0], #+2
+   \      0x170   0x11A0'C80C        LSLNE    R12,R12,#+16
+   \      0x174   0xE183'300C        ORR      R3,R3,R12
+   \      0x178   0xE582'3010        STR      R3,[R2, #+16]
+   \                     ??classd_transfer_7:
+   \      0x17C   0xE150'0001        CMP      R0,R1
+   \      0x180   0x3AFF'FFEE        BCC      ??classd_transfer_6
+   \      0x184   0xE285'0010        ADD      R0,R5,#+16
+   \      0x188   0x....'....        BL       mutex_unlock
+   \      0x18C   0xE3A0'1000        MOV      R1,#+0
+   \      0x190   0xE285'0024        ADD      R0,R5,#+36
+   \      0x194   0x....'....        BL       callback_call
+    489          	}
+    490          	return 0;
+   \                     ??classd_transfer_2:
+   \      0x198   0xE3A0'0000        MOV      R0,#+0
+   \      0x19C   0xE8BD'81F6        POP      {R1,R2,R4-R8,PC}  ;; return
+    491          }
+    492          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    493          bool classd_tx_transfer_is_done(struct _classd_desc* desc)
+    494          {
+   \                     classd_tx_transfer_is_done:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    495          	return (!mutex_is_locked(&desc->tx.mutex));
+   \        0x4   0xE280'0010        ADD      R0,R0,#+16
+   \        0x8   0x....'....        BL       mutex_is_locked
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x03A0'0001        MOVEQ    R0,#+1
+   \       0x14   0x13A0'0000        MOVNE    R0,#+0
+   \       0x18   0xE8BD'8002        POP      {R1,PC}          ;; return
+    496          }
+    497          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    498          void classd_tx_stop(struct _classd_desc* desc)
+    499          {
+   \                     classd_tx_stop:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    500          	if (desc->transfer_mode == CLASSD_MODE_DMA) {
+   \        0x8   0xE5D4'0008        LDRB     R0,[R4, #+8]
+   \        0xC   0xE350'0001        CMP      R0,#+1
+   \       0x10   0x1A00'0006        BNE      ??classd_tx_stop_0
+    501          		if (desc->tx.dma.channel){
+   \       0x14   0xE594'002C        LDR      R0,[R4, #+44]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x0A00'0003        BEQ      ??classd_tx_stop_0
+    502          			dma_stop_transfer(desc->tx.dma.channel);
+   \       0x20   0x....'....        BL       dma_stop_transfer
+    503          			mutex_unlock(&desc->tx.mutex);
+   \       0x24   0xE284'0010        ADD      R0,R4,#+16
+   \       0x28   0xE8BD'4010        POP      {R4,LR}
+   \       0x2C   0x....'....        B        mutex_unlock     ;; tailcall
+    504          		}
+    505          	}
+    506          }
+   \                     ??classd_tx_stop_0:
+   \       0x30   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6:
+   \        0x0   0x....'....        DC32     audio_info
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \        0x0   0x....'....        DC32     ?_6
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6_2:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6_3:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6_4:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6_5:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6_6:
+   \        0x0   0x....'....        DC32     _classd_dma_transfer_callback
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x57          DC8 "-W- classd: invalid equalizer config %u\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x63 0x6C    
+
+   \              0x61 0x73    
+
+   \              0x73 0x64    
+
+   \              0x3A 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x65 0x71    
+
+   \              0x75 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x7A 0x65    
+
+   \              0x72 0x20    
+
+   \              0x63 0x6F    
+
+   \              0x6E 0x66    
+
+   \              0x69 0x67    
+
+   \              0x20 0x25    
+
+   \              0x75 0x0D    
+
+   \              0x0A 0x00
+   \       0x2A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_4:
+   \        0x0   0x2D 0x57          DC8 "-W- classd: invalid mode %u\012"
+
+   \              0x2D 0x20    
+
+   \              0x63 0x6C    
+
+   \              0x61 0x73    
+
+   \              0x73 0x64    
+
+   \              0x3A 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x20 0x25    
+
+   \              0x75 0x0A    
+
+   \              0x00
+   \       0x1D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x64 0x65          DC8 "desc->tx.dma.channel != 0"
+
+   \              0x73 0x63    
+
+   \              0x2D 0x3E    
+
+   \              0x74 0x78    
+
+   \              0x2E 0x64    
+
+   \              0x6D 0x61    
+
+   \              0x2E 0x63    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x6C    
+
+   \              0x20 0x21    
+
+   \              0x3D 0x20    
+
+   \              0x30 0x00
+   \       0x1A   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   _classd_dma_transfer_callback
+         0   -> callback_call
+         8   -> dma_reset_channel
+         8   -> mutex_unlock
+      40   classd_configure
+        40   -> __aeabi_assert
+        40   -> __iar_EmptyStepPoint
+        40   -> dma_allocate_channel
+        40   -> get_classd_id_from_addr
+        40   -> pmc_configure_peripheral
+        40   -> printf
+       8   classd_disable
+         8   -> get_classd_id_from_addr
+         8   -> pmc_disable_gck
+         0   -> pmc_disable_peripheral
+       0   classd_disable_channels
+       0   classd_enable_channels
+       0   classd_set_equalizer
+         0   -> printf
+       0   classd_set_left_attenuation
+       0   classd_set_right_attenuation
+       0   classd_swap_channels
+      32   classd_transfer
+        32   -> cache_clean_region
+        32   -> callback_call
+        32   -> callback_copy
+        32   -> callback_set
+        32   -> dma_configure_transfer
+        32   -> dma_set_callback
+        32   -> dma_start_transfer
+        32   -> mutex_lock
+        32   -> mutex_unlock
+       8   classd_tx_stop
+         8   -> dma_stop_transfer
+         0   -> mutex_unlock
+       8   classd_tx_transfer_is_done
+         8   -> mutex_is_locked
+       0   classd_volume_mute
+       0   classd_volume_unmute
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_2
+       4  ??DataTable6_3
+       4  ??DataTable6_4
+       4  ??DataTable6_5
+       4  ??DataTable6_6
+      12  ?Subroutine0
+      44  ?_0
+      32  ?_4
+      28  ?_5
+       8  ?_6
+      40  _classd_dma_transfer_callback
+     252  audio_info
+     700  classd_configure
+      32  classd_disable
+      36  classd_disable_channels
+      32  classd_enable_channels
+     184  classd_set_equalizer
+      36  classd_set_left_attenuation
+      40  classd_set_right_attenuation
+      28  classd_swap_channels
+     416  classd_transfer
+      52  classd_tx_stop
+      28  classd_tx_transfer_is_done
+      28  classd_volume_mute
+      36  classd_volume_unmute
+
+ 
+   364 bytes in section .rodata
+ 1'728 bytes in section SOFTPACK
+ 
+ 1'728 bytes of CODE  memory
+   364 bytes of CONST memory
+
+Errors: none
+Warnings: none

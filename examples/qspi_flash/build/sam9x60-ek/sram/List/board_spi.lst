@@ -1,0 +1,680 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         17/Feb/2021  15:29:19
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_spi.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW3308.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_spi.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_QSPI -D
+#        CONFIG_HAVE_QSPI_DMA -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_TRNG -D CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_OTPC -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List\board_spi.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\Obj\board_spi.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#      __iar_require _Printf         
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_spi.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "board_spi.h"
+     35          #include "errno.h"
+     36          #include "gpio/pio.h"
+     37          #include "nvm/spi-nor/spi-nor.h"
+     38          #include "peripherals/bus.h"
+     39          #include "trace.h"
+     40          
+     41          /*----------------------------------------------------------------------------
+     42           *        Local variables
+     43           *----------------------------------------------------------------------------*/
+     44          
+     45          #if defined(CONFIG_HAVE_SPI_AT25) && defined(CONFIG_HAVE_QSPI)
+     46          static struct spi_flash _spi_flash[2];
+     47          #else
+
+   \                                 In section .bss, align 8
+     48          static struct spi_flash _spi_flash[1];
+   \                     _spi_flash:
+   \        0x0                      DS8 184
+     49          #endif
+     50          
+
+   \                                 In section .rodata, align 4
+     51          static const struct spi_flash_cfg _spi_flash_cfg[] = {
+   \                     _spi_flash_cfg:
+   \        0x0   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x02FA'F080        DC32 50'000'000
+   \        0x8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0xF001'4000        DC32 0xf001'4000
+   \       0x10   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x01
+   \       0x25   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0x28   0x0000'9C40        DC32 40'000
+   \       0x2C   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x38   0x0000'0000        DC32 0, 0, 0
+
+   \              0x0000'0000  
+
+   \              0x0000'0000
+   \       0x44   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00
+   \       0x59   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00
+     52          #if defined(CONFIG_HAVE_QSPI) && defined(BOARD_QSPIFLASH_ADDR)
+     53          	{
+     54          		.type = SPI_FLASH_TYPE_QSPI,
+     55          		.baudrate = BOARD_QSPIFLASH_BAUDRATE,
+     56          		.mode = SPI_FLASH_MODE0,
+     57          		.qspi = {
+     58          			.addr = BOARD_QSPIFLASH_ADDR,
+     59          		},
+     60          	},
+     61          #endif
+     62          #ifdef BOARD_AT25_BUS
+     63          	{
+     64          		.type = SPI_FLASH_TYPE_SPI,
+     65          		.baudrate = BOARD_AT25_BITRATE,
+     66          		.mode = BOARD_AT25_SPI_MODE,
+                 		        ^
+Warning[Pe188]: enumerated type mixed with another type
+     67          		.spi = {
+     68          			.bus_cfg = {
+     69          				.bus = BOARD_AT25_BUS,
+     70          				.spi_dev = {
+     71          					.chip_select = BOARD_AT25_CHIP_SELECT,
+     72          					.delay = {
+     73          						.bs = BOARD_AT25_DLYBS,
+     74          						.bct = BOARD_AT25_DLYBCT,
+     75          					},
+     76          				},
+     77          			},
+     78          		},
+     79          	},
+     80          #endif
+     81          	{ 0 },
+                 	  ^
+Warning[Pe188]: enumerated type mixed with another type
+     82          };
+     83          
+     84          /*----------------------------------------------------------------------------
+     85           *        Exported functions
+     86           *----------------------------------------------------------------------------*/
+     87          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     88          void board_cfg_spi_bus(void)
+     89          {
+   \                     board_cfg_spi_bus:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+   \        0x4   0xE24D'D098        SUB      SP,SP,#+152
+     90          #ifdef BOARD_SPI_BUS0
+     91          	const struct _pin pins_spi_bus0[] = BOARD_SPI_BUS0_PINS;
+   \        0x8   0xE28D'0058        ADD      R0,SP,#+88
+   \        0xC   0x....'....        LDR      R1,??DataTable2
+   \       0x10   0xE3A0'2040        MOV      R2,#+64
+   \       0x14   0x....'....        BL       __aeabi_memcpy4
+     92          	const struct _bus_iface iface_bus0 = {
+     93          		.type = BUS_TYPE_SPI,
+     94          		.spi = {
+     95          			.hw = BOARD_SPI_BUS0,
+     96          		},
+     97          		.transfer_mode = BOARD_SPI_BUS0_MODE,
+     98          	};
+   \       0x18   0xE28D'000C        ADD      R0,SP,#+12
+   \       0x1C   0x....'....        LDR      R1,??DataTable2_1
+   \       0x20   0xE891'100C        LDM      R1,{R2,R3,R12}
+   \       0x24   0xE880'100C        STM      R0,{R2,R3,R12}
+     99          	pio_configure(pins_spi_bus0, ARRAY_SIZE(pins_spi_bus0));
+   \       0x28   0xE3A0'1004        MOV      R1,#+4
+   \       0x2C   0xE28D'0058        ADD      R0,SP,#+88
+   \       0x30   0x....'....        BL       pio_configure
+    100          	bus_configure(BUS(BUS_TYPE_SPI, 0), &iface_bus0);
+   \       0x34   0xE28D'100C        ADD      R1,SP,#+12
+   \       0x38   0xE3A0'0000        MOV      R0,#+0
+   \       0x3C   0x....'....        BL       bus_configure
+    101          #endif
+    102          #ifdef BOARD_SPI_BUS1
+    103          	const struct _pin pins_spi_bus1[] = BOARD_SPI_BUS1_PINS;
+   \       0x40   0xE28D'0018        ADD      R0,SP,#+24
+   \       0x44   0x....'....        LDR      R1,??DataTable2_2
+   \       0x48   0xE3A0'2040        MOV      R2,#+64
+   \       0x4C   0x....'....        BL       __aeabi_memcpy4
+    104          	const struct _bus_iface iface_bus1 = {
+    105          		.type = BUS_TYPE_SPI,
+    106          		.spi = {
+    107          			.hw = BOARD_SPI_BUS1,
+    108          		},
+    109          		.transfer_mode = BOARD_SPI_BUS1_MODE,
+    110          	};
+   \       0x50   0xE1B0'000D        MOVS     R0,SP
+   \       0x54   0x....'....        LDR      R1,??DataTable2_3
+   \       0x58   0xE891'100C        LDM      R1,{R2,R3,R12}
+   \       0x5C   0xE880'100C        STM      R0,{R2,R3,R12}
+    111          	pio_configure(pins_spi_bus1, ARRAY_SIZE(pins_spi_bus1));
+   \       0x60   0xE3A0'1004        MOV      R1,#+4
+   \       0x64   0xE28D'0018        ADD      R0,SP,#+24
+   \       0x68   0x....'....        BL       pio_configure
+    112          	bus_configure(BUS(BUS_TYPE_SPI, 1), &iface_bus1);
+   \       0x6C   0xE1B0'100D        MOVS     R1,SP
+   \       0x70   0xE3A0'0001        MOV      R0,#+1
+   \       0x74   0x....'....        BL       bus_configure
+    113          #endif
+    114          #ifdef BOARD_SPI_BUS2
+    115          	const struct _pin pins_spi_bus2[] = BOARD_SPI_BUS2_PINS;
+    116          	const struct _bus_iface iface_bus2 = {
+    117          		.type = BUS_TYPE_SPI,
+    118          		.spi = {
+    119          			.hw = BOARD_SPI_BUS2,
+    120          		},
+    121          		.transfer_mode = BOARD_SPI_BUS2_MODE,
+    122          	};
+    123          	pio_configure(pins_spi_bus2, ARRAY_SIZE(pins_spi_bus2));
+    124          	bus_configure(BUS(BUS_TYPE_SPI, 2), &iface_bus2);
+    125          #endif
+    126          #ifdef BOARD_SPI_BUS3
+    127          	const struct _pin pins_spi_bus3[] = BOARD_SPI_BUS3_PINS;
+    128          	const struct _bus_iface iface_bus3 = {
+    129          		.type = BUS_TYPE_SPI,
+    130          		.spi = {
+    131          			.hw = BOARD_SPI_BUS3,
+    132          		},
+    133          		.transfer_mode = BOARD_SPI_BUS3_MODE,
+    134          	};
+    135          	pio_configure(pins_spi_bus3, ARRAY_SIZE(pins_spi_bus3));
+    136          	bus_configure(BUS(BUS_TYPE_SPI, 3), &iface_bus3);
+    137          #endif
+    138          #ifdef BOARD_SPI_BUS4
+    139          	const struct _pin pins_spi_bus4[] = BOARD_SPI_BUS4_PINS;
+    140          	const struct _bus_iface iface_bus4 = {
+    141          		.type = BUS_TYPE_SPI,
+    142          		.spi = {
+    143          			.hw = BOARD_SPI_BUS4,
+    144          		},
+    145          		.transfer_mode = BOARD_SPI_BUS4_MODE,
+    146          	};
+    147          	pio_configure(pins_spi_bus4, ARRAY_SIZE(pins_spi_bus4));
+    148          	bus_configure(BUS(BUS_TYPE_SPI, 4), &iface_bus4);
+    149          #endif
+    150          #ifdef BOARD_SPI_BUS5
+    151          	const struct _pin pins_spi_bus5[] = BOARD_SPI_BUS5_PINS;
+    152          	const struct _bus_iface iface_bus5 = {
+    153          		.type = BUS_TYPE_SPI,
+    154          		.spi = {
+    155          			.hw = BOARD_SPI_BUS5,
+    156          		},
+    157          		.transfer_mode = BOARD_SPI_BUS5_MODE,
+    158          	};
+    159          	pio_configure(pins_spi_bus5, ARRAY_SIZE(pins_spi_bus5));
+    160          	bus_configure(BUS(BUS_TYPE_SPI, 5), &iface_bus5);
+    161          #endif
+    162          }
+   \       0x78   0xE28D'D09C        ADD      SP,SP,#+156
+   \       0x7C   0xE8BD'8000        POP      {PC}             ;; return
+
+   \                                 In section .rodata, align 4
+   \                     ?_4:
+   \        0x0   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0xF000'0400        DC32 0xf000'0400
+   \        0x8   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_5:
+   \        0x0   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0xF801'C400        DC32 0xf801'c400
+   \        0x8   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+    163          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    164          void board_cfg_spi_flash(void)
+    165          {
+   \                     board_cfg_spi_flash:
+   \        0x0   0xE92D'401F        PUSH     {R0-R4,LR}
+    166          	int i;
+    167          
+    168          #ifdef BOARD_QSPIFLASH_PINS
+    169          	struct _pin pins_qspi[] = BOARD_QSPIFLASH_PINS;
+   \        0x4   0xE1B0'000D        MOVS     R0,SP
+   \        0x8   0x....'....        LDR      R1,??DataTable2_4
+   \        0xC   0xE3A0'2010        MOV      R2,#+16
+   \       0x10   0x....'....        BL       __aeabi_memcpy4
+    170          
+    171          	pio_configure(pins_qspi, ARRAY_SIZE(pins_qspi));
+   \       0x14   0xE3A0'1001        MOV      R1,#+1
+   \       0x18   0xE1B0'000D        MOVS     R0,SP
+   \       0x1C   0x....'....        BL       pio_configure
+    172          #endif
+    173          
+    174          	for (i = 0; i < ARRAY_SIZE(_spi_flash) && _spi_flash_cfg[i].type != 0; i++) {
+   \       0x20   0xE3A0'4000        MOV      R4,#+0
+   \                     ??board_cfg_spi_flash_0:
+   \       0x24   0xE354'0000        CMP      R4,#+0
+   \       0x28   0x1A00'0017        BNE      ??board_cfg_spi_flash_1
+   \       0x2C   0x....'....        LDR      R0,??DataTable2_5
+   \       0x30   0xE084'1184        ADD      R1,R4,R4, LSL #+3
+   \       0x34   0xE7D0'1101        LDRB     R1,[R0, +R1, LSL #+2]
+   \       0x38   0xE351'0000        CMP      R1,#+0
+   \       0x3C   0x0A00'0012        BEQ      ??board_cfg_spi_flash_1
+    175          		if (spi_nor_configure(&_spi_flash[i], &_spi_flash_cfg[i]) < 0)
+   \       0x40   0xE084'1184        ADD      R1,R4,R4, LSL #+3
+   \       0x44   0xE090'1101        ADDS     R1,R0,R1, LSL #+2
+   \       0x48   0x....'....        LDR      R0,??DataTable2_6
+   \       0x4C   0xE3A0'20B8        MOV      R2,#+184
+   \       0x50   0xE013'0492        MULS     R3,R2,R4
+   \       0x54   0xE090'0003        ADDS     R0,R0,R3
+   \       0x58   0x....'....        BL       spi_nor_configure
+   \       0x5C   0xE350'0000        CMP      R0,#+0
+   \       0x60   0x5A00'0007        BPL      ??board_cfg_spi_flash_2
+    176          			trace_fatal("spi-nor: device%d: not configured\r\n", i);
+   \       0x64   0x....'....        LDR      R0,??DataTable2_7
+   \       0x68   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x6C   0xE350'0000        CMP      R0,#+0
+   \       0x70   0x0A00'0002        BEQ      ??board_cfg_spi_flash_3
+   \       0x74   0xE1B0'1004        MOVS     R1,R4
+   \       0x78   0x....'....        LDR      R0,??DataTable2_8
+   \       0x7C   0x....'....        BL       printf
+   \                     ??board_cfg_spi_flash_3:
+   \       0x80   0xEAFF'FFFE        B        ??board_cfg_spi_flash_3
+    177          	}
+   \                     ??board_cfg_spi_flash_2:
+   \       0x84   0xE294'4001        ADDS     R4,R4,#+1
+   \       0x88   0xEAFF'FFE5        B        ??board_cfg_spi_flash_0
+    178          }
+   \                     ??board_cfg_spi_flash_1:
+   \       0x8C   0xE8BD'801F        POP      {R0-R4,PC}       ;; return
+    179          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    180          struct spi_flash * board_get_spi_flash(uint8_t idx)
+    181          {
+   \                     board_get_spi_flash:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    182          	if (idx < ARRAY_SIZE(_spi_flash))
+   \        0x4   0xE1B0'0001        MOVS     R0,R1
+   \        0x8   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x1A00'0005        BNE      ??board_get_spi_flash_0
+    183          		return &_spi_flash[idx];
+   \       0x14   0x....'....        LDR      R0,??DataTable2_6
+   \       0x18   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x1C   0xE3A0'20B8        MOV      R2,#+184
+   \       0x20   0xE011'0192        MULS     R1,R2,R1
+   \       0x24   0xE090'0001        ADDS     R0,R0,R1
+   \       0x28   0xEA00'0000        B        ??board_get_spi_flash_1
+    184          
+    185          	return NULL;
+   \                     ??board_get_spi_flash_0:
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??board_get_spi_flash_1:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    186          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_5:
+   \        0x0   0x....'....        DC32     _spi_flash_cfg
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_6:
+   \        0x0   0x....'....        DC32     _spi_flash
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_7:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_8:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'1000        DC32 4'096
+   \        0x8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+   \       0x10   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x14   0x0000'0800        DC32 2'048
+   \       0x18   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x1C   0x0000'0000        DC32 0
+   \       0x20   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x24   0x0000'2000        DC32 8'192
+   \       0x28   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x2C   0x0000'0000        DC32 0
+   \       0x30   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x34   0x0000'4000        DC32 16'384
+   \       0x38   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x3C   0x0000'0000        DC32 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'0001        DC32 1
+   \        0x8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+   \       0x10   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x14   0x0000'0002        DC32 2
+   \       0x18   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x1C   0x0000'0000        DC32 0
+   \       0x20   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x24   0x0000'0010        DC32 16
+   \       0x28   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x2C   0x0000'0000        DC32 0
+   \       0x30   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x34   0x0000'0008        DC32 8
+   \       0x38   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x3C   0x0000'0000        DC32 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x01F8'0000        DC32 33'030'144
+   \        0x8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x2D 0x46          DC8 "-F- spi-nor: device%d: not configured\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x73 0x70    
+
+   \              0x69 0x2D    
+
+   \              0x6E 0x6F    
+
+   \              0x72 0x3A    
+
+   \              0x20 0x64    
+
+   \              0x65 0x76    
+
+   \              0x69 0x63    
+
+   \              0x65 0x25    
+
+   \              0x64 0x3A    
+
+   \              0x20 0x6E    
+
+   \              0x6F 0x74    
+
+   \              0x20 0x63    
+
+   \              0x6F 0x6E    
+
+   \              0x66 0x69    
+
+   \              0x67 0x75    
+
+   \              0x72 0x65    
+
+   \              0x64 0x0D    
+
+   \              0x0A 0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+     160   board_cfg_spi_bus
+       160   -> __aeabi_memcpy4
+       160   -> bus_configure
+       160   -> pio_configure
+      24   board_cfg_spi_flash
+        24   -> __aeabi_memcpy4
+        24   -> pio_configure
+        24   -> printf
+        24   -> spi_nor_configure
+       0   board_get_spi_flash
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+       4  ??DataTable2_6
+       4  ??DataTable2_7
+       4  ??DataTable2_8
+      64  ?_0
+      64  ?_1
+      16  ?_2
+      40  ?_3
+      12  ?_4
+      12  ?_5
+     184  _spi_flash
+     108  _spi_flash_cfg
+     128  board_cfg_spi_bus
+     144  board_cfg_spi_flash
+      52  board_get_spi_flash
+
+ 
+ 184 bytes in section .bss
+ 316 bytes in section .rodata
+ 360 bytes in section SOFTPACK
+ 
+ 360 bytes of CODE  memory
+ 316 bytes of CONST memory
+ 184 bytes of DATA  memory
+
+Errors: none
+Warnings: 2

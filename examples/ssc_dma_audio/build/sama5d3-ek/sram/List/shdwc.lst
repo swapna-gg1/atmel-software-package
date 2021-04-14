@@ -1,0 +1,240 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         08/Dec/2020  16:47:05
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\shdwc.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW5073.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\shdwc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D3 -D
+#        CONFIG_CHIP_SAMA5D36 -D CONFIG_BOARD_SAMA5D3_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_INPUT_OFFSET -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_PLLA_CHARGE_PUMP -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_PMC_PERIPH_DIV -D CONFIG_HAVE_SCKC -D
+#        CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_DMAC
+#        -D CONFIG_HAVE_DMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SMD -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_MT47H128M16 -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_TC_FAULT_MODE -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC
+#        -D CONFIG_HAVE_AUDIO_WM8904 -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sama5d3\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List\shdwc.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj\shdwc.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\shdwc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "chip.h"
+     35          #include "peripherals/shdwc.h"
+     36          #include <stdint.h>
+     37          
+     38          /*----------------------------------------------------------------------------
+     39           *        Local Defines
+     40           *----------------------------------------------------------------------------*/
+     41          
+     42          struct _bitfield_shdwc_cfgr {
+     43          	uint32_t
+     44          		lpdbcen0: 1,
+     45          		lpdbcen1: 1,
+     46          		rfu2_7:   6,
+     47          		lpdbc:    3,
+     48          		rfu10_15: 5,
+     49          		rttwken:  1,
+     50          		rtcwken:  1,
+     51          		accwken:  1,
+     52          		rxlpwken: 1,
+     53          		rfu20_23: 4,
+     54          		wkupdbc:  3,
+     55          		rfu26_31: 5;
+     56          };
+     57          
+     58          union _shdwc_cfg {
+     59          	struct _bitfield_shdwc_cfgr bfield;
+     60          	uint32_t uint32_value;
+     61          };
+     62          
+     63          /*----------------------------------------------------------------------------
+     64           *        Exported functions
+     65           *----------------------------------------------------------------------------*/
+     66          
+     67          #ifdef CONFIG_SOC_SAMA5D2
+     68          void shdwc_configure_wakeup_mode(uint32_t config)
+     69          {
+     70          	union _shdwc_cfg cfg;
+     71          
+     72          	cfg.uint32_value = SHDWC->SHDW_MR;
+     73          
+     74          	cfg.bfield.lpdbcen0 = (config & SHDW_MR_LPDBCEN0_ENABLE) ? 1 : 0;
+     75          	cfg.bfield.lpdbcen1 = (config & SHDW_MR_LPDBCEN1_ENABLE) ? 1 : 0;
+     76          	cfg.bfield.lpdbc = (config & SHDW_MR_LPDBC_Msk) >> SHDW_MR_LPDBC_Pos;
+     77          	cfg.bfield.rttwken = (config & SHDW_MR_RTTWKEN) ? 1 : 0;
+     78          	cfg.bfield.rtcwken = (config & SHDW_MR_RTCWKEN) ? 1 : 0;
+     79          	cfg.bfield.accwken = (config & SHDW_MR_ACCWKEN) ? 1 : 0;
+     80          	cfg.bfield.rxlpwken = (config & SHDW_MR_RXLPWKEN) ? 1 : 0;
+     81          	cfg.bfield.wkupdbc = (config & SHDW_MR_WKUPDBC_Msk) >> SHDW_MR_WKUPDBC_Pos;
+     82          
+     83          	SHDWC->SHDW_MR = cfg.uint32_value;
+     84          }
+     85          
+     86          void shdwc_set_wakeup_input(uint32_t input_enable, uint32_t input_type)
+     87          {
+     88          	uint32_t wuir = (input_enable & 0x0000FFFF) | (input_type & 0xFFFF0000);
+     89          
+     90          	SHDWC->SHDW_WUIR = wuir;
+     91          }
+     92          
+     93          void shdwc_set_wakeup_debounce(uint32_t debounce)
+     94          {
+     95          	SHDWC->SHDW_MR = (SHDWC->SHDW_MR & ~SHDW_MR_WKUPDBC_Msk)
+     96          	               | (debounce & SHDW_MR_WKUPDBC_Msk);
+     97          }
+     98          #endif
+     99          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    100          void shdwc_configure_wakeup(void)
+    101          {
+    102          #ifdef CONFIG_SOC_SAMA5D2
+    103                 shdwc_set_wakeup_input(SHDW_WUIR_WKUPEN0_ENABLE, SHDW_WUIR_WKUPT0_LOW);
+    104                 shdwc_configure_wakeup_mode(0);
+    105          #elif defined(CONFIG_SOC_SAMA5D3) || defined(CONFIG_SOC_SAMA5D4) || defined(CONFIG_SOC_SAM9XX5)
+    106                 SHDWC->SHDW_MR = SHDW_MR_WKMODE0_FALLING_EDGE | SHDW_MR_CPTWK0(0x8);
+   \                     shdwc_configure_wakeup:
+   \        0x0   0xE3E0'10EB        MVN      R1,#+235
+   \        0x4   0xE3A0'0082        MOV      R0,#+130
+   \        0x8   0x....'....        B        ?Subroutine0
+    107          #elif defined(CONFIG_SOC_SAM9X60)
+    108                 SHDWC->SHDW_WUIR = SHDW_WUIR_WKUPEN0 | SHDW_WUIR_WKUPT0_LOW;
+    109          #endif
+    110          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE3C1'1F40        BIC      R1,R1,#0x100
+   \        0x4   0xE581'0000        STR      R0,[R1, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    111          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    112          void shdwc_do_shutdown(void)
+    113          {
+    114          	SHDWC->SHDW_CR = SHDW_CR_KEY_PASSWD | SHDW_CR_SHDW;
+   \                     shdwc_do_shutdown:
+   \        0x0   0xE3A0'0001        MOV      R0,#+1
+   \        0x4   0xE3E0'10EF        MVN      R1,#+239
+   \        0x8   0xE380'04A5        ORR      R0,R0,#0xA5000000
+   \        0xC                      REQUIRE ?Subroutine0
+   \        0xC                      ;; // Fall through to label ?Subroutine0
+    115          }
+    116          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    117          uint32_t shdwc_get_status(void)
+    118          {
+    119          	return SHDWC->SHDW_SR;
+   \                     shdwc_get_status:
+   \        0x0   0xE3E0'00E7        MVN      R0,#+231
+   \        0x4   0xE3C0'0F40        BIC      R0,R0,#0x100
+   \        0x8   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    120          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   shdwc_configure_wakeup
+       0   shdwc_do_shutdown
+       0   shdwc_get_status
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      12  ?Subroutine0
+      12  shdwc_configure_wakeup
+      12  shdwc_do_shutdown
+      16  shdwc_get_status
+
+ 
+ 52 bytes in section SOFTPACK
+ 
+ 52 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,86 @@
+#Generating source browse information for project crypto-aesb_sama5d2-xplained
+
+
+#Abbreviations
+cc = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\SourceIndexer.exe
+ll = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\PbdLink.exe
+bd = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\makeBrowseData.exe
+
+
+
+#Rules
+rule index
+  depfile = $out.dep
+  command = $cc -out=$out -f $in
+rule link
+  command = $ll -M $out $in
+rule browsedata
+  command = $bd $in -output  $out
+
+
+
+#Build steps
+build fault_handlers.pbi : index fault_handlers.xcl
+build l1cache_cp15.pbi : index l1cache_cp15.xcl
+build mmu_cp15.pbi : index mmu_cp15.xcl
+build mutex.pbi : index mutex.xcl
+build aesb.pbi : index aesb.xcl
+build aic5.pbi : index aic5.xcl
+build bus.pbi : index bus.xcl
+build cache.pbi : index cache.xcl
+build console.pbi : index console.xcl
+build ddram.pbi : index ddram.xcl
+build dma.pbi : index dma.xcl
+build dma_xdmac.pbi : index dma_xdmac.xcl
+build flexcom.pbi : index flexcom.xcl
+build irq.pbi : index irq.xcl
+build l2cache_l2cc.pbi : index l2cache_l2cc.xcl
+build matrix.pbi : index matrix.xcl
+build mpddrc.pbi : index mpddrc.xcl
+build nfc.pbi : index nfc.xcl
+build pio4.pbi : index pio4.xcl
+build piobu.pbi : index piobu.xcl
+build pit.pbi : index pit.xcl
+build pmc.pbi : index pmc.xcl
+build pwmc.pbi : index pwmc.xcl
+build rstc.pbi : index rstc.xcl
+build rtc.pbi : index rtc.xcl
+build secumod.pbi : index secumod.xcl
+build seriald.pbi : index seriald.xcl
+build sfc.pbi : index sfc.xcl
+build sfrbu.pbi : index sfrbu.xcl
+build shdwc.pbi : index shdwc.xcl
+build slowclock_sckc.pbi : index slowclock_sckc.xcl
+build smc.pbi : index smc.xcl
+build tc.pbi : index tc.xcl
+build tcd.pbi : index tcd.xcl
+build uart.pbi : index uart.xcl
+build usart.pbi : index usart.xcl
+build usartd.pbi : index usartd.xcl
+build wdt.pbi : index wdt.xcl
+build xdmac.pbi : index xdmac.xcl
+build board_console.pbi : index board_console.xcl
+build board_sama5d2-xplained.pbi : index board_sama5d2-xplained.xcl
+build board_support.pbi : index board_support.xcl
+build board_timer.pbi : index board_timer.xcl
+build chip.pbi : index chip.xcl
+build chip_common.pbi : index chip_common.xcl
+build callback.pbi : index callback.xcl
+build intmath.pbi : index intmath.xcl
+build rand.pbi : index rand.xcl
+build syscalls.pbi : index syscalls.xcl
+build timer.pbi : index timer.xcl
+build trace.pbi : index trace.xcl
+build main.pbi : index main.xcl
+build crypto-aesb_sama5d2-xplained_part0.pbi : link fault_handlers.pbi l1cache_cp15.pbi mmu_cp15.pbi mutex.pbi aesb.pbi aic5.pbi bus.pbi
+build crypto-aesb_sama5d2-xplained_part1.pbi : link cache.pbi console.pbi ddram.pbi dma.pbi dma_xdmac.pbi flexcom.pbi irq.pbi
+build crypto-aesb_sama5d2-xplained_part2.pbi : link l2cache_l2cc.pbi matrix.pbi mpddrc.pbi nfc.pbi pio4.pbi piobu.pbi pit.pbi
+build crypto-aesb_sama5d2-xplained_part3.pbi : link pmc.pbi pwmc.pbi rstc.pbi rtc.pbi secumod.pbi seriald.pbi sfc.pbi
+build crypto-aesb_sama5d2-xplained_part4.pbi : link sfrbu.pbi shdwc.pbi slowclock_sckc.pbi smc.pbi tc.pbi tcd.pbi uart.pbi
+build crypto-aesb_sama5d2-xplained_part5.pbi : link usart.pbi usartd.pbi wdt.pbi xdmac.pbi board_console.pbi board_sama5d2-xplained.pbi board_support.pbi
+build crypto-aesb_sama5d2-xplained_part6.pbi : link board_timer.pbi chip.pbi chip_common.pbi callback.pbi intmath.pbi rand.pbi syscalls.pbi
+build crypto-aesb_sama5d2-xplained_part7.pbi : link timer.pbi trace.pbi main.pbi
+build crypto-aesb_sama5d2-xplained.pbd : link crypto-aesb_sama5d2-xplained_part0.pbi crypto-aesb_sama5d2-xplained_part1.pbi crypto-aesb_sama5d2-xplained_part2.pbi crypto-aesb_sama5d2-xplained_part3.pbi crypto-aesb_sama5d2-xplained_part4.pbi crypto-aesb_sama5d2-xplained_part5.pbi crypto-aesb_sama5d2-xplained_part6.pbi crypto-aesb_sama5d2-xplained_part7.pbi
+build crypto-aesb_sama5d2-xplained.pbw : browsedata crypto-aesb_sama5d2-xplained.pbd
+
+

@@ -1,0 +1,840 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Nov/2020  16:11:16
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\sdramc.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWA532.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\sdramc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\List\sdramc.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\Obj\sdramc.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\extram\sdramc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2018, Microchip Technology
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*------------------------------------------------------------------------------
+     31           *        Header
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "chip.h"
+     35          #include "barriers.h"
+     36          #include "timer.h"
+     37          #include "trace.h"
+     38          
+     39          #include "extram/sdram.h"
+     40          #include "peripherals/pmc.h"
+     41          
+     42          #include <string.h>
+     43          
+     44          /*------------------------------------------------------------------------------
+     45           *        Macro
+     46           *----------------------------------------------------------------------------*/
+     47          
+     48          #ifndef MAX
+     49          #define MAX(x, y) (((x) > (y)) ? (x) : (y))
+     50          #endif
+     51          
+     52          /*---------------------------------------------------------------------------
+     53           *      Local functions
+     54           *---------------------------------------------------------------------------*/
+     55          
+     56          static uint32_t _compute_ba_offset(const struct _sdramc_desc *desc)
+     57          {
+     58          	return desc->nb_rows + desc->nb_columns +
+     59          		(desc->data_bus_width == 16 ? 1 : 2);
+     60          }
+     61          
+     62          static void _send_sdram_cmd(uint32_t cmd)
+     63          {
+     64          	SDRAMC->SDRAMC_MR = cmd & SDRAMC_MR_MODE_Msk;
+     65          	SDRAMC->SDRAMC_MR;
+     66          	dmb();
+     67          
+     68          	/* Perform a write to SDRAM to acknowledge the command */
+     69          	*((uint32_t *)DDR_CS_ADDR) = 0;
+     70          }
+     71          
+     72          static void _send_ext_lmr_cmd(uint32_t opcode, uint32_t ba_offset)
+     73          {
+     74          	SDRAMC->SDRAMC_MR = SDRAMC_MR_MODE_EXT_LOAD_MODEREG;
+     75          	SDRAMC->SDRAMC_MR;
+     76          	dmb();
+     77          
+     78          	/* Perform a write to the SDRAM to acknowledge the command */
+     79          	*((uint32_t *)(DDR_CS_ADDR + (opcode << ba_offset))) = 0u;
+     80          }
+     81          
+     82          /*------------------------------------------------------------------------------
+     83           *        Exported Functions
+     84           *----------------------------------------------------------------------------*/
+     85          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     86          void sdramc_configure(const struct _sdramc_desc *desc)
+     87          {
+   \                     sdramc_configure:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     88          	uint32_t master_clock_khz = pmc_get_master_clock() / 1000;
+   \        0x8   0x....'....        BL       pmc_get_master_clock
+   \        0xC   0x....'....        LDR      R2,??DataTable2  ;; 0x83126e98
+     89          	uint32_t ba_offset = _compute_ba_offset(desc);
+     90          	uint8_t trc_trfc = MAX(desc->timings.trc, desc->timings.trfc);
+   \       0x10   0xE5D4'7009        LDRB     R7,[R4, #+9]
+   \       0x14   0xE081'2290        UMULL    R2,R1,R0,R2
+   \       0x18   0xE1A0'54A1        LSR      R5,R1,#+9
+   \       0x1C   0xE5D4'0004        LDRB     R0,[R4, #+4]
+   \       0x20   0xE5D4'1002        LDRB     R1,[R4, #+2]
+   \       0x24   0xE5D4'2001        LDRB     R2,[R4, #+1]
+   \       0x28   0xE350'0010        CMP      R0,#+16
+   \       0x2C   0x03A0'0001        MOVEQ    R0,#+1
+   \       0x30   0x13A0'0002        MOVNE    R0,#+2
+   \       0x34   0xE082'2001        ADD      R2,R2,R1
+   \       0x38   0xE080'6002        ADD      R6,R0,R2
+   \       0x3C   0xE5D4'000A        LDRB     R0,[R4, #+10]
+   \       0x40   0xE157'0000        CMP      R7,R0
+   \       0x44   0x31A0'7000        MOVCC    R7,R0
+     91          	uint32_t cr, cfr1, mdr;
+     92          	int i;
+     93          
+     94          	/* Enable the controller clock */
+     95          #ifdef ID_SDRAMC
+     96          	pmc_configure_peripheral(ID_SDRAMC, NULL, true);
+     97          #endif
+     98          	pmc_enable_system_clock(PMC_SYSTEM_CLOCK_DDR);
+   \       0x48   0xE3A0'0000        MOV      R0,#+0
+   \       0x4C   0x....'....        BL       pmc_enable_system_clock
+     99          
+    100          	/*
+    101          	 * Step 1: Set the SDRAM features in tht SDRAMC_CR: asynchronous
+    102          	 * timings (TRC, TRAS, etc.), number of columns, number of rows, CAS
+    103          	 * latency and data bus width. Set UNAL bit in SDRAMC_CFR1.
+    104          	 */
+    105          	cr = SDRAMC_CR_TWR(desc->timings.twr) |
+    106          	     SDRAMC_CR_TRC_TRFC(trc_trfc) |
+    107          	     SDRAMC_CR_TRP(desc->timings.trp) |
+    108          	     SDRAMC_CR_TRCD(desc->timings.trcd) |
+    109          	     SDRAMC_CR_TRAS(desc->timings.tras) |
+    110          	     SDRAMC_CR_TXSR(desc->timings.txsr);
+   \       0x50   0xE5D4'0008        LDRB     R0,[R4, #+8]
+   \       0x54   0xE3A0'1EF0        MOV      R1,#+3840
+   \       0x58   0xE3A0'2AF0        MOV      R2,#+983040
+   \       0x5C   0xE001'1400        AND      R1,R1,R0, LSL #+8
+   \       0x60   0xE3A0'0CF0        MOV      R0,#+61440
+   \       0x64   0xE000'0607        AND      R0,R0,R7, LSL #+12
+   \       0x68   0xE180'0001        ORR      R0,R0,R1
+   \       0x6C   0xE5D4'100B        LDRB     R1,[R4, #+11]
+   \       0x70   0xE002'2801        AND      R2,R2,R1, LSL #+16
+   \       0x74   0xE5D4'100C        LDRB     R1,[R4, #+12]
+   \       0x78   0xE182'0000        ORR      R0,R2,R0
+   \       0x7C   0xE3A0'28F0        MOV      R2,#+15728640
+   \       0x80   0xE002'2A01        AND      R2,R2,R1, LSL #+20
+   \       0x84   0xE5D4'100D        LDRB     R1,[R4, #+13]
+   \       0x88   0xE182'0000        ORR      R0,R2,R0
+   \       0x8C   0xE3A0'26F0        MOV      R2,#+251658240
+   \       0x90   0xE002'2C01        AND      R2,R2,R1, LSL #+24
+   \       0x94   0xE5D4'100E        LDRB     R1,[R4, #+14]
+   \       0x98   0xE182'0000        ORR      R0,R2,R0
+    111          
+    112          	switch (desc->nb_columns) {
+   \       0x9C   0xE5D4'2001        LDRB     R2,[R4, #+1]
+   \       0xA0   0xE180'0E01        ORR      R0,R0,R1, LSL #+28
+   \       0xA4   0xE242'2008        SUB      R2,R2,#+8
+   \       0xA8   0xE352'0003        CMP      R2,#+3
+   \       0xAC   0x8A00'0032        BHI      ??sdramc_configure_1
+   \       0xB0   0xE7DF'3002        LDRB     R3,[PC, R2]
+   \       0xB4   0xE08F'F103        ADD      PC,PC,R3, LSL #+2
+   \                     ??sdramc_configure_0:
+   \       0xB8   0x01 0x00          DC8      0x1,0x0,0x2C,0x2E
+
+   \              0x2C 0x2E
+    113          	case 8:
+    114          		cr |= SDRAMC_CR_NC_COL8;
+    115          		break;
+    116          	case 9:
+    117          		cr |= SDRAMC_CR_NC_COL9;
+   \                     ??sdramc_configure_2:
+   \       0xBC   0xE380'0001        ORR      R0,R0,#0x1
+    118          		break;
+    119          	case 10:
+    120          		cr |= SDRAMC_CR_NC_COL10;
+    121          		break;
+    122          	case 11:
+    123          		cr |= SDRAMC_CR_NC_COL11;
+    124          		break;
+    125          	default:
+    126          		trace_fatal("Unsupported number of columns\r\n");
+    127          		break;
+    128          	}
+    129          
+    130          	switch (desc->nb_rows) {
+   \                     ??sdramc_configure_3:
+   \       0xC0   0xE5D4'1002        LDRB     R1,[R4, #+2]
+   \       0xC4   0xE351'000B        CMP      R1,#+11
+   \       0xC8   0x0A00'0004        BEQ      ??sdramc_configure_4
+   \       0xCC   0x3A00'0033        BCC      ??sdramc_configure_5
+   \       0xD0   0xE351'000D        CMP      R1,#+13
+   \       0xD4   0x0A00'002F        BEQ      ??sdramc_configure_6
+   \       0xD8   0x2A00'0030        BCS      ??sdramc_configure_5
+    131          	case 11:
+    132          		cr |= SDRAMC_CR_NR_ROW11;
+    133          		break;
+    134          	case 12:
+    135          		cr |= SDRAMC_CR_NR_ROW12;
+   \       0xDC   0xE380'0004        ORR      R0,R0,#0x4
+    136          		break;
+    137          	case 13:
+    138          		cr |= SDRAMC_CR_NR_ROW13;
+    139          		break;
+    140          	default:
+    141          		trace_fatal("Unsupported number of rows\r\n");
+    142          		break;
+    143          	}
+    144          
+    145          	switch (desc->nb_banks) {
+   \                     ??sdramc_configure_4:
+   \       0xE0   0xE5D4'1003        LDRB     R1,[R4, #+3]
+   \       0xE4   0xE351'0002        CMP      R1,#+2
+   \       0xE8   0x0A00'0002        BEQ      ??sdramc_configure_7
+   \       0xEC   0xE351'0004        CMP      R1,#+4
+   \       0xF0   0x1A00'0031        BNE      ??sdramc_configure_8
+    146          	case 2:
+    147          		cr |= SDRAMC_CR_NB_BANK2;
+    148          		break;
+    149          	case 4:
+    150          		cr |= SDRAMC_CR_NB_BANK4;
+   \       0xF4   0xE380'0010        ORR      R0,R0,#0x10
+    151          		break;
+    152          	default:
+    153          		trace_fatal("Unsupported number of banks\r\n");
+    154          		break;
+    155          	}
+    156          
+    157          	switch (desc->cas_latency) {
+   \                     ??sdramc_configure_7:
+   \       0xF8   0xE5D4'1005        LDRB     R1,[R4, #+5]
+   \       0xFC   0xE351'0002        CMP      R1,#+2
+   \      0x100   0x0A00'0002        BEQ      ??sdramc_configure_9
+   \      0x104   0xE351'0003        CMP      R1,#+3
+   \      0x108   0x0A00'0032        BEQ      ??sdramc_configure_10
+   \      0x10C   0xEA00'0033        B        ??sdramc_configure_11
+    158          	case 2:
+    159          		cr |= SDRAMC_CR_CAS_LATENCY2;
+   \                     ??sdramc_configure_9:
+   \      0x110   0xE380'0040        ORR      R0,R0,#0x40
+    160          		break;
+    161          	case 3:
+    162          		cr |= SDRAMC_CR_CAS_LATENCY3;
+    163          		break;
+    164          	default:
+    165          		trace_fatal("Unsupported CAS latency\r\n");
+    166          		break;
+    167          	}
+    168          
+    169          	switch (desc->data_bus_width) {
+   \                     ??sdramc_configure_12:
+   \      0x114   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \      0x118   0xE351'0010        CMP      R1,#+16
+   \      0x11C   0x0A00'0002        BEQ      ??sdramc_configure_13
+   \      0x120   0xE351'0020        CMP      R1,#+32
+   \      0x124   0x0A00'0001        BEQ      ??sdramc_configure_14
+   \      0x128   0xEA00'0033        B        ??sdramc_configure_15
+    170          	case 16:
+    171          		cr |= SDRAMC_CR_DBW;
+   \                     ??sdramc_configure_13:
+   \      0x12C   0xE380'0080        ORR      R0,R0,#0x80
+    172          		break;
+    173          	case 32:
+    174          		break;
+    175          	default:
+    176          		trace_fatal("Unsupported data width\r\n");
+    177          		break;
+    178          	}
+    179          
+    180          	SDRAMC->SDRAMC_CR = cr;
+   \                     ??sdramc_configure_14:
+   \      0x130   0xE3E0'70FF        MVN      R7,#+255
+   \      0x134   0xE3C7'7D4C        BIC      R7,R7,#0x1300
+   \      0x138   0xE587'0008        STR      R0,[R7, #+8]
+    181          
+    182          	cfr1 = SDRAMC_CFR1_TMRD(desc->timings.tmrd) |
+    183          	       SDRAMC_CFR1_UNAL;
+    184          	SDRAMC->SDRAMC_CFR1 = cfr1;
+   \      0x13C   0xE5D4'0007        LDRB     R0,[R4, #+7]
+   \      0x140   0xE200'100F        AND      R1,R0,#0xF
+   \      0x144   0xE381'2F40        ORR      R2,R1,#0x100
+   \      0x148   0xE587'2028        STR      R2,[R7, #+40]
+    185          
+    186          	/*
+    187          	 * Step 2: For mobile SDRAM, configure temperature-compensated
+    188          	 * self-refresh (TCSR), drive strength (DS) and partial array
+    189          	 * self-refresh (PASR) in the Low Power register (SDRAMC_LPR).
+    190          	 */
+    191          	if (desc->is_lpsdr) {
+   \      0x14C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \      0x150   0xE350'0000        CMP      R0,#+0
+   \      0x154   0x0A00'002F        BEQ      ??sdramc_configure_16
+    192          		SDRAMC->SDRAMC_LPR = SDRAMC_LPR_LPCB_SELF_REFRESH |
+    193          		                     SDRAMC_LPR_PASR(0) | /* Full array */
+    194          		                     SDRAMC_LPR_TCSR(0) |
+    195          		                     SDRAMC_LPR_DS(2) | /* Quarter */
+    196          		                     SDRAMC_LPR_TIMEOUT_LP_LAST_XFER_128;
+   \      0x158   0xE3A0'1001        MOV      R1,#+1
+   \      0x15C   0xE381'1DA0        ORR      R1,R1,#0x2800
+   \      0x160   0xE587'1010        STR      R1,[R7, #+16]
+   \      0x164   0xE3A0'0001        MOV      R0,#+1
+   \      0x168   0xEA00'002A        B        ??sdramc_configure_16
+    197          	}
+   \                     ??sdramc_configure_17:
+   \      0x16C   0xE380'0002        ORR      R0,R0,#0x2
+   \      0x170   0xEAFF'FFD2        B        ??sdramc_configure_3
+   \                     ??sdramc_configure_18:
+   \      0x174   0xE380'0003        ORR      R0,R0,#0x3
+   \      0x178   0xEAFF'FFD0        B        ??sdramc_configure_3
+   \                     ??sdramc_configure_1:
+   \      0x17C   0x....'....        LDR      R0,??DataTable2_1
+   \      0x180   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x184   0xE351'0000        CMP      R1,#+0
+   \      0x188   0x0A00'0001        BEQ      ??sdramc_configure_19
+   \      0x18C   0x....'....        LDR      R0,??DataTable2_2
+   \      0x190   0x....'....        BL       printf
+   \                     ??sdramc_configure_19:
+   \      0x194   0xEAFF'FFFE        B        ??sdramc_configure_19
+   \                     ??sdramc_configure_6:
+   \      0x198   0xE380'0008        ORR      R0,R0,#0x8
+   \      0x19C   0xEAFF'FFCF        B        ??sdramc_configure_4
+   \                     ??sdramc_configure_5:
+   \      0x1A0   0x....'....        LDR      R0,??DataTable2_1
+   \      0x1A4   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x1A8   0xE351'0000        CMP      R1,#+0
+   \      0x1AC   0x0A00'0001        BEQ      ??sdramc_configure_20
+   \      0x1B0   0x....'....        LDR      R0,??DataTable2_3
+   \      0x1B4   0x....'....        BL       printf
+   \                     ??sdramc_configure_20:
+   \      0x1B8   0xEAFF'FFFE        B        ??sdramc_configure_20
+   \                     ??sdramc_configure_8:
+   \      0x1BC   0x....'....        LDR      R0,??DataTable2_1
+   \      0x1C0   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x1C4   0xE351'0000        CMP      R1,#+0
+   \      0x1C8   0x0A00'0001        BEQ      ??sdramc_configure_21
+   \      0x1CC   0x....'....        LDR      R0,??DataTable2_4
+   \      0x1D0   0x....'....        BL       printf
+   \                     ??sdramc_configure_21:
+   \      0x1D4   0xEAFF'FFFE        B        ??sdramc_configure_21
+   \                     ??sdramc_configure_10:
+   \      0x1D8   0xE380'0060        ORR      R0,R0,#0x60
+   \      0x1DC   0xEAFF'FFCC        B        ??sdramc_configure_12
+   \                     ??sdramc_configure_11:
+   \      0x1E0   0x....'....        LDR      R0,??DataTable2_1
+   \      0x1E4   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x1E8   0xE351'0000        CMP      R1,#+0
+   \      0x1EC   0x0A00'0001        BEQ      ??sdramc_configure_22
+   \      0x1F0   0x....'....        ADR      R0,?_4
+   \      0x1F4   0x....'....        BL       printf
+   \                     ??sdramc_configure_22:
+   \      0x1F8   0xEAFF'FFFE        B        ??sdramc_configure_22
+   \                     ??sdramc_configure_15:
+   \      0x1FC   0x....'....        LDR      R0,??DataTable2_1
+   \      0x200   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x204   0xE351'0000        CMP      R1,#+0
+   \      0x208   0x0A00'0001        BEQ      ??sdramc_configure_23
+   \      0x20C   0x....'....        ADR      R0,?_5
+   \      0x210   0x....'....        BL       printf
+   \                     ??sdramc_configure_23:
+   \      0x214   0xEAFF'FFFE        B        ??sdramc_configure_23
+    198          
+    199          	/*
+    200          	 * Step 3: Select the SDRAM memory device type and the shift sampling
+    201          	 * value int he Memory Device register (SDRAMC_MDR).
+    202          	 */
+    203          	mdr = desc->is_lpsdr ? SDRAMC_MDR_MD_LPSDRAM : SDRAMC_MDR_MD_SDRAM;
+    204          	switch (desc->shift_sampling) {
+   \                     ??sdramc_configure_16:
+   \      0x218   0xE5D4'1006        LDRB     R1,[R4, #+6]
+   \      0x21C   0xE241'2001        SUB      R2,R1,#+1
+   \      0x220   0xE352'0002        CMP      R2,#+2
+   \      0x224   0x8A00'003F        BHI      ??sdramc_configure_24
+    205          	case 1:
+    206          	case 2:
+    207          	case 3:
+    208          		mdr |= SDRAMC_MDR_SHIFT_SAMPLING(desc->shift_sampling);
+    209          		break;
+    210          	default:
+    211          		trace_fatal("Unsupported shift sampling\r\n");
+    212          		break;
+    213          	}
+    214          
+    215          	SDRAMC->SDRAMC_MDR = mdr;
+   \      0x228   0xE3A0'3030        MOV      R3,#+48
+   \      0x22C   0xE003'1201        AND      R1,R3,R1, LSL #+4
+   \      0x230   0xE181'0000        ORR      R0,R1,R0
+   \      0x234   0xE587'0024        STR      R0,[R7, #+36]
+    216          
+    217          	/*
+    218          	 * Step 4: A pause of at least 200 us must be observed before a signal
+    219          	 * toggle.
+    220          	 */
+    221          	usleep(200);
+   \      0x238   0xE3A0'00C8        MOV      R0,#+200
+   \      0x23C   0x....'....        BL       usleep
+    222          
+    223          	/* Step 5: A NOP command is issued to the SDRAM devices. */
+    224          	_send_sdram_cmd(SDRAMC_MR_MODE_NOP);
+   \      0x240   0xE3A0'0001        MOV      R0,#+1
+   \      0x244   0xE587'0000        STR      R0,[R7, #+0]
+   \      0x248   0xE597'1000        LDR      R1,[R7, #+0]
+   \      0x24C   0xE3A0'0580        MOV      R0,#+536870912
+   \      0x250   0xE3A0'1000        MOV      R1,#+0
+   \      0x254   0xE580'1000        STR      R1,[R0, #+0]
+    225          
+    226          	/* Step 6: An All Banks Precharge command is issued to the SDRAM. */
+    227          	_send_sdram_cmd(SDRAMC_MR_MODE_ALLBANKS_PRECHARGE);
+   \      0x258   0xE3A0'2002        MOV      R2,#+2
+   \      0x25C   0xE587'2000        STR      R2,[R7, #+0]
+   \      0x260   0xE597'3000        LDR      R3,[R7, #+0]
+   \      0x264   0xE580'1000        STR      R1,[R0, #+0]
+    228          
+    229          	/* Step 7: Eight autorefresh (CBR) cycles are provided. */
+    230          	for (i = 0; i < 8; i++)
+    231          		_send_sdram_cmd(SDRAMC_MR_MODE_AUTO_REFRESH);
+   \      0x268   0xE3A0'3004        MOV      R3,#+4
+   \      0x26C   0xE587'3000        STR      R3,[R7, #+0]
+   \      0x270   0xE597'C000        LDR      R12,[R7, #+0]
+   \      0x274   0xE580'1000        STR      R1,[R0, #+0]
+   \      0x278   0xE587'3000        STR      R3,[R7, #+0]
+   \      0x27C   0xE597'E000        LDR      LR,[R7, #+0]
+   \      0x280   0xE580'1000        STR      R1,[R0, #+0]
+   \      0x284   0xE587'3000        STR      R3,[R7, #+0]
+   \      0x288   0xE597'8000        LDR      R8,[R7, #+0]
+   \      0x28C   0xE580'1000        STR      R1,[R0, #+0]
+   \      0x290   0xE587'3000        STR      R3,[R7, #+0]
+   \      0x294   0xE597'9000        LDR      R9,[R7, #+0]
+   \      0x298   0xE580'1000        STR      R1,[R0, #+0]
+   \      0x29C   0xE587'3000        STR      R3,[R7, #+0]
+   \      0x2A0   0xE597'C000        LDR      R12,[R7, #+0]
+   \      0x2A4   0xE580'1000        STR      R1,[R0, #+0]
+   \      0x2A8   0xE587'3000        STR      R3,[R7, #+0]
+   \      0x2AC   0xE597'E000        LDR      LR,[R7, #+0]
+   \      0x2B0   0xE580'1000        STR      R1,[R0, #+0]
+   \      0x2B4   0xE587'3000        STR      R3,[R7, #+0]
+   \      0x2B8   0xE597'8000        LDR      R8,[R7, #+0]
+   \      0x2BC   0xE580'1000        STR      R1,[R0, #+0]
+   \      0x2C0   0xE587'3000        STR      R3,[R7, #+0]
+   \      0x2C4   0xE597'3000        LDR      R3,[R7, #+0]
+   \      0x2C8   0xE580'1000        STR      R1,[R0, #+0]
+    232          
+    233          	/*
+    234          	 * Step 8: A Mode Register set (MRS) cycle is issued to program the
+    235          	 * parameters of the SDRAM, in particular CAS latency and burst length.
+    236          	 * The application must write a 3 to the MODE field in the SDRAMC_MR.
+    237          	 * Read the SDRAMC_MR and add a memory barrier assembler instruction
+    238          	 * just after the read. Perform a write access to the SDRAM. The write
+    239          	 * address must be chosen so that BA[1:0] are set to 0.
+    240          	 */
+    241          	_send_sdram_cmd(SDRAMC_MR_MODE_LOAD_MODEREG);
+   \      0x2CC   0xE3A0'C003        MOV      R12,#+3
+   \      0x2D0   0xE587'C000        STR      R12,[R7, #+0]
+   \      0x2D4   0xE597'E000        LDR      LR,[R7, #+0]
+   \      0x2D8   0xE580'1000        STR      R1,[R0, #+0]
+    242          
+    243          	/*
+    244          	 * Step 9: For mobile SDRAM initialization, an Extended Mode Register
+    245          	 * set (EMRS) cycle is issued to program the SDRAM parametres (TCSR,
+    246          	 * PASR, DS). The application must set the MODE field to 5 in the
+    247          	 * SDRAMC_MR. Read the SDRAMC_MR and add a memory barrier assembler
+    248          	 * instruction just after the read. Perform a write access to the SDRAM.
+    249          	 * The write address must be chosen so that BA[1] or BA[0] are set to 1.
+    250          	 */
+    251          	if (desc->is_lpsdr)
+   \      0x2DC   0xE5D4'8000        LDRB     R8,[R4, #+0]
+   \      0x2E0   0xE358'0000        CMP      R8,#+0
+   \      0x2E4   0x0A00'0004        BEQ      ??sdramc_configure_25
+    252          		_send_ext_lmr_cmd(2, ba_offset);
+   \      0x2E8   0xE3A0'3005        MOV      R3,#+5
+   \      0x2EC   0xE587'3000        STR      R3,[R7, #+0]
+   \      0x2F0   0xE597'C000        LDR      R12,[R7, #+0]
+   \      0x2F4   0xE080'2612        ADD      R2,R0,R2, LSL R6
+   \      0x2F8   0xE582'1000        STR      R1,[R2, #+0]
+    253          
+    254          	/* Step 10: The application must go into Normal mode. */
+    255          	_send_sdram_cmd(SDRAMC_MR_MODE_NORMAL);
+   \                     ??sdramc_configure_25:
+   \      0x2FC   0xE587'1000        STR      R1,[R7, #+0]
+   \      0x300   0xE597'3000        LDR      R3,[R7, #+0]
+   \      0x304   0xE580'1000        STR      R1,[R0, #+0]
+    256          
+    257          	/*
+    258          	 * Step 11: Write the refresh rate into the COUNT field in the Refresh
+    259          	 * Timer register (SDRAMC_TR). (Refresh rate = delay between refresh
+    260          	 * cycles.)
+    261          	 * Refresh Timer is (refresh window / refresh_cycles) * master_clock_khz
+    262          	 */
+    263          	SDRAMC->SDRAMC_TR = SDRAMC_TR_COUNT(desc->refresh_window * master_clock_khz / desc->refresh_cycles);
+   \      0x308   0xE594'0010        LDR      R0,[R4, #+16]
+   \      0x30C   0xE594'1014        LDR      R1,[R4, #+20]
+   \      0x310   0xE000'0095        MUL      R0,R5,R0
+   \      0x314   0x....'....        BL       __aeabi_uidiv
+   \      0x318   0xE1A0'1A00        LSL      R1,R0,#+20
+   \      0x31C   0xE1A0'1A21        LSR      R1,R1,#+20
+   \      0x320   0xE587'1004        STR      R1,[R7, #+4]
+    264          }
+   \      0x324   0xE8BD'83F1        POP      {R0,R4-R9,PC}    ;; return
+   \                     ??sdramc_configure_24:
+   \      0x328   0x....'....        LDR      R0,??DataTable2_1
+   \      0x32C   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x330   0xE351'0000        CMP      R1,#+0
+   \      0x334   0x0A00'0001        BEQ      ??sdramc_configure_26
+   \      0x338   0x....'....        LDR      R0,??DataTable2_5
+   \      0x33C   0x....'....        BL       printf
+   \                     ??sdramc_configure_26:
+   \      0x340   0xEAFF'FFFE        B        ??sdramc_configure_26
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0x8312'6E98        DC32     0x83126e98
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \        0x0   0x....'....        DC32     ?_0+0x24
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \        0x0   0x....'....        DC32     ?_0+0x48
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_5:
+   \        0x0   0x....'....        DC32     ?_0+0x6C
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_4:
+   \        0x0   0x2D 0x46          DC8 "-F- Unsupported CAS latency\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70    
+
+   \              0x6F 0x72    
+
+   \              0x74 0x65    
+
+   \              0x64 0x20    
+
+   \              0x43 0x41    
+
+   \              0x53 0x20    
+
+   \              0x6C 0x61    
+
+   \              0x74 0x65    
+
+   \              0x6E 0x63    
+
+   \              0x79 0x0D    
+
+   \              0x0A 0x00
+   \       0x1E   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x2D 0x46          DC8 "-F- Unsupported data width\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70    
+
+   \              0x6F 0x72    
+
+   \              0x74 0x65    
+
+   \              0x64 0x20    
+
+   \              0x64 0x61    
+
+   \              0x74 0x61    
+
+   \              0x20 0x77    
+
+   \              0x69 0x64    
+
+   \              0x74 0x68    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x1D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x46          DC8 "-F- Unsupported number of columns\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70    
+
+   \              0x6F 0x72    
+
+   \              0x74 0x65    
+
+   \              0x64 0x20    
+
+   \              0x6E 0x75    
+
+   \              0x6D 0x62    
+
+   \              0x65 0x72    
+
+   \              0x20 0x6F    
+
+   \              0x66 0x20    
+
+   \              0x63 0x6F    
+
+   \              0x6C 0x75    
+
+   \              0x6D 0x6E    
+
+   \              0x73 0x0D    
+
+   \              0x0A 0x00
+   \       0x24   0x2D 0x46          DC8 "-F- Unsupported number of rows\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70    
+
+   \              0x6F 0x72    
+
+   \              0x74 0x65    
+
+   \              0x64 0x20    
+
+   \              0x6E 0x75    
+
+   \              0x6D 0x62    
+
+   \              0x65 0x72    
+
+   \              0x20 0x6F    
+
+   \              0x66 0x20    
+
+   \              0x72 0x6F    
+
+   \              0x77 0x73    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x45   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0x48   0x2D 0x46          DC8 "-F- Unsupported number of banks\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70    
+
+   \              0x6F 0x72    
+
+   \              0x74 0x65    
+
+   \              0x64 0x20    
+
+   \              0x6E 0x75    
+
+   \              0x6D 0x62    
+
+   \              0x65 0x72    
+
+   \              0x20 0x6F    
+
+   \              0x66 0x20    
+
+   \              0x62 0x61    
+
+   \              0x6E 0x6B    
+
+   \              0x73 0x0D    
+
+   \              0x0A 0x00
+   \       0x6A   0x00 0x00          DC8 0, 0
+   \       0x6C   0x2D 0x46          DC8 "-F- Unsupported shift sampling\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70    
+
+   \              0x6F 0x72    
+
+   \              0x74 0x65    
+
+   \              0x64 0x20    
+
+   \              0x73 0x68    
+
+   \              0x69 0x66    
+
+   \              0x74 0x20    
+
+   \              0x73 0x61    
+
+   \              0x6D 0x70    
+
+   \              0x6C 0x69    
+
+   \              0x6E 0x67    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x8D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   sdramc_configure
+        32   -> pmc_enable_system_clock
+        32   -> pmc_get_master_clock
+        32   -> printf
+        32   -> usleep
+        32 __aeabi_uidiv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+     144  ?_0
+      32  ?_4
+      32  ?_5
+     836  sdramc_configure
+
+ 
+ 144 bytes in section .rodata
+ 924 bytes in section SOFTPACK
+ 
+ 924 bytes of CODE  memory
+ 144 bytes of CONST memory
+
+Errors: none
+Warnings: none

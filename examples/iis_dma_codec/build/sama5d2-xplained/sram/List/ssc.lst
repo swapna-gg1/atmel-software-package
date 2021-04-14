@@ -1,0 +1,1105 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         10/Dec/2020  08:15:50
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\ssc.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWD079.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\ssc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_PDMIC -D CONFIG_HAVE_AUDIO_AD1934 -D
+#        CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D CONFIG_HAVE_SPI_FIFO -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_UART -D CONFIG_HAVE_SERIALD_UART -D
+#        CONFIG_HAVE_USART -D CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_I2C_BUS -D
+#        CONFIG_HAVE_I2SC -D CONFIG_HAVE_AUDIO_WM8731 --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\sram\List\ssc.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\sram\Obj\ssc.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\ssc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup ssc_module Working with SSC
+     31           * \section Purpose
+     32           * The SSC driver provides the interface to configure and use the SSC
+     33           * peripheral.
+     34           *
+     35           * \section Usage
+     36           * -# Enable the SSC interface pins.
+     37           * -# Configure the SSC to operate at a specific frequency by calling
+     38           *    SSC_Configure(). This function enables the peripheral clock of the SSC,
+     39           *    but not its PIOs.
+     40           * -# Configure the transmitter and/or the receiver using the
+     41           *    SSC_ConfigureTransmitter() and SSC_ConfigureEmitter() functions.
+     42           * -# Enable the PIOs or the transmitter and/or the received.
+     43           * -# Enable the transmitter and/or the receiver using SSC_EnableTransmitter()
+     44           *    and SSC_EnableReceiver()
+     45           * -# Send data through the transmitter using SSC_Write()
+     46           * -# Receive data from the receiver using SSC_Read()
+     47           * -# Disable the transmitter and/or the receiver using SSC_DisableTransmitter()
+     48           *    and SSC_DisableReceiver()
+     49           *
+     50           * For more accurate information, please look at the SSC section of the
+     51           * Datasheet.
+     52           *
+     53           * Related files :\n
+     54           * \ref ssc.c\n
+     55           * \ref ssc.h.\n
+     56          */
+     57          /*@{*/
+     58          /*@}*/
+     59          
+     60          /**
+     61           * \file
+     62           *
+     63           * Implementation of Synchronous Serial (SSC) controller.
+     64           *
+     65           */
+     66          
+     67          /*----------------------------------------------------------------------------
+     68           *        Headers
+     69           *----------------------------------------------------------------------------*/
+     70          
+     71          #include <assert.h>
+     72          #include <string.h>
+     73          
+     74          #include "audio/ssc.h"
+     75          #include "chip.h"
+     76          #include "errno.h"
+     77          #include "mm/cache.h"
+     78          #include "peripherals/pmc.h"
+     79          
+     80          /*----------------------------------------------------------------------------
+     81           *       Local functions
+     82           *----------------------------------------------------------------------------*/
+     83          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     84          static int _ssc_dma_rx_callback(void* arg, void* arg2)
+     85          {
+   \                     _ssc_dma_rx_callback:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     86          	struct _ssc_desc* desc = (struct _ssc_desc*)arg;
+     87          
+     88          	cache_invalidate_region(desc->rx.dma.cfg.daddr, desc->rx.dma.cfg.len);
+   \        0x8   0xE594'1048        LDR      R1,[R4, #+72]
+   \        0xC   0xE594'0044        LDR      R0,[R4, #+68]
+   \       0x10   0x....'....        BL       cache_invalidate_region
+     89          
+     90          	dma_reset_channel(desc->rx.dma.channel);
+   \       0x14   0xE594'0030        LDR      R0,[R4, #+48]
+   \       0x18   0x....'....        BL       dma_reset_channel
+     91          
+     92          	mutex_unlock(&desc->rx.mutex);
+   \       0x1C   0xE284'0014        ADD      R0,R4,#+20
+   \       0x20   0x....'....        BL       mutex_unlock
+     93          
+     94          	return callback_call(&desc->rx.callback, NULL);
+   \       0x24   0xE284'0028        ADD      R0,R4,#+40
+   \       0x28   0x....'....        B        ?Subroutine0
+     95          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE3A0'1000        MOV      R1,#+0
+   \        0x4   0xE8BD'4010        POP      {R4,LR}
+   \        0x8   0x....'....        B        callback_call    ;; tailcall
+     96          
+     97          static void _ssc_dma_rx_transfer(struct _ssc_desc* desc, struct _buffer* buffer)
+     98          {
+     99          	uint32_t id = get_ssc_id_from_addr(desc->addr);
+    100          	struct _callback _cb;
+    101          
+    102          	assert(id < ID_PERIPH_COUNT);
+    103          
+    104          	desc->rx.dma.cfg.saddr = (void*)&desc->addr->SSC_RHR;
+    105          	desc->rx.dma.cfg.daddr = buffer->data;
+    106          
+    107          	if (desc->slot_length == 8) {
+    108          		desc->rx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+    109          		desc->rx.dma.cfg.len  = buffer->size;
+    110          	} else if (desc->slot_length == 16) {
+    111          		desc->rx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_HALF_WORD;
+    112          		desc->rx.dma.cfg.len  = buffer->size/2;
+    113          	} else if (desc->slot_length == 32) {
+    114          		desc->rx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_WORD;
+    115          		desc->rx.dma.cfg.len  = buffer->size/4;
+    116          	}
+    117          	dma_configure_transfer(desc->rx.dma.channel, &desc->rx.dma.cfg_dma, &desc->rx.dma.cfg, 1);
+    118          	callback_set(&_cb, _ssc_dma_rx_callback, (void*)desc);
+    119          	dma_set_callback(desc->rx.dma.channel, &_cb);
+    120          	dma_start_transfer(desc->rx.dma.channel);
+    121          }
+    122          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    123          static int _ssc_dma_tx_callback(void* arg, void* arg2)
+    124          {
+   \                     _ssc_dma_tx_callback:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    125          	struct _ssc_desc* desc = (struct _ssc_desc*)arg;
+    126          
+    127          	dma_reset_channel(desc->tx.dma.channel);
+   \        0x8   0xE594'0068        LDR      R0,[R4, #+104]
+   \        0xC   0x....'....        BL       dma_reset_channel
+    128          
+    129          	mutex_unlock(&desc->tx.mutex);
+   \       0x10   0xE284'004C        ADD      R0,R4,#+76
+   \       0x14   0x....'....        BL       mutex_unlock
+    130          
+    131          	return callback_call(&desc->tx.callback, NULL);
+   \       0x18   0xE284'0060        ADD      R0,R4,#+96
+   \       0x1C                      REQUIRE ?Subroutine0
+   \       0x1C                      ;; // Fall through to label ?Subroutine0
+    132          }
+    133          
+    134          static void _ssc_dma_tx_transfer(struct _ssc_desc* desc, struct _buffer* buffer)
+    135          {
+    136          	uint32_t id = get_ssc_id_from_addr(desc->addr);
+    137          	struct _callback _cb;
+    138          
+    139          	assert(id < ID_PERIPH_COUNT);
+    140          
+    141          	memset(&desc->tx.dma.cfg, 0x0, sizeof(desc->tx.dma.cfg));
+    142          
+    143          	desc->tx.dma.cfg.saddr = buffer->data;
+    144          	desc->tx.dma.cfg.daddr = (void*)&desc->addr->SSC_THR;
+    145          
+    146          	if (desc->slot_length == 8) {
+    147          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+    148          		desc->tx.dma.cfg.len  = buffer->size;
+    149          	} else if (desc->slot_length == 16) {
+    150          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_HALF_WORD;
+    151          		desc->tx.dma.cfg.len  = buffer->size/2;
+    152          	} else if (desc->slot_length == 32) {
+    153          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_WORD;
+    154          		desc->tx.dma.cfg.len  = buffer->size/4;
+    155          	}
+    156          	dma_configure_transfer(desc->tx.dma.channel, &desc->tx.dma.cfg_dma, &desc->tx.dma.cfg, 1);
+    157          	callback_set(&_cb, _ssc_dma_tx_callback, (void*)desc);
+    158          	dma_set_callback(desc->tx.dma.channel, &_cb);
+    159          	cache_clean_region(desc->tx.dma.cfg.saddr, desc->tx.dma.cfg.len);
+    160          	dma_start_transfer(desc->tx.dma.channel);
+    161          }
+    162          
+    163          /*----------------------------------------------------------------------------
+    164           *       Exported functions
+    165           *----------------------------------------------------------------------------*/
+    166          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    167          void ssc_configure(struct _ssc_desc* desc)
+    168          {
+   \                     ssc_configure:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    169          	uint32_t id;
+    170          	uint32_t clock;
+    171          	uint32_t rcmr, rfmr, tcmr, tfmr;
+    172          
+    173          	id = get_ssc_id_from_addr(desc->addr);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_ssc_id_from_addr
+   \       0x10   0xE1A0'5000        MOV      R5,R0
+    174          	clock = pmc_get_peripheral_clock(id);
+   \       0x14   0x....'....        BL       pmc_get_peripheral_clock
+    175          
+    176          	/* Reset, disable receiver & transmitter */
+    177          	desc->addr->SSC_CR = SSC_CR_RXDIS | SSC_CR_TXDIS | SSC_CR_SWRST;
+   \       0x18   0xE594'6000        LDR      R6,[R4, #+0]
+   \       0x1C   0xE308'1202        MOVW     R1,#+33282
+   \       0x20   0xE586'1000        STR      R1,[R6, #+0]
+    178          
+    179          	/* Configure clock frequency */
+    180          	if (desc->bit_rate != 0)
+   \       0x24   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x28   0xE351'0000        CMP      R1,#+0
+   \       0x2C   0x0A00'0002        BEQ      ??ssc_configure_0
+    181          		desc->addr->SSC_CMR = clock / (2 * desc->bit_rate);
+   \       0x30   0xE1A0'1081        LSL      R1,R1,#+1
+   \       0x34   0x....'....        BL       __aeabi_uidiv
+   \       0x38   0xEA00'0000        B        ??ssc_configure_1
+    182          	else
+    183          		desc->addr->SSC_CMR = 0;
+   \                     ??ssc_configure_0:
+   \       0x3C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??ssc_configure_1:
+   \       0x40   0xE586'0004        STR      R0,[R6, #+4]
+    184          
+    185          	if (desc->rx_cfg_cks_rk) {
+    186          		rcmr = SSC_RCMR_CKS_RK |
+    187          		       SSC_RCMR_CKO_NONE |
+    188          		       SSC_RCMR_CKI |
+    189          		       desc->rx_start_selection |
+    190          		       SSC_RCMR_STTDLY(1) |
+    191          		       SSC_RCMR_PERIOD(0);
+    192          	} else {
+    193          		rcmr = SSC_RCMR_CKS_TK |
+    194          		       SSC_RCMR_CKO_NONE |
+    195          		       SSC_RCMR_CKI |
+    196          		       desc->rx_start_selection |
+    197          		       SSC_RCMR_STTDLY(1) |
+    198          		       SSC_RCMR_PERIOD(0);
+    199          	}
+    200          
+    201          	rfmr = SSC_RFMR_DATLEN(desc->slot_length - 1) |
+    202          	       SSC_RFMR_MSBF |
+    203          	       SSC_RFMR_DATNB(desc->slot_num - 1) |
+    204          	       SSC_RFMR_FSOS_NONE;
+    205          
+    206          	ssc_configure_receiver(desc, rcmr, rfmr);
+   \       0x44   0xE5D4'C00D        LDRB     R12,[R4, #+13]
+   \       0x48   0xE5D4'100F        LDRB     R1,[R4, #+15]
+   \       0x4C   0xE1D4'01B2        LDRH     R0,[R4, #+18]
+   \       0x50   0xE24C'E001        SUB      LR,R12,#+1
+   \       0x54   0xE351'0000        CMP      R1,#+0
+   \       0x58   0xE5D4'100C        LDRB     R1,[R4, #+12]
+   \       0x5C   0xE241'2001        SUB      R2,R1,#+1
+   \       0x60   0xE3A0'1EF0        MOV      R1,#+3840
+   \       0x64   0xE001'140E        AND      R1,R1,LR, LSL #+8
+   \       0x68   0x1380'0022        ORRNE    R0,R0,#0x22
+   \       0x6C   0x0380'0021        ORREQ    R0,R0,#0x21
+   \       0x70   0xE202'301F        AND      R3,R2,#0x1F
+   \       0x74   0xE380'0B40        ORR      R0,R0,#0x10000
+   \       0x78   0xE181'1003        ORR      R1,R1,R3
+   \       0x7C   0xE381'1080        ORR      R1,R1,#0x80
+   \       0x80   0xE586'0010        STR      R0,[R6, #+16]
+   \       0x84   0xE586'1014        STR      R1,[R6, #+20]
+    207          
+    208          	if (desc->tx_cfg_cks_tk) {
+    209          		tcmr = SSC_TCMR_CKS_TK |
+    210          		       SSC_TCMR_CKO_NONE |
+    211          		       desc->tx_start_selection |
+    212          		       SSC_TCMR_STTDLY(1) |
+    213          		       SSC_TCMR_PERIOD(0);
+    214          
+    215          	} else {
+    216          		tcmr = SSC_TCMR_CKS_RK |
+    217          		       SSC_TCMR_CKO_NONE |
+    218          		       desc->tx_start_selection |
+    219          		       SSC_TCMR_STTDLY(1) |
+    220          		       SSC_TCMR_PERIOD(0);
+    221          	}
+    222          
+    223          	tfmr = SSC_TFMR_DATLEN(desc->slot_length - 1) |
+    224          	       SSC_TFMR_MSBF |
+    225          	       SSC_TFMR_DATNB(desc->slot_num - 1) |
+    226          	       SSC_TFMR_FSOS_NONE;
+    227          
+    228          	ssc_configure_transmitter(desc, tcmr, tfmr);
+   \       0x88   0xE5D4'C00D        LDRB     R12,[R4, #+13]
+   \       0x8C   0xE5D4'100E        LDRB     R1,[R4, #+14]
+   \       0x90   0xE1D4'01B0        LDRH     R0,[R4, #+16]
+   \       0x94   0xE24C'E001        SUB      LR,R12,#+1
+   \       0x98   0xE351'0000        CMP      R1,#+0
+   \       0x9C   0xE5D4'100C        LDRB     R1,[R4, #+12]
+   \       0xA0   0xE241'2001        SUB      R2,R1,#+1
+   \       0xA4   0xE3A0'1EF0        MOV      R1,#+3840
+   \       0xA8   0xE001'140E        AND      R1,R1,LR, LSL #+8
+   \       0xAC   0xE202'301F        AND      R3,R2,#0x1F
+   \       0xB0   0x1380'0002        ORRNE    R0,R0,#0x2
+    229          
+    230          	/* Enable SSC peripheral clock */
+    231          	pmc_configure_peripheral(id, NULL, true);
+   \       0xB4   0xE3A0'2001        MOV      R2,#+1
+   \       0xB8   0x0380'0001        ORREQ    R0,R0,#0x1
+   \       0xBC   0xE181'1003        ORR      R1,R1,R3
+   \       0xC0   0xE380'0B40        ORR      R0,R0,#0x10000
+   \       0xC4   0xE381'1080        ORR      R1,R1,#0x80
+   \       0xC8   0xE586'0018        STR      R0,[R6, #+24]
+   \       0xCC   0xE586'101C        STR      R1,[R6, #+28]
+   \       0xD0   0xE3A0'1000        MOV      R1,#+0
+   \       0xD4   0xE1A0'0005        MOV      R0,R5
+   \       0xD8   0x....'....        BL       pmc_configure_peripheral
+    232          
+    233          	desc->rx.dma.cfg_dma.incr_saddr = false;
+   \       0xDC   0xE3A0'0000        MOV      R0,#+0
+    234          	desc->rx.dma.cfg_dma.incr_daddr = true;
+   \       0xE0   0xE3A0'1001        MOV      R1,#+1
+   \       0xE4   0xE5C4'003C        STRB     R0,[R4, #+60]
+   \       0xE8   0xE5C4'103D        STRB     R1,[R4, #+61]
+    235          	desc->rx.dma.cfg_dma.loop = false;
+   \       0xEC   0xE5C4'003E        STRB     R0,[R4, #+62]
+    236          	desc->rx.dma.cfg_dma.chunk_size = DMA_CHUNK_SIZE_1;
+   \       0xF0   0xE584'0038        STR      R0,[R4, #+56]
+    237          	desc->tx.dma.cfg_dma.incr_saddr = true;
+   \       0xF4   0xE5C4'1074        STRB     R1,[R4, #+116]
+    238          	desc->tx.dma.cfg_dma.incr_daddr = false;
+   \       0xF8   0xE5C4'0075        STRB     R0,[R4, #+117]
+    239          	desc->tx.dma.cfg_dma.loop = false;
+   \       0xFC   0xE5C4'0076        STRB     R0,[R4, #+118]
+    240          	desc->tx.dma.cfg_dma.chunk_size = DMA_CHUNK_SIZE_1;
+   \      0x100   0xE584'0070        STR      R0,[R4, #+112]
+    241          
+    242          	desc->tx.dma.channel = dma_allocate_channel(DMA_PERIPH_MEMORY, id);
+   \      0x104   0xE6EF'1075        UXTB     R1,R5
+   \      0x108   0xE3A0'00FF        MOV      R0,#+255
+   \      0x10C   0x....'....        BL       dma_allocate_channel
+    243          	assert(desc->tx.dma.channel);
+   \      0x110   0xE350'0000        CMP      R0,#+0
+   \      0x114   0xE584'0068        STR      R0,[R4, #+104]
+   \      0x118   0x1A00'0004        BNE      ??ssc_configure_2
+   \      0x11C   0xE3A0'20F3        MOV      R2,#+243
+   \      0x120   0x....'....        LDR      R1,??DataTable5
+   \      0x124   0x....'....        ADR      R0,?_2
+   \      0x128   0x....'....        BL       __aeabi_assert
+   \      0x12C   0x....'....        BL       __iar_EmptyStepPoint
+    244          	desc->rx.dma.channel = dma_allocate_channel(id, DMA_PERIPH_MEMORY);
+   \                     ??ssc_configure_2:
+   \      0x130   0xE3A0'10FF        MOV      R1,#+255
+   \      0x134   0xE6EF'0075        UXTB     R0,R5
+   \      0x138   0x....'....        BL       dma_allocate_channel
+    245          	assert(desc->rx.dma.channel);
+   \      0x13C   0xE350'0000        CMP      R0,#+0
+   \      0x140   0xE584'0030        STR      R0,[R4, #+48]
+   \      0x144   0x1A00'0004        BNE      ??ssc_configure_3
+   \      0x148   0xE3A0'20F5        MOV      R2,#+245
+   \      0x14C   0x....'....        LDR      R1,??DataTable5
+   \      0x150   0x....'....        ADR      R0,?_3
+   \      0x154   0x....'....        BL       __aeabi_assert
+   \      0x158   0x....'....        BL       __iar_EmptyStepPoint
+    246          }
+   \                     ??ssc_configure_3:
+   \      0x15C   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    247          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    248          void ssc_configure_transmitter(struct _ssc_desc* desc, uint32_t tcmr, uint32_t tfmr)
+    249          {
+    250          	desc->addr->SSC_TCMR = tcmr;
+   \                     ssc_configure_transmitter:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE580'1018        STR      R1,[R0, #+24]
+    251          	desc->addr->SSC_TFMR = tfmr;
+   \        0x8   0xE580'201C        STR      R2,[R0, #+28]
+    252          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    253          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    254          void ssc_configure_receiver(struct _ssc_desc* desc, uint32_t rcmr, uint32_t rfmr)
+    255          {
+    256          	desc->addr->SSC_RCMR = rcmr;
+   \                     ssc_configure_receiver:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE580'1010        STR      R1,[R0, #+16]
+    257          	desc->addr->SSC_RFMR = rfmr;
+   \        0x8   0xE580'2014        STR      R2,[R0, #+20]
+    258          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    259          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    260          void ssc_enable_transmitter(struct _ssc_desc* desc)
+    261          {
+    262          	desc->addr->SSC_CR = SSC_CR_TXEN;
+   \                     ssc_enable_transmitter:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE3A0'1F40        MOV      R1,#+256
+   \        0x8   0x....'....        B        ?Subroutine1
+    263          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE580'1000        STR      R1,[R0, #+0]
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    264          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    265          void ssc_disable_transmitter(struct _ssc_desc* desc)
+    266          {
+    267          	desc->addr->SSC_CR = SSC_CR_TXDIS;
+   \                     ssc_disable_transmitter:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE3A0'1F80        MOV      R1,#+512
+   \        0x8                      REQUIRE ?Subroutine1
+   \        0x8                      ;; // Fall through to label ?Subroutine1
+    268          }
+    269          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    270          void ssc_enable_receiver(struct _ssc_desc* desc)
+    271          {
+    272          	desc->addr->SSC_CR = SSC_CR_RXEN;
+   \                     ssc_enable_receiver:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE3A0'1001        MOV      R1,#+1
+   \        0x8   0x....'....        B        ?Subroutine1
+    273          }
+    274          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    275          void ssc_disable_receiver(struct _ssc_desc* desc)
+    276          {
+    277          	desc->addr->SSC_CR = SSC_CR_RXDIS;
+   \                     ssc_disable_receiver:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE3A0'1002        MOV      R1,#+2
+   \        0x8   0x....'....        B        ?Subroutine1
+    278          }
+    279          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    280          void ssc_enable_interrupts(struct _ssc_desc* desc, uint32_t sources)
+    281          {
+    282          	desc->addr->SSC_IER = sources;
+   \                     ssc_enable_interrupts:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE580'1044        STR      R1,[R0, #+68]
+    283          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    284          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    285          void ssc_disable_interrupts(struct _ssc_desc* desc, uint32_t sources)
+    286          {
+    287          	desc->addr->SSC_IDR = sources;
+   \                     ssc_disable_interrupts:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE580'1048        STR      R1,[R0, #+72]
+    288          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    289          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    290          void ssc_write(struct _ssc_desc* desc, uint32_t frame)
+    291          {
+   \                     ssc_write:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+    292          	while ((desc->addr->SSC_SR & SSC_SR_TXRDY) == 0) ;
+   \                     ??ssc_write_0:
+   \        0x4   0xE590'2040        LDR      R2,[R0, #+64]
+   \        0x8   0xE312'0001        TST      R2,#0x1
+   \        0xC   0x0AFF'FFFC        BEQ      ??ssc_write_0
+    293          	desc->addr->SSC_THR = frame;
+   \       0x10   0xE580'1024        STR      R1,[R0, #+36]
+    294          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    295          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    296          uint32_t ssc_read(struct _ssc_desc* desc)
+    297          {
+   \                     ssc_read:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+    298          	while ((desc->addr->SSC_SR & SSC_SR_RXRDY) == 0) ;
+   \                     ??ssc_read_0:
+   \        0x4   0xE590'1040        LDR      R1,[R0, #+64]
+   \        0x8   0xE311'0010        TST      R1,#0x10
+   \        0xC   0x0AFF'FFFC        BEQ      ??ssc_read_0
+    299          	return desc->addr->SSC_RHR;
+   \       0x10   0xE590'0020        LDR      R0,[R0, #+32]
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    300          }
+    301          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    302          bool ssc_is_rx_ready(struct _ssc_desc* desc)
+    303          {
+    304          	return ((desc->addr->SSC_SR & SSC_SR_RXRDY) == SSC_SR_RXRDY);
+   \                     ssc_is_rx_ready:
+   \        0x0   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x4   0xE590'1040        LDR      R1,[R0, #+64]
+   \        0x8   0xE1A0'2221        LSR      R2,R1,#+4
+   \        0xC   0xE202'0001        AND      R0,R2,#0x1
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    305          }
+    306          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    307          int ssc_transfer(struct _ssc_desc* desc, struct _buffer* buf, struct _callback* cb)
+    308          {
+   \                     ssc_transfer:
+   \        0x0   0xE92D'407C        PUSH     {R2-R6,LR}
+   \        0x4   0xE1B0'4001        MOVS     R4,R1
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+    309          	if ((buf == NULL) || (buf->size == 0))
+   \       0x10   0x0A00'0002        BEQ      ??ssc_transfer_0
+   \       0x14   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x1A00'0001        BNE      ??ssc_transfer_1
+    310          		return -EINVAL;
+   \                     ??ssc_transfer_0:
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+   \       0x24   0xE8BD'8076        POP      {R1,R2,R4-R6,PC}
+    311          
+    312          	if (buf->attr & SSC_BUF_ATTR_READ) {
+   \                     ??ssc_transfer_1:
+   \       0x28   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x2C   0xE310'0002        TST      R0,#0x2
+   \       0x30   0x0A00'003C        BEQ      ??ssc_transfer_2
+    313          		mutex_lock(&desc->rx.mutex);
+   \       0x34   0xE285'0014        ADD      R0,R5,#+20
+   \       0x38   0x....'....        BL       mutex_lock
+    314          
+    315          		callback_copy(&desc->rx.callback, cb);
+   \       0x3C   0xE1A0'1006        MOV      R1,R6
+   \       0x40   0xE285'0028        ADD      R0,R5,#+40
+   \       0x44   0x....'....        BL       callback_copy
+    316          
+    317          		desc->rx.transferred = 0;
+   \       0x48   0xE3A0'6000        MOV      R6,#+0
+   \       0x4C   0xE1C5'62B4        STRH     R6,[R5, #+36]
+    318          		desc->rx.buffer.data = buf->data;
+   \       0x50   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x54   0xE585'0018        STR      R0,[R5, #+24]
+    319          		desc->rx.buffer.size = buf->size;
+   \       0x58   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x5C   0xE585'101C        STR      R1,[R5, #+28]
+    320          		desc->rx.buffer.attr = buf->attr;
+   \       0x60   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x64   0xE585'0020        STR      R0,[R5, #+32]
+    321          		_ssc_dma_rx_transfer(desc, buf);
+   \       0x68   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x6C   0x....'....        BL       get_ssc_id_from_addr
+   \       0x70   0xE350'004F        CMP      R0,#+79
+   \       0x74   0x3A00'0004        BCC      ??ssc_transfer_3
+   \       0x78   0xE3A0'2066        MOV      R2,#+102
+   \       0x7C   0x....'....        LDR      R1,??DataTable5
+   \       0x80   0x....'....        ADR      R0,?_1
+   \       0x84   0x....'....        BL       __aeabi_assert
+   \       0x88   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??ssc_transfer_3:
+   \       0x8C   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x90   0xE280'1020        ADD      R1,R0,#+32
+   \       0x94   0xE5D5'000C        LDRB     R0,[R5, #+12]
+   \       0x98   0xE585'1040        STR      R1,[R5, #+64]
+   \       0x9C   0xE594'2000        LDR      R2,[R4, #+0]
+   \       0xA0   0xE350'0008        CMP      R0,#+8
+   \       0xA4   0x0585'6034        STREQ    R6,[R5, #+52]
+   \       0xA8   0xE585'2044        STR      R2,[R5, #+68]
+   \       0xAC   0x0594'0004        LDREQ    R0,[R4, #+4]
+   \       0xB0   0x0585'0048        STREQ    R0,[R5, #+72]
+   \       0xB4   0x0A00'000D        BEQ      ??ssc_transfer_4
+   \       0xB8   0xE350'0010        CMP      R0,#+16
+   \       0xBC   0x1A00'0004        BNE      ??ssc_transfer_5
+   \       0xC0   0xE3A0'1001        MOV      R1,#+1
+   \       0xC4   0xE585'1034        STR      R1,[R5, #+52]
+   \       0xC8   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0xCC   0xE1A0'20A0        LSR      R2,R0,#+1
+   \       0xD0   0xEA00'0005        B        ??ssc_transfer_6
+   \                     ??ssc_transfer_5:
+   \       0xD4   0xE350'0020        CMP      R0,#+32
+   \       0xD8   0x1A00'0004        BNE      ??ssc_transfer_4
+   \       0xDC   0xE3A0'0002        MOV      R0,#+2
+   \       0xE0   0xE585'0034        STR      R0,[R5, #+52]
+   \       0xE4   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xE8   0xE1A0'2121        LSR      R2,R1,#+2
+   \                     ??ssc_transfer_6:
+   \       0xEC   0xE585'2048        STR      R2,[R5, #+72]
+   \                     ??ssc_transfer_4:
+   \       0xF0   0xE595'0030        LDR      R0,[R5, #+48]
+   \       0xF4   0xE3A0'3001        MOV      R3,#+1
+   \       0xF8   0xE285'2040        ADD      R2,R5,#+64
+   \       0xFC   0xE285'1034        ADD      R1,R5,#+52
+   \      0x100   0x....'....        BL       dma_configure_transfer
+   \      0x104   0xE1A0'2005        MOV      R2,R5
+   \      0x108   0x....'....        ADR      R1,_ssc_dma_rx_callback
+   \      0x10C   0xE1A0'000D        MOV      R0,SP
+   \      0x110   0x....'....        BL       callback_set
+   \      0x114   0xE595'0030        LDR      R0,[R5, #+48]
+   \      0x118   0xE1A0'100D        MOV      R1,SP
+   \      0x11C   0x....'....        BL       dma_set_callback
+   \      0x120   0xE595'0030        LDR      R0,[R5, #+48]
+   \      0x124   0xEA00'0045        B        ??ssc_transfer_7
+    322          	} else if (buf->attr & SSC_BUF_ATTR_WRITE) {
+   \                     ??ssc_transfer_2:
+   \      0x128   0xE310'0001        TST      R0,#0x1
+   \      0x12C   0x0A00'0044        BEQ      ??ssc_transfer_8
+    323          		mutex_lock(&desc->tx.mutex);
+   \      0x130   0xE285'004C        ADD      R0,R5,#+76
+   \      0x134   0x....'....        BL       mutex_lock
+    324          
+    325          		callback_copy(&desc->tx.callback, cb);
+   \      0x138   0xE1A0'1006        MOV      R1,R6
+   \      0x13C   0xE285'0060        ADD      R0,R5,#+96
+   \      0x140   0x....'....        BL       callback_copy
+    326          
+    327          		desc->tx.transferred = 0;
+   \      0x144   0xE3A0'6000        MOV      R6,#+0
+   \      0x148   0xE1C5'65BC        STRH     R6,[R5, #+92]
+    328          		desc->tx.buffer.data = buf->data;
+   \      0x14C   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x150   0xE585'0050        STR      R0,[R5, #+80]
+    329          		desc->tx.buffer.size = buf->size;
+   \      0x154   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x158   0xE585'1054        STR      R1,[R5, #+84]
+    330          		desc->tx.buffer.attr = buf->attr;
+   \      0x15C   0xE594'0008        LDR      R0,[R4, #+8]
+   \      0x160   0xE585'0058        STR      R0,[R5, #+88]
+    331          		_ssc_dma_tx_transfer(desc, buf);
+   \      0x164   0xE595'0000        LDR      R0,[R5, #+0]
+   \      0x168   0x....'....        BL       get_ssc_id_from_addr
+   \      0x16C   0xE350'004F        CMP      R0,#+79
+   \      0x170   0x3A00'0004        BCC      ??ssc_transfer_9
+   \      0x174   0xE3A0'208B        MOV      R2,#+139
+   \      0x178   0x....'....        LDR      R1,??DataTable5
+   \      0x17C   0x....'....        ADR      R0,?_1
+   \      0x180   0x....'....        BL       __aeabi_assert
+   \      0x184   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??ssc_transfer_9:
+   \      0x188   0xE285'0078        ADD      R0,R5,#+120
+   \      0x18C   0xE3A0'1000        MOV      R1,#+0
+   \      0x190   0xE3A0'2000        MOV      R2,#+0
+   \      0x194   0xE3A0'3000        MOV      R3,#+0
+   \      0x198   0xE880'000E        STM      R0,{R1-R3}
+   \      0x19C   0xE594'1000        LDR      R1,[R4, #+0]
+   \      0x1A0   0xE5D5'000C        LDRB     R0,[R5, #+12]
+   \      0x1A4   0xE585'1078        STR      R1,[R5, #+120]
+   \      0x1A8   0xE595'2000        LDR      R2,[R5, #+0]
+   \      0x1AC   0xE282'3024        ADD      R3,R2,#+36
+   \      0x1B0   0xE350'0008        CMP      R0,#+8
+   \      0x1B4   0xE585'307C        STR      R3,[R5, #+124]
+   \      0x1B8   0x0585'606C        STREQ    R6,[R5, #+108]
+   \      0x1BC   0x0594'0004        LDREQ    R0,[R4, #+4]
+   \      0x1C0   0x0585'0080        STREQ    R0,[R5, #+128]
+   \      0x1C4   0x0A00'000D        BEQ      ??ssc_transfer_10
+   \      0x1C8   0xE350'0010        CMP      R0,#+16
+   \      0x1CC   0x1A00'0004        BNE      ??ssc_transfer_11
+   \      0x1D0   0xE3A0'1001        MOV      R1,#+1
+   \      0x1D4   0xE585'106C        STR      R1,[R5, #+108]
+   \      0x1D8   0xE594'0004        LDR      R0,[R4, #+4]
+   \      0x1DC   0xE1A0'20A0        LSR      R2,R0,#+1
+   \      0x1E0   0xEA00'0005        B        ??ssc_transfer_12
+   \                     ??ssc_transfer_11:
+   \      0x1E4   0xE350'0020        CMP      R0,#+32
+   \      0x1E8   0x1A00'0004        BNE      ??ssc_transfer_10
+   \      0x1EC   0xE3A0'0002        MOV      R0,#+2
+   \      0x1F0   0xE585'006C        STR      R0,[R5, #+108]
+   \      0x1F4   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x1F8   0xE1A0'2121        LSR      R2,R1,#+2
+   \                     ??ssc_transfer_12:
+   \      0x1FC   0xE585'2080        STR      R2,[R5, #+128]
+   \                     ??ssc_transfer_10:
+   \      0x200   0xE595'0068        LDR      R0,[R5, #+104]
+   \      0x204   0xE3A0'3001        MOV      R3,#+1
+   \      0x208   0xE285'2078        ADD      R2,R5,#+120
+   \      0x20C   0xE285'106C        ADD      R1,R5,#+108
+   \      0x210   0x....'....        BL       dma_configure_transfer
+   \      0x214   0xE1A0'2005        MOV      R2,R5
+   \      0x218   0x....'....        LDR      R1,??DataTable5_1
+   \      0x21C   0xE1A0'000D        MOV      R0,SP
+   \      0x220   0x....'....        BL       callback_set
+   \      0x224   0xE595'0068        LDR      R0,[R5, #+104]
+   \      0x228   0xE1A0'100D        MOV      R1,SP
+   \      0x22C   0x....'....        BL       dma_set_callback
+   \      0x230   0xE595'1080        LDR      R1,[R5, #+128]
+   \      0x234   0xE595'0078        LDR      R0,[R5, #+120]
+   \      0x238   0x....'....        BL       cache_clean_region
+   \      0x23C   0xE595'0068        LDR      R0,[R5, #+104]
+   \                     ??ssc_transfer_7:
+   \      0x240   0x....'....        BL       dma_start_transfer
+    332          	}
+    333          
+    334          	return 0;
+   \                     ??ssc_transfer_8:
+   \      0x244   0xE3A0'0000        MOV      R0,#+0
+   \      0x248   0xE8BD'8076        POP      {R1,R2,R4-R6,PC}  ;; return
+    335          }
+    336          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    337          bool ssc_tx_transfer_is_done(struct _ssc_desc* desc)
+    338          {
+   \                     ssc_tx_transfer_is_done:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    339          	return (!mutex_is_locked(&desc->tx.mutex));
+   \        0x4   0xE280'004C        ADD      R0,R0,#+76
+   \        0x8   0x....'....        B        ?Subroutine2
+    340          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0x....'....        BL       mutex_is_locked
+   \        0x4   0xE350'0000        CMP      R0,#+0
+   \        0x8   0x03A0'0001        MOVEQ    R0,#+1
+   \        0xC   0x13A0'0000        MOVNE    R0,#+0
+   \       0x10   0xE8BD'8002        POP      {R1,PC}          ;; return
+    341          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    342          bool ssc_rx_transfer_is_done(struct _ssc_desc* desc)
+    343          {
+   \                     ssc_rx_transfer_is_done:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    344          	return (!mutex_is_locked(&desc->rx.mutex));
+   \        0x4   0xE280'0014        ADD      R0,R0,#+20
+   \        0x8                      REQUIRE ?Subroutine2
+   \        0x8                      ;; // Fall through to label ?Subroutine2
+    345          }
+    346          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    347          void ssc_tx_stop(struct _ssc_desc* desc)
+    348          {
+   \                     ssc_tx_stop:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    349          	if (desc->tx.dma.channel) {
+   \        0x8   0xE594'0068        LDR      R0,[R4, #+104]
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x0A00'0002        BEQ      ??ssc_tx_stop_0
+    350          		dma_stop_transfer(desc->tx.dma.channel);
+   \       0x14   0x....'....        BL       dma_stop_transfer
+    351          		mutex_unlock(&desc->tx.mutex);
+   \       0x18   0xE284'004C        ADD      R0,R4,#+76
+   \       0x1C   0x....'....        B        ?Subroutine3
+    352          	}
+    353          }
+   \                     ??ssc_tx_stop_0:
+   \       0x20   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine3:
+   \        0x0   0xE8BD'4010        POP      {R4,LR}
+   \        0x4   0x....'....        B        mutex_unlock     ;; tailcall
+    354          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    355          void ssc_rx_stop(struct _ssc_desc* desc)
+    356          {
+   \                     ssc_rx_stop:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    357          	if (desc->rx.dma.channel) {
+   \        0x8   0xE594'0030        LDR      R0,[R4, #+48]
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x0A00'0002        BEQ      ??ssc_rx_stop_0
+    358          		dma_stop_transfer(desc->rx.dma.channel);
+   \       0x14   0x....'....        BL       dma_stop_transfer
+    359          		mutex_unlock(&desc->rx.mutex);
+   \       0x18   0xE284'0014        ADD      R0,R4,#+20
+   \       0x1C   0x....'....        B        ?Subroutine3
+    360          	}
+    361          }
+   \                     ??ssc_rx_stop_0:
+   \       0x20   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \        0x0   0x....'....        DC32     _ssc_dma_tx_callback
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x61, 0x75, 0x64, 0x69, 0x6F, 0x5C
+
+   \              0x61 0x75    
+
+   \              0x64 0x69    
+
+   \              0x6F 0x5C
+   \       0x40   0x73 0x73          DC8 0x73, 0x73, 0x63, 0x2E, 0x63, 0
+
+   \              0x63 0x2E    
+
+   \              0x63 0x00
+   \       0x46   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x69 0x64          DC8 "id < (79)"
+
+   \              0x20 0x3C    
+
+   \              0x20 0x28    
+
+   \              0x37 0x39    
+
+   \              0x29 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_2:
+   \        0x0   0x64 0x65          DC8 "desc->tx.dma.channel"
+
+   \              0x73 0x63    
+
+   \              0x2D 0x3E    
+
+   \              0x74 0x78    
+
+   \              0x2E 0x64    
+
+   \              0x6D 0x61    
+
+   \              0x2E 0x63    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x6C    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_3:
+   \        0x0   0x64 0x65          DC8 "desc->rx.dma.channel"
+
+   \              0x73 0x63    
+
+   \              0x2D 0x3E    
+
+   \              0x72 0x78    
+
+   \              0x2E 0x64    
+
+   \              0x6D 0x61    
+
+   \              0x2E 0x63    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x6C    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   _ssc_dma_rx_callback
+         8   -> cache_invalidate_region
+         0   -> callback_call
+         8   -> dma_reset_channel
+         8   -> mutex_unlock
+       8   _ssc_dma_tx_callback
+         0   -> callback_call
+         8   -> dma_reset_channel
+         8   -> mutex_unlock
+      16   ssc_configure
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+        16   -> dma_allocate_channel
+        16   -> get_ssc_id_from_addr
+        16   -> pmc_configure_peripheral
+        16   -> pmc_get_peripheral_clock
+        16 __aeabi_uidiv
+       0   ssc_configure_receiver
+       0   ssc_configure_transmitter
+       0   ssc_disable_interrupts
+       0   ssc_disable_receiver
+       0   ssc_disable_transmitter
+       0   ssc_enable_interrupts
+       0   ssc_enable_receiver
+       0   ssc_enable_transmitter
+       0   ssc_is_rx_ready
+       0   ssc_read
+       8   ssc_rx_stop
+         8   -> dma_stop_transfer
+         0   -> mutex_unlock
+       8   ssc_rx_transfer_is_done
+         8   -> mutex_is_locked
+      24   ssc_transfer
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+        24   -> cache_clean_region
+        24   -> callback_copy
+        24   -> callback_set
+        24   -> dma_configure_transfer
+        24   -> dma_set_callback
+        24   -> dma_start_transfer
+        24   -> get_ssc_id_from_addr
+        24   -> mutex_lock
+       8   ssc_tx_stop
+         8   -> dma_stop_transfer
+         0   -> mutex_unlock
+       8   ssc_tx_transfer_is_done
+         8   -> mutex_is_locked
+       0   ssc_write
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+      12  ?Subroutine0
+       8  ?Subroutine1
+      20  ?Subroutine2
+       8  ?Subroutine3
+      72  ?_0
+      12  ?_1
+      24  ?_2
+      24  ?_3
+      44  _ssc_dma_rx_callback
+      28  _ssc_dma_tx_callback
+     352  ssc_configure
+      16  ssc_configure_receiver
+      16  ssc_configure_transmitter
+      12  ssc_disable_interrupts
+      12  ssc_disable_receiver
+       8  ssc_disable_transmitter
+      12  ssc_enable_interrupts
+      12  ssc_enable_receiver
+      12  ssc_enable_transmitter
+      20  ssc_is_rx_ready
+      24  ssc_read
+      36  ssc_rx_stop
+       8  ssc_rx_transfer_is_done
+     588  ssc_transfer
+      36  ssc_tx_stop
+      12  ssc_tx_transfer_is_done
+      24  ssc_write
+
+ 
+    72 bytes in section .rodata
+ 1'388 bytes in section SOFTPACK
+ 
+ 1'388 bytes of CODE  memory
+    72 bytes of CONST memory
+
+Errors: none
+Warnings: none

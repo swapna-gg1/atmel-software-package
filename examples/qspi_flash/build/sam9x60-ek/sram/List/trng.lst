@@ -1,0 +1,485 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         17/Feb/2021  15:29:28
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\crypto\trng.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW5A2B.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\crypto\trng.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_QSPI -D
+#        CONFIG_HAVE_QSPI_DMA -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_TRNG -D CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_OTPC -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\List\trng.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sam9x60-ek\sram\Obj\trng.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\crypto\trng.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup rtng_module Working with RTNG
+     31           * \ingroup peripherals_module
+     32           * The TRNG driver provides the interface to configure and use the TRNG
+     33           * peripheral.
+     34           * \n
+     35           *
+     36           * The True Random Number Generator (TRNG) passes the American NIST Special
+     37           * Publication 800-22 and Diehard Random Tests Suites. As soon as the TRNG is
+     38           * enabled (trng_enable()), the generator provides one 32-bit value every 84
+     39           * clock cycles.  TRNG Interrupt can be enabled through trng_enable_it()
+     40           * (respectively disabled with trng_disable_it()).  When new random data is
+     41           * ready, the interrupt will fire and the configured callback will be called.
+     42           * Alternatively, the TRNG can also be used in polling mode using
+     43           * trng_get_random_data().
+     44           *
+     45           * For more accurate information, please look at the TRNG section of the
+     46           * datasheet.
+     47           *
+     48           * Related files :\n
+     49           * \ref trng.c\n
+     50           * \ref trng.h\n
+     51           */
+     52          /*@{*/
+     53          /*@}*/
+     54          
+     55          /**
+     56           * \file
+     57           *
+     58           * Implementation of True Random Number Generator (TRNG)
+     59           *
+     60           */
+     61          
+     62          /*----------------------------------------------------------------------------
+     63           *        Headers
+     64           *----------------------------------------------------------------------------*/
+     65          
+     66          #include "chip.h"
+     67          
+     68          #include "irq/irq.h"
+     69          #include "peripherals/pmc.h"
+     70          #include "crypto/trng.h"
+     71          
+     72          #include <assert.h>
+     73          #include <stdlib.h>
+     74          
+     75          /*----------------------------------------------------------------------------
+     76           *        Local Data
+     77           *----------------------------------------------------------------------------*/
+     78          
+
+   \                                 In section .bss, align 4
+     79          static trng_callback_t _trng_callback;
+   \                     _trng_callback:
+   \        0x0                      DS8 4
+
+   \                                 In section .bss, align 4
+     80          static void*           _trng_callback_arg;
+   \                     _trng_callback_arg:
+   \        0x0                      DS8 4
+     81          
+     82          /*------------------------------------------------------------------------------
+     83           *         Local functions
+     84           *------------------------------------------------------------------------------*/
+     85          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     86          static void _trng_handler(uint32_t source, void* user_arg)
+     87          {
+   \                     _trng_handler:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     88          	assert(source == ID_TRNG);
+   \        0xC   0xE354'0026        CMP      R4,#+38
+   \       0x10   0x0A00'0004        BEQ      ??_trng_handler_0
+   \       0x14   0xE3A0'2058        MOV      R2,#+88
+   \       0x18   0x....'....        LDR      R1,??DataTable5
+   \       0x1C   0x....'....        LDR      R0,??DataTable5_1
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+     89          	if (TRNG->TRNG_ISR & TRNG_ISR_DATRDY) {
+   \                     ??_trng_handler_0:
+   \       0x28   0x....'....        LDR      R0,??DataTable5_2  ;; 0xf003001c
+   \       0x2C   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x30   0xE310'0001        TST      R0,#0x1
+   \       0x34   0x0A00'0009        BEQ      ??_trng_handler_1
+     90          		if (_trng_callback) {
+   \       0x38   0x....'....        LDR      R2,??DataTable5_3
+   \       0x3C   0xE592'0000        LDR      R0,[R2, #+0]
+   \       0x40   0xE350'0000        CMP      R0,#+0
+   \       0x44   0x0A00'0005        BEQ      ??_trng_handler_1
+     91          			_trng_callback(TRNG->TRNG_ODATA, _trng_callback_arg);
+   \       0x48   0x....'....        LDR      R0,??DataTable5_4
+   \       0x4C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x50   0x....'....        LDR      R0,??DataTable5_5  ;; 0xf0030050
+   \       0x54   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x58   0xE592'2000        LDR      R2,[R2, #+0]
+   \       0x5C   0xE12F'FF32        BLX      R2
+     92          		}
+     93          	}
+     94          }
+   \                     ??_trng_handler_1:
+   \       0x60   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+     95          
+     96          /*------------------------------------------------------------------------------
+     97           *         Exported functions
+     98           *------------------------------------------------------------------------------*/
+     99          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    100          void trng_enable()
+    101          {
+   \                     trng_enable:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    102          	pmc_enable_peripheral(ID_TRNG);
+   \        0x4   0xE3A0'0026        MOV      R0,#+38
+   \        0x8   0x....'....        BL       pmc_enable_peripheral
+    103          	TRNG->TRNG_CR = TRNG_CR_ENABLE | TRNG_CR_KEY_PASSWD;
+   \        0xC   0x....'....        LDR      R0,??DataTable5_6  ;; 0x524e4701
+   \       0x10   0xE3A0'14F0        MOV      R1,#-268435456
+   \       0x14   0xE381'1BC0        ORR      R1,R1,#0x30000
+   \       0x18   0xE581'0000        STR      R0,[R1, #+0]
+    104          }
+   \       0x1C   0xE8BD'8001        POP      {R0,PC}          ;; return
+    105          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    106          void trng_disable()
+    107          {
+   \                     trng_disable:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    108          	TRNG->TRNG_CR = TRNG_CR_KEY_PASSWD;
+   \        0x4   0x....'....        LDR      R0,??DataTable5_7  ;; 0x524e4700
+   \        0x8   0xE3A0'14F0        MOV      R1,#-268435456
+   \        0xC   0xE381'1BC0        ORR      R1,R1,#0x30000
+   \       0x10   0xE581'0000        STR      R0,[R1, #+0]
+    109          	pmc_disable_peripheral(ID_TRNG);
+   \       0x14   0xE3A0'0026        MOV      R0,#+38
+   \       0x18   0x....'....        BL       pmc_disable_peripheral
+    110          }
+   \       0x1C   0xE8BD'8001        POP      {R0,PC}          ;; return
+    111          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    112          void trng_enable_it(trng_callback_t cb, void* user_arg)
+    113          {
+   \                     trng_enable_it:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    114          	_trng_callback = cb;
+   \        0xC   0x....'....        LDR      R0,??DataTable5_3
+   \       0x10   0xE580'4000        STR      R4,[R0, #+0]
+    115          	_trng_callback_arg = user_arg;
+   \       0x14   0x....'....        LDR      R0,??DataTable5_4
+   \       0x18   0xE580'5000        STR      R5,[R0, #+0]
+    116          	irq_add_handler(ID_TRNG, _trng_handler, NULL);
+   \       0x1C   0xE3A0'2000        MOV      R2,#+0
+   \       0x20   0x....'....        ADR      R1,_trng_handler
+   \       0x24   0xE3A0'0026        MOV      R0,#+38
+   \       0x28   0x....'....        BL       irq_add_handler
+    117          	irq_enable(ID_TRNG);
+   \       0x2C   0xE3A0'0026        MOV      R0,#+38
+   \       0x30   0x....'....        BL       irq_enable
+    118          	TRNG->TRNG_IER = TRNG_IER_DATRDY;
+   \       0x34   0xE3A0'0001        MOV      R0,#+1
+   \       0x38   0x....'....        LDR      R1,??DataTable5_8  ;; 0xf0030010
+   \       0x3C   0xE581'0000        STR      R0,[R1, #+0]
+    119          }
+   \       0x40   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    120          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    121          void trng_disable_it(void)
+    122          {
+   \                     trng_disable_it:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    123          	TRNG->TRNG_IDR = TRNG_IDR_DATRDY;
+   \        0x4   0xE3A0'0001        MOV      R0,#+1
+   \        0x8   0x....'....        LDR      R1,??DataTable5_9  ;; 0xf0030014
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+    124          	irq_disable(ID_TRNG);
+   \       0x10   0xE3A0'0026        MOV      R0,#+38
+   \       0x14   0x....'....        BL       irq_disable
+    125          	_trng_callback = NULL;
+   \       0x18   0xE3A0'0000        MOV      R0,#+0
+   \       0x1C   0x....'....        LDR      R1,??DataTable5_3
+   \       0x20   0xE581'0000        STR      R0,[R1, #+0]
+    126          	_trng_callback_arg = NULL;
+   \       0x24   0x....'....        LDR      R1,??DataTable5_4
+   \       0x28   0xE581'0000        STR      R0,[R1, #+0]
+    127          }
+   \       0x2C   0xE8BD'8001        POP      {R0,PC}          ;; return
+    128          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    129          uint32_t trng_get_random_data(void)
+    130          {
+    131          	while (!(TRNG->TRNG_ISR & TRNG_ISR_DATRDY));
+   \                     trng_get_random_data:
+   \                     ??trng_get_random_data_0:
+   \        0x0   0x....'....        LDR      R0,??DataTable5_2  ;; 0xf003001c
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE310'0001        TST      R0,#0x1
+   \        0xC   0x0AFF'FFFB        BEQ      ??trng_get_random_data_0
+    132          	return TRNG->TRNG_ODATA;
+   \       0x10   0x....'....        LDR      R0,??DataTable5_5  ;; 0xf0030050
+   \       0x14   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+    133          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \        0x0   0xF003'001C        DC32     0xf003001c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_3:
+   \        0x0   0x....'....        DC32     _trng_callback
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_4:
+   \        0x0   0x....'....        DC32     _trng_callback_arg
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_5:
+   \        0x0   0xF003'0050        DC32     0xf0030050
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_6:
+   \        0x0   0x524E'4701        DC32     0x524e4701
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_7:
+   \        0x0   0x524E'4700        DC32     0x524e4700
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_8:
+   \        0x0   0xF003'0010        DC32     0xf0030010
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_9:
+   \        0x0   0xF003'0014        DC32     0xf0030014
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x73 0x6F          DC8 "source == (38)"
+
+   \              0x75 0x72    
+
+   \              0x63 0x65    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x20    
+
+   \              0x28 0x33    
+
+   \              0x38 0x29    
+
+   \              0x00
+   \        0xF   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x63, 0x72, 0x79, 0x70, 0x74, 0x6F
+
+   \              0x63 0x72    
+
+   \              0x79 0x70    
+
+   \              0x74 0x6F
+   \       0x40   0x5C 0x74          DC8 0x5C, 0x74, 0x72, 0x6E, 0x67, 0x2E, 0x63, 0
+
+   \              0x72 0x6E    
+
+   \              0x67 0x2E    
+
+   \              0x63 0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   _trng_handler
+        16   -- Indirect call
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       8   trng_disable
+         8   -> pmc_disable_peripheral
+       8   trng_disable_it
+         8   -> irq_disable
+       8   trng_enable
+         8   -> pmc_enable_peripheral
+      16   trng_enable_it
+        16   -> irq_add_handler
+        16   -> irq_enable
+       0   trng_get_random_data
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable5_6
+       4  ??DataTable5_7
+       4  ??DataTable5_8
+       4  ??DataTable5_9
+      16  ?_0
+      72  ?_1
+       4  _trng_callback
+       4  _trng_callback_arg
+     100  _trng_handler
+      32  trng_disable
+      48  trng_disable_it
+      32  trng_enable
+      68  trng_enable_it
+      28  trng_get_random_data
+
+ 
+   8 bytes in section .bss
+  88 bytes in section .rodata
+ 348 bytes in section SOFTPACK
+ 
+ 348 bytes of CODE  memory
+  88 bytes of CONST memory
+   8 bytes of DATA  memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1719 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Nov/2020  13:24:59
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\usartd.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW6376.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\usartd.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\List\usartd.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\Obj\usartd.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\usartd.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <assert.h>
+     35          #include <stdint.h>
+     36          #include <string.h>
+     37          
+     38          #include "callback.h"
+     39          #include "chip.h"
+     40          #include "dma/dma.h"
+     41          #include "io.h"
+     42          #include "irq/irq.h"
+     43          #include "mm/cache.h"
+     44          #include "mutex.h"
+     45          #ifdef CONFIG_HAVE_FLEXCOM
+     46          #include "peripherals/flexcom.h"
+     47          #endif
+     48          #include "peripherals/pmc.h"
+     49          #include "serial/usart.h"
+     50          #include "serial/usartd.h"
+     51          #include "trace.h"
+     52          
+     53          /*----------------------------------------------------------------------------
+     54           *        Definition
+     55           *----------------------------------------------------------------------------*/
+     56          
+     57          #define USARTD_ATTRIBUTE_MASK     (0)
+     58          #define USARTD_POLLING_THRESHOLD  16
+     59          
+
+   \                                 In section .bss, align 4
+     60          static struct _usart_desc *_serial[USART_IFACE_COUNT];
+   \                     _serial:
+   \        0x0                      DS8 16
+     61          
+     62          /*----------------------------------------------------------------------------
+     63           *        Internal functions
+     64           *----------------------------------------------------------------------------*/
+     65          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     66          static int _usartd_dma_write_callback(void* arg, void* arg2)
+     67          {
+   \                     _usartd_dma_write_callback:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+     68          	uint8_t iface = (uint32_t)arg;
+   \        0x4   0xE200'40FF        AND      R4,R0,#0xFF
+     69          	assert(iface < USART_IFACE_COUNT);
+   \        0x8   0xE354'0004        CMP      R4,#+4
+   \        0xC   0xBA00'0004        BLT      ??_usartd_dma_write_callback_0
+   \       0x10   0xE3A0'2045        MOV      R2,#+69
+   \       0x14   0x....'....        LDR      R1,??DataTable15
+   \       0x18   0x....'....        LDR      R0,??DataTable15_1
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+     70          
+     71          	dma_reset_channel(_serial[iface]->dma.tx.channel);
+   \                     ??_usartd_dma_write_callback_0:
+   \       0x24   0x....'....        LDR      R5,??DataTable15_2
+   \       0x28   0xE795'0104        LDR      R0,[R5, +R4, LSL #+2]
+   \       0x2C   0xE590'0074        LDR      R0,[R0, #+116]
+   \       0x30   0x....'....        BL       dma_reset_channel
+     72          
+     73          	mutex_unlock(&_serial[iface]->tx.mutex);
+   \       0x34   0xE795'0104        LDR      R0,[R5, +R4, LSL #+2]
+   \       0x38   0xE280'0030        ADD      R0,R0,#+48
+   \       0x3C   0x....'....        BL       mutex_unlock
+     74          
+     75          	callback_call(&_serial[iface]->tx.callback, NULL);
+   \       0x40   0xE795'0104        LDR      R0,[R5, +R4, LSL #+2]
+   \       0x44   0xE3A0'1000        MOV      R1,#+0
+   \       0x48   0xE280'0044        ADD      R0,R0,#+68
+   \       0x4C   0x....'....        B        ?Subroutine0
+     76          
+     77          	return 0;
+     78          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0x....'....        BL       callback_call
+   \        0x4   0xE3A0'0000        MOV      R0,#+0
+   \        0x8   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+     79          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     80          static int _usartd_dma_read_callback(void* arg, void* arg2)
+     81          {
+   \                     _usartd_dma_read_callback:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+     82          	uint8_t iface = (uint32_t)arg;
+   \        0x4   0xE200'40FF        AND      R4,R0,#0xFF
+     83          	assert(iface < USART_IFACE_COUNT);
+   \        0x8   0xE354'0004        CMP      R4,#+4
+   \        0xC   0xBA00'0004        BLT      ??_usartd_dma_read_callback_0
+   \       0x10   0xE3A0'2053        MOV      R2,#+83
+   \       0x14   0x....'....        LDR      R1,??DataTable15
+   \       0x18   0x....'....        LDR      R0,??DataTable15_1
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+     84          	struct _usart_desc *desc = _serial[iface];
+   \                     ??_usartd_dma_read_callback_0:
+   \       0x24   0x....'....        LDR      R0,??DataTable15_2
+   \       0x28   0xE790'4104        LDR      R4,[R0, +R4, LSL #+2]
+     85          	struct _dma_channel* channel = desc->dma.rx.channel;
+     86          
+     87          	if (desc->timeout > 0) {
+   \       0x2C   0xE594'0010        LDR      R0,[R4, #+16]
+   \       0x30   0xE594'5058        LDR      R5,[R4, #+88]
+   \       0x34   0xE350'0000        CMP      R0,#+0
+   \       0x38   0x0A00'0004        BEQ      ??_usartd_dma_read_callback_1
+     88          		desc->addr->US_CR = US_CR_STTTO;
+   \       0x3C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x40   0xE3A0'1E80        MOV      R1,#+2048
+   \       0x44   0xE580'1000        STR      R1,[R0, #+0]
+     89          		usart_disable_it(desc->addr, US_IDR_TIMEOUT);
+   \       0x48   0xE3A0'1F40        MOV      R1,#+256
+   \       0x4C   0x....'....        BL       usart_disable_it
+     90          	}
+     91          
+     92          	if (!dma_is_transfer_done(channel))
+   \                     ??_usartd_dma_read_callback_1:
+   \       0x50   0xE1A0'0005        MOV      R0,R5
+   \       0x54   0x....'....        BL       dma_is_transfer_done
+   \       0x58   0xE350'0000        CMP      R0,#+0
+   \       0x5C   0x1A00'0001        BNE      ??_usartd_dma_read_callback_2
+     93          		dma_stop_transfer(channel);
+   \       0x60   0xE1A0'0005        MOV      R0,R5
+   \       0x64   0x....'....        BL       dma_stop_transfer
+     94          	dma_fifo_flush(channel);
+   \                     ??_usartd_dma_read_callback_2:
+   \       0x68   0xE1A0'0005        MOV      R0,R5
+   \       0x6C   0x....'....        BL       dma_fifo_flush
+     95          
+     96          	desc->rx.transferred = dma_get_transferred_data_len(channel, desc->dma.rx.cfg_dma.chunk_size, desc->dma.rx.cfg.len);
+   \       0x70   0xE594'1060        LDR      R1,[R4, #+96]
+   \       0x74   0xE594'2070        LDR      R2,[R4, #+112]
+   \       0x78   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0x7C   0xE1A0'0005        MOV      R0,R5
+   \       0x80   0x....'....        BL       dma_get_transferred_data_len
+   \       0x84   0xE1C4'02B4        STRH     R0,[R4, #+36]
+     97          	dma_reset_channel(desc->dma.rx.channel);
+   \       0x88   0xE594'0058        LDR      R0,[R4, #+88]
+   \       0x8C   0x....'....        BL       dma_reset_channel
+     98          
+     99          	if (desc->rx.transferred > 0)
+   \       0x90   0xE1D4'12B4        LDRH     R1,[R4, #+36]
+   \       0x94   0xE351'0000        CMP      R1,#+0
+   \       0x98   0x0A00'0001        BEQ      ??_usartd_dma_read_callback_3
+    100          		cache_invalidate_region(desc->dma.rx.cfg.daddr, desc->rx.transferred);
+   \       0x9C   0xE594'006C        LDR      R0,[R4, #+108]
+   \       0xA0   0x....'....        BL       cache_invalidate_region
+    101          
+    102          	desc->rx.buffer.size = 0;
+   \                     ??_usartd_dma_read_callback_3:
+   \       0xA4   0xE3A0'0000        MOV      R0,#+0
+   \       0xA8   0xE584'001C        STR      R0,[R4, #+28]
+    103          
+    104          	mutex_unlock(&desc->rx.mutex);
+   \       0xAC   0xE284'0014        ADD      R0,R4,#+20
+   \       0xB0   0x....'....        BL       mutex_unlock
+    105          
+    106          	callback_call(&desc->rx.callback, NULL);
+   \       0xB4   0xE3A0'1000        MOV      R1,#+0
+   \       0xB8   0xE284'0028        ADD      R0,R4,#+40
+   \       0xBC                      REQUIRE ?Subroutine0
+   \       0xBC                      ;; // Fall through to label ?Subroutine0
+    107          
+    108          	return 0;
+    109          }
+    110          
+    111          static void _usartd_dma_read(uint8_t iface)
+    112          {
+    113          	struct _callback _cb;
+    114          	assert(iface < USART_IFACE_COUNT);
+    115          	struct _usart_desc* desc = _serial[iface];
+    116          
+    117          	memset(&desc->dma.rx.cfg, 0x0, sizeof(desc->dma.rx.cfg));
+    118          
+    119          	desc->dma.rx.cfg.saddr = (void *)&desc->addr->US_RHR;
+    120          	desc->dma.rx.cfg.daddr = desc->rx.buffer.data;
+    121          	desc->dma.rx.cfg.len = desc->rx.buffer.size;
+    122          	dma_configure_transfer(desc->dma.rx.channel, &desc->dma.rx.cfg_dma, &desc->dma.rx.cfg, 1);
+    123          
+    124          	callback_set(&_cb, _usartd_dma_read_callback, (void*)(uint32_t)iface);
+    125          	dma_set_callback(desc->dma.rx.channel, &_cb);
+    126          	usart_enable_it(desc->addr, US_IER_TIMEOUT);
+    127          	usart_restart_rx_timeout(desc->addr);
+    128          	dma_start_transfer(desc->dma.rx.channel);
+    129          }
+    130          
+    131          static void _usartd_dma_write(uint8_t iface)
+    132          {
+    133          	struct _callback _cb;
+    134          	assert(iface < USART_IFACE_COUNT);
+    135          	struct _usart_desc* desc = _serial[iface];
+    136          	struct _dma_transfer_cfg cfg;
+    137          
+    138          	cfg.saddr = desc->tx.buffer.data;
+    139          	cfg.daddr = (void *)&desc->addr->US_THR;
+    140          	cfg.len = desc->tx.buffer.size;
+    141          	dma_configure_transfer(desc->dma.tx.channel, &desc->dma.tx.cfg_dma, &cfg, 1);
+    142          
+    143          	callback_set(&_cb, _usartd_dma_write_callback, (void*)(uint32_t)iface);
+    144          	dma_set_callback(desc->dma.tx.channel, &_cb);
+    145          	cache_clean_region(cfg.saddr, cfg.len);
+    146          	dma_start_transfer(desc->dma.tx.channel);
+    147          }
+    148          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    149          static void _usartd_handler(uint32_t source, void* user_arg)
+    150          {
+   \                     _usartd_handler:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+    151          	int iface;
+    152          	uint32_t status = 0;
+    153          	Usart* addr = get_usart_addr_from_id(source);
+   \        0x4   0x....'....        BL       get_usart_addr_from_id
+    154          	bool _rx_stop = true;
+    155          	bool _tx_stop = true;
+    156          
+    157          	for (iface = 0; iface < USART_IFACE_COUNT; iface++) {
+   \        0x8   0x....'....        LDR      R11,??DataTable15_2
+   \        0xC   0xE1A0'4000        MOV      R4,R0
+    158          		if (_serial[iface]->addr == addr) {
+   \       0x10   0xE59B'0000        LDR      R0,[R11, #+0]
+   \       0x14   0xE3A0'8001        MOV      R8,#+1
+   \       0x18   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x1C   0xE3A0'9001        MOV      R9,#+1
+   \       0x20   0xE3A0'A000        MOV      R10,#+0
+   \       0x24   0xE151'0004        CMP      R1,R4
+   \       0x28   0x1A00'001A        BNE      ??_usartd_handler_0
+    159          			status = 1;
+    160          			break;
+    161          		}
+    162          	}
+    163          
+    164          	if (!status) {
+    165          		/* async descriptor not found, disable interrupt */
+    166          		usart_disable_it(addr, US_IDR_RXRDY | US_IDR_TXRDY | US_IDR_TXEMPTY | US_IDR_TIMEOUT);
+    167          		return;
+    168          	}
+    169          
+    170          	struct _usart_desc* desc = _serial[iface];
+   \                     ??_usartd_handler_1:
+   \       0x2C   0xE79B'510A        LDR      R5,[R11, +R10, LSL #+2]
+    171          	status = usart_get_masked_status(addr);
+   \       0x30   0xE1A0'0004        MOV      R0,R4
+   \       0x34   0x....'....        BL       usart_get_masked_status
+   \       0x38   0xE1A0'6000        MOV      R6,R0
+    172          	desc->rx.has_timeout = false;
+   \       0x3C   0xE3A0'7000        MOV      R7,#+0
+   \       0x40   0xE5C5'7026        STRB     R7,[R5, #+38]
+    173          
+    174          	if (USART_STATUS_RXRDY(status)) {
+   \       0x44   0xE316'0001        TST      R6,#0x1
+   \       0x48   0x0A00'0026        BEQ      ??_usartd_handler_2
+    175          		if (desc->rx.buffer.size) {
+   \       0x4C   0xE595'001C        LDR      R0,[R5, #+28]
+   \       0x50   0xE350'0000        CMP      R0,#+0
+   \       0x54   0x0A00'0023        BEQ      ??_usartd_handler_2
+    176          			desc->rx.buffer.data[desc->rx.transferred] = usart_get_char(addr);
+   \       0x58   0xE1A0'0004        MOV      R0,R4
+   \       0x5C   0x....'....        BL       usart_get_char
+   \       0x60   0xE1D5'22B4        LDRH     R2,[R5, #+36]
+   \       0x64   0xE595'1018        LDR      R1,[R5, #+24]
+   \       0x68   0xE7C1'0002        STRB     R0,[R1, +R2]
+    177          			desc->rx.transferred++;
+   \       0x6C   0xE1D5'02B4        LDRH     R0,[R5, #+36]
+    178          
+    179          			if (desc->rx.transferred >= desc->rx.buffer.size)
+   \       0x70   0xE595'101C        LDR      R1,[R5, #+28]
+   \       0x74   0xE280'0001        ADD      R0,R0,#+1
+   \       0x78   0xE1C5'02B4        STRH     R0,[R5, #+36]
+   \       0x7C   0xE1A0'0800        MOV      R0,R0, LSL #+16
+   \       0x80   0xE151'0820        CMP      R1,R0, LSR #+16
+   \       0x84   0x8A00'0016        BHI      ??_usartd_handler_3
+    180          				usart_disable_it(addr, US_IDR_RXRDY);
+   \       0x88   0xE3A0'1001        MOV      R1,#+1
+   \       0x8C   0xE1A0'0004        MOV      R0,R4
+   \       0x90   0x....'....        BL       usart_disable_it
+   \       0x94   0xEA00'0013        B        ??_usartd_handler_2
+   \                     ??_usartd_handler_0:
+   \       0x98   0xE59B'0004        LDR      R0,[R11, #+4]
+   \       0x9C   0xE3A0'A001        MOV      R10,#+1
+   \       0xA0   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xA4   0xE151'0004        CMP      R1,R4
+   \       0xA8   0x0AFF'FFDF        BEQ      ??_usartd_handler_1
+   \       0xAC   0xE59B'0008        LDR      R0,[R11, #+8]
+   \       0xB0   0xE3A0'A002        MOV      R10,#+2
+   \       0xB4   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xB8   0xE151'0004        CMP      R1,R4
+   \       0xBC   0x0AFF'FFDA        BEQ      ??_usartd_handler_1
+   \       0xC0   0xE59B'000C        LDR      R0,[R11, #+12]
+   \       0xC4   0xE3A0'A003        MOV      R10,#+3
+   \       0xC8   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xCC   0xE151'0004        CMP      R1,R4
+   \       0xD0   0x0AFF'FFD5        BEQ      ??_usartd_handler_1
+   \       0xD4   0xE38A'1FC0        ORR      R1,R10,#0x300
+   \       0xD8   0xE1A0'0004        MOV      R0,R4
+   \       0xDC   0xE8BD'4FF4        POP      {R2,R4-R11,LR}
+   \       0xE0   0x....'....        B        usart_disable_it  ;; tailcall
+    181          			else
+    182          				_rx_stop = false;
+   \                     ??_usartd_handler_3:
+   \       0xE4   0xE3A0'8000        MOV      R8,#+0
+    183          		}
+    184          	}
+    185          
+    186          	if (USART_STATUS_TXRDY(status)) {
+   \                     ??_usartd_handler_2:
+   \       0xE8   0xE316'0002        TST      R6,#0x2
+   \       0xEC   0x0A00'0015        BEQ      ??_usartd_handler_4
+    187          		if (desc->tx.buffer.size) {
+   \       0xF0   0xE595'0038        LDR      R0,[R5, #+56]
+   \       0xF4   0xE350'0000        CMP      R0,#+0
+   \       0xF8   0x0A00'0012        BEQ      ??_usartd_handler_4
+    188          			usart_put_char(addr, desc->tx.buffer.data[desc->tx.transferred]);
+   \       0xFC   0xE1D5'14B0        LDRH     R1,[R5, #+64]
+   \      0x100   0xE595'0034        LDR      R0,[R5, #+52]
+   \      0x104   0xE7D0'1001        LDRB     R1,[R0, +R1]
+   \      0x108   0xE1A0'0004        MOV      R0,R4
+   \      0x10C   0x....'....        BL       usart_put_char
+    189          			desc->tx.transferred++;
+   \      0x110   0xE1D5'04B0        LDRH     R0,[R5, #+64]
+    190          
+    191          			if (desc->tx.transferred > desc->tx.buffer.size) {
+   \      0x114   0xE595'1038        LDR      R1,[R5, #+56]
+   \      0x118   0xE280'0001        ADD      R0,R0,#+1
+   \      0x11C   0xE1C5'04B0        STRH     R0,[R5, #+64]
+   \      0x120   0xE1A0'0800        MOV      R0,R0, LSL #+16
+   \      0x124   0xE151'0820        CMP      R1,R0, LSR #+16
+   \      0x128   0x2A00'0005        BCS      ??_usartd_handler_5
+    192          				usart_disable_it(addr, US_IDR_TXRDY);
+   \      0x12C   0xE3A0'1002        MOV      R1,#+2
+   \      0x130   0xE1A0'0004        MOV      R0,R4
+   \      0x134   0x....'....        BL       usart_disable_it
+    193          				usart_enable_it(addr, US_IER_TXEMPTY);
+   \      0x138   0xE3A0'1F80        MOV      R1,#+512
+   \      0x13C   0xE1A0'0004        MOV      R0,R4
+   \      0x140   0x....'....        BL       usart_enable_it
+    194          			}
+    195          			_tx_stop = false;
+   \                     ??_usartd_handler_5:
+   \      0x144   0xE3A0'9000        MOV      R9,#+0
+    196          		}
+    197          	}
+    198          
+    199          	if (USART_STATUS_TIMEOUT(status)) {
+   \                     ??_usartd_handler_4:
+   \      0x148   0xE316'0F40        TST      R6,#0x100
+   \      0x14C   0x0A00'0047        BEQ      ??_usartd_handler_6
+    200          		switch (desc->transfer_mode) {
+   \      0x150   0xE5D5'000C        LDRB     R0,[R5, #+12]
+   \      0x154   0xE350'0001        CMP      R0,#+1
+   \      0x158   0x0A00'0002        BEQ      ??_usartd_handler_7
+   \      0x15C   0xE350'0002        CMP      R0,#+2
+   \      0x160   0x0A00'0007        BEQ      ??_usartd_handler_8
+   \      0x164   0xEA00'0032        B        ??_usartd_handler_9
+    201          		case USARTD_MODE_ASYNC:
+    202          			desc->addr->US_CR = US_CR_STTTO;
+   \                     ??_usartd_handler_7:
+   \      0x168   0xE595'3000        LDR      R3,[R5, #+0]
+   \      0x16C   0xE3A0'2E80        MOV      R2,#+2048
+   \      0x170   0xE583'2000        STR      R2,[R3, #+0]
+    203          			usart_disable_it(addr, US_IDR_TIMEOUT);
+   \      0x174   0xE3A0'1F40        MOV      R1,#+256
+   \      0x178   0xE1A0'0004        MOV      R0,R4
+   \      0x17C   0x....'....        BL       usart_disable_it
+    204          			break;
+   \      0x180   0xEA00'002B        B        ??_usartd_handler_9
+    205          		case USARTD_MODE_DMA:
+    206          			_usartd_dma_read_callback((void *)iface, NULL);
+   \                     ??_usartd_handler_8:
+   \      0x184   0xE35A'0003        CMP      R10,#+3
+   \      0x188   0xDA00'0004        BLE      ??_usartd_handler_10
+   \      0x18C   0xE3A0'2053        MOV      R2,#+83
+   \      0x190   0x....'....        LDR      R1,??DataTable15
+   \      0x194   0x....'....        LDR      R0,??DataTable15_1
+   \      0x198   0x....'....        BL       __aeabi_assert
+   \      0x19C   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??_usartd_handler_10:
+   \      0x1A0   0xE79B'A10A        LDR      R10,[R11, +R10, LSL #+2]
+   \      0x1A4   0xE59A'0010        LDR      R0,[R10, #+16]
+   \      0x1A8   0xE59A'B058        LDR      R11,[R10, #+88]
+   \      0x1AC   0xE350'0000        CMP      R0,#+0
+   \      0x1B0   0x0A00'0004        BEQ      ??_usartd_handler_11
+   \      0x1B4   0xE59A'0000        LDR      R0,[R10, #+0]
+   \      0x1B8   0xE3A0'1E80        MOV      R1,#+2048
+   \      0x1BC   0xE580'1000        STR      R1,[R0, #+0]
+   \      0x1C0   0xE3A0'1F40        MOV      R1,#+256
+   \      0x1C4   0x....'....        BL       usart_disable_it
+   \                     ??_usartd_handler_11:
+   \      0x1C8   0xE1A0'000B        MOV      R0,R11
+   \      0x1CC   0x....'....        BL       dma_is_transfer_done
+   \      0x1D0   0xE350'0000        CMP      R0,#+0
+   \      0x1D4   0x1A00'0001        BNE      ??_usartd_handler_12
+   \      0x1D8   0xE1A0'000B        MOV      R0,R11
+   \      0x1DC   0x....'....        BL       dma_stop_transfer
+   \                     ??_usartd_handler_12:
+   \      0x1E0   0xE1A0'000B        MOV      R0,R11
+   \      0x1E4   0x....'....        BL       dma_fifo_flush
+   \      0x1E8   0xE59A'1060        LDR      R1,[R10, #+96]
+   \      0x1EC   0xE59A'2070        LDR      R2,[R10, #+112]
+   \      0x1F0   0xE201'10FF        AND      R1,R1,#0xFF
+   \      0x1F4   0xE1A0'000B        MOV      R0,R11
+   \      0x1F8   0x....'....        BL       dma_get_transferred_data_len
+   \      0x1FC   0xE1CA'02B4        STRH     R0,[R10, #+36]
+   \      0x200   0xE59A'0058        LDR      R0,[R10, #+88]
+   \      0x204   0x....'....        BL       dma_reset_channel
+   \      0x208   0xE1DA'12B4        LDRH     R1,[R10, #+36]
+   \      0x20C   0xE351'0000        CMP      R1,#+0
+   \      0x210   0x0A00'0001        BEQ      ??_usartd_handler_13
+   \      0x214   0xE59A'006C        LDR      R0,[R10, #+108]
+   \      0x218   0x....'....        BL       cache_invalidate_region
+   \                     ??_usartd_handler_13:
+   \      0x21C   0xE58A'701C        STR      R7,[R10, #+28]
+   \      0x220   0xE28A'0014        ADD      R0,R10,#+20
+   \      0x224   0x....'....        BL       mutex_unlock
+   \      0x228   0xE3A0'1000        MOV      R1,#+0
+   \      0x22C   0xE28A'0028        ADD      R0,R10,#+40
+   \      0x230   0x....'....        BL       callback_call
+    207          			break;
+    208          		}
+    209          
+    210          		if (desc->rx.buffer.size)
+   \                     ??_usartd_handler_9:
+   \      0x234   0xE595'001C        LDR      R0,[R5, #+28]
+   \      0x238   0xE350'0000        CMP      R0,#+0
+   \      0x23C   0x0A00'0002        BEQ      ??_usartd_handler_14
+    211          			usart_disable_it(addr, US_IDR_RXRDY);
+   \      0x240   0xE3A0'1001        MOV      R1,#+1
+   \      0x244   0xE1A0'0004        MOV      R0,R4
+   \      0x248   0x....'....        BL       usart_disable_it
+    212          
+    213          		if (desc->tx.buffer.size)
+   \                     ??_usartd_handler_14:
+   \      0x24C   0xE595'0038        LDR      R0,[R5, #+56]
+   \      0x250   0xE350'0000        CMP      R0,#+0
+   \      0x254   0x0A00'0003        BEQ      ??_usartd_handler_15
+    214          			usart_disable_it(addr, US_IDR_TXRDY | US_IDR_TXEMPTY);
+   \      0x258   0xE3A0'1002        MOV      R1,#+2
+   \      0x25C   0xE381'1F80        ORR      R1,R1,#0x200
+   \      0x260   0xE1A0'0004        MOV      R0,R4
+   \      0x264   0x....'....        BL       usart_disable_it
+    215          
+    216          		desc->rx.has_timeout = true;
+   \                     ??_usartd_handler_15:
+   \      0x268   0xE3A0'0001        MOV      R0,#+1
+   \      0x26C   0xE5C5'0026        STRB     R0,[R5, #+38]
+    217          	}
+    218          
+    219          	if (USART_STATUS_TXEMPTY(status)) {
+   \                     ??_usartd_handler_6:
+   \      0x270   0xE316'0F80        TST      R6,#0x200
+   \      0x274   0x0A00'0002        BEQ      ??_usartd_handler_16
+    220          		usart_disable_it(addr, US_IDR_TXEMPTY);
+   \      0x278   0xE3A0'1F80        MOV      R1,#+512
+   \      0x27C   0xE1A0'0004        MOV      R0,R4
+   \      0x280   0x....'....        BL       usart_disable_it
+    221          	}
+    222          
+    223          	if (_rx_stop) {
+   \                     ??_usartd_handler_16:
+   \      0x284   0xE358'0000        CMP      R8,#+0
+   \      0x288   0x0A00'0005        BEQ      ??_usartd_handler_17
+    224          		desc->addr->US_CR = US_CR_STTTO;
+   \      0x28C   0xE595'1000        LDR      R1,[R5, #+0]
+   \      0x290   0xE3A0'0E80        MOV      R0,#+2048
+   \      0x294   0xE581'0000        STR      R0,[R1, #+0]
+    225          		desc->rx.buffer.size = 0;
+   \      0x298   0xE585'701C        STR      R7,[R5, #+28]
+    226          		mutex_unlock(&desc->rx.mutex);
+   \      0x29C   0xE285'0014        ADD      R0,R5,#+20
+   \      0x2A0   0x....'....        BL       mutex_unlock
+    227          	}
+    228          	if (_tx_stop) {
+   \                     ??_usartd_handler_17:
+   \      0x2A4   0xE359'0000        CMP      R9,#+0
+    229          		desc->tx.buffer.size = 0;
+   \      0x2A8   0x1585'7038        STRNE    R7,[R5, #+56]
+    230          		mutex_unlock(&desc->tx.mutex);
+   \      0x2AC   0x1285'0030        ADDNE    R0,R5,#+48
+   \      0x2B0   0x18BD'4FF2        POPNE    {R1,R4-R11,LR}
+   \      0x2B4   0x....'....        BNE      mutex_unlock     ;; tailcall
+    231          	}
+    232          }
+   \      0x2B8   0xE8BD'8FF1        POP      {R0,R4-R11,PC}   ;; return
+    233          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    234          void usartd_configure(uint8_t iface, struct _usart_desc* config)
+    235          {
+   \                     usartd_configure:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'6000        MOV      R6,R0
+   \        0x8   0xE1A0'4001        MOV      R4,R1
+    236          	uint32_t id = get_usart_id_from_addr(config->addr);
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0x....'....        BL       get_usart_id_from_addr
+   \       0x14   0xE1A0'5000        MOV      R5,R0
+    237          	assert(id < ID_PERIPH_COUNT);
+   \       0x18   0xE355'0033        CMP      R5,#+51
+   \       0x1C   0x3A00'0004        BCC      ??usartd_configure_0
+   \       0x20   0xE3A0'20ED        MOV      R2,#+237
+   \       0x24   0x....'....        LDR      R1,??DataTable15
+   \       0x28   0x....'....        LDR      R0,??DataTable15_3
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    238          	assert(iface < USART_IFACE_COUNT);
+   \                     ??usartd_configure_0:
+   \       0x34   0xE356'0004        CMP      R6,#+4
+   \       0x38   0xBA00'0004        BLT      ??usartd_configure_1
+   \       0x3C   0xE3A0'20EE        MOV      R2,#+238
+   \       0x40   0x....'....        LDR      R1,??DataTable15
+   \       0x44   0x....'....        LDR      R0,??DataTable15_1
+   \       0x48   0x....'....        BL       __aeabi_assert
+   \       0x4C   0x....'....        BL       __iar_EmptyStepPoint
+    239          
+    240          	_serial[iface] = config;
+   \                     ??usartd_configure_1:
+   \       0x50   0x....'....        LDR      R0,??DataTable15_2
+   \       0x54   0xE780'4106        STR      R4,[R0, +R6, LSL #+2]
+    241          
+    242          #ifdef CONFIG_HAVE_FLEXCOM
+    243          	Flexcom* flexcom = get_flexcom_addr_from_id(id);
+   \       0x58   0xE1A0'0005        MOV      R0,R5
+   \       0x5C   0x....'....        BL       get_flexcom_addr_from_id
+    244          	if (flexcom) {
+   \       0x60   0xE350'0000        CMP      R0,#+0
+   \       0x64   0x0A00'0001        BEQ      ??usartd_configure_2
+    245          		flexcom_select(flexcom, FLEX_MR_OPMODE_USART);
+   \       0x68   0xE3A0'1001        MOV      R1,#+1
+   \       0x6C   0x....'....        BL       flexcom_select
+    246          	}
+    247          #endif
+    248          	pmc_configure_peripheral(id, NULL, true);
+   \                     ??usartd_configure_2:
+   \       0x70   0xE3A0'2001        MOV      R2,#+1
+   \       0x74   0xE3A0'1000        MOV      R1,#+0
+   \       0x78   0xE1A0'0005        MOV      R0,R5
+   \       0x7C   0x....'....        BL       pmc_configure_peripheral
+    249          	usart_configure(config->addr, config->mode, config->baudrate);
+   \       0x80   0xE594'2008        LDR      R2,[R4, #+8]
+   \       0x84   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x88   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x8C   0x....'....        BL       usart_configure
+    250          	usart_set_rx_timeout(config->addr, config->baudrate, config->timeout);
+   \       0x90   0xE594'2010        LDR      R2,[R4, #+16]
+   \       0x94   0xE594'1008        LDR      R1,[R4, #+8]
+   \       0x98   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x9C   0x....'....        BL       usart_set_rx_timeout
+    251          	irq_add_handler(get_usart_id_from_addr(config->addr), _usartd_handler, NULL);
+   \       0xA0   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0xA4   0x....'....        BL       get_usart_id_from_addr
+   \       0xA8   0xE3A0'2000        MOV      R2,#+0
+   \       0xAC   0x....'....        LDR      R1,??DataTable15_4
+   \       0xB0   0x....'....        BL       irq_add_handler
+    252          	/* Enable USART interrupt */
+    253          	irq_enable(id);
+   \       0xB4   0xE1A0'0005        MOV      R0,R5
+   \       0xB8   0x....'....        BL       irq_enable
+    254          
+    255          #ifdef CONFIG_HAVE_USART_FIFO
+    256          	config->fifo.rx.size = get_peripheral_fifo_depth(config->addr);
+   \       0xBC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0xC0   0x....'....        BL       get_peripheral_fifo_depth
+   \       0xC4   0xE1C4'04BE        STRH     R0,[R4, #+78]
+    257          	config->fifo.tx.size = get_peripheral_fifo_depth(config->addr);
+   \       0xC8   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0xCC   0x....'....        BL       get_peripheral_fifo_depth
+    258          	usart_fifo_configure(config->addr, config->fifo.tx.threshold,
+    259          						 config->fifo.rx.threshold, config->fifo.rx.threshold);
+   \       0xD0   0xE1D4'25B0        LDRH     R2,[R4, #+80]
+   \       0xD4   0xE1D4'15B4        LDRH     R1,[R4, #+84]
+   \       0xD8   0xE1C4'05B2        STRH     R0,[R4, #+82]
+   \       0xDC   0xE202'30FF        AND      R3,R2,#0xFF
+   \       0xE0   0xE202'20FF        AND      R2,R2,#0xFF
+   \       0xE4   0xE201'10FF        AND      R1,R1,#0xFF
+   \       0xE8   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0xEC   0x....'....        BL       usart_fifo_configure
+    260          	if (config->use_fifo)
+   \       0xF0   0xE5D4'004C        LDRB     R0,[R4, #+76]
+   \       0xF4   0xE350'0000        CMP      R0,#+0
+   \       0xF8   0x0A00'0002        BEQ      ??usartd_configure_3
+    261          		usart_fifo_enable(config->addr);
+   \       0xFC   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x100   0x....'....        BL       usart_fifo_enable
+    262          #endif
+    263          
+    264          	config->dma.rx.cfg_dma.incr_saddr = false;
+   \      0x104   0xE3A0'0000        MOV      R0,#+0
+    265          	config->dma.rx.cfg_dma.incr_daddr = true;
+   \                     ??usartd_configure_3:
+   \      0x108   0xE3A0'1001        MOV      R1,#+1
+   \      0x10C   0xE5C4'0064        STRB     R0,[R4, #+100]
+   \      0x110   0xE5C4'1065        STRB     R1,[R4, #+101]
+    266          	config->dma.rx.cfg_dma.loop = false;
+   \      0x114   0xE5C4'0066        STRB     R0,[R4, #+102]
+    267          	config->dma.rx.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+   \      0x118   0xE584'005C        STR      R0,[R4, #+92]
+    268          	config->dma.rx.cfg_dma.chunk_size = DMA_CHUNK_SIZE_1;
+   \      0x11C   0xE584'0060        STR      R0,[R4, #+96]
+    269          
+    270          	config->dma.tx.cfg_dma.incr_saddr = true;
+   \      0x120   0xE5C4'1080        STRB     R1,[R4, #+128]
+    271          	config->dma.tx.cfg_dma.incr_daddr = false;
+   \      0x124   0xE5C4'0081        STRB     R0,[R4, #+129]
+    272          	config->dma.tx.cfg_dma.loop = false;
+   \      0x128   0xE5C4'0082        STRB     R0,[R4, #+130]
+    273          	config->dma.tx.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+   \      0x12C   0xE584'0078        STR      R0,[R4, #+120]
+    274          	config->dma.tx.cfg_dma.chunk_size = DMA_CHUNK_SIZE_1;
+   \      0x130   0xE584'007C        STR      R0,[R4, #+124]
+    275          
+    276          	config->dma.rx.channel = dma_allocate_channel(id, DMA_PERIPH_MEMORY);
+   \      0x134   0xE3A0'10FF        MOV      R1,#+255
+   \      0x138   0xE205'00FF        AND      R0,R5,#0xFF
+   \      0x13C   0x....'....        BL       dma_allocate_channel
+   \      0x140   0xE584'0058        STR      R0,[R4, #+88]
+    277          	assert(config->dma.rx.channel);
+   \      0x144   0xE350'0000        CMP      R0,#+0
+   \      0x148   0x1A00'0005        BNE      ??usartd_configure_4
+   \      0x14C   0xE3A0'2015        MOV      R2,#+21
+   \      0x150   0xE382'2F40        ORR      R2,R2,#0x100
+   \      0x154   0x....'....        LDR      R1,??DataTable15
+   \      0x158   0x....'....        LDR      R0,??DataTable15_5
+   \      0x15C   0x....'....        BL       __aeabi_assert
+   \      0x160   0x....'....        BL       __iar_EmptyStepPoint
+    278          
+    279          	config->dma.tx.channel = dma_allocate_channel(DMA_PERIPH_MEMORY, id);
+   \                     ??usartd_configure_4:
+   \      0x164   0xE205'10FF        AND      R1,R5,#0xFF
+   \      0x168   0xE3A0'00FF        MOV      R0,#+255
+   \      0x16C   0x....'....        BL       dma_allocate_channel
+   \      0x170   0xE584'0074        STR      R0,[R4, #+116]
+    280          	assert(config->dma.tx.channel);
+   \      0x174   0xE350'0000        CMP      R0,#+0
+   \      0x178   0x1A00'0004        BNE      ??usartd_configure_5
+   \      0x17C   0xE3A0'2F46        MOV      R2,#+280
+   \      0x180   0x....'....        LDR      R1,??DataTable15
+   \      0x184   0x....'....        LDR      R0,??DataTable15_6
+   \      0x188   0x....'....        BL       __aeabi_assert
+   \      0x18C   0x....'....        BL       __iar_EmptyStepPoint
+    281          }
+   \                     ??usartd_configure_5:
+   \      0x190   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    282          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    283          uint32_t usartd_transfer(uint8_t iface, struct _buffer* buf, struct _callback* cb)
+    284          {
+   \                     usartd_transfer:
+   \        0x0   0xE92D'41F8        PUSH     {R3-R8,LR}
+   \        0x4   0xE1A0'7000        MOV      R7,R0
+   \        0x8   0xE24D'D014        SUB      SP,SP,#+20
+   \        0xC   0xE1A0'5001        MOV      R5,R1
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+    285          	assert(iface < USART_IFACE_COUNT);
+   \       0x14   0xE357'0004        CMP      R7,#+4
+   \       0x18   0xBA00'0005        BLT      ??usartd_transfer_0
+   \       0x1C   0xE3A0'201D        MOV      R2,#+29
+   \       0x20   0xE382'2F40        ORR      R2,R2,#0x100
+   \       0x24   0x....'....        LDR      R1,??DataTable15
+   \       0x28   0x....'....        LDR      R0,??DataTable15_1
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    286          	struct _usart_desc *desc = _serial[iface];
+   \                     ??usartd_transfer_0:
+   \       0x34   0x....'....        LDR      R4,??DataTable15_2
+    287          	uint8_t tmode;
+    288          	uint32_t csr;
+    289          	uint32_t i;
+    290          
+    291          	if ((buf == NULL) || (buf->size == 0))
+   \       0x38   0xE355'0000        CMP      R5,#+0
+   \       0x3C   0xE794'7107        LDR      R7,[R4, +R7, LSL #+2]
+   \       0x40   0x0A00'00BF        BEQ      ??usartd_transfer_1
+   \       0x44   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x48   0xE350'0000        CMP      R0,#+0
+   \       0x4C   0x0A00'00BD        BEQ      ??usartd_transfer_2
+    292          		return USARTD_SUCCESS;
+    293          
+    294          	if (buf->attr & USARTD_BUF_ATTR_READ) {
+   \       0x50   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \       0x54   0xE310'0002        TST      R0,#0x2
+   \       0x58   0x0A00'000F        BEQ      ??usartd_transfer_3
+    295          		if (!mutex_try_lock(&desc->rx.mutex))
+   \       0x5C   0xE287'0014        ADD      R0,R7,#+20
+   \       0x60   0x....'....        BL       mutex_try_lock
+   \       0x64   0xE350'0000        CMP      R0,#+0
+   \       0x68   0x0A00'0012        BEQ      ??usartd_transfer_4
+    296          			return USARTD_ERROR_LOCK;
+    297          
+    298          		desc->rx.transferred = 0;
+   \       0x6C   0xE3A0'8000        MOV      R8,#+0
+   \       0x70   0xE1C7'82B4        STRH     R8,[R7, #+36]
+    299          		desc->rx.buffer.data = buf->data;
+   \       0x74   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x78   0xE587'0018        STR      R0,[R7, #+24]
+    300          		desc->rx.buffer.size = buf->size;
+   \       0x7C   0xE595'1004        LDR      R1,[R5, #+4]
+   \       0x80   0xE587'101C        STR      R1,[R7, #+28]
+    301          		desc->rx.buffer.attr = buf->attr;
+   \       0x84   0xE595'0008        LDR      R0,[R5, #+8]
+    302          		callback_copy(&desc->rx.callback, cb);
+   \       0x88   0xE1A0'1006        MOV      R1,R6
+   \       0x8C   0xE587'0020        STR      R0,[R7, #+32]
+   \       0x90   0xE287'0028        ADD      R0,R7,#+40
+   \       0x94   0x....'....        BL       callback_copy
+    303          
+    304          		desc->rx.has_timeout = false;
+   \       0x98   0xE5C7'8026        STRB     R8,[R7, #+38]
+    305          	}
+    306          
+    307          	if (buf->attr & USARTD_BUF_ATTR_WRITE) {
+   \                     ??usartd_transfer_3:
+   \       0x9C   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \       0xA0   0xE310'0001        TST      R0,#0x1
+   \       0xA4   0x0A00'0011        BEQ      ??usartd_transfer_5
+    308          		if (!mutex_try_lock(&desc->tx.mutex))
+   \       0xA8   0xE287'0030        ADD      R0,R7,#+48
+   \       0xAC   0x....'....        BL       mutex_try_lock
+   \       0xB0   0xE350'0000        CMP      R0,#+0
+   \       0xB4   0x1A00'0002        BNE      ??usartd_transfer_6
+    309          			return USARTD_ERROR_LOCK;
+   \                     ??usartd_transfer_4:
+   \       0xB8   0xE3A0'0003        MOV      R0,#+3
+   \       0xBC   0xE28D'D018        ADD      SP,SP,#+24
+   \       0xC0   0xE8BD'81F0        POP      {R4-R8,PC}
+    310          
+    311          		desc->tx.transferred = 0;
+   \                     ??usartd_transfer_6:
+   \       0xC4   0xE3A0'0000        MOV      R0,#+0
+   \       0xC8   0xE1C7'04B0        STRH     R0,[R7, #+64]
+    312          		desc->tx.buffer.data = buf->data;
+   \       0xCC   0xE595'1000        LDR      R1,[R5, #+0]
+   \       0xD0   0xE587'1034        STR      R1,[R7, #+52]
+    313          		desc->tx.buffer.size = buf->size;
+   \       0xD4   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0xD8   0xE587'0038        STR      R0,[R7, #+56]
+    314          		desc->tx.buffer.attr = buf->attr;
+   \       0xDC   0xE595'1008        LDR      R1,[R5, #+8]
+    315          		callback_copy(&desc->tx.callback, cb);
+   \       0xE0   0xE287'0044        ADD      R0,R7,#+68
+   \       0xE4   0xE587'103C        STR      R1,[R7, #+60]
+   \       0xE8   0xE1A0'1006        MOV      R1,R6
+   \       0xEC   0x....'....        BL       callback_copy
+    316          	}
+    317          
+    318          	tmode = desc->transfer_mode;
+   \                     ??usartd_transfer_5:
+   \       0xF0   0xE5D7'000C        LDRB     R0,[R7, #+12]
+    319          
+    320          	/* If short transfer detected, use POLLING mode */
+    321          	if (tmode != USARTD_MODE_POLLING)
+   \       0xF4   0xE1B0'1000        MOVS     R1,R0
+   \       0xF8   0x0A00'0008        BEQ      ??usartd_transfer_7
+    322          		if (buf->size < USARTD_POLLING_THRESHOLD)
+   \       0xFC   0xE595'1004        LDR      R1,[R5, #+4]
+   \      0x100   0xE351'0010        CMP      R1,#+16
+   \      0x104   0x3A00'0005        BCC      ??usartd_transfer_7
+    323          			tmode = USARTD_MODE_POLLING;
+    324          
+    325          	switch (tmode) {
+   \      0x108   0xE350'0000        CMP      R0,#+0
+   \      0x10C   0x0A00'0003        BEQ      ??usartd_transfer_7
+   \      0x110   0xE350'0002        CMP      R0,#+2
+   \      0x114   0x0A00'008D        BEQ      ??usartd_transfer_8
+   \      0x118   0x3A00'0078        BCC      ??usartd_transfer_9
+   \      0x11C   0xEA00'00CB        B        ??usartd_transfer_10
+    326          	case USARTD_MODE_POLLING:
+    327          		i = 0;
+    328          
+    329          		if (buf->attr & USARTD_BUF_ATTR_READ) {
+   \                     ??usartd_transfer_7:
+   \      0x120   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \      0x124   0xE3A0'4000        MOV      R4,#+0
+   \      0x128   0xE3A0'6000        MOV      R6,#+0
+   \      0x12C   0xE310'0002        TST      R0,#0x2
+   \      0x130   0x0A00'0012        BEQ      ??usartd_transfer_11
+    330          			desc->addr->US_CSR;
+   \      0x134   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x138   0xE590'1014        LDR      R1,[R0, #+20]
+    331          			usart_restart_rx_timeout(desc->addr);
+   \      0x13C   0x....'....        BL       usart_restart_rx_timeout
+   \      0x140   0xEA00'000E        B        ??usartd_transfer_11
+    332          		}
+    333          
+    334          		while (i < buf->size) {
+    335          			if (i < desc->tx.buffer.size) {
+    336          #ifdef CONFIG_HAVE_USART_FIFO
+    337          				if (desc->use_fifo) {
+    338          					if ((desc->fifo.tx.size - usart_fifo_get_tx_size(desc->addr)) > 0) {
+    339          						if ((desc->tx.buffer.size - i) >= 4) {
+    340          							writew(&desc->addr->US_THR, *(uint32_t*)&desc->tx.buffer.data[i]);
+    341          							i += 4;
+    342          						} else if ((desc->tx.buffer.size - i) >= 2) {
+    343          							writehw(&desc->addr->US_THR, *(uint16_t*)&desc->tx.buffer.data[i]);
+    344          							i += 2;
+    345          						} else {
+    346          							writeb(&desc->addr->US_THR, *(uint8_t*)&desc->tx.buffer.data[i]);
+    347          							i += 1;
+    348          						}
+    349          					}
+    350          				} else
+    351          #endif /* CONFIG_HAVE_USART_FIFO */
+    352          				{
+    353          					/* Wait for the transmitter to be ready */
+    354          					while (!USART_STATUS_TXRDY(desc->addr->US_CSR));
+    355          
+    356          					writeb(&desc->addr->US_THR, desc->tx.buffer.data[i]);
+    357          					i++;
+    358          				}
+    359          				desc->tx.transferred = i;
+    360          
+    361          				if (desc->tx.transferred >= desc->tx.buffer.size) {
+    362          					desc->tx.buffer.size = 0;
+    363          					mutex_unlock(&desc->tx.mutex);
+    364          					callback_call(&desc->tx.callback, NULL);
+    365          				}
+    366          			}
+    367          			if (i < desc->rx.buffer.size) {
+    368          #ifdef CONFIG_HAVE_USART_FIFO
+    369          				if (desc->use_fifo) {
+    370          					if ((desc->fifo.rx.size - usart_fifo_get_rx_size(desc->addr)) > 0) {
+    371          						if ((desc->rx.buffer.size - i) >= 4) {
+    372          							readw(&desc->addr->US_RHR, (uint32_t*)&desc->rx.buffer.data[i]);
+    373          							i += 4;
+    374          						} else if (usart_fifo_get_rx_size(desc->addr) >= 2) {
+    375          							readhw(&desc->addr->US_RHR, (uint16_t*)&desc->rx.buffer.data[i]);
+    376          							i += 2;
+    377          						} else {
+    378          							readb(&desc->addr->US_RHR, (uint8_t*)&desc->rx.buffer.data[i]);
+    379          							i += 1;
+    380          						}
+    381          					}
+    382          				} else
+    383          #endif /* CONFIG_HAVE_USART_FIFO */
+    384          				{
+    385          					/* Wait for the transmitter to be ready */
+    386          					csr = desc->addr->US_CSR;
+    387          					while (!USART_STATUS_RXRDY(csr)) {
+    388          						if (USART_STATUS_TIMEOUT(csr)) {
+    389          							desc->addr->US_CR = US_CR_STTTO;
+    390          							desc->rx.buffer.size = 0;
+    391          							desc->rx.transferred = i;
+    392          							mutex_unlock(&desc->rx.mutex);
+    393          							return USARTD_ERROR_TIMEOUT;
+    394          						}
+    395          						csr = desc->addr->US_CSR;
+    396          					}
+    397          
+    398          					readb(&desc->addr->US_RHR, &desc->rx.buffer.data[i]);
+   \                     ??usartd_transfer_12:
+   \      0x144   0xE5D0'0018        LDRB     R0,[R0, #+24]
+   \                     ??usartd_transfer_13:
+   \      0x148   0xE597'1018        LDR      R1,[R7, #+24]
+   \      0x14C   0xE7C1'0006        STRB     R0,[R1, +R6]
+    399          					i++;
+   \      0x150   0xE286'6001        ADD      R6,R6,#+1
+    400          				}
+    401          				desc->rx.transferred = i;
+   \                     ??usartd_transfer_14:
+   \      0x154   0xE1C7'62B4        STRH     R6,[R7, #+36]
+    402          
+    403          				if (desc->rx.transferred >= desc->rx.buffer.size) {
+   \      0x158   0xE1D7'02B4        LDRH     R0,[R7, #+36]
+   \      0x15C   0xE597'101C        LDR      R1,[R7, #+28]
+   \      0x160   0xE150'0001        CMP      R0,R1
+   \      0x164   0x3A00'0005        BCC      ??usartd_transfer_11
+    404          					desc->rx.buffer.size = 0;
+   \      0x168   0xE587'401C        STR      R4,[R7, #+28]
+    405          					mutex_unlock(&desc->rx.mutex);
+   \      0x16C   0xE287'0014        ADD      R0,R7,#+20
+   \      0x170   0x....'....        BL       mutex_unlock
+    406          					callback_call(&desc->rx.callback, NULL);
+   \      0x174   0xE3A0'1000        MOV      R1,#+0
+   \      0x178   0xE287'0028        ADD      R0,R7,#+40
+   \      0x17C   0x....'....        BL       callback_call
+    407          				}
+   \                     ??usartd_transfer_11:
+   \      0x180   0xE595'0004        LDR      R0,[R5, #+4]
+   \      0x184   0xE156'0000        CMP      R6,R0
+   \      0x188   0x2A00'006D        BCS      ??usartd_transfer_1
+   \      0x18C   0xE597'1038        LDR      R1,[R7, #+56]
+   \      0x190   0xE156'0001        CMP      R6,R1
+   \      0x194   0x2A00'002A        BCS      ??usartd_transfer_15
+   \      0x198   0xE5D7'104C        LDRB     R1,[R7, #+76]
+   \      0x19C   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x1A0   0xE351'0000        CMP      R1,#+0
+   \      0x1A4   0x0A00'0014        BEQ      ??usartd_transfer_16
+   \      0x1A8   0x....'....        BL       usart_fifo_get_tx_size
+   \      0x1AC   0xE1D7'15B2        LDRH     R1,[R7, #+82]
+   \      0x1B0   0xE051'0000        SUBS     R0,R1,R0
+   \      0x1B4   0x0A00'0017        BEQ      ??usartd_transfer_17
+   \      0x1B8   0xE597'0038        LDR      R0,[R7, #+56]
+   \      0x1BC   0xE597'1034        LDR      R1,[R7, #+52]
+   \      0x1C0   0xE040'0006        SUB      R0,R0,R6
+   \      0x1C4   0xE350'0004        CMP      R0,#+4
+   \      0x1C8   0xE597'2000        LDR      R2,[R7, #+0]
+   \      0x1CC   0x2791'0006        LDRCS    R0,[R1, +R6]
+   \      0x1D0   0x2286'6004        ADDCS    R6,R6,#+4
+   \      0x1D4   0x2582'001C        STRCS    R0,[R2, #+28]
+   \      0x1D8   0x2A00'000E        BCS      ??usartd_transfer_17
+   \      0x1DC   0xE350'0002        CMP      R0,#+2
+   \      0x1E0   0x2191'00B6        LDRHCS   R0,[R1, +R6]
+   \      0x1E4   0x2286'6002        ADDCS    R6,R6,#+2
+   \      0x1E8   0x21C2'01BC        STRHCS   R0,[R2, #+28]
+   \      0x1EC   0x2A00'0009        BCS      ??usartd_transfer_17
+   \      0x1F0   0xE7D1'0006        LDRB     R0,[R1, +R6]
+   \      0x1F4   0xE5C2'001C        STRB     R0,[R2, #+28]
+   \      0x1F8   0xEA00'0005        B        ??usartd_transfer_18
+   \                     ??usartd_transfer_16:
+   \      0x1FC   0xE590'1014        LDR      R1,[R0, #+20]
+   \      0x200   0xE311'0002        TST      R1,#0x2
+   \      0x204   0x0AFF'FFFC        BEQ      ??usartd_transfer_16
+   \      0x208   0xE597'1034        LDR      R1,[R7, #+52]
+   \      0x20C   0xE7D1'1006        LDRB     R1,[R1, +R6]
+   \      0x210   0xE5C0'101C        STRB     R1,[R0, #+28]
+   \                     ??usartd_transfer_18:
+   \      0x214   0xE286'6001        ADD      R6,R6,#+1
+   \                     ??usartd_transfer_17:
+   \      0x218   0xE1C7'64B0        STRH     R6,[R7, #+64]
+   \      0x21C   0xE1D7'04B0        LDRH     R0,[R7, #+64]
+   \      0x220   0xE597'1038        LDR      R1,[R7, #+56]
+   \      0x224   0xE150'0001        CMP      R0,R1
+   \      0x228   0x3A00'0005        BCC      ??usartd_transfer_15
+   \      0x22C   0xE587'4038        STR      R4,[R7, #+56]
+   \      0x230   0xE287'0030        ADD      R0,R7,#+48
+   \      0x234   0x....'....        BL       mutex_unlock
+   \      0x238   0xE3A0'1000        MOV      R1,#+0
+   \      0x23C   0xE287'0044        ADD      R0,R7,#+68
+   \      0x240   0x....'....        BL       callback_call
+   \                     ??usartd_transfer_15:
+   \      0x244   0xE597'001C        LDR      R0,[R7, #+28]
+   \      0x248   0xE156'0000        CMP      R6,R0
+   \      0x24C   0x2AFF'FFCB        BCS      ??usartd_transfer_11
+   \      0x250   0xE5D7'104C        LDRB     R1,[R7, #+76]
+   \      0x254   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x258   0xE351'0000        CMP      R1,#+0
+   \      0x25C   0x0A00'0019        BEQ      ??usartd_transfer_19
+   \      0x260   0x....'....        BL       usart_fifo_get_rx_size
+   \      0x264   0xE1D7'14BE        LDRH     R1,[R7, #+78]
+   \      0x268   0xE051'0000        SUBS     R0,R1,R0
+   \      0x26C   0x0AFF'FFB8        BEQ      ??usartd_transfer_14
+   \      0x270   0xE597'101C        LDR      R1,[R7, #+28]
+   \      0x274   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x278   0xE041'1006        SUB      R1,R1,R6
+   \      0x27C   0xE351'0004        CMP      R1,#+4
+   \      0x280   0x3A00'0004        BCC      ??usartd_transfer_20
+   \      0x284   0xE590'0018        LDR      R0,[R0, #+24]
+   \      0x288   0xE597'1018        LDR      R1,[R7, #+24]
+   \      0x28C   0xE781'0006        STR      R0,[R1, +R6]
+   \      0x290   0xE286'6004        ADD      R6,R6,#+4
+   \      0x294   0xEAFF'FFAE        B        ??usartd_transfer_14
+   \                     ??usartd_transfer_20:
+   \      0x298   0x....'....        BL       usart_fifo_get_rx_size
+   \      0x29C   0xE350'0002        CMP      R0,#+2
+   \      0x2A0   0x3A00'0005        BCC      ??usartd_transfer_21
+   \      0x2A4   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x2A8   0xE1D0'11B8        LDRH     R1,[R0, #+24]
+   \      0x2AC   0xE597'0018        LDR      R0,[R7, #+24]
+   \      0x2B0   0xE180'10B6        STRH     R1,[R0, +R6]
+   \      0x2B4   0xE286'6002        ADD      R6,R6,#+2
+   \      0x2B8   0xEAFF'FFA5        B        ??usartd_transfer_14
+   \                     ??usartd_transfer_21:
+   \      0x2BC   0xE597'1000        LDR      R1,[R7, #+0]
+   \      0x2C0   0xE5D1'0018        LDRB     R0,[R1, #+24]
+   \      0x2C4   0xEAFF'FF9F        B        ??usartd_transfer_13
+   \                     ??usartd_transfer_19:
+   \      0x2C8   0xE590'1014        LDR      R1,[R0, #+20]
+   \      0x2CC   0xE311'0001        TST      R1,#0x1
+   \      0x2D0   0x1AFF'FF9B        BNE      ??usartd_transfer_12
+   \      0x2D4   0xE311'0F40        TST      R1,#0x100
+   \      0x2D8   0x0AFF'FFFA        BEQ      ??usartd_transfer_19
+   \      0x2DC   0xE3A0'1E80        MOV      R1,#+2048
+   \      0x2E0   0xE580'1000        STR      R1,[R0, #+0]
+   \      0x2E4   0xE587'401C        STR      R4,[R7, #+28]
+   \      0x2E8   0xE1C7'62B4        STRH     R6,[R7, #+36]
+   \      0x2EC   0xE287'0014        ADD      R0,R7,#+20
+   \      0x2F0   0x....'....        BL       mutex_unlock
+   \      0x2F4   0xE3A0'0005        MOV      R0,#+5
+   \      0x2F8   0xE28D'D018        ADD      SP,SP,#+24
+   \      0x2FC   0xE8BD'81F0        POP      {R4-R8,PC}
+    408          			}
+    409          		}
+    410          		break;
+    411          
+    412          	case USARTD_MODE_ASYNC:
+    413          		if (buf->attr & USARTD_BUF_ATTR_WRITE)
+   \                     ??usartd_transfer_9:
+   \      0x300   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \      0x304   0xE310'0001        TST      R0,#0x1
+   \      0x308   0x0A00'0002        BEQ      ??usartd_transfer_22
+    414          			usart_enable_it(desc->addr, US_IER_TXRDY);
+   \      0x30C   0xE3A0'1002        MOV      R1,#+2
+   \      0x310   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x314   0x....'....        BL       usart_enable_it
+    415          
+    416          		if (buf->attr & USARTD_BUF_ATTR_READ) {
+   \                     ??usartd_transfer_22:
+   \      0x318   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \      0x31C   0xE310'0002        TST      R0,#0x2
+   \      0x320   0x0A00'0007        BEQ      ??usartd_transfer_1
+    417          			usart_get_status(desc->addr);
+   \      0x324   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x328   0x....'....        BL       usart_get_status
+    418          
+    419          			usart_restart_rx_timeout(desc->addr);
+   \      0x32C   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x330   0x....'....        BL       usart_restart_rx_timeout
+    420          			usart_enable_it(desc->addr, US_IER_RXRDY | US_IER_TIMEOUT);
+   \      0x334   0xE3A0'1001        MOV      R1,#+1
+   \      0x338   0xE381'1F40        ORR      R1,R1,#0x100
+   \      0x33C   0xE597'0000        LDR      R0,[R7, #+0]
+   \      0x340   0x....'....        BL       usart_enable_it
+    421          		}
+    422          		break;
+    423          
+    424          	case USARTD_MODE_DMA:
+    425          		if (buf->attr & USARTD_BUF_ATTR_WRITE)
+    426          			_usartd_dma_write(0);
+    427          		if (buf->attr & USARTD_BUF_ATTR_READ)
+    428          			_usartd_dma_read(0);
+    429          		break;
+    430          
+    431          	default:
+    432          		trace_fatal("Unknown Usart mode!\r\n");
+    433          	}
+    434          
+    435          	return USARTD_SUCCESS;
+   \                     ??usartd_transfer_1:
+   \      0x344   0xE3A0'0000        MOV      R0,#+0
+   \                     ??usartd_transfer_2:
+   \      0x348   0xE28D'D018        ADD      SP,SP,#+24
+   \      0x34C   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+   \                     ??usartd_transfer_8:
+   \      0x350   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \      0x354   0xE310'0001        TST      R0,#0x1
+   \      0x358   0x0A00'0018        BEQ      ??usartd_transfer_23
+   \      0x35C   0xE594'6000        LDR      R6,[R4, #+0]
+   \      0x360   0xE596'0034        LDR      R0,[R6, #+52]
+   \      0x364   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x368   0xE596'2000        LDR      R2,[R6, #+0]
+   \      0x36C   0xE282'301C        ADD      R3,R2,#+28
+   \      0x370   0xE58D'3004        STR      R3,[SP, #+4]
+   \      0x374   0xE596'1038        LDR      R1,[R6, #+56]
+   \      0x378   0xE3A0'3001        MOV      R3,#+1
+   \      0x37C   0xE58D'1008        STR      R1,[SP, #+8]
+   \      0x380   0xE1A0'200D        MOV      R2,SP
+   \      0x384   0xE286'1078        ADD      R1,R6,#+120
+   \      0x388   0xE596'0074        LDR      R0,[R6, #+116]
+   \      0x38C   0x....'....        BL       dma_configure_transfer
+   \      0x390   0xE3A0'2000        MOV      R2,#+0
+   \      0x394   0x....'....        LDR      R1,??DataTable15_7
+   \      0x398   0xE28D'000C        ADD      R0,SP,#+12
+   \      0x39C   0x....'....        BL       callback_set
+   \      0x3A0   0xE28D'100C        ADD      R1,SP,#+12
+   \      0x3A4   0xE596'0074        LDR      R0,[R6, #+116]
+   \      0x3A8   0x....'....        BL       dma_set_callback
+   \      0x3AC   0xE59D'1008        LDR      R1,[SP, #+8]
+   \      0x3B0   0xE59D'0000        LDR      R0,[SP, #+0]
+   \      0x3B4   0x....'....        BL       cache_clean_region
+   \      0x3B8   0xE596'0074        LDR      R0,[R6, #+116]
+   \      0x3BC   0x....'....        BL       dma_start_transfer
+   \                     ??usartd_transfer_23:
+   \      0x3C0   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \      0x3C4   0xE310'0002        TST      R0,#0x2
+   \      0x3C8   0x0AFF'FFDD        BEQ      ??usartd_transfer_1
+   \      0x3CC   0xE594'4000        LDR      R4,[R4, #+0]
+   \      0x3D0   0xE3A0'3000        MOV      R3,#+0
+   \      0x3D4   0xE3A0'2000        MOV      R2,#+0
+   \      0x3D8   0xE284'0068        ADD      R0,R4,#+104
+   \      0x3DC   0xE3A0'1000        MOV      R1,#+0
+   \      0x3E0   0xE880'000E        STM      R0,{R1-R3}
+   \      0x3E4   0xE594'1000        LDR      R1,[R4, #+0]
+   \      0x3E8   0xE594'0018        LDR      R0,[R4, #+24]
+   \      0x3EC   0xE281'2018        ADD      R2,R1,#+24
+   \      0x3F0   0xE594'101C        LDR      R1,[R4, #+28]
+   \      0x3F4   0xE584'2068        STR      R2,[R4, #+104]
+   \      0x3F8   0xE584'006C        STR      R0,[R4, #+108]
+   \      0x3FC   0xE584'1070        STR      R1,[R4, #+112]
+   \      0x400   0xE3A0'3001        MOV      R3,#+1
+   \      0x404   0xE284'2068        ADD      R2,R4,#+104
+   \      0x408   0xE284'105C        ADD      R1,R4,#+92
+   \      0x40C   0xE594'0058        LDR      R0,[R4, #+88]
+   \      0x410   0x....'....        BL       dma_configure_transfer
+   \      0x414   0xE3A0'2000        MOV      R2,#+0
+   \      0x418   0x....'....        LDR      R1,??DataTable15_8
+   \      0x41C   0xE1A0'000D        MOV      R0,SP
+   \      0x420   0x....'....        BL       callback_set
+   \      0x424   0xE1A0'100D        MOV      R1,SP
+   \      0x428   0xE594'0058        LDR      R0,[R4, #+88]
+   \      0x42C   0x....'....        BL       dma_set_callback
+   \      0x430   0xE3A0'1F40        MOV      R1,#+256
+   \      0x434   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x438   0x....'....        BL       usart_enable_it
+   \      0x43C   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x440   0x....'....        BL       usart_restart_rx_timeout
+   \      0x444   0xE594'0058        LDR      R0,[R4, #+88]
+   \      0x448   0x....'....        BL       dma_start_transfer
+   \      0x44C   0xEAFF'FFBC        B        ??usartd_transfer_1
+   \                     ??usartd_transfer_10:
+   \      0x450   0x....'....        LDR      R0,??DataTable15_9
+   \      0x454   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x458   0xE351'0000        CMP      R1,#+0
+   \      0x45C   0x0A00'0001        BEQ      ??usartd_transfer_24
+   \      0x460   0x....'....        ADR      R0,?_5
+   \      0x464   0x....'....        BL       printf
+   \                     ??usartd_transfer_24:
+   \      0x468   0xEAFF'FFFE        B        ??usartd_transfer_24
+    436          }
+    437          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    438          void usartd_finish_rx_transfer(uint8_t iface)
+    439          {
+   \                     usartd_finish_rx_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    440          	assert(iface < USART_IFACE_COUNT);
+   \        0x8   0xE354'0004        CMP      R4,#+4
+   \        0xC   0xBA00'0004        BLT      ??usartd_finish_rx_transfer_0
+   \       0x10   0xE3A0'2F6E        MOV      R2,#+440
+   \       0x14   0x....'....        LDR      R1,??DataTable15
+   \       0x18   0x....'....        ADR      R0,?_1
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    441          	mutex_unlock(&_serial[iface]->rx.mutex);
+   \                     ??usartd_finish_rx_transfer_0:
+   \       0x24   0x....'....        LDR      R0,??DataTable15_2
+   \       0x28   0xE790'1104        LDR      R1,[R0, +R4, LSL #+2]
+   \       0x2C   0xE8BD'4010        POP      {R4,LR}
+   \       0x30   0xE281'0014        ADD      R0,R1,#+20
+   \       0x34   0x....'....        B        mutex_unlock     ;; tailcall
+    442          }
+    443          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    444          void usartd_finish_tx_transfer(uint8_t iface)
+    445          {
+   \                     usartd_finish_tx_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    446          	assert(iface < USART_IFACE_COUNT);
+   \        0x8   0xE354'0004        CMP      R4,#+4
+   \        0xC   0xBA00'0005        BLT      ??usartd_finish_tx_transfer_0
+   \       0x10   0xE3A0'20BE        MOV      R2,#+190
+   \       0x14   0xE382'2F40        ORR      R2,R2,#0x100
+   \       0x18   0x....'....        LDR      R1,??DataTable15
+   \       0x1C   0x....'....        ADR      R0,?_1
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    447          	mutex_unlock(&_serial[iface]->tx.mutex);
+   \                     ??usartd_finish_tx_transfer_0:
+   \       0x28   0x....'....        LDR      R0,??DataTable15_2
+   \       0x2C   0xE790'1104        LDR      R1,[R0, +R4, LSL #+2]
+   \       0x30   0xE8BD'4010        POP      {R4,LR}
+   \       0x34   0xE281'0030        ADD      R0,R1,#+48
+   \       0x38   0x....'....        B        mutex_unlock     ;; tailcall
+    448          }
+    449          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    450          uint32_t usartd_rx_is_busy(const uint8_t iface)
+    451          {
+   \                     usartd_rx_is_busy:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    452          	assert(iface < USART_IFACE_COUNT);
+   \        0x8   0xE354'0004        CMP      R4,#+4
+   \        0xC   0xBA00'0004        BLT      ??usartd_rx_is_busy_0
+   \       0x10   0xE3A0'2F71        MOV      R2,#+452
+   \       0x14   0x....'....        LDR      R1,??DataTable15
+   \       0x18   0x....'....        ADR      R0,?_1
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    453          	return mutex_is_locked(&_serial[iface]->rx.mutex);
+   \                     ??usartd_rx_is_busy_0:
+   \       0x24   0x....'....        LDR      R0,??DataTable15_2
+   \       0x28   0xE790'1104        LDR      R1,[R0, +R4, LSL #+2]
+   \       0x2C   0xE8BD'4010        POP      {R4,LR}
+   \       0x30   0xE281'0014        ADD      R0,R1,#+20
+   \       0x34   0x....'....        B        mutex_is_locked  ;; tailcall
+    454          }
+    455          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    456          uint32_t usartd_tx_is_busy(const uint8_t iface)
+    457          {
+   \                     usartd_tx_is_busy:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    458          	assert(iface < USART_IFACE_COUNT);
+   \        0x8   0xE354'0004        CMP      R4,#+4
+   \        0xC   0xBA00'0005        BLT      ??usartd_tx_is_busy_0
+   \       0x10   0xE3A0'20CA        MOV      R2,#+202
+   \       0x14   0xE382'2F40        ORR      R2,R2,#0x100
+   \       0x18   0x....'....        LDR      R1,??DataTable15
+   \       0x1C   0x....'....        ADR      R0,?_1
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    459          	return mutex_is_locked(&_serial[iface]->tx.mutex);
+   \                     ??usartd_tx_is_busy_0:
+   \       0x28   0x....'....        LDR      R0,??DataTable15_2
+   \       0x2C   0xE790'1104        LDR      R1,[R0, +R4, LSL #+2]
+   \       0x30   0xE8BD'4010        POP      {R4,LR}
+   \       0x34   0xE281'0030        ADD      R0,R1,#+48
+   \       0x38   0x....'....        B        mutex_is_locked  ;; tailcall
+    460          }
+    461          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    462          void usartd_wait_rx_transfer(const uint8_t iface)
+    463          {
+   \                     usartd_wait_rx_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    464          	assert(iface < USART_IFACE_COUNT);
+   \        0x8   0xE354'0004        CMP      R4,#+4
+   \        0xC   0xBA00'0004        BLT      ??usartd_wait_rx_transfer_0
+   \       0x10   0xE3A0'2F74        MOV      R2,#+464
+   \       0x14   0x....'....        LDR      R1,??DataTable15
+   \       0x18   0x....'....        ADR      R0,?_1
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    465          	while (mutex_is_locked(&_serial[iface]->rx.mutex));
+   \                     ??usartd_wait_rx_transfer_0:
+   \       0x24   0x....'....        LDR      R0,??DataTable15_2
+   \       0x28   0xE790'1104        LDR      R1,[R0, +R4, LSL #+2]
+   \       0x2C   0xE281'0014        ADD      R0,R1,#+20
+   \       0x30   0x....'....        BL       mutex_is_locked
+   \       0x34   0xE350'0000        CMP      R0,#+0
+   \       0x38   0x1AFF'FFF9        BNE      ??usartd_wait_rx_transfer_0
+    466          }
+   \       0x3C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    467          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    468          void usartd_wait_tx_transfer(const uint8_t iface)
+    469          {
+   \                     usartd_wait_tx_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    470          	assert(iface < USART_IFACE_COUNT);
+   \        0x8   0xE354'0004        CMP      R4,#+4
+   \        0xC   0xBA00'0005        BLT      ??usartd_wait_tx_transfer_0
+   \       0x10   0xE3A0'20D6        MOV      R2,#+214
+   \       0x14   0xE382'2F40        ORR      R2,R2,#0x100
+   \       0x18   0x....'....        LDR      R1,??DataTable15
+   \       0x1C   0x....'....        ADR      R0,?_1
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    471          	while (mutex_is_locked(&_serial[iface]->tx.mutex));
+   \                     ??usartd_wait_tx_transfer_0:
+   \       0x28   0x....'....        LDR      R0,??DataTable15_2
+   \       0x2C   0xE790'1104        LDR      R1,[R0, +R4, LSL #+2]
+   \       0x30   0xE281'0030        ADD      R0,R1,#+48
+   \       0x34   0x....'....        BL       mutex_is_locked
+   \       0x38   0xE350'0000        CMP      R0,#+0
+   \       0x3C   0x1AFF'FFF9        BNE      ??usartd_wait_tx_transfer_0
+    472          }
+   \       0x40   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15_1:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15_2:
+   \        0x0   0x....'....        DC32     _serial
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15_3:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15_4:
+   \        0x0   0x....'....        DC32     _usartd_handler
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15_5:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15_6:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15_7:
+   \        0x0   0x....'....        DC32     _usartd_dma_write_callback
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15_8:
+   \        0x0   0x....'....        DC32     _usartd_dma_read_callback
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15_9:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6C
+
+   \              0x73 0x65    
+
+   \              0x72 0x69    
+
+   \              0x61 0x6C
+   \       0x40   0x5C 0x75          DC8 0x5C, 0x75, 0x73, 0x61, 0x72, 0x74, 0x64, 0x2E
+
+   \              0x73 0x61    
+
+   \              0x72 0x74    
+
+   \              0x64 0x2E
+   \       0x48   0x63 0x00          DC8 0x63, 0
+   \       0x4A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_2:
+   \        0x0   0x69 0x64          DC8 "id < (51)"
+
+   \              0x20 0x3C    
+
+   \              0x20 0x28    
+
+   \              0x35 0x31    
+
+   \              0x29 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_3:
+   \        0x0   0x63 0x6F          DC8 "config->dma.rx.channel"
+
+   \              0x6E 0x66    
+
+   \              0x69 0x67    
+
+   \              0x2D 0x3E    
+
+   \              0x64 0x6D    
+
+   \              0x61 0x2E    
+
+   \              0x72 0x78    
+
+   \              0x2E 0x63    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x6C    
+
+   \              0x00
+   \       0x17   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_4:
+   \        0x0   0x63 0x6F          DC8 "config->dma.tx.channel"
+
+   \              0x6E 0x66    
+
+   \              0x69 0x67    
+
+   \              0x2D 0x3E    
+
+   \              0x64 0x6D    
+
+   \              0x61 0x2E    
+
+   \              0x74 0x78    
+
+   \              0x2E 0x63    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x6C    
+
+   \              0x00
+   \       0x17   0x00               DC8 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x69 0x66          DC8 "iface < (4)"
+
+   \              0x61 0x63    
+
+   \              0x65 0x20    
+
+   \              0x3C 0x20    
+
+   \              0x28 0x34    
+
+   \              0x29 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x2D 0x46          DC8 "-F- Unknown Usart mode!\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x6B 0x6E    
+
+   \              0x6F 0x77    
+
+   \              0x6E 0x20    
+
+   \              0x55 0x73    
+
+   \              0x61 0x72    
+
+   \              0x74 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x21 0x0D    
+
+   \              0x0A 0x00
+   \       0x1A   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   _usartd_dma_read_callback
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+        16   -> cache_invalidate_region
+        16   -> callback_call
+        16   -> dma_fifo_flush
+        16   -> dma_get_transferred_data_len
+        16   -> dma_is_transfer_done
+        16   -> dma_reset_channel
+        16   -> dma_stop_transfer
+        16   -> mutex_unlock
+        16   -> usart_disable_it
+      16   _usartd_dma_write_callback
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+        16   -> callback_call
+        16   -> dma_reset_channel
+        16   -> mutex_unlock
+      40   _usartd_handler
+        40   -> __aeabi_assert
+        40   -> __iar_EmptyStepPoint
+        40   -> cache_invalidate_region
+        40   -> callback_call
+        40   -> dma_fifo_flush
+        40   -> dma_get_transferred_data_len
+        40   -> dma_is_transfer_done
+        40   -> dma_reset_channel
+        40   -> dma_stop_transfer
+        40   -> get_usart_addr_from_id
+        40   -> mutex_unlock
+         0   -> usart_disable_it
+        40   -> usart_disable_it
+        40   -> usart_enable_it
+        40   -> usart_get_char
+        40   -> usart_get_masked_status
+        40   -> usart_put_char
+      16   usartd_configure
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+        16   -> dma_allocate_channel
+        16   -> flexcom_select
+        16   -> get_flexcom_addr_from_id
+        16   -> get_peripheral_fifo_depth
+        16   -> get_usart_id_from_addr
+        16   -> irq_add_handler
+        16   -> irq_enable
+        16   -> pmc_configure_peripheral
+        16   -> usart_configure
+        16   -> usart_fifo_configure
+        16   -> usart_fifo_enable
+        16   -> usart_set_rx_timeout
+       8   usartd_finish_rx_transfer
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         0   -> mutex_unlock
+       8   usartd_finish_tx_transfer
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         0   -> mutex_unlock
+       8   usartd_rx_is_busy
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         0   -> mutex_is_locked
+      48   usartd_transfer
+        48   -> __aeabi_assert
+        48   -> __iar_EmptyStepPoint
+        48   -> cache_clean_region
+        48   -> callback_call
+        48   -> callback_copy
+        48   -> callback_set
+        48   -> dma_configure_transfer
+        48   -> dma_set_callback
+        48   -> dma_start_transfer
+        48   -> mutex_try_lock
+        48   -> mutex_unlock
+        48   -> printf
+        48   -> usart_enable_it
+        48   -> usart_fifo_get_rx_size
+        48   -> usart_fifo_get_tx_size
+        48   -> usart_get_status
+        48   -> usart_restart_rx_timeout
+       8   usartd_tx_is_busy
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         0   -> mutex_is_locked
+       8   usartd_wait_rx_transfer
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         8   -> mutex_is_locked
+       8   usartd_wait_tx_transfer
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+         8   -> mutex_is_locked
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable15
+       4  ??DataTable15_1
+       4  ??DataTable15_2
+       4  ??DataTable15_3
+       4  ??DataTable15_4
+       4  ??DataTable15_5
+       4  ??DataTable15_6
+       4  ??DataTable15_7
+       4  ??DataTable15_8
+       4  ??DataTable15_9
+      12  ?Subroutine0
+      76  ?_0
+      12  ?_1
+      12  ?_2
+      24  ?_3
+      24  ?_4
+      28  ?_5
+      16  _serial
+     188  _usartd_dma_read_callback
+      80  _usartd_dma_write_callback
+     700  _usartd_handler
+     404  usartd_configure
+      56  usartd_finish_rx_transfer
+      60  usartd_finish_tx_transfer
+      56  usartd_rx_is_busy
+   1'132  usartd_transfer
+      60  usartd_tx_is_busy
+      64  usartd_wait_rx_transfer
+      68  usartd_wait_tx_transfer
+
+ 
+    16 bytes in section .bss
+   136 bytes in section .rodata
+ 2'960 bytes in section SOFTPACK
+ 
+ 2'960 bytes of CODE  memory
+   136 bytes of CONST memory
+    16 bytes of DATA  memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1102 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Nov/2020  13:24:55
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\pwmc.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW5635.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\pwmc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\List\pwmc.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sam9x60-ek\ddram\Obj\pwmc.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf  =  flags,int_specials,widths
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\pwmc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup pwm_module Working with PWM
+     31           * \section Purpose
+     32           * The PWM driver provides the interface to configure and use the PWM
+     33           * peripheral.
+     34           *
+     35           * The PWM macrocell controls square output waveforms of 4 channels.
+     36           * Characteristics of output waveforms such as period, duty-cycle can be configured.\n
+     37           *
+     38           * Before enabling the channels, they must have been configured first.
+     39           * The main settings include:
+     40           * <ul>
+     41           * <li>Configuration of the clock generator.</li>
+     42           * <li>Selection of the clock for each channel.</li>
+     43           * <li>Configuration of output waveform characteristics, such as period, duty-cycle etc.</li>
+     44           * </ul>
+     45           *
+     46           * After the channels is enabled, the user must use respective update registers
+     47           * to change the wave characteristics to prevent unexpected output waveform.
+     48           * i.e. PWM_CUPDx register should be used if user want to change duty-cycle
+     49           * when the channel is enabled.
+     50           *
+     51           * \section Usage
+     52           * <ul>
+     53           * <li>  Configure PWM clock using pwmc_configure_clocks().
+     54           * <li>  Enable & disable given PWM channel using pwmc_enable_channel() and pwmc_disable_channel().
+     55           * <li>  Enable & disable interrupt of given PWM channel using pwmc_enable_channel_it()
+     56           * and pwmc_disable_channel_it().
+     57           * <li>  Set feature of the given PWM channel's output signal using pwmc_set_period()
+     58           * and pwmc_set_duty_cycle().
+     59           * </li>
+     60           * </ul>
+     61           *
+     62           * For more accurate information, please look at the PWM section of the
+     63           * Datasheet.
+     64           *
+     65           * Related files :\n
+     66           * \ref pwmc.c\n
+     67           * \ref pwmc.h.\n
+     68           */
+     69          /*@{*/
+     70          /*@}*/
+     71          
+     72          /**
+     73           * \file
+     74           *
+     75           * Implementation of the Pulse Width Modulation Controller (PWM) peripheral.
+     76           *
+     77           */
+     78          
+     79          /*----------------------------------------------------------------------------
+     80           *        Headers
+     81           *----------------------------------------------------------------------------*/
+     82          
+     83          #include <assert.h>
+     84          #include <stdint.h>
+     85          #include <string.h>
+     86          
+     87          #include "callback.h"
+     88          #include "chip.h"
+     89          #include "dma/dma.h"
+     90          #include "mm/cache.h"
+     91          #include "peripherals/pwmc.h"
+     92          #include "trace.h"
+     93          
+     94          /*----------------------------------------------------------------------------
+     95           *        Local variables
+     96           *----------------------------------------------------------------------------*/
+     97          
+     98          #ifdef CONFIG_HAVE_PWMC_DMA
+     99          static struct _dma_channel* pwm_dma_channel = NULL;
+    100          static struct _callback pwmc_cb;
+    101          #endif /* CONFIG_HAVE_PWMC_DMA */
+    102          
+    103          /*----------------------------------------------------------------------------
+    104           *        Exported functions
+    105           *----------------------------------------------------------------------------*/
+    106          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    107          void pwmc_configure_clocks(Pwm *pwm, uint32_t mode)
+    108          {
+    109          	pwm->PWM_CLK = mode;
+   \                     pwmc_configure_clocks:
+   \        0x0   0xE580'1000        STR      R1,[R0, #+0]
+    110          }
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    111          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    112          void pwmc_enable_channel(Pwm *pwm, uint8_t channel)
+    113          {
+    114          	pwm->PWM_ENA = 0x1ul << channel;
+   \                     pwmc_enable_channel:
+   \        0x0   0xE3A0'2001        MOV      R2,#+1
+   \        0x4   0xE1A0'1112        LSL      R1,R2,R1
+   \        0x8   0xE580'1004        STR      R1,[R0, #+4]
+    115          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    116          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    117          void pwmc_disable_channel(Pwm *pwm, uint8_t channel)
+    118          {
+    119          	pwm->PWM_DIS = 0x1ul << channel;
+   \                     pwmc_disable_channel:
+   \        0x0   0xE3A0'2001        MOV      R2,#+1
+   \        0x4   0xE1A0'1112        LSL      R1,R2,R1
+   \        0x8   0xE580'1008        STR      R1,[R0, #+8]
+    120          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    121          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    122          void pwmc_enable_channel_it(Pwm *pwm, uint8_t channel)
+    123          {
+    124          	pwm->PWM_IER1 = 0x1ul << channel;
+   \                     pwmc_enable_channel_it:
+   \        0x0   0xE3A0'2001        MOV      R2,#+1
+   \        0x4   0xE1A0'1112        LSL      R1,R2,R1
+   \        0x8   0xE580'1010        STR      R1,[R0, #+16]
+    125          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    126          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    127          void pwmc_disable_channel_it(Pwm *pwm, uint8_t channel)
+    128          {
+    129          	pwm->PWM_IDR1 = 0x1ul << channel;
+   \                     pwmc_disable_channel_it:
+   \        0x0   0xE3A0'2001        MOV      R2,#+1
+   \        0x4   0xE1A0'1112        LSL      R1,R2,R1
+   \        0x8   0xE580'1014        STR      R1,[R0, #+20]
+    130          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    131          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    132          uint32_t pwmc_get_it_status1(Pwm *pwm)
+    133          {
+    134          	return pwm->PWM_ISR1;
+   \                     pwmc_get_it_status1:
+   \        0x0   0xE590'001C        LDR      R0,[R0, #+28]
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    135          }
+    136          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    137          void pwmc_enable_it(Pwm *pwm, uint32_t sources1, uint32_t sources2)
+    138          {
+    139          	pwm->PWM_IER1 = sources1;
+   \                     pwmc_enable_it:
+   \        0x0   0xE580'1010        STR      R1,[R0, #+16]
+    140          #ifdef CONFIG_HAVE_PWMC_CMP_UNIT
+    141          	pwm->PWM_IER2 = sources2;
+    142          #endif
+    143          }
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    144          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    145          void pwmc_disable_it(Pwm *pwm, uint32_t sources1, uint32_t sources2)
+    146          {
+    147          	pwm->PWM_IDR1 = sources1;
+   \                     pwmc_disable_it:
+   \        0x0   0xE580'1014        STR      R1,[R0, #+20]
+    148          #ifdef CONFIG_HAVE_PWMC_CMP_UNIT
+    149          	pwm->PWM_IDR2 = sources2;
+    150          #endif
+    151          }
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    152          
+    153          #ifdef CONFIG_HAVE_PWMC_CMP_UNIT
+    154          uint32_t pwmc_get_it_status2(Pwm *pwm)
+    155          {
+    156          	return pwm->PWM_ISR2;
+    157          }
+    158          
+    159          void pwmc_configure_comparison_unit(Pwm *pwm, uint32_t x,
+    160          		uint32_t value, uint32_t mode)
+    161          {
+    162          	assert(x < 8);
+    163          
+    164          	/* If channel is disabled, write to CMPxM & CMPxV */
+    165          	if ((pwm->PWM_SR & (1 << 0)) == 0) {
+    166          		pwm->PWM_CMP[x].PWM_CMPM = mode;
+    167          		pwm->PWM_CMP[x].PWM_CMPV = value;
+    168          	} else {
+    169          		/* Otherwise use update register */
+    170          		pwm->PWM_CMP[x].PWM_CMPMUPD = mode;
+    171          		pwm->PWM_CMP[x].PWM_CMPVUPD = value;
+    172          	}
+    173          }
+    174          
+    175          #endif /* CONFIG_HAVE_PWMC_CMP_UNIT */
+    176          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    177          void pwmc_configure_channel(Pwm *pwm, uint8_t channel, uint32_t mode)
+    178          {
+   \                     pwmc_configure_channel:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+    179          	assert(channel < ARRAY_SIZE(pwm->PWM_CH));
+   \       0x10   0xE355'0004        CMP      R5,#+4
+   \       0x14   0x3A00'0004        BCC      ??pwmc_configure_channel_0
+   \       0x18   0x....'....        LDR      R0,??DataTable3
+   \       0x1C   0xE3A0'20B3        MOV      R2,#+179
+   \       0x20   0xE280'103C        ADD      R1,R0,#+60
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    180          
+    181          	trace_debug("pwm: set channel %u with mode 0x%08x\n\r", \
+    182          			(unsigned)channel, (unsigned)mode);
+   \                     ??pwmc_configure_channel_0:
+   \       0x2C   0x....'....        LDR      R0,??DataTable3_1
+   \       0x30   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x34   0xE351'0004        CMP      R1,#+4
+   \       0x38   0x9A00'0003        BLS      ??pwmc_configure_channel_1
+   \       0x3C   0xE1A0'2006        MOV      R2,R6
+   \       0x40   0xE1A0'1005        MOV      R1,R5
+   \       0x44   0x....'....        LDR      R0,??DataTable3_2
+   \       0x48   0x....'....        BL       printf
+    183          
+    184          #ifdef PWM_CMUPD0_CPOLUP
+    185          	if ((pwm->PWM_SR & (1 << channel)) == 0)
+    186          		pwm->PWM_CH[channel].PWM_CMR = mode;
+    187          	else {
+    188          		switch (channel) {
+    189          			case 0:
+    190          				pwm->PWM_CMUPD0 = mode;
+    191          				break;
+    192          			case 1:
+    193          				pwm->PWM_CMUPD1 = mode;
+    194          				break;
+    195          			case 2:
+    196          				pwm->PWM_CMUPD2 = mode;
+    197          				break;
+    198          			case 3:
+    199          			default:
+    200          				pwm->PWM_CMUPD3 = mode;
+    201          				break;
+    202          		}
+    203          	}
+    204          #else
+    205          	pwm->PWM_CH[channel].PWM_CMR = mode;
+   \                     ??pwmc_configure_channel_1:
+   \       0x4C   0xE084'0285        ADD      R0,R4,R5, LSL #+5
+   \       0x50   0xE580'6200        STR      R6,[R0, #+512]
+    206          #endif
+    207          }
+   \       0x54   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    208          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    209          void pwmc_set_period(Pwm *pwm, uint8_t channel, uint16_t period)
+    210          {
+   \                     pwmc_set_period:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4001        MOV      R4,R1
+   \        0x8   0xE1A0'6000        MOV      R6,R0
+   \        0xC   0xE1A0'5002        MOV      R5,R2
+    211          	assert(channel < ARRAY_SIZE(pwm->PWM_CH));
+   \       0x10   0xE354'0004        CMP      R4,#+4
+   \       0x14   0x3A00'0004        BCC      ??pwmc_set_period_0
+   \       0x18   0x....'....        LDR      R0,??DataTable3
+   \       0x1C   0xE3A0'20D3        MOV      R2,#+211
+   \       0x20   0xE280'103C        ADD      R1,R0,#+60
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    212          
+    213          	/* If channel is disabled, write to CPRD */
+    214          	if ((pwm->PWM_SR & (1 << channel)) == 0) {
+   \                     ??pwmc_set_period_0:
+   \       0x2C   0xE596'100C        LDR      R1,[R6, #+12]
+   \       0x30   0xE3A0'2001        MOV      R2,#+1
+   \       0x34   0xE112'0431        TST      R2,R1, LSR R4
+   \       0x38   0xE086'0284        ADD      R0,R6,R4, LSL #+5
+   \       0x3C   0x1A00'0001        BNE      ??pwmc_set_period_1
+    215          		pwm->PWM_CH[channel].PWM_CPRD = period;
+   \       0x40   0xE580'5208        STR      R5,[R0, #+520]
+   \       0x44   0xE8BD'8070        POP      {R4-R6,PC}
+    216          	}
+    217          	/* Otherwise use update register */
+    218          	else {
+    219          #ifdef PWM_CMR_CPD
+    220          		pwm->PWM_CH[channel].PWM_CMR |= PWM_CMR_CPD;
+   \                     ??pwmc_set_period_1:
+   \       0x48   0xE590'1200        LDR      R1,[R0, #+512]
+   \       0x4C   0xE381'2E40        ORR      R2,R1,#0x400
+   \       0x50   0xE580'2200        STR      R2,[R0, #+512]
+    221          		pwm->PWM_CH[channel].PWM_CUPD = period;
+   \       0x54   0xE580'5210        STR      R5,[R0, #+528]
+    222          #else
+    223          		pwm->PWM_CH[channel].PWM_CPRDUPD = period;
+    224          #endif
+    225          	}
+    226          }
+   \       0x58   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    227          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    228          void pwmc_set_duty_cycle(Pwm *pwm, uint8_t channel, uint16_t duty)
+    229          {
+   \                     pwmc_set_duty_cycle:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'4001        MOV      R4,R1
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+    230          	assert(channel < ARRAY_SIZE(pwm->PWM_CH));
+   \       0x10   0xE354'0004        CMP      R4,#+4
+   \       0x14   0x3A00'0004        BCC      ??pwmc_set_duty_cycle_0
+   \       0x18   0x....'....        LDR      R0,??DataTable3
+   \       0x1C   0xE3A0'20E6        MOV      R2,#+230
+   \       0x20   0xE280'103C        ADD      R1,R0,#+60
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    231          	assert(pwm->PWM_CH[channel].PWM_CPRD >= duty);
+   \                     ??pwmc_set_duty_cycle_0:
+   \       0x2C   0xE085'7284        ADD      R7,R5,R4, LSL #+5
+   \       0x30   0xE597'0208        LDR      R0,[R7, #+520]
+   \       0x34   0xE150'0006        CMP      R0,R6
+   \       0x38   0x2A00'0005        BCS      ??pwmc_set_duty_cycle_1
+   \       0x3C   0x....'....        LDR      R0,??DataTable3
+   \       0x40   0xE3A0'20E7        MOV      R2,#+231
+   \       0x44   0xE280'103C        ADD      R1,R0,#+60
+   \       0x48   0xE280'0F42        ADD      R0,R0,#+264
+   \       0x4C   0x....'....        BL       __aeabi_assert
+   \       0x50   0x....'....        BL       __iar_EmptyStepPoint
+    232          
+    233          	/* If channel is disabled, write to CDTY */
+    234          	if ((pwm->PWM_SR & (1 << channel)) == 0) {
+   \                     ??pwmc_set_duty_cycle_1:
+   \       0x54   0xE595'000C        LDR      R0,[R5, #+12]
+   \       0x58   0xE3A0'1001        MOV      R1,#+1
+   \       0x5C   0xE111'0430        TST      R1,R0, LSR R4
+   \       0x60   0x1A00'0001        BNE      ??pwmc_set_duty_cycle_2
+    235          		pwm->PWM_CH[channel].PWM_CDTY = duty;
+   \       0x64   0xE587'6204        STR      R6,[R7, #+516]
+   \       0x68   0xE8BD'80F1        POP      {R0,R4-R7,PC}
+    236          	}
+    237          	/* Otherwise use update register */
+    238          	else {
+    239          #ifdef PWM_CMR_CPD
+    240          		pwm->PWM_CH[channel].PWM_CMR &= ~PWM_CMR_CPD;
+   \                     ??pwmc_set_duty_cycle_2:
+   \       0x6C   0xE597'0200        LDR      R0,[R7, #+512]
+   \       0x70   0xE3C0'1E40        BIC      R1,R0,#0x400
+   \       0x74   0xE587'1200        STR      R1,[R7, #+512]
+    241          		pwm->PWM_CH[channel].PWM_CUPD = duty;
+   \       0x78   0xE587'6210        STR      R6,[R7, #+528]
+    242          #else
+    243          		pwm->PWM_CH[channel].PWM_CDTYUPD = duty;
+    244          #endif
+    245          	}
+    246          }
+   \       0x7C   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_2:
+   \        0x0   0x....'....        DC32     ?_0+0x8C
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x63 0x68          DC8 0x63, 0x68, 0x61, 0x6E, 0x6E, 0x65, 0x6C, 0x20
+
+   \              0x61 0x6E    
+
+   \              0x6E 0x65    
+
+   \              0x6C 0x20
+   \        0x8   0x3C 0x20          DC8 0x3C, 0x20, 0x28, 0x73, 0x69, 0x7A, 0x65, 0x6F
+
+   \              0x28 0x73    
+
+   \              0x69 0x7A    
+
+   \              0x65 0x6F
+   \       0x10   0x66 0x20          DC8 0x66, 0x20, 0x28, 0x28, 0x70, 0x77, 0x6D, 0x2D
+
+   \              0x28 0x28    
+
+   \              0x70 0x77    
+
+   \              0x6D 0x2D
+   \       0x18   0x3E 0x50          DC8 0x3E, 0x50, 0x57, 0x4D, 0x5F, 0x43, 0x48, 0x29
+
+   \              0x57 0x4D    
+
+   \              0x5F 0x43    
+
+   \              0x48 0x29
+   \       0x20   0x29 0x20          DC8 0x29, 0x20, 0x2F, 0x20, 0x73, 0x69, 0x7A, 0x65
+
+   \              0x2F 0x20    
+
+   \              0x73 0x69    
+
+   \              0x7A 0x65
+   \       0x28   0x6F 0x66          DC8 0x6F, 0x66, 0x28, 0x2A, 0x28, 0x70, 0x77, 0x6D
+
+   \              0x28 0x2A    
+
+   \              0x28 0x70    
+
+   \              0x77 0x6D
+   \       0x30   0x2D 0x3E          DC8 0x2D, 0x3E, 0x50, 0x57, 0x4D, 0x5F, 0x43, 0x48
+
+   \              0x50 0x57    
+
+   \              0x4D 0x5F    
+
+   \              0x43 0x48
+   \       0x38   0x29 0x29          DC8 0x29, 0x29, 0x29, 0
+
+   \              0x29 0x00
+   \       0x3C   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \       0x44   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x4C   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x54   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x5C   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x64   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x6C   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x74   0x73 0x5C          DC8 0x73, 0x5C, 0x70, 0x65, 0x72, 0x69, 0x70, 0x68
+
+   \              0x70 0x65    
+
+   \              0x72 0x69    
+
+   \              0x70 0x68
+   \       0x7C   0x65 0x72          DC8 0x65, 0x72, 0x61, 0x6C, 0x73, 0x5C, 0x70, 0x77
+
+   \              0x61 0x6C    
+
+   \              0x73 0x5C    
+
+   \              0x70 0x77
+   \       0x84   0x6D 0x63          DC8 0x6D, 0x63, 0x2E, 0x63, 0
+
+   \              0x2E 0x63    
+
+   \              0x00
+   \       0x89   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0x8C   0x2D 0x44          DC8 0x2D, 0x44, 0x2D, 0x20, 0x43, 0x3A, 0x5C, 0x77
+
+   \              0x2D 0x20    
+
+   \              0x43 0x3A    
+
+   \              0x5C 0x77
+   \       0x94   0x6F 0x72          DC8 0x6F, 0x72, 0x6B, 0x5C, 0x41, 0x74, 0x6D, 0x65
+
+   \              0x6B 0x5C    
+
+   \              0x41 0x74    
+
+   \              0x6D 0x65
+   \       0x9C   0x6C 0x53          DC8 0x6C, 0x53, 0x6F, 0x66, 0x74, 0x50, 0x41, 0x63
+
+   \              0x6F 0x66    
+
+   \              0x74 0x50    
+
+   \              0x41 0x63
+   \       0xA4   0x6B 0x5C          DC8 0x6B, 0x5C, 0x61, 0x74, 0x6D, 0x65, 0x6C, 0x2D
+
+   \              0x61 0x74    
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x2D
+   \       0xAC   0x73 0x6F          DC8 0x73, 0x6F, 0x66, 0x74, 0x77, 0x61, 0x72, 0x65
+
+   \              0x66 0x74    
+
+   \              0x77 0x61    
+
+   \              0x72 0x65
+   \       0xB4   0x2D 0x70          DC8 0x2D, 0x70, 0x61, 0x63, 0x6B, 0x61, 0x67, 0x65
+
+   \              0x61 0x63    
+
+   \              0x6B 0x61    
+
+   \              0x67 0x65
+   \       0xBC   0x2D 0x32          DC8 0x2D, 0x32, 0x2E, 0x31, 0x37, 0x5C, 0x64, 0x72
+
+   \              0x2E 0x31    
+
+   \              0x37 0x5C    
+
+   \              0x64 0x72
+   \       0xC4   0x69 0x76          DC8 0x69, 0x76, 0x65, 0x72, 0x73, 0x5C, 0x70, 0x65
+
+   \              0x65 0x72    
+
+   \              0x73 0x5C    
+
+   \              0x70 0x65
+   \       0xCC   0x72 0x69          DC8 0x72, 0x69, 0x70, 0x68, 0x65, 0x72, 0x61, 0x6C
+
+   \              0x70 0x68    
+
+   \              0x65 0x72    
+
+   \              0x61 0x6C
+   \       0xD4   0x73 0x5C          DC8 0x73, 0x5C, 0x70, 0x77, 0x6D, 0x63, 0x2E, 0x63
+
+   \              0x70 0x77    
+
+   \              0x6D 0x63    
+
+   \              0x2E 0x63
+   \       0xDC   0x3A 0x31          DC8 0x3A, 0x31, 0x38, 0x31, 0x20, 0x70, 0x77, 0x6D
+
+   \              0x38 0x31    
+
+   \              0x20 0x70    
+
+   \              0x77 0x6D
+   \       0xE4   0x3A 0x20          DC8 0x3A, 0x20, 0x73, 0x65, 0x74, 0x20, 0x63, 0x68
+
+   \              0x73 0x65    
+
+   \              0x74 0x20    
+
+   \              0x63 0x68
+   \       0xEC   0x61 0x6E          DC8 0x61, 0x6E, 0x6E, 0x65, 0x6C, 0x20, 0x25, 0x75
+
+   \              0x6E 0x65    
+
+   \              0x6C 0x20    
+
+   \              0x25 0x75
+   \       0xF4   0x20 0x77          DC8 0x20, 0x77, 0x69, 0x74, 0x68, 0x20, 0x6D, 0x6F
+
+   \              0x69 0x74    
+
+   \              0x68 0x20    
+
+   \              0x6D 0x6F
+   \       0xFC   0x64 0x65          DC8 0x64, 0x65, 0x20, 0x30, 0x78, 0x25, 0x30, 0x38
+
+   \              0x20 0x30    
+
+   \              0x78 0x25    
+
+   \              0x30 0x38
+   \      0x104   0x78 0x0A          DC8 0x78, 0x0A, 0x0D, 0
+
+   \              0x0D 0x00
+   \      0x108   0x70 0x77          DC8 "pwm->PWM_CH[channel].PWM_CPRD >= duty"
+
+   \              0x6D 0x2D    
+
+   \              0x3E 0x50    
+
+   \              0x57 0x4D    
+
+   \              0x5F 0x43    
+
+   \              0x48 0x5B    
+
+   \              0x63 0x68    
+
+   \              0x61 0x6E    
+
+   \              0x6E 0x65    
+
+   \              0x6C 0x5D    
+
+   \              0x2E 0x50    
+
+   \              0x57 0x4D    
+
+   \              0x5F 0x43    
+
+   \              0x50 0x52    
+
+   \              0x44 0x20    
+
+   \              0x3E 0x3D    
+
+   \              0x20 0x64    
+
+   \              0x75 0x74    
+
+   \              0x79 0x00
+   \      0x12E   0x00 0x00          DC8 0, 0
+    247          
+    248          #ifdef CONFIG_HAVE_PWMC_SYNC_MODE
+    249          void pwmc_configure_sync_channels(Pwm *pwm, uint32_t mode)
+    250          {
+    251          #ifndef NDEBUG
+    252          	uint32_t sync_bits = mode & (PWM_SCM_SYNC0 | PWM_SCM_SYNC1 \
+    253          				     | PWM_SCM_SYNC2 | PWM_SCM_SYNC3);
+    254          #ifdef CONFIG_HAVE_PWMC_DMA
+    255          	trace_debug("pwm: SYNC CHs bitmap 0x%x, Update Mode %u, " \
+    256          		    "DMA Request Mode %u, Request Comparison Selection %u\n\r",
+    257          		    (unsigned)sync_bits,
+    258          		    (unsigned)((mode & PWM_SCM_UPDM_Msk) >> PWM_SCM_UPDM_Pos), \
+    259          		    (unsigned)(0 != (mode & PWM_SCM_PTRM)),		\
+    260          		    (unsigned)((mode & PWM_SCM_PTRCS_Msk) >> PWM_SCM_PTRCS_Pos));
+    261          #else
+    262          	trace_debug("pwm: SYNC CHs bitmap 0x%x, Update Mode %u, " ,
+    263          		    (unsigned)sync_bits,
+    264          		    (unsigned)((mode & PWM_SCM_UPDM_Msk) >> PWM_SCM_UPDM_Pos));
+    265          #endif
+    266          
+    267          	/* Defining a channel as a synchronous channel while it is an asynchronous
+    268          	channel (by writing the bit SYNCx to '1' while it was at '0') is allowed
+    269          	only if the channel is disabled at this time (CHIDx = 0 in PWM_SR). In the
+    270          	same way, defining a channel as an asynchronous channel while it is a
+    271          	synchronous channel (by writing the SYNCx bit to '0' while it was '1') is
+    272          	allowed only if the channel is disabled at this time. */
+    273          	uint32_t pwm_sr = pwm->PWM_SR;
+    274          	assert((pwm_sr & (pwm->PWM_SCM ^ sync_bits)) == 0);
+    275          	/* Mode3 does not exist */
+    276          	assert(((mode & PWM_SCM_UPDM_Msk) >> PWM_SCM_UPDM_Pos) != 3);
+    277          #ifndef CONFIG_HAVE_PWMC_DMA
+    278          	/* Mode2 does not exist if PWM does not support DMA */
+    279          	assert(((mode & PWM_SCM_UPDM_Msk) >> PWM_SCM_UPDM_Pos) != 2);
+    280          #endif
+    281          #endif
+    282          	pwm->PWM_SCM = mode;
+    283          }
+    284          
+    285          void pwmc_set_sync_channels_update_unlock(Pwm *pwm)
+    286          {
+    287          	pwm->PWM_SCUC = PWM_SCUC_UPDULOCK;
+    288          }
+    289          
+    290          void pwmc_set_sync_channels_update_period(Pwm *pwm,
+    291          		uint8_t counter, uint8_t period)
+    292          {
+    293          	pwm->PWM_SCUP = PWM_SCUP_UPRCNT(counter) | PWM_SCUP_UPR(period);
+    294          }
+    295          
+    296          void pwmc_set_sync_channels_update_period_update(Pwm *pwm, uint8_t period)
+    297          {
+    298          	pwm->PWM_SCUPUPD = PWM_SCUPUPD_UPRUPD(period);
+    299          }
+    300          #endif /* CONFIG_HAVE_PWMC_SYNC_MODE */
+    301          
+    302          #ifdef CONFIG_HAVE_PWMC_DMA
+    303          static int _pwm_dma_callback_wrapper(void* arg, void* arg2)
+    304          {
+    305          	struct _dma_channel* dma_channel = (struct _dma_channel*)arg;
+    306          
+    307          	if (dma_is_transfer_done(dma_channel)) {
+    308          		dma_free_channel(dma_channel);
+    309          		callback_call(&pwmc_cb, NULL);
+    310          	}
+    311          
+    312          	return 0;
+    313          }
+    314          
+    315          void pwmc_set_dma_finished_callback(Pwm *pwm, struct _callback* cb)
+    316          {
+    317          	uint32_t id = get_pwm_id_from_addr(pwm);
+    318          
+    319          	if (!pwm_dma_channel) {
+    320          		pwm_dma_channel = dma_allocate_channel(DMA_PERIPH_MEMORY, id);
+    321          		assert(pwm_dma_channel);
+    322          	}
+    323          	callback_copy(&pwmc_cb, cb);
+    324          }
+    325          
+    326          void pwmc_dma_duty_cycle(Pwm* pwm, uint16_t *duty, uint32_t size)
+    327          {
+    328          	struct _callback _cb;
+    329          	struct _dma_cfg dma_cfg;
+    330          	struct _dma_transfer_cfg cfg;
+    331          
+    332          	assert(pwm_dma_channel);
+    333          	memset(&cfg, 0, sizeof(cfg));
+    334          	cfg.saddr = (void*)duty;
+    335          	cfg.daddr = (void*)&pwm->PWM_DMAR;
+    336          	cfg.len = size;
+    337          	dma_cfg.incr_saddr = true;
+    338          	dma_cfg.incr_daddr = false;
+    339          	dma_cfg.loop = false;
+    340          	dma_cfg.data_width = DMA_DATA_WIDTH_HALF_WORD;
+    341          	dma_cfg.chunk_size = DMA_CHUNK_SIZE_1;
+    342          	dma_reset_channel(pwm_dma_channel);
+    343          	dma_configure_transfer(pwm_dma_channel, &dma_cfg, &cfg, 1);
+    344          	callback_set(&_cb, _pwm_dma_callback_wrapper, pwm_dma_channel);
+    345          	dma_set_callback(pwm_dma_channel, &_cb);
+    346          
+    347          	cache_clean_region(duty, size);
+    348          	dma_start_transfer(pwm_dma_channel);
+    349          }
+    350          
+    351          #endif /* CONFIG_HAVE_PWMC_DMA */
+    352          
+    353          #ifdef CONFIG_HAVE_PWMC_OOV
+    354          void pwmc_output_override(Pwm *pwm, uint8_t channel,
+    355          		uint8_t is_pwmh, uint8_t level, uint8_t sync)
+    356          {
+    357          	volatile uint32_t tmp;
+    358          	uint32_t mask;
+    359          
+    360          	assert(channel < ARRAY_SIZE(pwm->PWM_CH));
+    361          
+    362          	trace_debug("pwm: CH%u PWM%c output overridden to %u\n\r",
+    363          			(unsigned)channel, (0 != is_pwmh) ? 'H' : 'L', (unsigned)level);
+    364          
+    365          	if (0 == is_pwmh)
+    366          		mask = PWM_OSS_OSSH0 << channel;
+    367          	else
+    368          		mask = PWM_OSS_OSSL0 << channel;
+    369          
+    370          	tmp = pwm->PWM_OOV;
+    371          	if (0 == level)
+    372          		tmp &= ~mask;
+    373          	else
+    374          		tmp |= mask;
+    375          	pwm->PWM_OOV = tmp;
+    376          
+    377          	/* If channel is disabled, write to OSS */
+    378          	if (((pwm->PWM_SR & (1 << channel)) == 0) || (0 != sync))
+    379          		pwm->PWM_OSS = mask;
+    380          	/* Otherwise use update register */
+    381          	else
+    382          		pwm->PWM_OSSUPD = mask;
+    383          }
+    384          
+    385          void pwmc_disable_output_override(Pwm *pwm, uint8_t channel,
+    386          		uint8_t is_pwmh, uint8_t sync)
+    387          {
+    388          	uint32_t mask;
+    389          
+    390          	assert(channel < ARRAY_SIZE(pwm->PWM_CH));
+    391          
+    392          	trace_debug("pwm: CH%u PWM%c output override disabled\n\r",
+    393          			(unsigned)channel, (0 != is_pwmh) ? 'H' : 'L');
+    394          
+    395          	if (0 == is_pwmh)
+    396          		mask = PWM_OSS_OSSH0 << channel;
+    397          	else
+    398          		mask = PWM_OSS_OSSL0 << channel;
+    399          
+    400          	/* If channel is disabled, write to OSS */
+    401          	if (((pwm->PWM_SR & (1 << channel)) == 0) || (0 != sync))
+    402          		pwm->PWM_OSC = mask;
+    403          	/* Otherwise use update register */
+    404          	else
+    405          		pwm->PWM_OSCUPD = mask;
+    406          }
+    407          
+    408          #endif /* CONFIG_HAVE_PWMC_OOV */
+    409          
+    410          #ifdef CONFIG_HAVE_PWMC_DTIME
+    411          void pwmc_output_dead_time(Pwm *pwm, uint8_t channel,
+    412          		uint16_t time_h, uint16_t time_l)
+    413          {
+    414          	uint32_t dead_time;
+    415          
+    416          	assert(channel < ARRAY_SIZE(pwm->PWM_CH));
+    417          
+    418          	trace_debug("pwm: CH%u output dead time H: %u, L: %u\n\r",
+    419          			(unsigned)channel, (unsigned)time_h, (unsigned)time_l);
+    420          
+    421          #ifndef NDEBUG
+    422          	uint32_t pwm_cprd = pwm->PWM_CH[channel].PWM_CPRD;
+    423          	uint32_t pwm_cdty = pwm->PWM_CH[channel].PWM_CDTY;
+    424          	assert(pwm_cprd - pwm_cdty >= time_h);
+    425          	assert(pwm_cdty >= time_l);
+    426          #endif
+    427          
+    428          	dead_time = PWM_DT_DTH(time_h) | PWM_DT_DTL(time_l);
+    429          
+    430          	/* If channel is disabled, write to DT */
+    431          	if ((pwm->PWM_SR & (1 << channel)) == 0)
+    432          		pwm->PWM_CH[channel].PWM_DT = dead_time;
+    433          	/* Otherwise use update register */
+    434          	else
+    435          		pwm->PWM_CH[channel].PWM_DTUPD = dead_time;
+    436          }
+    437          
+    438          #endif /* CONFIG_HAVE_PWMC_DTIME */
+    439          
+    440          #ifdef CONFIG_HAVE_PWMC_FMODE
+    441          void pwmc_set_fault_mode(Pwm *pwm, uint32_t mode)
+    442          {
+    443          	pwm->PWM_FMR = mode;
+    444          }
+    445          
+    446          uint32_t pwmc_get_fault_status(Pwm *pwm)
+    447          {
+    448          	return pwm->PWM_FSR;
+    449          }
+    450          
+    451          void pwmc_fault_clear(Pwm *pwm, uint32_t fault)
+    452          {
+    453          	pwm->PWM_FCR = fault;
+    454          }
+    455          
+    456          void pwmc_set_fault_protection(Pwm *pwm, uint32_t value)
+    457          {
+    458          	pwm->PWM_FPV1 = value;
+    459          }
+    460          
+    461          void pwmc_enable_fault_protection(Pwm *pwm, uint8_t channel,
+    462          		uint8_t fault_inputs)
+    463          {
+    464          	volatile uint32_t tmp;
+    465          	assert(channel < ARRAY_SIZE(pwm->PWM_CH));
+    466          	tmp = pwm->PWM_FPE;
+    467          	tmp &= ~(PWM_FPE_FPE0_Msk << (8 * channel));
+    468          	pwm->PWM_FPE = tmp | ((uint32_t)fault_inputs << (8 * channel));
+    469          }
+    470          
+    471          #endif /* CONFIG_HAVE_PWMC_FMODE */
+    472          
+    473          #ifdef CONFIG_HAVE_PWMC_FAULT_PROT_HIZ
+    474          void pwmc_set_fault_protection_to_hiz(Pwm *pwm, uint32_t value)
+    475          {
+    476          	pwm->PWM_FPV2 = value;
+    477          }
+    478          
+    479          #endif /* CONFIG_HAVE_PWMC_FAULT_PROT_HIZ */
+    480          
+    481          #ifdef CONFIG_HAVE_PWMC_ELINE
+    482          void pwmc_configure_event_line_mode(Pwm *pwm, uint32_t value)
+    483          {
+    484          	pwm->PWM_ELMR[0] = value;
+    485          }
+    486          #endif /* CONFIG_HAVE_PWMC_ELINE */
+    487          
+    488          #ifdef CONFIG_HAVE_PWMC_SPREAD_SPECTRUM
+    489          void pwmc_configure_spread_spectrum_mode(Pwm *pwm, uint32_t value)
+    490          {
+    491          	/* If channel 0 is disabled, write to SSPR */
+    492          	if (0 == (pwm->PWM_SR & (1 << 0)))
+    493          		pwm->PWM_SSPR = value;
+    494          	/* Otherwise use update register */
+    495          	else
+    496          		pwm->PWM_SSPUP = PWM_SSPUP_SPRDUP(value);
+    497          }
+    498          
+    499          #endif /* CONFIG_HAVE_PWMC_SPREAD_SPECTRUM */
+    500          
+    501          #ifdef CONFIG_HAVE_PWMC_STEPPER_MOTOR
+    502          void pwmc_configure_stepper_motor_mode(Pwm *pwm, uint32_t value)
+    503          {
+    504          	trace_debug("pwm: CH0-1 Gray Count %s %s, CH2-3 Gray Count %s %s\n\r", \
+    505          			(0 != (value & PWM_SMMR_DOWN0)) ? "Down" : "Up", \
+    506          			(0 != (value & PWM_SMMR_GCEN0)) ? "Enable" : "Disable", \
+    507          			(0 != (value & PWM_SMMR_DOWN1)) ? "Down" : "Up", \
+    508          			(0 != (value & PWM_SMMR_GCEN1)) ? "Enable" : "Disable");
+    509          	pwm->PWM_SMMR = value;
+    510          }
+    511          #endif /* CONFIG_HAVE_PWMC_STEPPER_MOTOR */
+    512          
+    513          #ifdef CONFIG_HAVE_PWMC_WP
+    514          void pwmc_set_write_protection_control(Pwm *pwm, uint32_t value)
+    515          {
+    516          	pwm->PWM_WPCR = value;
+    517          }
+    518          
+    519          uint32_t pwmc_get_write_protection_status(Pwm *pwm)
+    520          {
+    521          	return pwm->PWM_WPSR;
+    522          }
+    523          #endif /* CONFIG_HAVE_PWMC_WP */
+    524          
+    525          #ifdef CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+    526          void pwmc_configure_external_trigger(Pwm *pwm,
+    527          		uint32_t channel, uint32_t value)
+    528          {
+    529          	trace_debug("pwm: external trigger for channel %u, value %08x\n\r", \
+    530          		(unsigned)channel, (unsigned)value);
+    531          	switch (channel) {
+    532          	case 1:
+    533          		pwm->PWM_ETRG1 = value;
+    534          		break;
+    535          	case 2:
+    536          		pwm->PWM_ETRG2 = value;
+    537          		break;
+    538          	default:
+    539          		assert(0);
+    540          		break;
+    541          	}
+    542          }
+    543          
+    544          void pwmc_configure_leading_edge_blanking(Pwm *pwm,
+    545          		uint32_t channel, uint32_t value)
+    546          {
+    547          	trace_debug("pwm: leading-edge blanking channel %u, value %08x\n\r", \
+    548          		(unsigned)channel, (unsigned)value);
+    549          	switch (channel) {
+    550          	case 1:
+    551          		pwm->PWM_LEBR1 = value;
+    552          		break;
+    553          	case 2:
+    554          		pwm->PWM_LEBR2 = value;
+    555          		break;
+    556          	default:
+    557          		assert(0);
+    558          		break;
+    559          	}
+    560          }
+    561          #endif /* CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   pwmc_configure_channel
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+        16   -> printf
+       0   pwmc_configure_clocks
+       0   pwmc_disable_channel
+       0   pwmc_disable_channel_it
+       0   pwmc_disable_it
+       0   pwmc_enable_channel
+       0   pwmc_enable_channel_it
+       0   pwmc_enable_it
+       0   pwmc_get_it_status1
+      24   pwmc_set_duty_cycle
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+      16   pwmc_set_period
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+     304  ?_0
+      88  pwmc_configure_channel
+       8  pwmc_configure_clocks
+      16  pwmc_disable_channel
+      16  pwmc_disable_channel_it
+       8  pwmc_disable_it
+      16  pwmc_enable_channel
+      16  pwmc_enable_channel_it
+       8  pwmc_enable_it
+       8  pwmc_get_it_status1
+     128  pwmc_set_duty_cycle
+      92  pwmc_set_period
+
+ 
+ 304 bytes in section .rodata
+ 416 bytes in section SOFTPACK
+ 
+ 416 bytes of CODE  memory
+ 304 bytes of CONST memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1464 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         19/Aug/2020  13:39:18
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\spi-nor\spi-flash.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW67BE.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\spi-nor\spi-flash.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_SPI_AT25 -D CONFIG_DRV_AT25 -D
+#        CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\List\spi-flash.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\Obj\spi-flash.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#      __iar_require _Printf         
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\nvm\spi-nor\spi-flash.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         ATMEL Microcontroller Software Support
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2017, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           */
+     28          
+     29          #include "board.h"
+     30          #include "errno.h"
+     31          #include "gpio/pio.h"
+     32          #include "intmath.h"
+     33          #include "nvm/spi-nor/spi-flash.h"
+     34          #include "nvm/spi-nor/sfdp.h"
+     35          #include "timer.h"
+     36          #include "trace.h"
+     37          
+     38          /*----------------------------------------------------------------------------
+     39           *        Local Definitions
+     40           *----------------------------------------------------------------------------*/
+     41          
+     42          /* Default timeout values (in timer ticks, for 1000 Hz timer) */
+     43          #define TIMEOUT_DEFAULT       100 /* 0.1s */
+     44          #define TIMEOUT_WRITE         800 /* 0.8s */
+     45          #define TIMEOUT_ERASE        3000 /* 3s */
+     46          #define TIMEOUT_ERASE_CHIP 500000 /* 500s */
+     47          
+     48          /*----------------------------------------------------------------------------
+     49           *        Public functions
+     50           *----------------------------------------------------------------------------*/
+     51          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     52          int spi_flash_read_reg(struct spi_flash *flash, uint8_t inst, uint8_t *buf, size_t len)
+     53          {
+   \                     spi_flash_read_reg:
+   \        0x0   0xE92D'40F0        PUSH     {R4-R7,LR}
+   \        0x4   0xE24D'D024        SUB      SP,SP,#+36
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'7001        MOV      R7,R1
+   \       0x10   0xE1A0'5002        MOV      R5,R2
+   \       0x14   0xE1A0'6003        MOV      R6,R3
+     54          	struct spi_flash_command cmd;
+     55          
+     56          	spi_flash_command_init(&cmd, inst, 0, SFLASH_TYPE_READ_REG);
+   \       0x18   0xE3A0'1024        MOV      R1,#+36
+   \       0x1C   0xE1A0'000D        MOV      R0,SP
+   \       0x20   0x....'....        BL       __aeabi_memclr4
+   \       0x24   0x....'....        LDR      R0,??DataTable6  ;; 0x10101
+   \       0x28   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x2C   0xE3A0'3000        MOV      R3,#+0
+   \       0x30   0xE3A0'0003        MOV      R0,#+3
+   \       0x34   0xE5CD'7008        STRB     R7,[SP, #+8]
+   \       0x38   0xE5CD'300C        STRB     R3,[SP, #+12]
+   \       0x3C   0xE58D'0004        STR      R0,[SP, #+4]
+     57          	cmd.proto = flash->reg_proto;
+   \       0x40   0xE594'2028        LDR      R2,[R4, #+40]
+     58          	cmd.data_len = len;
+   \       0x44   0xE58D'6014        STR      R6,[SP, #+20]
+     59          	cmd.rx_data = buf;
+   \       0x48   0xE58D'501C        STR      R5,[SP, #+28]
+   \       0x4C   0xE58D'2000        STR      R2,[SP, #+0]
+     60          	cmd.timeout = TIMEOUT_DEFAULT;
+   \       0x50   0xE3A0'2064        MOV      R2,#+100
+     61          	return spi_flash_exec(flash, &cmd);
+   \       0x54   0xE1A0'100D        MOV      R1,SP
+   \       0x58   0xE58D'2020        STR      R2,[SP, #+32]
+   \       0x5C   0xE1A0'0004        MOV      R0,R4
+   \       0x60   0x....'....        BL       spi_flash_exec
+   \       0x64   0x....'....        B        ?Subroutine0
+     62          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE28D'D024        ADD      SP,SP,#+36
+   \        0x4   0xE8BD'80F0        POP      {R4-R7,PC}       ;; return
+     63          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     64          int spi_flash_write_reg(struct spi_flash *flash, uint8_t inst, const uint8_t *buf, size_t len)
+     65          {
+   \                     spi_flash_write_reg:
+   \        0x0   0xE92D'40F0        PUSH     {R4-R7,LR}
+   \        0x4   0xE24D'D024        SUB      SP,SP,#+36
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'7001        MOV      R7,R1
+   \       0x10   0xE1A0'5002        MOV      R5,R2
+   \       0x14   0xE1A0'6003        MOV      R6,R3
+     66          	struct spi_flash_command cmd;
+     67          
+     68          	spi_flash_command_init(&cmd, inst, 0, SFLASH_TYPE_WRITE_REG);
+   \       0x18   0xE3A0'1024        MOV      R1,#+36
+   \       0x1C   0xE1A0'000D        MOV      R0,SP
+   \       0x20   0x....'....        BL       __aeabi_memclr4
+   \       0x24   0x....'....        LDR      R0,??DataTable6  ;; 0x10101
+   \       0x28   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x2C   0xE3A0'3000        MOV      R3,#+0
+   \       0x30   0xE3A0'0004        MOV      R0,#+4
+   \       0x34   0xE5CD'7008        STRB     R7,[SP, #+8]
+   \       0x38   0xE5CD'300C        STRB     R3,[SP, #+12]
+   \       0x3C   0xE58D'0004        STR      R0,[SP, #+4]
+     69          	cmd.proto = flash->reg_proto;
+   \       0x40   0xE594'2028        LDR      R2,[R4, #+40]
+     70          	cmd.data_len = len;
+   \       0x44   0xE58D'6014        STR      R6,[SP, #+20]
+     71          	cmd.tx_data = buf;
+   \       0x48   0xE58D'5018        STR      R5,[SP, #+24]
+   \       0x4C   0xE58D'2000        STR      R2,[SP, #+0]
+     72          	cmd.timeout = TIMEOUT_DEFAULT;
+   \       0x50   0xE3A0'2064        MOV      R2,#+100
+     73          	return spi_flash_exec(flash, &cmd);
+   \       0x54   0xE1A0'100D        MOV      R1,SP
+   \       0x58   0xE58D'2020        STR      R2,[SP, #+32]
+   \       0x5C   0xE594'C0A0        LDR      R12,[R4, #+160]
+   \       0x60   0xE1A0'0004        MOV      R0,R4
+   \       0x64   0xE59C'2010        LDR      R2,[R12, #+16]
+   \       0x68   0xE12F'FF32        BLX      R2
+   \       0x6C                      REQUIRE ?Subroutine0
+   \       0x6C                      ;; // Fall through to label ?Subroutine0
+     74          }
+     75          
+     76          static int spi_flash_is_ready(struct spi_flash *flash)
+     77          {
+     78          	uint8_t sr, fsr;
+     79          	int rc;
+     80          
+     81          	rc = spi_flash_read_sr(flash, &sr);
+     82          	if (rc < 0)
+     83          		return rc;
+     84          
+     85          	if (sr & SR_WIP)
+     86          		return 0;
+     87          
+     88          	if (!(flash->flags & SFLASH_FLG_HAS_FSR))
+     89          		return 1;
+     90          
+     91          	rc = spi_flash_read_reg(flash, SFLASH_INST_READ_FSR, &fsr, 1);
+     92          	if (rc < 0)
+     93          		return rc;
+     94          
+     95          	return (fsr & FSR_READY) != 0;
+     96          }
+     97          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     98          int spi_flash_wait_till_ready_timeout(struct spi_flash *flash, unsigned long timeout)
+     99          {
+   \                     spi_flash_wait_till_ready_timeout:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'5001        MOVS     R5,R1
+   \        0x8   0xE24D'D028        SUB      SP,SP,#+40
+   \        0xC   0xE1A0'4000        MOV      R4,R0
+    100          	unsigned long delay = 1L; /* 1ms */
+    101          	unsigned long loop = (timeout + delay - 1) / (delay);
+    102          	int rc;
+    103          
+    104          	if (!loop)
+   \       0x10   0x1A00'0027        BNE      ??spi_flash_wait_till_ready_timeout_0
+    105          		loop = 1;
+   \       0x14   0xE3A0'5001        MOV      R5,#+1
+    106          	while (loop-- > 0) {
+    107          		rc = spi_flash_is_ready(flash);
+   \                     ??spi_flash_wait_till_ready_timeout_1:
+   \       0x18   0xE3A0'3001        MOV      R3,#+1
+   \       0x1C   0xE28D'2001        ADD      R2,SP,#+1
+   \       0x20   0xE3A0'1005        MOV      R1,#+5
+   \       0x24   0xE1A0'0004        MOV      R0,R4
+   \       0x28   0x....'....        BL       spi_flash_read_reg
+   \       0x2C   0xE350'0000        CMP      R0,#+0
+   \       0x30   0xE245'5001        SUB      R5,R5,#+1
+   \       0x34   0x4A00'0021        BMI      ??spi_flash_wait_till_ready_timeout_2
+   \       0x38   0xE5DD'1001        LDRB     R1,[SP, #+1]
+   \       0x3C   0xE311'0001        TST      R1,#0x1
+   \       0x40   0x1A00'0019        BNE      ??spi_flash_wait_till_ready_timeout_3
+   \       0x44   0xE5D4'001C        LDRB     R0,[R4, #+28]
+   \       0x48   0xE310'0001        TST      R0,#0x1
+   \       0x4C   0x0A00'0014        BEQ      ??spi_flash_wait_till_ready_timeout_4
+   \       0x50   0xE3A0'3003        MOV      R3,#+3
+   \       0x54   0xE3A0'2000        MOV      R2,#+0
+   \       0x58   0xE3A0'1070        MOV      R1,#+112
+   \       0x5C   0xE28D'0004        ADD      R0,SP,#+4
+   \       0x60   0x....'....        BL       spi_flash_command_init
+   \       0x64   0xE594'0028        LDR      R0,[R4, #+40]
+   \       0x68   0xE3A0'1064        MOV      R1,#+100
+   \       0x6C   0xE3A0'2001        MOV      R2,#+1
+   \       0x70   0xE58D'1024        STR      R1,[SP, #+36]
+   \       0x74   0xE58D'0004        STR      R0,[SP, #+4]
+   \       0x78   0xE58D'2018        STR      R2,[SP, #+24]
+   \       0x7C   0xE58D'D020        STR      SP,[SP, #+32]
+   \       0x80   0xE28D'1004        ADD      R1,SP,#+4
+   \       0x84   0xE1A0'0004        MOV      R0,R4
+   \       0x88   0x....'....        BL       spi_flash_exec
+   \       0x8C   0xE350'0000        CMP      R0,#+0
+   \       0x90   0x4A00'000A        BMI      ??spi_flash_wait_till_ready_timeout_2
+   \       0x94   0xE5DD'1000        LDRB     R1,[SP, #+0]
+   \       0x98   0xE1B0'03A1        LSRS     R0,R1,#+7
+    108          		if (rc < 0)
+   \       0x9C   0x4A00'0007        BMI      ??spi_flash_wait_till_ready_timeout_2
+    109          			return rc;
+    110          		if (rc)
+   \       0xA0   0x0A00'0001        BEQ      ??spi_flash_wait_till_ready_timeout_3
+    111          			return 0;
+   \                     ??spi_flash_wait_till_ready_timeout_4:
+   \       0xA4   0xE3A0'0000        MOV      R0,#+0
+   \       0xA8   0x....'....        B        ?Subroutine1
+    112          
+    113          		msleep(delay);
+   \                     ??spi_flash_wait_till_ready_timeout_3:
+   \       0xAC   0xE3A0'0001        MOV      R0,#+1
+   \       0xB0   0x....'....        BL       msleep
+    114          	}
+   \                     ??spi_flash_wait_till_ready_timeout_0:
+   \       0xB4   0xE355'0000        CMP      R5,#+0
+   \       0xB8   0x1AFF'FFD6        BNE      ??spi_flash_wait_till_ready_timeout_1
+    115          
+    116          	return -ETIMEDOUT;
+   \       0xBC   0xE3E0'004C        MVN      R0,#+76
+   \                     ??spi_flash_wait_till_ready_timeout_2:
+   \       0xC0                      REQUIRE ?Subroutine1
+   \       0xC0                      ;; // Fall through to label ?Subroutine1
+    117          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE28D'D02C        ADD      SP,SP,#+44
+   \        0x4   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+    118          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    119          int spi_flash_hwcaps2cmd(uint32_t hwcaps)
+    120          {
+    121          	switch (hwcaps) {
+   \                     spi_flash_hwcaps2cmd:
+   \        0x0   0xE350'0001        CMP      R0,#+1
+   \        0x4   0x0A00'001E        BEQ      ??spi_flash_hwcaps2cmd_0
+   \        0x8   0xE350'0002        CMP      R0,#+2
+   \        0xC   0x0A00'001D        BEQ      ??spi_flash_hwcaps2cmd_1
+   \       0x10   0xE350'0004        CMP      R0,#+4
+   \       0x14   0x0A00'001D        BEQ      ??spi_flash_hwcaps2cmd_2
+   \       0x18   0xE350'0008        CMP      R0,#+8
+   \       0x1C   0x0A00'001D        BEQ      ??spi_flash_hwcaps2cmd_3
+   \       0x20   0xE350'0010        CMP      R0,#+16
+   \       0x24   0x0A00'000E        BEQ      ??spi_flash_hwcaps2cmd_4
+   \       0x28   0xE350'0020        CMP      R0,#+32
+   \       0x2C   0x0A00'000E        BEQ      ??spi_flash_hwcaps2cmd_5
+   \       0x30   0xE350'0040        CMP      R0,#+64
+   \       0x34   0x0A00'000E        BEQ      ??spi_flash_hwcaps2cmd_6
+   \       0x38   0xE350'0080        CMP      R0,#+128
+   \       0x3C   0x0A00'000E        BEQ      ??spi_flash_hwcaps2cmd_7
+   \       0x40   0xE350'0B40        CMP      R0,#+65536
+   \       0x44   0x0A00'000E        BEQ      ??spi_flash_hwcaps2cmd_0
+   \       0x48   0xE350'0B80        CMP      R0,#+131072
+   \       0x4C   0x0A00'000D        BEQ      ??spi_flash_hwcaps2cmd_1
+   \       0x50   0xE350'0A40        CMP      R0,#+262144
+   \       0x54   0x0A00'000D        BEQ      ??spi_flash_hwcaps2cmd_2
+   \       0x58   0xE350'0A80        CMP      R0,#+524288
+   \       0x5C   0x0A00'000D        BEQ      ??spi_flash_hwcaps2cmd_3
+   \       0x60   0xEA00'000E        B        ??spi_flash_hwcaps2cmd_8
+    122          	case SFLASH_HWCAPS_READ:
+    123          		return SFLASH_CMD_READ;
+    124          	case SFLASH_HWCAPS_READ_FAST:
+    125          		return SFLASH_CMD_READ_FAST;
+    126          	case SFLASH_HWCAPS_READ_1_1_2:
+    127          		return SFLASH_CMD_READ_1_1_2;
+    128          	case SFLASH_HWCAPS_READ_1_2_2:
+    129          		return SFLASH_CMD_READ_1_2_2;
+    130          	case SFLASH_HWCAPS_READ_2_2_2:
+    131          		return SFLASH_CMD_READ_2_2_2;
+   \                     ??spi_flash_hwcaps2cmd_4:
+   \       0x64   0xE3A0'0004        MOV      R0,#+4
+   \       0x68   0xE12F'FF1E        BX       LR
+    132          	case SFLASH_HWCAPS_READ_1_1_4:
+    133          		return SFLASH_CMD_READ_1_1_4;
+   \                     ??spi_flash_hwcaps2cmd_5:
+   \       0x6C   0xE3A0'0005        MOV      R0,#+5
+   \       0x70   0xE12F'FF1E        BX       LR
+    134          	case SFLASH_HWCAPS_READ_1_4_4:
+    135          		return SFLASH_CMD_READ_1_4_4;
+   \                     ??spi_flash_hwcaps2cmd_6:
+   \       0x74   0xE3A0'0006        MOV      R0,#+6
+   \       0x78   0xE12F'FF1E        BX       LR
+    136          	case SFLASH_HWCAPS_READ_4_4_4:
+    137          		return SFLASH_CMD_READ_4_4_4;
+   \                     ??spi_flash_hwcaps2cmd_7:
+   \       0x7C   0xE3A0'0007        MOV      R0,#+7
+   \       0x80   0xE12F'FF1E        BX       LR
+    138          
+    139          	case SFLASH_HWCAPS_PP:
+    140          		return SFLASH_CMD_PP;
+   \                     ??spi_flash_hwcaps2cmd_0:
+   \       0x84   0x....'....        B        ?Subroutine2
+    141          	case SFLASH_HWCAPS_PP_1_1_4:
+    142          		return SFLASH_CMD_PP_1_1_4;
+   \                     ??spi_flash_hwcaps2cmd_1:
+   \       0x88   0xE3A0'0001        MOV      R0,#+1
+   \       0x8C   0xE12F'FF1E        BX       LR
+    143          	case SFLASH_HWCAPS_PP_1_4_4:
+    144          		return SFLASH_CMD_PP_1_4_4;
+   \                     ??spi_flash_hwcaps2cmd_2:
+   \       0x90   0xE3A0'0002        MOV      R0,#+2
+   \       0x94   0xE12F'FF1E        BX       LR
+    145          	case SFLASH_HWCAPS_PP_4_4_4:
+    146          		return SFLASH_CMD_PP_4_4_4;
+   \                     ??spi_flash_hwcaps2cmd_3:
+   \       0x98   0xE3A0'0003        MOV      R0,#+3
+   \       0x9C   0xE12F'FF1E        BX       LR
+    147          	}
+    148          
+    149          	return -EINVAL;
+   \                     ??spi_flash_hwcaps2cmd_8:
+   \       0xA0   0xE3E0'001B        MVN      R0,#+27
+   \       0xA4   0xE12F'FF1E        BX       LR               ;; return
+    150          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0xE12F'FF1E        BX       LR
+    151          
+    152          static int spi_flash_select_read(struct spi_flash *flash, const struct spi_flash_parameters *params, uint32_t shared_hwcaps)
+    153          {
+    154          	int cmd, best_match = fls(shared_hwcaps & SFLASH_HWCAPS_READ_MASK) - 1;
+    155          	const struct spi_flash_read_command *read;
+    156          
+    157          	if (best_match < 0)
+    158          		return -EINVAL;
+    159          
+    160          	cmd = spi_flash_hwcaps2cmd((0x1UL << best_match));
+    161          	if (cmd < 0)
+    162          		return cmd;
+    163          
+    164          	read = &params->reads[cmd];
+    165          	flash->num_mode_cycles = read->num_mode_cycles;
+    166          	flash->num_wait_states = read->num_wait_states;
+    167          	flash->read_inst = read->inst;
+    168          	flash->read_proto = read->proto;
+    169          	return 0;
+    170          }
+    171          
+    172          static int spi_flash_select_pp(struct spi_flash *flash, const struct spi_flash_parameters *params, uint32_t shared_hwcaps)
+    173          {
+    174          	int cmd, best_match = fls(shared_hwcaps & SFLASH_HWCAPS_PP_MASK) - 1;
+    175          	const struct spi_flash_pp_command *pp;
+    176          
+    177          	if (best_match < 0)
+    178          		return -EINVAL;
+    179          
+    180          	cmd = spi_flash_hwcaps2cmd((0x1UL << best_match));
+    181          	if (cmd < 0)
+    182          		return cmd;
+    183          
+    184          	pp = &params->page_programs[cmd];
+    185          	flash->write_inst = pp->inst;
+    186          	flash->write_proto = pp->proto;
+    187          	return 0;
+    188          }
+    189          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    190          int spi_flash_setup(struct spi_flash *flash, const struct spi_flash_parameters *params)
+    191          {
+   \                     spi_flash_setup:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    192          	uint32_t ignored_mask, shared_mask;
+    193          	int rc;
+    194          
+    195          	/*
+    196          	 * Keep only the hardware capabilities supported by both the SPI
+    197          	 * controller and the SPI flash memory.
+    198          	 */
+    199          	shared_mask = flash->hwcaps.mask & params->hwcaps.mask;
+   \        0xC   0xE594'0018        LDR      R0,[R4, #+24]
+   \       0x10   0xE595'1008        LDR      R1,[R5, #+8]
+    200          
+    201          	/* SPI n-n-n protocols are not supported yet. */
+    202          	ignored_mask = (SFLASH_HWCAPS_READ_2_2_2 |
+    203          			SFLASH_HWCAPS_READ_4_4_4 |
+    204          			SFLASH_HWCAPS_PP_4_4_4);
+    205          	if (shared_mask & ignored_mask)
+   \       0x14   0xE3A0'2090        MOV      R2,#+144
+   \       0x18   0xE382'2A80        ORR      R2,R2,#0x80000
+   \       0x1C   0xE001'6000        AND      R6,R1,R0
+   \       0x20   0xE112'0006        TST      R2,R6
+    206          		shared_mask &= ~ignored_mask;
+   \       0x24   0x11E0'0002        MVNNE    R0,R2
+   \       0x28   0x1000'6006        ANDNE    R6,R0,R6
+    207          
+    208          	/* Select the (Fast) Read command. */
+    209          	rc = spi_flash_select_read(flash, params, shared_mask);
+   \       0x2C   0xE206'00FF        AND      R0,R6,#0xFF
+   \       0x30   0x....'....        BL       fls
+   \       0x34   0xE250'0001        SUBS     R0,R0,#+1
+   \       0x38   0x4A00'003E        BMI      ??spi_flash_setup_0
+   \       0x3C   0xE3A0'7001        MOV      R7,#+1
+   \       0x40   0xE1A0'0017        LSL      R0,R7,R0
+   \       0x44   0xE350'0001        CMP      R0,#+1
+   \       0x48   0x0A00'0038        BEQ      ??spi_flash_setup_1
+   \       0x4C   0xE350'0002        CMP      R0,#+2
+   \       0x50   0x0A00'0034        BEQ      ??spi_flash_setup_2
+   \       0x54   0xE350'0004        CMP      R0,#+4
+   \       0x58   0x0A00'0030        BEQ      ??spi_flash_setup_3
+   \       0x5C   0xE350'0008        CMP      R0,#+8
+   \       0x60   0x0A00'002C        BEQ      ??spi_flash_setup_4
+   \       0x64   0xE350'0010        CMP      R0,#+16
+   \       0x68   0x0A00'0028        BEQ      ??spi_flash_setup_5
+   \       0x6C   0xE350'0020        CMP      R0,#+32
+   \       0x70   0x0A00'0024        BEQ      ??spi_flash_setup_6
+   \       0x74   0xE350'0040        CMP      R0,#+64
+   \       0x78   0x0A00'0020        BEQ      ??spi_flash_setup_7
+   \       0x7C   0xE350'0080        CMP      R0,#+128
+   \       0x80   0x0A00'0008        BEQ      ??spi_flash_setup_8
+   \       0x84   0xE350'0B40        CMP      R0,#+65536
+   \       0x88   0x0A00'0028        BEQ      ??spi_flash_setup_1
+   \       0x8C   0xE350'0B80        CMP      R0,#+131072
+   \       0x90   0x0A00'0024        BEQ      ??spi_flash_setup_2
+   \       0x94   0xE350'0A40        CMP      R0,#+262144
+   \       0x98   0x0A00'0020        BEQ      ??spi_flash_setup_3
+   \       0x9C   0xE350'0A80        CMP      R0,#+524288
+   \       0xA0   0x0A00'001C        BEQ      ??spi_flash_setup_4
+   \       0xA4   0xEA00'0023        B        ??spi_flash_setup_0
+   \                     ??spi_flash_setup_8:
+   \       0xA8   0xE3A0'0007        MOV      R0,#+7
+   \                     ??spi_flash_setup_9:
+   \       0xAC   0xE085'2180        ADD      R2,R5,R0, LSL #+3
+   \       0xB0   0xE282'000C        ADD      R0,R2,#+12
+   \       0xB4   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \       0xB8   0xE5C4'1031        STRB     R1,[R4, #+49]
+   \       0xBC   0xE5D0'3001        LDRB     R3,[R0, #+1]
+   \       0xC0   0xE5C4'3032        STRB     R3,[R4, #+50]
+   \       0xC4   0xE5D0'1002        LDRB     R1,[R0, #+2]
+   \       0xC8   0xE5C4'102D        STRB     R1,[R4, #+45]
+   \       0xCC   0xE590'0004        LDR      R0,[R0, #+4]
+   \       0xD0   0xE584'0020        STR      R0,[R4, #+32]
+    210          	if (rc < 0) {
+    211          		trace_info("SF: can't select read settings supported by both the SPI controller and memory.\n");
+    212          		return rc;
+    213          	}
+    214          
+    215          	/* Select the Page Program command. */
+    216          	rc = spi_flash_select_pp(flash, params, shared_mask);
+   \       0xD4   0xE206'0AF0        AND      R0,R6,#0xF0000
+   \       0xD8   0x....'....        BL       fls
+   \       0xDC   0xE250'0001        SUBS     R0,R0,#+1
+   \       0xE0   0x5A00'001C        BPL      ??spi_flash_setup_10
+    217          	if (rc < 0) {
+    218          		trace_info("SF: can't select write settings supported by both the SPI controller and memory.\n");
+   \                     ??spi_flash_setup_11:
+   \       0xE4   0x....'....        LDR      R0,??DataTable6_1
+   \       0xE8   0xE3E0'601B        MVN      R6,#+27
+   \       0xEC   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0xF0   0xE351'0004        CMP      R1,#+4
+   \       0xF4   0x3A00'0053        BCC      ??spi_flash_setup_12
+   \       0xF8   0x....'....        LDR      R0,??DataTable6_2
+   \       0xFC   0xEA00'0013        B        ??spi_flash_setup_13
+    219          		return rc;
+    220          	}
+   \                     ??spi_flash_setup_7:
+   \      0x100   0xE3A0'0006        MOV      R0,#+6
+   \      0x104   0xEAFF'FFE8        B        ??spi_flash_setup_9
+   \                     ??spi_flash_setup_6:
+   \      0x108   0xE3A0'0005        MOV      R0,#+5
+   \      0x10C   0xEAFF'FFE6        B        ??spi_flash_setup_9
+   \                     ??spi_flash_setup_5:
+   \      0x110   0xE3A0'0004        MOV      R0,#+4
+   \      0x114   0xEAFF'FFE4        B        ??spi_flash_setup_9
+   \                     ??spi_flash_setup_4:
+   \      0x118   0xE3A0'0003        MOV      R0,#+3
+   \      0x11C   0xEAFF'FFE2        B        ??spi_flash_setup_9
+   \                     ??spi_flash_setup_3:
+   \      0x120   0xE3A0'0002        MOV      R0,#+2
+   \      0x124   0xEAFF'FFE0        B        ??spi_flash_setup_9
+   \                     ??spi_flash_setup_2:
+   \      0x128   0xE3A0'0001        MOV      R0,#+1
+   \      0x12C   0xEAFF'FFDE        B        ??spi_flash_setup_9
+   \                     ??spi_flash_setup_1:
+   \      0x130   0xE3A0'0000        MOV      R0,#+0
+   \      0x134   0xEAFF'FFDC        B        ??spi_flash_setup_9
+   \                     ??spi_flash_setup_0:
+   \      0x138   0x....'....        LDR      R0,??DataTable6_1
+   \      0x13C   0xE3E0'601B        MVN      R6,#+27
+   \      0x140   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x144   0xE351'0004        CMP      R1,#+4
+   \      0x148   0x3A00'003E        BCC      ??spi_flash_setup_12
+   \      0x14C   0x....'....        LDR      R0,??DataTable6_3
+   \                     ??spi_flash_setup_13:
+   \      0x150   0x....'....        BL       printf
+   \      0x154   0xEA00'003B        B        ??spi_flash_setup_12
+   \                     ??spi_flash_setup_10:
+   \      0x158   0xE1A0'0017        LSL      R0,R7,R0
+   \      0x15C   0xE350'0001        CMP      R0,#+1
+   \      0x160   0x0A00'0024        BEQ      ??spi_flash_setup_14
+   \      0x164   0xE350'0002        CMP      R0,#+2
+   \      0x168   0x0A00'0020        BEQ      ??spi_flash_setup_15
+   \      0x16C   0xE350'0004        CMP      R0,#+4
+   \      0x170   0x0A00'001C        BEQ      ??spi_flash_setup_16
+   \      0x174   0xE350'0008        CMP      R0,#+8
+   \      0x178   0x0A00'0018        BEQ      ??spi_flash_setup_17
+   \      0x17C   0xE350'0010        CMP      R0,#+16
+   \      0x180   0x0A00'0014        BEQ      ??spi_flash_setup_18
+   \      0x184   0xE350'0020        CMP      R0,#+32
+   \      0x188   0x0A00'0010        BEQ      ??spi_flash_setup_19
+   \      0x18C   0xE350'0040        CMP      R0,#+64
+   \      0x190   0x0A00'000C        BEQ      ??spi_flash_setup_20
+   \      0x194   0xE350'0080        CMP      R0,#+128
+   \      0x198   0x0A00'0008        BEQ      ??spi_flash_setup_21
+   \      0x19C   0xE350'0B40        CMP      R0,#+65536
+   \      0x1A0   0x0A00'0014        BEQ      ??spi_flash_setup_14
+   \      0x1A4   0xE350'0B80        CMP      R0,#+131072
+   \      0x1A8   0x0A00'0010        BEQ      ??spi_flash_setup_15
+   \      0x1AC   0xE350'0A40        CMP      R0,#+262144
+   \      0x1B0   0x0A00'000C        BEQ      ??spi_flash_setup_16
+   \      0x1B4   0xE350'0A80        CMP      R0,#+524288
+   \      0x1B8   0x0A00'0008        BEQ      ??spi_flash_setup_17
+   \      0x1BC   0xEAFF'FFC8        B        ??spi_flash_setup_11
+   \                     ??spi_flash_setup_21:
+   \      0x1C0   0xE3A0'0007        MOV      R0,#+7
+   \      0x1C4   0xEA00'000C        B        ??spi_flash_setup_22
+   \                     ??spi_flash_setup_20:
+   \      0x1C8   0xE3A0'0006        MOV      R0,#+6
+   \      0x1CC   0xEA00'000A        B        ??spi_flash_setup_22
+   \                     ??spi_flash_setup_19:
+   \      0x1D0   0xE3A0'0005        MOV      R0,#+5
+   \      0x1D4   0xEA00'0008        B        ??spi_flash_setup_22
+   \                     ??spi_flash_setup_18:
+   \      0x1D8   0xE3A0'0004        MOV      R0,#+4
+   \      0x1DC   0xEA00'0006        B        ??spi_flash_setup_22
+   \                     ??spi_flash_setup_17:
+   \      0x1E0   0xE3A0'0003        MOV      R0,#+3
+   \      0x1E4   0xEA00'0004        B        ??spi_flash_setup_22
+   \                     ??spi_flash_setup_16:
+   \      0x1E8   0xE3A0'0002        MOV      R0,#+2
+   \      0x1EC   0xEA00'0002        B        ??spi_flash_setup_22
+   \                     ??spi_flash_setup_15:
+   \      0x1F0   0xE3A0'0001        MOV      R0,#+1
+   \      0x1F4   0xEA00'0000        B        ??spi_flash_setup_22
+   \                     ??spi_flash_setup_14:
+   \      0x1F8   0xE3A0'0000        MOV      R0,#+0
+   \                     ??spi_flash_setup_22:
+   \      0x1FC   0xE085'0180        ADD      R0,R5,R0, LSL #+3
+   \      0x200   0xE3A0'6000        MOV      R6,#+0
+   \      0x204   0xE5F0'104C        LDRB     R1,[R0, #+76]!
+   \      0x208   0xE5C4'102E        STRB     R1,[R4, #+46]
+    221          
+    222          	/* Enable Quad I/O if needed. */
+    223          	if ((spi_flash_protocol_get_data_nbits(flash->read_proto) == 4 ||
+    224          	     spi_flash_protocol_get_data_nbits(flash->write_proto) == 4) &&
+    225          	    params->quad_enable)
+   \      0x20C   0xE594'1020        LDR      R1,[R4, #+32]
+   \      0x210   0xE590'0004        LDR      R0,[R0, #+4]
+   \      0x214   0xE6EF'1071        UXTB     R1,R1
+   \      0x218   0xE351'0004        CMP      R1,#+4
+   \      0x21C   0xE584'0024        STR      R0,[R4, #+36]
+   \      0x220   0x0A00'0002        BEQ      ??spi_flash_setup_23
+   \      0x224   0xE6EF'0070        UXTB     R0,R0
+   \      0x228   0xE350'0004        CMP      R0,#+4
+   \      0x22C   0x1A00'0005        BNE      ??spi_flash_setup_12
+   \                     ??spi_flash_setup_23:
+   \      0x230   0xE595'106C        LDR      R1,[R5, #+108]
+   \      0x234   0xE351'0000        CMP      R1,#+0
+   \      0x238   0x0A00'0002        BEQ      ??spi_flash_setup_12
+    226          		rc = params->quad_enable(flash);
+   \      0x23C   0xE1A0'0004        MOV      R0,R4
+   \      0x240   0xE12F'FF31        BLX      R1
+   \      0x244   0xE1A0'6000        MOV      R6,R0
+    227          
+    228          	return rc;
+   \                     ??spi_flash_setup_12:
+   \      0x248   0xE1A0'0006        MOV      R0,R6
+   \      0x24C   0xE8BD'80F2        POP      {R1,R4-R7,PC}    ;; return
+    229          }
+    230          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    231          int spi_flash_read_sr(struct spi_flash *flash, uint8_t *sr)
+    232          {
+   \                     spi_flash_read_sr:
+   \        0x0   0xE92D'4030        PUSH     {R4,R5,LR}
+   \        0x4   0xE24D'D024        SUB      SP,SP,#+36
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'5001        MOV      R5,R1
+    233          	return spi_flash_read_reg(flash, SFLASH_INST_READ_SR, sr, 1);
+   \       0x10   0xE3A0'1024        MOV      R1,#+36
+   \       0x14   0xE1A0'000D        MOV      R0,SP
+   \       0x18   0x....'....        BL       __aeabi_memclr4
+   \       0x1C   0x....'....        LDR      R0,??DataTable6  ;; 0x10101
+   \       0x20   0xE3A0'2005        MOV      R2,#+5
+   \       0x24   0xE3A0'C000        MOV      R12,#+0
+   \       0x28   0xE3A0'1003        MOV      R1,#+3
+   \       0x2C   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x30   0xE5CD'2008        STRB     R2,[SP, #+8]
+   \       0x34   0xE5CD'C00C        STRB     R12,[SP, #+12]
+   \       0x38   0xE58D'1004        STR      R1,[SP, #+4]
+   \       0x3C   0xE594'0028        LDR      R0,[R4, #+40]
+   \       0x40   0xE3A0'1001        MOV      R1,#+1
+   \       0x44   0xE58D'501C        STR      R5,[SP, #+28]
+   \       0x48   0xE58D'1014        STR      R1,[SP, #+20]
+   \       0x4C   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x50   0xE3A0'0064        MOV      R0,#+100
+   \       0x54   0xE1A0'100D        MOV      R1,SP
+   \       0x58   0xE58D'0020        STR      R0,[SP, #+32]
+   \       0x5C   0xE1A0'0004        MOV      R0,R4
+   \       0x60   0x....'....        BL       spi_flash_exec
+   \       0x64   0xE28D'D024        ADD      SP,SP,#+36
+   \       0x68   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+    234          }
+    235          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    236          int spi_flash_write_enable(struct spi_flash *flash)
+    237          {
+    238          	return spi_flash_write_reg(flash, SFLASH_INST_WRITE_ENABLE, NULL, 0);
+   \                     spi_flash_write_enable:
+   \        0x0   0xE3A0'3000        MOV      R3,#+0
+   \        0x4   0xE3A0'2000        MOV      R2,#+0
+   \        0x8   0xE3A0'1006        MOV      R1,#+6
+   \        0xC   0x....'....        B        spi_flash_write_reg  ;; tailcall
+    239          }
+    240          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    241          int spi_flash_write_disable(struct spi_flash *flash)
+    242          {
+   \                     spi_flash_write_disable:
+   \        0x0   0xE92D'4018        PUSH     {R3,R4,LR}
+   \        0x4   0xE24D'D024        SUB      SP,SP,#+36
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    243          	return spi_flash_write_reg(flash, SFLASH_INST_WRITE_DISABLE, NULL, 0);
+   \        0xC   0xE3A0'1024        MOV      R1,#+36
+   \       0x10   0xE1A0'000D        MOV      R0,SP
+   \       0x14   0x....'....        BL       __aeabi_memclr4
+   \       0x18   0x....'....        LDR      R0,??DataTable6  ;; 0x10101
+   \       0x1C   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x20   0xE3A0'0004        MOV      R0,#+4
+   \       0x24   0xE3A0'1000        MOV      R1,#+0
+   \       0x28   0xE5CD'0008        STRB     R0,[SP, #+8]
+   \       0x2C   0xE5CD'100C        STRB     R1,[SP, #+12]
+   \       0x30   0xE58D'0004        STR      R0,[SP, #+4]
+   \       0x34   0xE594'0028        LDR      R0,[R4, #+40]
+   \       0x38   0xE58D'1014        STR      R1,[SP, #+20]
+   \       0x3C   0xE58D'1018        STR      R1,[SP, #+24]
+   \       0x40   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x44   0xE3A0'0064        MOV      R0,#+100
+   \       0x48   0xE1A0'100D        MOV      R1,SP
+   \       0x4C   0xE58D'0020        STR      R0,[SP, #+32]
+   \       0x50   0xE1A0'0004        MOV      R0,R4
+   \       0x54   0x....'....        BL       spi_flash_exec
+   \       0x58   0xE28D'D028        ADD      SP,SP,#+40
+   \       0x5C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    244          }
+    245          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    246          int spi_flash_reset(struct spi_flash *flash)
+    247          {
+   \                     spi_flash_reset:
+   \        0x0   0xE92D'41F8        PUSH     {R3-R8,LR}
+   \        0x4   0xE24D'D024        SUB      SP,SP,#+36
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    248          	int rc;
+    249          
+    250          	rc = spi_flash_write_reg(flash, SFLASH_INST_RESET_ENABLE, NULL, 0);
+   \        0xC   0xE3A0'1024        MOV      R1,#+36
+   \       0x10   0xE1A0'000D        MOV      R0,SP
+   \       0x14   0x....'....        BL       __aeabi_memclr4
+   \       0x18   0x....'....        LDR      R5,??DataTable6  ;; 0x10101
+   \       0x1C   0xE3A0'2066        MOV      R2,#+102
+   \       0x20   0xE3A0'6000        MOV      R6,#+0
+   \       0x24   0xE3A0'7004        MOV      R7,#+4
+   \       0x28   0xE58D'5000        STR      R5,[SP, #+0]
+   \       0x2C   0xE5CD'2008        STRB     R2,[SP, #+8]
+   \       0x30   0xE5CD'600C        STRB     R6,[SP, #+12]
+   \       0x34   0xE58D'7004        STR      R7,[SP, #+4]
+   \       0x38   0xE594'1028        LDR      R1,[R4, #+40]
+   \       0x3C   0xE3A0'8064        MOV      R8,#+100
+   \       0x40   0xE58D'6014        STR      R6,[SP, #+20]
+   \       0x44   0xE58D'6018        STR      R6,[SP, #+24]
+   \       0x48   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x4C   0xE58D'8020        STR      R8,[SP, #+32]
+   \       0x50   0xE1A0'100D        MOV      R1,SP
+   \       0x54   0xE1A0'0004        MOV      R0,R4
+   \       0x58   0x....'....        BL       spi_flash_exec
+    251          	return rc < 0 ? rc : spi_flash_write_reg(flash, SFLASH_INST_RESET, NULL, 0);
+   \       0x5C   0xE350'0000        CMP      R0,#+0
+   \       0x60   0x4A00'000F        BMI      ??spi_flash_reset_0
+   \       0x64   0xE3A0'1024        MOV      R1,#+36
+   \       0x68   0xE1A0'000D        MOV      R0,SP
+   \       0x6C   0x....'....        BL       __aeabi_memclr4
+   \       0x70   0xE3A0'1099        MOV      R1,#+153
+   \       0x74   0xE58D'5000        STR      R5,[SP, #+0]
+   \       0x78   0xE5CD'1008        STRB     R1,[SP, #+8]
+   \       0x7C   0xE5CD'600C        STRB     R6,[SP, #+12]
+   \       0x80   0xE58D'7004        STR      R7,[SP, #+4]
+   \       0x84   0xE594'1028        LDR      R1,[R4, #+40]
+   \       0x88   0xE58D'6014        STR      R6,[SP, #+20]
+   \       0x8C   0xE58D'6018        STR      R6,[SP, #+24]
+   \       0x90   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x94   0xE58D'8020        STR      R8,[SP, #+32]
+   \       0x98   0xE1A0'100D        MOV      R1,SP
+   \       0x9C   0xE1A0'0004        MOV      R0,R4
+   \       0xA0   0x....'....        BL       spi_flash_exec
+   \                     ??spi_flash_reset_0:
+   \       0xA4   0xE28D'D028        ADD      SP,SP,#+40
+   \       0xA8   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    252          }
+    253          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    254          int spi_flash_wait_till_ready(struct spi_flash *flash)
+    255          {
+    256          	return spi_flash_wait_till_ready_timeout(flash, SFLASH_DEFAULT_TIMEOUT);
+   \                     spi_flash_wait_till_ready:
+   \        0x0   0xE3A0'1A7A        MOV      R1,#+499712
+   \        0x4   0xE381'1F48        ORR      R1,R1,#0x120
+   \        0x8   0x....'....        B        spi_flash_wait_till_ready_timeout  ;; tailcall
+    257          }
+    258          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    259          void spi_flash_set_erase_command(struct spi_flash_erase_command *cmd, size_t size, uint8_t inst)
+    260          {
+   \                     spi_flash_set_erase_command:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    261          	cmd->size = size;
+   \        0x8   0xE584'1000        STR      R1,[R4, #+0]
+    262          	cmd->inst = inst;
+   \        0xC   0xE5C4'200C        STRB     R2,[R4, #+12]
+    263          
+    264          	if (IS_POWER_OF_TWO(cmd->size))
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x0A00'0006        BEQ      ??spi_flash_set_erase_command_0
+   \       0x1C   0xE240'1001        SUB      R1,R0,#+1
+   \       0x20   0xE111'0000        TST      R1,R0
+   \       0x24   0x1A00'0003        BNE      ??spi_flash_set_erase_command_0
+    265          		cmd->size_shift = fls(cmd->size) - 1;
+   \       0x28   0x....'....        BL       fls
+   \       0x2C   0xE240'0001        SUB      R0,R0,#+1
+   \       0x30   0xE584'0004        STR      R0,[R4, #+4]
+   \       0x34   0xEA00'0001        B        ??spi_flash_set_erase_command_1
+    266          	else
+    267          		cmd->size_shift = 0;
+   \                     ??spi_flash_set_erase_command_0:
+   \       0x38   0xE3A0'1000        MOV      R1,#+0
+   \       0x3C   0xE584'1004        STR      R1,[R4, #+4]
+    268          
+    269          	cmd->size_mask = (1U << cmd->size_shift) - 1;
+   \                     ??spi_flash_set_erase_command_1:
+   \       0x40   0xE594'2004        LDR      R2,[R4, #+4]
+   \       0x44   0xE3A0'0001        MOV      R0,#+1
+   \       0x48   0xE260'1000        RSB      R1,R0,#+0
+   \       0x4C   0xE081'1210        ADD      R1,R1,R0, LSL R2
+   \       0x50   0xE584'1008        STR      R1,[R4, #+8]
+    270          }
+   \       0x54   0xE8BD'8010        POP      {R4,PC}          ;; return
+    271          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    272          uint32_t spi_flash_div_by_erase_size(const struct spi_flash_erase_command *cmd, uint32_t dividend, uint32_t *remainder)
+    273          {
+   \                     spi_flash_div_by_erase_size:
+   \        0x0   0xE1A0'3000        MOV      R3,R0
+   \        0x4   0xE1A0'0001        MOV      R0,R1
+   \        0x8   0xE92D'4010        PUSH     {R4,LR}
+    274          	div_t q;
+    275          
+    276          	if (cmd->size_shift) {
+   \        0xC   0xE593'1004        LDR      R1,[R3, #+4]
+   \       0x10   0xE1A0'4002        MOV      R4,R2
+   \       0x14   0xE351'0000        CMP      R1,#+0
+   \       0x18   0x0A00'0005        BEQ      ??spi_flash_div_by_erase_size_0
+    277          		*remainder = dividend & cmd->size_mask;
+   \       0x1C   0xE593'2008        LDR      R2,[R3, #+8]
+   \       0x20   0xE002'2000        AND      R2,R2,R0
+   \       0x24   0xE584'2000        STR      R2,[R4, #+0]
+    278          		return dividend >> cmd->size_shift;
+   \       0x28   0xE593'1004        LDR      R1,[R3, #+4]
+   \       0x2C   0xE1A0'0130        LSR      R0,R0,R1
+   \       0x30   0xE8BD'8010        POP      {R4,PC}
+    279          	}
+    280          
+    281          	q = div(dividend, cmd->size);
+   \                     ??spi_flash_div_by_erase_size_0:
+   \       0x34   0xE593'1000        LDR      R1,[R3, #+0]
+   \       0x38   0x....'....        BL       __aeabi_idivmod
+    282          	*remainder = q.rem;
+   \       0x3C   0xE584'1000        STR      R1,[R4, #+0]
+    283          	return q.quot;
+   \       0x40   0xE8BD'8010        POP      {R4,PC}          ;; return
+    284          }
+    285          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    286          void spi_flash_init_uniform_erase_map(struct spi_flash_erase_map *map, uint32_t cmd_mask, uint64_t flash_size)
+    287          {
+   \                     spi_flash_init_uniform_erase_map:
+   \        0x0   0xE92D'4000        PUSH     {LR}
+    288          	map->num_regions = 1;
+    289          	map->regions = &map->uniform_region;
+    290          	map->uniform_region.cmd_mask = cmd_mask;
+   \        0x4   0xE580'1040        STR      R1,[R0, #+64]
+   \        0x8   0xE3A0'C001        MOV      R12,#+1
+   \        0xC   0xE280'E040        ADD      LR,R0,#+64
+    291          	map->uniform_region.offset = 0;
+   \       0x10   0xE3A0'1000        MOV      R1,#+0
+   \       0x14   0xE580'C054        STR      R12,[R0, #+84]
+   \       0x18   0xE580'E050        STR      LR,[R0, #+80]
+   \       0x1C   0xE580'1044        STR      R1,[R0, #+68]
+    292          	map->uniform_region.size = flash_size;
+   \       0x20   0xE1C0'24F8        STRD     R2,R3,[R0, #+72]
+    293          }
+   \       0x24   0xE8BD'8000        POP      {PC}             ;; return
+    294          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    295          int spi_flash_exec(struct spi_flash *flash, const struct spi_flash_command *cmd)
+    296          {
+    297          	return flash->ops->exec(&flash->priv, cmd);
+   \                     spi_flash_exec:
+   \        0x0   0xE590'20A0        LDR      R2,[R0, #+160]
+   \        0x4   0xE592'3010        LDR      R3,[R2, #+16]
+   \        0x8   0xE12F'FF13        BX       R3               ;; tailcall
+    298          }
+    299          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    300          uint8_t spi_flash_protocol_get_inst_nbits(enum spi_flash_protocol proto)
+    301          {
+    302          	return ((unsigned long)(proto & SFLASH_PROTO_INST_MASK)) >>
+    303          		SFLASH_PROTO_INST_SHIFT;
+   \                     spi_flash_protocol_get_inst_nbits:
+   \        0x0   0xE1A0'0400        LSL      R0,R0,#+8
+   \        0x4   0x....'....        B        ?Subroutine3
+    304          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine3:
+   \        0x0   0xE1A0'0C20        LSR      R0,R0,#+24
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    305          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    306          uint8_t spi_flash_protocol_get_addr_nbits(enum spi_flash_protocol proto)
+    307          {
+    308          	return ((unsigned long)(proto & SFLASH_PROTO_ADDR_MASK)) >>
+    309          		SFLASH_PROTO_ADDR_SHIFT;
+   \                     spi_flash_protocol_get_addr_nbits:
+   \        0x0   0xE1A0'0800        LSL      R0,R0,#+16
+   \        0x4                      REQUIRE ?Subroutine3
+   \        0x4                      ;; // Fall through to label ?Subroutine3
+    310          }
+    311          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    312          uint8_t spi_flash_protocol_get_data_nbits(enum spi_flash_protocol proto)
+    313          {
+    314          	return ((unsigned long)(proto & SFLASH_PROTO_DATA_MASK)) >>
+    315          		SFLASH_PROTO_DATA_SHIFT;
+   \                     spi_flash_protocol_get_data_nbits:
+   \        0x0   0xE6EF'0070        UXTB     R0,R0
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    316          }
+    317          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    318          uint8_t spi_flash_get_mfr(const struct spi_flash *flash)
+    319          {
+    320          	return flash->id[0];
+   \                     spi_flash_get_mfr:
+   \        0x0   0xE5D0'0033        LDRB     R0,[R0, #+51]
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    321          }
+    322          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    323          int spi_flash_init(struct spi_flash *flash)
+    324          {
+    325          	return flash->ops->init(&flash->priv);
+   \                     spi_flash_init:
+   \        0x0   0xE590'10A0        LDR      R1,[R0, #+160]
+   \        0x4   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0x8   0xE12F'FF12        BX       R2               ;; tailcall
+    326          }
+    327          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    328          int spi_flash_cleanup(struct spi_flash *flash)
+    329          {
+    330          	return flash->ops->cleanup(&flash->priv);
+   \                     spi_flash_cleanup:
+   \        0x0   0xE590'10A0        LDR      R1,[R0, #+160]
+   \        0x4   0xE591'2004        LDR      R2,[R1, #+4]
+   \        0x8   0xE12F'FF12        BX       R2               ;; tailcall
+    331          }
+    332          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    333          int spi_flash_set_mode(struct spi_flash *flash, uint8_t mode)
+    334          {
+    335          	return flash->ops->set_mode(&flash->priv, mode);
+   \                     spi_flash_set_mode:
+   \        0x0   0xE590'20A0        LDR      R2,[R0, #+160]
+   \        0x4   0xE592'300C        LDR      R3,[R2, #+12]
+   \        0x8   0xE12F'FF13        BX       R3               ;; tailcall
+    336          }
+    337          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    338          int spi_flash_set_freq(struct spi_flash *flash, uint32_t freq)
+    339          {
+    340          	return flash->ops->set_freq(&flash->priv, freq);
+   \                     spi_flash_set_freq:
+   \        0x0   0xE590'20A0        LDR      R2,[R0, #+160]
+   \        0x4   0xE592'3008        LDR      R3,[R2, #+8]
+   \        0x8   0xE12F'FF13        BX       R3               ;; tailcall
+    341          }
+    342          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    343          int spi_flash_read(struct spi_flash *flash, size_t from, void *buf, size_t len)
+    344          {
+    345          	return flash->read(flash, from, buf, len);
+   \                     spi_flash_read:
+   \        0x0   0xE590'C0A4        LDR      R12,[R0, #+164]
+   \        0x4   0xE12F'FF1C        BX       R12              ;; tailcall
+    346          }
+    347          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    348          int spi_flash_write(struct spi_flash *flash, size_t to, const void *buf, size_t len)
+    349          {
+    350          	return flash->write(flash, to, buf, len);
+   \                     spi_flash_write:
+   \        0x0   0xE590'C0A8        LDR      R12,[R0, #+168]
+   \        0x4   0xE12F'FF1C        BX       R12              ;; tailcall
+    351          }
+    352          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    353          int spi_flash_erase(struct spi_flash *flash, size_t offset, size_t len)
+    354          {
+    355          	return flash->erase(flash, offset, len);
+   \                     spi_flash_erase:
+   \        0x0   0xE590'30AC        LDR      R3,[R0, #+172]
+   \        0x4   0xE12F'FF13        BX       R3               ;; tailcall
+    356          }
+    357          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    358          bool spi_flash_has_uniform_erase(const struct spi_flash *flash)
+    359          {
+    360          	return flash->erase_map.regions == &flash->erase_map.uniform_region;
+   \                     spi_flash_has_uniform_erase:
+   \        0x0   0xE590'1098        LDR      R1,[R0, #+152]
+   \        0x4   0xE280'0088        ADD      R0,R0,#+136
+   \        0x8   0xE151'0000        CMP      R1,R0
+   \        0xC   0x03A0'0001        MOVEQ    R0,#+1
+   \       0x10   0x13A0'0000        MOVNE    R0,#+0
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    361          }
+    362          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    363          uint32_t spi_flash_get_uniform_erase_map(const struct spi_flash *flash)
+    364          {
+   \                     spi_flash_get_uniform_erase_map:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    365          	uint32_t erase_map = 0;
+   \        0x8   0xE3A0'5000        MOV      R5,#+0
+    366          
+    367          	if (spi_flash_has_uniform_erase(flash)) {
+   \        0xC   0xE284'1088        ADD      R1,R4,#+136
+   \       0x10   0xE594'0098        LDR      R0,[R4, #+152]
+   \       0x14   0xE150'0001        CMP      R0,R1
+   \       0x18   0x1A00'001B        BNE      ??spi_flash_get_uniform_erase_map_0
+    368          		int i;
+    369          		for (i = 0; i < SFLASH_CMD_ERASE_MAX; i++) {
+    370          			if (flash->erase_map.uniform_region.cmd_mask & (1u << i)) {
+   \       0x1C   0xE594'6088        LDR      R6,[R4, #+136]
+   \       0x20   0xE316'0001        TST      R6,#0x1
+   \       0x24   0x0A00'0003        BEQ      ??spi_flash_get_uniform_erase_map_1
+    371          				erase_map |= flash->erase_map.commands[i].size / flash->page_size;
+   \       0x28   0xE594'0048        LDR      R0,[R4, #+72]
+   \       0x2C   0xE594'1044        LDR      R1,[R4, #+68]
+   \       0x30   0x....'....        BL       __aeabi_uidiv
+   \       0x34   0xE1A0'5000        MOV      R5,R0
+   \                     ??spi_flash_get_uniform_erase_map_1:
+   \       0x38   0xE7E0'00D6        UBFX     R0,R6,#+1,#+1
+   \       0x3C   0xE350'0000        CMP      R0,#+0
+   \       0x40   0x0A00'0003        BEQ      ??spi_flash_get_uniform_erase_map_2
+   \       0x44   0xE594'0058        LDR      R0,[R4, #+88]
+   \       0x48   0xE594'1044        LDR      R1,[R4, #+68]
+   \       0x4C   0x....'....        BL       __aeabi_uidiv
+   \       0x50   0xE180'5005        ORR      R5,R0,R5
+   \                     ??spi_flash_get_uniform_erase_map_2:
+   \       0x54   0xE7E0'0156        UBFX     R0,R6,#+2,#+1
+   \       0x58   0xE350'0000        CMP      R0,#+0
+   \       0x5C   0x0A00'0003        BEQ      ??spi_flash_get_uniform_erase_map_3
+   \       0x60   0xE594'0068        LDR      R0,[R4, #+104]
+   \       0x64   0xE594'1044        LDR      R1,[R4, #+68]
+   \       0x68   0x....'....        BL       __aeabi_uidiv
+   \       0x6C   0xE180'5005        ORR      R5,R0,R5
+   \                     ??spi_flash_get_uniform_erase_map_3:
+   \       0x70   0xE7E0'01D6        UBFX     R0,R6,#+3,#+1
+   \       0x74   0xE350'0000        CMP      R0,#+0
+   \       0x78   0x0A00'0003        BEQ      ??spi_flash_get_uniform_erase_map_0
+   \       0x7C   0xE594'0078        LDR      R0,[R4, #+120]
+   \       0x80   0xE594'1044        LDR      R1,[R4, #+68]
+   \       0x84   0x....'....        BL       __aeabi_uidiv
+   \       0x88   0xE180'5005        ORR      R5,R0,R5
+    372          			}
+    373          		}
+    374          	}
+    375          
+    376          	return erase_map;
+   \                     ??spi_flash_get_uniform_erase_map_0:
+   \       0x8C   0xE1A0'0005        MOV      R0,R5
+   \       0x90   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    377          }
+    378          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    379          void spi_flash_command_init(struct spi_flash_command *cmd, uint8_t inst, uint8_t addr_len, uint8_t flags)
+    380          {
+   \                     spi_flash_command_init:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'5001        MOV      R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+   \       0x10   0xE1A0'7003        MOV      R7,R3
+    381          	memset(cmd, 0, sizeof(*cmd));
+   \       0x14   0xE3A0'1024        MOV      R1,#+36
+   \       0x18   0x....'....        BL       __aeabi_memclr4
+    382          	cmd->proto = SFLASH_PROTO_1_1_1;
+   \       0x1C   0x....'....        LDR      R0,??DataTable6  ;; 0x10101
+   \       0x20   0xE584'0000        STR      R0,[R4, #+0]
+    383          	cmd->inst = inst;
+   \       0x24   0xE5C4'5008        STRB     R5,[R4, #+8]
+    384          	cmd->addr_len = addr_len;
+   \       0x28   0xE5C4'600C        STRB     R6,[R4, #+12]
+    385          	cmd->flags = flags;
+   \       0x2C   0xE584'7004        STR      R7,[R4, #+4]
+    386          }
+   \       0x30   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    387          
+    388          #ifdef CONFIG_HAVE_AESB
+    389          void spi_flash_use_aesb(struct spi_flash* flash, bool enable)
+    390          {
+    391          	flash->use_aesb = enable;
+    392          }
+    393          #endif
+    394          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    395          int spi_flash_set_protection(struct spi_flash *flash, bool protect)
+    396          {
+    397          	if (flash->set_protection)
+   \                     spi_flash_set_protection:
+   \        0x0   0xE590'20B4        LDR      R2,[R0, #+180]
+   \        0x4   0xE352'0000        CMP      R2,#+0
+    398          		return flash->set_protection(flash, protect);
+   \        0x8   0x112F'FF12        BXNE     R2               ;; tailcall
+    399          
+    400          	return 0;
+   \        0xC                      REQUIRE ?Subroutine2
+   \        0xC                      ;; // Fall through to label ?Subroutine2
+    401          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6:
+   \        0x0   0x0001'0101        DC32     0x10101
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6_2:
+   \        0x0   0x....'....        DC32     ?_0+0x58
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6_3:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x49          DC8 0x2D, 0x49, 0x2D, 0x20, 0x53, 0x46, 0x3A, 0x20
+
+   \              0x2D 0x20    
+
+   \              0x53 0x46    
+
+   \              0x3A 0x20
+   \        0x8   0x63 0x61          DC8 0x63, 0x61, 0x6E, 0x27, 0x74, 0x20, 0x73, 0x65
+
+   \              0x6E 0x27    
+
+   \              0x74 0x20    
+
+   \              0x73 0x65
+   \       0x10   0x6C 0x65          DC8 0x6C, 0x65, 0x63, 0x74, 0x20, 0x72, 0x65, 0x61
+
+   \              0x63 0x74    
+
+   \              0x20 0x72    
+
+   \              0x65 0x61
+   \       0x18   0x64 0x20          DC8 0x64, 0x20, 0x73, 0x65, 0x74, 0x74, 0x69, 0x6E
+
+   \              0x73 0x65    
+
+   \              0x74 0x74    
+
+   \              0x69 0x6E
+   \       0x20   0x67 0x73          DC8 0x67, 0x73, 0x20, 0x73, 0x75, 0x70, 0x70, 0x6F
+
+   \              0x20 0x73    
+
+   \              0x75 0x70    
+
+   \              0x70 0x6F
+   \       0x28   0x72 0x74          DC8 0x72, 0x74, 0x65, 0x64, 0x20, 0x62, 0x79, 0x20
+
+   \              0x65 0x64    
+
+   \              0x20 0x62    
+
+   \              0x79 0x20
+   \       0x30   0x62 0x6F          DC8 0x62, 0x6F, 0x74, 0x68, 0x20, 0x74, 0x68, 0x65
+
+   \              0x74 0x68    
+
+   \              0x20 0x74    
+
+   \              0x68 0x65
+   \       0x38   0x20 0x53          DC8 0x20, 0x53, 0x50, 0x49, 0x20, 0x63, 0x6F, 0x6E
+
+   \              0x50 0x49    
+
+   \              0x20 0x63    
+
+   \              0x6F 0x6E
+   \       0x40   0x74 0x72          DC8 0x74, 0x72, 0x6F, 0x6C, 0x6C, 0x65, 0x72, 0x20
+
+   \              0x6F 0x6C    
+
+   \              0x6C 0x65    
+
+   \              0x72 0x20
+   \       0x48   0x61 0x6E          DC8 0x61, 0x6E, 0x64, 0x20, 0x6D, 0x65, 0x6D, 0x6F
+
+   \              0x64 0x20    
+
+   \              0x6D 0x65    
+
+   \              0x6D 0x6F
+   \       0x50   0x72 0x79          DC8 0x72, 0x79, 0x2E, 0x0A, 0
+
+   \              0x2E 0x0A    
+
+   \              0x00
+   \       0x55   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0x58   0x2D 0x49          DC8 0x2D, 0x49, 0x2D, 0x20, 0x53, 0x46, 0x3A, 0x20
+
+   \              0x2D 0x20    
+
+   \              0x53 0x46    
+
+   \              0x3A 0x20
+   \       0x60   0x63 0x61          DC8 0x63, 0x61, 0x6E, 0x27, 0x74, 0x20, 0x73, 0x65
+
+   \              0x6E 0x27    
+
+   \              0x74 0x20    
+
+   \              0x73 0x65
+   \       0x68   0x6C 0x65          DC8 0x6C, 0x65, 0x63, 0x74, 0x20, 0x77, 0x72, 0x69
+
+   \              0x63 0x74    
+
+   \              0x20 0x77    
+
+   \              0x72 0x69
+   \       0x70   0x74 0x65          DC8 0x74, 0x65, 0x20, 0x73, 0x65, 0x74, 0x74, 0x69
+
+   \              0x20 0x73    
+
+   \              0x65 0x74    
+
+   \              0x74 0x69
+   \       0x78   0x6E 0x67          DC8 0x6E, 0x67, 0x73, 0x20, 0x73, 0x75, 0x70, 0x70
+
+   \              0x73 0x20    
+
+   \              0x73 0x75    
+
+   \              0x70 0x70
+   \       0x80   0x6F 0x72          DC8 0x6F, 0x72, 0x74, 0x65, 0x64, 0x20, 0x62, 0x79
+
+   \              0x74 0x65    
+
+   \              0x64 0x20    
+
+   \              0x62 0x79
+   \       0x88   0x20 0x62          DC8 0x20, 0x62, 0x6F, 0x74, 0x68, 0x20, 0x74, 0x68
+
+   \              0x6F 0x74    
+
+   \              0x68 0x20    
+
+   \              0x74 0x68
+   \       0x90   0x65 0x20          DC8 0x65, 0x20, 0x53, 0x50, 0x49, 0x20, 0x63, 0x6F
+
+   \              0x53 0x50    
+
+   \              0x49 0x20    
+
+   \              0x63 0x6F
+   \       0x98   0x6E 0x74          DC8 0x6E, 0x74, 0x72, 0x6F, 0x6C, 0x6C, 0x65, 0x72
+
+   \              0x72 0x6F    
+
+   \              0x6C 0x6C    
+
+   \              0x65 0x72
+   \       0xA0   0x20 0x61          DC8 0x20, 0x61, 0x6E, 0x64, 0x20, 0x6D, 0x65, 0x6D
+
+   \              0x6E 0x64    
+
+   \              0x20 0x6D    
+
+   \              0x65 0x6D
+   \       0xA8   0x6F 0x72          DC8 0x6F, 0x72, 0x79, 0x2E, 0x0A, 0
+
+   \              0x79 0x2E    
+
+   \              0x0A 0x00
+   \       0xAE   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   spi_flash_cleanup
+         0   -- Indirect call
+      24   spi_flash_command_init
+        24   -> __aeabi_memclr4
+       8   spi_flash_div_by_erase_size
+         8   -> __aeabi_idivmod
+       0   spi_flash_erase
+         0   -- Indirect call
+       0   spi_flash_exec
+         0   -- Indirect call
+       0   spi_flash_get_mfr
+      16   spi_flash_get_uniform_erase_map
+        16 __aeabi_uidiv
+       0   spi_flash_has_uniform_erase
+       0   spi_flash_hwcaps2cmd
+       0   spi_flash_init
+         0   -- Indirect call
+       4   spi_flash_init_uniform_erase_map
+       0   spi_flash_protocol_get_addr_nbits
+       0   spi_flash_protocol_get_data_nbits
+       0   spi_flash_protocol_get_inst_nbits
+       0   spi_flash_read
+         0   -- Indirect call
+      56   spi_flash_read_reg
+        56   -> __aeabi_memclr4
+        56   -> spi_flash_exec
+      48   spi_flash_read_sr
+        48   -> __aeabi_memclr4
+        48   -> spi_flash_exec
+      64   spi_flash_reset
+        64   -> __aeabi_memclr4
+        64   -> spi_flash_exec
+       8   spi_flash_set_erase_command
+         8   -> fls
+       0   spi_flash_set_freq
+         0   -- Indirect call
+       0   spi_flash_set_mode
+         0   -- Indirect call
+       0   spi_flash_set_protection
+         0   -- Indirect call
+      24   spi_flash_setup
+        24   -- Indirect call
+        24   -> fls
+        24   -> printf
+       0   spi_flash_wait_till_ready
+         0   -> spi_flash_wait_till_ready_timeout
+      56   spi_flash_wait_till_ready_timeout
+        56   -> msleep
+        56   -> spi_flash_command_init
+        56   -> spi_flash_exec
+        56   -> spi_flash_read_reg
+       0   spi_flash_write
+         0   -- Indirect call
+      48   spi_flash_write_disable
+        48   -> __aeabi_memclr4
+        48   -> spi_flash_exec
+       0   spi_flash_write_enable
+         0   -> spi_flash_write_reg
+      56   spi_flash_write_reg
+        56   -- Indirect call
+        56   -> __aeabi_memclr4
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+       4  ??DataTable6_2
+       4  ??DataTable6_3
+       8  ?Subroutine0
+       8  ?Subroutine1
+       8  ?Subroutine2
+       8  ?Subroutine3
+     176  ?_0
+      12  spi_flash_cleanup
+      52  spi_flash_command_init
+      68  spi_flash_div_by_erase_size
+       8  spi_flash_erase
+      12  spi_flash_exec
+       8  spi_flash_get_mfr
+     148  spi_flash_get_uniform_erase_map
+      24  spi_flash_has_uniform_erase
+     168  spi_flash_hwcaps2cmd
+      12  spi_flash_init
+      40  spi_flash_init_uniform_erase_map
+       4  spi_flash_protocol_get_addr_nbits
+       8  spi_flash_protocol_get_data_nbits
+       8  spi_flash_protocol_get_inst_nbits
+       8  spi_flash_read
+     104  spi_flash_read_reg
+     108  spi_flash_read_sr
+     172  spi_flash_reset
+      88  spi_flash_set_erase_command
+      12  spi_flash_set_freq
+      12  spi_flash_set_mode
+      12  spi_flash_set_protection
+     592  spi_flash_setup
+      12  spi_flash_wait_till_ready
+     192  spi_flash_wait_till_ready_timeout
+       8  spi_flash_write
+      96  spi_flash_write_disable
+      16  spi_flash_write_enable
+     108  spi_flash_write_reg
+
+ 
+   176 bytes in section .rodata
+ 2'160 bytes in section SOFTPACK
+ 
+ 2'160 bytes of CODE  memory
+   176 bytes of CONST memory
+
+Errors: none
+Warnings: none

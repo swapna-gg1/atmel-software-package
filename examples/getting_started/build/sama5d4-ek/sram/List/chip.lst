@@ -1,0 +1,1032 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         24/Nov/2020  14:00:47
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sama5d4\chip.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW4A28.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sama5d4\chip.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D4 -D
+#        CONFIG_CHIP_SAMA5D44 -D CONFIG_BOARD_SAMA5D4_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_ADC_LOW_RES -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D
+#        CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SFC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_SECURE_MATRIX -D
+#        CONFIG_HAVE_DDR2_MT47H128M8 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_TC_FAULT_MODE -D
+#        CONFIG_HAVE_RTC_CALIBRATION -D CONFIG_HAVE_RTC_MODE_PERSIAN -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_SPI_MODE -D CONFIG_HAVE_SERIALD_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sama5d4\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\List\chip.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\Obj\chip.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sama5d4\chip.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2014, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <assert.h>
+     35          #include <string.h>
+     36          
+     37          #include "chip.h"
+     38          #include "compiler.h"
+     39          #include "peripherals/matrix.h"
+     40          #include "serial/console.h"
+     41          
+     42          /*----------------------------------------------------------------------------
+     43           *        Definitions
+     44           *----------------------------------------------------------------------------*/
+     45          
+     46          struct chipid {
+     47          	uint32_t    exid; /**< EXID */
+     48          	const char* name; /**< Chip Name */
+     49          };
+     50          
+     51          struct peripheral_xdma {
+     52          	uint32_t id;   /**< Peripheral ID */
+     53          	uint8_t  iftx; /**< DMA Interface for TX */
+     54          	uint8_t  ifrx; /**< DMA Interface for RX */
+     55          };
+     56          
+     57          /*----------------------------------------------------------------------------
+     58           *        Local constants
+     59           *----------------------------------------------------------------------------*/
+     60          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     61          static const struct chipid _exid_names[] = {
+   \                     _exid_names:
+   \        0x0   0x0000'0001        DC32 1, ?_0, 2, ?_1, 3, ?_2, 4, ?_3
+
+   \              0x....'....  
+
+   \              0x0000'0002  
+
+   \              0x....'....  
+
+   \              0x0000'0003  
+
+   \              0x....'....  
+
+   \              0x0000'0004  
+
+   \              0x....'....
+     62          	{ CHIPID_EXID_SAMA5D41, "SAMA5D41" },
+     63          	{ CHIPID_EXID_SAMA5D42, "SAMA5D42" },
+     64          	{ CHIPID_EXID_SAMA5D43, "SAMA5D43" },
+     65          	{ CHIPID_EXID_SAMA5D44, "SAMA5D44" },
+     66          };
+     67          
+     68          /* default console used by ROM-code */
+
+   \                                 In section .rodata, align 4
+     69          static const struct _console_cfg _console_cfg =
+   \                     _console_cfg:
+   \        0x0   0xFC00'C000        DC32 0xfc00'c000, 115'200
+
+   \              0x0001'C200
+   \        0x8   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0002'0000        DC32 131'072
+   \       0x10   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x14   0x0000'0000        DC32 0
+   \       0x18   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x1C   0x0001'0000        DC32 65'536
+   \       0x20   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x24   0x0000'0000        DC32 0
+     70          	{ USART3, 115200, PIN_USART3_TXD, PIN_USART3_RXD };
+     71          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     72          static const uint8_t _h64_peripherals[] = {
+   \                     _h64_peripherals:
+   \        0x0   0x02 0x08          DC8 2, 8, 10, 13, 16, 18, 19, 50, 51, 52, 67, 0
+
+   \              0x0A 0x0D    
+
+   \              0x10 0x12    
+
+   \              0x13 0x32    
+
+   \              0x33 0x34    
+
+   \              0x43 0x00
+     73          	ID_ARM,     /* 2: Performance Monitor Unit (ARM) */
+     74          	ID_XDMAC0,  /* 8: DMA Controller 0 (XDMAC0) */
+     75          	ID_CPKCC,   /* 10: Classic Public Key Crypto Controller (CPKCC) */
+     76          	ID_AESB,    /* 13: AES bridge (AESB) */
+     77          	ID_MPDDRC,  /* 16: MPDDR controller (MPDDRC) */
+     78          	ID_MATRIX0, /* 18: H64MX, 64-bit AHB Matrix (MATRIX0) */
+     79          	ID_VDEC,    /* 19: Video Decoder (VDEC) */
+     80          	ID_XDMAC1,  /* 50: DMA Controller 1 (XDMAC1) */
+     81          	ID_LCDC,    /* 51: LCD Controller (LCDC) */
+     82          	ID_ISI,     /* 52: Camera Interface (ISI) */
+     83          	ID_L2CC,    /* 67: L2 Cache Controller  (L2CC) */
+     84          };
+     85          
+
+   \                                 In section .rodata, align 4
+     86          static const struct peripheral_xdma _xdmac0_peripherals[] = {
+   \                     _xdmac0_peripherals:
+   \        0x0   0x0000'0023        DC32 35
+   \        0x4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x8   0x0000'0024        DC32 36
+   \        0xC   0x01 0x01          DC8 1, 1, 0, 0
+
+   \              0x00 0x00
+   \       0x10   0x0000'0020        DC32 32
+   \       0x14   0x02 0x03          DC8 2, 3, 0, 0
+
+   \              0x00 0x00
+   \       0x18   0x0000'0021        DC32 33
+   \       0x1C   0x04 0x05          DC8 4, 5, 0, 0
+
+   \              0x00 0x00
+   \       0x20   0x0000'0022        DC32 34
+   \       0x24   0x06 0x07          DC8 6, 7, 0, 0
+
+   \              0x00 0x00
+   \       0x28   0x0000'003E        DC32 62
+   \       0x2C   0x08 0x09          DC8 8, 9, 0, 0
+
+   \              0x00 0x00
+   \       0x30   0x0000'0025        DC32 37
+   \       0x34   0x0A 0x0B          DC8 10, 11, 0, 0
+
+   \              0x00 0x00
+   \       0x38   0x0000'0026        DC32 38
+   \       0x3C   0x0C 0x0D          DC8 12, 13, 0, 0
+
+   \              0x00 0x00
+   \       0x40   0x0000'0027        DC32 39
+   \       0x44   0x0E 0x0F          DC8 14, 15, 0, 0
+
+   \              0x00 0x00
+   \       0x48   0x0000'001D        DC32 29
+   \       0x4C   0x10 0x11          DC8 16, 17, 0, 0
+
+   \              0x00 0x00
+   \       0x50   0x0000'001E        DC32 30
+   \       0x54   0x12 0x13          DC8 18, 19, 0, 0
+
+   \              0x00 0x00
+   \       0x58   0x0000'001F        DC32 31
+   \       0x5C   0x14 0x15          DC8 20, 21, 0, 0
+
+   \              0x00 0x00
+   \       0x60   0x0000'001B        DC32 27
+   \       0x64   0x16 0x17          DC8 22, 23, 0, 0
+
+   \              0x00 0x00
+   \       0x68   0x0000'001C        DC32 28
+   \       0x6C   0x18 0x19          DC8 24, 25, 0, 0
+
+   \              0x00 0x00
+   \       0x70   0x0000'0030        DC32 48
+   \       0x74   0x1A 0x1B          DC8 26, 27, 0, 0
+
+   \              0x00 0x00
+   \       0x78   0x0000'0031        DC32 49
+   \       0x7C   0x1C 0x1D          DC8 28, 29, 0, 0
+
+   \              0x00 0x00
+   \       0x80   0x0000'002D        DC32 45
+   \       0x84   0x1E 0x1F          DC8 30, 31, 0, 0
+
+   \              0x00 0x00
+   \       0x88   0x0000'002C        DC32 44
+   \       0x8C   0xFF 0x20          DC8 255, 32, 0, 0
+
+   \              0x00 0x00
+   \       0x90   0x0000'003D        DC32 61
+   \       0x94   0x21 0x22          DC8 33, 34, 0, 0
+
+   \              0x00 0x00
+   \       0x98   0x0000'0006        DC32 6
+   \       0x9C   0x24 0x25          DC8 36, 37, 0, 0
+
+   \              0x00 0x00
+   \       0xA0   0x0000'0007        DC32 7
+   \       0xA4   0x26 0x27          DC8 38, 39, 0, 0
+
+   \              0x00 0x00
+   \       0xA8   0x0000'000C        DC32 12
+   \       0xAC   0x29 0x28          DC8 41, 40, 0, 0
+
+   \              0x00 0x00
+   \       0xB0   0x0000'000E        DC32 14
+   \       0xB4   0x2A 0x2B          DC8 42, 43, 0, 0
+
+   \              0x00 0x00
+   \       0xB8   0x0000'000F        DC32 15
+   \       0xBC   0x2C 0xFF          DC8 44, 255, 0, 0
+
+   \              0x00 0x00
+   \       0xC0   0x0000'0023        DC32 35
+   \       0xC4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0xC8   0x0000'0024        DC32 36
+   \       0xCC   0x01 0x01          DC8 1, 1, 0, 0
+
+   \              0x00 0x00
+   \       0xD0   0x0000'0020        DC32 32
+   \       0xD4   0x02 0x03          DC8 2, 3, 0, 0
+
+   \              0x00 0x00
+   \       0xD8   0x0000'0021        DC32 33
+   \       0xDC   0x04 0x05          DC8 4, 5, 0, 0
+
+   \              0x00 0x00
+   \       0xE0   0x0000'0022        DC32 34
+   \       0xE4   0x06 0x07          DC8 6, 7, 0, 0
+
+   \              0x00 0x00
+   \       0xE8   0x0000'003E        DC32 62
+   \       0xEC   0x08 0x09          DC8 8, 9, 0, 0
+
+   \              0x00 0x00
+   \       0xF0   0x0000'0025        DC32 37
+   \       0xF4   0x0A 0x0B          DC8 10, 11, 0, 0
+
+   \              0x00 0x00
+   \       0xF8   0x0000'0026        DC32 38
+   \       0xFC   0x0C 0x0D          DC8 12, 13, 0, 0
+
+   \              0x00 0x00
+   \      0x100   0x0000'0027        DC32 39
+   \      0x104   0x0E 0x0F          DC8 14, 15, 0, 0
+
+   \              0x00 0x00
+   \      0x108   0x0000'001D        DC32 29
+   \      0x10C   0x10 0x11          DC8 16, 17, 0, 0
+
+   \              0x00 0x00
+   \      0x110   0x0000'001E        DC32 30
+   \      0x114   0x12 0x13          DC8 18, 19, 0, 0
+
+   \              0x00 0x00
+   \      0x118   0x0000'001F        DC32 31
+   \      0x11C   0x14 0x15          DC8 20, 21, 0, 0
+
+   \              0x00 0x00
+   \      0x120   0x0000'001B        DC32 27
+   \      0x124   0x16 0x17          DC8 22, 23, 0, 0
+
+   \              0x00 0x00
+   \      0x128   0x0000'001C        DC32 28
+   \      0x12C   0x18 0x19          DC8 24, 25, 0, 0
+
+   \              0x00 0x00
+   \      0x130   0x0000'0030        DC32 48
+   \      0x134   0x1A 0x1B          DC8 26, 27, 0, 0
+
+   \              0x00 0x00
+   \      0x138   0x0000'0031        DC32 49
+   \      0x13C   0x1C 0x1D          DC8 28, 29, 0, 0
+
+   \              0x00 0x00
+   \      0x140   0x0000'002D        DC32 45
+   \      0x144   0x1E 0x1F          DC8 30, 31, 0, 0
+
+   \              0x00 0x00
+   \      0x148   0x0000'002C        DC32 44
+   \      0x14C   0xFF 0x20          DC8 255, 32, 0, 0
+
+   \              0x00 0x00
+   \      0x150   0x0000'003D        DC32 61
+   \      0x154   0x21 0x22          DC8 33, 34, 0, 0
+
+   \              0x00 0x00
+     87          	{ ID_HSMCI0,    0,  0 },
+     88          	{ ID_HSMCI1,    1,  1 },
+     89          	{ ID_TWI0,      2,  3 },
+     90          	{ ID_TWI1,      4,  5 },
+     91          	{ ID_TWI2,      6,  7 },
+     92          	{ ID_TWI3,      8,  9 },
+     93          	{ ID_SPI0,     10, 11 },
+     94          	{ ID_SPI1,     12, 13 },
+     95          	{ ID_SPI2,     14, 15 },
+     96          	{ ID_USART2,   16, 17 },
+     97          	{ ID_USART3,   18, 19 },
+     98          	{ ID_USART4,   20, 21 },
+     99          	{ ID_UART0,    22, 23 },
+    100          	{ ID_UART1,    24, 25 },
+    101          	{ ID_SSC0,     26, 27 },
+    102          	{ ID_SSC1,     28, 29 },
+    103          	{ ID_DBGU,     30, 31 },
+    104          	{ ID_ADC,    0xff, 32 },
+    105          	{ ID_SMD,      33, 34 },
+    106          	{ ID_USART0,   36, 37 },
+    107          	{ ID_USART1,   38, 39 },
+    108          	{ ID_AES,      41, 40 },
+    109          	{ ID_TDES,     42, 43 },
+    110          	{ ID_SHA,      44, 0xff },
+    111          };
+    112          
+    113          static const struct peripheral_xdma _xdmac1_peripherals[] = {
+    114          	{ ID_HSMCI0,    0,  0 },
+    115          	{ ID_HSMCI1,    1,  1 },
+    116          	{ ID_TWI0,      2,  3 },
+    117          	{ ID_TWI1,      4,  5 },
+    118          	{ ID_TWI2,      6,  7 },
+    119          	{ ID_TWI3,      8,  9 },
+    120          	{ ID_SPI0,     10, 11 },
+    121          	{ ID_SPI1,     12, 13 },
+    122          	{ ID_SPI2,     14, 15 },
+    123          	{ ID_USART2,   16, 17 },
+    124          	{ ID_USART3,   18, 19 },
+    125          	{ ID_USART4,   20, 21 },
+    126          	{ ID_UART0,    22, 23 },
+    127          	{ ID_UART1,    24, 25 },
+    128          	{ ID_SSC0,     26, 27 },
+    129          	{ ID_SSC1,     28, 29 },
+    130          	{ ID_DBGU,     30, 31 },
+    131          	{ ID_ADC,    0xff, 32 },
+    132          	{ ID_SMD,      33, 34 },
+    133          };
+    134          
+    135          /*----------------------------------------------------------------------------
+    136           *        Private functions
+    137           *----------------------------------------------------------------------------*/
+    138          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    139          static const struct peripheral_xdma *get_peripheral_xdma(uint32_t id, Xdmac *xdmac)
+    140          {
+    141          	const struct peripheral_xdma *_xdmac_peripherals;
+    142          	int count, i;
+    143          
+    144          	if (xdmac == XDMAC0) {
+   \                     get_peripheral_xdma:
+   \        0x0   0xE3A0'24F0        MOV      R2,#-268435456
+   \        0x4   0xE382'2B50        ORR      R2,R2,#0x14000
+   \        0x8   0xE92D'4000        PUSH     {LR}
+   \        0xC   0xE151'0002        CMP      R1,R2
+    145          		_xdmac_peripherals = _xdmac0_peripherals;
+   \       0x10   0x....'....        LDREQ    R1,??DataTable9
+    146          		count = ARRAY_SIZE(_xdmac0_peripherals);
+   \       0x14   0x03A0'2018        MOVEQ    R2,#+24
+   \       0x18   0x0A00'0004        BEQ      ??get_peripheral_xdma_0
+    147          	} else if (xdmac == XDMAC1) {
+   \       0x1C   0xE3C2'3B40        BIC      R3,R2,#0x10000
+   \       0x20   0xE151'0003        CMP      R1,R3
+   \       0x24   0x1A00'000C        BNE      ??get_peripheral_xdma_1
+    148          		_xdmac_peripherals = _xdmac1_peripherals;
+   \       0x28   0x....'....        LDR      R1,??DataTable9_1
+    149          		count = ARRAY_SIZE(_xdmac1_peripherals);
+   \       0x2C   0xE3A0'2013        MOV      R2,#+19
+    150          	} else {
+    151          		return NULL;
+    152          	}
+    153          
+    154          	for (i = 0; i < count; i++) {
+   \                     ??get_peripheral_xdma_0:
+   \       0x30   0xE3A0'3000        MOV      R3,#+0
+   \       0x34   0xE1A0'C001        MOV      R12,R1
+   \       0x38   0xEA00'0000        B        ??get_peripheral_xdma_2
+   \                     ??get_peripheral_xdma_3:
+   \       0x3C   0xE283'3001        ADD      R3,R3,#+1
+   \                     ??get_peripheral_xdma_2:
+   \       0x40   0xE153'0002        CMP      R3,R2
+   \       0x44   0xAA00'0004        BGE      ??get_peripheral_xdma_1
+    155          		if (_xdmac_peripherals[i].id == id) {
+   \       0x48   0xE49C'E008        LDR      LR,[R12], #+8
+   \       0x4C   0xE15E'0000        CMP      LR,R0
+   \       0x50   0x1AFF'FFF9        BNE      ??get_peripheral_xdma_3
+    156          			return &_xdmac_peripherals[i];
+   \       0x54   0xE081'0183        ADD      R0,R1,R3, LSL #+3
+   \       0x58   0xE8BD'8000        POP      {PC}
+    157          		}
+    158          	}
+    159          
+    160          	return NULL;
+   \                     ??get_peripheral_xdma_1:
+   \       0x5C   0xE3A0'0000        MOV      R0,#+0
+   \       0x60   0xE8BD'8000        POP      {PC}             ;; return
+    161          }
+    162          
+    163          /*----------------------------------------------------------------------------
+    164           *        Exported functions
+    165           *----------------------------------------------------------------------------*/
+    166          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    167          const char* get_chip_name(void)
+    168          {
+    169          	int i;
+    170          
+    171          	if ((DBGU->DBGU_CIDR & ~DBGU_CIDR_VERSION_Msk) ==
+    172          			CHIPID_CIDR_SAMA5D4) {
+   \                     get_chip_name:
+   \        0x0   0x....'....        LDR      R0,??DataTable9_2  ;; 0xfc069040
+   \        0x4   0x....'....        LDR      R3,??DataTable9_3  ;; 0x8a5c07c0
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE1A0'22A1        LSR      R2,R1,#+5
+   \       0x10   0xE153'0282        CMP      R3,R2, LSL #+5
+   \       0x14   0x1A00'0010        BNE      ??get_chip_name_0
+    173          		uint32_t exid = DBGU->DBGU_EXID;
+   \       0x18   0xE590'0004        LDR      R0,[R0, #+4]
+    174          		for (i = 0; i < ARRAY_SIZE(_exid_names); i++) {
+   \       0x1C   0xE3A0'1000        MOV      R1,#+0
+    175          			if (_exid_names[i].exid == exid)
+   \       0x20   0xE350'0001        CMP      R0,#+1
+   \       0x24   0x1A00'0003        BNE      ??get_chip_name_1
+    176          				return _exid_names[i].name;
+   \                     ??get_chip_name_2:
+   \       0x28   0x....'....        ADR      R0,_exid_names
+   \       0x2C   0xE080'0001        ADD      R0,R0,R1
+   \       0x30   0xE590'0004        LDR      R0,[R0, #+4]
+   \       0x34   0xE12F'FF1E        BX       LR
+   \                     ??get_chip_name_1:
+   \       0x38   0xE350'0002        CMP      R0,#+2
+   \       0x3C   0xE3A0'1008        MOV      R1,#+8
+   \       0x40   0x0AFF'FFF8        BEQ      ??get_chip_name_2
+   \       0x44   0xE350'0003        CMP      R0,#+3
+   \       0x48   0xE3A0'1010        MOV      R1,#+16
+   \       0x4C   0x0AFF'FFF5        BEQ      ??get_chip_name_2
+   \       0x50   0xE350'0004        CMP      R0,#+4
+   \       0x54   0xE3A0'1018        MOV      R1,#+24
+   \       0x58   0x0AFF'FFF2        BEQ      ??get_chip_name_2
+    177          		}
+    178          	}
+    179          
+    180          	return "Unknown";
+   \                     ??get_chip_name_0:
+   \       0x5C   0x....'....        ADR      R0,?_6
+   \       0x60   0xE12F'FF1E        BX       LR               ;; return
+    181          }
+    182          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    183          void get_romcode_console(struct _console_cfg* config)
+    184          {
+    185          	memcpy(config, &_console_cfg, sizeof(*config));
+   \                     get_romcode_console:
+   \        0x0   0xE3A0'2028        MOV      R2,#+40
+   \        0x4   0x....'....        LDR      R1,??DataTable9_4
+   \        0x8   0x....'....        B        __aeabi_memcpy4  ;; tailcall
+    186          }
+    187          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    188          Matrix* get_peripheral_matrix(uint32_t id)
+    189          {
+    190          	int i;
+    191          
+    192          	for (i = 0; i < ARRAY_SIZE(_h64_peripherals); i++)
+   \                     get_peripheral_matrix:
+   \        0x0   0x....'....        ADR      R1,_h64_peripherals
+   \        0x4   0xE3A0'200B        MOV      R2,#+11
+    193          		if (_h64_peripherals[i] == id)
+   \                     ??get_peripheral_matrix_0:
+   \        0x8   0xE4D1'3001        LDRB     R3,[R1], #+1
+   \        0xC   0xE153'0000        CMP      R3,R0
+   \       0x10   0x0A00'0004        BEQ      ??get_peripheral_matrix_1
+   \       0x14   0xE252'2001        SUBS     R2,R2,#+1
+   \       0x18   0x1AFF'FFFA        BNE      ??get_peripheral_matrix_0
+    194          			return MATRIX0; // AHB 64-bit matrix
+    195          	return MATRIX1; // AHB 32-bit matrix
+   \       0x1C   0xE3A0'04FC        MOV      R0,#-67108864
+   \       0x20   0xE380'0A54        ORR      R0,R0,#0x54000
+   \       0x24   0xE12F'FF1E        BX       LR
+   \                     ??get_peripheral_matrix_1:
+   \       0x28   0xE3A0'04F0        MOV      R0,#-268435456
+   \       0x2C   0xE380'0B70        ORR      R0,R0,#0x1C000
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    196          }
+    197          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    198          uint32_t get_peripheral_clock_matrix_div(uint32_t id)
+    199          {
+    200          	Matrix* matrix = get_peripheral_matrix(id);
+   \                     get_peripheral_clock_matrix_div:
+   \        0x0   0x....'....        ADR      R1,_h64_peripherals
+   \        0x4   0xE3A0'200B        MOV      R2,#+11
+   \                     ??get_peripheral_clock_matrix_div_0:
+   \        0x8   0xE4D1'3001        LDRB     R3,[R1], #+1
+   \        0xC   0xE153'0000        CMP      R3,R0
+   \       0x10   0x0A00'0007        BEQ      ??get_peripheral_clock_matrix_div_1
+   \       0x14   0xE252'2001        SUBS     R2,R2,#+1
+   \       0x18   0x1AFF'FFFA        BNE      ??get_peripheral_clock_matrix_div_0
+    201          
+    202          	if (matrix == MATRIX1) {
+    203          		if (PMC->PMC_MCKR & PMC_MCKR_H32MXDIV_H32MXDIV2)
+   \       0x1C   0x....'....        LDR      R0,??DataTable9_5  ;; 0xf0018030
+   \       0x20   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x24   0xE311'0740        TST      R1,#0x1000000
+   \       0x28   0x0A00'0001        BEQ      ??get_peripheral_clock_matrix_div_1
+    204          			return 2;
+   \       0x2C   0xE3A0'0002        MOV      R0,#+2
+   \       0x30   0xE12F'FF1E        BX       LR
+    205          		else
+    206          			return 1;
+   \                     ??get_peripheral_clock_matrix_div_1:
+   \       0x34   0xE3A0'0001        MOV      R0,#+1
+   \       0x38   0xE12F'FF1E        BX       LR               ;; return
+    207          	}
+    208          
+    209          	return 1;
+    210          }
+    211          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    212          uint8_t get_peripheral_dma_channel(uint32_t id, Xdmac *xdmac, bool transmit)
+    213          {
+    214          	const struct peripheral_xdma *periph_xdma = get_peripheral_xdma(id, xdmac);
+   \                     get_peripheral_dma_channel:
+   \        0x0   0xE3A0'34F0        MOV      R3,#-268435456
+   \        0x4   0xE92D'4010        PUSH     {R4,LR}
+   \        0x8   0xE383'3B50        ORR      R3,R3,#0x14000
+   \        0xC   0xE151'0003        CMP      R1,R3
+   \       0x10   0x....'....        LDREQ    R1,??DataTable9
+   \       0x14   0x03A0'3018        MOVEQ    R3,#+24
+   \       0x18   0x0A00'0004        BEQ      ??get_peripheral_dma_channel_0
+   \       0x1C   0xE3C3'CB40        BIC      R12,R3,#0x10000
+   \       0x20   0xE151'000C        CMP      R1,R12
+   \       0x24   0x1A00'0010        BNE      ??get_peripheral_dma_channel_1
+   \       0x28   0x....'....        LDR      R1,??DataTable9_1
+   \       0x2C   0xE3A0'3013        MOV      R3,#+19
+   \                     ??get_peripheral_dma_channel_0:
+   \       0x30   0xE3A0'C000        MOV      R12,#+0
+   \       0x34   0xE1A0'E001        MOV      LR,R1
+   \       0x38   0xEA00'0000        B        ??get_peripheral_dma_channel_2
+   \                     ??get_peripheral_dma_channel_3:
+   \       0x3C   0xE28C'C001        ADD      R12,R12,#+1
+   \                     ??get_peripheral_dma_channel_2:
+   \       0x40   0xE15C'0003        CMP      R12,R3
+   \       0x44   0xAA00'0008        BGE      ??get_peripheral_dma_channel_1
+   \       0x48   0xE49E'4008        LDR      R4,[LR], #+8
+   \       0x4C   0xE154'0000        CMP      R4,R0
+   \       0x50   0x1AFF'FFF9        BNE      ??get_peripheral_dma_channel_3
+   \       0x54   0xE091'018C        ADDS     R0,R1,R12, LSL #+3
+    215          	if (periph_xdma) {
+   \       0x58   0x0A00'0003        BEQ      ??get_peripheral_dma_channel_1
+    216          		return transmit ? periph_xdma->iftx : periph_xdma->ifrx;
+   \       0x5C   0xE352'0000        CMP      R2,#+0
+   \       0x60   0x15D0'0004        LDRBNE   R0,[R0, #+4]
+   \       0x64   0x05D0'0005        LDRBEQ   R0,[R0, #+5]
+   \       0x68   0xE8BD'8010        POP      {R4,PC}
+    217          	} else {
+    218          		return 0xff;
+   \                     ??get_peripheral_dma_channel_1:
+   \       0x6C   0xE3A0'00FF        MOV      R0,#+255
+   \       0x70   0xE8BD'8010        POP      {R4,PC}          ;; return
+    219          	}
+    220          }
+    221          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    222          bool is_peripheral_on_dma_controller(uint32_t peri_id, Xdmac *xdmac)
+    223          {
+   \                     is_peripheral_on_dma_controller:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    224          	Matrix *dmac_mtx = NULL;
+    225          	Matrix *peri_mtx = get_peripheral_matrix(peri_id);
+   \        0xC   0x....'....        BL       get_peripheral_matrix
+   \       0x10   0xE1A0'6000        MOV      R6,R0
+    226          	uint32_t dmac_id = get_xdmac_id_from_addr(xdmac);
+   \       0x14   0xE1A0'0005        MOV      R0,R5
+   \       0x18   0x....'....        BL       get_xdmac_id_from_addr
+    227          
+    228          	assert(peri_id < ID_PERIPH_COUNT && dmac_id < ID_PERIPH_COUNT);
+   \       0x1C   0xE354'0044        CMP      R4,#+68
+   \       0x20   0xE1A0'7000        MOV      R7,R0
+   \       0x24   0x2A00'0001        BCS      ??is_peripheral_on_dma_controller_0
+   \       0x28   0xE357'0044        CMP      R7,#+68
+   \       0x2C   0x3A00'0004        BCC      ??is_peripheral_on_dma_controller_1
+   \                     ??is_peripheral_on_dma_controller_0:
+   \       0x30   0x....'....        LDR      R0,??DataTable9_6
+   \       0x34   0xE3A0'20E4        MOV      R2,#+228
+   \       0x38   0xE280'1024        ADD      R1,R0,#+36
+   \       0x3C   0x....'....        BL       __aeabi_assert
+   \       0x40   0x....'....        BL       __iar_EmptyStepPoint
+    229          	dmac_mtx = get_peripheral_matrix(dmac_id);
+   \                     ??is_peripheral_on_dma_controller_1:
+   \       0x44   0xE1A0'0007        MOV      R0,R7
+   \       0x48   0x....'....        BL       get_peripheral_matrix
+    230          	assert(peri_mtx != NULL && dmac_mtx != NULL);
+   \       0x4C   0xE356'0000        CMP      R6,#+0
+   \       0x50   0xE1A0'8000        MOV      R8,R0
+   \       0x54   0x0A00'0001        BEQ      ??is_peripheral_on_dma_controller_2
+   \       0x58   0xE358'0000        CMP      R8,#+0
+   \       0x5C   0x1A00'0004        BNE      ??is_peripheral_on_dma_controller_3
+   \                     ??is_peripheral_on_dma_controller_2:
+   \       0x60   0xE3A0'20E6        MOV      R2,#+230
+   \       0x64   0x....'....        LDR      R1,??DataTable9_7
+   \       0x68   0x....'....        ADR      R0,?_7
+   \       0x6C   0x....'....        BL       __aeabi_assert
+   \       0x70   0x....'....        BL       __iar_EmptyStepPoint
+    231          	if (matrix_is_peripheral_secured(peri_mtx, peri_id)
+    232          		!= matrix_is_peripheral_secured(dmac_mtx, dmac_id))
+   \                     ??is_peripheral_on_dma_controller_3:
+   \       0x74   0xE1A0'1004        MOV      R1,R4
+   \       0x78   0xE1A0'0006        MOV      R0,R6
+   \       0x7C   0x....'....        BL       matrix_is_peripheral_secured
+   \       0x80   0xE1A0'6000        MOV      R6,R0
+   \       0x84   0xE1A0'1007        MOV      R1,R7
+   \       0x88   0xE1A0'0008        MOV      R0,R8
+   \       0x8C   0x....'....        BL       matrix_is_peripheral_secured
+   \       0x90   0xE156'0000        CMP      R6,R0
+   \       0x94   0x0A00'0001        BEQ      ??is_peripheral_on_dma_controller_4
+    233          		return false;
+   \       0x98   0xE3A0'0000        MOV      R0,#+0
+   \       0x9C   0xE8BD'81F0        POP      {R4-R8,PC}
+    234          	return get_peripheral_xdma(peri_id, xdmac) != NULL;
+   \                     ??is_peripheral_on_dma_controller_4:
+   \       0xA0   0xE1A0'1005        MOV      R1,R5
+   \       0xA4   0xE1A0'0004        MOV      R0,R4
+   \       0xA8   0x....'....        BL       get_peripheral_xdma
+   \       0xAC   0xE350'0000        CMP      R0,#+0
+   \       0xB0   0x13A0'0001        MOVNE    R0,#+1
+   \       0xB4   0xE6EF'0070        UXTB     R0,R0
+   \       0xB8   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    235          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9:
+   \        0x0   0x....'....        DC32     _xdmac0_peripherals
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_1:
+   \        0x0   0x....'....        DC32     _xdmac0_peripherals+0xC0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_2:
+   \        0x0   0xFC06'9040        DC32     0xfc069040
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_3:
+   \        0x0   0x8A5C'07C0        DC32     0x8a5c07c0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_4:
+   \        0x0   0x....'....        DC32     _console_cfg
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_5:
+   \        0x0   0xF001'8030        DC32     0xf0018030
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_6:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable9_7:
+   \        0x0   0x....'....        DC32     ?_4+0x24
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x53 0x41          DC8 "SAMA5D41"
+
+   \              0x4D 0x41    
+
+   \              0x35 0x44    
+
+   \              0x34 0x31    
+
+   \              0x00
+   \        0x9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x53 0x41          DC8 "SAMA5D42"
+
+   \              0x4D 0x41    
+
+   \              0x35 0x44    
+
+   \              0x34 0x32    
+
+   \              0x00
+   \        0x9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x53 0x41          DC8 "SAMA5D43"
+
+   \              0x4D 0x41    
+
+   \              0x35 0x44    
+
+   \              0x34 0x33    
+
+   \              0x00
+   \        0x9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x53 0x41          DC8 "SAMA5D44"
+
+   \              0x4D 0x41    
+
+   \              0x35 0x44    
+
+   \              0x34 0x34    
+
+   \              0x00
+   \        0x9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_6:
+   \        0x0   0x55 0x6E          DC8 "Unknown"
+
+   \              0x6B 0x6E    
+
+   \              0x6F 0x77    
+
+   \              0x6E 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_4:
+   \        0x0   0x70 0x65          DC8 "peri_id < (68) && dmac_id < (68)"
+
+   \              0x72 0x69    
+
+   \              0x5F 0x69    
+
+   \              0x64 0x20    
+
+   \              0x3C 0x20    
+
+   \              0x28 0x36    
+
+   \              0x38 0x29    
+
+   \              0x20 0x26    
+
+   \              0x26 0x20    
+
+   \              0x64 0x6D    
+
+   \              0x61 0x63    
+
+   \              0x5F 0x69    
+
+   \              0x64 0x20    
+
+   \              0x3C 0x20    
+
+   \              0x28 0x36    
+
+   \              0x38 0x29    
+
+   \              0x00
+   \       0x21   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0x24   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \       0x2C   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x34   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x3C   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x44   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x4C   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x54   0x37 0x5C          DC8 0x37, 0x5C, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74
+
+   \              0x74 0x61    
+
+   \              0x72 0x67    
+
+   \              0x65 0x74
+   \       0x5C   0x5C 0x73          DC8 0x5C, 0x73, 0x61, 0x6D, 0x61, 0x35, 0x64, 0x34
+
+   \              0x61 0x6D    
+
+   \              0x61 0x35    
+
+   \              0x64 0x34
+   \       0x64   0x5C 0x63          DC8 0x5C, 0x63, 0x68, 0x69, 0x70, 0x2E, 0x63, 0
+
+   \              0x68 0x69    
+
+   \              0x70 0x2E    
+
+   \              0x63 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_7:
+   \        0x0   0x70 0x65          DC8 "peri_mtx != 0 && dmac_mtx != 0"
+
+   \              0x72 0x69    
+
+   \              0x5F 0x6D    
+
+   \              0x74 0x78    
+
+   \              0x20 0x21    
+
+   \              0x3D 0x20    
+
+   \              0x30 0x20    
+
+   \              0x26 0x26    
+
+   \              0x20 0x64    
+
+   \              0x6D 0x61    
+
+   \              0x63 0x5F    
+
+   \              0x6D 0x74    
+
+   \              0x78 0x20    
+
+   \              0x21 0x3D    
+
+   \              0x20 0x30    
+
+   \              0x00
+   \       0x1F   0x00               DC8 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   get_chip_name
+       0   get_peripheral_clock_matrix_div
+       8   get_peripheral_dma_channel
+       0   get_peripheral_matrix
+       4   get_peripheral_xdma
+       0   get_romcode_console
+         0   -> __aeabi_memcpy4
+      24   is_peripheral_on_dma_controller
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+        24   -> get_peripheral_matrix
+        24   -> get_peripheral_xdma
+        24   -> get_xdmac_id_from_addr
+        24   -> matrix_is_peripheral_secured
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable9
+       4  ??DataTable9_1
+       4  ??DataTable9_2
+       4  ??DataTable9_3
+       4  ??DataTable9_4
+       4  ??DataTable9_5
+       4  ??DataTable9_6
+       4  ??DataTable9_7
+      12  ?_0
+      12  ?_1
+      12  ?_2
+      12  ?_3
+     108  ?_4
+       8  ?_6
+      32  ?_7
+      40  _console_cfg
+      32  _exid_names
+      12  _h64_peripherals
+     344  _xdmac0_peripherals
+          _xdmac1_peripherals
+     100  get_chip_name
+      60  get_peripheral_clock_matrix_div
+     116  get_peripheral_dma_channel
+      52  get_peripheral_matrix
+     100  get_peripheral_xdma
+      12  get_romcode_console
+     188  is_peripheral_on_dma_controller
+
+ 
+ 540 bytes in section .rodata
+ 744 bytes in section SOFTPACK
+ 
+ 744 bytes of CODE  memory
+ 540 bytes of CONST memory
+
+Errors: none
+Warnings: none

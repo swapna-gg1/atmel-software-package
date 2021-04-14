@@ -1,0 +1,1640 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         05/May/2020  01:59:57
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\console.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWE984.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\console.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D27_SOM1_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR2_W971GG6SB -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_UART -D CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sama5d27-som1-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sama5d27-som1-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sama5d27-som1-ek\ddram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\lib\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sama5d27-som1-ek\ddram\List\console.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sama5d27-som1-ek\ddram\Obj\console.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf  =  flags,int_specials,widths
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\serial\console.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31          *        Headers
+     32          *----------------------------------------------------------------------------*/
+     33          
+     34          #include <stdio.h>
+     35          #include <string.h>
+     36          
+     37          #include "board.h"
+     38          #include "chip.h"
+     39          #include "console.h"
+     40          #ifdef CONFIG_HAVE_L1CACHE
+     41          #include "mm/l1cache.h"
+     42          #endif
+     43          #ifdef CONFIG_HAVE_L2CACHE
+     44          #include "mm/l2cache.h"
+     45          #endif
+     46          #ifdef CONFIG_HAVE_MMU
+     47          #include "mm/mmu.h"
+     48          #endif
+     49          #include "peripherals/pmc.h"
+     50          #include "serial/seriald.h"
+     51          
+
+   \                                 In section .bss, align 4
+     52          static struct _seriald console;
+   \                     console:
+   \        0x0                      DS8 16
+     53          
+     54          /*------------------------------------------------------------------------------
+     55           *         Exported functions
+     56           *------------------------------------------------------------------------------*/
+     57          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     58          void console_configure(const struct _console_cfg* config)
+     59          {
+   \                     console_configure:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+     60          	if (config && config->addr && config->baudrate)
+   \        0x8   0x0A00'0016        BEQ      ??console_configure_0
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x0A00'0013        BEQ      ??console_configure_0
+   \       0x18   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x1C   0xE351'0000        CMP      R1,#+0
+   \       0x20   0x0A00'0010        BEQ      ??console_configure_0
+     61          	{
+     62          		if (config->tx_pin.mask)
+   \       0x24   0xE594'000C        LDR      R0,[R4, #+12]
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x0A00'0002        BEQ      ??console_configure_1
+     63          			pio_configure(&config->tx_pin, 1);
+   \       0x30   0xE3A0'1001        MOV      R1,#+1
+   \       0x34   0xE284'0008        ADD      R0,R4,#+8
+   \       0x38   0x....'....        BL       pio_configure
+     64          		if (config->rx_pin.mask)
+   \                     ??console_configure_1:
+   \       0x3C   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x40   0xE350'0000        CMP      R0,#+0
+   \       0x44   0x0A00'0002        BEQ      ??console_configure_2
+     65          			pio_configure(&config->rx_pin, 1);
+   \       0x48   0xE3A0'1001        MOV      R1,#+1
+   \       0x4C   0xE284'0018        ADD      R0,R4,#+24
+   \       0x50   0x....'....        BL       pio_configure
+     66          		seriald_configure(&console, config->addr, config->baudrate);
+   \                     ??console_configure_2:
+   \       0x54   0xE594'2004        LDR      R2,[R4, #+4]
+   \       0x58   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0x5C   0xE8BD'4010        POP      {R4,LR}
+   \       0x60   0x....'....        LDR      R0,??DataTable39_3
+   \       0x64   0x....'....        B        seriald_configure  ;; tailcall
+     67          	} else {
+     68          		memset(&console, 0, sizeof(console));
+   \                     ??console_configure_0:
+   \       0x68   0x....'....        LDR      R0,??DataTable39_3
+   \       0x6C   0xE3A0'1000        MOV      R1,#+0
+   \       0x70   0xE3A0'2000        MOV      R2,#+0
+   \       0x74   0xE3A0'3000        MOV      R3,#+0
+   \       0x78   0xE3A0'C000        MOV      R12,#+0
+   \       0x7C   0xE880'100E        STM      R0,{R1-R3,R12}
+     69          	}
+     70          }
+   \       0x80   0xE8BD'8010        POP      {R4,PC}          ;; return
+     71          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     72          void console_put_char(char c)
+     73          {
+     74          	seriald_put_char(&console, *(uint8_t*)&c);
+   \                     console_put_char:
+   \        0x0   0xE1A0'1000        MOV      R1,R0
+   \        0x4   0x....'....        B        ?Subroutine0
+     75          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0x....'....        LDR      R0,??DataTable39_3
+   \        0x4   0x....'....        B        seriald_put_char  ;; tailcall
+     76          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     77          void console_put_string(const char* str)
+     78          {
+     79          	seriald_put_string(&console, (const uint8_t*)str);
+   \                     console_put_string:
+   \        0x0   0xE1A0'1000        MOV      R1,R0
+   \        0x4   0x....'....        B        ?Subroutine1
+     80          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0x....'....        LDR      R0,??DataTable39_3
+   \        0x4   0x....'....        B        seriald_put_string  ;; tailcall
+     81          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     82          bool console_is_tx_empty(void)
+     83          {
+     84          	return seriald_is_tx_empty(&console);
+   \                     console_is_tx_empty:
+   \        0x0   0x....'....        LDR      R0,??DataTable39_3
+   \        0x4   0x....'....        B        seriald_is_tx_empty  ;; tailcall
+     85          }
+     86          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     87          char console_get_char(void)
+     88          {
+     89          	uint8_t c = seriald_get_char(&console);
+     90          	return *(char*)&c;
+   \                     console_get_char:
+   \        0x0   0x....'....        LDR      R0,??DataTable39_3
+   \        0x4   0x....'....        B        seriald_get_char  ;; tailcall
+     91          }
+     92          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     93          bool console_is_rx_ready(void)
+     94          {
+     95          	return seriald_is_rx_ready(&console);
+   \                     console_is_rx_ready:
+   \        0x0   0x....'....        LDR      R0,??DataTable39_3
+   \        0x4   0x....'....        B        seriald_is_rx_ready  ;; tailcall
+     96          }
+     97          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     98          void console_set_rx_handler(console_rx_handler_t handler)
+     99          {
+    100          	seriald_set_rx_handler(&console, handler);
+   \                     console_set_rx_handler:
+   \        0x0   0xE1A0'1000        MOV      R1,R0
+   \        0x4   0x....'....        LDR      R0,??DataTable39_3
+   \        0x8   0x....'....        B        seriald_set_rx_handler  ;; tailcall
+    101          }
+    102          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    103          void console_enable_rx_interrupt(void)
+    104          {
+    105          	seriald_enable_rx_interrupt(&console);
+   \                     console_enable_rx_interrupt:
+   \        0x0   0x....'....        LDR      R0,??DataTable39_3
+   \        0x4   0x....'....        B        seriald_enable_rx_interrupt  ;; tailcall
+    106          }
+    107          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    108          void console_disable_rx_interrupt(void)
+    109          {
+    110          	seriald_disable_rx_interrupt(&console);
+   \                     console_disable_rx_interrupt:
+   \        0x0   0x....'....        LDR      R0,??DataTable39_3
+   \        0x4   0x....'....        B        seriald_disable_rx_interrupt  ;; tailcall
+    111          }
+    112          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    113          void console_example_info(const char *example_name)
+    114          {
+   \                     console_example_info:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'5000        MOV      R5,R0
+    115          	/* Clear screen */
+    116          	console_clear_screen();
+   \        0x8   0x....'....        LDR      R4,??DataTable39_3
+   \        0xC   0x....'....        LDR      R1,??DataTable39_4
+   \       0x10   0xE1A0'0004        MOV      R0,R4
+   \       0x14   0x....'....        BL       seriald_put_string
+    117          
+    118          	/* reset cursor */
+    119          	console_reset_cursor();
+   \       0x18   0x....'....        LDR      R1,??DataTable39_5
+   \       0x1C   0xE1A0'0004        MOV      R0,R4
+   \       0x20   0x....'....        BL       seriald_put_string
+    120          
+    121          	/* Output example information */
+    122          	printf("-- %s --\r\n", example_name);
+   \       0x24   0xE1A0'1005        MOV      R1,R5
+   \       0x28   0x....'....        LDR      R0,??DataTable39_6
+   \       0x2C   0x....'....        BL       printf
+    123          #ifndef NDEBUG
+    124          	printf("Softpack v%s\r\n", SOFTPACK_VERSION);
+   \       0x30   0x....'....        LDR      R1,??DataTable39_7
+   \       0x34   0x....'....        LDR      R0,??DataTable39_8
+   \       0x38   0x....'....        BL       printf
+    125          	printf("Built for %s\r\n", get_board_name());
+   \       0x3C   0x....'....        BL       get_board_name
+   \       0x40   0xE1A0'1000        MOV      R1,R0
+   \       0x44   0x....'....        LDR      R0,??DataTable39_9
+   \       0x48   0x....'....        BL       printf
+    126          	printf("Processor: %s\r\n", get_chip_name());
+   \       0x4C   0x....'....        BL       get_chip_name
+   \       0x50   0xE1A0'1000        MOV      R1,R0
+   \       0x54   0x....'....        LDR      R0,??DataTable39_10
+   \       0x58   0x....'....        BL       printf
+    127          	printf("Processor clock: %u MHz\r\n", (unsigned)(pmc_get_processor_clock() / 1000000));
+   \       0x5C   0x....'....        BL       pmc_get_processor_clock
+   \       0x60   0x....'....        LDR      R2,??DataTable39_11  ;; 0x8637bd06
+   \       0x64   0xE081'2290        UMULL    R2,R1,R0,R2
+   \       0x68   0x....'....        LDR      R0,??DataTable39_12
+   \       0x6C   0xE1A0'19A1        LSR      R1,R1,#+19
+   \       0x70   0x....'....        BL       printf
+    128          	printf("Master clock: %u MHz\r\n", (unsigned)(pmc_get_master_clock() / 1000000));
+   \       0x74   0x....'....        BL       pmc_get_master_clock
+   \       0x78   0x....'....        LDR      R2,??DataTable39_11  ;; 0x8637bd06
+   \       0x7C   0xE081'2290        UMULL    R2,R1,R0,R2
+   \       0x80   0x....'....        LDR      R0,??DataTable39_13
+   \       0x84   0xE1A0'19A1        LSR      R1,R1,#+19
+   \       0x88   0x....'....        BL       printf
+    129          #ifdef CONFIG_HAVE_MMU
+    130          	printf("MMU is %s\r\n", mmu_is_enabled() ? "enabled" : "disabled");
+   \       0x8C   0x....'....        BL       mmu_is_enabled
+   \       0x90   0xE350'0000        CMP      R0,#+0
+   \       0x94   0x....'....        LDR      R0,??DataTable39_14
+   \       0x98   0x....'....        LDRNE    R1,??DataTable39_15
+   \       0x9C   0x....'....        LDREQ    R1,??DataTable39_16
+   \       0xA0   0x....'....        BL       printf
+    131          #endif
+    132          #ifdef CONFIG_HAVE_L1CACHE
+    133          	printf("I-Cache is %s\r\n", icache_is_enabled() ? "enabled" : "disabled");
+   \       0xA4   0x....'....        BL       icache_is_enabled
+   \       0xA8   0xE350'0000        CMP      R0,#+0
+   \       0xAC   0x....'....        LDR      R0,??DataTable39_17
+   \       0xB0   0x....'....        LDRNE    R1,??DataTable39_15
+   \       0xB4   0x....'....        LDREQ    R1,??DataTable39_16
+   \       0xB8   0x....'....        BL       printf
+    134          	printf("D-Cache is %s\r\n", dcache_is_enabled() ? "enabled" : "disabled");
+   \       0xBC   0x....'....        BL       dcache_is_enabled
+   \       0xC0   0xE350'0000        CMP      R0,#+0
+   \       0xC4   0x....'....        LDR      R0,??DataTable39_18
+   \       0xC8   0x....'....        LDRNE    R1,??DataTable39_15
+   \       0xCC   0x....'....        LDREQ    R1,??DataTable39_16
+   \       0xD0   0x....'....        BL       printf
+    135          #endif
+    136          #ifdef CONFIG_HAVE_L2CACHE
+    137          	printf("L2-Cache is %s\r\n", l2cache_is_enabled() ? "enabled" : "disabled");
+   \       0xD4   0x....'....        BL       l2cache_is_enabled
+   \       0xD8   0xE350'0000        CMP      R0,#+0
+   \       0xDC   0x....'....        LDR      R0,??DataTable39_19
+   \       0xE0   0x....'....        LDRNE    R1,??DataTable39_15
+   \       0xE4   0x....'....        LDREQ    R1,??DataTable39_16
+   \       0xE8   0x....'....        BL       printf
+    138          #endif
+    139          #endif
+    140          	console_put_string("\r\n");
+   \       0xEC   0xE1A0'0004        MOV      R0,R4
+   \       0xF0   0xE8BD'4034        POP      {R2,R4,R5,LR}
+   \       0xF4   0x....'....        ADR      R1,??DataTable38  ;; 0x0D, 0x0A, 0x00, 0x00
+   \       0xF8   0x....'....        B        seriald_put_string  ;; tailcall
+    141          }
+    142          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    143          void console_dump_frame(uint8_t *frame, uint32_t size)
+    144          {
+   \                     console_dump_frame:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'5001        MOVS     R5,R1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+    145          	uint32_t i;
+    146          	for (i = 0; i < size; i++) {
+   \        0xC   0x0A00'0005        BEQ      ??console_dump_frame_0
+   \       0x10   0x....'....        LDR      R6,??DataTable39_20
+    147          		printf("%02x ", frame[i]);
+   \                     ??console_dump_frame_1:
+   \       0x14   0xE4D4'1001        LDRB     R1,[R4], #+1
+   \       0x18   0xE1A0'0006        MOV      R0,R6
+   \       0x1C   0x....'....        BL       printf
+    148          	}
+   \       0x20   0xE255'5001        SUBS     R5,R5,#+1
+   \       0x24   0x1AFF'FFFA        BNE      ??console_dump_frame_1
+    149          	console_put_string("\n\r");
+   \                     ??console_dump_frame_0:
+   \       0x28   0xE8BD'4070        POP      {R4-R6,LR}
+   \       0x2C   0x....'....        ADR      R1,??DataTable38_1  ;; 0x0A, 0x0D, 0x00, 0x00
+   \       0x30                      REQUIRE ?Subroutine1
+   \       0x30                      ;; // Fall through to label ?Subroutine1
+    150          }
+    151          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    152          void console_dump_memory(uint8_t *buffer, uint32_t size,
+    153          				uint32_t address)
+    154          {
+   \                     console_dump_memory:
+   \        0x0   0xE92D'4FF5        PUSH     {R0,R2,R4-R11,LR}
+   \        0x4   0xE1A0'4001        MOV      R4,R1
+   \        0x8   0xE24D'D00C        SUB      SP,SP,#+12
+    155          	uint32_t i, j;
+    156          	uint32_t last_line_start;
+    157          	uint8_t *tmp;
+    158          
+    159          	for (i = 0; i < (size / 16); i++) {
+   \        0xC   0xE1B0'0224        LSRS     R0,R4,#+4
+   \       0x10   0xE3A0'7000        MOV      R7,#+0
+   \       0x14   0x0A00'0034        BEQ      ??console_dump_memory_0
+   \       0x18   0xE59D'900C        LDR      R9,[SP, #+12]
+   \       0x1C   0x....'....        LDR      R1,??DataTable39_21
+   \       0x20   0xE1A0'8002        MOV      R8,R2
+   \       0x24   0x....'....        LDR      R5,??DataTable39_3
+   \       0x28   0x....'....        LDR      R6,??DataTable39_22
+   \       0x2C   0xE58D'1004        STR      R1,[SP, #+4]
+    160          		printf("0x%08X: ", (unsigned int)(address + (i * 16)));
+   \                     ??console_dump_memory_1:
+   \       0x30   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0x34   0xE1A0'1008        MOV      R1,R8
+   \       0x38   0xE289'A004        ADD      R10,R9,#+4
+   \       0x3C   0xE3A0'B010        MOV      R11,#+16
+   \       0x40   0x....'....        BL       printf
+    161          		tmp = (uint8_t *) & buffer[i * 16];
+    162          		for (j = 0; j < 4; j++) {
+    163          			printf("%02X%02X%02X%02X ", tmp[0], tmp[1], tmp[2],
+    164          			       tmp[3]);
+   \       0x44   0xE5D9'1003        LDRB     R1,[R9, #+3]
+   \       0x48   0xE1A0'0006        MOV      R0,R6
+   \       0x4C   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x50   0xE5D9'3002        LDRB     R3,[R9, #+2]
+   \       0x54   0xE5D9'2001        LDRB     R2,[R9, #+1]
+   \       0x58   0xE5D9'1000        LDRB     R1,[R9, #+0]
+   \       0x5C   0x....'....        BL       printf
+    165          			tmp += 4;
+   \       0x60   0xE5DA'0003        LDRB     R0,[R10, #+3]
+   \       0x64   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x68   0xE5DA'3002        LDRB     R3,[R10, #+2]
+   \       0x6C   0xE5DA'2001        LDRB     R2,[R10, #+1]
+   \       0x70   0xE4DA'1004        LDRB     R1,[R10], #+4
+   \       0x74   0xE1A0'0006        MOV      R0,R6
+   \       0x78   0x....'....        BL       printf
+   \       0x7C   0xE5DA'0003        LDRB     R0,[R10, #+3]
+   \       0x80   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x84   0xE5DA'3002        LDRB     R3,[R10, #+2]
+   \       0x88   0xE5DA'2001        LDRB     R2,[R10, #+1]
+   \       0x8C   0xE5DA'1000        LDRB     R1,[R10, #+0]
+   \       0x90   0xE1A0'0006        MOV      R0,R6
+   \       0x94   0x....'....        BL       printf
+   \       0x98   0xE28A'0004        ADD      R0,R10,#+4
+   \       0x9C   0xE1A0'A009        MOV      R10,R9
+   \       0xA0   0xE5D0'1003        LDRB     R1,[R0, #+3]
+   \       0xA4   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0xA8   0xE5D0'3002        LDRB     R3,[R0, #+2]
+   \       0xAC   0xE5D0'2001        LDRB     R2,[R0, #+1]
+   \       0xB0   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \       0xB4   0xE1A0'0006        MOV      R0,R6
+   \       0xB8   0x....'....        BL       printf
+    166          		}
+    167          		tmp = (uint8_t *) & buffer[i * 16];
+    168          		for (j = 0; j < 16; j++) {
+    169          			console_put_char(*tmp++);
+   \                     ??console_dump_memory_2:
+   \       0xBC   0xE4DA'1001        LDRB     R1,[R10], #+1
+   \       0xC0   0xE1A0'0005        MOV      R0,R5
+   \       0xC4   0x....'....        BL       seriald_put_char
+    170          		}
+   \       0xC8   0xE25B'B001        SUBS     R11,R11,#+1
+   \       0xCC   0x1AFF'FFFA        BNE      ??console_dump_memory_2
+    171          		printf("\n\r");
+   \       0xD0   0x....'....        ADR      R0,??DataTable38_1  ;; 0x0A, 0x0D, 0x00, 0x00
+   \       0xD4   0x....'....        BL       printf
+    172          	}
+   \       0xD8   0xE287'7001        ADD      R7,R7,#+1
+   \       0xDC   0xE289'9010        ADD      R9,R9,#+16
+   \       0xE0   0xE157'0224        CMP      R7,R4, LSR #+4
+   \       0xE4   0xE288'8010        ADD      R8,R8,#+16
+   \       0xE8   0x3AFF'FFD0        BCC      ??console_dump_memory_1
+    173          	if ((size % 16) != 0) {
+   \                     ??console_dump_memory_0:
+   \       0xEC   0xE314'000F        TST      R4,#0xF
+   \       0xF0   0x0A00'0031        BEQ      ??console_dump_memory_3
+    174          		last_line_start = size - (size % 16);
+    175          		printf("0x%08X: ", (unsigned int)(address + last_line_start));
+   \       0xF4   0xE59D'2010        LDR      R2,[SP, #+16]
+   \       0xF8   0xE204'000F        AND      R0,R4,#0xF
+   \       0xFC   0xE044'9000        SUB      R9,R4,R0
+   \      0x100   0x....'....        LDR      R0,??DataTable39_21
+   \      0x104   0xE089'1002        ADD      R1,R9,R2
+   \      0x108   0xE289'5010        ADD      R5,R9,#+16
+   \      0x10C   0x....'....        BL       printf
+    176          		for (j = last_line_start; j < last_line_start + 16; j++) {
+   \      0x110   0xE159'0005        CMP      R9,R5
+   \      0x114   0xE1A0'A009        MOV      R10,R9
+   \      0x118   0x....'....        ADR      R6,??DataTable39  ;; " "
+   \      0x11C   0x2A00'0015        BCS      ??console_dump_memory_4
+   \      0x120   0xE59D'100C        LDR      R1,[SP, #+12]
+   \      0x124   0x....'....        ADR      R7,??DataTable39_1  ;; 0x20, 0x20, 0x00, 0x00
+   \      0x128   0x....'....        LDR      R8,??DataTable39_23
+   \      0x12C   0xE081'B00A        ADD      R11,R1,R10
+    177          			if ((j != last_line_start) && (j % 4 == 0)) {
+   \                     ??console_dump_memory_5:
+   \      0x130   0xE15A'0009        CMP      R10,R9
+   \      0x134   0x0A00'0003        BEQ      ??console_dump_memory_6
+   \      0x138   0xE31A'0003        TST      R10,#0x3
+   \      0x13C   0x1A00'0001        BNE      ??console_dump_memory_6
+    178          				printf(" ");
+   \      0x140   0xE1A0'0006        MOV      R0,R6
+   \      0x144   0x....'....        BL       printf
+    179          			}
+    180          			if (j < size)
+   \                     ??console_dump_memory_6:
+   \      0x148   0xE15A'0004        CMP      R10,R4
+   \      0x14C   0x2A00'0003        BCS      ??console_dump_memory_7
+    181          				printf("%02X", buffer[j]);
+   \      0x150   0xE5DB'1000        LDRB     R1,[R11, #+0]
+   \      0x154   0xE1A0'0008        MOV      R0,R8
+   \      0x158   0x....'....        BL       printf
+   \      0x15C   0xEA00'0001        B        ??console_dump_memory_8
+    182          			else
+    183          				printf("  ");
+   \                     ??console_dump_memory_7:
+   \      0x160   0xE1A0'0007        MOV      R0,R7
+   \      0x164   0x....'....        BL       printf
+    184          		}
+   \                     ??console_dump_memory_8:
+   \      0x168   0xE28A'A001        ADD      R10,R10,#+1
+   \      0x16C   0xE28B'B001        ADD      R11,R11,#+1
+   \      0x170   0xE15A'0005        CMP      R10,R5
+   \      0x174   0x3AFF'FFED        BCC      ??console_dump_memory_5
+    185          		printf(" ");
+   \                     ??console_dump_memory_4:
+   \      0x178   0xE1A0'0006        MOV      R0,R6
+   \      0x17C   0x....'....        BL       printf
+    186          		for (j = last_line_start; j < size; j++) {
+   \      0x180   0xE159'0004        CMP      R9,R4
+   \      0x184   0x2A00'0008        BCS      ??console_dump_memory_9
+   \      0x188   0xE59D'100C        LDR      R1,[SP, #+12]
+   \      0x18C   0xE044'6009        SUB      R6,R4,R9
+   \      0x190   0x....'....        LDR      R4,??DataTable39_3
+   \      0x194   0xE081'5009        ADD      R5,R1,R9
+    187          			console_put_char(buffer[j]);
+   \                     ??console_dump_memory_10:
+   \      0x198   0xE4D5'1001        LDRB     R1,[R5], #+1
+   \      0x19C   0xE1A0'0004        MOV      R0,R4
+   \      0x1A0   0x....'....        BL       seriald_put_char
+    188          		}
+   \      0x1A4   0xE256'6001        SUBS     R6,R6,#+1
+   \      0x1A8   0x1AFF'FFFA        BNE      ??console_dump_memory_10
+    189          		printf("\n\r");
+   \                     ??console_dump_memory_9:
+   \      0x1AC   0xE28D'D014        ADD      SP,SP,#+20
+   \      0x1B0   0xE8BD'4FF0        POP      {R4-R11,LR}
+   \      0x1B4   0x....'....        ADR      R0,??DataTable38_1  ;; 0x0A, 0x0D, 0x00, 0x00
+   \      0x1B8   0x....'....        B        printf           ;; tailcall
+    190          	}
+    191          }
+   \                     ??console_dump_memory_3:
+   \      0x1BC   0xE28D'D014        ADD      SP,SP,#+20
+   \      0x1C0   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    192          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    193          uint32_t console_get_integer(uint32_t * pvalue)
+    194          {
+   \                     console_get_integer:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    195          	uint8_t key;
+    196          	uint8_t nb = 0;
+   \        0x8   0xE3A0'6000        MOV      R6,#+0
+    197          	uint32_t value = 0;
+   \        0xC   0xE3A0'7000        MOV      R7,#+0
+   \       0x10   0x....'....        LDR      R5,??DataTable39_3
+   \       0x14   0xEA00'0003        B        ??console_get_integer_0
+    198          
+    199          	while (1) {
+    200          		key = console_get_char();
+    201          		console_put_char(key);
+    202          
+    203          		if (key >= '0' && key <= '9') {
+    204          			value = (value * 10) + (key - '0');
+   \                     ??console_get_integer_1:
+   \       0x18   0xE087'0107        ADD      R0,R7,R7, LSL #+2
+   \       0x1C   0xE248'1030        SUB      R1,R8,#+48
+    205          			nb++;
+   \       0x20   0xE286'6001        ADD      R6,R6,#+1
+   \       0x24   0xE081'7080        ADD      R7,R1,R0, LSL #+1
+    206          		} else {
+   \                     ??console_get_integer_0:
+   \       0x28   0xE1A0'0005        MOV      R0,R5
+   \       0x2C   0x....'....        BL       seriald_get_char
+   \       0x30   0xE1A0'8000        MOV      R8,R0
+   \       0x34   0xE1A0'1000        MOV      R1,R0
+   \       0x38   0xE1A0'0005        MOV      R0,R5
+   \       0x3C   0x....'....        BL       seriald_put_char
+   \       0x40   0xE248'0030        SUB      R0,R8,#+48
+   \       0x44   0xE350'000A        CMP      R0,#+10
+   \       0x48   0x3AFF'FFF2        BCC      ??console_get_integer_1
+    207          			if (key == 0x0D || key == ' ') {
+   \       0x4C   0xE358'000D        CMP      R8,#+13
+   \       0x50   0x0A00'0001        BEQ      ??console_get_integer_2
+   \       0x54   0xE358'0020        CMP      R8,#+32
+   \       0x58   0x1A00'0009        BNE      ??console_get_integer_3
+    208          				if (nb == 0) {
+   \                     ??console_get_integer_2:
+   \       0x5C   0xE6EF'6076        UXTB     R6,R6
+   \       0x60   0xE356'0000        CMP      R6,#+0
+   \       0x64   0x1A00'0002        BNE      ??console_get_integer_4
+    209          					printf
+    210          					    ("\n\rWrite a number and press ENTER or SPACE!\n\r");
+   \       0x68   0x....'....        LDR      R0,??DataTable39_24
+   \       0x6C   0x....'....        BL       printf
+    211          					return 0;
+   \       0x70   0xEA00'0006        B        ??console_get_integer_5
+    212          				} else {
+    213          					printf("\n\r");
+   \                     ??console_get_integer_4:
+   \       0x74   0x....'....        ADR      R0,??DataTable38_1  ;; 0x0A, 0x0D, 0x00, 0x00
+   \       0x78   0x....'....        BL       printf
+    214          					*pvalue = value;
+   \       0x7C   0xE584'7000        STR      R7,[R4, #+0]
+    215          					return 1;
+   \       0x80   0x....'....        B        ?Subroutine3
+    216          				}
+    217          			} else {
+    218          				printf("\n\r'%c' not a number!\n\r", key);
+   \                     ??console_get_integer_3:
+   \       0x84   0xE1A0'1008        MOV      R1,R8
+   \       0x88   0x....'....        ADR      R0,?_23
+   \       0x8C   0x....'....        BL       printf
+    219          				return 0;
+    220          			}
+    221          		}
+    222          	}
+   \                     ??console_get_integer_5:
+   \       0x90   0x....'....        B        ?Subroutine2
+    223          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine3:
+   \        0x0   0xE3A0'0001        MOV      R0,#+1
+   \        0x4   0xE8BD'81F0        POP      {R4-R8,PC}
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE3A0'0000        MOV      R0,#+0
+   \        0x4   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    224          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    225          uint32_t console_get_integer_min_max(uint32_t * pvalue, uint32_t min,
+    226          					 uint32_t max)
+    227          {
+   \                     console_get_integer_min_max:
+   \        0x0   0xE92D'407C        PUSH     {R2-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    228          	uint32_t value = 0;
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x10   0xE1A0'5001        MOV      R5,R1
+   \       0x14   0xE1A0'6002        MOV      R6,R2
+    229          
+    230          	if (console_get_integer(&value) == 0)
+   \       0x18   0xE1A0'000D        MOV      R0,SP
+   \       0x1C   0x....'....        BL       console_get_integer
+   \       0x20   0xE350'0000        CMP      R0,#+0
+   \       0x24   0x0A00'0010        BEQ      ??console_get_integer_min_max_0
+    231          		return 0;
+    232          	if (value < min || value > max) {
+   \       0x28   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x2C   0xE151'0005        CMP      R1,R5
+   \       0x30   0x3A00'0001        BCC      ??console_get_integer_min_max_1
+   \       0x34   0xE156'0001        CMP      R6,R1
+   \       0x38   0x2A00'0005        BCS      ??console_get_integer_min_max_2
+    233          		printf("\n\rThe number have to be between %u and %u\n\r",
+    234          		       (unsigned int)min, (unsigned int)max);
+   \                     ??console_get_integer_min_max_1:
+   \       0x3C   0xE1A0'2006        MOV      R2,R6
+   \       0x40   0xE1A0'1005        MOV      R1,R5
+   \       0x44   0x....'....        LDR      R0,??DataTable39_25
+   \       0x48   0x....'....        BL       printf
+    235          		return 0;
+   \       0x4C   0xE3A0'0000        MOV      R0,#+0
+   \       0x50   0xE8BD'8076        POP      {R1,R2,R4-R6,PC}
+    236          	}
+    237          	console_put_string("\n\r");
+   \                     ??console_get_integer_min_max_2:
+   \       0x54   0x....'....        ADR      R1,??DataTable38_1  ;; 0x0A, 0x0D, 0x00, 0x00
+   \       0x58   0x....'....        LDR      R0,??DataTable39_3
+   \       0x5C   0x....'....        BL       seriald_put_string
+    238          	*pvalue = value;
+   \       0x60   0xE59D'1000        LDR      R1,[SP, #+0]
+    239          	return 1;
+   \       0x64   0xE3A0'0001        MOV      R0,#+1
+   \       0x68   0xE584'1000        STR      R1,[R4, #+0]
+   \                     ??console_get_integer_min_max_0:
+   \       0x6C   0xE8BD'8076        POP      {R1,R2,R4-R6,PC}  ;; return
+    240          }
+    241          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    242          uint32_t console_get_hexa_32(uint32_t * pvalue)
+    243          {
+   \                     console_get_hexa_32:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1A0'5000        MOV      R5,R0
+    244          	uint8_t key;
+    245          	uint32_t dw = 0;
+    246          	uint32_t value = 0;
+   \        0x8   0xE3A0'6000        MOV      R6,#+0
+    247          
+    248          	for (dw = 0; dw < 8; dw++) {
+   \        0xC   0xE3A0'7008        MOV      R7,#+8
+   \       0x10   0x....'....        LDR      R4,??DataTable39_3
+    249          		key = console_get_char();
+   \                     ??console_get_hexa_32_0:
+   \       0x14   0xE1A0'0004        MOV      R0,R4
+   \       0x18   0x....'....        BL       seriald_get_char
+   \       0x1C   0xE1A0'8000        MOV      R8,R0
+    250          		console_put_char(key);
+   \       0x20   0xE1A0'1000        MOV      R1,R0
+   \       0x24   0xE1A0'0004        MOV      R0,R4
+   \       0x28   0x....'....        BL       seriald_put_char
+    251          
+    252          		if (key >= '0' && key <= '9') {
+   \       0x2C   0xE248'0030        SUB      R0,R8,#+48
+   \       0x30   0xE350'000A        CMP      R0,#+10
+    253          			value = (value * 16) + (key - '0');
+   \       0x34   0x3248'1030        SUBCC    R1,R8,#+48
+   \       0x38   0x3A00'0007        BCC      ??console_get_hexa_32_1
+    254          		} else {
+    255          			if (key >= 'A' && key <= 'F') {
+   \       0x3C   0xE248'0041        SUB      R0,R8,#+65
+   \       0x40   0xE350'0006        CMP      R0,#+6
+    256          				value = (value * 16) + (key - 'A' + 10);
+   \       0x44   0x3248'1037        SUBCC    R1,R8,#+55
+   \       0x48   0x3A00'0003        BCC      ??console_get_hexa_32_1
+    257          			} else {
+    258          				if (key >= 'a' && key <= 'f') {
+   \       0x4C   0xE248'0061        SUB      R0,R8,#+97
+   \       0x50   0xE350'0006        CMP      R0,#+6
+   \       0x54   0x2A00'0008        BCS      ??console_get_hexa_32_2
+    259          					value = (value * 16) + (key - 'a' + 10);
+   \       0x58   0xE248'1057        SUB      R1,R8,#+87
+    260          				} else {
+   \                     ??console_get_hexa_32_1:
+   \       0x5C   0xE257'7001        SUBS     R7,R7,#+1
+   \       0x60   0xE081'6206        ADD      R6,R1,R6, LSL #+4
+   \       0x64   0x1AFF'FFEA        BNE      ??console_get_hexa_32_0
+    261          					console_put_string("\n\rIt is not a hexa character!\n\r");
+    262          					return 0;
+    263          				}
+    264          			}
+    265          		}
+    266          	}
+    267          	console_put_string("\n\r");
+   \       0x68   0x....'....        ADR      R1,??DataTable38_1  ;; 0x0A, 0x0D, 0x00, 0x00
+   \       0x6C   0xE1A0'0004        MOV      R0,R4
+   \       0x70   0x....'....        BL       seriald_put_string
+    268          	*pvalue = value;
+   \       0x74   0xE585'6000        STR      R6,[R5, #+0]
+    269          	return 1;
+   \       0x78   0x....'....        B        ?Subroutine3
+   \                     ??console_get_hexa_32_2:
+   \       0x7C   0x....'....        ADR      R1,?_24
+   \       0x80   0xE1A0'0004        MOV      R0,R4
+   \       0x84   0x....'....        BL       seriald_put_string
+   \       0x88   0x....'....        B        ?Subroutine2
+    270          }
+    271          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    272          void console_clear_screen(void)
+    273          {
+    274          	console_put_string("\033[2J\033[0;0f");
+   \                     console_clear_screen:
+   \        0x0   0x....'....        ADR      R1,?_25
+   \        0x4   0x....'....        B        ?Subroutine1
+    275          }
+    276          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    277          void console_reset_cursor(void)
+    278          {
+    279          	console_put_string("\033[0;0f");
+   \                     console_reset_cursor:
+   \        0x0   0x....'....        ADR      R1,?_26
+   \        0x4   0x....'....        B        ?Subroutine1
+    280          }
+    281          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    282          void console_echo(uint8_t c)
+    283          {
+    284          	switch (c) {
+   \                     console_echo:
+   \        0x0   0xE1A0'1000        MOV      R1,R0
+   \        0x4   0xE351'0008        CMP      R1,#+8
+   \        0x8   0x0A00'0008        BEQ      ??console_echo_0
+   \        0xC   0xE351'000A        CMP      R1,#+10
+   \       0x10   0x0A00'0004        BEQ      ??console_echo_1
+   \       0x14   0xE351'000D        CMP      R1,#+13
+   \       0x18   0x0A00'0002        BEQ      ??console_echo_1
+   \       0x1C   0xE351'007F        CMP      R1,#+127
+   \       0x20   0x0A00'0002        BEQ      ??console_echo_0
+   \       0x24   0xEA00'0003        B        ??console_echo_2
+    285          	case '\r':
+    286          	case '\n':
+    287          		console_put_string("\r\n");
+   \                     ??console_echo_1:
+   \       0x28   0x....'....        ADR      R1,??DataTable39_2  ;; 0x0D, 0x0A, 0x00, 0x00
+   \       0x2C   0xEA00'0000        B        ??console_echo_3
+    288          		break;
+    289          	case 0x7F:
+    290          		console_put_string("\033[1D\033[K");
+    291          		break;
+    292          	case '\b':
+    293          		console_put_string("\033[1D\033[K");
+   \                     ??console_echo_0:
+   \       0x30   0x....'....        ADR      R1,?_27
+   \                     ??console_echo_3:
+   \       0x34   0x....'....        B        ?Subroutine1
+    294          		break;
+    295          	default:
+    296          		console_put_char(c);
+   \                     ??console_echo_2:
+   \       0x38                      REQUIRE ?Subroutine0
+   \       0x38                      ;; // Fall through to label ?Subroutine0
+    297          	}
+    298          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38:
+   \        0x0   0x0D 0x0A          DC8      0x0D, 0x0A, 0x00, 0x00
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_1:
+   \        0x0   0x0A 0x0D          DC8      0x0A, 0x0D, 0x00, 0x00
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39:
+   \        0x0   0x20 0x00          DC8      " ",0x0,0x0
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_1:
+   \        0x0   0x20 0x20          DC8      0x20, 0x20, 0x00, 0x00
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_2:
+   \        0x0   0x0D 0x0A          DC8      0x0D, 0x0A, 0x00, 0x00
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_3:
+   \        0x0   0x....'....        DC32     console
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_4:
+   \        0x0   0x....'....        DC32     ?_25
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_5:
+   \        0x0   0x....'....        DC32     ?_26
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_6:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_7:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_8:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_9:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_10:
+   \        0x0   0x....'....        DC32     ?_6
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_11:
+   \        0x0   0x8637'BD06        DC32     0x8637bd06
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_12:
+   \        0x0   0x....'....        DC32     ?_7
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_13:
+   \        0x0   0x....'....        DC32     ?_8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_14:
+   \        0x0   0x....'....        DC32     ?_9
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_15:
+   \        0x0   0x....'....        DC32     ?_10
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_16:
+   \        0x0   0x....'....        DC32     ?_11
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_17:
+   \        0x0   0x....'....        DC32     ?_12
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_18:
+   \        0x0   0x....'....        DC32     ?_13
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_19:
+   \        0x0   0x....'....        DC32     ?_14
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_20:
+   \        0x0   0x....'....        DC32     ?_16
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_21:
+   \        0x0   0x....'....        DC32     ?_18
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_22:
+   \        0x0   0x....'....        DC32     ?_19
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_23:
+   \        0x0   0x....'....        DC32     ?_21
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_24:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable39_25:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x0A 0x0D          DC8 "\012\015Write a number and press ENTER or SPACE!\012\015"
+
+   \              0x57 0x72    
+
+   \              0x69 0x74    
+
+   \              0x65 0x20    
+
+   \              0x61 0x20    
+
+   \              0x6E 0x75    
+
+   \              0x6D 0x62    
+
+   \              0x65 0x72    
+
+   \              0x20 0x61    
+
+   \              0x6E 0x64    
+
+   \              0x20 0x70    
+
+   \              0x72 0x65    
+
+   \              0x73 0x73    
+
+   \              0x20 0x45    
+
+   \              0x4E 0x54    
+
+   \              0x45 0x52    
+
+   \              0x20 0x6F    
+
+   \              0x72 0x20    
+
+   \              0x53 0x50    
+
+   \              0x41 0x43    
+
+   \              0x45 0x21    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x2D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x0A 0x0D          DC8 "\012\015The number have to be between %u and %u\012\015"
+
+   \              0x54 0x68    
+
+   \              0x65 0x20    
+
+   \              0x6E 0x75    
+
+   \              0x6D 0x62    
+
+   \              0x65 0x72    
+
+   \              0x20 0x68    
+
+   \              0x61 0x76    
+
+   \              0x65 0x20    
+
+   \              0x74 0x6F    
+
+   \              0x20 0x62    
+
+   \              0x65 0x20    
+
+   \              0x62 0x65    
+
+   \              0x74 0x77    
+
+   \              0x65 0x65    
+
+   \              0x6E 0x20    
+
+   \              0x25 0x75    
+
+   \              0x20 0x61    
+
+   \              0x6E 0x64    
+
+   \              0x20 0x25    
+
+   \              0x75 0x0A    
+
+   \              0x0D 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_2:
+   \        0x0   0x2D 0x2D          DC8 "-- %s --\015\012"
+
+   \              0x20 0x25    
+
+   \              0x73 0x20    
+
+   \              0x2D 0x2D    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_3:
+   \        0x0   0x53 0x6F          DC8 "Softpack v%s\015\012"
+
+   \              0x66 0x74    
+
+   \              0x70 0x61    
+
+   \              0x63 0x6B    
+
+   \              0x20 0x76    
+
+   \              0x25 0x73    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \        0xF   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_4:
+   \        0x0   0x32 0x2E          DC8 "2.17"
+
+   \              0x31 0x37    
+
+   \              0x00
+   \        0x5   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x42 0x75          DC8 "Built for %s\015\012"
+
+   \              0x69 0x6C    
+
+   \              0x74 0x20    
+
+   \              0x66 0x6F    
+
+   \              0x72 0x20    
+
+   \              0x25 0x73    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \        0xF   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_6:
+   \        0x0   0x50 0x72          DC8 "Processor: %s\015\012"
+
+   \              0x6F 0x63    
+
+   \              0x65 0x73    
+
+   \              0x73 0x6F    
+
+   \              0x72 0x3A    
+
+   \              0x20 0x25    
+
+   \              0x73 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_7:
+   \        0x0   0x50 0x72          DC8 "Processor clock: %u MHz\015\012"
+
+   \              0x6F 0x63    
+
+   \              0x65 0x73    
+
+   \              0x73 0x6F    
+
+   \              0x72 0x20    
+
+   \              0x63 0x6C    
+
+   \              0x6F 0x63    
+
+   \              0x6B 0x3A    
+
+   \              0x20 0x25    
+
+   \              0x75 0x20    
+
+   \              0x4D 0x48    
+
+   \              0x7A 0x0D    
+
+   \              0x0A 0x00
+   \       0x1A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_8:
+   \        0x0   0x4D 0x61          DC8 "Master clock: %u MHz\015\012"
+
+   \              0x73 0x74    
+
+   \              0x65 0x72    
+
+   \              0x20 0x63    
+
+   \              0x6C 0x6F    
+
+   \              0x63 0x6B    
+
+   \              0x3A 0x20    
+
+   \              0x25 0x75    
+
+   \              0x20 0x4D    
+
+   \              0x48 0x7A    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x17   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_9:
+   \        0x0   0x4D 0x4D          DC8 "MMU is %s\015\012"
+
+   \              0x55 0x20    
+
+   \              0x69 0x73    
+
+   \              0x20 0x25    
+
+   \              0x73 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_23:
+   \        0x0   0x0A 0x0D          DC8 "\012\015'%c' not a number!\012\015"
+
+   \              0x27 0x25    
+
+   \              0x63 0x27    
+
+   \              0x20 0x6E    
+
+   \              0x6F 0x74    
+
+   \              0x20 0x61    
+
+   \              0x20 0x6E    
+
+   \              0x75 0x6D    
+
+   \              0x62 0x65    
+
+   \              0x72 0x21    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x17   0x00               DC8 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_24:
+   \        0x0   0x0A 0x0D          DC8 "\012\015It is not a hexa character!\012\015"
+
+   \              0x49 0x74    
+
+   \              0x20 0x69    
+
+   \              0x73 0x20    
+
+   \              0x6E 0x6F    
+
+   \              0x74 0x20    
+
+   \              0x61 0x20    
+
+   \              0x68 0x65    
+
+   \              0x78 0x61    
+
+   \              0x20 0x63    
+
+   \              0x68 0x61    
+
+   \              0x72 0x61    
+
+   \              0x63 0x74    
+
+   \              0x65 0x72    
+
+   \              0x21 0x0A    
+
+   \              0x0D 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_25:
+   \        0x0   0x1B 0x5B          DC8 "\033[2J\033[0;0f"
+
+   \              0x32 0x4A    
+
+   \              0x1B 0x5B    
+
+   \              0x30 0x3B    
+
+   \              0x30 0x66    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_26:
+   \        0x0   0x1B 0x5B          DC8 "\033[0;0f"
+
+   \              0x30 0x3B    
+
+   \              0x30 0x66    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_27:
+   \        0x0   0x1B 0x5B          DC8 "\033[1D\033[K"
+
+   \              0x31 0x44    
+
+   \              0x1B 0x5B    
+
+   \              0x4B 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_10:
+   \        0x0   0x65 0x6E          DC8 "enabled"
+
+   \              0x61 0x62    
+
+   \              0x6C 0x65    
+
+   \              0x64 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_11:
+   \        0x0   0x64 0x69          DC8 "disabled"
+
+   \              0x73 0x61    
+
+   \              0x62 0x6C    
+
+   \              0x65 0x64    
+
+   \              0x00
+   \        0x9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_12:
+   \        0x0   0x49 0x2D          DC8 "I-Cache is %s\015\012"
+
+   \              0x43 0x61    
+
+   \              0x63 0x68    
+
+   \              0x65 0x20    
+
+   \              0x69 0x73    
+
+   \              0x20 0x25    
+
+   \              0x73 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_13:
+   \        0x0   0x44 0x2D          DC8 "D-Cache is %s\015\012"
+
+   \              0x43 0x61    
+
+   \              0x63 0x68    
+
+   \              0x65 0x20    
+
+   \              0x69 0x73    
+
+   \              0x20 0x25    
+
+   \              0x73 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_14:
+   \        0x0   0x4C 0x32          DC8 "L2-Cache is %s\015\012"
+
+   \              0x2D 0x43    
+
+   \              0x61 0x63    
+
+   \              0x68 0x65    
+
+   \              0x20 0x69    
+
+   \              0x73 0x20    
+
+   \              0x25 0x73    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x11   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_15:
+   \        0x0   0x0D 0x0A          DC8 "\015\012"
+
+   \              0x00
+   \        0x3   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_16:
+   \        0x0   0x25 0x30          DC8 "%02x "
+
+   \              0x32 0x78    
+
+   \              0x20 0x00
+   \        0x6   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_17:
+   \        0x0   0x0A 0x0D          DC8 "\012\015"
+
+   \              0x00
+   \        0x3   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_18:
+   \        0x0   0x30 0x78          DC8 "0x%08X: "
+
+   \              0x25 0x30    
+
+   \              0x38 0x58    
+
+   \              0x3A 0x20    
+
+   \              0x00
+   \        0x9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_19:
+   \        0x0   0x25 0x30          DC8 "%02X%02X%02X%02X "
+
+   \              0x32 0x58    
+
+   \              0x25 0x30    
+
+   \              0x32 0x58    
+
+   \              0x25 0x30    
+
+   \              0x32 0x58    
+
+   \              0x25 0x30    
+
+   \              0x32 0x58    
+
+   \              0x20 0x00
+   \       0x12   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 2, keep-with-next
+   \                     ?_20:
+   \        0x0   0x20 0x00          DC8 " "
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_21:
+   \        0x0   0x25 0x30          DC8 "%02X"
+
+   \              0x32 0x58    
+
+   \              0x00
+   \        0x5   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_22:
+   \        0x0   0x20 0x20          DC8 "  "
+
+   \              0x00
+   \        0x3   0x00               DC8 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   console_clear_screen
+         0   -> seriald_put_string
+       8   console_configure
+         8   -> pio_configure
+         0   -> seriald_configure
+       0   console_disable_rx_interrupt
+         0   -> seriald_disable_rx_interrupt
+      16   console_dump_frame
+        16   -> printf
+         0   -> seriald_put_string
+      56   console_dump_memory
+         0   -> printf
+        56   -> printf
+        56   -> seriald_put_char
+       0   console_echo
+         0   -> seriald_put_char
+         0   -> seriald_put_string
+       0   console_enable_rx_interrupt
+         0   -> seriald_enable_rx_interrupt
+      16   console_example_info
+        16   -> dcache_is_enabled
+        16   -> get_board_name
+        16   -> get_chip_name
+        16   -> icache_is_enabled
+        16   -> l2cache_is_enabled
+        16   -> mmu_is_enabled
+        16   -> pmc_get_master_clock
+        16   -> pmc_get_processor_clock
+        16   -> printf
+         0   -> seriald_put_string
+        16   -> seriald_put_string
+       0   console_get_char
+         0   -> seriald_get_char
+      24   console_get_hexa_32
+        24   -> seriald_get_char
+        24   -> seriald_put_char
+        24   -> seriald_put_string
+      24   console_get_integer
+        24   -> printf
+        24   -> seriald_get_char
+        24   -> seriald_put_char
+      24   console_get_integer_min_max
+        24   -> console_get_integer
+        24   -> printf
+        24   -> seriald_put_string
+       0   console_is_rx_ready
+         0   -> seriald_is_rx_ready
+       0   console_is_tx_empty
+         0   -> seriald_is_tx_empty
+       0   console_put_char
+         0   -> seriald_put_char
+       0   console_put_string
+         0   -> seriald_put_string
+       0   console_reset_cursor
+         0   -> seriald_put_string
+       0   console_set_rx_handler
+         0   -> seriald_set_rx_handler
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable38
+       4  ??DataTable38_1
+       4  ??DataTable39
+       4  ??DataTable39_1
+       4  ??DataTable39_10
+       4  ??DataTable39_11
+       4  ??DataTable39_12
+       4  ??DataTable39_13
+       4  ??DataTable39_14
+       4  ??DataTable39_15
+       4  ??DataTable39_16
+       4  ??DataTable39_17
+       4  ??DataTable39_18
+       4  ??DataTable39_19
+       4  ??DataTable39_2
+       4  ??DataTable39_20
+       4  ??DataTable39_21
+       4  ??DataTable39_22
+       4  ??DataTable39_23
+       4  ??DataTable39_24
+       4  ??DataTable39_25
+       4  ??DataTable39_3
+       4  ??DataTable39_4
+       4  ??DataTable39_5
+       4  ??DataTable39_6
+       4  ??DataTable39_7
+       4  ??DataTable39_8
+       4  ??DataTable39_9
+       8  ?Subroutine0
+       8  ?Subroutine1
+       8  ?Subroutine2
+       8  ?Subroutine3
+      48  ?_0
+      44  ?_1
+       8  ?_10
+      12  ?_11
+      16  ?_12
+      16  ?_13
+      20  ?_14
+       4  ?_15
+       8  ?_16
+       4  ?_17
+      12  ?_18
+      20  ?_19
+      12  ?_2
+       2  ?_20
+       8  ?_21
+       4  ?_22
+      24  ?_23
+      32  ?_24
+      12  ?_25
+       8  ?_26
+       8  ?_27
+      16  ?_3
+       8  ?_4
+      16  ?_5
+      16  ?_6
+      28  ?_7
+      24  ?_8
+      12  ?_9
+      16  console
+       8  console_clear_screen
+     132  console_configure
+       8  console_disable_rx_interrupt
+      48  console_dump_frame
+     452  console_dump_memory
+      56  console_echo
+       8  console_enable_rx_interrupt
+     252  console_example_info
+       8  console_get_char
+     140  console_get_hexa_32
+     148  console_get_integer
+     112  console_get_integer_min_max
+       8  console_is_rx_ready
+       8  console_is_tx_empty
+       8  console_put_char
+       8  console_put_string
+       8  console_reset_cursor
+      12  console_set_rx_handler
+
+ 
+    16 bytes in section .bss
+   358 bytes in section .rodata
+ 1'652 bytes in section SOFTPACK
+ 
+ 1'652 bytes of CODE  memory
+   358 bytes of CONST memory
+    16 bytes of DATA  memory
+
+Errors: none
+Warnings: none

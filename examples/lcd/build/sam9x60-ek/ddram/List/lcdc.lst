@@ -1,0 +1,3946 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         15/Jan/2021  07:46:45
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\display\lcdc.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW3ADC.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\display\lcdc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_LCD -D CONFIG_HAVE_LCDC -D CONFIG_HAVE_LCDC_OVR1 -D
+#        CONFIG_HAVE_LCDC_OVR2 -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_DDR2_W972GG6KB -D CONFIG_HAVE_RSTC_EXTERNAL_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_RTT -D
+#        CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List\lcdc.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\Obj\lcdc.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\display\lcdc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2019, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \file */
+     31          
+     32          /*----------------------------------------------------------------------------
+     33           *        Headers
+     34           *----------------------------------------------------------------------------*/
+     35          
+     36          #include <math.h>
+     37          #include <string.h>
+     38          #include <stdio.h>
+     39          
+     40          #include "chip.h"
+     41          #include "compiler.h"
+     42          #include "display/lcdc.h"
+     43          #include "gpio/pio.h"
+     44          #include "mm/cache.h"
+     45          #include "peripherals/pmc.h"
+     46          #include "trace.h"
+     47          
+     48          /** \addtogroup lcdc_base
+     49           * Implementation of LCD driver, Include LCD initialization,
+     50           * LCD on/off and LCD backlight control.
+     51           */
+     52          
+     53          /**@{*/
+     54          
+     55          /*----------------------------------------------------------------------------
+     56           *        Local types
+     57           *----------------------------------------------------------------------------*/
+     58          
+     59          /** Hardware info about the layers */
+     60          struct _layer_info {
+     61          	struct _layer_data* data;
+     62          	bool                stride_supported;
+     63          	volatile uint32_t  *reg_enable;     /**< regs: _ER, _DR, _SR, _IER, _IDR, _IMR, _ISR */
+     64          	volatile uint32_t  *reg_blender;    /**< regs: blender */
+     65          	volatile uint32_t  *reg_dma_head;   /**< regs: _HEAD, _ADDRESS, _CONTROL, _NEXT */
+     66          	volatile uint32_t  *reg_dma_u_head; /**< regs: _HEAD, _ADDRESS, _CONTROL, _NEXT */
+     67          	volatile uint32_t  *reg_dma_v_head; /**< regs: _HEAD, _ADDRESS, _CONTROL, _NEXT */
+     68          	volatile uint32_t  *reg_cfg;        /**< regs: _CFG0, _CFG1 (RGB mode ...) */
+     69          	volatile uint32_t  *reg_win;        /**< regs: X Y register, W H register */
+     70          	volatile uint32_t  *reg_stride;     /**< regs: stride */
+     71          	volatile uint32_t  *reg_color;      /**< regs: RGB Default, RGB Key, RGB Mask */
+     72          	volatile uint32_t  *reg_scale;      /**< regs: scale */
+     73          	volatile uint32_t  *reg_clut;       /**< regs: CLUT */
+     74          };
+     75          
+     76          /** DMA descriptor for LCDC */
+     77          struct _lcdc_dma_desc {
+     78          	uint32_t addr;
+     79          	uint32_t ctrl;
+     80          	uint32_t next;
+     81          	uint32_t for_alignment_only;
+     82          };
+     83          
+     84          /** Variable layer data */
+     85          struct _layer_data {
+     86          	struct _lcdc_dma_desc *dma_desc;
+     87          	struct _lcdc_dma_desc *dma_u_desc;
+     88          	struct _lcdc_dma_desc *dma_v_desc;
+     89          	void                  *buffer;
+     90          	uint8_t                bpp;
+     91          };
+     92          
+     93          /*----------------------------------------------------------------------------
+     94           *        Local variables
+     95           *----------------------------------------------------------------------------*/
+     96          
+     97          static struct _lcdc_desc lcdc_config;         /**< Current LCD configuration */
+     98          
+     99          static struct _lcdc_layer lcdc_canvas;        /**< Current selected canvas */
+    100          
+    101          CACHE_ALIGNED_DDR
+
+   \                                 In section .region_cache_aligned, align 8
+    102          static struct _lcdc_dma_desc base_dma_desc;  /**< DMA desc. for Base Layer */
+   \                     base_dma_desc:
+   \        0x0                      DS8 16
+   \       0x10                      DS8 16
+   \       0x20                      DS8 16
+   \       0x30                      DS8 16
+   \       0x40                      DS8 16
+   \       0x50                      DS8 16
+
+   \                                 In section .bss, align 4
+   \                     lcdc_config:
+   \        0x0                      DS8 12
+   \        0xC                      DS8 12
+    103          
+    104          static struct _layer_data lcdc_base;         /**< Base Layer */
+   \                     lcdc_base:
+   \       0x18                      DS8 20
+    105          
+    106          #ifdef CONFIG_HAVE_LCDC_OVR1
+    107          CACHE_ALIGNED_DDR
+    108          static struct _lcdc_dma_desc ovr1_dma_desc;  /**< DMA desc. for OVR1 Layer */
+    109          
+    110          static struct _layer_data lcdc_ovr1;         /**< OVR1 Layer */
+   \                     lcdc_ovr1:
+   \       0x2C                      DS8 20
+    111          #endif
+    112          
+    113          #ifdef CONFIG_HAVE_LCDC_OVR2
+    114          CACHE_ALIGNED_DDR
+    115          static struct _lcdc_dma_desc ovr2_dma_desc;  /**< DMA desc. for OVR2 Layer */
+    116          
+    117          static struct _layer_data lcdc_ovr2;         /**< OVR2 Layer */
+   \                     lcdc_ovr2:
+   \       0x40                      DS8 20
+    118          #endif
+    119          
+    120          CACHE_ALIGNED_DDR
+    121          static struct _lcdc_dma_desc heo_dma_desc;   /**< DMA desc. for HEO Layer */
+    122          
+    123          CACHE_ALIGNED_DDR
+    124          static struct _lcdc_dma_desc heo_dma_u_desc; /**< DMA desc. for HEO U-UV Layer */
+    125          
+    126          CACHE_ALIGNED_DDR
+    127          static struct _lcdc_dma_desc heo_dma_v_desc; /**< DMA desc. for HEO V Layer */
+    128          
+    129          static struct _layer_data lcdc_heo;          /**< HEO Layer */
+   \                     lcdc_heo:
+   \       0x54                      DS8 20
+    130          
+    131          #ifdef CONFIG_HAVE_LCDC_PP
+    132          CACHE_ALIGNED_DDR
+    133          static struct _lcdc_dma_desc pp_dma_desc;    /**< DMA desc. for PP Layer */
+    134          
+    135          static struct _layer_data lcdc_pp;           /**< PP Layer */
+    136          #endif
+    137          
+    138          /*----------------------------------------------------------------------------
+    139           *        Local constants
+    140           *----------------------------------------------------------------------------*/
+    141          
+    142          /** Information about layers, order must match value of LCDC_XXX constants in
+    143           * ldcd.h */
+
+   \                                 In section .rodata, align 4
+    144          static const struct _layer_info lcdc_layers[] = {
+   \                     lcdc_layers:
+   \        0x0   0x0000'0000        DC32 0x0
+   \        0x4   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x25   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00
+   \       0x34   0x....'....        DC32 lcdc_base
+   \       0x38   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x3C   0xF803'8060        DC32 0xf803'8060, 0xf803'809c, 0xf803'807c, 0x0, 0x0, 0xf803'808c, 0x0
+
+   \              0xF803'809C  
+
+   \              0xF803'807C  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0xF803'808C  
+
+   \              0x0000'0000
+   \       0x58   0xF803'8094        DC32 0xf803'8094, 0xf803'8098, 0x0, 0xf803'8600, lcdc_ovr1
+
+   \              0xF803'8098  
+
+   \              0x0000'0000  
+
+   \              0xF803'8600  
+
+   \              0x....'....
+   \       0x6C   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x70   0xF803'8160        DC32 0xf803'8160, 0xf803'81b0, 0xf803'817c, 0x0, 0x0, 0xf803'818c
+
+   \              0xF803'81B0  
+
+   \              0xF803'817C  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0xF803'818C
+   \       0x88   0xF803'8194        DC32 0xf803'8194, 0xf803'819c, 0xf803'81a4, 0x0, 0xf803'8a00, lcdc_heo
+
+   \              0xF803'819C  
+
+   \              0xF803'81A4  
+
+   \              0x0000'0000  
+
+   \              0xF803'8A00  
+
+   \              0x....'....
+   \       0xA0   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0xA4   0xF803'8360        DC32 0xf803'8360, 0xf803'83dc, 0xf803'837c, 0xf803'838c, 0xf803'839c
+
+   \              0xF803'83DC  
+
+   \              0xF803'837C  
+
+   \              0xF803'838C  
+
+   \              0xF803'839C
+   \       0xB8   0xF803'83AC        DC32 0xf803'83ac, 0xf803'83b4, 0xf803'83c0, 0xf803'83d0, 0xf803'83e0
+
+   \              0xF803'83B4  
+
+   \              0xF803'83C0  
+
+   \              0xF803'83D0  
+
+   \              0xF803'83E0
+   \       0xCC   0xF803'9200        DC32 0xf803'9200, lcdc_ovr2
+
+   \              0x....'....
+   \       0xD4   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0xD8   0xF803'8260        DC32 0xf803'8260, 0xf803'82b0, 0xf803'827c, 0x0, 0x0, 0xf803'828c
+
+   \              0xF803'82B0  
+
+   \              0xF803'827C  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0xF803'828C
+   \       0xF0   0xF803'8294        DC32 0xf803'8294, 0xf803'829c, 0xf803'82a4, 0x0, 0xf803'8e00, 0x0
+
+   \              0xF803'829C  
+
+   \              0xF803'82A4  
+
+   \              0x0000'0000  
+
+   \              0xF803'8E00  
+
+   \              0x0000'0000
+   \      0x108   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \      0x118   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \      0x128   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+    145          	/* 0: LCDC_CONTROLLER */
+    146          	{
+    147          		.stride_supported = false,
+    148          	},
+    149          	/* 1: LCDC_BASE */
+    150          	{
+    151          		.data = &lcdc_base,
+    152          		.stride_supported = false,
+    153          		.reg_enable = &LCDC->LCDC_BASECHER,
+    154          		.reg_blender = &LCDC->LCDC_BASECFG4,
+    155          		.reg_dma_head = &LCDC->LCDC_BASEHEAD,
+    156          		.reg_cfg = &LCDC->LCDC_BASECFG0,
+    157          		.reg_stride = &LCDC->LCDC_BASECFG2,
+    158          		.reg_color = &LCDC->LCDC_BASECFG3,
+    159          		.reg_clut = &LCDC->LCDC_BASECLUT[0]
+    160          	},
+    161          #ifdef CONFIG_HAVE_LCDC_OVR1
+    162          	/* 2: LCDC_OVR1 */
+    163          	{
+    164          		.data = &lcdc_ovr1,
+    165          		.stride_supported = true,
+    166          		.reg_enable = &LCDC->LCDC_OVR1CHER,
+    167          		.reg_blender = &LCDC->LCDC_OVR1CFG9,
+    168          		.reg_dma_head = &LCDC->LCDC_OVR1HEAD,
+    169          		.reg_cfg = &LCDC->LCDC_OVR1CFG0,
+    170          		.reg_win = &LCDC->LCDC_OVR1CFG2,
+    171          		.reg_stride = &LCDC->LCDC_OVR1CFG4,
+    172          		.reg_color = &LCDC->LCDC_OVR1CFG6,
+    173          		.reg_clut = &LCDC->LCDC_OVR1CLUT[0],
+    174          	},
+    175          #else
+    176          	/* 2: N/A */
+    177          	{
+    178          		.data = NULL,
+    179          	},
+    180          #endif
+    181          	/* 3: LCDC_HEO */
+    182          	{
+    183          		.data = &lcdc_heo,
+    184          		.stride_supported = true,
+    185          		.reg_enable = &LCDC->LCDC_HEOCHER,
+    186          		.reg_blender = &LCDC->LCDC_HEOCFG12,
+    187          		.reg_dma_head = &LCDC->LCDC_HEOHEAD,
+    188          		.reg_dma_u_head = &LCDC->LCDC_HEOUHEAD,
+    189          		.reg_dma_v_head = &LCDC->LCDC_HEOVHEAD,
+    190          		.reg_cfg = &LCDC->LCDC_HEOCFG0,
+    191          		.reg_win = &LCDC->LCDC_HEOCFG2,
+    192          		.reg_stride = &LCDC->LCDC_HEOCFG5,
+    193          		.reg_color = &LCDC->LCDC_HEOCFG9,
+    194          		.reg_scale = &LCDC->LCDC_HEOCFG13,
+    195          		.reg_clut = &LCDC->LCDC_HEOCLUT[0],
+    196          	},
+    197          #ifdef CONFIG_HAVE_LCDC_OVR2
+    198          	/* 4: LCDC_OVR2 */
+    199          	{
+    200          		.data = &lcdc_ovr2,
+    201          		.stride_supported = true,
+    202          		.reg_enable = &LCDC->LCDC_OVR2CHER,
+    203          		.reg_blender = &LCDC->LCDC_OVR2CFG9,
+    204          		.reg_dma_head = &LCDC->LCDC_OVR2HEAD,
+    205          		.reg_cfg = &LCDC->LCDC_OVR2CFG0,
+    206          		.reg_win = &LCDC->LCDC_OVR2CFG2,
+    207          		.reg_stride = &LCDC->LCDC_OVR2CFG4,
+    208          		.reg_color = &LCDC->LCDC_OVR2CFG6,
+    209          		.reg_clut = &LCDC->LCDC_OVR2CLUT[0],
+    210          	},
+    211          #else
+    212          	/* 4: N/A */
+    213          	{
+    214          		.data = NULL,
+    215          	},
+    216          #endif
+    217          #ifdef CONFIG_HAVE_LCDC_PP
+    218          
+    219          	{
+    220          		.data = &lcdc_pp,
+    221          		.stride_supported = true,
+    222          		.reg_enable = &LCDC->LCDC_PPCHER,
+    223          		.reg_dma_head = &LCDC->LCDC_PPHEAD,
+    224          		.reg_cfg = &LCDC->LCDC_PPCFG0,
+    225          		.reg_stride = &LCDC->LCDC_PPCFG2,
+    226          	},
+    227          #else
+    228          	/* 5: N/A */
+    229          	{
+    230          		.data = NULL,
+    231          	},
+    232          #endif
+    233          };
+    234          
+    235          /*----------------------------------------------------------------------------
+    236           *        Local functions
+    237           *----------------------------------------------------------------------------*/
+    238          
+    239          /**
+    240           * Wait for clock domain synchronization to be complete.
+    241           * While synchronization is in progress, access to registers
+    242           * LCDC_LCDCCFG[0..6], LCDC_LCDEN and LCDC_LCDDIS has no effect.
+    243           */
+    244          static void _wait_for_clock_domain_sync(void)
+    245          {
+    246          	while ((LCDC->LCDC_LCDSR & LCDC_LCDSR_SIPSTS));
+    247          }
+    248          
+    249          /**
+    250           * Return bits per pixel from RGB mode settings.
+    251           * (Note the bits is bits occupied in memory, including reserved)
+    252           */
+    253          static uint32_t _get_bits_per_pixel(uint32_t mode_reg)
+    254          {
+    255          	switch (mode_reg) {
+    256          
+    257          	/* RGB modes */
+    258          
+    259          	case LCDC_HEOCFG1_RGBMODE_12BPP_RGB_444:
+    260          	case LCDC_HEOCFG1_RGBMODE_16BPP_ARGB_4444:
+    261          	case LCDC_HEOCFG1_RGBMODE_16BPP_RGBA_4444:
+    262          	case LCDC_HEOCFG1_RGBMODE_16BPP_RGB_565:
+    263          	case LCDC_HEOCFG1_RGBMODE_16BPP_TRGB_1555:
+    264          		return 2 * 8;
+    265          
+    266          	case LCDC_HEOCFG1_RGBMODE_18BPP_RGB_666_PACKED:
+    267          	case LCDC_HEOCFG1_RGBMODE_19BPP_TRGB_PACKED:
+    268          	case LCDC_HEOCFG1_RGBMODE_24BPP_RGB_888_PACKED:
+    269          		return 3 * 8;
+    270          
+    271          	case LCDC_HEOCFG1_RGBMODE_18BPP_RGB_666:
+    272          	case LCDC_HEOCFG1_RGBMODE_19BPP_TRGB_1666:
+    273          	case LCDC_HEOCFG1_RGBMODE_24BPP_RGB_888:
+    274          	case LCDC_HEOCFG1_RGBMODE_25BPP_TRGB_1888:
+    275          	case LCDC_HEOCFG1_RGBMODE_32BPP_ARGB_8888:
+    276          	case LCDC_HEOCFG1_RGBMODE_32BPP_RGBA_8888:
+    277          		return 3 * 8;
+    278          
+    279          	/* CLUT modes */
+    280          
+    281          	case LCDC_HEOCFG1_CLUTMODE_1BPP | LCDC_HEOCFG1_CLUTEN:
+    282          		return 1;
+    283          	case LCDC_HEOCFG1_CLUTMODE_2BPP | LCDC_HEOCFG1_CLUTEN:
+    284          		return 2;
+    285          	case LCDC_HEOCFG1_CLUTMODE_4BPP | LCDC_HEOCFG1_CLUTEN:
+    286          		return 4;
+    287          	case LCDC_HEOCFG1_CLUTMODE_8BPP | LCDC_HEOCFG1_CLUTEN:
+    288          		return 8;
+    289          
+    290          #ifdef LCDC_HEOCFG1_YUVEN
+    291          	/* YUV modes */
+    292          
+    293          	case LCDC_HEOCFG1_YUVEN | LCDC_HEOCFG1_YUVMODE_32BPP_AYCBCR:
+    294          		return 32;
+    295          	case LCDC_HEOCFG1_YUVEN | LCDC_HEOCFG1_YUVMODE_16BPP_YCBCR_MODE0:
+    296          	case LCDC_HEOCFG1_YUVEN | LCDC_HEOCFG1_YUVMODE_16BPP_YCBCR_MODE1:
+    297          	case LCDC_HEOCFG1_YUVEN | LCDC_HEOCFG1_YUVMODE_16BPP_YCBCR_MODE2:
+    298          	case LCDC_HEOCFG1_YUVEN | LCDC_HEOCFG1_YUVMODE_16BPP_YCBCR_MODE3:
+    299          	case LCDC_HEOCFG1_YUVEN | LCDC_HEOCFG1_YUVMODE_16BPP_YCBCR_SEMIPLANAR:
+    300          	case LCDC_HEOCFG1_YUVEN | LCDC_HEOCFG1_YUVMODE_16BPP_YCBCR_PLANAR:
+    301          	case LCDC_HEOCFG1_YUVEN | LCDC_HEOCFG1_YUVMODE_12BPP_YCBCR_SEMIPLANAR:
+    302          	case LCDC_HEOCFG1_YUVEN | LCDC_HEOCFG1_YUVMODE_12BPP_YCBCR_PLANAR:
+    303          		return 16;
+    304          #endif /* LCDC_HEOCFG1_YUVEN */
+    305          	}
+    306          	return 0;
+    307          }
+    308          
+    309          /**
+    310           * Enable a LCDC DMA channel
+    311           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    312          static void _set_dma_desc(void *buffer, struct _lcdc_dma_desc *desc,
+    313          		volatile uint32_t *dma_head_reg)
+    314          {
+   \                     _set_dma_desc:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    315          	/* Modify descriptor */
+    316          	desc->addr = (uint32_t)buffer;
+   \        0xC   0xE585'4000        STR      R4,[R5, #+0]
+    317          	desc->ctrl = LCDC_BASECTRL_DFETCH;
+   \       0x10   0xE3A0'7001        MOV      R7,#+1
+   \       0x14   0xE1A0'6002        MOV      R6,R2
+   \       0x18   0xE585'7004        STR      R7,[R5, #+4]
+    318          	desc->next = (uint32_t)desc;
+   \       0x1C   0xE585'5008        STR      R5,[R5, #+8]
+    319          	cache_clean_region(desc, sizeof(struct _lcdc_dma_desc));
+   \       0x20   0xE3A0'1010        MOV      R1,#+16
+   \       0x24   0xE1A0'0005        MOV      R0,R5
+   \       0x28   0x....'....        BL       cache_clean_region
+    320          	/* Modify registers */
+    321          	dma_head_reg[1] = (uint32_t)buffer;
+   \       0x2C   0xE586'4004        STR      R4,[R6, #+4]
+    322          	dma_head_reg[2] = LCDC_BASECTRL_DFETCH;
+   \       0x30   0xE586'7008        STR      R7,[R6, #+8]
+    323          	dma_head_reg[3] = (uint32_t)desc;
+   \       0x34   0xE586'500C        STR      R5,[R6, #+12]
+    324          }
+   \       0x38   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    325          
+    326          /**
+    327           * Disable a LCDC DMA channel
+    328           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    329          static void _clear_dma_desc(struct _lcdc_dma_desc *desc,
+    330          		volatile uint32_t *dma_head_reg)
+    331          {
+   \                     _clear_dma_desc:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4001        MOV      R4,R1
+    332          	/* Modify descriptor */
+    333          	if (desc) {
+   \        0x8   0xE1B0'5000        MOVS     R5,R0
+   \        0xC   0x0A00'0005        BEQ      ??_clear_dma_desc_0
+    334          		desc->ctrl &= ~LCDC_BASECTRL_DFETCH;
+   \       0x10   0xE590'1004        LDR      R1,[R0, #+4]
+    335          		desc->next = (uint32_t)desc;
+   \       0x14   0xE580'5008        STR      R5,[R0, #+8]
+   \       0x18   0xE3C1'2001        BIC      R2,R1,#0x1
+   \       0x1C   0xE580'2004        STR      R2,[R0, #+4]
+    336          		cache_clean_region(desc, sizeof(struct _lcdc_dma_desc));
+   \       0x20   0xE3A0'1010        MOV      R1,#+16
+   \       0x24   0x....'....        BL       cache_clean_region
+    337          	}
+    338          
+    339          	/* Modify registers */
+    340          	dma_head_reg[2] &= ~LCDC_BASECTRL_DFETCH;
+   \                     ??_clear_dma_desc_0:
+   \       0x28   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x2C   0xE3C0'1001        BIC      R1,R0,#0x1
+   \       0x30   0xE584'1008        STR      R1,[R4, #+8]
+    341          	dma_head_reg[3] = (uint32_t)desc;
+   \       0x34   0xE584'500C        STR      R5,[R4, #+12]
+    342          }
+   \       0x38   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    343          
+    344          /**
+    345           * Compute scaling factors
+    346           */
+    347          static void _compute_scaling_factors(const struct _layer_info *layer,
+                             ^
+Warning[Pe177]: function "_compute_scaling_factors" was declared but never
+          referenced
+    348          		uint16_t* xfactor, uint16_t* yfactor)
+    349          {
+    350          	uint16_t xmemsize, ymemsize;
+    351          	uint16_t xsize, ysize;
+    352          #ifdef LCDC_HEOCFG41_XPHIDEF
+    353          	uint16_t xfactor_1st, yfactor_1st;
+    354          #endif
+    355          
+    356          	xmemsize = (layer->reg_win[2] & LCDC_HEOCFG4_XMEMSIZE_Msk) >> LCDC_HEOCFG4_XMEMSIZE_Pos;
+    357          	ymemsize = (layer->reg_win[2] & LCDC_HEOCFG4_YMEMSIZE_Msk) >> LCDC_HEOCFG4_YMEMSIZE_Pos;
+    358          	xsize = (layer->reg_win[1] & LCDC_HEOCFG3_XSIZE_Msk) >> LCDC_HEOCFG3_XSIZE_Pos;
+    359          	ysize = (layer->reg_win[1] & LCDC_HEOCFG3_YSIZE_Msk) >> LCDC_HEOCFG3_YSIZE_Pos;
+    360          
+    361          #ifdef LCDC_HEOCFG41_XPHIDEF
+    362          	/* we assume that XPHIDEF & YPHIDEF are 0 */
+    363          	xfactor_1st = (2048 * xmemsize / xsize) + 1;
+    364          	yfactor_1st = (2048 * ymemsize / ysize) + 1;
+    365          
+    366          	if ((xfactor_1st * xsize / 2048) > xmemsize)
+    367          		*xfactor = xfactor_1st - 1;
+    368          	else
+    369          		*xfactor = xfactor_1st;
+    370          
+    371          	if ((yfactor_1st * ysize / 2048) > ymemsize)
+    372          		*yfactor = yfactor_1st - 1;
+    373          	else
+    374          		*yfactor = yfactor_1st;
+    375          #else
+    376          	*xfactor = 1024 * (xmemsize + 1) / (xsize + 1);
+    377          	*yfactor = 1024 * (ymemsize + 1) / (ysize + 1);
+    378          #endif
+    379          }
+    380          
+    381          /**
+    382           * Build 8-bit color palette (actually true color)
+    383           */
+    384          static void _build_color_lut8(volatile uint32_t *clut)
+    385          {
+    386          	uint32_t r, g, b;
+    387          	/* 3:3:2 */
+    388          	for (r = 0; r < 8; r++) {
+    389          		for (g = 0; g < 8; g++) {
+    390          			for (b = 0; b < 4; b++) {
+    391          				*clut++ = (r << (16 + 5))
+    392          					+ (g << (8 + 5))
+    393          					+ (b << (0 + 6));
+    394          			}
+    395          		}
+    396          	}
+    397          }
+    398          
+    399          /**
+    400           * Build 4-bit color palette (16 color)
+    401           */
+    402          static void _build_color_lut4(volatile uint32_t *clut)
+    403          {
+    404          	uint32_t r, g, b;
+    405          	for (r = 0; r < 4; r++) {
+    406          		for (g = 0; g < 2; g++) {
+    407          			for (b = 0; b < 2; b++) {
+    408          				*clut++ = (r << (16 + 6))
+    409          					+ (g << (8 + 7))
+    410          					+ (b << (0 + 7));
+    411          			}
+    412          		}
+    413          	}
+    414          }
+    415          
+    416          /**
+    417           * Build 2-bit color palette (4 gray)
+    418           */
+    419          static void _build_color_lut2(volatile uint32_t *clut)
+    420          {
+    421          	clut[0] = 0x000000;
+    422          	clut[1] = 0x505050;
+    423          	clut[2] = 0xA0A0A0;
+    424          	clut[3] = 0xFFFFFF;
+    425          }
+    426          
+    427          /**
+    428           * Build 1-bit color palette (black & white)
+    429           */
+    430          static void _build_color_lut1(volatile uint32_t *clut)
+    431          {
+    432          	clut[0] = 0x000000;
+    433          	clut[1] = 0xFFFFFF;
+    434          }
+    435          
+    436          /*----------------------------------------------------------------------------
+    437           *        Exported functions
+    438           *----------------------------------------------------------------------------*/
+    439          /**
+    440           * \brief Initializes the LCD controller.
+    441           * Configure SMC to access LCD controller at 64MHz MCK.
+    442           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    443          void lcdc_configure(const struct _lcdc_desc *desc)
+    444          {
+   \                     lcdc_configure:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    445          	lcdc_config = *desc;
+   \        0x4   0x....'....        LDR      R4,??DataTable26
+   \        0x8   0xE1A0'1000        MOV      R1,R0
+   \        0xC   0xE1A0'0004        MOV      R0,R4
+   \       0x10   0xE3A0'200C        MOV      R2,#+12
+   \       0x14   0x....'....        BL       __aeabi_memcpy
+    446          
+    447          	/* Reset layer information */
+    448          	lcdc_base.bpp = 0;
+    449          	lcdc_base.buffer = NULL;
+    450          	lcdc_base.dma_desc = &base_dma_desc;
+   \       0x18   0x....'....        LDR      R1,??DataTable26_1
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+    451          #ifdef CONFIG_HAVE_LCDC_OVR1
+    452          	lcdc_ovr1.bpp = 0;
+    453          	lcdc_ovr1.buffer = NULL;
+    454          	lcdc_ovr1.dma_desc = &ovr1_dma_desc;
+   \       0x20   0xE281'2010        ADD      R2,R1,#+16
+   \       0x24   0xE584'202C        STR      R2,[R4, #+44]
+    455          #endif
+    456          #ifdef CONFIG_HAVE_LCDC_OVR2
+    457          	lcdc_ovr2.bpp = 0;
+    458          	lcdc_ovr2.buffer = NULL;
+    459          	lcdc_ovr2.dma_desc = &ovr2_dma_desc;
+   \       0x28   0xE281'2020        ADD      R2,R1,#+32
+   \       0x2C   0xE584'1018        STR      R1,[R4, #+24]
+   \       0x30   0xE584'2040        STR      R2,[R4, #+64]
+    460          #endif
+    461          	lcdc_heo.bpp = 0;
+    462          	lcdc_heo.buffer = NULL;
+    463          	lcdc_heo.dma_desc = &heo_dma_desc;
+   \       0x34   0xE281'2030        ADD      R2,R1,#+48
+    464          	lcdc_heo.dma_u_desc = &heo_dma_u_desc;
+   \       0x38   0xE281'3040        ADD      R3,R1,#+64
+    465          	lcdc_heo.dma_v_desc = &heo_dma_v_desc;
+   \       0x3C   0xE281'1050        ADD      R1,R1,#+80
+   \       0x40   0xE5C4'0028        STRB     R0,[R4, #+40]
+   \       0x44   0xE584'0024        STR      R0,[R4, #+36]
+   \       0x48   0xE5C4'003C        STRB     R0,[R4, #+60]
+   \       0x4C   0xE584'0038        STR      R0,[R4, #+56]
+   \       0x50   0xE5C4'0050        STRB     R0,[R4, #+80]
+   \       0x54   0xE584'004C        STR      R0,[R4, #+76]
+   \       0x58   0xE5C4'0064        STRB     R0,[R4, #+100]
+   \       0x5C   0xE584'0060        STR      R0,[R4, #+96]
+   \       0x60   0xE584'2054        STR      R2,[R4, #+84]
+   \       0x64   0xE584'3058        STR      R3,[R4, #+88]
+   \       0x68   0xE584'105C        STR      R1,[R4, #+92]
+    466          #ifdef CONFIG_HAVE_LCDC_PP
+    467          	/* Reset layer information */
+    468          	lcdc_pp.bpp = 0;
+    469          	lcdc_pp.buffer = NULL;
+    470          	lcdc_pp.dma_desc = &pp_dma_desc;
+    471          #endif
+    472          	/* No canvas selected */
+    473          	lcdc_canvas.buffer = NULL;
+   \       0x6C   0xE584'000C        STR      R0,[R4, #+12]
+    474          
+    475          	/* Disable LCD controller */
+    476          	lcdc_off();
+   \       0x70   0x....'....        BL       lcdc_off
+    477          
+    478          	/* Enable peripheral clock */
+    479          	pmc_configure_peripheral(ID_LCDC, NULL, true);
+   \       0x74   0xE3A0'2001        MOV      R2,#+1
+   \       0x78   0xE3A0'1000        MOV      R1,#+0
+   \       0x7C   0xE3A0'0019        MOV      R0,#+25
+   \       0x80   0x....'....        BL       pmc_configure_peripheral
+    480          	if (pmc_has_system_clock(PMC_SYSTEM_CLOCK_LCD))
+   \       0x84   0xE3A0'0001        MOV      R0,#+1
+   \       0x88   0x....'....        BL       pmc_has_system_clock
+   \       0x8C   0xE350'0000        CMP      R0,#+0
+   \       0x90   0x0A00'0001        BEQ      ??lcdc_configure_0
+    481          		pmc_enable_system_clock(PMC_SYSTEM_CLOCK_LCD);
+   \       0x94   0xE3A0'0001        MOV      R0,#+1
+   \       0x98   0x....'....        BL       pmc_enable_system_clock
+    482          
+    483          	/* Timing Engine Configuration */
+    484          
+    485          	/* Disable interrupt */
+    486          	LCDC->LCDC_LCDIDR = 0xFFFFFFFF;
+   \                     ??lcdc_configure_0:
+   \       0x9C   0x....'....        LDR      R0,??DataTable27  ;; 0xf8038030
+   \       0xA0   0xE3E0'1000        MVN      R1,#+0
+   \       0xA4   0xE580'1000        STR      R1,[R0, #+0]
+    487          
+    488          	/* Configure channels */
+    489          
+    490          	/* Base */
+    491          	LCDC->LCDC_BASECFG0 = LCDC_BASECFG0_DLBO |
+    492          	                      LCDC_BASECFG0_BLEN_AHB_INCR16;
+   \       0xA8   0xE3A0'2F4C        MOV      R2,#+304
+   \       0xAC   0xE580'205C        STR      R2,[R0, #+92]
+    493          	LCDC->LCDC_BASECFG1 = LCDC_BASECFG1_RGBMODE_24BPP_RGB_888_PACKED;
+   \       0xB0   0xE3A0'10A0        MOV      R1,#+160
+   \       0xB4   0xE580'1060        STR      R1,[R0, #+96]
+    494          
+    495          #ifdef CONFIG_HAVE_LCDC_OVR1
+    496          	/* Overlay 1, GA 0xFF */
+    497          	LCDC->LCDC_OVR1CFG0 = LCDC_OVR1CFG0_DLBO |
+    498          	                      LCDC_OVR1CFG0_BLEN_AHB_INCR16 |
+    499          	                      LCDC_OVR1CFG0_ROTDIS;
+   \       0xB8   0xE382'2D40        ORR      R2,R2,#0x1000
+   \       0xBC   0xE580'215C        STR      R2,[R0, #+348]
+    500          	LCDC->LCDC_OVR1CFG1 = LCDC_OVR1CFG1_RGBMODE_24BPP_RGB_888_PACKED;
+    501          	LCDC->LCDC_OVR1CFG9 = LCDC_OVR1CFG9_GA(0xFF) |
+    502          	                      LCDC_OVR1CFG9_GAEN;
+   \       0xC0   0xE3A0'3020        MOV      R3,#+32
+   \       0xC4   0xE580'1160        STR      R1,[R0, #+352]
+   \       0xC8   0xE383'38FF        ORR      R3,R3,#0xFF0000
+   \       0xCC   0xE580'3180        STR      R3,[R0, #+384]
+    503          #endif
+    504          
+    505          #ifdef CONFIG_HAVE_LCDC_OVR2
+    506          	/* Overlay 2, GA 0xFF */
+    507          	LCDC->LCDC_OVR2CFG0 = LCDC_OVR2CFG0_DLBO |
+    508          	                      LCDC_OVR2CFG0_BLEN_AHB_INCR16 |
+    509          	                      LCDC_OVR2CFG0_ROTDIS;
+   \       0xD0   0xE580'225C        STR      R2,[R0, #+604]
+    510          	LCDC->LCDC_OVR2CFG1 = LCDC_OVR2CFG1_RGBMODE_24BPP_RGB_888_PACKED;
+   \       0xD4   0xE580'1260        STR      R1,[R0, #+608]
+    511          	LCDC->LCDC_OVR2CFG9 = LCDC_OVR2CFG9_GA(0xFF) |
+    512          	                      LCDC_OVR2CFG9_GAEN;
+   \       0xD8   0xE580'3280        STR      R3,[R0, #+640]
+    513          #endif
+    514          
+    515          	/* High End Overlay, GA 0xFF */
+    516          	LCDC->LCDC_HEOCFG0 = LCDC_HEOCFG0_DLBO |
+    517          	                     LCDC_HEOCFG0_BLEN_AHB_INCR16 |
+    518          	                     LCDC_HEOCFG0_ROTDIS;
+   \       0xDC   0xE580'237C        STR      R2,[R0, #+892]
+    519          	LCDC->LCDC_HEOCFG1 = LCDC_HEOCFG1_RGBMODE_24BPP_RGB_888_PACKED;
+   \       0xE0   0xE580'1380        STR      R1,[R0, #+896]
+    520          	LCDC->LCDC_HEOCFG12 = LCDC_HEOCFG12_GA(0xFF) |
+    521          	                      LCDC_HEOCFG12_GAEN;
+    522          
+    523          	LCDC->LCDC_HEOCFG14 = LCDC_HEOCFG14_CSCRY(0x94) |
+    524          	                      LCDC_HEOCFG14_CSCRU(0xCC) |
+    525          	                      LCDC_HEOCFG14_CSCRV(0) |
+    526          	                      LCDC_HEOCFG14_CSCYOFF;
+   \       0xE4   0x....'....        LDR      R1,??DataTable27_1  ;; 0x40033094
+   \       0xE8   0xE580'33AC        STR      R3,[R0, #+940]
+    527          	LCDC->LCDC_HEOCFG15 = LCDC_HEOCFG15_CSCGY(0x94) |
+    528          	                      LCDC_HEOCFG15_CSCGU(0x387) |
+    529          	                      LCDC_HEOCFG15_CSCGV(0x3CD) |
+    530          	                      LCDC_HEOCFG15_CSCUOFF;
+   \       0xEC   0x....'....        LDR      R2,??DataTable27_2  ;; 0x7cde1c94
+   \       0xF0   0xE580'13B4        STR      R1,[R0, #+948]
+    531          	LCDC->LCDC_HEOCFG16 = LCDC_HEOCFG16_CSCBY(0x94)|
+    532          	                      LCDC_HEOCFG16_CSCBU(0) |
+    533          	                      LCDC_HEOCFG16_CSCBV(0x102) |
+    534          	                      LCDC_HEOCFG16_CSCVOFF;
+   \       0xF4   0x....'....        LDR      R1,??DataTable27_3  ;; 0x50200094
+   \       0xF8   0xE580'23B8        STR      R2,[R0, #+952]
+   \       0xFC   0xE580'13BC        STR      R1,[R0, #+956]
+    535          
+    536          	lcdc_on();
+   \      0x100   0xE8BD'4010        POP      {R4,LR}
+   \      0x104   0x....'....        B        lcdc_on          ;; tailcall
+    537          }
+    538          
+    539          /**
+    540           * Check if specified layer is working.
+    541           * \param layer Layer ID.
+    542           * \return 1 if layer is on.
+    543           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    544          uint8_t lcdc_is_layer_on(uint8_t layer_id)
+    545          {
+    546          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    547          
+    548          	if (!layer->reg_enable)
+   \                     lcdc_is_layer_on:
+   \        0x0   0xE3A0'2034        MOV      R2,#+52
+   \        0x4   0x....'....        LDR      R1,??DataTable27_4
+   \        0x8   0xE160'0082        SMULBB   R0,R2,R0
+   \        0xC   0xE791'0000        LDR      R0,[R1, +R0]
+   \       0x10   0xE350'0000        CMP      R0,#+0
+    549          		return 0;
+    550          
+    551          	return ((layer->reg_enable[2] & LCDC_BASECHSR_CHSR) > 0);
+   \       0x14   0x1590'0008        LDRNE    R0,[R0, #+8]
+   \       0x18   0x1200'0001        ANDNE    R0,R0,#0x1
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    552          }
+    553          
+    554          /**
+    555           * Enable(turn on)/Disable(hide) specified layer.
+    556           * \param layer_id Layer ID.
+    557           * \param bEnDis Enable/Disable.
+    558           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    559          void lcdc_enable_layer(uint8_t layer_id, bool enable)
+    560          {
+    561          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    562          #ifdef CONFIG_HAVE_LCDC_PP
+    563          	if (layer_id == LCDC_PP) {
+    564          		if (enable) {
+    565          			/* Disable the display by setting LCDC_LCDDIS.SYNCDIS bit */
+    566          			LCDC->LCDC_LCDDIS = LCDC_LCDDIS_SYNCDIS;
+    567          			/* select the PP layer */
+    568          			LCDC->LCDC_LCDCFG5 |= LCDC_LCDCFG5_PP;
+    569          			LCDC->LCDC_PPCHER = LCDC_PPCHER_CHEN | LCDC_PPCHER_UPDATEEN;
+    570          			while(LCDC->LCDC_PPCHSR & LCDC_PPCHSR_CHSR != LCDC_PPCHSR_CHSR);
+    571          			LCDC->LCDC_LCDEN = LCDC_LCDEN_SYNCEN;
+    572          		} else {
+    573          			LCDC->LCDC_LCDDIS = LCDC_LCDDIS_SYNCDIS;
+    574          			LCDC->LCDC_LCDCFG5 = 0;
+    575          			LCDC->LCDC_PPCHDR = LCDC_PPCHDR_CHDIS;
+    576          			LCDC->LCDC_LCDEN = LCDC_LCDEN_SYNCEN;
+    577          		}
+    578          	} else
+    579          #endif
+    580          	{
+    581          		if (!layer->reg_enable || !layer->reg_blender)
+   \                     lcdc_enable_layer:
+   \        0x0   0xE3A0'3034        MOV      R3,#+52
+   \        0x4   0x....'....        LDR      R2,??DataTable27_5
+   \        0x8   0xE160'0083        SMULBB   R0,R3,R0
+   \        0xC   0xE082'0000        ADD      R0,R2,R0
+   \       0x10   0xE590'C008        LDR      R12,[R0, #+8]
+   \       0x14   0xE35C'0000        CMP      R12,#+0
+   \       0x18   0x0A00'0010        BEQ      ??lcdc_enable_layer_0
+   \       0x1C   0xE590'200C        LDR      R2,[R0, #+12]
+   \       0x20   0xE352'0000        CMP      R2,#+0
+   \       0x24   0x0A00'000D        BEQ      ??lcdc_enable_layer_0
+    582          			return;
+    583          
+    584          		if (enable) {
+   \       0x28   0xE351'0000        CMP      R1,#+0
+   \       0x2C   0x0A00'0005        BEQ      ??lcdc_enable_layer_1
+    585          			layer->reg_enable[0] = LCDC_BASECHER_CHEN | LCDC_BASECHER_UPDATEEN;
+   \       0x30   0xE3A0'1003        MOV      R1,#+3
+   \       0x34   0xE58C'1000        STR      R1,[R12, #+0]
+    586          			layer->reg_blender[0] |= LCDC_HEOCFG12_DMA | LCDC_HEOCFG12_OVR;
+   \       0x38   0xE590'000C        LDR      R0,[R0, #+12]
+   \       0x3C   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x40   0xE381'2F60        ORR      R2,R1,#0x180
+   \       0x44   0xEA00'0004        B        ??lcdc_enable_layer_2
+    587          		} else {
+    588          			layer->reg_enable[1] = LCDC_BASECHDR_CHDIS;
+   \                     ??lcdc_enable_layer_1:
+   \       0x48   0xE3A0'3001        MOV      R3,#+1
+   \       0x4C   0xE58C'3004        STR      R3,[R12, #+4]
+    589          			layer->reg_blender[0] &= ~(LCDC_HEOCFG12_DMA | LCDC_HEOCFG12_OVR);
+   \       0x50   0xE590'000C        LDR      R0,[R0, #+12]
+   \       0x54   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x58   0xE3C1'2F60        BIC      R2,R1,#0x180
+   \                     ??lcdc_enable_layer_2:
+   \       0x5C   0xE580'2000        STR      R2,[R0, #+0]
+    590          		}
+    591          	}
+    592          }
+   \                     ??lcdc_enable_layer_0:
+   \       0x60   0xE12F'FF1E        BX       LR               ;; return
+    593          
+    594          /**
+    595           * Refresh layer
+    596           * \param layer_id Layer ID.
+    597           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    598          void lcdc_refresh(uint8_t layer_id)
+    599          {
+    600          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    601          
+    602          	if (!layer->reg_enable || !layer->reg_blender)
+   \                     lcdc_refresh:
+   \        0x0   0xE3A0'2034        MOV      R2,#+52
+   \        0x4   0x....'....        LDR      R1,??DataTable28
+   \        0x8   0xE160'0082        SMULBB   R0,R2,R0
+   \        0xC   0xE081'0000        ADD      R0,R1,R0
+   \       0x10   0xE590'3008        LDR      R3,[R0, #+8]
+   \       0x14   0xE353'0000        CMP      R3,#+0
+   \       0x18   0x0A00'000C        BEQ      ??lcdc_refresh_0
+   \       0x1C   0xE590'100C        LDR      R1,[R0, #+12]
+   \       0x20   0xE351'0000        CMP      R1,#+0
+   \       0x24   0x0A00'0009        BEQ      ??lcdc_refresh_0
+    603          		return;
+    604          
+    605          	if (layer->reg_enable[2] & LCDC_HEOCHSR_CHSR) {
+   \       0x28   0xE593'2008        LDR      R2,[R3, #+8]
+   \       0x2C   0xE312'0001        TST      R2,#0x1
+   \       0x30   0x0A00'0006        BEQ      ??lcdc_refresh_0
+    606          		layer->reg_blender[0] |= LCDC_HEOCFG12_DMA;
+   \       0x34   0xE590'100C        LDR      R1,[R0, #+12]
+   \       0x38   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x3C   0xE382'3F40        ORR      R3,R2,#0x100
+   \       0x40   0xE581'3000        STR      R3,[R1, #+0]
+    607          		layer->reg_enable[0] = LCDC_HEOCHER_UPDATEEN;
+   \       0x44   0xE590'0008        LDR      R0,[R0, #+8]
+   \       0x48   0xE3A0'1002        MOV      R1,#+2
+   \       0x4C   0xE580'1000        STR      R1,[R0, #+0]
+    608          	}
+    609          }
+   \                     ??lcdc_refresh_0:
+   \       0x50   0xE12F'FF1E        BX       LR               ;; return
+    610          
+    611          /**
+    612           * Set display window position.
+    613           * \param layer_id Layer ID.
+    614           * \param x X position.
+    615           * \param y Y position.
+    616           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    617          void lcdc_set_position(uint8_t layer_id, uint32_t x, uint32_t y)
+    618          {
+   \                     lcdc_set_position:
+   \        0x0   0xE92D'40F0        PUSH     {R4-R7,LR}
+    619          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    620          	uint32_t w, h;
+    621          
+    622          	if (!layer->reg_enable || !layer->reg_win)
+   \        0x4   0xE3A0'C034        MOV      R12,#+52
+   \        0x8   0x....'....        LDR      R3,??DataTable27_5
+   \        0xC   0xE160'008C        SMULBB   R0,R12,R0
+   \       0x10   0xE083'0000        ADD      R0,R3,R0
+   \       0x14   0xE590'E008        LDR      LR,[R0, #+8]
+   \       0x18   0xE35E'0000        CMP      LR,#+0
+   \       0x1C   0x0A00'001B        BEQ      ??lcdc_set_position_0
+   \       0x20   0xE590'3020        LDR      R3,[R0, #+32]
+   \       0x24   0xE353'0000        CMP      R3,#+0
+   \       0x28   0x0A00'0018        BEQ      ??lcdc_set_position_0
+    623          		return;
+    624          
+    625          	w = (layer->reg_win[1] & LCDC_HEOCFG3_XSIZE_Msk) >> LCDC_HEOCFG3_XSIZE_Pos;
+    626          	h = (layer->reg_win[1] & LCDC_HEOCFG3_YSIZE_Msk) >> LCDC_HEOCFG3_YSIZE_Pos;
+    627          
+    628          	if (x + w >= lcdc_config.width)
+   \       0x2C   0x....'....        LDR      R5,??DataTable26
+   \       0x30   0xE3A0'C0FF        MOV      R12,#+255
+   \       0x34   0xE593'E004        LDR      LR,[R3, #+4]
+   \       0x38   0xE38C'CE70        ORR      R12,R12,#0x700
+   \       0x3C   0xE00C'E00E        AND      LR,R12,LR
+   \       0x40   0xE08E'7001        ADD      R7,LR,R1
+   \       0x44   0xE593'4004        LDR      R4,[R3, #+4]
+   \       0x48   0xE1D5'60B0        LDRH     R6,[R5, #+0]
+   \       0x4C   0xE00C'4824        AND      R4,R12,R4, LSR #+16
+   \       0x50   0xE157'0006        CMP      R7,R6
+    629          		x = lcdc_config.width - w;
+   \       0x54   0x2046'100E        SUBCS    R1,R6,LR
+    630          	if (y + h >= lcdc_config.height)
+   \       0x58   0xE1D5'E0B2        LDRH     LR,[R5, #+2]
+   \       0x5C   0xE084'5002        ADD      R5,R4,R2
+    631          		y = lcdc_config.height - h;
+    632          
+    633          	layer->reg_win[0] = LCDC_HEOCFG2_XPOS(x) | LCDC_HEOCFG2_YPOS(y);
+   \       0x60   0xE00C'1001        AND      R1,R12,R1
+   \       0x64   0xE155'000E        CMP      R5,LR
+   \       0x68   0x204E'2004        SUBCS    R2,LR,R4
+   \       0x6C   0xE1A0'C80C        MOV      R12,R12, LSL #+16
+   \       0x70   0xE00C'2802        AND      R2,R12,R2, LSL #+16
+   \       0x74   0xE182'1001        ORR      R1,R2,R1
+   \       0x78   0xE583'1000        STR      R1,[R3, #+0]
+    634          	if (layer->reg_enable[2] & LCDC_HEOCHSR_CHSR)
+   \       0x7C   0xE590'0008        LDR      R0,[R0, #+8]
+   \       0x80   0xE590'1008        LDR      R1,[R0, #+8]
+   \       0x84   0xE311'0001        TST      R1,#0x1
+    635          		layer->reg_enable[0] = LCDC_HEOCHER_UPDATEEN;
+   \       0x88   0x13A0'1002        MOVNE    R1,#+2
+   \       0x8C   0x1580'1000        STRNE    R1,[R0, #+0]
+    636          }
+   \                     ??lcdc_set_position_0:
+   \       0x90   0xE8BD'80F0        POP      {R4-R7,PC}       ;; return
+    637          
+    638          /**
+    639           * Set Priority of layer (only for HEO now).
+    640           * \param layer_id Layer ID
+    641           * \param priority Priority value.
+    642           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    643          void lcdc_set_priority(uint8_t layer_id, uint8_t priority)
+    644          {
+    645          #ifdef LCDC_HEOCFG12_VIDPRI
+    646          	if (layer_id != LCDC_HEO)
+   \                     lcdc_set_priority:
+   \        0x0   0xE350'0003        CMP      R0,#+3
+   \        0x4   0x1A00'0007        BNE      ??lcdc_set_priority_0
+    647          		return;
+    648          
+    649          	if (priority)
+   \        0x8   0x....'....        LDR      R0,??DataTable29  ;; 0xf8038360
+   \        0xC   0xE351'0000        CMP      R1,#+0
+   \       0x10   0xE590'107C        LDR      R1,[R0, #+124]
+    650          		LCDC->LCDC_HEOCFG12 |= LCDC_HEOCFG12_VIDPRI;
+   \       0x14   0x1381'2D40        ORRNE    R2,R1,#0x1000
+    651          	else
+    652          		LCDC->LCDC_HEOCFG12 &= ~LCDC_HEOCFG12_VIDPRI;
+   \       0x18   0x03C1'2D40        BICEQ    R2,R1,#0x1000
+   \       0x1C   0xE580'207C        STR      R2,[R0, #+124]
+    653          	LCDC->LCDC_HEOCHER = LCDC_HEOCHER_UPDATEEN;
+   \       0x20   0xE3A0'1002        MOV      R1,#+2
+   \       0x24   0xE580'1000        STR      R1,[R0, #+0]
+    654          #endif /* LCDC_HEOCFG12_VIDPRI */
+    655          }
+   \                     ??lcdc_set_priority_0:
+   \       0x28   0xE12F'FF1E        BX       LR               ;; return
+    656          
+    657          /**
+    658           * Return Priority of layer (only for HEO now).
+    659           * \param layer_id Layer ID.
+    660           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    661          uint8_t lcdc_get_priority(uint8_t layer_id)
+    662          {
+    663          #ifdef LCDC_HEOCFG12_VIDPRI
+    664          	if (layer_id != LCDC_HEO)
+   \                     lcdc_get_priority:
+   \        0x0   0xE350'0003        CMP      R0,#+3
+   \        0x4   0x0A00'0001        BEQ      ??lcdc_get_priority_0
+    665          		return 0;
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0xE12F'FF1E        BX       LR
+    666          
+    667          	return (LCDC->LCDC_HEOCFG12 & LCDC_HEOCFG12_VIDPRI) > 0;
+   \                     ??lcdc_get_priority_0:
+   \       0x10   0x....'....        LDR      R0,??DataTable30  ;; 0xf80383dc
+   \       0x14   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x18   0xE1A0'2621        LSR      R2,R1,#+12
+   \       0x1C   0xE202'0001        AND      R0,R2,#0x1
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    668          #else
+    669          	return 0;
+    670          #endif /* LCDC_HEOCFG12_VIDPRI */
+    671          }
+    672          
+    673          /**
+    674           * Global & Local Alpha Enable/Disable
+    675           * \param layer_id   Layer ID.
+    676           * \param bEnDisLA Enable/Disable local  alpha.
+    677           * \param bEnDisGA Enable/Disable global alpha.
+    678           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    679          void lcdc_enable_alpha(uint8_t layer_id, bool enable_local, bool enable_global)
+    680          {
+    681          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    682          	uint32_t cfg;
+    683          
+    684          	if (!layer->reg_enable || !layer->reg_blender)
+   \                     lcdc_enable_alpha:
+   \        0x0   0xE3A0'C034        MOV      R12,#+52
+   \        0x4   0x....'....        LDR      R3,??DataTable28
+   \        0x8   0xE160'008C        SMULBB   R0,R12,R0
+   \        0xC   0xE92D'4000        PUSH     {LR}
+   \       0x10   0xE083'0000        ADD      R0,R3,R0
+   \       0x14   0xE590'E008        LDR      LR,[R0, #+8]
+   \       0x18   0xE35E'0000        CMP      LR,#+0
+   \       0x1C   0x0A00'000C        BEQ      ??lcdc_enable_alpha_0
+   \       0x20   0xE590'300C        LDR      R3,[R0, #+12]
+   \       0x24   0xE353'0000        CMP      R3,#+0
+   \       0x28   0x0A00'0009        BEQ      ??lcdc_enable_alpha_0
+    685          		return;
+    686          
+    687          	cfg = layer->reg_blender[0] & ~(LCDC_HEOCFG12_LAEN | LCDC_HEOCFG12_GAEN);
+   \       0x2C   0xE593'C000        LDR      R12,[R3, #+0]
+    688          	if (enable_global)
+   \       0x30   0xE352'0000        CMP      R2,#+0
+   \       0x34   0xE3CC'C060        BIC      R12,R12,#0x60
+    689          		cfg |= LCDC_HEOCFG12_GAEN;
+   \       0x38   0x138C'C020        ORRNE    R12,R12,#0x20
+    690          	if (enable_local)
+   \       0x3C   0xE351'0000        CMP      R1,#+0
+    691          		cfg |= LCDC_HEOCFG12_LAEN;
+   \       0x40   0x138C'C040        ORRNE    R12,R12,#0x40
+    692          	layer->reg_blender[0] = cfg;
+   \       0x44   0xE583'C000        STR      R12,[R3, #+0]
+    693          	layer->reg_enable[0] = LCDC_HEOCHER_UPDATEEN;
+   \       0x48   0xE590'0008        LDR      R0,[R0, #+8]
+   \       0x4C   0xE3A0'1002        MOV      R1,#+2
+   \       0x50   0xE580'1000        STR      R1,[R0, #+0]
+    694          }
+   \                     ??lcdc_enable_alpha_0:
+   \       0x54   0xE8BD'8000        POP      {PC}             ;; return
+    695          
+    696          /**
+    697           * Set alpha value
+    698           * \param layer_id Layer ID (OVR1 or HEOR).
+    699           * \param bReverse Reverse alpha (alpha -> 1 - alpha).
+    700           * \param bAlpha   Global alpha value.
+    701           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    702          void lcdc_set_alpha(uint8_t layer_id, bool reverse, uint8_t alpha)
+    703          {
+    704          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    705          	uint32_t cfg;
+    706          
+    707          	if (!layer->reg_enable || !layer->reg_blender)
+   \                     lcdc_set_alpha:
+   \        0x0   0xE3A0'C034        MOV      R12,#+52
+   \        0x4   0x....'....        LDR      R3,??DataTable28
+   \        0x8   0xE160'008C        SMULBB   R0,R12,R0
+   \        0xC   0xE92D'4000        PUSH     {LR}
+   \       0x10   0xE083'0000        ADD      R0,R3,R0
+   \       0x14   0xE590'E008        LDR      LR,[R0, #+8]
+   \       0x18   0xE35E'0000        CMP      LR,#+0
+   \       0x1C   0x0A00'000D        BEQ      ??lcdc_set_alpha_0
+   \       0x20   0xE590'300C        LDR      R3,[R0, #+12]
+   \       0x24   0xE353'0000        CMP      R3,#+0
+   \       0x28   0x0A00'000A        BEQ      ??lcdc_set_alpha_0
+    708          		return;
+    709          
+    710          	cfg = layer->reg_blender[0] & ~(LCDC_HEOCFG12_REVALPHA | LCDC_HEOCFG12_GA_Msk);
+   \       0x2C   0xE593'C000        LDR      R12,[R3, #+0]
+   \       0x30   0xE3E0'E010        MVN      LR,#+16
+   \       0x34   0xE3CE'E8FF        BIC      LR,LR,#0xFF0000
+   \       0x38   0xE00E'C00C        AND      R12,LR,R12
+    711          	if (reverse)
+   \       0x3C   0xE351'0000        CMP      R1,#+0
+    712          		cfg |= LCDC_HEOCFG12_REVALPHA;
+   \       0x40   0x138C'C010        ORRNE    R12,R12,#0x10
+    713          	layer->reg_blender[0] = cfg | LCDC_HEOCFG12_GA(alpha);
+   \       0x44   0xE18C'1802        ORR      R1,R12,R2, LSL #+16
+   \       0x48   0xE583'1000        STR      R1,[R3, #+0]
+    714          	layer->reg_enable[0] = LCDC_HEOCHER_UPDATEEN;
+   \       0x4C   0xE590'0008        LDR      R0,[R0, #+8]
+   \       0x50   0xE3A0'2002        MOV      R2,#+2
+   \       0x54   0xE580'2000        STR      R2,[R0, #+0]
+    715          }
+   \                     ??lcdc_set_alpha_0:
+   \       0x58   0xE8BD'8000        POP      {PC}             ;; return
+    716          
+    717          /**
+    718           * Get alpha value
+    719           * \param layer_id Layer ID (OVR1 or HEO).
+    720           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    721          uint8_t lcdc_get_alpha(uint8_t layer_id)
+    722          {
+    723          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    724          
+    725          	if (!layer->reg_blender)
+   \                     lcdc_get_alpha:
+   \        0x0   0xE3A0'2034        MOV      R2,#+52
+   \        0x4   0x....'....        LDR      R1,??DataTable28
+   \        0x8   0xE160'0082        SMULBB   R0,R2,R0
+   \        0xC   0xE081'0000        ADD      R0,R1,R0
+   \       0x10   0xE590'000C        LDR      R0,[R0, #+12]
+   \       0x14   0xE350'0000        CMP      R0,#+0
+    726          		return 0;
+    727          
+    728          	return (layer->reg_blender[0] & LCDC_HEOCFG12_GA_Msk) >> LCDC_HEOCFG12_GA_Pos;
+   \       0x18   0x1590'0000        LDRNE    R0,[R0, #+0]
+   \       0x1C   0x11A0'0400        LSLNE    R0,R0,#+8
+   \       0x20   0x11A0'0C20        LSRNE    R0,R0,#+24
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    729          }
+    730          
+    731          /**
+    732           * Enable and Set Color Keying
+    733           * \param layer_id  Layer ID (OVR1 or HEO).
+    734           * \param dest_keying Destination/Source keying.
+    735           * \param color Color to matching.
+    736           * \param mask  Color bit mask.
+    737           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    738          void lcdc_set_color_keying(uint8_t layer_id, bool dest_keying,
+    739          			   uint32_t color, uint32_t mask)
+    740          {
+   \                     lcdc_set_color_keying:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    741          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    742          
+    743          	if (!layer->reg_enable || !layer->reg_blender || !layer->reg_color)
+   \        0x4   0xE3A0'E034        MOV      LR,#+52
+   \        0x8   0x....'....        LDR      R12,??DataTable28
+   \        0xC   0xE160'008E        SMULBB   R0,LR,R0
+   \       0x10   0xE08C'0000        ADD      R0,R12,R0
+   \       0x14   0xE590'4008        LDR      R4,[R0, #+8]
+   \       0x18   0xE354'0000        CMP      R4,#+0
+   \       0x1C   0x0A00'0016        BEQ      ??lcdc_set_color_keying_0
+   \       0x20   0xE590'C00C        LDR      R12,[R0, #+12]
+   \       0x24   0xE35C'0000        CMP      R12,#+0
+   \       0x28   0x0A00'0013        BEQ      ??lcdc_set_color_keying_0
+   \       0x2C   0xE590'C028        LDR      R12,[R0, #+40]
+   \       0x30   0xE35C'0000        CMP      R12,#+0
+   \       0x34   0x0A00'0010        BEQ      ??lcdc_set_color_keying_0
+    744          		return;
+    745          
+    746          	/* Dest/Source Keying */
+    747          	if (dest_keying)
+   \       0x38   0xE590'C00C        LDR      R12,[R0, #+12]
+   \       0x3C   0xE351'0000        CMP      R1,#+0
+    748          		layer->reg_blender[0] |= LCDC_HEOCFG12_DSTKEY;
+   \       0x40   0x159C'1000        LDRNE    R1,[R12, #+0]
+   \       0x44   0x1381'EE40        ORRNE    LR,R1,#0x400
+   \       0x48   0x158C'E000        STRNE    LR,[R12, #+0]
+    749          	else
+    750          		layer->reg_blender[0] &= ~LCDC_HEOCFG12_DSTKEY;
+   \       0x4C   0x059C'4000        LDREQ    R4,[R12, #+0]
+   \       0x50   0x03C4'1E40        BICEQ    R1,R4,#0x400
+   \       0x54   0x058C'1000        STREQ    R1,[R12, #+0]
+    751          
+    752          	/* Activate Color Keying */
+    753          	layer->reg_blender[0] |= LCDC_HEOCFG12_CRKEY;
+   \       0x58   0xE59C'E000        LDR      LR,[R12, #+0]
+   \       0x5C   0xE38E'4001        ORR      R4,LR,#0x1
+   \       0x60   0xE58C'4000        STR      R4,[R12, #+0]
+    754          
+    755          	/* Program Color Keying */
+    756          	layer->reg_color[1] = color;
+   \       0x64   0xE590'1028        LDR      R1,[R0, #+40]
+   \       0x68   0xE581'2004        STR      R2,[R1, #+4]
+    757          	layer->reg_color[2] = mask;
+   \       0x6C   0xE581'3008        STR      R3,[R1, #+8]
+    758          
+    759          	/* Update */
+    760          	layer->reg_enable[0] = LCDC_HEOCHER_UPDATEEN;
+   \       0x70   0xE590'0008        LDR      R0,[R0, #+8]
+   \       0x74   0xE3A0'1002        MOV      R1,#+2
+   \       0x78   0xE580'1000        STR      R1,[R0, #+0]
+    761          }
+   \                     ??lcdc_set_color_keying_0:
+   \       0x7C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    762          
+    763          /**
+    764           * Disable Color Keying
+    765           * \param layer_id  Layer ID (OVR1 or HEO).
+    766           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    767          void lcdc_disable_color_keying(uint8_t layer_id)
+    768          {
+    769          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    770          
+    771          	if (!layer->reg_enable || !layer->reg_blender || !layer->reg_color)
+   \                     lcdc_disable_color_keying:
+   \        0x0   0xE3A0'2034        MOV      R2,#+52
+   \        0x4   0x....'....        LDR      R1,??DataTable28
+   \        0x8   0xE160'0082        SMULBB   R0,R2,R0
+   \        0xC   0xE081'0000        ADD      R0,R1,R0
+   \       0x10   0xE590'3008        LDR      R3,[R0, #+8]
+   \       0x14   0xE353'0000        CMP      R3,#+0
+   \       0x18   0x0A00'000F        BEQ      ??lcdc_disable_color_keying_0
+   \       0x1C   0xE590'100C        LDR      R1,[R0, #+12]
+   \       0x20   0xE351'0000        CMP      R1,#+0
+   \       0x24   0x0A00'000C        BEQ      ??lcdc_disable_color_keying_0
+   \       0x28   0xE590'1028        LDR      R1,[R0, #+40]
+   \       0x2C   0xE351'0000        CMP      R1,#+0
+   \       0x30   0x0A00'0009        BEQ      ??lcdc_disable_color_keying_0
+    772          		return;
+    773          
+    774          	layer->reg_blender[0] &= ~LCDC_HEOCFG12_CRKEY;
+   \       0x34   0xE590'100C        LDR      R1,[R0, #+12]
+   \       0x38   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x3C   0xE3C2'3001        BIC      R3,R2,#0x1
+   \       0x40   0xE581'3000        STR      R3,[R1, #+0]
+    775          	layer->reg_color[2] = 0;
+   \       0x44   0xE590'2028        LDR      R2,[R0, #+40]
+   \       0x48   0xE3A0'1000        MOV      R1,#+0
+   \       0x4C   0xE582'1008        STR      R1,[R2, #+8]
+    776          
+    777          	/* Update */
+    778          	layer->reg_enable[0] = LCDC_HEOCHER_UPDATEEN;
+   \       0x50   0xE590'0008        LDR      R0,[R0, #+8]
+   \       0x54   0xE3A0'1002        MOV      R1,#+2
+   \       0x58   0xE580'1000        STR      R1,[R0, #+0]
+    779          }
+   \                     ??lcdc_disable_color_keying_0:
+   \       0x5C   0xE12F'FF1E        BX       LR               ;; return
+    780          
+    781          /**
+    782           * Set Color Lookup Table
+    783           * \param layer_id   Layer ID (OVR1 or HEO).
+    784           * \param pCLUT    Pointer to color lookup table.
+    785           * \param bpp      Bits Per Pixel (1, 2, 4, 8).
+    786           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    787          void lcdc_set_color_lut(uint8_t layer_id, uint32_t *clut, uint8_t bpp)
+    788          {
+   \                     lcdc_set_color_lut:
+   \        0x0   0xE3A0'3034        MOV      R3,#+52
+   \        0x4   0xE160'0083        SMULBB   R0,R3,R0
+   \        0x8   0x....'....        LDR      R3,??DataTable27_5
+   \        0xC   0xE793'C000        LDR      R12,[R3, +R0]
+   \       0x10   0xE083'0000        ADD      R0,R3,R0
+   \       0x14   0xE590'0030        LDR      R0,[R0, #+48]
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x1A00'0000        BNE      ??lcdc_set_color_lut_1
+   \       0x20   0xE12F'FF1E        BX       LR
+   \                     ??lcdc_set_color_lut_1:
+   \       0x24   0xE92D'4000        PUSH     {LR}
+    789          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    790          	struct _layer_data *data = layer->data;
+    791          
+    792          	if (!layer->reg_clut || !data)
+   \       0x28   0xE35C'0000        CMP      R12,#+0
+   \       0x2C   0x0A00'0009        BEQ      ??lcdc_set_color_lut_2
+    793          		return;
+    794          
+    795          	data->bpp = bpp;
+   \       0x30   0xE5CC'2010        STRB     R2,[R12, #+16]
+    796          
+    797          	/* Customize CLUT */
+    798          	if (clut) {
+   \       0x34   0xE351'0000        CMP      R1,#+0
+   \       0x38   0x0A00'0007        BEQ      ??lcdc_set_color_lut_3
+    799          		uint32_t i;
+    800          		for (i = 0; i < (1 << bpp); i++)
+   \       0x3C   0xE3A0'3001        MOV      R3,#+1
+   \       0x40   0xE1B0'2213        LSLS     R2,R3,R2
+   \       0x44   0x0A00'0003        BEQ      ??lcdc_set_color_lut_2
+    801          			layer->reg_clut[i] = clut[i];
+   \                     ??lcdc_set_color_lut_4:
+   \       0x48   0xE491'C004        LDR      R12,[R1], #+4
+   \       0x4C   0xE252'2001        SUBS     R2,R2,#+1
+   \       0x50   0xE480'C004        STR      R12,[R0], #+4
+   \       0x54   0x1AFF'FFFB        BNE      ??lcdc_set_color_lut_4
+    802          	}
+    803          	/* Build CLUT */
+    804          	else {
+    805          		switch (bpp) {
+    806          		case 1:
+    807          			_build_color_lut1(layer->reg_clut);
+    808          			break;
+    809          		case 2:
+    810          			_build_color_lut2(layer->reg_clut);
+    811          			break;
+    812          		case 4:
+    813          			_build_color_lut4(layer->reg_clut);
+    814          			break;
+    815          		case 8:
+    816          			_build_color_lut8(layer->reg_clut);
+    817          			break;
+    818          		}
+    819          	}
+    820          }
+   \                     ??lcdc_set_color_lut_2:
+   \       0x58   0xE8BD'8000        POP      {PC}             ;; return
+   \                     ??lcdc_set_color_lut_3:
+   \       0x5C   0xE242'2001        SUB      R2,R2,#+1
+   \       0x60   0xE352'0007        CMP      R2,#+7
+   \       0x64   0x8AFF'FFFB        BHI      ??lcdc_set_color_lut_2
+   \       0x68   0xE19F'10D2        LDRSB    R1,[PC, R2]
+   \       0x6C   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??lcdc_set_color_lut_0:
+   \       0x70   0x01 0x06          DC8      0x1,0x6,0xF9,0xF
+
+   \              0xF9 0x0F
+   \       0x74   0xF9 0xF9          DC8      0xF9,0xF9,0xF9,0x1D
+
+   \              0xF9 0x1D
+   \                     ??lcdc_set_color_lut_5:
+   \       0x78   0xE3A0'1000        MOV      R1,#+0
+   \       0x7C   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x80   0xE3E0'24FF        MVN      R2,#-16777216
+   \       0x84   0xE580'2004        STR      R2,[R0, #+4]
+   \       0x88   0xE8BD'8000        POP      {PC}
+   \                     ??lcdc_set_color_lut_6:
+   \       0x8C   0xE3A0'1000        MOV      R1,#+0
+   \       0x90   0x....'....        LDR      R2,??DataTable31  ;; 0x505050
+   \       0x94   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x98   0xE580'2004        STR      R2,[R0, #+4]
+   \       0x9C   0xE1A0'3082        MOV      R3,R2, LSL #+1
+   \       0xA0   0xE580'3008        STR      R3,[R0, #+8]
+   \       0xA4   0xE3E0'14FF        MVN      R1,#-16777216
+   \       0xA8   0xE580'100C        STR      R1,[R0, #+12]
+   \       0xAC   0xE8BD'8000        POP      {PC}
+   \                     ??lcdc_set_color_lut_7:
+   \       0xB0   0xE3A0'1000        MOV      R1,#+0
+   \                     ??lcdc_set_color_lut_8:
+   \       0xB4   0xE1A0'2B01        LSL      R2,R1,#+22
+   \       0xB8   0xE3A0'3002        MOV      R3,#+2
+   \                     ??lcdc_set_color_lut_9:
+   \       0xBC   0xE580'2000        STR      R2,[R0, #+0]
+   \       0xC0   0xE282'C080        ADD      R12,R2,#+128
+   \       0xC4   0xE580'C004        STR      R12,[R0, #+4]
+   \       0xC8   0xE280'0008        ADD      R0,R0,#+8
+   \       0xCC   0xE282'2C80        ADD      R2,R2,#+32768
+   \       0xD0   0xE253'3001        SUBS     R3,R3,#+1
+   \       0xD4   0x1AFF'FFF8        BNE      ??lcdc_set_color_lut_9
+   \       0xD8   0xE281'1001        ADD      R1,R1,#+1
+   \       0xDC   0xE351'0004        CMP      R1,#+4
+   \       0xE0   0x2AFF'FFDC        BCS      ??lcdc_set_color_lut_2
+   \       0xE4   0xEAFF'FFF2        B        ??lcdc_set_color_lut_8
+   \                     ??lcdc_set_color_lut_10:
+   \       0xE8   0xE3A0'1000        MOV      R1,#+0
+   \                     ??lcdc_set_color_lut_11:
+   \       0xEC   0xE1A0'2A81        LSL      R2,R1,#+21
+   \       0xF0   0xE3A0'3008        MOV      R3,#+8
+   \                     ??lcdc_set_color_lut_12:
+   \       0xF4   0xE580'2000        STR      R2,[R0, #+0]
+   \       0xF8   0xE282'C040        ADD      R12,R2,#+64
+   \       0xFC   0xE580'C004        STR      R12,[R0, #+4]
+   \      0x100   0xE282'E080        ADD      LR,R2,#+128
+   \      0x104   0xE580'E008        STR      LR,[R0, #+8]
+   \      0x108   0xE282'C0C0        ADD      R12,R2,#+192
+   \      0x10C   0xE580'C00C        STR      R12,[R0, #+12]
+   \      0x110   0xE280'0010        ADD      R0,R0,#+16
+   \      0x114   0xE282'2D80        ADD      R2,R2,#+8192
+   \      0x118   0xE253'3001        SUBS     R3,R3,#+1
+   \      0x11C   0x1AFF'FFF4        BNE      ??lcdc_set_color_lut_12
+   \      0x120   0xE281'1001        ADD      R1,R1,#+1
+   \      0x124   0xE351'0008        CMP      R1,#+8
+   \      0x128   0x3AFF'FFEF        BCC      ??lcdc_set_color_lut_11
+   \      0x12C   0xE8BD'8000        POP      {PC}
+    821          //swap
+    822          #if 1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    823          void * lcdc_put_image_rotated(uint8_t layer_id,
+    824          			     void *buffer, uint8_t bpp,
+    825          			     uint32_t x, uint32_t y,
+    826          			     int32_t w, int32_t h,
+    827          			     uint32_t img_w, uint32_t img_h, int16_t rotation)
+    828          {
+   \                     lcdc_put_image_rotated:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1A0'4001        MOV      R4,R1
+    829          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    830          	struct _layer_data *data = layer->data;
+   \        0x8   0xE3A0'1034        MOV      R1,#+52
+   \        0xC   0xE160'0081        SMULBB   R0,R1,R0
+   \       0x10   0x....'....        LDR      R1,??DataTable28
+    831          
+    832          	void *old_buffer = data->buffer;
+    833          	//layer->reg_cfg[1] = LCDC_HEOCFG1_RGBMODE_24BPP_RGB_888_PACKED;
+    834                  //layer->reg_cfg[1] = LCDC_HEOCFG1_RGBMODE_24BPP_RGB_888;
+    835                  data->buffer = buffer;
+    836          	/* No rotation optimization */
+    837          //	layer->reg_cfg[0] |= LCDC_HEOCFG0_ROTDIS;
+    838          //	layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(0);	
+    839          	
+    840          	_set_dma_desc(buffer, data->dma_desc, layer->reg_dma_head);
+   \       0x14   0xE3A0'9001        MOV      R9,#+1
+   \       0x18   0xE791'2000        LDR      R2,[R1, +R0]
+   \       0x1C   0xE081'6000        ADD      R6,R1,R0
+   \       0x20   0xE592'500C        LDR      R5,[R2, #+12]
+   \       0x24   0xE582'400C        STR      R4,[R2, #+12]
+   \       0x28   0xE592'8000        LDR      R8,[R2, #+0]
+   \       0x2C   0xE596'7010        LDR      R7,[R6, #+16]
+   \       0x30   0xE588'4000        STR      R4,[R8, #+0]
+   \       0x34   0xE588'9004        STR      R9,[R8, #+4]
+   \       0x38   0xE588'8008        STR      R8,[R8, #+8]
+   \       0x3C   0xE3A0'1010        MOV      R1,#+16
+   \       0x40   0xE1A0'0008        MOV      R0,R8
+   \       0x44   0x....'....        BL       cache_clean_region
+   \       0x48   0xE587'4004        STR      R4,[R7, #+4]
+   \       0x4C   0xE587'9008        STR      R9,[R7, #+8]
+   \       0x50   0xE587'800C        STR      R8,[R7, #+12]
+    841          	
+    842          	
+    843          	layer->reg_blender[0] |= LCDC_HEOCFG12_DMA | LCDC_HEOCFG12_OVR;
+   \       0x54   0xE596'000C        LDR      R0,[R6, #+12]
+   \       0x58   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x5C   0xE381'2F60        ORR      R2,R1,#0x180
+   \       0x60   0xE580'2000        STR      R2,[R0, #+0]
+    844          	
+    845          	/* Enable & Update */
+    846          	/* 5. Enable the relevant channel by writing one to the CHEN field of the
+    847          	   CHXCHER register. */
+    848          	layer->reg_enable[0] = LCDC_HEOCHER_UPDATEEN | LCDC_HEOCHER_CHEN;
+   \       0x64   0xE596'1008        LDR      R1,[R6, #+8]
+   \       0x68   0xE3A0'0003        MOV      R0,#+3
+   \       0x6C   0xE581'0000        STR      R0,[R1, #+0]
+    849                  
+    850          	/* 6. An interrupt may be raised if unmasked when the descriptor has been
+    851          	   loaded.  */
+    852          
+    853          	return old_buffer;
+   \       0x70   0xE1A0'0005        MOV      R0,R5
+   \       0x74   0xE8BD'83F2        POP      {R1,R4-R9,PC}    ;; return
+    854          }
+    855          #endif 
+    856          #if 0
+    857          /**
+    858           * Display an image on specified layer.
+    859           * (Image scan origion: Left -> Right, Top -> Bottom.)
+    860           * \note w & h should be the rotated result.
+    861           * \note for LCDC_BASE: x, y don't care. w always > 0.
+    862           * \note for LCDC_HEO:imgW & imgH is used.
+    863           * \param layer_id  Layer ID (OVR1 or HEO).
+    864           * \param buffer Pointer to image data.
+    865           * \param bpp     Bits Per Pixel.
+    866           *                - 16: TRGB 1555
+    867           *                - 24:  RGB  888  packed
+    868           *                - 32: ARGB 8888
+    869           * \param x       X position.
+    870           * \param y       Y position.
+    871           * \param w       Width  (<0 means Right  -> Left data).
+    872           * \param h       Height (<0 means Bottom -> Top data).
+    873           * \param imgW    Source image width.
+    874           * \param imgH    Source image height.
+    875           * \param wRotate Rotation (clockwise, 0, 90, 180, 270 accepted).
+    876           */
+    877          void * lcdc_put_image_rotated(uint8_t layer_id,
+    878          			     void *buffer, uint8_t bpp,
+    879          			     uint32_t x, uint32_t y,
+    880          			     int32_t w, int32_t h,
+    881          			     uint32_t img_w, uint32_t img_h, int16_t rotation)
+    882          {
+    883          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+    884          	struct _layer_data *data = layer->data;
+    885          
+    886          	uint8_t bottom_up = (h < 0);
+    887          	uint8_t right_left = (w < 0);
+    888          	uint32_t padding = 0;
+    889          	int32_t src_w, src_h;
+    890          	uint32_t bits_per_row, bytes_per_row;
+    891          	uint32_t bytes_per_pixel = bpp >> 3;
+    892          
+    893          	void *old_buffer = data->buffer;
+    894          
+    895          	if (!layer->reg_cfg)
+    896          		return old_buffer;
+    897          
+    898          	//printf("Show %x @ %d: (%d,%d)+(%d,%d) img %d x %d * %d\n\r", buffer, layer_id, x, y, w, h, img_w, img_h, bpp);
+    899          
+    900          	switch (bpp) {
+    901          	/*  RGB 565 */
+    902          	case 16:
+    903          #ifdef LCDC_HEOCFG1_YUVEN
+    904          		if ((layer->reg_cfg[1] & LCDC_HEOCFG1_YUVEN) == LCDC_HEOCFG1_YUVEN) {
+    905          			layer->reg_cfg[1] = layer->reg_cfg[1] & (~LCDC_HEOCFG1_YUVMODE_Msk) | LCDC_HEOCFG1_YUVMODE_16BPP_YCBCR_MODE0;
+    906          		} else
+    907          #endif
+    908          		{
+    909          			layer->reg_cfg[1] = LCDC_HEOCFG1_RGBMODE_16BPP_RGB_565;
+    910          		}
+    911          		break;
+    912          	/*  RGB  888 packed */
+    913          	case 24:
+    914          		layer->reg_cfg[1] = LCDC_HEOCFG1_RGBMODE_24BPP_RGB_888_PACKED;
+    915          		break;
+    916          	/* ARGB 8888 */
+    917          	case 32:
+    918          		layer->reg_cfg[1] = LCDC_HEOCFG1_RGBMODE_32BPP_ARGB_8888;
+    919          		break;
+    920          	default:
+    921          		return old_buffer;
+    922          	}
+    923          
+    924          	/* Windows position & size check */
+    925          	if (h < 0)
+    926          		h = -h;
+    927          	if (w < 0)
+    928          		w = -w;
+    929          	if (x + w > lcdc_config.width) {
+    930          		//printf("! w %d -> %d\n\r", w, lcdc_config.width-x);
+    931          		w = lcdc_config.width - x;
+    932          	}
+    933          	if (y + h > lcdc_config.height) {
+    934          		//printf("! h %d -> %d\n\r", h, lcdc_config.height-y);
+    935          		h = lcdc_config.height - y;
+    936          	}
+    937          	if (w == 0)
+    938          		w++;
+    939          	if (h == 0)
+    940          		h++;
+    941          	if (img_w == 0)
+    942          		img_w++;
+    943          	if (img_h == 0)
+    944          		img_h++;
+    945          
+    946          	/* Only 0,(-)90,(-)180,(-)270 accepted */
+    947          	switch (rotation) {
+    948          	case 0:
+    949          	case 90:
+    950          	case 180:
+    951          	case 270:
+    952          		break;
+    953          	case -90:
+    954          	case -180:
+    955          	case -270:
+    956          		rotation += 360;
+    957          		break;
+    958          	default:
+    959          		return NULL;
+    960          	}
+    961          
+    962          	/* Setup display buffer & window */
+    963          	if (buffer)
+    964          		data->buffer = buffer;
+    965          	else
+    966          		buffer = data->buffer;
+    967          
+    968          	/* Set display buffer & mode */
+    969          	bits_per_row = img_w * bpp;
+    970          	bytes_per_row = bits_per_row >> 3;
+    971          	if (bits_per_row & 0x7)
+    972          		bytes_per_row++;
+    973          	if (bytes_per_row & 0x3)
+    974          		padding = 4 - (bytes_per_row & 0x3);
+    975          
+    976          	/* No X mirror supported layer, no Right->Left scan */
+    977          	if (!layer->stride_supported)
+    978          		right_left = 0;
+    979          
+    980          	/* --------- Mirror & then rotate --------- */
+    981          	/* Normal direction: Left,Top -> Right,Down */
+    982          	if ((!right_left && !bottom_up && rotation == 0)
+    983          	    || (right_left && bottom_up && rotation == 180)) {
+    984          #ifdef LCDC_HEOCFG1_YUVEN
+    985          		if(layer->reg_cfg[1] & LCDC_HEOCFG1_YUVEN) {
+    986          			/* No rotation optimization */
+    987          			layer->reg_cfg[0] = LCDC_HEOCFG0_BLEN(0x2) | LCDC_HEOCFG0_ROTDIS;
+    988          			layer->reg_cfg[1] &= ~LCDC_HEOCFG1_YUV422ROT;
+    989          			/* X0 ++ */
+    990          			if (layer->stride_supported)
+    991          					layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0);
+    992          			/* Y0 ++ */
+    993          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(0);
+    994          			/* Pointer to Left,Top (x0,y0) */
+    995          		} else
+    996          #endif
+    997          		{
+    998          			/* No rotation optimization */
+    999          			layer->reg_cfg[0] |= LCDC_HEOCFG0_ROTDIS;
+   1000          			/* X0 ++ */
+   1001          			if (layer->stride_supported)
+   1002          				layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0);
+   1003          			/* Y0 ++ */
+   1004          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(padding);
+   1005          			/* Pointer to Left,Top (x0,y0) */
+   1006          		}
+   1007          	}
+   1008          	/* X mirror: Right,Top -> Left,Down */
+   1009          	else if ((right_left && !bottom_up && rotation == 0)
+   1010          		 || (!right_left && bottom_up && rotation == 180)) {
+   1011          #ifdef LCDC_HEOCFG1_YUVEN
+   1012          		if ((layer->reg_cfg[1] & LCDC_HEOCFG1_YUVEN) == LCDC_HEOCFG1_YUVEN) {
+   1013          			/* No rotation optimization */
+   1014          			layer->reg_cfg[0] = LCDC_HEOCFG0_BLEN(0x2) | LCDC_HEOCFG0_ROTDIS;
+   1015          			layer->reg_cfg[1] &= ~LCDC_HEOCFG1_YUV422ROT;
+   1016          			/* X0 ++ */
+   1017          			if (layer->stride_supported)
+   1018          					layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0 - 2 * bytes_per_pixel - 4);
+   1019          			/* Y0 ++ */
+   1020          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(bytes_per_row * 2 - 2 * bytes_per_pixel - 4);
+   1021          			/* Pointer to Right,Top (x1,y0) */
+   1022          			buffer = (void *)((uint32_t) buffer + bytes_per_row - 4);
+   1023          		} else
+   1024          #endif
+   1025          		{
+   1026          			/* No rotation optimization */
+   1027          			layer->reg_cfg[0] |= LCDC_HEOCFG0_ROTDIS;
+   1028          			/* X1 -- */
+   1029          			if (layer->stride_supported)
+   1030          				layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0 - 2 * bytes_per_pixel);
+   1031          			/* Y0 ++ */
+   1032          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(bytes_per_row * 2 + padding - 2 * bytes_per_pixel);
+   1033          			/* Pointer to Right,Top (x1,y0) */
+   1034          			buffer = (void *)((uint32_t) buffer + bytes_per_pixel * (img_w - 1));
+   1035          		}
+   1036          	}
+   1037          	/* Y mirror: Left,Down -> Right,Top */
+   1038          	else if ((!right_left && bottom_up && rotation == 0)
+   1039          		 || (right_left && !bottom_up && rotation == 180)) {
+   1040          #ifdef LCDC_HEOCFG1_YUVEN
+   1041          		if(layer->reg_cfg[1] & LCDC_HEOCFG1_YUVEN) {
+   1042          			/* No rotation optimization */
+   1043          			layer->reg_cfg[0] = LCDC_HEOCFG0_BLEN(0x2) | LCDC_HEOCFG0_ROTDIS;
+   1044          			layer->reg_cfg[1] &= ~LCDC_HEOCFG1_YUV422ROT;
+   1045          			/* X0 ++ */
+   1046          			if (layer->stride_supported)
+   1047          					layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0);
+   1048          			/* Y0 ++ */
+   1049          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(0 - bytes_per_row * 2);
+   1050          			/* Pointer to Right,Top (x1,y0) */
+   1051          			buffer = (void *)((uint32_t) buffer + bytes_per_row * (img_h - 1));
+   1052          		} else
+   1053          #endif
+   1054          		{
+   1055          			/* No rotation optimization */
+   1056          			layer->reg_cfg[0] |= LCDC_HEOCFG0_ROTDIS;
+   1057          			/* X0 ++ */
+   1058          			if (layer->stride_supported)
+   1059          				layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0);
+   1060          			/* Y1 -- */
+   1061          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(0 - (bytes_per_row * 2 + padding));
+   1062          			/* Pointer to Left,Down (x0,y1) */
+   1063          			buffer = (void *)((uint32_t) buffer + (bytes_per_row + padding) * (img_h - 1));
+   1064          		}
+   1065          	}
+   1066          	/* X,Y mirror: Right,Top -> Left,Down */
+   1067          	else if ((right_left && bottom_up && rotation == 0)
+   1068          		 || (!right_left && !bottom_up && rotation == 180)) {
+   1069          #ifdef LCDC_HEOCFG1_YUVEN
+   1070          		if(layer->reg_cfg[1] & LCDC_HEOCFG1_YUVEN) {
+   1071          			/* No rotation optimization */
+   1072          			layer->reg_cfg[0] = LCDC_HEOCFG0_BLEN(0x2) | LCDC_HEOCFG0_ROTDIS;
+   1073          			layer->reg_cfg[1] &= ~LCDC_HEOCFG1_YUV422ROT;
+   1074          			/* X0 ++ */
+   1075          			if (layer->stride_supported)
+   1076          				  layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0);
+   1077          			/* Y0 ++ */
+   1078          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(0 - bytes_per_row * 2);
+   1079          			/* Pointer to Right,Top (x1,y0) */
+   1080          			buffer = (void *)((uint32_t) buffer + bytes_per_row * (img_h-1));
+   1081          		} else
+   1082          #endif
+   1083          		{
+   1084          			/* No rotation optimization */
+   1085          			layer->reg_cfg[0] |= LCDC_HEOCFG0_ROTDIS;
+   1086          			/* X1 -- */
+   1087          			if (layer->stride_supported)
+   1088          				layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0 - 2 * bytes_per_pixel);
+   1089          			/* Y1 -- */
+   1090          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(0 - (bytes_per_pixel * 2 + padding));
+   1091          			/* Pointer to Left,Down (x1,y1) */
+   1092          			buffer = (void *)((uint32_t) buffer + (bytes_per_row + padding) * (img_h - 1) + (bytes_per_pixel) * (img_w - 1));
+   1093          		}
+   1094          	}
+   1095          	/* Rotate  90: Down,Left -> Top,Right (with w,h swap) */
+   1096          	else if ((!right_left && !bottom_up && rotation == 90)
+   1097          		 || (right_left && bottom_up && rotation == 270)) {
+   1098          #ifdef LCDC_HEOCFG1_YUVEN
+   1099          		if(layer->reg_cfg[1] & LCDC_HEOCFG1_YUVEN) {
+   1100          			/* No rotation optimization */
+   1101          			layer->reg_cfg[0] = LCDC_HEOCFG0_BLEN(0x2) | LCDC_HEOCFG0_ROTDIS;
+   1102          			layer->reg_cfg[1] |= LCDC_HEOCFG1_YUV422ROT;
+   1103          			/* X0 ++ */
+   1104          			if (layer->stride_supported)
+   1105          					layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0 - bytes_per_row - 4);
+   1106          			/* Y0 ++ */
+   1107          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(bytes_per_row * (img_h-1));
+   1108          			/* Pointer to Right,Top (x1,y0) */
+   1109          			buffer = (void *)((uint32_t) buffer + bytes_per_row * (img_h - 1));
+   1110          		} else
+   1111          #endif
+   1112          		{
+   1113          			/* No rotation optimization */
+   1114          			layer->reg_cfg[0] |= LCDC_HEOCFG0_ROTDIS;
+   1115          			/* Y -- as pixels in row */
+   1116          			if (layer->stride_supported)
+   1117          				layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0 - (bytes_per_pixel + bytes_per_row + padding));
+   1118          			/* X ++ as rows */
+   1119          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE((bytes_per_row + padding) * (img_h - 1));
+   1120          			/* Pointer to Bottom,Left */
+   1121          			buffer = (void *)((uint32_t) buffer + (bytes_per_row + padding) * (img_h - 1));
+   1122          		}
+   1123          	}
+   1124          	/* Rotate 270: Top,Right -> Down,Left (with w,h swap) */
+   1125          	else if ((!right_left && !bottom_up && rotation == 270)
+   1126          		 || (right_left && bottom_up && rotation == 90)) {
+   1127          #ifdef LCDC_HEOCFG1_YUVEN
+   1128          		if(layer->reg_cfg[1] & LCDC_HEOCFG1_YUVEN) {
+   1129          			/* No rotation optimization */
+   1130          			layer->reg_cfg[0] = LCDC_HEOCFG0_BLEN(0x2) | LCDC_HEOCFG0_ROTDIS;
+   1131          			layer->reg_cfg[1] |= LCDC_HEOCFG1_YUV422ROT;
+   1132          			/* X0 ++ */
+   1133          			if (layer->stride_supported)
+   1134          					layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(bytes_per_row - 4);
+   1135          			/* Y0 ++ */
+   1136          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE((bytes_per_row * (1 - img_h) - 4 - 4));
+   1137          			/* Pointer to Right,Top (x1,y0) */
+   1138          			buffer = (void *)((uint32_t) buffer + bytes_per_row - 4);
+   1139          		} else
+   1140          #endif
+   1141          		{
+   1142          			/* No rotation optimization */
+   1143          			layer->reg_cfg[0] |= LCDC_HEOCFG0_ROTDIS;
+   1144          			/* Y ++ as pixels in row */
+   1145          			if (layer->stride_supported)
+   1146          				layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(bytes_per_row + padding - bytes_per_pixel);
+   1147          			/* X -- as rows */
+   1148          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(0 - 2 * bytes_per_pixel - (bytes_per_row + padding) * (img_h - 1));
+   1149          			/* Pointer to top right */
+   1150          			buffer = (void *)((uint32_t) buffer + bytes_per_pixel * (img_w - 1));
+   1151          		}
+   1152          	}
+   1153          	/* Mirror X then Rotate 90: Down,Right -> Top,Left */
+   1154          	else if ((right_left && !bottom_up && rotation == 90)
+   1155          		 || (!right_left && bottom_up && rotation == 270)) {
+   1156          #ifdef LCDC_HEOCFG1_YUVEN
+   1157          		if(layer->reg_cfg[1] & LCDC_HEOCFG1_YUVEN) {
+   1158          			/* No rotation optimization */
+   1159          			layer->reg_cfg[0] = LCDC_HEOCFG0_BLEN(0x2) | LCDC_HEOCFG0_ROTDIS;
+   1160          			layer->reg_cfg[1] |= LCDC_HEOCFG1_YUV422ROT;
+   1161          			/* X0 ++ */
+   1162          			if (layer->stride_supported)
+   1163          					layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0 - bytes_per_row - 4);
+   1164          			/* Y0 ++ */
+   1165          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(bytes_per_row * (img_h - 1) - 2 * bytes_per_pixel - 4);
+   1166          			/* Pointer to Right,Top (x1,y0) */
+   1167          			buffer = (void *)((uint32_t) buffer + bytes_per_row * img_h - 4);
+   1168          		} else
+   1169          #endif
+   1170          		{
+   1171          			/* No rotation optimization */
+   1172          			layer->reg_cfg[0] |= LCDC_HEOCFG0_ROTDIS;
+   1173          			/* Y -- as pixels in row */
+   1174          			if (layer->stride_supported)
+   1175          				layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(0 - (bytes_per_pixel + bytes_per_row + padding));
+   1176          			/* X -- as rows */
+   1177          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(0 - 2 * bytes_per_pixel + (bytes_per_row + padding) * (img_h - 1));
+   1178          			/* Pointer to down right (x1,y1) */
+   1179          			buffer = (void *)((uint32_t) buffer + (bytes_per_row + padding) * (img_h - 1) + (bytes_per_pixel) * (img_w - 1));
+   1180          		}
+   1181          	}
+   1182          	/* Mirror Y then Rotate 90: Top,Left -> Down,Right */
+   1183          	else if ((!right_left && bottom_up && rotation == 90)
+   1184          		 || (right_left && !bottom_up && rotation == 270)) {
+   1185          #ifdef LCDC_HEOCFG1_YUVEN
+   1186          		if(layer->reg_cfg[1] & LCDC_HEOCFG1_YUVEN) {
+   1187          			/* No rotation optimization */
+   1188          			layer->reg_cfg[0] = LCDC_HEOCFG0_BLEN(0x2) | LCDC_HEOCFG0_ROTDIS;
+   1189          			layer->reg_cfg[1] |= LCDC_HEOCFG1_YUV422ROT;
+   1190          			/* X0 ++ */
+   1191          			if (layer->stride_supported)
+   1192          					layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(bytes_per_row - 4);
+   1193          			/* Y0 ++ */
+   1194          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(0 - (bytes_per_row * (img_h - 1)));
+   1195          			/* Pointer to Right,Top (x1,y0) */
+   1196          		} else
+   1197          #endif
+   1198          		{
+   1199          			/* No rotation optimization */
+   1200          			layer->reg_cfg[0] |= LCDC_HEOCFG0_ROTDIS;
+   1201          			/* Y ++ as pixels in row */
+   1202          			if (layer->stride_supported)
+   1203          				layer->reg_stride[1] = LCDC_HEOCFG6_PSTRIDE(bytes_per_row + padding - bytes_per_pixel);
+   1204          			/* X ++ as rows */
+   1205          			layer->reg_stride[0] = LCDC_HEOCFG5_XSTRIDE(0 - (bytes_per_row + padding) * (img_h - 1));
+   1206          			/* Pointer to top left (x0,y0) */
+   1207          		}
+   1208          	}
+   1209          
+   1210          	/** DMA is running, just add new descriptor to queue */
+   1211          	if (layer->reg_blender[0] & LCDC_HEOCFG12_DMA) {
+   1212          		data->dma_desc->addr = (uint32_t)buffer;
+   1213          		data->dma_desc->ctrl = LCDC_HEOCTRL_DFETCH;
+   1214          		data->dma_desc->next = (uint32_t)data->dma_desc;
+   1215          		cache_clean_region(data->dma_desc, sizeof(*(data->dma_desc)));
+   1216          		layer->reg_dma_head[0] = (uint32_t)data->dma_desc;
+   1217          		layer->reg_enable[0] = LCDC_HEOCHER_A2QEN;
+   1218          	} else {
+   1219          		/* 2. Write the channel descriptor (DSCR) structure in the system memory by
+   1220          		   writing DSCR.CHXADDR Frame base address, DSCR.CHXCTRL channel control
+   1221          		   and DSCR.CHXNEXT next descriptor location.
+   1222          		   3. If more than one descriptor is expected, the DFETCH field of
+   1223          		   DSCR.CHXCTRL is set to one to enable the descriptor fetch operation.
+   1224          		   4. Write the DSCR.CHXNEXT register with the address location of the
+   1225          		   descriptor structure and set DFETCH field of the DSCR.CHXCTRL register
+   1226          		   to one. */
+   1227          		_set_dma_desc(buffer, data->dma_desc, layer->reg_dma_head);
+   1228          	}
+   1229          
+   1230          	/* Set window & position */
+   1231          	if (layer->reg_win) {
+   1232          		layer->reg_win[0] = LCDC_HEOCFG2_XPOS(x) | LCDC_HEOCFG2_YPOS(y);
+   1233          		layer->reg_win[1] = LCDC_HEOCFG3_XSIZE(w - 1) | LCDC_HEOCFG3_YSIZE(h - 1);
+   1234          	}
+   1235          
+   1236          	/* Scaling setup */
+   1237          	if (layer->reg_win && layer->reg_scale) {
+   1238          		/* Image size only used in scaling */
+   1239          		/* Scaling target */
+   1240          		if (rotation == 90 || rotation == 270) {
+   1241          			src_w = img_h;
+   1242          			src_h = img_w;
+   1243          		} else {
+   1244          			src_w = img_w;
+   1245          			src_h = img_h;
+   1246          		}
+   1247          		layer->reg_win[2] = LCDC_HEOCFG4_XMEMSIZE(src_w - 1)
+   1248          			| LCDC_HEOCFG4_YMEMSIZE(src_h - 1);
+   1249          		/* Scaled */
+   1250          		if (w != src_w || h != src_h) {
+   1251          			uint16_t scale_w, scale_h;
+   1252          			_compute_scaling_factors(layer, &scale_w, &scale_h);
+   1253          			layer->reg_scale[0] = LCDC_HEOCFG13_YFACTOR(scale_h)
+   1254          				| LCDC_HEOCFG13_XFACTOR(scale_w)
+   1255          				| LCDC_HEOCFG13_SCALEN;
+   1256          		}
+   1257          		/* Disable scaling */
+   1258          		else {
+   1259          			layer->reg_scale[0] = 0;
+   1260          		}
+   1261          	}
+   1262          	/* Enable DMA */
+   1263          	if (buffer) {
+   1264          		layer->reg_blender[0] |= LCDC_HEOCFG12_DMA | LCDC_HEOCFG12_OVR;
+   1265          	}
+   1266          	/* Enable & Update */
+   1267          	/* 5. Enable the relevant channel by writing one to the CHEN field of the
+   1268          	   CHXCHER register. */
+   1269          	layer->reg_enable[0] = LCDC_HEOCHER_UPDATEEN | LCDC_HEOCHER_CHEN;
+   1270          
+   1271          	/* 6. An interrupt may be raised if unmasked when the descriptor has been
+   1272          	   loaded.  */
+   1273          
+   1274          	return old_buffer;
+   1275          }
+   1276          
+   1277          
+   1278          #endif
+   1279          /**
+   1280           * Display an image on specified layer.
+   1281           * (Image scan: Left -> Right, Top -> Bottom.)
+   1282           * \param layer_id  Layer ID (OVR1 or HEO).
+   1283           * \param buffer Pointer to image data.
+   1284           * \param bpp     Bits Per Pixel.
+   1285           *                - 16: TRGB 1555
+   1286           *                - 24:  RGB  888  packed
+   1287           *                - 32: ARGB 8888
+   1288           * \param x       X position.
+   1289           * \param y       Y position.
+   1290           * \param w       Width  (<0 means Right  -> Left data).
+   1291           * \param h       Height (<0 means Bottom -> Top data).
+   1292           * \param imgW    Source image width.
+   1293           * \param imgH    Source image height.
+   1294           * \return Pointer to old display image data.
+   1295           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1296          void * lcdc_put_image_scaled(uint8_t layer_id, void *buffer, uint8_t bpp,
+   1297          		uint32_t x, uint32_t y, int32_t w, int32_t h,
+   1298          		uint32_t img_w, uint32_t img_h)
+   1299          {
+   \                     lcdc_put_image_scaled:
+   \        0x0   0xE92D'401C        PUSH     {R2-R4,LR}
+   \        0x4   0xE24D'D018        SUB      SP,SP,#+24
+   1300          	return lcdc_put_image_rotated(layer_id, buffer, bpp, x, y, w, h, img_w,
+   1301          			img_h, 0);
+   \        0x8   0xE59D'4038        LDR      R4,[SP, #+56]
+   \        0xC   0xE3A0'C000        MOV      R12,#+0
+   \       0x10   0xE58D'C014        STR      R12,[SP, #+20]
+   \       0x14   0xE58D'4010        STR      R4,[SP, #+16]
+   \       0x18   0xE59D'C034        LDR      R12,[SP, #+52]
+   \       0x1C   0xE59D'4030        LDR      R4,[SP, #+48]
+   \       0x20   0xE58D'C00C        STR      R12,[SP, #+12]
+   \       0x24   0xE58D'4008        STR      R4,[SP, #+8]
+   \       0x28   0xE59D'C02C        LDR      R12,[SP, #+44]
+   \       0x2C   0xE59D'4028        LDR      R4,[SP, #+40]
+   \       0x30   0xE58D'C004        STR      R12,[SP, #+4]
+   \       0x34   0xE58D'4000        STR      R4,[SP, #+0]
+   \       0x38   0x....'....        B        ?Subroutine0
+   1302          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0x....'....        BL       lcdc_put_image_rotated
+   \        0x4   0xE28D'D020        ADD      SP,SP,#+32
+   \        0x8   0xE8BD'8010        POP      {R4,PC}          ;; return
+   1303          
+   1304          /**
+   1305           * Display an image on specified layer.
+   1306           * (Image scan: Left -> Right, Top -> Bottom.)
+   1307           * \param layer_id  Layer ID (OVR1 or HEO).
+   1308           * \param buffer Pointer to image data.
+   1309           * \param bpp     Bits Per Pixel.
+   1310           *                - 16: TRGB 1555
+   1311           *                - 24:  RGB  888  packed
+   1312           *                - 32: ARGB 8888
+   1313           * \param x       X position.
+   1314           * \param y       Y position.
+   1315           * \param w       Width
+   1316           * \param h       Height (<0 means Bottom -> Top data).
+   1317           * \return Pointer to old display image data.
+   1318           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1319          void * lcdc_put_image(uint8_t layer_id, void *buffer, uint8_t bpp,
+   1320          		uint32_t x, uint32_t y, int32_t w, int32_t h)
+   1321          {
+   \                     lcdc_put_image:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE24D'D018        SUB      SP,SP,#+24
+   1322          	return lcdc_put_image_rotated(layer_id, buffer, bpp, x, y, w, h, w,
+   1323          			h < 0 ? -h : h, 0);
+   \        0x8   0xE59D'C02C        LDR      R12,[SP, #+44]
+   \        0xC   0xE59D'E030        LDR      LR,[SP, #+48]
+   \       0x10   0xE58D'C00C        STR      R12,[SP, #+12]
+   \       0x14   0xE58D'C004        STR      R12,[SP, #+4]
+   \       0x18   0xE35E'0000        CMP      LR,#+0
+   \       0x1C   0xE59D'C028        LDR      R12,[SP, #+40]
+   \       0x20   0x426E'4000        RSBMI    R4,LR,#+0
+   \       0x24   0x51A0'400E        MOVPL    R4,LR
+   \       0x28   0xE3A0'5000        MOV      R5,#+0
+   \       0x2C   0xE58D'5014        STR      R5,[SP, #+20]
+   \       0x30   0xE58D'4010        STR      R4,[SP, #+16]
+   \       0x34   0xE58D'E008        STR      LR,[SP, #+8]
+   \       0x38   0xE58D'C000        STR      R12,[SP, #+0]
+   \       0x3C   0x....'....        BL       lcdc_put_image_rotated
+   \       0x40   0xE28D'D01C        ADD      SP,SP,#+28
+   \       0x44   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+   1324          }
+   1325          
+   1326          /**
+   1327           * Start display on base layer
+   1328           * \param buffer   Pointer to image data.
+   1329           * \param bpp       Bits Per Pixel.
+   1330           * \param bBottomUp Scan from bottom to top.
+   1331           * \return Pointer to old display image data.
+   1332           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1333          void * lcdc_show_base(void *buffer, uint8_t bpp, bool bottom_up)
+   1334          {
+   1335            //int32_t width = 80; int32_t height=48;
+   1336            //return lcdc_put_image(LCDC_BASE, buffer, bpp, 0, 0, width,
+   1337          			//height);
+   1338          	return lcdc_put_image(LCDC_BASE, buffer, bpp, 0, 0, lcdc_config.width,
+   1339          			bottom_up ? -lcdc_config.height : lcdc_config.height);
+   \                     lcdc_show_base:
+   \        0x0   0x....'....        LDR      R3,??DataTable31_1
+   \        0x4   0xE92D'4000        PUSH     {LR}
+   \        0x8   0xE1D3'C0B2        LDRH     R12,[R3, #+2]
+   \        0xC   0xE352'0000        CMP      R2,#+0
+   \       0x10   0xE1D3'20B0        LDRH     R2,[R3, #+0]
+   \       0x14   0xE24D'D00C        SUB      SP,SP,#+12
+   \       0x18   0x126C'C000        RSBNE    R12,R12,#+0
+   \       0x1C   0xE58D'2004        STR      R2,[SP, #+4]
+   \       0x20   0xE1A0'2001        MOV      R2,R1
+   \       0x24   0xE3A0'3000        MOV      R3,#+0
+   \       0x28   0xE1A0'1000        MOV      R1,R0
+   \       0x2C   0xE58D'C008        STR      R12,[SP, #+8]
+   \       0x30   0xE58D'3000        STR      R3,[SP, #+0]
+   \       0x34   0xE3A0'0001        MOV      R0,#+1
+   \       0x38   0x....'....        BL       lcdc_put_image
+   \       0x3C   0xE28D'D00C        ADD      SP,SP,#+12
+   \       0x40   0xE8BD'8000        POP      {PC}             ;; return
+   1340          }
+   1341          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1342          void lcdc_base_auto_loop(void *buffer, uint32_t size, uint32_t slides)
+   1343          {
+   \                     lcdc_base_auto_loop:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'5000        MOV      R5,R0
+   \        0x8   0xE1A0'0001        MOV      R0,R1
+   \        0xC   0xE1A0'1002        MOV      R1,R2
+   1344          	uint32_t i;
+   1345          	ALIGNED(16) static struct _lcdc_dma_desc dma_desc[40];
+   1346          	if (ARRAY_SIZE(dma_desc) < slides * 10) {
+   \       0x10   0xE081'2101        ADD      R2,R1,R1, LSL #+2
+   \       0x14   0xE1A0'2082        LSL      R2,R2,#+1
+   \       0x18   0xE352'0028        CMP      R2,#+40
+   \       0x1C   0x9A00'0006        BLS      ??lcdc_base_auto_loop_0
+   1347          		trace_warning("The DMA link size is not suitable for showing the loop effects on the base layer!");
+   \       0x20   0x....'....        LDR      R0,??DataTable31_2
+   \       0x24   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x28   0xE351'0003        CMP      R1,#+3
+   \       0x2C   0x3A00'001C        BCC      ??lcdc_base_auto_loop_1
+   \       0x30   0xE8BD'40F2        POP      {R1,R4-R7,LR}
+   \       0x34   0x....'....        LDR      R0,??DataTable31_3
+   \       0x38   0x....'....        B        printf           ;; tailcall
+   1348          		return;
+   1349          	}
+   1350          	for (i = 0; i < ARRAY_SIZE(dma_desc); i++) {
+   \                     ??lcdc_base_auto_loop_0:
+   \       0x3C   0x....'....        BL       __aeabi_uidiv
+   \       0x40   0x....'....        LDR      R4,??DataTable31_4
+   \       0x44   0xE3A0'6000        MOV      R6,#+0
+   \       0x48   0xE1A0'7004        MOV      R7,R4
+   \       0x4C   0xE3A0'1001        MOV      R1,#+1
+   1351          		dma_desc[i].addr = (uint32_t)buffer + (i / 10) * (size / slides);
+   \                     ??lcdc_base_auto_loop_2:
+   \       0x50   0x....'....        LDR      R3,??DataTable31_5  ;; 0xcccccccd
+   1352          		dma_desc[i].ctrl = LCDC_HEOCTRL_DFETCH;
+   1353          		dma_desc[i].next = (uint32_t)&dma_desc[i+1];
+   \       0x54   0xE287'C010        ADD      R12,R7,#+16
+   \       0x58   0xE082'3396        UMULL    R3,R2,R6,R3
+   \       0x5C   0xE1A0'21A2        LSR      R2,R2,#+3
+   \       0x60   0xE022'5290        MLA      R2,R0,R2,R5
+   1354          	}
+   \       0x64   0xE286'6001        ADD      R6,R6,#+1
+   \       0x68   0xE587'2000        STR      R2,[R7, #+0]
+   \       0x6C   0xE587'1004        STR      R1,[R7, #+4]
+   \       0x70   0xE587'C008        STR      R12,[R7, #+8]
+   \       0x74   0xE287'7010        ADD      R7,R7,#+16
+   \       0x78   0xE356'0028        CMP      R6,#+40
+   \       0x7C   0x3AFF'FFF3        BCC      ??lcdc_base_auto_loop_2
+   1355          	dma_desc[i-1].next = (uint32_t)&dma_desc[0];
+   \       0x80   0xE084'0206        ADD      R0,R4,R6, LSL #+4
+   \       0x84   0xE500'4008        STR      R4,[R0, #-8]
+   1356          	cache_clean_region(dma_desc, sizeof(dma_desc));
+   \       0x88   0xE3A0'1FA0        MOV      R1,#+640
+   \       0x8C   0xE1A0'0004        MOV      R0,R4
+   \       0x90   0x....'....        BL       cache_clean_region
+   1357          	lcdc_layers[LCDC_BASE].reg_dma_head[0] = (uint32_t)dma_desc;
+   \       0x94   0x....'....        LDR      R0,??DataTable31_6  ;; 0xf8038060
+   1358          	lcdc_layers[LCDC_BASE].reg_enable[0] = LCDC_HEOCHER_A2QEN;
+   \       0x98   0xE3A0'1004        MOV      R1,#+4
+   \       0x9C   0xE580'401C        STR      R4,[R0, #+28]
+   \       0xA0   0xE580'1000        STR      R1,[R0, #+0]
+   1359          }
+   \                     ??lcdc_base_auto_loop_1:
+   \       0xA4   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+
+   \                                 In section .bss, align 16
+   \                     `lcdc_base_auto_loop::dma_desc`:
+   \        0x0                      DS8 640
+   1360          
+   1361          /**
+   1362           * Stop display on base layer
+   1363           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1364          void lcdc_stop_base(void)
+   1365          {
+   \                     lcdc_stop_base:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   1366          	if (!(LCDC->LCDC_BASECHSR & LCDC_BASECHSR_CHSR))
+   \        0x4   0x....'....        LDR      R4,??DataTable31_7  ;; 0xf8038064
+   \        0x8   0xE594'0004        LDR      R0,[R4, #+4]
+   \        0xC   0xE310'0001        TST      R0,#0x1
+   \       0x10   0x0A00'0012        BEQ      ??lcdc_stop_base_0
+   1367          		return;
+   1368          
+   1369          	/* 1. Clear the DFETCH bit in the DSCR.CHXCTRL field of the DSCR structure
+   1370          	   will disable the channel at the end of the frame. */
+   1371          	/* 2. Set the DSCR.CHXNEXT field of the DSCR structure will disable the
+   1372          	   channel at the end of the frame. */
+   1373          	_clear_dma_desc(lcdc_base.dma_desc, &LCDC->LCDC_BASEHEAD);
+   \       0x14   0x....'....        LDR      R0,??DataTable31_1
+   \       0x18   0xE590'0018        LDR      R0,[R0, #+24]
+   \       0x1C   0xE1B0'5000        MOVS     R5,R0
+   \       0x20   0x0A00'0005        BEQ      ??lcdc_stop_base_1
+   \       0x24   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x28   0xE580'5008        STR      R5,[R0, #+8]
+   \       0x2C   0xE3C1'2001        BIC      R2,R1,#0x1
+   \       0x30   0xE580'2004        STR      R2,[R0, #+4]
+   \       0x34   0xE3A0'1010        MOV      R1,#+16
+   \       0x38   0x....'....        BL       cache_clean_region
+   \                     ??lcdc_stop_base_1:
+   \       0x3C   0xE594'0020        LDR      R0,[R4, #+32]
+   \       0x40   0xE3C0'1001        BIC      R1,R0,#0x1
+   \       0x44   0xE584'1020        STR      R1,[R4, #+32]
+   \       0x48   0xE584'5024        STR      R5,[R4, #+36]
+   1374          
+   1375          	/* 3. Writing one to the CHDIS field of the CHXCHDR register will disable
+   1376          	   the channel at the end of the frame. */
+   1377          	LCDC->LCDC_BASECHDR = LCDC_BASECHDR_CHDIS;
+   \       0x4C   0xE3A0'0001        MOV      R0,#+1
+   \       0x50   0xE584'0000        STR      R0,[R4, #+0]
+   1378          
+   1379          	/* 4. Writing one to the CHRST field of the CHXCHDR register will disable
+   1380          	   the channel immediately. This may occur in the middle of the image. */
+   1381          
+   1382          	/* 5. Poll CHSR field in the CHXCHSR register until the channel is
+   1383          	   successfully disabled. */
+   1384          	while (LCDC->LCDC_BASECHSR & LCDC_BASECHSR_CHSR);
+   \                     ??lcdc_stop_base_2:
+   \       0x54   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x58   0xE311'0001        TST      R1,#0x1
+   \       0x5C   0x1AFF'FFFC        BNE      ??lcdc_stop_base_2
+   1385          }
+   \                     ??lcdc_stop_base_0:
+   \       0x60   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+   1386          
+   1387          #ifdef CONFIG_HAVE_LCDC_OVR1
+   1388          /**
+   1389           * Start display on overlay 1 layer
+   1390           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1391          void *lcdc_show_ovr1(void *buffer, uint8_t bpp, uint32_t x, uint32_t y,
+   1392          		int32_t w, int32_t h)
+   1393          {
+   \                     lcdc_show_ovr1:
+   \        0x0   0xE92D'4030        PUSH     {R4,R5,LR}
+   \        0x4   0xE24D'D00C        SUB      SP,SP,#+12
+   1394          	return lcdc_put_image(LCDC_OVR1, buffer, bpp, x, y, w, h);
+   \        0x8   0xE58D'3000        STR      R3,[SP, #+0]
+   \        0xC   0xE1A0'3002        MOV      R3,R2
+   \       0x10   0xE59D'E01C        LDR      LR,[SP, #+28]
+   \       0x14   0xE59D'5018        LDR      R5,[SP, #+24]
+   \       0x18   0xE1A0'2001        MOV      R2,R1
+   \       0x1C   0xE1A0'1000        MOV      R1,R0
+   \       0x20   0xE58D'E008        STR      LR,[SP, #+8]
+   \       0x24   0xE58D'5004        STR      R5,[SP, #+4]
+   \       0x28   0xE3A0'0002        MOV      R0,#+2
+   \       0x2C   0x....'....        BL       lcdc_put_image
+   \       0x30   0xE28D'D010        ADD      SP,SP,#+16
+   \       0x34   0xE8BD'8020        POP      {R5,PC}          ;; return
+   1395          }
+   1396          
+   1397          /**
+   1398           * Stop display on overlay 1 layer
+   1399           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1400          void lcdc_stop_ovr1(void)
+   1401          {
+   \                     lcdc_stop_ovr1:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   1402          	if (!(LCDC->LCDC_OVR1CHSR & LCDC_OVR1CHSR_CHSR))
+   \        0x4   0x....'....        LDR      R4,??DataTable31_8  ;; 0xf8038164
+   \        0x8   0xE594'0004        LDR      R0,[R4, #+4]
+   \        0xC   0xE310'0001        TST      R0,#0x1
+   \       0x10   0x0A00'0012        BEQ      ??lcdc_stop_ovr1_0
+   1403          		return;
+   1404          
+   1405          	/* 1. Clear the DFETCH bit in the DSCR.CHXCTRL field of the DSCR structure
+   1406          	   will disable the channel at the end of the frame. */
+   1407          	/* 2. Set the DSCR.CHXNEXT field of the DSCR structure will disable the
+   1408          	   channel at the end of the frame. */
+   1409          	_clear_dma_desc(lcdc_ovr1.dma_desc, &LCDC->LCDC_OVR1HEAD);
+   \       0x14   0x....'....        LDR      R0,??DataTable31_1
+   \       0x18   0xE590'002C        LDR      R0,[R0, #+44]
+   \       0x1C   0xE1B0'5000        MOVS     R5,R0
+   \       0x20   0x0A00'0005        BEQ      ??lcdc_stop_ovr1_1
+   \       0x24   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x28   0xE580'5008        STR      R5,[R0, #+8]
+   \       0x2C   0xE3C1'2001        BIC      R2,R1,#0x1
+   \       0x30   0xE580'2004        STR      R2,[R0, #+4]
+   \       0x34   0xE3A0'1010        MOV      R1,#+16
+   \       0x38   0x....'....        BL       cache_clean_region
+   \                     ??lcdc_stop_ovr1_1:
+   \       0x3C   0xE594'0020        LDR      R0,[R4, #+32]
+   \       0x40   0xE3C0'1001        BIC      R1,R0,#0x1
+   \       0x44   0xE584'1020        STR      R1,[R4, #+32]
+   \       0x48   0xE584'5024        STR      R5,[R4, #+36]
+   1410          
+   1411          	/* 3. Writing one to the CHDIS field of the CHXCHDR register will disable
+   1412          	   the channel at the end of the frame. */
+   1413          	LCDC->LCDC_OVR1CHDR = LCDC_OVR1CHDR_CHDIS;
+   \       0x4C   0xE3A0'0001        MOV      R0,#+1
+   \       0x50   0xE584'0000        STR      R0,[R4, #+0]
+   1414          
+   1415          	/* 4. Writing one to the CHRST field of the CHXCHDR register will disable
+   1416          	   the channel immediately. This may occur in the middle of the image. */
+   1417          
+   1418          	/* 5. Poll CHSR field in the CHXCHSR register until the channel is
+   1419          	   successfully disabled. */
+   1420          	while (LCDC->LCDC_OVR1CHSR & LCDC_OVR1CHSR_CHSR);
+   \                     ??lcdc_stop_ovr1_2:
+   \       0x54   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x58   0xE311'0001        TST      R1,#0x1
+   \       0x5C   0x1AFF'FFFC        BNE      ??lcdc_stop_ovr1_2
+   1421          }
+   \                     ??lcdc_stop_ovr1_0:
+   \       0x60   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+   1422          #endif /* CONFIG_HAVE_LCDC_OVR1 */
+   1423          
+   1424          /**
+   1425           * Start display on High End Overlay layer
+   1426           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1427          void *lcdc_show_heo(void *buffer, uint8_t bpp, uint32_t x, uint32_t y,
+   1428          		int32_t w, int32_t h, uint32_t img_w, uint32_t img_h)
+   1429          {
+   \                     lcdc_show_heo:
+   \        0x0   0xE92D'401C        PUSH     {R2-R4,LR}
+   \        0x4   0xE24D'D018        SUB      SP,SP,#+24
+   1430          	return lcdc_put_image_rotated(LCDC_HEO, buffer, bpp, x, y, w, h,
+   1431          			img_w, img_h, 0);
+   \        0x8   0xE3A0'C000        MOV      R12,#+0
+   \        0xC   0xE58D'C014        STR      R12,[SP, #+20]
+   \       0x10   0xE59D'4034        LDR      R4,[SP, #+52]
+   \       0x14   0xE59D'C030        LDR      R12,[SP, #+48]
+   \       0x18   0xE58D'3000        STR      R3,[SP, #+0]
+   \       0x1C   0xE58D'4010        STR      R4,[SP, #+16]
+   \       0x20   0xE58D'C00C        STR      R12,[SP, #+12]
+   \       0x24   0xE1A0'3002        MOV      R3,R2
+   \       0x28   0xE59D'402C        LDR      R4,[SP, #+44]
+   \       0x2C   0xE59D'C028        LDR      R12,[SP, #+40]
+   \       0x30   0xE1A0'2001        MOV      R2,R1
+   \       0x34   0xE1A0'1000        MOV      R1,R0
+   \       0x38   0xE58D'4008        STR      R4,[SP, #+8]
+   \       0x3C   0xE58D'C004        STR      R12,[SP, #+4]
+   \       0x40   0xE3A0'0003        MOV      R0,#+3
+   \       0x44                      REQUIRE ?Subroutine0
+   \       0x44                      ;; // Fall through to label ?Subroutine0
+   1432          }
+   1433          
+   1434          /**
+   1435           * Stop display on High End Overlay layer
+   1436           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1437          void lcdc_stop_heo(void)
+   1438          {
+   \                     lcdc_stop_heo:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   1439          	if (!(LCDC->LCDC_HEOCHSR & LCDC_HEOCHSR_CHSR))
+   \        0x4   0x....'....        LDR      R4,??DataTable31_9  ;; 0xf8038364
+   \        0x8   0xE594'0004        LDR      R0,[R4, #+4]
+   \        0xC   0xE310'0001        TST      R0,#0x1
+   \       0x10   0x0A00'000E        BEQ      ??lcdc_stop_heo_0
+   1440          		return;
+   1441          
+   1442          	/* 1. Clear the DFETCH bit in the DSCR.CHXCTRL field of the DSCR structure
+   1443          	   will disable the channel at the end of the frame. */
+   1444          	/* 2. Set the DSCR.CHXNEXT field of the DSCR structure will disable the
+   1445          	   channel at the end of the frame. */
+   1446          	_clear_dma_desc(lcdc_heo.dma_desc, &LCDC->LCDC_HEOHEAD);
+   \       0x14   0x....'....        LDR      R5,??DataTable31_1
+   \       0x18   0xE384'1018        ORR      R1,R4,#0x18
+   \       0x1C   0xE595'0054        LDR      R0,[R5, #+84]
+   \       0x20   0x....'....        BL       _clear_dma_desc
+   1447          	_clear_dma_desc(lcdc_heo.dma_u_desc, &LCDC->LCDC_HEOUHEAD);
+   \       0x24   0xE284'1028        ADD      R1,R4,#+40
+   \       0x28   0xE595'0058        LDR      R0,[R5, #+88]
+   \       0x2C   0x....'....        BL       _clear_dma_desc
+   1448          	_clear_dma_desc(lcdc_heo.dma_v_desc, &LCDC->LCDC_HEOVHEAD);
+   \       0x30   0xE284'1038        ADD      R1,R4,#+56
+   \       0x34   0xE595'005C        LDR      R0,[R5, #+92]
+   \       0x38   0x....'....        BL       _clear_dma_desc
+   1449          
+   1450          	/* 3. Writing one to the CHDIS field of the CHXCHDR register will disable
+   1451          	   the channel at the end of the frame. */
+   1452          	LCDC->LCDC_HEOCHDR = LCDC_HEOCHDR_CHDIS;
+   \       0x3C   0xE3A0'0001        MOV      R0,#+1
+   \       0x40   0xE584'0000        STR      R0,[R4, #+0]
+   1453          
+   1454          	/* 4. Writing one to the CHRST field of the CHXCHDR register will disable
+   1455          	   the channel immediately. This may occur in the middle of the image. */
+   1456          
+   1457          	/* 5. Poll CHSR field in the CHXCHSR register until the channel is
+   1458          	   successfully disabled. */
+   1459          	while (LCDC->LCDC_HEOCHSR & LCDC_HEOCHSR_CHSR);
+   \                     ??lcdc_stop_heo_1:
+   \       0x44   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x48   0xE311'0001        TST      R1,#0x1
+   \       0x4C   0x1AFF'FFFC        BNE      ??lcdc_stop_heo_1
+   1460          }
+   \                     ??lcdc_stop_heo_0:
+   \       0x50   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+   1461          
+   1462          /**
+   1463           * \brief Turn on the LCD.
+   1464           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1465          void lcdc_on(void)
+   1466          {
+   \                     lcdc_on:
+   \        0x0   0xE92D'403E        PUSH     {R1-R5,LR}
+   1467          	uint32_t cfg0;
+   1468          	uint32_t pixel_clock = lcdc_config.framerate;
+   1469          	uint32_t lcd_clock;
+   1470          	pixel_clock *= lcdc_config.timing_hpw + lcdc_config.timing_hbp +
+   1471          		lcdc_config.width + lcdc_config.timing_hfp;
+   1472          	pixel_clock *= lcdc_config.timing_vpw + lcdc_config.timing_vbp +
+   1473          		lcdc_config.height + lcdc_config.timing_vfp;
+   \        0x4   0x....'....        LDR      R4,??DataTable26
+   \        0x8   0xE5D4'100A        LDRB     R1,[R4, #+10]
+   \        0xC   0xE5D4'2009        LDRB     R2,[R4, #+9]
+   \       0x10   0xE1D4'30B0        LDRH     R3,[R4, #+0]
+   \       0x14   0xE5D4'0004        LDRB     R0,[R4, #+4]
+   \       0x18   0xE082'2001        ADD      R2,R2,R1
+   \       0x1C   0xE5D4'1008        LDRB     R1,[R4, #+8]
+   \       0x20   0xE083'3002        ADD      R3,R3,R2
+   \       0x24   0xE5D4'2007        LDRB     R2,[R4, #+7]
+   \       0x28   0xE081'1003        ADD      R1,R1,R3
+   \       0x2C   0xE000'0091        MUL      R0,R1,R0
+   \       0x30   0xE5D4'1006        LDRB     R1,[R4, #+6]
+   \       0x34   0xE081'1002        ADD      R1,R1,R2
+   \       0x38   0xE1D4'20B2        LDRH     R2,[R4, #+2]
+   \       0x3C   0xE082'2001        ADD      R2,R2,R1
+   \       0x40   0xE5D4'1005        LDRB     R1,[R4, #+5]
+   \       0x44   0xE081'1002        ADD      R1,R1,R2
+   \       0x48   0xE005'0091        MUL      R5,R1,R0
+   1474          
+   1475          	/* Enable peripheral clock and LCD system clock */
+   1476          	if (pmc_has_system_clock(PMC_SYSTEM_CLOCK_LCD)) {
+   \       0x4C   0xE3A0'0001        MOV      R0,#+1
+   \       0x50   0x....'....        BL       pmc_has_system_clock
+   \       0x54   0xE350'0000        CMP      R0,#+0
+   \       0x58   0x0A00'0007        BEQ      ??lcdc_on_0
+   1477          		pmc_configure_peripheral(ID_LCDC, NULL, true);
+   \       0x5C   0xE3A0'2001        MOV      R2,#+1
+   \       0x60   0xE3A0'1000        MOV      R1,#+0
+   \       0x64   0xE3A0'0019        MOV      R0,#+25
+   \       0x68   0x....'....        BL       pmc_configure_peripheral
+   1478          		pmc_enable_system_clock(PMC_SYSTEM_CLOCK_LCD);
+   \       0x6C   0xE3A0'0001        MOV      R0,#+1
+   \       0x70   0x....'....        BL       pmc_enable_system_clock
+   1479          		lcd_clock = pmc_get_master_clock();
+   \       0x74   0x....'....        BL       pmc_get_master_clock
+   \       0x78   0xEA00'0008        B        ??lcdc_on_1
+   1480          	} else {
+   1481          #ifdef CONFIG_HAVE_PMC_GENERATED_CLOCKS
+   1482          		struct _pmc_periph_cfg cfg = {
+   1483          			.gck = {
+   1484          				.css = PMC_PCR_GCKCSS_MCK_CLK,
+   1485          				.div = 2,
+   1486          			},
+   1487          		};
+   \                     ??lcdc_on_0:
+   \       0x7C   0x....'....        LDR      R0,??DataTable31_10
+   \       0x80   0xE1A0'100D        MOV      R1,SP
+   \       0x84   0xE890'000C        LDM      R0,{R2,R3}
+   1488          		pmc_configure_peripheral(ID_LCDC, &cfg, true);
+   \       0x88   0xE3A0'0019        MOV      R0,#+25
+   \       0x8C   0xE881'000C        STM      R1,{R2,R3}
+   \       0x90   0xE3A0'2001        MOV      R2,#+1
+   \       0x94   0x....'....        BL       pmc_configure_peripheral
+   1489          		lcd_clock = pmc_get_gck_clock(ID_LCDC);
+   \       0x98   0xE3A0'0019        MOV      R0,#+25
+   \       0x9C   0x....'....        BL       pmc_get_gck_clock
+   1490          #else
+   1491          		lcd_clock = pmc_get_master_clock();
+   1492          #endif
+   1493          	}
+   1494          	/* 1. Configure LCD timing parameters, signal polarity and clock period. */
+   1495          #ifdef LCDC_LCDCFG0_CLKSEL
+   1496          	cfg0 = LCDC_LCDCFG0_CLKDIV((lcd_clock * 2) / pixel_clock - 2) |
+   1497          	       LCDC_LCDCFG0_CGDISBASE |
+   1498          	       LCDC_LCDCFG0_CGDISHEO |
+   1499          	       LCDC_LCDCFG0_CLKPWMSEL |
+   1500          	       LCDC_LCDCFG0_CLKSEL;
+   1501          #else
+   1502          	cfg0 = LCDC_LCDCFG0_CLKDIV(lcd_clock / pixel_clock - 2) |
+   1503          	       LCDC_LCDCFG0_CGDISBASE |
+   1504          	       LCDC_LCDCFG0_CGDISHEO |
+   1505          	       LCDC_LCDCFG0_CLKPWMSEL;
+   1506          #endif
+   1507          
+   1508          #ifdef LCDC_LCDCFG0_CGDISOVR1
+   1509          	cfg0 |= LCDC_LCDCFG0_CGDISOVR1;
+   1510          #endif
+   1511          #ifdef LCDC_LCDCFG0_CGDISOVR2
+   1512          	cfg0 |= LCDC_LCDCFG0_CGDISOVR2;
+   \                     ??lcdc_on_1:
+   \       0xA0   0xE1A0'1005        MOV      R1,R5
+   \       0xA4   0x....'....        BL       __aeabi_uidiv
+   \       0xA8   0xE240'0002        SUB      R0,R0,#+2
+   \       0xAC   0xE3A0'18FF        MOV      R1,#+16711680
+   \       0xB0   0xE001'1800        AND      R1,R1,R0, LSL #+16
+   \       0xB4   0xE381'1FC2        ORR      R1,R1,#0x308
+   \       0xB8   0xE3A0'04F8        MOV      R0,#-134217728
+   \       0xBC   0xE381'1EC0        ORR      R1,R1,#0xC00
+   \       0xC0   0xE380'0BE0        ORR      R0,R0,#0x38000
+   1513          #endif
+   1514          #ifdef LCDC_LCDCFG0_CGDISHCR
+   1515          	cfg0 |= LCDC_LCDCFG0_CGDISHCR;
+   1516          #endif
+   1517          #ifdef LCDC_LCDCFG0_CGDISPP
+   1518          	cfg0 |= LCDC_LCDCFG0_CGDISPP;
+   1519          #endif
+   1520          	_wait_for_clock_domain_sync();
+   \                     ??lcdc_on_2:
+   \       0xC4   0xE590'2028        LDR      R2,[R0, #+40]
+   \       0xC8   0xE312'0010        TST      R2,#0x10
+   \       0xCC   0x1AFF'FFFC        BNE      ??lcdc_on_2
+   1521          	LCDC->LCDC_LCDCFG0 = cfg0;
+   \       0xD0   0xE580'1000        STR      R1,[R0, #+0]
+   1522          
+   1523          	_wait_for_clock_domain_sync();
+   \                     ??lcdc_on_3:
+   \       0xD4   0xE590'1028        LDR      R1,[R0, #+40]
+   \       0xD8   0xE311'0010        TST      R1,#0x10
+   \       0xDC   0x1AFF'FFFC        BNE      ??lcdc_on_3
+   1524          	LCDC->LCDC_LCDCFG1 = LCDC_LCDCFG1_VSPW(lcdc_config.timing_vpw - 1) |
+   1525          	                     LCDC_LCDCFG1_HSPW(lcdc_config.timing_hpw - 1);
+   \       0xE0   0xE5D4'3007        LDRB     R3,[R4, #+7]
+   \       0xE4   0xE3A0'10FF        MOV      R1,#+255
+   \       0xE8   0xE381'1FC0        ORR      R1,R1,#0x300
+   \       0xEC   0xE1A0'2801        MOV      R2,R1, LSL #+16
+   \       0xF0   0xE243'C001        SUB      R12,R3,#+1
+   \       0xF4   0xE5D4'300A        LDRB     R3,[R4, #+10]
+   \       0xF8   0xE002'E80C        AND      LR,R2,R12, LSL #+16
+   \       0xFC   0xE243'C001        SUB      R12,R3,#+1
+   \      0x100   0xE001'C00C        AND      R12,R1,R12
+   \      0x104   0xE18C'C00E        ORR      R12,R12,LR
+   \      0x108   0xE580'C004        STR      R12,[R0, #+4]
+   1526          
+   1527          	_wait_for_clock_domain_sync();
+   \                     ??lcdc_on_4:
+   \      0x10C   0xE590'3028        LDR      R3,[R0, #+40]
+   \      0x110   0xE313'0010        TST      R3,#0x10
+   \      0x114   0x1AFF'FFFC        BNE      ??lcdc_on_4
+   1528          	LCDC->LCDC_LCDCFG2 = LCDC_LCDCFG2_VBPW(lcdc_config.timing_vbp) |
+   1529          	                     LCDC_LCDCFG2_VFPW(lcdc_config.timing_vfp - 1);
+   \      0x118   0xE5D4'C005        LDRB     R12,[R4, #+5]
+   \      0x11C   0xE5D4'3006        LDRB     R3,[R4, #+6]
+   \      0x120   0xE24C'E001        SUB      LR,R12,#+1
+   \      0x124   0xE001'E00E        AND      LR,R1,LR
+   \      0x128   0xE18E'3803        ORR      R3,LR,R3, LSL #+16
+   \      0x12C   0xE580'3008        STR      R3,[R0, #+8]
+   1530          
+   1531          	_wait_for_clock_domain_sync();
+   \                     ??lcdc_on_5:
+   \      0x130   0xE590'3028        LDR      R3,[R0, #+40]
+   \      0x134   0xE313'0010        TST      R3,#0x10
+   \      0x138   0x1AFF'FFFC        BNE      ??lcdc_on_5
+   1532          	LCDC->LCDC_LCDCFG3 = LCDC_LCDCFG3_HBPW(lcdc_config.timing_hbp - 1) |
+   1533          	                     LCDC_LCDCFG3_HFPW(lcdc_config.timing_hfp - 1);
+   \      0x13C   0xE5D4'3009        LDRB     R3,[R4, #+9]
+   \      0x140   0xE243'C001        SUB      R12,R3,#+1
+   \      0x144   0xE5D4'3008        LDRB     R3,[R4, #+8]
+   \      0x148   0xE002'280C        AND      R2,R2,R12, LSL #+16
+   \      0x14C   0xE243'C001        SUB      R12,R3,#+1
+   \      0x150   0xE001'100C        AND      R1,R1,R12
+   \      0x154   0xE181'1002        ORR      R1,R1,R2
+   \      0x158   0xE580'100C        STR      R1,[R0, #+12]
+   1534          
+   1535          	_wait_for_clock_domain_sync();
+   \                     ??lcdc_on_6:
+   \      0x15C   0xE590'1028        LDR      R1,[R0, #+40]
+   \      0x160   0xE311'0010        TST      R1,#0x10
+   \      0x164   0x1AFF'FFFC        BNE      ??lcdc_on_6
+   1536          	LCDC->LCDC_LCDCFG4 = LCDC_LCDCFG4_RPF(lcdc_config.height - 1) |
+   1537          	                     LCDC_LCDCFG4_PPL(lcdc_config.width - 1);
+   \      0x168   0xE1D4'10B2        LDRH     R1,[R4, #+2]
+   \      0x16C   0xE3A0'3670        MOV      R3,#+117440512
+   \      0x170   0xE383'38FF        ORR      R3,R3,#0xFF0000
+   \      0x174   0xE241'2001        SUB      R2,R1,#+1
+   \      0x178   0xE1D4'10B0        LDRH     R1,[R4, #+0]
+   \      0x17C   0xE003'3802        AND      R3,R3,R2, LSL #+16
+   \      0x180   0xE241'2001        SUB      R2,R1,#+1
+   \      0x184   0xE1A0'CA82        LSL      R12,R2,#+21
+   \      0x188   0xE183'CAAC        ORR      R12,R3,R12, LSR #+21
+   \      0x18C   0xE580'C010        STR      R12,[R0, #+16]
+   1538          
+   1539          	_wait_for_clock_domain_sync();
+   \                     ??lcdc_on_7:
+   \      0x190   0xE590'1028        LDR      R1,[R0, #+40]
+   \      0x194   0xE311'0010        TST      R1,#0x10
+   \      0x198   0x1AFF'FFFC        BNE      ??lcdc_on_7
+   1540          	LCDC->LCDC_LCDCFG5 = LCDC_LCDCFG5_GUARDTIME(30) |
+   1541          	                     LCDC_LCDCFG5_MODE_OUTPUT_24BPP |
+   1542          	                     LCDC_LCDCFG5_DISPDLY |
+   1543          	                     LCDC_LCDCFG5_VSPDLYS |
+   1544          	                     LCDC_LCDCFG5_VSPOL |
+   1545          	                     LCDC_LCDCFG5_HSPOL;
+   \      0x19C   0x....'....        LDR      R1,??DataTable31_11  ;; 0x1e0387
+   \      0x1A0   0xE580'1014        STR      R1,[R0, #+20]
+   1546          
+   1547          	_wait_for_clock_domain_sync();
+   \                     ??lcdc_on_8:
+   \      0x1A4   0xE590'1028        LDR      R1,[R0, #+40]
+   \      0x1A8   0xE311'0010        TST      R1,#0x10
+   \      0x1AC   0x1AFF'FFFC        BNE      ??lcdc_on_8
+   1548          	LCDC->LCDC_LCDCFG6 = LCDC_LCDCFG6_PWMCVAL(0xF0) |
+   1549          	                     LCDC_LCDCFG6_PWMPOL |
+   1550          	                     LCDC_LCDCFG6_PWMPS(5);
+   \      0x1B0   0xE3A0'1015        MOV      R1,#+21
+   \      0x1B4   0xE381'1CF0        ORR      R1,R1,#0xF000
+   \      0x1B8   0xE580'1018        STR      R1,[R0, #+24]
+   1551          
+   1552          	/* 2. Enable the Pixel Clock by writing one to the CLKEN field of the
+   1553          	   LCDC_LCDEN register. */
+   1554          	_wait_for_clock_domain_sync();
+   \                     ??lcdc_on_9:
+   \      0x1BC   0xE590'1028        LDR      R1,[R0, #+40]
+   \      0x1C0   0xE311'0010        TST      R1,#0x10
+   \      0x1C4   0x1AFF'FFFC        BNE      ??lcdc_on_9
+   1555          	LCDC->LCDC_LCDEN = LCDC_LCDEN_CLKEN;
+   \      0x1C8   0xE3A0'1001        MOV      R1,#+1
+   \      0x1CC   0xE580'1020        STR      R1,[R0, #+32]
+   1556          
+   1557          	/* 3. Poll CLKSTS field of the LCDC_LCDSR register to check that the clock
+   1558          	   is running. */
+   1559          	while (!(LCDC->LCDC_LCDSR & LCDC_LCDSR_CLKSTS));
+   \                     ??lcdc_on_10:
+   \      0x1D0   0xE590'1028        LDR      R1,[R0, #+40]
+   \      0x1D4   0xE311'0001        TST      R1,#0x1
+   \      0x1D8   0x0AFF'FFFC        BEQ      ??lcdc_on_10
+   \                     ??lcdc_on_11:
+   \      0x1DC   0xE590'1028        LDR      R1,[R0, #+40]
+   \      0x1E0   0xE311'0010        TST      R1,#0x10
+   \      0x1E4   0x1AFF'FFFC        BNE      ??lcdc_on_11
+   1560          
+   1561          	/* 4. Enable Horizontal and Vertical Synchronization by writing one to the
+   1562          	   SYNCEN field of the LCDC_LCDEN register. */
+   1563          	_wait_for_clock_domain_sync();
+   1564          	LCDC->LCDC_LCDEN = LCDC_LCDEN_SYNCEN;
+   \      0x1E8   0xE3A0'1002        MOV      R1,#+2
+   \      0x1EC   0xE580'1020        STR      R1,[R0, #+32]
+   1565          
+   1566          	/* 5. Poll LCDSTS field of the LCDC_LCDSR register to check that the
+   1567          	   synchronization is up. */
+   1568          	while (!(LCDC->LCDC_LCDSR & LCDC_LCDSR_LCDSTS));
+   \                     ??lcdc_on_12:
+   \      0x1F0   0xE590'1028        LDR      R1,[R0, #+40]
+   \      0x1F4   0xE311'0002        TST      R1,#0x2
+   \      0x1F8   0x0AFF'FFFC        BEQ      ??lcdc_on_12
+   \                     ??lcdc_on_13:
+   \      0x1FC   0xE590'1028        LDR      R1,[R0, #+40]
+   \      0x200   0xE311'0010        TST      R1,#0x10
+   \      0x204   0x1AFF'FFFC        BNE      ??lcdc_on_13
+   1569          
+   1570          	/* 6. Enable the display power signal writing one to the DISPEN field of the
+   1571          	   LCDC_LCDEN register. */
+   1572          	_wait_for_clock_domain_sync();
+   1573          	LCDC->LCDC_LCDEN = LCDC_LCDEN_DISPEN;
+   \      0x208   0xE3A0'1004        MOV      R1,#+4
+   \      0x20C   0xE580'1020        STR      R1,[R0, #+32]
+   1574          
+   1575          	/* 7. Poll DISPSTS field of the LCDC_LCDSR register to check that the power
+   1576          	   signal is activated. */
+   1577          	while (!(LCDC->LCDC_LCDSR & LCDC_LCDSR_DISPSTS));
+   \                     ??lcdc_on_14:
+   \      0x210   0xE590'1028        LDR      R1,[R0, #+40]
+   \      0x214   0xE311'0004        TST      R1,#0x4
+   \      0x218   0x0AFF'FFFC        BEQ      ??lcdc_on_14
+   \                     ??lcdc_on_15:
+   \      0x21C   0xE590'1028        LDR      R1,[R0, #+40]
+   \      0x220   0xE311'0010        TST      R1,#0x10
+   \      0x224   0x1AFF'FFFC        BNE      ??lcdc_on_15
+   1578          
+   1579          	/* 8. Enable backlight */
+   1580          	_wait_for_clock_domain_sync();
+   1581          	LCDC->LCDC_LCDEN = LCDC_LCDEN_PWMEN;
+   \      0x228   0xE3A0'1008        MOV      R1,#+8
+   \      0x22C   0xE580'1020        STR      R1,[R0, #+32]
+   1582          }
+   \      0x230   0xE28D'D00C        ADD      SP,SP,#+12
+   \      0x234   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x0000'0300        DC32 768, 2
+
+   \              0x0000'0002
+   1583          
+   1584          /**
+   1585           * \brief Turn off the LCD.
+   1586           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1587          void lcdc_off(void)
+   1588          {
+   \                     lcdc_off:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   1589          	/* 1. Clear the DFETCH bit in the DSCR.CHXCTRL field of the DSCR structure
+   1590          	   will disable the channel at the end of the frame. */
+   1591          
+   1592          	/* 2. Set the DSCR.CHXNEXT field of the DSCR structure will disable the
+   1593          	   channel at the end of the frame. */
+   1594          
+   1595          	/* Disable all DMA channel descriptors */
+   1596          	_clear_dma_desc(lcdc_base.dma_desc, &LCDC->LCDC_BASEHEAD);
+   \        0x4   0x....'....        LDR      R7,??DataTable26
+   \        0x8   0x....'....        LDR      R4,??DataTable31_12  ;; 0xf803807c
+   \        0xC   0xE597'0018        LDR      R0,[R7, #+24]
+   \       0x10   0xE1A0'1004        MOV      R1,R4
+   \       0x14   0x....'....        BL       _clear_dma_desc
+   1597          #ifdef CONFIG_HAVE_LCDC_OVR1
+   1598          	_clear_dma_desc(lcdc_ovr1.dma_desc, &LCDC->LCDC_OVR1HEAD);
+   \       0x18   0xE384'5F40        ORR      R5,R4,#0x100
+   \       0x1C   0xE1A0'1005        MOV      R1,R5
+   \       0x20   0xE597'002C        LDR      R0,[R7, #+44]
+   \       0x24   0x....'....        BL       _clear_dma_desc
+   1599          #endif
+   1600          #ifdef CONFIG_HAVE_LCDC_OVR2
+   1601          	_clear_dma_desc(lcdc_ovr2.dma_desc, &LCDC->LCDC_OVR2HEAD);
+   \       0x28   0xE384'6F80        ORR      R6,R4,#0x200
+   \       0x2C   0xE1A0'1006        MOV      R1,R6
+   \       0x30   0xE597'0040        LDR      R0,[R7, #+64]
+   \       0x34   0x....'....        BL       _clear_dma_desc
+   1602          #endif
+   1603          	_clear_dma_desc(lcdc_heo.dma_desc, &LCDC->LCDC_HEOHEAD);
+   \       0x38   0xE384'1FC0        ORR      R1,R4,#0x300
+   \       0x3C   0xE597'0054        LDR      R0,[R7, #+84]
+   \       0x40   0x....'....        BL       _clear_dma_desc
+   1604          	_clear_dma_desc(lcdc_heo.dma_u_desc, &LCDC->LCDC_HEOUHEAD);
+   \       0x44   0xE284'1FC4        ADD      R1,R4,#+784
+   \       0x48   0xE597'0058        LDR      R0,[R7, #+88]
+   \       0x4C   0x....'....        BL       _clear_dma_desc
+   1605          	_clear_dma_desc(lcdc_heo.dma_v_desc, &LCDC->LCDC_HEOVHEAD);
+   \       0x50   0xE284'1FC8        ADD      R1,R4,#+800
+   \       0x54   0xE597'005C        LDR      R0,[R7, #+92]
+   \       0x58   0x....'....        BL       _clear_dma_desc
+   1606          
+   1607          	/* 3. Writing one to the CHDIS field of the CHXCHDR register will disable
+   1608          	   the channel at the end of the frame. */
+   1609          
+   1610          	/* Disable DMA channels */
+   1611          	LCDC->LCDC_BASECHDR = LCDC_BASECHDR_CHDIS;
+   \       0x5C   0xE3C4'0058        BIC      R0,R4,#0x58
+   \       0x60   0xE3A0'1001        MOV      R1,#+1
+   \       0x64   0xE580'1040        STR      R1,[R0, #+64]
+   1612          #ifdef CONFIG_HAVE_LCDC_OVR1
+   1613          	LCDC->LCDC_OVR1CHDR = LCDC_OVR1CHDR_CHDIS;
+   \       0x68   0xE584'10E8        STR      R1,[R4, #+232]
+   1614          #endif
+   1615          #ifdef CONFIG_HAVE_LCDC_OVR2
+   1616          	LCDC->LCDC_OVR2CHDR = LCDC_OVR2CHDR_CHDIS;
+   \       0x6C   0xE585'10E8        STR      R1,[R5, #+232]
+   1617          #endif
+   1618          	LCDC->LCDC_HEOCHDR = LCDC_HEOCHDR_CHDIS;
+   \       0x70   0xE586'10E8        STR      R1,[R6, #+232]
+   1619          	LCDC->LCDC_BASECFG4 = 0;
+   \       0x74   0xE3A0'2000        MOV      R2,#+0
+   \       0x78   0xE584'2020        STR      R2,[R4, #+32]
+   1620          
+   1621          	/* 4. Writing one to the CHRST field of the CHXCHDR register will disable
+   1622          	   the channel immediately. This may occur in the middle of the image. */
+   1623          
+   1624          	/* 5. Poll CHSR field in the CHXCHSR register until the channel is
+   1625          	   successfully disabled. */
+   1626          	while (LCDC->LCDC_BASECHSR & LCDC_BASECHSR_CHSR);
+   \                     ??lcdc_off_0:
+   \       0x7C   0xE590'2044        LDR      R2,[R0, #+68]
+   \       0x80   0xE312'0001        TST      R2,#0x1
+   \       0x84   0x1AFF'FFFC        BNE      ??lcdc_off_0
+   1627          #ifdef CONFIG_HAVE_LCDC_OVR1
+   1628          	while (LCDC->LCDC_OVR1CHSR & LCDC_OVR1CHSR_CHSR);
+   \                     ??lcdc_off_1:
+   \       0x88   0xE594'20EC        LDR      R2,[R4, #+236]
+   \       0x8C   0xE312'0001        TST      R2,#0x1
+   \       0x90   0x1AFF'FFFC        BNE      ??lcdc_off_1
+   1629          #endif
+   1630          #ifdef CONFIG_HAVE_LCDC_OVR2
+   1631          	while (LCDC->LCDC_OVR2CHSR & LCDC_OVR1CHSR_CHSR);
+   \                     ??lcdc_off_2:
+   \       0x94   0xE595'20EC        LDR      R2,[R5, #+236]
+   \       0x98   0xE312'0001        TST      R2,#0x1
+   \       0x9C   0x1AFF'FFFC        BNE      ??lcdc_off_2
+   1632          #endif
+   1633          	while (LCDC->LCDC_HEOCHSR & LCDC_HEOCHSR_CHSR);
+   \                     ??lcdc_off_3:
+   \       0xA0   0xE596'20EC        LDR      R2,[R6, #+236]
+   \       0xA4   0xE312'0001        TST      R2,#0x1
+   \       0xA8   0x1AFF'FFFC        BNE      ??lcdc_off_3
+   1634          
+   1635          	/* Timing Engine Power Down Software Operation */
+   1636          
+   1637          	/* Disable backlight */
+   1638          	LCDC->LCDC_LCDDIS = LCDC_LCDDIS_PWMDIS;
+   \       0xAC   0xE3A0'2008        MOV      R2,#+8
+   \       0xB0   0xE580'2000        STR      R2,[R0, #+0]
+   1639          	while (LCDC->LCDC_LCDSR & LCDC_LCDSR_PWMSTS);
+   \                     ??lcdc_off_4:
+   \       0xB4   0xE590'3004        LDR      R3,[R0, #+4]
+   \       0xB8   0xE313'0008        TST      R3,#0x8
+   \       0xBC   0x1AFF'FFFC        BNE      ??lcdc_off_4
+   1640          
+   1641          	/* 1. Disable the DISP signal writing DISPDIS field of the LCDC_LCDDIS
+   1642          	   register. */
+   1643          	LCDC->LCDC_LCDDIS = LCDC_LCDDIS_DISPDIS;
+   \       0xC0   0xE3A0'2004        MOV      R2,#+4
+   \       0xC4   0xE580'2000        STR      R2,[R0, #+0]
+   1644          
+   1645          	/* 2. Poll DISPSTS field of the LCDC_LCDSR register to verify that the DISP
+   1646          	   is no longer activated. */
+   1647          	while (LCDC->LCDC_LCDSR & LCDC_LCDSR_DISPSTS);
+   \                     ??lcdc_off_5:
+   \       0xC8   0xE590'3004        LDR      R3,[R0, #+4]
+   \       0xCC   0xE313'0004        TST      R3,#0x4
+   \       0xD0   0x1AFF'FFFC        BNE      ??lcdc_off_5
+   1648          
+   1649          	/* 3. Disable the hsync and vsync signals by writing one to SYNCDIS field of
+   1650          	   the LCDC_LCDDIS register. */
+   1651          	LCDC->LCDC_LCDDIS = LCDC_LCDDIS_SYNCDIS;
+   \       0xD4   0xE3A0'2002        MOV      R2,#+2
+   \       0xD8   0xE580'2000        STR      R2,[R0, #+0]
+   1652          
+   1653          	/* 4. Poll LCDSTS field of the LCDC_LCDSR register to check that the
+   1654          	   synchronization is off. */
+   1655          	while (LCDC->LCDC_LCDSR & LCDC_LCDSR_LCDSTS);
+   \                     ??lcdc_off_6:
+   \       0xDC   0xE590'3004        LDR      R3,[R0, #+4]
+   \       0xE0   0xE313'0002        TST      R3,#0x2
+   \       0xE4   0x1AFF'FFFC        BNE      ??lcdc_off_6
+   1656          
+   1657          	/* 5. Disable the Pixel clock by writing one in the CLKDIS field of the
+   1658          	   LCDC_LCDDIS register. */
+   1659          	LCDC->LCDC_LCDDIS = LCDC_LCDDIS_CLKDIS;
+   \       0xE8   0xE580'1000        STR      R1,[R0, #+0]
+   1660          
+   1661          	/* 6. Poll CLKSTS field of the LCDC_LCDSR register to check that Pixel Clock
+   1662          	   is disabled. */
+   1663          	while (LCDC->LCDC_LCDSR & LCDC_LCDSR_CLKSTS);
+   \                     ??lcdc_off_7:
+   \       0xEC   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0xF0   0xE311'0001        TST      R1,#0x1
+   \       0xF4   0x1AFF'FFFC        BNE      ??lcdc_off_7
+   1664          
+   1665          	/* Disable peripheral clock and ISC system clock */
+   1666          	pmc_disable_peripheral(ID_LCDC);
+   \       0xF8   0xE3A0'0019        MOV      R0,#+25
+   \       0xFC   0x....'....        BL       pmc_disable_peripheral
+   1667          	if (pmc_has_system_clock(PMC_SYSTEM_CLOCK_LCD))
+   \      0x100   0xE3A0'0001        MOV      R0,#+1
+   \      0x104   0x....'....        BL       pmc_has_system_clock
+   \      0x108   0xE350'0000        CMP      R0,#+0
+   1668          		pmc_disable_system_clock(PMC_SYSTEM_CLOCK_LCD);
+   \      0x10C   0x18BD'40F2        POPNE    {R1,R4-R7,LR}
+   \      0x110   0x13A0'0001        MOVNE    R0,#+1
+   \      0x114   0x....'....        BNE      pmc_disable_system_clock  ;; tailcall
+   1669          }
+   \      0x118   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+   1670          
+   1671          /**
+   1672           * \brief Set the backlight of the LCD.
+   1673           *
+   1674           * \param level   Backlight brightness level [1..255],
+   1675           *                255 means maximum brightness.
+   1676           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1677          void lcdc_set_backlight(uint32_t level)
+   1678          {
+   1679          	uint32_t cfg = LCDC->LCDC_LCDCFG6 & ~LCDC_LCDCFG6_PWMCVAL_Msk;
+   \                     lcdc_set_backlight:
+   \        0x0   0x....'....        LDR      R1,??DataTable31_13  ;; 0xf8038018
+   1680          	LCDC->LCDC_LCDCFG6 = cfg | LCDC_LCDCFG6_PWMCVAL(level);
+   \        0x4   0xE3A0'3CFF        MOV      R3,#+65280
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0xC   0xE003'0400        AND      R0,R3,R0, LSL #+8
+   \       0x10   0xE3C2'2CFF        BIC      R2,R2,#0xFF00
+   \       0x14   0xE180'0002        ORR      R0,R0,R2
+   \       0x18   0xE581'0000        STR      R0,[R1, #+0]
+   1681          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+   1682          
+   1683          /**
+   1684           * Get canvas layer for LCDC_Draw*
+   1685           * \return Layer information pointer.
+   1686           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1687          struct _lcdc_layer *lcdc_get_canvas(void)
+   1688          {
+   1689          	return &lcdc_canvas;
+   \                     lcdc_get_canvas:
+   \        0x0   0x....'....        LDR      R0,??DataTable31_14
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+   1690          }
+   1691          
+   1692          /**
+   1693           * Flush the current canvas layer*
+   1694           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1695          void lcdc_flush_canvas(void)
+   1696          {
+   1697          	struct _lcdc_layer *layer;
+   1698          
+   1699          	layer = lcdc_get_canvas();
+   1700          	cache_clean_region(layer->buffer, layer->height * layer->width * 4);
+   \                     lcdc_flush_canvas:
+   \        0x0   0x....'....        LDR      R0,??DataTable31_1
+   \        0x4   0xE1D0'21B2        LDRH     R2,[R0, #+18]
+   \        0x8   0xE1D0'31B0        LDRH     R3,[R0, #+16]
+   \        0xC   0xE590'000C        LDR      R0,[R0, #+12]
+   \       0x10   0xE00C'0293        MUL      R12,R3,R2
+   \       0x14   0xE1A0'110C        LSL      R1,R12,#+2
+   \       0x18   0x....'....        B        cache_clean_region  ;; tailcall
+   1701          }
+   1702          
+   1703          /**
+   1704           * Select an LCD layer as canvas layer.
+   1705           * Then all drawing operations will apply to current display buffer
+   1706           * of selected layer.
+   1707           * \note If there is no display buffer for the layer (not running)
+   1708           *       selection fails.
+   1709           * \param layer_id Layer ID.
+   1710           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1711          uint8_t lcdc_select_canvas(uint8_t layer_id)
+   1712          {
+   1713          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+   1714          
+   1715          	if (!layer->reg_cfg || !layer->data)
+   \                     lcdc_select_canvas:
+   \        0x0   0xE3A0'3034        MOV      R3,#+52
+   \        0x4   0xE162'0083        SMULBB   R2,R3,R0
+   \        0x8   0x....'....        LDR      R3,??DataTable27_5
+   \        0xC   0xE92D'4000        PUSH     {LR}
+   \       0x10   0xE083'1002        ADD      R1,R3,R2
+   \       0x14   0xE591'C01C        LDR      R12,[R1, #+28]
+   \       0x18   0xE35C'0000        CMP      R12,#+0
+   \       0x1C   0x0A00'0002        BEQ      ??lcdc_select_canvas_0
+   \       0x20   0xE793'3002        LDR      R3,[R3, +R2]
+   \       0x24   0xE353'0000        CMP      R3,#+0
+   \       0x28   0x1A00'0001        BNE      ??lcdc_select_canvas_1
+   1716          		return 0;
+   \                     ??lcdc_select_canvas_0:
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \       0x30   0xE8BD'8000        POP      {PC}
+   1717          
+   1718          	lcdc_canvas.buffer = (void *)layer->data->buffer;
+   \                     ??lcdc_select_canvas_1:
+   \       0x34   0x....'....        LDR      R2,??DataTable31_1
+   \       0x38   0xE593'300C        LDR      R3,[R3, #+12]
+   \       0x3C   0xE582'300C        STR      R3,[R2, #+12]
+   1719          	if (layer->reg_win) {
+   \       0x40   0xE591'3020        LDR      R3,[R1, #+32]
+   \       0x44   0xE353'0000        CMP      R3,#+0
+   \       0x48   0x0A00'0007        BEQ      ??lcdc_select_canvas_2
+   1720          		lcdc_canvas.width = (layer->reg_win[1] & LCDC_HEOCFG3_XSIZE_Msk) >> LCDC_HEOCFG3_XSIZE_Pos;
+   \       0x4C   0xE3A0'C0FF        MOV      R12,#+255
+   \       0x50   0xE593'E004        LDR      LR,[R3, #+4]
+   \       0x54   0xE38C'CE70        ORR      R12,R12,#0x700
+   \       0x58   0xE00C'E00E        AND      LR,R12,LR
+   \       0x5C   0xE1C2'E1B0        STRH     LR,[R2, #+16]
+   1721          		lcdc_canvas.height = (layer->reg_win[1] & LCDC_HEOCFG3_YSIZE_Msk) >> LCDC_HEOCFG3_YSIZE_Pos;
+   \       0x60   0xE593'3004        LDR      R3,[R3, #+4]
+   \       0x64   0xE00C'C823        AND      R12,R12,R3, LSR #+16
+   \       0x68   0xEA00'0002        B        ??lcdc_select_canvas_3
+   1722          	} else {
+   1723          		lcdc_canvas.width = lcdc_config.width;
+   \                     ??lcdc_select_canvas_2:
+   \       0x6C   0xE1D2'30B0        LDRH     R3,[R2, #+0]
+   1724          		lcdc_canvas.height = lcdc_config.height;
+   \       0x70   0xE1D2'C0B2        LDRH     R12,[R2, #+2]
+   \       0x74   0xE1C2'31B0        STRH     R3,[R2, #+16]
+   \                     ??lcdc_select_canvas_3:
+   \       0x78   0xE1C2'C1B2        STRH     R12,[R2, #+18]
+   1725          	}
+   1726          	lcdc_canvas.bpp = _get_bits_per_pixel(layer->reg_cfg[1] & LCDC_HEOCFG1_RGBMODE_Msk);
+   \       0x7C   0xE591'101C        LDR      R1,[R1, #+28]
+   \       0x80   0xE591'1004        LDR      R1,[R1, #+4]
+   \       0x84   0xE211'30F0        ANDS     R3,R1,#0xF0
+   \       0x88   0x0A00'001B        BEQ      ??lcdc_select_canvas_4
+   \       0x8C   0xE353'0010        CMP      R3,#+16
+   \       0x90   0x0A00'0019        BEQ      ??lcdc_select_canvas_4
+   \       0x94   0xE353'0020        CMP      R3,#+32
+   \       0x98   0x0A00'0017        BEQ      ??lcdc_select_canvas_4
+   \       0x9C   0xE353'0030        CMP      R3,#+48
+   \       0xA0   0x0A00'0015        BEQ      ??lcdc_select_canvas_4
+   \       0xA4   0xE353'0040        CMP      R3,#+64
+   \       0xA8   0x0A00'0013        BEQ      ??lcdc_select_canvas_4
+   \       0xAC   0xE353'0050        CMP      R3,#+80
+   \       0xB0   0x0A00'000F        BEQ      ??lcdc_select_canvas_5
+   \       0xB4   0xE353'0060        CMP      R3,#+96
+   \       0xB8   0x0A00'000D        BEQ      ??lcdc_select_canvas_5
+   \       0xBC   0xE353'0070        CMP      R3,#+112
+   \       0xC0   0x0A00'000B        BEQ      ??lcdc_select_canvas_5
+   \       0xC4   0xE353'0080        CMP      R3,#+128
+   \       0xC8   0x0A00'0009        BEQ      ??lcdc_select_canvas_5
+   \       0xCC   0xE353'0090        CMP      R3,#+144
+   \       0xD0   0x0A00'0007        BEQ      ??lcdc_select_canvas_5
+   \       0xD4   0xE353'00A0        CMP      R3,#+160
+   \       0xD8   0x0A00'0005        BEQ      ??lcdc_select_canvas_5
+   \       0xDC   0xE353'00B0        CMP      R3,#+176
+   \       0xE0   0x0A00'0003        BEQ      ??lcdc_select_canvas_5
+   \       0xE4   0xE353'00C0        CMP      R3,#+192
+   \       0xE8   0x0A00'0001        BEQ      ??lcdc_select_canvas_5
+   \       0xEC   0xE353'00D0        CMP      R3,#+208
+   \       0xF0   0x1A00'0003        BNE      ??lcdc_select_canvas_6
+   \                     ??lcdc_select_canvas_5:
+   \       0xF4   0xE3A0'1018        MOV      R1,#+24
+   \       0xF8   0xEA00'0002        B        ??lcdc_select_canvas_7
+   \                     ??lcdc_select_canvas_4:
+   \       0xFC   0xE3A0'1010        MOV      R1,#+16
+   \      0x100   0xEA00'0000        B        ??lcdc_select_canvas_7
+   \                     ??lcdc_select_canvas_6:
+   \      0x104   0xE3A0'1000        MOV      R1,#+0
+   1727          	lcdc_canvas.layer_id = layer_id;
+   \                     ??lcdc_select_canvas_7:
+   \      0x108   0xE5C2'0015        STRB     R0,[R2, #+21]
+   \      0x10C   0xE5C2'1014        STRB     R1,[R2, #+20]
+   1728          
+   1729          	return 1;
+   \      0x110   0xE3A0'0001        MOV      R0,#+1
+   \      0x114   0xE8BD'8000        POP      {PC}             ;; return
+   1730          }
+   1731          
+   1732          /**
+   1733           * Create a blank canvas on a display layer for further operations.
+   1734           * \param layer_id Layer ID.
+   1735           * \param buffer   Pointer to canvas display buffer.
+   1736           * \param bpp      Bits Per Pixel.
+   1737           * \param x        Canvas X coordinate on base.
+   1738           * \param y        Canvas Y coordinate on base.
+   1739           * \param w        Canvas width.
+   1740           * \param h        Canvas height.
+   1741           * \note The content in buffer is destroied.
+   1742           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1743          void * lcdc_create_canvas(uint8_t layer_id, void *buffer, uint8_t bpp,
+   1744          			  uint16_t x, uint16_t y, uint16_t w, uint16_t h)
+   1745          {
+   \                     lcdc_create_canvas:
+   \        0x0   0xE92D'4FF1        PUSH     {R0,R4-R11,LR}
+   1746          	uint32_t max_w = lcdc_config.width;
+   \        0x4   0x....'....        LDR      R7,??DataTable31_1
+   \        0x8   0xE1D7'E0B0        LDRH     LR,[R7, #+0]
+   1747          	uint32_t max_h = lcdc_config.height;
+   \        0xC   0xE1D7'C0B2        LDRH     R12,[R7, #+2]
+   \       0x10   0xE24D'D020        SUB      SP,SP,#+32
+   1748          	uint32_t bits_per_row, bytes_per_row;
+   1749          	void *old_buffer;
+   1750          
+   1751          	switch (layer_id) {
+   \       0x14   0xE5DD'A020        LDRB     R10,[SP, #+32]
+   \       0x18   0xE1A0'8003        MOV      R8,R3
+   \       0x1C   0xE1DD'94B8        LDRH     R9,[SP, #+72]
+   \       0x20   0xE1DD'54BC        LDRH     R5,[SP, #+76]
+   \       0x24   0xE1DD'65B0        LDRH     R6,[SP, #+80]
+   \       0x28   0xE1A0'000E        MOV      R0,LR
+   \       0x2C   0xE1A0'300C        MOV      R3,R12
+   \       0x30   0xE25A'A001        SUBS     R10,R10,#+1
+   \       0x34   0x0A00'0003        BEQ      ??lcdc_create_canvas_0
+   \       0x38   0xE24A'A001        SUB      R10,R10,#+1
+   \       0x3C   0xE35A'0002        CMP      R10,#+2
+   \       0x40   0x9A00'000F        BLS      ??lcdc_create_canvas_1
+   \       0x44   0xEA00'0001        B        ??lcdc_create_canvas_2
+   1752          	case LCDC_BASE:
+   1753          		x = 0;
+   \                     ??lcdc_create_canvas_0:
+   \       0x48   0xE3A0'9000        MOV      R9,#+0
+   \       0x4C   0xE3A0'8000        MOV      R8,#+0
+   1754          		y = 0;
+   1755          		break;
+   1756          #ifdef CONFIG_HAVE_LCDC_OVR1
+   1757          	case LCDC_OVR1:
+   1758          #endif
+   1759          #ifdef CONFIG_HAVE_LCDC_OVR2
+   1760          	case LCDC_OVR2:
+   1761          #endif
+   1762          	case LCDC_HEO:
+   1763          		/* Size check */
+   1764          		if (x + w > lcdc_config.width || y + h > lcdc_config.height)
+   1765          			return NULL;
+   1766          		break;
+   1767          	}
+   1768          	if (w == 0)
+   \                     ??lcdc_create_canvas_2:
+   \       0x50   0xE1B0'C005        MOVS     R12,R5
+   1769          		w = max_w - x;
+   \       0x54   0x0040'5008        SUBEQ    R5,R0,R8
+   1770          	if (h == 0)
+   1771          		h = max_h - y;
+   1772          
+   1773          	/* Clear buffer */
+   1774          	bits_per_row = w * bpp;
+   \       0x58   0xE1A0'A805        LSL      R10,R5,#+16
+   \       0x5C   0xE1A0'A82A        LSR      R10,R10,#+16
+   \       0x60   0xE1B0'0006        MOVS     R0,R6
+   \       0x64   0xE000'0A92        MUL      R0,R2,R10
+   \       0x68   0x0043'6009        SUBEQ    R6,R3,R9
+   \       0x6C   0xE1A0'4002        MOV      R4,R2
+   1775          	bytes_per_row = (bits_per_row & 0x7) ? (bits_per_row / 8 + 1) : (bits_per_row / 8);
+   \       0x70   0xE1A0'21A0        LSR      R2,R0,#+3
+   \       0x74   0xE310'0007        TST      R0,#0x7
+   \       0x78   0x0A00'000A        BEQ      ??lcdc_create_canvas_3
+   \       0x7C   0xE282'2001        ADD      R2,R2,#+1
+   \       0x80   0xEA00'0008        B        ??lcdc_create_canvas_3
+   \                     ??lcdc_create_canvas_1:
+   \       0x84   0xE085'4008        ADD      R4,R5,R8
+   \       0x88   0xE15E'0004        CMP      LR,R4
+   \       0x8C   0xBA00'0002        BLT      ??lcdc_create_canvas_4
+   \       0x90   0xE086'E009        ADD      LR,R6,R9
+   \       0x94   0xE15C'000E        CMP      R12,LR
+   \       0x98   0xAAFF'FFEC        BGE      ??lcdc_create_canvas_2
+   \                     ??lcdc_create_canvas_4:
+   \       0x9C   0xE3A0'0000        MOV      R0,#+0
+   1776          	memset(buffer, 0, bytes_per_row * h);
+   1777          
+   1778          	old_buffer = lcdc_put_image_rotated(layer_id, buffer, bpp,
+   1779          			x, y, w, h, w, h, 0);
+   1780          
+   1781          	lcdc_canvas.layer_id = layer_id;
+   1782          	lcdc_canvas.bpp = bpp;
+   1783          	lcdc_canvas.buffer = buffer;
+   1784          	lcdc_canvas.width = w;
+   1785          	lcdc_canvas.height = h;
+   1786          
+   1787          	return old_buffer;
+   \       0xA0   0xE28D'D024        ADD      SP,SP,#+36
+   \       0xA4   0xE8BD'8FF0        POP      {R4-R11,PC}
+   \                     ??lcdc_create_canvas_3:
+   \       0xA8   0xE1A0'B806        LSL      R11,R6,#+16
+   \       0xAC   0xE58D'1018        STR      R1,[SP, #+24]
+   \       0xB0   0xE1A0'B82B        LSR      R11,R11,#+16
+   \       0xB4   0xE001'029B        MUL      R1,R11,R2
+   \       0xB8   0xE59D'0018        LDR      R0,[SP, #+24]
+   \       0xBC   0x....'....        BL       __aeabi_memclr
+   \       0xC0   0xE3A0'0000        MOV      R0,#+0
+   \       0xC4   0xE58D'0014        STR      R0,[SP, #+20]
+   \       0xC8   0xE1A0'0805        LSL      R0,R5,#+16
+   \       0xCC   0xE1A0'0820        LSR      R0,R0,#+16
+   \       0xD0   0xE58D'000C        STR      R0,[SP, #+12]
+   \       0xD4   0xE1A0'0806        LSL      R0,R6,#+16
+   \       0xD8   0xE1A0'0820        LSR      R0,R0,#+16
+   \       0xDC   0xE58D'0008        STR      R0,[SP, #+8]
+   \       0xE0   0xE58D'B010        STR      R11,[SP, #+16]
+   \       0xE4   0xE58D'A004        STR      R10,[SP, #+4]
+   \       0xE8   0xE58D'9000        STR      R9,[SP, #+0]
+   \       0xEC   0xE1A0'3008        MOV      R3,R8
+   \       0xF0   0xE1A0'2004        MOV      R2,R4
+   \       0xF4   0xE59D'1018        LDR      R1,[SP, #+24]
+   \       0xF8   0xE5DD'0020        LDRB     R0,[SP, #+32]
+   \       0xFC   0x....'....        BL       lcdc_put_image_rotated
+   \      0x100   0xE5DD'2020        LDRB     R2,[SP, #+32]
+   \      0x104   0xE5C7'4014        STRB     R4,[R7, #+20]
+   \      0x108   0xE1C7'51B0        STRH     R5,[R7, #+16]
+   \      0x10C   0xE5C7'2015        STRB     R2,[R7, #+21]
+   \      0x110   0xE59D'2018        LDR      R2,[SP, #+24]
+   \      0x114   0xE1C7'61B2        STRH     R6,[R7, #+18]
+   \      0x118   0xE587'200C        STR      R2,[R7, #+12]
+   \      0x11C   0xE28D'D024        ADD      SP,SP,#+36
+   \      0x120   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+   1788          }
+   1789          
+   1790          /**
+   1791           * Create a blank canvas on a display layer for YUV422/420 planar.
+   1792           * \param layer_id Layer ID.
+   1793           * \param buffer   Pointer to buffer of Y.
+   1794           * \param buffer_u Pointer to buffer of U.
+   1795           * \param buffer_v Pointer to buffer of V.
+   1796           * \param bpp      Bits Per Pixel.
+   1797           * \param x        Canvas X coordinate on base.
+   1798           * \param y        Canvas Y coordinate on base.
+   1799           * \param w        Canvas width.
+   1800           * \param h        Canvas height.
+   1801           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1802          void *lcdc_create_canvas_yuv_planar(uint8_t layer_id,
+   1803          		void *buffer_y, void *buffer_u, void *buffer_v, uint8_t bpp,
+   1804          		uint16_t x, uint16_t y, uint16_t w, uint16_t h)
+   1805          {
+   \                     lcdc_create_canvas_yuv_planar:
+   \        0x0   0xE92D'4FFE        PUSH     {R1-R11,LR}
+   1806          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+   1807          
+   1808          	uint32_t max_w = lcdc_config.width;
+   \        0x4   0x....'....        LDR      R3,??DataTable31_1
+   1809          	uint32_t max_h = lcdc_config.height;
+   1810          	uint32_t bits_per_row, bytes_per_row;
+   1811          
+   1812          	if (!layer->reg_dma_u_head || !layer->reg_dma_v_head)
+   \        0x8   0xE3A0'4034        MOV      R4,#+52
+   \        0xC   0xE165'0084        SMULBB   R5,R4,R0
+   \       0x10   0x....'....        LDR      R6,??DataTable28
+   \       0x14   0xE1D3'E0B0        LDRH     LR,[R3, #+0]
+   \       0x18   0xE1D3'30B2        LDRH     R3,[R3, #+2]
+   \       0x1C   0xE086'7005        ADD      R7,R6,R5
+   \       0x20   0xE597'0014        LDR      R0,[R7, #+20]
+   \       0x24   0xE1A0'C003        MOV      R12,R3
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x0A00'0044        BEQ      ??lcdc_create_canvas_yuv_planar_0
+   \       0x30   0xE597'0018        LDR      R0,[R7, #+24]
+   \       0x34   0xE350'0000        CMP      R0,#+0
+   \       0x38   0x0A00'0041        BEQ      ??lcdc_create_canvas_yuv_planar_0
+   \       0x3C   0xE1DD'A3BC        LDRH     R10,[SP, #+60]
+   \       0x40   0xE1DD'43B4        LDRH     R4,[SP, #+52]
+   1813          		return NULL;
+   1814          
+   1815          	/* Size check */
+   1816          	if (x + w > lcdc_config.width || y + h > lcdc_config.height)
+   \       0x44   0xE08A'8004        ADD      R8,R10,R4
+   \       0x48   0xE15E'0008        CMP      LR,R8
+   \       0x4C   0xBA00'003B        BLT      ??lcdc_create_canvas_yuv_planar_1
+   \       0x50   0xE1DD'03B8        LDRH     R0,[SP, #+56]
+   \       0x54   0xE1DD'94B0        LDRH     R9,[SP, #+64]
+   \       0x58   0xE1A0'8000        MOV      R8,R0
+   \       0x5C   0xE089'B008        ADD      R11,R9,R8
+   \       0x60   0xE153'000B        CMP      R3,R11
+   \       0x64   0xBA00'0035        BLT      ??lcdc_create_canvas_yuv_planar_1
+   1817          		return NULL;
+   1818          	if (w == 0)
+   \       0x68   0xE1B0'300A        MOVS     R3,R10
+   1819          		w = max_w - x;
+   \       0x6C   0x004E'A004        SUBEQ    R10,LR,R4
+   1820          	if (h == 0)
+   \       0x70   0xE1B0'2009        MOVS     R2,R9
+   1821          		h = max_h - y;
+   \       0x74   0x004C'9000        SUBEQ    R9,R12,R0
+   \       0x78   0xE5DD'0030        LDRB     R0,[SP, #+48]
+   1822          
+   1823          	/* Clear buffer */
+   1824          	bits_per_row = w * bpp;
+   \       0x7C   0xE1A0'A80A        LSL      R10,R10,#+16
+   \       0x80   0xE1A0'A82A        LSR      R10,R10,#+16
+   \       0x84   0xE002'0A90        MUL      R2,R0,R10
+   1825          	bytes_per_row = (bits_per_row & 0x7) ? (bits_per_row / 8 + 1) : (bits_per_row / 8);
+   1826          	memset(buffer_y, 0xFF, bytes_per_row * h);
+   \       0x88   0xE1A0'3809        LSL      R3,R9,#+16
+   \       0x8C   0xE1A0'01A2        LSR      R0,R2,#+3
+   \       0x90   0xE312'0007        TST      R2,#0x7
+   \       0x94   0x1280'0001        ADDNE    R0,R0,#+1
+   \       0x98   0xE1A0'B001        MOV      R11,R1
+   \       0x9C   0xE1A0'3823        LSR      R3,R3,#+16
+   \       0xA0   0xE001'0093        MUL      R1,R3,R0
+   \       0xA4   0xE3A0'20FF        MOV      R2,#+255
+   \       0xA8   0xE1A0'000B        MOV      R0,R11
+   \       0xAC   0x....'....        BL       __aeabi_memset
+   1827          
+   1828          	/* Setup window */
+   1829          	if (layer->reg_win) {
+   \       0xB0   0xE597'0020        LDR      R0,[R7, #+32]
+   \       0xB4   0xE350'0000        CMP      R0,#+0
+   \       0xB8   0x0A00'000F        BEQ      ??lcdc_create_canvas_yuv_planar_2
+   1830          		layer->reg_win[0] = LCDC_HEOCFG2_XPOS(x) | LCDC_HEOCFG2_YPOS(y);
+   \       0xBC   0xE3A0'1670        MOV      R1,#+117440512
+   \       0xC0   0xE381'18FF        ORR      R1,R1,#0xFF0000
+   1831          		layer->reg_win[1] = LCDC_HEOCFG3_XSIZE(w - 1) | LCDC_HEOCFG3_YSIZE(h - 1);
+   \       0xC4   0xE1A0'9809        LSL      R9,R9,#+16
+   \       0xC8   0xE1A0'2821        MOV      R2,R1, LSR #+16
+   \       0xCC   0xE1A0'9829        LSR      R9,R9,#+16
+   \       0xD0   0xE002'3004        AND      R3,R2,R4
+   \       0xD4   0xE001'C808        AND      R12,R1,R8, LSL #+16
+   \       0xD8   0xE24A'E001        SUB      LR,R10,#+1
+   \       0xDC   0xE249'4001        SUB      R4,R9,#+1
+   \       0xE0   0xE18C'C003        ORR      R12,R12,R3
+   \       0xE4   0xE002'200E        AND      R2,R2,LR
+   \       0xE8   0xE001'1804        AND      R1,R1,R4, LSL #+16
+   \       0xEC   0xE580'C000        STR      R12,[R0, #+0]
+   \       0xF0   0xE181'1002        ORR      R1,R1,R2
+   \       0xF4   0xE580'1004        STR      R1,[R0, #+4]
+   1832          		layer->reg_win[2] = LCDC_HEOCFG4_XMEMSIZE(w - 1) | LCDC_HEOCFG4_YMEMSIZE(h - 1);
+   \       0xF8   0xE580'1008        STR      R1,[R0, #+8]
+   1833          	}
+   1834          
+   1835          	_set_dma_desc(buffer_y, layer->data->dma_desc, layer->reg_dma_head);
+   \                     ??lcdc_create_canvas_yuv_planar_2:
+   \       0xFC   0xE796'0005        LDR      R0,[R6, +R5]
+   \      0x100   0xE59D'4008        LDR      R4,[SP, #+8]
+   \      0x104   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x108   0xE59D'8004        LDR      R8,[SP, #+4]
+   \      0x10C   0xE597'2010        LDR      R2,[R7, #+16]
+   \      0x110   0xE1A0'000B        MOV      R0,R11
+   \      0x114   0x....'....        BL       _set_dma_desc
+   1836          	_set_dma_desc(buffer_u, layer->data->dma_u_desc, layer->reg_dma_u_head);
+   \      0x118   0xE796'0005        LDR      R0,[R6, +R5]
+   \      0x11C   0xE597'2014        LDR      R2,[R7, #+20]
+   \      0x120   0xE590'1004        LDR      R1,[R0, #+4]
+   \      0x124   0xE1A0'0008        MOV      R0,R8
+   \      0x128   0x....'....        BL       _set_dma_desc
+   1837          	_set_dma_desc(buffer_v, layer->data->dma_v_desc, layer->reg_dma_v_head);
+   \      0x12C   0xE796'0005        LDR      R0,[R6, +R5]
+   \      0x130   0xE597'2018        LDR      R2,[R7, #+24]
+   \      0x134   0xE590'1008        LDR      R1,[R0, #+8]
+   \      0x138   0xE1A0'0004        MOV      R0,R4
+   \      0x13C   0x....'....        BL       _set_dma_desc
+   1838          
+   1839          	return 0;
+   \                     ??lcdc_create_canvas_yuv_planar_1:
+   \      0x140   0xE3A0'0000        MOV      R0,#+0
+   \                     ??lcdc_create_canvas_yuv_planar_0:
+   \      0x144   0xE28D'D00C        ADD      SP,SP,#+12
+   \      0x148   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+   1840          }
+   1841          
+   1842          /**
+   1843           * Create a blank canvas on a display layer for YUV422/420 semiplanar.
+   1844           * \param layer_id  Layer ID.
+   1845           * \param buffer    Pointer to buffer of Y.
+   1846           * \param buffer_uv Pointer to buffer of UV.
+   1847           * \param bpp       Bits Per Pixel.
+   1848           * \param x         Canvas X coordinate on base.
+   1849           * \param y         Canvas Y coordinate on base.
+   1850           * \param w         Canvas width.
+   1851           * \param h         Canvas height.
+   1852           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1853          void *lcdc_create_canvas_yuv_semiplanar(uint8_t layer_id,
+   1854          		void *buffer_y, void *buffer_uv, uint8_t bpp,
+   1855          		uint16_t x, uint16_t y, uint16_t w, uint16_t h)
+   1856          {
+   \                     lcdc_create_canvas_yuv_semiplanar:
+   \        0x0   0xE92D'4FF4        PUSH     {R2,R4-R11,LR}
+   1857          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+   1858          
+   1859          	uint32_t max_w = lcdc_config.width;
+   1860          	uint32_t max_h = lcdc_config.height;
+   1861          	uint32_t bits_per_row, bytes_per_row;
+   1862          
+   1863          	if (!layer->reg_dma_u_head || !layer->reg_dma_v_head)
+   \        0x4   0xE3A0'4034        MOV      R4,#+52
+   \        0x8   0x....'....        LDR      R12,??DataTable31_1
+   \        0xC   0xE165'0084        SMULBB   R5,R4,R0
+   \       0x10   0x....'....        LDR      R6,??DataTable31_15
+   \       0x14   0xE1DC'80B0        LDRH     R8,[R12, #+0]
+   \       0x18   0xE1DC'E0B2        LDRH     LR,[R12, #+2]
+   \       0x1C   0xE086'7005        ADD      R7,R6,R5
+   \       0x20   0xE597'0014        LDR      R0,[R7, #+20]
+   \       0x24   0xE1A0'2008        MOV      R2,R8
+   \       0x28   0xE1A0'C00E        MOV      R12,LR
+   \       0x2C   0xE350'0000        CMP      R0,#+0
+   \       0x30   0x0A00'003D        BEQ      ??lcdc_create_canvas_yuv_semiplanar_0
+   \       0x34   0xE597'0018        LDR      R0,[R7, #+24]
+   \       0x38   0xE350'0000        CMP      R0,#+0
+   \       0x3C   0x0A00'003A        BEQ      ??lcdc_create_canvas_yuv_semiplanar_0
+   \       0x40   0xE1DD'A3B0        LDRH     R10,[SP, #+48]
+   \       0x44   0xE1DD'42B8        LDRH     R4,[SP, #+40]
+   1864          		return NULL;
+   1865          
+   1866          	/* Size check */
+   1867          	if (x + w > lcdc_config.width || y + h > lcdc_config.height)
+   \       0x48   0xE08A'9004        ADD      R9,R10,R4
+   \       0x4C   0xE158'0009        CMP      R8,R9
+   \       0x50   0xBA00'0034        BLT      ??lcdc_create_canvas_yuv_semiplanar_1
+   \       0x54   0xE1DD'02BC        LDRH     R0,[SP, #+44]
+   \       0x58   0xE1DD'93B4        LDRH     R9,[SP, #+52]
+   \       0x5C   0xE1A0'8000        MOV      R8,R0
+   \       0x60   0xE089'B008        ADD      R11,R9,R8
+   \       0x64   0xE15E'000B        CMP      LR,R11
+   \       0x68   0xBA00'002E        BLT      ??lcdc_create_canvas_yuv_semiplanar_1
+   1868          		return NULL;
+   1869          	if (w == 0)
+   \       0x6C   0xE1B0'E00A        MOVS     LR,R10
+   1870          		w = max_w - x;
+   \       0x70   0x0042'A004        SUBEQ    R10,R2,R4
+   1871          	if (h == 0)
+   \       0x74   0xE1B0'2009        MOVS     R2,R9
+   1872          		h = max_h - y;
+   1873          
+   1874          	/* Clear buffer */
+   1875          	bits_per_row = w * bpp;
+   \       0x78   0xE1A0'A80A        LSL      R10,R10,#+16
+   \       0x7C   0x004C'9000        SUBEQ    R9,R12,R0
+   \       0x80   0xE1A0'A82A        LSR      R10,R10,#+16
+   \       0x84   0xE000'0A93        MUL      R0,R3,R10
+   1876          	bytes_per_row = (bits_per_row & 0x7) ? (bits_per_row / 8 + 1) : (bits_per_row / 8);
+   \       0x88   0xE1A0'31A0        LSR      R3,R0,#+3
+   \       0x8C   0xE310'0007        TST      R0,#0x7
+   1877          	memset(buffer_y, 0xFF, bytes_per_row * h);
+   \       0x90   0xE1A0'0809        LSL      R0,R9,#+16
+   \       0x94   0x1283'3001        ADDNE    R3,R3,#+1
+   \       0x98   0xE1A0'B001        MOV      R11,R1
+   \       0x9C   0xE1A0'0820        LSR      R0,R0,#+16
+   \       0xA0   0xE001'0390        MUL      R1,R0,R3
+   \       0xA4   0xE3A0'20FF        MOV      R2,#+255
+   \       0xA8   0xE1A0'000B        MOV      R0,R11
+   \       0xAC   0x....'....        BL       __aeabi_memset
+   1878          
+   1879          	if (layer->reg_win) {
+   \       0xB0   0xE597'0020        LDR      R0,[R7, #+32]
+   \       0xB4   0xE350'0000        CMP      R0,#+0
+   \       0xB8   0x0A00'000F        BEQ      ??lcdc_create_canvas_yuv_semiplanar_2
+   1880          		layer->reg_win[0] = LCDC_HEOCFG2_XPOS(x) | LCDC_HEOCFG2_YPOS(y);
+   \       0xBC   0xE3A0'1670        MOV      R1,#+117440512
+   \       0xC0   0xE381'18FF        ORR      R1,R1,#0xFF0000
+   1881          		layer->reg_win[1] = LCDC_HEOCFG3_XSIZE(w - 1) | LCDC_HEOCFG3_YSIZE(h - 1);
+   \       0xC4   0xE1A0'9809        LSL      R9,R9,#+16
+   \       0xC8   0xE1A0'2821        MOV      R2,R1, LSR #+16
+   \       0xCC   0xE1A0'9829        LSR      R9,R9,#+16
+   \       0xD0   0xE002'3004        AND      R3,R2,R4
+   \       0xD4   0xE001'C808        AND      R12,R1,R8, LSL #+16
+   \       0xD8   0xE24A'E001        SUB      LR,R10,#+1
+   \       0xDC   0xE249'4001        SUB      R4,R9,#+1
+   \       0xE0   0xE18C'C003        ORR      R12,R12,R3
+   \       0xE4   0xE002'200E        AND      R2,R2,LR
+   \       0xE8   0xE001'1804        AND      R1,R1,R4, LSL #+16
+   \       0xEC   0xE580'C000        STR      R12,[R0, #+0]
+   \       0xF0   0xE181'1002        ORR      R1,R1,R2
+   \       0xF4   0xE580'1004        STR      R1,[R0, #+4]
+   1882          		layer->reg_win[2] = LCDC_HEOCFG4_XMEMSIZE(w - 1) | LCDC_HEOCFG4_YMEMSIZE(h - 1);
+   \       0xF8   0xE580'1008        STR      R1,[R0, #+8]
+   1883          	}
+   1884          
+   1885          	_set_dma_desc(buffer_y, layer->data->dma_desc, layer->reg_dma_head);
+   \                     ??lcdc_create_canvas_yuv_semiplanar_2:
+   \       0xFC   0xE796'0005        LDR      R0,[R6, +R5]
+   \      0x100   0xE59D'4000        LDR      R4,[SP, #+0]
+   \      0x104   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x108   0xE597'2010        LDR      R2,[R7, #+16]
+   \      0x10C   0xE1A0'000B        MOV      R0,R11
+   \      0x110   0x....'....        BL       _set_dma_desc
+   1886          	_set_dma_desc(buffer_uv, layer->data->dma_u_desc, layer->reg_dma_u_head);
+   \      0x114   0xE796'0005        LDR      R0,[R6, +R5]
+   \      0x118   0xE597'2014        LDR      R2,[R7, #+20]
+   \      0x11C   0xE590'1004        LDR      R1,[R0, #+4]
+   \      0x120   0xE1A0'0004        MOV      R0,R4
+   \      0x124   0x....'....        BL       _set_dma_desc
+   1887          
+   1888          	return 0;
+   \                     ??lcdc_create_canvas_yuv_semiplanar_1:
+   \      0x128   0xE3A0'0000        MOV      R0,#+0
+   \                     ??lcdc_create_canvas_yuv_semiplanar_0:
+   \      0x12C   0xE8BD'8FF2        POP      {R1,R4-R11,PC}   ;; return
+   1889          }
+   1890          
+   1891          #ifdef CONFIG_HAVE_LCDC_PP
+   1892          /**
+   1893           * Connfigure PPC with DMA enabled.
+   1894           * \param buffer       Pointer to buffer.
+   1895           * \param output_mode  Post Processing output format selection.
+   1896           */
+   1897          void lcdc_configure_pp(void *buffer, uint32_t output_mode)
+   1898          {
+   1899          	const struct _layer_info *layer = &lcdc_layers[LCDC_PP];
+   1900          
+   1901          	_set_dma_desc(buffer, layer->data->dma_desc, layer->reg_dma_head);
+   1902          	layer->reg_dma_head[0] = (uint32_t)layer->data->dma_desc;
+   1903          	LCDC->LCDC_PPCFG1 = output_mode;
+   1904          }
+   1905          #endif
+   1906          
+   1907          /**
+   1908           * \brief Change RGB Input Mode Selection for given layer.
+   1909           * \param layer_id   Layer ID.
+   1910           * \param input_mode RGB Input Mode Selection.
+   1911           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1912          void lcdc_configure_input_mode(uint8_t layer_id, uint32_t input_mode)
+   1913          {
+   1914          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+   1915          	layer->reg_cfg[1] = input_mode;
+   \                     lcdc_configure_input_mode:
+   \        0x0   0xE3A0'3034        MOV      R3,#+52
+   \        0x4   0x....'....        LDR      R2,??DataTable31_15
+   \        0x8   0xE160'0083        SMULBB   R0,R3,R0
+   \        0xC   0xE082'0000        ADD      R0,R2,R0
+   \       0x10   0xE590'C01C        LDR      R12,[R0, #+28]
+   \       0x14   0xE58C'1004        STR      R1,[R12, #+4]
+   1916          }
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+   1917          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   1918          uint32_t lcdc_configure_get_mode(uint8_t layer_id)
+   1919          {
+   1920          	const struct _layer_info *layer = &lcdc_layers[layer_id];
+   1921          	return layer->reg_cfg[1];
+   \                     lcdc_configure_get_mode:
+   \        0x0   0xE3A0'2034        MOV      R2,#+52
+   \        0x4   0x....'....        LDR      R1,??DataTable31_15
+   \        0x8   0xE160'0082        SMULBB   R0,R2,R0
+   \        0xC   0xE081'0000        ADD      R0,R1,R0
+   \       0x10   0xE590'301C        LDR      R3,[R0, #+28]
+   \       0x14   0xE593'0004        LDR      R0,[R3, #+4]
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+   1922          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable26:
+   \        0x0   0x....'....        DC32     lcdc_config
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable26_1:
+   \        0x0   0x....'....        DC32     base_dma_desc
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable27:
+   \        0x0   0xF803'8030        DC32     0xf8038030
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable27_1:
+   \        0x0   0x4003'3094        DC32     0x40033094
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable27_2:
+   \        0x0   0x7CDE'1C94        DC32     0x7cde1c94
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable27_3:
+   \        0x0   0x5020'0094        DC32     0x50200094
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable27_4:
+   \        0x0   0x....'....        DC32     lcdc_layers+0x8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable27_5:
+   \        0x0   0x....'....        DC32     lcdc_layers
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable28:
+   \        0x0   0x....'....        DC32     lcdc_layers
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable29:
+   \        0x0   0xF803'8360        DC32     0xf8038360
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30:
+   \        0x0   0xF803'83DC        DC32     0xf80383dc
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31:
+   \        0x0   0x0050'5050        DC32     0x505050
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_1:
+   \        0x0   0x....'....        DC32     lcdc_config
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_2:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_3:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_4:
+   \        0x0   0x....'....        DC32     `lcdc_base_auto_loop::dma_desc`
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_5:
+   \        0x0   0xCCCC'CCCD        DC32     0xcccccccd
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_6:
+   \        0x0   0xF803'8060        DC32     0xf8038060
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_7:
+   \        0x0   0xF803'8064        DC32     0xf8038064
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_8:
+   \        0x0   0xF803'8164        DC32     0xf8038164
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_9:
+   \        0x0   0xF803'8364        DC32     0xf8038364
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_10:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_11:
+   \        0x0   0x001E'0387        DC32     0x1e0387
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_12:
+   \        0x0   0xF803'807C        DC32     0xf803807c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_13:
+   \        0x0   0xF803'8018        DC32     0xf8038018
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_14:
+   \        0x0   0x....'....        DC32     lcdc_config+0xC
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable31_15:
+   \        0x0   0x....'....        DC32     lcdc_layers
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x57          DC8 0x2D, 0x57, 0x2D, 0x20, 0x54, 0x68, 0x65, 0x20
+
+   \              0x2D 0x20    
+
+   \              0x54 0x68    
+
+   \              0x65 0x20
+   \        0x8   0x44 0x4D          DC8 0x44, 0x4D, 0x41, 0x20, 0x6C, 0x69, 0x6E, 0x6B
+
+   \              0x41 0x20    
+
+   \              0x6C 0x69    
+
+   \              0x6E 0x6B
+   \       0x10   0x20 0x73          DC8 0x20, 0x73, 0x69, 0x7A, 0x65, 0x20, 0x69, 0x73
+
+   \              0x69 0x7A    
+
+   \              0x65 0x20    
+
+   \              0x69 0x73
+   \       0x18   0x20 0x6E          DC8 0x20, 0x6E, 0x6F, 0x74, 0x20, 0x73, 0x75, 0x69
+
+   \              0x6F 0x74    
+
+   \              0x20 0x73    
+
+   \              0x75 0x69
+   \       0x20   0x74 0x61          DC8 0x74, 0x61, 0x62, 0x6C, 0x65, 0x20, 0x66, 0x6F
+
+   \              0x62 0x6C    
+
+   \              0x65 0x20    
+
+   \              0x66 0x6F
+   \       0x28   0x72 0x20          DC8 0x72, 0x20, 0x73, 0x68, 0x6F, 0x77, 0x69, 0x6E
+
+   \              0x73 0x68    
+
+   \              0x6F 0x77    
+
+   \              0x69 0x6E
+   \       0x30   0x67 0x20          DC8 0x67, 0x20, 0x74, 0x68, 0x65, 0x20, 0x6C, 0x6F
+
+   \              0x74 0x68    
+
+   \              0x65 0x20    
+
+   \              0x6C 0x6F
+   \       0x38   0x6F 0x70          DC8 0x6F, 0x70, 0x20, 0x65, 0x66, 0x66, 0x65, 0x63
+
+   \              0x20 0x65    
+
+   \              0x66 0x66    
+
+   \              0x65 0x63
+   \       0x40   0x74 0x73          DC8 0x74, 0x73, 0x20, 0x6F, 0x6E, 0x20, 0x74, 0x68
+
+   \              0x20 0x6F    
+
+   \              0x6E 0x20    
+
+   \              0x74 0x68
+   \       0x48   0x65 0x20          DC8 0x65, 0x20, 0x62, 0x61, 0x73, 0x65, 0x20, 0x6C
+
+   \              0x62 0x61    
+
+   \              0x73 0x65    
+
+   \              0x20 0x6C
+   \       0x50   0x61 0x79          DC8 0x61, 0x79, 0x65, 0x72, 0x21, 0
+
+   \              0x65 0x72    
+
+   \              0x21 0x00
+   \       0x56   0x00 0x00          DC8 0, 0
+   1923          
+   1924          /**@}*/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   _clear_dma_desc
+        16   -> cache_clean_region
+      24   _set_dma_desc
+        24   -> cache_clean_region
+      24   lcdc_base_auto_loop
+        24   -> cache_clean_region
+         0   -> printf
+        24 __aeabi_uidiv
+       8   lcdc_configure
+         8   -> __aeabi_memcpy
+         8   -> lcdc_off
+         0   -> lcdc_on
+         8   -> pmc_configure_peripheral
+         8   -> pmc_enable_system_clock
+         8   -> pmc_has_system_clock
+       0   lcdc_configure_get_mode
+       0   lcdc_configure_input_mode
+      72   lcdc_create_canvas
+        72   -> __aeabi_memclr
+        72   -> lcdc_put_image_rotated
+      48   lcdc_create_canvas_yuv_planar
+        48   -> __aeabi_memset
+        48   -> _set_dma_desc
+      40   lcdc_create_canvas_yuv_semiplanar
+        40   -> __aeabi_memset
+        40   -> _set_dma_desc
+       0   lcdc_disable_color_keying
+       4   lcdc_enable_alpha
+       0   lcdc_enable_layer
+       0   lcdc_flush_canvas
+         0   -> cache_clean_region
+       0   lcdc_get_alpha
+       0   lcdc_get_canvas
+       0   lcdc_get_priority
+       0   lcdc_is_layer_on
+      24   lcdc_off
+        24   -> _clear_dma_desc
+        24   -> pmc_disable_peripheral
+        24   -> pmc_disable_system_clock
+        24   -> pmc_has_system_clock
+      24   lcdc_on
+        24   -> pmc_configure_peripheral
+        24   -> pmc_enable_system_clock
+        24   -> pmc_get_gck_clock
+        24   -> pmc_get_master_clock
+        24   -> pmc_has_system_clock
+        24 __aeabi_uidiv
+      40   lcdc_put_image
+        40   -> lcdc_put_image_rotated
+      32   lcdc_put_image_rotated
+        32   -> cache_clean_region
+      40   lcdc_put_image_scaled
+        40   -> lcdc_put_image_rotated
+       0   lcdc_refresh
+       4   lcdc_select_canvas
+       4   lcdc_set_alpha
+       0   lcdc_set_backlight
+       8   lcdc_set_color_keying
+       4   lcdc_set_color_lut
+      20   lcdc_set_position
+       0   lcdc_set_priority
+      16   lcdc_show_base
+        16   -> lcdc_put_image
+      40   lcdc_show_heo
+        40   -> lcdc_put_image_rotated
+      24   lcdc_show_ovr1
+        24   -> lcdc_put_image
+      16   lcdc_stop_base
+        16   -> cache_clean_region
+      16   lcdc_stop_heo
+        16   -> _clear_dma_desc
+      16   lcdc_stop_ovr1
+        16   -> cache_clean_region
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable26
+       4  ??DataTable26_1
+       4  ??DataTable27
+       4  ??DataTable27_1
+       4  ??DataTable27_2
+       4  ??DataTable27_3
+       4  ??DataTable27_4
+       4  ??DataTable27_5
+       4  ??DataTable28
+       4  ??DataTable29
+       4  ??DataTable30
+       4  ??DataTable31
+       4  ??DataTable31_1
+       4  ??DataTable31_10
+       4  ??DataTable31_11
+       4  ??DataTable31_12
+       4  ??DataTable31_13
+       4  ??DataTable31_14
+       4  ??DataTable31_15
+       4  ??DataTable31_2
+       4  ??DataTable31_3
+       4  ??DataTable31_4
+       4  ??DataTable31_5
+       4  ??DataTable31_6
+       4  ??DataTable31_7
+       4  ??DataTable31_8
+       4  ??DataTable31_9
+      12  ?Subroutine0
+      88  ?_0
+       8  ?_1
+      60  _clear_dma_desc
+      60  _set_dma_desc
+      96  base_dma_desc
+          ovr1_dma_desc
+          ovr2_dma_desc
+          heo_dma_desc
+          heo_dma_u_desc
+          heo_dma_v_desc
+     640  dma_desc
+     168  lcdc_base_auto_loop
+     104  lcdc_config
+          lcdc_canvas
+          lcdc_base
+          lcdc_ovr1
+          lcdc_ovr2
+          lcdc_heo
+     264  lcdc_configure
+      28  lcdc_configure_get_mode
+      28  lcdc_configure_input_mode
+     292  lcdc_create_canvas
+     332  lcdc_create_canvas_yuv_planar
+     304  lcdc_create_canvas_yuv_semiplanar
+      96  lcdc_disable_color_keying
+      88  lcdc_enable_alpha
+     100  lcdc_enable_layer
+      28  lcdc_flush_canvas
+      40  lcdc_get_alpha
+       8  lcdc_get_canvas
+      36  lcdc_get_priority
+      32  lcdc_is_layer_on
+     312  lcdc_layers
+     284  lcdc_off
+     568  lcdc_on
+      72  lcdc_put_image
+     120  lcdc_put_image_rotated
+      60  lcdc_put_image_scaled
+      84  lcdc_refresh
+     280  lcdc_select_canvas
+      92  lcdc_set_alpha
+      32  lcdc_set_backlight
+     128  lcdc_set_color_keying
+     304  lcdc_set_color_lut
+     148  lcdc_set_position
+      44  lcdc_set_priority
+      68  lcdc_show_base
+      68  lcdc_show_heo
+      56  lcdc_show_ovr1
+     100  lcdc_stop_base
+      84  lcdc_stop_heo
+     100  lcdc_stop_ovr1
+
+ 
+   744 bytes in section .bss
+    96 bytes in section .region_cache_aligned
+   408 bytes in section .rodata
+ 4'776 bytes in section SOFTPACK
+ 
+ 4'776 bytes of CODE  memory
+   408 bytes of CONST memory
+   840 bytes of DATA  memory
+
+Errors: none
+Warnings: 1

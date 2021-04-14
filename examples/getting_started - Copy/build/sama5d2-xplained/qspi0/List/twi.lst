@@ -1,0 +1,1495 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         03/Nov/2020  20:09:10
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\i2c\twi.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW4155.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\i2c\twi.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_QSPI0 -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_TWI_FIFO -D
+#        CONFIG_HAVE_PMIC_ACT8945A -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d2-xplained\qspi0\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d2-xplained\qspi0\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d2-xplained\qspi0\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d2-xplained\qspi0\List\twi.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d2-xplained\qspi0\Obj\twi.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\i2c\twi.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup twi_module Working with TWI
+     31           * \section Purpose
+     32           * The TWI driver provides the interface to configure and use the TWI
+     33           * peripheral.
+     34           *
+     35           * \section Usage
+     36           * <ul>
+     37           * <li> Configures a TWI peripheral to operate in master mode, at the given
+     38           * frequency (in Hz) using twi_configure(). </li>
+     39           * <li> Sends a STOP condition on the TWI using twi_stop().</li>
+     40           * <li> twi_send_start_condition generate a START condition on the TWI bus with
+     41           * the specified slave. Should be called explicitely.
+     42           * <li> Starts a read operation on the TWI bus with the specified slave using
+     43           * twi_start_read(). Data must then be read using twi_read_byte() whenever
+     44           * a byte is available (poll using twi_is_byte_received()).</li>
+     45           * <li> Starts a write operation on the TWI to access the selected slave using
+     46           * twi_start_write(). A byte of data must be provided to start the write;
+     47           * other bytes are written next.</li>
+     48           * <li> Sends a byte of data to one of the TWI slaves on the bus using twi_write_byte().
+     49           * This function must be called once before twi_start_write() with the first byte of data
+     50           * to send, then it shall be called repeatedly after that to send the remaining bytes.</li>
+     51           * <li> Check if a byte has been received and can be read on the given TWI
+     52           * peripheral using twi_is_byte_received().<
+     53           * Check if a byte has been sent using twi_byte_sent().</li>
+     54           * <li> Check if the current transmission is complete (the STOP has been sent)
+     55           * using twi_is_transfer_complete().</li>
+     56           * <li> Enables & disable the selected interrupts sources on a TWI peripheral
+     57           * using twi_enable_it() and twi_enable_it().</li>
+     58           * <li> Get current status register of the given TWI peripheral using
+     59           * twi_get_status(). Get current status register of the given TWI peripheral, but
+     60           * masking interrupt sources which are not currently enabled using
+     61           * twi_get_masked_status().</li>
+     62           * </ul>
+     63           * For more accurate information, please look at the TWI section of the
+     64           * Datasheet.
+     65           *
+     66           * Related files :\n
+     67           * \ref twi.c\n
+     68           * \ref twi.h.\n
+     69          */
+     70          /*@{*/
+     71          /*@}*/
+     72          
+     73          /**
+     74           * \file
+     75           *
+     76           * Implementation of Two Wire Interface (TWI).
+     77           *
+     78           */
+     79          
+     80          /*----------------------------------------------------------------------------
+     81           *        Headers
+     82           *----------------------------------------------------------------------------*/
+     83          
+     84          #include "chip.h"
+     85          #include "i2c/twi.h"
+     86          #include "peripherals/pmc.h"
+     87          #include "trace.h"
+     88          #include "intmath.h"
+     89          
+     90          #include "timer.h"
+     91          #include "io.h"
+     92          
+     93          #include <stddef.h>
+     94          #include <assert.h>
+     95          
+     96          /*----------------------------------------------------------------------------
+     97           *        Definitions
+     98           *----------------------------------------------------------------------------*/
+     99          
+    100          #if defined(CONFIG_SOC_SAM9XX5) || defined(CONFIG_SOC_SAM9X60)
+    101          #define TWI_CLK_OFFSET (4)
+    102          #elif defined(CONFIG_SOC_SAMA5D2)
+    103          #define TWI_CLK_OFFSET (3) /* TODO: handle GCK case (offset=0) */
+    104          #elif defined(CONFIG_SOC_SAMA5D3)
+    105          #define TWI_CLK_OFFSET (4)
+    106          #elif defined(CONFIG_SOC_SAMA5D4)
+    107          #define TWI_CLK_OFFSET (4)
+    108          #elif defined(CONFIG_SOC_SAMV71)
+    109          #define TWI_CLK_OFFSET (3)
+    110          #else
+    111          #error Unsupported SoC!
+    112          #endif
+    113          
+    114          
+    115          /*----------------------------------------------------------------------------
+    116           *        Exported functions
+    117           *----------------------------------------------------------------------------*/
+    118          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    119          uint32_t twi_configure_master(Twi *twi, uint32_t twi_clock)
+    120          {
+   \                     twi_configure_master:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'7001        MOV      R7,R1
+    121          	uint32_t ck_div, clh_div, clock;
+    122          	uint32_t hold = 0;
+    123          	uint32_t id = get_twi_id_from_addr(twi);
+   \        0xC   0x....'....        BL       get_twi_id_from_addr
+    124          
+    125          	assert(twi);
+   \       0x10   0xE354'0000        CMP      R4,#+0
+   \       0x14   0xE1A0'5000        MOV      R5,R0
+   \       0x18   0x1A00'0004        BNE      ??twi_configure_master_0
+   \       0x1C   0xE3A0'207D        MOV      R2,#+125
+   \       0x20   0x....'....        LDR      R1,??DataTable32
+   \       0x24   0x....'....        ADR      R0,??DataTable13  ;; "twi"
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    126          	assert(id < ID_PERIPH_COUNT);
+   \                     ??twi_configure_master_0:
+   \       0x30   0xE355'004F        CMP      R5,#+79
+   \       0x34   0x3A00'0004        BCC      ??twi_configure_master_1
+   \       0x38   0xE3A0'207E        MOV      R2,#+126
+   \       0x3C   0x....'....        LDR      R1,??DataTable32
+   \       0x40   0x....'....        LDR      R0,??DataTable32_1
+   \       0x44   0x....'....        BL       __aeabi_assert
+   \       0x48   0x....'....        BL       __iar_EmptyStepPoint
+    127          
+    128          	/* TWI software reset */
+    129          	twi->TWI_CR = TWI_CR_SWRST;
+   \                     ??twi_configure_master_1:
+   \       0x4C   0xE3A0'0080        MOV      R0,#+128
+    130          
+    131          	/* Configure dummy slave address */
+    132          	twi->TWI_MMR = 0;
+   \       0x50   0xE3A0'1000        MOV      R1,#+0
+   \       0x54   0xE584'0000        STR      R0,[R4, #+0]
+   \       0x58   0xE584'1004        STR      R1,[R4, #+4]
+    133          
+    134          	/* Compute clock */
+    135          	clock = pmc_get_peripheral_clock(id);
+   \       0x5C   0xE1A0'0005        MOV      R0,R5
+   \       0x60   0xE3A0'6000        MOV      R6,#+0
+   \       0x64   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x68   0xE1A0'5000        MOV      R5,R0
+    136          	for (ck_div = 0; ck_div < 7; ck_div++) {
+   \       0x6C   0xE1A0'1007        MOV      R1,R7
+   \       0x70   0x....'....        BL       __aeabi_uidiv
+   \       0x74   0xE240'0006        SUB      R0,R0,#+6
+    137          		clh_div = ((clock / twi_clock) - 2 * TWI_CLK_OFFSET) >> ck_div;
+   \                     ??twi_configure_master_2:
+   \       0x78   0xE1A0'1630        LSR      R1,R0,R6
+    138          		if (clh_div <= 511)
+   \       0x7C   0xE351'0F80        CMP      R1,#+512
+   \       0x80   0x3A00'0002        BCC      ??twi_configure_master_3
+    139          			break;
+    140          	}
+   \       0x84   0xE286'6001        ADD      R6,R6,#+1
+   \       0x88   0xE356'0006        CMP      R6,#+6
+   \       0x8C   0x9AFF'FFF9        BLS      ??twi_configure_master_2
+    141          
+    142          #ifdef TWI_CWGR_HOLD
+    143          	/* Compute holding time (I2C spec requires 300ns) */
+    144          	hold = TWI_CWGR_HOLD(CEIL_INT_DIV((uint32_t)(0.3 * clock), 1000000) - 3);
+    145          #endif
+    146          
+    147          	/* Configure clock */
+    148          	twi->TWI_CWGR = TWI_CWGR_CKDIV(ck_div)
+    149          	              | TWI_CWGR_CHDIV(clh_div >> 1)
+    150          	              | TWI_CWGR_CLDIV(clh_div >> 1)
+    151          	              | hold;
+   \                     ??twi_configure_master_3:
+   \       0x90   0xEE00'5A10        VMOV     S0,R5
+   \       0x94   0xEEB8'0B40        VCVT.F64.U32 D0,S0
+   \       0x98   0x....'....        VLDR     D2,??DataTable15
+   \       0x9C   0xEE20'0B02        VMUL.F64 D0,D0,D2
+   \       0xA0   0xE3A0'0A70        MOV      R0,#+458752
+   \       0xA4   0xE3A0'2CFF        MOV      R2,#+65280
+   \       0xA8   0xE000'0806        AND      R0,R0,R6, LSL #+16
+   \       0xAC   0xE002'2381        AND      R2,R2,R1, LSL #+7
+   \       0xB0   0x....'....        LDR      R12,??DataTable32_2  ;; 0xf423f
+   \       0xB4   0xE182'2000        ORR      R2,R2,R0
+   \       0xB8   0xE7E7'00D1        UBFX     R0,R1,#+1,#+8
+   \       0xBC   0xE180'0002        ORR      R0,R0,R2
+   \       0xC0   0x....'....        LDR      LR,??DataTable32_3  ;; 0x8637bd06
+   \       0xC4   0xE3E0'7002        MVN      R7,#+2
+   \       0xC8   0xE3A0'857C        MOV      R8,#+520093696
+   \       0xCC   0xEEBC'0BC0        VCVT.U32.F64 S0,D0
+   \       0xD0   0xEE10'3A10        VMOV     R3,S0
+   \       0xD4   0xE08C'C003        ADD      R12,R12,R3
+    152          
+    153          	/* Set master mode */
+    154          	twi->TWI_CR = TWI_CR_SVDIS;
+   \       0xD8   0xE3A0'3020        MOV      R3,#+32
+   \       0xDC   0xE082'EE9C        UMULL    LR,R2,R12,LR
+    155          	twi->TWI_CR = TWI_CR_MSEN;
+    156          
+    157          	return clock / ((clh_div << ck_div) + 2 * TWI_CLK_OFFSET);
+   \       0xE0   0xE3A0'C006        MOV      R12,#+6
+   \       0xE4   0xE08C'1611        ADD      R1,R12,R1, LSL R6
+   \       0xE8   0xE087'79A2        ADD      R7,R7,R2, LSR #+19
+   \       0xEC   0xE3A0'2004        MOV      R2,#+4
+   \       0xF0   0xE008'8C07        AND      R8,R8,R7, LSL #+24
+   \       0xF4   0xE188'0000        ORR      R0,R8,R0
+   \       0xF8   0xE584'0010        STR      R0,[R4, #+16]
+   \       0xFC   0xE584'3000        STR      R3,[R4, #+0]
+   \      0x100   0xE584'2000        STR      R2,[R4, #+0]
+   \      0x104   0xE1A0'0005        MOV      R0,R5
+   \      0x108   0xE8BD'41F0        POP      {R4-R8,LR}
+   \      0x10C   0x....'....        B        __aeabi_uidiv
+    158          }
+    159          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    160          void twi_configure_slave(Twi *twi, uint8_t slave_address)
+    161          {
+   \                     twi_configure_slave:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    162          	assert(twi);
+   \        0xC   0x1A00'0004        BNE      ??twi_configure_slave_0
+   \       0x10   0xE3A0'20A2        MOV      R2,#+162
+   \       0x14   0x....'....        LDR      R1,??DataTable32
+   \       0x18   0x....'....        ADR      R0,??DataTable13  ;; "twi"
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    163          
+    164          	/* TWI software reset */
+    165          	twi->TWI_CR = TWI_CR_SWRST;
+    166          
+    167          	/* Configure slave address. */
+    168          	twi->TWI_SMR = TWI_SMR_SADR(slave_address);
+   \                     ??twi_configure_slave_0:
+   \       0x24   0xE3A0'187F        MOV      R1,#+8323072
+   \       0x28   0xE3A0'0080        MOV      R0,#+128
+   \       0x2C   0xE001'1805        AND      R1,R1,R5, LSL #+16
+   \       0x30   0xE584'0000        STR      R0,[R4, #+0]
+    169          
+    170          	/* Set Slave Mode */
+    171          	twi->TWI_CR = TWI_CR_MSDIS;
+   \       0x34   0xE3A0'2008        MOV      R2,#+8
+    172          	twi->TWI_CR = TWI_CR_SVEN;
+   \       0x38   0xE3A0'3010        MOV      R3,#+16
+   \       0x3C   0xE584'1008        STR      R1,[R4, #+8]
+   \       0x40   0xE584'2000        STR      R2,[R4, #+0]
+   \       0x44   0xE584'3000        STR      R3,[R4, #+0]
+    173          }
+   \       0x48   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    174          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    175          void twi_stop(Twi *twi)
+    176          {
+   \                     twi_stop:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    177          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_stop_0
+   \        0xC   0xE3A0'20B1        MOV      R2,#+177
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        LDR      R0,??DataTable32_4
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    178          	twi->TWI_CR = TWI_CR_STOP;
+   \                     ??twi_stop_0:
+   \       0x20   0x....'....        B        ?Subroutine1
+    179          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE3A0'0002        MOV      R0,#+2
+   \                     ??Subroutine1_0:
+   \        0x4   0xE584'0000        STR      R0,[R4, #+0]
+   \        0x8   0xE8BD'8010        POP      {R4,PC}          ;; return
+    180          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    181          void twi_init_read(Twi *twi, uint8_t address, uint32_t iaddress, uint8_t isize)
+    182          {
+   \                     twi_init_read:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'6001        MOV      R6,R1
+   \        0xC   0xE1A0'5002        MOV      R5,R2
+   \       0x10   0xE1A0'7003        MOV      R7,R3
+    183          	assert(twi != NULL);
+   \       0x14   0x1A00'0004        BNE      ??twi_init_read_0
+   \       0x18   0xE3A0'20B7        MOV      R2,#+183
+   \       0x1C   0x....'....        LDR      R1,??DataTable32
+   \       0x20   0x....'....        LDR      R0,??DataTable32_4
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    184          	assert((address & 0x80) == 0);
+   \                     ??twi_init_read_0:
+   \       0x2C   0xE316'0080        TST      R6,#0x80
+   \       0x30   0x0A00'0004        BEQ      ??twi_init_read_1
+   \       0x34   0xE3A0'20B8        MOV      R2,#+184
+   \       0x38   0x....'....        LDR      R1,??DataTable32
+   \       0x3C   0x....'....        LDR      R0,??DataTable32_5
+   \       0x40   0x....'....        BL       __aeabi_assert
+   \       0x44   0x....'....        BL       __iar_EmptyStepPoint
+    185          	assert((iaddress & 0xFF000000) == 0);
+   \                     ??twi_init_read_1:
+   \       0x48   0xE315'04FF        TST      R5,#0xFF000000
+   \       0x4C   0x0A00'0004        BEQ      ??twi_init_read_2
+   \       0x50   0xE3A0'20B9        MOV      R2,#+185
+   \       0x54   0x....'....        LDR      R1,??DataTable32
+   \       0x58   0x....'....        LDR      R0,??DataTable32_6
+   \       0x5C   0x....'....        BL       __aeabi_assert
+   \       0x60   0x....'....        BL       __iar_EmptyStepPoint
+    186          	assert(isize < 4);
+   \                     ??twi_init_read_2:
+   \       0x64   0xE357'0004        CMP      R7,#+4
+   \       0x68   0xBA00'0004        BLT      ??twi_init_read_3
+   \       0x6C   0xE3A0'20BA        MOV      R2,#+186
+   \       0x70   0x....'....        LDR      R1,??DataTable32
+   \       0x74   0x....'....        LDR      R0,??DataTable32_7
+   \       0x78   0x....'....        BL       __aeabi_assert
+   \       0x7C   0x....'....        BL       __iar_EmptyStepPoint
+    187          
+    188          	/* Set slave address and number of internal address bytes. */
+    189          	twi->TWI_MMR = TWI_MMR_DADR(address) | TWI_MMR_MREAD | TWI_MMR_IADRSZ(isize);
+   \                     ??twi_init_read_3:
+   \       0x80   0xE3A0'087F        MOV      R0,#+8323072
+   \       0x84   0xE3A0'1FC0        MOV      R1,#+768
+   \       0x88   0xE000'0806        AND      R0,R0,R6, LSL #+16
+   \       0x8C   0xE001'1407        AND      R1,R1,R7, LSL #+8
+    190          	/* Set internal address bytes */
+    191          	twi->TWI_IADR = TWI_IADR_IADR(iaddress);
+   \       0x90   0xE3C5'34FF        BIC      R3,R5,#0xFF000000
+   \       0x94   0xE181'1000        ORR      R1,R1,R0
+   \       0x98   0xE381'2D40        ORR      R2,R1,#0x1000
+   \       0x9C   0xE584'2004        STR      R2,[R4, #+4]
+   \       0xA0   0xE584'300C        STR      R3,[R4, #+12]
+    192          }
+   \       0xA4   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    193          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    194          uint8_t twi_read_byte(Twi *twi)
+    195          {
+   \                     twi_read_byte:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    196          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_read_byte_0
+   \        0xC   0xE3A0'20C4        MOV      R2,#+196
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        LDR      R0,??DataTable32_4
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    197          	uint8_t value;
+    198          	readb(&twi->TWI_RHR, &value);
+   \                     ??twi_read_byte_0:
+   \       0x20   0xE5D4'0030        LDRB     R0,[R4, #+48]
+    199          	return value;
+   \       0x24   0xE8BD'8010        POP      {R4,PC}          ;; return
+    200          }
+    201          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    202          void twi_write_byte(Twi *twi, uint8_t byte)
+    203          {
+   \                     twi_write_byte:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    204          	assert(twi != NULL);
+   \        0xC   0x1A00'0004        BNE      ??twi_write_byte_0
+   \       0x10   0xE3A0'20CC        MOV      R2,#+204
+   \       0x14   0x....'....        LDR      R1,??DataTable32
+   \       0x18   0x....'....        LDR      R0,??DataTable32_4
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    205          	writeb(&twi->TWI_THR, byte);
+   \                     ??twi_write_byte_0:
+   \       0x24   0xE5C4'5034        STRB     R5,[R4, #+52]
+    206          }
+   \       0x28   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    207          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    208          void twi_init_write(Twi *twi, uint8_t address, uint32_t iaddress, uint8_t isize)
+    209          {
+   \                     twi_init_write:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'6001        MOV      R6,R1
+   \        0xC   0xE1A0'5002        MOV      R5,R2
+   \       0x10   0xE1A0'7003        MOV      R7,R3
+    210          	assert(twi != NULL);
+   \       0x14   0x1A00'0004        BNE      ??twi_init_write_0
+   \       0x18   0xE3A0'20D2        MOV      R2,#+210
+   \       0x1C   0x....'....        LDR      R1,??DataTable32
+   \       0x20   0x....'....        LDR      R0,??DataTable32_4
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    211          	assert((address & 0x80) == 0);
+   \                     ??twi_init_write_0:
+   \       0x2C   0xE316'0080        TST      R6,#0x80
+   \       0x30   0x0A00'0004        BEQ      ??twi_init_write_1
+   \       0x34   0xE3A0'20D3        MOV      R2,#+211
+   \       0x38   0x....'....        LDR      R1,??DataTable32
+   \       0x3C   0x....'....        LDR      R0,??DataTable32_5
+   \       0x40   0x....'....        BL       __aeabi_assert
+   \       0x44   0x....'....        BL       __iar_EmptyStepPoint
+    212          	assert((iaddress & 0xFF000000) == 0);
+   \                     ??twi_init_write_1:
+   \       0x48   0xE315'04FF        TST      R5,#0xFF000000
+   \       0x4C   0x0A00'0004        BEQ      ??twi_init_write_2
+   \       0x50   0xE3A0'20D4        MOV      R2,#+212
+   \       0x54   0x....'....        LDR      R1,??DataTable32
+   \       0x58   0x....'....        LDR      R0,??DataTable32_6
+   \       0x5C   0x....'....        BL       __aeabi_assert
+   \       0x60   0x....'....        BL       __iar_EmptyStepPoint
+    213          	assert(isize < 4);
+   \                     ??twi_init_write_2:
+   \       0x64   0xE357'0004        CMP      R7,#+4
+   \       0x68   0xBA00'0004        BLT      ??twi_init_write_3
+   \       0x6C   0xE3A0'20D5        MOV      R2,#+213
+   \       0x70   0x....'....        LDR      R1,??DataTable32
+   \       0x74   0x....'....        LDR      R0,??DataTable32_7
+   \       0x78   0x....'....        BL       __aeabi_assert
+   \       0x7C   0x....'....        BL       __iar_EmptyStepPoint
+    214          
+    215          	/* Set slave address and number of internal address bytes. */
+    216          	twi->TWI_MMR = TWI_MMR_DADR(address) | TWI_MMR_IADRSZ(isize);
+   \                     ??twi_init_write_3:
+   \       0x80   0xE3A0'087F        MOV      R0,#+8323072
+   \       0x84   0xE3A0'1FC0        MOV      R1,#+768
+   \       0x88   0xE000'0806        AND      R0,R0,R6, LSL #+16
+   \       0x8C   0xE001'1407        AND      R1,R1,R7, LSL #+8
+    217          	/* Set internal address bytes. */
+    218          	twi->TWI_IADR = TWI_IADR_IADR(iaddress);
+   \       0x90   0xE3C5'24FF        BIC      R2,R5,#0xFF000000
+   \       0x94   0xE181'1000        ORR      R1,R1,R0
+   \       0x98   0xE584'1004        STR      R1,[R4, #+4]
+   \       0x9C   0xE584'200C        STR      R2,[R4, #+12]
+    219          }
+   \       0xA0   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    220          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    221          uint8_t twi_is_byte_received(Twi *twi)
+    222          {
+   \                     twi_is_byte_received:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    223          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_is_byte_received_0
+   \        0xC   0xE3A0'20DF        MOV      R2,#+223
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        LDR      R0,??DataTable32_4
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    224          	return (twi->TWI_SR & TWI_SR_RXRDY) == TWI_SR_RXRDY;
+   \                     ??twi_is_byte_received_0:
+   \       0x20   0xE594'0020        LDR      R0,[R4, #+32]
+   \       0x24   0xE1A0'10A0        LSR      R1,R0,#+1
+   \       0x28   0x....'....        B        ?Subroutine2
+    225          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE201'0001        AND      R0,R1,#0x1
+   \        0x4   0xE8BD'8010        POP      {R4,PC}          ;; return
+    226          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    227          uint8_t twi_is_byte_sent(Twi *twi)
+    228          {
+   \                     twi_is_byte_sent:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    229          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_is_byte_sent_0
+   \        0xC   0xE3A0'20E5        MOV      R2,#+229
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        LDR      R0,??DataTable32_4
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    230          	return (twi->TWI_SR & TWI_SR_TXRDY) == TWI_SR_TXRDY;
+   \                     ??twi_is_byte_sent_0:
+   \       0x20   0xE594'0020        LDR      R0,[R4, #+32]
+   \       0x24   0xE1A0'1120        LSR      R1,R0,#+2
+   \       0x28                      REQUIRE ?Subroutine2
+   \       0x28                      ;; // Fall through to label ?Subroutine2
+    231          }
+    232          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    233          uint8_t twi_is_transfer_complete(Twi *twi)
+    234          {
+   \                     twi_is_transfer_complete:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    235          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_is_transfer_complete_0
+   \        0xC   0xE3A0'20EB        MOV      R2,#+235
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        LDR      R0,??DataTable32_4
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    236          	return (twi->TWI_SR & TWI_SR_TXCOMP) == TWI_SR_TXCOMP;
+   \                     ??twi_is_transfer_complete_0:
+   \       0x20   0xE594'0020        LDR      R0,[R4, #+32]
+   \       0x24   0xE200'0001        AND      R0,R0,#0x1
+   \       0x28   0xE8BD'8010        POP      {R4,PC}          ;; return
+    237          }
+    238          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    239          void twi_enable_it(Twi *twi, uint32_t sources)
+    240          {
+   \                     twi_enable_it:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    241          	assert(twi != NULL);
+   \        0xC   0x1A00'0004        BNE      ??twi_enable_it_0
+   \       0x10   0xE3A0'20F1        MOV      R2,#+241
+   \       0x14   0x....'....        LDR      R1,??DataTable32
+   \       0x18   0x....'....        LDR      R0,??DataTable32_4
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    242          	twi->TWI_IER = sources;
+   \                     ??twi_enable_it_0:
+   \       0x24   0xE584'5024        STR      R5,[R4, #+36]
+    243          }
+   \       0x28   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    244          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    245          void twi_disable_it(Twi *twi, uint32_t sources)
+    246          {
+   \                     twi_disable_it:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    247          	assert(twi != NULL);
+   \        0xC   0x1A00'0004        BNE      ??twi_disable_it_0
+   \       0x10   0xE3A0'20F7        MOV      R2,#+247
+   \       0x14   0x....'....        LDR      R1,??DataTable32
+   \       0x18   0x....'....        LDR      R0,??DataTable32_4
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    248          	twi->TWI_IDR = sources;
+   \                     ??twi_disable_it_0:
+   \       0x24   0xE584'5028        STR      R5,[R4, #+40]
+    249          }
+   \       0x28   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    250          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    251          uint32_t twi_get_status(Twi *twi)
+    252          {
+   \                     twi_get_status:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    253          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_get_status_0
+   \        0xC   0xE3A0'20FD        MOV      R2,#+253
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        LDR      R0,??DataTable32_4
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    254          	return twi->TWI_SR;
+   \                     ??twi_get_status_0:
+   \       0x20   0xE594'0020        LDR      R0,[R4, #+32]
+   \       0x24   0xE8BD'8010        POP      {R4,PC}          ;; return
+    255          }
+    256          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    257          uint32_t twi_get_masked_status(Twi *twi)
+    258          {
+   \                     twi_get_masked_status:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    259          	uint32_t status;
+    260          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_get_masked_status_0
+   \        0xC   0xE3A0'2F41        MOV      R2,#+260
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        LDR      R0,??DataTable32_4
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    261          	status = twi->TWI_SR;
+   \                     ??twi_get_masked_status_0:
+   \       0x20   0xE594'0020        LDR      R0,[R4, #+32]
+    262          	status &= twi->TWI_IMR;
+   \       0x24   0xE594'102C        LDR      R1,[R4, #+44]
+    263          	return status;
+   \       0x28   0xE001'0000        AND      R0,R1,R0
+   \       0x2C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    264          }
+    265          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    266          void twi_send_stop_condition(Twi *twi)
+    267          {
+   \                     twi_send_stop_condition:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    268          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_send_stop_condition_0
+   \        0xC   0xE3A0'2F43        MOV      R2,#+268
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        LDR      R0,??DataTable32_4
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    269          	twi->TWI_CR = TWI_CR_STOP;
+   \                     ??twi_send_stop_condition_0:
+   \       0x20                      REQUIRE ?Subroutine1
+   \       0x20                      ;; // Fall through to label ?Subroutine1
+    270          }
+    271          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    272          void twi_send_start_condition(Twi *twi)
+    273          {
+   \                     twi_send_start_condition:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    274          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_send_start_condition_0
+   \        0xC   0xE300'2112        MOVW     R2,#+274
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        LDR      R0,??DataTable32_4
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    275          	twi->TWI_CR = TWI_CR_START;
+   \                     ??twi_send_start_condition_0:
+   \       0x20   0xE3A0'0001        MOV      R0,#+1
+   \       0x24   0x....'....        B        ??Subroutine1_0
+    276          }
+    277          
+    278          #ifdef CONFIG_HAVE_TWI_ALTERNATE_CMD
+    279          
+    280          void twi_alt_cmd_configure_write(Twi *twi, uint8_t len)
+    281          {
+    282          	assert(twi != NULL);
+    283          	twi->TWI_ACR = TWI_ACR_DATAL(len);
+    284          }
+    285          
+    286          void twi_alt_cmd_configure_read(Twi *twi, uint8_t len)
+    287          {
+    288          	assert(twi != NULL);
+    289          	twi->TWI_ACR = TWI_ACR_DATAL(len) | TWI_ACR_DIR;
+    290          }
+    291          
+    292          void twi_alt_cmd_enable(Twi *twi)
+    293          {
+    294          	twi->TWI_CR = TWI_CR_ACMEN;
+    295          }
+    296          
+    297          void twi_alt_cmd_disable(Twi *twi)
+    298          {
+    299          	twi->TWI_CR = TWI_CR_ACMDIS;
+    300          }
+    301          
+    302          #endif /* CONFIG_HAVE_TWI_ALTERNATE_CMD */
+    303          
+    304          #ifdef CONFIG_HAVE_TWI_FIFO
+    305          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    306          void twi_fifo_configure(Twi *twi, uint8_t tx_thres, uint8_t rx_thres, uint32_t rdym)
+    307          {
+   \                     twi_fifo_configure:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'6001        MOV      R6,R1
+   \        0xC   0xE1A0'7002        MOV      R7,R2
+   \       0x10   0xE1A0'5003        MOV      R5,R3
+    308          	assert(twi != NULL);
+   \       0x14   0x1A00'0004        BNE      ??twi_fifo_configure_0
+   \       0x18   0xE3A0'2F4D        MOV      R2,#+308
+   \       0x1C   0x....'....        LDR      R1,??DataTable32
+   \       0x20   0x....'....        ADR      R0,?_3
+   \       0x24   0x....'....        BL       __aeabi_assert
+   \       0x28   0x....'....        BL       __iar_EmptyStepPoint
+    309          
+    310          	/* Configure FIFO */
+    311          	twi->TWI_FMR = TWI_FMR_TXFTHRES(tx_thres) | TWI_FMR_RXFTHRES(rx_thres) | rdym;
+   \                     ??twi_fifo_configure_0:
+   \       0x2C   0xE3A0'09FC        MOV      R0,#+4128768
+   \       0x30   0xE3A0'15FC        MOV      R1,#+1056964608
+   \       0x34   0xE000'0806        AND      R0,R0,R6, LSL #+16
+   \       0x38   0xE001'1C07        AND      R1,R1,R7, LSL #+24
+   \       0x3C   0xE181'1000        ORR      R1,R1,R0
+   \       0x40   0xE185'1001        ORR      R1,R5,R1
+   \       0x44   0xE584'1050        STR      R1,[R4, #+80]
+    312          }
+   \       0x48   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    313          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    314          void twi_fifo_enable(Twi *twi, bool master)
+    315          {
+   \                     twi_fifo_enable:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    316          	assert(twi != NULL);
+   \        0xC   0x1A00'0004        BNE      ??twi_fifo_enable_0
+   \       0x10   0xE3A0'2F4F        MOV      R2,#+316
+   \       0x14   0x....'....        LDR      R1,??DataTable32
+   \       0x18   0x....'....        ADR      R0,?_3
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    317          
+    318          	/* Enable TWI master and slave mode and activate FIFO */
+    319          	twi->TWI_CR = TWI_CR_MSDIS | TWI_CR_SVDIS;
+   \                     ??twi_fifo_enable_0:
+   \       0x24   0xE3A0'0028        MOV      R0,#+40
+    320          	twi->TWI_CR = TWI_CR_FIFOEN;
+   \       0x28   0xE3A0'1540        MOV      R1,#+268435456
+   \       0x2C   0xE584'0000        STR      R0,[R4, #+0]
+   \       0x30   0xE584'1000        STR      R1,[R4, #+0]
+    321          	twi->TWI_CR = TWI_CR_TXFCLR | TWI_CR_RXFCLR;
+   \       0x34   0xE3A0'27C0        MOV      R2,#+50331648
+    322          
+    323          	if (master)
+   \       0x38   0x....'....        B        ?Subroutine0
+    324          		twi->TWI_CR = TWI_CR_MSEN;
+    325          	else
+    326          		twi->TWI_CR = TWI_CR_SVEN;
+    327          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE355'0000        CMP      R5,#+0
+   \        0x4   0xE584'2000        STR      R2,[R4, #+0]
+   \        0x8   0x13A0'3004        MOVNE    R3,#+4
+   \        0xC   0x03A0'0010        MOVEQ    R0,#+16
+   \       0x10   0x1584'3000        STRNE    R3,[R4, #+0]
+   \       0x14   0x0584'0000        STREQ    R0,[R4, #+0]
+   \       0x18   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    328          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    329          void twi_fifo_disable(Twi *twi, bool master)
+    330          {
+   \                     twi_fifo_disable:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+    331          	assert(twi != NULL);
+   \        0xC   0x1A00'0004        BNE      ??twi_fifo_disable_0
+   \       0x10   0xE300'214B        MOVW     R2,#+331
+   \       0x14   0x....'....        LDR      R1,??DataTable32
+   \       0x18   0x....'....        ADR      R0,?_3
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    332          
+    333          	/* Disable TWI master and slave mode and activate FIFO */
+    334          	twi->TWI_CR = TWI_CR_MSDIS | TWI_CR_SVDIS;
+   \                     ??twi_fifo_disable_0:
+   \       0x24   0xE3A0'0028        MOV      R0,#+40
+    335          	twi->TWI_CR = TWI_CR_TXFCLR | TWI_CR_RXFCLR;
+   \       0x28   0xE3A0'17C0        MOV      R1,#+50331648
+   \       0x2C   0xE584'0000        STR      R0,[R4, #+0]
+   \       0x30   0xE584'1000        STR      R1,[R4, #+0]
+    336          	twi->TWI_CR = TWI_CR_FIFODIS;
+   \       0x34   0xE3A0'2580        MOV      R2,#+536870912
+    337          
+    338          	if (master)
+   \       0x38                      REQUIRE ?Subroutine0
+   \       0x38                      ;; // Fall through to label ?Subroutine0
+    339          		twi->TWI_CR = TWI_CR_MSEN;
+    340          	else
+    341          		twi->TWI_CR = TWI_CR_SVEN;
+    342          }
+    343          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    344          uint32_t twi_fifo_get_rx_size(Twi *twi)
+    345          {
+   \                     twi_fifo_get_rx_size:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    346          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_fifo_get_rx_size_0
+   \        0xC   0xE300'215A        MOVW     R2,#+346
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    347          
+    348          	return (twi->TWI_FLR & TWI_FLR_RXFL_Msk) >> TWI_FLR_RXFL_Pos;
+   \                     ??twi_fifo_get_rx_size_0:
+   \       0x20   0xE594'0054        LDR      R0,[R4, #+84]
+   \       0x24   0xE7E5'0850        UBFX     R0,R0,#+16,#+6
+   \       0x28   0xE8BD'8010        POP      {R4,PC}          ;; return
+    349          }
+    350          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    351          uint32_t twi_fifo_get_tx_size(Twi *twi)
+    352          {
+   \                     twi_fifo_get_tx_size:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    353          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_fifo_get_tx_size_0
+   \        0xC   0xE300'2161        MOVW     R2,#+353
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    354          
+    355          	return (twi->TWI_FLR & TWI_FLR_TXFL_Msk) >> TWI_FLR_TXFL_Pos;
+   \                     ??twi_fifo_get_tx_size_0:
+   \       0x20   0xE594'0054        LDR      R0,[R4, #+84]
+   \       0x24   0xE200'003F        AND      R0,R0,#0x3F
+   \       0x28   0xE8BD'8010        POP      {R4,PC}          ;; return
+    356          }
+    357          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    358          uint8_t twi_fifo_write(Twi *twi, uint8_t *data, uint8_t size)
+    359          {
+   \                     twi_fifo_write:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+    360          	uint8_t i;
+    361          
+    362          	assert(twi != NULL);
+   \       0x10   0x1A00'0004        BNE      ??twi_fifo_write_0
+   \       0x14   0xE300'216A        MOVW     R2,#+362
+   \       0x18   0x....'....        LDR      R1,??DataTable32
+   \       0x1C   0x....'....        ADR      R0,?_3
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    363          
+    364          	for (i = 0 ; i < size ; ) {
+   \                     ??twi_fifo_write_0:
+   \       0x28   0xE3A0'0000        MOV      R0,#+0
+   \       0x2C   0xEA00'0003        B        ??twi_fifo_write_1
+    365          		if ((size - i) >= 4) {
+    366          			writew(&twi->TWI_THR,  *(uint32_t*)&data[i]);
+   \                     ??twi_fifo_write_2:
+   \       0x30   0xE795'1000        LDR      R1,[R5, +R0]
+    367          			i += 4;
+   \       0x34   0xE280'0004        ADD      R0,R0,#+4
+   \       0x38   0xE584'1034        STR      R1,[R4, #+52]
+   \                     ??twi_fifo_write_3:
+   \       0x3C   0xE6EF'0070        UXTB     R0,R0
+    368          		} else if ((size - i) >= 2) {
+   \                     ??twi_fifo_write_1:
+   \       0x40   0xE150'0006        CMP      R0,R6
+   \       0x44   0xAA00'000A        BGE      ??twi_fifo_write_4
+   \       0x48   0xE046'1000        SUB      R1,R6,R0
+   \       0x4C   0xE351'0004        CMP      R1,#+4
+   \       0x50   0xAAFF'FFF6        BGE      ??twi_fifo_write_2
+   \       0x54   0xE351'0002        CMP      R1,#+2
+    369          			writehw(&twi->TWI_THR, *(uint16_t*)&data[i]);
+   \       0x58   0xA195'10B0        LDRHGE   R1,[R5, +R0]
+    370          			i += 2;
+   \       0x5C   0xA280'0002        ADDGE    R0,R0,#+2
+   \       0x60   0xA1C4'13B4        STRHGE   R1,[R4, #+52]
+    371          		} else {
+    372          			writeb(&twi->TWI_THR,  *(uint8_t*)&data[i]);
+   \       0x64   0xB7D5'1000        LDRBLT   R1,[R5, +R0]
+    373          			i += 1;
+   \       0x68   0xB280'0001        ADDLT    R0,R0,#+1
+   \       0x6C   0xB5C4'1034        STRBLT   R1,[R4, #+52]
+   \       0x70   0xEAFF'FFF1        B        ??twi_fifo_write_3
+    374          		}
+    375          	}
+    376          
+    377          	return i;
+   \                     ??twi_fifo_write_4:
+   \       0x74   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    378          }
+    379          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    380          uint8_t twi_fifo_read(Twi *twi, uint8_t *data, uint8_t size)
+    381          {
+   \                     twi_fifo_read:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+    382          	uint8_t i;
+    383          
+    384          	assert(twi != NULL);
+   \       0x10   0x1A00'0004        BNE      ??twi_fifo_read_0
+   \       0x14   0xE3A0'2F60        MOV      R2,#+384
+   \       0x18   0x....'....        LDR      R1,??DataTable32
+   \       0x1C   0x....'....        ADR      R0,?_3
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    385          
+    386          	for (i = 0 ; i < size ; ) {
+   \                     ??twi_fifo_read_0:
+   \       0x28   0xE3A0'0000        MOV      R0,#+0
+   \       0x2C   0xEA00'0003        B        ??twi_fifo_read_1
+    387          		if ((size - i) >= 4) {
+    388          			readw(&twi->TWI_RHR, (uint32_t*)&data[i]);
+   \                     ??twi_fifo_read_2:
+   \       0x30   0xE594'1030        LDR      R1,[R4, #+48]
+   \       0x34   0xE785'1000        STR      R1,[R5, +R0]
+    389          			i += 4;
+   \       0x38   0xE280'0004        ADD      R0,R0,#+4
+   \                     ??twi_fifo_read_3:
+   \       0x3C   0xE6EF'0070        UXTB     R0,R0
+    390          		} else if ((size - i) >= 2) {
+   \                     ??twi_fifo_read_1:
+   \       0x40   0xE150'0006        CMP      R0,R6
+   \       0x44   0xAA00'000A        BGE      ??twi_fifo_read_4
+   \       0x48   0xE046'1000        SUB      R1,R6,R0
+   \       0x4C   0xE351'0004        CMP      R1,#+4
+   \       0x50   0xAAFF'FFF6        BGE      ??twi_fifo_read_2
+   \       0x54   0xE351'0002        CMP      R1,#+2
+    391          			readhw(&twi->TWI_RHR, (uint16_t*)&data[i]);
+   \       0x58   0xA1D4'13B0        LDRHGE   R1,[R4, #+48]
+   \       0x5C   0xA185'10B0        STRHGE   R1,[R5, +R0]
+    392          			i += 2;
+    393          		} else {
+    394          			readb(&twi->TWI_RHR,  (uint8_t*)&data[i]);
+   \       0x60   0xB5D4'2030        LDRBLT   R2,[R4, #+48]
+   \       0x64   0xA280'0002        ADDGE    R0,R0,#+2
+   \       0x68   0xB7C5'2000        STRBLT   R2,[R5, +R0]
+    395          			i += 1;
+   \       0x6C   0xB280'0001        ADDLT    R0,R0,#+1
+   \       0x70   0xEAFF'FFF1        B        ??twi_fifo_read_3
+    396          		}
+    397          	}
+    398          
+    399          	return i;
+   \                     ??twi_fifo_read_4:
+   \       0x74   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    400          }
+    401          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    402          void twi_fifo_flush_rx(Twi *twi)
+    403          {
+   \                     twi_fifo_flush_rx:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    404          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_fifo_flush_rx_0
+   \        0xC   0xE3A0'2F65        MOV      R2,#+404
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    405          	twi->TWI_CR = TWI_CR_RXFCLR;
+   \                     ??twi_fifo_flush_rx_0:
+   \       0x20   0xE3A0'0780        MOV      R0,#+33554432
+   \       0x24   0x....'....        B        ??Subroutine1_0
+    406          }
+    407          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    408          void twi_fifo_flush_tx(Twi *twi)
+    409          {
+   \                     twi_fifo_flush_tx:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    410          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_fifo_flush_tx_0
+   \        0xC   0xE300'219A        MOVW     R2,#+410
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    411          	twi->TWI_CR = TWI_CR_TXFCLR;
+   \                     ??twi_fifo_flush_tx_0:
+   \       0x20   0xE3A0'0740        MOV      R0,#+16777216
+   \       0x24   0x....'....        B        ??Subroutine1_0
+    412          }
+    413          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    414          bool twi_fifo_is_locked(Twi *twi)
+    415          {
+   \                     twi_fifo_is_locked:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    416          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_fifo_is_locked_0
+   \        0xC   0xE3A0'2F68        MOV      R2,#+416
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    417          	return twi->TWI_SR & TWI_SR_LOCK;
+   \                     ??twi_fifo_is_locked_0:
+   \       0x20   0xE594'0020        LDR      R0,[R4, #+32]
+   \       0x24   0xE1A0'1BA0        LSR      R1,R0,#+23
+   \       0x28   0x....'....        B        ?Subroutine2
+    418          }
+    419          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    420          void twi_fifo_unlock(Twi *twi)
+    421          {
+   \                     twi_fifo_unlock:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    422          	assert(twi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??twi_fifo_unlock_0
+   \        0xC   0xE300'21A6        MOVW     R2,#+422
+   \       0x10   0x....'....        LDR      R1,??DataTable32
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    423          	twi->TWI_CR = TWI_CR_LOCKCLR;
+   \                     ??twi_fifo_unlock_0:
+   \       0x20   0xE3A0'0640        MOV      R0,#+67108864
+   \       0x24   0x....'....        B        ??Subroutine1_0
+    424          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable13:
+   \        0x0   0x74 0x77          DC8      "twi"
+
+   \              0x69 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable15:
+   \        0x0   0x3333'3333        DC32     0x33333333,0x3FD33333
+
+   \              0x3FD3'3333
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable32:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable32_1:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable32_2:
+   \        0x0   0x000F'423F        DC32     0xf423f
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable32_3:
+   \        0x0   0x8637'BD06        DC32     0x8637bd06
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable32_4:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable32_5:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable32_6:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable32_7:
+   \        0x0   0x....'....        DC32     ?_6
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x69, 0x32, 0x63, 0x5C, 0x74, 0x77
+
+   \              0x69 0x32    
+
+   \              0x63 0x5C    
+
+   \              0x74 0x77
+   \       0x40   0x69 0x2E          DC8 0x69, 0x2E, 0x63, 0
+
+   \              0x63 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_3:
+   \        0x0   0x74 0x77          DC8 "twi != ((void*)0)"
+
+   \              0x69 0x20    
+
+   \              0x21 0x3D    
+
+   \              0x20 0x28    
+
+   \              0x28 0x76    
+
+   \              0x6F 0x69    
+
+   \              0x64 0x2A    
+
+   \              0x29 0x30    
+
+   \              0x29 0x00
+   \       0x12   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x74 0x77          DC8 "twi"
+
+   \              0x69 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_2:
+   \        0x0   0x69 0x64          DC8 "id < (79)"
+
+   \              0x20 0x3C    
+
+   \              0x20 0x28    
+
+   \              0x37 0x39    
+
+   \              0x29 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_4:
+   \        0x0   0x28 0x61          DC8 "(address & 0x80) == 0"
+
+   \              0x64 0x64    
+
+   \              0x72 0x65    
+
+   \              0x73 0x73    
+
+   \              0x20 0x26    
+
+   \              0x20 0x30    
+
+   \              0x78 0x38    
+
+   \              0x30 0x29    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x20    
+
+   \              0x30 0x00
+   \       0x16   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x28 0x69          DC8 "(iaddress & 0xFF000000) == 0"
+
+   \              0x61 0x64    
+
+   \              0x64 0x72    
+
+   \              0x65 0x73    
+
+   \              0x73 0x20    
+
+   \              0x26 0x20    
+
+   \              0x30 0x78    
+
+   \              0x46 0x46    
+
+   \              0x30 0x30    
+
+   \              0x30 0x30    
+
+   \              0x30 0x30    
+
+   \              0x29 0x20    
+
+   \              0x3D 0x3D    
+
+   \              0x20 0x30    
+
+   \              0x00
+   \       0x1D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_6:
+   \        0x0   0x69 0x73          DC8 "isize < 4"
+
+   \              0x69 0x7A    
+
+   \              0x65 0x20    
+
+   \              0x3C 0x20    
+
+   \              0x34 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+    425          
+    426          #endif /* CONFIG_HAVE_TWI_FIFO */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   twi_configure_master
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+        24   -> get_twi_id_from_addr
+        24   -> pmc_get_peripheral_clock
+         0 __aeabi_uidiv
+        24 __aeabi_uidiv
+      16   twi_configure_slave
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   twi_disable_it
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   twi_enable_it
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      24   twi_fifo_configure
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+      16   twi_fifo_disable
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+      16   twi_fifo_enable
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       8   twi_fifo_flush_rx
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_fifo_flush_tx
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_fifo_get_rx_size
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_fifo_get_tx_size
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_fifo_is_locked
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+      16   twi_fifo_read
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       8   twi_fifo_unlock
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+      16   twi_fifo_write
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       8   twi_get_masked_status
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_get_status
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+      24   twi_init_read
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+      24   twi_init_write
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+       8   twi_is_byte_received
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_is_byte_sent
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_is_transfer_complete
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_read_byte
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_send_start_condition
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_send_stop_condition
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   twi_stop
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+      16   twi_write_byte
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable13
+       8  ??DataTable15
+       4  ??DataTable32
+       4  ??DataTable32_1
+       4  ??DataTable32_2
+       4  ??DataTable32_3
+       4  ??DataTable32_4
+       4  ??DataTable32_5
+       4  ??DataTable32_6
+       4  ??DataTable32_7
+      28  ?Subroutine0
+      12  ?Subroutine1
+       8  ?Subroutine2
+      68  ?_0
+       4  ?_1
+      12  ?_2
+      20  ?_3
+      24  ?_4
+      32  ?_5
+      12  ?_6
+     272  twi_configure_master
+      76  twi_configure_slave
+      44  twi_disable_it
+      44  twi_enable_it
+      76  twi_fifo_configure
+      56  twi_fifo_disable
+      60  twi_fifo_enable
+      40  twi_fifo_flush_rx
+      40  twi_fifo_flush_tx
+      44  twi_fifo_get_rx_size
+      44  twi_fifo_get_tx_size
+      44  twi_fifo_is_locked
+     120  twi_fifo_read
+      40  twi_fifo_unlock
+     120  twi_fifo_write
+      48  twi_get_masked_status
+      40  twi_get_status
+     168  twi_init_read
+     164  twi_init_write
+      44  twi_is_byte_received
+      40  twi_is_byte_sent
+      44  twi_is_transfer_complete
+      40  twi_read_byte
+      40  twi_send_start_condition
+      32  twi_send_stop_condition
+      36  twi_stop
+      44  twi_write_byte
+
+ 
+   152 bytes in section .rodata
+ 1'972 bytes in section SOFTPACK
+ 
+ 1'972 bytes of CODE  memory
+   152 bytes of CONST memory
+
+Errors: none
+Warnings: none

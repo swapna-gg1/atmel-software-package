@@ -1,0 +1,739 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         24/Nov/2020  13:57:05
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\irq\aic5.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWE805.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\irq\aic5.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D4 -D
+#        CONFIG_CHIP_SAMA5D44 -D CONFIG_BOARD_SAMA5D4_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_ADC_LOW_RES -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D
+#        CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SFC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_SECURE_MATRIX -D
+#        CONFIG_HAVE_DDR2_MT47H128M8 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_TC_FAULT_MODE -D
+#        CONFIG_HAVE_RTC_CALIBRATION -D CONFIG_HAVE_RTC_MODE_PERSIAN -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_SPI_MODE -D CONFIG_HAVE_SERIALD_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sama5d4\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\List\aic5.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\Obj\aic5.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\irq\aic5.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "chip.h"
+     35          #include "trace.h"
+     36          #include "irqflags.h"
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \   static __interwork __vfp void arch_irq_enable(void)
+   \                     arch_irq_enable:
+   \        0x0   0xF108'00C0        cpsie if
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \   static __interwork __vfp void arch_irq_disable(void)
+   \                     arch_irq_disable:
+   \        0x0   0xF10C'00C0        cpsid if
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+     37          
+     38          #include "irq/aic.h"
+     39          #include "irq/irq.h"
+     40          #include "peripherals/matrix.h"
+     41          
+     42          #include <stdint.h>
+     43          #include <assert.h>
+     44          #include <errno.h>
+     45          
+     46          /*------------------------------------------------------------------------------
+     47           *         Local functions
+     48           *------------------------------------------------------------------------------*/
+     49          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     50          static void spurious_handler(void)
+     51          {
+     52          	// nothing here
+     53          }
+   \                     spurious_handler:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+     54          
+     55          /**
+     56           * \brief Interrupt Init.
+     57           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     58          static void _aic_initialize(Aic* aic, aic_handler_t irq_handler)
+     59          {
+     60          	int i;
+     61          
+     62          	/* Disable all interrupts and clear pending flags */
+     63          	for (i = 1; i < ID_PERIPH_COUNT; i++)
+   \                     _aic_initialize:
+   \        0x0   0xE3A0'2001        MOV      R2,#+1
+   \        0x4   0xE3A0'3001        MOV      R3,#+1
+     64          	{
+     65          		aic->AIC_SSR = i;
+   \                     ??_aic_initialize_0:
+   \        0x8   0xE580'2000        STR      R2,[R0, #+0]
+     66          		aic->AIC_IDCR = AIC_IDCR_INTD;
+     67          		aic->AIC_ICCR = AIC_ICCR_INTCLR;
+     68          	}
+   \        0xC   0xE282'2001        ADD      R2,R2,#+1
+   \       0x10   0xE580'3044        STR      R3,[R0, #+68]
+   \       0x14   0xE352'0044        CMP      R2,#+68
+   \       0x18   0xE580'3048        STR      R3,[R0, #+72]
+   \       0x1C   0xBAFF'FFF9        BLT      ??_aic_initialize_0
+     69          
+     70          	/* Perform 8 IT acknowledge (write any value in EOICR) */
+     71          	for (i = 0; i < 8; i++)
+     72          		aic->AIC_EOICR = 0;
+   \       0x20   0xE3A0'2000        MOV      R2,#+0
+   \       0x24   0xE580'2038        STR      R2,[R0, #+56]
+   \       0x28   0xE580'2038        STR      R2,[R0, #+56]
+   \       0x2C   0xE580'2038        STR      R2,[R0, #+56]
+   \       0x30   0xE580'2038        STR      R2,[R0, #+56]
+   \       0x34   0xE580'2038        STR      R2,[R0, #+56]
+   \       0x38   0xE580'2038        STR      R2,[R0, #+56]
+   \       0x3C   0xE580'2038        STR      R2,[R0, #+56]
+   \       0x40   0xE580'2038        STR      R2,[R0, #+56]
+     73          
+     74          	/* Assign default handlers */
+     75          	for (i = 0; i < ID_PERIPH_COUNT; i++)
+     76          	{
+     77          		aic->AIC_SSR = i;
+   \                     ??_aic_initialize_1:
+   \       0x44   0xE580'2000        STR      R2,[R0, #+0]
+     78          		aic->AIC_SVR = (uint32_t)irq_handler;
+     79          	}
+   \       0x48   0xE282'2001        ADD      R2,R2,#+1
+   \       0x4C   0xE580'1008        STR      R1,[R0, #+8]
+   \       0x50   0xE352'0044        CMP      R2,#+68
+   \       0x54   0xBAFF'FFFA        BLT      ??_aic_initialize_1
+     80          	aic->AIC_SPU = (uint32_t)spurious_handler;
+   \       0x58   0x....'....        ADR      R1,spurious_handler
+   \       0x5C   0xE580'103C        STR      R1,[R0, #+60]
+     81          }
+   \       0x60   0xE12F'FF1E        BX       LR               ;; return
+     82          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     83          static Aic* _get_aic_instance(uint32_t source)
+     84          {
+   \                     _get_aic_instance:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+     85          #ifdef CONFIG_HAVE_SAIC
+     86          	if (SFR->SFR_AICREDIR == 0) {
+   \        0x8   0x....'....        LDR      R0,??DataTable10  ;; 0xf8028054
+   \        0xC   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x10   0xE351'0000        CMP      R1,#+0
+   \       0x14   0x1A00'0007        BNE      ??_get_aic_instance_0
+     87          		Matrix* matrix = get_peripheral_matrix(source);
+   \       0x18   0xE1A0'0004        MOV      R0,R4
+   \       0x1C   0x....'....        BL       get_peripheral_matrix
+     88          		if (matrix_is_peripheral_secured(matrix, source))
+   \       0x20   0xE1A0'1004        MOV      R1,R4
+   \       0x24   0x....'....        BL       matrix_is_peripheral_secured
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x0A00'0001        BEQ      ??_get_aic_instance_0
+     89          			return SAIC;
+   \       0x30   0x....'....        LDR      R0,??DataTable10_1  ;; 0xfc068400
+   \       0x34   0xE8BD'8010        POP      {R4,PC}
+     90          	}
+     91          #endif /* CONFIG_HAVE_SAIC */
+     92          	return AIC;
+   \                     ??_get_aic_instance_0:
+   \       0x38   0xE3A0'04FC        MOV      R0,#-67108864
+   \       0x3C   0xE380'0A6E        ORR      R0,R0,#0x6E000
+   \       0x40   0xE8BD'8010        POP      {R4,PC}          ;; return
+     93          }
+     94          
+     95          /*----------------------------------------------------------------------------
+     96           *        Exported functions
+     97           *----------------------------------------------------------------------------*/
+     98          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     99          void aic_initialize(aic_handler_t irq_handler)
+    100          {
+   \                     aic_initialize:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    101          	/* Disable interrupts at core level */
+    102          	arch_irq_disable();
+   \        0x8   0x....'....        BL       arch_irq_disable
+    103          
+    104          	/* Set default vectors */
+    105          	_aic_initialize(AIC, irq_handler);
+   \        0xC   0xE3A0'04FC        MOV      R0,#-67108864
+   \       0x10   0xE1A0'1004        MOV      R1,R4
+   \       0x14   0xE380'0A6E        ORR      R0,R0,#0x6E000
+   \       0x18   0x....'....        BL       _aic_initialize
+    106          #ifdef CONFIG_HAVE_SAIC
+    107          	_aic_initialize(SAIC, irq_handler);
+   \       0x1C   0xE1A0'1004        MOV      R1,R4
+   \       0x20   0x....'....        LDR      R0,??DataTable10_1  ;; 0xfc068400
+   \       0x24   0x....'....        BL       _aic_initialize
+    108          
+    109          	/* Redirect all interrupts to Non-secure AIC */
+    110          	uint32_t aicredir = SFR_AICREDIR_AICREDIRKEY((uint32_t)(AICREDIR_KEY));
+    111          	SFR->SFR_AICREDIR = (aicredir ^ SFR->SFR_SN1) | SFR_AICREDIR_NSAIC;
+   \       0x28   0x....'....        LDR      R0,??DataTable10_2  ;; 0xf8028050
+   \       0x2C   0x....'....        LDR      R2,??DataTable10_3  ;; 0x5f67b102
+   \       0x30   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x34   0xE022'2001        EOR      R2,R2,R1
+   \       0x38   0xE382'3001        ORR      R3,R2,#0x1
+   \       0x3C   0xE580'3004        STR      R3,[R0, #+4]
+    112          #endif /* CONFIG_HAVE_SAIC */
+    113          
+    114          	/* Enable interrupts at core level */
+    115          	arch_irq_enable();
+   \       0x40   0xE8BD'4010        POP      {R4,LR}
+   \       0x44   0x....'....        B        arch_irq_enable  ;; tailcall
+    116          }
+    117          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    118          void aic_set_source_vector(uint32_t source, aic_handler_t handler)
+    119          {
+   \                     aic_set_source_vector:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    120          	Aic *aic = _get_aic_instance(source);
+   \        0x8   0x....'....        LDR      R0,??DataTable10  ;; 0xf8028054
+   \        0xC   0xE1A0'5001        MOV      R5,R1
+   \       0x10   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x14   0xE351'0000        CMP      R1,#+0
+   \       0x18   0x1A00'0006        BNE      ??aic_set_source_vector_0
+   \       0x1C   0xE1A0'0004        MOV      R0,R4
+   \       0x20   0x....'....        BL       get_peripheral_matrix
+   \       0x24   0xE1A0'1004        MOV      R1,R4
+   \       0x28   0x....'....        BL       matrix_is_peripheral_secured
+   \       0x2C   0xE350'0000        CMP      R0,#+0
+   \       0x30   0x....'....        LDRNE    R0,??DataTable10_1  ;; 0xfc068400
+   \       0x34   0x1A00'0001        BNE      ??aic_set_source_vector_1
+   \                     ??aic_set_source_vector_0:
+   \       0x38   0xE3A0'04FC        MOV      R0,#-67108864
+   \       0x3C   0xE380'0A6E        ORR      R0,R0,#0x6E000
+    121          	aic->AIC_SSR = AIC_SSR_INTSEL(source);
+   \                     ??aic_set_source_vector_1:
+   \       0x40   0xE204'107F        AND      R1,R4,#0x7F
+   \       0x44   0xE580'1000        STR      R1,[R0, #+0]
+    122          	aic->AIC_SVR = (uint32_t)handler;
+   \       0x48   0xE580'5008        STR      R5,[R0, #+8]
+    123          }
+   \       0x4C   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    124          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    125          void aic_set_spurious_vector(aic_handler_t handler)
+    126          {
+    127          	AIC->AIC_SPU = (uint32_t)handler;
+   \                     aic_set_spurious_vector:
+   \        0x0   0x....'....        LDR      R1,??DataTable10_4  ;; 0xfc06e03c
+    128          #ifdef CONFIG_HAVE_SAIC
+    129          	if (SFR->SFR_AICREDIR == 0)
+   \        0x4   0x....'....        LDR      R2,??DataTable10  ;; 0xf8028054
+   \        0x8   0xE581'0000        STR      R0,[R1, #+0]
+   \        0xC   0xE592'3000        LDR      R3,[R2, #+0]
+   \       0x10   0xE353'0000        CMP      R3,#+0
+    130          		SAIC->AIC_SPU = (uint32_t)handler;
+   \       0x14   0x0241'CC5C        SUBEQ    R12,R1,#+23552
+   \       0x18   0x058C'0000        STREQ    R0,[R12, #+0]
+    131          #endif
+    132          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    133          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    134          void aic_configure_mode(uint32_t source, enum _irq_mode mode)
+    135          {
+   \                     aic_configure_mode:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    136          	uint32_t srctype;
+    137          
+    138          	switch (mode) {
+   \        0x8   0xE1A0'0001        MOV      R0,R1
+   \        0xC   0xE350'0003        CMP      R0,#+3
+   \       0x10   0x8A00'0013        BHI      ??aic_configure_mode_1
+   \       0x14   0xE7DF'2000        LDRB     R2,[PC, R0]
+   \       0x18   0xE08F'F102        ADD      PC,PC,R2, LSL #+2
+   \                     ??aic_configure_mode_0:
+   \       0x1C   0x00 0x0B          DC8      0x0,0xB,0xD,0xF
+
+   \              0x0D 0x0F
+    139          	case IRQ_MODE_HIGH_LEVEL:
+    140          		srctype = AIC_SMR_SRCTYPE_EXT_HIGH_LEVEL;
+   \                     ??aic_configure_mode_2:
+   \       0x20   0xE3A0'5040        MOV      R5,#+64
+    141          		break;
+    142          	case IRQ_MODE_LOW_LEVEL:
+    143          		srctype = AIC_SMR_SRCTYPE_INT_LEVEL_SENSITIVE;
+    144          		break;
+    145          	case IRQ_MODE_POSITIVE_EDGE:
+    146          		srctype = AIC_SMR_SRCTYPE_EXT_POSITIVE_EDGE;
+    147          		break;
+    148          	case IRQ_MODE_NEGATIVE_EDGE:
+    149          		srctype = AIC_SMR_SRCTYPE_INT_EDGE_TRIGGERED;
+    150          		break;
+    151          	default:
+    152          		trace_fatal("Invalid interrupt mode: %d\r\n", (int)mode);
+    153          	}
+    154          
+    155          	Aic* aic = _get_aic_instance(source);
+   \                     ??aic_configure_mode_3:
+   \       0x24   0xE1A0'0004        MOV      R0,R4
+   \       0x28   0x....'....        BL       _get_aic_instance
+    156          	aic->AIC_SSR = source;
+   \       0x2C   0xE580'4000        STR      R4,[R0, #+0]
+    157          	aic->AIC_IDCR = AIC_IDCR_INTD;
+   \       0x30   0xE3A0'1001        MOV      R1,#+1
+   \       0x34   0xE580'1044        STR      R1,[R0, #+68]
+    158          	aic->AIC_SMR = (aic->AIC_SMR & ~AIC_SMR_SRCTYPE_Msk) | srctype;
+   \       0x38   0xE590'2004        LDR      R2,[R0, #+4]
+   \       0x3C   0xE3C2'3060        BIC      R3,R2,#0x60
+   \       0x40   0xE185'3003        ORR      R3,R5,R3
+   \       0x44   0xE580'3004        STR      R3,[R0, #+4]
+    159          	aic->AIC_ICCR = AIC_ICCR_INTCLR;
+   \       0x48   0x....'....        B        ?Subroutine0
+   \                     ??aic_configure_mode_4:
+   \       0x4C   0xE3A0'5000        MOV      R5,#+0
+   \       0x50   0xEAFF'FFF3        B        ??aic_configure_mode_3
+   \                     ??aic_configure_mode_5:
+   \       0x54   0xE3A0'5060        MOV      R5,#+96
+   \       0x58   0xEAFF'FFF1        B        ??aic_configure_mode_3
+   \                     ??aic_configure_mode_6:
+   \       0x5C   0xE3A0'5020        MOV      R5,#+32
+   \       0x60   0xEAFF'FFEF        B        ??aic_configure_mode_3
+   \                     ??aic_configure_mode_1:
+   \       0x64   0x....'....        LDR      R0,??DataTable10_5
+   \       0x68   0xE590'2000        LDR      R2,[R0, #+0]
+   \       0x6C   0xE352'0000        CMP      R2,#+0
+   \       0x70   0x0A00'0001        BEQ      ??aic_configure_mode_7
+   \       0x74   0x....'....        LDR      R0,??DataTable10_6
+   \       0x78   0x....'....        BL       printf
+   \                     ??aic_configure_mode_7:
+   \       0x7C   0xEAFF'FFFE        B        ??aic_configure_mode_7
+    160          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE580'1048        STR      R1,[R0, #+72]
+   \        0x4   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    161          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    162          void aic_configure_priority(uint32_t source, uint8_t priority)
+    163          {
+   \                     aic_configure_priority:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'5000        MOV      R5,R0
+    164          	Aic* aic = _get_aic_instance(source);
+   \        0x8   0x....'....        LDR      R0,??DataTable10  ;; 0xf8028054
+   \        0xC   0xE1A0'4001        MOV      R4,R1
+   \       0x10   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x14   0xE351'0000        CMP      R1,#+0
+   \       0x18   0x1A00'0006        BNE      ??aic_configure_priority_0
+   \       0x1C   0xE1A0'0005        MOV      R0,R5
+   \       0x20   0x....'....        BL       get_peripheral_matrix
+   \       0x24   0xE1A0'1005        MOV      R1,R5
+   \       0x28   0x....'....        BL       matrix_is_peripheral_secured
+   \       0x2C   0xE350'0000        CMP      R0,#+0
+   \       0x30   0x....'....        LDRNE    R0,??DataTable10_1  ;; 0xfc068400
+   \       0x34   0x1A00'0001        BNE      ??aic_configure_priority_1
+   \                     ??aic_configure_priority_0:
+   \       0x38   0xE3A0'04FC        MOV      R0,#-67108864
+   \       0x3C   0xE380'0A6E        ORR      R0,R0,#0x6E000
+    165          	aic->AIC_SSR = source;
+   \                     ??aic_configure_priority_1:
+   \       0x40   0xE580'5000        STR      R5,[R0, #+0]
+    166          	aic->AIC_IDCR = AIC_IDCR_INTD;
+   \       0x44   0xE3A0'1001        MOV      R1,#+1
+    167          	aic->AIC_SMR = (aic->AIC_SMR & ~AIC_SMR_PRIOR_Msk) | AIC_SMR_PRIOR(priority);
+   \       0x48   0xE204'C007        AND      R12,R4,#0x7
+   \       0x4C   0xE580'1044        STR      R1,[R0, #+68]
+   \       0x50   0xE590'2004        LDR      R2,[R0, #+4]
+   \       0x54   0xE1A0'31A2        LSR      R3,R2,#+3
+   \       0x58   0xE18C'C183        ORR      R12,R12,R3, LSL #+3
+   \       0x5C   0xE580'C004        STR      R12,[R0, #+4]
+    168          	aic->AIC_ICCR = AIC_ICCR_INTCLR;
+   \       0x60                      REQUIRE ?Subroutine0
+   \       0x60                      ;; // Fall through to label ?Subroutine0
+    169          }
+    170          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    171          void aic_enable(uint32_t source)
+    172          {
+   \                     aic_enable:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    173          	Aic* aic = _get_aic_instance(source);
+   \        0x8   0x....'....        LDR      R0,??DataTable10  ;; 0xf8028054
+   \        0xC   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x10   0xE351'0000        CMP      R1,#+0
+   \       0x14   0x1A00'0006        BNE      ??aic_enable_0
+   \       0x18   0xE1A0'0004        MOV      R0,R4
+   \       0x1C   0x....'....        BL       get_peripheral_matrix
+   \       0x20   0xE1A0'1004        MOV      R1,R4
+   \       0x24   0x....'....        BL       matrix_is_peripheral_secured
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x....'....        LDRNE    R0,??DataTable10_1  ;; 0xfc068400
+   \       0x30   0x1A00'0001        BNE      ??aic_enable_1
+   \                     ??aic_enable_0:
+   \       0x34   0xE3A0'04FC        MOV      R0,#-67108864
+   \       0x38   0xE380'0A6E        ORR      R0,R0,#0x6E000
+    174          	aic->AIC_SSR = AIC_SSR_INTSEL(source);
+   \                     ??aic_enable_1:
+   \       0x3C   0xE204'107F        AND      R1,R4,#0x7F
+    175          	aic->AIC_IECR = AIC_IECR_INTEN;
+   \       0x40   0xE3A0'2001        MOV      R2,#+1
+   \       0x44   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x48   0xE580'2040        STR      R2,[R0, #+64]
+    176          }
+   \       0x4C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    177          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    178          void aic_disable(uint32_t source)
+    179          {
+   \                     aic_disable:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    180          	Aic* aic = _get_aic_instance(source);
+   \        0x8   0x....'....        LDR      R0,??DataTable10  ;; 0xf8028054
+   \        0xC   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x10   0xE351'0000        CMP      R1,#+0
+   \       0x14   0x1A00'0006        BNE      ??aic_disable_0
+   \       0x18   0xE1A0'0004        MOV      R0,R4
+   \       0x1C   0x....'....        BL       get_peripheral_matrix
+   \       0x20   0xE1A0'1004        MOV      R1,R4
+   \       0x24   0x....'....        BL       matrix_is_peripheral_secured
+   \       0x28   0xE350'0000        CMP      R0,#+0
+   \       0x2C   0x....'....        LDRNE    R0,??DataTable10_1  ;; 0xfc068400
+   \       0x30   0x1A00'0001        BNE      ??aic_disable_1
+   \                     ??aic_disable_0:
+   \       0x34   0xE3A0'04FC        MOV      R0,#-67108864
+   \       0x38   0xE380'0A6E        ORR      R0,R0,#0x6E000
+    181          	aic->AIC_SSR = AIC_SSR_INTSEL(source);
+   \                     ??aic_disable_1:
+   \       0x3C   0xE204'107F        AND      R1,R4,#0x7F
+    182          	aic->AIC_IDCR = AIC_IDCR_INTD;
+   \       0x40   0xE3A0'2001        MOV      R2,#+1
+   \       0x44   0xE580'1000        STR      R1,[R0, #+0]
+   \       0x48   0xE580'2044        STR      R2,[R0, #+68]
+    183          }
+   \       0x4C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    184          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    185          uint32_t aic_get_current_interrupt_source(void)
+    186          {
+    187          	return AIC->AIC_ISR;
+   \                     aic_get_current_interrupt_source:
+   \        0x0   0x....'....        LDR      R0,??DataTable10_7  ;; 0xfc06e018
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    188          }
+    189          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    190          void aic_set_debug_config(Aic* aic, bool protect, bool mask)
+    191          {
+    192          	uint32_t dcr = 0;
+   \                     aic_set_debug_config:
+   \        0x0   0xE3A0'3000        MOV      R3,#+0
+    193          	if (protect)
+   \        0x4   0xE351'0000        CMP      R1,#+0
+    194          		dcr |= AIC_DCR_PROT;
+   \        0x8   0x13A0'3001        MOVNE    R3,#+1
+    195          	if (mask)
+   \        0xC   0xE352'0000        CMP      R2,#+0
+    196          		dcr |= AIC_DCR_GMSK;
+   \       0x10   0x1383'3002        ORRNE    R3,R3,#0x2
+    197          	aic->AIC_DCR = dcr;
+   \       0x14   0xE580'306C        STR      R3,[R0, #+108]
+    198          }
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+    199          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    200          void aic_set_write_protection(Aic* aic, bool enable)
+    201          {
+    202          	if (enable)
+   \                     aic_set_write_protection:
+   \        0x0   0xE351'0000        CMP      R1,#+0
+    203          		aic->AIC_WPMR = AIC_WPMR_WPKEY_PASSWD | AIC_WPMR_WPEN;
+   \        0x4   0x....'....        LDRNE    R1,??DataTable10_8  ;; 0x41494301
+   \        0x8   0x1580'10E4        STRNE    R1,[R0, #+228]
+    204          	else
+    205          		aic->AIC_WPMR = AIC_WPMR_WPKEY_PASSWD;
+   \        0xC   0x....'....        LDREQ    R2,??DataTable10_9  ;; 0x41494300
+   \       0x10   0x0580'20E4        STREQ    R2,[R0, #+228]
+    206          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    207          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    208          bool aic_check_write_protection_violation(Aic* aic, uint32_t* wpvsrc)
+    209          {
+    210          	if (aic->AIC_WPSR & AIC_WPSR_WPVS) {
+   \                     aic_check_write_protection_violation:
+   \        0x0   0xE590'20E8        LDR      R2,[R0, #+232]
+   \        0x4   0xE312'0001        TST      R2,#0x1
+   \        0x8   0x0A00'0004        BEQ      ??aic_check_write_protection_violation_0
+    211          		*wpvsrc = (aic->AIC_WPSR & AIC_WPSR_WPVSRC_Msk) >> AIC_WPSR_WPVSRC_Pos;
+   \        0xC   0xE590'00E8        LDR      R0,[R0, #+232]
+   \       0x10   0xE7EF'0450        UBFX     R0,R0,#+8,#+16
+   \       0x14   0xE581'0000        STR      R0,[R1, #+0]
+    212          		return true;
+   \       0x18   0xE3A0'0001        MOV      R0,#+1
+   \       0x1C   0xE12F'FF1E        BX       LR
+    213          	}
+    214          	return false;
+   \                     ??aic_check_write_protection_violation_0:
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    215          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10:
+   \        0x0   0xF802'8054        DC32     0xf8028054
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_1:
+   \        0x0   0xFC06'8400        DC32     0xfc068400
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_2:
+   \        0x0   0xF802'8050        DC32     0xf8028050
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_3:
+   \        0x0   0x5F67'B102        DC32     0x5f67b102
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_4:
+   \        0x0   0xFC06'E03C        DC32     0xfc06e03c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_5:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_6:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_7:
+   \        0x0   0xFC06'E018        DC32     0xfc06e018
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_8:
+   \        0x0   0x4149'4301        DC32     0x41494301
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_9:
+   \        0x0   0x4149'4300        DC32     0x41494300
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x46          DC8 "-F- Invalid interrupt mode: %d\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x49 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x69 0x6E    
+
+   \              0x74 0x65    
+
+   \              0x72 0x72    
+
+   \              0x75 0x70    
+
+   \              0x74 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x3A 0x20    
+
+   \              0x25 0x64    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x21   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   _aic_initialize
+       8   _get_aic_instance
+         8   -> get_peripheral_matrix
+         8   -> matrix_is_peripheral_secured
+       0   aic_check_write_protection_violation
+      16   aic_configure_mode
+        16   -> _get_aic_instance
+        16   -> printf
+      16   aic_configure_priority
+        16   -> get_peripheral_matrix
+        16   -> matrix_is_peripheral_secured
+       8   aic_disable
+         8   -> get_peripheral_matrix
+         8   -> matrix_is_peripheral_secured
+       8   aic_enable
+         8   -> get_peripheral_matrix
+         8   -> matrix_is_peripheral_secured
+       0   aic_get_current_interrupt_source
+       8   aic_initialize
+         8   -> _aic_initialize
+         8   -> arch_irq_disable
+         0   -> arch_irq_enable
+       0   aic_set_debug_config
+      16   aic_set_source_vector
+        16   -> get_peripheral_matrix
+        16   -> matrix_is_peripheral_secured
+       0   aic_set_spurious_vector
+       0   aic_set_write_protection
+       0   arch_irq_disable
+       0   arch_irq_enable
+       0   spurious_handler
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable10_1
+       4  ??DataTable10_2
+       4  ??DataTable10_3
+       4  ??DataTable10_4
+       4  ??DataTable10_5
+       4  ??DataTable10_6
+       4  ??DataTable10_7
+       4  ??DataTable10_8
+       4  ??DataTable10_9
+       8  ?Subroutine0
+      36  ?_0
+     100  _aic_initialize
+      68  _get_aic_instance
+      40  aic_check_write_protection_violation
+     128  aic_configure_mode
+      96  aic_configure_priority
+      80  aic_disable
+      80  aic_enable
+      12  aic_get_current_interrupt_source
+      72  aic_initialize
+      28  aic_set_debug_config
+      80  aic_set_source_vector
+      32  aic_set_spurious_vector
+      24  aic_set_write_protection
+       8  arch_irq_disable
+       8  arch_irq_enable
+       4  spurious_handler
+
+ 
+  36 bytes in section .rodata
+ 908 bytes in section SOFTPACK
+ 
+ 908 bytes of CODE  memory
+  36 bytes of CONST memory
+
+Errors: none
+Warnings: none

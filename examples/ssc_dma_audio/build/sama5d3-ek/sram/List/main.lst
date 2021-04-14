@@ -1,0 +1,448 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         08/Dec/2020  16:47:04
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\main.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW48A5.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\main.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D3 -D
+#        CONFIG_CHIP_SAMA5D36 -D CONFIG_BOARD_SAMA5D3_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_INPUT_OFFSET -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_PLLA_CHARGE_PUMP -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_PMC_PERIPH_DIV -D CONFIG_HAVE_SCKC -D
+#        CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_DMAC
+#        -D CONFIG_HAVE_DMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SMD -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_MT47H128M16 -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_TC_FAULT_MODE -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC
+#        -D CONFIG_HAVE_AUDIO_WM8904 -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sama5d3\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List\main.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj\main.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\main.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           * \page ssc_dma_audio SSC with DMA Audio Example
+     32           *
+     33           * \section Purpose
+     34           *
+     35           * This example uses the Synchronous Serial Controller (SSC) of SAMA5D3/4
+     36           * and SAM9XX5 microcontroller to output an audio stream through the on-board
+     37           * WM8904/WM8731 CODEC.
+     38           *
+     39           * \section Requirements
+     40           *
+     41           * \section Description
+     42           * This program plays a WAV file from PC via Line-In. The audio stream is
+     43           * sent through the SSC interface connected to the on-board audio codec, enabling
+     44           * the sound to be audible using a pair of headphones.
+     45           *
+     46           * \section Usage
+     47           * -# Build the program and download it inside the evaluation board. Please
+     48           *    refer to the
+     49           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/6421B.pdf">
+     50           *    SAM-BA User Guide</a>, the
+     51           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">
+     52           *    GNU-Based Software Development</a> application note or to the
+     53           *    <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">
+     54           *    IAR EWARM User Guide</a>, depending on your chosen solution.
+     55           * -# On the computer, open and configure a terminal application
+     56           *    (e.g. HyperTerminal on Microsoft Windows) with these settings:
+     57           *   - 115200 bauds
+     58           *   - 8 bits of data
+     59           *   - No parity
+     60           *   - 1 stop bit
+     61           *   - No flow control
+     62           * -# Start the application.
+     63           * -# In the terminal window, the following text should appear:
+     64           *    \code
+     65           *     -- SSC DMA Audio Example xxx --
+     66           *      -- SAMxxxxx-xx
+     67           *     -- Compiled: xxx xx xxxx xx:xx:xx --
+     68           *    \endcode
+     69           * The user can then choose any of the available options to perform the described action.
+     70           *
+     71           * \section References
+     72           * - ssc_dma_audio/main.c
+     73           * - ssc.c
+     74           * - wm8904.c
+     75           * - wm8731.c
+     76           * - dma.c
+     77           */
+     78          
+     79          /**
+     80           * \file
+     81           *
+     82           * This file contains all the specific code for the ssc audio example.
+     83           */
+     84          
+     85          
+     86          /*----------------------------------------------------------------------------
+     87           *        Headers
+     88           *----------------------------------------------------------------------------*/
+     89          
+     90          #include <stdio.h>
+     91          #include <stdbool.h>
+     92          #include <stdint.h>
+     93          #include <string.h>
+     94          #include <assert.h>
+     95          
+     96          #include "audio/ssc.h"
+     97          #if defined(CONFIG_HAVE_AUDIO_WM8904)
+     98          #include "audio/wm8904.h"
+     99          #elif defined(CONFIG_HAVE_AUDIO_WM8731)
+    100          #include "audio/wm8731.h"
+    101          #endif
+    102          #include "audio/wm8731.h"
+    103          #include "board.h"
+    104          #include "chip.h"
+    105          #include "compiler.h"
+    106          #include "dma/dma.h"
+    107          #include "gpio/pio.h"
+    108          #include "led/led.h"
+    109          #include "mm/cache.h"
+    110          #include "peripherals/pit.h"
+    111          #include "peripherals/pmc.h"
+    112          #include "serial/console.h"
+    113          #include "timer.h"
+    114          #include "trace.h"
+    115          
+    116          #if defined(CONFIG_BOARD_SAMA5D3_EK)
+    117          	#include "config_sama5d3-ek.h"
+    118          #elif defined(CONFIG_BOARD_SAMA5D4_EK)
+    119          	#include "config_sama5d4-ek.h"
+    120          #elif defined(CONFIG_BOARD_SAM9G15_EK)
+    121          	#include "config_sam9xx5-ek.h"
+    122          #elif defined(CONFIG_BOARD_SAM9G25_EK)
+    123          	#include "config_sam9xx5-ek.h"
+    124          #elif defined(CONFIG_BOARD_SAM9G35_EK)
+    125          	#include "config_sam9xx5-ek.h"
+    126          #elif defined(CONFIG_BOARD_SAM9X25_EK)
+    127          	#include "config_sam9xx5-ek.h"
+    128          #elif defined(CONFIG_BOARD_SAM9X35_EK)
+    129          	#include "config_sam9xx5-ek.h"
+    130          #elif defined(CONFIG_BOARD_SAMV71_XPLAINED)
+    131          	#include "config_samv71-xplained.h"
+    132          #elif defined(CONFIG_BOARD_SAMA5D2_XPLAINED)
+    133                  #include "config_sama5d2-xplained.h"
+    134          #else
+    135          #error Unsupported board!
+    136          #endif
+    137          #include "music_data.h"
+    138          /*----------------------------------------------------------------------------
+    139           *         Definitions
+    140           *----------------------------------------------------------------------------*/
+    141          
+    142          #define BUFFERS (32)
+    143          
+    144          #define BUFFER_SIZE ROUND_UP_MULT(192, L1_CACHE_BYTES)
+    145          
+    146          #define BUFFER_THRESHOLD (8)
+    147          
+    148          /*----------------------------------------------------------------------------
+    149           *         Internal variables
+    150           *----------------------------------------------------------------------------*/
+    151          
+    152          /** Audio record buffer */
+    153          CACHE_ALIGNED_DDR static uint16_t _sound_buffer[BUFFERS][BUFFER_SIZE];
+    154          
+    155          static struct _audio_ctx {
+    156          	uint32_t threshold;
+    157          	struct {
+    158          		uint16_t rx;
+    159          		uint16_t tx;
+    160          		uint32_t count;
+    161          	} circ;
+    162          	uint8_t volume;
+    163          	bool playing;
+    164          	bool recording;
+    165          } _audio_ctx = {
+    166          	.threshold = BUFFER_THRESHOLD,
+    167          	.circ = {
+    168          		.rx = 0,
+    169          		.tx = 0,
+    170          		.count = 0,
+    171          	},
+    172          	.volume = 30,
+    173          	.recording = false,
+    174          	.playing = false,
+    175          };
+    176          
+    177          /*----------------------------------------------------------------------------
+    178           *         Local functions
+    179           *----------------------------------------------------------------------------*/
+    180          
+    181          /**
+    182           * \brief Display main menu.
+    183           */
+    184          static void _display_menu(void)
+    185          {
+    186          	printf("\n\r");
+    187          	printf("-----------------\n\r");
+    188          	printf("R -> Start to record the sound and play \n\r");
+    189          	printf("S -> Stop recording sound \n\r");
+    190          	printf("+ -> Increase the volume of playback sound \n\r");
+    191          	printf("- -> Decrease the volume of playback sound \n\r");
+    192          	printf("-----------------\n\r");
+    193          }
+    194          
+    195          
+    196          /**
+    197           *  \brief Audio RX callback
+    198           */
+    199          static int _ssc_tx_transfer_callback(void* arg, void* arg2)
+    200          {
+    201          	struct _ssc_desc* desc = (struct _ssc_desc*)arg;
+                 	                  ^
+Warning[Pe177]: variable "desc" was declared but never referenced
+    202          	struct _callback _cb;
+                 	                 ^
+Warning[Pe177]: variable "_cb" was declared but never referenced
+    203          #if 0
+    204          	if (_audio_ctx.playing && (_audio_ctx.circ.count > 0)){
+    205          		struct _buffer _tx = {
+    206          			.data = (unsigned char*)&_sound_buffer[_audio_ctx.circ.tx],
+    207          			.size = BUFFER_SIZE,
+    208          			.attr = SSC_BUF_ATTR_WRITE,
+    209          		};
+    210          
+    211          		callback_set(&_cb, _ssc_tx_transfer_callback, desc);
+    212          		ssc_transfer(desc, &_tx, &_cb);
+    213          		_audio_ctx.circ.tx = (_audio_ctx.circ.tx + 1) % BUFFERS;
+    214          		_audio_ctx.circ.count--;
+    215          
+    216          		if (_audio_ctx.circ.count == 0) {
+    217          			ssc_disable_transmitter(&ssc_dev_desc);
+    218          
+    219          			_audio_ctx.playing = false;
+    220          		}
+    221          	}
+    222          #endif
+    223                  printf("<Playback Stop >\r\n");
+    224          	return 0;
+    225          }
+    226          
+    227          /**
+    228           *  \brief Audio RX callback
+    229           */
+    230          static int _ssc_rx_transfer_callback(void* arg, void* arg2)
+    231          {
+    232          	struct _ssc_desc* desc = (struct _ssc_desc*)arg;
+                 	                  ^
+Warning[Pe177]: variable "desc" was declared but never referenced
+    233          	struct _callback _cb;
+                 	                 ^
+Warning[Pe177]: variable "_cb" was declared but never referenced
+    234          #if 0
+    235          	/* New buffer received */
+    236          	_audio_ctx.circ.rx = (_audio_ctx.circ.rx + 1) % BUFFERS;
+    237          	_audio_ctx.circ.count++;
+    238          
+    239          	if (!_audio_ctx.playing && (_audio_ctx.circ.count > _audio_ctx.threshold)) {
+    240          		_audio_ctx.playing = true;
+    241          		ssc_enable_transmitter(&ssc_dev_desc);
+    242          		_ssc_tx_transfer_callback(desc, NULL);
+    243          	}
+    244          
+    245          	struct _buffer _rx = {
+    246          		.data = (unsigned char*)&_sound_buffer[_audio_ctx.circ.rx],
+    247          		.size = BUFFER_SIZE,
+    248          		.attr = SSC_BUF_ATTR_READ,
+    249          	};
+    250          
+    251          	callback_set(&_cb, _ssc_rx_transfer_callback, desc);
+    252          	ssc_transfer(desc, &_rx, &_cb);
+    253          #endif
+    254                  printf("<Playback Stop >\r\n");
+    255          	return 0;
+    256          }
+    257          
+    258          /**
+    259           * \brief Play recording.
+    260           */
+    261          
+    262          static void _set_volume(uint8_t vol)
+    263          {
+    264          #if defined(CONFIG_HAVE_AUDIO_WM8904)
+    265          	printf("Setting volume to %ddB\r\n", (signed)(vol-57));
+    266          	wm8904_set_left_volume(&wm8904, vol);
+    267          	wm8904_set_right_volume(&wm8904, vol);
+    268          #elif defined(CONFIG_HAVE_AUDIO_WM8731)
+    269          	printf("Setting volume to %ddB\r\n", (signed)(vol-73));
+    270          	wm8731_set_left_volume(&wm8731, vol);
+    271          	wm8731_set_right_volume(&wm8731, vol);
+    272          #endif
+    273          }
+    274          
+    275          static void console_handler(uint8_t key)
+    276          {
+    277          	switch (key) {
+    278          	case '+':
+    279          		if (_audio_ctx.volume < 63) {
+    280          			_audio_ctx.volume += 3;
+    281          			_set_volume(_audio_ctx.volume);
+    282          		}
+    283          		break;
+    284          	case '-':
+    285          		if (_audio_ctx.volume > 1) {
+    286          			_audio_ctx.volume -= 3;
+    287          			_set_volume(_audio_ctx.volume);
+    288          		}
+    289          		break;
+    290          
+    291          	case 'R':
+    292          	case 'r':
+    293          		_audio_ctx.recording = true;
+    294                          printf("SSC start to record and play sound\r\n");
+    295          		//ssc_enable_receiver(&ssc_dev_desc);
+    296                          ssc_enable_transmitter(&ssc_dev_desc);
+    297          		{ /* Start recording */
+    298          			struct _callback _cb;
+    299          			callback_set(&_cb, _ssc_tx_transfer_callback, &ssc_dev_desc);
+    300          			struct _buffer _tx = {
+    301          				.data = (unsigned char*)&_sound_buffer[_audio_ctx.circ.rx],
+    302          				.size = BUFFER_SIZE,
+    303          				.attr = SSC_BUF_ATTR_WRITE,
+    304          			};
+    305          
+    306          			ssc_transfer(&ssc_dev_desc, &_tx, &_cb);
+    307          		}
+    308          
+    309          		//printf("SSC start to record and play sound\r\n");
+    310          		break;
+    311          
+    312          	case 'S':
+    313          	case 's':
+    314          		_audio_ctx.recording = false;
+    315          		ssc_disable_transmitter(&ssc_dev_desc);
+    316          		ssc_disable_receiver(&ssc_dev_desc);
+    317          		printf("SSC stop to record and play sound\r\n");
+    318          		break;
+    319          
+    320          	default:
+    321          		break;
+    322          	}
+    323          }
+    324          
+    325          /*----------------------------------------------------------------------------
+    326           *         Global functions
+    327           *----------------------------------------------------------------------------*/
+    328          
+    329          /**
+    330           * \brief Application entry point for tc_capture_waveform example.
+    331           *
+    332           * \return Unused (ANSI-C compatibility).
+    333           */
+    334          extern int main( void )
+    335          {
+    336          	/* Output example information */
+    337          	console_example_info("SSC DMA Audio Example");
+    338          
+    339          	console_set_rx_handler(console_handler);
+    340          	console_enable_rx_interrupt();
+    341          
+    342          	/* Configure SSC */
+    343          	ssc_configure(&ssc_dev_desc);
+    344          
+    345          	ssc_disable_receiver(&ssc_dev_desc);
+    346          	ssc_disable_transmitter(&ssc_dev_desc);
+    347          
+    348          	/* Initialize the audio DAC */
+    349          #if defined(CONFIG_HAVE_AUDIO_WM8904)
+    350          	wm8904_configure(&wm8904);
+    351          #elif defined(CONFIG_HAVE_AUDIO_WM8731)
+    352          	wm8731_configure(&wm8731);
+    353          #endif
+    354                wm8731_configure(&wm8731);
+                                         ^
+Error[Pe020]: identifier "wm8731" is undefined
+
+  static int _ssc_rx_transfer_callback(void* arg, void* arg2)
+             ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\main.c",230  Warning[Pe177]: 
+          function "_ssc_rx_transfer_callback" was declared but never
+          referenced
+    355          	_set_volume(_audio_ctx.volume);
+    356          
+    357          	_display_menu();
+    358          
+    359          	/* Infinite loop */
+    360          	while (1);
+    361          }
+
+Errors: 1
+Warnings: 5

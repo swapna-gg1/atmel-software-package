@@ -1,0 +1,2058 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Apr/2020  10:57:03
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\th_rand.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWA041.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\th_rand.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\lib\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\List\th_rand.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\sram\Obj\th_rand.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\th_rand.c
+      1          
+      2          #include "th_rand.h"
+      3          
+      4          #include <stdlib.h>
+      5          #include <stdio.h>
+      6          #include <math.h>
+      7          
+      8          #define DEBUG_ACCURATE_BITS (0)
+      9          #define MIN_ACC_BITS_FP 14
+     10          #define BNC 8
+     11          
+     12          #ifndef CHAR_BIT
+     13          #define	CHAR_BIT	8
+     14          #endif
+     15          #define EE_LIMIT_DYNAMIC_RANGE(x) (x)
+     16          #define HIBITMASK 0x80000000UL
+     17          typedef struct rand_state_s {
+     18          	uint32_t idx;
+     19          	uint32_t rsl[256];
+     20                  uint32_t mm[256];
+     21                  uint32_t aa, bb, cc;
+     22          	uint32_t initial_seed;
+     23          	uint32_t reseed;
+     24          	float range;
+     25          	float min;
+     26          	int32_t mantsign; // negative mantsign, force negative. zero, force positive. +1, random. 
+     27          	int32_t expsign;  // negative expsign, force negative. zero, force positive, +1, random.
+     28          	uint16_t exp_cut;
+     29          	uint32_t manthigh_cut;
+     30          	uint32_t mantlow_cut;
+     31          
+     32          } rand_state;
+     33          
+     34          typedef struct BIGNUM_S
+     35          {
+     36          	uint32_t n[BNC];
+     37          } BIGNUM;
+     38          #define MAX_ACC_COUNTS 128
+     39          typedef struct acc_bits_i_s {
+     40          	int32_t n;
+     41          	int32_t min;
+     42          	int32_t max;
+     43          	int32_t sum;
+     44          	int32_t avg;
+     45           } acc_bits_i;
+     46          
+     47           typedef struct acc_bits_d_s {
+     48          	acc_bits_i sig_exp;
+     49          	acc_bits_i ref_exp;
+     50          	acc_bits_i bits;
+     51          	uint32_t counts[MAX_ACC_COUNTS+1];
+     52           } acc_bits_d;
+     53          
+     54          void bignum_zero(BIGNUM *res);
+     55          void bignum_add(BIGNUM *res, BIGNUM *a, BIGNUM *b);
+     56          uint32_t bignum_shl(BIGNUM *res, BIGNUM *a, uint32_t c);
+     57          void bignum_neg(BIGNUM *res, BIGNUM *a);
+     58          int32_t bignum_diff(BIGNUM *diff, BIGNUM *a, BIGNUM *b);
+     59          uint32_t bignum_diff_sp(BIGNUM *diff, intparts *sig, intparts *ref);
+     60          void bignum_sub(BIGNUM *res, BIGNUM *a, BIGNUM *b);
+     61          void bignum_abs(BIGNUM *res, BIGNUM *a);
+     62          int32_t bignum_msb(BIGNUM *res);
+     63          
+     64          #define mix(a,b,c,d,e,f,g,h) \
+     65          { \
+     66             a^=b<<11; d+=a; b+=c; \
+     67             b^=c>>2;  e+=b; c+=d; \
+     68             c^=d<<8;  f+=c; d+=e; \
+     69             d^=e>>16; g+=d; e+=f; \
+     70             e^=f<<10; h+=e; f+=g; \
+     71             f^=g>>4;  a+=f; g+=h; \
+     72             g^=h<<8;  b+=g; h+=a; \
+     73             h^=a>>9;  c+=h; a+=b; \
+     74          }
+     75          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     76          void rand_fini(void *r) {
+   \                     rand_fini:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+     77          	free(r);
+   \        0x8   0xE1B0'0004        MOVS     R0,R4
+   \        0xC   0x....'....        BL       free
+     78          }
+   \       0x10   0xE8BD'8010        POP      {R4,PC}          ;; return
+     79          
+     80          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     81          static void isaac(void *pr)
+     82          {
+   \                     isaac:
+   \        0x0   0xE92D'43F0        PUSH     {R4-R9,LR}
+     83             register uint32_t i,x,y;
+     84             rand_state *r=(rand_state *)pr;
+   \        0x4   0xE1B0'3000        MOVS     R3,R0
+     85             uint32_t *mm=r->mm;
+   \        0x8   0xE3A0'C004        MOV      R12,#+4
+   \        0xC   0xE38C'CE40        ORR      R12,R12,#0x400
+   \       0x10   0xE093'C00C        ADDS     R12,R3,R12
+     86             uint32_t *randrsl=r->rsl;
+   \       0x14   0xE293'E004        ADDS     LR,R3,#+4
+     87             uint32_t aa=r->aa, bb=r->bb, cc=r->cc;
+   \       0x18   0xE593'4804        LDR      R4,[R3, #+2052]
+   \       0x1C   0xE593'6808        LDR      R6,[R3, #+2056]
+   \       0x20   0xE593'580C        LDR      R5,[R3, #+2060]
+     88          
+     89             cc = cc + 1;    /* cc just gets incremented once per reseed results */
+   \       0x24   0xE295'5001        ADDS     R5,R5,#+1
+     90             bb = bb + cc;   /* then combined with bb */
+   \       0x28   0xE095'6006        ADDS     R6,R5,R6
+     91          
+     92             for (i=0; i<256; ++i)
+   \       0x2C   0xE3A0'7000        MOV      R7,#+0
+   \                     ??isaac_1:
+   \       0x30   0xE357'0F40        CMP      R7,#+256
+   \       0x34   0x2A00'0027        BCS      ??isaac_2
+     93             {
+     94               x = mm[i];
+   \       0x38   0xE1B0'8107        LSLS     R8,R7,#+2
+   \       0x3C   0xE79C'8008        LDR      R8,[R12, +R8]
+   \       0x40   0xE1B0'1008        MOVS     R1,R8
+     95               switch (i%4)
+   \       0x44   0xE217'8003        ANDS     R8,R7,#0x3
+   \       0x48   0xE358'0003        CMP      R8,#+3
+   \       0x4C   0x8A00'0009        BHI      ??isaac_3
+   \       0x50   0xE7DF'9008        LDRB     R9,[PC, R8]
+   \       0x54   0xE08F'F109        ADD      PC,PC,R9, LSL #+2
+   \                     ??isaac_0:
+   \       0x58   0x00 0x02          DC8      0x0,0x2,0x4,0x6
+
+   \              0x04 0x06
+     96               {
+     97               case 0: aa = aa^(aa<<13); break;
+   \                     ??isaac_4:
+   \       0x5C   0xE034'4684        EORS     R4,R4,R4, LSL #+13
+   \       0x60   0xEA00'0004        B        ??isaac_3
+     98               case 1: aa = aa^(aa>>6); break;
+   \                     ??isaac_5:
+   \       0x64   0xE034'4324        EORS     R4,R4,R4, LSR #+6
+   \       0x68   0xEA00'0002        B        ??isaac_3
+     99               case 2: aa = aa^(aa<<2); break;
+   \                     ??isaac_6:
+   \       0x6C   0xE034'4104        EORS     R4,R4,R4, LSL #+2
+   \       0x70   0xEA00'0000        B        ??isaac_3
+    100               case 3: aa = aa^(aa>>16); break;
+   \                     ??isaac_7:
+   \       0x74   0xE034'4824        EORS     R4,R4,R4, LSR #+16
+    101               }
+    102               aa              = mm[(i+128)%256] + aa;
+   \                     ??isaac_3:
+   \       0x78   0xE297'8080        ADDS     R8,R7,#+128
+   \       0x7C   0xE218'80FF        ANDS     R8,R8,#0xFF
+   \       0x80   0xE1B0'8108        LSLS     R8,R8,#+2
+   \       0x84   0xE79C'8008        LDR      R8,[R12, +R8]
+   \       0x88   0xE098'4004        ADDS     R4,R8,R4
+    103               mm[i]      = y  = mm[(x>>2)%256] + aa + bb;
+   \       0x8C   0xE3A0'80FF        MOV      R8,#+255
+   \       0x90   0xE018'8121        ANDS     R8,R8,R1, LSR #+2
+   \       0x94   0xE1B0'8108        LSLS     R8,R8,#+2
+   \       0x98   0xE79C'8008        LDR      R8,[R12, +R8]
+   \       0x9C   0xE094'8008        ADDS     R8,R4,R8
+   \       0xA0   0xE096'8008        ADDS     R8,R6,R8
+   \       0xA4   0xE1B0'2008        MOVS     R2,R8
+   \       0xA8   0xE1B0'8107        LSLS     R8,R7,#+2
+   \       0xAC   0xE78C'2008        STR      R2,[R12, +R8]
+    104               randrsl[i] = bb = mm[(y>>10)%256] + x;
+   \       0xB0   0xE3A0'80FF        MOV      R8,#+255
+   \       0xB4   0xE018'8522        ANDS     R8,R8,R2, LSR #+10
+   \       0xB8   0xE1B0'8108        LSLS     R8,R8,#+2
+   \       0xBC   0xE79C'8008        LDR      R8,[R12, +R8]
+   \       0xC0   0xE091'8008        ADDS     R8,R1,R8
+   \       0xC4   0xE1B0'6008        MOVS     R6,R8
+   \       0xC8   0xE1B0'8107        LSLS     R8,R7,#+2
+   \       0xCC   0xE78E'6008        STR      R6,[LR, +R8]
+    105             }
+   \       0xD0   0xE297'7001        ADDS     R7,R7,#+1
+   \       0xD4   0xEAFF'FFD5        B        ??isaac_1
+    106             r->aa=aa;r->bb=bb;r->cc=cc;
+   \                     ??isaac_2:
+   \       0xD8   0xE583'4804        STR      R4,[R3, #+2052]
+   \       0xDC   0xE583'6808        STR      R6,[R3, #+2056]
+   \       0xE0   0xE583'580C        STR      R5,[R3, #+2060]
+    107          }
+   \       0xE4   0xE8BD'83F0        POP      {R4-R9,PC}       ;; return
+    108          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    109          void *rand_init(uint32_t seed, uint32_t reseed, int64_t min, int64_t max)
+    110          {
+   \                     rand_init:
+   \        0x0   0xE92D'4FF3        PUSH     {R0,R1,R4-R11,LR}
+   \        0x4   0xE24D'D004        SUB      SP,SP,#+4
+   \        0x8   0xE92D'000E        PUSH     {R1-R3}
+   \        0xC   0xE24D'D00C        SUB      SP,SP,#+12
+    111             int i;
+    112             uint32_t a,b,c,d,e,f,g,h;
+    113             rand_state *r=(rand_state *)malloc(sizeof(rand_state));
+   \       0x10   0xE3A0'0034        MOV      R0,#+52
+   \       0x14   0xE380'0E80        ORR      R0,R0,#0x800
+   \       0x18   0x....'....        BL       malloc
+   \       0x1C   0xE58D'0000        STR      R0,[SP, #+0]
+    114             uint32_t *mm=r->mm;
+   \       0x20   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x24   0xE3A0'1004        MOV      R1,#+4
+   \       0x28   0xE381'1E40        ORR      R1,R1,#0x400
+   \       0x2C   0xE090'0001        ADDS     R0,R0,R1
+   \       0x30   0xE58D'0008        STR      R0,[SP, #+8]
+    115          
+    116             r->reseed=0xff*reseed;
+   \       0x34   0xE59D'0020        LDR      R0,[SP, #+32]
+   \       0x38   0xE060'0400        RSB      R0,R0,R0, LSL #+8
+   \       0x3C   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x40   0xE581'0814        STR      R0,[R1, #+2068]
+    117             r->range=max-min;
+   \       0x44   0xE1CD'24D8        LDRD     R2,R3,[SP, #+72]
+   \       0x48   0xE1CD'01D0        LDRD     R0,R1,[SP, #+16]
+   \       0x4C   0xE052'0000        SUBS     R0,R2,R0
+   \       0x50   0xE0C3'1001        SBC      R1,R3,R1
+   \       0x54   0x....'....        BL       __aeabi_l2f
+   \       0x58   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x5C   0xE581'0818        STR      R0,[R1, #+2072]
+    118             r->min=min;
+   \       0x60   0xE1CD'01D0        LDRD     R0,R1,[SP, #+16]
+   \       0x64   0x....'....        BL       __aeabi_l2f
+   \       0x68   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x6C   0xE581'081C        STR      R0,[R1, #+2076]
+    119             if (r->reseed==0) r->reseed=0xffffffff;
+   \       0x70   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x74   0xE590'0814        LDR      R0,[R0, #+2068]
+   \       0x78   0xE350'0000        CMP      R0,#+0
+   \       0x7C   0x1A00'0002        BNE      ??rand_init_0
+   \       0x80   0xE3E0'0000        MVN      R0,#+0
+   \       0x84   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x88   0xE581'0814        STR      R0,[R1, #+2068]
+    120             r->aa=r->bb=r->cc=0;
+   \                     ??rand_init_0:
+   \       0x8C   0xE3A0'0000        MOV      R0,#+0
+   \       0x90   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x94   0xE581'080C        STR      R0,[R1, #+2060]
+   \       0x98   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0x9C   0xE581'0808        STR      R0,[R1, #+2056]
+   \       0xA0   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0xA4   0xE581'0804        STR      R0,[R1, #+2052]
+    121             r->initial_seed=a=b=c=d=e=f=g=h=seed;  
+   \       0xA8   0xE59D'101C        LDR      R1,[SP, #+28]
+   \       0xAC   0xE1B0'4001        MOVS     R4,R1
+   \       0xB0   0xE1B0'5001        MOVS     R5,R1
+   \       0xB4   0xE1B0'6001        MOVS     R6,R1
+   \       0xB8   0xE1B0'7001        MOVS     R7,R1
+   \       0xBC   0xE1B0'8001        MOVS     R8,R1
+   \       0xC0   0xE1B0'9001        MOVS     R9,R1
+   \       0xC4   0xE1B0'A001        MOVS     R10,R1
+   \       0xC8   0xE58D'1004        STR      R1,[SP, #+4]
+   \       0xCC   0xE59D'2000        LDR      R2,[SP, #+0]
+   \       0xD0   0xE582'1810        STR      R1,[R2, #+2064]
+    122             r->idx=0;
+   \       0xD4   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0xD8   0xE581'0000        STR      R0,[R1, #+0]
+    123          
+    124             for (i=0; i<4; ++i)          /* scramble the seed */
+   \       0xDC   0xE3A0'0000        MOV      R0,#+0
+   \                     ??rand_init_1:
+   \       0xE0   0xE350'0004        CMP      R0,#+4
+   \       0xE4   0xAA00'001B        BGE      ??rand_init_2
+    125             {
+    126               mix(a,b,c,d,e,f,g,h);
+   \       0xE8   0xE59D'1004        LDR      R1,[SP, #+4]
+   \       0xEC   0xE031'158A        EORS     R1,R1,R10, LSL #+11
+   \       0xF0   0xE091'C008        ADDS     R12,R1,R8
+   \       0xF4   0xE099'200A        ADDS     R2,R9,R10
+   \       0xF8   0xE032'2129        EORS     R2,R2,R9, LSR #+2
+   \       0xFC   0xE092'E007        ADDS     LR,R2,R7
+   \      0x100   0xE09C'3009        ADDS     R3,R12,R9
+   \      0x104   0xE033'340C        EORS     R3,R3,R12, LSL #+8
+   \      0x108   0xE093'6006        ADDS     R6,R3,R6
+   \      0x10C   0xE09E'C00C        ADDS     R12,LR,R12
+   \      0x110   0xE03C'882E        EORS     R8,R12,LR, LSR #+16
+   \      0x114   0xE098'C005        ADDS     R12,R8,R5
+   \      0x118   0xE096'E00E        ADDS     LR,R6,LR
+   \      0x11C   0xE03E'7506        EORS     R7,LR,R6, LSL #+10
+   \      0x120   0xE097'E004        ADDS     LR,R7,R4
+   \      0x124   0xE09C'4006        ADDS     R4,R12,R6
+   \      0x128   0xE034'622C        EORS     R6,R4,R12, LSR #+4
+   \      0x12C   0xE096'1001        ADDS     R1,R6,R1
+   \      0x130   0xE09E'C00C        ADDS     R12,LR,R12
+   \      0x134   0xE03C'540E        EORS     R5,R12,LR, LSL #+8
+   \      0x138   0xE095'A002        ADDS     R10,R5,R2
+   \      0x13C   0xE091'200E        ADDS     R2,R1,LR
+   \      0x140   0xE032'44A1        EORS     R4,R2,R1, LSR #+9
+   \      0x144   0xE094'9003        ADDS     R9,R4,R3
+   \      0x148   0xE09A'1001        ADDS     R1,R10,R1
+   \      0x14C   0xE58D'1004        STR      R1,[SP, #+4]
+    127             }
+   \      0x150   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x154   0xEAFF'FFE1        B        ??rand_init_1
+    128          
+    129             for (i=0; i<256; i+=8)   /* fill in mm[] with messy stuff */
+   \                     ??rand_init_2:
+   \      0x158   0xE3A0'B000        MOV      R11,#+0
+   \                     ??rand_init_3:
+   \      0x15C   0xE35B'0F40        CMP      R11,#+256
+   \      0x160   0xAA00'003E        BGE      ??rand_init_4
+    130             {
+    131               mix(a,b,c,d,e,f,g,h);
+   \      0x164   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x168   0xE030'058A        EORS     R0,R0,R10, LSL #+11
+   \      0x16C   0xE58D'0004        STR      R0,[SP, #+4]
+   \      0x170   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x174   0xE090'2008        ADDS     R2,R0,R8
+   \      0x178   0xE099'000A        ADDS     R0,R9,R10
+   \      0x17C   0xE030'0129        EORS     R0,R0,R9, LSR #+2
+   \      0x180   0xE090'C007        ADDS     R12,R0,R7
+   \      0x184   0xE092'1009        ADDS     R1,R2,R9
+   \      0x188   0xE031'1402        EORS     R1,R1,R2, LSL #+8
+   \      0x18C   0xE091'E006        ADDS     LR,R1,R6
+   \      0x190   0xE09C'2002        ADDS     R2,R12,R2
+   \      0x194   0xE032'882C        EORS     R8,R2,R12, LSR #+16
+   \      0x198   0xE098'3005        ADDS     R3,R8,R5
+   \      0x19C   0xE09E'200C        ADDS     R2,LR,R12
+   \      0x1A0   0xE032'750E        EORS     R7,R2,LR, LSL #+10
+   \      0x1A4   0xE097'C004        ADDS     R12,R7,R4
+   \      0x1A8   0xE093'200E        ADDS     R2,R3,LR
+   \      0x1AC   0xE032'6223        EORS     R6,R2,R3, LSR #+4
+   \      0x1B0   0xE59D'2004        LDR      R2,[SP, #+4]
+   \      0x1B4   0xE096'2002        ADDS     R2,R6,R2
+   \      0x1B8   0xE09C'3003        ADDS     R3,R12,R3
+   \      0x1BC   0xE033'540C        EORS     R5,R3,R12, LSL #+8
+   \      0x1C0   0xE095'A000        ADDS     R10,R5,R0
+   \      0x1C4   0xE092'000C        ADDS     R0,R2,R12
+   \      0x1C8   0xE030'44A2        EORS     R4,R0,R2, LSR #+9
+   \      0x1CC   0xE094'9001        ADDS     R9,R4,R1
+   \      0x1D0   0xE09A'0002        ADDS     R0,R10,R2
+   \      0x1D4   0xE58D'0004        STR      R0,[SP, #+4]
+    132               mm[i  ]=a; mm[i+1]=b; mm[i+2]=c; mm[i+3]=d;
+   \      0x1D8   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x1DC   0xE59D'1008        LDR      R1,[SP, #+8]
+   \      0x1E0   0xE1B0'210B        LSLS     R2,R11,#+2
+   \      0x1E4   0xE781'0002        STR      R0,[R1, +R2]
+   \      0x1E8   0xE59D'0008        LDR      R0,[SP, #+8]
+   \      0x1EC   0xE1B0'110B        LSLS     R1,R11,#+2
+   \      0x1F0   0xE090'0001        ADDS     R0,R0,R1
+   \      0x1F4   0xE580'A004        STR      R10,[R0, #+4]
+   \      0x1F8   0xE59D'0008        LDR      R0,[SP, #+8]
+   \      0x1FC   0xE1B0'110B        LSLS     R1,R11,#+2
+   \      0x200   0xE090'0001        ADDS     R0,R0,R1
+   \      0x204   0xE580'9008        STR      R9,[R0, #+8]
+   \      0x208   0xE59D'0008        LDR      R0,[SP, #+8]
+   \      0x20C   0xE1B0'110B        LSLS     R1,R11,#+2
+   \      0x210   0xE090'0001        ADDS     R0,R0,R1
+   \      0x214   0xE580'800C        STR      R8,[R0, #+12]
+    133               mm[i+4]=e; mm[i+5]=f; mm[i+6]=g; mm[i+7]=h;
+   \      0x218   0xE59D'0008        LDR      R0,[SP, #+8]
+   \      0x21C   0xE1B0'110B        LSLS     R1,R11,#+2
+   \      0x220   0xE090'0001        ADDS     R0,R0,R1
+   \      0x224   0xE580'7010        STR      R7,[R0, #+16]
+   \      0x228   0xE59D'0008        LDR      R0,[SP, #+8]
+   \      0x22C   0xE1B0'110B        LSLS     R1,R11,#+2
+   \      0x230   0xE090'0001        ADDS     R0,R0,R1
+   \      0x234   0xE580'6014        STR      R6,[R0, #+20]
+   \      0x238   0xE59D'0008        LDR      R0,[SP, #+8]
+   \      0x23C   0xE1B0'110B        LSLS     R1,R11,#+2
+   \      0x240   0xE090'0001        ADDS     R0,R0,R1
+   \      0x244   0xE580'5018        STR      R5,[R0, #+24]
+   \      0x248   0xE59D'0008        LDR      R0,[SP, #+8]
+   \      0x24C   0xE1B0'110B        LSLS     R1,R11,#+2
+   \      0x250   0xE090'0001        ADDS     R0,R0,R1
+   \      0x254   0xE580'401C        STR      R4,[R0, #+28]
+    134             }
+   \      0x258   0xE29B'B008        ADDS     R11,R11,#+8
+   \      0x25C   0xEAFF'FFBE        B        ??rand_init_3
+    135          
+    136             isaac(r);            /* fill in the first set of results */
+   \                     ??rand_init_4:
+   \      0x260   0xE59D'0000        LDR      R0,[SP, #+0]
+   \      0x264   0x....'....        BL       isaac
+    137             return r;
+   \      0x268   0xE59D'0000        LDR      R0,[SP, #+0]
+   \      0x26C   0xE28D'D024        ADD      SP,SP,#+36
+   \      0x270   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    138          }
+    139          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    140          uint32_t random_u32(void *pr) {
+   \                     random_u32:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    141          	rand_state *r=(rand_state *)pr;
+   \        0x8   0xE1B0'5004        MOVS     R5,R4
+    142          	if (r==NULL)
+   \        0xC   0xE355'0000        CMP      R5,#+0
+   \       0x10   0x1A00'0001        BNE      ??random_u32_0
+    143          		return 0;
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \       0x18   0xEA00'000F        B        ??random_u32_1
+    144          	r->idx++;
+   \                     ??random_u32_0:
+   \       0x1C   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x20   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x24   0xE585'0000        STR      R0,[R5, #+0]
+    145          	if (r->idx > r->reseed) { isaac(r); r->idx=0; }
+   \       0x28   0xE595'0814        LDR      R0,[R5, #+2068]
+   \       0x2C   0xE595'1000        LDR      R1,[R5, #+0]
+   \       0x30   0xE150'0001        CMP      R0,R1
+   \       0x34   0x2A00'0003        BCS      ??random_u32_2
+   \       0x38   0xE1B0'0005        MOVS     R0,R5
+   \       0x3C   0x....'....        BL       isaac
+   \       0x40   0xE3A0'0000        MOV      R0,#+0
+   \       0x44   0xE585'0000        STR      R0,[R5, #+0]
+    146          	return r->rsl[r->idx&0xff];
+   \                     ??random_u32_2:
+   \       0x48   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x4C   0xE210'00FF        ANDS     R0,R0,#0xFF
+   \       0x50   0xE1B0'0100        LSLS     R0,R0,#+2
+   \       0x54   0xE095'0000        ADDS     R0,R5,R0
+   \       0x58   0xE590'0004        LDR      R0,[R0, #+4]
+   \                     ??random_u32_1:
+   \       0x5C   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    147          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    148          uint16_t random_u16(void *pr) {
+   \                     random_u16:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    149          	rand_state *r=(rand_state *)pr;
+   \        0x8   0xE1B0'5004        MOVS     R5,R4
+    150          	return ((uint16_t)random_u32(r));
+   \        0xC   0xE1B0'0005        MOVS     R0,R5
+   \       0x10   0x....'....        BL       random_u32
+   \       0x14   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x18   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x1C   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    151          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    152          void *rand_intparts_init(uint32_t seed, uint32_t reseed, 	
+    153          	int32_t mantsign,
+    154          	int32_t expsign,
+    155          	uint32_t exp_cut,
+    156          	uint32_t manthigh_cut,
+    157          	uint32_t mantlow_cut) {
+   \                     rand_intparts_init:
+   \        0x0   0xE92D'47FC        PUSH     {R2-R10,LR}
+   \        0x4   0xE1B0'A000        MOVS     R10,R0
+   \        0x8   0xE1B0'9001        MOVS     R9,R1
+   \        0xC   0xE1B0'4002        MOVS     R4,R2
+   \       0x10   0xE1B0'5003        MOVS     R5,R3
+   \       0x14   0xE59D'6028        LDR      R6,[SP, #+40]
+   \       0x18   0xE59D'702C        LDR      R7,[SP, #+44]
+   \       0x1C   0xE59D'8030        LDR      R8,[SP, #+48]
+    158          	rand_state *r=(rand_state *)rand_init(seed,reseed,0.0,0.0);
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \       0x24   0xE3A0'1000        MOV      R1,#+0
+   \       0x28   0xE88D'0003        STM      SP,{R0,R1}
+   \       0x2C   0xE3A0'2000        MOV      R2,#+0
+   \       0x30   0xE3A0'3000        MOV      R3,#+0
+   \       0x34   0xE1B0'1009        MOVS     R1,R9
+   \       0x38   0xE1B0'000A        MOVS     R0,R10
+   \       0x3C   0x....'....        BL       rand_init
+    159          	r->mantsign=mantsign;
+   \       0x40   0xE580'4820        STR      R4,[R0, #+2080]
+    160          	r->expsign=expsign;
+   \       0x44   0xE580'5824        STR      R5,[R0, #+2084]
+    161          	r->exp_cut=(uint16_t)exp_cut;
+   \       0x48   0xE3A0'1028        MOV      R1,#+40
+   \       0x4C   0xE381'1E80        ORR      R1,R1,#0x800
+   \       0x50   0xE180'60B1        STRH     R6,[R0, +R1]
+    162          	r->manthigh_cut=manthigh_cut;
+   \       0x54   0xE580'782C        STR      R7,[R0, #+2092]
+    163          	r->mantlow_cut=mantlow_cut;
+   \       0x58   0xE580'8830        STR      R8,[R0, #+2096]
+    164          	return r;
+   \       0x5C   0xE8BD'87F6        POP      {R1,R2,R4-R10,PC}  ;; return
+    165          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    166          int store_sp(float *value, intparts *asint)
+    167          {
+   \                     store_sp:
+   \        0x0   0xE92D'4030        PUSH     {R4,R5,LR}
+   \        0x4   0xE1B0'2000        MOVS     R2,R0
+    168             uint32_t iValue;
+    169             float v32;
+    170             uint32_t iexp;
+    171             int32_t exp=asint->exp;
+   \        0x8   0xE1D1'E0F2        LDRSH    LR,[R1, #+2]
+    172             uint32_t mant=asint->mant_low32;
+   \        0xC   0xE591'4008        LDR      R4,[R1, #+8]
+    173          
+    174             if (asint->mant_high32)
+   \       0x10   0xE591'0004        LDR      R0,[R1, #+4]
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x0A00'0001        BEQ      ??store_sp_0
+    175                return 0;
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \       0x20   0xEA00'0025        B        ??store_sp_1
+    176          
+    177             if (mant >= ((uint32_t)1<<24))
+   \                     ??store_sp_0:
+   \       0x24   0xE354'0740        CMP      R4,#+16777216
+   \       0x28   0x3A00'0001        BCC      ??store_sp_2
+    178             {
+    179                return 0;
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \       0x30   0xEA00'0021        B        ??store_sp_1
+    180             }
+    181             if (!(mant & ((uint32_t)1<<23)))
+   \                     ??store_sp_2:
+   \       0x34   0xE314'0880        TST      R4,#0x800000
+   \       0x38   0x1A00'000C        BNE      ??store_sp_3
+    182             {
+    183                /* special casing signed zero */
+    184                if (exp == 0 && mant == 0)
+   \       0x3C   0xE35E'0000        CMP      LR,#+0
+   \       0x40   0x1A00'0008        BNE      ??store_sp_4
+   \       0x44   0xE354'0000        CMP      R4,#+0
+   \       0x48   0x1A00'0006        BNE      ??store_sp_4
+    185                {
+    186                   iValue = (uint32_t)(asint->sign) << 31;
+   \       0x4C   0xE1D1'00D0        LDRSB    R0,[R1, #+0]
+   \       0x50   0xE1B0'3F80        LSLS     R3,R0,#+31
+    187                   SET_FLOAT_WORD(v32, iValue);
+   \       0x54   0xE1B0'0003        MOVS     R0,R3
+   \       0x58   0xE1B0'C000        MOVS     R12,R0
+    188                   *value = v32;
+   \       0x5C   0xE582'C000        STR      R12,[R2, #+0]
+    189                   return 1;
+   \       0x60   0xE3A0'0001        MOV      R0,#+1
+   \       0x64   0xEA00'0014        B        ??store_sp_1
+    190                }
+    191                return 0;
+   \                     ??store_sp_4:
+   \       0x68   0xE3A0'0000        MOV      R0,#+0
+   \       0x6C   0xEA00'0012        B        ??store_sp_1
+    192             }
+    193             
+    194             mant &= ((uint32_t)1 << 23) - 1;
+   \                     ??store_sp_3:
+   \       0x70   0xE1B0'0484        LSLS     R0,R4,#+9
+   \       0x74   0xE1B0'54A0        LSRS     R5,R0,#+9
+    195          
+    196             exp += 127;
+   \       0x78   0xE29E'407F        ADDS     R4,LR,#+127
+    197             if (exp <= 0 || exp >= 255)
+   \       0x7C   0xE354'0001        CMP      R4,#+1
+   \       0x80   0xBA00'0001        BLT      ??store_sp_5
+   \       0x84   0xE354'00FF        CMP      R4,#+255
+   \       0x88   0xBA00'0001        BLT      ??store_sp_6
+    198             {
+    199                return 0;
+   \                     ??store_sp_5:
+   \       0x8C   0xE3A0'0000        MOV      R0,#+0
+   \       0x90   0xEA00'0009        B        ??store_sp_1
+    200             }
+    201             iexp = exp << 23;
+   \                     ??store_sp_6:
+   \       0x94   0xE1B0'EB84        LSLS     LR,R4,#+23
+    202             if (asint->sign)
+   \       0x98   0xE1D1'00D0        LDRSB    R0,[R1, #+0]
+   \       0x9C   0xE350'0000        CMP      R0,#+0
+   \       0xA0   0x0A00'0000        BEQ      ??store_sp_7
+    203             {
+    204                iexp |= 0x80000000;
+   \       0xA4   0xE39E'E480        ORRS     LR,LR,#0x80000000
+    205             }
+    206             iValue = mant | iexp; 
+   \                     ??store_sp_7:
+   \       0xA8   0xE19E'3005        ORRS     R3,LR,R5
+    207             SET_FLOAT_WORD(v32, iValue);
+   \       0xAC   0xE1B0'0003        MOVS     R0,R3
+   \       0xB0   0xE1B0'C000        MOVS     R12,R0
+    208             *value = v32;
+   \       0xB4   0xE582'C000        STR      R12,[R2, #+0]
+    209             return 1;
+   \       0xB8   0xE3A0'0001        MOV      R0,#+1
+   \                     ??store_sp_1:
+   \       0xBC   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+    210          }
+    211          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    212          int load_sp(float *value, intparts *asint)
+    213          {
+   \                     load_sp:
+   \        0x0   0xE1B0'2000        MOVS     R2,R0
+    214             uint32_t iValue;
+    215          
+    216             if (!value || !asint)
+   \        0x4   0xE352'0000        CMP      R2,#+0
+   \        0x8   0x0A00'0001        BEQ      ??load_sp_0
+   \        0xC   0xE351'0000        CMP      R1,#+0
+   \       0x10   0x1A00'0001        BNE      ??load_sp_1
+    217                return 0;
+   \                     ??load_sp_0:
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \       0x18   0xEA00'0020        B        ??load_sp_2
+    218          
+    219             GET_FLOAT_WORD(iValue, *value);
+   \                     ??load_sp_1:
+   \       0x1C   0xE592'0000        LDR      R0,[R2, #+0]
+   \       0x20   0xE1B0'3000        MOVS     R3,R0
+    220          
+    221             asint->mant_high32 = 0;
+   \       0x24   0xE3A0'0000        MOV      R0,#+0
+   \       0x28   0xE581'0004        STR      R0,[R1, #+4]
+    222             asint->mant_low32 = (iValue & (((uint32_t)1 << 23) - 1));
+   \       0x2C   0xE1B0'0483        LSLS     R0,R3,#+9
+   \       0x30   0xE1B0'04A0        LSRS     R0,R0,#+9
+   \       0x34   0xE581'0008        STR      R0,[R1, #+8]
+    223             asint->exp = ((iValue >> 23) & 255);
+   \       0x38   0xE1B0'0BA3        LSRS     R0,R3,#+23
+   \       0x3C   0xE210'00FF        ANDS     R0,R0,#0xFF
+   \       0x40   0xE1C1'00B2        STRH     R0,[R1, #+2]
+    224          
+    225             if (asint->exp == 255)
+   \       0x44   0xE1D1'00F2        LDRSH    R0,[R1, #+2]
+   \       0x48   0xE350'00FF        CMP      R0,#+255
+   \       0x4C   0x1A00'0001        BNE      ??load_sp_3
+    226                return 0;
+   \       0x50   0xE3A0'0000        MOV      R0,#+0
+   \       0x54   0xEA00'0011        B        ??load_sp_2
+    227          
+    228             if (asint->exp != 0)
+   \                     ??load_sp_3:
+   \       0x58   0xE1D1'00F2        LDRSH    R0,[R1, #+2]
+   \       0x5C   0xE350'0000        CMP      R0,#+0
+   \       0x60   0x0A00'0006        BEQ      ??load_sp_4
+    229             {
+    230                asint->mant_low32 |=  ((uint32_t)1 << 23);
+   \       0x64   0xE591'0008        LDR      R0,[R1, #+8]
+   \       0x68   0xE390'0880        ORRS     R0,R0,#0x800000
+   \       0x6C   0xE581'0008        STR      R0,[R1, #+8]
+    231                asint->exp -= 127;
+   \       0x70   0xE1D1'00F2        LDRSH    R0,[R1, #+2]
+   \       0x74   0xE250'007F        SUBS     R0,R0,#+127
+   \       0x78   0xE1C1'00B2        STRH     R0,[R1, #+2]
+   \       0x7C   0xEA00'0004        B        ??load_sp_5
+    232             }
+    233             else
+    234             {
+    235                if (asint->mant_low32)
+   \                     ??load_sp_4:
+   \       0x80   0xE591'0008        LDR      R0,[R1, #+8]
+   \       0x84   0xE350'0000        CMP      R0,#+0
+   \       0x88   0x0A00'0001        BEQ      ??load_sp_5
+    236                   return 0;
+   \       0x8C   0xE3A0'0000        MOV      R0,#+0
+   \       0x90   0xEA00'0002        B        ??load_sp_2
+    237             }
+    238             asint->sign = iValue >> 31;
+   \                     ??load_sp_5:
+   \       0x94   0xE1B0'0FA3        LSRS     R0,R3,#+31
+   \       0x98   0xE5C1'0000        STRB     R0,[R1, #+0]
+    239             return 1;
+   \       0x9C   0xE3A0'0001        MOV      R0,#+1
+   \                     ??load_sp_2:
+   \       0xA0   0xE12F'FF1E        BX       LR               ;; return
+    240          }
+    241          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    242          float precise_random_f32(void *pr) {
+   \                     precise_random_f32:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE24D'D010        SUB      SP,SP,#+16
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+    243          	rand_state *r=(rand_state *)pr;
+   \        0xC   0xE1B0'5004        MOVS     R5,R4
+    244          	float res;
+    245          	intparts num;
+    246          	num.sign=r->mantsign < 0 ?  1 : (r->mantsign  & (random_u32(pr)&1))==0 ? 0  :  1;  // negative mantsign, force negative. zero, force positive. +1, random. 
+   \       0x10   0xE595'0820        LDR      R0,[R5, #+2080]
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x5A00'0001        BPL      ??precise_random_f32_0
+   \       0x1C   0xE3A0'0001        MOV      R0,#+1
+   \       0x20   0xEA00'0004        B        ??precise_random_f32_1
+   \                     ??precise_random_f32_0:
+   \       0x24   0xE1B0'0004        MOVS     R0,R4
+   \       0x28   0x....'....        BL       random_u32
+   \       0x2C   0xE595'1820        LDR      R1,[R5, #+2080]
+   \       0x30   0xE010'0001        ANDS     R0,R0,R1
+   \       0x34   0xE210'0001        ANDS     R0,R0,#0x1
+   \                     ??precise_random_f32_1:
+   \       0x38   0xE5CD'0000        STRB     R0,[SP, #+0]
+    247          	num.exp= r->expsign  < 0 ? -1 : (r->expsign   & (random_u32(pr)&1))==0 ? 1  : -1;  // negative expsign, force negative. zero, force positive, +1, random.
+   \       0x3C   0xE595'0824        LDR      R0,[R5, #+2084]
+   \       0x40   0xE350'0000        CMP      R0,#+0
+   \       0x44   0x5A00'0001        BPL      ??precise_random_f32_2
+   \       0x48   0xE3E0'0000        MVN      R0,#+0
+   \       0x4C   0xEA00'0008        B        ??precise_random_f32_3
+   \                     ??precise_random_f32_2:
+   \       0x50   0xE1B0'0004        MOVS     R0,R4
+   \       0x54   0x....'....        BL       random_u32
+   \       0x58   0xE595'1824        LDR      R1,[R5, #+2084]
+   \       0x5C   0xE010'0001        ANDS     R0,R0,R1
+   \       0x60   0xE310'0001        TST      R0,#0x1
+   \       0x64   0x1A00'0001        BNE      ??precise_random_f32_4
+   \       0x68   0xE3A0'0001        MOV      R0,#+1
+   \       0x6C   0xEA00'0000        B        ??precise_random_f32_3
+   \                     ??precise_random_f32_4:
+   \       0x70   0xE3E0'0000        MVN      R0,#+0
+   \                     ??precise_random_f32_3:
+   \       0x74   0xE1CD'00B2        STRH     R0,[SP, #+2]
+    248          	num.mant_low32=random_u32(pr);
+   \       0x78   0xE1B0'0004        MOVS     R0,R4
+   \       0x7C   0x....'....        BL       random_u32
+   \       0x80   0xE58D'0008        STR      R0,[SP, #+8]
+    249          	num.exp *= 1 + (random_u16(pr) & (r->exp_cut));
+   \       0x84   0xE1B0'0004        MOVS     R0,R4
+   \       0x88   0x....'....        BL       random_u16
+   \       0x8C   0xE1DD'10F2        LDRSH    R1,[SP, #+2]
+   \       0x90   0xE3A0'2028        MOV      R2,#+40
+   \       0x94   0xE382'2E80        ORR      R2,R2,#0x800
+   \       0x98   0xE195'20F2        LDRSH    R2,[R5, +R2]
+   \       0x9C   0xE012'0000        ANDS     R0,R2,R0
+   \       0xA0   0xE290'0001        ADDS     R0,R0,#+1
+   \       0xA4   0xE160'0081        SMULBB   R0,R1,R0
+   \       0xA8   0xE1CD'00B2        STRH     R0,[SP, #+2]
+    250          	num.mant_low32 &= r->mantlow_cut;
+   \       0xAC   0xE59D'0008        LDR      R0,[SP, #+8]
+   \       0xB0   0xE595'1830        LDR      R1,[R5, #+2096]
+   \       0xB4   0xE011'0000        ANDS     R0,R1,R0
+   \       0xB8   0xE58D'0008        STR      R0,[SP, #+8]
+    251          	num.mant_low32 |= (((uint32_t)1)<<23); 
+   \       0xBC   0xE59D'0008        LDR      R0,[SP, #+8]
+   \       0xC0   0xE390'0880        ORRS     R0,R0,#0x800000
+   \       0xC4   0xE58D'0008        STR      R0,[SP, #+8]
+    252          	num.mant_high32=0;
+   \       0xC8   0xE3A0'0000        MOV      R0,#+0
+   \       0xCC   0xE58D'0004        STR      R0,[SP, #+4]
+    253          	store_sp(&res,&num);
+   \       0xD0   0xE1B0'100D        MOVS     R1,SP
+   \       0xD4   0xE28D'000C        ADD      R0,SP,#+12
+   \       0xD8   0x....'....        BL       store_sp
+    254          	return res;
+   \       0xDC   0xE59D'000C        LDR      R0,[SP, #+12]
+   \       0xE0   0xE28D'D014        ADD      SP,SP,#+20
+   \       0xE4   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+    255          }
+    256          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    257          float *fromint_f32_vector(int N, uint32_t seed) {
+   \                     fromint_f32_vector:
+   \        0x0   0xE92D'41F8        PUSH     {R3-R8,LR}
+   \        0x4   0xE24D'D01C        SUB      SP,SP,#+28
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+   \        0xC   0xE1B0'5001        MOVS     R5,R1
+    258          	float *v=(float *)malloc(sizeof(float)*N);
+   \       0x10   0xE1B0'0104        LSLS     R0,R4,#+2
+   \       0x14   0x....'....        BL       malloc
+   \       0x18   0xE1B0'6000        MOVS     R6,R0
+    259          	int i=0;
+   \       0x1C   0xE3A0'7000        MOV      R7,#+0
+    260          	void *R[4];
+    261          	if (seed==0) {							// m+-  ,e+-,ecut	,high		,low
+   \       0x20   0xE355'0000        CMP      R5,#+0
+   \       0x24   0x1A00'0033        BNE      ??fromint_f32_vector_0
+    262          		R[0]=rand_intparts_init(0x9e3779b9,256,0	,0	,0x7	,0			,EE_LIMIT_DYNAMIC_RANGE(0x00ffffff));
+   \       0x28   0xE3E0'04FF        MVN      R0,#-16777216
+   \       0x2C   0xE58D'0008        STR      R0,[SP, #+8]
+   \       0x30   0xE3A0'0000        MOV      R0,#+0
+   \       0x34   0xE58D'0004        STR      R0,[SP, #+4]
+   \       0x38   0xE3A0'0007        MOV      R0,#+7
+   \       0x3C   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x40   0xE3A0'3000        MOV      R3,#+0
+   \       0x44   0xE3A0'2000        MOV      R2,#+0
+   \       0x48   0xE3A0'1F40        MOV      R1,#+256
+   \       0x4C   0x....'....        LDR      R0,??DataTable2  ;; 0x9e3779b9
+   \       0x50   0x....'....        BL       rand_intparts_init
+   \       0x54   0xE58D'000C        STR      R0,[SP, #+12]
+    263          		R[1]=rand_intparts_init(0x73686179,256,1	,1	,0x3	,0			,EE_LIMIT_DYNAMIC_RANGE(0x00ffffff));
+   \       0x58   0xE28D'800C        ADD      R8,SP,#+12
+   \       0x5C   0xE3E0'04FF        MVN      R0,#-16777216
+   \       0x60   0xE58D'0008        STR      R0,[SP, #+8]
+   \       0x64   0xE3A0'0000        MOV      R0,#+0
+   \       0x68   0xE58D'0004        STR      R0,[SP, #+4]
+   \       0x6C   0xE3A0'0003        MOV      R0,#+3
+   \       0x70   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x74   0xE3A0'3001        MOV      R3,#+1
+   \       0x78   0xE3A0'2001        MOV      R2,#+1
+   \       0x7C   0xE3A0'1F40        MOV      R1,#+256
+   \       0x80   0x....'....        LDR      R0,??DataTable2_1  ;; 0x73686179
+   \       0x84   0x....'....        BL       rand_intparts_init
+   \       0x88   0xE588'0004        STR      R0,[R8, #+4]
+    264          		R[2]=rand_intparts_init(0x656d6263,256,0	,1	,0x7	,0			,EE_LIMIT_DYNAMIC_RANGE(0x000fffff));
+   \       0x8C   0xE3E0'04F0        MVN      R0,#-268435456
+   \       0x90   0xE3C0'06FF        BIC      R0,R0,#0xFF00000
+   \       0x94   0xE58D'0008        STR      R0,[SP, #+8]
+   \       0x98   0xE3A0'0000        MOV      R0,#+0
+   \       0x9C   0xE58D'0004        STR      R0,[SP, #+4]
+   \       0xA0   0xE3A0'0007        MOV      R0,#+7
+   \       0xA4   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0xA8   0xE3A0'3001        MOV      R3,#+1
+   \       0xAC   0xE3A0'2000        MOV      R2,#+0
+   \       0xB0   0xE3A0'1F40        MOV      R1,#+256
+   \       0xB4   0x....'....        LDR      R0,??DataTable2_2  ;; 0x656d6263
+   \       0xB8   0x....'....        BL       rand_intparts_init
+   \       0xBC   0xE588'0008        STR      R0,[R8, #+8]
+    265          		R[3]=rand_intparts_init(0xee6dbbcc,256,1	,0	,0xf	,0			,EE_LIMIT_DYNAMIC_RANGE(0x0000ffff));
+   \       0xC0   0xE3A0'00FF        MOV      R0,#+255
+   \       0xC4   0xE380'0CFF        ORR      R0,R0,#0xFF00
+   \       0xC8   0xE58D'0008        STR      R0,[SP, #+8]
+   \       0xCC   0xE3A0'0000        MOV      R0,#+0
+   \       0xD0   0xE58D'0004        STR      R0,[SP, #+4]
+   \       0xD4   0xE3A0'000F        MOV      R0,#+15
+   \       0xD8   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0xDC   0xE3A0'3000        MOV      R3,#+0
+   \       0xE0   0xE3A0'2001        MOV      R2,#+1
+   \       0xE4   0xE3A0'1F40        MOV      R1,#+256
+   \       0xE8   0x....'....        LDR      R0,??DataTable2_3  ;; 0xee6dbbcc
+   \       0xEC   0x....'....        BL       rand_intparts_init
+   \       0xF0   0xE588'000C        STR      R0,[R8, #+12]
+   \       0xF4   0xEA00'0032        B        ??fromint_f32_vector_1
+    266          	} else {
+    267          		R[0]=rand_intparts_init(seed,256	  ,0	,0	,0x7	,0			,EE_LIMIT_DYNAMIC_RANGE(0x00ffffff));
+   \                     ??fromint_f32_vector_0:
+   \       0xF8   0xE3E0'04FF        MVN      R0,#-16777216
+   \       0xFC   0xE58D'0008        STR      R0,[SP, #+8]
+   \      0x100   0xE3A0'0000        MOV      R0,#+0
+   \      0x104   0xE58D'0004        STR      R0,[SP, #+4]
+   \      0x108   0xE3A0'0007        MOV      R0,#+7
+   \      0x10C   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x110   0xE3A0'3000        MOV      R3,#+0
+   \      0x114   0xE3A0'2000        MOV      R2,#+0
+   \      0x118   0xE3A0'1F40        MOV      R1,#+256
+   \      0x11C   0xE1B0'0005        MOVS     R0,R5
+   \      0x120   0x....'....        BL       rand_intparts_init
+   \      0x124   0xE58D'000C        STR      R0,[SP, #+12]
+    268          		R[1]=rand_intparts_init(seed,256	  ,1	,1	,0x3	,0			,EE_LIMIT_DYNAMIC_RANGE(0x00ffffff));
+   \      0x128   0xE28D'800C        ADD      R8,SP,#+12
+   \      0x12C   0xE3E0'04FF        MVN      R0,#-16777216
+   \      0x130   0xE58D'0008        STR      R0,[SP, #+8]
+   \      0x134   0xE3A0'0000        MOV      R0,#+0
+   \      0x138   0xE58D'0004        STR      R0,[SP, #+4]
+   \      0x13C   0xE3A0'0003        MOV      R0,#+3
+   \      0x140   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x144   0xE3A0'3001        MOV      R3,#+1
+   \      0x148   0xE3A0'2001        MOV      R2,#+1
+   \      0x14C   0xE3A0'1F40        MOV      R1,#+256
+   \      0x150   0xE1B0'0005        MOVS     R0,R5
+   \      0x154   0x....'....        BL       rand_intparts_init
+   \      0x158   0xE588'0004        STR      R0,[R8, #+4]
+    269          		R[2]=rand_intparts_init(seed,256	  ,0	,1	,0x7	,0			,EE_LIMIT_DYNAMIC_RANGE(0x000fffff));
+   \      0x15C   0xE3E0'04F0        MVN      R0,#-268435456
+   \      0x160   0xE3C0'06FF        BIC      R0,R0,#0xFF00000
+   \      0x164   0xE58D'0008        STR      R0,[SP, #+8]
+   \      0x168   0xE3A0'0000        MOV      R0,#+0
+   \      0x16C   0xE58D'0004        STR      R0,[SP, #+4]
+   \      0x170   0xE3A0'0007        MOV      R0,#+7
+   \      0x174   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x178   0xE3A0'3001        MOV      R3,#+1
+   \      0x17C   0xE3A0'2000        MOV      R2,#+0
+   \      0x180   0xE3A0'1F40        MOV      R1,#+256
+   \      0x184   0xE1B0'0005        MOVS     R0,R5
+   \      0x188   0x....'....        BL       rand_intparts_init
+   \      0x18C   0xE588'0008        STR      R0,[R8, #+8]
+    270          		R[3]=rand_intparts_init(seed,256	  ,1	,0	,0xf	,0			,EE_LIMIT_DYNAMIC_RANGE(0x0000ffff));
+   \      0x190   0xE3A0'00FF        MOV      R0,#+255
+   \      0x194   0xE380'0CFF        ORR      R0,R0,#0xFF00
+   \      0x198   0xE58D'0008        STR      R0,[SP, #+8]
+   \      0x19C   0xE3A0'0000        MOV      R0,#+0
+   \      0x1A0   0xE58D'0004        STR      R0,[SP, #+4]
+   \      0x1A4   0xE3A0'000F        MOV      R0,#+15
+   \      0x1A8   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x1AC   0xE3A0'3000        MOV      R3,#+0
+   \      0x1B0   0xE3A0'2001        MOV      R2,#+1
+   \      0x1B4   0xE3A0'1F40        MOV      R1,#+256
+   \      0x1B8   0xE1B0'0005        MOVS     R0,R5
+   \      0x1BC   0x....'....        BL       rand_intparts_init
+   \      0x1C0   0xE588'000C        STR      R0,[R8, #+12]
+    271          	}
+    272          	for (i=0 ; i<N ;i++) v[i]=precise_random_f32(R[i&3]);
+   \                     ??fromint_f32_vector_1:
+   \      0x1C4   0xE3A0'8000        MOV      R8,#+0
+   \                     ??fromint_f32_vector_2:
+   \      0x1C8   0xE158'0004        CMP      R8,R4
+   \      0x1CC   0xAA00'0008        BGE      ??fromint_f32_vector_3
+   \      0x1D0   0xE28D'000C        ADD      R0,SP,#+12
+   \      0x1D4   0xE218'1003        ANDS     R1,R8,#0x3
+   \      0x1D8   0xE1B0'1101        LSLS     R1,R1,#+2
+   \      0x1DC   0xE790'0001        LDR      R0,[R0, +R1]
+   \      0x1E0   0x....'....        BL       precise_random_f32
+   \      0x1E4   0xE1B0'1108        LSLS     R1,R8,#+2
+   \      0x1E8   0xE786'0001        STR      R0,[R6, +R1]
+   \      0x1EC   0xE298'8001        ADDS     R8,R8,#+1
+   \      0x1F0   0xEAFF'FFF4        B        ??fromint_f32_vector_2
+    273          	for (i=0 ; i<4 ;i++) rand_fini(R[i]);
+   \                     ??fromint_f32_vector_3:
+   \      0x1F4   0xE3A0'7000        MOV      R7,#+0
+   \                     ??fromint_f32_vector_4:
+   \      0x1F8   0xE357'0004        CMP      R7,#+4
+   \      0x1FC   0xAA00'0005        BGE      ??fromint_f32_vector_5
+   \      0x200   0xE28D'000C        ADD      R0,SP,#+12
+   \      0x204   0xE1B0'1107        LSLS     R1,R7,#+2
+   \      0x208   0xE790'0001        LDR      R0,[R0, +R1]
+   \      0x20C   0x....'....        BL       rand_fini
+   \      0x210   0xE297'7001        ADDS     R7,R7,#+1
+   \      0x214   0xEAFF'FFF7        B        ??fromint_f32_vector_4
+    274          	return v;
+   \                     ??fromint_f32_vector_5:
+   \      0x218   0xE1B0'0006        MOVS     R0,R6
+   \      0x21C   0xE28D'D020        ADD      SP,SP,#+32
+   \      0x220   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    275          }
+    276          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    277          void bignum_zero(BIGNUM *res)
+    278          {
+    279          	uint32_t i;
+    280          	for (i=0;i<BNC;i++) res->n[i] = 0;
+   \                     bignum_zero:
+   \        0x0   0xE3A0'1000        MOV      R1,#+0
+   \                     ??bignum_zero_0:
+   \        0x4   0xE351'0008        CMP      R1,#+8
+   \        0x8   0x2A00'0004        BCS      ??bignum_zero_1
+   \        0xC   0xE3A0'2000        MOV      R2,#+0
+   \       0x10   0xE1B0'3101        LSLS     R3,R1,#+2
+   \       0x14   0xE780'2003        STR      R2,[R0, +R3]
+   \       0x18   0xE291'1001        ADDS     R1,R1,#+1
+   \       0x1C   0xEAFF'FFF8        B        ??bignum_zero_0
+    281          }
+   \                     ??bignum_zero_1:
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    282          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    283          void bignum_add(BIGNUM *res, BIGNUM *a, BIGNUM *b)
+    284          {
+   \                     bignum_add:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    285          	uint32_t i;
+    286          	uint32_t c = 0;
+   \        0x4   0xE3A0'C000        MOV      R12,#+0
+    287          
+    288          	if (!res || !a || !b)
+   \        0x8   0xE350'0000        CMP      R0,#+0
+   \        0xC   0x0A00'0003        BEQ      ??bignum_add_0
+   \       0x10   0xE351'0000        CMP      R1,#+0
+   \       0x14   0x0A00'0001        BEQ      ??bignum_add_0
+   \       0x18   0xE352'0000        CMP      R2,#+0
+   \       0x1C   0x1A00'0000        BNE      ??bignum_add_1
+    289          		return;
+   \                     ??bignum_add_0:
+   \       0x20   0xEA00'0017        B        ??bignum_add_2
+    290          
+    291          	for (i=0;i<BNC;i++)
+   \                     ??bignum_add_1:
+   \       0x24   0xE3A0'3000        MOV      R3,#+0
+   \                     ??bignum_add_3:
+   \       0x28   0xE353'0008        CMP      R3,#+8
+   \       0x2C   0x2A00'0014        BCS      ??bignum_add_4
+    292          	{
+    293          		uint32_t n = a->n[i] + b->n[i] + c;
+   \       0x30   0xE1B0'E103        LSLS     LR,R3,#+2
+   \       0x34   0xE791'E00E        LDR      LR,[R1, +LR]
+   \       0x38   0xE1B0'4103        LSLS     R4,R3,#+2
+   \       0x3C   0xE792'4004        LDR      R4,[R2, +R4]
+   \       0x40   0xE094'E00E        ADDS     LR,R4,LR
+   \       0x44   0xE09C'E00E        ADDS     LR,R12,LR
+    294          		c = (n < a->n[i] || n < b->n[i]) ? 1 : 0;
+   \       0x48   0xE1B0'4103        LSLS     R4,R3,#+2
+   \       0x4C   0xE791'4004        LDR      R4,[R1, +R4]
+   \       0x50   0xE15E'0004        CMP      LR,R4
+   \       0x54   0x3A00'0003        BCC      ??bignum_add_5
+   \       0x58   0xE1B0'C103        LSLS     R12,R3,#+2
+   \       0x5C   0xE792'C00C        LDR      R12,[R2, +R12]
+   \       0x60   0xE15E'000C        CMP      LR,R12
+   \       0x64   0x2A00'0001        BCS      ??bignum_add_6
+   \                     ??bignum_add_5:
+   \       0x68   0xE3A0'C001        MOV      R12,#+1
+   \       0x6C   0xEA00'0000        B        ??bignum_add_7
+   \                     ??bignum_add_6:
+   \       0x70   0xE3A0'C000        MOV      R12,#+0
+    295          		res->n[i] = n;
+   \                     ??bignum_add_7:
+   \       0x74   0xE1B0'4103        LSLS     R4,R3,#+2
+   \       0x78   0xE780'E004        STR      LR,[R0, +R4]
+    296          	}
+   \       0x7C   0xE293'3001        ADDS     R3,R3,#+1
+   \       0x80   0xEAFF'FFE8        B        ??bignum_add_3
+    297          }
+   \                     ??bignum_add_4:
+   \                     ??bignum_add_2:
+   \       0x84   0xE8BD'8010        POP      {R4,PC}          ;; return
+    298          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    299          void bignum_sub(BIGNUM *res, BIGNUM *a, BIGNUM *b)
+    300          {
+   \                     bignum_sub:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE24D'D020        SUB      SP,SP,#+32
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+   \        0xC   0xE1B0'5001        MOVS     R5,R1
+   \       0x10   0xE1B0'6002        MOVS     R6,R2
+    301          	BIGNUM t;
+    302          	bignum_neg(&t,b);
+   \       0x14   0xE1B0'1006        MOVS     R1,R6
+   \       0x18   0xE1B0'000D        MOVS     R0,SP
+   \       0x1C   0x....'....        BL       bignum_neg
+    303          	bignum_add(res,a,&t);
+   \       0x20   0xE1B0'200D        MOVS     R2,SP
+   \       0x24   0xE1B0'1005        MOVS     R1,R5
+   \       0x28   0xE1B0'0004        MOVS     R0,R4
+   \       0x2C   0x....'....        BL       bignum_add
+    304          }
+   \       0x30   0xE28D'D020        ADD      SP,SP,#+32
+   \       0x34   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    305          uint32_t bignum_shl(BIGNUM *res, BIGNUM *a, uint32_t c)
+    306          {
+   \                     bignum_shl:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1B0'3000        MOVS     R3,R0
+    307          	uint32_t skip = c / (sizeof(uint32_t) * CHAR_BIT);
+   \        0x8   0xE1B0'C2A2        LSRS     R12,R2,#+5
+    308          	uint32_t rem = c % (sizeof(uint32_t) * CHAR_BIT);
+   \        0xC   0xE212'E01F        ANDS     LR,R2,#0x1F
+    309          	uint32_t i,j;
+    310          	uint32_t prev = 0;
+   \       0x10   0xE3A0'4000        MOV      R4,#+0
+    311          
+    312          	for (i=skip,j=0;i<BNC;i++,j++)
+   \       0x14   0xE1B0'000C        MOVS     R0,R12
+   \       0x18   0xE3A0'5000        MOV      R5,#+0
+   \                     ??bignum_shl_0:
+   \       0x1C   0xE350'0008        CMP      R0,#+8
+   \       0x20   0x2A00'000B        BCS      ??bignum_shl_1
+    313          	{
+    314          		uint32_t current = a->n[j];
+   \       0x24   0xE1B0'6105        LSLS     R6,R5,#+2
+   \       0x28   0xE791'6006        LDR      R6,[R1, +R6]
+    315          		res->n[i] = (current << rem) | (prev >> ((sizeof(uint32_t) * CHAR_BIT)-rem));
+   \       0x2C   0xE1B0'700E        MOVS     R7,LR
+   \       0x30   0xE277'7020        RSBS     R7,R7,#+32
+   \       0x34   0xE1B0'7734        LSRS     R7,R4,R7
+   \       0x38   0xE197'7E16        ORRS     R7,R7,R6, LSL LR
+   \       0x3C   0xE1B0'8100        LSLS     R8,R0,#+2
+   \       0x40   0xE783'7008        STR      R7,[R3, +R8]
+    316          		prev = current;
+   \       0x44   0xE1B0'4006        MOVS     R4,R6
+    317          	}
+   \       0x48   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x4C   0xE295'5001        ADDS     R5,R5,#+1
+   \       0x50   0xEAFF'FFF1        B        ??bignum_shl_0
+    318          
+    319          	for (i=0;i<skip;i++) 
+   \                     ??bignum_shl_1:
+   \       0x54   0xE3A0'6000        MOV      R6,#+0
+   \                     ??bignum_shl_2:
+   \       0x58   0xE156'000C        CMP      R6,R12
+   \       0x5C   0x2A00'0004        BCS      ??bignum_shl_3
+    320          	{
+    321          		res->n[i] = 0;
+   \       0x60   0xE3A0'0000        MOV      R0,#+0
+   \       0x64   0xE1B0'7106        LSLS     R7,R6,#+2
+   \       0x68   0xE783'0007        STR      R0,[R3, +R7]
+    322          	}
+   \       0x6C   0xE296'6001        ADDS     R6,R6,#+1
+   \       0x70   0xEAFF'FFF8        B        ??bignum_shl_2
+    323          	if (skip>=BNC)
+   \                     ??bignum_shl_3:
+   \       0x74   0xE35C'0008        CMP      R12,#+8
+   \       0x78   0x3A00'0001        BCC      ??bignum_shl_4
+    324          		return 1;
+   \       0x7C   0xE3A0'0001        MOV      R0,#+1
+   \       0x80   0xEA00'0001        B        ??bignum_shl_5
+    325          	else 
+    326          		return (prev >> ((sizeof(uint32_t) * CHAR_BIT)-rem));
+   \                     ??bignum_shl_4:
+   \       0x84   0xE27E'0020        RSBS     R0,LR,#+32
+   \       0x88   0xE1B0'0034        LSRS     R0,R4,R0
+   \                     ??bignum_shl_5:
+   \       0x8C   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    327          }
+    328          
+    329          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    330          BIGNUM * bignum_convert(BIGNUM *res,
+    331          		  uint32_t s_1, int32_t e_1, uint32_t m1_1, uint32_t m0_1, int32_t scale ) 
+    332          {
+   \                     bignum_convert:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE59D'8020        LDR      R8,[SP, #+32]
+   \       0x18   0xE59D'9024        LDR      R9,[SP, #+36]
+    333          	bignum_zero(res);
+   \       0x1C   0xE1B0'0004        MOVS     R0,R4
+   \       0x20   0x....'....        BL       bignum_zero
+    334          	res->n[0] = m0_1;
+   \       0x24   0xE584'8000        STR      R8,[R4, #+0]
+    335          	res->n[1] = m1_1;
+   \       0x28   0xE584'7004        STR      R7,[R4, #+4]
+    336          	if (s_1) bignum_neg(res,res);
+   \       0x2C   0xE355'0000        CMP      R5,#+0
+   \       0x30   0x0A00'0002        BEQ      ??bignum_convert_0
+   \       0x34   0xE1B0'1004        MOVS     R1,R4
+   \       0x38   0xE1B0'0004        MOVS     R0,R4
+   \       0x3C   0x....'....        BL       bignum_neg
+    337          	if (scale>0)
+   \                     ??bignum_convert_0:
+   \       0x40   0xE359'0001        CMP      R9,#+1
+   \       0x44   0xBA00'0003        BLT      ??bignum_convert_1
+    338          		bignum_shl(res,res, scale); 
+   \       0x48   0xE1B0'2009        MOVS     R2,R9
+   \       0x4C   0xE1B0'1004        MOVS     R1,R4
+   \       0x50   0xE1B0'0004        MOVS     R0,R4
+   \       0x54   0x....'....        BL       bignum_shl
+    339          	return res;
+   \                     ??bignum_convert_1:
+   \       0x58   0xE1B0'0004        MOVS     R0,R4
+   \       0x5C   0xE8BD'83F2        POP      {R1,R4-R9,PC}    ;; return
+    340          }
+    341          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    342          void bignum_abs(BIGNUM *res, BIGNUM *a)
+    343          {
+   \                     bignum_abs:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    344          	if (a->n[BNC-1] & HIBITMASK)
+   \        0xC   0xE595'001C        LDR      R0,[R5, #+28]
+   \       0x10   0xE310'0480        TST      R0,#0x80000000
+   \       0x14   0x0A00'0003        BEQ      ??bignum_abs_0
+    345          	{
+    346          		bignum_neg(res,a);
+   \       0x18   0xE1B0'1005        MOVS     R1,R5
+   \       0x1C   0xE1B0'0004        MOVS     R0,R4
+   \       0x20   0x....'....        BL       bignum_neg
+   \       0x24   0xEA00'0003        B        ??bignum_abs_1
+    347          	}
+    348          	else 
+    349          	{
+    350          		*res = *a;
+   \                     ??bignum_abs_0:
+   \       0x28   0xE1B0'0004        MOVS     R0,R4
+   \       0x2C   0xE1B0'1005        MOVS     R1,R5
+   \       0x30   0xE3A0'2020        MOV      R2,#+32
+   \       0x34   0x....'....        BL       __aeabi_memcpy4
+    351          	}
+    352          }
+   \                     ??bignum_abs_1:
+   \       0x38   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    353          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    354          int32_t count_msb(uint32_t v) {
+   \                     count_msb:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    355          	int32_t c;
+    356          	for (c = 31; v; c--)
+   \        0x4   0xE3A0'201F        MOV      R2,#+31
+   \                     ??count_msb_0:
+   \        0x8   0xE351'0000        CMP      R1,#+0
+   \        0xC   0x0A00'0006        BEQ      ??count_msb_1
+    357          	{
+    358          		if (v&(1<<c)) return c;
+   \       0x10   0xE3A0'0001        MOV      R0,#+1
+   \       0x14   0xE110'0231        TST      R0,R1, LSR R2
+   \       0x18   0x0A00'0001        BEQ      ??count_msb_2
+   \       0x1C   0xE1B0'0002        MOVS     R0,R2
+   \       0x20   0xEA00'0002        B        ??count_msb_3
+    359          	}
+   \                     ??count_msb_2:
+   \       0x24   0xE252'2001        SUBS     R2,R2,#+1
+   \       0x28   0xEAFF'FFF6        B        ??count_msb_0
+    360          	return -1;
+   \                     ??count_msb_1:
+   \       0x2C   0xE3E0'0000        MVN      R0,#+0
+   \                     ??count_msb_3:
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    361          }
+    362          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    363          int32_t bignum_msb(BIGNUM *res)
+    364          {
+   \                     bignum_msb:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    365          	int32_t i,ret=-1,tmp;
+   \        0x8   0xE3E0'6000        MVN      R6,#+0
+    366          	for (i=BNC-1;i>=0;i--) {
+   \        0xC   0xE3A0'5007        MOV      R5,#+7
+   \                     ??bignum_msb_0:
+   \       0x10   0xE355'0000        CMP      R5,#+0
+   \       0x14   0x4A00'000B        BMI      ??bignum_msb_1
+    367          		tmp=count_msb(res->n[i]);
+   \       0x18   0xE1B0'0105        LSLS     R0,R5,#+2
+   \       0x1C   0xE794'0000        LDR      R0,[R4, +R0]
+   \       0x20   0x....'....        BL       count_msb
+   \       0x24   0xE1B0'7000        MOVS     R7,R0
+    368          		if (tmp>=0) {
+   \       0x28   0xE357'0000        CMP      R7,#+0
+   \       0x2C   0x4A00'0003        BMI      ??bignum_msb_2
+    369          			ret=tmp+32*i;
+   \       0x30   0xE3A0'0020        MOV      R0,#+32
+   \       0x34   0xE021'7590        MLA      R1,R0,R5,R7
+   \       0x38   0xE1B0'6001        MOVS     R6,R1
+    370          			break;
+   \       0x3C   0xEA00'0001        B        ??bignum_msb_1
+    371          		}
+    372          	}
+   \                     ??bignum_msb_2:
+   \       0x40   0xE255'5001        SUBS     R5,R5,#+1
+   \       0x44   0xEAFF'FFF1        B        ??bignum_msb_0
+    373          	return ret;
+   \                     ??bignum_msb_1:
+   \       0x48   0xE1B0'0006        MOVS     R0,R6
+   \       0x4C   0xE8BD'80F2        POP      {R1,R4-R7,PC}    ;; return
+    374          }
+    375          
+    376          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    377          int32_t bignum_diff(BIGNUM *diff, BIGNUM *a, BIGNUM *b)
+    378          {
+   \                     bignum_diff:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    379          	bignum_sub(diff,a,b);
+   \       0x10   0xE1B0'2006        MOVS     R2,R6
+   \       0x14   0xE1B0'1005        MOVS     R1,R5
+   \       0x18   0xE1B0'0004        MOVS     R0,R4
+   \       0x1C   0x....'....        BL       bignum_sub
+    380          	bignum_abs(diff,diff);
+   \       0x20   0xE1B0'1004        MOVS     R1,R4
+   \       0x24   0xE1B0'0004        MOVS     R0,R4
+   \       0x28   0x....'....        BL       bignum_abs
+    381          	return bignum_msb(diff);
+   \       0x2C   0xE1B0'0004        MOVS     R0,R4
+   \       0x30   0x....'....        BL       bignum_msb
+   \       0x34   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    382          }
+    383          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    384          void bignum_neg(BIGNUM *res, BIGNUM *a)
+    385          {
+   \                     bignum_neg:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE24D'D020        SUB      SP,SP,#+32
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+   \        0xC   0xE1B0'5001        MOVS     R5,R1
+    386          	BIGNUM t;
+    387          	uint32_t i;
+    388          	bignum_zero(&t);
+   \       0x10   0xE1B0'000D        MOVS     R0,SP
+   \       0x14   0x....'....        BL       bignum_zero
+    389          	t.n[0] = 1;
+   \       0x18   0xE3A0'0001        MOV      R0,#+1
+   \       0x1C   0xE58D'0000        STR      R0,[SP, #+0]
+    390          	for (i=0;i<BNC;i++)
+   \       0x20   0xE3A0'6000        MOV      R6,#+0
+   \                     ??bignum_neg_0:
+   \       0x24   0xE356'0008        CMP      R6,#+8
+   \       0x28   0x2A00'0006        BCS      ??bignum_neg_1
+    391          	{
+    392          		res->n[i] = ~a->n[i];
+   \       0x2C   0xE1B0'0106        LSLS     R0,R6,#+2
+   \       0x30   0xE795'0000        LDR      R0,[R5, +R0]
+   \       0x34   0xE1F0'0000        MVNS     R0,R0
+   \       0x38   0xE1B0'1106        LSLS     R1,R6,#+2
+   \       0x3C   0xE784'0001        STR      R0,[R4, +R1]
+    393          	}
+   \       0x40   0xE296'6001        ADDS     R6,R6,#+1
+   \       0x44   0xEAFF'FFF6        B        ??bignum_neg_0
+    394          	bignum_add(res,res,&t);
+   \                     ??bignum_neg_1:
+   \       0x48   0xE1B0'200D        MOVS     R2,SP
+   \       0x4C   0xE1B0'1004        MOVS     R1,R4
+   \       0x50   0xE1B0'0004        MOVS     R0,R4
+   \       0x54   0x....'....        BL       bignum_add
+    395          }
+   \       0x58   0xE28D'D020        ADD      SP,SP,#+32
+   \       0x5C   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    396          
+    397          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    398          uint32_t bignum_diff_sp(BIGNUM *diff, intparts *sig, intparts *ref)
+    399          {
+   \                     bignum_diff_sp:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE24D'D048        SUB      SP,SP,#+72
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+   \        0xC   0xE1B0'5001        MOVS     R5,R1
+   \       0x10   0xE1B0'6002        MOVS     R6,R2
+    400          	BIGNUM _1,_2;
+    401          	int32_t msb,ref_msb,sigscale=0,refscale=0,retval=23;
+   \       0x14   0xE3A0'7000        MOV      R7,#+0
+   \       0x18   0xE3A0'8000        MOV      R8,#+0
+   \       0x1C   0xE3A0'9017        MOV      R9,#+23
+    402          	if ((ref->mant_low32)==0) { //special handling for zero, accept epsilon of 1e-200
+   \       0x20   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x1A00'000C        BNE      ??bignum_diff_sp_0
+    403          		if (sig->exp<=-100 || (sig->exp==0 && sig->mant_low32==0))
+   \       0x2C   0xE1D5'00F2        LDRSH    R0,[R5, #+2]
+   \       0x30   0xE370'0063        CMN      R0,#+99
+   \       0x34   0xBA00'0005        BLT      ??bignum_diff_sp_1
+   \       0x38   0xE1D5'00F2        LDRSH    R0,[R5, #+2]
+   \       0x3C   0xE350'0000        CMP      R0,#+0
+   \       0x40   0x1A00'0004        BNE      ??bignum_diff_sp_2
+   \       0x44   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0x48   0xE350'0000        CMP      R0,#+0
+   \       0x4C   0x1A00'0001        BNE      ??bignum_diff_sp_2
+    404          			return retval;
+   \                     ??bignum_diff_sp_1:
+   \       0x50   0xE1B0'0009        MOVS     R0,R9
+   \       0x54   0xEA00'0057        B        ??bignum_diff_sp_3
+    405          		else
+    406          			return 0;
+   \                     ??bignum_diff_sp_2:
+   \       0x58   0xE3A0'0000        MOV      R0,#+0
+   \       0x5C   0xEA00'0055        B        ??bignum_diff_sp_3
+    407          	}
+    408          	if ((sig->mant_low32)==0) { //special handling for zero, accept epsilon of 1e-200
+   \                     ??bignum_diff_sp_0:
+   \       0x60   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0x64   0xE350'0000        CMP      R0,#+0
+   \       0x68   0x1A00'000C        BNE      ??bignum_diff_sp_4
+    409          		if ((ref->exp<=-100) || (ref->exp==0 && ref->mant_low32==0))
+   \       0x6C   0xE1D6'00F2        LDRSH    R0,[R6, #+2]
+   \       0x70   0xE370'0063        CMN      R0,#+99
+   \       0x74   0xBA00'0005        BLT      ??bignum_diff_sp_5
+   \       0x78   0xE1D6'00F2        LDRSH    R0,[R6, #+2]
+   \       0x7C   0xE350'0000        CMP      R0,#+0
+   \       0x80   0x1A00'0004        BNE      ??bignum_diff_sp_6
+   \       0x84   0xE596'0008        LDR      R0,[R6, #+8]
+   \       0x88   0xE350'0000        CMP      R0,#+0
+   \       0x8C   0x1A00'0001        BNE      ??bignum_diff_sp_6
+    410          			return retval;
+   \                     ??bignum_diff_sp_5:
+   \       0x90   0xE1B0'0009        MOVS     R0,R9
+   \       0x94   0xEA00'0047        B        ??bignum_diff_sp_3
+    411          		else
+    412          			return 0;
+   \                     ??bignum_diff_sp_6:
+   \       0x98   0xE3A0'0000        MOV      R0,#+0
+   \       0x9C   0xEA00'0045        B        ??bignum_diff_sp_3
+    413          	}
+    414          	if (abs(sig->exp - ref->exp) > 40) //special handling for cases where the difference in exponents is such that we can ignore the mantissa
+   \                     ??bignum_diff_sp_4:
+   \       0xA0   0xE1D5'00F2        LDRSH    R0,[R5, #+2]
+   \       0xA4   0xE1D6'10F2        LDRSH    R1,[R6, #+2]
+   \       0xA8   0xE050'0001        SUBS     R0,R0,R1
+   \       0xAC   0x....'....        BL       abs
+   \       0xB0   0xE350'0029        CMP      R0,#+41
+   \       0xB4   0xBA00'0001        BLT      ??bignum_diff_sp_7
+    415          		return 0;
+   \       0xB8   0xE3A0'0000        MOV      R0,#+0
+   \       0xBC   0xEA00'003D        B        ??bignum_diff_sp_3
+    416          	if (ref->exp < sig->exp)
+   \                     ??bignum_diff_sp_7:
+   \       0xC0   0xE1D6'00F2        LDRSH    R0,[R6, #+2]
+   \       0xC4   0xE1D5'10F2        LDRSH    R1,[R5, #+2]
+   \       0xC8   0xE150'0001        CMP      R0,R1
+   \       0xCC   0xAA00'0004        BGE      ??bignum_diff_sp_8
+    417          		sigscale=abs(ref->exp-sig->exp);
+   \       0xD0   0xE1D6'00F2        LDRSH    R0,[R6, #+2]
+   \       0xD4   0xE1D5'10F2        LDRSH    R1,[R5, #+2]
+   \       0xD8   0xE050'0001        SUBS     R0,R0,R1
+   \       0xDC   0x....'....        BL       abs
+   \       0xE0   0xE1B0'7000        MOVS     R7,R0
+    418          	if (ref->exp > sig->exp)
+   \                     ??bignum_diff_sp_8:
+   \       0xE4   0xE1D5'00F2        LDRSH    R0,[R5, #+2]
+   \       0xE8   0xE1D6'10F2        LDRSH    R1,[R6, #+2]
+   \       0xEC   0xE150'0001        CMP      R0,R1
+   \       0xF0   0xAA00'0004        BGE      ??bignum_diff_sp_9
+    419          		refscale=abs(sig->exp-ref->exp);
+   \       0xF4   0xE1D5'00F2        LDRSH    R0,[R5, #+2]
+   \       0xF8   0xE1D6'10F2        LDRSH    R1,[R6, #+2]
+   \       0xFC   0xE050'0001        SUBS     R0,R0,R1
+   \      0x100   0x....'....        BL       abs
+   \      0x104   0xE1B0'8000        MOVS     R8,R0
+    420          	bignum_convert(&_1,sig->sign,  sig->exp,  0,  sig->mant_low32,sigscale);
+   \                     ??bignum_diff_sp_9:
+   \      0x108   0xE58D'7004        STR      R7,[SP, #+4]
+   \      0x10C   0xE595'0008        LDR      R0,[R5, #+8]
+   \      0x110   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x114   0xE3A0'3000        MOV      R3,#+0
+   \      0x118   0xE1D5'20F2        LDRSH    R2,[R5, #+2]
+   \      0x11C   0xE1D5'10D0        LDRSB    R1,[R5, #+0]
+   \      0x120   0xE28D'0028        ADD      R0,SP,#+40
+   \      0x124   0x....'....        BL       bignum_convert
+    421          	bignum_convert(&_2,ref->sign,  ref->exp,  0,  ref->mant_low32,refscale);
+   \      0x128   0xE58D'8004        STR      R8,[SP, #+4]
+   \      0x12C   0xE596'0008        LDR      R0,[R6, #+8]
+   \      0x130   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x134   0xE3A0'3000        MOV      R3,#+0
+   \      0x138   0xE1D6'20F2        LDRSH    R2,[R6, #+2]
+   \      0x13C   0xE1D6'10D0        LDRSB    R1,[R6, #+0]
+   \      0x140   0xE28D'0008        ADD      R0,SP,#+8
+   \      0x144   0x....'....        BL       bignum_convert
+    422          	msb=bignum_diff(diff,&_1,&_2);
+   \      0x148   0xE28D'2008        ADD      R2,SP,#+8
+   \      0x14C   0xE28D'1028        ADD      R1,SP,#+40
+   \      0x150   0xE1B0'0004        MOVS     R0,R4
+   \      0x154   0x....'....        BL       bignum_diff
+   \      0x158   0xE1B0'A000        MOVS     R10,R0
+    423          	if (msb<0) return retval; // no error
+   \      0x15C   0xE35A'0000        CMP      R10,#+0
+   \      0x160   0x5A00'0001        BPL      ??bignum_diff_sp_10
+   \      0x164   0xE1B0'0009        MOVS     R0,R9
+   \      0x168   0xEA00'0012        B        ??bignum_diff_sp_3
+    424          	if (ref->sign) 			//diff returns absolute value, so msb accordingly.
+   \                     ??bignum_diff_sp_10:
+   \      0x16C   0xE1D6'00D0        LDRSB    R0,[R6, #+0]
+   \      0x170   0xE350'0000        CMP      R0,#+0
+   \      0x174   0x0A00'0002        BEQ      ??bignum_diff_sp_11
+    425          		bignum_neg(&_2,&_2);//need to abs the ref bignum to get correct diff for negative numbers
+   \      0x178   0xE28D'1008        ADD      R1,SP,#+8
+   \      0x17C   0xE28D'0008        ADD      R0,SP,#+8
+   \      0x180   0x....'....        BL       bignum_neg
+    426          	ref_msb=bignum_msb(&_2);
+   \                     ??bignum_diff_sp_11:
+   \      0x184   0xE28D'0008        ADD      R0,SP,#+8
+   \      0x188   0x....'....        BL       bignum_msb
+   \      0x18C   0xE1B0'1000        MOVS     R1,R0
+    427          	if (ref_msb<msb) 
+   \      0x190   0xE151'000A        CMP      R1,R10
+   \      0x194   0xAA00'0001        BGE      ??bignum_diff_sp_12
+    428          		return 0;
+   \      0x198   0xE3A0'0000        MOV      R0,#+0
+   \      0x19C   0xEA00'0005        B        ??bignum_diff_sp_3
+    429          	else {
+    430          		if (ref_msb-msb < retval) retval=ref_msb-msb;
+   \                     ??bignum_diff_sp_12:
+   \      0x1A0   0xE051'000A        SUBS     R0,R1,R10
+   \      0x1A4   0xE150'0009        CMP      R0,R9
+   \      0x1A8   0xAA00'0001        BGE      ??bignum_diff_sp_13
+   \      0x1AC   0xE051'000A        SUBS     R0,R1,R10
+   \      0x1B0   0xE1B0'9000        MOVS     R9,R0
+    431          		return retval;
+   \                     ??bignum_diff_sp_13:
+   \      0x1B4   0xE1B0'0009        MOVS     R0,R9
+   \                     ??bignum_diff_sp_3:
+   \      0x1B8   0xE28D'D048        ADD      SP,SP,#+72
+   \      0x1BC   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    432          	}
+    433          }
+    434          
+    435          
+
+   \                                 In section .data, align 4
+    436          acc_bits_d acc_summary = {{0,9999,-9999,0,0},{0,9999,-9999,0,0},{0,9999,-9999,0,0},{0,}};
+   \                     acc_summary:
+   \        0x0   0x0000'0000        DC32 0, 9'999, -9'999, 0, 0, 0, 9'999, -9'999, 0, 0, 0, 9'999, -9'999
+
+   \              0x0000'270F  
+
+   \              0xFFFF'D8F1  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'270F  
+
+   \              0xFFFF'D8F1  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'270F  
+
+   \              0xFFFF'D8F1
+   \       0x34   0x0000'0000        DC32 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000
+   \       0x8C   0x0000'0000        DC32 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000
+   \       0xE4   0x0000'0000        DC32 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000
+   \      0x13C   0x0000'0000        DC32 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000
+   \      0x194   0x0000'0000        DC32 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000
+   \      0x1EC   0x0000'0000        DC32 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000  
+
+   \              0x0000'0000
+    437          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    438          void svals(acc_bits_i *p, int32_t val) {
+   \                     svals:
+   \        0x0   0xE92D'4030        PUSH     {R4,R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    439          	if (p->min > val) p->min=val;
+   \        0xC   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x10   0xE155'0000        CMP      R5,R0
+   \       0x14   0xAA00'0000        BGE      ??svals_0
+   \       0x18   0xE584'5004        STR      R5,[R4, #+4]
+    440          	if (p->max < val) p->max=val;
+   \                     ??svals_0:
+   \       0x1C   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x20   0xE150'0005        CMP      R0,R5
+   \       0x24   0xAA00'0000        BGE      ??svals_1
+   \       0x28   0xE584'5008        STR      R5,[R4, #+8]
+    441          	p->n++;
+   \                     ??svals_1:
+   \       0x2C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x30   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x34   0xE584'0000        STR      R0,[R4, #+0]
+    442          	p->sum+=val;
+   \       0x38   0xE594'000C        LDR      R0,[R4, #+12]
+   \       0x3C   0xE095'0000        ADDS     R0,R5,R0
+   \       0x40   0xE584'000C        STR      R0,[R4, #+12]
+    443          	p->avg=p->sum/p->n;
+   \       0x44   0xE594'000C        LDR      R0,[R4, #+12]
+   \       0x48   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0x4C   0x....'....        BL       __aeabi_idiv
+   \       0x50   0xE584'0010        STR      R0,[R4, #+16]
+    444          }
+   \       0x54   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+    445          	
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    446          void acc_summary_info(intparts *sig, intparts *ref, uint32_t accbits) {
+   \                     acc_summary_info:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    447          	svals(&acc_summary.sig_exp,sig->exp);
+   \       0x10   0x....'....        LDR      R7,??DataTable2_4
+   \       0x14   0xE1D4'10F2        LDRSH    R1,[R4, #+2]
+   \       0x18   0xE1B0'0007        MOVS     R0,R7
+   \       0x1C   0x....'....        BL       svals
+    448          	svals(&acc_summary.ref_exp,ref->exp);
+   \       0x20   0xE1D5'10F2        LDRSH    R1,[R5, #+2]
+   \       0x24   0xE297'0014        ADDS     R0,R7,#+20
+   \       0x28   0x....'....        BL       svals
+    449          	svals(&acc_summary.bits,accbits);
+   \       0x2C   0xE1B0'1006        MOVS     R1,R6
+   \       0x30   0xE297'0028        ADDS     R0,R7,#+40
+   \       0x34   0x....'....        BL       svals
+    450          	if (accbits<MIN_ACC_BITS_FP)
+   \       0x38   0xE356'000E        CMP      R6,#+14
+   \       0x3C   0x2A00'0007        BCS      ??acc_summary_info_0
+    451          		acc_summary.counts[accbits]++;
+   \       0x40   0xE1B0'0106        LSLS     R0,R6,#+2
+   \       0x44   0xE097'0000        ADDS     R0,R7,R0
+   \       0x48   0xE590'003C        LDR      R0,[R0, #+60]
+   \       0x4C   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x50   0xE1B0'1106        LSLS     R1,R6,#+2
+   \       0x54   0xE097'1001        ADDS     R1,R7,R1
+   \       0x58   0xE581'003C        STR      R0,[R1, #+60]
+   \       0x5C   0xEA00'0002        B        ??acc_summary_info_1
+    452          	else
+    453          		acc_summary.counts[MAX_ACC_COUNTS]++;
+   \                     ??acc_summary_info_0:
+   \       0x60   0xE597'023C        LDR      R0,[R7, #+572]
+   \       0x64   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x68   0xE587'023C        STR      R0,[R7, #+572]
+    454          }
+   \                     ??acc_summary_info_1:
+   \       0x6C   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    455          
+    456          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    457          uint32_t fp_iaccurate_bits_sp(float sig, intparts *refbits) {
+   \                     fp_iaccurate_bits_sp:
+   \        0x0   0xE92D'4031        PUSH     {R0,R4,R5,LR}
+   \        0x4   0xE24D'D030        SUB      SP,SP,#+48
+   \        0x8   0xE1B0'4001        MOVS     R4,R1
+    458          	intparts sigbits;
+    459          	BIGNUM diff;
+    460          	uint32_t ret;
+    461          #if DEBUG_ACCURATE_BITS
+    462          	float refval;
+    463          	store_sp(&refval,refbits);
+    464          #endif
+    465          	load_sp(&sig,&sigbits);
+   \        0xC   0xE1B0'100D        MOVS     R1,SP
+   \       0x10   0xE28D'0030        ADD      R0,SP,#+48
+   \       0x14   0x....'....        BL       load_sp
+    466          	ret=bignum_diff_sp(&diff,&sigbits,refbits);
+   \       0x18   0xE1B0'2004        MOVS     R2,R4
+   \       0x1C   0xE1B0'100D        MOVS     R1,SP
+   \       0x20   0xE28D'000C        ADD      R0,SP,#+12
+   \       0x24   0x....'....        BL       bignum_diff_sp
+   \       0x28   0xE1B0'5000        MOVS     R5,R0
+    467          	acc_summary_info(&sigbits,refbits,ret);
+   \       0x2C   0xE1B0'2005        MOVS     R2,R5
+   \       0x30   0xE1B0'1004        MOVS     R1,R4
+   \       0x34   0xE1B0'000D        MOVS     R0,SP
+   \       0x38   0x....'....        BL       acc_summary_info
+    468          #if DEBUG_ACCURATE_BITS
+    469          	printf("ACCBITS,%d,%1.18e,%1.18e\n",ret,sig,refval);
+    470          #endif
+    471          	return ret;
+   \       0x3C   0xE1B0'0005        MOVS     R0,R5
+   \       0x40   0xE28D'D034        ADD      SP,SP,#+52
+   \       0x44   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+    472          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2:
+   \        0x0   0x9E37'79B9        DC32     0x9e3779b9
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \        0x0   0x7368'6179        DC32     0x73686179
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \        0x0   0x656D'6263        DC32     0x656d6263
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \        0x0   0xEE6D'BBCC        DC32     0xee6dbbcc
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \        0x0   0x....'....        DC32     acc_summary
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   acc_summary_info
+        24   -> svals
+      16   bignum_abs
+        16   -> __aeabi_memcpy4
+        16   -> bignum_neg
+       8   bignum_add
+      32   bignum_convert
+        32   -> bignum_neg
+        32   -> bignum_shl
+        32   -> bignum_zero
+      16   bignum_diff
+        16   -> bignum_abs
+        16   -> bignum_msb
+        16   -> bignum_sub
+     104   bignum_diff_sp
+       104   -> abs
+       104   -> bignum_convert
+       104   -> bignum_diff
+       104   -> bignum_msb
+       104   -> bignum_neg
+      24   bignum_msb
+        24   -> count_msb
+      48   bignum_neg
+        48   -> bignum_add
+        48   -> bignum_zero
+      24   bignum_shl
+      48   bignum_sub
+        48   -> bignum_add
+        48   -> bignum_neg
+       0   bignum_zero
+       0   count_msb
+      64   fp_iaccurate_bits_sp
+        64   -> acc_summary_info
+        64   -> bignum_diff_sp
+        64   -> load_sp
+      56   fromint_f32_vector
+        56   -> malloc
+        56   -> precise_random_f32
+        56   -> rand_fini
+        56   -> rand_intparts_init
+      28   isaac
+       0   load_sp
+      32   precise_random_f32
+        32   -> random_u16
+        32   -> random_u32
+        32   -> store_sp
+       8   rand_fini
+         8   -> free
+      72   rand_init
+        72   -> __aeabi_l2f
+        72   -> isaac
+        72   -> malloc
+      40   rand_intparts_init
+        40   -> rand_init
+      16   random_u16
+        16   -> random_u32
+      16   random_u32
+        16   -> isaac
+      12   store_sp
+      12   svals
+        12 __aeabi_idiv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+     576  acc_summary
+     112  acc_summary_info
+      60  bignum_abs
+     136  bignum_add
+      96  bignum_convert
+      56  bignum_diff
+     448  bignum_diff_sp
+      80  bignum_msb
+      96  bignum_neg
+     144  bignum_shl
+      56  bignum_sub
+      36  bignum_zero
+      52  count_msb
+      72  fp_iaccurate_bits_sp
+     548  fromint_f32_vector
+     232  isaac
+     164  load_sp
+     232  precise_random_f32
+      20  rand_fini
+     628  rand_init
+      96  rand_intparts_init
+      32  random_u16
+      96  random_u32
+     192  store_sp
+      88  svals
+
+ 
+   576 bytes in section .data
+ 3'792 bytes in section SOFTPACK
+ 
+ 3'792 bytes of CODE memory
+   576 bytes of DATA memory
+
+Errors: none
+Warnings: none

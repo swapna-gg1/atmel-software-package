@@ -1,0 +1,798 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         05/Jan/2021  12:18:30
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\clk-config.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW98FB.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\clk-config.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\List\clk-config.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\build\sam9x60-ek\sram\Obj\clk-config.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\low_power_mode\clk-config.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "clk-config.h"
+     35          #include "event-config.h"
+     36          
+     37          /*----------------------------------------------------------------------------
+     38           *        Types
+     39           *----------------------------------------------------------------------------*/
+     40          
+
+   \                                 In section .data, align 4
+     41          struct test_mode test_setting[] = {
+   \                     test_setting:
+   \        0x0   0x....'....        DC32 ?_0
+   \        0x4   0x00 0x03          DC8 0, 3, 0, 0
+
+   \              0x00 0x00
+   \        0x8   0x0000'0000        DC32 0
+   \        0xC   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x10   0x0000'0000        DC32 0
+   \       0x14   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x28   0x0000'0000        DC32 0, 0, ?_1
+
+   \              0x0000'0000  
+
+   \              0x....'....
+   \       0x34   0x01 0x03          DC8 1, 3, 0, 0
+
+   \              0x00 0x00
+   \       0x38   0x0000'0001        DC32 1
+   \       0x3C   0x01 0x00          DC8 1, 0, 1, 0
+
+   \              0x01 0x00
+   \       0x40   0x0000'0000        DC32 0
+   \       0x44   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x58   0x0000'0000        DC32 0, 768, ?_2
+
+   \              0x0000'0300  
+
+   \              0x....'....
+   \       0x64   0x01 0x03          DC8 1, 3, 0, 0
+
+   \              0x00 0x00
+   \       0x68   0x0000'0001        DC32 1
+   \       0x6C   0x01 0x00          DC8 1, 0, 1, 0
+
+   \              0x01 0x00
+   \       0x70   0x0000'0000        DC32 0
+   \       0x74   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x88   0x0000'0040        DC32 64, 768, ?_3
+
+   \              0x0000'0300  
+
+   \              0x....'....
+   \       0x94   0x01 0x03          DC8 1, 3, 0, 0
+
+   \              0x00 0x00
+   \       0x98   0x0000'0001        DC32 1
+   \       0x9C   0x01 0x00          DC8 1, 0, 1, 0
+
+   \              0x01 0x00
+   \       0xA0   0x0000'0000        DC32 0
+   \       0xA4   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0xB8   0x0000'0060        DC32 96, 768, ?_4
+
+   \              0x0000'0300  
+
+   \              0x....'....
+   \       0xC4   0x01 0x03          DC8 1, 3, 0, 0
+
+   \              0x00 0x00
+   \       0xC8   0x0000'0000        DC32 0
+   \       0xCC   0x01 0x00          DC8 1, 0, 1, 0
+
+   \              0x01 0x00
+   \       0xD0   0x0000'0000        DC32 0
+   \       0xD4   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0xE8   0x0000'0000        DC32 0, 768, ?_5
+
+   \              0x0000'0300  
+
+   \              0x....'....
+   \       0xF4   0x01 0x01          DC8 1, 1, 0, 0
+
+   \              0x00 0x00
+   \       0xF8   0x0000'0000        DC32 0
+   \       0xFC   0x01 0x00          DC8 1, 0, 1, 0
+
+   \              0x01 0x00
+   \      0x100   0x0000'0000        DC32 0
+   \      0x104   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \      0x118   0x0000'0060        DC32 96, 0, ?_6
+
+   \              0x0000'0000  
+
+   \              0x....'....
+   \      0x124   0x01 0x03          DC8 1, 3, 0, 0
+
+   \              0x00 0x00
+   \      0x128   0x0000'0001        DC32 1
+   \      0x12C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x130   0x0000'0000        DC32 0
+   \      0x134   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \      0x148   0x0000'0000        DC32 0, 768, ?_7
+
+   \              0x0000'0300  
+
+   \              0x....'....
+   \      0x154   0x01 0x03          DC8 1, 3, 0, 0
+
+   \              0x00 0x00
+   \      0x158   0x0000'0002        DC32 2
+   \      0x15C   0x01 0x00          DC8 1, 0, 1, 0
+
+   \              0x01 0x00
+   \      0x160   0x0000'0031        DC32 49, 1, 63
+
+   \              0x0000'0001  
+
+   \              0x0000'003F
+   \      0x16C   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \      0x178   0x0000'0000        DC32 0, 768, ?_8
+
+   \              0x0000'0300  
+
+   \              0x....'....
+   \      0x184   0x02 0x04          DC8 2, 4, 0, 0
+
+   \              0x00 0x00
+   \      0x188   0x0000'0001        DC32 1
+   \      0x18C   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x190   0x0000'0000        DC32 0
+   \      0x194   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \      0x1A8   0x0000'0000        DC32 0, 768, 0x0
+
+   \              0x0000'0300  
+
+   \              0x0000'0000
+   \      0x1B4   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x1B8   0x0000'0000        DC32 0
+   \      0x1BC   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \      0x1C0   0x0000'0000        DC32 0
+   \      0x1C4   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \      0x1D8   0x0000'0000        DC32 0, 0
+
+   \              0x0000'0000
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x69 0x64          DC8 "idle"
+
+   \              0x6C 0x65    
+
+   \              0x00
+   \        0x5   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x75 0x6C          DC8 "ulp0_osc"
+
+   \              0x70 0x30    
+
+   \              0x5F 0x6F    
+
+   \              0x73 0x63    
+
+   \              0x00
+   \        0x9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x75 0x6C          DC8 "ulp0_OSC/16"
+
+   \              0x70 0x30    
+
+   \              0x5F 0x4F    
+
+   \              0x53 0x43    
+
+   \              0x2F 0x31    
+
+   \              0x36 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x75 0x6C          DC8 "ulp0_OSC/64"
+
+   \              0x70 0x30    
+
+   \              0x5F 0x4F    
+
+   \              0x53 0x43    
+
+   \              0x2F 0x36    
+
+   \              0x34 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_4:
+   \        0x0   0x75 0x6C          DC8 "ulp0_32.768kHz"
+
+   \              0x70 0x30    
+
+   \              0x5F 0x33    
+
+   \              0x32 0x2E    
+
+   \              0x37 0x36    
+
+   \              0x38 0x6B    
+
+   \              0x48 0x7A    
+
+   \              0x00
+   \        0xF   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_5:
+   \        0x0   0x75 0x6C          DC8 "ulp0_512Hz"
+
+   \              0x70 0x30    
+
+   \              0x5F 0x35    
+
+   \              0x31 0x32    
+
+   \              0x48 0x7A    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_6:
+   \        0x0   0x75 0x6C          DC8 "ulp0_rc_12MHz"
+
+   \              0x70 0x30    
+
+   \              0x5F 0x72    
+
+   \              0x63 0x5F    
+
+   \              0x31 0x32    
+
+   \              0x4D 0x48    
+
+   \              0x7A 0x00
+   \        0xE   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_7:
+   \        0x0   0x75 0x6C          DC8 "ulp0_plla/3"
+
+   \              0x70 0x30    
+
+   \              0x5F 0x70    
+
+   \              0x6C 0x6C    
+
+   \              0x61 0x2F    
+
+   \              0x33 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_8:
+   \        0x0   0x75 0x6C          DC8 "ulp1_rc_12MHz"
+
+   \              0x70 0x31    
+
+   \              0x5F 0x72    
+
+   \              0x63 0x5F    
+
+   \              0x31 0x32    
+
+   \              0x4D 0x48    
+
+   \              0x7A 0x00
+   \        0xE   0x00 0x00          DC8 0, 0
+     42          	{
+     43          		.name = "idle",
+     44          		.mode = IDLE,
+     45          		.event = USER_BTN | RTC_INT,
+     46          		/* PCK = MCK = BOARD_OSC */
+     47          		.clock_test_setting = {
+     48          			.pck_input = (uint32_t)NULL,
+     49          			.extosc = NULL,
+     50          			.ext32k = NULL,
+     51          			.plla = {
+     52          				.mul = (uint32_t)NULL,
+     53          			},
+     54          			.pck_pres = (uint32_t)NULL,
+     55          			.mck_div = (uint32_t)NULL,
+     56          		},
+     57          	},
+     58          
+     59          	{
+     60          		.name = "ulp0_osc",
+     61          		.mode = ULP0,
+     62          		.event = USER_BTN | RTC_INT,
+     63          		/* PCK = MCK = BOARD_OSC */
+     64          		.clock_test_setting = {
+     65          			.pck_input = PMC_MCKR_CSS_MAIN_CLK,
+     66          			.extosc = true,
+     67          			.ext32k = true,
+     68          			.plla = {
+     69          				.mul = 0,
+     70          			},
+     71          			.pck_pres = PMC_MCKR_PRES_CLOCK,
+     72          #if defined(CONFIG_SOC_SAM9X60)
+     73          			.mck_div = PMC_MCKR_MDIV_PCK_DIV3,
+     74          #else
+     75          			.mck_div = PMC_MCKR_MDIV_EQ_PCK,
+     76          #endif
+     77          		},
+     78          	},
+     79          
+     80          	{
+     81          		.name = "ulp0_OSC/16",
+     82          		.mode = ULP0,
+     83          		.event = USER_BTN | RTC_INT,
+     84          		/* PCK = MCK = BOARD_OSC/16 */
+     85          		.clock_test_setting = {
+     86          			.pck_input = PMC_MCKR_CSS_MAIN_CLK,
+     87          			.extosc = true,
+     88          			.ext32k = true,
+     89          			.plla = {
+     90          				.mul = 0,
+     91          			},
+     92          			.pck_pres = PMC_MCKR_PRES_CLOCK_DIV16,
+     93          #if defined(CONFIG_SOC_SAM9X60)
+     94          			.mck_div = PMC_MCKR_MDIV_PCK_DIV3,
+     95          #else
+     96          			.mck_div = PMC_MCKR_MDIV_EQ_PCK,
+     97          #endif
+     98          		},
+     99          	},
+    100          
+    101          	{
+    102          		.name = "ulp0_OSC/64",
+    103          		.mode = ULP0,
+    104          		.event = USER_BTN | RTC_INT,
+    105          		/* PCK = MCK = BOARD_OSC/64 */
+    106          		.clock_test_setting = {
+    107          			.pck_input = PMC_MCKR_CSS_MAIN_CLK,
+    108          			.extosc = true,
+    109          			.ext32k = true,
+    110          			.plla = {
+    111          				.mul = 0,
+    112          			},
+    113          			.pck_pres = PMC_MCKR_PRES_CLOCK_DIV64,
+    114          #if defined(CONFIG_SOC_SAM9X60)
+    115          			.mck_div = PMC_MCKR_MDIV_PCK_DIV3,
+    116          #else
+    117          			.mck_div = PMC_MCKR_MDIV_EQ_PCK,
+    118          #endif
+    119          		},
+    120          	},
+    121          
+    122          	{
+    123          		.name = "ulp0_32.768kHz",
+    124          		.mode = ULP0,
+    125          		.event = USER_BTN | RTC_INT,
+    126          		/* PCK = MCK = 32.768 kHz */
+    127          		.clock_test_setting = {
+    128          			.pck_input = PMC_MCKR_CSS_SLOW_CLK,
+    129          			.extosc = true,
+    130          			.ext32k = true,
+    131          			.plla = {
+    132          				.mul = 0,
+    133          			},
+    134          			.pck_pres = PMC_MCKR_PRES_CLOCK,
+    135          #if defined(CONFIG_SOC_SAM9X60)
+    136          			.mck_div = PMC_MCKR_MDIV_PCK_DIV3,
+    137          #else
+    138          			.mck_div = PMC_MCKR_MDIV_EQ_PCK,
+    139          #endif
+    140          		},
+    141          	},	
+    142          
+    143          	{
+    144          		.name = "ulp0_512Hz",
+    145          		.mode = ULP0,
+    146          		.event = USER_BTN,
+    147          		/* PCK = MCK = 32768/64 = 512 Hz */
+    148          		.clock_test_setting = {
+    149          			.pck_input = PMC_MCKR_CSS_SLOW_CLK,
+    150          			.extosc = true,
+    151          			.ext32k = true,
+    152          			.plla = {
+    153          				.mul = 0,
+    154          			},
+    155          			.pck_pres = PMC_MCKR_PRES_CLOCK_DIV64,
+    156          			.mck_div = PMC_MCKR_MDIV_EQ_PCK,
+    157          		},
+    158          	},
+    159          
+    160          	{
+    161          		.name = "ulp0_rc_12MHz",
+    162          		.mode = ULP0,
+    163          		.event = USER_BTN | RTC_INT,
+    164          		/* PCK = MCK = 12 MHz (RC) */
+    165          		.clock_test_setting = {
+    166          			.pck_input = PMC_MCKR_CSS_MAIN_CLK,
+    167          			.extosc = false,
+    168          			.ext32k = false,
+    169          			.plla = {
+    170          				.mul = 0,
+    171          			},
+    172          			.pck_pres = PMC_MCKR_PRES_CLOCK,
+    173          #if defined(CONFIG_SOC_SAM9X60)
+    174          			.mck_div = PMC_MCKR_MDIV_PCK_DIV3,
+    175          #else
+    176          			.mck_div = PMC_MCKR_MDIV_EQ_PCK,
+    177          #endif
+    178          		},
+    179          	},
+    180          
+    181          	{
+    182          		.name = "ulp0_plla/3",
+    183          		.mode = ULP0,
+    184          		.event = USER_BTN | RTC_INT,
+    185          		/* PLLA = BOARD_OSC*50/2, PCK = PLLA, MCK = PCK/3 */
+    186          		.clock_test_setting = {
+    187          			.pck_input = PMC_MCKR_CSS_PLLA_CLK,
+    188          			.extosc = true,
+    189          			.ext32k = true,
+    190          			.plla = {
+    191          				.mul = 49,
+    192          				.div = 1,
+    193          				.count = 0x3f,
+    194          			},
+    195          			.pck_pres = PMC_MCKR_PRES_CLOCK,
+    196          			.mck_div = PMC_MCKR_MDIV_PCK_DIV3,
+    197          #ifdef CONFIG_HAVE_PMC_PLLADIV2
+    198          			.plla_div2 = true,
+    199          #endif
+    200          #ifdef CONFIG_HAVE_PMC_H32MXDIV
+    201          			.h32mx_div2 = true,
+    202          #endif
+    203          		},
+    204          	},
+    205          #if defined(CONFIG_SOC_SAMA5D2)
+    206          	{
+    207          		.name = "ulp1_rc_12MHz",
+    208          		.mode = ULP1,
+    209          		.event = RTC_ALARM | WAKE_UP,
+    210          		/* PCK = MCK = 12 MHz (RC) */
+    211          		.clock_test_setting = {
+    212          			.pck_input = PMC_MCKR_CSS_MAIN_CLK,
+    213          			.extosc = false,
+    214          			.ext32k = false,
+    215          			.plla = {
+    216          				.mul = 0,
+    217          			},
+    218          			.pck_pres = PMC_MCKR_PRES_CLOCK,
+    219          			.mck_div = PMC_MCKR_MDIV_EQ_PCK,
+    220          		},
+    221          	},
+    222          #elif defined(CONFIG_SOC_SAM9X60)
+    223          	{
+    224          		.name = "ulp1_rc_12MHz",
+    225          		.mode = ULP1,
+    226          		.event = RTC_ALARM,
+    227          		/* PCK = MCK = 12 MHz (RC) */
+    228          		.clock_test_setting = {
+    229          			.pck_input = PMC_MCKR_CSS_MAIN_CLK,
+    230          			.extosc = false,
+    231          			.ext32k = false,
+    232          			.plla = {
+    233          				.mul = 0,
+    234          			},
+    235          			.pck_pres = PMC_MCKR_PRES_CLOCK,
+    236          			.mck_div = PMC_MCKR_MDIV_PCK_DIV3,
+    237          		},
+    238          	},	
+    239          #endif
+    240          	{
+    241          		.name = NULL,
+    242          		.mode = (uint32_t)NULL,
+    243          		.event = (uint32_t)NULL,
+    244          		/* PCK = MCK = BOARD_OSC */
+    245          		.clock_test_setting = {
+    246          			.pck_input = (uint32_t)NULL,
+    247          			.extosc = NULL,
+    248          			.ext32k = NULL,
+    249          			.plla = {
+    250          				.mul = (uint32_t)NULL,
+    251          			},
+    252          			.pck_pres = (uint32_t)NULL,
+    253          			.mck_div = (uint32_t)NULL,
+    254          		},
+    255          	},
+    256          };
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       8  ?_0
+      12  ?_1
+      12  ?_2
+      12  ?_3
+      16  ?_4
+      12  ?_5
+      16  ?_6
+      12  ?_7
+      16  ?_8
+     480  test_setting
+
+ 
+ 480 bytes in section .data
+ 116 bytes in section .rodata
+ 
+ 116 bytes of CONST memory
+ 480 bytes of DATA  memory
+
+Errors: none
+Warnings: none

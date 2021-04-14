@@ -1,0 +1,1222 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Nov/2020  17:33:23
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\main.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWD753.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\main.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\List\main.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sam9x60-ek\sram\Obj\main.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\main.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           * \page ssc_dma_audio SSC with DMA Audio Example
+     32           *
+     33           * \section Purpose
+     34           *
+     35           * This example uses the Synchronous Serial Controller (SSC) of SAMA5D3/4
+     36           * and SAM9XX5 microcontroller to output an audio stream through the on-board
+     37           * WM8904/WM8731 CODEC.
+     38           *
+     39           * \section Requirements
+     40           *
+     41           * \section Description
+     42           * This program plays a WAV file from PC via Line-In. The audio stream is
+     43           * sent through the SSC interface connected to the on-board audio codec, enabling
+     44           * the sound to be audible using a pair of headphones.
+     45           *
+     46           * \section Usage
+     47           * -# Build the program and download it inside the evaluation board. Please
+     48           *    refer to the
+     49           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/6421B.pdf">
+     50           *    SAM-BA User Guide</a>, the
+     51           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">
+     52           *    GNU-Based Software Development</a> application note or to the
+     53           *    <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">
+     54           *    IAR EWARM User Guide</a>, depending on your chosen solution.
+     55           * -# On the computer, open and configure a terminal application
+     56           *    (e.g. HyperTerminal on Microsoft Windows) with these settings:
+     57           *   - 115200 bauds
+     58           *   - 8 bits of data
+     59           *   - No parity
+     60           *   - 1 stop bit
+     61           *   - No flow control
+     62           * -# Start the application.
+     63           * -# In the terminal window, the following text should appear:
+     64           *    \code
+     65           *     -- SSC DMA Audio Example xxx --
+     66           *      -- SAMxxxxx-xx
+     67           *     -- Compiled: xxx xx xxxx xx:xx:xx --
+     68           *    \endcode
+     69           * The user can then choose any of the available options to perform the described action.
+     70           *
+     71           * \section References
+     72           * - ssc_dma_audio/main.c
+     73           * - ssc.c
+     74           * - wm8904.c
+     75           * - wm8731.c
+     76           * - dma.c
+     77           */
+     78          
+     79          /**
+     80           * \file
+     81           *
+     82           * This file contains all the specific code for the ssc audio example.
+     83           */
+     84          
+     85          
+     86          /*----------------------------------------------------------------------------
+     87           *        Headers
+     88           *----------------------------------------------------------------------------*/
+     89          
+     90          #include <stdio.h>
+     91          #include <stdbool.h>
+     92          #include <stdint.h>
+     93          #include <string.h>
+     94          #include <assert.h>
+     95          
+     96          #include "audio/ssc.h"
+     97          #if defined(CONFIG_HAVE_AUDIO_WM8904)
+     98          #include "audio/wm8904.h"
+     99          #elif defined(CONFIG_HAVE_AUDIO_WM8731)
+    100          #include "audio/wm8731.h"
+    101          #endif
+    102          #include "board.h"
+    103          #include "chip.h"
+    104          #include "compiler.h"
+    105          #include "dma/dma.h"
+    106          #include "gpio/pio.h"
+    107          #include "led/led.h"
+    108          #include "mm/cache.h"
+    109          #include "peripherals/pit.h"
+    110          #include "peripherals/pmc.h"
+    111          #include "serial/console.h"
+    112          #include "timer.h"
+    113          #include "trace.h"
+    114          
+    115          #if defined(CONFIG_BOARD_SAMA5D3_EK)
+    116          	#include "config_sama5d3-ek.h"
+    117          #elif defined(CONFIG_BOARD_SAMA5D4_EK)
+    118          	#include "config_sama5d4-ek.h"
+    119          #elif defined(CONFIG_BOARD_SAM9G15_EK)
+    120          	#include "config_sam9xx5-ek.h"
+    121          #elif defined(CONFIG_BOARD_SAM9G25_EK)
+    122          	#include "config_sam9xx5-ek.h"
+    123          #elif defined(CONFIG_BOARD_SAM9G35_EK)
+    124          	#include "config_sam9xx5-ek.h"
+    125          #elif defined(CONFIG_BOARD_SAM9X25_EK)
+    126          	#include "config_sam9xx5-ek.h"
+    127          #elif defined(CONFIG_BOARD_SAM9X35_EK)
+    128          	#include "config_sam9xx5-ek.h"
+    129          #elif defined(CONFIG_BOARD_SAMV71_XPLAINED)
+    130          	#include "config_samv71-xplained.h"
+    131          #elif defined(CONFIG_BOARD_SAM9X60_EK)
+    132                  #include "config_sam9x60-ek.h"
+    133          #else
+    134          #error Unsupported board!
+    135          #endif
+    136          
+    137          /*----------------------------------------------------------------------------
+    138           *         Definitions
+    139           *----------------------------------------------------------------------------*/
+    140          
+    141          #define BUFFERS (32)
+    142          
+    143          #define BUFFER_SIZE ROUND_UP_MULT(192, L1_CACHE_BYTES)
+    144          
+    145          #define BUFFER_THRESHOLD (8)
+    146          
+    147          /*----------------------------------------------------------------------------
+    148           *         Internal variables
+    149           *----------------------------------------------------------------------------*/
+    150          
+    151          /** Audio record buffer */
+
+   \                                 In section .region_ddr_cache_aligned, align 32
+    152          CACHE_ALIGNED_DDR static uint16_t _sound_buffer[BUFFERS][BUFFER_SIZE];
+   \                     _sound_buffer:
+   \        0x0                      DS8 12'288
+
+   \                                 In section .data, align 4
+    153          
+    154          static struct _audio_ctx {
+    155          	uint32_t threshold;
+    156          	struct {
+    157          		uint16_t rx;
+    158          		uint16_t tx;
+    159          		uint32_t count;
+    160          	} circ;
+    161          	uint8_t volume;
+    162          	bool playing;
+    163          	bool recording;
+    164          } _audio_ctx = {
+   \                     _audio_ctx:
+   \        0x0   0x0000'0008        DC32 8
+   \        0x4   0x0000 0x0000      DC16 0, 0
+   \        0x8   0x0000'0000        DC32 0
+   \        0xC   0x1E 0x00          DC8 30, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x10   0xF001'0000        DC32 0xf001'0000, 0, 48'000
+
+   \              0x0000'0000  
+
+   \              0x0000'BB80
+   \       0x1C   0x10 0x01          DC8 16, 1, 1, 1
+
+   \              0x01 0x01
+   \       0x20   0x0700 0x0700      DC16 1'792, 1'792
+   \       0x24   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x34   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x44   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x54   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x64   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x74   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x84   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+    165          	.threshold = BUFFER_THRESHOLD,
+    166          	.circ = {
+    167          		.rx = 0,
+    168          		.tx = 0,
+    169          		.count = 0,
+    170          	},
+    171          	.volume = 30,
+    172          	.recording = false,
+    173          	.playing = false,
+    174          };
+    175          
+    176          /*----------------------------------------------------------------------------
+    177           *         Local functions
+    178           *----------------------------------------------------------------------------*/
+    179          
+    180          /**
+    181           * \brief Display main menu.
+    182           */
+    183          static void _display_menu(void)
+    184          {
+    185          	printf("\n\r");
+    186          	printf("-----------------\n\r");
+    187          	printf("R -> Start to record the sound and play \n\r");
+    188          	printf("S -> Stop recording sound \n\r");
+    189          	printf("+ -> Increase the volume of playback sound \n\r");
+    190          	printf("- -> Decrease the volume of playback sound \n\r");
+    191          	printf("-----------------\n\r");
+    192          }
+    193          
+    194          
+    195          /**
+    196           *  \brief Audio RX callback
+    197           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    198          static int _ssc_tx_transfer_callback(void* arg, void* arg2)
+    199          {
+   \                     _ssc_tx_transfer_callback:
+   \        0x0   0xE92D'4078        PUSH     {R3-R6,LR}
+    200          	struct _ssc_desc* desc = (struct _ssc_desc*)arg;
+    201          	struct _callback _cb;
+    202          
+    203          	if (_audio_ctx.playing && (_audio_ctx.circ.count > 0)){
+   \        0x4   0x....'....        LDR      R4,??DataTable10_1
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+   \        0xC   0xE5D4'000D        LDRB     R0,[R4, #+13]
+   \       0x10   0xE24D'D014        SUB      SP,SP,#+20
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x0A00'0023        BEQ      ??_ssc_tx_transfer_callback_0
+   \       0x1C   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x20   0xE350'0000        CMP      R0,#+0
+   \       0x24   0x0A00'0020        BEQ      ??_ssc_tx_transfer_callback_0
+    204          		struct _buffer _tx = {
+    205          			.data = (unsigned char*)&_sound_buffer[_audio_ctx.circ.tx],
+    206          			.size = BUFFER_SIZE,
+    207          			.attr = SSC_BUF_ATTR_WRITE,
+    208          		};
+   \       0x28   0x....'....        LDR      R0,??DataTable10_2
+   \       0x2C   0xE28D'1008        ADD      R1,SP,#+8
+   \       0x30   0xE890'100C        LDM      R0,{R2,R3,R12}
+   \       0x34   0xE1D4'60B6        LDRH     R6,[R4, #+6]
+   \       0x38   0x....'....        LDR      LR,??DataTable10_3
+   \       0x3C   0xE881'100C        STM      R1,{R2,R3,R12}
+   \       0x40   0xE086'0086        ADD      R0,R6,R6, LSL #+1
+   \       0x44   0xE08E'0380        ADD      R0,LR,R0, LSL #+7
+   \       0x48   0xE58D'0008        STR      R0,[SP, #+8]
+    209          
+    210          		callback_set(&_cb, _ssc_tx_transfer_callback, desc);
+   \       0x4C   0xE1A0'2005        MOV      R2,R5
+   \       0x50   0xE24F'1058        ADR      R1,_ssc_tx_transfer_callback
+   \       0x54   0xE1A0'000D        MOV      R0,SP
+   \       0x58   0x....'....        BL       callback_set
+    211          		ssc_transfer(desc, &_tx, &_cb);
+   \       0x5C   0xE1A0'200D        MOV      R2,SP
+   \       0x60   0xE28D'1008        ADD      R1,SP,#+8
+   \       0x64   0xE1A0'0005        MOV      R0,R5
+   \       0x68   0x....'....        BL       ssc_transfer
+    212          		_audio_ctx.circ.tx = (_audio_ctx.circ.tx + 1) % BUFFERS;
+   \       0x6C   0xE1D4'00B6        LDRH     R0,[R4, #+6]
+   \       0x70   0xE280'0001        ADD      R0,R0,#+1
+   \       0x74   0xE1A0'1240        ASR      R1,R0,#+4
+   \       0x78   0xE080'2DA1        ADD      R2,R0,R1, LSR #+27
+   \       0x7C   0xE1A0'32C2        ASR      R3,R2,#+5
+   \       0x80   0xE040'0283        SUB      R0,R0,R3, LSL #+5
+    213          		_audio_ctx.circ.count--;
+   \       0x84   0xE594'1008        LDR      R1,[R4, #+8]
+   \       0x88   0xE1C4'00B6        STRH     R0,[R4, #+6]
+   \       0x8C   0xE251'0001        SUBS     R0,R1,#+1
+   \       0x90   0xE584'0008        STR      R0,[R4, #+8]
+    214          
+    215          		if (_audio_ctx.circ.count == 0) {
+   \       0x94   0x1A00'0003        BNE      ??_ssc_tx_transfer_callback_1
+    216          			ssc_disable_transmitter(&ssc_dev_desc);
+   \       0x98   0xE284'0010        ADD      R0,R4,#+16
+   \       0x9C   0x....'....        BL       ssc_disable_transmitter
+    217          
+    218          			_audio_ctx.playing = false;
+   \       0xA0   0xE3A0'0000        MOV      R0,#+0
+   \       0xA4   0xE5C4'000D        STRB     R0,[R4, #+13]
+    219          		}
+    220          	}
+    221          
+    222          	return 0;
+   \                     ??_ssc_tx_transfer_callback_1:
+   \       0xA8   0xE3A0'0000        MOV      R0,#+0
+   \                     ??_ssc_tx_transfer_callback_0:
+   \       0xAC   0xE28D'D018        ADD      SP,SP,#+24
+   \       0xB0   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    223          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_9:
+   \        0x0   0x0000'0000        DC32 0x0, 192, 1
+
+   \              0x0000'00C0  
+
+   \              0x0000'0001
+    224          
+    225          /**
+    226           *  \brief Audio RX callback
+    227           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    228          static int _ssc_rx_transfer_callback(void* arg, void* arg2)
+    229          {
+   \                     _ssc_rx_transfer_callback:
+   \        0x0   0xE92D'4030        PUSH     {R4,R5,LR}
+    230          	struct _ssc_desc* desc = (struct _ssc_desc*)arg;
+    231          	struct _callback _cb;
+    232          
+    233          	/* New buffer received */
+    234          	_audio_ctx.circ.rx = (_audio_ctx.circ.rx + 1) % BUFFERS;
+   \        0x4   0x....'....        LDR      R5,??DataTable10_1
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1D5'00B4        LDRH     R0,[R5, #+4]
+   \       0x10   0xE24D'D01C        SUB      SP,SP,#+28
+   \       0x14   0xE280'0001        ADD      R0,R0,#+1
+   \       0x18   0xE1A0'1240        ASR      R1,R0,#+4
+   \       0x1C   0xE080'2DA1        ADD      R2,R0,R1, LSR #+27
+   \       0x20   0xE1A0'32C2        ASR      R3,R2,#+5
+   \       0x24   0xE040'0283        SUB      R0,R0,R3, LSL #+5
+    235          	_audio_ctx.circ.count++;
+   \       0x28   0xE595'1008        LDR      R1,[R5, #+8]
+   \       0x2C   0xE1C5'00B4        STRH     R0,[R5, #+4]
+   \       0x30   0xE281'0001        ADD      R0,R1,#+1
+    236          
+    237          	if (!_audio_ctx.playing && (_audio_ctx.circ.count > _audio_ctx.threshold)) {
+   \       0x34   0xE5D5'100D        LDRB     R1,[R5, #+13]
+   \       0x38   0xE585'0008        STR      R0,[R5, #+8]
+   \       0x3C   0xE351'0000        CMP      R1,#+0
+   \       0x40   0x1A00'002C        BNE      ??_ssc_rx_transfer_callback_0
+   \       0x44   0xE595'2000        LDR      R2,[R5, #+0]
+   \       0x48   0xE152'0000        CMP      R2,R0
+   \       0x4C   0x2A00'0029        BCS      ??_ssc_rx_transfer_callback_0
+    238          		_audio_ctx.playing = true;
+   \       0x50   0xE3A0'0001        MOV      R0,#+1
+   \       0x54   0xE5C5'000D        STRB     R0,[R5, #+13]
+    239          		ssc_enable_transmitter(&ssc_dev_desc);
+   \       0x58   0xE285'0010        ADD      R0,R5,#+16
+   \       0x5C   0x....'....        BL       ssc_enable_transmitter
+    240          		_ssc_tx_transfer_callback(desc, NULL);
+   \       0x60   0xE5D5'000D        LDRB     R0,[R5, #+13]
+   \       0x64   0xE350'0000        CMP      R0,#+0
+   \       0x68   0x0A00'0022        BEQ      ??_ssc_rx_transfer_callback_0
+   \       0x6C   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0x70   0xE350'0000        CMP      R0,#+0
+   \       0x74   0x0A00'001F        BEQ      ??_ssc_rx_transfer_callback_0
+   \       0x78   0x....'....        ADR      R0,?_9
+   \       0x7C   0xE28D'1010        ADD      R1,SP,#+16
+   \       0x80   0xE890'100C        LDM      R0,{R2,R3,R12}
+   \       0x84   0x....'....        LDR      LR,??DataTable10_3
+   \       0x88   0xE881'100C        STM      R1,{R2,R3,R12}
+   \       0x8C   0xE1D5'10B6        LDRH     R1,[R5, #+6]
+   \       0x90   0xE1A0'2004        MOV      R2,R4
+   \       0x94   0xE081'0081        ADD      R0,R1,R1, LSL #+1
+   \       0x98   0xE08E'0380        ADD      R0,LR,R0, LSL #+7
+   \       0x9C   0xE58D'0010        STR      R0,[SP, #+16]
+   \       0xA0   0x....'....        ADR      R1,_ssc_tx_transfer_callback
+   \       0xA4   0xE1A0'000D        MOV      R0,SP
+   \       0xA8   0x....'....        BL       callback_set
+   \       0xAC   0xE1A0'200D        MOV      R2,SP
+   \       0xB0   0xE28D'1010        ADD      R1,SP,#+16
+   \       0xB4   0xE1A0'0004        MOV      R0,R4
+   \       0xB8   0x....'....        BL       ssc_transfer
+   \       0xBC   0xE1D5'00B6        LDRH     R0,[R5, #+6]
+   \       0xC0   0xE280'0001        ADD      R0,R0,#+1
+   \       0xC4   0xE1A0'1240        ASR      R1,R0,#+4
+   \       0xC8   0xE080'2DA1        ADD      R2,R0,R1, LSR #+27
+   \       0xCC   0xE1A0'32C2        ASR      R3,R2,#+5
+   \       0xD0   0xE040'0283        SUB      R0,R0,R3, LSL #+5
+   \       0xD4   0xE595'1008        LDR      R1,[R5, #+8]
+   \       0xD8   0xE1C5'00B6        STRH     R0,[R5, #+6]
+   \       0xDC   0xE251'0001        SUBS     R0,R1,#+1
+   \       0xE0   0xE585'0008        STR      R0,[R5, #+8]
+   \       0xE4   0x1A00'0003        BNE      ??_ssc_rx_transfer_callback_0
+   \       0xE8   0xE285'0010        ADD      R0,R5,#+16
+   \       0xEC   0x....'....        BL       ssc_disable_transmitter
+   \       0xF0   0xE3A0'0000        MOV      R0,#+0
+   \       0xF4   0xE5C5'000D        STRB     R0,[R5, #+13]
+    241          	}
+    242          
+    243          	struct _buffer _rx = {
+    244          		.data = (unsigned char*)&_sound_buffer[_audio_ctx.circ.rx],
+    245          		.size = BUFFER_SIZE,
+    246          		.attr = SSC_BUF_ATTR_READ,
+    247          	};
+   \                     ??_ssc_rx_transfer_callback_0:
+   \       0xF8   0x....'....        ADR      R0,?_10
+   \       0xFC   0xE28D'1010        ADD      R1,SP,#+16
+   \      0x100   0xE890'100C        LDM      R0,{R2,R3,R12}
+   \      0x104   0x....'....        LDR      LR,??DataTable10_3
+   \      0x108   0xE881'100C        STM      R1,{R2,R3,R12}
+   \      0x10C   0xE1D5'10B4        LDRH     R1,[R5, #+4]
+    248          
+    249          	callback_set(&_cb, _ssc_rx_transfer_callback, desc);
+   \      0x110   0xE1A0'2004        MOV      R2,R4
+   \      0x114   0xE081'0081        ADD      R0,R1,R1, LSL #+1
+   \      0x118   0xE08E'0380        ADD      R0,LR,R0, LSL #+7
+   \      0x11C   0xE58D'0010        STR      R0,[SP, #+16]
+   \      0x120   0xE24F'1F4A        ADR      R1,_ssc_rx_transfer_callback
+   \      0x124   0xE28D'0008        ADD      R0,SP,#+8
+   \      0x128   0x....'....        BL       callback_set
+    250          	ssc_transfer(desc, &_rx, &_cb);
+   \      0x12C   0xE28D'2008        ADD      R2,SP,#+8
+   \      0x130   0xE28D'1010        ADD      R1,SP,#+16
+   \      0x134   0xE1A0'0004        MOV      R0,R4
+   \      0x138   0x....'....        BL       ssc_transfer
+    251          
+    252          	return 0;
+   \      0x13C   0xE3A0'0000        MOV      R0,#+0
+   \      0x140   0xE28D'D01C        ADD      SP,SP,#+28
+   \      0x144   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+    253          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_10:
+   \        0x0   0x0000'0000        DC32 0x0, 192, 2
+
+   \              0x0000'00C0  
+
+   \              0x0000'0002
+    254          
+    255          /**
+    256           * \brief Play recording.
+    257           */
+    258          
+    259          static void _set_volume(uint8_t vol)
+    260          {
+    261          #if defined(CONFIG_HAVE_AUDIO_WM8904)
+    262          	printf("Setting volume to %ddB\r\n", (signed)(vol-57));
+    263          	wm8904_set_left_volume(&wm8904, vol);
+    264          	wm8904_set_right_volume(&wm8904, vol);
+    265          #elif defined(CONFIG_HAVE_AUDIO_WM8731)
+    266          	printf("Setting volume to %ddB\r\n", (signed)(vol-73));
+    267          	wm8731_set_left_volume(&wm8731, vol);
+    268          	wm8731_set_right_volume(&wm8731, vol);
+    269          #endif
+    270          }
+    271          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    272          static void console_handler(uint8_t key)
+    273          {
+   \                     console_handler:
+   \        0x0   0xE92D'4018        PUSH     {R3,R4,LR}
+   \        0x4   0xE24D'D014        SUB      SP,SP,#+20
+    274          	switch (key) {
+   \        0x8   0xE350'002B        CMP      R0,#+43
+   \        0xC   0x0A00'000B        BEQ      ??console_handler_0
+   \       0x10   0xE350'002D        CMP      R0,#+45
+   \       0x14   0x0A00'000F        BEQ      ??console_handler_1
+   \       0x18   0xE350'0052        CMP      R0,#+82
+   \       0x1C   0x0A00'0015        BEQ      ??console_handler_2
+   \       0x20   0xE350'0053        CMP      R0,#+83
+   \       0x24   0x0A00'002B        BEQ      ??console_handler_3
+   \       0x28   0xE350'0072        CMP      R0,#+114
+   \       0x2C   0x0A00'0011        BEQ      ??console_handler_2
+   \       0x30   0xE350'0073        CMP      R0,#+115
+   \       0x34   0x0A00'0027        BEQ      ??console_handler_3
+    275          	case '+':
+    276          		if (_audio_ctx.volume < 63) {
+    277          			_audio_ctx.volume += 3;
+    278          			_set_volume(_audio_ctx.volume);
+    279          		}
+    280          		break;
+    281          	case '-':
+    282          		if (_audio_ctx.volume > 1) {
+    283          			_audio_ctx.volume -= 3;
+    284          			_set_volume(_audio_ctx.volume);
+    285          		}
+    286          		break;
+    287          
+    288          	case 'R':
+    289          	case 'r':
+    290          		_audio_ctx.recording = true;
+    291          		ssc_enable_receiver(&ssc_dev_desc);
+    292          
+    293          		{ /* Start recording */
+    294          			struct _callback _cb;
+    295          			callback_set(&_cb, _ssc_rx_transfer_callback, &ssc_dev_desc);
+    296          			struct _buffer _rx = {
+    297          				.data = (unsigned char*)&_sound_buffer[_audio_ctx.circ.rx],
+    298          				.size = BUFFER_SIZE,
+    299          				.attr = SSC_BUF_ATTR_READ,
+    300          			};
+    301          
+    302          			ssc_transfer(&ssc_dev_desc, &_rx, &_cb);
+    303          		}
+    304          
+    305          		printf("SSC start to record and play sound\r\n");
+    306          		break;
+    307          
+    308          	case 'S':
+    309          	case 's':
+    310          		_audio_ctx.recording = false;
+    311          		ssc_disable_transmitter(&ssc_dev_desc);
+    312          		ssc_disable_receiver(&ssc_dev_desc);
+    313          		printf("SSC stop to record and play sound\r\n");
+    314          		break;
+    315          
+    316          	default:
+    317          		break;
+    318          	}
+    319          }
+   \       0x38   0xE28D'D018        ADD      SP,SP,#+24
+   \       0x3C   0xE8BD'8010        POP      {R4,PC}
+   \                     ??console_handler_0:
+   \       0x40   0x....'....        LDR      R0,??DataTable10_1
+   \       0x44   0xE5D0'100C        LDRB     R1,[R0, #+12]
+   \       0x48   0xE351'003F        CMP      R1,#+63
+   \       0x4C   0xAA00'002A        BGE      ??console_handler_4
+   \       0x50   0xE281'1003        ADD      R1,R1,#+3
+   \       0x54   0xEA00'0004        B        ??console_handler_5
+   \                     ??console_handler_1:
+   \       0x58   0x....'....        LDR      R0,??DataTable10_1
+   \       0x5C   0xE5D0'100C        LDRB     R1,[R0, #+12]
+   \       0x60   0xE351'0002        CMP      R1,#+2
+   \       0x64   0xBA00'0024        BLT      ??console_handler_4
+   \       0x68   0xE241'1003        SUB      R1,R1,#+3
+   \                     ??console_handler_5:
+   \       0x6C   0xE5C0'100C        STRB     R1,[R0, #+12]
+   \       0x70   0xE28D'D018        ADD      SP,SP,#+24
+   \       0x74   0xE8BD'8010        POP      {R4,PC}
+   \                     ??console_handler_2:
+   \       0x78   0x....'....        LDR      R4,??DataTable10_1
+   \       0x7C   0xE3A0'0001        MOV      R0,#+1
+   \       0x80   0xE5C4'000E        STRB     R0,[R4, #+14]
+   \       0x84   0xE284'0010        ADD      R0,R4,#+16
+   \       0x88   0x....'....        BL       ssc_enable_receiver
+   \       0x8C   0xE284'2010        ADD      R2,R4,#+16
+   \       0x90   0x....'....        ADR      R1,_ssc_rx_transfer_callback
+   \       0x94   0xE1A0'000D        MOV      R0,SP
+   \       0x98   0x....'....        BL       callback_set
+   \       0x9C   0x....'....        ADR      R1,?_11
+   \       0xA0   0xE28D'0008        ADD      R0,SP,#+8
+   \       0xA4   0xE891'100C        LDM      R1,{R2,R3,R12}
+   \       0xA8   0x....'....        LDR      LR,??DataTable10_3
+   \       0xAC   0xE880'100C        STM      R0,{R2,R3,R12}
+   \       0xB0   0xE1D4'00B4        LDRH     R0,[R4, #+4]
+   \       0xB4   0xE1A0'200D        MOV      R2,SP
+   \       0xB8   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \       0xBC   0xE08E'1381        ADD      R1,LR,R1, LSL #+7
+   \       0xC0   0xE58D'1008        STR      R1,[SP, #+8]
+   \       0xC4   0xE28D'1008        ADD      R1,SP,#+8
+   \       0xC8   0xE284'0010        ADD      R0,R4,#+16
+   \       0xCC   0x....'....        BL       ssc_transfer
+   \       0xD0   0x....'....        LDR      R0,??DataTable10_4
+   \       0xD4   0xEA00'0007        B        ??console_handler_6
+   \                     ??console_handler_3:
+   \       0xD8   0x....'....        LDR      R4,??DataTable10_1
+   \       0xDC   0xE3A0'0000        MOV      R0,#+0
+   \       0xE0   0xE5C4'000E        STRB     R0,[R4, #+14]
+   \       0xE4   0xE284'0010        ADD      R0,R4,#+16
+   \       0xE8   0x....'....        BL       ssc_disable_transmitter
+   \       0xEC   0xE284'0010        ADD      R0,R4,#+16
+   \       0xF0   0x....'....        BL       ssc_disable_receiver
+   \       0xF4   0x....'....        LDR      R0,??DataTable10_5
+   \                     ??console_handler_6:
+   \       0xF8   0x....'....        BL       printf
+   \                     ??console_handler_4:
+   \       0xFC   0xE28D'D018        ADD      SP,SP,#+24
+   \      0x100   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_11:
+   \        0x0   0x0000'0000        DC32 0x0, 192, 2
+
+   \              0x0000'00C0  
+
+   \              0x0000'0002
+    320          
+    321          /*----------------------------------------------------------------------------
+    322           *         Global functions
+    323           *----------------------------------------------------------------------------*/
+    324          
+    325          /**
+    326           * \brief Application entry point for tc_capture_waveform example.
+    327           *
+    328           * \return Unused (ANSI-C compatibility).
+    329           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    330          extern int main( void )
+    331          {
+   \                     main:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    332          	/* Output example information */
+    333          	console_example_info("SSC DMA Audio Example");
+   \        0x4   0x....'....        ADR      R0,?_8
+   \        0x8   0x....'....        BL       console_example_info
+    334          
+    335          	console_set_rx_handler(console_handler);
+   \        0xC   0x....'....        ADR      R0,console_handler
+   \       0x10   0x....'....        BL       console_set_rx_handler
+    336          	console_enable_rx_interrupt();
+   \       0x14   0x....'....        BL       console_enable_rx_interrupt
+    337          
+    338          	/* Configure SSC */
+    339          	ssc_configure(&ssc_dev_desc);
+   \       0x18   0x....'....        LDR      R4,??DataTable10_1
+   \       0x1C   0x....'....        LDR      R5,??DataTable10_6
+   \       0x20   0xE284'0010        ADD      R0,R4,#+16
+   \       0x24   0x....'....        BL       ssc_configure
+    340          
+    341          	ssc_disable_receiver(&ssc_dev_desc);
+   \       0x28   0xE284'0010        ADD      R0,R4,#+16
+   \       0x2C   0x....'....        BL       ssc_disable_receiver
+    342          	ssc_disable_transmitter(&ssc_dev_desc);
+   \       0x30   0xE284'0010        ADD      R0,R4,#+16
+   \       0x34   0x....'....        BL       ssc_disable_transmitter
+    343          
+    344          	/* Initialize the audio DAC */
+    345          #if defined(CONFIG_HAVE_AUDIO_WM8904)
+    346          	wm8904_configure(&wm8904);
+    347          #elif defined(CONFIG_HAVE_AUDIO_WM8731)
+    348          	wm8731_configure(&wm8731);
+    349          #endif
+    350          
+    351          	_set_volume(_audio_ctx.volume);
+    352          
+    353          	_display_menu();
+   \       0x38   0x....'....        ADR      R0,??DataTable10  ;; 0x0A, 0x0D, 0x00, 0x00
+   \       0x3C   0x....'....        BL       printf
+   \       0x40   0x....'....        ADR      R4,?_6
+   \       0x44   0xE1A0'0004        MOV      R0,R4
+   \       0x48   0x....'....        BL       printf
+   \       0x4C   0xE1A0'0005        MOV      R0,R5
+   \       0x50   0x....'....        BL       printf
+   \       0x54   0x....'....        ADR      R0,?_7
+   \       0x58   0x....'....        BL       printf
+   \       0x5C   0xE285'002C        ADD      R0,R5,#+44
+   \       0x60   0x....'....        BL       printf
+   \       0x64   0xE285'005C        ADD      R0,R5,#+92
+   \       0x68   0x....'....        BL       printf
+   \       0x6C   0xE1A0'0004        MOV      R0,R4
+   \       0x70   0x....'....        BL       printf
+    354          
+    355          	/* Infinite loop */
+    356          	while (1);
+   \                     ??main_0:
+   \       0x74   0xEAFF'FFFE        B        ??main_0
+    357          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10:
+   \        0x0   0x0A 0x0D          DC8      0x0A, 0x0D, 0x00, 0x00
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_1:
+   \        0x0   0x....'....        DC32     _audio_ctx
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_2:
+   \        0x0   0x....'....        DC32     ?_9
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_3:
+   \        0x0   0x....'....        DC32     _sound_buffer
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_4:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_5:
+   \        0x0   0x....'....        DC32     ?_3+0x28
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_6:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_6:
+   \        0x0   0x2D 0x2D          DC8 "-----------------\012\015"
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x2D    
+
+   \              0x2D 0x0A    
+
+   \              0x0D 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x52 0x20          DC8 "R -> Start to record the sound and play \012\015"
+
+   \              0x2D 0x3E    
+
+   \              0x20 0x53    
+
+   \              0x74 0x61    
+
+   \              0x72 0x74    
+
+   \              0x20 0x74    
+
+   \              0x6F 0x20    
+
+   \              0x72 0x65    
+
+   \              0x63 0x6F    
+
+   \              0x72 0x64    
+
+   \              0x20 0x74    
+
+   \              0x68 0x65    
+
+   \              0x20 0x73    
+
+   \              0x6F 0x75    
+
+   \              0x6E 0x64    
+
+   \              0x20 0x61    
+
+   \              0x6E 0x64    
+
+   \              0x20 0x70    
+
+   \              0x6C 0x61    
+
+   \              0x79 0x20    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x2B   0x00               DC8 0
+   \       0x2C   0x2B 0x20          DC8 "+ -> Increase the volume of playback sound \012\015"
+
+   \              0x2D 0x3E    
+
+   \              0x20 0x49    
+
+   \              0x6E 0x63    
+
+   \              0x72 0x65    
+
+   \              0x61 0x73    
+
+   \              0x65 0x20    
+
+   \              0x74 0x68    
+
+   \              0x65 0x20    
+
+   \              0x76 0x6F    
+
+   \              0x6C 0x75    
+
+   \              0x6D 0x65    
+
+   \              0x20 0x6F    
+
+   \              0x66 0x20    
+
+   \              0x70 0x6C    
+
+   \              0x61 0x79    
+
+   \              0x62 0x61    
+
+   \              0x63 0x6B    
+
+   \              0x20 0x73    
+
+   \              0x6F 0x75    
+
+   \              0x6E 0x64    
+
+   \              0x20 0x0A    
+
+   \              0x0D 0x00
+   \       0x5A   0x00 0x00          DC8 0, 0
+   \       0x5C   0x2D 0x20          DC8 "- -> Decrease the volume of playback sound \012\015"
+
+   \              0x2D 0x3E    
+
+   \              0x20 0x44    
+
+   \              0x65 0x63    
+
+   \              0x72 0x65    
+
+   \              0x61 0x73    
+
+   \              0x65 0x20    
+
+   \              0x74 0x68    
+
+   \              0x65 0x20    
+
+   \              0x76 0x6F    
+
+   \              0x6C 0x75    
+
+   \              0x6D 0x65    
+
+   \              0x20 0x6F    
+
+   \              0x66 0x20    
+
+   \              0x70 0x6C    
+
+   \              0x61 0x79    
+
+   \              0x62 0x61    
+
+   \              0x63 0x6B    
+
+   \              0x20 0x73    
+
+   \              0x6F 0x75    
+
+   \              0x6E 0x64    
+
+   \              0x20 0x0A    
+
+   \              0x0D 0x00
+   \       0x8A   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_7:
+   \        0x0   0x53 0x20          DC8 "S -> Stop recording sound \012\015"
+
+   \              0x2D 0x3E    
+
+   \              0x20 0x53    
+
+   \              0x74 0x6F    
+
+   \              0x70 0x20    
+
+   \              0x72 0x65    
+
+   \              0x63 0x6F    
+
+   \              0x72 0x64    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x20    
+
+   \              0x73 0x6F    
+
+   \              0x75 0x6E    
+
+   \              0x64 0x20    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x1D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_8:
+   \        0x0   0x53 0x53          DC8 "SSC DMA Audio Example"
+
+   \              0x43 0x20    
+
+   \              0x44 0x4D    
+
+   \              0x41 0x20    
+
+   \              0x41 0x75    
+
+   \              0x64 0x69    
+
+   \              0x6F 0x20    
+
+   \              0x45 0x78    
+
+   \              0x61 0x6D    
+
+   \              0x70 0x6C    
+
+   \              0x65 0x00
+   \       0x16   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x53 0x53          DC8 "SSC start to record and play sound\015\012"
+
+   \              0x43 0x20    
+
+   \              0x73 0x74    
+
+   \              0x61 0x72    
+
+   \              0x74 0x20    
+
+   \              0x74 0x6F    
+
+   \              0x20 0x72    
+
+   \              0x65 0x63    
+
+   \              0x6F 0x72    
+
+   \              0x64 0x20    
+
+   \              0x61 0x6E    
+
+   \              0x64 0x20    
+
+   \              0x70 0x6C    
+
+   \              0x61 0x79    
+
+   \              0x20 0x73    
+
+   \              0x6F 0x75    
+
+   \              0x6E 0x64    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x25   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+   \       0x28   0x53 0x53          DC8 "SSC stop to record and play sound\015\012"
+
+   \              0x43 0x20    
+
+   \              0x73 0x74    
+
+   \              0x6F 0x70    
+
+   \              0x20 0x74    
+
+   \              0x6F 0x20    
+
+   \              0x72 0x65    
+
+   \              0x63 0x6F    
+
+   \              0x72 0x64    
+
+   \              0x20 0x61    
+
+   \              0x6E 0x64    
+
+   \              0x20 0x70    
+
+   \              0x6C 0x61    
+
+   \              0x79 0x20    
+
+   \              0x73 0x6F    
+
+   \              0x75 0x6E    
+
+   \              0x64 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x0A 0x0D          DC8 "\012\015"
+
+   \              0x00
+   \        0x3   0x00               DC8 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      40   _ssc_rx_transfer_callback
+        40   -> callback_set
+        40   -> ssc_disable_transmitter
+        40   -> ssc_enable_transmitter
+        40   -> ssc_transfer
+      40   _ssc_tx_transfer_callback
+        40   -> callback_set
+        40   -> ssc_disable_transmitter
+        40   -> ssc_transfer
+      32   console_handler
+        32   -> callback_set
+        32   -> printf
+        32   -> ssc_disable_receiver
+        32   -> ssc_disable_transmitter
+        32   -> ssc_enable_receiver
+        32   -> ssc_transfer
+      16   main
+        16   -> console_enable_rx_interrupt
+        16   -> console_example_info
+        16   -> console_set_rx_handler
+        16   -> printf
+        16   -> ssc_configure
+        16   -> ssc_disable_receiver
+        16   -> ssc_disable_transmitter
+
+
+   Section sizes:
+
+   Bytes   Function/Label
+   -----   --------------
+        4  ??DataTable10
+        4  ??DataTable10_1
+        4  ??DataTable10_2
+        4  ??DataTable10_3
+        4  ??DataTable10_4
+        4  ??DataTable10_5
+        4  ??DataTable10_6
+      140  ?_0
+       12  ?_10
+       12  ?_11
+       76  ?_3
+        4  ?_5
+       20  ?_6
+       32  ?_7
+       24  ?_8
+       12  ?_9
+      148  _audio_ctx
+           ssc_dev_desc
+   12'288  _sound_buffer
+      328  _ssc_rx_transfer_callback
+      180  _ssc_tx_transfer_callback
+      260  console_handler
+      120  main
+
+ 
+    148 bytes in section .data
+ 12'288 bytes in section .region_ddr_cache_aligned
+    220 bytes in section .rodata
+  1'028 bytes in section SOFTPACK
+ 
+  1'028 bytes of CODE  memory
+    220 bytes of CONST memory
+ 12'436 bytes of DATA  memory
+
+Errors: none
+Warnings: none

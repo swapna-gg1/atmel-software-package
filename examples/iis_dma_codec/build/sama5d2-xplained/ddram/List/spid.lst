@@ -1,0 +1,1395 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         08/Dec/2020  15:53:43
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\spi\spid.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW8347.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\spi\spid.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_SECURE_MATRIX -D
+#        CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_I2SC -D CONFIG_HAVE_PDMIC -D
+#        CONFIG_HAVE_AUDIO_AD1934 -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_AUDIO_WM8731 --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\ddram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-A5 -e --fpu=VFPv4_D16 --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\ddram\List\spid.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\ddram\Obj\spid.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\spi\spid.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <stddef.h>
+     35          #include <stdint.h>
+     36          #include <assert.h>
+     37          #include <string.h>
+     38          
+     39          #include "callback.h"
+     40          #include "dma/dma.h"
+     41          #include "errno.h"
+     42          #include "irq/irq.h"
+     43          #include "mm/cache.h"
+     44          #include "peripherals/bus.h"
+     45          #ifdef CONFIG_HAVE_FLEXCOM
+     46          #include "peripherals/flexcom.h"
+     47          #endif
+     48          #include "peripherals/pmc.h"
+     49          #include "spi/spi.h"
+     50          #include "spi/spid.h"
+     51          #include "trace.h"
+     52          
+     53          /*----------------------------------------------------------------------------
+     54           *        Definitions
+     55           *----------------------------------------------------------------------------*/
+     56          
+     57          #define SPID_POLLING_THRESHOLD      16
+     58          
+     59          /*----------------------------------------------------------------------------
+     60           *        Local variables
+     61           *----------------------------------------------------------------------------*/
+     62          
+     63          CACHE_ALIGNED
+
+   \                                 In section .region_cache_aligned, align 32
+     64          static uint32_t _garbage = UINT32_MAX;
+   \                     _garbage:
+   \        0x0   0xFFFF'FFFF        DC32 4'294'967'295
+     65          
+     66          /*----------------------------------------------------------------------------
+     67           *        Local functions
+     68           *----------------------------------------------------------------------------*/
+     69          
+     70          #ifdef CONFIG_HAVE_SPI_FIFO
+     71          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     72          static void _spid_fifo_configure(struct _spi_desc *desc)
+     73          {
+   \                     _spid_fifo_configure:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+     74          	desc->fifo.rx.size = get_peripheral_fifo_depth(desc->addr);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_peripheral_fifo_depth
+   \       0x10   0xE1C4'01B2        STRH     R0,[R4, #+18]
+     75          	desc->fifo.rx.threshold = desc->fifo.rx.size / 2;
+   \       0x14   0xE3A0'5002        MOV      R5,#+2
+   \       0x18   0xE1D4'01B2        LDRH     R0,[R4, #+18]
+   \       0x1C   0xE1B0'1005        MOVS     R1,R5
+   \       0x20   0x....'....        BL       __aeabi_idiv
+   \       0x24   0xE1C4'01B4        STRH     R0,[R4, #+20]
+     76          	desc->fifo.tx.size = get_peripheral_fifo_depth(desc->addr);
+   \       0x28   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x2C   0x....'....        BL       get_peripheral_fifo_depth
+   \       0x30   0xE1C4'01B6        STRH     R0,[R4, #+22]
+     77          	desc->fifo.tx.threshold = desc->fifo.tx.size / 2;
+   \       0x34   0xE1D4'01B6        LDRH     R0,[R4, #+22]
+   \       0x38   0xE1B0'1005        MOVS     R1,R5
+   \       0x3C   0x....'....        BL       __aeabi_idiv
+   \       0x40   0xE1C4'01B8        STRH     R0,[R4, #+24]
+     78          	spi_fifo_configure(desc->addr, desc->fifo.tx.threshold, desc->fifo.rx.threshold);
+   \       0x44   0xE1D4'21B4        LDRH     R2,[R4, #+20]
+   \       0x48   0xE6EF'2072        UXTB     R2,R2
+   \       0x4C   0xE1D4'11B8        LDRH     R1,[R4, #+24]
+   \       0x50   0xE6EF'1071        UXTB     R1,R1
+   \       0x54   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x58   0x....'....        BL       spi_fifo_configure
+     79          }
+   \       0x5C   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+     80          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     81          static void _spid_wait_tx_fifo_not_full(struct _spi_desc* desc)
+     82          {
+     83          	if (desc->use_fifo)
+   \                     _spid_wait_tx_fifo_not_full:
+   \        0x0   0xE5D0'1010        LDRB     R1,[R0, #+16]
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0x0A00'0003        BEQ      ??_spid_wait_tx_fifo_not_full_0
+     84          		while (desc->addr->SPI_SR & SPI_SR_TXFFF);
+   \                     ??_spid_wait_tx_fifo_not_full_1:
+   \        0xC   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x10   0xE591'1010        LDR      R1,[R1, #+16]
+   \       0x14   0xE311'0780        TST      R1,#0x2000000
+   \       0x18   0x1AFF'FFFB        BNE      ??_spid_wait_tx_fifo_not_full_1
+     85          }
+   \                     ??_spid_wait_tx_fifo_not_full_0:
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+     86          
+     87          #endif /* CONFIG_HAVE_SPI_FIFO */
+     88          
+     89          /* forward declaration */
+     90          static void _spid_transfer_next_buffer(struct _spi_desc* desc);
+     91          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     92          static int _spid_dma_rx_callback(void* arg, void* arg2)
+     93          {
+   \                     _spid_dma_rx_callback:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     94          	struct _spi_desc* desc = (struct _spi_desc*)arg;
+   \        0xC   0xE1B0'6004        MOVS     R6,R4
+     95          
+     96          	if (desc->xfer.current->attr & BUS_BUF_ATTR_RX)
+   \       0x10   0xE596'001C        LDR      R0,[R6, #+28]
+   \       0x14   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0x18   0xE310'0001        TST      R0,#0x1
+   \       0x1C   0x0A00'0004        BEQ      ??_spid_dma_rx_callback_0
+     97          		cache_invalidate_region(desc->xfer.current->data, desc->xfer.current->size);
+   \       0x20   0xE596'001C        LDR      R0,[R6, #+28]
+   \       0x24   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x28   0xE596'001C        LDR      R0,[R6, #+28]
+   \       0x2C   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x30   0x....'....        BL       cache_invalidate_region
+     98          
+     99          	dma_reset_channel(desc->xfer.dma.rx_channel);
+   \                     ??_spid_dma_rx_callback_0:
+   \       0x34   0xE596'0034        LDR      R0,[R6, #+52]
+   \       0x38   0x....'....        BL       dma_reset_channel
+    100          
+    101          	/* process next buffer */
+    102          	_spid_transfer_next_buffer(desc);
+   \       0x3C   0xE1B0'0006        MOVS     R0,R6
+   \       0x40   0x....'....        BL       _spid_transfer_next_buffer
+    103          
+    104          	return 0;
+   \       0x44   0xE3A0'0000        MOV      R0,#+0
+   \       0x48   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    105          }
+    106          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    107          static int _spid_dma_tx_callback(void* arg, void* arg2)
+    108          {
+   \                     _spid_dma_tx_callback:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    109          	struct _spi_desc* desc = (struct _spi_desc*)arg;
+   \        0xC   0xE1B0'6004        MOVS     R6,R4
+    110          
+    111          	dma_reset_channel(desc->xfer.dma.tx_channel);
+   \       0x10   0xE596'0038        LDR      R0,[R6, #+56]
+   \       0x14   0x....'....        BL       dma_reset_channel
+    112          
+    113          	return 0;
+   \       0x18   0xE3A0'0000        MOV      R0,#+0
+   \       0x1C   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    114          }
+    115          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    116          static void _spid_transfer_current_buffer_dma(struct _spi_desc* desc)
+    117          {
+   \                     _spid_transfer_current_buffer_dma:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE24D'D038        SUB      SP,SP,#+56
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+    118          	uint32_t id = get_spi_id_from_addr(desc->addr);
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0x....'....        BL       get_spi_id_from_addr
+   \       0x14   0xE1B0'5000        MOVS     R5,R0
+    119          	struct _callback _cb;
+    120          	struct _dma_transfer_cfg rx_cfg = {
+    121          		.saddr = (void*)&desc->addr->SPI_RDR,
+    122          		.daddr = &_garbage,
+    123          		.len = desc->xfer.current->size,
+    124          	};
+   \       0x18   0xE28D'0014        ADD      R0,SP,#+20
+   \       0x1C   0x....'....        LDR      R1,??DataTable3
+   \       0x20   0xE891'100C        LDM      R1,{R2,R3,R12}
+   \       0x24   0xE880'100C        STM      R0,{R2,R3,R12}
+   \       0x28   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x2C   0xE290'0008        ADDS     R0,R0,#+8
+   \       0x30   0xE58D'0014        STR      R0,[SP, #+20]
+   \       0x34   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x38   0xE590'0004        LDR      R0,[R0, #+4]
+   \       0x3C   0xE58D'001C        STR      R0,[SP, #+28]
+    125          	struct _dma_transfer_cfg tx_cfg = {
+    126          		.saddr = &_garbage,
+    127          		.daddr = (void*)&desc->addr->SPI_TDR,
+    128          		.len = desc->xfer.current->size,
+    129          	};
+   \       0x40   0xE28D'0008        ADD      R0,SP,#+8
+   \       0x44   0x....'....        LDR      R1,??DataTable3_1
+   \       0x48   0xE891'100C        LDM      R1,{R2,R3,R12}
+   \       0x4C   0xE880'100C        STM      R0,{R2,R3,R12}
+   \       0x50   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x54   0xE290'000C        ADDS     R0,R0,#+12
+   \       0x58   0xE58D'000C        STR      R0,[SP, #+12]
+   \       0x5C   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x60   0xE590'0004        LDR      R0,[R0, #+4]
+   \       0x64   0xE58D'0010        STR      R0,[SP, #+16]
+    130          	struct _dma_cfg rx_cfg_dma = {
+    131          		.incr_saddr = false,
+    132          		.incr_daddr = false,
+    133          		.loop = false,
+    134          		.data_width = DMA_DATA_WIDTH_BYTE,
+    135          		.chunk_size = DMA_CHUNK_SIZE_1,
+    136          	};
+   \       0x68   0xE28D'002C        ADD      R0,SP,#+44
+   \       0x6C   0xE3A0'1000        MOV      R1,#+0
+   \       0x70   0xE3A0'2000        MOV      R2,#+0
+   \       0x74   0xE3A0'3000        MOV      R3,#+0
+   \       0x78   0xE880'000E        STM      R0,{R1-R3}
+    137          	struct _dma_cfg tx_cfg_dma = {
+    138          		.incr_saddr = false,
+    139          		.incr_daddr = false,
+    140          		.loop = false,
+    141          		.data_width = DMA_DATA_WIDTH_BYTE,
+    142          		.chunk_size = DMA_CHUNK_SIZE_1,
+    143          	};
+   \       0x7C   0xE28D'0020        ADD      R0,SP,#+32
+   \       0x80   0xE3A0'1000        MOV      R1,#+0
+   \       0x84   0xE3A0'2000        MOV      R2,#+0
+   \       0x88   0xE3A0'3000        MOV      R3,#+0
+   \       0x8C   0xE880'000E        STM      R0,{R1-R3}
+    144          
+    145          	if (desc->xfer.current->attr & BUS_BUF_ATTR_TX) {
+   \       0x90   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x94   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0x98   0xE310'0002        TST      R0,#0x2
+   \       0x9C   0x0A00'0009        BEQ      ??_spid_transfer_current_buffer_dma_0
+    146          		cache_clean_region(desc->xfer.current->data, desc->xfer.current->size);
+   \       0xA0   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0xA4   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0xA8   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0xAC   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0xB0   0x....'....        BL       cache_clean_region
+    147          		tx_cfg.saddr = desc->xfer.current->data;
+   \       0xB4   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0xB8   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0xBC   0xE58D'0008        STR      R0,[SP, #+8]
+    148          		tx_cfg_dma.incr_saddr = true;
+   \       0xC0   0xE3A0'0001        MOV      R0,#+1
+   \       0xC4   0xE5CD'0028        STRB     R0,[SP, #+40]
+    149          	}
+    150          
+    151          	if (desc->xfer.current->attr & BUS_BUF_ATTR_RX) {
+   \                     ??_spid_transfer_current_buffer_dma_0:
+   \       0xC8   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0xCC   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0xD0   0xE310'0001        TST      R0,#0x1
+   \       0xD4   0x0A00'0004        BEQ      ??_spid_transfer_current_buffer_dma_1
+    152          		rx_cfg.daddr = desc->xfer.current->data;
+   \       0xD8   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0xDC   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0xE0   0xE58D'0018        STR      R0,[SP, #+24]
+    153          		rx_cfg_dma.incr_daddr = true;
+   \       0xE4   0xE3A0'0001        MOV      R0,#+1
+   \       0xE8   0xE5CD'0035        STRB     R0,[SP, #+53]
+    154          	}
+    155          
+    156          	if (!desc->xfer.dma.tx_channel)
+   \                     ??_spid_transfer_current_buffer_dma_1:
+   \       0xEC   0xE594'0038        LDR      R0,[R4, #+56]
+   \       0xF0   0xE350'0000        CMP      R0,#+0
+   \       0xF4   0x1A00'0004        BNE      ??_spid_transfer_current_buffer_dma_2
+    157          		desc->xfer.dma.tx_channel = dma_allocate_channel(DMA_PERIPH_MEMORY, id);
+   \       0xF8   0xE1B0'1005        MOVS     R1,R5
+   \       0xFC   0xE6EF'1071        UXTB     R1,R1
+   \      0x100   0xE3A0'00FF        MOV      R0,#+255
+   \      0x104   0x....'....        BL       dma_allocate_channel
+   \      0x108   0xE584'0038        STR      R0,[R4, #+56]
+    158          	if (!desc->xfer.dma.rx_channel)
+   \                     ??_spid_transfer_current_buffer_dma_2:
+   \      0x10C   0xE594'0034        LDR      R0,[R4, #+52]
+   \      0x110   0xE350'0000        CMP      R0,#+0
+   \      0x114   0x1A00'0004        BNE      ??_spid_transfer_current_buffer_dma_3
+    159          		desc->xfer.dma.rx_channel = dma_allocate_channel(id, DMA_PERIPH_MEMORY);
+   \      0x118   0xE3A0'10FF        MOV      R1,#+255
+   \      0x11C   0xE1B0'0005        MOVS     R0,R5
+   \      0x120   0xE6EF'0070        UXTB     R0,R0
+   \      0x124   0x....'....        BL       dma_allocate_channel
+   \      0x128   0xE584'0034        STR      R0,[R4, #+52]
+    160          
+    161          	dma_reset_channel(desc->xfer.dma.tx_channel);
+   \                     ??_spid_transfer_current_buffer_dma_3:
+   \      0x12C   0xE594'0038        LDR      R0,[R4, #+56]
+   \      0x130   0x....'....        BL       dma_reset_channel
+    162          	dma_configure_transfer(desc->xfer.dma.tx_channel, &tx_cfg_dma, &tx_cfg, 1);
+   \      0x134   0xE3A0'3001        MOV      R3,#+1
+   \      0x138   0xE28D'2008        ADD      R2,SP,#+8
+   \      0x13C   0xE28D'1020        ADD      R1,SP,#+32
+   \      0x140   0xE594'0038        LDR      R0,[R4, #+56]
+   \      0x144   0x....'....        BL       dma_configure_transfer
+    163          	callback_set(&_cb, _spid_dma_tx_callback, (void*)desc);
+   \      0x148   0xE1B0'2004        MOVS     R2,R4
+   \      0x14C   0x....'....        ADR      R1,_spid_dma_tx_callback
+   \      0x150   0xE1B0'000D        MOVS     R0,SP
+   \      0x154   0x....'....        BL       callback_set
+    164          	dma_set_callback(desc->xfer.dma.tx_channel, &_cb);
+   \      0x158   0xE1B0'100D        MOVS     R1,SP
+   \      0x15C   0xE594'0038        LDR      R0,[R4, #+56]
+   \      0x160   0x....'....        BL       dma_set_callback
+    165          
+    166          	dma_reset_channel(desc->xfer.dma.rx_channel);
+   \      0x164   0xE594'0034        LDR      R0,[R4, #+52]
+   \      0x168   0x....'....        BL       dma_reset_channel
+    167          	dma_configure_transfer(desc->xfer.dma.rx_channel, &rx_cfg_dma, &rx_cfg, 1);
+   \      0x16C   0xE3A0'3001        MOV      R3,#+1
+   \      0x170   0xE28D'2014        ADD      R2,SP,#+20
+   \      0x174   0xE28D'102C        ADD      R1,SP,#+44
+   \      0x178   0xE594'0034        LDR      R0,[R4, #+52]
+   \      0x17C   0x....'....        BL       dma_configure_transfer
+    168          	callback_set(&_cb, _spid_dma_rx_callback, (void*)desc);
+   \      0x180   0xE1B0'2004        MOVS     R2,R4
+   \      0x184   0x....'....        ADR      R1,_spid_dma_rx_callback
+   \      0x188   0xE1B0'000D        MOVS     R0,SP
+   \      0x18C   0x....'....        BL       callback_set
+    169          	dma_set_callback(desc->xfer.dma.rx_channel, &_cb);
+   \      0x190   0xE1B0'100D        MOVS     R1,SP
+   \      0x194   0xE594'0034        LDR      R0,[R4, #+52]
+   \      0x198   0x....'....        BL       dma_set_callback
+    170          
+    171          	dma_start_transfer(desc->xfer.dma.rx_channel);
+   \      0x19C   0xE594'0034        LDR      R0,[R4, #+52]
+   \      0x1A0   0x....'....        BL       dma_start_transfer
+    172          	dma_start_transfer(desc->xfer.dma.tx_channel);
+   \      0x1A4   0xE594'0038        LDR      R0,[R4, #+56]
+   \      0x1A8   0x....'....        BL       dma_start_transfer
+    173          }
+   \      0x1AC   0xE28D'D03C        ADD      SP,SP,#+60
+   \      0x1B0   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x0000'0000        DC32 0x0, _garbage, 0
+
+   \              0x....'....  
+
+   \              0x0000'0000
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x....'....        DC32 _garbage, 0x0, 0
+
+   \              0x0000'0000  
+
+   \              0x0000'0000
+
+   \                                 In section .rodata, align 4
+   \        0x0   0x0000'0000        DC32 0, 0
+
+   \              0x0000'0000
+   \        0x8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+
+   \                                 In section .rodata, align 4
+   \        0x0   0x0000'0000        DC32 0, 0
+
+   \              0x0000'0000
+   \        0x8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+    174          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    175          static void _spid_handler(uint32_t source, void* user_arg)
+    176          {
+   \                     _spid_handler:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    177          	uint8_t data;
+    178          	uint32_t status = 0;
+   \        0xC   0xE3A0'7000        MOV      R7,#+0
+    179          	Spi* addr = get_spi_addr_from_id(source);
+   \       0x10   0xE1B0'0004        MOVS     R0,R4
+   \       0x14   0x....'....        BL       get_spi_addr_from_id
+   \       0x18   0xE1B0'8000        MOVS     R8,R0
+    180          	struct _spi_desc *desc = (struct _spi_desc*)user_arg;
+   \       0x1C   0xE1B0'9005        MOVS     R9,R5
+    181          
+    182          	if (!desc->xfer.current || addr != desc->addr) {
+   \       0x20   0xE599'001C        LDR      R0,[R9, #+28]
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x0A00'0002        BEQ      ??_spid_handler_0
+   \       0x2C   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0x30   0xE158'0000        CMP      R8,R0
+   \       0x34   0x0A00'0003        BEQ      ??_spid_handler_1
+    183          		/* async descriptor not found, disable interrupt */
+    184          		spi_disable_it(addr, SPI_IDR_RDRF | SPI_IDR_TDRE | SPI_IDR_TXEMPTY);
+   \                     ??_spid_handler_0:
+   \       0x38   0xE300'1203        MOVW     R1,#+515
+   \       0x3C   0xE1B0'0008        MOVS     R0,R8
+   \       0x40   0x....'....        BL       spi_disable_it
+    185          		return;
+   \       0x44   0xEA00'0044        B        ??_spid_handler_2
+    186          	}
+    187          
+    188          	status = spi_get_masked_status(addr);
+   \                     ??_spid_handler_1:
+   \       0x48   0xE1B0'0008        MOVS     R0,R8
+   \       0x4C   0x....'....        BL       spi_get_masked_status
+   \       0x50   0xE1B0'A000        MOVS     R10,R0
+    189          
+    190          	if (SPI_STATUS_TDRE(status)) {
+   \       0x54   0xE31A'0002        TST      R10,#0x2
+   \       0x58   0x0A00'001D        BEQ      ??_spid_handler_3
+    191          #ifdef CONFIG_HAVE_SPI_FIFO
+    192          		_spid_wait_tx_fifo_not_full(desc);
+   \       0x5C   0xE1B0'0009        MOVS     R0,R9
+   \       0x60   0x....'....        BL       _spid_wait_tx_fifo_not_full
+    193          #endif /* CONFIG_HAVE_SPI_FIFO */
+    194          
+    195          		if (desc->xfer.current->attr & BUS_BUF_ATTR_TX)
+   \       0x64   0xE599'001C        LDR      R0,[R9, #+28]
+   \       0x68   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0x6C   0xE310'0002        TST      R0,#0x2
+   \       0x70   0x0A00'0005        BEQ      ??_spid_handler_4
+    196          			data = desc->xfer.current->data[desc->xfer.async.tx];
+   \       0x74   0xE599'001C        LDR      R0,[R9, #+28]
+   \       0x78   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x7C   0xE599'1030        LDR      R1,[R9, #+48]
+   \       0x80   0xE7D0'0001        LDRB     R0,[R0, +R1]
+   \       0x84   0xE1B0'6000        MOVS     R6,R0
+   \       0x88   0xEA00'0001        B        ??_spid_handler_5
+    197          		else
+    198          			data = 0xff;
+   \                     ??_spid_handler_4:
+   \       0x8C   0xE3A0'00FF        MOV      R0,#+255
+   \       0x90   0xE1B0'6000        MOVS     R6,R0
+    199          
+    200          		spi_write(desc->addr, data);
+   \                     ??_spid_handler_5:
+   \       0x94   0xE1B0'1006        MOVS     R1,R6
+   \       0x98   0xE6EF'1071        UXTB     R1,R1
+   \       0x9C   0xE6FF'1071        UXTH     R1,R1
+   \       0xA0   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0xA4   0x....'....        BL       spi_write
+    201          
+    202          		desc->xfer.async.tx++;
+   \       0xA8   0xE599'0030        LDR      R0,[R9, #+48]
+   \       0xAC   0xE290'0001        ADDS     R0,R0,#+1
+   \       0xB0   0xE589'0030        STR      R0,[R9, #+48]
+    203          
+    204          		if (desc->xfer.async.tx >= desc->xfer.current->size) {
+   \       0xB4   0xE599'0030        LDR      R0,[R9, #+48]
+   \       0xB8   0xE599'101C        LDR      R1,[R9, #+28]
+   \       0xBC   0xE591'1004        LDR      R1,[R1, #+4]
+   \       0xC0   0xE150'0001        CMP      R0,R1
+   \       0xC4   0x3A00'0002        BCC      ??_spid_handler_3
+    205          			/* current buffer TX complete */
+    206          			spi_disable_it(addr, SPI_IDR_TDRE);
+   \       0xC8   0xE3A0'1002        MOV      R1,#+2
+   \       0xCC   0xE1B0'0008        MOVS     R0,R8
+   \       0xD0   0x....'....        BL       spi_disable_it
+    207          		}
+    208          	}
+    209          
+    210          	if (SPI_STATUS_RDRF(status)) {
+   \                     ??_spid_handler_3:
+   \       0xD4   0xE31A'0001        TST      R10,#0x1
+   \       0xD8   0x0A00'0018        BEQ      ??_spid_handler_6
+    211          		data = spi_read(desc->addr);
+   \       0xDC   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0xE0   0x....'....        BL       spi_read
+   \       0xE4   0xE1B0'6000        MOVS     R6,R0
+    212          
+    213          		if (desc->xfer.current->attr & BUS_BUF_ATTR_RX)
+   \       0xE8   0xE599'001C        LDR      R0,[R9, #+28]
+   \       0xEC   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0xF0   0xE310'0001        TST      R0,#0x1
+   \       0xF4   0x0A00'0003        BEQ      ??_spid_handler_7
+    214          			desc->xfer.current->data[desc->xfer.async.rx] = data;
+   \       0xF8   0xE599'001C        LDR      R0,[R9, #+28]
+   \       0xFC   0xE590'0000        LDR      R0,[R0, #+0]
+   \      0x100   0xE599'102C        LDR      R1,[R9, #+44]
+   \      0x104   0xE7C0'6001        STRB     R6,[R0, +R1]
+    215          
+    216          		desc->xfer.async.rx++;
+   \                     ??_spid_handler_7:
+   \      0x108   0xE599'002C        LDR      R0,[R9, #+44]
+   \      0x10C   0xE290'0001        ADDS     R0,R0,#+1
+   \      0x110   0xE589'002C        STR      R0,[R9, #+44]
+    217          
+    218          		if (desc->xfer.async.rx >= desc->xfer.current->size) {
+   \      0x114   0xE599'002C        LDR      R0,[R9, #+44]
+   \      0x118   0xE599'101C        LDR      R1,[R9, #+28]
+   \      0x11C   0xE591'1004        LDR      R1,[R1, #+4]
+   \      0x120   0xE150'0001        CMP      R0,R1
+   \      0x124   0x3A00'0005        BCC      ??_spid_handler_6
+    219          			/* current buffer RX complete */
+    220          			spi_disable_it(addr, SPI_IDR_RDRF);
+   \      0x128   0xE3A0'1001        MOV      R1,#+1
+   \      0x12C   0xE1B0'0008        MOVS     R0,R8
+   \      0x130   0x....'....        BL       spi_disable_it
+    221          			spi_enable_it(addr, SPI_IER_TXEMPTY);
+   \      0x134   0xE3A0'1F80        MOV      R1,#+512
+   \      0x138   0xE1B0'0008        MOVS     R0,R8
+   \      0x13C   0x....'....        BL       spi_enable_it
+    222          		}
+    223          	}
+    224          
+    225          	if (SPI_STATUS_TXEMPTY(status)) {
+   \                     ??_spid_handler_6:
+   \      0x140   0xE31A'0F80        TST      R10,#0x200
+   \      0x144   0x0A00'0004        BEQ      ??_spid_handler_8
+    226          		spi_disable_it(addr, SPI_IDR_TXEMPTY);
+   \      0x148   0xE3A0'1F80        MOV      R1,#+512
+   \      0x14C   0xE1B0'0008        MOVS     R0,R8
+   \      0x150   0x....'....        BL       spi_disable_it
+    227          		_spid_transfer_next_buffer(desc);
+   \      0x154   0xE1B0'0009        MOVS     R0,R9
+   \      0x158   0x....'....        BL       _spid_transfer_next_buffer
+    228          	}
+    229          }
+   \                     ??_spid_handler_8:
+   \                     ??_spid_handler_2:
+   \      0x15C   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    230          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    231          static void _spid_transfer_current_buffer_polling(struct _spi_desc* desc)
+    232          {
+   \                     _spid_transfer_current_buffer_polling:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    233          	int i;
+    234          	uint8_t data;
+    235          
+    236          	for (i = 0; i < desc->xfer.current->size; ++i) {
+   \        0x8   0xE3A0'6000        MOV      R6,#+0
+   \                     ??_spid_transfer_current_buffer_polling_0:
+   \        0xC   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x10   0xE590'0004        LDR      R0,[R0, #+4]
+   \       0x14   0xE156'0000        CMP      R6,R0
+   \       0x18   0x2A00'0019        BCS      ??_spid_transfer_current_buffer_polling_1
+    237          #ifdef CONFIG_HAVE_SPI_FIFO
+    238          		_spid_wait_tx_fifo_not_full(desc);
+   \       0x1C   0xE1B0'0004        MOVS     R0,R4
+   \       0x20   0x....'....        BL       _spid_wait_tx_fifo_not_full
+    239          #endif /* CONFIG_HAVE_SPI_FIFO */
+    240          
+    241          		if (desc->xfer.current->attr & BUS_BUF_ATTR_TX)
+   \       0x24   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x28   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0x2C   0xE310'0002        TST      R0,#0x2
+   \       0x30   0x0A00'0003        BEQ      ??_spid_transfer_current_buffer_polling_2
+    242          			data = desc->xfer.current->data[i];
+   \       0x34   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x38   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x3C   0xE7D0'7006        LDRB     R7,[R0, +R6]
+   \       0x40   0xEA00'0000        B        ??_spid_transfer_current_buffer_polling_3
+    243          		else
+    244          			data = 0xff;
+   \                     ??_spid_transfer_current_buffer_polling_2:
+   \       0x44   0xE3A0'70FF        MOV      R7,#+255
+    245          
+    246          		data = spi_transfer(desc->addr, data);
+   \                     ??_spid_transfer_current_buffer_polling_3:
+   \       0x48   0xE1B0'1007        MOVS     R1,R7
+   \       0x4C   0xE6EF'1071        UXTB     R1,R1
+   \       0x50   0xE6FF'1071        UXTH     R1,R1
+   \       0x54   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x58   0x....'....        BL       spi_transfer
+   \       0x5C   0xE1B0'5000        MOVS     R5,R0
+    247          
+    248          		if (desc->xfer.current->attr & BUS_BUF_ATTR_RX)
+   \       0x60   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x64   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0x68   0xE310'0001        TST      R0,#0x1
+   \       0x6C   0x0A00'0002        BEQ      ??_spid_transfer_current_buffer_polling_4
+    249          			desc->xfer.current->data[i] = data;
+   \       0x70   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x74   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x78   0xE7C0'5006        STRB     R5,[R0, +R6]
+    250          	}
+   \                     ??_spid_transfer_current_buffer_polling_4:
+   \       0x7C   0xE296'6001        ADDS     R6,R6,#+1
+   \       0x80   0xEAFF'FFE1        B        ??_spid_transfer_current_buffer_polling_0
+    251          
+    252          	_spid_transfer_next_buffer(desc);
+   \                     ??_spid_transfer_current_buffer_polling_1:
+   \       0x84   0xE1B0'0004        MOVS     R0,R4
+   \       0x88   0x....'....        BL       _spid_transfer_next_buffer
+    253          }
+   \       0x8C   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    254          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    255          static void _spid_transfer_current_buffer_async(struct _spi_desc* desc)
+    256          {
+   \                     _spid_transfer_current_buffer_async:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    257          	uint32_t id = get_spi_id_from_addr(desc->addr);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_spi_id_from_addr
+   \       0x10   0xE1B0'5000        MOVS     R5,R0
+    258          
+    259          	desc->xfer.async.rx = 0;
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \       0x18   0xE584'002C        STR      R0,[R4, #+44]
+    260          	desc->xfer.async.tx = 0;
+   \       0x1C   0xE584'0030        STR      R0,[R4, #+48]
+    261          
+    262          	spi_disable_it(desc->addr, ~0u);
+   \       0x20   0xE3E0'1000        MVN      R1,#+0
+   \       0x24   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x28   0x....'....        BL       spi_disable_it
+    263          	irq_add_handler(id, _spid_handler, desc);
+   \       0x2C   0xE1B0'2004        MOVS     R2,R4
+   \       0x30   0x....'....        ADR      R1,_spid_handler
+   \       0x34   0xE1B0'0005        MOVS     R0,R5
+   \       0x38   0x....'....        BL       irq_add_handler
+    264          	irq_enable(id);
+   \       0x3C   0xE1B0'0005        MOVS     R0,R5
+   \       0x40   0x....'....        BL       irq_enable
+    265          
+    266          	spi_enable_it(desc->addr, SPI_IER_RDRF | SPI_IER_TDRE);
+   \       0x44   0xE3A0'1003        MOV      R1,#+3
+   \       0x48   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x4C   0x....'....        BL       spi_enable_it
+    267          }
+   \       0x50   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    268          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    269          static void _spid_transfer_current_buffer(struct _spi_desc* desc)
+    270          {
+   \                     _spid_transfer_current_buffer:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    271          	enum _bus_transfer_mode tmode = (enum _bus_transfer_mode)desc->transfer_mode;
+   \        0x8   0xE594'5008        LDR      R5,[R4, #+8]
+    272          
+    273          	if (desc->xfer.current->size < SPID_POLLING_THRESHOLD)
+   \        0xC   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x10   0xE590'0004        LDR      R0,[R0, #+4]
+   \       0x14   0xE350'0010        CMP      R0,#+16
+   \       0x18   0x2A00'0001        BCS      ??_spid_transfer_current_buffer_0
+    274          		tmode = BUS_TRANSFER_MODE_POLLING;
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \       0x20   0xE1B0'5000        MOVS     R5,R0
+    275          
+    276          	switch (tmode) {
+   \                     ??_spid_transfer_current_buffer_0:
+   \       0x24   0xE1B0'0005        MOVS     R0,R5
+   \       0x28   0xE6EF'0070        UXTB     R0,R0
+   \       0x2C   0xE350'0000        CMP      R0,#+0
+   \       0x30   0x0A00'0003        BEQ      ??_spid_transfer_current_buffer_1
+   \       0x34   0xE350'0002        CMP      R0,#+2
+   \       0x38   0x0A00'0007        BEQ      ??_spid_transfer_current_buffer_2
+   \       0x3C   0x3A00'0003        BCC      ??_spid_transfer_current_buffer_3
+   \       0x40   0xEA00'0008        B        ??_spid_transfer_current_buffer_4
+    277          	case BUS_TRANSFER_MODE_POLLING:
+    278          		_spid_transfer_current_buffer_polling(desc);
+   \                     ??_spid_transfer_current_buffer_1:
+   \       0x44   0xE1B0'0004        MOVS     R0,R4
+   \       0x48   0x....'....        BL       _spid_transfer_current_buffer_polling
+    279          		break;
+   \       0x4C   0xEA00'000C        B        ??_spid_transfer_current_buffer_5
+    280          
+    281          	case BUS_TRANSFER_MODE_ASYNC:
+    282          		_spid_transfer_current_buffer_async(desc);
+   \                     ??_spid_transfer_current_buffer_3:
+   \       0x50   0xE1B0'0004        MOVS     R0,R4
+   \       0x54   0x....'....        BL       _spid_transfer_current_buffer_async
+    283          		break;
+   \       0x58   0xEA00'0009        B        ??_spid_transfer_current_buffer_5
+    284          
+    285          	case BUS_TRANSFER_MODE_DMA:
+    286          		_spid_transfer_current_buffer_dma(desc);
+   \                     ??_spid_transfer_current_buffer_2:
+   \       0x5C   0xE1B0'0004        MOVS     R0,R4
+   \       0x60   0x....'....        BL       _spid_transfer_current_buffer_dma
+    287          		break;
+   \       0x64   0xEA00'0006        B        ??_spid_transfer_current_buffer_5
+    288          
+    289          	default:
+    290          		trace_fatal("Unknown SPI transfer mode\r\n");
+   \                     ??_spid_transfer_current_buffer_4:
+   \       0x68   0x....'....        LDR      R0,??DataTable3_2
+   \       0x6C   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x70   0xE350'0000        CMP      R0,#+0
+   \       0x74   0x0A00'0001        BEQ      ??_spid_transfer_current_buffer_6
+   \       0x78   0x....'....        LDR      R0,??DataTable3_3
+   \       0x7C   0x....'....        BL       printf
+   \                     ??_spid_transfer_current_buffer_6:
+   \       0x80   0xEAFF'FFFE        B        ??_spid_transfer_current_buffer_6
+    291          	}
+    292          }
+   \                     ??_spid_transfer_current_buffer_5:
+   \       0x84   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    293          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    294          static void _spid_transfer_next_buffer(struct _spi_desc* desc)
+    295          {
+   \                     _spid_transfer_next_buffer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    296          	if (desc->xfer.current < desc->xfer.last) {
+   \        0x8   0xE594'001C        LDR      R0,[R4, #+28]
+   \        0xC   0xE594'1020        LDR      R1,[R4, #+32]
+   \       0x10   0xE150'0001        CMP      R0,R1
+   \       0x14   0x2A00'0005        BCS      ??_spid_transfer_next_buffer_0
+    297          		desc->xfer.current++;
+   \       0x18   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x1C   0xE290'000C        ADDS     R0,R0,#+12
+   \       0x20   0xE584'001C        STR      R0,[R4, #+28]
+    298          
+    299          		_spid_transfer_current_buffer(desc);
+   \       0x24   0xE1B0'0004        MOVS     R0,R4
+   \       0x28   0x....'....        BL       _spid_transfer_current_buffer
+   \       0x2C   0xEA00'000C        B        ??_spid_transfer_next_buffer_1
+    300          	} else {
+    301          		if (desc->xfer.current->attr & BUS_SPI_BUF_ATTR_RELEASE_CS)
+   \                     ??_spid_transfer_next_buffer_0:
+   \       0x30   0xE594'001C        LDR      R0,[R4, #+28]
+   \       0x34   0xE1D0'00B8        LDRH     R0,[R0, #+8]
+   \       0x38   0xE310'0E80        TST      R0,#0x800
+   \       0x3C   0x0A00'0001        BEQ      ??_spid_transfer_next_buffer_2
+    302          			spi_release_cs(desc->addr);
+   \       0x40   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x44   0x....'....        BL       spi_release_cs
+    303          
+    304          		desc->xfer.current = NULL;
+   \                     ??_spid_transfer_next_buffer_2:
+   \       0x48   0xE3A0'0000        MOV      R0,#+0
+   \       0x4C   0xE584'001C        STR      R0,[R4, #+28]
+    305          		mutex_unlock(&desc->mutex);
+   \       0x50   0xE294'000C        ADDS     R0,R4,#+12
+   \       0x54   0x....'....        BL       mutex_unlock
+    306          		callback_call(&desc->xfer.callback, NULL);
+   \       0x58   0xE3A0'1000        MOV      R1,#+0
+   \       0x5C   0xE294'0024        ADDS     R0,R4,#+36
+   \       0x60   0x....'....        BL       callback_call
+    307          	}
+    308          }
+   \                     ??_spid_transfer_next_buffer_1:
+   \       0x64   0xE8BD'8010        POP      {R4,PC}          ;; return
+    309          
+    310          /*----------------------------------------------------------------------------
+    311           *        Public functions
+    312           *----------------------------------------------------------------------------*/
+    313          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    314          int spid_transfer(struct _spi_desc* desc,
+    315          		struct _buffer* buffers, int buffer_count,
+    316          		struct _callback* cb)
+    317          {
+   \                     spid_transfer:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+    318          	int i;
+    319          
+    320          	if (buffers == NULL)
+   \       0x14   0xE355'0000        CMP      R5,#+0
+   \       0x18   0x1A00'0001        BNE      ??spid_transfer_0
+    321          		return -EINVAL;
+   \       0x1C   0xE3E0'001B        MVN      R0,#+27
+   \       0x20   0xEA00'0025        B        ??spid_transfer_1
+    322          
+    323          	for (i = 0 ; i < buffer_count ; i++) {
+   \                     ??spid_transfer_0:
+   \       0x24   0xE3A0'8000        MOV      R8,#+0
+   \                     ??spid_transfer_2:
+   \       0x28   0xE158'0006        CMP      R8,R6
+   \       0x2C   0xAA00'0008        BGE      ??spid_transfer_3
+    324          		if ((buffers[i].attr & (BUS_BUF_ATTR_TX | BUS_BUF_ATTR_RX)) == 0)
+   \       0x30   0xE088'0088        ADD      R0,R8,R8, LSL #+1
+   \       0x34   0xE095'0100        ADDS     R0,R5,R0, LSL #+2
+   \       0x38   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0x3C   0xE310'0003        TST      R0,#0x3
+   \       0x40   0x1A00'0001        BNE      ??spid_transfer_4
+    325          			return -EINVAL;
+   \       0x44   0xE3E0'001B        MVN      R0,#+27
+   \       0x48   0xEA00'001B        B        ??spid_transfer_1
+    326          	}
+   \                     ??spid_transfer_4:
+   \       0x4C   0xE298'8001        ADDS     R8,R8,#+1
+   \       0x50   0xEAFF'FFF4        B        ??spid_transfer_2
+    327          
+    328          	if (!mutex_try_lock(&desc->mutex)) {
+   \                     ??spid_transfer_3:
+   \       0x54   0xE294'000C        ADDS     R0,R4,#+12
+   \       0x58   0x....'....        BL       mutex_try_lock
+   \       0x5C   0xE350'0000        CMP      R0,#+0
+   \       0x60   0x1A00'0007        BNE      ??spid_transfer_5
+    329          		trace_error("SPID mutex already locked!\r\n");
+   \       0x64   0x....'....        LDR      R0,??DataTable3_2
+   \       0x68   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x6C   0xE350'0002        CMP      R0,#+2
+   \       0x70   0x3A00'0001        BCC      ??spid_transfer_6
+   \       0x74   0x....'....        LDR      R0,??DataTable3_4
+   \       0x78   0x....'....        BL       printf
+    330          		return -EBUSY;
+   \                     ??spid_transfer_6:
+   \       0x7C   0xE3E0'0009        MVN      R0,#+9
+   \       0x80   0xEA00'000D        B        ??spid_transfer_1
+    331          	}
+    332          
+    333          	spi_select_cs(desc->addr, desc->chip_select);
+   \                     ??spid_transfer_5:
+   \       0x84   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x88   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x8C   0x....'....        BL       spi_select_cs
+    334          
+    335          	desc->xfer.current = buffers;
+   \       0x90   0xE584'501C        STR      R5,[R4, #+28]
+    336          	desc->xfer.last = &buffers[buffer_count - 1];
+   \       0x94   0xE086'0086        ADD      R0,R6,R6, LSL #+1
+   \       0x98   0xE095'0100        ADDS     R0,R5,R0, LSL #+2
+   \       0x9C   0xE250'000C        SUBS     R0,R0,#+12
+   \       0xA0   0xE584'0020        STR      R0,[R4, #+32]
+    337          	callback_copy(&desc->xfer.callback, cb);
+   \       0xA4   0xE1B0'1007        MOVS     R1,R7
+   \       0xA8   0xE294'0024        ADDS     R0,R4,#+36
+   \       0xAC   0x....'....        BL       callback_copy
+    338          
+    339          	_spid_transfer_current_buffer(desc);
+   \       0xB0   0xE1B0'0004        MOVS     R0,R4
+   \       0xB4   0x....'....        BL       _spid_transfer_current_buffer
+    340          
+    341          	return 0;
+   \       0xB8   0xE3A0'0000        MOV      R0,#+0
+   \                     ??spid_transfer_1:
+   \       0xBC   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    342          }
+    343          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    344          bool spid_is_busy(struct _spi_desc* desc)
+    345          {
+   \                     spid_is_busy:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    346          	return mutex_is_locked(&desc->mutex);
+   \        0x8   0xE294'000C        ADDS     R0,R4,#+12
+   \        0xC   0x....'....        BL       mutex_is_locked
+   \       0x10   0xE8BD'8010        POP      {R4,PC}          ;; return
+    347          }
+    348          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    349          void spid_wait_transfer(struct _spi_desc* desc)
+    350          {
+   \                     spid_wait_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    351          	while (spid_is_busy(desc)) {
+   \                     ??spid_wait_transfer_0:
+   \        0x8   0xE1B0'0004        MOVS     R0,R4
+   \        0xC   0x....'....        BL       spid_is_busy
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x0A00'0004        BEQ      ??spid_wait_transfer_1
+    352          		if (desc->transfer_mode == BUS_TRANSFER_MODE_DMA)
+   \       0x18   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x1C   0xE350'0002        CMP      R0,#+2
+   \       0x20   0x1AFF'FFF8        BNE      ??spid_wait_transfer_0
+    353          			dma_poll();
+   \       0x24   0x....'....        BL       dma_poll
+   \       0x28   0xEAFF'FFF6        B        ??spid_wait_transfer_0
+    354          	}
+    355          }
+   \                     ??spid_wait_transfer_1:
+   \       0x2C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    356          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    357          int spid_configure(struct _spi_desc* desc)
+    358          {
+   \                     spid_configure:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    359          	uint32_t id = get_spi_id_from_addr(desc->addr);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_spi_id_from_addr
+   \       0x10   0xE1B0'5000        MOVS     R5,R0
+    360          
+    361          #ifdef CONFIG_HAVE_FLEXCOM
+    362          	Flexcom* flexcom = get_flexcom_addr_from_id(id);
+   \       0x14   0xE1B0'0005        MOVS     R0,R5
+   \       0x18   0x....'....        BL       get_flexcom_addr_from_id
+   \       0x1C   0xE1B0'6000        MOVS     R6,R0
+    363          	if (flexcom)
+   \       0x20   0xE356'0000        CMP      R6,#+0
+   \       0x24   0x0A00'0002        BEQ      ??spid_configure_0
+    364          		flexcom_select(flexcom, FLEX_MR_OPMODE_SPI);
+   \       0x28   0xE3A0'1002        MOV      R1,#+2
+   \       0x2C   0xE1B0'0006        MOVS     R0,R6
+   \       0x30   0x....'....        BL       flexcom_select
+    365          #endif
+    366          	pmc_configure_peripheral(id, NULL, true);
+   \                     ??spid_configure_0:
+   \       0x34   0xE3A0'2001        MOV      R2,#+1
+   \       0x38   0xE3A0'1000        MOV      R1,#+0
+   \       0x3C   0xE1B0'0005        MOVS     R0,R5
+   \       0x40   0x....'....        BL       pmc_configure_peripheral
+    367          	spi_configure(desc->addr);
+   \       0x44   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x48   0x....'....        BL       spi_configure
+    368          	spi_mode_master_enable(desc->addr, true);
+   \       0x4C   0xE3A0'1001        MOV      R1,#+1
+   \       0x50   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x54   0x....'....        BL       spi_mode_master_enable
+    369          #ifdef CONFIG_HAVE_SPI_FIFO
+    370          	_spid_fifo_configure(desc);
+   \       0x58   0xE1B0'0004        MOVS     R0,R4
+   \       0x5C   0x....'....        BL       _spid_fifo_configure
+    371          	if (desc->use_fifo)
+   \       0x60   0xE5D4'0010        LDRB     R0,[R4, #+16]
+   \       0x64   0xE350'0000        CMP      R0,#+0
+   \       0x68   0x0A00'0001        BEQ      ??spid_configure_1
+    372          		spi_fifo_enable(desc->addr);
+   \       0x6C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x70   0x....'....        BL       spi_fifo_enable
+    373          #endif
+    374          
+    375          	spi_disable_it(desc->addr, ~0u);
+   \                     ??spid_configure_1:
+   \       0x74   0xE3E0'1000        MVN      R1,#+0
+   \       0x78   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x7C   0x....'....        BL       spi_disable_it
+    376          	desc->xfer.dma.tx_channel = 0;
+   \       0x80   0xE3A0'0000        MOV      R0,#+0
+   \       0x84   0xE584'0038        STR      R0,[R4, #+56]
+    377          	desc->xfer.dma.rx_channel = 0;
+   \       0x88   0xE584'0034        STR      R0,[R4, #+52]
+    378          
+    379          	spi_enable(desc->addr);
+   \       0x8C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x90   0x....'....        BL       spi_enable
+    380          
+    381          	return 0;
+   \       0x94   0xE3A0'0000        MOV      R0,#+0
+   \       0x98   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    382          }
+    383          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    384          void spid_configure_cs(struct _spi_desc* desc, uint8_t cs,
+    385          		uint32_t bitrate, uint32_t delay_dlybs, uint32_t delay_dlybct,
+    386          		enum _spid_mode mode)
+    387          {
+   \                     spid_configure_cs:
+   \        0x0   0xE92D'43FE        PUSH     {R1-R9,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE5DD'802C        LDRB     R8,[SP, #+44]
+    388          	uint32_t csr = SPI_CSR_BITS_8_BIT | SPI_CSR_CSAAT;
+   \       0x18   0xE3A0'9008        MOV      R9,#+8
+    389          
+    390          	switch (mode) {
+   \       0x1C   0xE1B0'0008        MOVS     R0,R8
+   \       0x20   0xE6EF'0070        UXTB     R0,R0
+   \       0x24   0xE350'0003        CMP      R0,#+3
+   \       0x28   0x8A00'0008        BHI      ??spid_configure_cs_1
+   \       0x2C   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \       0x30   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??spid_configure_cs_0:
+   \       0x34   0x00 0x02          DC8      0x0,0x2,0x3,0x5
+
+   \              0x03 0x05
+    391          	case SPID_MODE_0:
+    392          		csr |= SPI_CSR_NCPHA;
+   \                     ??spid_configure_cs_2:
+   \       0x38   0xE399'9002        ORRS     R9,R9,#0x2
+    393          		break;
+   \       0x3C   0xEA00'0003        B        ??spid_configure_cs_1
+    394          	case SPID_MODE_1:
+    395          		csr |= 0;
+    396          		break;
+   \                     ??spid_configure_cs_3:
+   \       0x40   0xEA00'0002        B        ??spid_configure_cs_1
+    397          	case SPID_MODE_2:
+    398          		csr |= SPI_CSR_CPOL | SPI_CSR_NCPHA;
+   \                     ??spid_configure_cs_4:
+   \       0x44   0xE399'9003        ORRS     R9,R9,#0x3
+    399          		break;
+   \       0x48   0xEA00'0000        B        ??spid_configure_cs_1
+    400          	case SPID_MODE_3:
+    401          		csr |= SPI_CSR_CPOL;
+   \                     ??spid_configure_cs_5:
+   \       0x4C   0xE399'9001        ORRS     R9,R9,#0x1
+    402          		break;
+    403          	}
+    404          
+    405          	spi_configure_cs(desc->addr, cs, bitrate, delay_dlybs, delay_dlybct, csr);
+   \                     ??spid_configure_cs_1:
+   \       0x50   0xE58D'9004        STR      R9,[SP, #+4]
+   \       0x54   0xE59D'0028        LDR      R0,[SP, #+40]
+   \       0x58   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x5C   0xE1B0'3007        MOVS     R3,R7
+   \       0x60   0xE1B0'2006        MOVS     R2,R6
+   \       0x64   0xE1B0'1005        MOVS     R1,R5
+   \       0x68   0xE6EF'1071        UXTB     R1,R1
+   \       0x6C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x70   0x....'....        BL       spi_configure_cs
+    406          }
+   \       0x74   0xE8BD'83F7        POP      {R0-R2,R4-R9,PC}  ;; return
+    407          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    408          void spid_set_cs_bitrate(struct _spi_desc* desc, uint8_t cs, uint32_t bitrate)
+    409          {
+   \                     spid_set_cs_bitrate:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    410          	spi_set_cs_bitrate(desc->addr, cs, bitrate);
+   \       0x10   0xE1B0'2006        MOVS     R2,R6
+   \       0x14   0xE1B0'1005        MOVS     R1,R5
+   \       0x18   0xE6EF'1071        UXTB     R1,R1
+   \       0x1C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x20   0x....'....        BL       spi_set_cs_bitrate
+    411          }
+   \       0x24   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    412          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    413          int spid_configure_master(struct _spi_desc* desc, bool master)
+    414          {
+   \                     spid_configure_master:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    415          	spi_disable(desc->addr);
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0x....'....        BL       spi_disable
+    416          	spi_mode_master_enable(desc->addr, master);
+   \       0x14   0xE1B0'1005        MOVS     R1,R5
+   \       0x18   0xE6EF'1071        UXTB     R1,R1
+   \       0x1C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x20   0x....'....        BL       spi_mode_master_enable
+    417          	spi_enable(desc->addr);
+   \       0x24   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x28   0x....'....        BL       spi_enable
+    418          
+    419          	return 0;
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \       0x30   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    420          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_2:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_3:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_4:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x46          DC8 "-F- Unknown SPI transfer mode\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x6B 0x6E    
+
+   \              0x6F 0x77    
+
+   \              0x6E 0x20    
+
+   \              0x53 0x50    
+
+   \              0x49 0x20    
+
+   \              0x74 0x72    
+
+   \              0x61 0x6E    
+
+   \              0x73 0x66    
+
+   \              0x65 0x72    
+
+   \              0x20 0x6D    
+
+   \              0x6F 0x64    
+
+   \              0x65 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x2D 0x45          DC8 "-E- SPID mutex already locked!\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x53 0x50    
+
+   \              0x49 0x44    
+
+   \              0x20 0x6D    
+
+   \              0x75 0x74    
+
+   \              0x65 0x78    
+
+   \              0x20 0x61    
+
+   \              0x6C 0x72    
+
+   \              0x65 0x61    
+
+   \              0x64 0x79    
+
+   \              0x20 0x6C    
+
+   \              0x6F 0x63    
+
+   \              0x6B 0x65    
+
+   \              0x64 0x21    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x21   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   _spid_dma_rx_callback
+        16   -> _spid_transfer_next_buffer
+        16   -> cache_invalidate_region
+        16   -> dma_reset_channel
+      16   _spid_dma_tx_callback
+        16   -> dma_reset_channel
+      16   _spid_fifo_configure
+        16   -> get_peripheral_fifo_depth
+        16   -> spi_fifo_configure
+        16 __aeabi_idiv
+      32   _spid_handler
+        32   -> _spid_transfer_next_buffer
+        32   -> _spid_wait_tx_fifo_not_full
+        32   -> get_spi_addr_from_id
+        32   -> spi_disable_it
+        32   -> spi_enable_it
+        32   -> spi_get_masked_status
+        32   -> spi_read
+        32   -> spi_write
+      16   _spid_transfer_current_buffer
+        16   -> _spid_transfer_current_buffer_async
+        16   -> _spid_transfer_current_buffer_dma
+        16   -> _spid_transfer_current_buffer_polling
+        16   -> printf
+      16   _spid_transfer_current_buffer_async
+        16   -> get_spi_id_from_addr
+        16   -> irq_add_handler
+        16   -> irq_enable
+        16   -> spi_disable_it
+        16   -> spi_enable_it
+      72   _spid_transfer_current_buffer_dma
+        72   -> cache_clean_region
+        72   -> callback_set
+        72   -> dma_allocate_channel
+        72   -> dma_configure_transfer
+        72   -> dma_reset_channel
+        72   -> dma_set_callback
+        72   -> dma_start_transfer
+        72   -> get_spi_id_from_addr
+      24   _spid_transfer_current_buffer_polling
+        24   -> _spid_transfer_next_buffer
+        24   -> _spid_wait_tx_fifo_not_full
+        24   -> spi_transfer
+       8   _spid_transfer_next_buffer
+         8   -> _spid_transfer_current_buffer
+         8   -> callback_call
+         8   -> mutex_unlock
+         8   -> spi_release_cs
+       0   _spid_wait_tx_fifo_not_full
+      16   spid_configure
+        16   -> _spid_fifo_configure
+        16   -> flexcom_select
+        16   -> get_flexcom_addr_from_id
+        16   -> get_spi_id_from_addr
+        16   -> pmc_configure_peripheral
+        16   -> spi_configure
+        16   -> spi_disable_it
+        16   -> spi_enable
+        16   -> spi_fifo_enable
+        16   -> spi_mode_master_enable
+      40   spid_configure_cs
+        40   -> spi_configure_cs
+      16   spid_configure_master
+        16   -> spi_disable
+        16   -> spi_enable
+        16   -> spi_mode_master_enable
+       8   spid_is_busy
+         8   -> mutex_is_locked
+      16   spid_set_cs_bitrate
+        16   -> spi_set_cs_bitrate
+      24   spid_transfer
+        24   -> _spid_transfer_current_buffer
+        24   -> callback_copy
+        24   -> mutex_try_lock
+        24   -> printf
+        24   -> spi_select_cs
+       8   spid_wait_transfer
+         8   -> dma_poll
+         8   -> spid_is_busy
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+       4  ??DataTable3_3
+       4  ??DataTable3_4
+      32  ?_0
+      36  ?_1
+      12  ?_2
+      12  ?_3
+      12  ?_4
+      12  ?_5
+       4  _garbage
+      76  _spid_dma_rx_callback
+      32  _spid_dma_tx_callback
+      96  _spid_fifo_configure
+     352  _spid_handler
+     136  _spid_transfer_current_buffer
+      84  _spid_transfer_current_buffer_async
+     436  _spid_transfer_current_buffer_dma
+     144  _spid_transfer_current_buffer_polling
+     104  _spid_transfer_next_buffer
+      32  _spid_wait_tx_fifo_not_full
+     156  spid_configure
+     120  spid_configure_cs
+      52  spid_configure_master
+      20  spid_is_busy
+      40  spid_set_cs_bitrate
+     192  spid_transfer
+      48  spid_wait_transfer
+
+ 
+     4 bytes in section .region_cache_aligned
+   116 bytes in section .rodata
+ 2'140 bytes in section SOFTPACK
+ 
+ 2'140 bytes of CODE  memory
+   116 bytes of CONST memory
+     4 bytes of DATA  memory
+
+Errors: none
+Warnings: none

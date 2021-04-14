@@ -1,0 +1,2000 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         13/Jan/2021  09:45:21
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\security\secumod.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW8255.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\security\secumod.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-A5 -e --fpu=VFPv4_D16 --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\List\secumod.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\Obj\secumod.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\security\secumod.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2011, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup secumod_module Working with Security Module
+     31           * \ingroup peripherals_module
+     32           * The SECUMOD driver provides the interface to configure and use the SECUMOD (Security Module).
+     33           *
+     34           * It provides secure functions to avoid attacks on the chip.
+     35           *
+     36           * To use these functions,the user has to follow these few steps:
+     37           * <ul>
+     38           * <li> Configure the SECUMOD according to its requirements and special needs, which
+     39           * could be broken down into several parts:
+     40           * - Configure PIOBU pins and JTAG pins protection mode if necessary</li>
+     41           * - Configure secure memories' access rights</li>
+     42           * - Configure scrambling mode</li>
+     43           * - Configure the interrupts
+     44           </li>
+     45           * <li> Access violation occurs once there's no right to access the secure memories. </li>
+     46           * <li> Once attacks occur the tamper info will be recorded or.</li>
+     47           * <li> Lower 6 Kbytes and 512-bit register bank will be erasing automatically incase of intrusion.</li>
+     48           * </ul>
+     49           *
+     50           * \section Usage
+     51           * <ul>
+     52           * <li> Initialize the SECUMOD peripheral using secumod_set_auto_backup(), secumod_set_scrambling()
+     53           * and secumod_piobu_config().
+     54           * <li> Enable & disable SECUMOD interrupt using secumod_enable_it() and secumod_disable_it().
+     55           * <li> Get interrupt mask using secumod_get_normal_it_mask().
+     56           * <li> Register SECUMOD_BMPR and SECUMOD_NMPR can be toggled the appearance using secumod_toggle_protection_reg().
+     57           * <li> Get & set protections in normal mode using secumod_get_normal_mode_protections() and secumod_set_normal_mode_protections().
+     58           * <li> Get & set protections in backup mode using secumod_get_backup_mode_protections() and secumod_set_backup_mode_protections().
+     59           * <li> Get & set protections in wakeup mode using secumod_get_wakeup_protections() and secumod_set_wakeup_protections().
+     60           * <li> Set the secure RAM's access rights using secumod_set_ram_access_rights().
+     61           * <li> Get & set RAM Scrambling Key using secumod_get_scrambling_key() and secumod_set_scrambling_key().
+     62           * <li> Read & write the secure RAM using secumod_read_internal_memory() and secumod_write_internal_memory()
+     63            or directly by SECURAM->SECURAM_4KB[], SECURAM->SECURAM_1KB[] and SECURAM->SECURAM_256b[].
+     64           * <li> Enable/Disable alarm regenerated periodically while intrusion is maintained
+     65           using secumod_periodic_alarm().
+     66           * <li> PIOBU pins can set to static or dynamic intrusion mode using secumod_spiobu_set_static_mode()
+     67            or secumod_piobu_set_dynamic_mode();
+     68           * <li> JTAG pins protection options can be set using secumod_set_jtag_protection();
+     69           * <li> Tuning dynamic signatures by period and threshold using secumod_dynamic_signatures_tuning();
+     70           * <li> Using secumod_software_protection() can start clear the secure RAM;
+     71           * <li> Switch to normal or backup mode using secumod_switch_to_normal_mode() or secumod_switch_to_backup_mode();
+     72           * <li> Two dedicated ISR are used: SECUMOD_IrqHandler() for SECUMOD's alarm and
+     73           SECURAM_IrqHandler() for secure RAM;
+     74           * </li>
+     75           * </ul>
+     76           *
+     77           * For more accurate information, please look at datasheet “SAMA5D2 Security
+     78           *  Module” (Atmel literature No. 44036).
+     79           *
+     80           * \see secumod_driver
+     81           *
+     82           * Related files :\n
+     83           * \ref secumodc.c\n
+     84           * \ref secumodc.h.\n
+     85          */
+     86          /*@{*/
+     87          /*@}*/
+     88          
+     89          /**
+     90           * \file
+     91           *
+     92           * Interface for Security Module (SECUMOD).
+     93           *
+     94           */
+     95          
+     96          /*----------------------------------------------------------------------------
+     97           *        Headers
+     98           *----------------------------------------------------------------------------*/
+     99          
+    100          #include "secumod.h"
+    101          
+    102          #include "irq/irq.h"
+    103          #include "peripherals/pit.h"
+    104          #include "peripherals/pmc.h"
+    105          #include "peripherals/rtc.h"
+    106          
+    107          #include <assert.h>
+    108          #include <stdint.h>
+    109          #include <stdio.h>
+    110          #include <string.h>
+    111          
+    112          /*----------------------------------------------------------------------------
+    113           *        Local definitions
+    114           *----------------------------------------------------------------------------*/
+    115          
+    116          struct _secumod {
+    117          	/** tamper information */
+    118          	struct _tamper_info tamper_info;
+    119          
+    120          	/** Callback for access violations */
+    121          	secumod_access_violation_callback_t access_callback;
+    122          
+    123          	/** Callback for internal memory erased */
+    124          	secumod_memory_erased_callback_t erased_callback;
+    125          
+    126          	/** Callback for tamper */
+    127          	secumod_tamper_callback_t tamper_callback;
+    128          };
+    129          
+    130          /*----------------------------------------------------------------------------
+    131           *        Local variables
+    132           *----------------------------------------------------------------------------*/
+    133          
+    134          /** SECUMOD driver instance */
+
+   \                                 In section .bss, align 4
+    135          static struct _secumod secumod_inst;
+   \                     secumod_inst:
+   \        0x0                      DS8 56
+    136          
+    137          /*----------------------------------------------------------------------------
+    138           *        Interrupt Service Routines
+    139           *----------------------------------------------------------------------------*/
+    140          
+    141          /**
+    142           * \brief Interrupt handler for SECURAM.
+    143           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    144          static void securam_irq_handler(uint32_t source, void* user_arg)
+    145          {
+   \                     securam_irq_handler:
+   \        0x0   0xE92D'4FF2        PUSH     {R1,R4-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    146          	uint32_t status, protections;
+    147          	uint32_t tmp;
+    148          	uint32_t i;
+    149          
+    150          	assert(source == ID_SECURAM);
+   \        0x8   0xE354'0033        CMP      R4,#+51
+   \        0xC   0x0A00'0004        BEQ      ??securam_irq_handler_0
+   \       0x10   0xE3A0'2096        MOV      R2,#+150
+   \       0x14   0x....'....        LDR      R1,??DataTable30
+   \       0x18   0x....'....        LDR      R0,??DataTable30_1
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    151          
+    152          	protections = secumod_get_normal_mode_protections();
+   \                     ??securam_irq_handler_0:
+   \       0x24   0x....'....        BL       secumod_get_normal_mode_protections
+   \       0x28   0xE1B0'6000        MOVS     R6,R0
+    153          
+    154          	/* Read Periodic Interval Timer Value, also clears the PICNT */
+    155          	(void)pit_get_pivr();
+   \       0x2C   0x....'....        BL       pit_get_pivr
+    156          
+    157          	/* Read RAM access violation flags */
+    158          	status = SECUMOD->SECUMOD_RAMACCSR;
+   \       0x30   0x....'....        LDR      R9,??DataTable30_2  ;; 0xfc040078
+   \       0x34   0xE599'7000        LDR      R7,[R9, #+0]
+    159          
+    160          	for (i = 0; i < SECUMOD_RAM_REGION_NUM; i++)
+   \       0x38   0xE3A0'8000        MOV      R8,#+0
+   \                     ??securam_irq_handler_1:
+   \       0x3C   0xE358'0006        CMP      R8,#+6
+   \       0x40   0x2A00'0011        BCS      ??securam_irq_handler_2
+    161          	{
+    162          		tmp = (status >> (2 * i)) & 3;
+   \       0x44   0xE1B0'0008        MOVS     R0,R8
+   \       0x48   0xE1B0'0080        LSLS     R0,R0,#+1
+   \       0x4C   0xE3A0'1003        MOV      R1,#+3
+   \       0x50   0xE011'0037        ANDS     R0,R1,R7, LSR R0
+   \       0x54   0xE1B0'5000        MOVS     R5,R0
+    163          		if (tmp != SECUMOD_RAMACCSR_NO_VIOLATION && secumod_inst.access_callback)
+   \       0x58   0xE355'0000        CMP      R5,#+0
+   \       0x5C   0x0A00'0008        BEQ      ??securam_irq_handler_3
+   \       0x60   0x....'....        LDR      R2,??DataTable30_3
+   \       0x64   0xE592'002C        LDR      R0,[R2, #+44]
+   \       0x68   0xE350'0000        CMP      R0,#+0
+   \       0x6C   0x0A00'0004        BEQ      ??securam_irq_handler_3
+    164          			secumod_inst.access_callback(i, tmp);
+   \       0x70   0xE1B0'1005        MOVS     R1,R5
+   \       0x74   0xE1B0'0008        MOVS     R0,R8
+   \       0x78   0xE6EF'0070        UXTB     R0,R0
+   \       0x7C   0xE592'202C        LDR      R2,[R2, #+44]
+   \       0x80   0xE12F'FF32        BLX      R2
+    165          	}
+   \                     ??securam_irq_handler_3:
+   \       0x84   0xE298'8001        ADDS     R8,R8,#+1
+   \       0x88   0xEAFF'FFEB        B        ??securam_irq_handler_1
+    166          
+    167          	/* process the end of erase signalling */
+    168          	do {
+    169          		status = SECUMOD->SECUMOD_SYSR;
+   \                     ??securam_irq_handler_2:
+   \       0x8C   0x....'....        LDR      R0,??DataTable30_4  ;; 0xfc040004
+   \       0x90   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x94   0xE1B0'7001        MOVS     R7,R1
+    170          	} while (status & SECUMOD_SYSR_ERASE_ON);
+   \       0x98   0xE317'0002        TST      R7,#0x2
+   \       0x9C   0x1AFF'FFFA        BNE      ??securam_irq_handler_2
+    171          
+    172          	if (SECUMOD_SYSR_ERASE_DONE == (status & SECUMOD_SYSR_ERASE_DONE))
+   \       0xA0   0xE317'0001        TST      R7,#0x1
+   \       0xA4   0x0A00'0007        BEQ      ??securam_irq_handler_4
+    173          	{
+    174          		/* Clear the flag ERASE_DONE */
+    175          		SECUMOD->SECUMOD_SYSR = SECUMOD_SYSR_ERASE_DONE;
+   \       0xA8   0xE3A0'1001        MOV      R1,#+1
+   \       0xAC   0xE580'1000        STR      R1,[R0, #+0]
+    176          
+    177          		/* call the callback routine */
+    178          		if (secumod_inst.erased_callback)
+   \       0xB0   0x....'....        LDR      R0,??DataTable30_3
+   \       0xB4   0xE590'1030        LDR      R1,[R0, #+48]
+   \       0xB8   0xE351'0000        CMP      R1,#+0
+   \       0xBC   0x0A00'0001        BEQ      ??securam_irq_handler_4
+    179          			secumod_inst.erased_callback();
+   \       0xC0   0xE590'0030        LDR      R0,[R0, #+48]
+   \       0xC4   0xE12F'FF30        BLX      R0
+    180          	}
+    181          
+    182          	/* wait at least one slow clock */
+    183          	while ((1000000 / pmc_get_slow_clock()) >=
+    184          			((pit_get_piir() & PIT_PIIR_PICNT_Msk) >> PIT_PIIR_PICNT_Pos));
+   \                     ??securam_irq_handler_4:
+   \       0xC8   0x....'....        BL       pmc_get_slow_clock
+   \       0xCC   0xE1B0'A000        MOVS     R10,R0
+   \       0xD0   0x....'....        BL       pit_get_piir
+   \       0xD4   0xE1B0'B000        MOVS     R11,R0
+   \       0xD8   0xE3A0'0AF4        MOV      R0,#+999424
+   \       0xDC   0xE380'0F90        ORR      R0,R0,#0x240
+   \       0xE0   0xE1B0'100A        MOVS     R1,R10
+   \       0xE4   0x....'....        BL       __aeabi_uidiv
+   \       0xE8   0xE150'0A2B        CMP      R0,R11, LSR #+20
+   \       0xEC   0x2AFF'FFF5        BCS      ??securam_irq_handler_4
+    185          
+    186          	/* Clear RAM access violation flags */
+    187          	SECUMOD->SECUMOD_RAMACCSR = status;
+   \       0xF0   0xE589'7000        STR      R7,[R9, #+0]
+    188          
+    189          	/* Read alarm status */
+    190          	status = secumod_get_status();
+   \       0xF4   0x....'....        BL       secumod_get_status
+   \       0xF8   0xE1B0'9000        MOVS     R9,R0
+    191          
+    192          	/* Clear corresponding alarm flag bit to make sure the protection can
+    193          	 * be detected next time when the corresponding tamper happens */
+    194          	secumod_clear_status(status);
+   \       0xFC   0xE1B0'0009        MOVS     R0,R9
+   \      0x100   0x....'....        BL       secumod_clear_status
+    195          
+    196          	secumod_set_normal_mode_protections(protections);
+   \      0x104   0xE1B0'0006        MOVS     R0,R6
+   \      0x108   0x....'....        BL       secumod_set_normal_mode_protections
+    197          }
+   \      0x10C   0xE8BD'8FF1        POP      {R0,R4-R11,PC}   ;; return
+    198          
+    199          /**
+    200           * \brief Interrupt handler for SECUMOD.
+    201           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    202          static void secumod_irq_handler(uint32_t source, void* user_arg)
+    203          {
+   \                     secumod_irq_handler:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    204          	uint32_t status, index, protections;
+    205          	struct _tamper_detail *detail;
+    206          
+    207          	assert(source == ID_SECUMOD);
+   \        0xC   0xE354'0010        CMP      R4,#+16
+   \       0x10   0x0A00'0004        BEQ      ??secumod_irq_handler_0
+   \       0x14   0xE3A0'20CF        MOV      R2,#+207
+   \       0x18   0x....'....        LDR      R1,??DataTable30
+   \       0x1C   0x....'....        LDR      R0,??DataTable30_5
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    208          
+    209          	/* Read Periodic Interval Timer Value, also clears the PICNT */
+    210          	(void)pit_get_pivr();
+   \                     ??secumod_irq_handler_0:
+   \       0x28   0x....'....        BL       pit_get_pivr
+    211          
+    212          	/* Read alarm status */
+    213          	status = secumod_get_status();
+   \       0x2C   0x....'....        BL       secumod_get_status
+   \       0x30   0xE1B0'7000        MOVS     R7,R0
+    214          
+    215          	/* Disable the interrupt */
+    216          	protections = secumod_get_normal_it_mask();
+   \       0x34   0x....'....        BL       secumod_get_normal_it_mask
+   \       0x38   0xE1B0'8000        MOVS     R8,R0
+    217          	secumod_disable_it(status & protections);
+   \       0x3C   0xE018'0007        ANDS     R0,R8,R7
+   \       0x40   0x....'....        BL       secumod_disable_it
+    218          	//secumod_set_normal_mode_protections((~status) & protections);
+    219          
+    220          	/*Clear the tamper_info bits before checking the tamper type*/
+    221          	secumod_inst.tamper_info.jtag_sel_ca5 = false;
+   \       0x44   0xE3A0'0000        MOV      R0,#+0
+   \       0x48   0x....'....        LDR      R9,??DataTable30_3
+   \       0x4C   0xE5C9'0000        STRB     R0,[R9, #+0]
+    222          	secumod_inst.tamper_info.jtag_tck_tms = false;
+   \       0x50   0xE5C9'0001        STRB     R0,[R9, #+1]
+    223          
+    224          	/* Read auxiliary status if needed */
+    225          	if (status & SECUMOD_SR_JTAG) {
+   \       0x54   0xE317'0008        TST      R7,#0x8
+   \       0x58   0x0A00'0007        BEQ      ??secumod_irq_handler_1
+    226          		uint32_t jtag = SECUMOD->SECUMOD_ASR;
+   \       0x5C   0x....'....        LDR      R0,??DataTable30_6  ;; 0xfc04000c
+   \       0x60   0xE590'0000        LDR      R0,[R0, #+0]
+    227          		secumod_inst.tamper_info.jtag_sel_ca5 = (jtag & SECUMOD_ASR_JTAG) != 0;
+   \       0x64   0xE1B0'1220        LSRS     R1,R0,#+4
+   \       0x68   0xE211'1001        ANDS     R1,R1,#0x1
+   \       0x6C   0xE5C9'1000        STRB     R1,[R9, #+0]
+    228          		secumod_inst.tamper_info.jtag_tck_tms = (jtag & SECUMOD_ASR_TCK) != 0;
+   \       0x70   0xE1B0'02A0        LSRS     R0,R0,#+5
+   \       0x74   0xE210'0001        ANDS     R0,R0,#0x1
+   \       0x78   0xE5C9'0001        STRB     R0,[R9, #+1]
+    229          	}
+    230          
+    231          	/* Read tamper counter */
+    232          	secumod_inst.tamper_info.tampers = rtc_get_tamper_event_counter();
+   \                     ??secumod_irq_handler_1:
+   \       0x7C   0x....'....        BL       rtc_get_tamper_event_counter
+   \       0x80   0xE589'0004        STR      R0,[R9, #+4]
+    233          
+    234          	/* Update the total counter */
+    235          	if (secumod_inst.tamper_info.total_tampers < 0xFFFFFFF0)
+   \       0x84   0xE599'0008        LDR      R0,[R9, #+8]
+   \       0x88   0xE370'0010        CMN      R0,#+16
+   \       0x8C   0x2A00'0003        BCS      ??secumod_irq_handler_2
+    236          		secumod_inst.tamper_info.total_tampers += secumod_inst.tamper_info.tampers;
+   \       0x90   0xE599'0008        LDR      R0,[R9, #+8]
+   \       0x94   0xE599'1004        LDR      R1,[R9, #+4]
+   \       0x98   0xE091'0000        ADDS     R0,R1,R0
+   \       0x9C   0xE589'0008        STR      R0,[R9, #+8]
+    237          
+    238          	/* Read tamper information */
+    239          	index = (secumod_inst.tamper_info.tampers >= 2 ) ? 2 : secumod_inst.tamper_info.tampers;
+   \                     ??secumod_irq_handler_2:
+   \       0xA0   0xE599'0004        LDR      R0,[R9, #+4]
+   \       0xA4   0xE350'0002        CMP      R0,#+2
+   \       0xA8   0x3A00'0001        BCC      ??secumod_irq_handler_3
+   \       0xAC   0xE3A0'A002        MOV      R10,#+2
+   \       0xB0   0xEA00'0000        B        ??secumod_irq_handler_4
+   \                     ??secumod_irq_handler_3:
+   \       0xB4   0xE599'A004        LDR      R10,[R9, #+4]
+    240          	while (index) {
+   \                     ??secumod_irq_handler_4:
+   \       0xB8   0xE35A'0000        CMP      R10,#+0
+   \       0xBC   0x0A00'0011        BEQ      ??secumod_irq_handler_5
+    241          		index--;
+   \       0xC0   0xE25A'A001        SUBS     R10,R10,#+1
+    242          		detail = &(secumod_inst.tamper_info.details[index]);
+   \       0xC4   0xE1B0'020A        LSLS     R0,R10,#+4
+   \       0xC8   0xE099'0000        ADDS     R0,R9,R0
+   \       0xCC   0xE290'000C        ADDS     R0,R0,#+12
+   \       0xD0   0xE1B0'6000        MOVS     R6,R0
+    243          		rtc_get_tamper_time(&detail->time, index);
+   \       0xD4   0xE1B0'100A        MOVS     R1,R10
+   \       0xD8   0xE6EF'1071        UXTB     R1,R1
+   \       0xDC   0xE296'0006        ADDS     R0,R6,#+6
+   \       0xE0   0x....'....        BL       rtc_get_tamper_time
+    244          		rtc_get_tamper_date(&detail->date, index);
+   \       0xE4   0xE1B0'100A        MOVS     R1,R10
+   \       0xE8   0xE6EF'1071        UXTB     R1,R1
+   \       0xEC   0xE1B0'0006        MOVS     R0,R6
+   \       0xF0   0x....'....        BL       rtc_get_tamper_date
+    245          		detail->source = rtc_get_tamper_source(index);
+   \       0xF4   0xE1B0'000A        MOVS     R0,R10
+   \       0xF8   0xE6EF'0070        UXTB     R0,R0
+   \       0xFC   0x....'....        BL       rtc_get_tamper_source
+   \      0x100   0xE586'000C        STR      R0,[R6, #+12]
+   \      0x104   0xEAFF'FFEB        B        ??secumod_irq_handler_4
+    246          	}
+    247          
+    248          	/* call the callback routine */
+    249          	if (secumod_inst.tamper_callback)
+   \                     ??secumod_irq_handler_5:
+   \      0x108   0xE599'0034        LDR      R0,[R9, #+52]
+   \      0x10C   0xE350'0000        CMP      R0,#+0
+   \      0x110   0x0A00'0001        BEQ      ??secumod_irq_handler_6
+    250          		secumod_inst.tamper_callback();
+   \      0x114   0xE599'0034        LDR      R0,[R9, #+52]
+   \      0x118   0xE12F'FF30        BLX      R0
+    251          
+    252          	/* ==== ATTENTION ====
+    253          	* it is recommended to wait at lease one slow clock period after reading
+    254          	* the Status register before clearing the status bits. */
+    255          
+    256          	/* wait at least one slow clock */
+    257          	while ((1000000 / pmc_get_slow_clock()) >=
+    258          			((pit_get_piir() & PIT_PIIR_PICNT_Msk) >> PIT_PIIR_PICNT_Pos)) ;
+   \                     ??secumod_irq_handler_6:
+   \      0x11C   0x....'....        BL       pmc_get_slow_clock
+   \      0x120   0xE1B0'9000        MOVS     R9,R0
+   \      0x124   0x....'....        BL       pit_get_piir
+   \      0x128   0xE1B0'B000        MOVS     R11,R0
+   \      0x12C   0xE3A0'0AF4        MOV      R0,#+999424
+   \      0x130   0xE380'0F90        ORR      R0,R0,#0x240
+   \      0x134   0xE1B0'1009        MOVS     R1,R9
+   \      0x138   0x....'....        BL       __aeabi_uidiv
+   \      0x13C   0xE150'0A2B        CMP      R0,R11, LSR #+20
+   \      0x140   0x2AFF'FFF5        BCS      ??secumod_irq_handler_6
+    259          
+    260          	/* Clear corresponding alarm flag bit */
+    261          	secumod_clear_status(status);
+   \      0x144   0xE1B0'0007        MOVS     R0,R7
+   \      0x148   0x....'....        BL       secumod_clear_status
+    262          
+    263          	/* Enable the interrupt */
+    264          	secumod_enable_it(status & protections);
+   \      0x14C   0xE018'0007        ANDS     R0,R8,R7
+   \      0x150   0x....'....        BL       secumod_enable_it
+    265          
+    266          	/* To only get an interrupt when tamper error happens without Auto
+    267          	 * Erasing SECURAM, the following line need to be commented */
+    268          	//secumod_set_normal_mode_protections(protections);
+    269          }
+   \      0x154   0xE8BD'8FF1        POP      {R0,R4-R11,PC}   ;; return
+    270          
+    271          /*----------------------------------------------------------------------------
+    272           *        Exported functions
+    273           *----------------------------------------------------------------------------*/
+    274          
+    275          /**
+    276           * \brief Initialize SECUMOD driver instance.
+    277           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    278          void secumod_initialize(void)
+    279          {
+   \                     secumod_initialize:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+    280          	/* Enable SECUMOD module clock in PMC */
+    281          	pmc_configure_peripheral(ID_SECUMOD, NULL, true);
+   \        0x4   0xE3A0'2001        MOV      R2,#+1
+   \        0x8   0xE3A0'1000        MOV      R1,#+0
+   \        0xC   0xE3A0'0010        MOV      R0,#+16
+   \       0x10   0x....'....        BL       pmc_configure_peripheral
+    282          
+    283          	memset(&secumod_inst, 0, sizeof(secumod_inst));
+   \       0x14   0xE3A0'4038        MOV      R4,#+56
+   \       0x18   0xE3A0'5000        MOV      R5,#+0
+   \       0x1C   0x....'....        LDR      R6,??DataTable30_3
+   \       0x20   0xE1B0'7006        MOVS     R7,R6
+   \       0x24   0xE1B0'2005        MOVS     R2,R5
+   \       0x28   0xE1B0'1004        MOVS     R1,R4
+   \       0x2C   0xE1B0'0007        MOVS     R0,R7
+   \       0x30   0x....'....        BL       __aeabi_memset
+   \       0x34   0xE1B0'0007        MOVS     R0,R7
+    284          	secumod_inst.tamper_info.total_tampers = 0;
+   \       0x38   0xE3A0'0000        MOV      R0,#+0
+   \       0x3C   0xE586'0008        STR      R0,[R6, #+8]
+    285          	secumod_inst.tamper_info.tampers = 0;
+   \       0x40   0xE586'0004        STR      R0,[R6, #+4]
+    286          	secumod_inst.tamper_info.jtag_sel_ca5 = false;
+   \       0x44   0xE5C6'0000        STRB     R0,[R6, #+0]
+    287          	secumod_inst.tamper_info.jtag_tck_tms = false;
+   \       0x48   0xE5C6'0001        STRB     R0,[R6, #+1]
+    288          
+    289          	/* Set irq handler */
+    290          	irq_add_handler(ID_SECUMOD, secumod_irq_handler, NULL);
+   \       0x4C   0xE3A0'2000        MOV      R2,#+0
+   \       0x50   0x....'....        ADR      R1,secumod_irq_handler
+   \       0x54   0xE3A0'0010        MOV      R0,#+16
+   \       0x58   0x....'....        BL       irq_add_handler
+    291          	irq_add_handler(ID_SECURAM, securam_irq_handler, NULL);
+   \       0x5C   0xE3A0'2000        MOV      R2,#+0
+   \       0x60   0x....'....        ADR      R1,securam_irq_handler
+   \       0x64   0xE3A0'0033        MOV      R0,#+51
+   \       0x68   0x....'....        BL       irq_add_handler
+    292          }
+   \       0x6C   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    293          
+    294          /**
+    295           * \brief Set the callback function for Access Violations in SECUMOD.
+    296           * \param callback Pointer to callback function.
+    297           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    298          void secumod_set_access_callback(secumod_access_violation_callback_t callback)
+    299          {
+    300          	secumod_inst.access_callback = callback;
+   \                     secumod_set_access_callback:
+   \        0x0   0x....'....        LDR      R1,??DataTable30_3
+   \        0x4   0xE581'002C        STR      R0,[R1, #+44]
+    301          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    302          
+    303          /**
+    304           * \brief Set the callback function for Internal Memory Erased in SECUMOD.
+    305           * \param callback Pointer to callback function.
+    306           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    307          void secumod_set_erased_callback(secumod_memory_erased_callback_t callback)
+    308          {
+    309          	secumod_inst.erased_callback = callback;
+   \                     secumod_set_erased_callback:
+   \        0x0   0x....'....        LDR      R1,??DataTable30_3
+   \        0x4   0xE581'0030        STR      R0,[R1, #+48]
+    310          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    311          
+    312          /**
+    313           * \brief Set the callback function for tamper in SECUMOD.
+    314           * \param callback Pointer to callback function.
+    315           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    316          void secumod_set_tamper_callback(secumod_tamper_callback_t callback)
+    317          {
+    318          	secumod_inst.tamper_callback = callback;
+   \                     secumod_set_tamper_callback:
+   \        0x0   0x....'....        LDR      R1,??DataTable30_3
+   \        0x4   0xE581'0034        STR      R0,[R1, #+52]
+    319          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    320          
+    321          /**
+    322           * \brief Get tamper information
+    323           * \return Pointer to tamper information structure.
+    324           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    325          struct _tamper_info * secumod_get_tamper_info(void)
+    326          {
+    327          	return &secumod_inst.tamper_info;
+   \                     secumod_get_tamper_info:
+   \        0x0   0x....'....        LDR      R0,??DataTable30_3
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    328          }
+    329          
+    330          /**
+    331           * \brief Switch to backup mode.
+    332           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    333          void secumod_switch_to_backup_mode(void)
+    334          {
+    335          	SECUMOD->SECUMOD_CR = SECUMOD_CR_BACKUP;
+   \                     secumod_switch_to_backup_mode:
+   \        0x0   0xE3A0'0001        MOV      R0,#+1
+   \        0x4   0xE3A0'14FC        MOV      R1,#-67108864
+   \        0x8   0xE381'1A40        ORR      R1,R1,#0x40000
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+    336          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    337          
+    338          /**
+    339           * \brief Switch to normal mode.
+    340           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    341          void secumod_switch_to_normal_mode(void)
+    342          {
+    343          	SECUMOD->SECUMOD_CR = SECUMOD_CR_NORMAL;
+   \                     secumod_switch_to_normal_mode:
+   \        0x0   0xE3A0'0002        MOV      R0,#+2
+   \        0x4   0xE3A0'14FC        MOV      R1,#-67108864
+   \        0x8   0xE381'1A40        ORR      R1,R1,#0x40000
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+    344          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    345          
+    346          /**
+    347           * \brief Start clear content of SECUMOD internal RAM 4Kbyte and 256bits.
+    348           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    349          void secumod_software_protection(void)
+    350          {
+    351          	SECUMOD->SECUMOD_CR = SECUMOD_CR_SWPROT;
+   \                     secumod_software_protection:
+   \        0x0   0xE3A0'0004        MOV      R0,#+4
+   \        0x4   0xE3A0'14FC        MOV      R1,#-67108864
+   \        0x8   0xE381'1A40        ORR      R1,R1,#0x40000
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+    352          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    353          
+    354          /**
+    355           * \brief Enable/Disable Auto-Backup
+    356           * \param enable Enable auto-backup if true, disable otherwise.
+    357           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    358          void secumod_set_auto_backup(bool enable)
+    359          {
+    360          	if (enable)
+   \                     secumod_set_auto_backup:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+   \        0x4   0xE6EF'1071        UXTB     R1,R1
+   \        0x8   0xE351'0000        CMP      R1,#+0
+   \        0xC   0x0A00'0004        BEQ      ??secumod_set_auto_backup_0
+    361          		SECUMOD->SECUMOD_CR = SECUMOD_CR_AUTOBKP_AUTO_SWITCH;
+   \       0x10   0xE3A0'1008        MOV      R1,#+8
+   \       0x14   0xE3A0'24FC        MOV      R2,#-67108864
+   \       0x18   0xE382'2A40        ORR      R2,R2,#0x40000
+   \       0x1C   0xE582'1000        STR      R1,[R2, #+0]
+   \       0x20   0xEA00'0003        B        ??secumod_set_auto_backup_1
+    362          	else
+    363          		SECUMOD->SECUMOD_CR = SECUMOD_CR_AUTOBKP_SW_SWITCH;
+   \                     ??secumod_set_auto_backup_0:
+   \       0x24   0xE3A0'1010        MOV      R1,#+16
+   \       0x28   0xE3A0'24FC        MOV      R2,#-67108864
+   \       0x2C   0xE382'2A40        ORR      R2,R2,#0x40000
+   \       0x30   0xE582'1000        STR      R1,[R2, #+0]
+    364          }
+   \                     ??secumod_set_auto_backup_1:
+   \       0x34   0xE12F'FF1E        BX       LR               ;; return
+    365          
+    366          /**
+    367           * \brief Enable/Disable Memory Scrambling
+    368           * \param enable Enable memory scrambling if true, disable otherwise.
+    369           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    370          void secumod_set_scrambling(bool enable)
+    371          {
+    372          	if (enable)
+   \                     secumod_set_scrambling:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+   \        0x4   0xE6EF'1071        UXTB     R1,R1
+   \        0x8   0xE351'0000        CMP      R1,#+0
+   \        0xC   0x0A00'0004        BEQ      ??secumod_set_scrambling_0
+    373          		SECUMOD->SECUMOD_CR = SECUMOD_CR_SCRAMB_ENABLE;
+   \       0x10   0xE3A0'1008        MOV      R1,#+8
+   \       0x14   0xE3A0'24FC        MOV      R2,#-67108864
+   \       0x18   0xE382'2A40        ORR      R2,R2,#0x40000
+   \       0x1C   0xE582'1000        STR      R1,[R2, #+0]
+   \       0x20   0xEA00'0003        B        ??secumod_set_scrambling_1
+    374          	else
+    375          		SECUMOD->SECUMOD_CR = SECUMOD_CR_SCRAMB_DISABLE;
+   \                     ??secumod_set_scrambling_0:
+   \       0x24   0xE3A0'1010        MOV      R1,#+16
+   \       0x28   0xE3A0'24FC        MOV      R2,#-67108864
+   \       0x2C   0xE382'2A40        ORR      R2,R2,#0x40000
+   \       0x30   0xE582'1000        STR      R1,[R2, #+0]
+    376          }
+   \                     ??secumod_set_scrambling_1:
+   \       0x34   0xE12F'FF1E        BX       LR               ;; return
+    377          
+    378          /**
+    379           * \brief Toggle normal or backup protection registers appear and disappear.
+    380           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    381          void secumod_toggle_protection_reg(void)
+    382          {
+    383          	SECUMOD->SECUMOD_CR = SECUMOD_CR_KEY_TOGGLE;
+   \                     secumod_toggle_protection_reg:
+   \        0x0   0xE3A0'0489        MOV      R0,#-1996488704
+   \        0x4   0xE380'08CA        ORR      R0,R0,#0xCA0000
+   \        0x8   0xE3A0'14FC        MOV      R1,#-67108864
+   \        0xC   0xE381'1A40        ORR      R1,R1,#0x40000
+   \       0x10   0xE581'0000        STR      R0,[R1, #+0]
+    384          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+    385          
+    386          /**
+    387           * \brief Get system status.
+    388           *
+    389           * \return system status.
+    390           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    391          uint32_t secumod_get_system_status(void)
+    392          {
+    393          	return SECUMOD->SECUMOD_SYSR;
+   \                     secumod_get_system_status:
+   \        0x0   0x....'....        LDR      R0,??DataTable30_4  ;; 0xfc040004
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    394          }
+    395          
+    396          /**
+    397           * \brief Set system status.
+    398           *
+    399           * \param status system status to set.
+    400           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    401          void secumod_set_system_status(uint32_t status)
+    402          {
+    403          	SECUMOD->SECUMOD_SYSR = status;
+   \                     secumod_set_system_status:
+   \        0x0   0x....'....        LDR      R1,??DataTable30_4  ;; 0xfc040004
+   \        0x4   0xE581'0000        STR      R0,[R1, #+0]
+    404          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    405          
+    406          /**
+    407           * \brief Get status register.
+    408           *
+    409           * \return status register.
+    410           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    411          uint32_t secumod_get_status(void)
+    412          {
+    413          	return SECUMOD->SECUMOD_SR;
+   \                     secumod_get_status:
+   \        0x0   0x....'....        LDR      R0,??DataTable30_7  ;; 0xfc040008
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    414          }
+    415          
+    416          /**
+    417           * \brief Clear status register bits.
+    418           *
+    419           * \param status status bits to clear.
+    420           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    421          void secumod_clear_status(uint32_t status)
+    422          {
+    423          	SECUMOD->SECUMOD_SCR = status;
+   \                     secumod_clear_status:
+   \        0x0   0x....'....        LDR      R1,??DataTable30_8  ;; 0xfc040010
+   \        0x4   0xE581'0000        STR      R0,[R1, #+0]
+    424          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    425          
+    426          /**
+    427           * \brief Configures PIOBU pin instances.
+    428           *
+    429           * \param pBiobu    Pointer to struct _secumod_piobu instances list.
+    430           * \param dwSize    Number of PIOBU pin instances.
+    431           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    432          void secumod_piobu_config(struct _secumod_piobu *list, uint32_t size)
+    433          {
+   \                     secumod_piobu_config:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    434          	uint32_t uwI;
+    435          	uint32_t dwTmp;
+    436          	uint8_t ucPiobu;
+    437          	struct _secumod_piobu *pBiobu;
+    438          
+    439          	for (uwI = 0; uwI < size; uwI++) {
+   \        0x4   0xE3A0'E000        MOV      LR,#+0
+   \        0x8   0xE1B0'400E        MOVS     R4,LR
+   \                     ??secumod_piobu_config_0:
+   \        0xC   0xE154'0001        CMP      R4,R1
+   \       0x10   0x2A00'003B        BCS      ??secumod_piobu_config_1
+    440          		ucPiobu = list[uwI].pinIndex;
+   \       0x14   0xE1B0'5104        LSLS     R5,R4,#+2
+   \       0x18   0xE790'5005        LDR      R5,[R0, +R5]
+   \       0x1C   0xE1B0'5EA5        LSRS     R5,R5,#+29
+   \       0x20   0xE1B0'3005        MOVS     R3,R5
+    441          		pBiobu = &list[uwI];
+   \       0x24   0xE1B0'5104        LSLS     R5,R4,#+2
+   \       0x28   0xE090'5005        ADDS     R5,R0,R5
+   \       0x2C   0xE1B0'C005        MOVS     R12,R5
+    442          
+    443          		/* AFV and RFV fields must be set to 0 when dynamic intrusion is selected. */
+    444          		if (pBiobu->dynamic) {
+   \       0x30   0xE59C'5000        LDR      R5,[R12, #+0]
+   \       0x34   0xE7E0'5A55        UBFX     R5,R5,#+20,#+1
+   \       0x38   0xE355'0000        CMP      R5,#+0
+   \       0x3C   0x0A00'0001        BEQ      ??secumod_piobu_config_2
+    445          		    dwTmp = 0;
+   \       0x40   0xE1B0'500E        MOVS     R5,LR
+   \       0x44   0xEA00'0004        B        ??secumod_piobu_config_3
+    446          		} else {
+    447          		    dwTmp = (pBiobu->afv << SECUMOD_PIOBU_AFV_Pos ) | (pBiobu->rfv << SECUMOD_PIOBU_RFV_Pos);
+   \                     ??secumod_piobu_config_2:
+   \       0x48   0xE5DC'5000        LDRB     R5,[R12, #+0]
+   \       0x4C   0xE215'500F        ANDS     R5,R5,#0xF
+   \       0x50   0xE59C'6000        LDR      R6,[R12, #+0]
+   \       0x54   0xE7E3'6256        UBFX     R6,R6,#+4,#+4
+   \       0x58   0xE195'5206        ORRS     R5,R5,R6, LSL #+4
+    448          		}
+    449          
+    450          		if (pBiobu->mode) {
+   \                     ??secumod_piobu_config_3:
+   \       0x5C   0xE59C'2000        LDR      R2,[R12, #+0]
+   \       0x60   0xE7E0'2452        UBFX     R2,R2,#+8,#+1
+   \       0x64   0xE352'0000        CMP      R2,#+0
+   \       0x68   0x0A00'0005        BEQ      ??secumod_piobu_config_4
+    451          			dwTmp |= SECUMOD_PIOBU_OUTPUT;
+   \       0x6C   0xE395'5F40        ORRS     R5,R5,#0x100
+    452          			if (pBiobu->outputLevel)
+   \       0x70   0xE59C'2000        LDR      R2,[R12, #+0]
+   \       0x74   0xE7E0'24D2        UBFX     R2,R2,#+9,#+1
+   \       0x78   0xE352'0000        CMP      R2,#+0
+   \       0x7C   0x0A00'0000        BEQ      ??secumod_piobu_config_4
+    453          				dwTmp |= SECUMOD_PIOBU_PIO_SOD;
+   \       0x80   0xE395'5F80        ORRS     R5,R5,#0x200
+    454          		}
+    455          
+    456          		dwTmp |= pBiobu->pullUpState << SECUMOD_PIOBU_PULLUP_Pos;
+   \                     ??secumod_piobu_config_4:
+   \       0x84   0xE59C'2000        LDR      R2,[R12, #+0]
+   \       0x88   0xE7E1'2652        UBFX     R2,R2,#+12,#+2
+   \       0x8C   0xE195'2602        ORRS     R2,R5,R2, LSL #+12
+    457          
+    458          		if (pBiobu->scheduled)
+   \       0x90   0xE59C'5000        LDR      R5,[R12, #+0]
+   \       0x94   0xE7E0'5755        UBFX     R5,R5,#+14,#+1
+   \       0x98   0xE355'0000        CMP      R5,#+0
+   \       0x9C   0x0A00'0000        BEQ      ??secumod_piobu_config_5
+    459          			dwTmp |= SECUMOD_PIOBU_SCHEDULE;
+   \       0xA0   0xE392'2C40        ORRS     R2,R2,#0x4000
+    460          
+    461          		if (pBiobu->inputDefaultLevel)
+   \                     ??secumod_piobu_config_5:
+   \       0xA4   0xE59C'5000        LDR      R5,[R12, #+0]
+   \       0xA8   0xE7E0'57D5        UBFX     R5,R5,#+15,#+1
+   \       0xAC   0xE355'0000        CMP      R5,#+0
+   \       0xB0   0x0A00'0000        BEQ      ??secumod_piobu_config_6
+    462          			dwTmp |= SECUMOD_PIOBU_SWITCH;
+   \       0xB4   0xE392'2C80        ORRS     R2,R2,#0x8000
+    463          
+    464          		/* FILTER3_5 and DYNSTAT fields exist only for even PIOBUs */
+    465          		if (0 == (ucPiobu & 0x01))
+   \                     ??secumod_piobu_config_6:
+   \       0xB8   0xE313'0001        TST      R3,#0x1
+   \       0xBC   0x1A00'0009        BNE      ??secumod_piobu_config_7
+    466          		{
+    467          			if (pBiobu->dynamic)
+   \       0xC0   0xE59C'5000        LDR      R5,[R12, #+0]
+   \       0xC4   0xE7E0'5A55        UBFX     R5,R5,#+20,#+1
+   \       0xC8   0xE355'0000        CMP      R5,#+0
+   \       0xCC   0x0A00'0000        BEQ      ??secumod_piobu_config_8
+    468          				dwTmp |= SECUMOD_PIOBU_DYNSTAT;
+   \       0xD0   0xE392'2940        ORRS     R2,R2,#0x100000
+    469          
+    470          			if (pBiobu->filter3_5)
+   \                     ??secumod_piobu_config_8:
+   \       0xD4   0xE59C'5000        LDR      R5,[R12, #+0]
+   \       0xD8   0xE7E0'5AD5        UBFX     R5,R5,#+21,#+1
+   \       0xDC   0xE355'0000        CMP      R5,#+0
+   \       0xE0   0x0A00'0000        BEQ      ??secumod_piobu_config_7
+    471          				dwTmp |=  SECUMOD_PIOBU_FILTER3_5;
+   \       0xE4   0xE392'2980        ORRS     R2,R2,#0x200000
+    472          		}
+    473          
+    474          		SECUMOD->SECUMOD_PIOBU[ucPiobu] = dwTmp;
+   \                     ??secumod_piobu_config_7:
+   \       0xE8   0x....'....        LDR      R5,??DataTable30_9  ;; 0xfc040018
+   \       0xEC   0xE1B0'6003        MOVS     R6,R3
+   \       0xF0   0xE6EF'6076        UXTB     R6,R6
+   \       0xF4   0xE1B0'6106        LSLS     R6,R6,#+2
+   \       0xF8   0xE785'2006        STR      R2,[R5, +R6]
+    475          	}
+   \       0xFC   0xE294'4001        ADDS     R4,R4,#+1
+   \      0x100   0xEAFF'FFC1        B        ??secumod_piobu_config_0
+    476          }
+   \                     ??secumod_piobu_config_1:
+   \      0x104   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    477          
+    478          /**
+    479           * \brief Change a pair of PIOBU pins to dynamic intrusion mode.
+    480           *
+    481           * \param pair Pair index, range 0~3.
+    482           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    483          void secumod_piobu_set_dynamic_mode(uint8_t pair)
+    484          {
+    485          	uint32_t tmp;
+    486          	volatile uint32_t *reg;
+    487          
+    488          	reg = &SECUMOD->SECUMOD_PIOBU[pair * 2];
+   \                     secumod_piobu_set_dynamic_mode:
+   \        0x0   0x....'....        LDR      R1,??DataTable30_9  ;; 0xfc040018
+   \        0x4   0xE1B0'2000        MOVS     R2,R0
+   \        0x8   0xE6EF'2072        UXTB     R2,R2
+   \        0xC   0xE1B0'2182        LSLS     R2,R2,#+3
+   \       0x10   0xE091'3002        ADDS     R3,R1,R2
+    489          
+    490          	tmp = reg[0] & ~(SECUMOD_PIOBU_RFV_Msk | SECUMOD_PIOBU_AFV_Msk);
+   \       0x14   0xE593'1000        LDR      R1,[R3, #+0]
+   \       0x18   0xE3D1'10FF        BICS     R1,R1,#0xFF
+    491          	reg[0] = tmp | SECUMOD_PIOBU_DYNSTAT;
+   \       0x1C   0xE391'2940        ORRS     R2,R1,#0x100000
+   \       0x20   0xE583'2000        STR      R2,[R3, #+0]
+    492          
+    493          	tmp = reg[1] & ~(SECUMOD_PIOBU_RFV_Msk | SECUMOD_PIOBU_AFV_Msk);
+   \       0x24   0xE593'2004        LDR      R2,[R3, #+4]
+   \       0x28   0xE3D2'20FF        BICS     R2,R2,#0xFF
+    494          	reg[1] = tmp;
+   \       0x2C   0xE583'2004        STR      R2,[R3, #+4]
+    495          }
+   \       0x30   0xE12F'FF1E        BX       LR               ;; return
+    496          
+    497          /**
+    498           * \brief Change a pair of PIOBU pins to static intrusion mode.
+    499           *
+    500           * \param pair          Pair index, range 0~3.
+    501           * \param reset_filter0 Reset filter value of the 1st pin in the pair, range 0~9.
+    502           * \param alarm_filter0 Alarm filter value of the 1st pin in the pair, range 0~9.
+    503           * \param reset_filter1 Reset filter value of the 2nd pin in the pair, range 0~9.
+    504           * \param alarm_filter1 Alarm filter value of the 2nd pin in the pair, range 0~9.
+    505           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    506          void secumod_piobu_set_static_mode(uint8_t pair,
+    507          		uint8_t reset_filter0, uint8_t alarm_filter0,
+    508          		uint8_t reset_filter1, uint8_t alarm_filter1)
+    509          {
+   \                     secumod_piobu_set_static_mode:
+   \        0x0   0xE92D'40F0        PUSH     {R4-R7,LR}
+   \        0x4   0xE5DD'C014        LDRB     R12,[SP, #+20]
+    510          	uint32_t tmp;
+    511          	volatile uint32_t *reg;
+    512          
+    513          	reg = &SECUMOD->SECUMOD_PIOBU[pair * 2];
+   \        0x8   0x....'....        LDR      LR,??DataTable30_9  ;; 0xfc040018
+   \        0xC   0xE1B0'4000        MOVS     R4,R0
+   \       0x10   0xE6EF'4074        UXTB     R4,R4
+   \       0x14   0xE1B0'4184        LSLS     R4,R4,#+3
+   \       0x18   0xE09E'E004        ADDS     LR,LR,R4
+    514          
+    515          	tmp = reg[0];
+   \       0x1C   0xE59E'4000        LDR      R4,[LR, #+0]
+    516          	tmp &= ~(SECUMOD_PIOBU_DYNSTAT | SECUMOD_PIOBU_RFV_Msk | SECUMOD_PIOBU_AFV_Msk);
+   \       0x20   0xE3E0'50FF        MVN      R5,#+255
+   \       0x24   0xE3C5'5940        BIC      R5,R5,#0x100000
+   \       0x28   0xE015'4004        ANDS     R4,R5,R4
+    517          	reg[0] = tmp | SECUMOD_PIOBU_RFV(reset_filter0) | SECUMOD_PIOBU_AFV(alarm_filter0);
+   \       0x2C   0xE1B0'5001        MOVS     R5,R1
+   \       0x30   0xE6EF'5075        UXTB     R5,R5
+   \       0x34   0xE3A0'60F0        MOV      R6,#+240
+   \       0x38   0xE016'5205        ANDS     R5,R6,R5, LSL #+4
+   \       0x3C   0xE195'5004        ORRS     R5,R5,R4
+   \       0x40   0xE1B0'6002        MOVS     R6,R2
+   \       0x44   0xE6EF'6076        UXTB     R6,R6
+   \       0x48   0xE216'600F        ANDS     R6,R6,#0xF
+   \       0x4C   0xE196'5005        ORRS     R5,R6,R5
+   \       0x50   0xE58E'5000        STR      R5,[LR, #+0]
+    518          
+    519          	tmp = reg[1];
+   \       0x54   0xE59E'5004        LDR      R5,[LR, #+4]
+    520          	tmp &= ~(SECUMOD_PIOBU_RFV_Msk | SECUMOD_PIOBU_AFV_Msk);
+   \       0x58   0xE3D5'50FF        BICS     R5,R5,#0xFF
+    521          	reg[0] = tmp | SECUMOD_PIOBU_RFV(reset_filter1) | SECUMOD_PIOBU_AFV(alarm_filter1);
+   \       0x5C   0xE1B0'6003        MOVS     R6,R3
+   \       0x60   0xE6EF'6076        UXTB     R6,R6
+   \       0x64   0xE3A0'70F0        MOV      R7,#+240
+   \       0x68   0xE017'6206        ANDS     R6,R7,R6, LSL #+4
+   \       0x6C   0xE196'6005        ORRS     R6,R6,R5
+   \       0x70   0xE1B0'700C        MOVS     R7,R12
+   \       0x74   0xE6EF'7077        UXTB     R7,R7
+   \       0x78   0xE217'700F        ANDS     R7,R7,#0xF
+   \       0x7C   0xE197'6006        ORRS     R6,R7,R6
+   \       0x80   0xE58E'6000        STR      R6,[LR, #+0]
+    522          }
+   \       0x84   0xE8BD'80F0        POP      {R4-R7,PC}       ;; return
+    523          
+    524          /**
+    525           * \brief Set JTAG protection options of SECUMOD.
+    526           *
+    527           * \param force_reset       Whether preventing debug state and BSD (Boundary Scan Diagnostics) to work.
+    528           * \param debug_permissions Debug permissions.
+    529           * \param ack_monitoring    Whether monitor the DBGACK signal.
+    530           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    531          void secumod_set_jtag_protection(bool force_reset, uint8_t debug_permissions,
+    532          		bool ack_monitoring)
+    533          {
+    534          	uint32_t jtag_cr;
+    535          
+    536          	jtag_cr = debug_permissions << SECUMOD_JTAGCR_CA5_DEBUG_MODE_Pos;
+   \                     secumod_set_jtag_protection:
+   \        0x0   0xE1B0'3001        MOVS     R3,R1
+   \        0x4   0xE6EF'3073        UXTB     R3,R3
+   \        0x8   0xE1B0'3083        LSLS     R3,R3,#+1
+    537          
+    538          	if (force_reset)
+   \        0xC   0xE1B0'C000        MOVS     R12,R0
+   \       0x10   0xE6EF'C07C        UXTB     R12,R12
+   \       0x14   0xE35C'0000        CMP      R12,#+0
+   \       0x18   0x0A00'0000        BEQ      ??secumod_set_jtag_protection_0
+    539          		jtag_cr |= SECUMOD_JTAGCR_FNTRST;
+   \       0x1C   0xE393'3001        ORRS     R3,R3,#0x1
+    540          
+    541          	if (ack_monitoring)
+   \                     ??secumod_set_jtag_protection_0:
+   \       0x20   0xE1B0'C002        MOVS     R12,R2
+   \       0x24   0xE6EF'C07C        UXTB     R12,R12
+   \       0x28   0xE35C'0000        CMP      R12,#+0
+   \       0x2C   0x0A00'0000        BEQ      ??secumod_set_jtag_protection_1
+    542          		jtag_cr |= SECUMOD_JTAGCR_CA5_DEBUG_MON;
+   \       0x30   0xE393'3010        ORRS     R3,R3,#0x10
+    543          
+    544          	SECUMOD->SECUMOD_JTAGCR = jtag_cr;
+   \                     ??secumod_set_jtag_protection_1:
+   \       0x34   0x....'....        LDR      R12,??DataTable30_10  ;; 0xfc040068
+   \       0x38   0xE58C'3000        STR      R3,[R12, #+0]
+    545          }
+   \       0x3C   0xE12F'FF1E        BX       LR               ;; return
+    546          
+    547          /**
+    548           * \brief Tuning dynamic signatures by period and threshold.
+    549           *
+    550           * \param period        Signature Clock Period.
+    551           * \param detection_thr Error Detection Threshold.
+    552           * \param reset_thr     Error Counter Reset Threshold.
+    553           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    554          void secumod_dynamic_signatures_tuning(uint16_t period,
+    555          		uint8_t detection_thr, uint8_t reset_thr)
+    556          {
+   \                     secumod_dynamic_signatures_tuning:
+   \        0x0   0xE92D'4000        PUSH     {LR}
+    557          	uint32_t dystune;
+    558          	dystune = SECUMOD->SECUMOD_DYSTUNE & SECUMOD_DYSTUNE_NOPA;
+   \        0x4   0x....'....        LDR      R12,??DataTable30_11  ;; 0xfc04006c
+   \        0x8   0xE59C'3000        LDR      R3,[R12, #+0]
+   \        0xC   0xE213'3080        ANDS     R3,R3,#0x80
+    559          	dystune |= SECUMOD_DYSTUNE_PERIOD(period);
+   \       0x10   0xE1B0'E000        MOVS     LR,R0
+   \       0x14   0xE6FF'E07E        UXTH     LR,LR
+   \       0x18   0xE193'380E        ORRS     R3,R3,LR, LSL #+16
+    560          	dystune |= SECUMOD_DYSTUNE_RX_ERROR_THRESHOLD(detection_thr);
+   \       0x1C   0xE1B0'E001        MOVS     LR,R1
+   \       0x20   0xE6EF'E07E        UXTB     LR,LR
+   \       0x24   0xE21E'E07F        ANDS     LR,LR,#0x7F
+   \       0x28   0xE19E'3003        ORRS     R3,LR,R3
+    561          	dystune |= SECUMOD_DYSTUNE_RX_OK_CORREL_NUMBER(reset_thr);
+   \       0x2C   0xE1B0'E002        MOVS     LR,R2
+   \       0x30   0xE6EF'E07E        UXTB     LR,LR
+   \       0x34   0xE193'340E        ORRS     R3,R3,LR, LSL #+8
+    562          	SECUMOD->SECUMOD_DYSTUNE = dystune;
+   \       0x38   0xE58C'3000        STR      R3,[R12, #+0]
+    563          }
+   \       0x3C   0xE8BD'8000        POP      {PC}             ;; return
+    564          
+    565          /**
+    566           * \brief Enable/Disable alarm regenerated periodically while intrusion is maintained.
+    567           *
+    568           * \param enable periodic alarm while intrusion is maintained, true - disable, false - enable.
+    569           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    570          void secumod_periodic_alarm(bool enable)
+    571          {
+    572          	uint32_t tmp;
+    573          
+    574          	tmp = SECUMOD->SECUMOD_DYSTUNE & ~SECUMOD_DYSTUNE_NOPA;
+   \                     secumod_periodic_alarm:
+   \        0x0   0x....'....        LDR      R2,??DataTable30_11  ;; 0xfc04006c
+   \        0x4   0xE592'1000        LDR      R1,[R2, #+0]
+   \        0x8   0xE3D1'1080        BICS     R1,R1,#0x80
+    575          	if (!enable)
+   \        0xC   0xE1B0'3000        MOVS     R3,R0
+   \       0x10   0xE6EF'3073        UXTB     R3,R3
+   \       0x14   0xE353'0000        CMP      R3,#+0
+   \       0x18   0x1A00'0000        BNE      ??secumod_periodic_alarm_0
+    576          		tmp |= SECUMOD_DYSTUNE_NOPA;
+   \       0x1C   0xE391'1080        ORRS     R1,R1,#0x80
+    577          	SECUMOD->SECUMOD_DYSTUNE = tmp;
+   \                     ??secumod_periodic_alarm_0:
+   \       0x20   0xE582'1000        STR      R1,[R2, #+0]
+    578          }
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    579          
+    580          /**
+    581           * \brief Set scrambling key for secure RAM in SECUMOD.
+    582           *
+    583           * \param key Scrambling key.
+    584           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    585          void secumod_set_scrambling_key(uint32_t key)
+    586          {
+    587          	SECUMOD->SECUMOD_SCRKEY = key;
+   \                     secumod_set_scrambling_key:
+   \        0x0   0x....'....        LDR      R1,??DataTable30_12  ;; 0xfc040070
+   \        0x4   0xE581'0000        STR      R0,[R1, #+0]
+    588          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    589          
+    590          /**
+    591           * \brief Get scrambling key for secure RAM in SECUMOD.
+    592           *
+    593           * \return Scrambling key.
+    594           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    595          uint32_t secumod_get_scrambling_key(void)
+    596          {
+    597          	return SECUMOD->SECUMOD_SCRKEY;
+   \                     secumod_get_scrambling_key:
+   \        0x0   0x....'....        LDR      R0,??DataTable30_12  ;; 0xfc040070
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    598          }
+    599          
+    600          /**
+    601           * \brief Set access rights for secure RAM in SECUMOD.
+    602           *
+    603           * \param region  RAM region N,
+    604           *                for N = 0~5: RAM range (N)Kbyte ~ (N+1)Kbyte;
+    605           *                for N = 5: register bank 256bit.
+    606           * \param rights  0: No access allowed;
+    607           *                1: Only write access allowed;
+    608           *                2: Only read access allowed;
+    609           *                3: Read and write access allowed.
+    610           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    611          void secumod_set_ram_access_rights(uint32_t region, uint8_t rights)
+    612          {
+   \                     secumod_set_ram_access_rights:
+   \        0x0   0xE92D'4000        PUSH     {LR}
+    613          	uint32_t tmp;
+    614          	tmp = SECUMOD->SECUMOD_RAMACC & ~SECUMOD_RAMACC_RWx_Msk(region);
+   \        0x4   0x....'....        LDR      R3,??DataTable30_13  ;; 0xfc040074
+   \        0x8   0xE593'2000        LDR      R2,[R3, #+0]
+   \        0xC   0xE3A0'C003        MOV      R12,#+3
+   \       0x10   0xE1B0'E000        MOVS     LR,R0
+   \       0x14   0xE1B0'E08E        LSLS     LR,LR,#+1
+   \       0x18   0xE1F0'CE1C        MVNS     R12,R12, LSL LR
+   \       0x1C   0xE01C'2002        ANDS     R2,R12,R2
+    615          	SECUMOD->SECUMOD_RAMACC = tmp | (rights << SECUMOD_RAMACC_RWx_Pos(region));
+   \       0x20   0xE1B0'C001        MOVS     R12,R1
+   \       0x24   0xE6EF'C07C        UXTB     R12,R12
+   \       0x28   0xE1B0'E000        MOVS     LR,R0
+   \       0x2C   0xE1B0'E08E        LSLS     LR,LR,#+1
+   \       0x30   0xE192'CE1C        ORRS     R12,R2,R12, LSL LR
+   \       0x34   0xE583'C000        STR      R12,[R3, #+0]
+    616          }
+   \       0x38   0xE8BD'8000        POP      {PC}             ;; return
+    617          
+    618          /**
+    619           * \brief Set protections enabled in backup mode.
+    620           * \note Make sure registers appears before call this function, to toggle the
+    621           * appearance of the registers using secumod_toggle_protection_reg().
+    622           *
+    623           * \param sources Bitwise OR of protections.
+    624           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    625          void secumod_set_backup_mode_protections(uint32_t sources)
+    626          {
+    627          	SECUMOD->SECUMOD_BMPR = sources;
+   \                     secumod_set_backup_mode_protections:
+   \        0x0   0x....'....        LDR      R1,??DataTable30_14  ;; 0xfc04007c
+   \        0x4   0xE581'0000        STR      R0,[R1, #+0]
+    628          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    629          
+    630          /**
+    631           * \brief Get protections enabled in backup mode.
+    632           * \note Make sure registers appears before call this function, to toggle the
+    633           * appearance of the registers using secumod_toggle_protection_reg().
+    634           *
+    635           * \return Bitwise OR of protections.
+    636           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    637          uint32_t secumod_get_backup_mode_protections()
+    638          {
+    639          	return SECUMOD->SECUMOD_BMPR;
+   \                     secumod_get_backup_mode_protections:
+   \        0x0   0x....'....        LDR      R0,??DataTable30_14  ;; 0xfc04007c
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    640          }
+    641          
+    642          /**
+    643           * \brief Set protections enabled in normal mode.
+    644           * \note Make sure registers appears before call this function, to toggle the
+    645           * appearance of the registers using secumod_toggle_protection_reg().
+    646           *
+    647           * \param sources Bitwise OR of protections.
+    648           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    649          void secumod_set_normal_mode_protections(uint32_t sources)
+    650          {
+   \                     secumod_set_normal_mode_protections:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    651          	SECUMOD->SECUMOD_NMPR = sources;
+   \        0x8   0x....'....        LDR      R5,??DataTable30_15  ;; 0xfc040080
+   \        0xC   0xE585'4000        STR      R4,[R5, #+0]
+    652          
+    653          	if (SECUMOD->SECUMOD_NMPR != sources) {
+   \       0x10   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x14   0xE150'0004        CMP      R0,R4
+   \       0x18   0x0A00'0001        BEQ      ??secumod_set_normal_mode_protections_0
+    654          		secumod_toggle_protection_reg();
+   \       0x1C   0x....'....        BL       secumod_toggle_protection_reg
+    655          		SECUMOD->SECUMOD_NMPR = sources;
+   \       0x20   0xE585'4000        STR      R4,[R5, #+0]
+    656          	}
+    657          }
+   \                     ??secumod_set_normal_mode_protections_0:
+   \       0x24   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    658          
+    659          /**
+    660           * \brief Get protections enabled in normal mode.
+    661           * \note This function would makes the Normal and Backup Protection Registers appear.
+    662           *
+    663           * \return Bitwise OR of protections.
+    664           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    665          uint32_t secumod_get_normal_mode_protections(void)
+    666          {
+    667          	return SECUMOD->SECUMOD_NMPR;
+   \                     secumod_get_normal_mode_protections:
+   \        0x0   0x....'....        LDR      R0,??DataTable30_15  ;; 0xfc040080
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    668          }
+    669          
+    670          /**
+    671           * \brief Set protection sources which can cause wake up signal generated.
+    672           *
+    673           * \param sources Bitwise OR of protection sources.
+    674           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    675          void secumod_set_wakeup_protections(uint32_t sources)
+    676          {
+    677          	SECUMOD->SECUMOD_WKPR = sources;
+   \                     secumod_set_wakeup_protections:
+   \        0x0   0x....'....        LDR      R1,??DataTable30_16  ;; 0xfc040090
+   \        0x4   0xE581'0000        STR      R0,[R1, #+0]
+    678          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    679          
+    680          /**
+    681           * \brief Get protection sources which can cause wake up signal generated.
+    682           *
+    683           * \return Bitwise OR of protection sources.
+    684           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    685          uint32_t secumod_get_wakeup_protections(void)
+    686          {
+    687          	return SECUMOD->SECUMOD_WKPR;
+   \                     secumod_get_wakeup_protections:
+   \        0x0   0x....'....        LDR      R0,??DataTable30_16  ;; 0xfc040090
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    688          }
+    689          
+    690          /**
+    691           * \brief Enables one or more interrupt sources of a SECUMOD.
+    692           * \note Make sure registers appears before call this function, to toggle the
+    693           * appearance of the registers using secumod_toggle_protection_reg().
+    694           *
+    695           * \param sources Bitwise OR of selected interrupt sources.
+    696           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    697          void secumod_enable_it(uint32_t sources)
+    698          {
+   \                     secumod_enable_it:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    699          	SECUMOD->SECUMOD_NIEPR = sources;
+   \        0x8   0x....'....        LDR      R0,??DataTable30_17  ;; 0xfc040084
+   \        0xC   0xE580'4000        STR      R4,[R0, #+0]
+    700          	if (sources) {
+   \       0x10   0xE354'0000        CMP      R4,#+0
+   \       0x14   0x0A00'0003        BEQ      ??secumod_enable_it_0
+    701          		/* Enable SECUMOD/Secure RAM interrupts */
+    702          		irq_enable(ID_SECUMOD);
+   \       0x18   0xE3A0'0010        MOV      R0,#+16
+   \       0x1C   0x....'....        BL       irq_enable
+    703          		irq_enable(ID_SECURAM);
+   \       0x20   0xE3A0'0033        MOV      R0,#+51
+   \       0x24   0x....'....        BL       irq_enable
+    704          	}
+    705          }
+   \                     ??secumod_enable_it_0:
+   \       0x28   0xE8BD'8010        POP      {R4,PC}          ;; return
+    706          
+    707          /**
+    708           * \brief Disables one or more interrupt sources of a SECUMOD.
+    709           * \note Make sure registers appears before call this function, to toggle the
+    710           * appearance of the registers using secumod_toggle_protection_reg().
+    711           *
+    712           * \param sources Bitwise OR of selected interrupt sources.
+    713           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    714          void secumod_disable_it(uint32_t sources)
+    715          {
+   \                     secumod_disable_it:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    716          	SECUMOD->SECUMOD_NIDPR = sources;
+   \        0x8   0x....'....        LDR      R0,??DataTable30_18  ;; 0xfc040088
+   \        0xC   0xE580'4000        STR      R4,[R0, #+0]
+    717          	if (SECUMOD_NIDPR_ALL == (sources & SECUMOD_NIDPR_ALL)) {
+   \       0x10   0x....'....        LDR      R0,??DataTable30_19  ;; 0xff3cef
+   \       0x14   0xE010'1004        ANDS     R1,R0,R4
+   \       0x18   0xE151'0000        CMP      R1,R0
+   \       0x1C   0x1A00'0003        BNE      ??secumod_disable_it_0
+    718          		/* Disable SECUMOD/Secure RAM interrupts */
+    719          		irq_disable(ID_SECUMOD);
+   \       0x20   0xE3A0'0010        MOV      R0,#+16
+   \       0x24   0x....'....        BL       irq_disable
+    720          		irq_disable(ID_SECURAM);
+   \       0x28   0xE3A0'0033        MOV      R0,#+51
+   \       0x2C   0x....'....        BL       irq_disable
+    721          	}
+    722          }
+   \                     ??secumod_disable_it_0:
+   \       0x30   0xE8BD'8010        POP      {R4,PC}          ;; return
+    723          
+    724          /**
+    725           * \brief Get interrupt mask of a SECUMOD.
+    726           * \note Make sure registers appears before call this function, to toggle the
+    727           * appearance of the registers using secumod_toggle_protection_reg().
+    728           *
+    729           * \param dwSources Bitwise OR of selected interrupt sources.
+    730           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    731          uint32_t secumod_get_normal_it_mask()
+    732          {
+    733          	return SECUMOD->SECUMOD_NIMPR;
+   \                     secumod_get_normal_it_mask:
+   \        0x0   0x....'....        LDR      R0,??DataTable30_20  ;; 0xfc04008c
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    734          }
+    735          
+    736          /**
+    737           * \brief Read the SECUMOD internal memory from the specified address
+    738           * \param data  Point to where the data read is stored
+    739           * \param addr memory address
+    740           * \param size The number of bytes to be read
+    741           * \retval Bytes read
+    742           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    743          uint32_t secumod_read_internal_memory(uint8_t *data, uint32_t addr, uint32_t size)
+    744          {
+   \                     secumod_read_internal_memory:
+   \        0x0   0xE92D'4FF1        PUSH     {R0,R4-R11,LR}
+   \        0x4   0xE24D'D008        SUB      SP,SP,#+8
+   \        0x8   0xE1B0'8001        MOVS     R8,R1
+   \        0xC   0xE1B0'4002        MOVS     R4,R2
+    745          	uint32_t i;
+    746          	uint32_t region;
+    747          	uint32_t count;
+    748          
+    749          	if (addr >= ((uint32_t)SECURAM))
+   \       0x10   0xE3A0'74F8        MOV      R7,#-134217728
+   \       0x14   0xE387'7A44        ORR      R7,R7,#0x44000
+   \       0x18   0xE158'0007        CMP      R8,R7
+   \       0x1C   0x3A00'0002        BCC      ??secumod_read_internal_memory_0
+    750          		addr -= ((uint32_t)SECURAM);
+   \       0x20   0xE3A0'067C        MOV      R0,#+130023424
+   \       0x24   0xE380'09EF        ORR      R0,R0,#0x3BC000
+   \       0x28   0xE090'8008        ADDS     R8,R0,R8
+    751          
+    752          	for (i = 0; i < size; i += count)
+   \                     ??secumod_read_internal_memory_0:
+   \       0x2C   0xE3A0'9000        MOV      R9,#+0
+   \                     ??secumod_read_internal_memory_1:
+   \       0x30   0xE159'0004        CMP      R9,R4
+   \       0x34   0x2A00'002A        BCS      ??secumod_read_internal_memory_2
+    753          	{
+    754          		region = (addr + i) >> 10;
+   \       0x38   0xE099'0008        ADDS     R0,R9,R8
+   \       0x3C   0xE1B0'0520        LSRS     R0,R0,#+10
+   \       0x40   0xE1B0'5000        MOVS     R5,R0
+    755          		if ((SECUMOD_RAMACC_RWx_NO_ACCESS(region) ==
+    756          				(SECUMOD->SECUMOD_RAMACC & SECUMOD_RAMACC_RWx_Msk(region))) ||
+    757          			(SECUMOD_RAMACC_RWx_WR_ACCESS(region) ==
+    758          				(SECUMOD->SECUMOD_RAMACC & SECUMOD_RAMACC_RWx_Msk(region))))
+   \       0x44   0xE3A0'0003        MOV      R0,#+3
+   \       0x48   0x....'....        LDR      R1,??DataTable30_13  ;; 0xfc040074
+   \       0x4C   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x50   0xE1B0'3005        MOVS     R3,R5
+   \       0x54   0xE1B0'3083        LSLS     R3,R3,#+1
+   \       0x58   0xE012'2310        ANDS     R2,R2,R0, LSL R3
+   \       0x5C   0xE352'0000        CMP      R2,#+0
+   \       0x60   0x0A00'0008        BEQ      ??secumod_read_internal_memory_3
+   \       0x64   0xE3A0'2001        MOV      R2,#+1
+   \       0x68   0xE1B0'3005        MOVS     R3,R5
+   \       0x6C   0xE1B0'3083        LSLS     R3,R3,#+1
+   \       0x70   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x74   0xE1B0'C005        MOVS     R12,R5
+   \       0x78   0xE1B0'C08C        LSLS     R12,R12,#+1
+   \       0x7C   0xE011'0C10        ANDS     R0,R1,R0, LSL R12
+   \       0x80   0xE150'0312        CMP      R0,R2, LSL R3
+   \       0x84   0x1A00'0000        BNE      ??secumod_read_internal_memory_4
+    759          		{
+    760          			break;
+   \                     ??secumod_read_internal_memory_3:
+   \       0x88   0xEA00'0015        B        ??secumod_read_internal_memory_2
+    761          		}
+    762          
+    763          		count = size;
+   \                     ??secumod_read_internal_memory_4:
+   \       0x8C   0xE1B0'6004        MOVS     R6,R4
+    764          		if (((region + 1) << 10 ) <= (addr + i + size))
+   \       0x90   0xE099'0008        ADDS     R0,R9,R8
+   \       0x94   0xE094'0000        ADDS     R0,R4,R0
+   \       0x98   0xE295'1001        ADDS     R1,R5,#+1
+   \       0x9C   0xE150'0501        CMP      R0,R1, LSL #+10
+   \       0xA0   0x3A00'0003        BCC      ??secumod_read_internal_memory_5
+    765          		{
+    766          			size = ((region + 1) << 10) - (addr + i);
+   \       0xA4   0xE295'0001        ADDS     R0,R5,#+1
+   \       0xA8   0xE078'0500        RSBS     R0,R8,R0, LSL #+10
+   \       0xAC   0xE050'0009        SUBS     R0,R0,R9
+   \       0xB0   0xE1B0'4000        MOVS     R4,R0
+    767          		}
+    768          
+    769          		memcpy(data + i, (uint8_t *)(((uint32_t)SECURAM) + addr + i), count);
+   \                     ??secumod_read_internal_memory_5:
+   \       0xB4   0xE58D'6000        STR      R6,[SP, #+0]
+   \       0xB8   0xE099'0008        ADDS     R0,R9,R8
+   \       0xBC   0xE097'A000        ADDS     R10,R7,R0
+   \       0xC0   0xE59D'0008        LDR      R0,[SP, #+8]
+   \       0xC4   0xE090'B009        ADDS     R11,R0,R9
+   \       0xC8   0xE59D'2000        LDR      R2,[SP, #+0]
+   \       0xCC   0xE1B0'100A        MOVS     R1,R10
+   \       0xD0   0xE1B0'000B        MOVS     R0,R11
+   \       0xD4   0x....'....        BL       __aeabi_memcpy
+   \       0xD8   0xE1B0'000B        MOVS     R0,R11
+    770          	}
+   \       0xDC   0xE096'9009        ADDS     R9,R6,R9
+   \       0xE0   0xEAFF'FFD2        B        ??secumod_read_internal_memory_1
+    771          	return i;
+   \                     ??secumod_read_internal_memory_2:
+   \       0xE4   0xE1B0'0009        MOVS     R0,R9
+   \       0xE8   0xE8BD'8FFE        POP      {R1-R11,PC}      ;; return
+    772          }
+    773          
+    774          /**
+    775           * \brief Write data to the SECUMOD internal memory from the specified address
+    776           * \param data Pointer to the data to be written
+    777           * \param addr memory address
+    778           * \param size The number of bytes to be be written
+    779           * \retval Bytes written
+    780           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    781          uint32_t secumod_write_internal_memory(uint8_t *data, uint32_t addr, uint32_t size)
+    782          {
+   \                     secumod_write_internal_memory:
+   \        0x0   0xE92D'4FF1        PUSH     {R0,R4-R11,LR}
+   \        0x4   0xE24D'D008        SUB      SP,SP,#+8
+   \        0x8   0xE1B0'8001        MOVS     R8,R1
+   \        0xC   0xE1B0'4002        MOVS     R4,R2
+    783          	uint32_t i;
+    784          	uint32_t region;
+    785          	uint32_t count;
+    786          
+    787          	if (addr >= ((uint32_t)SECURAM))
+   \       0x10   0xE3A0'74F8        MOV      R7,#-134217728
+   \       0x14   0xE387'7A44        ORR      R7,R7,#0x44000
+   \       0x18   0xE158'0007        CMP      R8,R7
+   \       0x1C   0x3A00'0002        BCC      ??secumod_write_internal_memory_0
+    788          		addr -= ((uint32_t)SECURAM);
+   \       0x20   0xE3A0'067C        MOV      R0,#+130023424
+   \       0x24   0xE380'09EF        ORR      R0,R0,#0x3BC000
+   \       0x28   0xE090'8008        ADDS     R8,R0,R8
+    789          
+    790          	for (i = 0; i < size; i += count)
+   \                     ??secumod_write_internal_memory_0:
+   \       0x2C   0xE3A0'9000        MOV      R9,#+0
+   \                     ??secumod_write_internal_memory_1:
+   \       0x30   0xE159'0004        CMP      R9,R4
+   \       0x34   0x2A00'002A        BCS      ??secumod_write_internal_memory_2
+    791          	{
+    792          		region = (addr + i) >> 10;
+   \       0x38   0xE099'0008        ADDS     R0,R9,R8
+   \       0x3C   0xE1B0'0520        LSRS     R0,R0,#+10
+   \       0x40   0xE1B0'5000        MOVS     R5,R0
+    793          		if ((SECUMOD_RAMACC_RWx_NO_ACCESS(region) ==
+    794          				(SECUMOD->SECUMOD_RAMACC & SECUMOD_RAMACC_RWx_Msk(region))) ||
+    795          			(SECUMOD_RAMACC_RWx_RD_ACCESS(region) ==
+    796          				(SECUMOD->SECUMOD_RAMACC & SECUMOD_RAMACC_RWx_Msk(region))))
+   \       0x44   0xE3A0'0003        MOV      R0,#+3
+   \       0x48   0x....'....        LDR      R1,??DataTable30_13  ;; 0xfc040074
+   \       0x4C   0xE591'2000        LDR      R2,[R1, #+0]
+   \       0x50   0xE1B0'3005        MOVS     R3,R5
+   \       0x54   0xE1B0'3083        LSLS     R3,R3,#+1
+   \       0x58   0xE012'2310        ANDS     R2,R2,R0, LSL R3
+   \       0x5C   0xE352'0000        CMP      R2,#+0
+   \       0x60   0x0A00'0008        BEQ      ??secumod_write_internal_memory_3
+   \       0x64   0xE3A0'2002        MOV      R2,#+2
+   \       0x68   0xE1B0'3005        MOVS     R3,R5
+   \       0x6C   0xE1B0'3083        LSLS     R3,R3,#+1
+   \       0x70   0xE591'1000        LDR      R1,[R1, #+0]
+   \       0x74   0xE1B0'C005        MOVS     R12,R5
+   \       0x78   0xE1B0'C08C        LSLS     R12,R12,#+1
+   \       0x7C   0xE011'0C10        ANDS     R0,R1,R0, LSL R12
+   \       0x80   0xE150'0312        CMP      R0,R2, LSL R3
+   \       0x84   0x1A00'0000        BNE      ??secumod_write_internal_memory_4
+    797          		{
+    798          		    break;
+   \                     ??secumod_write_internal_memory_3:
+   \       0x88   0xEA00'0015        B        ??secumod_write_internal_memory_2
+    799          		}
+    800          
+    801          		count = size;
+   \                     ??secumod_write_internal_memory_4:
+   \       0x8C   0xE1B0'6004        MOVS     R6,R4
+    802          		if (((region + 1) << 10 ) <= (addr + i + size))
+   \       0x90   0xE099'0008        ADDS     R0,R9,R8
+   \       0x94   0xE094'0000        ADDS     R0,R4,R0
+   \       0x98   0xE295'1001        ADDS     R1,R5,#+1
+   \       0x9C   0xE150'0501        CMP      R0,R1, LSL #+10
+   \       0xA0   0x3A00'0003        BCC      ??secumod_write_internal_memory_5
+    803          		{
+    804          			size = ((region + 1) << 10) - (addr + i);
+   \       0xA4   0xE295'0001        ADDS     R0,R5,#+1
+   \       0xA8   0xE078'0500        RSBS     R0,R8,R0, LSL #+10
+   \       0xAC   0xE050'0009        SUBS     R0,R0,R9
+   \       0xB0   0xE1B0'4000        MOVS     R4,R0
+    805          		}
+    806          
+    807          		memcpy((uint8_t *)(((uint32_t)SECURAM) + addr + i), data + i, count);
+   \                     ??secumod_write_internal_memory_5:
+   \       0xB4   0xE58D'6000        STR      R6,[SP, #+0]
+   \       0xB8   0xE59D'0008        LDR      R0,[SP, #+8]
+   \       0xBC   0xE090'A009        ADDS     R10,R0,R9
+   \       0xC0   0xE099'0008        ADDS     R0,R9,R8
+   \       0xC4   0xE097'B000        ADDS     R11,R7,R0
+   \       0xC8   0xE59D'2000        LDR      R2,[SP, #+0]
+   \       0xCC   0xE1B0'100A        MOVS     R1,R10
+   \       0xD0   0xE1B0'000B        MOVS     R0,R11
+   \       0xD4   0x....'....        BL       __aeabi_memcpy
+   \       0xD8   0xE1B0'000B        MOVS     R0,R11
+    808          	}
+   \       0xDC   0xE096'9009        ADDS     R9,R6,R9
+   \       0xE0   0xEAFF'FFD2        B        ??secumod_write_internal_memory_1
+    809          	return i;
+   \                     ??secumod_write_internal_memory_2:
+   \       0xE4   0xE1B0'0009        MOVS     R0,R9
+   \       0xE8   0xE8BD'8FFE        POP      {R1-R11,PC}      ;; return
+    810          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_2:
+   \        0x0   0xFC04'0078        DC32     0xfc040078
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_3:
+   \        0x0   0x....'....        DC32     secumod_inst
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_4:
+   \        0x0   0xFC04'0004        DC32     0xfc040004
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_5:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_6:
+   \        0x0   0xFC04'000C        DC32     0xfc04000c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_7:
+   \        0x0   0xFC04'0008        DC32     0xfc040008
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_8:
+   \        0x0   0xFC04'0010        DC32     0xfc040010
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_9:
+   \        0x0   0xFC04'0018        DC32     0xfc040018
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_10:
+   \        0x0   0xFC04'0068        DC32     0xfc040068
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_11:
+   \        0x0   0xFC04'006C        DC32     0xfc04006c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_12:
+   \        0x0   0xFC04'0070        DC32     0xfc040070
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_13:
+   \        0x0   0xFC04'0074        DC32     0xfc040074
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_14:
+   \        0x0   0xFC04'007C        DC32     0xfc04007c
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_15:
+   \        0x0   0xFC04'0080        DC32     0xfc040080
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_16:
+   \        0x0   0xFC04'0090        DC32     0xfc040090
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_17:
+   \        0x0   0xFC04'0084        DC32     0xfc040084
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_18:
+   \        0x0   0xFC04'0088        DC32     0xfc040088
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_19:
+   \        0x0   0x00FF'3CEF        DC32     0xff3cef
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable30_20:
+   \        0x0   0xFC04'008C        DC32     0xfc04008c
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x73 0x6F          DC8 "source == (51)"
+
+   \              0x75 0x72    
+
+   \              0x63 0x65    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x20    
+
+   \              0x28 0x35    
+
+   \              0x31 0x29    
+
+   \              0x00
+   \        0xF   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x73, 0x65, 0x63, 0x75, 0x72, 0x69
+
+   \              0x73 0x65    
+
+   \              0x63 0x75    
+
+   \              0x72 0x69
+   \       0x40   0x74 0x79          DC8 0x74, 0x79, 0x5C, 0x73, 0x65, 0x63, 0x75, 0x6D
+
+   \              0x5C 0x73    
+
+   \              0x65 0x63    
+
+   \              0x75 0x6D
+   \       0x48   0x6F 0x64          DC8 0x6F, 0x64, 0x2E, 0x63, 0
+
+   \              0x2E 0x63    
+
+   \              0x00
+   \       0x4D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x73 0x6F          DC8 "source == (16)"
+
+   \              0x75 0x72    
+
+   \              0x63 0x65    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x20    
+
+   \              0x28 0x31    
+
+   \              0x36 0x29    
+
+   \              0x00
+   \        0xF   0x00               DC8 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   secumod_clear_status
+       8   secumod_disable_it
+         8   -> irq_disable
+       4   secumod_dynamic_signatures_tuning
+       8   secumod_enable_it
+         8   -> irq_enable
+       0   secumod_get_backup_mode_protections
+       0   secumod_get_normal_it_mask
+       0   secumod_get_normal_mode_protections
+       0   secumod_get_scrambling_key
+       0   secumod_get_status
+       0   secumod_get_system_status
+       0   secumod_get_tamper_info
+       0   secumod_get_wakeup_protections
+      24   secumod_initialize
+        24   -> __aeabi_memset
+        24   -> irq_add_handler
+        24   -> pmc_configure_peripheral
+      40   secumod_irq_handler
+        40   -- Indirect call
+        40   -> __aeabi_assert
+        40   -> __iar_EmptyStepPoint
+        40   -> pit_get_piir
+        40   -> pit_get_pivr
+        40   -> pmc_get_slow_clock
+        40   -> rtc_get_tamper_date
+        40   -> rtc_get_tamper_event_counter
+        40   -> rtc_get_tamper_source
+        40   -> rtc_get_tamper_time
+        40   -> secumod_clear_status
+        40   -> secumod_disable_it
+        40   -> secumod_enable_it
+        40   -> secumod_get_normal_it_mask
+        40   -> secumod_get_status
+        40 __aeabi_uidiv
+       0   secumod_periodic_alarm
+      16   secumod_piobu_config
+       0   secumod_piobu_set_dynamic_mode
+      20   secumod_piobu_set_static_mode
+      48   secumod_read_internal_memory
+        48   -> __aeabi_memcpy
+       0   secumod_set_access_callback
+       0   secumod_set_auto_backup
+       0   secumod_set_backup_mode_protections
+       0   secumod_set_erased_callback
+       0   secumod_set_jtag_protection
+      16   secumod_set_normal_mode_protections
+        16   -> secumod_toggle_protection_reg
+       4   secumod_set_ram_access_rights
+       0   secumod_set_scrambling
+       0   secumod_set_scrambling_key
+       0   secumod_set_system_status
+       0   secumod_set_tamper_callback
+       0   secumod_set_wakeup_protections
+       0   secumod_software_protection
+       0   secumod_switch_to_backup_mode
+       0   secumod_switch_to_normal_mode
+       0   secumod_toggle_protection_reg
+      48   secumod_write_internal_memory
+        48   -> __aeabi_memcpy
+      40   securam_irq_handler
+        40   -- Indirect call
+        40   -> __aeabi_assert
+        40   -> __iar_EmptyStepPoint
+        40   -> pit_get_piir
+        40   -> pit_get_pivr
+        40   -> pmc_get_slow_clock
+        40   -> secumod_clear_status
+        40   -> secumod_get_normal_mode_protections
+        40   -> secumod_get_status
+        40   -> secumod_set_normal_mode_protections
+        40 __aeabi_uidiv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable30
+       4  ??DataTable30_1
+       4  ??DataTable30_10
+       4  ??DataTable30_11
+       4  ??DataTable30_12
+       4  ??DataTable30_13
+       4  ??DataTable30_14
+       4  ??DataTable30_15
+       4  ??DataTable30_16
+       4  ??DataTable30_17
+       4  ??DataTable30_18
+       4  ??DataTable30_19
+       4  ??DataTable30_2
+       4  ??DataTable30_20
+       4  ??DataTable30_3
+       4  ??DataTable30_4
+       4  ??DataTable30_5
+       4  ??DataTable30_6
+       4  ??DataTable30_7
+       4  ??DataTable30_8
+       4  ??DataTable30_9
+      16  ?_0
+      80  ?_1
+      16  ?_2
+      12  secumod_clear_status
+      52  secumod_disable_it
+      64  secumod_dynamic_signatures_tuning
+      44  secumod_enable_it
+      12  secumod_get_backup_mode_protections
+      12  secumod_get_normal_it_mask
+      12  secumod_get_normal_mode_protections
+      12  secumod_get_scrambling_key
+      12  secumod_get_status
+      12  secumod_get_system_status
+       8  secumod_get_tamper_info
+      12  secumod_get_wakeup_protections
+     112  secumod_initialize
+      56  secumod_inst
+     344  secumod_irq_handler
+      40  secumod_periodic_alarm
+     264  secumod_piobu_config
+      52  secumod_piobu_set_dynamic_mode
+     136  secumod_piobu_set_static_mode
+     236  secumod_read_internal_memory
+      12  secumod_set_access_callback
+      56  secumod_set_auto_backup
+      12  secumod_set_backup_mode_protections
+      12  secumod_set_erased_callback
+      64  secumod_set_jtag_protection
+      40  secumod_set_normal_mode_protections
+      60  secumod_set_ram_access_rights
+      56  secumod_set_scrambling
+      12  secumod_set_scrambling_key
+      12  secumod_set_system_status
+      12  secumod_set_tamper_callback
+      12  secumod_set_wakeup_protections
+      20  secumod_software_protection
+      20  secumod_switch_to_backup_mode
+      20  secumod_switch_to_normal_mode
+      24  secumod_toggle_protection_reg
+     236  secumod_write_internal_memory
+     272  securam_irq_handler
+
+ 
+    56 bytes in section .bss
+   112 bytes in section .rodata
+ 2'484 bytes in section SOFTPACK
+ 
+ 2'484 bytes of CODE  memory
+   112 bytes of CONST memory
+    56 bytes of DATA  memory
+
+Errors: none
+Warnings: none

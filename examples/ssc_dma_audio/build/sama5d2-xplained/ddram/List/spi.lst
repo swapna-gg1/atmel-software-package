@@ -1,0 +1,1056 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         01/Dec/2020  16:43:00
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\spi\spi.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW8460.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\spi\spi.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_AUDIO -D
+#        CONFIG_HAVE_AUDIO_WM8731 -D CONFIG_HAVE_SSC -D CONFIG_HAVE_CLASSD -D
+#        CONFIG_HAVE_PDMIC -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_I2C_BUS --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\List\spi.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d2-xplained\ddram\Obj\spi.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf  =  int_specials
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\spi\spi.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup spi_module Working with SPI
+     31           * \section Purpose
+     32           * The SPI driver provides the interface to configure and use the SPI
+     33           * peripheral.
+     34           *
+     35           * The Serial Peripheral Interface (SPI) circuit is a synchronous serial
+     36           * data link that provides communication with external devices in Master
+     37           * or Slave Mode.
+     38           *
+     39           * \section Usage
+     40           * To use the SPI, the user has to follow these few steps:
+     41           * -# Enable the SPI pins required by the application (see pio.h).
+     42           * -# Configure the SPI using the \ref spi_configure(). This enables the
+     43           *    peripheral clock. The mode register is loaded with the given value.
+     44           * -# Configure all the necessary chip selects with \ref spi_configure_npcs().
+     45           * -# Enable the SPI by calling \ref spi_enable().
+     46           * -# Send/receive data using \ref spi_write() and \ref
+     47           * spi_read(). Note that \ref spi_read()
+     48           *    must be called after \ref spi_write() to retrieve the last value read.
+     49           * -# Disable the SPI by calling \ref spi_disable().
+     50           *
+     51           * For more accurate information, please look at the SPI section of the
+     52           * Datasheet.
+     53           *
+     54           * Related files :\n
+     55           * \ref spi.c\n
+     56           * \ref spi.h\n
+     57          */
+     58          /*@{*/
+     59          /*@}*/
+     60          
+     61          /**
+     62           * \file
+     63           *
+     64           * Implementation of Serial Peripheral Interface (SPI) controller.
+     65           *
+     66           */
+     67          
+     68          /*----------------------------------------------------------------------------
+     69           *        Headers
+     70           *----------------------------------------------------------------------------*/
+     71          
+     72          #include "chip.h"
+     73          
+     74          #include "spi/spi.h"
+     75          #include "peripherals/pmc.h"
+     76          
+     77          #include "io.h"
+     78          #include "trace.h"
+     79          
+     80          #include <stdint.h>
+     81          
+     82          #include <assert.h>
+     83          
+     84          /*---------------------------------------------------------------------------
+     85          *        Macros
+     86          *----------------------------------------------------------------------------*/
+     87          
+     88          #define SPI_PCS(npcs)       SPI_MR_PCS((~(1 << npcs) & 0xF))
+     89          
+     90          /*----------------------------------------------------------------------------
+     91           *        local functions
+     92           *----------------------------------------------------------------------------*/
+     93          
+     94          static inline uint32_t _spi_compute_scbr(uint32_t bitrate, uint32_t id)
+     95          {
+     96          	uint32_t pclk = pmc_get_peripheral_clock(id);
+     97          	if (bitrate == 0)
+     98          		return 0;
+     99          	return SPI_CSR_SCBR(pclk / (bitrate * 1000));
+    100          }
+    101          
+    102          static inline uint32_t _spi_compute_dlybs(uint32_t delay, uint32_t id)
+    103          {
+    104          	uint32_t pclk = pmc_get_peripheral_clock(id);
+    105          	uint32_t dlybs = ((pclk / 1000000u) * delay) / 100;
+    106          	return SPI_CSR_DLYBS(dlybs);
+    107          }
+    108          
+    109          static inline uint32_t _spi_compute_dlybct(uint32_t delay, uint32_t id)
+    110          {
+    111          	uint32_t pclk = pmc_get_peripheral_clock(id);
+    112          	uint32_t dlybct = ((pclk / 32000u) * delay) / 100;
+    113          	return SPI_CSR_DLYBCT(dlybct);
+    114          }
+    115          
+    116          /*----------------------------------------------------------------------------
+    117           *        Exported functions
+    118           *----------------------------------------------------------------------------*/
+    119          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    120          void spi_enable(Spi * spi)
+    121          {
+    122          	spi->SPI_CR = SPI_CR_SPIEN;
+   \                     spi_enable:
+   \        0x0   0xE3A0'1001        MOV      R1,#+1
+   \        0x4   0x....'....        B        ?Subroutine1
+    123          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE580'1000        STR      R1,[R0, #+0]
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    124          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    125          void spi_disable(Spi * spi)
+    126          {
+    127          	spi->SPI_CR = SPI_CR_SPIDIS;
+   \                     spi_disable:
+   \        0x0   0xE3A0'1002        MOV      R1,#+2
+   \        0x4                      REQUIRE ?Subroutine1
+   \        0x4                      ;; // Fall through to label ?Subroutine1
+    128          }
+    129          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    130          void spi_enable_it(Spi * spi, uint32_t dwSources)
+    131          {
+    132          	spi->SPI_IER = dwSources;
+   \                     spi_enable_it:
+   \        0x0   0xE580'1014        STR      R1,[R0, #+20]
+    133          }
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    134          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    135          void spi_disable_it(Spi * spi, uint32_t dwSources)
+    136          {
+    137          	spi->SPI_IDR = dwSources;
+   \                     spi_disable_it:
+   \        0x0   0xE580'1018        STR      R1,[R0, #+24]
+    138          }
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    139          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    140          void spi_configure(Spi * spi)
+    141          {
+    142          	spi->SPI_CR = SPI_CR_SPIDIS;
+   \                     spi_configure:
+   \        0x0   0xE3A0'1002        MOV      R1,#+2
+    143          
+    144          	spi->SPI_CR = SPI_CR_SWRST;
+   \        0x4   0xE3A0'2080        MOV      R2,#+128
+   \        0x8   0xE580'1000        STR      R1,[R0, #+0]
+   \        0xC   0xE580'2000        STR      R2,[R0, #+0]
+    145          
+    146          	spi->SPI_MR = SPI_MR_WDRBT | SPI_MR_MODFDIS;
+   \       0x10   0xE3A0'3030        MOV      R3,#+48
+   \       0x14   0xE580'3004        STR      R3,[R0, #+4]
+    147          
+    148          	spi->SPI_RDR;
+   \       0x18   0xE590'0008        LDR      R0,[R0, #+8]
+    149          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    150          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    151          void spi_mode_master_enable(Spi *spi, bool master)
+    152          {
+    153          	if (master)
+   \                     spi_mode_master_enable:
+   \        0x0   0xE351'0000        CMP      R1,#+0
+    154          		spi->SPI_MR |= SPI_MR_MSTR;
+   \        0x4   0x1590'1004        LDRNE    R1,[R0, #+4]
+   \        0x8   0x1381'2001        ORRNE    R2,R1,#0x1
+   \        0xC   0x1580'2004        STRNE    R2,[R0, #+4]
+    155          	else
+    156          		spi->SPI_MR = spi->SPI_MR & ~SPI_MR_MSTR;
+   \       0x10   0x0590'3004        LDREQ    R3,[R0, #+4]
+   \       0x14   0x03C3'1001        BICEQ    R1,R3,#0x1
+   \       0x18   0x0580'1004        STREQ    R1,[R0, #+4]
+    157          }
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    158          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    159          void spi_select_cs(Spi * spi, uint8_t cs)
+    160          {
+   \                     spi_select_cs:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    161          	uint32_t mr = spi->SPI_MR & ~SPI_MR_PCS_Msk;
+    162          	spi->SPI_MR = mr | SPI_MR_PCS((1 << cs) - 1);
+   \        0x4   0xE3A0'C001        MOV      R12,#+1
+   \        0x8   0xE590'2004        LDR      R2,[R0, #+4]
+   \        0xC   0xE26C'E000        RSB      LR,R12,#+0
+   \       0x10   0xE3A0'4AF0        MOV      R4,#+983040
+   \       0x14   0xE08E'111C        ADD      R1,LR,R12, LSL R1
+   \       0x18   0xE3C2'3AF0        BIC      R3,R2,#0xF0000
+   \       0x1C   0xE004'4801        AND      R4,R4,R1, LSL #+16
+   \       0x20   0xE184'4003        ORR      R4,R4,R3
+   \       0x24   0xE580'4004        STR      R4,[R0, #+4]
+    163          }
+   \       0x28   0xE8BD'8010        POP      {R4,PC}          ;; return
+    164          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    165          void spi_release_cs(Spi * spi)
+    166          {
+    167          	spi->SPI_CR = SPI_CR_LASTXFER;
+   \                     spi_release_cs:
+   \        0x0   0xE3A0'1740        MOV      R1,#+16777216
+   \        0x4   0x....'....        B        ?Subroutine1
+    168          }
+    169          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    170          void spi_configure_cs(Spi * spi, uint8_t cs, uint32_t bitrate,
+    171          		      uint32_t delay_dlybs, uint32_t delay_dlybct,
+    172          		      uint32_t spi_mode)
+    173          {
+   \                     spi_configure_cs:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE1A0'5000        MOV      R5,R0
+    174          	uint32_t csr = 0;
+    175          	trace_debug("Spi: configuring chip select %u\r\n", (unsigned int)cs);
+   \        0x8   0x....'....        LDR      R0,??DataTable12
+   \        0xC   0xE1A0'6001        MOV      R6,R1
+   \       0x10   0xE1A0'8002        MOV      R8,R2
+   \       0x14   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x18   0xE1A0'4003        MOV      R4,R3
+   \       0x1C   0xE351'0005        CMP      R1,#+5
+   \       0x20   0x3A00'0002        BCC      ??spi_configure_cs_0
+   \       0x24   0xE1A0'1006        MOV      R1,R6
+   \       0x28   0x....'....        LDR      R0,??DataTable12_1
+   \       0x2C   0x....'....        BL       printf
+    176          	uint32_t id = get_spi_id_from_addr(spi);
+   \                     ??spi_configure_cs_0:
+   \       0x30   0xE1A0'0005        MOV      R0,R5
+   \       0x34   0x....'....        BL       get_spi_id_from_addr
+   \       0x38   0xE1A0'7000        MOV      R7,R0
+    177          	assert(id < ID_PERIPH_COUNT);
+   \       0x3C   0xE357'004F        CMP      R7,#+79
+   \       0x40   0x3A00'0004        BCC      ??spi_configure_cs_1
+   \       0x44   0xE3A0'20B1        MOV      R2,#+177
+   \       0x48   0x....'....        LDR      R1,??DataTable12_2
+   \       0x4C   0x....'....        ADR      R0,?_2
+   \       0x50   0x....'....        BL       __aeabi_assert
+   \       0x54   0x....'....        BL       __iar_EmptyStepPoint
+    178          
+    179          	csr |= _spi_compute_scbr(bitrate, id);
+   \                     ??spi_configure_cs_1:
+   \       0x58   0xE1A0'0007        MOV      R0,R7
+   \       0x5C   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x60   0xE358'0000        CMP      R8,#+0
+   \       0x64   0x03A0'A000        MOVEQ    R10,#+0
+   \       0x68   0x0A00'0004        BEQ      ??spi_configure_cs_2
+   \       0x6C   0xE3A0'2FFA        MOV      R2,#+1000
+   \       0x70   0xE001'0892        MUL      R1,R2,R8
+   \       0x74   0x....'....        BL       __aeabi_uidiv
+   \       0x78   0xE3A0'1CFF        MOV      R1,#+65280
+   \       0x7C   0xE001'A400        AND      R10,R1,R0, LSL #+8
+   \                     ??spi_configure_cs_2:
+   \       0x80   0xE59D'8024        LDR      R8,[SP, #+36]
+   \       0x84   0xE59D'9020        LDR      R9,[SP, #+32]
+    180          	csr |= _spi_compute_dlybs(delay_dlybs, id);
+   \       0x88   0xE1A0'0007        MOV      R0,R7
+   \       0x8C   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x90   0x....'....        LDR      R3,??DataTable12_3  ;; 0x8637bd06
+   \       0x94   0xE081'3390        UMULL    R3,R1,R0,R3
+    181          	csr |= _spi_compute_dlybct(delay_dlybct, id);
+    182          	csr |= spi_mode & ~(SPI_CSR_SCBR_Msk | SPI_CSR_DLYBS_Msk | SPI_CSR_DLYBCT_Msk);
+    183          
+    184          	spi->SPI_CSR[cs] = csr;
+   \       0x98   0x....'....        LDR      LR,??DataTable12_4  ;; 0xa3d70a3e
+   \       0x9C   0xE3A0'28FF        MOV      R2,#+16711680
+   \       0xA0   0xE1A0'19A1        LSR      R1,R1,#+19
+   \       0xA4   0xE000'0491        MUL      R0,R1,R4
+   \       0xA8   0xE08C'EE90        UMULL    LR,R12,R0,LR
+   \       0xAC   0xE1A0'032C        LSR      R0,R12,#+6
+   \       0xB0   0xE002'2800        AND      R2,R2,R0, LSL #+16
+   \       0xB4   0xE1A0'0007        MOV      R0,R7
+   \       0xB8   0xE182'400A        ORR      R4,R2,R10
+   \       0xBC   0x....'....        BL       pmc_get_peripheral_clock
+   \       0xC0   0x....'....        LDR      R3,??DataTable12_5  ;; 0x83126e98
+   \       0xC4   0xE081'3390        UMULL    R3,R1,R0,R3
+   \       0xC8   0x....'....        LDR      R12,??DataTable12_4  ;; 0xa3d70a3e
+   \       0xCC   0xE208'20FF        AND      R2,R8,#0xFF
+   \       0xD0   0xE1A0'1721        LSR      R1,R1,#+14
+   \       0xD4   0xE001'0199        MUL      R1,R9,R1
+   \       0xD8   0xE080'CC91        UMULL    R12,R0,R1,R12
+   \       0xDC   0xE1A0'0320        LSR      R0,R0,#+6
+   \       0xE0   0xE184'EC00        ORR      LR,R4,R0, LSL #+24
+   \       0xE4   0xE085'4106        ADD      R4,R5,R6, LSL #+2
+   \       0xE8   0xE182'200E        ORR      R2,R2,LR
+   \       0xEC   0xE584'2030        STR      R2,[R4, #+48]
+    185          }
+   \       0xF0   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    186          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    187          void spi_set_cs_bitrate(Spi * spi, uint8_t cs, uint32_t bitrate)
+    188          {
+   \                     spi_set_cs_bitrate:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+    189          	uint32_t csr = spi->SPI_CSR[cs];
+   \        0x4   0xE080'4101        ADD      R4,R0,R1, LSL #+2
+   \        0x8   0xE1A0'6002        MOV      R6,R2
+   \        0xC   0xE594'5030        LDR      R5,[R4, #+48]
+    190          	uint32_t id = get_spi_id_from_addr(spi);
+   \       0x10   0x....'....        BL       get_spi_id_from_addr
+   \       0x14   0xE1A0'7000        MOV      R7,R0
+    191          	assert(id < ID_PERIPH_COUNT);
+   \       0x18   0xE357'004F        CMP      R7,#+79
+   \       0x1C   0x3A00'0004        BCC      ??spi_set_cs_bitrate_0
+   \       0x20   0xE3A0'20BF        MOV      R2,#+191
+   \       0x24   0x....'....        LDR      R1,??DataTable12_2
+   \       0x28   0x....'....        ADR      R0,?_2
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    192          
+    193          	csr &= ~SPI_CSR_SCBR_Msk;
+    194          	csr |= _spi_compute_scbr(bitrate, id);
+   \                     ??spi_set_cs_bitrate_0:
+   \       0x34   0xE1A0'0007        MOV      R0,R7
+   \       0x38   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x3C   0xE356'0000        CMP      R6,#+0
+   \       0x40   0x03A0'0000        MOVEQ    R0,#+0
+   \       0x44   0x0A00'0004        BEQ      ??spi_set_cs_bitrate_1
+   \       0x48   0xE3A0'2FFA        MOV      R2,#+1000
+   \       0x4C   0xE001'0692        MUL      R1,R2,R6
+   \       0x50   0x....'....        BL       __aeabi_uidiv
+   \       0x54   0xE3A0'1CFF        MOV      R1,#+65280
+   \       0x58   0xE001'0400        AND      R0,R1,R0, LSL #+8
+    195          
+    196          	spi->SPI_CSR[cs] = csr;
+   \                     ??spi_set_cs_bitrate_1:
+   \       0x5C   0xE3C5'3CFF        BIC      R3,R5,#0xFF00
+   \       0x60   0xE180'0003        ORR      R0,R0,R3
+   \       0x64   0xE584'0030        STR      R0,[R4, #+48]
+    197          }
+   \       0x68   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    198          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    199          uint32_t spi_get_status(Spi * spi)
+    200          {
+    201          	return spi->SPI_SR;
+   \                     spi_get_status:
+   \        0x0   0xE590'0010        LDR      R0,[R0, #+16]
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    202          }
+    203          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    204          uint32_t spi_get_masked_status(Spi *spi)
+    205          {
+   \                     spi_get_masked_status:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    206          	uint32_t status;
+    207          	assert(spi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??spi_get_masked_status_0
+   \        0xC   0xE3A0'20CF        MOV      R2,#+207
+   \       0x10   0x....'....        LDR      R1,??DataTable12_2
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    208          	status = spi->SPI_SR;
+   \                     ??spi_get_masked_status_0:
+   \       0x20   0xE594'0010        LDR      R0,[R4, #+16]
+    209          	status &= spi->SPI_IMR;
+   \       0x24   0xE594'101C        LDR      R1,[R4, #+28]
+    210          	return status;
+   \       0x28   0xE001'0000        AND      R0,R1,R0
+   \       0x2C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    211          }
+    212          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    213          void spi_write(Spi *spi, uint16_t tx)
+    214          {
+    215          	while ((spi->SPI_SR & SPI_SR_TDRE) == 0);
+   \                     spi_write:
+   \                     ??spi_write_0:
+   \        0x0   0xE590'2010        LDR      R2,[R0, #+16]
+   \        0x4   0xE312'0002        TST      R2,#0x2
+   \        0x8   0x0AFF'FFFC        BEQ      ??spi_write_0
+    216          
+    217          	writehw(&spi->SPI_TDR, SPI_TDR_TD(tx));
+   \        0xC   0xE1C0'10BC        STRH     R1,[R0, #+12]
+    218          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    219          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    220          uint16_t spi_read(Spi *spi)
+    221          {
+    222          	while ((spi->SPI_SR & SPI_SR_RDRF) == 0);
+   \                     spi_read:
+   \                     ??spi_read_0:
+   \        0x0   0xE590'1010        LDR      R1,[R0, #+16]
+   \        0x4   0xE311'0001        TST      R1,#0x1
+   \        0x8   0x0AFF'FFFC        BEQ      ??spi_read_0
+    223          
+    224          	return (spi->SPI_RDR & SPI_RDR_RD_Msk);
+   \        0xC   0x....'....        B        ?Subroutine0
+    225          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE590'0008        LDR      R0,[R0, #+8]
+   \        0x4   0xE6FF'0070        UXTH     R0,R0
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    226          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    227          uint16_t spi_transfer(Spi *spi, uint16_t tx)
+    228          {
+    229          	spi_write(spi, tx);
+   \                     spi_transfer:
+   \                     ??spi_transfer_0:
+   \        0x0   0xE590'2010        LDR      R2,[R0, #+16]
+   \        0x4   0xE312'0002        TST      R2,#0x2
+   \        0x8   0x0AFF'FFFC        BEQ      ??spi_transfer_0
+   \        0xC   0xE1C0'10BC        STRH     R1,[R0, #+12]
+    230          
+    231          	return spi_read(spi);
+   \                     ??spi_transfer_1:
+   \       0x10   0xE590'1010        LDR      R1,[R0, #+16]
+   \       0x14   0xE311'0001        TST      R1,#0x1
+   \       0x18   0x0AFF'FFFC        BEQ      ??spi_transfer_1
+   \       0x1C                      REQUIRE ?Subroutine0
+   \       0x1C                      ;; // Fall through to label ?Subroutine0
+    232          }
+    233          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    234          bool spi_is_tx_finished(Spi * spi)
+    235          {
+    236          	return ((spi->SPI_SR & SPI_SR_TXEMPTY) != 0);
+   \                     spi_is_tx_finished:
+   \        0x0   0xE590'0010        LDR      R0,[R0, #+16]
+   \        0x4   0xE1A0'14A0        LSR      R1,R0,#+9
+   \        0x8   0xE201'0001        AND      R0,R1,#0x1
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    237          }
+    238          
+    239          #ifdef CONFIG_HAVE_SPI_FIFO
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    240          void spi_fifo_configure(Spi *spi, uint8_t tx_thres, uint8_t rx_thres)
+    241          {
+   \                     spi_fifo_configure:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+   \        0xC   0xE1A0'6002        MOV      R6,R2
+    242          	assert(spi != NULL);
+   \       0x10   0x1A00'0004        BNE      ??spi_fifo_configure_0
+   \       0x14   0xE3A0'20F2        MOV      R2,#+242
+   \       0x18   0x....'....        LDR      R1,??DataTable12_2
+   \       0x1C   0x....'....        ADR      R0,?_3
+   \       0x20   0x....'....        BL       __aeabi_assert
+   \       0x24   0x....'....        BL       __iar_EmptyStepPoint
+    243          
+    244          	/* Configure FIFO */
+    245          	spi->SPI_FMR = SPI_FMR_TXFTHRES(tx_thres) | SPI_FMR_RXFTHRES(rx_thres)
+    246          		| SPI_FMR_RXRDYM_ONE_DATA | SPI_FMR_TXRDYM_ONE_DATA;
+   \                     ??spi_fifo_configure_0:
+   \       0x28   0xE3A0'09FC        MOV      R0,#+4128768
+   \       0x2C   0xE3A0'15FC        MOV      R1,#+1056964608
+   \       0x30   0xE000'0805        AND      R0,R0,R5, LSL #+16
+   \       0x34   0xE001'1C06        AND      R1,R1,R6, LSL #+24
+   \       0x38   0xE181'1000        ORR      R1,R1,R0
+   \       0x3C   0xE584'1040        STR      R1,[R4, #+64]
+    247          }
+   \       0x40   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    248          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    249          void spi_fifo_enable(Spi *spi)
+    250          {
+   \                     spi_fifo_enable:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    251          	assert(spi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??spi_fifo_enable_0
+   \        0xC   0xE3A0'20FB        MOV      R2,#+251
+   \       0x10   0x....'....        LDR      R1,??DataTable12_2
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    252          
+    253          	spi->SPI_CR = SPI_CR_SPIDIS;
+   \                     ??spi_fifo_enable_0:
+   \       0x20   0xE3A0'0002        MOV      R0,#+2
+    254          	spi->SPI_CR = SPI_CR_FIFOEN | SPI_CR_TXFCLR | SPI_CR_RXFCLR;
+   \       0x24   0xE3A0'1440        MOV      R1,#+1073741824
+   \       0x28   0x....'....        B        ?Subroutine2
+    255          
+    256          	spi->SPI_CR = SPI_CR_SPIEN;
+    257          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE584'0000        STR      R0,[R4, #+0]
+   \        0x4   0xE381'1BC0        ORR      R1,R1,#0x30000
+   \        0x8   0xE3A0'2001        MOV      R2,#+1
+   \        0xC   0xE584'1000        STR      R1,[R4, #+0]
+   \       0x10   0xE584'2000        STR      R2,[R4, #+0]
+   \       0x14   0xE8BD'8010        POP      {R4,PC}          ;; return
+    258          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    259          void spi_fifo_disable(Spi *spi)
+    260          {
+   \                     spi_fifo_disable:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    261          	assert(spi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??spi_fifo_disable_0
+   \        0xC   0xE300'2105        MOVW     R2,#+261
+   \       0x10   0x....'....        LDR      R1,??DataTable12_2
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    262          
+    263          	spi->SPI_CR = SPI_CR_SPIDIS;
+   \                     ??spi_fifo_disable_0:
+   \       0x20   0xE3A0'0002        MOV      R0,#+2
+    264          	spi->SPI_CR = SPI_CR_FIFODIS | SPI_CR_TXFCLR | SPI_CR_RXFCLR;
+   \       0x24   0xE3A0'1480        MOV      R1,#-2147483648
+   \       0x28                      REQUIRE ?Subroutine2
+   \       0x28                      ;; // Fall through to label ?Subroutine2
+    265          
+    266          	spi->SPI_CR = SPI_CR_SPIEN;
+    267          }
+    268          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    269          uint32_t spi_fifo_get_rx_size(Spi *spi)
+    270          {
+   \                     spi_fifo_get_rx_size:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    271          	assert(spi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??spi_fifo_get_rx_size_0
+   \        0xC   0xE300'210F        MOVW     R2,#+271
+   \       0x10   0x....'....        LDR      R1,??DataTable12_2
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    272          
+    273          	return (spi->SPI_FLR & SPI_FLR_RXFL_Msk) >> SPI_FLR_RXFL_Pos;
+   \                     ??spi_fifo_get_rx_size_0:
+   \       0x20   0xE594'0044        LDR      R0,[R4, #+68]
+   \       0x24   0xE7E5'0850        UBFX     R0,R0,#+16,#+6
+   \       0x28   0xE8BD'8010        POP      {R4,PC}          ;; return
+    274          }
+    275          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    276          uint32_t spi_fifo_get_tx_size(Spi *spi)
+    277          {
+   \                     spi_fifo_get_tx_size:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    278          	assert(spi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??spi_fifo_get_tx_size_0
+   \        0xC   0xE300'2116        MOVW     R2,#+278
+   \       0x10   0x....'....        LDR      R1,??DataTable12_2
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    279          
+    280          	return (spi->SPI_FLR & SPI_FLR_TXFL_Msk) >> SPI_FLR_TXFL_Pos;
+   \                     ??spi_fifo_get_tx_size_0:
+   \       0x20   0xE594'0044        LDR      R0,[R4, #+68]
+   \       0x24   0xE200'003F        AND      R0,R0,#0x3F
+   \       0x28   0xE8BD'8010        POP      {R4,PC}          ;; return
+    281          }
+    282          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    283          void spi_fifo_flush_rx(Spi *spi)
+    284          {
+   \                     spi_fifo_flush_rx:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    285          	assert(spi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??spi_fifo_flush_rx_0
+   \        0xC   0xE300'211D        MOVW     R2,#+285
+   \       0x10   0x....'....        LDR      R1,??DataTable12_2
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    286          	spi->SPI_CR = SPI_CR_RXFCLR;
+   \                     ??spi_fifo_flush_rx_0:
+   \       0x20   0xE3A0'0B80        MOV      R0,#+131072
+   \       0x24   0x....'....        B        ?Subroutine3
+    287          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine3:
+   \        0x0   0xE584'0000        STR      R0,[R4, #+0]
+   \        0x4   0xE8BD'8010        POP      {R4,PC}          ;; return
+    288          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    289          void spi_fifo_flush_tx(Spi *spi)
+    290          {
+   \                     spi_fifo_flush_tx:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    291          	assert(spi != NULL);
+   \        0x8   0x1A00'0004        BNE      ??spi_fifo_flush_tx_0
+   \        0xC   0xE300'2123        MOVW     R2,#+291
+   \       0x10   0x....'....        LDR      R1,??DataTable12_2
+   \       0x14   0x....'....        ADR      R0,?_3
+   \       0x18   0x....'....        BL       __aeabi_assert
+   \       0x1C   0x....'....        BL       __iar_EmptyStepPoint
+    292          	spi->SPI_CR = SPI_CR_TXFCLR;
+   \                     ??spi_fifo_flush_tx_0:
+   \       0x20   0xE3A0'0B40        MOV      R0,#+65536
+   \       0x24                      REQUIRE ?Subroutine3
+   \       0x24                      ;; // Fall through to label ?Subroutine3
+    293          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable12:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable12_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable12_2:
+   \        0x0   0x....'....        DC32     ?_0+0x70
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable12_3:
+   \        0x0   0x8637'BD06        DC32     0x8637bd06
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable12_4:
+   \        0x0   0xA3D7'0A3E        DC32     0xa3d70a3e
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable12_5:
+   \        0x0   0x8312'6E98        DC32     0x83126e98
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x44          DC8 0x2D, 0x44, 0x2D, 0x20, 0x43, 0x3A, 0x5C, 0x77
+
+   \              0x2D 0x20    
+
+   \              0x43 0x3A    
+
+   \              0x5C 0x77
+   \        0x8   0x6F 0x72          DC8 0x6F, 0x72, 0x6B, 0x5C, 0x41, 0x74, 0x6D, 0x65
+
+   \              0x6B 0x5C    
+
+   \              0x41 0x74    
+
+   \              0x6D 0x65
+   \       0x10   0x6C 0x53          DC8 0x6C, 0x53, 0x6F, 0x66, 0x74, 0x50, 0x41, 0x63
+
+   \              0x6F 0x66    
+
+   \              0x74 0x50    
+
+   \              0x41 0x63
+   \       0x18   0x6B 0x5C          DC8 0x6B, 0x5C, 0x61, 0x74, 0x6D, 0x65, 0x6C, 0x2D
+
+   \              0x61 0x74    
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x2D
+   \       0x20   0x73 0x6F          DC8 0x73, 0x6F, 0x66, 0x74, 0x77, 0x61, 0x72, 0x65
+
+   \              0x66 0x74    
+
+   \              0x77 0x61    
+
+   \              0x72 0x65
+   \       0x28   0x2D 0x70          DC8 0x2D, 0x70, 0x61, 0x63, 0x6B, 0x61, 0x67, 0x65
+
+   \              0x61 0x63    
+
+   \              0x6B 0x61    
+
+   \              0x67 0x65
+   \       0x30   0x2D 0x32          DC8 0x2D, 0x32, 0x2E, 0x31, 0x37, 0x5C, 0x64, 0x72
+
+   \              0x2E 0x31    
+
+   \              0x37 0x5C    
+
+   \              0x64 0x72
+   \       0x38   0x69 0x76          DC8 0x69, 0x76, 0x65, 0x72, 0x73, 0x5C, 0x73, 0x70
+
+   \              0x65 0x72    
+
+   \              0x73 0x5C    
+
+   \              0x73 0x70
+   \       0x40   0x69 0x5C          DC8 0x69, 0x5C, 0x73, 0x70, 0x69, 0x2E, 0x63, 0x3A
+
+   \              0x73 0x70    
+
+   \              0x69 0x2E    
+
+   \              0x63 0x3A
+   \       0x48   0x31 0x37          DC8 0x31, 0x37, 0x35, 0x20, 0x53, 0x70, 0x69, 0x3A
+
+   \              0x35 0x20    
+
+   \              0x53 0x70    
+
+   \              0x69 0x3A
+   \       0x50   0x20 0x63          DC8 0x20, 0x63, 0x6F, 0x6E, 0x66, 0x69, 0x67, 0x75
+
+   \              0x6F 0x6E    
+
+   \              0x66 0x69    
+
+   \              0x67 0x75
+   \       0x58   0x72 0x69          DC8 0x72, 0x69, 0x6E, 0x67, 0x20, 0x63, 0x68, 0x69
+
+   \              0x6E 0x67    
+
+   \              0x20 0x63    
+
+   \              0x68 0x69
+   \       0x60   0x70 0x20          DC8 0x70, 0x20, 0x73, 0x65, 0x6C, 0x65, 0x63, 0x74
+
+   \              0x73 0x65    
+
+   \              0x6C 0x65    
+
+   \              0x63 0x74
+   \       0x68   0x20 0x25          DC8 0x20, 0x25, 0x75, 0x0D, 0x0A, 0
+
+   \              0x75 0x0D    
+
+   \              0x0A 0x00
+   \       0x6E   0x00 0x00          DC8 0, 0
+   \       0x70   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \       0x78   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x80   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x88   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x90   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x98   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0xA0   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0xA8   0x73 0x5C          DC8 0x73, 0x5C, 0x73, 0x70, 0x69, 0x5C, 0x73, 0x70
+
+   \              0x73 0x70    
+
+   \              0x69 0x5C    
+
+   \              0x73 0x70
+   \       0xB0   0x69 0x2E          DC8 0x69, 0x2E, 0x63, 0
+
+   \              0x63 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_2:
+   \        0x0   0x69 0x64          DC8 "id < (79)"
+
+   \              0x20 0x3C    
+
+   \              0x20 0x28    
+
+   \              0x37 0x39    
+
+   \              0x29 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_3:
+   \        0x0   0x73 0x70          DC8 "spi != ((void*)0)"
+
+   \              0x69 0x20    
+
+   \              0x21 0x3D    
+
+   \              0x20 0x28    
+
+   \              0x28 0x76    
+
+   \              0x6F 0x69    
+
+   \              0x64 0x2A    
+
+   \              0x29 0x30    
+
+   \              0x29 0x00
+   \       0x12   0x00 0x00          DC8 0, 0
+    294          
+    295          #endif /* CONFIG_HAVE_SPI_FIFO */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   spi_configure
+      32   spi_configure_cs
+        32   -> __aeabi_assert
+        32   -> __iar_EmptyStepPoint
+        32   -> get_spi_id_from_addr
+        32   -> pmc_get_peripheral_clock
+        32   -> printf
+        32 __aeabi_uidiv
+       0   spi_disable
+       0   spi_disable_it
+       0   spi_enable
+       0   spi_enable_it
+      16   spi_fifo_configure
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+       8   spi_fifo_disable
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   spi_fifo_enable
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   spi_fifo_flush_rx
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   spi_fifo_flush_tx
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   spi_fifo_get_rx_size
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   spi_fifo_get_tx_size
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   spi_get_masked_status
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       0   spi_get_status
+       0   spi_is_tx_finished
+       0   spi_mode_master_enable
+       0   spi_read
+       0   spi_release_cs
+       8   spi_select_cs
+      24   spi_set_cs_bitrate
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+        24   -> get_spi_id_from_addr
+        24   -> pmc_get_peripheral_clock
+        24 __aeabi_uidiv
+       0   spi_transfer
+       0   spi_write
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable12
+       4  ??DataTable12_1
+       4  ??DataTable12_2
+       4  ??DataTable12_3
+       4  ??DataTable12_4
+       4  ??DataTable12_5
+      12  ?Subroutine0
+       8  ?Subroutine1
+      24  ?Subroutine2
+       8  ?Subroutine3
+     180  ?_0
+      12  ?_2
+      20  ?_3
+      32  spi_configure
+     244  spi_configure_cs
+       4  spi_disable
+       8  spi_disable_it
+       8  spi_enable
+       8  spi_enable_it
+      68  spi_fifo_configure
+      40  spi_fifo_disable
+      44  spi_fifo_enable
+      40  spi_fifo_flush_rx
+      36  spi_fifo_flush_tx
+      44  spi_fifo_get_rx_size
+      44  spi_fifo_get_tx_size
+      48  spi_get_masked_status
+       8  spi_get_status
+      16  spi_is_tx_finished
+      32  spi_mode_master_enable
+      16  spi_read
+       8  spi_release_cs
+      44  spi_select_cs
+     108  spi_set_cs_bitrate
+      28  spi_transfer
+      20  spi_write
+
+ 
+   180 bytes in section .rodata
+ 1'056 bytes in section SOFTPACK
+ 
+ 1'056 bytes of CODE  memory
+   180 bytes of CONST memory
+
+Errors: none
+Warnings: none

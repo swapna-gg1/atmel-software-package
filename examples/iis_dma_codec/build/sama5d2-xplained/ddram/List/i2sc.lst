@@ -1,0 +1,1023 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         08/Dec/2020  21:18:55
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\i2sc.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW31F8.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\i2sc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_SECURE_MATRIX -D
+#        CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC -D
+#        CONFIG_HAVE_CLASSD -D CONFIG_HAVE_I2SC -D CONFIG_HAVE_PDMIC -D
+#        CONFIG_HAVE_AUDIO_AD1934 -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_AUDIO_WM8731 --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\ddram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-A5 -e --fpu=VFPv4_D16 --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\ddram\List\i2sc.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\iis_dma_codec\build\sama5d2-xplained\ddram\Obj\i2sc.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf  =  flags,widths
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\i2sc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <assert.h>
+     35          #include <stdio.h>
+     36          #include <string.h>
+     37          
+     38          #include "audio/i2sc.h"
+
+  extern void i2sc_tx_stop(struct _classd_desc* desc);
+                                  ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\i2sc.h",116  Warning[Pe231]: 
+          declaration is not visible outside of function
+     39          #include "callback.h"
+     40          #include "chip.h"
+     41          #include "errno.h"
+     42          #include "io.h"
+     43          #include "mm/cache.h"
+     44          #include "peripherals/pmc.h"
+     45          #include "trace.h"
+     46          
+     47          /*----------------------------------------------------------------------------
+     48           *        Local constants
+     49           *----------------------------------------------------------------------------*/
+     50          
+     51          /*----------------------------------------------------------------------------
+     52           *        Local functions
+     53           *----------------------------------------------------------------------------*/
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     54          static int _i2sc_dma_rx_callback(void* arg, void* arg2)
+     55          {
+   \                     _i2sc_dma_rx_callback:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     56          	struct _i2sc_desc* desc = (struct _i2sc_desc*)arg;
+   \        0xC   0xE1B0'6004        MOVS     R6,R4
+     57          
+     58          	cache_invalidate_region(desc->rx.dma.cfg.daddr, desc->rx.dma.cfg.len);
+   \       0x10   0xE596'1040        LDR      R1,[R6, #+64]
+   \       0x14   0xE596'003C        LDR      R0,[R6, #+60]
+   \       0x18   0x....'....        BL       cache_invalidate_region
+     59          
+     60          	dma_reset_channel(desc->rx.dma.channel);
+   \       0x1C   0xE596'0028        LDR      R0,[R6, #+40]
+   \       0x20   0x....'....        BL       dma_reset_channel
+     61          
+     62          	mutex_unlock(&desc->rx.mutex);
+   \       0x24   0xE296'000C        ADDS     R0,R6,#+12
+   \       0x28   0x....'....        BL       mutex_unlock
+     63          
+     64          	return callback_call(&desc->rx.callback, NULL);
+   \       0x2C   0xE3A0'1000        MOV      R1,#+0
+   \       0x30   0xE296'0020        ADDS     R0,R6,#+32
+   \       0x34   0x....'....        BL       callback_call
+   \       0x38   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+     65          }
+     66          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     67          static void _i2sc_dma_rx_transfer(struct _i2sc_desc* desc, struct _buffer* buffer)
+     68          {
+   \                     _i2sc_dma_rx_transfer:
+   \        0x0   0xE92D'407C        PUSH     {R2-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     69          	uint32_t id = get_i2sc_id_from_addr(desc->addr);
+                 	              ^
+Warning[Pe223]: function "get_i2sc_id_from_addr" declared implicitly
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0x....'....        BL       get_i2sc_id_from_addr
+   \       0x14   0xE1B0'6000        MOVS     R6,R0
+     70          	struct _callback _cb;
+     71          
+     72          	assert(id < ID_PERIPH_COUNT);
+   \       0x18   0xE356'004F        CMP      R6,#+79
+   \       0x1C   0x3A00'0004        BCC      ??_i2sc_dma_rx_transfer_0
+   \       0x20   0xE3A0'2048        MOV      R2,#+72
+   \       0x24   0x....'....        LDR      R1,??DataTable3
+   \       0x28   0x....'....        LDR      R0,??DataTable3_1
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+     73          
+     74          	desc->rx.dma.cfg.saddr = (void*)&desc->addr->I2SC_RHR;
+   \                     ??_i2sc_dma_rx_transfer_0:
+   \       0x34   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x38   0xE290'0020        ADDS     R0,R0,#+32
+   \       0x3C   0xE584'0038        STR      R0,[R4, #+56]
+     75          	desc->rx.dma.cfg.daddr = buffer->data;
+   \       0x40   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x44   0xE584'003C        STR      R0,[R4, #+60]
+     76          
+     77          	if (desc->datalen == 8) {
+   \       0x48   0xE5D4'0009        LDRB     R0,[R4, #+9]
+   \       0x4C   0xE350'0008        CMP      R0,#+8
+   \       0x50   0x1A00'0004        BNE      ??_i2sc_dma_rx_transfer_1
+     78          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+   \       0x54   0xE3A0'0000        MOV      R0,#+0
+   \       0x58   0xE584'0064        STR      R0,[R4, #+100]
+     79          		desc->tx.dma.cfg.len  = buffer->size;
+   \       0x5C   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x60   0xE584'0078        STR      R0,[R4, #+120]
+   \       0x64   0xEA00'0010        B        ??_i2sc_dma_rx_transfer_2
+     80          	} else if (desc->datalen == 16) {
+   \                     ??_i2sc_dma_rx_transfer_1:
+   \       0x68   0xE5D4'0009        LDRB     R0,[R4, #+9]
+   \       0x6C   0xE350'0010        CMP      R0,#+16
+   \       0x70   0x1A00'0005        BNE      ??_i2sc_dma_rx_transfer_3
+     81          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_HALF_WORD;
+   \       0x74   0xE3A0'0001        MOV      R0,#+1
+   \       0x78   0xE584'0064        STR      R0,[R4, #+100]
+     82          		desc->tx.dma.cfg.len  = buffer->size/2;
+   \       0x7C   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x80   0xE1B0'00A0        LSRS     R0,R0,#+1
+   \       0x84   0xE584'0078        STR      R0,[R4, #+120]
+   \       0x88   0xEA00'0007        B        ??_i2sc_dma_rx_transfer_2
+     83          	} else if (desc->datalen == 32) {
+   \                     ??_i2sc_dma_rx_transfer_3:
+   \       0x8C   0xE5D4'0009        LDRB     R0,[R4, #+9]
+   \       0x90   0xE350'0020        CMP      R0,#+32
+   \       0x94   0x1A00'0004        BNE      ??_i2sc_dma_rx_transfer_2
+     84          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_WORD;
+   \       0x98   0xE3A0'0002        MOV      R0,#+2
+   \       0x9C   0xE584'0064        STR      R0,[R4, #+100]
+     85          		desc->tx.dma.cfg.len  = buffer->size/4;
+   \       0xA0   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0xA4   0xE1B0'0120        LSRS     R0,R0,#+2
+   \       0xA8   0xE584'0078        STR      R0,[R4, #+120]
+     86          	}
+     87          	dma_configure_transfer(desc->rx.dma.channel, &desc->rx.dma.cfg_dma, &desc->rx.dma.cfg, 1);
+   \                     ??_i2sc_dma_rx_transfer_2:
+   \       0xAC   0xE3A0'3001        MOV      R3,#+1
+   \       0xB0   0xE294'2038        ADDS     R2,R4,#+56
+   \       0xB4   0xE294'102C        ADDS     R1,R4,#+44
+   \       0xB8   0xE594'0028        LDR      R0,[R4, #+40]
+   \       0xBC   0x....'....        BL       dma_configure_transfer
+     88          	callback_set(&_cb, _i2sc_dma_rx_callback, (void*)desc);
+   \       0xC0   0xE1B0'2004        MOVS     R2,R4
+   \       0xC4   0x....'....        ADR      R1,_i2sc_dma_rx_callback
+   \       0xC8   0xE1B0'000D        MOVS     R0,SP
+   \       0xCC   0x....'....        BL       callback_set
+     89          	dma_set_callback(desc->rx.dma.channel, &_cb);
+   \       0xD0   0xE1B0'100D        MOVS     R1,SP
+   \       0xD4   0xE594'0028        LDR      R0,[R4, #+40]
+   \       0xD8   0x....'....        BL       dma_set_callback
+     90          	dma_start_transfer(desc->rx.dma.channel);
+   \       0xDC   0xE594'0028        LDR      R0,[R4, #+40]
+   \       0xE0   0x....'....        BL       dma_start_transfer
+     91          }
+   \       0xE4   0xE8BD'8073        POP      {R0,R1,R4-R6,PC}  ;; return
+     92          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     93          static int _i2sc_dma_tx_callback(void* arg, void* arg2)
+     94          {
+   \                     _i2sc_dma_tx_callback:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     95          	struct _i2sc_desc* desc = (struct _i2sc_desc*)arg;
+   \        0xC   0xE1B0'6004        MOVS     R6,R4
+     96          
+     97          	dma_reset_channel(desc->tx.dma.channel);
+   \       0x10   0xE596'0060        LDR      R0,[R6, #+96]
+   \       0x14   0x....'....        BL       dma_reset_channel
+     98          
+     99          	mutex_unlock(&desc->tx.mutex);
+   \       0x18   0xE296'0044        ADDS     R0,R6,#+68
+   \       0x1C   0x....'....        BL       mutex_unlock
+    100          
+    101          	return callback_call(&desc->tx.callback, NULL);
+   \       0x20   0xE3A0'1000        MOV      R1,#+0
+   \       0x24   0xE296'0058        ADDS     R0,R6,#+88
+   \       0x28   0x....'....        BL       callback_call
+   \       0x2C   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    102          }
+    103          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    104          static void _i2sc_dma_tx_transfer(struct _i2sc_desc* desc, struct _buffer* buffer)
+    105          {
+   \                     _i2sc_dma_tx_transfer:
+   \        0x0   0xE92D'43FE        PUSH     {R1-R9,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    106          	uint32_t id = get_i2sc_id_from_addr(desc->addr);
+                 	              ^
+Warning[Pe223]: function "get_i2sc_id_from_addr" declared implicitly
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0x....'....        BL       get_i2sc_id_from_addr
+   \       0x14   0xE1B0'6000        MOVS     R6,R0
+    107          	struct _callback _cb;
+    108          
+    109          	assert(id < ID_PERIPH_COUNT);
+   \       0x18   0xE356'004F        CMP      R6,#+79
+   \       0x1C   0x3A00'0004        BCC      ??_i2sc_dma_tx_transfer_0
+   \       0x20   0xE3A0'206D        MOV      R2,#+109
+   \       0x24   0x....'....        LDR      R1,??DataTable3
+   \       0x28   0x....'....        LDR      R0,??DataTable3_1
+   \       0x2C   0x....'....        BL       __aeabi_assert
+   \       0x30   0x....'....        BL       __iar_EmptyStepPoint
+    110          
+    111          	memset(&desc->tx.dma.cfg, 0x0, sizeof(desc->tx.dma.cfg));
+   \                     ??_i2sc_dma_tx_transfer_0:
+   \       0x34   0xE3A0'700C        MOV      R7,#+12
+   \       0x38   0xE3A0'8000        MOV      R8,#+0
+   \       0x3C   0xE294'9070        ADDS     R9,R4,#+112
+   \       0x40   0xE1B0'2008        MOVS     R2,R8
+   \       0x44   0xE1B0'1007        MOVS     R1,R7
+   \       0x48   0xE1B0'0009        MOVS     R0,R9
+   \       0x4C   0x....'....        BL       __aeabi_memset
+   \       0x50   0xE1B0'0009        MOVS     R0,R9
+    112          
+    113          	desc->tx.dma.cfg.saddr = buffer->data;
+   \       0x54   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x58   0xE584'0070        STR      R0,[R4, #+112]
+    114          	desc->tx.dma.cfg.daddr = (void*)&desc->addr->I2SC_THR;
+   \       0x5C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x60   0xE290'0024        ADDS     R0,R0,#+36
+   \       0x64   0xE584'0074        STR      R0,[R4, #+116]
+    115          
+    116          	if (desc->datalen == 8) {
+   \       0x68   0xE5D4'0009        LDRB     R0,[R4, #+9]
+   \       0x6C   0xE350'0008        CMP      R0,#+8
+   \       0x70   0x1A00'0004        BNE      ??_i2sc_dma_tx_transfer_1
+    117          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+   \       0x74   0xE3A0'0000        MOV      R0,#+0
+   \       0x78   0xE584'0064        STR      R0,[R4, #+100]
+    118          		desc->tx.dma.cfg.len  = buffer->size;
+   \       0x7C   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x80   0xE584'0078        STR      R0,[R4, #+120]
+   \       0x84   0xEA00'0010        B        ??_i2sc_dma_tx_transfer_2
+    119          	} else if (desc->datalen == 16) {
+   \                     ??_i2sc_dma_tx_transfer_1:
+   \       0x88   0xE5D4'0009        LDRB     R0,[R4, #+9]
+   \       0x8C   0xE350'0010        CMP      R0,#+16
+   \       0x90   0x1A00'0005        BNE      ??_i2sc_dma_tx_transfer_3
+    120          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_HALF_WORD;
+   \       0x94   0xE3A0'0001        MOV      R0,#+1
+   \       0x98   0xE584'0064        STR      R0,[R4, #+100]
+    121          		desc->tx.dma.cfg.len  = buffer->size/2;
+   \       0x9C   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0xA0   0xE1B0'00A0        LSRS     R0,R0,#+1
+   \       0xA4   0xE584'0078        STR      R0,[R4, #+120]
+   \       0xA8   0xEA00'0007        B        ??_i2sc_dma_tx_transfer_2
+    122          	} else if (desc->datalen == 32) {
+   \                     ??_i2sc_dma_tx_transfer_3:
+   \       0xAC   0xE5D4'0009        LDRB     R0,[R4, #+9]
+   \       0xB0   0xE350'0020        CMP      R0,#+32
+   \       0xB4   0x1A00'0004        BNE      ??_i2sc_dma_tx_transfer_2
+    123          		desc->tx.dma.cfg_dma.data_width = DMA_DATA_WIDTH_WORD;
+   \       0xB8   0xE3A0'0002        MOV      R0,#+2
+   \       0xBC   0xE584'0064        STR      R0,[R4, #+100]
+    124          		desc->tx.dma.cfg.len  = buffer->size/4;
+   \       0xC0   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0xC4   0xE1B0'0120        LSRS     R0,R0,#+2
+   \       0xC8   0xE584'0078        STR      R0,[R4, #+120]
+    125          	}
+    126          	dma_configure_transfer(desc->tx.dma.channel, &desc->tx.dma.cfg_dma, &desc->tx.dma.cfg, 1);
+   \                     ??_i2sc_dma_tx_transfer_2:
+   \       0xCC   0xE3A0'3001        MOV      R3,#+1
+   \       0xD0   0xE294'2070        ADDS     R2,R4,#+112
+   \       0xD4   0xE294'1064        ADDS     R1,R4,#+100
+   \       0xD8   0xE594'0060        LDR      R0,[R4, #+96]
+   \       0xDC   0x....'....        BL       dma_configure_transfer
+    127          	callback_set(&_cb, _i2sc_dma_tx_callback, (void*)desc);
+   \       0xE0   0xE1B0'2004        MOVS     R2,R4
+   \       0xE4   0x....'....        ADR      R1,_i2sc_dma_tx_callback
+   \       0xE8   0xE1B0'000D        MOVS     R0,SP
+   \       0xEC   0x....'....        BL       callback_set
+    128          	dma_set_callback(desc->tx.dma.channel, &_cb);
+   \       0xF0   0xE1B0'100D        MOVS     R1,SP
+   \       0xF4   0xE594'0060        LDR      R0,[R4, #+96]
+   \       0xF8   0x....'....        BL       dma_set_callback
+    129          	cache_clean_region(desc->tx.dma.cfg.saddr, desc->tx.dma.cfg.len);
+   \       0xFC   0xE594'1078        LDR      R1,[R4, #+120]
+   \      0x100   0xE594'0070        LDR      R0,[R4, #+112]
+   \      0x104   0x....'....        BL       cache_clean_region
+    130          	dma_start_transfer(desc->tx.dma.channel);
+   \      0x108   0xE594'0060        LDR      R0,[R4, #+96]
+   \      0x10C   0x....'....        BL       dma_start_transfer
+    131          }
+   \      0x110   0xE8BD'83F7        POP      {R0-R2,R4-R9,PC}  ;; return
+    132          /*----------------------------------------------------------------------------
+    133           *        Exported functions
+    134           *----------------------------------------------------------------------------*/
+
+   \                                 In section .rodata, align 4
+    135          volatile uint32_t* const i2sc_mr   = (uint32_t*) 0xF8050004;
+   \                     i2sc_mr:
+   \        0x0   0xF805'0004        DC32 0xf805'0004
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    136          int i2sc_configure(struct _i2sc_desc *desc)
+    137          {
+   \                     i2sc_configure:
+   \        0x0   0xE92D'40FE        PUSH     {R1-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    138          	uint8_t i;
+    139          	uint32_t mr, intpmr, dsp_clk_set, frame_set;
+    140          	uint32_t id = get_i2sc_id_from_addr(desc->addr);
+                 	              ^
+Warning[Pe223]: function "get_i2sc_id_from_addr" declared implicitly
+
+  	uint8_t i;
+  	        ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\i2sc.c",138  Warning[Pe177]: 
+          variable "i" was declared but never referenced
+
+  	uint32_t mr, intpmr, dsp_clk_set, frame_set;
+  	         ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\i2sc.c",139  Warning[Pe177]: 
+          variable "mr" was declared but never referenced
+
+  	uint32_t mr, intpmr, dsp_clk_set, frame_set;
+  	             ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\i2sc.c",139  Warning[Pe177]: 
+          variable "intpmr" was declared but never referenced
+
+  	uint32_t mr, intpmr, dsp_clk_set, frame_set;
+  	                     ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\i2sc.c",139  Warning[Pe177]: 
+          variable "dsp_clk_set" was declared but never referenced
+
+  	uint32_t mr, intpmr, dsp_clk_set, frame_set;
+  	                                  ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\audio\i2sc.c",139  Warning[Pe177]: 
+          variable "frame_set" was declared but never referenced
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_i2sc_id_from_addr
+   \       0x10   0xE1B0'5000        MOVS     R5,R0
+    141                  struct _pmc_periph_cfg cfg = {
+    142          		.gck = {
+    143          #ifdef CONFIG_HAVE_PMC_AUDIO_CLOCK
+    144          			.css = PMC_PCR_GCKCSS_AUDIO_CLK,
+    145          			.div = 1,
+    146          #else
+    147          			.css = PMC_PCR_GCKCSS_MCK_CLK,
+    148          			.div = 2,
+    149          #endif	
+    150          		},
+    151          	};
+   \       0x14   0x....'....        LDR      R0,??DataTable3_2
+   \       0x18   0xE890'000C        LDM      R0,{R2,R3}
+   \       0x1C   0xE1B0'000D        MOVS     R0,SP
+   \       0x20   0xE1C0'20F0        STRD     R2,R3,[R0, #+0]
+    152                  
+    153                  /* Enable I2SC peripheral clock */
+    154          	pmc_configure_peripheral(id, &cfg, true); /* TO DO: Should we provide cfg? */
+   \       0x24   0xE3A0'2001        MOV      R2,#+1
+   \       0x28   0xE1B0'100D        MOVS     R1,SP
+   \       0x2C   0xE1B0'0005        MOVS     R0,R5
+   \       0x30   0x....'....        BL       pmc_configure_peripheral
+    155          
+    156          	/* perform soft reset */
+    157                  /* Reset, disable receiver & transmitter */
+    158          	desc->addr->I2SC_CR = I2SC_CR_RXDIS | I2SC_CR_TXDIS | I2SC_CR_SWRST;
+   \       0x34   0xE3A0'00A2        MOV      R0,#+162
+   \       0x38   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0x3C   0xE581'0000        STR      R0,[R1, #+0]
+    159          
+    160                  /* Select GCLK as clock source for I2SC0 in SFR module */
+    161                  SFR->SFR_I2SCLKSEL = SFR_I2SCLKSEL_CLKSEL0;
+   \       0x40   0xE3A0'6001        MOV      R6,#+1
+   \       0x44   0x....'....        LDR      R0,??DataTable3_3  ;; 0xf8030090
+   \       0x48   0xE580'6000        STR      R6,[R0, #+0]
+    162                  
+    163                  desc->addr->I2SC_MR = I2SC_MR_MODE_MASTER
+    164                                        | I2SC_MR_DATALENGTH_32_BITS
+    165                                        | I2SC_MR_FORMAT_I2S
+    166                                        | (3u << 16)
+    167                                        | I2SC_MR_IMCKFS(31)
+    168                                        | I2SC_MR_IMCKMODE;
+   \       0x4C   0x....'....        LDR      R0,??DataTable3_4  ;; 0x5f030001
+   \       0x50   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0x54   0xE581'0004        STR      R0,[R1, #+4]
+    169                   
+    170                  
+    171                  desc->addr->I2SC_MR = 0x5F030011;
+   \       0x58   0x....'....        LDR      R7,??DataTable3_5  ;; 0x5f030011
+   \       0x5C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x60   0xE580'7004        STR      R7,[R0, #+4]
+    172                  printf("value of I2SC_MR = 0x%08x", desc->addr->I2SC_MR);
+   \       0x64   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x68   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x6C   0x....'....        LDR      R0,??DataTable3_6
+   \       0x70   0x....'....        BL       printf
+    173                  //uint32_t mr1 = *i2sc_mr;
+    174                  *i2sc_mr = 0x5F030011;
+   \       0x74   0x....'....        LDR      R0,??DataTable3_7
+   \       0x78   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x7C   0xE581'7000        STR      R7,[R1, #+0]
+    175                   printf("value of CLASSD_MR = 0x%08x",*i2sc_mr);
+   \       0x80   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x84   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x88   0x....'....        LDR      R0,??DataTable3_8
+   \       0x8C   0x....'....        BL       printf
+    176          	desc->tx.dma.channel = dma_allocate_channel(DMA_PERIPH_MEMORY, id);
+   \       0x90   0xE1B0'1005        MOVS     R1,R5
+   \       0x94   0xE6EF'1071        UXTB     R1,R1
+   \       0x98   0xE3A0'00FF        MOV      R0,#+255
+   \       0x9C   0x....'....        BL       dma_allocate_channel
+   \       0xA0   0xE584'0060        STR      R0,[R4, #+96]
+    177          	assert(desc->tx.dma.channel != NULL);
+   \       0xA4   0xE594'0060        LDR      R0,[R4, #+96]
+   \       0xA8   0xE350'0000        CMP      R0,#+0
+   \       0xAC   0x1A00'0004        BNE      ??i2sc_configure_0
+   \       0xB0   0xE3A0'20B1        MOV      R2,#+177
+   \       0xB4   0x....'....        LDR      R1,??DataTable3
+   \       0xB8   0x....'....        LDR      R0,??DataTable3_9
+   \       0xBC   0x....'....        BL       __aeabi_assert
+   \       0xC0   0x....'....        BL       __iar_EmptyStepPoint
+    178          
+    179          	desc->tx.dma.cfg_dma.incr_saddr = true;
+   \                     ??i2sc_configure_0:
+   \       0xC4   0xE5C4'606C        STRB     R6,[R4, #+108]
+    180          	desc->tx.dma.cfg_dma.incr_daddr = false;
+   \       0xC8   0xE3A0'0000        MOV      R0,#+0
+   \       0xCC   0xE5C4'006D        STRB     R0,[R4, #+109]
+    181          	desc->tx.dma.cfg_dma.loop = false;
+   \       0xD0   0xE5C4'006E        STRB     R0,[R4, #+110]
+    182          	desc->tx.dma.cfg_dma.chunk_size = DMA_CHUNK_SIZE_1;
+   \       0xD4   0xE584'0068        STR      R0,[R4, #+104]
+    183          
+    184          	desc->tx.mutex = 0;
+   \       0xD8   0xE584'0044        STR      R0,[R4, #+68]
+    185          
+    186          
+    187          	return 0;
+   \       0xDC   0xE3A0'0000        MOV      R0,#+0
+   \       0xE0   0xE8BD'80FE        POP      {R1-R7,PC}       ;; return
+    188          }
+
+   \                                 In section .rodata, align 4
+   \                     ?_5:
+   \        0x0   0x0000'0500        DC32 1'280, 1
+
+   \              0x0000'0001
+    189          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    190          void i2sc_enable_transmitter(struct _i2sc_desc* desc)
+    191          {
+    192          	desc->addr->I2SC_CR = I2SC_CR_CKEN | I2SC_CR_TXEN;
+   \                     i2sc_enable_transmitter:
+   \        0x0   0xE3A0'1014        MOV      R1,#+20
+   \        0x4   0xE590'2000        LDR      R2,[R0, #+0]
+   \        0x8   0xE582'1000        STR      R1,[R2, #+0]
+    193          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    194          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    195          void i2sc_disable_transmitter(struct _i2sc_desc* desc)
+    196          {
+    197          	desc->addr->I2SC_CR = I2SC_CR_CKDIS | I2SC_CR_TXDIS;
+   \                     i2sc_disable_transmitter:
+   \        0x0   0xE3A0'1028        MOV      R1,#+40
+   \        0x4   0xE590'2000        LDR      R2,[R0, #+0]
+   \        0x8   0xE582'1000        STR      R1,[R2, #+0]
+    198          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    199          
+    200          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    201          int i2sc_transfer(struct _i2sc_desc* desc, struct _buffer* buf, struct _callback* cb)
+    202          {
+   \                     i2sc_transfer:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    203          	if ((buf == NULL) || (buf->size == 0))
+   \       0x10   0xE355'0000        CMP      R5,#+0
+   \       0x14   0x0A00'0002        BEQ      ??i2sc_transfer_0
+   \       0x18   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x1C   0xE350'0000        CMP      R0,#+0
+   \       0x20   0x1A00'0001        BNE      ??i2sc_transfer_1
+    204          		return -EINVAL;
+   \                     ??i2sc_transfer_0:
+   \       0x24   0xE3E0'001B        MVN      R0,#+27
+   \       0x28   0xEA00'0027        B        ??i2sc_transfer_2
+    205          
+    206          	if (buf->attr & I2SC_BUF_ATTR_READ) {
+   \                     ??i2sc_transfer_1:
+   \       0x2C   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \       0x30   0xE310'0002        TST      R0,#0x2
+   \       0x34   0x0A00'0010        BEQ      ??i2sc_transfer_3
+    207          		mutex_lock(&desc->rx.mutex);
+   \       0x38   0xE294'000C        ADDS     R0,R4,#+12
+   \       0x3C   0x....'....        BL       mutex_lock
+    208          
+    209          		callback_copy(&desc->rx.callback, cb);
+   \       0x40   0xE1B0'1006        MOVS     R1,R6
+   \       0x44   0xE294'0020        ADDS     R0,R4,#+32
+   \       0x48   0x....'....        BL       callback_copy
+    210          
+    211          		desc->rx.transferred = 0;
+   \       0x4C   0xE3A0'0000        MOV      R0,#+0
+   \       0x50   0xE1C4'01BC        STRH     R0,[R4, #+28]
+    212          		desc->rx.buffer.data = buf->data;
+   \       0x54   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x58   0xE584'0010        STR      R0,[R4, #+16]
+    213          		desc->rx.buffer.size = buf->size;
+   \       0x5C   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0x60   0xE584'0014        STR      R0,[R4, #+20]
+    214          		desc->rx.buffer.attr = buf->attr;
+   \       0x64   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0x68   0xE584'0018        STR      R0,[R4, #+24]
+    215          		_i2sc_dma_rx_transfer(desc, buf);
+   \       0x6C   0xE1B0'1005        MOVS     R1,R5
+   \       0x70   0xE1B0'0004        MOVS     R0,R4
+   \       0x74   0x....'....        BL       _i2sc_dma_rx_transfer
+   \       0x78   0xEA00'0012        B        ??i2sc_transfer_4
+    216          	} else if (buf->attr & I2SC_BUF_ATTR_WRITE) {
+   \                     ??i2sc_transfer_3:
+   \       0x7C   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \       0x80   0xE310'0001        TST      R0,#0x1
+   \       0x84   0x0A00'000F        BEQ      ??i2sc_transfer_4
+    217          		mutex_lock(&desc->tx.mutex);
+   \       0x88   0xE294'0044        ADDS     R0,R4,#+68
+   \       0x8C   0x....'....        BL       mutex_lock
+    218          
+    219          		callback_copy(&desc->tx.callback, cb);
+   \       0x90   0xE1B0'1006        MOVS     R1,R6
+   \       0x94   0xE294'0058        ADDS     R0,R4,#+88
+   \       0x98   0x....'....        BL       callback_copy
+    220          
+    221          		desc->tx.transferred = 0;
+   \       0x9C   0xE3A0'0000        MOV      R0,#+0
+   \       0xA0   0xE1C4'05B4        STRH     R0,[R4, #+84]
+    222          		desc->tx.buffer.data = buf->data;
+   \       0xA4   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0xA8   0xE584'0048        STR      R0,[R4, #+72]
+    223          		desc->tx.buffer.size = buf->size;
+   \       0xAC   0xE595'0004        LDR      R0,[R5, #+4]
+   \       0xB0   0xE584'004C        STR      R0,[R4, #+76]
+    224          		desc->tx.buffer.attr = buf->attr;
+   \       0xB4   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0xB8   0xE584'0050        STR      R0,[R4, #+80]
+    225          		_i2sc_dma_tx_transfer(desc, buf);
+   \       0xBC   0xE1B0'1005        MOVS     R1,R5
+   \       0xC0   0xE1B0'0004        MOVS     R0,R4
+   \       0xC4   0x....'....        BL       _i2sc_dma_tx_transfer
+    226          	}
+    227          
+    228          	return 0;
+   \                     ??i2sc_transfer_4:
+   \       0xC8   0xE3A0'0000        MOV      R0,#+0
+   \                     ??i2sc_transfer_2:
+   \       0xCC   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    229          }
+    230          
+    231          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    232          bool i2sc_tx_transfer_is_done(struct _i2sc_desc* desc)
+    233          {
+   \                     i2sc_tx_transfer_is_done:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    234          	return (!mutex_is_locked(&desc->tx.mutex));
+   \        0x8   0xE294'0044        ADDS     R0,R4,#+68
+   \        0xC   0x....'....        BL       mutex_is_locked
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x1A00'0001        BNE      ??i2sc_tx_transfer_is_done_0
+   \       0x18   0xE3A0'0001        MOV      R0,#+1
+   \       0x1C   0xEA00'0000        B        ??i2sc_tx_transfer_is_done_1
+   \                     ??i2sc_tx_transfer_is_done_0:
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \                     ??i2sc_tx_transfer_is_done_1:
+   \       0x24   0xE6EF'0070        UXTB     R0,R0
+   \       0x28   0xE8BD'8010        POP      {R4,PC}          ;; return
+    235          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_2:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_3:
+   \        0x0   0xF803'0090        DC32     0xf8030090
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_4:
+   \        0x0   0x5F03'0001        DC32     0x5f030001
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_5:
+   \        0x0   0x5F03'0011        DC32     0x5f030011
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_6:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_7:
+   \        0x0   0x....'....        DC32     i2sc_mr
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_8:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable3_9:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x69 0x64          DC8 "id < (79)"
+
+   \              0x20 0x3C    
+
+   \              0x20 0x28    
+
+   \              0x37 0x39    
+
+   \              0x29 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x61, 0x75, 0x64, 0x69, 0x6F, 0x5C
+
+   \              0x61 0x75    
+
+   \              0x64 0x69    
+
+   \              0x6F 0x5C
+   \       0x40   0x69 0x32          DC8 0x69, 0x32, 0x73, 0x63, 0x2E, 0x63, 0
+
+   \              0x73 0x63    
+
+   \              0x2E 0x63    
+
+   \              0x00
+   \       0x47   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x76 0x61          DC8 "value of I2SC_MR = 0x%08x"
+
+   \              0x6C 0x75    
+
+   \              0x65 0x20    
+
+   \              0x6F 0x66    
+
+   \              0x20 0x49    
+
+   \              0x32 0x53    
+
+   \              0x43 0x5F    
+
+   \              0x4D 0x52    
+
+   \              0x20 0x3D    
+
+   \              0x20 0x30    
+
+   \              0x78 0x25    
+
+   \              0x30 0x38    
+
+   \              0x78 0x00
+   \       0x1A   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x76 0x61          DC8 "value of CLASSD_MR = 0x%08x"
+
+   \              0x6C 0x75    
+
+   \              0x65 0x20    
+
+   \              0x6F 0x66    
+
+   \              0x20 0x43    
+
+   \              0x4C 0x41    
+
+   \              0x53 0x53    
+
+   \              0x44 0x5F    
+
+   \              0x4D 0x52    
+
+   \              0x20 0x3D    
+
+   \              0x20 0x30    
+
+   \              0x78 0x25    
+
+   \              0x30 0x38    
+
+   \              0x78 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_4:
+   \        0x0   0x64 0x65          DC8 "desc->tx.dma.channel != 0"
+
+   \              0x73 0x63    
+
+   \              0x2D 0x3E    
+
+   \              0x74 0x78    
+
+   \              0x2E 0x64    
+
+   \              0x6D 0x61    
+
+   \              0x2E 0x63    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x6C    
+
+   \              0x20 0x21    
+
+   \              0x3D 0x20    
+
+   \              0x30 0x00
+   \       0x1A   0x00 0x00          DC8 0, 0
+    236          
+    237          
+    238          #if 0
+    239          void i2sc_enable_receiver(struct _ssc_desc* desc)
+    240          {
+    241          	desc->addr->SSC_CR = SSC_CR_RXEN;
+    242          }
+    243          
+    244          void i2sc_disable_receiver(struct _ssc_desc* desc)
+    245          {
+    246          	desc->addr->SSC_CR = SSC_CR_RXDIS;
+    247          }
+    248          
+    249          
+    250          void classd_disable(struct _classd_desc *desc)
+    251          {
+    252          	uint32_t id = get_classd_id_from_addr(desc->addr);
+    253          #ifdef CONFIG_HAVE_PMC_AUDIO_CLOCK
+    254          	pmc_disable_audio();
+    255          #endif
+    256          	pmc_disable_gck(id);
+    257          	pmc_disable_peripheral(id);
+    258          }
+    259          
+    260          
+    261          void classd_tx_stop(struct _classd_desc* desc)
+    262          {
+    263          	if (desc->transfer_mode == CLASSD_MODE_DMA) {
+    264          		if (desc->tx.dma.channel){
+    265          			dma_stop_transfer(desc->tx.dma.channel);
+    266          			mutex_unlock(&desc->tx.mutex);
+    267          		}
+    268          	}
+    269          }
+    270          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   _i2sc_dma_rx_callback
+        16   -> cache_invalidate_region
+        16   -> callback_call
+        16   -> dma_reset_channel
+        16   -> mutex_unlock
+      24   _i2sc_dma_rx_transfer
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+        24   -> callback_set
+        24   -> dma_configure_transfer
+        24   -> dma_set_callback
+        24   -> dma_start_transfer
+        24   -> get_i2sc_id_from_addr
+      16   _i2sc_dma_tx_callback
+        16   -> callback_call
+        16   -> dma_reset_channel
+        16   -> mutex_unlock
+      40   _i2sc_dma_tx_transfer
+        40   -> __aeabi_assert
+        40   -> __aeabi_memset
+        40   -> __iar_EmptyStepPoint
+        40   -> cache_clean_region
+        40   -> callback_set
+        40   -> dma_configure_transfer
+        40   -> dma_set_callback
+        40   -> dma_start_transfer
+        40   -> get_i2sc_id_from_addr
+      32   i2sc_configure
+        32   -> __aeabi_assert
+        32   -> __iar_EmptyStepPoint
+        32   -> dma_allocate_channel
+        32   -> get_i2sc_id_from_addr
+        32   -> pmc_configure_peripheral
+        32   -> printf
+       0   i2sc_disable_transmitter
+       0   i2sc_enable_transmitter
+      16   i2sc_transfer
+        16   -> _i2sc_dma_rx_transfer
+        16   -> _i2sc_dma_tx_transfer
+        16   -> callback_copy
+        16   -> mutex_lock
+       8   i2sc_tx_transfer_is_done
+         8   -> mutex_is_locked
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+       4  ??DataTable3_3
+       4  ??DataTable3_4
+       4  ??DataTable3_5
+       4  ??DataTable3_6
+       4  ??DataTable3_7
+       4  ??DataTable3_8
+       4  ??DataTable3_9
+      12  ?_0
+      72  ?_1
+      28  ?_2
+      28  ?_3
+      28  ?_4
+       8  ?_5
+      60  _i2sc_dma_rx_callback
+     232  _i2sc_dma_rx_transfer
+      48  _i2sc_dma_tx_callback
+     276  _i2sc_dma_tx_transfer
+     228  i2sc_configure
+      16  i2sc_disable_transmitter
+      16  i2sc_enable_transmitter
+       4  i2sc_mr
+     208  i2sc_transfer
+      44  i2sc_tx_transfer_is_done
+
+ 
+   180 bytes in section .rodata
+ 1'168 bytes in section SOFTPACK
+ 
+ 1'168 bytes of CODE  memory
+   180 bytes of CONST memory
+
+Errors: none
+Warnings: 9

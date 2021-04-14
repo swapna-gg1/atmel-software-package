@@ -1,0 +1,1674 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         18/Feb/2021  16:03:18
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\spi\qspi.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWADD5.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\spi\qspi.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D27_SOM1_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_QSPI -D CONFIG_HAVE_QSPI_DMA -D CONFIG_HAVE_NFC -D
+#        CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D
+#        CONFIG_HAVE_GMAC_QUEUES -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_MPDDRC_DDR3 -D CONFIG_HAVE_MPDDRC_LPDDR3 -D
+#        CONFIG_HAVE_ADC_SETTLING_TIME -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_FAST_STARTUP -D
+#        CONFIG_HAVE_PMC_GENERATED_CLOCKS -D CONFIG_HAVE_PMC_AUDIO_CLOCK -D
+#        CONFIG_HAVE_PMC_PLLADIV2 -D CONFIG_HAVE_PMC_H32MXDIV -D
+#        CONFIG_HAVE_PMC_UPLL_BIAS -D CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA
+#        -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ
+#        -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_SFRBU
+#        -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_TRNG -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR2_W971GG6SB -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D
+#        CONFIG_HAVE_UART -D CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-A5 -e --fpu=VFPv4_D16 --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\List\qspi.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\qspi_flash\build\sama5d27-som1-ek\sram\Obj\qspi.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#      __iar_require _Printf         
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\spi\qspi.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         ATMEL Microcontroller Software Support
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           */
+     28          
+     29          /*----------------------------------------------------------------------------
+     30           *        HEADERS
+     31           *----------------------------------------------------------------------------*/
+     32          
+     33          #include <errno.h>
+     34          
+     35          #include "board.h"
+     36          #include "nvm/spi-nor/spi-nor.h"
+     37          #include "peripherals/pmc.h"
+     38          #include "string.h"
+     39          #include "spi/qspi.h"
+     40          #include "spi/spid.h"
+     41          #include "timer.h"
+     42          #include "trace.h"
+     43          #ifdef CONFIG_HAVE_QSPI_DMA
+     44          #include "barriers.h"
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \   static __interwork __vfp void dsb(void)
+   \                     `dsb`:
+   \        0x0   0xF57F'F04F        dsb
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+     45          #include "dma/dma.h"
+     46          #include "mm/cache.h"
+     47          #endif
+     48          
+     49          /*----------------------------------------------------------------------------
+     50           *        CONSTANTS
+     51           *----------------------------------------------------------------------------*/
+     52          
+     53          //#define QSPI_VERBOSE_DEBUG
+     54          
+     55          /*----------------------------------------------------------------------------
+     56           *        LOCAL FUNCTIONS
+     57           *----------------------------------------------------------------------------*/
+     58          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     59          static void * qspi_memcpy(union spi_flash_priv* priv, uint8_t *dst, const uint8_t *src, int count, bool use_dma)
+     60          {
+   \                     qspi_memcpy:
+   \        0x0   0xE92D'43FE        PUSH     {R1-R9,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE5DD'8028        LDRB     R8,[SP, #+40]
+     61          #ifdef CONFIG_HAVE_QSPI_DMA
+     62          	if (use_dma) {
+   \       0x18   0xE1B0'0008        MOVS     R0,R8
+   \       0x1C   0xE6EF'0070        UXTB     R0,R0
+   \       0x20   0xE350'0000        CMP      R0,#+0
+   \       0x24   0x0A00'001E        BEQ      ??qspi_memcpy_0
+     63          		uint32_t rc;
+     64          		struct _dma_transfer_cfg cfg = {
+     65          			.daddr = (void *)dst,
+     66          			.saddr = (void *)src,
+     67          			.len = count,
+     68          		};
+   \       0x28   0xE58D'6000        STR      R6,[SP, #+0]
+   \       0x2C   0xE58D'5004        STR      R5,[SP, #+4]
+   \       0x30   0xE58D'7008        STR      R7,[SP, #+8]
+     69          		static struct _dma_cfg dma_cfg = {
+     70          			.incr_saddr = true,
+     71          			.incr_daddr = true,
+     72          			.data_width = DMA_DATA_WIDTH_BYTE,
+     73          			.chunk_size = DMA_CHUNK_SIZE_1,
+     74          			.loop = false,
+     75          		};
+     76          		dma_configure_transfer(priv->qspi.dma_ch, &dma_cfg, &cfg, 1);
+   \       0x34   0xE3A0'3001        MOV      R3,#+1
+   \       0x38   0xE1B0'200D        MOVS     R2,SP
+   \       0x3C   0x....'....        LDR      R1,??DataTable5
+   \       0x40   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x44   0x....'....        BL       dma_configure_transfer
+     77          		rc = dma_start_transfer(priv->qspi.dma_ch);
+   \       0x48   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x4C   0x....'....        BL       dma_start_transfer
+   \       0x50   0xE1B0'9000        MOVS     R9,R0
+     78          		if (rc != 0)
+   \       0x54   0xE359'0000        CMP      R9,#+0
+   \       0x58   0x0A00'0006        BEQ      ??qspi_memcpy_1
+     79          			trace_fatal("Couldn't start xDMA transfer\n\r");
+   \       0x5C   0x....'....        LDR      R0,??DataTable5_1
+   \       0x60   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x64   0xE350'0000        CMP      R0,#+0
+   \       0x68   0x0A00'0001        BEQ      ??qspi_memcpy_2
+   \       0x6C   0x....'....        LDR      R0,??DataTable5_2
+   \       0x70   0x....'....        BL       printf
+   \                     ??qspi_memcpy_2:
+   \       0x74   0xEAFF'FFFE        B        ??qspi_memcpy_2
+     80          		while (!dma_is_transfer_done(priv->qspi.dma_ch))
+   \                     ??qspi_memcpy_1:
+   \       0x78   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x7C   0x....'....        BL       dma_is_transfer_done
+   \       0x80   0xE350'0000        CMP      R0,#+0
+   \       0x84   0x1A00'0001        BNE      ??qspi_memcpy_3
+     81          			dma_poll();
+   \       0x88   0x....'....        BL       dma_poll
+   \       0x8C   0xEAFF'FFF9        B        ??qspi_memcpy_1
+     82          		dma_reset_channel(priv->qspi.dma_ch);
+   \                     ??qspi_memcpy_3:
+   \       0x90   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x94   0x....'....        BL       dma_reset_channel
+     83          		dsb();
+   \       0x98   0x....'....        BL       `dsb`
+     84          
+     85          		return dst;
+   \       0x9C   0xE1B0'0005        MOVS     R0,R5
+   \       0xA0   0xEA00'0009        B        ??qspi_memcpy_4
+     86          	}
+     87          #endif
+     88          	while (count--) {
+   \                     ??qspi_memcpy_0:
+   \       0xA4   0xE1B0'0007        MOVS     R0,R7
+   \       0xA8   0xE250'7001        SUBS     R7,R0,#+1
+   \       0xAC   0xE350'0000        CMP      R0,#+0
+   \       0xB0   0x0A00'0004        BEQ      ??qspi_memcpy_5
+     89          		*dst++ = *src;
+   \       0xB4   0xE5D6'0000        LDRB     R0,[R6, #+0]
+   \       0xB8   0xE5C5'0000        STRB     R0,[R5, #+0]
+   \       0xBC   0xE295'5001        ADDS     R5,R5,#+1
+     90          		src++;
+   \       0xC0   0xE296'6001        ADDS     R6,R6,#+1
+   \       0xC4   0xEAFF'FFF6        B        ??qspi_memcpy_0
+     91          	}
+     92          	return 0;
+   \                     ??qspi_memcpy_5:
+   \       0xC8   0xE3A0'0000        MOV      R0,#+0
+   \                     ??qspi_memcpy_4:
+   \       0xCC   0xE8BD'83FE        POP      {R1-R9,PC}       ;; return
+     93          }
+
+   \                                 In section .data, align 4
+   \                     `qspi_memcpy{1}{2}::dma_cfg`:
+   \        0x0   0x0000'0000        DC32 0, 0
+
+   \              0x0000'0000
+   \        0x8   0x01 0x01          DC8 1, 1, 0, 0
+
+   \              0x00 0x00
+     94          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     95          static int qspi_set_freq(union spi_flash_priv* priv, uint32_t clock)
+     96          {
+   \                     qspi_set_freq:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     97          	Qspi* qspi = priv->qspi.addr;
+   \        0xC   0xE594'6000        LDR      R6,[R4, #+0]
+     98          	uint32_t scbr;
+     99          	uint32_t reg;
+    100          
+    101          	if (clock == 0) {
+   \       0x10   0xE355'0000        CMP      R5,#+0
+   \       0x14   0x1A00'0001        BNE      ??qspi_set_freq_0
+    102          		scbr = 0;
+   \       0x18   0xE3A0'1000        MOV      R1,#+0
+   \       0x1C   0xEA00'000B        B        ??qspi_set_freq_1
+    103          	} else {
+    104          		uint32_t mck = pmc_get_peripheral_clock(get_qspi_id_from_addr(qspi));
+   \                     ??qspi_set_freq_0:
+   \       0x20   0xE1B0'0006        MOVS     R0,R6
+   \       0x24   0x....'....        BL       get_qspi_id_from_addr
+   \       0x28   0x....'....        BL       pmc_get_peripheral_clock
+   \       0x2C   0xE1B0'7000        MOVS     R7,R0
+    105          		scbr = (mck + clock - 1) / (clock);
+   \       0x30   0xE095'0007        ADDS     R0,R5,R7
+   \       0x34   0xE250'0001        SUBS     R0,R0,#+1
+   \       0x38   0xE1B0'1005        MOVS     R1,R5
+   \       0x3C   0x....'....        BL       __aeabi_uidiv
+   \       0x40   0xE1B0'1000        MOVS     R1,R0
+    106          		if (scbr >= 1)
+   \       0x44   0xE351'0000        CMP      R1,#+0
+   \       0x48   0x0A00'0000        BEQ      ??qspi_set_freq_1
+    107          			scbr--;
+   \       0x4C   0xE251'1001        SUBS     R1,R1,#+1
+    108          	}
+    109          
+    110          	reg = qspi->QSPI_SCR;
+   \                     ??qspi_set_freq_1:
+   \       0x50   0xE596'2020        LDR      R2,[R6, #+32]
+    111          	reg = (reg & ~QSPI_SCR_SCBR_Msk) | QSPI_SCR_SCBR(scbr);
+   \       0x54   0xE7CF'2411        BFI      R2,R1,#+8,#+8
+    112          	qspi->QSPI_SCR = reg;
+   \       0x58   0xE586'2020        STR      R2,[R6, #+32]
+    113          
+    114          	return 0;
+   \       0x5C   0xE3A0'0000        MOV      R0,#+0
+   \       0x60   0xE8BD'80F2        POP      {R1,R4-R7,PC}    ;; return
+    115          }
+    116          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    117          static int qspi_set_mode(union spi_flash_priv* priv, uint8_t mode)
+    118          {
+   \                     qspi_set_mode:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'2000        MOVS     R2,R0
+    119          	Qspi* qspi = priv->qspi.addr;
+   \        0x8   0xE592'3000        LDR      R3,[R2, #+0]
+    120          	uint32_t reg, val, msk;
+    121          
+    122          	reg = qspi->QSPI_SCR;
+   \        0xC   0xE593'C020        LDR      R12,[R3, #+32]
+    123          
+    124          	msk = (QSPI_SCR_CPHA | QSPI_SCR_CPOL);
+   \       0x10   0xE3A0'4003        MOV      R4,#+3
+    125          	switch (mode) {
+   \       0x14   0xE1B0'0001        MOVS     R0,R1
+   \       0x18   0xE6EF'0070        UXTB     R0,R0
+   \       0x1C   0xE350'0003        CMP      R0,#+3
+   \       0x20   0x8A00'000A        BHI      ??qspi_set_mode_1
+   \       0x24   0xE7DF'E000        LDRB     LR,[PC, R0]
+   \       0x28   0xE08F'F10E        ADD      PC,PC,LR, LSL #+2
+   \                     ??qspi_set_mode_0:
+   \       0x2C   0x00 0x02          DC8      0x0,0x2,0x4,0x6
+
+   \              0x04 0x06
+    126          	case SPID_MODE_0:
+    127          		val = 0;
+   \                     ??qspi_set_mode_2:
+   \       0x30   0xE3A0'E000        MOV      LR,#+0
+    128          		break;
+   \       0x34   0xEA00'0007        B        ??qspi_set_mode_3
+    129          
+    130          	case SPID_MODE_1:
+    131          		val = QSPI_SCR_CPHA;
+   \                     ??qspi_set_mode_4:
+   \       0x38   0xE3A0'E002        MOV      LR,#+2
+    132          		break;
+   \       0x3C   0xEA00'0005        B        ??qspi_set_mode_3
+    133          
+    134          	case SPID_MODE_2:
+    135          		val = QSPI_SCR_CPOL;
+   \                     ??qspi_set_mode_5:
+   \       0x40   0xE3A0'E001        MOV      LR,#+1
+    136          		break;
+   \       0x44   0xEA00'0003        B        ??qspi_set_mode_3
+    137          
+    138          	case SPID_MODE_3:
+    139          		val = (QSPI_SCR_CPOL | QSPI_SCR_CPHA);
+   \                     ??qspi_set_mode_6:
+   \       0x48   0xE3A0'E003        MOV      LR,#+3
+    140          		break;
+   \       0x4C   0xEA00'0001        B        ??qspi_set_mode_3
+    141          
+    142          	default:
+    143          		return -1;
+   \                     ??qspi_set_mode_1:
+   \       0x50   0xE3E0'0000        MVN      R0,#+0
+   \       0x54   0xEA00'0006        B        ??qspi_set_mode_7
+    144          	}
+    145          
+    146          	if ((reg & msk) != val) {
+   \                     ??qspi_set_mode_3:
+   \       0x58   0xE014'000C        ANDS     R0,R4,R12
+   \       0x5C   0xE150'000E        CMP      R0,LR
+   \       0x60   0x0A00'0002        BEQ      ??qspi_set_mode_8
+    147          		reg = (reg & ~msk) | val;
+   \       0x64   0xE1DC'0004        BICS     R0,R12,R4
+   \       0x68   0xE19E'C000        ORRS     R12,LR,R0
+    148          		qspi->QSPI_SCR = reg;
+   \       0x6C   0xE583'C020        STR      R12,[R3, #+32]
+    149          	}
+    150          
+    151          	return 0;
+   \                     ??qspi_set_mode_8:
+   \       0x70   0xE3A0'0000        MOV      R0,#+0
+   \                     ??qspi_set_mode_7:
+   \       0x74   0xE8BD'8010        POP      {R4,PC}          ;; return
+    152          }
+    153          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    154          static int qspi_init(union spi_flash_priv* priv)
+    155          {
+   \                     qspi_init:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    156          	Qspi* qspi = priv->qspi.addr;
+   \        0x8   0xE594'5000        LDR      R5,[R4, #+0]
+    157          
+    158          	if (pmc_has_system_clock(PMC_SYSTEM_CLOCK_QSPI))
+   \        0xC   0xE3A0'000D        MOV      R0,#+13
+   \       0x10   0x....'....        BL       pmc_has_system_clock
+   \       0x14   0xE350'0000        CMP      R0,#+0
+   \       0x18   0x0A00'0001        BEQ      ??qspi_init_0
+    159          		pmc_enable_system_clock(PMC_SYSTEM_CLOCK_QSPI);
+   \       0x1C   0xE3A0'000D        MOV      R0,#+13
+   \       0x20   0x....'....        BL       pmc_enable_system_clock
+    160          	pmc_configure_peripheral(get_qspi_id_from_addr(qspi), NULL, true);
+   \                     ??qspi_init_0:
+   \       0x24   0xE1B0'0005        MOVS     R0,R5
+   \       0x28   0x....'....        BL       get_qspi_id_from_addr
+   \       0x2C   0xE3A0'2001        MOV      R2,#+1
+   \       0x30   0xE3A0'1000        MOV      R1,#+0
+   \       0x34   0x....'....        BL       pmc_configure_peripheral
+    161          
+    162          	/* Disable write protection */
+    163          	qspi->QSPI_WPMR = QSPI_WPMR_WPKEY_PASSWD;
+   \       0x38   0x....'....        LDR      R0,??DataTable5_3  ;; 0x51535000
+   \       0x3C   0xE585'00E4        STR      R0,[R5, #+228]
+    164          
+    165          	qspi->QSPI_CR = QSPI_CR_QSPIDIS;
+   \       0x40   0xE3A0'0002        MOV      R0,#+2
+   \       0x44   0xE585'0000        STR      R0,[R5, #+0]
+    166          	qspi->QSPI_CR = QSPI_CR_SWRST;
+   \       0x48   0xE3A0'0080        MOV      R0,#+128
+   \       0x4C   0xE585'0000        STR      R0,[R5, #+0]
+    167          
+    168          	qspi->QSPI_MR = QSPI_MR_SMM_MEMORY;
+   \       0x50   0xE3A0'0001        MOV      R0,#+1
+   \       0x54   0xE585'0004        STR      R0,[R5, #+4]
+    169          	qspi->QSPI_SCR = 0;
+   \       0x58   0xE3A0'1000        MOV      R1,#+0
+   \       0x5C   0xE585'1020        STR      R1,[R5, #+32]
+    170          
+    171          	qspi->QSPI_CR = QSPI_CR_QSPIEN;
+   \       0x60   0xE585'0000        STR      R0,[R5, #+0]
+    172          
+    173          #ifdef CONFIG_HAVE_QSPI_DMA
+    174          	priv->qspi.dma_ch = dma_allocate_channel(DMA_PERIPH_MEMORY, DMA_PERIPH_MEMORY);
+   \       0x64   0xE3A0'10FF        MOV      R1,#+255
+   \       0x68   0xE3A0'00FF        MOV      R0,#+255
+   \       0x6C   0x....'....        BL       dma_allocate_channel
+   \       0x70   0xE584'0008        STR      R0,[R4, #+8]
+    175          	if (!priv->qspi.dma_ch)
+   \       0x74   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x78   0xE350'0000        CMP      R0,#+0
+   \       0x7C   0x1A00'0006        BNE      ??qspi_init_1
+    176          		trace_fatal("Couldn't allocate XDMA channel\n\r");
+   \       0x80   0x....'....        LDR      R0,??DataTable5_1
+   \       0x84   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x88   0xE350'0000        CMP      R0,#+0
+   \       0x8C   0x0A00'0001        BEQ      ??qspi_init_2
+   \       0x90   0x....'....        LDR      R0,??DataTable5_4
+   \       0x94   0x....'....        BL       printf
+   \                     ??qspi_init_2:
+   \       0x98   0xEAFF'FFFE        B        ??qspi_init_2
+    177          #endif
+    178          
+    179          	return 0;
+   \                     ??qspi_init_1:
+   \       0x9C   0xE3A0'0000        MOV      R0,#+0
+   \       0xA0   0xE8BD'8032        POP      {R1,R4,R5,PC}    ;; return
+    180          }
+    181          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    182          static int qspi_cleanup(union spi_flash_priv* priv)
+    183          {
+   \                     qspi_cleanup:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    184          	Qspi* qspi = priv->qspi.addr;
+   \        0x4   0xE591'2000        LDR      R2,[R1, #+0]
+    185          
+    186          	qspi->QSPI_CR = QSPI_CR_QSPIDIS;
+   \        0x8   0xE3A0'0002        MOV      R0,#+2
+   \        0xC   0xE582'0000        STR      R0,[R2, #+0]
+    187          	qspi->QSPI_CR = QSPI_CR_SWRST;
+   \       0x10   0xE3A0'0080        MOV      R0,#+128
+   \       0x14   0xE582'0000        STR      R0,[R2, #+0]
+    188          
+    189          	return 0;
+   \       0x18   0xE3A0'0000        MOV      R0,#+0
+   \       0x1C   0xE12F'FF1E        BX       LR               ;; return
+    190          }
+    191          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    192          static int qspi_init_ifr(const struct spi_flash_command *cmd, uint32_t *ifr)
+    193          {
+   \                     qspi_init_ifr:
+   \        0x0   0xE1B0'2000        MOVS     R2,R0
+    194          	*ifr = 0;
+   \        0x4   0xE3A0'0000        MOV      R0,#+0
+   \        0x8   0xE581'0000        STR      R0,[R1, #+0]
+    195          
+    196          #ifdef QSPI_IFR_TFRTYP_TRSFR_REGISTER
+    197          	switch (cmd->flags & SFLASH_TYPE_MASK) {
+    198          	case SFLASH_TYPE_READ_REG:
+    199          		*ifr |= QSPI_IFR_APBTFRTYP_READ | QSPI_IFR_TFRTYP_TRSFR_REGISTER;
+    200          		break;
+    201          	case SFLASH_TYPE_READ:
+    202          		*ifr |= QSPI_IFR_APBTFRTYP_READ | QSPI_IFR_TFRTYP_TRSFR_MEMORY;
+    203          		break;
+    204          	case SFLASH_TYPE_WRITE_REG:
+    205          	case SFLASH_TYPE_ERASE:
+    206          		*ifr |= QSPI_IFR_APBTFRTYP_WRITE | QSPI_IFR_TFRTYP_TRSFR_REGISTER;
+    207          		break;
+    208          	case SFLASH_TYPE_WRITE:
+    209          		*ifr |= QSPI_IFR_APBTFRTYP_WRITE | QSPI_IFR_TFRTYP_TRSFR_MEMORY;
+    210          		break;
+    211          	default:
+    212          		return -1;
+    213          	}
+    214          #else
+    215          	switch (cmd->flags & SFLASH_TYPE_MASK) {
+   \        0xC   0xE5D2'0004        LDRB     R0,[R2, #+4]
+   \       0x10   0xE210'0007        ANDS     R0,R0,#0x7
+   \       0x14   0xE350'0004        CMP      R0,#+4
+   \       0x18   0x8A00'0012        BHI      ??qspi_init_ifr_1
+   \       0x1C   0xE7DF'3000        LDRB     R3,[PC, R0]
+   \       0x20   0xE08F'F103        ADD      PC,PC,R3, LSL #+2
+   \                     ??qspi_init_ifr_0:
+   \       0x24   0x01 0x05          DC8      0x1,0x5,0xC,0x9
+
+   \              0x0C 0x09
+   \       0x28   0x0C 0x00          DC8      0xC,0x0,0x0,0x0
+
+   \              0x00 0x00
+    216          	case SFLASH_TYPE_READ:
+    217          		*ifr |= QSPI_IFR_TFRTYP_TRSFR_READ_MEMORY;
+   \                     ??qspi_init_ifr_2:
+   \       0x2C   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x30   0xE390'0D40        ORRS     R0,R0,#0x1000
+   \       0x34   0xE581'0000        STR      R0,[R1, #+0]
+    218          		break;
+   \       0x38   0xEA00'000C        B        ??qspi_init_ifr_3
+    219          
+    220          	case SFLASH_TYPE_WRITE:
+    221          		*ifr |= QSPI_IFR_TFRTYP_TRSFR_WRITE_MEMORY;
+   \                     ??qspi_init_ifr_4:
+   \       0x3C   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x40   0xE390'0DC0        ORRS     R0,R0,#0x3000
+   \       0x44   0xE581'0000        STR      R0,[R1, #+0]
+    222          		break;
+   \       0x48   0xEA00'0008        B        ??qspi_init_ifr_3
+    223          
+    224          	case SFLASH_TYPE_READ_REG:
+    225          		*ifr |= QSPI_IFR_TFRTYP_TRSFR_READ;
+   \                     ??qspi_init_ifr_5:
+   \       0x4C   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x50   0xE581'0000        STR      R0,[R1, #+0]
+    226          		break;
+   \       0x54   0xEA00'0005        B        ??qspi_init_ifr_3
+    227          
+    228          	case SFLASH_TYPE_WRITE_REG:
+    229          	case SFLASH_TYPE_ERASE:
+    230          		*ifr |= QSPI_IFR_TFRTYP_TRSFR_WRITE;
+   \                     ??qspi_init_ifr_6:
+   \       0x58   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x5C   0xE390'0D80        ORRS     R0,R0,#0x2000
+   \       0x60   0xE581'0000        STR      R0,[R1, #+0]
+    231          		break;
+   \       0x64   0xEA00'0001        B        ??qspi_init_ifr_3
+    232          
+    233          	default:
+    234          		return -1;
+   \                     ??qspi_init_ifr_1:
+   \       0x68   0xE3E0'0000        MVN      R0,#+0
+   \       0x6C   0xEA00'0036        B        ??qspi_init_ifr_7
+    235          	}
+    236          #endif
+    237          
+    238          	switch (cmd->proto) {
+   \                     ??qspi_init_ifr_3:
+   \       0x70   0xE592'0000        LDR      R0,[R2, #+0]
+   \       0x74   0x....'....        LDR      R3,??DataTable5_5  ;; 0x10101
+   \       0x78   0xE150'0003        CMP      R0,R3
+   \       0x7C   0x0A00'0014        BEQ      ??qspi_init_ifr_8
+   \       0x80   0x....'....        LDR      R3,??DataTable5_6  ;; 0x10102
+   \       0x84   0xE150'0003        CMP      R0,R3
+   \       0x88   0x0A00'0014        BEQ      ??qspi_init_ifr_9
+   \       0x8C   0xE3A0'3B40        MOV      R3,#+65536
+   \       0x90   0xE383'3F41        ORR      R3,R3,#0x104
+   \       0x94   0xE150'0003        CMP      R0,R3
+   \       0x98   0x0A00'001C        BEQ      ??qspi_init_ifr_10
+   \       0x9C   0x....'....        LDR      R3,??DataTable5_7  ;; 0x10202
+   \       0xA0   0xE150'0003        CMP      R0,R3
+   \       0xA4   0x0A00'0011        BEQ      ??qspi_init_ifr_11
+   \       0xA8   0xE3A0'3004        MOV      R3,#+4
+   \       0xAC   0xE383'3B41        ORR      R3,R3,#0x10400
+   \       0xB0   0xE150'0003        CMP      R0,R3
+   \       0xB4   0x0A00'0019        BEQ      ??qspi_init_ifr_12
+   \       0xB8   0x....'....        LDR      R3,??DataTable5_8  ;; 0x20202
+   \       0xBC   0xE150'0003        CMP      R0,R3
+   \       0xC0   0x0A00'000E        BEQ      ??qspi_init_ifr_13
+   \       0xC4   0x....'....        LDR      R3,??DataTable5_9  ;; 0x40404
+   \       0xC8   0xE150'0003        CMP      R0,R3
+   \       0xCC   0x0A00'0017        BEQ      ??qspi_init_ifr_14
+   \       0xD0   0xEA00'001A        B        ??qspi_init_ifr_15
+    239          	case SFLASH_PROTO_1_1_1:
+    240          		*ifr |= QSPI_IFR_WIDTH_SINGLE_BIT_SPI;
+   \                     ??qspi_init_ifr_8:
+   \       0xD4   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0xD8   0xE581'0000        STR      R0,[R1, #+0]
+    241          #ifdef QSPI_VERBOSE_DEBUG
+    242          		printf("SPI 1-1-1 ");
+    243          #endif
+    244          		break;
+   \       0xDC   0xEA00'0019        B        ??qspi_init_ifr_16
+    245          
+    246          	case SFLASH_PROTO_1_1_2:
+    247          		*ifr |= QSPI_IFR_WIDTH_DUAL_OUTPUT;
+   \                     ??qspi_init_ifr_9:
+   \       0xE0   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0xE4   0xE390'0001        ORRS     R0,R0,#0x1
+   \       0xE8   0xE581'0000        STR      R0,[R1, #+0]
+    248          #ifdef QSPI_VERBOSE_DEBUG
+    249          		printf("SPI 1-1-2 ");
+    250          #endif
+    251          		break;
+   \       0xEC   0xEA00'0015        B        ??qspi_init_ifr_16
+    252          
+    253          	case SFLASH_PROTO_1_2_2:
+    254          		*ifr |= QSPI_IFR_WIDTH_DUAL_IO;
+   \                     ??qspi_init_ifr_11:
+   \       0xF0   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0xF4   0xE390'0003        ORRS     R0,R0,#0x3
+   \       0xF8   0xE581'0000        STR      R0,[R1, #+0]
+    255          #ifdef QSPI_VERBOSE_DEBUG
+    256          		printf("SPI 1-2-2 ");
+    257          #endif
+    258          		break;
+   \       0xFC   0xEA00'0011        B        ??qspi_init_ifr_16
+    259          
+    260          	case SFLASH_PROTO_2_2_2:
+    261          		*ifr |= QSPI_IFR_WIDTH_DUAL_CMD;
+   \                     ??qspi_init_ifr_13:
+   \      0x100   0xE591'0000        LDR      R0,[R1, #+0]
+   \      0x104   0xE390'0005        ORRS     R0,R0,#0x5
+   \      0x108   0xE581'0000        STR      R0,[R1, #+0]
+    262          #ifdef QSPI_VERBOSE_DEBUG
+    263          		printf("SPI 2-2-2 ");
+    264          #endif
+    265          		break;
+   \      0x10C   0xEA00'000D        B        ??qspi_init_ifr_16
+    266          
+    267          	case SFLASH_PROTO_1_1_4:
+    268          		*ifr |= QSPI_IFR_WIDTH_QUAD_OUTPUT;
+   \                     ??qspi_init_ifr_10:
+   \      0x110   0xE591'0000        LDR      R0,[R1, #+0]
+   \      0x114   0xE390'0002        ORRS     R0,R0,#0x2
+   \      0x118   0xE581'0000        STR      R0,[R1, #+0]
+    269          #ifdef QSPI_VERBOSE_DEBUG
+    270          		printf("SPI 1-1-4 ");
+    271          #endif
+    272          		break;
+   \      0x11C   0xEA00'0009        B        ??qspi_init_ifr_16
+    273          
+    274          	case SFLASH_PROTO_1_4_4:
+    275          		*ifr |= QSPI_IFR_WIDTH_QUAD_IO;
+   \                     ??qspi_init_ifr_12:
+   \      0x120   0xE591'0000        LDR      R0,[R1, #+0]
+   \      0x124   0xE390'0004        ORRS     R0,R0,#0x4
+   \      0x128   0xE581'0000        STR      R0,[R1, #+0]
+    276          #ifdef QSPI_VERBOSE_DEBUG
+    277          		printf("SPI 1-4-4 ");
+    278          #endif
+    279          		break;
+   \      0x12C   0xEA00'0005        B        ??qspi_init_ifr_16
+    280          
+    281          	case SFLASH_PROTO_4_4_4:
+    282          		*ifr |= QSPI_IFR_WIDTH_QUAD_CMD;
+   \                     ??qspi_init_ifr_14:
+   \      0x130   0xE591'0000        LDR      R0,[R1, #+0]
+   \      0x134   0xE390'0006        ORRS     R0,R0,#0x6
+   \      0x138   0xE581'0000        STR      R0,[R1, #+0]
+    283          #ifdef QSPI_VERBOSE_DEBUG
+    284          		printf("SPI 4-4-4 ");
+    285          #endif
+    286          		break;
+   \      0x13C   0xEA00'0001        B        ??qspi_init_ifr_16
+    287          
+    288          	default:
+    289          		return -1;
+   \                     ??qspi_init_ifr_15:
+   \      0x140   0xE3E0'0000        MVN      R0,#+0
+   \      0x144   0xEA00'0000        B        ??qspi_init_ifr_7
+    290          	}
+    291          
+    292          	return 0;
+   \                     ??qspi_init_ifr_16:
+   \      0x148   0xE3A0'0000        MOV      R0,#+0
+   \                     ??qspi_init_ifr_7:
+   \      0x14C   0xE12F'FF1E        BX       LR               ;; return
+    293          }
+    294          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    295          static int qspi_exec(union spi_flash_priv* priv, const struct spi_flash_command *cmd)
+    296          {
+   \                     qspi_exec:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE24D'D020        SUB      SP,SP,#+32
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+   \        0xC   0xE1B0'5001        MOVS     R5,R1
+    297          	Qspi* qspi = priv->qspi.addr;
+   \       0x10   0xE594'6000        LDR      R6,[R4, #+0]
+    298          	uint32_t iar, icr, ifr;
+    299          	uint32_t offset;
+    300          	uint8_t *ptr;
+    301          	bool use_dma = false;
+   \       0x14   0xE3A0'B000        MOV      R11,#+0
+   \       0x18   0xE1B0'700B        MOVS     R7,R11
+    302          	bool enable_data =
+    303          		(((cmd->flags & SFLASH_TYPE_MASK) == SFLASH_TYPE_READ ) ||
+    304          		 ((cmd->flags & SFLASH_TYPE_MASK) == SFLASH_TYPE_WRITE ) ||
+    305          		 ((cmd->flags & SFLASH_TYPE_MASK) == SFLASH_TYPE_READ_REG ) ||
+    306          		 (((cmd->flags & SFLASH_TYPE_MASK) == SFLASH_TYPE_WRITE_REG ) &&
+    307          		  (cmd->data_len != 0))) ? true : false;
+   \       0x1C   0xE5D5'0004        LDRB     R0,[R5, #+4]
+   \       0x20   0xE310'0007        TST      R0,#0x7
+   \       0x24   0x0A00'000E        BEQ      ??qspi_exec_2
+   \       0x28   0xE5D5'0004        LDRB     R0,[R5, #+4]
+   \       0x2C   0xE210'0007        ANDS     R0,R0,#0x7
+   \       0x30   0xE350'0001        CMP      R0,#+1
+   \       0x34   0x0A00'000A        BEQ      ??qspi_exec_2
+   \       0x38   0xE5D5'0004        LDRB     R0,[R5, #+4]
+   \       0x3C   0xE210'0007        ANDS     R0,R0,#0x7
+   \       0x40   0xE350'0003        CMP      R0,#+3
+   \       0x44   0x0A00'0006        BEQ      ??qspi_exec_2
+   \       0x48   0xE5D5'0004        LDRB     R0,[R5, #+4]
+   \       0x4C   0xE210'0007        ANDS     R0,R0,#0x7
+   \       0x50   0xE350'0004        CMP      R0,#+4
+   \       0x54   0x1A00'0004        BNE      ??qspi_exec_3
+   \       0x58   0xE595'0014        LDR      R0,[R5, #+20]
+   \       0x5C   0xE350'0000        CMP      R0,#+0
+   \       0x60   0x0A00'0001        BEQ      ??qspi_exec_3
+   \                     ??qspi_exec_2:
+   \       0x64   0xE3A0'0001        MOV      R0,#+1
+   \       0x68   0xEA00'0000        B        ??qspi_exec_4
+   \                     ??qspi_exec_3:
+   \       0x6C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??qspi_exec_4:
+   \       0x70   0xE350'0000        CMP      R0,#+0
+   \       0x74   0x0A00'0001        BEQ      ??qspi_exec_5
+   \       0x78   0xE3A0'8001        MOV      R8,#+1
+   \       0x7C   0xEA00'0000        B        ??qspi_exec_6
+   \                     ??qspi_exec_5:
+   \       0x80   0xE1B0'800B        MOVS     R8,R11
+    308          #ifdef QSPI_RICR_RDINST
+    309          	bool icr_write = false;
+    310          #endif
+    311          
+    312          	iar = 0;
+   \                     ??qspi_exec_6:
+   \       0x84   0xE58D'B00C        STR      R11,[SP, #+12]
+    313          	icr = 0;
+   \       0x88   0xE1B0'900B        MOVS     R9,R11
+    314          
+    315          	/* Init ifr. */
+    316          	if (qspi_init_ifr(cmd, &ifr))
+   \       0x8C   0xE28D'1004        ADD      R1,SP,#+4
+   \       0x90   0xE1B0'0005        MOVS     R0,R5
+   \       0x94   0x....'....        BL       qspi_init_ifr
+   \       0x98   0xE350'0000        CMP      R0,#+0
+   \       0x9C   0x0A00'0001        BEQ      ??qspi_exec_7
+    317          		return -1;
+   \       0xA0   0xE3E0'0000        MVN      R0,#+0
+   \       0xA4   0xEA00'00CC        B        ??qspi_exec_8
+    318          
+    319          	/* Compute instruction parameters. */
+    320          #ifdef QSPI_RICR_RDINST
+    321          	if ((cmd->flags & SFLASH_TYPE_MASK) == SFLASH_TYPE_ERASE
+    322          	    || (cmd->flags & SFLASH_TYPE_MASK) == SFLASH_TYPE_WRITE_REG
+    323          	    || (cmd->flags & SFLASH_TYPE_MASK) == SFLASH_TYPE_WRITE) {
+    324          		icr_write = true;
+    325          		icr |= QSPI_WICR_WRINST(cmd->inst);
+    326          	} else {
+    327          		icr |= QSPI_RICR_RDINST(cmd->inst);
+    328          	}
+    329          #else
+    330          	icr |= QSPI_ICR_INST(cmd->inst);
+   \                     ??qspi_exec_7:
+   \       0xA8   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \       0xAC   0xE190'9009        ORRS     R9,R0,R9
+    331          #endif
+    332          	ifr |= QSPI_IFR_INSTEN;
+   \       0xB0   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0xB4   0xE390'0010        ORRS     R0,R0,#0x10
+   \       0xB8   0xE58D'0004        STR      R0,[SP, #+4]
+    333          
+    334          	/* Compute address parameters. */
+    335          	switch (cmd->addr_len) {
+   \       0xBC   0xE5D5'000C        LDRB     R0,[R5, #+12]
+   \       0xC0   0xE350'0000        CMP      R0,#+0
+   \       0xC4   0x0A00'0012        BEQ      ??qspi_exec_9
+   \       0xC8   0xE350'0003        CMP      R0,#+3
+   \       0xCC   0x0A00'0004        BEQ      ??qspi_exec_10
+   \       0xD0   0xE350'0004        CMP      R0,#+4
+   \       0xD4   0x1A00'0010        BNE      ??qspi_exec_11
+    336          	case 4:
+    337          		ifr |= QSPI_IFR_ADDRL_32_BIT;
+   \                     ??qspi_exec_12:
+   \       0xD8   0xE59D'0004        LDR      R0,[SP, #+4]
+   \       0xDC   0xE390'0E40        ORRS     R0,R0,#0x400
+   \       0xE0   0xE58D'0004        STR      R0,[SP, #+4]
+    338          		/* fall through the 24bit (3 byte) address case */
+    339          	case 3:
+    340          		iar = cmd->data_len ? 0 : QSPI_IAR_ADDR(cmd->addr);
+   \                     ??qspi_exec_10:
+   \       0xE4   0xE595'0014        LDR      R0,[R5, #+20]
+   \       0xE8   0xE350'0000        CMP      R0,#+0
+   \       0xEC   0x0A00'0001        BEQ      ??qspi_exec_13
+   \       0xF0   0xE58D'B00C        STR      R11,[SP, #+12]
+   \       0xF4   0xEA00'0001        B        ??qspi_exec_14
+   \                     ??qspi_exec_13:
+   \       0xF8   0xE595'0010        LDR      R0,[R5, #+16]
+   \       0xFC   0xE58D'000C        STR      R0,[SP, #+12]
+    341          		ifr |= QSPI_IFR_ADDREN;
+   \                     ??qspi_exec_14:
+   \      0x100   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x104   0xE390'0020        ORRS     R0,R0,#0x20
+   \      0x108   0xE58D'0004        STR      R0,[SP, #+4]
+    342          		offset = cmd->addr;
+   \      0x10C   0xE595'A010        LDR      R10,[R5, #+16]
+    343          		break;
+   \      0x110   0xEA00'0003        B        ??qspi_exec_15
+    344          	case 0:
+    345          		offset = 0;
+   \                     ??qspi_exec_9:
+   \      0x114   0xE1B0'A00B        MOVS     R10,R11
+    346          		break;
+   \      0x118   0xEA00'0001        B        ??qspi_exec_15
+    347          	default:
+    348          		return -1;
+   \                     ??qspi_exec_11:
+   \      0x11C   0xE3E0'0000        MVN      R0,#+0
+   \      0x120   0xEA00'00AD        B        ??qspi_exec_8
+    349          	}
+    350          
+    351          	/* Compute option parameters. */
+    352          	if (cmd->num_mode_cycles) {
+   \                     ??qspi_exec_15:
+   \      0x124   0xE5D5'000A        LDRB     R0,[R5, #+10]
+   \      0x128   0xE350'0000        CMP      R0,#+0
+   \      0x12C   0x0A00'002D        BEQ      ??qspi_exec_16
+    353          		uint32_t mode_cycle_bits, mode_bits;
+    354          
+    355          #ifdef QSPI_RICR_RDINST
+    356          		if (icr_write)
+    357          			icr |= QSPI_WICR_WROPT(cmd->mode);
+    358          		else
+    359          			icr |= QSPI_RICR_RDOPT(cmd->mode);
+    360          #else
+    361          		icr |= QSPI_ICR_OPT(cmd->mode);
+   \      0x130   0xE5D5'0009        LDRB     R0,[R5, #+9]
+   \      0x134   0xE199'9800        ORRS     R9,R9,R0, LSL #+16
+    362          #endif
+    363          		ifr |= QSPI_IFR_OPTEN;
+   \      0x138   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x13C   0xE390'0040        ORRS     R0,R0,#0x40
+   \      0x140   0xE58D'0004        STR      R0,[SP, #+4]
+    364          
+    365          		switch (ifr & QSPI_IFR_WIDTH_Msk) {
+   \      0x144   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x148   0xE210'0007        ANDS     R0,R0,#0x7
+   \      0x14C   0xE350'0006        CMP      R0,#+6
+   \      0x150   0x8A00'0009        BHI      ??qspi_exec_17
+   \      0x154   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \      0x158   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??qspi_exec_0:
+   \      0x15C   0x01 0x01          DC8      0x1,0x1,0x1,0x3
+
+   \              0x01 0x03
+   \      0x160   0x05 0x03          DC8      0x5,0x3,0x5,0x0
+
+   \              0x05 0x00
+    366          		case QSPI_IFR_WIDTH_SINGLE_BIT_SPI:
+    367          		case QSPI_IFR_WIDTH_DUAL_OUTPUT:
+    368          		case QSPI_IFR_WIDTH_QUAD_OUTPUT:
+    369          			mode_cycle_bits = 1;
+   \                     ??qspi_exec_18:
+   \      0x164   0xE3A0'1001        MOV      R1,#+1
+    370          			break;
+   \      0x168   0xEA00'0005        B        ??qspi_exec_19
+    371          		case QSPI_IFR_WIDTH_DUAL_IO:
+    372          		case QSPI_IFR_WIDTH_DUAL_CMD:
+    373          			mode_cycle_bits = 2;
+   \                     ??qspi_exec_20:
+   \      0x16C   0xE3A0'1002        MOV      R1,#+2
+    374          			break;
+   \      0x170   0xEA00'0003        B        ??qspi_exec_19
+    375          		case QSPI_IFR_WIDTH_QUAD_IO:
+    376          		case QSPI_IFR_WIDTH_QUAD_CMD:
+    377          			mode_cycle_bits = 4;
+   \                     ??qspi_exec_21:
+   \      0x174   0xE3A0'1004        MOV      R1,#+4
+    378          			break;
+   \      0x178   0xEA00'0001        B        ??qspi_exec_19
+    379          		default:
+    380          			return -1;
+   \                     ??qspi_exec_17:
+   \      0x17C   0xE3E0'0000        MVN      R0,#+0
+   \      0x180   0xEA00'0095        B        ??qspi_exec_8
+    381          		}
+    382          
+    383          		mode_bits = cmd->num_mode_cycles * mode_cycle_bits;
+   \                     ??qspi_exec_19:
+   \      0x184   0xE5D5'000A        LDRB     R0,[R5, #+10]
+   \      0x188   0xE012'0091        MULS     R2,R1,R0
+    384          		switch (mode_bits) {
+   \      0x18C   0xE1B0'0002        MOVS     R0,R2
+   \      0x190   0xE240'0001        SUB      R0,R0,#+1
+   \      0x194   0xE350'0007        CMP      R0,#+7
+   \      0x198   0x8A00'0010        BHI      ??qspi_exec_22
+   \      0x19C   0xE7DF'3000        LDRB     R3,[PC, R0]
+   \      0x1A0   0xE08F'F103        ADD      PC,PC,R3, LSL #+2
+   \                     ??qspi_exec_1:
+   \      0x1A4   0x01 0x02          DC8      0x1,0x2,0xE,0x6
+
+   \              0x0E 0x06
+   \      0x1A8   0x0E 0x0E          DC8      0xE,0xE,0xE,0xA
+
+   \              0x0E 0x0A
+    385          		case 1:
+    386          			ifr |= QSPI_IFR_OPTL_OPTION_1BIT;
+    387          			break;
+   \                     ??qspi_exec_23:
+   \      0x1AC   0xEA00'000D        B        ??qspi_exec_16
+    388          
+    389          		case 2:
+    390          			ifr |= QSPI_IFR_OPTL_OPTION_2BIT;
+   \                     ??qspi_exec_24:
+   \      0x1B0   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x1B4   0xE390'0F40        ORRS     R0,R0,#0x100
+   \      0x1B8   0xE58D'0004        STR      R0,[SP, #+4]
+    391          			break;
+   \      0x1BC   0xEA00'0009        B        ??qspi_exec_16
+    392          
+    393          		case 4:
+    394          			ifr |= QSPI_IFR_OPTL_OPTION_4BIT;
+   \                     ??qspi_exec_25:
+   \      0x1C0   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x1C4   0xE390'0F80        ORRS     R0,R0,#0x200
+   \      0x1C8   0xE58D'0004        STR      R0,[SP, #+4]
+    395          			break;
+   \      0x1CC   0xEA00'0005        B        ??qspi_exec_16
+    396          
+    397          		case 8:
+    398          			ifr |= QSPI_IFR_OPTL_OPTION_8BIT;
+   \                     ??qspi_exec_26:
+   \      0x1D0   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x1D4   0xE390'0FC0        ORRS     R0,R0,#0x300
+   \      0x1D8   0xE58D'0004        STR      R0,[SP, #+4]
+    399          			break;
+   \      0x1DC   0xEA00'0001        B        ??qspi_exec_16
+    400          
+    401          		default:
+    402          			return -1;
+   \                     ??qspi_exec_22:
+   \      0x1E0   0xE3E0'0000        MVN      R0,#+0
+   \      0x1E4   0xEA00'007C        B        ??qspi_exec_8
+    403          		}
+    404          	}
+    405          
+    406          	/* Set the number of dummy cycles. */
+    407          	if (cmd->num_wait_states)
+   \                     ??qspi_exec_16:
+   \      0x1E8   0xE5D5'000B        LDRB     R0,[R5, #+11]
+   \      0x1EC   0xE350'0000        CMP      R0,#+0
+   \      0x1F0   0x0A00'0005        BEQ      ??qspi_exec_27
+    408          		ifr |= QSPI_IFR_NBDUM(cmd->num_wait_states);
+   \      0x1F4   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x1F8   0xE5D5'100B        LDRB     R1,[R5, #+11]
+   \      0x1FC   0xE3A0'297C        MOV      R2,#+2031616
+   \      0x200   0xE012'1801        ANDS     R1,R2,R1, LSL #+16
+   \      0x204   0xE191'0000        ORRS     R0,R1,R0
+   \      0x208   0xE58D'0004        STR      R0,[SP, #+4]
+    409          
+    410          	/* Set data enable. */
+    411          	if (enable_data) {
+   \                     ??qspi_exec_27:
+   \      0x20C   0xE1B0'0008        MOVS     R0,R8
+   \      0x210   0xE6EF'0070        UXTB     R0,R0
+   \      0x214   0xE350'0000        CMP      R0,#+0
+   \      0x218   0x0A00'000B        BEQ      ??qspi_exec_28
+    412          		ifr |= QSPI_IFR_DATAEN;
+   \      0x21C   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x220   0xE390'0080        ORRS     R0,R0,#0x80
+   \      0x224   0xE58D'0004        STR      R0,[SP, #+4]
+    413          
+    414          		/* Special case for Continuous Read Mode. */
+    415          		if (!cmd->tx_data && !cmd->rx_data)
+   \      0x228   0xE595'0018        LDR      R0,[R5, #+24]
+   \      0x22C   0xE350'0000        CMP      R0,#+0
+   \      0x230   0x1A00'0005        BNE      ??qspi_exec_28
+   \      0x234   0xE595'001C        LDR      R0,[R5, #+28]
+   \      0x238   0xE350'0000        CMP      R0,#+0
+   \      0x23C   0x1A00'0002        BNE      ??qspi_exec_28
+    416          			ifr |= QSPI_IFR_CRM;
+   \      0x240   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x244   0xE390'0C40        ORRS     R0,R0,#0x4000
+   \      0x248   0xE58D'0004        STR      R0,[SP, #+4]
+    417          	}
+    418          
+    419          	/* Clear pending interrupts. */
+    420          	(void)qspi->QSPI_SR;
+   \                     ??qspi_exec_28:
+   \      0x24C   0xE596'0010        LDR      R0,[R6, #+16]
+    421          
+    422          #ifdef QSPI_VERBOSE_DEBUG
+    423          	{
+    424          		int len;
+    425          
+    426          		if (cmd->inst)
+    427          			printf("opcode=%02Xh ", cmd->inst);
+    428          
+    429          		if (cmd->addr_len)
+    430          			printf("address=0x%08X (%d-bytes) ", (unsigned int)cmd->addr, cmd->addr_len);
+    431          
+    432          		if (cmd->num_mode_cycles)
+    433          			printf("mode=%u (%02Xh) ", cmd->num_mode_cycles, cmd->mode);
+    434          
+    435          		if (cmd->num_wait_states)
+    436          			printf("dummy=%u ", cmd->num_wait_states);
+    437          
+    438          		len = cmd->data_len;
+    439          		if (len > 4)
+    440          			len = 4;
+    441          		if (len) {
+    442          			if (cmd->rx_data)
+    443          				goto next;
+    444          
+    445          			if (cmd->tx_data) {
+    446          				int i;
+    447          				printf("TX (%u bytes): ", (unsigned int)cmd->data_len);
+    448          				for (i = 0; i < len; i++)
+    449          					printf("0x%02X ", ((uint8_t *)cmd->tx_data)[i]);
+    450          			}
+    451          
+    452          			if (len != cmd->data_len)
+    453          				printf("... ");
+    454          		}
+    455          
+    456          		printf("\r\n");
+    457          	}
+    458          next:
+    459          #endif /* QSPI_VERBOSE_DEBUG */
+    460          
+    461          
+    462          	/* Set QSPI Instruction Frame registers. */
+    463          	qspi->QSPI_IAR = iar;
+   \      0x250   0xE59D'000C        LDR      R0,[SP, #+12]
+   \      0x254   0xE586'0030        STR      R0,[R6, #+48]
+    464          #ifdef QSPI_RICR_RDINST
+    465          	if (icr_write)
+    466          		qspi->QSPI_WICR = icr;
+    467          	else
+    468          		qspi->QSPI_RICR = icr;
+    469          #else
+    470          	qspi->QSPI_ICR = icr;
+   \      0x258   0xE586'9034        STR      R9,[R6, #+52]
+    471          #endif
+    472          	qspi->QSPI_IFR = ifr;
+   \      0x25C   0xE59D'0004        LDR      R0,[SP, #+4]
+   \      0x260   0xE586'0038        STR      R0,[R6, #+56]
+    473          
+    474          	/* Skip to the final steps if there is no data. */
+    475          	if (!enable_data)
+   \      0x264   0xE1B0'0008        MOVS     R0,R8
+   \      0x268   0xE6EF'0070        UXTB     R0,R0
+   \      0x26C   0xE350'0000        CMP      R0,#+0
+   \      0x270   0x0A00'0045        BEQ      ??qspi_exec_29
+    476          		goto no_data;
+    477          
+    478          	/* Dummy read of QSPI_IFR to synchronize APB and AHB accesses. */
+    479          	(void)qspi->QSPI_IFR;
+   \                     ??qspi_exec_30:
+   \      0x274   0xE596'0038        LDR      R0,[R6, #+56]
+    480          
+    481          #ifdef CONFIG_HAVE_QSPI_DMA
+    482          	if ((((cmd->flags & SFLASH_TYPE_MASK) == SFLASH_TYPE_WRITE) &&
+    483                  //if(((cmd->flags == QSPI_IFR_TFRTYP_TRSFR_WRITE_MEMORY ) &&
+    484          	     IS_CACHE_ALIGNED(cmd->tx_data) &&
+    485          	     IS_CACHE_ALIGNED(cmd->data_len)) ||
+    486          	    (((cmd->flags & SFLASH_TYPE_MASK) == SFLASH_TYPE_READ) &&
+    487                     //((cmd->flags == QSPI_IFR_TFRTYP_TRSFR_READ_MEMORY ) &&
+    488          	     IS_CACHE_ALIGNED(cmd->rx_data) &&
+    489          	     IS_CACHE_ALIGNED(cmd->data_len)))
+   \      0x278   0xE5D5'0004        LDRB     R0,[R5, #+4]
+   \      0x27C   0xE210'0007        ANDS     R0,R0,#0x7
+   \      0x280   0xE350'0001        CMP      R0,#+1
+   \      0x284   0x1A00'0005        BNE      ??qspi_exec_31
+   \      0x288   0xE5D5'0018        LDRB     R0,[R5, #+24]
+   \      0x28C   0xE310'001F        TST      R0,#0x1F
+   \      0x290   0x1A00'0002        BNE      ??qspi_exec_31
+   \      0x294   0xE5D5'0014        LDRB     R0,[R5, #+20]
+   \      0x298   0xE310'001F        TST      R0,#0x1F
+   \      0x29C   0x0A00'0008        BEQ      ??qspi_exec_32
+   \                     ??qspi_exec_31:
+   \      0x2A0   0xE5D5'0004        LDRB     R0,[R5, #+4]
+   \      0x2A4   0xE310'0007        TST      R0,#0x7
+   \      0x2A8   0x1A00'0007        BNE      ??qspi_exec_33
+   \      0x2AC   0xE5D5'001C        LDRB     R0,[R5, #+28]
+   \      0x2B0   0xE310'001F        TST      R0,#0x1F
+   \      0x2B4   0x1A00'0004        BNE      ??qspi_exec_33
+   \      0x2B8   0xE5D5'0014        LDRB     R0,[R5, #+20]
+   \      0x2BC   0xE310'001F        TST      R0,#0x1F
+   \      0x2C0   0x1A00'0001        BNE      ??qspi_exec_33
+    490          		use_dma = true;
+   \                     ??qspi_exec_32:
+   \      0x2C4   0xE3A0'0001        MOV      R0,#+1
+   \      0x2C8   0xE1B0'7000        MOVS     R7,R0
+    491          #endif
+    492          
+    493          	/* Stop here for Continuous Read. */
+    494          	if (cmd->tx_data) {
+   \                     ??qspi_exec_33:
+   \      0x2CC   0xE595'0018        LDR      R0,[R5, #+24]
+   \      0x2D0   0xE350'0000        CMP      R0,#+0
+   \      0x2D4   0x0A00'0012        BEQ      ??qspi_exec_34
+    495          		/* Write data */
+    496          #ifdef CONFIG_HAVE_AESB
+    497          		if (cmd->use_aesb)
+    498          			ptr = priv->qspi.mem_aesb;
+    499          		else
+    500          #endif
+    501          			ptr = priv->qspi.mem;
+   \      0x2D8   0xE594'0004        LDR      R0,[R4, #+4]
+   \      0x2DC   0xE58D'0008        STR      R0,[SP, #+8]
+    502          
+    503          #ifdef CONFIG_HAVE_QSPI_DMA
+    504          		if (use_dma)
+   \      0x2E0   0xE1B0'0007        MOVS     R0,R7
+   \      0x2E4   0xE6EF'0070        UXTB     R0,R0
+   \      0x2E8   0xE350'0000        CMP      R0,#+0
+   \      0x2EC   0x0A00'0002        BEQ      ??qspi_exec_35
+    505          			cache_clean_region(cmd->tx_data, cmd->data_len);
+   \      0x2F0   0xE595'1014        LDR      R1,[R5, #+20]
+   \      0x2F4   0xE595'0018        LDR      R0,[R5, #+24]
+   \      0x2F8   0x....'....        BL       cache_clean_region
+    506          #endif
+    507          		qspi_memcpy(priv, ptr + offset, cmd->tx_data, cmd->data_len, use_dma);
+   \                     ??qspi_exec_35:
+   \      0x2FC   0xE1B0'0007        MOVS     R0,R7
+   \      0x300   0xE6EF'0070        UXTB     R0,R0
+   \      0x304   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x308   0xE595'3014        LDR      R3,[R5, #+20]
+   \      0x30C   0xE595'2018        LDR      R2,[R5, #+24]
+   \      0x310   0xE59D'0008        LDR      R0,[SP, #+8]
+   \      0x314   0xE090'100A        ADDS     R1,R0,R10
+   \      0x318   0xE1B0'0004        MOVS     R0,R4
+   \      0x31C   0x....'....        BL       qspi_memcpy
+   \      0x320   0xEA00'0017        B        ??qspi_exec_36
+    508          	} else if (cmd->rx_data) {
+   \                     ??qspi_exec_34:
+   \      0x324   0xE595'001C        LDR      R0,[R5, #+28]
+   \      0x328   0xE350'0000        CMP      R0,#+0
+   \      0x32C   0x0A00'0012        BEQ      ??qspi_exec_37
+    509          		/* Read data */
+    510          #ifdef CONFIG_HAVE_AESB
+    511          		if (cmd->use_aesb)
+    512          			ptr = priv->qspi.mem_aesb;
+    513          		else
+    514          #endif
+    515          			ptr = priv->qspi.mem;
+   \      0x330   0xE594'0004        LDR      R0,[R4, #+4]
+   \      0x334   0xE58D'0008        STR      R0,[SP, #+8]
+    516          
+    517          		qspi_memcpy(priv, cmd->rx_data, ptr + offset, cmd->data_len, use_dma);
+   \      0x338   0xE1B0'0007        MOVS     R0,R7
+   \      0x33C   0xE6EF'0070        UXTB     R0,R0
+   \      0x340   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x344   0xE595'3014        LDR      R3,[R5, #+20]
+   \      0x348   0xE59D'0008        LDR      R0,[SP, #+8]
+   \      0x34C   0xE090'200A        ADDS     R2,R0,R10
+   \      0x350   0xE595'101C        LDR      R1,[R5, #+28]
+   \      0x354   0xE1B0'0004        MOVS     R0,R4
+   \      0x358   0x....'....        BL       qspi_memcpy
+    518          #ifdef CONFIG_HAVE_QSPI_DMA
+    519          		if (use_dma)
+   \      0x35C   0xE1B0'0007        MOVS     R0,R7
+   \      0x360   0xE6EF'0070        UXTB     R0,R0
+   \      0x364   0xE350'0000        CMP      R0,#+0
+   \      0x368   0x0A00'0005        BEQ      ??qspi_exec_36
+    520          			cache_invalidate_region(cmd->rx_data, cmd->data_len);
+   \      0x36C   0xE595'1014        LDR      R1,[R5, #+20]
+   \      0x370   0xE595'001C        LDR      R0,[R5, #+28]
+   \      0x374   0x....'....        BL       cache_invalidate_region
+   \      0x378   0xEA00'0001        B        ??qspi_exec_36
+    521          #endif
+    522          	} else {
+    523          		/* Stop here for continuous read */
+    524          		return 0;
+   \                     ??qspi_exec_37:
+   \      0x37C   0xE3A0'0000        MOV      R0,#+0
+   \      0x380   0xEA00'0015        B        ??qspi_exec_8
+    525          	}
+    526          
+    527          	/* Release the chip-select. */
+    528          	qspi->QSPI_CR = QSPI_CR_LASTXFER;
+   \                     ??qspi_exec_36:
+   \      0x384   0xE3A0'0740        MOV      R0,#+16777216
+   \      0x388   0xE586'0000        STR      R0,[R6, #+0]
+    529          
+    530          no_data:
+    531          	{
+    532          		/* Wait for INSTRuction End */
+    533          		struct _timeout timeout;
+    534          		timer_start_timeout(&timeout, cmd->timeout);
+   \                     ??qspi_exec_29:
+   \      0x38C   0xE595'2020        LDR      R2,[R5, #+32]
+   \      0x390   0xE3B0'3000        MOVS     R3,#+0
+   \      0x394   0xE28D'0010        ADD      R0,SP,#+16
+   \      0x398   0x....'....        BL       timer_start_timeout
+    535          		while (!(qspi->QSPI_SR & QSPI_SR_INSTRE)) {
+   \                     ??qspi_exec_38:
+   \      0x39C   0xE596'0010        LDR      R0,[R6, #+16]
+   \      0x3A0   0xE310'0E40        TST      R0,#0x400
+   \      0x3A4   0x1A00'000B        BNE      ??qspi_exec_39
+    536          			if (timer_timeout_reached(&timeout)) {
+   \      0x3A8   0xE28D'0010        ADD      R0,SP,#+16
+   \      0x3AC   0x....'....        BL       timer_timeout_reached
+   \      0x3B0   0xE350'0000        CMP      R0,#+0
+   \      0x3B4   0x0AFF'FFF8        BEQ      ??qspi_exec_38
+    537          				trace_debug("qspi_exec timeout reached\r\n");
+   \      0x3B8   0x....'....        LDR      R0,??DataTable5_1
+   \      0x3BC   0xE590'0000        LDR      R0,[R0, #+0]
+   \      0x3C0   0xE350'0005        CMP      R0,#+5
+   \      0x3C4   0x3A00'0001        BCC      ??qspi_exec_40
+   \      0x3C8   0x....'....        LDR      R0,??DataTable5_10
+   \      0x3CC   0x....'....        BL       printf
+    538          				return -ETIMEDOUT;
+   \                     ??qspi_exec_40:
+   \      0x3D0   0xE3E0'004C        MVN      R0,#+76
+   \      0x3D4   0xEA00'0000        B        ??qspi_exec_8
+    539          			}
+    540          		}
+    541          	}
+    542          
+    543          #ifdef QSPI_VERBOSE_DEBUG
+    544          	{
+    545          		uint32_t i, len;
+    546          
+    547          		len = cmd->data_len;
+    548          		if (len > 4)
+    549          			len = 4;
+    550          		if (len && cmd->rx_data) {
+    551          			printf("RX (%u bytes): ", (unsigned int)cmd->data_len);
+    552          			for (i = 0; i < len; i++)
+    553          				printf("0x%02X ", ((uint8_t *)cmd->rx_data)[i]);
+    554          
+    555          			if (len != cmd->data_len)
+    556          				printf("... ");
+    557          
+    558          			printf("\r\n");
+    559          		}
+    560          	}
+    561          #endif /* QSPI_VERBOSE_DEBUG */
+    562          
+    563          	return 0;
+   \                     ??qspi_exec_39:
+   \      0x3D8   0xE3A0'0000        MOV      R0,#+0
+   \                     ??qspi_exec_8:
+   \      0x3DC   0xE28D'D024        ADD      SP,SP,#+36
+   \      0x3E0   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    564          }
+    565          
+
+   \                                 In section .rodata, align 4
+    566          static const struct spi_ops qspi_ops = {
+   \                     qspi_ops:
+   \        0x0   0x....'....        DC32 qspi_init, qspi_cleanup, qspi_set_freq, qspi_set_mode, qspi_exec
+
+   \              0x....'....  
+
+   \              0x....'....  
+
+   \              0x....'....  
+
+   \              0x....'....
+    567          	.init		= qspi_init,
+    568          	.cleanup	= qspi_cleanup,
+    569          	.set_freq	= qspi_set_freq,
+    570          	.set_mode	= qspi_set_mode,
+    571          	.exec		= qspi_exec,
+    572          };
+    573          
+    574          /*----------------------------------------------------------------------------
+    575           *        EXPORTED FUNCTIONS
+    576           *----------------------------------------------------------------------------*/
+    577          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    578          void qspi_configure(struct spi_flash *flash, const struct spi_flash_cfg *cfg)
+    579          {
+   \                     qspi_configure:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    580          	flash->priv.qspi.addr = cfg->qspi.addr;
+   \        0xC   0xE595'000C        LDR      R0,[R5, #+12]
+   \       0x10   0xE584'0000        STR      R0,[R4, #+0]
+    581          	flash->priv.qspi.mem = get_qspi_mem_from_addr(cfg->qspi.addr);
+   \       0x14   0xE595'000C        LDR      R0,[R5, #+12]
+   \       0x18   0x....'....        BL       get_qspi_mem_from_addr
+   \       0x1C   0xE584'0004        STR      R0,[R4, #+4]
+    582          #ifdef CONFIG_HAVE_AESB
+    583          	flash->priv.qspi.mem_aesb = get_qspi_aesb_mem_from_addr(cfg->qspi.addr);
+    584          #endif
+    585          
+    586          	flash->hwcaps.mask = (SFLASH_HWCAPS_READ_MASK | SFLASH_HWCAPS_PP_MASK);
+   \       0x20   0xE3A0'00FF        MOV      R0,#+255
+   \       0x24   0xE380'0AF0        ORR      R0,R0,#0xF0000
+   \       0x28   0xE584'0018        STR      R0,[R4, #+24]
+    587          
+    588          	flash->ops = &qspi_ops;
+   \       0x2C   0x....'....        LDR      R0,??DataTable5_11
+   \       0x30   0xE584'00A0        STR      R0,[R4, #+160]
+    589          }
+   \       0x34   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    590          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    591          int qspi_xip(struct spi_flash *flash, void **mem)
+    592          {
+   \                     qspi_xip:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    593          	int ret;
+    594          
+    595          	if (flash->enable_0_4_4) {
+   \        0xC   0xE594'00B0        LDR      R0,[R4, #+176]
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x0A00'0008        BEQ      ??qspi_xip_0
+    596          		ret = flash->enable_0_4_4(flash, true);
+   \       0x18   0xE3A0'1001        MOV      R1,#+1
+   \       0x1C   0xE1B0'0004        MOVS     R0,R4
+   \       0x20   0xE594'20B0        LDR      R2,[R4, #+176]
+   \       0x24   0xE12F'FF32        BLX      R2
+   \       0x28   0xE1B0'6000        MOVS     R6,R0
+    597          		if (ret)
+   \       0x2C   0xE356'0000        CMP      R6,#+0
+   \       0x30   0x0A00'0001        BEQ      ??qspi_xip_0
+    598          			return ret;
+   \       0x34   0xE1B0'0006        MOVS     R0,R6
+   \       0x38   0xEA00'0006        B        ??qspi_xip_1
+    599          	}
+    600          
+    601          	*mem = flash->priv.qspi.mem;
+   \                     ??qspi_xip_0:
+   \       0x3C   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x40   0xE585'0000        STR      R0,[R5, #+0]
+    602          	return spi_flash_read(flash, 0, NULL, 0);
+   \       0x44   0xE3A0'3000        MOV      R3,#+0
+   \       0x48   0xE3A0'2000        MOV      R2,#+0
+   \       0x4C   0xE3A0'1000        MOV      R1,#+0
+   \       0x50   0xE1B0'0004        MOVS     R0,R4
+   \       0x54   0x....'....        BL       spi_flash_read
+   \                     ??qspi_xip_1:
+   \       0x58   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    603          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5:
+   \        0x0   0x....'....        DC32     `qspi_memcpy{1}{2}::dma_cfg`
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_3:
+   \        0x0   0x5153'5000        DC32     0x51535000
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_4:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_5:
+   \        0x0   0x0001'0101        DC32     0x10101
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_6:
+   \        0x0   0x0001'0102        DC32     0x10102
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_7:
+   \        0x0   0x0001'0202        DC32     0x10202
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_8:
+   \        0x0   0x0002'0202        DC32     0x20202
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_9:
+   \        0x0   0x0004'0404        DC32     0x40404
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_10:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_11:
+   \        0x0   0x....'....        DC32     qspi_ops
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x46          DC8 "-F- Couldn't start xDMA transfer\012\015"
+
+   \              0x2D 0x20    
+
+   \              0x43 0x6F    
+
+   \              0x75 0x6C    
+
+   \              0x64 0x6E    
+
+   \              0x27 0x74    
+
+   \              0x20 0x73    
+
+   \              0x74 0x61    
+
+   \              0x72 0x74    
+
+   \              0x20 0x78    
+
+   \              0x44 0x4D    
+
+   \              0x41 0x20    
+
+   \              0x74 0x72    
+
+   \              0x61 0x6E    
+
+   \              0x73 0x66    
+
+   \              0x65 0x72    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x23   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x2D 0x46          DC8 "-F- Couldn't allocate XDMA channel\012\015"
+
+   \              0x2D 0x20    
+
+   \              0x43 0x6F    
+
+   \              0x75 0x6C    
+
+   \              0x64 0x6E    
+
+   \              0x27 0x74    
+
+   \              0x20 0x61    
+
+   \              0x6C 0x6C    
+
+   \              0x6F 0x63    
+
+   \              0x61 0x74    
+
+   \              0x65 0x20    
+
+   \              0x58 0x44    
+
+   \              0x4D 0x41    
+
+   \              0x20 0x63    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x6C    
+
+   \              0x0A 0x0D    
+
+   \              0x00
+   \       0x25   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x2D 0x44          DC8 0x2D, 0x44, 0x2D, 0x20, 0x43, 0x3A, 0x5C, 0x77
+
+   \              0x2D 0x20    
+
+   \              0x43 0x3A    
+
+   \              0x5C 0x77
+   \        0x8   0x6F 0x72          DC8 0x6F, 0x72, 0x6B, 0x5C, 0x41, 0x74, 0x6D, 0x65
+
+   \              0x6B 0x5C    
+
+   \              0x41 0x74    
+
+   \              0x6D 0x65
+   \       0x10   0x6C 0x53          DC8 0x6C, 0x53, 0x6F, 0x66, 0x74, 0x50, 0x41, 0x63
+
+   \              0x6F 0x66    
+
+   \              0x74 0x50    
+
+   \              0x41 0x63
+   \       0x18   0x6B 0x5C          DC8 0x6B, 0x5C, 0x61, 0x74, 0x6D, 0x65, 0x6C, 0x2D
+
+   \              0x61 0x74    
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x2D
+   \       0x20   0x73 0x6F          DC8 0x73, 0x6F, 0x66, 0x74, 0x77, 0x61, 0x72, 0x65
+
+   \              0x66 0x74    
+
+   \              0x77 0x61    
+
+   \              0x72 0x65
+   \       0x28   0x2D 0x70          DC8 0x2D, 0x70, 0x61, 0x63, 0x6B, 0x61, 0x67, 0x65
+
+   \              0x61 0x63    
+
+   \              0x6B 0x61    
+
+   \              0x67 0x65
+   \       0x30   0x2D 0x32          DC8 0x2D, 0x32, 0x2E, 0x31, 0x37, 0x5C, 0x64, 0x72
+
+   \              0x2E 0x31    
+
+   \              0x37 0x5C    
+
+   \              0x64 0x72
+   \       0x38   0x69 0x76          DC8 0x69, 0x76, 0x65, 0x72, 0x73, 0x5C, 0x73, 0x70
+
+   \              0x65 0x72    
+
+   \              0x73 0x5C    
+
+   \              0x73 0x70
+   \       0x40   0x69 0x5C          DC8 0x69, 0x5C, 0x71, 0x73, 0x70, 0x69, 0x2E, 0x63
+
+   \              0x71 0x73    
+
+   \              0x70 0x69    
+
+   \              0x2E 0x63
+   \       0x48   0x3A 0x35          DC8 0x3A, 0x35, 0x33, 0x37, 0x20, 0x71, 0x73, 0x70
+
+   \              0x33 0x37    
+
+   \              0x20 0x71    
+
+   \              0x73 0x70
+   \       0x50   0x69 0x5F          DC8 0x69, 0x5F, 0x65, 0x78, 0x65, 0x63, 0x20, 0x74
+
+   \              0x65 0x78    
+
+   \              0x65 0x63    
+
+   \              0x20 0x74
+   \       0x58   0x69 0x6D          DC8 0x69, 0x6D, 0x65, 0x6F, 0x75, 0x74, 0x20, 0x72
+
+   \              0x65 0x6F    
+
+   \              0x75 0x74    
+
+   \              0x20 0x72
+   \       0x60   0x65 0x61          DC8 0x65, 0x61, 0x63, 0x68, 0x65, 0x64, 0x0D, 0x0A
+
+   \              0x63 0x68    
+
+   \              0x65 0x64    
+
+   \              0x0D 0x0A
+   \       0x68   0x00               DC8 0
+   \       0x69   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   dsb
+       0   qspi_cleanup
+      16   qspi_configure
+        16   -> get_qspi_mem_from_addr
+      72   qspi_exec
+        72   -> cache_clean_region
+        72   -> cache_invalidate_region
+        72   -> printf
+        72   -> qspi_init_ifr
+        72   -> qspi_memcpy
+        72   -> timer_start_timeout
+        72   -> timer_timeout_reached
+      16   qspi_init
+        16   -> dma_allocate_channel
+        16   -> get_qspi_id_from_addr
+        16   -> pmc_configure_peripheral
+        16   -> pmc_enable_system_clock
+        16   -> pmc_has_system_clock
+        16   -> printf
+       0   qspi_init_ifr
+      40   qspi_memcpy
+        40   -> dma_configure_transfer
+        40   -> dma_is_transfer_done
+        40   -> dma_poll
+        40   -> dma_reset_channel
+        40   -> dma_start_transfer
+        40   -> dsb
+        40   -> printf
+      24   qspi_set_freq
+        24   -> get_qspi_id_from_addr
+        24   -> pmc_get_peripheral_clock
+        24 __aeabi_uidiv
+       8   qspi_set_mode
+      16   qspi_xip
+        16   -- Indirect call
+        16   -> spi_flash_read
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_10
+       4  ??DataTable5_11
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable5_6
+       4  ??DataTable5_7
+       4  ??DataTable5_8
+       4  ??DataTable5_9
+      36  ?_0
+      40  ?_1
+     108  ?_2
+      12  dma_cfg
+       8  dsb
+      32  qspi_cleanup
+      56  qspi_configure
+     996  qspi_exec
+     164  qspi_init
+     336  qspi_init_ifr
+     208  qspi_memcpy
+      20  qspi_ops
+     100  qspi_set_freq
+     120  qspi_set_mode
+      92  qspi_xip
+
+ 
+    12 bytes in section .data
+   204 bytes in section .rodata
+ 2'160 bytes in section SOFTPACK
+ 
+ 2'160 bytes of CODE  memory
+   204 bytes of CONST memory
+    12 bytes of DATA  memory
+
+Errors: none
+Warnings: none

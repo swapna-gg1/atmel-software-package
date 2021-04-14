@@ -1,0 +1,1339 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Apr/2020  11:05:16
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\bus.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW27EA.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\bus.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\lib\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\List\bus.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\Obj\bus.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\bus.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *         Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <string.h>
+     35          
+     36          #include "callback.h"
+     37          #include "dma/dma.h"
+     38          #include "errno.h"
+     39          #include "peripherals/bus.h"
+     40          #ifdef CONFIG_HAVE_BUS_SPI
+     41          #include "spi/spid.h"
+     42          #endif
+     43          #ifdef CONFIG_HAVE_BUS_I2C
+     44          #include "i2c/twid.h"
+     45          #endif
+     46          #include "timer.h"
+     47          #include "trace.h"
+     48          
+     49          /*----------------------------------------------------------------------------
+     50           *         Definitions
+     51           *----------------------------------------------------------------------------*/
+     52          
+     53          #define O_BLOCK (0x01)
+     54          
+     55          struct _bus_desc {
+     56          	enum _bus_type type;
+     57          	union {
+     58          		uint32_t dummy;
+     59          #ifdef CONFIG_HAVE_SPI_BUS
+     60          		struct _spi_desc spid;
+     61          #endif
+     62          #ifdef CONFIG_HAVE_I2C_BUS
+     63          		struct _twi_desc twid;
+     64          #endif
+     65          	} iface;
+     66          
+     67          	enum _bus_transfer_mode transfer_mode;
+     68          
+     69          	uint32_t options;
+     70          
+     71          	uint32_t timeout;
+     72          
+     73          	struct _callback callback;
+     74          
+     75          	struct {
+     76          		mutex_t lock;
+     77          		mutex_t transaction;
+     78          	} mutex;
+     79          };
+     80          
+     81          /*----------------------------------------------------------------------------
+     82           *         Local variables
+     83           *----------------------------------------------------------------------------*/
+     84          
+
+   \                                 In section .bss, align 4
+     85          static struct _bus_desc _bus[BUS_COUNT];
+   \                     _bus:
+   \        0x0                      DS8 180
+     86          
+     87          /*----------------------------------------------------------------------------
+     88           *         Local functions
+     89           *----------------------------------------------------------------------------*/
+     90          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     91          static int _bus_callback(void* arg, void* arg2)
+     92          {
+   \                     _bus_callback:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     93          	uint32_t bus_id = (uint32_t)arg;
+   \        0xC   0xE1B0'6004        MOVS     R6,R4
+     94          
+     95          	if (bus_id >= BUS_COUNT)
+   \       0x10   0xE356'0005        CMP      R6,#+5
+   \       0x14   0x3A00'0001        BCC      ??_bus_callback_0
+     96          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0009        B        ??_bus_callback_1
+     97          
+     98          	mutex_unlock(&_bus[bus_id].mutex.lock);
+   \                     ??_bus_callback_0:
+   \       0x20   0x....'....        LDR      R7,??DataTable8
+   \       0x24   0xE086'0186        ADD      R0,R6,R6, LSL #+3
+   \       0x28   0xE097'0100        ADDS     R0,R7,R0, LSL #+2
+   \       0x2C   0xE290'001C        ADDS     R0,R0,#+28
+   \       0x30   0x....'....        BL       mutex_unlock
+     99          
+    100          	return callback_call(&_bus[bus_id].callback, NULL);
+   \       0x34   0xE3A0'1000        MOV      R1,#+0
+   \       0x38   0xE086'0186        ADD      R0,R6,R6, LSL #+3
+   \       0x3C   0xE097'0100        ADDS     R0,R7,R0, LSL #+2
+   \       0x40   0xE290'0014        ADDS     R0,R0,#+20
+   \       0x44   0x....'....        BL       callback_call
+   \                     ??_bus_callback_1:
+   \       0x48   0xE8BD'80F2        POP      {R1,R4-R7,PC}    ;; return
+    101          }
+    102          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    103          static int _bus_fifo_enable(uint8_t bus_id)
+    104          {
+   \                     _bus_fifo_enable:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    105          	int err = 0;
+   \        0x4   0xE3A0'2000        MOV      R2,#+0
+    106          
+    107          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0001        MOVS     R0,R1
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??_bus_fifo_enable_0
+    108          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0000        B        ??_bus_fifo_enable_1
+    109          
+    110          	switch (_bus[bus_id].type) {
+    111          #ifdef CONFIG_HAVE_SPI_BUS
+    112          	case BUS_TYPE_SPI:
+    113          #ifdef CONFIG_HAVE_SPI_FIFO
+    114          		_bus[bus_id].iface.spid.use_fifo = true;
+    115          #endif
+    116          		break;
+    117          #endif
+    118          #ifdef CONFIG_HAVE_I2C_BUS
+    119          	case BUS_TYPE_I2C:
+    120          #ifdef CONFIG_HAVE_TWI_FIFO
+    121          		_bus[bus_id].iface.twid.use_fifo = true;
+    122          #endif
+    123          		break;
+    124          #endif
+    125          	default:
+    126          		err = -EINVAL;
+   \                     ??_bus_fifo_enable_0:
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+    127          		break;
+    128          	}
+    129          
+    130          	return err;
+   \                     ??_bus_fifo_enable_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    131          }
+    132          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    133          static int _bus_fifo_disable(uint8_t bus_id)
+    134          {
+   \                     _bus_fifo_disable:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    135          	int err = 0;
+   \        0x4   0xE3A0'2000        MOV      R2,#+0
+    136          
+    137          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0001        MOVS     R0,R1
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??_bus_fifo_disable_0
+    138          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0000        B        ??_bus_fifo_disable_1
+    139          
+    140          	switch (_bus[bus_id].type) {
+    141          #ifdef CONFIG_HAVE_SPI_BUS
+    142          	case BUS_TYPE_SPI:
+    143          #ifdef CONFIG_HAVE_SPI_FIFO
+    144          		_bus[bus_id].iface.spid.use_fifo = false;
+    145          #endif
+    146          		break;
+    147          #endif
+    148          #ifdef CONFIG_HAVE_I2C_BUS
+    149          	case BUS_TYPE_I2C:
+    150          #ifdef CONFIG_HAVE_TWI_FIFO
+    151          		_bus[bus_id].iface.twid.use_fifo = false;
+    152          #endif
+    153          		break;
+    154          #endif
+    155          	default:
+    156          		err = -EINVAL;
+   \                     ??_bus_fifo_disable_0:
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+    157          		break;
+    158          	}
+    159          
+    160          	return err;
+   \                     ??_bus_fifo_disable_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    161          }
+    162          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    163          static int _bus_fifo_is_enabled(uint8_t bus_id)
+    164          {
+   \                     _bus_fifo_is_enabled:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    165          	int err = 0;
+   \        0x4   0xE3A0'2000        MOV      R2,#+0
+    166          
+    167          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0001        MOVS     R0,R1
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??_bus_fifo_is_enabled_0
+    168          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0000        B        ??_bus_fifo_is_enabled_1
+    169          
+    170          	switch (_bus[bus_id].type) {
+    171          #ifdef CONFIG_HAVE_SPI_BUS
+    172          	case BUS_TYPE_SPI:
+    173          #ifdef CONFIG_HAVE_SPI_FIFO
+    174          		err = _bus[bus_id].iface.spid.use_fifo;
+    175          #endif
+    176          		break;
+    177          #endif
+    178          #ifdef CONFIG_HAVE_I2C_BUS
+    179          	case BUS_TYPE_I2C:
+    180          #ifdef CONFIG_HAVE_TWI_FIFO
+    181          		err = _bus[bus_id].iface.twid.use_fifo;
+    182          #endif
+    183          		break;
+    184          #endif
+    185          	default:
+    186          		err = -EINVAL;
+   \                     ??_bus_fifo_is_enabled_0:
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+    187          		break;
+    188          	}
+    189          
+    190          	return err;
+   \                     ??_bus_fifo_is_enabled_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    191          }
+    192          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    193          static int _bus_enable(uint8_t bus_id)
+    194          {
+   \                     _bus_enable:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    195          	int err = 0;
+   \        0x4   0xE3A0'2000        MOV      R2,#+0
+    196          
+    197          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0001        MOVS     R0,R1
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??_bus_enable_0
+    198          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0000        B        ??_bus_enable_1
+    199          
+    200          	switch (_bus[bus_id].type) {
+    201          #ifdef CONFIG_HAVE_SPI_BUS
+    202          	case BUS_TYPE_SPI:
+    203          		break;
+    204          #endif
+    205          #ifdef CONFIG_HAVE_I2C_BUS
+    206          	case BUS_TYPE_I2C:
+    207          		break;
+    208          #endif
+    209          	default:
+    210          		err = -EINVAL;
+   \                     ??_bus_enable_0:
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+    211          		break;
+    212          	}
+    213          
+    214          	return err;
+   \                     ??_bus_enable_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    215          }
+    216          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    217          static int _bus_disable(uint8_t bus_id)
+    218          {
+   \                     _bus_disable:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    219          	int err = 0;
+   \        0x4   0xE3A0'2000        MOV      R2,#+0
+    220          
+    221          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0001        MOVS     R0,R1
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??_bus_disable_0
+    222          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0000        B        ??_bus_disable_1
+    223          
+    224          	switch (_bus[bus_id].type) {
+    225          #ifdef CONFIG_HAVE_SPI_BUS
+    226          	case BUS_TYPE_SPI:
+    227          		break;
+    228          #endif
+    229          #ifdef CONFIG_HAVE_I2C_BUS
+    230          	case BUS_TYPE_I2C:
+    231          		break;
+    232          #endif
+    233          	default:
+    234          		err = -EINVAL;
+   \                     ??_bus_disable_0:
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+    235          		break;
+    236          	}
+    237          
+    238          	return err;
+   \                     ??_bus_disable_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    239          }
+    240          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    241          static int _bus_get_transfer_mode(uint8_t bus_id)
+    242          {
+   \                     _bus_get_transfer_mode:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    243          	int err = 0;
+   \        0x4   0xE3A0'2000        MOV      R2,#+0
+    244          
+    245          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0001        MOVS     R0,R1
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??_bus_get_transfer_mode_0
+    246          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0000        B        ??_bus_get_transfer_mode_1
+    247          
+    248          	switch (_bus[bus_id].type) {
+    249          #ifdef CONFIG_HAVE_SPI_BUS
+    250          	case BUS_TYPE_SPI:
+    251          		return _bus[bus_id].iface.spid.transfer_mode;
+    252          #endif
+    253          #ifdef CONFIG_HAVE_I2C_BUS
+    254          	case BUS_TYPE_I2C:
+    255          		return _bus[bus_id].iface.twid.transfer_mode;
+    256          #endif
+    257          	default:
+    258          		err = -EINVAL;
+   \                     ??_bus_get_transfer_mode_0:
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+    259          		break;
+    260          	}
+    261          
+    262          	return err;
+   \                     ??_bus_get_transfer_mode_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    263          }
+    264          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    265          static int _bus_set_transfer_mode(uint8_t bus_id, enum _bus_transfer_mode mode)
+    266          {
+   \                     _bus_set_transfer_mode:
+   \        0x0   0xE1B0'2000        MOVS     R2,R0
+    267          	int err = 0;
+   \        0x4   0xE3A0'3000        MOV      R3,#+0
+    268          
+    269          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0002        MOVS     R0,R2
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??_bus_set_transfer_mode_0
+    270          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0000        B        ??_bus_set_transfer_mode_1
+    271          
+    272          	switch (_bus[bus_id].type) {
+    273          #ifdef CONFIG_HAVE_SPI_BUS
+    274          	case BUS_TYPE_SPI:
+    275          		_bus[bus_id].iface.spid.transfer_mode = mode;
+    276          		break;
+    277          #endif
+    278          #ifdef CONFIG_HAVE_I2C_BUS
+    279          	case BUS_TYPE_I2C:
+    280          		_bus[bus_id].iface.twid.transfer_mode = mode;
+    281          		break;
+    282          #endif
+    283          	default:
+    284          		err = -EINVAL;
+   \                     ??_bus_set_transfer_mode_0:
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+    285          		break;
+    286          	}
+    287          
+    288          	return err;
+   \                     ??_bus_set_transfer_mode_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    289          }
+    290          
+    291          /*----------------------------------------------------------------------------
+    292           *         Exported functions
+    293           *----------------------------------------------------------------------------*/
+    294          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    295          int bus_configure(uint8_t bus_id, const struct _bus_iface* iface)
+    296          {
+   \                     bus_configure:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    297          	int err = 0;
+   \        0xC   0xE3A0'6000        MOV      R6,#+0
+    298          
+    299          	if (bus_id >= BUS_COUNT)
+   \       0x10   0xE1B0'0004        MOVS     R0,R4
+   \       0x14   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x18   0xE350'0005        CMP      R0,#+5
+   \       0x1C   0xBA00'0001        BLT      ??bus_configure_0
+    300          		return -ENODEV;
+   \       0x20   0xE3E0'002B        MVN      R0,#+43
+   \       0x24   0xEA00'0023        B        ??bus_configure_1
+    301          
+    302          	memset(&_bus[bus_id], 0, sizeof(_bus[bus_id]));
+   \                     ??bus_configure_0:
+   \       0x28   0xE3A0'7024        MOV      R7,#+36
+   \       0x2C   0xE3A0'8000        MOV      R8,#+0
+   \       0x30   0x....'....        LDR      R9,??DataTable8
+   \       0x34   0xE1B0'0004        MOVS     R0,R4
+   \       0x38   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x3C   0xE080'1180        ADD      R1,R0,R0, LSL #+3
+   \       0x40   0xE099'A101        ADDS     R10,R9,R1, LSL #+2
+   \       0x44   0xE1B0'2008        MOVS     R2,R8
+   \       0x48   0xE1B0'1007        MOVS     R1,R7
+   \       0x4C   0xE1B0'000A        MOVS     R0,R10
+   \       0x50   0x....'....        BL       __aeabi_memset
+   \       0x54   0xE1B0'000A        MOVS     R0,R10
+    303          	_bus[bus_id].transfer_mode = iface->transfer_mode;
+   \       0x58   0xE5D5'0008        LDRB     R0,[R5, #+8]
+   \       0x5C   0xE1B0'1004        MOVS     R1,R4
+   \       0x60   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x64   0xE081'2181        ADD      R2,R1,R1, LSL #+3
+   \       0x68   0xE099'1102        ADDS     R1,R9,R2, LSL #+2
+   \       0x6C   0xE5C1'0008        STRB     R0,[R1, #+8]
+    304          	_bus[bus_id].options = O_BLOCK;
+   \       0x70   0xE3A0'0001        MOV      R0,#+1
+   \       0x74   0xE1B0'1004        MOVS     R1,R4
+   \       0x78   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x7C   0xE081'2181        ADD      R2,R1,R1, LSL #+3
+   \       0x80   0xE099'1102        ADDS     R1,R9,R2, LSL #+2
+   \       0x84   0xE581'000C        STR      R0,[R1, #+12]
+    305          	_bus[bus_id].type = iface->type;
+   \       0x88   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \       0x8C   0xE1B0'1004        MOVS     R1,R4
+   \       0x90   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x94   0xE081'2181        ADD      R2,R1,R1, LSL #+3
+   \       0x98   0xE7C9'0102        STRB     R0,[R9, +R2, LSL #+2]
+    306          
+    307          	switch (_bus[bus_id].type) {
+    308          #ifdef CONFIG_HAVE_SPI_BUS
+    309          	case BUS_TYPE_SPI:
+    310          		_bus[bus_id].iface.spid.addr = iface->spi.hw;
+    311          		_bus[bus_id].iface.spid.transfer_mode = iface->transfer_mode;
+    312          
+    313          		spid_configure(&_bus[bus_id].iface.spid);
+    314          		spid_configure_master(&_bus[bus_id].iface.spid, true);
+    315          		break;
+    316          #endif
+    317          #ifdef CONFIG_HAVE_I2C_BUS
+    318          	case BUS_TYPE_I2C:
+    319          		_bus[bus_id].iface.twid.addr = iface->i2c.hw;
+    320          		_bus[bus_id].iface.twid.transfer_mode = iface->transfer_mode;
+    321          		_bus[bus_id].iface.twid.freq = iface->i2c.freq;
+    322          
+    323          		twid_configure(&_bus[bus_id].iface.twid);
+    324          		break;
+    325          #endif
+    326          	default:
+    327          		err = -EINVAL;
+   \       0x9C   0xE3E0'901B        MVN      R9,#+27
+    328          		break;
+    329          	}
+    330          
+    331          	bus_ioctl(bus_id, BUS_IOCTL_ENABLE, NULL);
+   \       0xA0   0xE3A0'2000        MOV      R2,#+0
+   \       0xA4   0xE3A0'1001        MOV      R1,#+1
+   \       0xA8   0xE1B0'0004        MOVS     R0,R4
+   \       0xAC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xB0   0x....'....        BL       bus_ioctl
+    332          
+    333          	return err;
+   \       0xB4   0xE1B0'0009        MOVS     R0,R9
+   \                     ??bus_configure_1:
+   \       0xB8   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    334          }
+    335          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    336          int bus_configure_slave(uint8_t bus_id, const struct _bus_dev_cfg* cfg)
+    337          {
+   \                     bus_configure_slave:
+   \        0x0   0xE1B0'2000        MOVS     R2,R0
+    338          	int err = 0;
+   \        0x4   0xE3A0'3000        MOV      R3,#+0
+    339          
+    340          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0002        MOVS     R0,R2
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??bus_configure_slave_0
+    341          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0000        B        ??bus_configure_slave_1
+    342          
+    343          	switch (_bus[bus_id].type) {
+    344          #ifdef CONFIG_HAVE_SPI_BUS
+    345          	case BUS_TYPE_SPI:
+    346          		spid_configure_cs(&_bus[bus_id].iface.spid,
+    347          		                  cfg->spi_dev.chip_select,
+    348          		                  cfg->spi_dev.bitrate,
+    349          		                  cfg->spi_dev.delay.bs,
+    350          		                  cfg->spi_dev.delay.bct,
+    351          		                  cfg->spi_dev.spi_mode);
+    352          		break;
+    353          #endif
+    354          #ifdef CONFIG_HAVE_I2C_BUS
+    355          	case BUS_TYPE_I2C:
+    356          		break;
+    357          #endif
+    358          	default:
+    359          		err = -EINVAL;
+   \                     ??bus_configure_slave_0:
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+    360          		break;
+    361          	}
+    362          
+    363          	return err;
+   \                     ??bus_configure_slave_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    364          }
+    365          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    366          int bus_ioctl(uint8_t bus_id, int req, void* arg)
+    367          {
+   \                     bus_ioctl:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    368          	int err = 0;
+   \       0x10   0xE3A0'7000        MOV      R7,#+0
+    369          
+    370          	if (bus_id >= BUS_COUNT)
+   \       0x14   0xE1B0'0004        MOVS     R0,R4
+   \       0x18   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x1C   0xE350'0005        CMP      R0,#+5
+   \       0x20   0xBA00'0001        BLT      ??bus_ioctl_1
+    371          		return -EINVAL;
+   \       0x24   0xE3E0'001B        MVN      R0,#+27
+   \       0x28   0xEA00'0043        B        ??bus_ioctl_2
+    372          
+    373          	switch (req) {
+   \                     ??bus_ioctl_1:
+   \       0x2C   0xE1B0'0005        MOVS     R0,R5
+   \       0x30   0xE240'0001        SUB      R0,R0,#+1
+   \       0x34   0xE350'0007        CMP      R0,#+7
+   \       0x38   0x8A00'003C        BHI      ??bus_ioctl_3
+   \       0x3C   0xE7DF'1000        LDRB     R1,[PC, R0]
+   \       0x40   0xE08F'F101        ADD      PC,PC,R1, LSL #+2
+   \                     ??bus_ioctl_0:
+   \       0x44   0x01 0x06          DC8      0x1,0x6,0xB,0x10
+
+   \              0x0B 0x10
+   \       0x48   0x15 0x24          DC8      0x15,0x24,0x2A,0x32
+
+   \              0x2A 0x32
+    374          	case BUS_IOCTL_ENABLE:
+    375          		err = _bus_enable(bus_id);
+   \                     ??bus_ioctl_4:
+   \       0x4C   0xE1B0'0004        MOVS     R0,R4
+   \       0x50   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x54   0x....'....        BL       _bus_enable
+   \       0x58   0xE1B0'7000        MOVS     R7,R0
+    376          		break;
+   \       0x5C   0xEA00'0035        B        ??bus_ioctl_5
+    377          	case BUS_IOCTL_DISABLE:
+    378          		err = _bus_disable(bus_id);
+   \                     ??bus_ioctl_6:
+   \       0x60   0xE1B0'0004        MOVS     R0,R4
+   \       0x64   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x68   0x....'....        BL       _bus_disable
+   \       0x6C   0xE1B0'7000        MOVS     R7,R0
+    379          		break;
+   \       0x70   0xEA00'0030        B        ??bus_ioctl_5
+    380          	case BUS_IOCTL_ENABLE_FIFO:
+    381          		err = _bus_fifo_enable(bus_id);
+   \                     ??bus_ioctl_7:
+   \       0x74   0xE1B0'0004        MOVS     R0,R4
+   \       0x78   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x7C   0x....'....        BL       _bus_fifo_enable
+   \       0x80   0xE1B0'7000        MOVS     R7,R0
+    382          		break;
+   \       0x84   0xEA00'002B        B        ??bus_ioctl_5
+    383          	case BUS_IOCTL_DISABLE_FIFO:
+    384          		err = _bus_fifo_disable(bus_id);
+   \                     ??bus_ioctl_8:
+   \       0x88   0xE1B0'0004        MOVS     R0,R4
+   \       0x8C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x90   0x....'....        BL       _bus_fifo_disable
+   \       0x94   0xE1B0'7000        MOVS     R7,R0
+    385          		break;
+   \       0x98   0xEA00'0026        B        ??bus_ioctl_5
+    386          	case BUS_IOCTL_GET_FIFO_STATUS:
+    387          		err = _bus_fifo_is_enabled(bus_id);
+   \                     ??bus_ioctl_9:
+   \       0x9C   0xE1B0'0004        MOVS     R0,R4
+   \       0xA0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xA4   0x....'....        BL       _bus_fifo_is_enabled
+   \       0xA8   0xE1B0'7000        MOVS     R7,R0
+    388          		if (err >= 0) {
+   \       0xAC   0xE357'0000        CMP      R7,#+0
+   \       0xB0   0x4A00'0007        BMI      ??bus_ioctl_10
+    389          			*(bool*)arg = err;
+   \       0xB4   0xE357'0000        CMP      R7,#+0
+   \       0xB8   0x0A00'0001        BEQ      ??bus_ioctl_11
+   \       0xBC   0xE3A0'0001        MOV      R0,#+1
+   \       0xC0   0xEA00'0000        B        ??bus_ioctl_12
+   \                     ??bus_ioctl_11:
+   \       0xC4   0xE3A0'0000        MOV      R0,#+0
+   \                     ??bus_ioctl_12:
+   \       0xC8   0xE5C6'0000        STRB     R0,[R6, #+0]
+    390          			err = 0;
+   \       0xCC   0xE3A0'0000        MOV      R0,#+0
+   \       0xD0   0xE1B0'7000        MOVS     R7,R0
+    391          		}
+    392          		break;
+   \                     ??bus_ioctl_10:
+   \       0xD4   0xEA00'0017        B        ??bus_ioctl_5
+    393          	case BUS_IOCTL_SET_TRANSFER_MODE:
+    394          		err = _bus_set_transfer_mode(bus_id, *(enum _bus_transfer_mode*)arg);
+   \                     ??bus_ioctl_13:
+   \       0xD8   0xE5D6'1000        LDRB     R1,[R6, #+0]
+   \       0xDC   0xE1B0'0004        MOVS     R0,R4
+   \       0xE0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xE4   0x....'....        BL       _bus_set_transfer_mode
+   \       0xE8   0xE1B0'7000        MOVS     R7,R0
+    395          		break;
+   \       0xEC   0xEA00'0011        B        ??bus_ioctl_5
+    396          	case BUS_IOCTL_GET_TRANSFER_MODE:
+    397          		err = _bus_get_transfer_mode(bus_id);
+   \                     ??bus_ioctl_14:
+   \       0xF0   0xE1B0'0004        MOVS     R0,R4
+   \       0xF4   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xF8   0x....'....        BL       _bus_get_transfer_mode
+   \       0xFC   0xE1B0'7000        MOVS     R7,R0
+    398          		if (err >= 0)
+   \      0x100   0xE357'0000        CMP      R7,#+0
+   \      0x104   0x4A00'0000        BMI      ??bus_ioctl_15
+    399          			*(enum _bus_transfer_mode*)arg = (enum _bus_transfer_mode)err;
+   \      0x108   0xE5C6'7000        STRB     R7,[R6, #+0]
+    400          		break;
+   \                     ??bus_ioctl_15:
+   \      0x10C   0xEA00'0009        B        ??bus_ioctl_5
+    401          	case BUS_IOCTL_SET_TIMEOUT:
+    402          		_bus[bus_id].timeout = *(uint32_t*)arg;
+   \                     ??bus_ioctl_16:
+   \      0x110   0xE596'0000        LDR      R0,[R6, #+0]
+   \      0x114   0x....'....        LDR      R1,??DataTable8
+   \      0x118   0xE1B0'2004        MOVS     R2,R4
+   \      0x11C   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \      0x120   0xE082'3182        ADD      R3,R2,R2, LSL #+3
+   \      0x124   0xE091'1103        ADDS     R1,R1,R3, LSL #+2
+   \      0x128   0xE581'0010        STR      R0,[R1, #+16]
+    403          		break;
+   \      0x12C   0xEA00'0001        B        ??bus_ioctl_5
+    404          
+    405          	default:
+    406          		err = -EINVAL;
+   \                     ??bus_ioctl_3:
+   \      0x130   0xE3E0'001B        MVN      R0,#+27
+   \      0x134   0xE1B0'7000        MOVS     R7,R0
+    407          		break;
+    408          	}
+    409          
+    410          	return err;
+   \                     ??bus_ioctl_5:
+   \      0x138   0xE1B0'0007        MOVS     R0,R7
+   \                     ??bus_ioctl_2:
+   \      0x13C   0xE8BD'80F2        POP      {R1,R4-R7,PC}    ;; return
+    411          }
+    412          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    413          int bus_transfer(uint8_t bus_id, uint16_t remote, struct _buffer* buf, uint16_t buffers, struct _callback* cb)
+    414          {
+   \                     bus_transfer:
+   \        0x0   0xE92D'4FFE        PUSH     {R1-R11,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+   \       0x10   0xE1B0'7003        MOVS     R7,R3
+   \       0x14   0xE59D'8030        LDR      R8,[SP, #+48]
+    415          	int err = 0;
+   \       0x18   0xE3A0'9000        MOV      R9,#+0
+    416          	struct _callback _cb;
+    417          
+    418          	if (bus_id >= BUS_COUNT)
+   \       0x1C   0xE1B0'0004        MOVS     R0,R4
+   \       0x20   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x24   0xE350'0005        CMP      R0,#+5
+   \       0x28   0xBA00'0001        BLT      ??bus_transfer_0
+    419          		return -ENODEV;
+   \       0x2C   0xE3E0'002B        MVN      R0,#+43
+   \       0x30   0xEA00'004E        B        ??bus_transfer_1
+    420          
+    421          	if (buffers == 0)
+   \                     ??bus_transfer_0:
+   \       0x34   0xE1B0'0007        MOVS     R0,R7
+   \       0x38   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x3C   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x40   0xE350'0000        CMP      R0,#+0
+   \       0x44   0x1A00'0001        BNE      ??bus_transfer_2
+    422          		return 0;
+   \       0x48   0xE3A0'0000        MOV      R0,#+0
+   \       0x4C   0xEA00'0047        B        ??bus_transfer_1
+    423          
+    424          	if (!mutex_is_locked(&_bus[bus_id].mutex.transaction)) {
+   \                     ??bus_transfer_2:
+   \       0x50   0x....'....        LDR      R10,??DataTable8
+   \       0x54   0xE1B0'0004        MOVS     R0,R4
+   \       0x58   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x5C   0xE080'1180        ADD      R1,R0,R0, LSL #+3
+   \       0x60   0xE09A'0101        ADDS     R0,R10,R1, LSL #+2
+   \       0x64   0xE290'0020        ADDS     R0,R0,#+32
+   \       0x68   0x....'....        BL       mutex_is_locked
+   \       0x6C   0xE350'0000        CMP      R0,#+0
+   \       0x70   0x1A00'0007        BNE      ??bus_transfer_3
+    425          		trace_error("bus: no opened transaction on the bus.");
+   \       0x74   0x....'....        LDR      R0,??DataTable8_1
+   \       0x78   0xE590'0000        LDR      R0,[R0, #+0]
+   \       0x7C   0xE350'0002        CMP      R0,#+2
+   \       0x80   0x3A00'0001        BCC      ??bus_transfer_4
+   \       0x84   0x....'....        LDR      R0,??DataTable8_2
+   \       0x88   0x....'....        BL       printf
+    426          		return -EBUSY;
+   \                     ??bus_transfer_4:
+   \       0x8C   0xE3E0'0009        MVN      R0,#+9
+   \       0x90   0xEA00'0036        B        ??bus_transfer_1
+    427          	}
+    428          	if (!mutex_try_lock(&_bus[bus_id].mutex.lock))
+   \                     ??bus_transfer_3:
+   \       0x94   0xE1B0'0004        MOVS     R0,R4
+   \       0x98   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x9C   0xE080'1180        ADD      R1,R0,R0, LSL #+3
+   \       0xA0   0xE09A'0101        ADDS     R0,R10,R1, LSL #+2
+   \       0xA4   0xE290'001C        ADDS     R0,R0,#+28
+   \       0xA8   0x....'....        BL       mutex_try_lock
+   \       0xAC   0xE350'0000        CMP      R0,#+0
+   \       0xB0   0x1A00'0001        BNE      ??bus_transfer_5
+    429          		return -EAGAIN;
+   \       0xB4   0xE3E0'0005        MVN      R0,#+5
+   \       0xB8   0xEA00'002C        B        ??bus_transfer_1
+    430          
+    431          	callback_copy(&_bus[bus_id].callback, cb);
+   \                     ??bus_transfer_5:
+   \       0xBC   0xE1B0'1008        MOVS     R1,R8
+   \       0xC0   0xE1B0'0004        MOVS     R0,R4
+   \       0xC4   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xC8   0xE080'2180        ADD      R2,R0,R0, LSL #+3
+   \       0xCC   0xE09A'0102        ADDS     R0,R10,R2, LSL #+2
+   \       0xD0   0xE290'0014        ADDS     R0,R0,#+20
+   \       0xD4   0x....'....        BL       callback_copy
+    432          
+    433          	callback_set(&_cb, _bus_callback, (void*)(uint32_t)bus_id);
+   \       0xD8   0xE1B0'2004        MOVS     R2,R4
+   \       0xDC   0xE212'20FF        ANDS     R2,R2,#0xFF      ;; Zero extend
+   \       0xE0   0x....'....        LDR      R1,??DataTable8_3
+   \       0xE4   0xE1B0'000D        MOVS     R0,SP
+   \       0xE8   0x....'....        BL       callback_set
+    434          	switch (_bus[bus_id].type) {
+    435          #ifdef CONFIG_HAVE_SPI_BUS
+    436          	case BUS_TYPE_SPI:
+    437          		_bus[bus_id].iface.spid.chip_select = (uint8_t)remote;
+    438          
+    439          		err = spid_transfer(&_bus[bus_id].iface.spid, buf, buffers, &_cb);
+    440          		break;
+    441          #endif
+    442          #ifdef CONFIG_HAVE_I2C_BUS
+    443          	case BUS_TYPE_I2C:
+    444          		_bus[bus_id].iface.twid.slave_addr = (uint8_t)remote;
+    445          
+    446          		err = twid_transfer(&_bus[bus_id].iface.twid, buf, buffers, &_cb);
+    447          		break;
+    448          #endif
+    449          	default:
+    450          		err = -EINVAL;
+   \       0xEC   0xE3E0'B01B        MVN      R11,#+27
+    451          		break;
+    452          	}
+    453          
+    454          	if (err < 0) {
+   \       0xF0   0xE35B'0000        CMP      R11,#+0
+   \       0xF4   0x5A00'0007        BPL      ??bus_transfer_6
+    455          		mutex_unlock(&_bus[bus_id].mutex.lock);
+   \       0xF8   0xE1B0'0004        MOVS     R0,R4
+   \       0xFC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x100   0xE080'1180        ADD      R1,R0,R0, LSL #+3
+   \      0x104   0xE09A'0101        ADDS     R0,R10,R1, LSL #+2
+   \      0x108   0xE290'001C        ADDS     R0,R0,#+28
+   \      0x10C   0x....'....        BL       mutex_unlock
+    456          		return err;
+   \      0x110   0xE1B0'000B        MOVS     R0,R11
+   \      0x114   0xEA00'0015        B        ??bus_transfer_1
+    457          	}
+    458          	if (_bus[bus_id].options & O_BLOCK)
+   \                     ??bus_transfer_6:
+   \      0x118   0xE1B0'0004        MOVS     R0,R4
+   \      0x11C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x120   0xE080'1180        ADD      R1,R0,R0, LSL #+3
+   \      0x124   0xE09A'0101        ADDS     R0,R10,R1, LSL #+2
+   \      0x128   0xE5D0'000C        LDRB     R0,[R0, #+12]
+   \      0x12C   0xE310'0001        TST      R0,#0x1
+   \      0x130   0x0A00'000D        BEQ      ??bus_transfer_7
+    459          		while (bus_is_busy(bus_id)) {
+   \                     ??bus_transfer_8:
+   \      0x134   0xE1B0'0004        MOVS     R0,R4
+   \      0x138   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x13C   0x....'....        BL       bus_is_busy
+   \      0x140   0xE350'0000        CMP      R0,#+0
+   \      0x144   0x0A00'0008        BEQ      ??bus_transfer_7
+    460          			if (_bus[bus_id].transfer_mode == BUS_TRANSFER_MODE_DMA)
+   \      0x148   0xE1B0'0004        MOVS     R0,R4
+   \      0x14C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \      0x150   0xE080'1180        ADD      R1,R0,R0, LSL #+3
+   \      0x154   0xE09A'0101        ADDS     R0,R10,R1, LSL #+2
+   \      0x158   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \      0x15C   0xE350'0002        CMP      R0,#+2
+   \      0x160   0x1AFF'FFF3        BNE      ??bus_transfer_8
+    461          				dma_poll();
+   \      0x164   0x....'....        BL       dma_poll
+   \      0x168   0xEAFF'FFF1        B        ??bus_transfer_8
+    462          		}
+    463          
+    464          	return err;
+   \                     ??bus_transfer_7:
+   \      0x16C   0xE1B0'000B        MOVS     R0,R11
+   \                     ??bus_transfer_1:
+   \      0x170   0xE8BD'8FFE        POP      {R1-R11,PC}      ;; return
+    465          }
+    466          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    467          int bus_start_transaction(uint8_t bus_id)
+    468          {
+   \                     bus_start_transaction:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    469          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0004        MOVS     R0,R4
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??bus_start_transaction_0
+    470          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0007        B        ??bus_start_transaction_1
+    471          
+    472          	mutex_lock(&_bus[bus_id].mutex.transaction);
+   \                     ??bus_start_transaction_0:
+   \       0x20   0x....'....        LDR      R0,??DataTable8
+   \       0x24   0xE1B0'1004        MOVS     R1,R4
+   \       0x28   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x2C   0xE081'2181        ADD      R2,R1,R1, LSL #+3
+   \       0x30   0xE090'0102        ADDS     R0,R0,R2, LSL #+2
+   \       0x34   0xE290'0020        ADDS     R0,R0,#+32
+   \       0x38   0x....'....        BL       mutex_lock
+    473          
+    474          	return 0;
+   \       0x3C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??bus_start_transaction_1:
+   \       0x40   0xE8BD'8010        POP      {R4,PC}          ;; return
+    475          }
+    476          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    477          int bus_stop_transaction(uint8_t bus_id)
+    478          {
+   \                     bus_stop_transaction:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    479          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0004        MOVS     R0,R4
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??bus_stop_transaction_0
+    480          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0007        B        ??bus_stop_transaction_1
+    481          
+    482          	mutex_unlock(&_bus[bus_id].mutex.transaction);
+   \                     ??bus_stop_transaction_0:
+   \       0x20   0x....'....        LDR      R0,??DataTable8
+   \       0x24   0xE1B0'1004        MOVS     R1,R4
+   \       0x28   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x2C   0xE081'2181        ADD      R2,R1,R1, LSL #+3
+   \       0x30   0xE090'0102        ADDS     R0,R0,R2, LSL #+2
+   \       0x34   0xE290'0020        ADDS     R0,R0,#+32
+   \       0x38   0x....'....        BL       mutex_unlock
+    483          
+    484          	return 0;
+   \       0x3C   0xE3A0'0000        MOV      R0,#+0
+   \                     ??bus_stop_transaction_1:
+   \       0x40   0xE8BD'8010        POP      {R4,PC}          ;; return
+    485          }
+    486          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    487          void bus_wait_transaction(uint8_t bus_id)
+    488          {
+   \                     bus_wait_transaction:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    489          	while (mutex_is_locked(&_bus[bus_id].mutex.transaction));
+   \                     ??bus_wait_transaction_0:
+   \        0x8   0x....'....        LDR      R0,??DataTable8
+   \        0xC   0xE1B0'1004        MOVS     R1,R4
+   \       0x10   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x14   0xE081'2181        ADD      R2,R1,R1, LSL #+3
+   \       0x18   0xE090'0102        ADDS     R0,R0,R2, LSL #+2
+   \       0x1C   0xE290'0020        ADDS     R0,R0,#+32
+   \       0x20   0x....'....        BL       mutex_is_locked
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x1AFF'FFF6        BNE      ??bus_wait_transaction_0
+    490          }
+   \       0x2C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    491          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    492          bool bus_is_busy(uint8_t bus_id)
+    493          {
+   \                     bus_is_busy:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    494          	return mutex_is_locked(&_bus[bus_id].mutex.lock);
+   \        0x8   0x....'....        LDR      R0,??DataTable8
+   \        0xC   0xE1B0'1004        MOVS     R1,R4
+   \       0x10   0xE211'10FF        ANDS     R1,R1,#0xFF      ;; Zero extend
+   \       0x14   0xE081'2181        ADD      R2,R1,R1, LSL #+3
+   \       0x18   0xE090'0102        ADDS     R0,R0,R2, LSL #+2
+   \       0x1C   0xE290'001C        ADDS     R0,R0,#+28
+   \       0x20   0x....'....        BL       mutex_is_locked
+   \       0x24   0xE8BD'8010        POP      {R4,PC}          ;; return
+    495          }
+    496          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    497          int bus_wait_transfer(uint8_t bus_id)
+    498          {
+   \                     bus_wait_transfer:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE24D'D010        SUB      SP,SP,#+16
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+    499          	if (bus_id >= BUS_COUNT)
+   \        0xC   0xE1B0'0004        MOVS     R0,R4
+   \       0x10   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x14   0xE350'0005        CMP      R0,#+5
+   \       0x18   0xBA00'0001        BLT      ??bus_wait_transfer_0
+    500          		return -ENODEV;
+   \       0x1C   0xE3E0'002B        MVN      R0,#+43
+   \       0x20   0xEA00'0034        B        ??bus_wait_transfer_1
+    501          
+    502          	if (_bus[bus_id].timeout > 0) {
+   \                     ??bus_wait_transfer_0:
+   \       0x24   0x....'....        LDR      R5,??DataTable8
+   \       0x28   0xE1B0'0004        MOVS     R0,R4
+   \       0x2C   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x30   0xE080'1180        ADD      R1,R0,R0, LSL #+3
+   \       0x34   0xE095'0101        ADDS     R0,R5,R1, LSL #+2
+   \       0x38   0xE590'0010        LDR      R0,[R0, #+16]
+   \       0x3C   0xE350'0000        CMP      R0,#+0
+   \       0x40   0x0A00'001D        BEQ      ??bus_wait_transfer_2
+    503          		struct _timeout _to;
+    504          
+    505          		timer_start_timeout(&_to, _bus[bus_id].timeout);
+   \       0x44   0xE1B0'0004        MOVS     R0,R4
+   \       0x48   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x4C   0xE080'1180        ADD      R1,R0,R0, LSL #+3
+   \       0x50   0xE095'0101        ADDS     R0,R5,R1, LSL #+2
+   \       0x54   0xE590'2010        LDR      R2,[R0, #+16]
+   \       0x58   0xE3B0'3000        MOVS     R3,#+0
+   \       0x5C   0xE1B0'000D        MOVS     R0,SP
+   \       0x60   0x....'....        BL       timer_start_timeout
+    506          		while (!timer_timeout_reached(&_to)) {
+   \                     ??bus_wait_transfer_3:
+   \       0x64   0xE1B0'000D        MOVS     R0,SP
+   \       0x68   0x....'....        BL       timer_timeout_reached
+   \       0x6C   0xE350'0000        CMP      R0,#+0
+   \       0x70   0x1A00'000F        BNE      ??bus_wait_transfer_4
+    507          			if (!bus_is_busy(bus_id))
+   \       0x74   0xE1B0'0004        MOVS     R0,R4
+   \       0x78   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x7C   0x....'....        BL       bus_is_busy
+   \       0x80   0xE350'0000        CMP      R0,#+0
+   \       0x84   0x1A00'0001        BNE      ??bus_wait_transfer_5
+    508          				return 0;
+   \       0x88   0xE3A0'0000        MOV      R0,#+0
+   \       0x8C   0xEA00'0019        B        ??bus_wait_transfer_1
+    509          			if (_bus[bus_id].transfer_mode == BUS_TRANSFER_MODE_DMA)
+   \                     ??bus_wait_transfer_5:
+   \       0x90   0xE1B0'0004        MOVS     R0,R4
+   \       0x94   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x98   0xE080'1180        ADD      R1,R0,R0, LSL #+3
+   \       0x9C   0xE095'0101        ADDS     R0,R5,R1, LSL #+2
+   \       0xA0   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0xA4   0xE350'0002        CMP      R0,#+2
+   \       0xA8   0x1AFF'FFED        BNE      ??bus_wait_transfer_3
+    510          				dma_poll();
+   \       0xAC   0x....'....        BL       dma_poll
+   \       0xB0   0xEAFF'FFEB        B        ??bus_wait_transfer_3
+    511          		}
+    512          
+    513          		return -ETIMEDOUT;
+   \                     ??bus_wait_transfer_4:
+   \       0xB4   0xE3E0'004C        MVN      R0,#+76
+   \       0xB8   0xEA00'000E        B        ??bus_wait_transfer_1
+    514          	} else {
+    515          		while (bus_is_busy(bus_id)) {
+   \                     ??bus_wait_transfer_2:
+   \       0xBC   0xE1B0'0004        MOVS     R0,R4
+   \       0xC0   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xC4   0x....'....        BL       bus_is_busy
+   \       0xC8   0xE350'0000        CMP      R0,#+0
+   \       0xCC   0x0A00'0008        BEQ      ??bus_wait_transfer_6
+    516          			if (_bus[bus_id].transfer_mode == BUS_TRANSFER_MODE_DMA)
+   \       0xD0   0xE1B0'0004        MOVS     R0,R4
+   \       0xD4   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0xD8   0xE080'1180        ADD      R1,R0,R0, LSL #+3
+   \       0xDC   0xE095'0101        ADDS     R0,R5,R1, LSL #+2
+   \       0xE0   0xE5D0'0008        LDRB     R0,[R0, #+8]
+   \       0xE4   0xE350'0002        CMP      R0,#+2
+   \       0xE8   0x1AFF'FFF3        BNE      ??bus_wait_transfer_2
+    517          				dma_poll();
+   \       0xEC   0x....'....        BL       dma_poll
+   \       0xF0   0xEAFF'FFF1        B        ??bus_wait_transfer_2
+    518          		}
+    519          	}
+    520          
+    521          	return 0;
+   \                     ??bus_wait_transfer_6:
+   \       0xF4   0xE3A0'0000        MOV      R0,#+0
+   \                     ??bus_wait_transfer_1:
+   \       0xF8   0xE28D'D014        ADD      SP,SP,#+20
+   \       0xFC   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+    522          }
+    523          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    524          int bus_suspend(uint8_t bus_id)
+    525          {
+   \                     bus_suspend:
+   \        0x0   0xE1B0'1000        MOVS     R1,R0
+    526          	int err = -ENOTSUP;
+   \        0x4   0xE3E0'203C        MVN      R2,#+60
+    527          
+    528          	if (bus_id >= BUS_COUNT)
+   \        0x8   0xE1B0'0001        MOVS     R0,R1
+   \        0xC   0xE210'00FF        ANDS     R0,R0,#0xFF      ;; Zero extend
+   \       0x10   0xE350'0005        CMP      R0,#+5
+   \       0x14   0xBA00'0001        BLT      ??bus_suspend_0
+    529          		return -ENODEV;
+   \       0x18   0xE3E0'002B        MVN      R0,#+43
+   \       0x1C   0xEA00'0000        B        ??bus_suspend_1
+    530          
+    531          	switch (_bus[bus_id].type) {
+    532          #ifdef CONFIG_HAVE_SPI_BUS
+    533          	case BUS_TYPE_SPI:
+    534          		err = 0;
+    535          		break;
+    536          #endif
+    537          #ifdef CONFIG_HAVE_I2C_BUS
+    538          	case BUS_TYPE_I2C:
+    539          		err = 0;
+    540          		break;
+    541          #endif
+    542          	default:
+    543          		err = -EINVAL;
+   \                     ??bus_suspend_0:
+   \       0x20   0xE3E0'001B        MVN      R0,#+27
+    544          		break;
+    545          	}
+    546          
+    547          	return err;
+   \                     ??bus_suspend_1:
+   \       0x24   0xE12F'FF1E        BX       LR               ;; return
+    548          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable8:
+   \        0x0   0x....'....        DC32     _bus
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable8_1:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable8_2:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable8_3:
+   \        0x0   0x....'....        DC32     _bus_callback
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x45          DC8 "-E- bus: no opened transaction on the bus."
+
+   \              0x2D 0x20    
+
+   \              0x62 0x75    
+
+   \              0x73 0x3A    
+
+   \              0x20 0x6E    
+
+   \              0x6F 0x20    
+
+   \              0x6F 0x70    
+
+   \              0x65 0x6E    
+
+   \              0x65 0x64    
+
+   \              0x20 0x74    
+
+   \              0x72 0x61    
+
+   \              0x6E 0x73    
+
+   \              0x61 0x63    
+
+   \              0x74 0x69    
+
+   \              0x6F 0x6E    
+
+   \              0x20 0x6F    
+
+   \              0x6E 0x20    
+
+   \              0x74 0x68    
+
+   \              0x65 0x20    
+
+   \              0x62 0x75    
+
+   \              0x73 0x2E    
+
+   \              0x00
+   \       0x2B   0x00               DC8 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   _bus_callback
+        24   -> callback_call
+        24   -> mutex_unlock
+       0   _bus_disable
+       0   _bus_enable
+       0   _bus_fifo_disable
+       0   _bus_fifo_enable
+       0   _bus_fifo_is_enabled
+       0   _bus_get_transfer_mode
+       0   _bus_set_transfer_mode
+      32   bus_configure
+        32   -> __aeabi_memset
+        32   -> bus_ioctl
+       0   bus_configure_slave
+      24   bus_ioctl
+        24   -> _bus_disable
+        24   -> _bus_enable
+        24   -> _bus_fifo_disable
+        24   -> _bus_fifo_enable
+        24   -> _bus_fifo_is_enabled
+        24   -> _bus_get_transfer_mode
+        24   -> _bus_set_transfer_mode
+       8   bus_is_busy
+         8   -> mutex_is_locked
+       8   bus_start_transaction
+         8   -> mutex_lock
+       8   bus_stop_transaction
+         8   -> mutex_unlock
+       0   bus_suspend
+      48   bus_transfer
+        48   -> bus_is_busy
+        48   -> callback_copy
+        48   -> callback_set
+        48   -> dma_poll
+        48   -> mutex_is_locked
+        48   -> mutex_try_lock
+        48   -> mutex_unlock
+        48   -> printf
+       8   bus_wait_transaction
+         8   -> mutex_is_locked
+      32   bus_wait_transfer
+        32   -> bus_is_busy
+        32   -> dma_poll
+        32   -> timer_start_timeout
+        32   -> timer_timeout_reached
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable8
+       4  ??DataTable8_1
+       4  ??DataTable8_2
+       4  ??DataTable8_3
+      44  ?_0
+     180  _bus
+      76  _bus_callback
+      40  _bus_disable
+      40  _bus_enable
+      40  _bus_fifo_disable
+      40  _bus_fifo_enable
+      40  _bus_fifo_is_enabled
+      40  _bus_get_transfer_mode
+      40  _bus_set_transfer_mode
+     188  bus_configure
+      40  bus_configure_slave
+     320  bus_ioctl
+      40  bus_is_busy
+      68  bus_start_transaction
+      68  bus_stop_transaction
+      40  bus_suspend
+     372  bus_transfer
+      48  bus_wait_transaction
+     256  bus_wait_transfer
+
+ 
+   180 bytes in section .bss
+    44 bytes in section .rodata
+ 1'812 bytes in section SOFTPACK
+ 
+ 1'812 bytes of CODE  memory
+    44 bytes of CONST memory
+   180 bytes of DATA  memory
+
+Errors: none
+Warnings: none

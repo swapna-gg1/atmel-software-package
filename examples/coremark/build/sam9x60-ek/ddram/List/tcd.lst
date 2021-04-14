@@ -1,0 +1,831 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         30/Apr/2020  11:05:21
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\tcd.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW39C4.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\tcd.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=ARM926EJ-S -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\..\..\lib\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\coremark\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\List\tcd.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\coremark\build\sam9x60-ek\ddram\Obj\tcd.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\tcd.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2017, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <stddef.h>
+     35          #include <stdint.h>
+     36          #include <assert.h>
+     37          #include <string.h>
+     38          
+     39          #include "dma/dma.h"
+     40          #include "errno.h"
+     41          #include "irq/irq.h"
+     42          #include "mm/cache.h"
+     43          #include "peripherals/pmc.h"
+     44          #include "peripherals/tc.h"
+     45          #include "peripherals/tcd.h"
+     46          #include "trace.h"
+     47          
+     48          /*----------------------------------------------------------------------------
+     49           *        Local functions
+     50           *----------------------------------------------------------------------------*/
+     51          
+     52          #ifdef CONFIG_HAVE_TC_DMA_MODE
+     53          static int _tcd_dma_transfer_callback(void* args, void* arg2)
+     54          {
+     55          	struct _tcd_desc* desc = (struct _tcd_desc *)args;
+     56          
+     57          	cache_invalidate_region((uint32_t*)desc->capture.buffer.data, desc->capture.buffer.size);
+     58          
+     59          	dma_reset_channel(desc->capture.dma.channel);
+     60          	mutex_unlock(&desc->mutex);
+     61          
+     62          	return callback_call(&desc->callback, NULL);
+     63          }
+     64          #endif
+
+   \                                 In section .bss, align 8
+     65          volatile uint64_t timetick=0;
+   \                     timetick:
+   \        0x0                      DS8 8
+     66          /**
+     67           * \brief Interrupt handler for the TC capture.
+     68           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     69          static void _tcd_counter_handler(uint32_t source, void* user_arg)
+     70          {
+   \                     _tcd_counter_handler:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+     71          	struct _tcd_desc* desc = (struct _tcd_desc *)user_arg;
+   \        0xC   0xE1B0'6005        MOVS     R6,R5
+     72          	uint32_t status = tc_get_status(desc->addr, desc->channel);
+   \       0x10   0xE5D6'1004        LDRB     R1,[R6, #+4]
+   \       0x14   0xE596'0000        LDR      R0,[R6, #+0]
+   \       0x18   0x....'....        BL       tc_get_status
+   \       0x1C   0xE1B0'2000        MOVS     R2,R0
+     73          
+     74          	if (desc->mode == TCD_MODE_COUNTER)
+   \       0x20   0xE5D6'0005        LDRB     R0,[R6, #+5]
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x1A00'0006        BNE      ??_tcd_counter_handler_0
+     75          		if ((status & TC_SR_CPCS) == TC_SR_CPCS)
+   \       0x2C   0xE312'0010        TST      R2,#0x10
+   \       0x30   0x0A00'0004        BEQ      ??_tcd_counter_handler_0
+     76                              timetick++;
+   \       0x34   0x....'....        LDR      R3,??DataTable1
+   \       0x38   0xE1C3'00D0        LDRD     R0,R1,[R3, #+0]
+   \       0x3C   0xE290'0001        ADDS     R0,R0,#+1
+   \       0x40   0xE2A1'1000        ADC      R1,R1,#+0
+   \       0x44   0xE1C3'00F0        STRD     R0,R1,[R3, #+0]
+     77          			//callback_call(&desc->callback, NULL);
+     78          }
+   \                     ??_tcd_counter_handler_0:
+   \       0x48   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+     79          
+     80          #ifdef CONFIG_HAVE_TC_DMA_MODE
+     81          static int _tcd_capture_dma(struct _tcd_desc* desc)
+     82          {
+     83          	struct _dma_transfer_cfg cfg;
+     84          	struct _dma_cfg cfg_dma;
+     85          	struct _callback _cb;
+     86          
+     87          	memset(&cfg_dma, 0, sizeof(cfg_dma));
+     88          	cfg_dma.incr_saddr = false;
+     89          	cfg_dma.incr_daddr = true;
+     90          	cfg_dma.data_width = DMA_DATA_WIDTH_WORD;
+     91          	cfg_dma.chunk_size = DMA_CHUNK_SIZE_1;
+     92          
+     93          	memset(&cfg, 0, sizeof(cfg));
+     94          	cfg.saddr = (uint32_t*)&(desc->addr->TC_CHANNEL[desc->channel].TC_RAB);
+     95          	cfg.daddr = desc->capture.buffer.data;
+     96          	cfg.len = desc->capture.buffer.size / sizeof(uint32_t);
+     97          	dma_configure_transfer(desc->capture.dma.channel, &cfg_dma, &cfg, 1);
+     98          
+     99          	callback_set(&_cb, _tcd_dma_transfer_callback, (void*)desc);
+    100          	dma_set_callback(desc->capture.dma.channel, &_cb);
+    101          
+    102          	tc_get_status(desc->addr, desc->channel);
+    103          	tc_start(desc->addr, desc->channel);
+    104          
+    105          	dma_start_transfer(desc->capture.dma.channel);
+    106          
+    107          	return -EAGAIN;
+    108          }
+    109          #endif
+    110          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    111          static int _tcd_capture_polling(struct _tcd_desc* desc)
+    112          {
+   \                     _tcd_capture_polling:
+   \        0x0   0xE92D'407C        PUSH     {R2-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    113          	uint32_t i;
+    114          	uint32_t* rab_data = (uint32_t*)desc->capture.buffer.data;
+   \        0x8   0xE594'6024        LDR      R6,[R4, #+36]
+    115          
+    116          	tc_start(desc->addr, desc->channel);
+   \        0xC   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0x....'....        BL       tc_start
+    117          	for (i = 0; i < desc->capture.buffer.size / sizeof(uint32_t); i += 2) {
+   \       0x18   0xE3A0'5000        MOV      R5,#+0
+   \                     ??_tcd_capture_polling_0:
+   \       0x1C   0xE594'0028        LDR      R0,[R4, #+40]
+   \       0x20   0xE155'0120        CMP      R5,R0, LSR #+2
+   \       0x24   0x2A00'0010        BCS      ??_tcd_capture_polling_1
+    118          		while ((tc_get_status(desc->addr, desc->channel) & TC_SR_LDRBS) != TC_SR_LDRBS);
+   \                     ??_tcd_capture_polling_2:
+   \       0x28   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x2C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x30   0x....'....        BL       tc_get_status
+   \       0x34   0xE310'0040        TST      R0,#0x40
+   \       0x38   0x0AFF'FFFA        BEQ      ??_tcd_capture_polling_2
+    119          		tc_get_ra_rb_rc(desc->addr, desc->channel, &rab_data[i], &rab_data[i + 1], 0);
+   \       0x3C   0xE3A0'0000        MOV      R0,#+0
+   \       0x40   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x44   0xE1B0'0105        LSLS     R0,R5,#+2
+   \       0x48   0xE096'0000        ADDS     R0,R6,R0
+   \       0x4C   0xE290'3004        ADDS     R3,R0,#+4
+   \       0x50   0xE1B0'0105        LSLS     R0,R5,#+2
+   \       0x54   0xE096'2000        ADDS     R2,R6,R0
+   \       0x58   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x5C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x60   0x....'....        BL       tc_get_ra_rb_rc
+    120          	}
+   \       0x64   0xE295'5002        ADDS     R5,R5,#+2
+   \       0x68   0xEAFF'FFEB        B        ??_tcd_capture_polling_0
+    121          	tc_stop(desc->addr, desc->channel);
+   \                     ??_tcd_capture_polling_1:
+   \       0x6C   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x70   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x74   0x....'....        BL       tc_stop
+    122          
+    123          	mutex_unlock(&desc->mutex);
+   \       0x78   0xE294'0008        ADDS     R0,R4,#+8
+   \       0x7C   0x....'....        BL       mutex_unlock
+    124          
+    125          	return callback_call(&desc->callback, NULL);
+   \       0x80   0xE3A0'1000        MOV      R1,#+0
+   \       0x84   0xE294'000C        ADDS     R0,R4,#+12
+   \       0x88   0x....'....        BL       callback_call
+   \       0x8C   0xE8BD'8076        POP      {R1,R2,R4-R6,PC}  ;; return
+    126          }
+    127          
+    128          /*----------------------------------------------------------------------------
+    129           *        Public functions
+    130           *----------------------------------------------------------------------------*/
+    131          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    132          int tcd_configure_counter(struct _tcd_desc* desc, uint32_t min_timer_freq, uint32_t frequency)
+    133          {
+   \                     tcd_configure_counter:
+   \        0x0   0xE92D'47FC        PUSH     {R2-R10,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+   \        0xC   0xE1B0'6002        MOVS     R6,R2
+    134          	uint32_t tc_id = get_tc_id_from_addr(desc->addr, desc->channel);
+   \       0x10   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x14   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x18   0x....'....        BL       get_tc_id_from_addr
+   \       0x1C   0xE1B0'7000        MOVS     R7,R0
+    135          	uint32_t tc_clks, config, rc, chan_freq;
+    136          
+    137          	desc->mutex = 0;
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \       0x24   0xE584'0008        STR      R0,[R4, #+8]
+    138          	desc->mode = TCD_MODE_COUNTER;
+   \       0x28   0xE5C4'0005        STRB     R0,[R4, #+5]
+    139          	callback_set(&desc->callback, NULL, NULL);
+   \       0x2C   0xE3A0'2000        MOV      R2,#+0
+   \       0x30   0xE3A0'1000        MOV      R1,#+0
+   \       0x34   0xE294'000C        ADDS     R0,R4,#+12
+   \       0x38   0x....'....        BL       callback_set
+    140          	desc->cfg.counter.min_timer_freq = min_timer_freq;
+   \       0x3C   0xE584'5014        STR      R5,[R4, #+20]
+    141          	desc->cfg.counter.frequency = frequency;
+   \       0x40   0xE584'6018        STR      R6,[R4, #+24]
+    142          
+    143          	if (!pmc_is_peripheral_enabled(tc_id))
+   \       0x44   0xE1B0'0007        MOVS     R0,R7
+   \       0x48   0x....'....        BL       pmc_is_peripheral_enabled
+   \       0x4C   0xE350'0000        CMP      R0,#+0
+   \       0x50   0x1A00'0003        BNE      ??tcd_configure_counter_0
+    144          		pmc_configure_peripheral(tc_id, NULL, true);
+   \       0x54   0xE3A0'2001        MOV      R2,#+1
+   \       0x58   0xE3A0'1000        MOV      R1,#+0
+   \       0x5C   0xE1B0'0007        MOVS     R0,R7
+   \       0x60   0x....'....        BL       pmc_configure_peripheral
+    145          
+    146          	if (min_timer_freq < frequency)
+   \                     ??tcd_configure_counter_0:
+   \       0x64   0xE155'0006        CMP      R5,R6
+   \       0x68   0x2A00'0000        BCS      ??tcd_configure_counter_1
+    147          		min_timer_freq = frequency;
+   \       0x6C   0xE1B0'5006        MOVS     R5,R6
+    148          
+    149          	tc_clks = tc_find_best_clock_source(desc->addr, desc->channel, min_timer_freq);
+   \                     ??tcd_configure_counter_1:
+   \       0x70   0xE1B0'2005        MOVS     R2,R5
+   \       0x74   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x78   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x7C   0x....'....        BL       tc_find_best_clock_source
+   \       0x80   0xE1B0'8000        MOVS     R8,R0
+    150          	config = tc_clks | TC_CMR_WAVE | TC_CMR_WAVSEL_UP_RC;
+   \       0x84   0xE398'9CC0        ORRS     R9,R8,#0xC000
+    151          	tc_configure(desc->addr, desc->channel, config);
+   \       0x88   0xE1B0'2009        MOVS     R2,R9
+   \       0x8C   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x90   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x94   0x....'....        BL       tc_configure
+    152          	chan_freq = tc_get_channel_freq(desc->addr, desc->channel);
+   \       0x98   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x9C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0xA0   0x....'....        BL       tc_get_channel_freq
+   \       0xA4   0xE1B0'A000        MOVS     R10,R0
+    153          
+    154          	rc = chan_freq / frequency;
+   \       0xA8   0xE1B0'000A        MOVS     R0,R10
+   \       0xAC   0xE1B0'1006        MOVS     R1,R6
+   \       0xB0   0x....'....        BL       __aeabi_uidiv
+   \       0xB4   0xE58D'0004        STR      R0,[SP, #+4]
+    155          	tc_set_ra_rb_rc(desc->addr, desc->channel, NULL, NULL, &rc);
+   \       0xB8   0xE28D'0004        ADD      R0,SP,#+4
+   \       0xBC   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0xC0   0xE3A0'3000        MOV      R3,#+0
+   \       0xC4   0xE3A0'2000        MOV      R2,#+0
+   \       0xC8   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0xCC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0xD0   0x....'....        BL       tc_set_ra_rb_rc
+    156          
+    157          	return chan_freq / rc;
+   \       0xD4   0xE1B0'000A        MOVS     R0,R10
+   \       0xD8   0xE59D'1004        LDR      R1,[SP, #+4]
+   \       0xDC   0x....'....        BL       __aeabi_uidiv
+   \       0xE0   0xE8BD'87F6        POP      {R1,R2,R4-R10,PC}  ;; return
+    158          }
+    159          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    160          int tcd_configure_waveform(struct _tcd_desc* desc, uint32_t min_timer_freq, uint32_t frequency, uint16_t duty_cycle)
+    161          {
+   \                     tcd_configure_waveform:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE24D'D010        SUB      SP,SP,#+16
+   \        0x8   0xE1B0'4000        MOVS     R4,R0
+   \        0xC   0xE1B0'A001        MOVS     R10,R1
+   \       0x10   0xE1B0'8002        MOVS     R8,R2
+   \       0x14   0xE1B0'B003        MOVS     R11,R3
+    162          	uint32_t tc_id = get_tc_id_from_addr(desc->addr, desc->channel);
+   \       0x18   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x1C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x20   0x....'....        BL       get_tc_id_from_addr
+   \       0x24   0xE1B0'5000        MOVS     R5,R0
+    163          	uint32_t tc_clks, config, ra, rc, duty, chan_freq;
+    164          
+    165          	if (duty_cycle > 1000)
+   \       0x28   0xE1B0'000B        MOVS     R0,R11
+   \       0x2C   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x30   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x34   0xE3A0'10E9        MOV      R1,#+233
+   \       0x38   0xE381'1FC0        ORR      R1,R1,#0x300
+   \       0x3C   0xE150'0001        CMP      R0,R1
+   \       0x40   0xBA00'0001        BLT      ??tcd_configure_waveform_0
+    166          		return -EINVAL;
+   \       0x44   0xE3E0'001B        MVN      R0,#+27
+   \       0x48   0xEA00'0044        B        ??tcd_configure_waveform_1
+    167          
+    168          	desc->mutex = 0;
+   \                     ??tcd_configure_waveform_0:
+   \       0x4C   0xE3A0'0000        MOV      R0,#+0
+   \       0x50   0xE584'0008        STR      R0,[R4, #+8]
+    169          	desc->mode = TCD_MODE_WAVEFORM;
+   \       0x54   0xE3A0'0001        MOV      R0,#+1
+   \       0x58   0xE5C4'0005        STRB     R0,[R4, #+5]
+    170          	callback_set(&desc->callback, NULL, NULL);
+   \       0x5C   0xE3A0'2000        MOV      R2,#+0
+   \       0x60   0xE3A0'1000        MOV      R1,#+0
+   \       0x64   0xE294'000C        ADDS     R0,R4,#+12
+   \       0x68   0x....'....        BL       callback_set
+    171          	desc->cfg.waveform.min_timer_freq = min_timer_freq;
+   \       0x6C   0xE584'A014        STR      R10,[R4, #+20]
+    172          	desc->cfg.waveform.frequency = frequency;
+   \       0x70   0xE584'8018        STR      R8,[R4, #+24]
+    173          	desc->cfg.waveform.duty_cycle = duty_cycle;
+   \       0x74   0xE1B0'000B        MOVS     R0,R11
+   \       0x78   0xE1A0'0800        LSL      R0,R0,#+16
+   \       0x7C   0xE1B0'0820        LSRS     R0,R0,#+16
+   \       0x80   0xE584'001C        STR      R0,[R4, #+28]
+    174          	
+    175          	if (!pmc_is_peripheral_enabled(tc_id))
+   \       0x84   0xE1B0'0005        MOVS     R0,R5
+   \       0x88   0x....'....        BL       pmc_is_peripheral_enabled
+   \       0x8C   0xE350'0000        CMP      R0,#+0
+   \       0x90   0x1A00'0003        BNE      ??tcd_configure_waveform_2
+    176          		pmc_configure_peripheral(tc_id, NULL, true);
+   \       0x94   0xE3A0'2001        MOV      R2,#+1
+   \       0x98   0xE3A0'1000        MOV      R1,#+0
+   \       0x9C   0xE1B0'0005        MOVS     R0,R5
+   \       0xA0   0x....'....        BL       pmc_configure_peripheral
+    177          
+    178          	if (min_timer_freq < frequency)
+   \                     ??tcd_configure_waveform_2:
+   \       0xA4   0xE15A'0008        CMP      R10,R8
+   \       0xA8   0x2A00'0000        BCS      ??tcd_configure_waveform_3
+    179          		min_timer_freq = frequency;
+   \       0xAC   0xE1B0'A008        MOVS     R10,R8
+    180          
+    181          	tc_clks = tc_find_best_clock_source(desc->addr, desc->channel, min_timer_freq);
+   \                     ??tcd_configure_waveform_3:
+   \       0xB0   0xE1B0'200A        MOVS     R2,R10
+   \       0xB4   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0xB8   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0xBC   0x....'....        BL       tc_find_best_clock_source
+   \       0xC0   0xE1B0'6000        MOVS     R6,R0
+    182          	config = tc_clks | TC_CMR_WAVE | TC_CMR_WAVSEL_UP_RC | TC_CMR_ACPA_CLEAR | TC_CMR_ACPC_SET | TC_CMR_ASWTRG_SET;
+   \       0xC4   0xE396'1A6C        ORRS     R1,R6,#0x6C000
+   \       0xC8   0xE391'1840        ORRS     R1,R1,#0x400000
+   \       0xCC   0xE58D'100C        STR      R1,[SP, #+12]
+    183          	tc_configure(desc->addr, desc->channel, config);
+   \       0xD0   0xE59D'200C        LDR      R2,[SP, #+12]
+   \       0xD4   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0xD8   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0xDC   0x....'....        BL       tc_configure
+    184          	chan_freq = tc_get_channel_freq(desc->addr, desc->channel);
+   \       0xE0   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0xE4   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0xE8   0x....'....        BL       tc_get_channel_freq
+   \       0xEC   0xE1B0'7000        MOVS     R7,R0
+    185          
+    186          	rc = chan_freq / frequency;
+   \       0xF0   0xE1B0'0007        MOVS     R0,R7
+   \       0xF4   0xE1B0'1008        MOVS     R1,R8
+   \       0xF8   0x....'....        BL       __aeabi_uidiv
+   \       0xFC   0xE58D'0004        STR      R0,[SP, #+4]
+    187          	duty = ((uint64_t)duty_cycle * ((1ull << TC_CHANNEL_SIZE) - 1)) / 1000;
+   \      0x100   0xE1B0'200B        MOVS     R2,R11
+   \      0x104   0xE1A0'2802        LSL      R2,R2,#+16
+   \      0x108   0xE1B0'2822        LSRS     R2,R2,#+16
+   \      0x10C   0xE3E0'3000        MVN      R3,#+0
+   \      0x110   0xE081'0392        UMULL    R0,R1,R2,R3
+   \      0x114   0xE3A0'2FFA        MOV      R2,#+1000
+   \      0x118   0xE3A0'3000        MOV      R3,#+0
+   \      0x11C   0x....'....        BL       __aeabi_uldivmod
+   \      0x120   0xE1B0'9000        MOVS     R9,R0
+    188          	ra = (uint32_t)(((uint64_t)duty * rc + (1ull << (TC_CHANNEL_SIZE - 1))) >> TC_CHANNEL_SIZE);
+   \      0x124   0xE59D'2004        LDR      R2,[SP, #+4]
+   \      0x128   0xE3A0'0480        MOV      R0,#-2147483648
+   \      0x12C   0xE3A0'1000        MOV      R1,#+0
+   \      0x130   0xE0A1'0299        UMLAL    R0,R1,R9,R2
+   \      0x134   0xE58D'1008        STR      R1,[SP, #+8]
+    189          	tc_set_ra_rb_rc(desc->addr, desc->channel, &ra, NULL, &rc);
+   \      0x138   0xE28D'0004        ADD      R0,SP,#+4
+   \      0x13C   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x140   0xE3A0'3000        MOV      R3,#+0
+   \      0x144   0xE28D'2008        ADD      R2,SP,#+8
+   \      0x148   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \      0x14C   0xE594'0000        LDR      R0,[R4, #+0]
+   \      0x150   0x....'....        BL       tc_set_ra_rb_rc
+    190          
+    191          	return chan_freq / rc;
+   \      0x154   0xE1B0'0007        MOVS     R0,R7
+   \      0x158   0xE59D'1004        LDR      R1,[SP, #+4]
+   \      0x15C   0x....'....        BL       __aeabi_uidiv
+   \                     ??tcd_configure_waveform_1:
+   \      0x160   0xE28D'D014        ADD      SP,SP,#+20
+   \      0x164   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    192          }
+    193          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    194          int tcd_configure_capture(struct _tcd_desc* desc, uint32_t frequency, struct _buffer* buffer)
+    195          {
+   \                     tcd_configure_capture:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+   \        0x4   0xE1B0'5000        MOVS     R5,R0
+   \        0x8   0xE1B0'6001        MOVS     R6,R1
+   \        0xC   0xE1B0'7002        MOVS     R7,R2
+    196          	uint32_t tc_id = get_tc_id_from_addr(desc->addr, desc->channel);
+   \       0x10   0xE5D5'1004        LDRB     R1,[R5, #+4]
+   \       0x14   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x18   0x....'....        BL       get_tc_id_from_addr
+   \       0x1C   0xE1B0'8000        MOVS     R8,R0
+    197          	uint32_t tc_clks, config, chan_freq;
+    198          
+    199          	desc->mutex = 0;
+   \       0x20   0xE3A0'0000        MOV      R0,#+0
+   \       0x24   0xE585'0008        STR      R0,[R5, #+8]
+    200          	desc->mode = TCD_MODE_CAPTURE;
+   \       0x28   0xE3A0'0002        MOV      R0,#+2
+   \       0x2C   0xE5C5'0005        STRB     R0,[R5, #+5]
+    201          	callback_set(&desc->callback, NULL, NULL);
+   \       0x30   0xE3A0'2000        MOV      R2,#+0
+   \       0x34   0xE3A0'1000        MOV      R1,#+0
+   \       0x38   0xE295'000C        ADDS     R0,R5,#+12
+   \       0x3C   0x....'....        BL       callback_set
+    202          	desc->cfg.capture.frequency = frequency;
+   \       0x40   0xE585'601C        STR      R6,[R5, #+28]
+    203          	desc->capture.buffer.data = buffer->data;
+   \       0x44   0xE597'0000        LDR      R0,[R7, #+0]
+   \       0x48   0xE585'0024        STR      R0,[R5, #+36]
+    204          	desc->capture.buffer.size = buffer->size;
+   \       0x4C   0xE597'0004        LDR      R0,[R7, #+4]
+   \       0x50   0xE585'0028        STR      R0,[R5, #+40]
+    205          
+    206          #ifdef CONFIG_HAVE_TC_DMA_MODE
+    207          	/* Allocate one DMA channel for TC capture */
+    208          	desc->capture.dma.channel = dma_allocate_channel(tc_id, DMA_PERIPH_MEMORY);
+    209          	assert(desc->capture.dma.channel);
+    210          #endif
+    211          
+    212          	if (!pmc_is_peripheral_enabled(tc_id))
+   \       0x54   0xE1B0'0008        MOVS     R0,R8
+   \       0x58   0x....'....        BL       pmc_is_peripheral_enabled
+   \       0x5C   0xE350'0000        CMP      R0,#+0
+   \       0x60   0x1A00'0003        BNE      ??tcd_configure_capture_0
+    213          		pmc_configure_peripheral(tc_id, NULL, true);
+   \       0x64   0xE3A0'2001        MOV      R2,#+1
+   \       0x68   0xE3A0'1000        MOV      R1,#+0
+   \       0x6C   0xE1B0'0008        MOVS     R0,R8
+   \       0x70   0x....'....        BL       pmc_configure_peripheral
+    214          	if (desc->cfg.capture.use_ext_clk) {
+   \                     ??tcd_configure_capture_0:
+   \       0x74   0xE5D5'0014        LDRB     R0,[R5, #+20]
+   \       0x78   0xE350'0000        CMP      R0,#+0
+   \       0x7C   0x0A00'0003        BEQ      ??tcd_configure_capture_1
+    215          		config = desc->cfg.capture.ext_clk_sel | TC_CMR_LDRA_RISING |
+    216          		         TC_CMR_LDRB_FALLING | TC_CMR_ABETRG | TC_CMR_ETRGEDG_FALLING;
+   \       0x80   0xE595'0018        LDR      R0,[R5, #+24]
+   \       0x84   0xE390'9E60        ORRS     R9,R0,#0x600
+   \       0x88   0xE399'9A90        ORRS     R9,R9,#0x90000
+   \       0x8C   0xEA00'0006        B        ??tcd_configure_capture_2
+    217          	}
+    218          	else {
+    219          		tc_clks = tc_find_best_clock_source(desc->addr, desc->channel, frequency);
+   \                     ??tcd_configure_capture_1:
+   \       0x90   0xE1B0'2006        MOVS     R2,R6
+   \       0x94   0xE5D5'1004        LDRB     R1,[R5, #+4]
+   \       0x98   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0x9C   0x....'....        BL       tc_find_best_clock_source
+   \       0xA0   0xE1B0'4000        MOVS     R4,R0
+    220          		config = tc_clks | TC_CMR_LDRA_RISING | TC_CMR_LDRB_FALLING | TC_CMR_ABETRG | TC_CMR_ETRGEDG_FALLING;
+   \       0xA4   0xE394'9E60        ORRS     R9,R4,#0x600
+   \       0xA8   0xE399'9A90        ORRS     R9,R9,#0x90000
+    221          	}
+    222          	tc_configure(desc->addr, desc->channel, config);
+   \                     ??tcd_configure_capture_2:
+   \       0xAC   0xE1B0'2009        MOVS     R2,R9
+   \       0xB0   0xE5D5'1004        LDRB     R1,[R5, #+4]
+   \       0xB4   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0xB8   0x....'....        BL       tc_configure
+    223          	if (desc->cfg.capture.use_ext_clk)
+   \       0xBC   0xE5D5'0014        LDRB     R0,[R5, #+20]
+   \       0xC0   0xE350'0000        CMP      R0,#+0
+   \       0xC4   0x0A00'0001        BEQ      ??tcd_configure_capture_3
+    224          		chan_freq = frequency;
+   \       0xC8   0xE1B0'0006        MOVS     R0,R6
+   \       0xCC   0xEA00'0002        B        ??tcd_configure_capture_4
+    225          	else
+    226          		chan_freq = tc_get_channel_freq(desc->addr, desc->channel);
+   \                     ??tcd_configure_capture_3:
+   \       0xD0   0xE5D5'1004        LDRB     R1,[R5, #+4]
+   \       0xD4   0xE595'0000        LDR      R0,[R5, #+0]
+   \       0xD8   0x....'....        BL       tc_get_channel_freq
+    227          	return chan_freq;
+   \                     ??tcd_configure_capture_4:
+   \       0xDC   0xE8BD'83F2        POP      {R1,R4-R9,PC}    ;; return
+    228          }
+    229          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    230          int tcd_start(struct _tcd_desc* desc, struct _callback* cb)
+    231          {
+   \                     tcd_start:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+   \        0x8   0xE1B0'5001        MOVS     R5,R1
+    232          	uint32_t tc_id = get_tc_id_from_addr(desc->addr, desc->channel);
+   \        0xC   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x10   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x14   0x....'....        BL       get_tc_id_from_addr
+   \       0x18   0xE1B0'6000        MOVS     R6,R0
+    233          
+    234          	if (!mutex_try_lock(&desc->mutex))
+   \       0x1C   0xE294'0008        ADDS     R0,R4,#+8
+   \       0x20   0x....'....        BL       mutex_try_lock
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x1A00'0001        BNE      ??tcd_start_0
+    235          		return -EBUSY;
+   \       0x2C   0xE3E0'0009        MVN      R0,#+9
+   \       0x30   0xEA00'0026        B        ??tcd_start_1
+    236          
+    237          	callback_copy(&desc->callback, cb);
+   \                     ??tcd_start_0:
+   \       0x34   0xE1B0'1005        MOVS     R1,R5
+   \       0x38   0xE294'000C        ADDS     R0,R4,#+12
+   \       0x3C   0x....'....        BL       callback_copy
+    238          
+    239          	switch (desc->mode) {
+   \       0x40   0xE5D4'0005        LDRB     R0,[R4, #+5]
+   \       0x44   0xE350'0000        CMP      R0,#+0
+   \       0x48   0x0A00'0003        BEQ      ??tcd_start_2
+   \       0x4C   0xE350'0002        CMP      R0,#+2
+   \       0x50   0x0A00'0013        BEQ      ??tcd_start_3
+   \       0x54   0x3A00'000E        BCC      ??tcd_start_4
+   \       0x58   0xEA00'0019        B        ??tcd_start_5
+    240          	case TCD_MODE_COUNTER:
+    241          		irq_add_handler(tc_id, _tcd_counter_handler, (void*)desc);
+   \                     ??tcd_start_2:
+   \       0x5C   0xE1B0'2004        MOVS     R2,R4
+   \       0x60   0x....'....        LDR      R1,??DataTable1_1
+   \       0x64   0xE1B0'0006        MOVS     R0,R6
+   \       0x68   0x....'....        BL       irq_add_handler
+    242          		irq_enable(tc_id);
+   \       0x6C   0xE1B0'0006        MOVS     R0,R6
+   \       0x70   0x....'....        BL       irq_enable
+    243          		tc_enable_it(desc->addr, desc->channel, TC_IER_CPCS);
+   \       0x74   0xE3A0'2010        MOV      R2,#+16
+   \       0x78   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x7C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x80   0x....'....        BL       tc_enable_it
+    244                          //tc_enable_it(desc->addr, desc->channel, TC_IER_COVFS);
+    245          		tc_start(desc->addr, desc->channel);
+   \       0x84   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x88   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x8C   0x....'....        BL       tc_start
+    246          		break;
+   \       0x90   0xEA00'000D        B        ??tcd_start_6
+    247          	case TCD_MODE_WAVEFORM:
+    248          		tc_start(desc->addr, desc->channel);
+   \                     ??tcd_start_4:
+   \       0x94   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \       0x98   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x9C   0x....'....        BL       tc_start
+    249          		break;
+   \       0xA0   0xEA00'0009        B        ??tcd_start_6
+    250          	case TCD_MODE_CAPTURE:
+    251          		switch (desc->cfg.capture.transfer_mode) {
+   \                     ??tcd_start_3:
+   \       0xA4   0xE5D4'0020        LDRB     R0,[R4, #+32]
+   \       0xA8   0xE350'0000        CMP      R0,#+0
+   \       0xAC   0x1A00'0002        BNE      ??tcd_start_7
+    252          		case TCD_TRANSFER_MODE_POLLING:
+    253          			_tcd_capture_polling(desc);
+   \       0xB0   0xE1B0'0004        MOVS     R0,R4
+   \       0xB4   0x....'....        BL       _tcd_capture_polling
+    254          			break;
+    255          #ifdef CONFIG_HAVE_TC_DMA_MODE
+    256          		case TCD_TRANSFER_MODE_DMA:
+    257          			_tcd_capture_dma(desc);
+    258          			break;
+    259          #endif
+    260          		default:
+    261          			return -EINVAL;
+    262          		}
+    263          		break;
+   \       0xB8   0xEA00'0003        B        ??tcd_start_6
+   \                     ??tcd_start_7:
+   \       0xBC   0xE3E0'001B        MVN      R0,#+27
+   \       0xC0   0xEA00'0002        B        ??tcd_start_1
+    264          	default:
+    265          		return -ENOTSUP;
+   \                     ??tcd_start_5:
+   \       0xC4   0xE3E0'003C        MVN      R0,#+60
+   \       0xC8   0xEA00'0000        B        ??tcd_start_1
+    266          	}
+    267          
+    268          	return 0;
+   \                     ??tcd_start_6:
+   \       0xCC   0xE3A0'0000        MOV      R0,#+0
+   \                     ??tcd_start_1:
+   \       0xD0   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    269          }
+    270          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    271          int tcd_stop(struct _tcd_desc* desc)
+    272          {
+   \                     tcd_stop:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    273          	tc_stop(desc->addr, desc->channel);
+   \        0x8   0xE5D4'1004        LDRB     R1,[R4, #+4]
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0x....'....        BL       tc_stop
+    274          	if (mutex_is_locked(&desc->mutex))
+   \       0x14   0xE294'0008        ADDS     R0,R4,#+8
+   \       0x18   0x....'....        BL       mutex_is_locked
+   \       0x1C   0xE350'0000        CMP      R0,#+0
+   \       0x20   0x0A00'0001        BEQ      ??tcd_stop_0
+    275          		mutex_unlock(&desc->mutex);
+   \       0x24   0xE294'0008        ADDS     R0,R4,#+8
+   \       0x28   0x....'....        BL       mutex_unlock
+    276          
+    277          	return 0;
+   \                     ??tcd_stop_0:
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+   \       0x30   0xE8BD'8010        POP      {R4,PC}          ;; return
+    278          }
+    279          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    280          void tcd_wait(struct _tcd_desc* desc)
+    281          {
+   \                     tcd_wait:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    282          	while (mutex_is_locked(&desc->mutex)) {
+   \                     ??tcd_wait_0:
+   \        0x8   0xE294'0008        ADDS     R0,R4,#+8
+   \        0xC   0x....'....        BL       mutex_is_locked
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x1AFF'FFFB        BNE      ??tcd_wait_0
+    283          #ifdef CONFIG_HAVE_TC_DMA_MODE
+    284          		if (desc->mode == TCD_MODE_CAPTURE){
+    285          			if (desc->cfg.capture.transfer_mode == TCD_TRANSFER_MODE_DMA)
+    286          				dma_poll();
+    287          		}
+    288          #endif
+    289          	}
+    290          }
+   \       0x18   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0x....'....        DC32     timetick
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \        0x0   0x....'....        DC32     _tcd_counter_handler
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   _tcd_capture_polling
+        24   -> callback_call
+        24   -> mutex_unlock
+        24   -> tc_get_ra_rb_rc
+        24   -> tc_get_status
+        24   -> tc_start
+        24   -> tc_stop
+      16   _tcd_counter_handler
+        16   -> tc_get_status
+      32   tcd_configure_capture
+        32   -> callback_set
+        32   -> get_tc_id_from_addr
+        32   -> pmc_configure_peripheral
+        32   -> pmc_is_peripheral_enabled
+        32   -> tc_configure
+        32   -> tc_find_best_clock_source
+        32   -> tc_get_channel_freq
+      40   tcd_configure_counter
+        40   -> callback_set
+        40   -> get_tc_id_from_addr
+        40   -> pmc_configure_peripheral
+        40   -> pmc_is_peripheral_enabled
+        40   -> tc_configure
+        40   -> tc_find_best_clock_source
+        40   -> tc_get_channel_freq
+        40   -> tc_set_ra_rb_rc
+        40 __aeabi_uidiv
+      56   tcd_configure_waveform
+        56   -> callback_set
+        56   -> get_tc_id_from_addr
+        56   -> pmc_configure_peripheral
+        56   -> pmc_is_peripheral_enabled
+        56   -> tc_configure
+        56   -> tc_find_best_clock_source
+        56   -> tc_get_channel_freq
+        56   -> tc_set_ra_rb_rc
+        56 __aeabi_uidiv
+        56 __aeabi_uldivmod
+      16   tcd_start
+        16   -> _tcd_capture_polling
+        16   -> callback_copy
+        16   -> get_tc_id_from_addr
+        16   -> irq_add_handler
+        16   -> irq_enable
+        16   -> mutex_try_lock
+        16   -> tc_enable_it
+        16   -> tc_start
+       8   tcd_stop
+         8   -> mutex_is_locked
+         8   -> mutex_unlock
+         8   -> tc_stop
+       8   tcd_wait
+         8   -> mutex_is_locked
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+     144  _tcd_capture_polling
+      76  _tcd_counter_handler
+     224  tcd_configure_capture
+     228  tcd_configure_counter
+     360  tcd_configure_waveform
+     212  tcd_start
+      52  tcd_stop
+      28  tcd_wait
+       8  timetick
+
+ 
+     8 bytes in section .bss
+ 1'332 bytes in section SOFTPACK
+ 
+ 1'332 bytes of CODE memory
+     8 bytes of DATA memory
+
+Errors: none
+Warnings: none

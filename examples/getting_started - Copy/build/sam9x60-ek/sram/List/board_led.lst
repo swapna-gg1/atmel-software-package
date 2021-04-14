@@ -1,0 +1,174 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         09/Apr/2020  11:29:37
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_led.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW3D72.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_led.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_W972GG6KB -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_RTT -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\List\board_led.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sam9x60-ek\sram\Obj\board_led.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\common\board_led.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include "board_led.h"
+     35          
+     36          #include "led/led.h"
+     37          
+     38          /*----------------------------------------------------------------------------
+     39           *        Local constants
+     40           *----------------------------------------------------------------------------*/
+     41          
+     42          #ifdef PINS_LEDS
+
+   \                                 In section .data, align 4
+     43          static struct _pin pins_leds[] = PINS_LEDS;
+   \                     pins_leds:
+   \        0x0   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'0800        DC32 2'048
+   \        0x8   0x09 0x00          DC8 9, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+   \       0x10   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x14   0x0000'1000        DC32 4'096
+   \       0x18   0x09 0x00          DC8 9, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x1C   0x0000'0000        DC32 0
+   \       0x20   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x24   0x0000'2000        DC32 8'192
+   \       0x28   0x09 0x00          DC8 9, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x2C   0x0000'0000        DC32 0
+     44          #endif
+     45          
+     46          /*----------------------------------------------------------------------------
+     47           *        Public functions
+     48           *----------------------------------------------------------------------------*/
+     49          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     50          void board_cfg_led(void)
+     51          {
+     52          #ifdef PINS_LEDS
+     53          	led_configure(pins_leds, ARRAY_SIZE(pins_leds));
+   \                     board_cfg_led:
+   \        0x0   0xE3A0'1003        MOV      R1,#+3
+   \        0x4   0xE59F'0000        LDR      R0,??board_cfg_led_0
+   \        0x8   0x....'....        B        led_configure    ;; tailcall
+   \                     ??board_cfg_led_0:
+   \        0xC   0x....'....        DC32     pins_leds
+     54          #endif
+     55          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   board_cfg_led
+         0   -> led_configure
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      16  board_cfg_led
+      48  pins_leds
+
+ 
+ 48 bytes in section .data
+ 16 bytes in section SOFTPACK
+ 
+ 16 bytes of CODE memory
+ 48 bytes of DATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,2404 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         29/Oct/2020  16:00:33
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\rtc.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW2590.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\rtc.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_QSPI1 -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D27_SOM1_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR2_W971GG6SB -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_UART -D CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d27-som1-ek\qspi1\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d27-som1-ek\qspi1\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d27-som1-ek\qspi1\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d27-som1-ek\qspi1\List\rtc.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d27-som1-ek\qspi1\Obj\rtc.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\rtc.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \addtogroup rtc_module Working with RTC
+     31           * \section Purpose
+     32           * The RTC driver provides the interface to configure and use the RTC
+     33           * peripheral.
+     34           *
+     35           * It manages date, time, and alarms.\n
+     36           * This timer is clocked by the 32kHz system clock, and is not impacted by
+     37           * power management settings (PMC). To be accurate, it is better to use an
+     38           * external 32kHz crystal instead of the internal 32kHz RC.\n
+     39           *
+     40           * It uses BCD format, and time can be set in AM/PM or 24h mode through a
+     41           * configuration bit in the mode register.\n
+     42           *
+     43           * To update date or time, the user has to follow these few steps :
+     44           * <ul>
+     45           * <li>Set UPDTIM and/or UPDCAL bit(s) in RTC_CR,</li>
+     46           * <li>Polling or IRQ on the ACKUPD bit of RTC_CR,</li>
+     47           * <li>Clear ACKUPD bit in RTC_SCCR,</li>
+     48           * <li>Update Time and/or Calendar values in RTC_TIMR/RTC_CALR (BCD format),</li>
+     49           * <li>Clear UPDTIM and/or UPDCAL bit in RTC_CR.</li>
+     50           * </ul>
+     51           * An alarm can be set to happen on month, date, hours, minutes or seconds,
+     52           * by setting the proper "Enable" bit of each of these fields in the Time and
+     53           * Calendar registers.
+     54           * This allows a large number of configurations to be available for the user.
+     55           * Alarm occurence can be detected even by polling or interrupt.
+     56           *
+     57           * A check of the validity of the date and time format and values written by the user is automatically done.
+     58           * Errors are reported through the Valid Entry Register.
+     59           *
+     60           * \section Usage
+     61           * <ul>
+     62           * <li>  Enable & disable RTC interrupt using rtc_enable_it() and rtc_disable_it().
+     63           * <li>  Set RTC data, time, alarm using rtc_set_date(), rtc_set_time(),
+     64           * rtc_set_time_alarm() and rtc_set_date_alarm().
+     65           * <li>  Get RTC data, time using rtc_get_date() and rtc_get_time().
+     66           * </li>
+     67           * </ul>
+     68           *
+     69           * For more accurate information, please look at the RTC section of the
+     70           * Datasheet.
+     71           *
+     72           * Related files :\n
+     73           * \ref rtc.c\n
+     74           * \ref rtc.h.\n
+     75          */
+     76          /*@{*/
+     77          /*@}*/
+     78          
+     79          /**
+     80           * \file
+     81           *
+     82           * Implementation of Real Time Clock (RTC) controller.
+     83           *
+     84           */
+     85          
+     86          /*----------------------------------------------------------------------------
+     87           *        Headers
+     88           *----------------------------------------------------------------------------*/
+     89          
+     90          #include "chip.h"
+     91          #include "peripherals/rtc.h"
+     92          #include "trace.h"
+     93          #include <stdint.h>
+     94          #include <assert.h>
+     95          
+     96          /*----------------------------------------------------------------------------
+     97           *        Local Defines
+     98           *----------------------------------------------------------------------------*/
+     99          
+    100          /* The BCD code shift value */
+    101          #define BCD_SHIFT      4
+    102          
+    103          /* The BCD code mask value */
+    104          #define BCD_MASK       0xfu
+    105          
+    106          /* The BCD mul/div factor value */
+    107          #define BCD_FACTOR     10
+    108          
+    109          /*----------------------------------------------------------------------------
+    110           *        Local Types
+    111           *----------------------------------------------------------------------------*/
+    112          
+    113          struct rtc_ppm_lookup {
+    114          	int8_t   tempr;
+    115          	int16_t  ppm;
+    116          	bool     negppm;
+    117          	bool     highppm;
+    118          	uint16_t correction;
+    119          };
+    120          
+    121          //------------------------------------------------------------------------------
+    122          //         Local constants
+    123          //------------------------------------------------------------------------------
+    124          
+    125          #ifdef CONFIG_HAVE_RTC_CALIBRATION
+    126          
+
+   \                                 In section .rodata, align 4
+    127          static const struct rtc_ppm_lookup ppm_lookup[] = {
+   \                     ppm_lookup:
+   \        0x0   0xD8 0x00          DC8 -40, 0
+   \        0x2   0xFF58             DC16 -168
+   \        0x4   0x00 0x01          DC8 0, 1
+   \        0x6   0x0016             DC16 22
+   \        0x8   0xD9 0x00          DC8 -39, 0
+   \        0xA   0xFF5D             DC16 -163
+   \        0xC   0x00 0x01          DC8 0, 1
+   \        0xE   0x0017             DC16 23
+   \       0x10   0xDA 0x00          DC8 -38, 0
+   \       0x12   0xFF62             DC16 -158
+   \       0x14   0x00 0x01          DC8 0, 1
+   \       0x16   0x0018             DC16 24
+   \       0x18   0xDB 0x00          DC8 -37, 0
+   \       0x1A   0xFF67             DC16 -153
+   \       0x1C   0x00 0x01          DC8 0, 1
+   \       0x1E   0x0019             DC16 25
+   \       0x20   0xDC 0x00          DC8 -36, 0
+   \       0x22   0xFF6C             DC16 -148
+   \       0x24   0x00 0x01          DC8 0, 1
+   \       0x26   0x0019             DC16 25
+   \       0x28   0xDD 0x00          DC8 -35, 0
+   \       0x2A   0xFF71             DC16 -143
+   \       0x2C   0x00 0x01          DC8 0, 1
+   \       0x2E   0x001A             DC16 26
+   \       0x30   0xDE 0x00          DC8 -34, 0
+   \       0x32   0xFF76             DC16 -138
+   \       0x34   0x00 0x01          DC8 0, 1
+   \       0x36   0x001B             DC16 27
+   \       0x38   0xDF 0x00          DC8 -33, 0
+   \       0x3A   0xFF7A             DC16 -134
+   \       0x3C   0x00 0x01          DC8 0, 1
+   \       0x3E   0x001C             DC16 28
+   \       0x40   0xE0 0x00          DC8 -32, 0
+   \       0x42   0xFF7F             DC16 -129
+   \       0x44   0x00 0x01          DC8 0, 1
+   \       0x46   0x001D             DC16 29
+   \       0x48   0xE1 0x00          DC8 -31, 0
+   \       0x4A   0xFF84             DC16 -124
+   \       0x4C   0x00 0x01          DC8 0, 1
+   \       0x4E   0x001F             DC16 31
+   \       0x50   0xE2 0x00          DC8 -30, 0
+   \       0x52   0xFF88             DC16 -120
+   \       0x54   0x00 0x01          DC8 0, 1
+   \       0x56   0x0020             DC16 32
+   \       0x58   0xE3 0x00          DC8 -29, 0
+   \       0x5A   0xFF8C             DC16 -116
+   \       0x5C   0x00 0x01          DC8 0, 1
+   \       0x5E   0x0021             DC16 33
+   \       0x60   0xE4 0x00          DC8 -28, 0
+   \       0x62   0xFF91             DC16 -111
+   \       0x64   0x00 0x01          DC8 0, 1
+   \       0x66   0x0022             DC16 34
+   \       0x68   0xE5 0x00          DC8 -27, 0
+   \       0x6A   0xFF95             DC16 -107
+   \       0x6C   0x00 0x01          DC8 0, 1
+   \       0x6E   0x0024             DC16 36
+   \       0x70   0xE6 0x00          DC8 -26, 0
+   \       0x72   0xFF99             DC16 -103
+   \       0x74   0x00 0x01          DC8 0, 1
+   \       0x76   0x0025             DC16 37
+   \       0x78   0xE7 0x00          DC8 -25, 0
+   \       0x7A   0xFF9D             DC16 -99
+   \       0x7C   0x00 0x01          DC8 0, 1
+   \       0x7E   0x0026             DC16 38
+   \       0x80   0xE8 0x00          DC8 -24, 0
+   \       0x82   0xFFA1             DC16 -95
+   \       0x84   0x00 0x01          DC8 0, 1
+   \       0x86   0x0028             DC16 40
+   \       0x88   0xE9 0x00          DC8 -23, 0
+   \       0x8A   0xFFA5             DC16 -91
+   \       0x8C   0x00 0x01          DC8 0, 1
+   \       0x8E   0x002A             DC16 42
+   \       0x90   0xEA 0x00          DC8 -22, 0
+   \       0x92   0xFFA9             DC16 -87
+   \       0x94   0x00 0x01          DC8 0, 1
+   \       0x96   0x002C             DC16 44
+   \       0x98   0xEB 0x00          DC8 -21, 0
+   \       0x9A   0xFFAC             DC16 -84
+   \       0x9C   0x00 0x01          DC8 0, 1
+   \       0x9E   0x002D             DC16 45
+   \       0xA0   0xEC 0x00          DC8 -20, 0
+   \       0xA2   0xFFB0             DC16 -80
+   \       0xA4   0x00 0x01          DC8 0, 1
+   \       0xA6   0x0030             DC16 48
+   \       0xA8   0xED 0x00          DC8 -19, 0
+   \       0xAA   0xFFB4             DC16 -76
+   \       0xAC   0x00 0x01          DC8 0, 1
+   \       0xAE   0x0032             DC16 50
+   \       0xB0   0xEE 0x00          DC8 -18, 0
+   \       0xB2   0xFFB7             DC16 -73
+   \       0xB4   0x00 0x01          DC8 0, 1
+   \       0xB6   0x0035             DC16 53
+   \       0xB8   0xEF 0x00          DC8 -17, 0
+   \       0xBA   0xFFBA             DC16 -70
+   \       0xBC   0x00 0x01          DC8 0, 1
+   \       0xBE   0x0037             DC16 55
+   \       0xC0   0xF0 0x00          DC8 -16, 0
+   \       0xC2   0xFFBE             DC16 -66
+   \       0xC4   0x00 0x01          DC8 0, 1
+   \       0xC6   0x003A             DC16 58
+   \       0xC8   0xF1 0x00          DC8 -15, 0
+   \       0xCA   0xFFC1             DC16 -63
+   \       0xCC   0x00 0x01          DC8 0, 1
+   \       0xCE   0x003D             DC16 61
+   \       0xD0   0xF2 0x00          DC8 -14, 0
+   \       0xD2   0xFFC4             DC16 -60
+   \       0xD4   0x00 0x01          DC8 0, 1
+   \       0xD6   0x0040             DC16 64
+   \       0xD8   0xF3 0x00          DC8 -13, 0
+   \       0xDA   0xFFC7             DC16 -57
+   \       0xDC   0x00 0x01          DC8 0, 1
+   \       0xDE   0x0044             DC16 68
+   \       0xE0   0xF4 0x00          DC8 -12, 0
+   \       0xE2   0xFFCA             DC16 -54
+   \       0xE4   0x00 0x01          DC8 0, 1
+   \       0xE6   0x0047             DC16 71
+   \       0xE8   0xF5 0x00          DC8 -11, 0
+   \       0xEA   0xFFCD             DC16 -51
+   \       0xEC   0x00 0x01          DC8 0, 1
+   \       0xEE   0x004C             DC16 76
+   \       0xF0   0xF6 0x00          DC8 -10, 0
+   \       0xF2   0xFFD0             DC16 -48
+   \       0xF4   0x00 0x01          DC8 0, 1
+   \       0xF6   0x0050             DC16 80
+   \       0xF8   0xF7 0x00          DC8 -9, 0
+   \       0xFA   0xFFD3             DC16 -45
+   \       0xFC   0x00 0x01          DC8 0, 1
+   \       0xFE   0x0056             DC16 86
+   \      0x100   0xF8 0x00          DC8 -8, 0
+   \      0x102   0xFFD5             DC16 -43
+   \      0x104   0x00 0x01          DC8 0, 1
+   \      0x106   0x005A             DC16 90
+   \      0x108   0xF9 0x00          DC8 -7, 0
+   \      0x10A   0xFFD8             DC16 -40
+   \      0x10C   0x00 0x01          DC8 0, 1
+   \      0x10E   0x0061             DC16 97
+   \      0x110   0xFA 0x00          DC8 -6, 0
+   \      0x112   0xFFDB             DC16 -37
+   \      0x114   0x00 0x01          DC8 0, 1
+   \      0x116   0x0069             DC16 105
+   \      0x118   0xFB 0x00          DC8 -5, 0
+   \      0x11A   0xFFDD             DC16 -35
+   \      0x11C   0x00 0x01          DC8 0, 1
+   \      0x11E   0x006F             DC16 111
+   \      0x120   0xFC 0x00          DC8 -4, 0
+   \      0x122   0xFFDF             DC16 -33
+   \      0x124   0x00 0x01          DC8 0, 1
+   \      0x126   0x0075             DC16 117
+   \      0x128   0xFD 0x00          DC8 -3, 0
+   \      0x12A   0xFFE2             DC16 -30
+   \      0x12C   0x00 0x00          DC8 0, 0
+   \      0x12E   0x0006             DC16 6
+   \      0x130   0xFE 0x00          DC8 -2, 0
+   \      0x132   0xFFE4             DC16 -28
+   \      0x134   0x00 0x00          DC8 0, 0
+   \      0x136   0x0006             DC16 6
+   \      0x138   0xFF 0x00          DC8 -1, 0
+   \      0x13A   0xFFE6             DC16 -26
+   \      0x13C   0x00 0x00          DC8 0, 0
+   \      0x13E   0x0007             DC16 7
+   \      0x140   0x00 0x00          DC8 0, 0
+   \      0x142   0xFFE8             DC16 -24
+   \      0x144   0x00 0x00          DC8 0, 0
+   \      0x146   0x0007             DC16 7
+   \      0x148   0x01 0x00          DC8 1, 0
+   \      0x14A   0xFFEA             DC16 -22
+   \      0x14C   0x00 0x00          DC8 0, 0
+   \      0x14E   0x0008             DC16 8
+   \      0x150   0x02 0x00          DC8 2, 0
+   \      0x152   0xFFEC             DC16 -20
+   \      0x154   0x00 0x00          DC8 0, 0
+   \      0x156   0x0009             DC16 9
+   \      0x158   0x03 0x00          DC8 3, 0
+   \      0x15A   0xFFEE             DC16 -18
+   \      0x15C   0x00 0x00          DC8 0, 0
+   \      0x15E   0x000A             DC16 10
+   \      0x160   0x04 0x00          DC8 4, 0
+   \      0x162   0xFFEF             DC16 -17
+   \      0x164   0x00 0x00          DC8 0, 0
+   \      0x166   0x000A             DC16 10
+   \      0x168   0x05 0x00          DC8 5, 0
+   \      0x16A   0xFFF1             DC16 -15
+   \      0x16C   0x00 0x00          DC8 0, 0
+   \      0x16E   0x000C             DC16 12
+   \      0x170   0x06 0x00          DC8 6, 0
+   \      0x172   0xFFF3             DC16 -13
+   \      0x174   0x00 0x00          DC8 0, 0
+   \      0x176   0x000E             DC16 14
+   \      0x178   0x07 0x00          DC8 7, 0
+   \      0x17A   0xFFF4             DC16 -12
+   \      0x17C   0x00 0x00          DC8 0, 0
+   \      0x17E   0x000F             DC16 15
+   \      0x180   0x08 0x00          DC8 8, 0
+   \      0x182   0xFFF5             DC16 -11
+   \      0x184   0x00 0x00          DC8 0, 0
+   \      0x186   0x0011             DC16 17
+   \      0x188   0x09 0x00          DC8 9, 0
+   \      0x18A   0xFFF7             DC16 -9
+   \      0x18C   0x00 0x00          DC8 0, 0
+   \      0x18E   0x0015             DC16 21
+   \      0x190   0x0A 0x00          DC8 10, 0
+   \      0x192   0xFFF8             DC16 -8
+   \      0x194   0x00 0x00          DC8 0, 0
+   \      0x196   0x0017             DC16 23
+   \      0x198   0x0B 0x00          DC8 11, 0
+   \      0x19A   0xFFF9             DC16 -7
+   \      0x19C   0x00 0x00          DC8 0, 0
+   \      0x19E   0x001B             DC16 27
+   \      0x1A0   0x0C 0x00          DC8 12, 0
+   \      0x1A2   0xFFFA             DC16 -6
+   \      0x1A4   0x00 0x00          DC8 0, 0
+   \      0x1A6   0x0020             DC16 32
+   \      0x1A8   0x0D 0x00          DC8 13, 0
+   \      0x1AA   0xFFFB             DC16 -5
+   \      0x1AC   0x00 0x00          DC8 0, 0
+   \      0x1AE   0x0026             DC16 38
+   \      0x1B0   0x0E 0x00          DC8 14, 0
+   \      0x1B2   0xFFFC             DC16 -4
+   \      0x1B4   0x00 0x00          DC8 0, 0
+   \      0x1B6   0x0030             DC16 48
+   \      0x1B8   0x0F 0x00          DC8 15, 0
+   \      0x1BA   0xFFFD             DC16 -3
+   \      0x1BC   0x00 0x00          DC8 0, 0
+   \      0x1BE   0x0040             DC16 64
+   \      0x1C0   0x10 0x00          DC8 16, 0
+   \      0x1C2   0xFFFE             DC16 -2
+   \      0x1C4   0x00 0x00          DC8 0, 0
+   \      0x1C6   0x0061             DC16 97
+   \      0x1C8   0x11 0x00          DC8 17, 0
+   \      0x1CA   0xFFFE             DC16 -2
+   \      0x1CC   0x00 0x00          DC8 0, 0
+   \      0x1CE   0x0061             DC16 97
+   \      0x1D0   0x12 0x00          DC8 18, 0
+   \      0x1D2   0xFFFF             DC16 -1
+   \      0x1D4   0x00 0x00          DC8 0, 0
+   \      0x1D6   0x007F             DC16 127
+   \      0x1D8   0x13 0x00          DC8 19, 0
+   \      0x1DA   0x0000             DC16 0
+   \      0x1DC   0x01 0x00          DC8 1, 0
+   \      0x1DE   0x0000             DC16 0
+   \      0x1E0   0x14 0x00          DC8 20, 0
+   \      0x1E2   0x0000             DC16 0
+   \      0x1E4   0x01 0x00          DC8 1, 0
+   \      0x1E6   0x0000             DC16 0
+   \      0x1E8   0x15 0x00          DC8 21, 0
+   \      0x1EA   0x0000             DC16 0
+   \      0x1EC   0x01 0x00          DC8 1, 0
+   \      0x1EE   0x0000             DC16 0
+   \      0x1F0   0x16 0x00          DC8 22, 0
+   \      0x1F2   0x0001             DC16 1
+   \      0x1F4   0x01 0x00          DC8 1, 0
+   \      0x1F6   0x007F             DC16 127
+   \      0x1F8   0x17 0x00          DC8 23, 0
+   \      0x1FA   0x0001             DC16 1
+   \      0x1FC   0x01 0x00          DC8 1, 0
+   \      0x1FE   0x007F             DC16 127
+   \      0x200   0x18 0x00          DC8 24, 0
+   \      0x202   0x0001             DC16 1
+   \      0x204   0x01 0x00          DC8 1, 0
+   \      0x206   0x007F             DC16 127
+   \      0x208   0x19 0x00          DC8 25, 0
+   \      0x20A   0x0001             DC16 1
+   \      0x20C   0x01 0x00          DC8 1, 0
+   \      0x20E   0x007F             DC16 127
+   \      0x210   0x1A 0x00          DC8 26, 0
+   \      0x212   0x0001             DC16 1
+   \      0x214   0x01 0x00          DC8 1, 0
+   \      0x216   0x007F             DC16 127
+   \      0x218   0x1B 0x00          DC8 27, 0
+   \      0x21A   0x0001             DC16 1
+   \      0x21C   0x01 0x00          DC8 1, 0
+   \      0x21E   0x007F             DC16 127
+   \      0x220   0x1C 0x00          DC8 28, 0
+   \      0x222   0x0001             DC16 1
+   \      0x224   0x01 0x00          DC8 1, 0
+   \      0x226   0x007F             DC16 127
+   \      0x228   0x1D 0x00          DC8 29, 0
+   \      0x22A   0x0000             DC16 0
+   \      0x22C   0x01 0x00          DC8 1, 0
+   \      0x22E   0x0000             DC16 0
+   \      0x230   0x1E 0x00          DC8 30, 0
+   \      0x232   0x0000             DC16 0
+   \      0x234   0x01 0x00          DC8 1, 0
+   \      0x236   0x0000             DC16 0
+   \      0x238   0x1F 0x00          DC8 31, 0
+   \      0x23A   0x0000             DC16 0
+   \      0x23C   0x01 0x00          DC8 1, 0
+   \      0x23E   0x0000             DC16 0
+   \      0x240   0x20 0x00          DC8 32, 0
+   \      0x242   0xFFFF             DC16 -1
+   \      0x244   0x00 0x00          DC8 0, 0
+   \      0x246   0x007F             DC16 127
+   \      0x248   0x21 0x00          DC8 33, 0
+   \      0x24A   0xFFFE             DC16 -2
+   \      0x24C   0x00 0x00          DC8 0, 0
+   \      0x24E   0x0061             DC16 97
+   \      0x250   0x22 0x00          DC8 34, 0
+   \      0x252   0xFFFE             DC16 -2
+   \      0x254   0x00 0x00          DC8 0, 0
+   \      0x256   0x0061             DC16 97
+   \      0x258   0x23 0x00          DC8 35, 0
+   \      0x25A   0xFFFD             DC16 -3
+   \      0x25C   0x00 0x00          DC8 0, 0
+   \      0x25E   0x0040             DC16 64
+   \      0x260   0x24 0x00          DC8 36, 0
+   \      0x262   0xFFFC             DC16 -4
+   \      0x264   0x00 0x00          DC8 0, 0
+   \      0x266   0x0030             DC16 48
+   \      0x268   0x25 0x00          DC8 37, 0
+   \      0x26A   0xFFFB             DC16 -5
+   \      0x26C   0x00 0x00          DC8 0, 0
+   \      0x26E   0x0026             DC16 38
+   \      0x270   0x26 0x00          DC8 38, 0
+   \      0x272   0xFFFA             DC16 -6
+   \      0x274   0x00 0x00          DC8 0, 0
+   \      0x276   0x0020             DC16 32
+   \      0x278   0x27 0x00          DC8 39, 0
+   \      0x27A   0xFFF9             DC16 -7
+   \      0x27C   0x00 0x00          DC8 0, 0
+   \      0x27E   0x001B             DC16 27
+   \      0x280   0x28 0x00          DC8 40, 0
+   \      0x282   0xFFF8             DC16 -8
+   \      0x284   0x00 0x00          DC8 0, 0
+   \      0x286   0x0017             DC16 23
+   \      0x288   0x29 0x00          DC8 41, 0
+   \      0x28A   0xFFF7             DC16 -9
+   \      0x28C   0x00 0x00          DC8 0, 0
+   \      0x28E   0x0015             DC16 21
+   \      0x290   0x2A 0x00          DC8 42, 0
+   \      0x292   0xFFF5             DC16 -11
+   \      0x294   0x00 0x00          DC8 0, 0
+   \      0x296   0x0011             DC16 17
+   \      0x298   0x2B 0x00          DC8 43, 0
+   \      0x29A   0xFFF4             DC16 -12
+   \      0x29C   0x00 0x00          DC8 0, 0
+   \      0x29E   0x000F             DC16 15
+   \      0x2A0   0x2C 0x00          DC8 44, 0
+   \      0x2A2   0xFFF3             DC16 -13
+   \      0x2A4   0x00 0x00          DC8 0, 0
+   \      0x2A6   0x000E             DC16 14
+   \      0x2A8   0x2D 0x00          DC8 45, 0
+   \      0x2AA   0xFFF1             DC16 -15
+   \      0x2AC   0x00 0x00          DC8 0, 0
+   \      0x2AE   0x000C             DC16 12
+   \      0x2B0   0x2E 0x00          DC8 46, 0
+   \      0x2B2   0xFFEF             DC16 -17
+   \      0x2B4   0x00 0x00          DC8 0, 0
+   \      0x2B6   0x000A             DC16 10
+   \      0x2B8   0x2F 0x00          DC8 47, 0
+   \      0x2BA   0xFFEE             DC16 -18
+   \      0x2BC   0x00 0x00          DC8 0, 0
+   \      0x2BE   0x000A             DC16 10
+   \      0x2C0   0x30 0x00          DC8 48, 0
+   \      0x2C2   0xFFEC             DC16 -20
+   \      0x2C4   0x00 0x00          DC8 0, 0
+   \      0x2C6   0x0009             DC16 9
+   \      0x2C8   0x31 0x00          DC8 49, 0
+   \      0x2CA   0xFFEA             DC16 -22
+   \      0x2CC   0x00 0x00          DC8 0, 0
+   \      0x2CE   0x0008             DC16 8
+   \      0x2D0   0x32 0x00          DC8 50, 0
+   \      0x2D2   0xFFE8             DC16 -24
+   \      0x2D4   0x00 0x00          DC8 0, 0
+   \      0x2D6   0x0007             DC16 7
+   \      0x2D8   0x33 0x00          DC8 51, 0
+   \      0x2DA   0xFFE6             DC16 -26
+   \      0x2DC   0x00 0x00          DC8 0, 0
+   \      0x2DE   0x0007             DC16 7
+   \      0x2E0   0x34 0x00          DC8 52, 0
+   \      0x2E2   0xFFE4             DC16 -28
+   \      0x2E4   0x00 0x00          DC8 0, 0
+   \      0x2E6   0x0006             DC16 6
+   \      0x2E8   0x35 0x00          DC8 53, 0
+   \      0x2EA   0xFFE2             DC16 -30
+   \      0x2EC   0x00 0x00          DC8 0, 0
+   \      0x2EE   0x0006             DC16 6
+   \      0x2F0   0x36 0x00          DC8 54, 0
+   \      0x2F2   0xFFDF             DC16 -33
+   \      0x2F4   0x00 0x01          DC8 0, 1
+   \      0x2F6   0x0075             DC16 117
+   \      0x2F8   0x37 0x00          DC8 55, 0
+   \      0x2FA   0xFFDD             DC16 -35
+   \      0x2FC   0x00 0x01          DC8 0, 1
+   \      0x2FE   0x006F             DC16 111
+   \      0x300   0x38 0x00          DC8 56, 0
+   \      0x302   0xFFDB             DC16 -37
+   \      0x304   0x00 0x01          DC8 0, 1
+   \      0x306   0x0069             DC16 105
+   \      0x308   0x39 0x00          DC8 57, 0
+   \      0x30A   0xFFD8             DC16 -40
+   \      0x30C   0x00 0x01          DC8 0, 1
+   \      0x30E   0x0061             DC16 97
+   \      0x310   0x3A 0x00          DC8 58, 0
+   \      0x312   0xFFD5             DC16 -43
+   \      0x314   0x00 0x01          DC8 0, 1
+   \      0x316   0x005A             DC16 90
+   \      0x318   0x3B 0x00          DC8 59, 0
+   \      0x31A   0xFFD3             DC16 -45
+   \      0x31C   0x00 0x01          DC8 0, 1
+   \      0x31E   0x0056             DC16 86
+   \      0x320   0x3C 0x00          DC8 60, 0
+   \      0x322   0xFFD0             DC16 -48
+   \      0x324   0x00 0x01          DC8 0, 1
+   \      0x326   0x0050             DC16 80
+   \      0x328   0x3D 0x00          DC8 61, 0
+   \      0x32A   0xFFCD             DC16 -51
+   \      0x32C   0x00 0x01          DC8 0, 1
+   \      0x32E   0x004C             DC16 76
+   \      0x330   0x3E 0x00          DC8 62, 0
+   \      0x332   0xFFCA             DC16 -54
+   \      0x334   0x00 0x01          DC8 0, 1
+   \      0x336   0x0047             DC16 71
+   \      0x338   0x3F 0x00          DC8 63, 0
+   \      0x33A   0xFFC7             DC16 -57
+   \      0x33C   0x00 0x01          DC8 0, 1
+   \      0x33E   0x0044             DC16 68
+   \      0x340   0x40 0x00          DC8 64, 0
+   \      0x342   0xFFC4             DC16 -60
+   \      0x344   0x00 0x01          DC8 0, 1
+   \      0x346   0x0040             DC16 64
+   \      0x348   0x41 0x00          DC8 65, 0
+   \      0x34A   0xFFC1             DC16 -63
+   \      0x34C   0x00 0x01          DC8 0, 1
+   \      0x34E   0x003D             DC16 61
+   \      0x350   0x42 0x00          DC8 66, 0
+   \      0x352   0xFFBE             DC16 -66
+   \      0x354   0x00 0x01          DC8 0, 1
+   \      0x356   0x003A             DC16 58
+   \      0x358   0x43 0x00          DC8 67, 0
+   \      0x35A   0xFFBA             DC16 -70
+   \      0x35C   0x00 0x01          DC8 0, 1
+   \      0x35E   0x0037             DC16 55
+   \      0x360   0x44 0x00          DC8 68, 0
+   \      0x362   0xFFB7             DC16 -73
+   \      0x364   0x00 0x01          DC8 0, 1
+   \      0x366   0x0035             DC16 53
+   \      0x368   0x45 0x00          DC8 69, 0
+   \      0x36A   0xFFB4             DC16 -76
+   \      0x36C   0x00 0x01          DC8 0, 1
+   \      0x36E   0x0032             DC16 50
+   \      0x370   0x46 0x00          DC8 70, 0
+   \      0x372   0xFFB0             DC16 -80
+   \      0x374   0x00 0x01          DC8 0, 1
+   \      0x376   0x0030             DC16 48
+   \      0x378   0x47 0x00          DC8 71, 0
+   \      0x37A   0xFFAC             DC16 -84
+   \      0x37C   0x00 0x01          DC8 0, 1
+   \      0x37E   0x002D             DC16 45
+   \      0x380   0x48 0x00          DC8 72, 0
+   \      0x382   0xFFA9             DC16 -87
+   \      0x384   0x00 0x01          DC8 0, 1
+   \      0x386   0x002C             DC16 44
+   \      0x388   0x49 0x00          DC8 73, 0
+   \      0x38A   0xFFA5             DC16 -91
+   \      0x38C   0x00 0x01          DC8 0, 1
+   \      0x38E   0x002A             DC16 42
+   \      0x390   0x4A 0x00          DC8 74, 0
+   \      0x392   0xFFA1             DC16 -95
+   \      0x394   0x00 0x01          DC8 0, 1
+   \      0x396   0x0028             DC16 40
+   \      0x398   0x4B 0x00          DC8 75, 0
+   \      0x39A   0xFF9D             DC16 -99
+   \      0x39C   0x00 0x01          DC8 0, 1
+   \      0x39E   0x0026             DC16 38
+   \      0x3A0   0x4C 0x00          DC8 76, 0
+   \      0x3A2   0xFF99             DC16 -103
+   \      0x3A4   0x00 0x01          DC8 0, 1
+   \      0x3A6   0x0025             DC16 37
+   \      0x3A8   0x4D 0x00          DC8 77, 0
+   \      0x3AA   0xFF95             DC16 -107
+   \      0x3AC   0x00 0x01          DC8 0, 1
+   \      0x3AE   0x0024             DC16 36
+   \      0x3B0   0x4E 0x00          DC8 78, 0
+   \      0x3B2   0xFF91             DC16 -111
+   \      0x3B4   0x00 0x01          DC8 0, 1
+   \      0x3B6   0x0022             DC16 34
+   \      0x3B8   0x4F 0x00          DC8 79, 0
+   \      0x3BA   0xFF8C             DC16 -116
+   \      0x3BC   0x00 0x01          DC8 0, 1
+   \      0x3BE   0x0021             DC16 33
+   \      0x3C0   0x50 0x00          DC8 80, 0
+   \      0x3C2   0xFF88             DC16 -120
+   \      0x3C4   0x00 0x01          DC8 0, 1
+   \      0x3C6   0x0020             DC16 32
+   \      0x3C8   0x51 0x00          DC8 81, 0
+   \      0x3CA   0xFF84             DC16 -124
+   \      0x3CC   0x00 0x01          DC8 0, 1
+   \      0x3CE   0x001F             DC16 31
+   \      0x3D0   0x52 0x00          DC8 82, 0
+   \      0x3D2   0xFF7F             DC16 -129
+   \      0x3D4   0x00 0x01          DC8 0, 1
+   \      0x3D6   0x001D             DC16 29
+   \      0x3D8   0x53 0x00          DC8 83, 0
+   \      0x3DA   0xFF7A             DC16 -134
+   \      0x3DC   0x00 0x01          DC8 0, 1
+   \      0x3DE   0x001C             DC16 28
+   \      0x3E0   0x54 0x00          DC8 84, 0
+   \      0x3E2   0xFF76             DC16 -138
+   \      0x3E4   0x00 0x01          DC8 0, 1
+   \      0x3E6   0x001B             DC16 27
+   \      0x3E8   0x55 0x00          DC8 85, 0
+   \      0x3EA   0xFF71             DC16 -143
+   \      0x3EC   0x00 0x01          DC8 0, 1
+   \      0x3EE   0x001A             DC16 26
+    128          	{ -40, -168, false,  true,  22 },
+    129          	{ -39, -163, false,  true,  23 },
+    130          	{ -38, -158, false,  true,  24 },
+    131          	{ -37, -153, false,  true,  25 },
+    132          	{ -36, -148, false,  true,  25 },
+    133          	{ -35, -143, false,  true,  26 },
+    134          	{ -34, -138, false,  true,  27 },
+    135          	{ -33, -134, false,  true,  28 },
+    136          	{ -32, -129, false,  true,  29 },
+    137          	{ -31, -124, false,  true,  31 },
+    138          	{ -30, -120, false,  true,  32 },
+    139          	{ -29, -116, false,  true,  33 },
+    140          	{ -28, -111, false,  true,  34 },
+    141          	{ -27, -107, false,  true,  36 },
+    142          	{ -26, -103, false,  true,  37 },
+    143          	{ -25,  -99, false,  true,  38 },
+    144          	{ -24,  -95, false,  true,  40 },
+    145          	{ -23,  -91, false,  true,  42 },
+    146          	{ -22,  -87, false,  true,  44 },
+    147          	{ -21,  -84, false,  true,  45 },
+    148          	{ -20,  -80, false,  true,  48 },
+    149          	{ -19,  -76, false,  true,  50 },
+    150          	{ -18,  -73, false,  true,  53 },
+    151          	{ -17,  -70, false,  true,  55 },
+    152          	{ -16,  -66, false,  true,  58 },
+    153          	{ -15,  -63, false,  true,  61 },
+    154          	{ -14,  -60, false,  true,  64 },
+    155          	{ -13,  -57, false,  true,  68 },
+    156          	{ -12,  -54, false,  true,  71 },
+    157          	{ -11,  -51, false,  true,  76 },
+    158          	{ -10,  -48, false,  true,  80 },
+    159          	{  -9,  -45, false,  true,  86 },
+    160          	{  -8,  -43, false,  true,  90 },
+    161          	{  -7,  -40, false,  true,  97 },
+    162          	{  -6,  -37, false,  true, 105 },
+    163          	{  -5,  -35, false,  true, 111 },
+    164          	{  -4,  -33, false,  true, 117 },
+    165          	{  -3,  -30, false, false,   6 },
+    166          	{  -2,  -28, false, false,   6 },
+    167          	{  -1,  -26, false, false,   7 },
+    168          	{   0,  -24, false, false,   7 },
+    169          	{   1,  -22, false, false,   8 },
+    170          	{   2,  -20, false, false,   9 },
+    171          	{   3,  -18, false, false,  10 },
+    172          	{   4,  -17, false, false,  10 },
+    173          	{   5,  -15, false, false,  12 },
+    174          	{   6,  -13, false, false,  14 },
+    175          	{   7,  -12, false, false,  15 },
+    176          	{   8,  -11, false, false,  17 },
+    177          	{   9,   -9, false, false,  21 },
+    178          	{  10,   -8, false, false,  23 },
+    179          	{  11,   -7, false, false,  27 },
+    180          	{  12,   -6, false, false,  32 },
+    181          	{  13,   -5, false, false,  38 },
+    182          	{  14,   -4, false, false,  48 },
+    183          	{  15,   -3, false, false,  64 },
+    184          	{  16,   -2, false, false,  97 },
+    185          	{  17,   -2, false, false,  97 },
+    186          	{  18,   -1, false, false, 127 },
+    187          	{  19,    0,  true, false,   0 },
+    188          	{  20,    0,  true, false,   0 },
+    189          	{  21,    0,  true, false,   0 },
+    190          	{  22,    1,  true, false, 127 },
+    191          	{  23,    1,  true, false, 127 },
+    192          	{  24,    1,  true, false, 127 },
+    193          	{  25,    1,  true, false, 127 },
+    194          	{  26,    1,  true, false, 127 },
+    195          	{  27,    1,  true, false, 127 },
+    196          	{  28,    1,  true, false, 127 },
+    197          	{  29,    0,  true, false,   0 },
+    198          	{  30,    0,  true, false,   0 },
+    199          	{  31,    0,  true, false,   0 },
+    200          	{  32,   -1, false, false, 127 },
+    201          	{  33,   -2, false, false,  97 },
+    202          	{  34,   -2, false, false,  97 },
+    203          	{  35,   -3, false, false,  64 },
+    204          	{  36,   -4, false, false,  48 },
+    205          	{  37,   -5, false, false,  38 },
+    206          	{  38,   -6, false, false,  32 },
+    207          	{  39,   -7, false, false,  27 },
+    208          	{  40,   -8, false, false,  23 },
+    209          	{  41,   -9, false, false,  21 },
+    210          	{  42,  -11, false, false,  17 },
+    211          	{  43,  -12, false, false,  15 },
+    212          	{  44,  -13, false, false,  14 },
+    213          	{  45,  -15, false, false,  12 },
+    214          	{  46,  -17, false, false,  10 },
+    215          	{  47,  -18, false, false,  10 },
+    216          	{  48,  -20, false, false,   9 },
+    217          	{  49,  -22, false, false,   8 },
+    218          	{  50,  -24, false, false,   7 },
+    219          	{  51,  -26, false, false,   7 },
+    220          	{  52,  -28, false, false,   6 },
+    221          	{  53,  -30, false, false,   6 },
+    222          	{  54,  -33, false,  true, 117 },
+    223          	{  55,  -35, false,  true, 111 },
+    224          	{  56,  -37, false,  true, 105 },
+    225          	{  57,  -40, false,  true,  97 },
+    226          	{  58,  -43, false,  true,  90 },
+    227          	{  59,  -45, false,  true,  86 },
+    228          	{  60,  -48, false,  true,  80 },
+    229          	{  61,  -51, false,  true,  76 },
+    230          	{  62,  -54, false,  true,  71 },
+    231          	{  63,  -57, false,  true,  68 },
+    232          	{  64,  -60, false,  true,  64 },
+    233          	{  65,  -63, false,  true,  61 },
+    234          	{  66,  -66, false,  true,  58 },
+    235          	{  67,  -70, false,  true,  55 },
+    236          	{  68,  -73, false,  true,  53 },
+    237          	{  69,  -76, false,  true,  50 },
+    238          	{  70,  -80, false,  true,  48 },
+    239          	{  71,  -84, false,  true,  45 },
+    240          	{  72,  -87, false,  true,  44 },
+    241          	{  73,  -91, false,  true,  42 },
+    242          	{  74,  -95, false,  true,  40 },
+    243          	{  75,  -99, false,  true,  38 },
+    244          	{  76, -103, false,  true,  37 },
+    245          	{  77, -107, false,  true,  36 },
+    246          	{  78, -111, false,  true,  34 },
+    247          	{  79, -116, false,  true,  33 },
+    248          	{  80, -120, false,  true,  32 },
+    249          	{  81, -124, false,  true,  31 },
+    250          	{  82, -129, false,  true,  29 },
+    251          	{  83, -134, false,  true,  28 },
+    252          	{  84, -138, false,  true,  27 },
+    253          	{  85, -143, false,  true,  26 }
+    254          };
+    255          
+    256          #endif /* CONFIG_HAVE_RTC_CALIBRATION */
+    257          
+    258          /*----------------------------------------------------------------------------
+    259           *        Exported functions
+    260           *----------------------------------------------------------------------------*/
+    261          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    262          void rtc_set_mode(enum _rtc_mode mode)
+    263          {
+   \                     rtc_set_mode:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    264          	uint32_t mr;
+    265          
+    266          	mr = RTC->RTC_MR;
+   \        0x4   0x....'....        LDR      R4,??DataTable25  ;; 0xf80480b4
+    267          #ifdef CONFIG_HAVE_RTC_MODE_PERSIAN
+    268          	mr &= ~RTC_MR_PERSIAN;
+    269          #endif
+    270          #ifdef CONFIG_HAVE_RTC_MODE_UTC
+    271          	mr &= ~RTC_MR_UTC;
+    272          #endif
+    273          
+    274          	switch (mode) {
+   \        0x8   0xE350'0000        CMP      R0,#+0
+   \        0xC   0xE594'1000        LDR      R1,[R4, #+0]
+   \       0x10   0xE3C1'5006        BIC      R5,R1,#0x6
+   \       0x14   0x0A00'000C        BEQ      ??rtc_set_mode_0
+   \       0x18   0xE350'0002        CMP      R0,#+2
+   \       0x1C   0x0A00'0002        BEQ      ??rtc_set_mode_1
+   \       0x20   0x2A00'0003        BCS      ??rtc_set_mode_2
+    275          	case RTC_MODE_GREGORIAN:
+    276          		// nothing here, this is the default
+    277          		break;
+    278          #ifdef CONFIG_HAVE_RTC_MODE_PERSIAN
+    279          	case RTC_MODE_PERSIAN:
+    280          		mr |= RTC_MR_PERSIAN;
+   \       0x24   0xE385'5002        ORR      R5,R5,#0x2
+    281          		break;
+   \       0x28   0xEA00'0007        B        ??rtc_set_mode_0
+    282          #endif
+    283          #ifdef CONFIG_HAVE_RTC_MODE_UTC
+    284          	case RTC_MODE_UTC:
+    285          		mr |= RTC_MR_UTC;
+   \                     ??rtc_set_mode_1:
+   \       0x2C   0xE385'5004        ORR      R5,R5,#0x4
+    286          		break;
+   \       0x30   0xEA00'0005        B        ??rtc_set_mode_0
+    287          #endif
+    288          	default:
+    289          		trace_debug("RTC: Invalid time_mode\r\n");
+   \                     ??rtc_set_mode_2:
+   \       0x34   0x....'....        LDR      R0,??DataTable25_1
+   \       0x38   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x3C   0xE351'0004        CMP      R1,#+4
+   \       0x40   0x9A00'0001        BLS      ??rtc_set_mode_0
+   \       0x44   0x....'....        LDR      R0,??DataTable25_2
+   \       0x48   0x....'....        BL       printf
+    290          	}
+    291          
+    292          	RTC->RTC_MR = mr;
+   \                     ??rtc_set_mode_0:
+   \       0x4C   0xE584'5000        STR      R5,[R4, #+0]
+    293          }
+   \       0x50   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    294          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    295          enum _rtc_mode rtc_get_mode(void)
+    296          {
+    297          #if defined(CONFIG_HAVE_RTC_MODE_UTC) || defined(CONFIG_HAVE_RTC_MODE_PERSIAN)
+    298          	uint32_t mr = RTC->RTC_MR;
+   \                     rtc_get_mode:
+   \        0x0   0x....'....        LDR      R0,??DataTable25  ;; 0xf80480b4
+   \        0x4   0xE590'0000        LDR      R0,[R0, #+0]
+    299          #endif
+    300          
+    301          #ifdef CONFIG_HAVE_RTC_MODE_UTC
+    302          	if (mr & RTC_MR_UTC)
+   \        0x8   0xE310'0004        TST      R0,#0x4
+   \        0xC   0x0A00'0001        BEQ      ??rtc_get_mode_0
+    303          		return RTC_MODE_UTC;
+   \       0x10   0xE3A0'0002        MOV      R0,#+2
+   \       0x14   0xE12F'FF1E        BX       LR
+    304          #endif
+    305          #ifdef CONFIG_HAVE_RTC_MODE_PERSIAN
+    306          	if (mr & RTC_MR_PERSIAN)
+   \                     ??rtc_get_mode_0:
+   \       0x18   0xE310'0002        TST      R0,#0x2
+    307          		return RTC_MODE_PERSIAN;
+   \       0x1C   0x....'....        B        ?Subroutine1
+    308          #endif
+    309          
+    310          	return RTC_MODE_GREGORIAN;
+    311          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0x13A0'0001        MOVNE    R0,#+1
+   \        0x4   0x03A0'0000        MOVEQ    R0,#+0
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    312          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    313          void rtc_set_hour_mode(enum _rtc_hour_mode mode)
+    314          {
+    315          	RTC->RTC_MR &= ~RTC_MR_HRMOD;
+   \                     rtc_set_hour_mode:
+   \        0x0   0x....'....        LDR      R1,??DataTable25  ;; 0xf80480b4
+    316          	switch (mode) {
+   \        0x4   0xE350'0001        CMP      R0,#+1
+   \        0x8   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0xC   0xE3C2'3001        BIC      R3,R2,#0x1
+   \       0x10   0xE581'3000        STR      R3,[R1, #+0]
+    317          	case RTC_HOUR_MODE_12:
+    318          		RTC->RTC_MR |= RTC_MR_HRMOD;
+   \       0x14   0x0591'0000        LDREQ    R0,[R1, #+0]
+   \       0x18   0x0380'C001        ORREQ    R12,R0,#0x1
+   \       0x1C   0x0581'C000        STREQ    R12,[R1, #+0]
+    319          		break;
+    320          	case RTC_HOUR_MODE_24:
+    321          		break;
+    322          	}
+    323          }
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    324          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    325          enum _rtc_hour_mode rtc_get_hour_mode(void)
+    326          {
+    327          	return (RTC->RTC_MR & RTC_MR_HRMOD) ? RTC_HOUR_MODE_12 : RTC_HOUR_MODE_24;
+   \                     rtc_get_hour_mode:
+   \        0x0   0x....'....        LDR      R0,??DataTable25  ;; 0xf80480b4
+   \        0x4   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0x8   0xE201'0001        AND      R0,R1,#0x1
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    328          }
+    329          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    330          void rtc_enable_it(uint32_t sources)
+    331          {
+   \                     rtc_enable_it:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    332          #ifndef RTC_IER_TDERREN
+    333          #define RTC_IER_TDERREN 0
+    334          #endif
+    335          	assert((sources &  (uint32_t)(~(RTC_IER_ACKEN | RTC_IER_ALREN | RTC_IER_SECEN
+    336          			    | RTC_IER_TIMEN | RTC_IER_CALEN | RTC_IER_TDERREN))) == 0);
+   \        0x8   0xE3D4'003F        BICS     R0,R4,#0x3F
+   \        0xC   0x0A00'0004        BEQ      ??rtc_enable_it_0
+   \       0x10   0x....'....        LDR      R0,??DataTable25_3
+   \       0x14   0xE3A0'2F54        MOV      R2,#+336
+   \       0x18   0xE280'1074        ADD      R1,R0,#+116
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    337          	RTC->RTC_IER = sources;
+   \                     ??rtc_enable_it_0:
+   \       0x24   0x....'....        LDR      R0,??DataTable25_4  ;; 0xf80480d0
+   \       0x28   0x....'....        B        ?Subroutine2
+    338          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE580'4000        STR      R4,[R0, #+0]
+   \        0x4   0xE8BD'8010        POP      {R4,PC}          ;; return
+    339          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    340          void rtc_disable_it(uint32_t sources)
+    341          {
+   \                     rtc_disable_it:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    342          #ifndef RTC_IDR_TDERRDIS
+    343          #define RTC_IDR_TDERRDIS 0
+    344          #endif
+    345          	assert((sources & (uint32_t)(~(RTC_IDR_ACKDIS | RTC_IDR_ALRDIS | RTC_IDR_SECDIS
+    346          			   | RTC_IDR_TIMDIS | RTC_IDR_CALDIS | RTC_IDR_TDERRDIS))) == 0);
+   \        0x8   0xE3D4'003F        BICS     R0,R4,#0x3F
+   \        0xC   0x0A00'0004        BEQ      ??rtc_disable_it_0
+   \       0x10   0x....'....        LDR      R0,??DataTable25_3
+   \       0x14   0xE300'215A        MOVW     R2,#+346
+   \       0x18   0xE280'1074        ADD      R1,R0,#+116
+   \       0x1C   0x....'....        BL       __aeabi_assert
+   \       0x20   0x....'....        BL       __iar_EmptyStepPoint
+    347          	RTC->RTC_IDR = sources;
+   \                     ??rtc_disable_it_0:
+   \       0x24   0x....'....        LDR      R0,??DataTable25_5  ;; 0xf80480d4
+   \       0x28                      REQUIRE ?Subroutine2
+   \       0x28                      ;; // Fall through to label ?Subroutine2
+    348          }
+    349          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    350          uint32_t rtc_set_time(struct _time *time)
+    351          {
+   \                     rtc_set_time:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+    352          	uint32_t ltime = 0;
+    353          	uint8_t hour_bcd , min_bcd, sec_bcd;
+    354          
+    355          	/* if 12-hour mode, set AMPM bit */
+    356          	if ((RTC->RTC_MR & RTC_MR_HRMOD) == RTC_MR_HRMOD) {
+   \        0x4   0x....'....        LDR      R1,??DataTable25_6  ;; 0xf80480b0
+   \        0x8   0xE3A0'2000        MOV      R2,#+0
+   \        0xC   0xE591'3004        LDR      R3,[R1, #+4]
+   \       0x10   0xE313'0001        TST      R3,#0x1
+   \       0x14   0x0A00'0004        BEQ      ??rtc_set_time_0
+    357          		if (time->hour > 12) {
+   \       0x18   0xE5D0'3000        LDRB     R3,[R0, #+0]
+   \       0x1C   0xE353'000D        CMP      R3,#+13
+    358          			time->hour -= 12;
+   \       0x20   0xA243'200C        SUBGE    R2,R3,#+12
+   \       0x24   0xA5C0'2000        STRBGE   R2,[R0, #+0]
+    359          			ltime |= RTC_TIMR_AMPM;
+   \       0x28   0xA3A0'2840        MOVGE    R2,#+4194304
+    360          		}
+    361          	}
+    362          	hour_bcd = (time->hour % 10) | ((time->hour / 10) << 4);
+   \                     ??rtc_set_time_0:
+   \       0x2C   0xE5D0'3000        LDRB     R3,[R0, #+0]
+    363          	min_bcd = (time->min % 10) | ((time->min / 10) << 4);
+   \       0x30   0x....'....        LDR      R5,??DataTable25_7  ;; 0x66666667
+   \       0x34   0x....'....        LDR      R12,??DataTable25_7  ;; 0x66666667
+   \       0x38   0xE0CC'EC93        SMULL    LR,R12,R3,R12
+   \       0x3C   0xE1A0'C14C        ASR      R12,R12,#+2
+   \       0x40   0xE08C'CFAC        ADD      R12,R12,R12, LSR #+31
+   \       0x44   0xE08C'410C        ADD      R4,R12,R12, LSL #+2
+   \       0x48   0xE043'3084        SUB      R3,R3,R4, LSL #+1
+   \       0x4C   0xE183'320C        ORR      R3,R3,R12, LSL #+4
+   \       0x50   0xE5D0'C001        LDRB     R12,[R0, #+1]
+   \       0x54   0xE0C5'659C        SMULL    R6,R5,R12,R5
+    364          	sec_bcd = (time->sec % 10) | ((time->sec / 10) << 4);
+   \       0x58   0xE5D0'0002        LDRB     R0,[R0, #+2]
+   \       0x5C   0xE6EF'3073        UXTB     R3,R3
+   \       0x60   0xE1A0'E145        ASR      LR,R5,#+2
+    365          	/* value overflow */
+    366          	if ((hour_bcd & (uint8_t) (~RTC_HOUR_BIT_LEN_MASK)) |
+    367          	    (min_bcd & (uint8_t) (~RTC_MIN_BIT_LEN_MASK)) |
+    368          	    (sec_bcd & (uint8_t) (~RTC_SEC_BIT_LEN_MASK))) {
+   \       0x64   0xE203'60C0        AND      R6,R3,#0xC0
+   \       0x68   0xE08E'EFAE        ADD      LR,LR,LR, LSR #+31
+   \       0x6C   0xE08E'710E        ADD      R7,LR,LR, LSL #+2
+   \       0x70   0xE04C'C087        SUB      R12,R12,R7, LSL #+1
+   \       0x74   0xE18C'C20E        ORR      R12,R12,LR, LSL #+4
+   \       0x78   0x....'....        LDR      LR,??DataTable25_7  ;; 0x66666667
+   \       0x7C   0xE0CE'4E90        SMULL    R4,LR,R0,LR
+   \       0x80   0xE6EF'C07C        UXTB     R12,R12
+   \       0x84   0xE1A0'E14E        ASR      LR,LR,#+2
+   \       0x88   0xE08E'EFAE        ADD      LR,LR,LR, LSR #+31
+   \       0x8C   0xE08E'510E        ADD      R5,LR,LR, LSL #+2
+   \       0x90   0xE040'0085        SUB      R0,R0,R5, LSL #+1
+   \       0x94   0xE180'020E        ORR      R0,R0,LR, LSL #+4
+   \       0x98   0xE6EF'0070        UXTB     R0,R0
+   \       0x9C   0xE180'700C        ORR      R7,R0,R12
+   \       0xA0   0xE207'8080        AND      R8,R7,#0x80
+   \       0xA4   0xE198'8006        ORRS     R8,R8,R6
+   \       0xA8   0x0A00'0000        BEQ      ??rtc_set_time_1
+    369          		return 1;
+   \       0xAC   0x....'....        B        ?Subroutine3
+    370          	}
+    371          	ltime |= sec_bcd | (min_bcd << 8) | (hour_bcd << 16);
+   \                     ??rtc_set_time_1:
+   \       0xB0   0xE180'040C        ORR      R0,R0,R12, LSL #+8
+   \       0xB4   0xE180'3803        ORR      R3,R0,R3, LSL #+16
+   \       0xB8   0xE183'0002        ORR      R0,R3,R2
+    372          	/* Wait for a second periodic event */
+    373          	while ((RTC->RTC_SR & RTC_SR_SEC_SECEVENT) != RTC_SR_SEC_SECEVENT);
+   \                     ??rtc_set_time_2:
+   \       0xBC   0xE591'2018        LDR      R2,[R1, #+24]
+   \       0xC0   0xE312'0004        TST      R2,#0x4
+   \       0xC4   0x0AFF'FFFC        BEQ      ??rtc_set_time_2
+    374          	/* Set UPDTIM bit in RTC_CR */
+    375          	RTC->RTC_CR |= RTC_CR_UPDTIM;
+   \       0xC8   0xE591'3000        LDR      R3,[R1, #+0]
+   \       0xCC   0xE383'C001        ORR      R12,R3,#0x1
+   \       0xD0   0xE581'C000        STR      R12,[R1, #+0]
+    376          	while ((RTC->RTC_SR & RTC_SR_ACKUPD) != RTC_SR_ACKUPD);
+   \                     ??rtc_set_time_3:
+   \       0xD4   0xE591'2018        LDR      R2,[R1, #+24]
+   \       0xD8   0xE312'0001        TST      R2,#0x1
+   \       0xDC   0x0AFF'FFFC        BEQ      ??rtc_set_time_3
+    377          	RTC->RTC_SCCR = RTC_SCCR_ACKCLR;
+   \       0xE0   0xE3A0'3001        MOV      R3,#+1
+   \       0xE4   0xE581'301C        STR      R3,[R1, #+28]
+    378          	RTC->RTC_TIMR = ltime;
+   \       0xE8   0xE581'0008        STR      R0,[R1, #+8]
+    379          	RTC->RTC_CR &= (uint32_t) (~RTC_CR_UPDTIM);
+   \       0xEC   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0xF0   0xE3C0'2001        BIC      R2,R0,#0x1
+   \       0xF4   0xE581'2000        STR      R2,[R1, #+0]
+    380          	RTC->RTC_SCCR |= RTC_SCCR_SECCLR;
+   \       0xF8   0xE591'301C        LDR      R3,[R1, #+28]
+   \       0xFC   0xE383'C004        ORR      R12,R3,#0x4
+   \      0x100   0xE581'C01C        STR      R12,[R1, #+28]
+    381          	return (uint32_t) (RTC->RTC_VER & RTC_VER_NVTIM);
+   \      0x104   0xE591'002C        LDR      R0,[R1, #+44]
+   \      0x108   0xE200'0001        AND      R0,R0,#0x1
+   \      0x10C   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    382          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine3:
+   \        0x0   0xE3A0'0001        MOV      R0,#+1
+   \        0x4   0xE8BD'81F0        POP      {R4-R8,PC}
+    383          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    384          void rtc_get_time(struct _time *time)
+    385          {
+    386          	uint32_t ltime;
+    387          
+    388          	/* Get current RTC time */
+    389          	ltime = RTC->RTC_TIMR;
+   \                     rtc_get_time:
+   \        0x0   0x....'....        LDR      R2,??DataTable25_8  ;; 0xf80480b8
+    390          	while (ltime != RTC->RTC_TIMR) {
+    391          		ltime = RTC->RTC_TIMR;
+   \                     ??rtc_get_time_0:
+   \        0x4   0xE592'1000        LDR      R1,[R2, #+0]
+    392          	}
+   \        0x8   0xE592'3000        LDR      R3,[R2, #+0]
+   \        0xC   0xE151'0003        CMP      R1,R3
+   \       0x10   0x1AFF'FFFB        BNE      ??rtc_get_time_0
+    393          	/* Hour */
+    394          	time->hour = ((ltime & 0x00300000) >> 20) * 10 + ((ltime & 0x000F0000) >> 16);
+   \       0x14   0xE7E1'2A51        UBFX     R2,R1,#+20,#+2
+    395          	if ((ltime & RTC_TIMR_AMPM) == RTC_TIMR_AMPM) {
+   \       0x18   0xE311'0840        TST      R1,#0x400000
+   \       0x1C   0xE082'C102        ADD      R12,R2,R2, LSL #+2
+   \       0x20   0xE7E3'2851        UBFX     R2,R1,#+16,#+4
+   \       0x24   0xE082'208C        ADD      R2,R2,R12, LSL #+1
+   \       0x28   0xE5C0'2000        STRB     R2,[R0, #+0]
+    396          		time->hour += 12;
+   \       0x2C   0x15D0'2000        LDRBNE   R2,[R0, #+0]
+   \       0x30   0x1282'300C        ADDNE    R3,R2,#+12
+    397          	}
+    398          	/* Minute */
+    399          	time->min = ((ltime & 0x00007000) >> 12) * 10 + ((ltime & 0x00000F00) >> 8);
+   \       0x34   0xE7E2'2651        UBFX     R2,R1,#+12,#+3
+   \       0x38   0xE082'C102        ADD      R12,R2,R2, LSL #+2
+   \       0x3C   0xE7E3'2451        UBFX     R2,R1,#+8,#+4
+   \       0x40   0x15C0'3000        STRBNE   R3,[R0, #+0]
+   \       0x44   0xE082'208C        ADD      R2,R2,R12, LSL #+1
+   \       0x48   0xE5C0'2001        STRB     R2,[R0, #+1]
+    400          	/* Second */
+    401          	time->sec = ((ltime & 0x00000070) >> 4) * 10 + (ltime & 0x0000000F);
+   \       0x4C   0xE7E2'2251        UBFX     R2,R1,#+4,#+3
+   \       0x50   0xE201'100F        AND      R1,R1,#0xF
+   \       0x54   0xE082'3102        ADD      R3,R2,R2, LSL #+2
+   \       0x58   0xE081'1083        ADD      R1,R1,R3, LSL #+1
+   \       0x5C   0xE5C0'1002        STRB     R1,[R0, #+2]
+    402          }
+   \       0x60   0xE12F'FF1E        BX       LR               ;; return
+    403          
+    404          #ifdef CONFIG_HAVE_RTC_MODE_UTC
+    405          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    406          void rtc_get_utc_time(uint32_t* utc_time)
+    407          {
+    408          	if (utc_time)
+   \                     rtc_get_utc_time:
+   \        0x0   0xE350'0000        CMP      R0,#+0
+    409          		*utc_time = RTC->RTC_TIMR;
+   \        0x4   0x....'....        LDRNE    R1,??DataTable25_8  ;; 0xf80480b8
+   \        0x8   0x1591'2000        LDRNE    R2,[R1, #+0]
+   \        0xC   0x1580'2000        STRNE    R2,[R0, #+0]
+    410          }
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    411          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    412          uint32_t rtc_set_utc_time(uint32_t utc_time)
+    413          {
+   \                     rtc_set_utc_time:
+   \        0x0   0x....'....        LDR      R1,??DataTable25_6  ;; 0xf80480b0
+    414          	/* Wait for a second periodic event */
+    415          	while ((RTC->RTC_SR & RTC_SR_SEC_SECEVENT) != RTC_SR_SEC_SECEVENT);
+   \                     ??rtc_set_utc_time_0:
+   \        0x4   0xE591'2018        LDR      R2,[R1, #+24]
+   \        0x8   0xE312'0004        TST      R2,#0x4
+   \        0xC   0x0AFF'FFFC        BEQ      ??rtc_set_utc_time_0
+    416          	/* Set UPDTIM bit in RTC_CR */
+    417          	RTC->RTC_CR |= RTC_CR_UPDTIM;
+   \       0x10   0xE591'3000        LDR      R3,[R1, #+0]
+   \       0x14   0xE383'C001        ORR      R12,R3,#0x1
+   \       0x18   0xE581'C000        STR      R12,[R1, #+0]
+    418          	while ((RTC->RTC_SR & RTC_SR_ACKUPD) != RTC_SR_ACKUPD);
+   \                     ??rtc_set_utc_time_1:
+   \       0x1C   0xE591'2018        LDR      R2,[R1, #+24]
+   \       0x20   0xE312'0001        TST      R2,#0x1
+   \       0x24   0x0AFF'FFFC        BEQ      ??rtc_set_utc_time_1
+    419          	RTC->RTC_SCCR = RTC_SCCR_ACKCLR;
+   \       0x28   0xE3A0'3001        MOV      R3,#+1
+   \       0x2C   0xE581'301C        STR      R3,[R1, #+28]
+    420          	RTC->RTC_TIMR = utc_time;
+   \       0x30   0xE581'0008        STR      R0,[R1, #+8]
+    421          	RTC->RTC_CR &= ~RTC_CR_UPDTIM;
+   \       0x34   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0x38   0xE3C0'2001        BIC      R2,R0,#0x1
+   \       0x3C   0xE581'2000        STR      R2,[R1, #+0]
+    422          	RTC->RTC_SCCR |= RTC_SCCR_SECCLR;
+   \       0x40   0xE591'301C        LDR      R3,[R1, #+28]
+   \       0x44   0xE383'C004        ORR      R12,R3,#0x4
+   \       0x48   0xE581'C01C        STR      R12,[R1, #+28]
+    423          	return RTC->RTC_VER & RTC_VER_NVTIM;
+   \       0x4C   0xE591'002C        LDR      R0,[R1, #+44]
+   \       0x50   0xE200'0001        AND      R0,R0,#0x1
+   \       0x54   0xE12F'FF1E        BX       LR               ;; return
+    424          }
+    425          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    426          uint32_t rtc_set_utc_time_alarm(uint32_t utc_time)
+    427          {
+    428          	/* Disable the alarm. */
+    429          	RTC->RTC_CALALR = 0;
+   \                     rtc_set_utc_time_alarm:
+   \        0x0   0x....'....        LDR      R1,??DataTable25_9  ;; 0xf80480c0
+   \        0x4   0xE3A0'2000        MOV      R2,#+0
+   \        0x8   0xE581'2004        STR      R2,[R1, #+4]
+    430          	/* Change the UTC_TIME alarm value. */
+    431          	RTC->RTC_TIMALR = utc_time;
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+    432          	/* Enable the alarm in UTC mode. */
+    433          	RTC->RTC_CALALR = RTC_CALALR_UTCEN;
+   \       0x10   0xE3A0'0001        MOV      R0,#+1
+   \       0x14   0xE581'0004        STR      R0,[R1, #+4]
+    434          	return (uint32_t) (RTC->RTC_VER & RTC_VER_NVTIMALR);
+   \       0x18   0xE591'101C        LDR      R1,[R1, #+28]
+   \       0x1C   0xE201'0004        AND      R0,R1,#0x4
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    435          }
+    436          
+    437          #endif /* CONFIG_HAVE_RTC_MODE_UTC */
+    438          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    439          uint32_t rtc_set_time_alarm(struct _time *time)
+    440          {
+   \                     rtc_set_time_alarm:
+   \        0x0   0xE92D'4030        PUSH     {R4,R5,LR}
+    441          	uint32_t alarm = 0;
+    442          
+    443          	/* Hour */
+    444          	if (time->hour) {
+   \        0x4   0xE5D0'2000        LDRB     R2,[R0, #+0]
+   \        0x8   0xE3A0'1000        MOV      R1,#+0
+   \        0xC   0xE352'0000        CMP      R2,#+0
+   \       0x10   0x0A00'0008        BEQ      ??rtc_set_time_alarm_0
+    445          		alarm |= RTC_TIMALR_HOUREN | ((time->hour / 10) << 20) | ((time->hour % 10) << 16);
+   \       0x14   0x....'....        LDR      R1,??DataTable25_7  ;; 0x66666667
+   \       0x18   0xE0C1'3192        SMULL    R3,R1,R2,R1
+   \       0x1C   0xE1A0'1141        ASR      R1,R1,#+2
+   \       0x20   0xE081'1FA1        ADD      R1,R1,R1, LSR #+31
+   \       0x24   0xE081'C101        ADD      R12,R1,R1, LSL #+2
+   \       0x28   0xE042'208C        SUB      R2,R2,R12, LSL #+1
+   \       0x2C   0xE1A0'E802        LSL      LR,R2,#+16
+   \       0x30   0xE18E'EA01        ORR      LR,LR,R1, LSL #+20
+   \       0x34   0xE38E'1880        ORR      R1,LR,#0x800000
+    446          	}
+    447          	/* Minute */
+    448          	if (time->min) {
+   \                     ??rtc_set_time_alarm_0:
+   \       0x38   0xE5D0'2001        LDRB     R2,[R0, #+1]
+   \       0x3C   0xE352'0000        CMP      R2,#+0
+   \       0x40   0x0A00'0009        BEQ      ??rtc_set_time_alarm_1
+    449          		alarm |= RTC_TIMALR_MINEN | ((time->min / 10) << 12) | ((time->min % 10) << 8);
+   \       0x44   0x....'....        LDR      R3,??DataTable25_7  ;; 0x66666667
+   \       0x48   0xE0C3'C392        SMULL    R12,R3,R2,R3
+   \       0x4C   0xE1A0'3143        ASR      R3,R3,#+2
+   \       0x50   0xE083'3FA3        ADD      R3,R3,R3, LSR #+31
+   \       0x54   0xE083'E103        ADD      LR,R3,R3, LSL #+2
+   \       0x58   0xE042'208E        SUB      R2,R2,LR, LSL #+1
+   \       0x5C   0xE1A0'4402        LSL      R4,R2,#+8
+   \       0x60   0xE184'4603        ORR      R4,R4,R3, LSL #+12
+   \       0x64   0xE384'5C80        ORR      R5,R4,#0x8000
+   \       0x68   0xE185'1001        ORR      R1,R5,R1
+    450          	}
+    451          	/* Second */
+    452          	if (time->sec) {
+   \                     ??rtc_set_time_alarm_1:
+   \       0x6C   0xE5D0'0002        LDRB     R0,[R0, #+2]
+   \       0x70   0xE350'0000        CMP      R0,#+0
+   \       0x74   0x0A00'0008        BEQ      ??rtc_set_time_alarm_2
+    453          		alarm |= RTC_TIMALR_SECEN | ((time->sec / 10) << 4) | (time->sec % 10);
+   \       0x78   0x....'....        LDR      R2,??DataTable25_7  ;; 0x66666667
+   \       0x7C   0xE0C2'3290        SMULL    R3,R2,R0,R2
+   \       0x80   0xE1A0'2142        ASR      R2,R2,#+2
+   \       0x84   0xE082'2FA2        ADD      R2,R2,R2, LSR #+31
+   \       0x88   0xE082'C102        ADD      R12,R2,R2, LSL #+2
+   \       0x8C   0xE040'008C        SUB      R0,R0,R12, LSL #+1
+   \       0x90   0xE180'0202        ORR      R0,R0,R2, LSL #+4
+   \       0x94   0xE380'E080        ORR      LR,R0,#0x80
+   \       0x98   0xE18E'1001        ORR      R1,LR,R1
+    454          	}
+    455          	RTC->RTC_SCCR = RTC_SCCR_ALRCLR;
+   \                     ??rtc_set_time_alarm_2:
+   \       0x9C   0x....'....        LDR      R0,??DataTable25_9  ;; 0xf80480c0
+   \       0xA0   0xE3A0'2002        MOV      R2,#+2
+   \       0xA4   0xE580'200C        STR      R2,[R0, #+12]
+    456          	RTC->RTC_TIMALR = alarm;
+   \       0xA8   0xE580'1000        STR      R1,[R0, #+0]
+    457          	return (uint32_t) (RTC->RTC_VER & RTC_VER_NVTIMALR);
+   \       0xAC   0xE590'001C        LDR      R0,[R0, #+28]
+   \       0xB0   0xE200'0004        AND      R0,R0,#0x4
+   \       0xB4   0xE8BD'8030        POP      {R4,R5,PC}       ;; return
+    458          }
+    459          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    460          void rtc_get_date(struct _date *date)
+    461          {
+   \                     rtc_get_date:
+   \        0x0   0xE92D'4000        PUSH     {LR}
+   \        0x4   0x....'....        LDR      R2,??DataTable25_10  ;; 0xf80480bc
+    462          	uint32_t ldate;
+    463          
+    464          	/* Get current date (multiple reads are necessary to insure a stable value) */
+    465          	do {
+    466          		ldate = RTC->RTC_CALR;
+   \                     ??rtc_get_date_0:
+   \        0x8   0xE592'1000        LDR      R1,[R2, #+0]
+    467          	} while (ldate != RTC->RTC_CALR);
+   \        0xC   0xE592'3000        LDR      R3,[R2, #+0]
+   \       0x10   0xE151'0003        CMP      R1,R3
+   \       0x14   0x1AFF'FFFB        BNE      ??rtc_get_date_0
+    468          
+    469          	/* Retrieve values */
+    470          	date->year = (((ldate >> 4) & 0x7) * 1000) + ((ldate & 0xF) * 100)
+    471          		+ (((ldate >> 12) & 0xF) * 10) + ((ldate >> 8) & 0xF);
+   \       0x18   0xE7E2'2251        UBFX     R2,R1,#+4,#+3
+   \       0x1C   0xE3A0'CFFA        MOV      R12,#+1000
+   \       0x20   0xE162'0C82        SMULBB   R2,R2,R12
+   \       0x24   0xE201'300F        AND      R3,R1,#0xF
+   \       0x28   0xE3A0'E064        MOV      LR,#+100
+   \       0x2C   0xE10E'2E83        SMLABB   LR,R3,LR,R2
+   \       0x30   0xE7E3'2651        UBFX     R2,R1,#+12,#+4
+   \       0x34   0xE082'C102        ADD      R12,R2,R2, LSL #+2
+   \       0x38   0xE7E3'3451        UBFX     R3,R1,#+8,#+4
+   \       0x3C   0xE08E'208C        ADD      R2,LR,R12, LSL #+1
+   \       0x40   0xE083'2002        ADD      R2,R3,R2
+   \       0x44   0xE1C0'20B0        STRH     R2,[R0, #+0]
+    472          	date->month = (((ldate >> 20) & 1) * 10) + ((ldate >> 16) & 0xF);
+   \       0x48   0xE7E0'2A51        UBFX     R2,R1,#+20,#+1
+   \       0x4C   0xE082'3102        ADD      R3,R2,R2, LSL #+2
+   \       0x50   0xE7E3'2851        UBFX     R2,R1,#+16,#+4
+   \       0x54   0xE082'2083        ADD      R2,R2,R3, LSL #+1
+   \       0x58   0xE5C0'2002        STRB     R2,[R0, #+2]
+    473          	date->day = (((ldate >> 28) & 0x3) * 10) + ((ldate >> 24) & 0xF);
+   \       0x5C   0xE7E1'2E51        UBFX     R2,R1,#+28,#+2
+   \       0x60   0xE082'3102        ADD      R3,R2,R2, LSL #+2
+   \       0x64   0xE7E3'2C51        UBFX     R2,R1,#+24,#+4
+    474          	date->week = ((ldate >> 21) & 0x7);
+   \       0x68   0xE1A0'1AA1        LSR      R1,R1,#+21
+   \       0x6C   0xE082'2083        ADD      R2,R2,R3, LSL #+1
+   \       0x70   0xE5C0'2003        STRB     R2,[R0, #+3]
+   \       0x74   0xE201'2007        AND      R2,R1,#0x7
+   \       0x78   0xE5C0'2004        STRB     R2,[R0, #+4]
+    475          }
+   \       0x7C   0xE8BD'8000        POP      {PC}             ;; return
+    476          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    477          uint32_t rtc_set_date(struct _date *date)
+    478          {
+   \                     rtc_set_date:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+    479          	uint32_t ldate;
+    480          	uint8_t cent_bcd, year_bcd, month_bcd, day_bcd, week_bcd;
+    481          
+    482          	cent_bcd = ((date->year / 100) % 10) | ((date->year / 1000) << 4);
+    483          	year_bcd = (date->year % 10) | (((date->year / 10) % 10) << 4);
+   \        0x4   0xE30C'6CCD        MOVW     R6,#+52429
+   \        0x8   0xE1D0'30B0        LDRH     R3,[R0, #+0]
+   \        0xC   0xE006'0693        MUL      R6,R3,R6
+   \       0x10   0xE30A'C3D7        MOVW     R12,#+41943
+   \       0x14   0xE002'039C        MUL      R2,R12,R3
+   \       0x18   0xE30C'ECCD        MOVW     LR,#+52429
+   \       0x1C   0xE308'5312        MOVW     R5,#+33554
+   \       0x20   0xE08C'C002        ADD      R12,R12,R2
+   \       0x24   0xE1A0'2003        MOV      R2,R3
+   \       0x28   0xE1A0'1B2C        LSR      R1,R12,#+22
+   \       0x2C   0xE30C'CCCD        MOVW     R12,#+52429
+   \       0x30   0xE00C'0C92        MUL      R12,R2,R12
+   \       0x34   0xE00E'0E91        MUL      LR,R1,LR
+   \       0x38   0xE1A0'E9AE        LSR      LR,LR,#+19
+   \       0x3C   0xE08E'410E        ADD      R4,LR,LR, LSL #+2
+   \       0x40   0xE041'4084        SUB      R4,R1,R4, LSL #+1
+   \       0x44   0xE001'0395        MUL      R1,R5,R3
+   \       0x48   0xE1A0'39A6        LSR      R3,R6,#+19
+   \       0x4C   0xE1A0'6002        MOV      R6,R2
+   \       0x50   0xE1A0'29AC        LSR      R2,R12,#+19
+   \       0x54   0xE1A0'7003        MOV      R7,R3
+   \       0x58   0xE082'E102        ADD      LR,R2,R2, LSL #+2
+    484          	month_bcd = ((date->month % 10) | (date->month / 10) << 4);
+   \       0x5C   0x....'....        LDR      R12,??DataTable25_7  ;; 0x66666667
+   \       0x60   0xE046'E08E        SUB      LR,R6,LR, LSL #+1
+   \       0x64   0xE085'5001        ADD      R5,R5,R1
+   \       0x68   0xE1A0'1CA5        LSR      R1,R5,#+25
+   \       0x6C   0xE184'1201        ORR      R1,R4,R1, LSL #+4
+   \       0x70   0xE30C'4CCD        MOVW     R4,#+52429
+   \       0x74   0xE004'0493        MUL      R4,R3,R4
+   \       0x78   0xE6EF'1071        UXTB     R1,R1
+   \       0x7C   0xE1A0'39A4        LSR      R3,R4,#+19
+   \       0x80   0xE083'5103        ADD      R5,R3,R3, LSL #+2
+   \       0x84   0xE5D0'3002        LDRB     R3,[R0, #+2]
+   \       0x88   0xE047'5085        SUB      R5,R7,R5, LSL #+1
+   \       0x8C   0xE18E'2205        ORR      R2,LR,R5, LSL #+4
+    485          	day_bcd = ((date->day % 10) | (date->day / 10) << 4);
+   \       0x90   0x....'....        LDR      R5,??DataTable25_7  ;; 0x66666667
+   \       0x94   0xE0CC'EC93        SMULL    LR,R12,R3,R12
+   \       0x98   0xE1A0'C14C        ASR      R12,R12,#+2
+   \       0x9C   0xE08C'CFAC        ADD      R12,R12,R12, LSR #+31
+   \       0xA0   0xE08C'410C        ADD      R4,R12,R12, LSL #+2
+   \       0xA4   0xE043'3084        SUB      R3,R3,R4, LSL #+1
+   \       0xA8   0xE183'320C        ORR      R3,R3,R12, LSL #+4
+   \       0xAC   0xE5D0'C003        LDRB     R12,[R0, #+3]
+   \       0xB0   0xE0C5'659C        SMULL    R6,R5,R12,R5
+    486          	week_bcd = ((date->week % 10) | (date->week / 10) << 4);
+   \       0xB4   0xE5D0'0004        LDRB     R0,[R0, #+4]
+   \       0xB8   0xE6EF'3073        UXTB     R3,R3
+    487          	/* value over flow */
+    488          	if ((cent_bcd & (uint8_t) (~RTC_CENT_BIT_LEN_MASK)) |
+    489          	    (year_bcd & (uint8_t) (~RTC_YEAR_BIT_LEN_MASK)) |
+    490          	    (month_bcd & (uint8_t) (~RTC_MONTH_BIT_LEN_MASK)) |
+    491          	    (week_bcd & (uint8_t) (~RTC_WEEK_BIT_LEN_MASK)) |
+    492          	    (day_bcd & (uint8_t) (~RTC_DATE_BIT_LEN_MASK))
+    493          	    ) {
+   \       0xBC   0xE201'6080        AND      R6,R1,#0x80
+   \       0xC0   0xE1A0'E145        ASR      LR,R5,#+2
+   \       0xC4   0xE08E'EFAE        ADD      LR,LR,LR, LSR #+31
+   \       0xC8   0xE08E'710E        ADD      R7,LR,LR, LSL #+2
+   \       0xCC   0xE04C'C087        SUB      R12,R12,R7, LSL #+1
+   \       0xD0   0xE203'70E0        AND      R7,R3,#0xE0
+   \       0xD4   0xE187'7006        ORR      R7,R7,R6
+   \       0xD8   0xE18C'C20E        ORR      R12,R12,LR, LSL #+4
+   \       0xDC   0x....'....        LDR      LR,??DataTable25_7  ;; 0x66666667
+   \       0xE0   0xE0CE'4E90        SMULL    R4,LR,R0,LR
+   \       0xE4   0xE6EF'C07C        UXTB     R12,R12
+   \       0xE8   0xE1A0'E14E        ASR      LR,LR,#+2
+   \       0xEC   0xE08E'EFAE        ADD      LR,LR,LR, LSR #+31
+   \       0xF0   0xE08E'510E        ADD      R5,LR,LR, LSL #+2
+   \       0xF4   0xE040'0085        SUB      R0,R0,R5, LSL #+1
+   \       0xF8   0xE180'020E        ORR      R0,R0,LR, LSL #+4
+   \       0xFC   0xE20C'E0C0        AND      LR,R12,#0xC0
+   \      0x100   0xE6EF'0070        UXTB     R0,R0
+   \      0x104   0xE200'80F8        AND      R8,R0,#0xF8
+   \      0x108   0xE188'8007        ORR      R8,R8,R7
+   \      0x10C   0xE19E'E008        ORRS     LR,LR,R8
+   \      0x110   0x0A00'0000        BEQ      ??rtc_set_date_0
+    494          		return 1;
+   \      0x114   0x....'....        B        ?Subroutine3
+    495          	}
+    496          	/* Convert values to date register value */
+    497          	ldate = cent_bcd | (year_bcd << 8) | (month_bcd << 16) | (week_bcd << 21) | (day_bcd << 24);
+   \                     ??rtc_set_date_0:
+   \      0x118   0xE6EF'2072        UXTB     R2,R2
+   \      0x11C   0xE181'1402        ORR      R1,R1,R2, LSL #+8
+   \      0x120   0xE181'2803        ORR      R2,R1,R3, LSL #+16
+   \      0x124   0x....'....        LDR      R1,??DataTable25_6  ;; 0xf80480b0
+   \      0x128   0xE182'0A80        ORR      R0,R2,R0, LSL #+21
+   \      0x12C   0xE180'0C0C        ORR      R0,R0,R12, LSL #+24
+    498          	/* Wait for a second periodic event */
+    499          	while ((RTC->RTC_SR & RTC_SR_SEC_SECEVENT) != RTC_SR_SEC_SECEVENT);
+   \                     ??rtc_set_date_1:
+   \      0x130   0xE591'2018        LDR      R2,[R1, #+24]
+   \      0x134   0xE312'0004        TST      R2,#0x4
+   \      0x138   0x0AFF'FFFC        BEQ      ??rtc_set_date_1
+    500          	/* Update calendar register  */
+    501          	RTC->RTC_CR |= RTC_CR_UPDCAL;
+   \      0x13C   0xE591'3000        LDR      R3,[R1, #+0]
+   \      0x140   0xE383'C002        ORR      R12,R3,#0x2
+   \      0x144   0xE581'C000        STR      R12,[R1, #+0]
+    502          	while ((RTC->RTC_SR & RTC_SR_ACKUPD) != RTC_SR_ACKUPD);
+   \                     ??rtc_set_date_2:
+   \      0x148   0xE591'2018        LDR      R2,[R1, #+24]
+   \      0x14C   0xE312'0001        TST      R2,#0x1
+   \      0x150   0x0AFF'FFFC        BEQ      ??rtc_set_date_2
+    503          	RTC->RTC_SCCR = RTC_SCCR_ACKCLR;
+   \      0x154   0xE3A0'3001        MOV      R3,#+1
+   \      0x158   0xE581'301C        STR      R3,[R1, #+28]
+    504          	RTC->RTC_CALR = ldate;
+   \      0x15C   0xE581'000C        STR      R0,[R1, #+12]
+    505          	RTC->RTC_CR &= (uint32_t) (~RTC_CR_UPDCAL);
+   \      0x160   0xE591'0000        LDR      R0,[R1, #+0]
+   \      0x164   0xE3C0'2002        BIC      R2,R0,#0x2
+   \      0x168   0xE581'2000        STR      R2,[R1, #+0]
+    506          	RTC->RTC_SCCR |= RTC_SCCR_SECCLR;	/* clear SECENV in SCCR */
+   \      0x16C   0xE591'301C        LDR      R3,[R1, #+28]
+   \      0x170   0xE383'C004        ORR      R12,R3,#0x4
+   \      0x174   0xE581'C01C        STR      R12,[R1, #+28]
+    507          	return (uint32_t) (RTC->RTC_VER & RTC_VER_NVCAL);
+   \      0x178   0xE591'002C        LDR      R0,[R1, #+44]
+   \      0x17C   0xE200'0002        AND      R0,R0,#0x2
+   \      0x180   0xE8BD'81F0        POP      {R4-R8,PC}       ;; return
+    508          }
+    509          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    510          uint32_t rtc_set_date_alarm(struct _date *date)
+    511          {
+   \                     rtc_set_date_alarm:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    512          	uint32_t alarm;
+    513          
+    514          	alarm = ((date->month) || (date->day)) ? (0) : (0x01010000);
+   \        0x4   0xE5D0'1003        LDRB     R1,[R0, #+3]
+   \        0x8   0xE5D0'0002        LDRB     R0,[R0, #+2]
+   \        0xC   0xE350'0000        CMP      R0,#+0
+   \       0x10   0x1A00'0004        BNE      ??rtc_set_date_alarm_0
+   \       0x14   0xE351'0000        CMP      R1,#+0
+   \       0x18   0x1A00'000D        BNE      ??rtc_set_date_alarm_1
+   \       0x1C   0xE3A0'0740        MOV      R0,#+16777216
+   \       0x20   0xE380'0B40        ORR      R0,R0,#0x10000
+   \       0x24   0xEA00'0014        B        ??rtc_set_date_alarm_2
+    515          	/* Compute alarm field value */
+    516          	if (date->month) {
+    517          		alarm |= RTC_CALALR_MTHEN | ((date->month / 10) << 20) | ((date->month % 10) << 16);
+   \                     ??rtc_set_date_alarm_0:
+   \       0x28   0x....'....        LDR      R2,??DataTable25_7  ;; 0x66666667
+   \       0x2C   0xE0C2'3290        SMULL    R3,R2,R0,R2
+    518          	}
+    519          	if (date->day) {
+   \       0x30   0xE351'0000        CMP      R1,#+0
+   \       0x34   0xE1A0'2142        ASR      R2,R2,#+2
+   \       0x38   0xE082'2FA2        ADD      R2,R2,R2, LSR #+31
+   \       0x3C   0xE082'C102        ADD      R12,R2,R2, LSL #+2
+   \       0x40   0xE040'008C        SUB      R0,R0,R12, LSL #+1
+   \       0x44   0xE1A0'E800        LSL      LR,R0,#+16
+   \       0x48   0xE18E'EA02        ORR      LR,LR,R2, LSL #+20
+   \       0x4C   0xE38E'0880        ORR      R0,LR,#0x800000
+   \       0x50   0x0A00'0009        BEQ      ??rtc_set_date_alarm_2
+    520          		alarm |= RTC_CALALR_DATEEN | ((date->day / 10) << 28) | ((date->day % 10) << 24);
+   \                     ??rtc_set_date_alarm_1:
+   \       0x54   0x....'....        LDR      R2,??DataTable25_7  ;; 0x66666667
+   \       0x58   0xE0C2'3291        SMULL    R3,R2,R1,R2
+   \       0x5C   0xE1A0'2142        ASR      R2,R2,#+2
+   \       0x60   0xE082'2FA2        ADD      R2,R2,R2, LSR #+31
+   \       0x64   0xE082'C102        ADD      R12,R2,R2, LSL #+2
+   \       0x68   0xE041'108C        SUB      R1,R1,R12, LSL #+1
+   \       0x6C   0xE1A0'EC01        LSL      LR,R1,#+24
+   \       0x70   0xE18E'EE02        ORR      LR,LR,R2, LSL #+28
+   \       0x74   0xE38E'4480        ORR      R4,LR,#0x80000000
+   \       0x78   0xE184'0000        ORR      R0,R4,R0
+    521          	}
+    522          	/* Set alarm */
+    523          	RTC->RTC_CALALR = alarm;
+   \                     ??rtc_set_date_alarm_2:
+   \       0x7C   0x....'....        LDR      R1,??DataTable25_11  ;; 0xf80480c4
+   \       0x80   0xE581'0000        STR      R0,[R1, #+0]
+    524          	return (uint32_t) (RTC->RTC_VER & RTC_VER_NVCALALR);
+   \       0x84   0xE591'0018        LDR      R0,[R1, #+24]
+   \       0x88   0xE200'0008        AND      R0,R0,#0x8
+   \       0x8C   0xE8BD'8010        POP      {R4,PC}          ;; return
+    525          }
+    526          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    527          void rtc_clear_sccr(uint32_t mask)
+    528          {
+    529          	/* Clear all flag bits in status clear command register */
+    530          	mask &= RTC_SCCR_ACKCLR | RTC_SCCR_ALRCLR | RTC_SCCR_SECCLR |
+    531          		RTC_SCCR_TIMCLR | RTC_SCCR_CALCLR;
+    532          	RTC->RTC_SCCR = mask;
+   \                     rtc_clear_sccr:
+   \        0x0   0xE200'001F        AND      R0,R0,#0x1F
+   \        0x4   0x....'....        LDR      R1,??DataTable25_12  ;; 0xf80480cc
+   \        0x8   0xE581'0000        STR      R0,[R1, #+0]
+    533          }
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    534          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    535          uint32_t rtc_get_sr(uint32_t mask)
+    536          {
+    537          	return (RTC->RTC_SR) & mask;
+   \                     rtc_get_sr:
+   \        0x0   0x....'....        LDR      R1,??DataTable25_13  ;; 0xf80480c8
+   \        0x4   0xE591'2000        LDR      R2,[R1, #+0]
+   \        0x8   0xE000'0002        AND      R0,R0,R2
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    538          }
+    539          
+    540          #ifdef CONFIG_HAVE_RTC_TAMPER
+    541          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    542          void rtc_get_tamper_time(struct _time *time,  uint8_t reg_num)
+    543          {
+    544          	uint32_t ltime, temp;
+    545          
+    546          	/* Get current RTC time */
+    547          	ltime = RTC->RTC_TS[reg_num].RTC_TSTR;
+   \                     rtc_get_tamper_time:
+   \        0x0   0xE081'2081        ADD      R2,R1,R1, LSL #+1
+   \        0x4   0x....'....        LDR      R3,??DataTable25_14  ;; 0xf8048160
+   \        0x8   0xE1A0'2102        LSL      R2,R2,#+2
+    548          	while (ltime != RTC->RTC_TS[reg_num].RTC_TSTR) {
+    549          		ltime = RTC->RTC_TS[reg_num].RTC_TSTR;
+   \                     ??rtc_get_tamper_time_0:
+   \        0xC   0xE793'1002        LDR      R1,[R3, +R2]
+    550          	}
+   \       0x10   0xE793'C002        LDR      R12,[R3, +R2]
+   \       0x14   0xE151'000C        CMP      R1,R12
+   \       0x18   0x1AFF'FFFB        BNE      ??rtc_get_tamper_time_0
+    551          	/* Hour */
+    552          	if (time->hour) {
+   \       0x1C   0xE5D0'2000        LDRB     R2,[R0, #+0]
+   \       0x20   0xE352'0000        CMP      R2,#+0
+   \       0x24   0x0A00'0009        BEQ      ??rtc_get_tamper_time_1
+    553          		temp = (ltime & RTC_TSTR_HOUR_Msk) >> RTC_TSTR_HOUR_Pos;
+   \       0x28   0xE7E5'2851        UBFX     R2,R1,#+16,#+6
+    554          		time->hour = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+    555          		if ((ltime & RTC_TSTR_AMPM) == RTC_TSTR_AMPM) {
+   \       0x2C   0xE311'0840        TST      R1,#0x400000
+   \       0x30   0xE1A0'3222        LSR      R3,R2,#+4
+   \       0x34   0xE202'200F        AND      R2,R2,#0xF
+   \       0x38   0xE083'C103        ADD      R12,R3,R3, LSL #+2
+   \       0x3C   0xE082'208C        ADD      R2,R2,R12, LSL #+1
+   \       0x40   0xE5C0'2000        STRB     R2,[R0, #+0]
+    556          			time->hour += 12;
+   \       0x44   0x15D0'3000        LDRBNE   R3,[R0, #+0]
+   \       0x48   0x1283'C00C        ADDNE    R12,R3,#+12
+   \       0x4C   0x15C0'C000        STRBNE   R12,[R0, #+0]
+    557          		}
+    558          	}
+    559          	/* Minute */
+    560          	if (time->min) {
+   \                     ??rtc_get_tamper_time_1:
+   \       0x50   0xE5D0'2001        LDRB     R2,[R0, #+1]
+   \       0x54   0xE352'0000        CMP      R2,#+0
+   \       0x58   0x0A00'0005        BEQ      ??rtc_get_tamper_time_2
+    561          		temp = (ltime & RTC_TSTR_MIN_Msk) >> RTC_TSTR_MIN_Pos;
+   \       0x5C   0xE7E6'2451        UBFX     R2,R1,#+8,#+7
+    562          		time->min = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+   \       0x60   0xE1A0'3222        LSR      R3,R2,#+4
+   \       0x64   0xE202'200F        AND      R2,R2,#0xF
+   \       0x68   0xE083'C103        ADD      R12,R3,R3, LSL #+2
+   \       0x6C   0xE082'208C        ADD      R2,R2,R12, LSL #+1
+   \       0x70   0xE5C0'2001        STRB     R2,[R0, #+1]
+    563          	}
+    564          	/* Second */
+    565          	if (time->sec) {
+   \                     ??rtc_get_tamper_time_2:
+   \       0x74   0xE5D0'3002        LDRB     R3,[R0, #+2]
+   \       0x78   0xE353'0000        CMP      R3,#+0
+   \       0x7C   0x0A00'0005        BEQ      ??rtc_get_tamper_time_3
+    566          		temp = (ltime & RTC_TSTR_SEC_Msk) >> RTC_TSTR_SEC_Pos;
+   \       0x80   0xE201'107F        AND      R1,R1,#0x7F
+    567          		time->sec = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+   \       0x84   0xE1A0'2221        LSR      R2,R1,#+4
+   \       0x88   0xE201'100F        AND      R1,R1,#0xF
+   \       0x8C   0xE082'C102        ADD      R12,R2,R2, LSL #+2
+   \       0x90   0xE081'108C        ADD      R1,R1,R12, LSL #+1
+   \       0x94   0xE5C0'1002        STRB     R1,[R0, #+2]
+    568          	}
+    569          }
+   \                     ??rtc_get_tamper_time_3:
+   \       0x98   0xE12F'FF1E        BX       LR               ;; return
+    570          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    571          void rtc_get_tamper_date(struct _date *date, uint8_t reg_num)
+    572          {
+   \                     rtc_get_tamper_date:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+    573          	uint32_t ldate, cent, temp;
+    574          
+    575          	/* Get the current date (multiple reads are to insure a stable value). */
+    576          	ldate = RTC->RTC_TS[reg_num].RTC_TSDR;
+   \        0x4   0xE081'3081        ADD      R3,R1,R1, LSL #+1
+   \        0x8   0x....'....        LDR      R2,??DataTable25_14  ;; 0xf8048160
+   \        0xC   0xE082'2103        ADD      R2,R2,R3, LSL #+2
+    577          	while (ldate != RTC->RTC_TS[reg_num].RTC_TSDR) {
+    578          		ldate = RTC->RTC_TS[reg_num].RTC_TSDR;
+   \                     ??rtc_get_tamper_date_0:
+   \       0x10   0xE592'1004        LDR      R1,[R2, #+4]
+    579          	}
+   \       0x14   0xE592'3004        LDR      R3,[R2, #+4]
+   \       0x18   0xE151'0003        CMP      R1,R3
+   \       0x1C   0x1AFF'FFFB        BNE      ??rtc_get_tamper_date_0
+    580          	/* Retrieve year */
+    581          	temp = (ldate & RTC_TSDR_CENT_Msk) >> RTC_TSDR_CENT_Pos;
+   \       0x20   0xE201'207F        AND      R2,R1,#0x7F
+    582          	cent = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+   \       0x24   0xE1A0'C222        LSR      R12,R2,#+4
+   \       0x28   0xE202'200F        AND      R2,R2,#0xF
+   \       0x2C   0xE08C'E10C        ADD      LR,R12,R12, LSL #+2
+    583          	temp = (ldate & RTC_TSDR_YEAR_Msk) >> RTC_TSDR_YEAR_Pos;
+    584          	date->year = (cent * BCD_FACTOR * BCD_FACTOR) + (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+   \       0x30   0xE3A0'C064        MOV      R12,#+100
+   \       0x34   0xE082'308E        ADD      R3,R2,LR, LSL #+1
+   \       0x38   0xE7E7'2451        UBFX     R2,R1,#+8,#+8
+   \       0x3C   0xE163'0C83        SMULBB   R3,R3,R12
+   \       0x40   0xE1A0'E222        LSR      LR,R2,#+4
+   \       0x44   0xE08E'410E        ADD      R4,LR,LR, LSL #+2
+   \       0x48   0xE202'200F        AND      R2,R2,#0xF
+   \       0x4C   0xE083'4084        ADD      R4,R3,R4, LSL #+1
+   \       0x50   0xE082'2004        ADD      R2,R2,R4
+   \       0x54   0xE1C0'20B0        STRH     R2,[R0, #+0]
+    585          
+    586          	/* Retrieve month */
+    587          	temp = (ldate & RTC_TSDR_MONTH_Msk) >> RTC_TSDR_MONTH_Pos;
+   \       0x58   0xE7E4'2851        UBFX     R2,R1,#+16,#+5
+    588          	date->month = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+   \       0x5C   0xE1A0'3222        LSR      R3,R2,#+4
+   \       0x60   0xE202'200F        AND      R2,R2,#0xF
+   \       0x64   0xE083'C103        ADD      R12,R3,R3, LSL #+2
+   \       0x68   0xE082'208C        ADD      R2,R2,R12, LSL #+1
+   \       0x6C   0xE5C0'2002        STRB     R2,[R0, #+2]
+    589          
+    590          	/* Retrieve day */
+    591          	temp = (ldate & RTC_TSDR_DATE_Msk) >> RTC_TSDR_DATE_Pos;
+   \       0x70   0xE7E5'2C51        UBFX     R2,R1,#+24,#+6
+    592          	date->day = (temp >> BCD_SHIFT) * BCD_FACTOR + (temp & BCD_MASK);
+    593          
+    594          	/* Retrieve week */
+    595          	date->week= ((ldate & RTC_TSDR_DAY_Msk) >> RTC_TSDR_DAY_Pos);
+   \       0x74   0xE1A0'1AA1        LSR      R1,R1,#+21
+   \       0x78   0xE1A0'3222        LSR      R3,R2,#+4
+   \       0x7C   0xE202'200F        AND      R2,R2,#0xF
+   \       0x80   0xE083'C103        ADD      R12,R3,R3, LSL #+2
+   \       0x84   0xE201'E007        AND      LR,R1,#0x7
+   \       0x88   0xE5C0'E004        STRB     LR,[R0, #+4]
+   \       0x8C   0xE082'208C        ADD      R2,R2,R12, LSL #+1
+   \       0x90   0xE5C0'2003        STRB     R2,[R0, #+3]
+    596          }
+   \       0x94   0xE8BD'8010        POP      {R4,PC}          ;; return
+    597          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    598          uint32_t rtc_get_tamper_source(uint8_t reg_num)
+    599          {
+    600          	return RTC->RTC_TS[reg_num].RTC_TSSR;
+   \                     rtc_get_tamper_source:
+   \        0x0   0xE080'2080        ADD      R2,R0,R0, LSL #+1
+   \        0x4   0x....'....        LDR      R1,??DataTable25_14  ;; 0xf8048160
+   \        0x8   0xE081'0102        ADD      R0,R1,R2, LSL #+2
+   \        0xC   0xE590'0008        LDR      R0,[R0, #+8]
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+    601          }
+    602          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    603          uint32_t rtc_get_tamper_event_counter(void)
+    604          {
+    605          	return (RTC->RTC_TS[0].RTC_TSTR & RTC_TSTR_TEVCNT_Msk) >> RTC_TSTR_TEVCNT_Pos;
+   \                     rtc_get_tamper_event_counter:
+   \        0x0   0x....'....        LDR      R0,??DataTable25_14  ;; 0xf8048160
+   \        0x4   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0x8   0xE7E3'0C51        UBFX     R0,R1,#+24,#+4
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    606          }
+    607          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    608          uint8_t rtc_is_tamper_occur_in_backup_mode(uint8_t reg_num)
+    609          {
+    610          	if (RTC->RTC_TS[reg_num].RTC_TSTR & RTC_TSTR_BACKUP) {
+   \                     rtc_is_tamper_occur_in_backup_mode:
+   \        0x0   0xE080'2080        ADD      R2,R0,R0, LSL #+1
+   \        0x4   0x....'....        LDR      R1,??DataTable25_14  ;; 0xf8048160
+   \        0x8   0xE791'0102        LDR      R0,[R1, +R2, LSL #+2]
+   \        0xC   0xE310'0480        TST      R0,#0x80000000
+    611          		return 1;
+   \       0x10                      REQUIRE ?Subroutine1
+   \       0x10                      ;; // Fall through to label ?Subroutine1
+    612          	} else {
+    613          		return 0;
+    614          	}
+    615          }
+    616          
+    617          #endif /* CONFIG_HAVE_RTC_TAMPER */
+    618          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    619          void rtc_convert_time_to_hms(struct _time *time, uint32_t count)
+    620          {
+   \                     rtc_convert_time_to_hms:
+   \        0x0   0xE92D'47F0        PUSH     {R4-R10,LR}
+    621          	count = count % 86400;
+   \        0x4   0x....'....        LDR      R3,??DataTable25_15  ;; 0xc22e4507
+   \        0x8   0xE082'3391        UMULL    R3,R2,R1,R3
+   \        0xC   0xE3A0'CB50        MOV      R12,#+81920
+   \       0x10   0xE38C'CD46        ORR      R12,R12,#0x1180
+    622          	time->hour = count / 3600;
+   \       0x14   0x....'....        LDR      R5,??DataTable25_16  ;; 0x91a2b3c5
+   \       0x18   0xE1A0'2822        LSR      R2,R2,#+16
+    623          	count -= time->hour * 3600;
+   \       0x1C   0xE3A0'7EE1        MOV      R7,#+3600
+   \       0x20   0xE00E'029C        MUL      LR,R12,R2
+    624          	time->min = count / 60;
+   \       0x24   0x....'....        LDR      R10,??DataTable25_17  ;; 0x88888889
+   \       0x28   0xE041'100E        SUB      R1,R1,LR
+   \       0x2C   0xE084'5591        UMULL    R5,R4,R1,R5
+   \       0x30   0xE1A0'45A4        LSR      R4,R4,#+11
+   \       0x34   0xE5C0'4000        STRB     R4,[R0, #+0]
+   \       0x38   0xE5D0'6000        LDRB     R6,[R0, #+0]
+   \       0x3C   0xE168'0687        SMULBB   R8,R7,R6
+   \       0x40   0xE041'1008        SUB      R1,R1,R8
+   \       0x44   0xE089'AA91        UMULL    R10,R9,R1,R10
+   \       0x48   0xE1A0'22A9        LSR      R2,R9,#+5
+    625          	time->sec = count % 60;
+   \       0x4C   0xE062'3202        RSB      R3,R2,R2, LSL #+4
+   \       0x50   0xE5C0'2001        STRB     R2,[R0, #+1]
+   \       0x54   0xE041'1103        SUB      R1,R1,R3, LSL #+2
+   \       0x58   0xE5C0'1002        STRB     R1,[R0, #+2]
+    626          }
+   \       0x5C   0xE8BD'87F0        POP      {R4-R10,PC}      ;; return
+    627          
+    628          #ifdef CONFIG_HAVE_RTC_CALIBRATION
+    629          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    630          void rtc_calibration(int32_t current_tempr)
+    631          {
+   \                     rtc_calibration:
+   \        0x0   0xE92D'4000        PUSH     {LR}
+    632          	int i;
+    633          	uint32_t mr;
+    634          
+    635          	for (i = 0; i < ARRAY_SIZE(ppm_lookup); i++) {
+   \        0x4   0x....'....        LDR      R2,??DataTable25_18
+   \        0x8   0xE3A0'1000        MOV      R1,#+0
+   \        0xC   0xE1A0'3002        MOV      R3,R2
+    636          		if (ppm_lookup[i].tempr == current_tempr) {
+   \                     ??rtc_calibration_0:
+   \       0x10   0xE0D3'C0D8        LDRSB    R12,[R3], #+8
+   \       0x14   0xE15C'0000        CMP      R12,R0
+   \       0x18   0x0A00'0003        BEQ      ??rtc_calibration_1
+   \       0x1C   0xE281'1001        ADD      R1,R1,#+1
+   \       0x20   0xE351'007E        CMP      R1,#+126
+   \       0x24   0x3AFF'FFF9        BCC      ??rtc_calibration_0
+    637          			/* update the calibration value */
+    638          			mr = RTC->RTC_MR & ~(RTC_MR_CORRECTION_Msk | RTC_MR_HIGHPPM | RTC_MR_NEGPPM);
+    639          			mr |= RTC_MR_CORRECTION(ppm_lookup[i].correction);
+    640          			if (ppm_lookup[i].highppm)
+    641          				mr |= RTC_MR_HIGHPPM;
+    642          			if (ppm_lookup[i].negppm)
+    643          				mr |= RTC_MR_NEGPPM;
+    644          			RTC->RTC_MR = mr;
+    645          			break;
+    646          		}
+    647          	}
+    648          }
+   \       0x28   0xE8BD'8000        POP      {PC}             ;; return
+   \                     ??rtc_calibration_1:
+   \       0x2C   0x....'....        LDR      R0,??DataTable25  ;; 0xf80480b4
+   \       0x30   0xE082'1181        ADD      R1,R2,R1, LSL #+3
+   \       0x34   0xE3E0'2010        MVN      R2,#+16
+   \       0x38   0xE590'3000        LDR      R3,[R0, #+0]
+   \       0x3C   0xE3C2'2CFF        BIC      R2,R2,#0xFF00
+   \       0x40   0xE3A0'CC7F        MOV      R12,#+32512
+   \       0x44   0xE002'2003        AND      R2,R2,R3
+   \       0x48   0xE1D1'30B6        LDRH     R3,[R1, #+6]
+   \       0x4C   0xE5D1'E005        LDRB     LR,[R1, #+5]
+   \       0x50   0xE5D1'1004        LDRB     R1,[R1, #+4]
+   \       0x54   0xE00C'C403        AND      R12,R12,R3, LSL #+8
+   \       0x58   0xE18C'2002        ORR      R2,R12,R2
+   \       0x5C   0xE35E'0000        CMP      LR,#+0
+   \       0x60   0x1382'2C80        ORRNE    R2,R2,#0x8000
+   \       0x64   0xE351'0000        CMP      R1,#+0
+   \       0x68   0x1382'2010        ORRNE    R2,R2,#0x10
+   \       0x6C   0xE580'2000        STR      R2,[R0, #+0]
+   \       0x70   0xE8BD'8000        POP      {PC}
+    649          
+    650          #endif /* CONFIG_HAVE_RTC_CALIBRATION */
+    651          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    652          uint32_t rtc_set_time_event (uint32_t mask)
+    653          {
+    654             uint32_t reg;
+    655             reg = RTC->RTC_CR;
+   \                     rtc_set_time_event:
+   \        0x0   0x....'....        LDR      R1,??DataTable25_6  ;; 0xf80480b0
+   \        0x4   0xE591'2000        LDR      R2,[R1, #+0]
+    656             reg &= ~RTC_CR_TIMEVSEL_Msk;
+    657             reg |= mask;
+    658             RTC->RTC_CR = reg;
+   \        0x8   0xE3C2'2FC0        BIC      R2,R2,#0x300
+   \        0xC   0x....'....        B        ?Subroutine0
+    659             return RTC->RTC_CR;
+    660          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE180'0002        ORR      R0,R0,R2
+   \        0x4   0xE581'0000        STR      R0,[R1, #+0]
+   \        0x8   0xE591'0000        LDR      R0,[R1, #+0]
+   \        0xC   0xE12F'FF1E        BX       LR               ;; return
+    661          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    662          uint32_t rtc_set_calendar_event (uint32_t mask)
+    663          {
+    664             uint32_t reg;
+    665             reg = RTC->RTC_CR;
+   \                     rtc_set_calendar_event:
+   \        0x0   0x....'....        LDR      R1,??DataTable25_6  ;; 0xf80480b0
+   \        0x4   0xE591'2000        LDR      R2,[R1, #+0]
+    666             reg &= ~RTC_CR_CALEVSEL_Msk;
+    667             reg |= mask;
+    668             RTC->RTC_CR = reg;
+   \        0x8   0xE3C2'2BC0        BIC      R2,R2,#0x30000
+   \        0xC                      REQUIRE ?Subroutine0
+   \        0xC                      ;; // Fall through to label ?Subroutine0
+    669             return RTC->RTC_CR;
+    670          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25:
+   \        0x0   0xF804'80B4        DC32     0xf80480b4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_1:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_2:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_3:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_4:
+   \        0x0   0xF804'80D0        DC32     0xf80480d0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_5:
+   \        0x0   0xF804'80D4        DC32     0xf80480d4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_6:
+   \        0x0   0xF804'80B0        DC32     0xf80480b0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_7:
+   \        0x0   0x6666'6667        DC32     0x66666667
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_8:
+   \        0x0   0xF804'80B8        DC32     0xf80480b8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_9:
+   \        0x0   0xF804'80C0        DC32     0xf80480c0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_10:
+   \        0x0   0xF804'80BC        DC32     0xf80480bc
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_11:
+   \        0x0   0xF804'80C4        DC32     0xf80480c4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_12:
+   \        0x0   0xF804'80CC        DC32     0xf80480cc
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_13:
+   \        0x0   0xF804'80C8        DC32     0xf80480c8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_14:
+   \        0x0   0xF804'8160        DC32     0xf8048160
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_15:
+   \        0x0   0xC22E'4507        DC32     0xc22e4507
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_16:
+   \        0x0   0x91A2'B3C5        DC32     0x91a2b3c5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_17:
+   \        0x0   0x8888'8889        DC32     0x88888889
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable25_18:
+   \        0x0   0x....'....        DC32     ppm_lookup
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x44          DC8 0x2D, 0x44, 0x2D, 0x20, 0x43, 0x3A, 0x5C, 0x77
+
+   \              0x2D 0x20    
+
+   \              0x43 0x3A    
+
+   \              0x5C 0x77
+   \        0x8   0x6F 0x72          DC8 0x6F, 0x72, 0x6B, 0x5C, 0x41, 0x74, 0x6D, 0x65
+
+   \              0x6B 0x5C    
+
+   \              0x41 0x74    
+
+   \              0x6D 0x65
+   \       0x10   0x6C 0x53          DC8 0x6C, 0x53, 0x6F, 0x66, 0x74, 0x50, 0x41, 0x63
+
+   \              0x6F 0x66    
+
+   \              0x74 0x50    
+
+   \              0x41 0x63
+   \       0x18   0x6B 0x5C          DC8 0x6B, 0x5C, 0x61, 0x74, 0x6D, 0x65, 0x6C, 0x2D
+
+   \              0x61 0x74    
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x2D
+   \       0x20   0x73 0x6F          DC8 0x73, 0x6F, 0x66, 0x74, 0x77, 0x61, 0x72, 0x65
+
+   \              0x66 0x74    
+
+   \              0x77 0x61    
+
+   \              0x72 0x65
+   \       0x28   0x2D 0x70          DC8 0x2D, 0x70, 0x61, 0x63, 0x6B, 0x61, 0x67, 0x65
+
+   \              0x61 0x63    
+
+   \              0x6B 0x61    
+
+   \              0x67 0x65
+   \       0x30   0x2D 0x32          DC8 0x2D, 0x32, 0x2E, 0x31, 0x37, 0x5C, 0x64, 0x72
+
+   \              0x2E 0x31    
+
+   \              0x37 0x5C    
+
+   \              0x64 0x72
+   \       0x38   0x69 0x76          DC8 0x69, 0x76, 0x65, 0x72, 0x73, 0x5C, 0x70, 0x65
+
+   \              0x65 0x72    
+
+   \              0x73 0x5C    
+
+   \              0x70 0x65
+   \       0x40   0x72 0x69          DC8 0x72, 0x69, 0x70, 0x68, 0x65, 0x72, 0x61, 0x6C
+
+   \              0x70 0x68    
+
+   \              0x65 0x72    
+
+   \              0x61 0x6C
+   \       0x48   0x73 0x5C          DC8 0x73, 0x5C, 0x72, 0x74, 0x63, 0x2E, 0x63, 0x3A
+
+   \              0x72 0x74    
+
+   \              0x63 0x2E    
+
+   \              0x63 0x3A
+   \       0x50   0x32 0x38          DC8 0x32, 0x38, 0x39, 0x20, 0x52, 0x54, 0x43, 0x3A
+
+   \              0x39 0x20    
+
+   \              0x52 0x54    
+
+   \              0x43 0x3A
+   \       0x58   0x20 0x49          DC8 0x20, 0x49, 0x6E, 0x76, 0x61, 0x6C, 0x69, 0x64
+
+   \              0x6E 0x76    
+
+   \              0x61 0x6C    
+
+   \              0x69 0x64
+   \       0x60   0x20 0x74          DC8 0x20, 0x74, 0x69, 0x6D, 0x65, 0x5F, 0x6D, 0x6F
+
+   \              0x69 0x6D    
+
+   \              0x65 0x5F    
+
+   \              0x6D 0x6F
+   \       0x68   0x64 0x65          DC8 0x64, 0x65, 0x0D, 0x0A, 0
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x6D   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x28 0x73          DC8 0x28, 0x73, 0x6F, 0x75, 0x72, 0x63, 0x65, 0x73
+
+   \              0x6F 0x75    
+
+   \              0x72 0x63    
+
+   \              0x65 0x73
+   \        0x8   0x20 0x26          DC8 0x20, 0x26, 0x20, 0x28, 0x75, 0x69, 0x6E, 0x74
+
+   \              0x20 0x28    
+
+   \              0x75 0x69    
+
+   \              0x6E 0x74
+   \       0x10   0x33 0x32          DC8 0x33, 0x32, 0x5F, 0x74, 0x29, 0x28, 0x7E, 0x28
+
+   \              0x5F 0x74    
+
+   \              0x29 0x28    
+
+   \              0x7E 0x28
+   \       0x18   0x28 0x30          DC8 0x28, 0x30, 0x78, 0x31, 0x75, 0x20, 0x3C, 0x3C
+
+   \              0x78 0x31    
+
+   \              0x75 0x20    
+
+   \              0x3C 0x3C
+   \       0x20   0x20 0x30          DC8 0x20, 0x30, 0x29, 0x20, 0x7C, 0x20, 0x28, 0x30
+
+   \              0x29 0x20    
+
+   \              0x7C 0x20    
+
+   \              0x28 0x30
+   \       0x28   0x78 0x31          DC8 0x78, 0x31, 0x75, 0x20, 0x3C, 0x3C, 0x20, 0x31
+
+   \              0x75 0x20    
+
+   \              0x3C 0x3C    
+
+   \              0x20 0x31
+   \       0x30   0x29 0x20          DC8 0x29, 0x20, 0x7C, 0x20, 0x28, 0x30, 0x78, 0x31
+
+   \              0x7C 0x20    
+
+   \              0x28 0x30    
+
+   \              0x78 0x31
+   \       0x38   0x75 0x20          DC8 0x75, 0x20, 0x3C, 0x3C, 0x20, 0x32, 0x29, 0x20
+
+   \              0x3C 0x3C    
+
+   \              0x20 0x32    
+
+   \              0x29 0x20
+   \       0x40   0x7C 0x20          DC8 0x7C, 0x20, 0x28, 0x30, 0x78, 0x31, 0x75, 0x20
+
+   \              0x28 0x30    
+
+   \              0x78 0x31    
+
+   \              0x75 0x20
+   \       0x48   0x3C 0x3C          DC8 0x3C, 0x3C, 0x20, 0x33, 0x29, 0x20, 0x7C, 0x20
+
+   \              0x20 0x33    
+
+   \              0x29 0x20    
+
+   \              0x7C 0x20
+   \       0x50   0x28 0x30          DC8 0x28, 0x30, 0x78, 0x31, 0x75, 0x20, 0x3C, 0x3C
+
+   \              0x78 0x31    
+
+   \              0x75 0x20    
+
+   \              0x3C 0x3C
+   \       0x58   0x20 0x34          DC8 0x20, 0x34, 0x29, 0x20, 0x7C, 0x20, 0x28, 0x30
+
+   \              0x29 0x20    
+
+   \              0x7C 0x20    
+
+   \              0x28 0x30
+   \       0x60   0x78 0x31          DC8 0x78, 0x31, 0x75, 0x20, 0x3C, 0x3C, 0x20, 0x35
+
+   \              0x75 0x20    
+
+   \              0x3C 0x3C    
+
+   \              0x20 0x35
+   \       0x68   0x29 0x29          DC8 0x29, 0x29, 0x29, 0x29, 0x20, 0x3D, 0x3D, 0x20
+
+   \              0x29 0x29    
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x20
+   \       0x70   0x30 0x00          DC8 0x30, 0
+   \       0x72   0x00 0x00          DC8 0, 0
+   \       0x74   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \       0x7C   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x84   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x8C   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x94   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x9C   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0xA4   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0xAC   0x73 0x5C          DC8 0x73, 0x5C, 0x70, 0x65, 0x72, 0x69, 0x70, 0x68
+
+   \              0x70 0x65    
+
+   \              0x72 0x69    
+
+   \              0x70 0x68
+   \       0xB4   0x65 0x72          DC8 0x65, 0x72, 0x61, 0x6C, 0x73, 0x5C, 0x72, 0x74
+
+   \              0x61 0x6C    
+
+   \              0x73 0x5C    
+
+   \              0x72 0x74
+   \       0xBC   0x63 0x2E          DC8 0x63, 0x2E, 0x63, 0
+
+   \              0x63 0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   rtc_calibration
+       0   rtc_clear_sccr
+      32   rtc_convert_time_to_hms
+       8   rtc_disable_it
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       8   rtc_enable_it
+         8   -> __aeabi_assert
+         8   -> __iar_EmptyStepPoint
+       4   rtc_get_date
+       0   rtc_get_hour_mode
+       0   rtc_get_mode
+       0   rtc_get_sr
+       8   rtc_get_tamper_date
+       0   rtc_get_tamper_event_counter
+       0   rtc_get_tamper_source
+       0   rtc_get_tamper_time
+       0   rtc_get_time
+       0   rtc_get_utc_time
+       0   rtc_is_tamper_occur_in_backup_mode
+       0   rtc_set_calendar_event
+      24   rtc_set_date
+       8   rtc_set_date_alarm
+       0   rtc_set_hour_mode
+      16   rtc_set_mode
+        16   -> printf
+      24   rtc_set_time
+      12   rtc_set_time_alarm
+       0   rtc_set_time_event
+       0   rtc_set_utc_time
+       0   rtc_set_utc_time_alarm
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable25
+       4  ??DataTable25_1
+       4  ??DataTable25_10
+       4  ??DataTable25_11
+       4  ??DataTable25_12
+       4  ??DataTable25_13
+       4  ??DataTable25_14
+       4  ??DataTable25_15
+       4  ??DataTable25_16
+       4  ??DataTable25_17
+       4  ??DataTable25_18
+       4  ??DataTable25_2
+       4  ??DataTable25_3
+       4  ??DataTable25_4
+       4  ??DataTable25_5
+       4  ??DataTable25_6
+       4  ??DataTable25_7
+       4  ??DataTable25_8
+       4  ??DataTable25_9
+      16  ?Subroutine0
+      12  ?Subroutine1
+       8  ?Subroutine2
+       8  ?Subroutine3
+     112  ?_0
+     192  ?_1
+   1'008  ppm_lookup
+     116  rtc_calibration
+      16  rtc_clear_sccr
+      96  rtc_convert_time_to_hms
+      40  rtc_disable_it
+      44  rtc_enable_it
+     128  rtc_get_date
+      16  rtc_get_hour_mode
+      32  rtc_get_mode
+      16  rtc_get_sr
+     152  rtc_get_tamper_date
+      16  rtc_get_tamper_event_counter
+      20  rtc_get_tamper_source
+     156  rtc_get_tamper_time
+     100  rtc_get_time
+      20  rtc_get_utc_time
+      16  rtc_is_tamper_occur_in_backup_mode
+      12  rtc_set_calendar_event
+     388  rtc_set_date
+     144  rtc_set_date_alarm
+      36  rtc_set_hour_mode
+      84  rtc_set_mode
+     272  rtc_set_time
+     184  rtc_set_time_alarm
+      16  rtc_set_time_event
+      88  rtc_set_utc_time
+      36  rtc_set_utc_time_alarm
+
+ 
+ 1'312 bytes in section .rodata
+ 2'364 bytes in section SOFTPACK
+ 
+ 2'364 bytes of CODE  memory
+ 1'312 bytes of CONST memory
+
+Errors: none
+Warnings: none

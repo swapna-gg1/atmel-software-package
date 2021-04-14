@@ -1,0 +1,2003 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         24/Nov/2020  14:00:46
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sama5d4\board_support.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW487D.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sama5d4\board_support.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D4 -D
+#        CONFIG_CHIP_SAMA5D44 -D CONFIG_BOARD_SAMA5D4_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_ADC_LOW_RES -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D
+#        CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SFC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_SECURE_MATRIX -D
+#        CONFIG_HAVE_DDR2_MT47H128M8 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_TC_FAULT_MODE -D
+#        CONFIG_HAVE_RTC_CALIBRATION -D CONFIG_HAVE_RTC_MODE_PERSIAN -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_SPI_MODE -D CONFIG_HAVE_SERIALD_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sama5d4\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\List\board_support.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\sram\Obj\board_support.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sama5d4\board_support.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           * \file
+     32           *
+     33           * Implementation of memories configuration on board.
+     34           *
+     35           */
+     36          
+     37          /*----------------------------------------------------------------------------
+     38           *        Headers
+     39           *----------------------------------------------------------------------------*/
+     40          
+     41          #include "board.h"
+     42          #include "trace.h"
+     43          #include "board_timer.h"
+     44          #include "timer.h"
+     45          
+     46          #include "irq/irq.h"
+     47          #include "peripherals/matrix.h"
+     48          #include "gpio/pio.h"
+     49          #include "peripherals/pmc.h"
+     50          #include "extram/smc.h"
+     51          #include "peripherals/wdt.h"
+     52          
+     53          #include "extram/ddram.h"
+     54          
+     55          #include "arm/mmu_cp15.h"
+     56          #include "mm/l1cache.h"
+     57          #include "mm/l2cache_l2cc.h"
+     58          
+     59          #include "board_support.h"
+     60          
+     61          #ifdef CONFIG_HAVE_PMIC_ACT8865
+     62          #include "power/act8865.h"
+     63          #endif
+     64          
+     65          /*----------------------------------------------------------------------------
+     66           *        Local constants
+     67           *----------------------------------------------------------------------------*/
+     68          
+
+   \                                 In section .rodata, align 4, keep-with-next
+     69          static const struct _l2cc_config l2cc_cfg = {
+   \                     l2cc_cfg:
+   \        0x0   0x40 0xF8          DC8 64, 248, 219, 1
+
+   \              0xDB 0x01
+     70          	.instruct_prefetch = true,	// Instruction prefetch enable
+     71          	.data_prefetch = true,	// Data prefetch enable
+     72          	.double_linefill = true,
+     73          	.incr_double_linefill = true,
+     74          	/* Disable Write back (enables write through, Use this setting
+     75          	   if DDR2 mem is not write-back) */
+     76          	//cfg.no_write_back = true,
+     77          	.force_write_alloc = L2CC_FWA_NO_ALLOCATE,
+     78          	.offset = 31,
+     79          	.prefetch_drop = true,
+     80          	.standby_mode = true,
+     81          	.dyn_clock_gating = true
+     82          };
+     83          
+
+   \                                 In section .data, align 4
+   \        0x0   0x....'....        DC32 ?_4
+     84          static const char* board_name = BOARD_NAME;
+     85          
+     86          #ifdef CONFIG_HAVE_PMIC_ACT8865
+     87          static struct _act8865 pmic = {
+     88          	.bus = BOARD_ACT8865_TWI_BUS,
+     89          	.addr = BOARD_ACT8865_TWI_ADDR,
+     90          };
+     91          #endif
+     92          
+     93          /*----------------------------------------------------------------------------
+     94           *        Local variables
+     95           *----------------------------------------------------------------------------*/
+     96          
+
+   \                                 In section .bss, align 16384
+     97          ALIGNED(16384) static uint32_t tlb[4096];
+   \                     tlb:
+   \        0x0                      DS8 16'384
+     98          
+     99          /*----------------------------------------------------------------------------
+    100           *        Local functions
+    101           *----------------------------------------------------------------------------*/
+    102          
+    103          static bool board_cfg_sd_dev_pins(uint32_t periph_id, bool down, bool up)
+    104          {
+    105          	struct _pin *dev_pins = NULL;
+    106          	uint32_t count = 0, pin;
+    107          
+    108          #ifdef BOARD_HSMCI0_DEV_PINS
+    109          	struct _pin dev0_pins[] = BOARD_HSMCI0_DEV_PINS;
+    110          	if (periph_id == ID_HSMCI0) {
+    111          		dev_pins = dev0_pins;
+    112          		count = ARRAY_SIZE(dev0_pins);
+    113          	}
+    114          #endif
+    115          
+    116          #ifdef BOARD_HSMCI1_DEV_PINS
+    117          	struct _pin dev1_pins[] = BOARD_HSMCI1_DEV_PINS;
+    118          	if (periph_id == ID_HSMCI1) {
+    119          		dev_pins = dev1_pins;
+    120          		count = ARRAY_SIZE(dev1_pins);
+    121          	}
+    122          #endif
+    123          
+    124          	if (count == 0)
+    125          		return false;
+    126          
+    127          	for (pin = 0; (down || up) && pin < count; pin++) {
+    128          		dev_pins[pin].type = up ? PIO_OUTPUT_1 : PIO_OUTPUT_0;
+    129          		dev_pins[pin].attribute = PIO_DEFAULT;
+    130          	}
+    131          
+    132          	pio_configure(dev_pins, count);
+    133          	return true;
+    134          }
+    135          
+    136          static void board_cfg_matrix_default(void)
+    137          {
+    138          	matrix_set_default_config();
+    139          }
+    140          
+    141          /*----------------------------------------------------------------------------
+    142           *        Exported functions
+    143           *----------------------------------------------------------------------------*/
+    144          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    145          const char* get_board_name(void)
+    146          {
+    147          	return board_name;
+   \                     get_board_name:
+   \        0x0   0x....'....        LDR      R0,??DataTable14
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    148          }
+    149          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    150          void board_cfg_clocks(void)
+    151          {
+    152          	struct _pmc_plla_cfg plla_config = {
+    153          		.mul = 99,
+    154          		.div = 1,
+    155          		.count = 0x3f,
+    156          	};
+   \                     board_cfg_clocks:
+   \        0x0   0x....'....        LDR      R1,??DataTable14_1
+   \        0x4   0xE92D'4000        PUSH     {LR}
+   \        0x8   0xE891'100C        LDM      R1,{R2,R3,R12}
+   \        0xC   0xE24D'D00C        SUB      SP,SP,#+12
+   \       0x10   0xE1A0'000D        MOV      R0,SP
+   \       0x14   0xE880'100C        STM      R0,{R2,R3,R12}
+    157          	pmc_select_external_osc(false);
+   \       0x18   0xE3A0'0000        MOV      R0,#+0
+   \       0x1C   0x....'....        BL       pmc_select_external_osc
+    158          	pmc_switch_mck_to_main();
+   \       0x20   0x....'....        BL       pmc_switch_mck_to_main
+    159          	pmc_set_mck_h32mxdiv(true);
+   \       0x24   0xE3A0'0001        MOV      R0,#+1
+   \       0x28   0x....'....        BL       pmc_set_mck_h32mxdiv
+    160          	pmc_set_mck_plladiv2(true);
+   \       0x2C   0xE3A0'0001        MOV      R0,#+1
+   \       0x30   0x....'....        BL       pmc_set_mck_plladiv2
+    161          	pmc_configure_plla(&plla_config);
+   \       0x34   0xE1A0'000D        MOV      R0,SP
+   \       0x38   0x....'....        BL       pmc_configure_plla
+    162          	pmc_set_mck_prescaler(PMC_MCKR_PRES_CLOCK);
+   \       0x3C   0xE3A0'0000        MOV      R0,#+0
+   \       0x40   0x....'....        BL       pmc_set_mck_prescaler
+    163          	pmc_set_mck_divider(PMC_MCKR_MDIV_PCK_DIV3);
+   \       0x44   0xE3A0'0FC0        MOV      R0,#+768
+   \       0x48   0x....'....        BL       pmc_set_mck_divider
+    164          	pmc_switch_mck_to_pll();
+   \       0x4C   0x....'....        BL       pmc_switch_mck_to_pll
+    165          }
+   \       0x50   0xE28D'D00C        ADD      SP,SP,#+12
+   \       0x54   0xE8BD'8000        POP      {PC}             ;; return
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x0000'0063        DC32 99, 1, 63
+
+   \              0x0000'0001  
+
+   \              0x0000'003F
+    166          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    167          void board_cfg_lowlevel(bool clocks, bool ddram, bool mmu)
+    168          {
+   \                     board_cfg_lowlevel:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE24D'D030        SUB      SP,SP,#+48
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'5001        MOV      R5,R1
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+    169          	/* Disable Watchdog */
+    170          	wdt_disable();
+   \       0x14   0x....'....        BL       wdt_disable
+    171          
+    172          	/* Disable all PIO interrupts */
+    173          	pio_reset_all_it();
+   \       0x18   0x....'....        BL       pio_reset_all_it
+    174          
+    175          	/* Set external oscillator frequency */
+    176          	pmc_set_main_oscillator_freq(BOARD_MAIN_CLOCK_EXT_OSC);
+   \       0x1C   0xE3A0'08B7        MOV      R0,#+11993088
+   \       0x20   0xE380'0D6C        ORR      R0,R0,#0x1B00
+   \       0x24   0x....'....        BL       pmc_set_main_oscillator_freq
+    177          
+    178          	if (clocks) {
+   \       0x28   0xE354'0000        CMP      R4,#+0
+   \       0x2C   0x0A00'0000        BEQ      ??board_cfg_lowlevel_0
+    179          		/* Configure system clocks */
+    180          		board_cfg_clocks();
+   \       0x30   0x....'....        BL       board_cfg_clocks
+    181          	}
+    182          
+    183          	/* Setup default interrupt handlers */
+    184          	irq_initialize();
+   \                     ??board_cfg_lowlevel_0:
+   \       0x34   0x....'....        BL       irq_initialize
+    185          
+    186          	/* Configure system timer */
+    187          	board_cfg_timer();
+   \       0x38   0x....'....        BL       board_cfg_timer
+    188          
+    189          	board_cfg_matrix_default();
+   \       0x3C   0x....'....        BL       matrix_set_default_config
+    190          
+    191          	if (ddram) {
+   \       0x40   0xE355'0000        CMP      R5,#+0
+   \       0x44   0x0A00'0005        BEQ      ??board_cfg_lowlevel_1
+    192          		/* Configure DDRAM */
+    193          		board_cfg_ddram();
+   \       0x48   0x....'....        BL       board_cfg_matrix_for_ddr
+   \       0x4C   0xE3A0'1000        MOV      R1,#+0
+   \       0x50   0xE1A0'000D        MOV      R0,SP
+   \       0x54   0x....'....        BL       ddram_init_descriptor
+   \       0x58   0xE1A0'000D        MOV      R0,SP
+   \       0x5C   0x....'....        BL       ddram_configure
+    194          	}
+    195          
+    196          	if (mmu) {
+   \                     ??board_cfg_lowlevel_1:
+   \       0x60   0xE356'0000        CMP      R6,#+0
+   \       0x64   0x0A00'0000        BEQ      ??board_cfg_lowlevel_2
+    197          		/* Setup MMU */
+    198          		board_cfg_mmu();
+   \       0x68   0x....'....        BL       board_cfg_mmu
+    199          	}
+    200          }
+   \                     ??board_cfg_lowlevel_2:
+   \       0x6C   0xE28D'D030        ADD      SP,SP,#+48
+   \       0x70   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    201          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    202          void board_restore_pio_reset_state(void)
+    203          {
+   \                     board_restore_pio_reset_state:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+   \        0x4   0xE24D'D040        SUB      SP,SP,#+64
+    204          	int i;
+    205          
+    206          	/* all pins, excluding JTAG and NTRST */
+    207          	struct _pin pins[] = {
+    208          		{ PIO_GROUP_A, 0xFFFEFEFE, PIO_INPUT, PIO_PULLUP },
+    209          		{ PIO_GROUP_B, 0xFCFFFFFF, PIO_INPUT, PIO_PULLUP },
+    210          		{ PIO_GROUP_C, 0xFFFFFFFF, PIO_INPUT, PIO_PULLUP },
+    211          		{ PIO_GROUP_D, 0xFFFFFFFF, PIO_INPUT, PIO_PULLUP },
+    212          	};
+   \        0x8   0x....'....        LDR      R1,??DataTable14_2
+   \        0xC   0xE1A0'000D        MOV      R0,SP
+   \       0x10   0xE3A0'2040        MOV      R2,#+64
+   \       0x14   0x....'....        BL       __aeabi_memcpy4
+    213          
+    214          	/* For low_power_mode example, power consumption results can be affected
+    215          	* by IOs setting. To generate power consumption numbers in datasheet,
+    216          	* most IOs must be disconnected from external devices just like on
+    217          	* VB board. Then putting IOs to reset state are OK.
+    218          	*/
+    219          
+    220          	pio_configure(pins, ARRAY_SIZE(pins));
+   \       0x18   0xE3A0'1004        MOV      R1,#+4
+   \       0x1C   0xE1A0'000D        MOV      R0,SP
+   \       0x20   0x....'....        BL       pio_configure
+    221          	for (i = 0; i < ARRAY_SIZE(pins); i++)
+    222          		pio_clear(&pins[i]);
+   \       0x24   0xE1A0'000D        MOV      R0,SP
+   \       0x28   0x....'....        BL       pio_clear
+   \       0x2C   0xE28D'0010        ADD      R0,SP,#+16
+   \       0x30   0x....'....        BL       pio_clear
+   \       0x34   0xE28D'0020        ADD      R0,SP,#+32
+   \       0x38   0x....'....        BL       pio_clear
+   \       0x3C   0xE28D'0030        ADD      R0,SP,#+48
+   \       0x40   0x....'....        BL       pio_clear
+    223          }
+   \       0x44   0xE28D'D044        ADD      SP,SP,#+68
+   \       0x48   0xE8BD'8000        POP      {PC}             ;; return
+    224          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    225          void board_save_misc_power(void)
+    226          {
+   \                     board_save_misc_power:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    227          	int i;
+    228          	int tc_id = get_tc_id_from_addr(BOARD_TIMER_TC, BOARD_TIMER_CHANNEL);
+   \        0x4   0xE3A0'04FC        MOV      R0,#-67108864
+   \        0x8   0xE3A0'1000        MOV      R1,#+0
+   \        0xC   0xE380'0B80        ORR      R0,R0,#0x20000
+   \       0x10   0xE3A0'5003        MOV      R5,#+3
+   \       0x14   0x....'....        BL       get_tc_id_from_addr
+   \       0x18   0xE1A0'4000        MOV      R4,R0
+    229          
+    230          	/* disable USB clock */
+    231          	pmc_disable_upll_clock();
+   \       0x1C   0x....'....        BL       pmc_disable_upll_clock
+    232          	pmc_disable_upll_bias();
+   \       0x20   0x....'....        BL       pmc_disable_upll_bias
+    233          
+    234          	/* disable system clocks */
+    235          #ifdef VARIANT_SRAM
+    236          	pmc_disable_system_clock(PMC_SYSTEM_CLOCK_DDR);
+   \       0x24   0xE3A0'0000        MOV      R0,#+0
+   \       0x28   0x....'....        BL       pmc_disable_system_clock
+    237          #endif
+    238          	pmc_disable_system_clock(PMC_SYSTEM_CLOCK_LCD);
+   \       0x2C   0xE3A0'0001        MOV      R0,#+1
+   \       0x30   0x....'....        BL       pmc_disable_system_clock
+    239          #ifdef CONFIG_HAVE_SMD
+    240          	pmc_disable_system_clock(PMC_SYSTEM_CLOCK_SMD);
+    241          #endif
+    242          	pmc_disable_system_clock(PMC_SYSTEM_CLOCK_UHP);
+   \       0x34   0xE3A0'0003        MOV      R0,#+3
+   \       0x38   0x....'....        BL       pmc_disable_system_clock
+    243          	pmc_disable_system_clock(PMC_SYSTEM_CLOCK_UDP);
+   \       0x3C   0xE3A0'0004        MOV      R0,#+4
+   \       0x40   0x....'....        BL       pmc_disable_system_clock
+    244          	pmc_disable_system_clock(PMC_SYSTEM_CLOCK_PCK0);
+   \       0x44   0xE3A0'0005        MOV      R0,#+5
+   \       0x48   0x....'....        BL       pmc_disable_system_clock
+    245          	pmc_disable_system_clock(PMC_SYSTEM_CLOCK_PCK1);
+   \       0x4C   0xE3A0'0006        MOV      R0,#+6
+   \       0x50   0x....'....        BL       pmc_disable_system_clock
+    246          	pmc_disable_system_clock(PMC_SYSTEM_CLOCK_PCK2);
+   \       0x54   0xE3A0'0007        MOV      R0,#+7
+   \       0x58   0x....'....        BL       pmc_disable_system_clock
+    247          #ifdef CONFIG_HAVE_ISC
+    248          	pmc_disable_system_clock(PMC_SYSTEM_CLOCK_ISC);
+    249          #endif
+    250          
+    251          	/* disable all peripheral clocks except PIOA for JTAG, serial debug port */
+    252          	for (i = ID_PIT; i < ID_PERIPH_COUNT; i++) {
+   \       0x5C   0xEA00'0001        B        ??board_save_misc_power_0
+    253          		if (i == ID_PIOA)
+   \                     ??board_save_misc_power_1:
+   \       0x60   0xE355'0017        CMP      R5,#+23
+   \       0x64   0x0A00'0003        BEQ      ??board_save_misc_power_2
+    254          			continue;
+    255          		if (i == tc_id)
+   \                     ??board_save_misc_power_0:
+   \       0x68   0xE155'0004        CMP      R5,R4
+   \       0x6C   0x0A00'0001        BEQ      ??board_save_misc_power_2
+    256          			continue;
+    257          #ifdef VARIANT_DDRAM
+    258          		if (i == ID_MPDDRC)
+    259          			continue;
+    260          #endif
+    261          		pmc_disable_peripheral(i);
+   \       0x70   0xE1A0'0005        MOV      R0,R5
+   \       0x74   0x....'....        BL       pmc_disable_peripheral
+    262          	}
+   \                     ??board_save_misc_power_2:
+   \       0x78   0xE285'5001        ADD      R5,R5,#+1
+   \       0x7C   0xE355'0044        CMP      R5,#+68
+   \       0x80   0xBAFF'FFF6        BLT      ??board_save_misc_power_1
+    263          }
+   \       0x84   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    264          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    265          void board_cfg_mmu(void)
+    266          {
+   \                     board_cfg_mmu:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    267          	uint32_t addr;
+    268          
+    269          	if (mmu_is_enabled())
+   \        0x4   0x....'....        BL       mmu_is_enabled
+   \        0x8   0xE350'0000        CMP      R0,#+0
+   \        0xC   0x1A00'00A4        BNE      ??board_cfg_mmu_0
+    270          		return;
+    271          
+    272          	/* TODO: some peripherals are configured TTB_SECT_STRONGLY_ORDERED
+    273          	   instead of TTB_SECT_SHAREABLE_DEVICE because their drivers have to
+    274          	   be verified for correct operation when write-back is enabled */
+    275          
+    276          	/* Reset table entries */
+    277          	for (addr = 0; addr < 4096; addr++)
+    278          		tlb[addr] = 0;
+   \       0x10   0x....'....        LDR      R4,??DataTable14_3
+   \       0x14   0xE3A0'1C40        MOV      R1,#+16384
+   \       0x18   0xE1A0'0004        MOV      R0,R4
+   \       0x1C   0x....'....        BL       __aeabi_memclr4
+    279          
+    280          	/* 0x00000000: ROM */
+    281          	tlb[0x000] = TTB_SECT_ADDR(0x00000000)
+    282          	           | TTB_SECT_AP_READ_ONLY
+    283          	           | TTB_SECT_DOMAIN(0xf)
+    284          	           | TTB_SECT_EXEC
+    285          	           | TTB_SECT_CACHEABLE_WB
+    286          	           | TTB_TYPE_SECT;
+   \       0x20   0xE308'09EE        MOVW     R0,#+35310
+    287          
+    288          	/* 0x00100000: NFC SRAM */
+    289          	tlb[0x001] = TTB_SECT_ADDR(0x00100000)
+    290          	           | TTB_SECT_AP_FULL_ACCESS
+    291          	           | TTB_SECT_DOMAIN(0xf)
+    292          	           | TTB_SECT_EXEC
+    293          	           | TTB_SECT_SHAREABLE_DEVICE
+    294          	           | TTB_TYPE_SECT;
+   \       0x24   0x....'....        LDR      R1,??DataTable14_4  ;; 0x100de6
+   \       0x28   0xE584'0000        STR      R0,[R4, #+0]
+    295          
+    296          	/* 0x00200000: SRAM */
+    297          	tlb[0x002] = TTB_SECT_ADDR(0x00200000)
+    298          	           | TTB_SECT_AP_FULL_ACCESS
+    299          	           | TTB_SECT_DOMAIN(0xf)
+    300          	           | TTB_SECT_EXEC
+    301          	           | TTB_SECT_CACHEABLE_WB
+    302          	           | TTB_TYPE_SECT;
+   \       0x2C   0x....'....        LDR      R2,??DataTable14_5  ;; 0x200dee
+   \       0x30   0xE584'1004        STR      R1,[R4, #+4]
+   \       0x34   0xE584'2008        STR      R2,[R4, #+8]
+    303          
+    304          	/* 0x00300000: VDEC */
+    305          	tlb[0x003] = TTB_SECT_ADDR(0x00300000)
+    306          	           | TTB_SECT_AP_FULL_ACCESS
+    307          	           | TTB_SECT_DOMAIN(0xf)
+    308          	           | TTB_SECT_EXEC_NEVER
+    309          	           | TTB_SECT_SHAREABLE_DEVICE
+    310          	           | TTB_TYPE_SECT;
+   \       0x38   0x....'....        LDR      R3,??DataTable14_6  ;; 0x300df6
+    311          
+    312          #ifdef CONFIG_HAVE_UDPHS
+    313          	/* 0x00400000: UDPHS (RAM) */
+    314          	tlb[0x004] = TTB_SECT_ADDR(0x00400000)
+    315          	           | TTB_SECT_AP_FULL_ACCESS
+    316          	           | TTB_SECT_DOMAIN(0xf)
+    317          	           | TTB_SECT_EXEC_NEVER
+    318          	           | TTB_SECT_SHAREABLE_DEVICE
+    319          	           | TTB_TYPE_SECT;
+    320          
+    321          	/* 0x00500000: UHP (OHCI) */
+    322          	tlb[0x005] = TTB_SECT_ADDR(0x00500000)
+    323          	           | TTB_SECT_AP_FULL_ACCESS
+    324          	           | TTB_SECT_DOMAIN(0xf)
+    325          	           | TTB_SECT_EXEC_NEVER
+    326          	           | TTB_SECT_SHAREABLE_DEVICE
+    327          	           | TTB_TYPE_SECT;
+    328          
+    329          	/* 0x00600000: UHP (EHCI) */
+    330          	tlb[0x006] = TTB_SECT_ADDR(0x00600000)
+    331          	           | TTB_SECT_AP_FULL_ACCESS
+    332          	           | TTB_SECT_DOMAIN(0xf)
+    333          	           | TTB_SECT_EXEC_NEVER
+    334          	           | TTB_SECT_SHAREABLE_DEVICE
+    335          	           | TTB_TYPE_SECT;
+    336          #endif /* CONFIG_HAVE_UDPHS */
+    337          
+    338          	/* 0x00700000: AXI Matrix */
+    339          	tlb[0x007] = TTB_SECT_ADDR(0x00700000)
+    340          	           | TTB_SECT_AP_FULL_ACCESS
+    341          	           | TTB_SECT_DOMAIN(0xf)
+    342          	           | TTB_SECT_EXEC_NEVER
+    343          	           | TTB_SECT_SHAREABLE_DEVICE
+    344          	           | TTB_TYPE_SECT;
+   \       0x3C   0xE383'0840        ORR      R0,R3,#0x400000
+   \       0x40   0xE584'300C        STR      R3,[R4, #+12]
+   \       0x44   0xE584'001C        STR      R0,[R4, #+28]
+    345          
+    346          	/* 0x00800000: DAP */
+    347          	tlb[0x008] = TTB_SECT_ADDR(0x00800000)
+    348          	           | TTB_SECT_AP_FULL_ACCESS
+    349          	           | TTB_SECT_DOMAIN(0xf)
+    350          	           | TTB_SECT_EXEC_NEVER
+    351          	           | TTB_SECT_SHAREABLE_DEVICE
+    352          	           | TTB_TYPE_SECT;
+   \       0x48   0xE280'1940        ADD      R1,R0,#+1048576
+    353          
+    354          	/* 0x00900000: SMD */
+    355          	tlb[0x009] = TTB_SECT_ADDR(0x00900000)
+    356          	           | TTB_SECT_AP_FULL_ACCESS
+    357          	           | TTB_SECT_DOMAIN(0xf)
+    358          	           | TTB_SECT_EXEC_NEVER
+    359          	           | TTB_SECT_SHAREABLE_DEVICE
+    360          	           | TTB_TYPE_SECT;
+   \       0x4C   0xE280'2980        ADD      R2,R0,#+2097152
+    361          
+    362          #ifdef CONFIG_HAVE_L2CC
+    363          	/* 0x00a00000: L2CC */
+    364          	tlb[0x00a] = TTB_SECT_ADDR(0x00a00000)
+    365          	           | TTB_SECT_AP_FULL_ACCESS
+    366          	           | TTB_SECT_DOMAIN(0xf)
+    367          	           | TTB_SECT_EXEC_NEVER
+    368          	           | TTB_SECT_SHAREABLE_DEVICE
+    369          	           | TTB_TYPE_SECT;
+   \       0x50   0xE280'09C0        ADD      R0,R0,#+3145728
+   \       0x54   0xE584'1020        STR      R1,[R4, #+32]
+   \       0x58   0xE584'2024        STR      R2,[R4, #+36]
+   \       0x5C   0xE584'0028        STR      R0,[R4, #+40]
+    370          #endif
+    371          
+    372          	/* 0x10000000: EBI Chip Select 0 */
+    373          	for (addr = 0x100; addr < 0x200; addr++)
+   \       0x60   0xE3A0'1F40        MOV      R1,#+256
+   \       0x64   0xE284'2E40        ADD      R2,R4,#+1024
+   \       0x68   0xE300'0DF2        MOVW     R0,#+3570
+    374          		tlb[addr] = TTB_SECT_ADDR(addr << 20)
+    375          	                  | TTB_SECT_AP_FULL_ACCESS
+    376          	                  | TTB_SECT_DOMAIN(0xf)
+    377          	                  | TTB_SECT_EXEC_NEVER
+    378          	                  | TTB_SECT_STRONGLY_ORDERED
+    379          	                  | TTB_TYPE_SECT;
+   \                     ??board_cfg_mmu_1:
+   \       0x6C   0xE180'3A01        ORR      R3,R0,R1, LSL #+20
+   \       0x70   0xE281'1001        ADD      R1,R1,#+1
+   \       0x74   0xE180'CA01        ORR      R12,R0,R1, LSL #+20
+   \       0x78   0xE281'1001        ADD      R1,R1,#+1
+   \       0x7C   0xE482'3004        STR      R3,[R2], #+4
+   \       0x80   0xE180'EA01        ORR      LR,R0,R1, LSL #+20
+   \       0x84   0xE281'1001        ADD      R1,R1,#+1
+   \       0x88   0xE482'C004        STR      R12,[R2], #+4
+   \       0x8C   0xE180'3A01        ORR      R3,R0,R1, LSL #+20
+   \       0x90   0xE281'1001        ADD      R1,R1,#+1
+   \       0x94   0xE351'0F80        CMP      R1,#+512
+   \       0x98   0xE482'E004        STR      LR,[R2], #+4
+   \       0x9C   0xE482'3004        STR      R3,[R2], #+4
+   \       0xA0   0x3AFF'FFF1        BCC      ??board_cfg_mmu_1
+    380          
+    381          	/* 0x20000000: DDR CS */
+    382          	/* (64MB cacheable, 448MB strongly ordered) */
+    383          	for (addr = 0x200; addr < 0x240; addr++)
+   \       0xA4   0xE3A0'2F80        MOV      R2,#+512
+   \       0xA8   0xE284'3E80        ADD      R3,R4,#+2048
+   \       0xAC   0xE240'1004        SUB      R1,R0,#+4
+    384          		tlb[addr] = TTB_SECT_ADDR(addr << 20)
+    385          	                  | TTB_SECT_AP_FULL_ACCESS
+    386          	                  | TTB_SECT_DOMAIN(0xf)
+    387          	                  | TTB_SECT_EXEC
+    388          	                  | TTB_SECT_CACHEABLE_WB
+    389          	                  | TTB_TYPE_SECT;
+   \                     ??board_cfg_mmu_2:
+   \       0xB0   0xE181'CA02        ORR      R12,R1,R2, LSL #+20
+   \       0xB4   0xE282'2001        ADD      R2,R2,#+1
+   \       0xB8   0xE181'EA02        ORR      LR,R1,R2, LSL #+20
+   \       0xBC   0xE282'2001        ADD      R2,R2,#+1
+   \       0xC0   0xE483'C004        STR      R12,[R3], #+4
+   \       0xC4   0xE181'5A02        ORR      R5,R1,R2, LSL #+20
+   \       0xC8   0xE282'2001        ADD      R2,R2,#+1
+   \       0xCC   0xE483'E004        STR      LR,[R3], #+4
+   \       0xD0   0xE181'CA02        ORR      R12,R1,R2, LSL #+20
+   \       0xD4   0xE282'2001        ADD      R2,R2,#+1
+   \       0xD8   0xE352'0F90        CMP      R2,#+576
+   \       0xDC   0xE483'5004        STR      R5,[R3], #+4
+   \       0xE0   0xE483'C004        STR      R12,[R3], #+4
+   \       0xE4   0x3AFF'FFF1        BCC      ??board_cfg_mmu_2
+    390          	for (addr = 0x240; addr < 0x400; addr++)
+   \       0xE8   0xE3A0'3F90        MOV      R3,#+576
+   \       0xEC   0xE284'CE90        ADD      R12,R4,#+2304
+   \       0xF0   0xE3C0'2010        BIC      R2,R0,#0x10
+    391          		tlb[addr] = TTB_SECT_ADDR(addr << 20)
+    392          	                  | TTB_SECT_AP_FULL_ACCESS
+    393          	                  | TTB_SECT_DOMAIN(0xf)
+    394          	                  | TTB_SECT_EXEC
+    395          	                  | TTB_SECT_STRONGLY_ORDERED
+    396          	                  | TTB_TYPE_SECT;
+   \                     ??board_cfg_mmu_3:
+   \       0xF4   0xE182'EA03        ORR      LR,R2,R3, LSL #+20
+   \       0xF8   0xE283'3001        ADD      R3,R3,#+1
+   \       0xFC   0xE182'5A03        ORR      R5,R2,R3, LSL #+20
+   \      0x100   0xE283'3001        ADD      R3,R3,#+1
+   \      0x104   0xE48C'E004        STR      LR,[R12], #+4
+   \      0x108   0xE182'6A03        ORR      R6,R2,R3, LSL #+20
+   \      0x10C   0xE283'3001        ADD      R3,R3,#+1
+   \      0x110   0xE48C'5004        STR      R5,[R12], #+4
+   \      0x114   0xE182'EA03        ORR      LR,R2,R3, LSL #+20
+   \      0x118   0xE283'3001        ADD      R3,R3,#+1
+   \      0x11C   0xE353'0E40        CMP      R3,#+1024
+   \      0x120   0xE48C'6004        STR      R6,[R12], #+4
+   \      0x124   0xE48C'E004        STR      LR,[R12], #+4
+   \      0x128   0x3AFF'FFF1        BCC      ??board_cfg_mmu_3
+    397          
+    398          	/* 0x40000000: DDR CS/AES */
+    399          	for (addr = 0x400; addr < 0x600; addr++)
+   \      0x12C   0xE3A0'3E40        MOV      R3,#+1024
+   \      0x130   0xE284'CD40        ADD      R12,R4,#+4096
+    400          		tlb[addr] = TTB_SECT_ADDR(addr << 20)
+    401          	                  | TTB_SECT_AP_FULL_ACCESS
+    402          	                  | TTB_SECT_DOMAIN(0xf)
+    403          	                  | TTB_SECT_EXEC
+    404          	                  | TTB_SECT_CACHEABLE_WB
+    405          	                  | TTB_TYPE_SECT;
+   \                     ??board_cfg_mmu_4:
+   \      0x134   0xE181'EA03        ORR      LR,R1,R3, LSL #+20
+   \      0x138   0xE283'3001        ADD      R3,R3,#+1
+   \      0x13C   0xE181'5A03        ORR      R5,R1,R3, LSL #+20
+   \      0x140   0xE283'3001        ADD      R3,R3,#+1
+   \      0x144   0xE48C'E004        STR      LR,[R12], #+4
+   \      0x148   0xE181'6A03        ORR      R6,R1,R3, LSL #+20
+   \      0x14C   0xE283'3001        ADD      R3,R3,#+1
+   \      0x150   0xE48C'5004        STR      R5,[R12], #+4
+   \      0x154   0xE181'EA03        ORR      LR,R1,R3, LSL #+20
+   \      0x158   0xE283'3001        ADD      R3,R3,#+1
+   \      0x15C   0xE353'0E60        CMP      R3,#+1536
+   \      0x160   0xE48C'6004        STR      R6,[R12], #+4
+   \      0x164   0xE48C'E004        STR      LR,[R12], #+4
+   \      0x168   0x3AFF'FFF1        BCC      ??board_cfg_mmu_4
+    406          
+    407          	/* 0x60000000: EBI Chip Select 1 */
+    408          	for (addr = 0x600; addr < 0x700; addr++)
+   \      0x16C   0xE3A0'1E60        MOV      R1,#+1536
+   \      0x170   0xE284'3D60        ADD      R3,R4,#+6144
+    409          		tlb[addr] = TTB_SECT_ADDR(addr << 20)
+    410          	                  | TTB_SECT_AP_FULL_ACCESS
+    411          	                  | TTB_SECT_DOMAIN(0xf)
+    412          	                  | TTB_SECT_EXEC_NEVER
+    413          	                  | TTB_SECT_STRONGLY_ORDERED
+    414          	                  | TTB_TYPE_SECT;
+   \                     ??board_cfg_mmu_5:
+   \      0x174   0xE180'CA01        ORR      R12,R0,R1, LSL #+20
+   \      0x178   0xE281'1001        ADD      R1,R1,#+1
+   \      0x17C   0xE180'EA01        ORR      LR,R0,R1, LSL #+20
+   \      0x180   0xE281'1001        ADD      R1,R1,#+1
+   \      0x184   0xE483'C004        STR      R12,[R3], #+4
+   \      0x188   0xE180'5A01        ORR      R5,R0,R1, LSL #+20
+   \      0x18C   0xE281'1001        ADD      R1,R1,#+1
+   \      0x190   0xE483'E004        STR      LR,[R3], #+4
+   \      0x194   0xE180'CA01        ORR      R12,R0,R1, LSL #+20
+   \      0x198   0xE281'1001        ADD      R1,R1,#+1
+   \      0x19C   0xE351'0E70        CMP      R1,#+1792
+   \      0x1A0   0xE483'5004        STR      R5,[R3], #+4
+   \      0x1A4   0xE483'C004        STR      R12,[R3], #+4
+   \      0x1A8   0x3AFF'FFF1        BCC      ??board_cfg_mmu_5
+    415          
+    416          	/* 0x70000000: EBI Chip Select 2 */
+    417          	for (addr = 0x700; addr < 0x800; addr++)
+   \      0x1AC   0xE3A0'1E70        MOV      R1,#+1792
+   \      0x1B0   0xE284'3D70        ADD      R3,R4,#+7168
+    418          		tlb[addr] = TTB_SECT_ADDR(addr << 20)
+    419          	                  | TTB_SECT_AP_FULL_ACCESS
+    420          	                  | TTB_SECT_DOMAIN(0xf)
+    421          	                  | TTB_SECT_EXEC_NEVER
+    422          	                  | TTB_SECT_STRONGLY_ORDERED
+    423          	                  | TTB_TYPE_SECT;
+   \                     ??board_cfg_mmu_6:
+   \      0x1B4   0xE180'CA01        ORR      R12,R0,R1, LSL #+20
+   \      0x1B8   0xE281'1001        ADD      R1,R1,#+1
+   \      0x1BC   0xE180'EA01        ORR      LR,R0,R1, LSL #+20
+   \      0x1C0   0xE281'1001        ADD      R1,R1,#+1
+   \      0x1C4   0xE483'C004        STR      R12,[R3], #+4
+   \      0x1C8   0xE180'5A01        ORR      R5,R0,R1, LSL #+20
+   \      0x1CC   0xE281'1001        ADD      R1,R1,#+1
+   \      0x1D0   0xE483'E004        STR      LR,[R3], #+4
+   \      0x1D4   0xE180'CA01        ORR      R12,R0,R1, LSL #+20
+   \      0x1D8   0xE281'1001        ADD      R1,R1,#+1
+   \      0x1DC   0xE351'0E80        CMP      R1,#+2048
+   \      0x1E0   0xE483'5004        STR      R5,[R3], #+4
+   \      0x1E4   0xE483'C004        STR      R12,[R3], #+4
+   \      0x1E8   0x3AFF'FFF1        BCC      ??board_cfg_mmu_6
+    424          
+    425          	/* 0x80000000: EBI Chip Select 3 */
+    426          	for (addr = 0x800; addr < 0x880; addr++)
+   \      0x1EC   0xE3A0'1E80        MOV      R1,#+2048
+   \      0x1F0   0xE284'3D80        ADD      R3,R4,#+8192
+    427          		tlb[addr] = TTB_SECT_ADDR(addr << 20)
+    428          	                  | TTB_SECT_AP_FULL_ACCESS
+    429          	                  | TTB_SECT_DOMAIN(0xf)
+    430          	                  | TTB_SECT_EXEC_NEVER
+    431          	                  | TTB_SECT_STRONGLY_ORDERED
+    432          	                  | TTB_TYPE_SECT;
+   \                     ??board_cfg_mmu_7:
+   \      0x1F4   0xE180'CA01        ORR      R12,R0,R1, LSL #+20
+   \      0x1F8   0xE281'1001        ADD      R1,R1,#+1
+   \      0x1FC   0xE180'EA01        ORR      LR,R0,R1, LSL #+20
+   \      0x200   0xE281'1001        ADD      R1,R1,#+1
+   \      0x204   0xE483'C004        STR      R12,[R3], #+4
+   \      0x208   0xE180'5A01        ORR      R5,R0,R1, LSL #+20
+   \      0x20C   0xE281'1001        ADD      R1,R1,#+1
+   \      0x210   0xE483'E004        STR      LR,[R3], #+4
+   \      0x214   0xE180'CA01        ORR      R12,R0,R1, LSL #+20
+   \      0x218   0xE281'1001        ADD      R1,R1,#+1
+   \      0x21C   0xE351'0E88        CMP      R1,#+2176
+   \      0x220   0xE483'5004        STR      R5,[R3], #+4
+   \      0x224   0xE483'C004        STR      R12,[R3], #+4
+   \      0x228   0x3AFF'FFF1        BCC      ??board_cfg_mmu_7
+    433          
+    434          	/* 0x90000000: NFC Command Registers */
+    435          	for (addr = 0x900; addr < 0xa00; addr++)
+   \      0x22C   0xE3A0'0E90        MOV      R0,#+2304
+   \      0x230   0xE284'1D90        ADD      R1,R4,#+9216
+    436          		tlb[addr] = TTB_SECT_ADDR(addr << 20)
+    437          	                  | TTB_SECT_AP_FULL_ACCESS
+    438          	                  | TTB_SECT_DOMAIN(0xf)
+    439          	                  | TTB_SECT_EXEC
+    440          	                  //| TTB_SECT_SHAREABLE_DEVICE
+    441          	                  | TTB_SECT_STRONGLY_ORDERED
+    442          	                  | TTB_TYPE_SECT;
+   \                     ??board_cfg_mmu_8:
+   \      0x234   0xE182'3A00        ORR      R3,R2,R0, LSL #+20
+   \      0x238   0xE280'0001        ADD      R0,R0,#+1
+   \      0x23C   0xE182'CA00        ORR      R12,R2,R0, LSL #+20
+   \      0x240   0xE280'0001        ADD      R0,R0,#+1
+   \      0x244   0xE481'3004        STR      R3,[R1], #+4
+   \      0x248   0xE182'EA00        ORR      LR,R2,R0, LSL #+20
+   \      0x24C   0xE280'0001        ADD      R0,R0,#+1
+   \      0x250   0xE481'C004        STR      R12,[R1], #+4
+   \      0x254   0xE182'3A00        ORR      R3,R2,R0, LSL #+20
+   \      0x258   0xE280'0001        ADD      R0,R0,#+1
+   \      0x25C   0xE350'0EA0        CMP      R0,#+2560
+   \      0x260   0xE481'E004        STR      LR,[R1], #+4
+   \      0x264   0xE481'3004        STR      R3,[R1], #+4
+   \      0x268   0x3AFF'FFF1        BCC      ??board_cfg_mmu_8
+    443          
+    444          	/* 0xf0000000: Internal Peripherals */
+    445          	tlb[0xf00] = TTB_SECT_ADDR(0xf0000000)
+    446          	           | TTB_SECT_AP_FULL_ACCESS
+    447          	           | TTB_SECT_DOMAIN(0xf)
+    448          	           | TTB_SECT_EXEC
+    449          	           | TTB_SECT_STRONGLY_ORDERED
+    450          	           | TTB_TYPE_SECT;
+   \      0x26C   0xE3A0'0DF0        MOV      R0,#+15360
+   \      0x270   0xE382'14F0        ORR      R1,R2,#0xF0000000
+   \      0x274   0xE784'1000        STR      R1,[R4, +R0]
+    451          
+    452          	/* 0xf8000000: Internal Peripherals */
+    453          	tlb[0xf80] = TTB_SECT_ADDR(0xf8000000)
+    454          	           | TTB_SECT_AP_FULL_ACCESS
+    455          	           | TTB_SECT_DOMAIN(0xf)
+    456          	           | TTB_SECT_EXEC
+    457          	           | TTB_SECT_STRONGLY_ORDERED
+    458          	           | TTB_TYPE_SECT;
+   \      0x278   0xE084'0000        ADD      R0,R4,R0
+   \      0x27C   0xE381'2680        ORR      R2,R1,#0x8000000
+    459          
+    460          	/* 0xfc000000: Internal Peripherals */
+    461          	tlb[0xfc0] = TTB_SECT_ADDR(0xfc000000)
+    462          	           | TTB_SECT_AP_FULL_ACCESS
+    463          	           | TTB_SECT_DOMAIN(0xf)
+    464          	           | TTB_SECT_EXEC
+    465          	           | TTB_SECT_STRONGLY_ORDERED
+    466          	           | TTB_TYPE_SECT;
+   \      0x280   0xE381'36C0        ORR      R3,R1,#0xC000000
+   \      0x284   0xE580'2200        STR      R2,[R0, #+512]
+   \      0x288   0xE580'3300        STR      R3,[R0, #+768]
+    467          
+    468          	/* Enable MMU, I-Cache and D-Cache */
+    469          	mmu_configure(tlb);
+   \      0x28C   0xE1A0'0004        MOV      R0,R4
+   \      0x290   0x....'....        BL       mmu_configure
+    470          	icache_enable();
+   \      0x294   0x....'....        BL       icache_enable
+    471          	mmu_enable();
+   \      0x298   0x....'....        BL       mmu_enable
+    472          	dcache_enable();
+   \      0x29C   0xE8BD'4070        POP      {R4-R6,LR}
+   \      0x2A0   0x....'....        B        dcache_enable    ;; tailcall
+   \                     ??board_cfg_mmu_0:
+   \      0x2A4   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    473          }
+    474          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    475          void board_cfg_l2cc(void)
+    476          {
+    477          	l2cc_configure(&l2cc_cfg);
+   \                     board_cfg_l2cc:
+   \        0x0   0x....'....        LDR      R0,??DataTable14_7
+   \        0x4   0x....'....        B        l2cc_configure   ;; tailcall
+    478          }
+    479          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    480          void board_cfg_matrix_for_ddr(void)
+    481          {
+   \                     board_cfg_matrix_for_ddr:
+   \        0x0   0xE92D'401C        PUSH     {R2-R4,LR}
+    482          	int i;
+    483          
+    484          	/* Disable write protection */
+    485          	matrix_remove_write_protection(MATRIX0);
+   \        0x4   0xE3A0'44F0        MOV      R4,#-268435456
+   \        0x8   0xE384'4B70        ORR      R4,R4,#0x1C000
+   \        0xC   0xE1A0'0004        MOV      R0,R4
+   \       0x10   0x....'....        BL       matrix_remove_write_protection
+    486          
+    487          	/* Internal SRAM */
+    488          	matrix_configure_slave_sec(MATRIX0,
+    489          			H64MX_SLAVE_SRAM, 0, 0, 0);
+   \       0x14   0xE3A0'1000        MOV      R1,#+0
+   \       0x18   0xE3A0'3000        MOV      R3,#+0
+   \       0x1C   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x20   0xE3A0'2000        MOV      R2,#+0
+   \       0x24   0xE3A0'100B        MOV      R1,#+11
+   \       0x28   0xE1A0'0004        MOV      R0,R4
+   \       0x2C   0x....'....        BL       matrix_configure_slave_sec
+    490          	matrix_set_slave_region_size(MATRIX0,
+    491          			H64MX_SLAVE_SRAM, MATRIX_AREA_128K, 0x1);
+   \       0x30   0xE3A0'3001        MOV      R3,#+1
+   \       0x34   0xE3A0'2005        MOV      R2,#+5
+   \       0x38   0xE3A0'100B        MOV      R1,#+11
+   \       0x3C   0xE1A0'0004        MOV      R0,R4
+   \       0x40   0x....'....        BL       matrix_set_slave_region_size
+    492          	matrix_set_slave_split_addr(MATRIX0,
+    493          			H64MX_SLAVE_SRAM, MATRIX_AREA_64K, 0x1);
+   \       0x44   0xE3A0'3001        MOV      R3,#+1
+   \       0x48   0xE3A0'2004        MOV      R2,#+4
+   \       0x4C   0xE3A0'100B        MOV      R1,#+11
+   \       0x50   0xE1A0'0004        MOV      R0,R4
+   \       0x54   0x....'....        BL       matrix_set_slave_split_addr
+    494          
+    495          	/* External DDR */
+    496          	/* DDR port 0 not used */
+    497          	for (i = H64MX_SLAVE_DDR_PORT1; i <= H64MX_SLAVE_DDR_PORT7; i++) {
+    498          		matrix_configure_slave_sec(MATRIX0, i, 0xff, 0xff, 0xff);
+   \       0x58   0xE3A0'00FF        MOV      R0,#+255
+   \       0x5C   0xE3A0'30FF        MOV      R3,#+255
+   \       0x60   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x64   0xE3A0'20FF        MOV      R2,#+255
+   \       0x68   0xE3A0'1004        MOV      R1,#+4
+   \       0x6C   0xE1A0'0004        MOV      R0,R4
+   \       0x70   0x....'....        BL       matrix_configure_slave_sec
+    499          		matrix_set_slave_split_addr(MATRIX0, i, MATRIX_AREA_128M, 0xf);
+   \       0x74   0xE3A0'300F        MOV      R3,#+15
+   \       0x78   0xE3A0'200F        MOV      R2,#+15
+   \       0x7C   0xE3A0'1004        MOV      R1,#+4
+   \       0x80   0xE1A0'0004        MOV      R0,R4
+   \       0x84   0x....'....        BL       matrix_set_slave_split_addr
+    500          		matrix_set_slave_region_size(MATRIX0, i, MATRIX_AREA_128M, 0x1);
+   \       0x88   0xE3A0'3001        MOV      R3,#+1
+   \       0x8C   0xE3A0'200F        MOV      R2,#+15
+   \       0x90   0xE3A0'1004        MOV      R1,#+4
+   \       0x94   0xE1A0'0004        MOV      R0,R4
+   \       0x98   0x....'....        BL       matrix_set_slave_region_size
+   \       0x9C   0xE3A0'00FF        MOV      R0,#+255
+   \       0xA0   0xE3A0'30FF        MOV      R3,#+255
+   \       0xA4   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0xA8   0xE3A0'20FF        MOV      R2,#+255
+   \       0xAC   0xE3A0'1005        MOV      R1,#+5
+   \       0xB0   0xE1A0'0004        MOV      R0,R4
+   \       0xB4   0x....'....        BL       matrix_configure_slave_sec
+   \       0xB8   0xE3A0'300F        MOV      R3,#+15
+   \       0xBC   0xE3A0'200F        MOV      R2,#+15
+   \       0xC0   0xE3A0'1005        MOV      R1,#+5
+   \       0xC4   0xE1A0'0004        MOV      R0,R4
+   \       0xC8   0x....'....        BL       matrix_set_slave_split_addr
+   \       0xCC   0xE3A0'3001        MOV      R3,#+1
+   \       0xD0   0xE3A0'200F        MOV      R2,#+15
+   \       0xD4   0xE3A0'1005        MOV      R1,#+5
+   \       0xD8   0xE1A0'0004        MOV      R0,R4
+   \       0xDC   0x....'....        BL       matrix_set_slave_region_size
+   \       0xE0   0xE3A0'00FF        MOV      R0,#+255
+   \       0xE4   0xE3A0'30FF        MOV      R3,#+255
+   \       0xE8   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0xEC   0xE3A0'20FF        MOV      R2,#+255
+   \       0xF0   0xE3A0'1006        MOV      R1,#+6
+   \       0xF4   0xE1A0'0004        MOV      R0,R4
+   \       0xF8   0x....'....        BL       matrix_configure_slave_sec
+   \       0xFC   0xE3A0'300F        MOV      R3,#+15
+   \      0x100   0xE3A0'200F        MOV      R2,#+15
+   \      0x104   0xE3A0'1006        MOV      R1,#+6
+   \      0x108   0xE1A0'0004        MOV      R0,R4
+   \      0x10C   0x....'....        BL       matrix_set_slave_split_addr
+   \      0x110   0xE3A0'3001        MOV      R3,#+1
+   \      0x114   0xE3A0'200F        MOV      R2,#+15
+   \      0x118   0xE3A0'1006        MOV      R1,#+6
+   \      0x11C   0xE1A0'0004        MOV      R0,R4
+   \      0x120   0x....'....        BL       matrix_set_slave_region_size
+   \      0x124   0xE3A0'00FF        MOV      R0,#+255
+   \      0x128   0xE3A0'30FF        MOV      R3,#+255
+   \      0x12C   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x130   0xE3A0'20FF        MOV      R2,#+255
+   \      0x134   0xE3A0'1007        MOV      R1,#+7
+   \      0x138   0xE1A0'0004        MOV      R0,R4
+   \      0x13C   0x....'....        BL       matrix_configure_slave_sec
+   \      0x140   0xE3A0'300F        MOV      R3,#+15
+   \      0x144   0xE3A0'200F        MOV      R2,#+15
+   \      0x148   0xE3A0'1007        MOV      R1,#+7
+   \      0x14C   0xE1A0'0004        MOV      R0,R4
+   \      0x150   0x....'....        BL       matrix_set_slave_split_addr
+   \      0x154   0xE3A0'3001        MOV      R3,#+1
+   \      0x158   0xE3A0'200F        MOV      R2,#+15
+   \      0x15C   0xE3A0'1007        MOV      R1,#+7
+   \      0x160   0xE1A0'0004        MOV      R0,R4
+   \      0x164   0x....'....        BL       matrix_set_slave_region_size
+   \      0x168   0xE3A0'00FF        MOV      R0,#+255
+   \      0x16C   0xE3A0'30FF        MOV      R3,#+255
+   \      0x170   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x174   0xE3A0'20FF        MOV      R2,#+255
+   \      0x178   0xE3A0'1008        MOV      R1,#+8
+   \      0x17C   0xE1A0'0004        MOV      R0,R4
+   \      0x180   0x....'....        BL       matrix_configure_slave_sec
+   \      0x184   0xE3A0'300F        MOV      R3,#+15
+   \      0x188   0xE3A0'200F        MOV      R2,#+15
+   \      0x18C   0xE3A0'1008        MOV      R1,#+8
+   \      0x190   0xE1A0'0004        MOV      R0,R4
+   \      0x194   0x....'....        BL       matrix_set_slave_split_addr
+   \      0x198   0xE3A0'3001        MOV      R3,#+1
+   \      0x19C   0xE3A0'200F        MOV      R2,#+15
+   \      0x1A0   0xE3A0'1008        MOV      R1,#+8
+   \      0x1A4   0xE1A0'0004        MOV      R0,R4
+   \      0x1A8   0x....'....        BL       matrix_set_slave_region_size
+   \      0x1AC   0xE3A0'00FF        MOV      R0,#+255
+   \      0x1B0   0xE3A0'30FF        MOV      R3,#+255
+   \      0x1B4   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x1B8   0xE3A0'20FF        MOV      R2,#+255
+   \      0x1BC   0xE3A0'1009        MOV      R1,#+9
+   \      0x1C0   0xE1A0'0004        MOV      R0,R4
+   \      0x1C4   0x....'....        BL       matrix_configure_slave_sec
+   \      0x1C8   0xE3A0'300F        MOV      R3,#+15
+   \      0x1CC   0xE3A0'200F        MOV      R2,#+15
+   \      0x1D0   0xE3A0'1009        MOV      R1,#+9
+   \      0x1D4   0xE1A0'0004        MOV      R0,R4
+   \      0x1D8   0x....'....        BL       matrix_set_slave_split_addr
+   \      0x1DC   0xE3A0'3001        MOV      R3,#+1
+   \      0x1E0   0xE3A0'200F        MOV      R2,#+15
+   \      0x1E4   0xE3A0'1009        MOV      R1,#+9
+   \      0x1E8   0xE1A0'0004        MOV      R0,R4
+   \      0x1EC   0x....'....        BL       matrix_set_slave_region_size
+   \      0x1F0   0xE3A0'00FF        MOV      R0,#+255
+   \      0x1F4   0xE3A0'30FF        MOV      R3,#+255
+   \      0x1F8   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x1FC   0xE3A0'20FF        MOV      R2,#+255
+   \      0x200   0xE3A0'100A        MOV      R1,#+10
+   \      0x204   0xE1A0'0004        MOV      R0,R4
+   \      0x208   0x....'....        BL       matrix_configure_slave_sec
+   \      0x20C   0xE3A0'300F        MOV      R3,#+15
+   \      0x210   0xE3A0'200F        MOV      R2,#+15
+   \      0x214   0xE3A0'100A        MOV      R1,#+10
+   \      0x218   0xE1A0'0004        MOV      R0,R4
+   \      0x21C   0x....'....        BL       matrix_set_slave_split_addr
+   \      0x220   0xE1A0'0004        MOV      R0,R4
+   \      0x224   0xE28D'D008        ADD      SP,SP,#+8
+   \      0x228   0xE8BD'4010        POP      {R4,LR}
+   \      0x22C   0xE3A0'3001        MOV      R3,#+1
+   \      0x230   0xE3A0'200F        MOV      R2,#+15
+   \      0x234   0xE3A0'100A        MOV      R1,#+10
+   \      0x238   0x....'....        B        matrix_set_slave_region_size  ;; tailcall
+    501          	}
+    502          }
+    503          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    504          void board_cfg_matrix_for_nand(void)
+    505          {
+   \                     board_cfg_matrix_for_nand:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    506          	/* Disable write protection */
+    507          	matrix_remove_write_protection(MATRIX0);
+   \        0x4   0xE3A0'44F0        MOV      R4,#-268435456
+   \        0x8   0xE3A0'54FC        MOV      R5,#-67108864
+   \        0xC   0xE384'4B70        ORR      R4,R4,#0x1C000
+   \       0x10   0xE385'5A54        ORR      R5,R5,#0x54000
+   \       0x14   0xE1A0'0004        MOV      R0,R4
+   \       0x18   0x....'....        BL       matrix_remove_write_protection
+    508          	matrix_remove_write_protection(MATRIX1);
+   \       0x1C   0xE1A0'0005        MOV      R0,R5
+   \       0x20   0x....'....        BL       matrix_remove_write_protection
+    509          
+    510          	/* Internal SRAM */
+    511          	matrix_configure_slave_sec(MATRIX0,
+    512          			H64MX_SLAVE_SRAM, 0x1, 0x1, 0x1);
+   \       0x24   0xE3A0'0001        MOV      R0,#+1
+   \       0x28   0xE3A0'3001        MOV      R3,#+1
+   \       0x2C   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x30   0xE3A0'2001        MOV      R2,#+1
+   \       0x34   0xE3A0'100B        MOV      R1,#+11
+   \       0x38   0xE1A0'0004        MOV      R0,R4
+   \       0x3C   0x....'....        BL       matrix_configure_slave_sec
+    513          	matrix_set_slave_split_addr(MATRIX0,
+    514          			H64MX_SLAVE_SRAM, MATRIX_AREA_128K, 0x1);
+   \       0x40   0xE3A0'3001        MOV      R3,#+1
+   \       0x44   0xE3A0'2005        MOV      R2,#+5
+   \       0x48   0xE3A0'100B        MOV      R1,#+11
+   \       0x4C   0xE1A0'0004        MOV      R0,R4
+   \       0x50   0x....'....        BL       matrix_set_slave_split_addr
+    515          	matrix_set_slave_region_size(MATRIX0,
+    516          			H64MX_SLAVE_SRAM, MATRIX_AREA_128K, 0x1);
+   \       0x54   0xE3A0'3001        MOV      R3,#+1
+   \       0x58   0xE3A0'2005        MOV      R2,#+5
+   \       0x5C   0xE3A0'100B        MOV      R1,#+11
+   \       0x60   0xE1A0'0004        MOV      R0,R4
+   \       0x64   0x....'....        BL       matrix_set_slave_region_size
+    517          
+    518          	/* NFC Command Register */
+    519          	matrix_configure_slave_sec(MATRIX1,
+    520          			H32MX_SLAVE_NFC_CMD, 0xff, 0xff, 0xff);
+   \       0x68   0xE3A0'00FF        MOV      R0,#+255
+   \       0x6C   0xE3A0'30FF        MOV      R3,#+255
+   \       0x70   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x74   0xE3A0'20FF        MOV      R2,#+255
+   \       0x78   0xE3A0'1003        MOV      R1,#+3
+   \       0x7C   0xE1A0'0005        MOV      R0,R5
+   \       0x80   0x....'....        BL       matrix_configure_slave_sec
+    521          	matrix_set_slave_split_addr(MATRIX1,
+    522          			H32MX_SLAVE_NFC_CMD, MATRIX_AREA_8M, 0xff);
+   \       0x84   0xE3A0'30FF        MOV      R3,#+255
+   \       0x88   0xE3A0'200B        MOV      R2,#+11
+   \       0x8C   0xE3A0'1003        MOV      R1,#+3
+   \       0x90   0xE1A0'0005        MOV      R0,R5
+   \       0x94   0x....'....        BL       matrix_set_slave_split_addr
+    523          	matrix_set_slave_region_size(MATRIX1,
+    524          			H32MX_SLAVE_NFC_CMD, MATRIX_AREA_8M, 0xff);
+   \       0x98   0xE3A0'30FF        MOV      R3,#+255
+   \       0x9C   0xE3A0'200B        MOV      R2,#+11
+   \       0xA0   0xE3A0'1003        MOV      R1,#+3
+   \       0xA4   0xE1A0'0005        MOV      R0,R5
+   \       0xA8   0x....'....        BL       matrix_set_slave_region_size
+    525          
+    526          	/* NFC SRAM */
+    527          	matrix_configure_slave_sec(MATRIX1,
+    528          			H32MX_SLAVE_NFC_SRAM, 0xff,0xff,0xff);
+   \       0xAC   0xE3A0'00FF        MOV      R0,#+255
+   \       0xB0   0xE3A0'30FF        MOV      R3,#+255
+   \       0xB4   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0xB8   0xE3A0'20FF        MOV      R2,#+255
+   \       0xBC   0xE3A0'1004        MOV      R1,#+4
+   \       0xC0   0xE1A0'0005        MOV      R0,R5
+   \       0xC4   0x....'....        BL       matrix_configure_slave_sec
+    529          	matrix_set_slave_split_addr(MATRIX1,
+    530          			H32MX_SLAVE_NFC_SRAM, MATRIX_AREA_128M, 0x4f);
+   \       0xC8   0xE3A0'304F        MOV      R3,#+79
+   \       0xCC   0xE3A0'200F        MOV      R2,#+15
+   \       0xD0   0xE3A0'1004        MOV      R1,#+4
+   \       0xD4   0xE1A0'0005        MOV      R0,R5
+   \       0xD8   0x....'....        BL       matrix_set_slave_split_addr
+    531          	matrix_set_slave_region_size(MATRIX1,
+    532          			H32MX_SLAVE_NFC_SRAM, MATRIX_AREA_8K, 0x1);
+   \       0xDC   0xE3A0'3001        MOV      R3,#+1
+   \       0xE0   0xE3A0'2001        MOV      R2,#+1
+   \       0xE4   0xE3A0'1004        MOV      R1,#+4
+   \       0xE8   0xE1A0'0005        MOV      R0,R5
+   \       0xEC   0x....'....        BL       matrix_set_slave_region_size
+    533          
+    534          	MATRIX1->MATRIX_MEIER = 0x3ff;
+   \       0xF0   0xE300'03FF        MOVW     R0,#+1023
+   \       0xF4   0xE585'0150        STR      R0,[R5, #+336]
+    535          }
+   \       0xF8   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    536          
+    537          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    538          void board_cfg_ddram(void)
+    539          {
+   \                     board_cfg_ddram:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+   \        0x4   0xE24D'D030        SUB      SP,SP,#+48
+    540          #ifdef BOARD_DDRAM_TYPE
+    541          	board_cfg_matrix_for_ddr();
+   \        0x8   0x....'....        BL       board_cfg_matrix_for_ddr
+    542          	struct _mpddrc_desc desc;
+    543          	ddram_init_descriptor(&desc, BOARD_DDRAM_TYPE);
+   \        0xC   0xE3A0'1000        MOV      R1,#+0
+   \       0x10   0xE1A0'000D        MOV      R0,SP
+   \       0x14   0x....'....        BL       ddram_init_descriptor
+    544          	ddram_configure(&desc);
+   \       0x18   0xE1A0'000D        MOV      R0,SP
+   \       0x1C   0x....'....        BL       ddram_configure
+    545          #else
+    546          	trace_fatal("Cannot configure DDRAM: target board have no DDRAM type definition!");
+    547          #endif
+    548          }
+   \       0x20   0xE28D'D034        ADD      SP,SP,#+52
+   \       0x24   0xE8BD'8000        POP      {PC}             ;; return
+    549          
+    550          #ifdef CONFIG_HAVE_NAND_FLASH
+    551          void board_cfg_nand_flash(void)
+    552          {
+    553          #if defined(BOARD_NANDFLASH_PINS) && defined(BOARD_NANDFLASH_BUS_WIDTH)
+    554          	board_cfg_matrix_for_nand();
+    555          	const struct _pin pins_nandflash[] = BOARD_NANDFLASH_PINS;
+    556          	pio_configure(pins_nandflash, ARRAY_SIZE(pins_nandflash));
+    557          	smc_nand_configure(BOARD_NANDFLASH_BUS_WIDTH);
+    558          #else
+    559          	trace_fatal("Cannot configure NAND: target board have no NAND definitions!");
+    560          #endif
+    561          }
+    562          #endif /* CONFIG_HAVE_NAND_FLASH */
+    563          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    564          void board_cfg_nor_flash(void)
+    565          {
+   \                     board_cfg_nor_flash:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    566          #if defined(BOARD_NORFLASH_CS) && defined(BOARD_NORFLASH_BUS_WIDTH)
+    567          	smc_nor_configure(BOARD_NORFLASH_CS, BOARD_NORFLASH_BUS_WIDTH);
+    568          #else
+    569          	trace_fatal("Cannot configure NOR: target board have no NOR definitions!");
+   \        0x4   0x....'....        LDR      R0,??DataTable14_8
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0xE351'0000        CMP      R1,#+0
+   \       0x10   0x0A00'0001        BEQ      ??board_cfg_nor_flash_0
+   \       0x14   0x....'....        LDR      R0,??DataTable14_9
+   \       0x18   0x....'....        BL       printf
+   \                     ??board_cfg_nor_flash_0:
+   \       0x1C   0xEAFF'FFFE        B        ??board_cfg_nor_flash_0
+    570          #endif
+    571          }
+    572          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    573          void board_cfg_pmic()
+    574          {
+    575          #ifdef CONFIG_HAVE_PMIC_ACT8865
+    576          	/* check PMIC chip presence */
+    577          	if (act8865_check_twi_status(&pmic)) {
+    578          #if defined(CONFIG_BOARD_SAMA5D4_XPLAINED)
+    579          		/* Setup PMIC output 5 to 3.3V (VDDANA) */
+    580          		act8865_set_reg_voltage(&pmic, REG5_0, ACT8865_3V3);
+    581          #elif defined(CONFIG_BOARD_SAMA5D4_EK)
+    582          		/* Setup PMIC output 5 to 3.3V (VDDANA, 3V3_AUDIO) */
+    583          		act8865_set_reg_voltage(&pmic, REG5_0, ACT8865_3V3);
+    584          		/* Setup PMIC output 6 to 1.8V (1V8_AUDIO) */
+    585          		act8865_set_reg_voltage(&pmic, REG6_0, ACT8865_1V8);
+    586          #endif
+    587          	} else {
+    588          		trace_error("Error initializing ACT8865 PMIC\n\r");
+    589          		return;
+    590          	}
+    591          #endif
+    592          }
+   \                     board_cfg_pmic:
+   \        0x0   0xE12F'FF1E        BX       LR               ;; return
+    593          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    594          bool board_cfg_sdmmc(uint32_t periph_id)
+    595          {
+   \                     board_cfg_sdmmc:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    596          	switch (periph_id) {
+   \        0x4   0xE350'0023        CMP      R0,#+35
+   \        0x8   0x0A00'0002        BEQ      ??board_cfg_sdmmc_0
+   \        0xC   0xE350'0024        CMP      R0,#+36
+   \       0x10   0x0A00'0003        BEQ      ??board_cfg_sdmmc_1
+   \       0x14   0xEA00'0007        B        ??board_cfg_sdmmc_2
+    597          	case ID_HSMCI0:
+    598          	{
+    599          #ifdef BOARD_HSMCI0_PINS
+    600          		const struct _pin pins[] = BOARD_HSMCI0_PINS;
+    601          
+    602          		/* Configure HSMCI0 pins */
+    603          		pio_configure(pins, ARRAY_SIZE(pins));
+   \                     ??board_cfg_sdmmc_0:
+   \       0x18   0xE3A0'1005        MOV      R1,#+5
+   \       0x1C   0x....'....        LDR      R0,??DataTable14_10
+   \       0x20   0xEA00'0001        B        ??board_cfg_sdmmc_3
+    604          		return true;
+    605          #else
+    606          		trace_fatal("Target board misses HSMCI0 pins");
+    607          		return false;
+    608          #endif
+    609          	}
+    610          	case ID_HSMCI1:
+    611          	{
+    612          #ifdef BOARD_HSMCI1_PINS
+    613          		const struct _pin pins[] = BOARD_HSMCI1_PINS;
+    614          
+    615          		/* Configure HSMCI1 pins */
+    616          		pio_configure(pins, ARRAY_SIZE(pins));
+   \                     ??board_cfg_sdmmc_1:
+   \       0x24   0xE3A0'1005        MOV      R1,#+5
+   \       0x28   0x....'....        LDR      R0,??DataTable14_11
+   \                     ??board_cfg_sdmmc_3:
+   \       0x2C   0x....'....        BL       pio_configure
+    617          		return true;
+   \       0x30   0xE3A0'0001        MOV      R0,#+1
+   \       0x34   0xE8BD'8002        POP      {R1,PC}
+    618          #else
+    619          		trace_fatal("Target board misses HSMCI1 pins");
+    620          		return false;
+    621          #endif
+    622          	}
+    623          	default:
+    624          		return false;
+   \                     ??board_cfg_sdmmc_2:
+   \       0x38   0xE3A0'0000        MOV      R0,#+0
+   \       0x3C   0xE8BD'8002        POP      {R1,PC}          ;; return
+    625          	}
+    626          }
+
+   \                                 In section .rodata, align 4
+   \                     `board_cfg_sdmmc{1}{2}{3}::pins`:
+   \        0x0   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'0020        DC32 32
+   \        0x8   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+   \       0x10   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x14   0x0000'0010        DC32 16
+   \       0x18   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x1C   0x0000'0000        DC32 0
+   \       0x20   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x24   0x0000'03C0        DC32 960
+   \       0x28   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x2C   0x0000'0000        DC32 0
+   \       0x30   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x34   0x0000'3C00        DC32 15'360
+   \       0x38   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x3C   0x0000'0001        DC32 1
+   \       0x40   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x44   0x0000'0020        DC32 32
+   \       0x48   0x07 0x00          DC8 7, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x4C   0x0000'0000        DC32 0
+   \       0x50   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x54   0x0008'0000        DC32 524'288
+   \       0x58   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x5C   0x0000'0000        DC32 0
+   \       0x60   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x64   0x0004'0000        DC32 262'144
+   \       0x68   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x6C   0x0000'0000        DC32 0
+   \       0x70   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x74   0x00F0'0000        DC32 15'728'640
+   \       0x78   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x7C   0x0000'0000        DC32 0
+   \       0x80   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x84   0x0000'0040        DC32 64
+   \       0x88   0x07 0x00          DC8 7, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x8C   0x0000'0000        DC32 0
+   \       0x90   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x94   0x0000'8000        DC32 32'768
+   \       0x98   0x08 0x00          DC8 8, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x9C   0x0000'0000        DC32 0
+    627          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    628          bool board_get_hsmci_card_detect_status(uint32_t periph_id)
+    629          {
+   \                     board_get_hsmci_card_detect_status:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    630          	const struct _pin *cd_input = NULL;
+    631          
+    632          #ifdef BOARD_HSMCI0_PIN_CD
+    633          	const struct _pin cd0_input = BOARD_HSMCI0_PIN_CD;
+    634          	cd_input = periph_id == ID_HSMCI0 ? &cd0_input : cd_input;
+   \        0x8   0xE354'0023        CMP      R4,#+35
+   \        0xC   0x....'....        ADREQ    R5,`board_get_hsmci_card_detect_status::cd0_input`
+   \       0x10   0x0A00'0002        BEQ      ??board_get_hsmci_card_detect_status_0
+    635          #endif
+    636          
+    637          #ifdef BOARD_HSMCI1_PIN_CD
+    638          	const struct _pin cd1_input = BOARD_HSMCI1_PIN_CD;
+    639          	cd_input = periph_id == ID_HSMCI1 ? &cd1_input : cd_input;
+   \       0x14   0xE354'0024        CMP      R4,#+36
+   \       0x18   0x1A00'0010        BNE      ??board_get_hsmci_card_detect_status_1
+   \       0x1C   0x....'....        ADR      R5,`board_get_hsmci_card_detect_status::cd1_input`
+    640          #endif
+    641          
+    642          	if (periph_id != ID_HSMCI0 && periph_id != ID_HSMCI1)
+    643          		return false;
+    644          
+    645          	/* no detection, assume card is always present */
+    646          	if (!cd_input)
+   \                     ??board_get_hsmci_card_detect_status_0:
+   \       0x20   0xE355'0000        CMP      R5,#+0
+   \       0x24   0x1A00'0001        BNE      ??board_get_hsmci_card_detect_status_2
+    647          		return true;
+   \       0x28   0xE3A0'0001        MOV      R0,#+1
+   \       0x2C   0xE8BD'8070        POP      {R4-R6,PC}
+    648          
+    649          #ifdef CONFIG_BOARD_SAMA5D4_EK
+    650          	/* HW erratum affecting the HSMCI1 slot of the SAMA5D4-EK board;
+    651          	 * card detection status is valid only when power is supplied to
+    652          	 * the microSD connector. */
+    653          	const struct _pin pwr_sig = BOARD_HSMCI1_PIN_POWER;
+    654          	const bool powered = periph_id == ID_HSMCI1
+    655          		? (pio_get(&pwr_sig) ? false : true) : true;
+   \                     ??board_get_hsmci_card_detect_status_2:
+   \       0x30   0xE354'0024        CMP      R4,#+36
+   \       0x34   0x1A00'000B        BNE      ??board_get_hsmci_card_detect_status_3
+   \       0x38   0x....'....        ADR      R0,`board_get_hsmci_card_detect_status::pwr_sig`
+   \       0x3C   0x....'....        BL       pio_get
+   \       0x40   0xE350'0000        CMP      R0,#+0
+   \       0x44   0x0A00'0007        BEQ      ??board_get_hsmci_card_detect_status_3
+    656          	if (!powered)
+    657          		if (!board_set_hsmci_card_power(periph_id, true))
+   \       0x48   0xE3A0'1001        MOV      R1,#+1
+   \       0x4C   0xE3A0'0024        MOV      R0,#+36
+   \       0x50   0x....'....        BL       board_set_hsmci_card_power
+   \       0x54   0xE350'0000        CMP      R0,#+0
+   \       0x58   0xE3A0'6000        MOV      R6,#+0
+   \       0x5C   0x1A00'0002        BNE      ??board_get_hsmci_card_detect_status_4
+    658          			return false;
+   \                     ??board_get_hsmci_card_detect_status_1:
+   \       0x60   0xE3A0'0000        MOV      R0,#+0
+   \       0x64   0xE8BD'8070        POP      {R4-R6,PC}
+   \                     ??board_get_hsmci_card_detect_status_3:
+   \       0x68   0xE3A0'6001        MOV      R6,#+1
+    659          	bool res = pio_get(cd_input) ? false : true;
+   \                     ??board_get_hsmci_card_detect_status_4:
+   \       0x6C   0xE1A0'0005        MOV      R0,R5
+   \       0x70   0x....'....        BL       pio_get
+   \       0x74   0xE350'0000        CMP      R0,#+0
+   \       0x78   0x03A0'5001        MOVEQ    R5,#+1
+   \       0x7C   0x13A0'5000        MOVNE    R5,#+0
+    660          	if (!powered)
+   \       0x80   0xE356'0000        CMP      R6,#+0
+   \       0x84   0x1A00'0002        BNE      ??board_get_hsmci_card_detect_status_5
+    661          		board_set_hsmci_card_power(periph_id, false);
+   \       0x88   0xE3A0'1000        MOV      R1,#+0
+   \       0x8C   0xE1A0'0004        MOV      R0,R4
+   \       0x90   0x....'....        BL       board_set_hsmci_card_power
+    662          	return res;
+   \                     ??board_get_hsmci_card_detect_status_5:
+   \       0x94   0xE1A0'0005        MOV      R0,R5
+   \       0x98   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    663          #else
+    664          	return pio_get(cd_input) ? false : true;
+    665          #endif
+    666          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     `board_get_hsmci_card_detect_status::cd0_input`:
+   \        0x0   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'0020        DC32 32
+   \        0x8   0x07 0x00          DC8 7, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     `board_get_hsmci_card_detect_status::cd1_input`:
+   \        0x0   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'0040        DC32 64
+   \        0x8   0x07 0x00          DC8 7, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     `board_get_hsmci_card_detect_status::pwr_sig`:
+   \        0x0   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'8000        DC32 32'768
+   \        0x8   0x08 0x00          DC8 8, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+    667          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    668          bool board_set_hsmci_card_power(uint32_t periph_id, bool on)
+    669          {
+   \                     board_set_hsmci_card_power:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    670          	const struct _pin *pwr_ctrl = NULL;
+    671          
+    672          #ifdef BOARD_HSMCI0_PIN_POWER
+    673          	const struct _pin pwr0_ctrl = BOARD_HSMCI0_PIN_POWER;
+    674          	pwr_ctrl = periph_id == ID_HSMCI0 ? &pwr0_ctrl : pwr_ctrl;
+    675          #endif
+    676          
+    677          #ifdef BOARD_HSMCI1_PIN_POWER
+    678          	const struct _pin pwr1_ctrl = BOARD_HSMCI1_PIN_POWER;
+    679          	pwr_ctrl = periph_id == ID_HSMCI1 ? &pwr1_ctrl : pwr_ctrl;
+   \        0x4   0xE350'0024        CMP      R0,#+36
+   \        0x8   0xE24D'D070        SUB      SP,SP,#+112
+   \        0xC   0x1A00'0002        BNE      ??board_set_hsmci_card_power_0
+   \       0x10   0x....'....        ADR      R5,`board_set_hsmci_card_power::pwr1_ctrl`
+    680          #endif
+    681          
+    682          	if (periph_id != ID_HSMCI0 && periph_id != ID_HSMCI1)
+    683          		return false;
+    684          
+    685          	/* This slot doesn't support switching VDD on/off */
+    686          	if (!pwr_ctrl)
+   \       0x14   0xE355'0000        CMP      R5,#+0
+   \       0x18   0x1A00'0001        BNE      ??board_set_hsmci_card_power_1
+    687          		return false;
+   \                     ??board_set_hsmci_card_power_0:
+   \       0x1C   0xE3A0'0000        MOV      R0,#+0
+   \       0x20   0x....'....        B        ?Subroutine0
+    688          
+    689          	if (on) {
+   \                     ??board_set_hsmci_card_power_1:
+   \       0x24   0xE351'0000        CMP      R1,#+0
+   \       0x28   0x....'....        LDR      R6,??DataTable14_12
+   \       0x2C   0x0A00'0026        BEQ      ??board_set_hsmci_card_power_2
+    690          		/*
+    691          		 * Workaround HW issue: flipping straight the VDD switch often
+    692          		 * causes the VCC_3V3 rail to drop and trigger reset upon
+    693          		 * under-voltage.
+    694          		 */
+    695          		board_cfg_sd_dev_pins(periph_id, false, true);
+   \       0x30   0xE28D'0030        ADD      R0,SP,#+48
+   \       0x34   0xE1A0'1006        MOV      R1,R6
+   \       0x38   0xE3A0'2040        MOV      R2,#+64
+   \       0x3C   0x....'....        BL       __aeabi_memcpy4
+   \       0x40   0xE1A0'000D        MOV      R0,SP
+   \       0x44   0xE286'1040        ADD      R1,R6,#+64
+   \       0x48   0xE3A0'2030        MOV      R2,#+48
+   \       0x4C   0x....'....        BL       __aeabi_memcpy4
+   \       0x50   0xE28D'000C        ADD      R0,SP,#+12
+   \       0x54   0xE3A0'1003        MOV      R1,#+3
+   \       0x58   0xE3A0'2000        MOV      R2,#+0
+   \       0x5C   0xE3A0'3009        MOV      R3,#+9
+   \                     ??board_set_hsmci_card_power_3:
+   \       0x60   0xE251'1001        SUBS     R1,R1,#+1
+   \       0x64   0xE540'3004        STRB     R3,[R0, #-4]
+   \       0x68   0xE480'2010        STR      R2,[R0], #+16
+   \       0x6C   0x1AFF'FFFB        BNE      ??board_set_hsmci_card_power_3
+   \       0x70   0xE3A0'1003        MOV      R1,#+3
+   \       0x74   0xE1A0'000D        MOV      R0,SP
+   \       0x78   0x....'....        BL       pio_configure
+    696          		msleep(100);
+   \       0x7C   0xE3A0'0064        MOV      R0,#+100
+   \       0x80   0x....'....        BL       msleep
+    697          		pio_clear(pwr_ctrl);
+   \       0x84   0xE1A0'0005        MOV      R0,R5
+   \       0x88   0x....'....        BL       pio_clear
+    698          		/* Wait for the VDD rail to settle at nominal voltage */
+    699          		msleep(1);
+   \       0x8C   0xE3A0'0001        MOV      R0,#+1
+   \       0x90   0x....'....        BL       msleep
+    700          		board_cfg_sd_dev_pins(periph_id, false, false);
+   \       0x94   0xE28D'0030        ADD      R0,SP,#+48
+   \       0x98   0xE1A0'1006        MOV      R1,R6
+   \       0x9C   0xE3A0'2040        MOV      R2,#+64
+   \       0xA0   0x....'....        BL       __aeabi_memcpy4
+   \       0xA4   0xE1A0'000D        MOV      R0,SP
+   \       0xA8   0xE286'1040        ADD      R1,R6,#+64
+   \       0xAC   0xE3A0'2030        MOV      R2,#+48
+   \       0xB0   0x....'....        BL       __aeabi_memcpy4
+   \       0xB4   0xE3A0'1003        MOV      R1,#+3
+   \       0xB8   0xE1A0'000D        MOV      R0,SP
+   \       0xBC   0x....'....        BL       pio_configure
+    701          		msleep(1);
+   \       0xC0   0xE3A0'0001        MOV      R0,#+1
+   \       0xC4   0x....'....        BL       msleep
+   \       0xC8   0xEA00'0014        B        ??board_set_hsmci_card_power_4
+    702          	} else {
+    703          		pio_set(pwr_ctrl);
+   \                     ??board_set_hsmci_card_power_2:
+   \       0xCC   0xE1A0'0005        MOV      R0,R5
+   \       0xD0   0x....'....        BL       pio_set
+    704          		/*
+    705          		 * Drive all device signals low, in an attempt to have VDD
+    706          		 * falling quicker.
+    707          		 */
+    708          		board_cfg_sd_dev_pins(periph_id, true, false);
+   \       0xD4   0xE28D'0030        ADD      R0,SP,#+48
+   \       0xD8   0xE1A0'1006        MOV      R1,R6
+   \       0xDC   0xE3A0'2040        MOV      R2,#+64
+   \       0xE0   0x....'....        BL       __aeabi_memcpy4
+   \       0xE4   0xE1A0'000D        MOV      R0,SP
+   \       0xE8   0xE286'1040        ADD      R1,R6,#+64
+   \       0xEC   0xE3A0'2030        MOV      R2,#+48
+   \       0xF0   0x....'....        BL       __aeabi_memcpy4
+   \       0xF4   0xE28D'100C        ADD      R1,SP,#+12
+   \       0xF8   0xE3A0'2003        MOV      R2,#+3
+   \       0xFC   0xE3A0'3008        MOV      R3,#+8
+   \      0x100   0xE3A0'0000        MOV      R0,#+0
+   \                     ??board_set_hsmci_card_power_5:
+   \      0x104   0xE252'2001        SUBS     R2,R2,#+1
+   \      0x108   0xE541'3004        STRB     R3,[R1, #-4]
+   \      0x10C   0xE481'0010        STR      R0,[R1], #+16
+   \      0x110   0x1AFF'FFFB        BNE      ??board_set_hsmci_card_power_5
+   \      0x114   0xE3A0'1003        MOV      R1,#+3
+   \      0x118   0xE1A0'000D        MOV      R0,SP
+   \      0x11C   0x....'....        BL       pio_configure
+    709          	}
+    710          
+    711          	return true;
+   \                     ??board_set_hsmci_card_power_4:
+   \      0x120   0xE3A0'0001        MOV      R0,#+1
+   \      0x124                      REQUIRE ?Subroutine0
+   \      0x124                      ;; // Fall through to label ?Subroutine0
+    712          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE28D'D074        ADD      SP,SP,#+116
+   \        0x4   0xE8BD'8060        POP      {R5,R6,PC}       ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     `board_set_hsmci_card_power::pwr1_ctrl`:
+   \        0x0   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'8000        DC32 32'768
+   \        0x8   0x08 0x00          DC8 8, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_1:
+   \        0x0   0x....'....        DC32     ?_5
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_2:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_3:
+   \        0x0   0x....'....        DC32     tlb
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_4:
+   \        0x0   0x0010'0DE6        DC32     0x100de6
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_5:
+   \        0x0   0x0020'0DEE        DC32     0x200dee
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_6:
+   \        0x0   0x0030'0DF6        DC32     0x300df6
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_7:
+   \        0x0   0x....'....        DC32     l2cc_cfg
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_8:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_9:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_10:
+   \        0x0   0x....'....        DC32     `board_cfg_sdmmc{1}{2}{3}::pins`
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_11:
+   \        0x0   0x....'....        DC32     `board_cfg_sdmmc{1}{2}{3}::pins`+0x50
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable14_12:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'0020        DC32 32
+   \        0x8   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+   \       0x10   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x14   0x0000'0010        DC32 16
+   \       0x18   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x1C   0x0000'0000        DC32 0
+   \       0x20   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x24   0x0000'03C0        DC32 960
+   \       0x28   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x2C   0x0000'0000        DC32 0
+   \       0x30   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x34   0x0000'3C00        DC32 15'360
+   \       0x38   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x3C   0x0000'0001        DC32 1
+   \       0x40   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x44   0x0008'0000        DC32 524'288
+   \       0x48   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x4C   0x0000'0000        DC32 0
+   \       0x50   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x54   0x0004'0000        DC32 262'144
+   \       0x58   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x5C   0x0000'0000        DC32 0
+   \       0x60   0x04 0x00          DC8 4, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x64   0x00F0'0000        DC32 15'728'640
+   \       0x68   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x6C   0x0000'0000        DC32 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0xFFFE'FEFE        DC32 4'294'901'502
+   \        0x8   0x07 0x00          DC8 7, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0001        DC32 1
+   \       0x10   0x01 0x00          DC8 1, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x14   0xFCFF'FFFF        DC32 4'244'635'647
+   \       0x18   0x07 0x00          DC8 7, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x1C   0x0000'0001        DC32 1
+   \       0x20   0x02 0x00          DC8 2, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x24   0xFFFF'FFFF        DC32 4'294'967'295
+   \       0x28   0x07 0x00          DC8 7, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x2C   0x0000'0001        DC32 1
+   \       0x30   0x03 0x00          DC8 3, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x34   0xFFFF'FFFF        DC32 4'294'967'295
+   \       0x38   0x07 0x00          DC8 7, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x3C   0x0000'0001        DC32 1
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x2D 0x46          DC8 0x2D, 0x46, 0x2D, 0x20, 0x43, 0x61, 0x6E, 0x6E
+
+   \              0x2D 0x20    
+
+   \              0x43 0x61    
+
+   \              0x6E 0x6E
+   \        0x8   0x6F 0x74          DC8 0x6F, 0x74, 0x20, 0x63, 0x6F, 0x6E, 0x66, 0x69
+
+   \              0x20 0x63    
+
+   \              0x6F 0x6E    
+
+   \              0x66 0x69
+   \       0x10   0x67 0x75          DC8 0x67, 0x75, 0x72, 0x65, 0x20, 0x4E, 0x4F, 0x52
+
+   \              0x72 0x65    
+
+   \              0x20 0x4E    
+
+   \              0x4F 0x52
+   \       0x18   0x3A 0x20          DC8 0x3A, 0x20, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74
+
+   \              0x74 0x61    
+
+   \              0x72 0x67    
+
+   \              0x65 0x74
+   \       0x20   0x20 0x62          DC8 0x20, 0x62, 0x6F, 0x61, 0x72, 0x64, 0x20, 0x68
+
+   \              0x6F 0x61    
+
+   \              0x72 0x64    
+
+   \              0x20 0x68
+   \       0x28   0x61 0x76          DC8 0x61, 0x76, 0x65, 0x20, 0x6E, 0x6F, 0x20, 0x4E
+
+   \              0x65 0x20    
+
+   \              0x6E 0x6F    
+
+   \              0x20 0x4E
+   \       0x30   0x4F 0x52          DC8 0x4F, 0x52, 0x20, 0x64, 0x65, 0x66, 0x69, 0x6E
+
+   \              0x20 0x64    
+
+   \              0x65 0x66    
+
+   \              0x69 0x6E
+   \       0x38   0x69 0x74          DC8 0x69, 0x74, 0x69, 0x6F, 0x6E, 0x73, 0x21, 0
+
+   \              0x69 0x6F    
+
+   \              0x6E 0x73    
+
+   \              0x21 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_4:
+   \        0x0   0x73 0x61          DC8 "sama5d4-ek"
+
+   \              0x6D 0x61    
+
+   \              0x35 0x64    
+
+   \              0x34 0x2D    
+
+   \              0x65 0x6B    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      16   board_cfg_clocks
+        16   -> pmc_configure_plla
+        16   -> pmc_select_external_osc
+        16   -> pmc_set_mck_divider
+        16   -> pmc_set_mck_h32mxdiv
+        16   -> pmc_set_mck_plladiv2
+        16   -> pmc_set_mck_prescaler
+        16   -> pmc_switch_mck_to_main
+        16   -> pmc_switch_mck_to_pll
+      56   board_cfg_ddram
+        56   -> board_cfg_matrix_for_ddr
+        56   -> ddram_configure
+        56   -> ddram_init_descriptor
+       0   board_cfg_l2cc
+         0   -> l2cc_configure
+      64   board_cfg_lowlevel
+        64   -> board_cfg_clocks
+        64   -> board_cfg_matrix_for_ddr
+        64   -> board_cfg_mmu
+        64   -> board_cfg_timer
+        64   -> ddram_configure
+        64   -> ddram_init_descriptor
+        64   -> irq_initialize
+        64   -> matrix_set_default_config
+        64   -> pio_reset_all_it
+        64   -> pmc_set_main_oscillator_freq
+        64   -> wdt_disable
+      16   board_cfg_matrix_for_ddr
+        16   -> matrix_configure_slave_sec
+        16   -> matrix_remove_write_protection
+         0   -> matrix_set_slave_region_size
+        16   -> matrix_set_slave_region_size
+        16   -> matrix_set_slave_split_addr
+      16   board_cfg_matrix_for_nand
+        16   -> matrix_configure_slave_sec
+        16   -> matrix_remove_write_protection
+        16   -> matrix_set_slave_region_size
+        16   -> matrix_set_slave_split_addr
+      16   board_cfg_mmu
+        16   -> __aeabi_memclr4
+         0   -> dcache_enable
+        16   -> icache_enable
+        16   -> mmu_configure
+        16   -> mmu_enable
+        16   -> mmu_is_enabled
+       8   board_cfg_nor_flash
+         8   -> printf
+       0   board_cfg_pmic
+       8   board_cfg_sdmmc
+         8   -> pio_configure
+      16   board_get_hsmci_card_detect_status
+        16   -> board_set_hsmci_card_power
+        16   -> pio_get
+      72   board_restore_pio_reset_state
+        72   -> __aeabi_memcpy4
+        72   -> pio_clear
+        72   -> pio_configure
+      16   board_save_misc_power
+        16   -> get_tc_id_from_addr
+        16   -> pmc_disable_peripheral
+        16   -> pmc_disable_system_clock
+        16   -> pmc_disable_upll_bias
+        16   -> pmc_disable_upll_clock
+     128   board_set_hsmci_card_power
+       128   -> __aeabi_memcpy4
+       128   -> msleep
+       128   -> pio_clear
+       128   -> pio_configure
+       128   -> pio_set
+       0   get_board_name
+
+
+   Section sizes:
+
+   Bytes   Function/Label
+   -----   --------------
+        4  ??DataTable14
+        4  ??DataTable14_1
+        4  ??DataTable14_10
+        4  ??DataTable14_11
+        4  ??DataTable14_12
+        4  ??DataTable14_2
+        4  ??DataTable14_3
+        4  ??DataTable14_4
+        4  ??DataTable14_5
+        4  ??DataTable14_6
+        4  ??DataTable14_7
+        4  ??DataTable14_8
+        4  ??DataTable14_9
+        8  ?Subroutine0
+      112  ?_0
+       64  ?_2
+       64  ?_3
+       12  ?_4
+       12  ?_5
+       88  board_cfg_clocks
+       40  board_cfg_ddram
+        8  board_cfg_l2cc
+      116  board_cfg_lowlevel
+      572  board_cfg_matrix_for_ddr
+      252  board_cfg_matrix_for_nand
+      680  board_cfg_mmu
+       32  board_cfg_nor_flash
+        4  board_cfg_pmic
+       64  board_cfg_sdmmc
+      156  board_get_hsmci_card_detect_status
+        4  board_name
+       76  board_restore_pio_reset_state
+      136  board_save_misc_power
+      292  board_set_hsmci_card_power
+       16  cd0_input
+       16  cd1_input
+        8  get_board_name
+        4  l2cc_cfg
+      160  pins
+           pins
+       16  pwr1_ctrl
+       16  pwr_sig
+   16'384  tlb
+
+ 
+ 16'384 bytes in section .bss
+      4 bytes in section .data
+    428 bytes in section .rodata
+  2'648 bytes in section SOFTPACK
+ 
+  2'648 bytes of CODE  memory
+    428 bytes of CONST memory
+ 16'388 bytes of DATA  memory
+
+Errors: none
+Warnings: none

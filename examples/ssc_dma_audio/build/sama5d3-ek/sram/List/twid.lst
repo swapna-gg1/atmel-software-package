@@ -1,0 +1,2534 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         08/Dec/2020  16:47:07
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\i2c\twid.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW54F2.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\i2c\twid.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D3 -D
+#        CONFIG_CHIP_SAMA5D36 -D CONFIG_BOARD_SAMA5D3_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_INPUT_OFFSET -D CONFIG_HAVE_ADC_DIFF_INPUT -D
+#        CONFIG_HAVE_ADC_SEQ_R2 -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_PLLA_CHARGE_PUMP -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_PMC_PERIPH_DIV -D CONFIG_HAVE_SCKC -D
+#        CONFIG_HAVE_PWMC_STEPPER_MOTOR -D CONFIG_HAVE_PWMC_CMP_UNIT -D
+#        CONFIG_HAVE_PWMC_SYNC_MODE -D CONFIG_HAVE_PWMC_OOV -D
+#        CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP -D
+#        CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D CONFIG_HAVE_DMAC
+#        -D CONFIG_HAVE_DMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SMD -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_DDR2_MT47H128M16 -D
+#        CONFIG_HAVE_RSTC_EXTERNAL_RESET -D CONFIG_HAVE_RSTC_INDEPENDENT_RESET
+#        -D CONFIG_HAVE_TC_FAULT_MODE -D CONFIG_HAVE_AUDIO -D CONFIG_HAVE_SSC
+#        -D CONFIG_HAVE_AUDIO_WM8904 -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_TWI -D
+#        CONFIG_HAVE_I2C_BUS -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\target\sama5d3\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\List\twid.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\ssc_dma_audio\build\sama5d3-ek\sram\Obj\twid.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf     
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\i2c\twid.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <assert.h>
+     35          #include <string.h>
+     36          
+     37          #include "callback.h"
+     38          #include "dma/dma.h"
+     39          #include "errno.h"
+     40          #include "i2c/twi.h"
+     41          #include "i2c/twid.h"
+     42          #include "io.h"
+     43          #include "irq/irq.h"
+     44          #include "mm/cache.h"
+     45          #include "peripherals/bus.h"
+     46          #ifdef CONFIG_HAVE_FLEXCOM
+     47          #include "peripherals/flexcom.h"
+     48          #endif
+     49          #include "peripherals/pmc.h"
+     50          #include "timer.h"
+     51          #include "trace.h"
+     52          
+     53          /*----------------------------------------------------------------------------
+     54           *        Definitions
+     55           *----------------------------------------------------------------------------*/
+     56          
+     57          #define TWID_POLLING_THRESHOLD  16
+     58          #define TWID_TIMEOUT            100
+     59          
+     60          /** \brief twi asynchronous transfer descriptor.*/
+     61          struct _async_desc
+     62          {
+     63          	bool master;
+     64          	union {
+     65          		struct _twi_desc *twi_desc;
+     66          		struct _twi_slave_desc *twi_slave_desc;
+     67          	};
+     68          	uint32_t twi_id;
+     69          	struct _buffer buf;
+     70          	uint32_t transferred; /**< Number of already transferred bytes. */
+     71          };
+     72          
+     73          /*----------------------------------------------------------------------------
+     74           *        Local variables
+     75           *----------------------------------------------------------------------------*/
+     76          
+
+   \                                 In section .bss, align 4
+     77          static struct _async_desc async_desc[TWI_IFACE_COUNT];
+   \                     async_desc:
+   \        0x0                      DS8 84
+   \       0x54                      DS8 1
+     78          static uint8_t adesc_index = 0;
+     79          
+     80          /*----------------------------------------------------------------------------
+     81           *        Local functions
+     82           *----------------------------------------------------------------------------*/
+     83          
+     84          /*
+     85           *
+     86           */
+     87          static bool _check_nack(struct _twi_desc *desc)
+     88          {
+     89          #ifdef CONFIG_HAVE_TWI_FIFO
+     90          	if (desc->use_fifo) {
+     91          		if (twi_fifo_is_locked(desc->addr)) {
+     92          			twi_fifo_unlock(desc->addr);
+     93          			twi_fifo_flush_tx(desc->addr);
+     94          			trace_error("twid: command NACK\r\n");
+     95          			twid_configure(desc);
+     96          			return true;
+     97          		}
+     98          
+     99          		return false;
+    100          	}
+    101          #endif
+    102          
+    103          	if (twi_get_status(desc->addr) & TWI_SR_NACK) {
+    104          		trace_error("twid: command NACK\r\n");
+    105          		twid_configure(desc);
+    106          		return true;
+    107          	}
+    108          
+    109          	return false;
+    110          }
+    111          
+    112          /*
+    113           *
+    114           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    115          static bool _check_rx_timeout(struct _twi_desc* desc)
+    116          {
+   \                     _check_rx_timeout:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE24D'D010        SUB      SP,SP,#+16
+    117          	struct _timeout timeout;
+    118          
+    119          #ifdef CONFIG_HAVE_TWI_FIFO
+    120          	if (desc->use_fifo)
+    121          		return false;
+    122          #endif
+    123          
+    124          	timer_start_timeout(&timeout, desc->timeout);
+   \        0xC   0xE3A0'3000        MOV      R3,#+0
+   \       0x10   0xE1A0'000D        MOV      R0,SP
+   \       0x14   0xE594'2014        LDR      R2,[R4, #+20]
+   \       0x18   0x....'....        BL       timer_start_timeout
+    125          	while (!twi_is_byte_received(desc->addr)) {
+   \                     ??_check_rx_timeout_0:
+   \       0x1C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x20   0x....'....        BL       twi_is_byte_received
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x1A00'000A        BNE      ??_check_rx_timeout_1
+    126          		if (timer_timeout_reached(&timeout)) {
+   \       0x2C   0xE1A0'000D        MOV      R0,SP
+   \       0x30   0x....'....        BL       timer_timeout_reached
+   \       0x34   0xE350'0000        CMP      R0,#+0
+   \       0x38   0x0AFF'FFF7        BEQ      ??_check_rx_timeout_0
+    127          			trace_error("twid: Device doesn't answer (RX TIMEOUT)\r\n");
+   \       0x3C   0x....'....        LDR      R0,??DataTable10
+   \       0x40   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x44   0xE351'0002        CMP      R1,#+2
+   \       0x48   0x3A00'0001        BCC      ??_check_rx_timeout_2
+   \       0x4C   0x....'....        LDR      R0,??DataTable10_1
+   \       0x50   0x....'....        BL       printf
+    128          			twid_configure(desc);
+   \                     ??_check_rx_timeout_2:
+   \       0x54   0x....'....        B        ?Subroutine1
+    129          			return true;
+    130          		}
+    131          	}
+    132          
+    133          	return false;
+   \                     ??_check_rx_timeout_1:
+   \       0x58   0xE3A0'0000        MOV      R0,#+0
+   \       0x5C   0x....'....        B        ??Subroutine4_0
+    134          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine1:
+   \        0x0   0xE1A0'0004        MOV      R0,R4
+   \        0x4   0x....'....        BL       twid_configure
+   \        0x8   0xE3A0'0001        MOV      R0,#+1
+   \        0xC                      REQUIRE ??Subroutine4_0
+   \        0xC                      ;; // Fall through to label ??Subroutine4_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??Subroutine4_0:
+   \        0x0   0xE28D'D010        ADD      SP,SP,#+16
+   \        0x4   0xE8BD'8010        POP      {R4,PC}
+    135          
+    136          /*
+    137           *
+    138           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    139          static bool _check_tx_timeout(struct _twi_desc* desc)
+    140          {
+   \                     _check_tx_timeout:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE24D'D010        SUB      SP,SP,#+16
+    141          	struct _timeout timeout;
+    142          
+    143          #ifdef CONFIG_HAVE_TWI_FIFO
+    144          	if (desc->use_fifo)
+    145          		return false;
+    146          #endif
+    147          
+    148          	timer_start_timeout(&timeout, desc->timeout);
+   \        0xC   0xE3A0'3000        MOV      R3,#+0
+   \       0x10   0xE1A0'000D        MOV      R0,SP
+   \       0x14   0xE594'2014        LDR      R2,[R4, #+20]
+   \       0x18   0x....'....        BL       timer_start_timeout
+    149          	while (!twi_is_byte_sent(desc->addr)) {
+   \                     ??_check_tx_timeout_0:
+   \       0x1C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x20   0x....'....        BL       twi_is_byte_sent
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x1A00'000A        BNE      ??_check_tx_timeout_1
+    150          		if (timer_timeout_reached(&timeout)) {
+   \       0x2C   0xE1A0'000D        MOV      R0,SP
+   \       0x30   0x....'....        BL       timer_timeout_reached
+   \       0x34   0xE350'0000        CMP      R0,#+0
+   \       0x38   0x0AFF'FFF7        BEQ      ??_check_tx_timeout_0
+    151          			trace_error("twid: Device doesn't answer (TX TIMEOUT)\r\n");
+   \       0x3C   0x....'....        LDR      R0,??DataTable10
+   \       0x40   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x44   0xE351'0002        CMP      R1,#+2
+   \       0x48   0x3A00'0001        BCC      ??_check_tx_timeout_2
+   \       0x4C   0x....'....        LDR      R0,??DataTable10_2
+   \       0x50   0x....'....        BL       printf
+    152          			twid_configure(desc);
+   \                     ??_check_tx_timeout_2:
+   \       0x54   0x....'....        B        ?Subroutine1
+    153          			return true;
+    154          		}
+    155          	}
+    156          
+    157          	return false;
+   \                     ??_check_tx_timeout_1:
+   \       0x58   0xE3A0'0000        MOV      R0,#+0
+   \       0x5C   0x....'....        B        ??Subroutine4_0
+    158          }
+    159          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    160          static int _twid_wait_twi_transfer(struct _twi_desc* desc)
+    161          {
+   \                     _twid_wait_twi_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE24D'D010        SUB      SP,SP,#+16
+    162          	struct _timeout timeout;
+    163          
+    164          	timer_start_timeout(&timeout, desc->timeout);
+   \        0xC   0xE3A0'3000        MOV      R3,#+0
+   \       0x10   0xE1A0'000D        MOV      R0,SP
+   \       0x14   0xE594'2014        LDR      R2,[R4, #+20]
+   \       0x18   0x....'....        BL       timer_start_timeout
+    165          	while (!twi_is_transfer_complete(desc->addr)) {
+   \                     ??_twid_wait_twi_transfer_0:
+   \       0x1C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x20   0x....'....        BL       twi_is_transfer_complete
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x1A00'000D        BNE      ??_twid_wait_twi_transfer_1
+    166          		if (timer_timeout_reached(&timeout)) {
+   \       0x2C   0xE1A0'000D        MOV      R0,SP
+   \       0x30   0x....'....        BL       timer_timeout_reached
+   \       0x34   0xE350'0000        CMP      R0,#+0
+   \       0x38   0x0AFF'FFF7        BEQ      ??_twid_wait_twi_transfer_0
+    167          			trace_error("twid: Unable to complete transfer!\r\n");
+   \       0x3C   0x....'....        LDR      R0,??DataTable10
+   \       0x40   0xE590'1000        LDR      R1,[R0, #+0]
+   \       0x44   0xE351'0002        CMP      R1,#+2
+   \       0x48   0x3A00'0001        BCC      ??_twid_wait_twi_transfer_2
+   \       0x4C   0x....'....        LDR      R0,??DataTable10_3
+   \       0x50   0x....'....        BL       printf
+    168          			twid_configure(desc);
+   \                     ??_twid_wait_twi_transfer_2:
+   \       0x54   0xE1A0'0004        MOV      R0,R4
+   \       0x58   0x....'....        BL       twid_configure
+    169          			return -ETIMEDOUT;
+   \       0x5C   0xE3E0'004C        MVN      R0,#+76
+   \       0x60   0x....'....        B        ??Subroutine4_0
+    170          		}
+    171          	}
+    172          
+    173          	return 0;
+   \                     ??_twid_wait_twi_transfer_1:
+   \       0x64   0xE3A0'0000        MOV      R0,#+0
+   \       0x68   0x....'....        B        ??Subroutine4_0
+    174          }
+    175          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    176          static int _twid_dma_read_callback(void* arg, void* arg2)
+    177          {
+   \                     _twid_dma_read_callback:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    178          	struct _twi_desc* desc = (struct _twi_desc *)arg;
+    179          
+    180          	cache_invalidate_region(desc->dma.rx.cfg.daddr, desc->dma.rx.cfg.len);
+   \        0x8   0xE594'103C        LDR      R1,[R4, #+60]
+   \        0xC   0xE594'0038        LDR      R0,[R4, #+56]
+   \       0x10   0x....'....        BL       cache_invalidate_region
+    181          
+    182          	dma_reset_channel(desc->dma.rx.channel);
+   \       0x14   0xE594'0024        LDR      R0,[R4, #+36]
+   \       0x18   0x....'....        BL       dma_reset_channel
+    183          
+    184          	if (_check_rx_timeout(desc)) {
+   \       0x1C   0xE1A0'0004        MOV      R0,R4
+   \       0x20   0x....'....        BL       _check_rx_timeout
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x1A00'000D        BNE      ??_twid_dma_read_callback_0
+    185          		mutex_unlock(&desc->mutex);
+    186          		return -ETIMEDOUT;
+    187          	}
+    188          
+    189          	if (desc->flags & BUS_I2C_BUF_ATTR_STOP)
+   \       0x2C   0xE1D4'01B0        LDRH     R0,[R4, #+16]
+   \       0x30   0xE310'0D80        TST      R0,#0x2000
+   \       0x34   0x0A00'0001        BEQ      ??_twid_dma_read_callback_1
+    190          		twi_send_stop_condition(desc->addr);
+   \       0x38   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x3C   0x....'....        BL       twi_send_stop_condition
+    191          
+    192          #ifdef CONFIG_HAVE_FIFO
+    193          	if (!desc->use_fifo)
+    194          #endif
+    195          	{
+    196          		((uint8_t*)desc->dma.rx.cfg.daddr)[desc->dma.rx.cfg.len] = twi_read_byte(desc->addr);
+   \                     ??_twid_dma_read_callback_1:
+   \       0x40   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x44   0x....'....        BL       twi_read_byte
+   \       0x48   0xE594'1038        LDR      R1,[R4, #+56]
+   \       0x4C   0xE594'203C        LDR      R2,[R4, #+60]
+   \       0x50   0xE7C1'0002        STRB     R0,[R1, +R2]
+    197          
+    198          		if (_check_rx_timeout(desc)) {
+   \       0x54   0xE1A0'0004        MOV      R0,R4
+   \       0x58   0x....'....        BL       _check_rx_timeout
+   \       0x5C   0xE350'0000        CMP      R0,#+0
+   \       0x60   0x0A00'0000        BEQ      ??_twid_dma_read_callback_2
+    199          			mutex_unlock(&desc->mutex);
+   \                     ??_twid_dma_read_callback_0:
+   \       0x64   0x....'....        B        ?Subroutine2
+    200          			return -ETIMEDOUT;
+    201          		}
+    202          
+    203          		((uint8_t*)desc->dma.rx.cfg.daddr)[desc->dma.rx.cfg.len + 1] = twi_read_byte(desc->addr);
+   \                     ??_twid_dma_read_callback_2:
+   \       0x68   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x6C   0x....'....        BL       twi_read_byte
+   \       0x70   0xE594'1038        LDR      R1,[R4, #+56]
+   \       0x74   0xE594'203C        LDR      R2,[R4, #+60]
+   \       0x78   0xE081'2002        ADD      R2,R1,R2
+   \       0x7C   0xE5C2'0001        STRB     R0,[R2, #+1]
+    204          	}
+    205          
+    206          	mutex_unlock(&desc->mutex);
+   \       0x80   0x....'....        B        ?Subroutine0
+    207          
+    208          	callback_call(&desc->callback, NULL);
+    209          
+    210          	return 0;
+    211          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine2:
+   \        0x0   0xE284'0018        ADD      R0,R4,#+24
+   \        0x4   0x....'....        BL       mutex_unlock
+   \        0x8   0xE3E0'004C        MVN      R0,#+76
+   \        0xC   0xE8BD'8010        POP      {R4,PC}
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE284'0018        ADD      R0,R4,#+24
+   \        0x4   0x....'....        BL       mutex_unlock
+   \        0x8   0xE3A0'1000        MOV      R1,#+0
+   \        0xC   0xE284'001C        ADD      R0,R4,#+28
+   \       0x10   0x....'....        BL       callback_call
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \       0x18   0xE8BD'8010        POP      {R4,PC}          ;; return
+    212          
+    213          static void _twid_dma_read(struct _twi_desc* desc, struct _buffer* buffer)
+    214          {
+    215          	struct _callback _cb;
+    216          	uint32_t id = get_twi_id_from_addr(desc->addr);
+    217          
+    218          	memset(&desc->dma.rx.cfg, 0x0, sizeof(desc->dma.rx.cfg));
+    219          
+    220          	desc->dma.rx.cfg.saddr = (void*)&desc->addr->TWI_RHR;
+    221          	desc->dma.rx.cfg.daddr = buffer->data;
+    222          
+    223          	if(!desc->dma.rx.channel)
+    224          		desc->dma.rx.channel = dma_allocate_channel(id, DMA_PERIPH_MEMORY);
+    225          	assert(desc->dma.rx.channel);
+    226          
+    227          #ifdef CONFIG_HAVE_TWI_FIFO
+    228          	if (desc->use_fifo) {
+    229          		if ((buffer->size % 4) == 0) {
+    230          			desc->addr->TWI_FMR = (desc->addr->TWI_FMR & ~TWI_FMR_RXRDYM_Msk) | TWI_FMR_RXRDYM_FOUR_DATA;
+    231          			desc->dma.rx.cfg_dma.data_width = DMA_DATA_WIDTH_WORD;
+    232          		} else if ((buffer->size % 2) == 0)  {
+    233          			desc->addr->TWI_FMR = (desc->addr->TWI_FMR & ~TWI_FMR_RXRDYM_Msk) | TWI_FMR_RXRDYM_TWO_DATA;
+    234          			desc->dma.rx.cfg_dma.data_width = DMA_DATA_WIDTH_HALF_WORD;
+    235          		} else {
+    236          			desc->addr->TWI_FMR = (desc->addr->TWI_FMR & ~TWI_FMR_RXRDYM_Msk) | TWI_FMR_RXRDYM_ONE_DATA;
+    237          			desc->dma.rx.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+    238          		}
+    239          		desc->dma.rx.cfg.len = buffer->size;
+    240          	} else {
+    241          		desc->dma.rx.cfg.len = buffer->size - 2;
+    242          		desc->addr->TWI_FMR = (desc->addr->TWI_FMR & ~TWI_FMR_RXRDYM_Msk) | TWI_FMR_RXRDYM_ONE_DATA;
+    243          		desc->dma.rx.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+    244          	}
+    245          #else
+    246          	desc->dma.rx.cfg.len = buffer->size - 2;
+    247          	desc->dma.rx.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+    248          #endif
+    249          	dma_configure_transfer(desc->dma.rx.channel, &desc->dma.rx.cfg_dma, &desc->dma.rx.cfg, 1);
+    250          	callback_set(&_cb, _twid_dma_read_callback, (void*)desc);
+    251          	dma_set_callback(desc->dma.rx.channel, &_cb);
+    252          	dma_start_transfer(desc->dma.rx.channel);
+    253          
+    254          	if (desc->flags & BUS_I2C_BUF_ATTR_START)
+    255          		twi_send_start_condition(desc->addr);
+    256          }
+    257          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    258          static int _twid_dma_write_callback(void* arg, void* arg2)
+    259          {
+   \                     _twid_dma_write_callback:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    260          	struct _twi_desc* desc = (struct _twi_desc *)arg;
+    261          
+    262          	dma_reset_channel(desc->dma.tx.channel);
+   \        0x8   0xE594'0040        LDR      R0,[R4, #+64]
+   \        0xC   0x....'....        BL       dma_reset_channel
+    263          
+    264          	if (_check_tx_timeout(desc)) {
+   \       0x10   0xE1A0'0004        MOV      R0,R4
+   \       0x14   0x....'....        BL       _check_tx_timeout
+   \       0x18   0xE350'0000        CMP      R0,#+0
+   \       0x1C   0x0A00'0000        BEQ      ??_twid_dma_write_callback_0
+    265          		mutex_unlock(&desc->mutex);
+   \       0x20   0x....'....        B        ?Subroutine2
+    266          		return -ETIMEDOUT;
+    267          	}
+    268          
+    269          	if (desc->flags & BUS_I2C_BUF_ATTR_STOP)
+   \                     ??_twid_dma_write_callback_0:
+   \       0x24   0xE1D4'01B0        LDRH     R0,[R4, #+16]
+   \       0x28   0xE310'0D80        TST      R0,#0x2000
+   \       0x2C   0x0A00'0001        BEQ      ??_twid_dma_write_callback_1
+    270          		twi_send_stop_condition(desc->addr);
+   \       0x30   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x34   0x....'....        BL       twi_send_stop_condition
+    271          
+    272          #ifdef CONFIG_HAVE_TWI_FIFO
+    273          	if (!desc->use_fifo)
+    274          		twi_write_byte(desc->addr, ((uint8_t *)desc->dma.tx.cfg.saddr)[desc->dma.tx.cfg.len]);
+    275          #endif
+    276          
+    277          	mutex_unlock(&desc->mutex);
+   \                     ??_twid_dma_write_callback_1:
+   \       0x38   0x....'....        B        ?Subroutine0
+    278          
+    279          	callback_call(&desc->callback, NULL);
+    280          
+    281          	return 0;
+    282          }
+    283          
+    284          static void _twid_dma_write(struct _twi_desc* desc, struct _buffer* buffer)
+    285          {
+    286          	struct _callback _cb;
+    287          	uint32_t id = get_twi_id_from_addr(desc->addr);
+    288          
+    289          	memset(&desc->dma.tx.cfg, 0x0, sizeof(desc->dma.tx.cfg));
+    290          
+    291          	if(!desc->dma.tx.channel)
+    292          		desc->dma.tx.channel = dma_allocate_channel(DMA_PERIPH_MEMORY, id);
+    293          	assert(desc->dma.tx.channel);
+    294          
+    295          	desc->dma.tx.cfg.saddr = buffer->data;
+    296          	desc->dma.tx.cfg.daddr = (void*)&desc->addr->TWI_THR;
+    297          #ifdef CONFIG_HAVE_TWI_FIFO
+    298          	if (desc->use_fifo) {
+    299          		if ((buffer->size % 4) == 0) {
+    300          			desc->addr->TWI_FMR = (desc->addr->TWI_FMR & ~TWI_FMR_TXRDYM_Msk) | TWI_FMR_TXRDYM_FOUR_DATA;
+    301          			desc->dma.tx.cfg_dma.data_width = DMA_DATA_WIDTH_WORD;
+    302          		} else if ((buffer->size % 2) == 0) {
+    303          			desc->addr->TWI_FMR = (desc->addr->TWI_FMR & ~TWI_FMR_TXRDYM_Msk) | TWI_FMR_TXRDYM_TWO_DATA;
+    304          			desc->dma.tx.cfg_dma.data_width = DMA_DATA_WIDTH_HALF_WORD;
+    305          		} else {
+    306          			desc->addr->TWI_FMR = (desc->addr->TWI_FMR & ~TWI_FMR_TXRDYM_Msk) | TWI_FMR_TXRDYM_ONE_DATA;
+    307          			desc->dma.tx.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+    308          		}
+    309          		desc->dma.tx.cfg.len = buffer->size;
+    310          	} else {
+    311          		desc->addr->TWI_FMR = (desc->addr->TWI_FMR & ~TWI_FMR_TXRDYM_Msk) | TWI_FMR_TXRDYM_ONE_DATA;
+    312          		desc->dma.tx.cfg.len = buffer->size - 1;
+    313          		desc->dma.tx.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+    314          	}
+    315          #else
+    316          	desc->dma.tx.cfg.len = buffer->size - 1;
+    317          	desc->dma.tx.cfg_dma.data_width = DMA_DATA_WIDTH_BYTE;
+    318          #endif
+    319          	dma_configure_transfer(desc->dma.tx.channel, &desc->dma.tx.cfg_dma, &desc->dma.tx.cfg, 1);
+    320          	callback_set(&_cb, _twid_dma_write_callback, (void*)desc);
+    321          	dma_set_callback(desc->dma.tx.channel, &_cb);
+    322          	cache_clean_region(desc->dma.tx.cfg.saddr, desc->dma.tx.cfg.len);
+    323          	dma_start_transfer(desc->dma.tx.channel);
+    324          }
+    325          
+    326          /*
+    327           *
+    328           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    329          static void _twid_handler(uint32_t source, void* user_arg)
+    330          {
+   \                     _twid_handler:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+   \        0x4   0xE1A0'4001        MOV      R4,R1
+    331          	uint32_t status = 0;
+    332          	Twi* addr;
+    333          	uint32_t buf_size;
+    334          	bool use_fifo = false;
+    335          	struct _async_desc* adesc = (struct _async_desc*)user_arg;
+    336          
+    337          	addr = adesc->twi_desc->addr;
+   \        0x8   0xE594'1004        LDR      R1,[R4, #+4]
+   \        0xC   0xE591'5000        LDR      R5,[R1, #+0]
+    338          	status = twi_get_masked_status(addr);
+   \       0x10   0xE1A0'0005        MOV      R0,R5
+   \       0x14   0x....'....        BL       twi_get_masked_status
+    339          
+    340          #if defined(CONFIG_HAVE_TWI_FIFO)
+    341          	use_fifo = adesc->twi_desc->use_fifo;
+    342          #endif
+    343          
+    344          	if (TWI_STATUS_RXRDY(status)) {
+   \       0x18   0xE310'0002        TST      R0,#0x2
+   \       0x1C   0x0A00'0022        BEQ      ??_twid_handler_0
+    345          		if (use_fifo) {
+    346          #ifdef CONFIG_HAVE_TWI_FIFO
+    347          			uint8_t size = twi_fifo_get_rx_size(addr);
+    348          
+    349          			adesc->transferred += twi_fifo_read(addr, &adesc->buf.data[adesc->transferred], size);
+    350          
+    351          			if ((adesc->buf.size - adesc->transferred) >= 4)
+    352          				addr->TWI_FMR = (addr->TWI_FMR & ~TWI_FMR_RXRDYM_Msk) | TWI_FMR_RXRDYM_FOUR_DATA;
+    353          			else if ((adesc->buf.size - adesc->transferred) >= 2)
+    354          				addr->TWI_FMR = (addr->TWI_FMR & ~TWI_FMR_RXRDYM_Msk) | TWI_FMR_RXRDYM_TWO_DATA;
+    355          			else
+    356          				addr->TWI_FMR = (addr->TWI_FMR & ~TWI_FMR_RXRDYM_Msk) | TWI_FMR_RXRDYM_ONE_DATA;
+    357          
+    358          			buf_size = adesc->buf.size;
+    359          #endif /* CONFIG_HAVE_TWI_FIFO */
+    360          		} else {
+    361          			adesc->buf.data[adesc->transferred] = twi_read_byte(addr);
+   \       0x20   0xE1A0'0005        MOV      R0,R5
+   \       0x24   0x....'....        BL       twi_read_byte
+   \       0x28   0xE594'100C        LDR      R1,[R4, #+12]
+   \       0x2C   0xE594'2018        LDR      R2,[R4, #+24]
+   \       0x30   0xE7C1'0002        STRB     R0,[R1, +R2]
+    362          			adesc->transferred++;
+    363          			buf_size = adesc->buf.size - 1;
+    364          		}
+    365          
+    366          		/* Only one byte remaining, send stop condition */
+    367          		if (adesc->transferred == buf_size)
+   \       0x34   0xE594'1010        LDR      R1,[R4, #+16]
+   \       0x38   0xE594'0018        LDR      R0,[R4, #+24]
+   \       0x3C   0xE241'2001        SUB      R2,R1,#+1
+   \       0x40   0xE280'0001        ADD      R0,R0,#+1
+   \       0x44   0xE150'0002        CMP      R0,R2
+   \       0x48   0xE584'0018        STR      R0,[R4, #+24]
+   \       0x4C   0x1A00'0005        BNE      ??_twid_handler_1
+    368          			if (adesc->twi_desc->flags & BUS_I2C_BUF_ATTR_STOP)
+   \       0x50   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x54   0xE1D0'11B0        LDRH     R1,[R0, #+16]
+   \       0x58   0xE311'0D80        TST      R1,#0x2000
+   \       0x5C   0x0A00'0001        BEQ      ??_twid_handler_1
+    369          				twi_send_stop_condition(addr);
+   \       0x60   0xE1A0'0005        MOV      R0,R5
+   \       0x64   0x....'....        BL       twi_send_stop_condition
+    370          
+    371          		if (adesc->transferred == adesc->buf.size) {
+   \                     ??_twid_handler_1:
+   \       0x68   0xE594'0018        LDR      R0,[R4, #+24]
+   \       0x6C   0xE594'1010        LDR      R1,[R4, #+16]
+   \       0x70   0xE150'0001        CMP      R0,R1
+   \       0x74   0x1A00'0040        BNE      ??_twid_handler_2
+    372          			twi_disable_it(addr, TWI_IDR_RXRDY);
+   \       0x78   0xE3A0'1002        MOV      R1,#+2
+   \       0x7C   0xE1A0'0005        MOV      R0,R5
+   \       0x80   0x....'....        BL       twi_disable_it
+    373          			if (adesc->twi_desc->flags & BUS_I2C_BUF_ATTR_STOP) {
+   \       0x84   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x88   0xE1D0'11B0        LDRH     R1,[R0, #+16]
+   \       0x8C   0xE311'0D80        TST      R1,#0x2000
+   \       0x90   0x1A00'0024        BNE      ??_twid_handler_3
+    374          				twi_enable_it(addr, TWI_IER_TXCOMP);
+    375          			} else {
+    376          				adesc->twi_id = 0;
+    377          				mutex_unlock(&adesc->twi_desc->mutex);
+    378          			}
+    379          		}
+    380          	} else if (TWI_STATUS_TXRDY(status)) {
+    381          		if (use_fifo) {
+    382          #ifdef CONFIG_HAVE_TWI_FIFO
+    383          			uint8_t len = 0;
+    384          			uint8_t size = adesc->twi_desc->fifo.tx.size - twi_fifo_get_tx_size(addr);
+    385          
+    386          			if ((adesc->buf.size - adesc->transferred) > size)
+    387          				len = size;
+    388          			else
+    389          				len = adesc->buf.size - adesc->transferred;
+    390          			adesc->transferred += twi_fifo_write(addr, &adesc->buf.data[adesc->transferred], len);
+    391          
+    392          			/* Transfer finished ? */
+    393          			if (adesc->transferred == adesc->buf.size)
+    394          				if (adesc->twi_desc->flags & BUS_I2C_BUF_ATTR_STOP)
+    395          					twi_send_stop_condition(addr);
+    396          
+    397          			if ((adesc->buf.size - adesc->transferred) >= 4)
+    398          				addr->TWI_FMR = (addr->TWI_FMR & ~TWI_FMR_TXRDYM_Msk) | TWI_FMR_TXRDYM_FOUR_DATA;
+    399          			else if ((adesc->buf.size - adesc->transferred) >= 2)
+    400          				addr->TWI_FMR = (addr->TWI_FMR & ~TWI_FMR_TXRDYM_Msk) | TWI_FMR_TXRDYM_TWO_DATA;
+    401          			else
+    402          				addr->TWI_FMR = (addr->TWI_FMR & ~TWI_FMR_TXRDYM_Msk) | TWI_FMR_TXRDYM_ONE_DATA;
+    403          #endif /* CONFIG_HAVE_TWI_FIFO */
+    404          		} else {
+    405          			/* Transfer finished ? */
+    406          			if (adesc->transferred == adesc->buf.size - 1)
+    407          				if (adesc->twi_desc->flags & BUS_I2C_BUF_ATTR_STOP)
+    408          					twi_send_stop_condition(addr);
+    409          
+    410          			twi_write_byte(addr, adesc->buf.data[adesc->transferred]);
+    411          			adesc->transferred++;
+    412          		}
+    413          
+    414          		if (adesc->transferred >= adesc->buf.size){
+    415          			twi_disable_it(addr, TWI_IDR_TXRDY);
+    416          			if (adesc->twi_desc->flags & BUS_I2C_BUF_ATTR_STOP) {
+    417          				twi_enable_it(addr, TWI_IER_TXCOMP);
+    418          			} else {
+    419          				adesc->twi_id = 0;
+    420          				mutex_unlock(&adesc->twi_desc->mutex);
+   \                     ??_twid_handler_4:
+   \       0x94   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x98   0xE3A0'0000        MOV      R0,#+0
+   \       0x9C   0xE584'0008        STR      R0,[R4, #+8]
+   \       0xA0   0xE281'0018        ADD      R0,R1,#+24
+   \       0xA4   0xE8BD'4032        POP      {R1,R4,R5,LR}
+   \       0xA8   0x....'....        B        mutex_unlock     ;; tailcall
+    421          			}
+   \                     ??_twid_handler_0:
+   \       0xAC   0xE310'0004        TST      R0,#0x4
+   \       0xB0   0x0A00'0020        BEQ      ??_twid_handler_5
+   \       0xB4   0xE594'1010        LDR      R1,[R4, #+16]
+   \       0xB8   0xE594'0018        LDR      R0,[R4, #+24]
+   \       0xBC   0xE241'2001        SUB      R2,R1,#+1
+   \       0xC0   0xE150'0002        CMP      R0,R2
+   \       0xC4   0x1A00'0005        BNE      ??_twid_handler_6
+   \       0xC8   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0xCC   0xE1D0'11B0        LDRH     R1,[R0, #+16]
+   \       0xD0   0xE311'0D80        TST      R1,#0x2000
+   \       0xD4   0x0A00'0001        BEQ      ??_twid_handler_6
+   \       0xD8   0xE1A0'0005        MOV      R0,R5
+   \       0xDC   0x....'....        BL       twi_send_stop_condition
+   \                     ??_twid_handler_6:
+   \       0xE0   0xE594'000C        LDR      R0,[R4, #+12]
+   \       0xE4   0xE594'1018        LDR      R1,[R4, #+24]
+   \       0xE8   0xE7D0'1001        LDRB     R1,[R0, +R1]
+   \       0xEC   0xE1A0'0005        MOV      R0,R5
+   \       0xF0   0x....'....        BL       twi_write_byte
+   \       0xF4   0xE594'1010        LDR      R1,[R4, #+16]
+   \       0xF8   0xE594'0018        LDR      R0,[R4, #+24]
+   \       0xFC   0xE280'0001        ADD      R0,R0,#+1
+   \      0x100   0xE150'0001        CMP      R0,R1
+   \      0x104   0xE584'0018        STR      R0,[R4, #+24]
+   \      0x108   0x3A00'001B        BCC      ??_twid_handler_2
+   \      0x10C   0xE3A0'1004        MOV      R1,#+4
+   \      0x110   0xE1A0'0005        MOV      R0,R5
+   \      0x114   0x....'....        BL       twi_disable_it
+   \      0x118   0xE594'0004        LDR      R0,[R4, #+4]
+   \      0x11C   0xE1D0'11B0        LDRH     R1,[R0, #+16]
+   \      0x120   0xE311'0D80        TST      R1,#0x2000
+   \      0x124   0x0AFF'FFDA        BEQ      ??_twid_handler_4
+   \                     ??_twid_handler_3:
+   \      0x128   0xE1A0'0005        MOV      R0,R5
+   \      0x12C   0xE3A0'1001        MOV      R1,#+1
+   \      0x130   0xE8BD'4034        POP      {R2,R4,R5,LR}
+   \      0x134   0x....'....        B        twi_enable_it    ;; tailcall
+    422          		}
+    423          	}
+    424          	/* Transfer complete*/
+    425          	else if (TWI_STATUS_TXCOMP(status)) {
+   \                     ??_twid_handler_5:
+   \      0x138   0xE310'0001        TST      R0,#0x1
+   \      0x13C   0x0A00'000E        BEQ      ??_twid_handler_2
+    426          		irq_disable(adesc->twi_id);
+   \      0x140   0xE594'0008        LDR      R0,[R4, #+8]
+   \      0x144   0x....'....        BL       irq_disable
+    427          		twi_disable_it(addr, TWI_IDR_TXCOMP);
+   \      0x148   0xE3A0'1001        MOV      R1,#+1
+   \      0x14C   0xE1A0'0005        MOV      R0,R5
+   \      0x150   0x....'....        BL       twi_disable_it
+    428          		adesc->twi_id = 0;
+    429          		mutex_unlock(&adesc->twi_desc->mutex);
+   \      0x154   0xE594'1004        LDR      R1,[R4, #+4]
+   \      0x158   0xE3A0'0000        MOV      R0,#+0
+   \      0x15C   0xE584'0008        STR      R0,[R4, #+8]
+   \      0x160   0xE281'0018        ADD      R0,R1,#+24
+   \      0x164   0x....'....        BL       mutex_unlock
+    430          		callback_call(&adesc->twi_desc->callback, NULL);
+   \      0x168   0xE594'0004        LDR      R0,[R4, #+4]
+   \      0x16C   0xE8BD'4034        POP      {R2,R4,R5,LR}
+   \      0x170   0xE3A0'1000        MOV      R1,#+0
+   \      0x174   0xE280'001C        ADD      R0,R0,#+28
+   \      0x178   0x....'....        B        callback_call    ;; tailcall
+    431          	}
+    432          }
+   \                     ??_twid_handler_2:
+   \      0x17C   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    433          
+    434          /*
+    435           *
+    436           */
+    437          static int _twid_poll_read(struct _twi_desc* desc, struct _buffer* buffer)
+    438          {
+    439          	int i;
+    440          	Twi* addr = desc->addr;
+    441          	int32_t size;
+    442          	bool use_fifo = false;
+    443          
+    444          #if defined(CONFIG_HAVE_TWI_FIFO)
+    445          	use_fifo = desc->use_fifo;
+    446          #endif
+    447          
+    448          	if (use_fifo)
+    449          		size = buffer->size;
+    450          	else
+    451          		size = buffer->size - 1;
+    452          	if (size < 0)
+    453          		size = 0;
+    454          
+    455          	if (desc->flags & BUS_I2C_BUF_ATTR_START)
+    456          		twi_send_start_condition(addr);
+    457          
+    458          	if (use_fifo) {
+    459          #ifdef CONFIG_HAVE_TWI_FIFO
+    460          		for (i = 0 ; i < size ; ) {
+    461          			int len;
+    462          
+    463          			do {
+    464          				uint8_t _size;
+    465          
+    466          				do {
+    467          					_size = twi_fifo_get_rx_size(desc->addr);
+    468          				} while (_size == 0);
+    469          
+    470          				if (size > _size)
+    471          					len = _size;
+    472          				else
+    473          					len = size;
+    474          			} while (len == 0);
+    475          
+    476          			i += twi_fifo_read(desc->addr, &buffer->data[i], len);
+    477          
+    478          			if ((i < size) && _check_nack(desc))
+    479          				return -ECONNABORTED;
+    480          		}
+    481          #endif /* CONFIG_HAVE_TWI_FIFO */
+    482          	} else {
+    483          		for (i = 0 ; i < size ; i++) {
+    484          			if (_check_rx_timeout(desc))
+    485          				break;
+    486          
+    487          			buffer->data[i] = twi_read_byte(addr);
+    488          
+    489          			if (_check_nack(desc))
+    490          				return -ECONNABORTED;
+    491          		}
+    492          	}
+    493          
+    494          	/* Before receive last data, send stop */
+    495          	if (desc->flags & BUS_I2C_BUF_ATTR_STOP)
+    496          		twi_send_stop_condition(addr);
+    497          
+    498          	if ((size == (buffer->size - 1)) || (size == 0)) {
+    499          		if (_check_rx_timeout(desc))
+    500          			return -ETIMEDOUT;
+    501          		buffer->data[i] = twi_read_byte(addr);
+    502          	}
+    503          
+    504          	/* wait transfer to be finished */
+    505          	if (desc->flags & BUS_I2C_BUF_ATTR_STOP)
+    506          		return _twid_wait_twi_transfer(desc);
+    507          	return 0;
+    508          }
+    509          
+    510          static int _twid_poll_write(struct _twi_desc* desc, struct _buffer* buffer)
+    511          {
+    512          	int i = 0;
+    513          	int size;
+    514          	bool use_fifo = false;
+    515          
+    516          #if defined(CONFIG_HAVE_TWI_FIFO)
+    517          	use_fifo = desc->use_fifo;
+    518          #endif
+    519          
+    520          	if (use_fifo)
+    521          		size = buffer->size;
+    522          	else
+    523          		size = buffer->size - 1;
+    524          	if (size < 0)
+    525          		size = 0;
+    526          
+    527          	/* If only one byte send stop immediatly */
+    528          	if (buffer->size <= 1)
+    529          		if (desc->flags & BUS_I2C_BUF_ATTR_STOP)
+    530          			twi_send_stop_condition(desc->addr);
+    531          
+    532          	if (use_fifo) {
+    533          #ifdef CONFIG_HAVE_TWI_FIFO
+    534          		for (i = 0 ; i < size ; ) {
+    535          			uint8_t len;
+    536          			do {
+    537          				volatile uint8_t _size =  twi_fifo_get_tx_size(desc->addr);
+    538          
+    539          				/* Fill the FIFO as much as possible */
+    540          				len = desc->fifo.tx.size - _size;
+    541          				len = len > (size) ? size : len;
+    542          			} while (len == 0);
+    543          
+    544          			i += twi_fifo_write(desc->addr, &buffer->data[i], len);
+    545          
+    546          			if ((i < size - 1) && _check_nack(desc))
+    547          				return -ECONNABORTED;
+    548          		}
+    549          #endif /* CONFIG_HAVE_TWI_FIFO */
+    550          	} else {
+    551          		for (i = 0 ; i < size ; i++) {
+    552          			if (_check_tx_timeout(desc))
+    553          				break;
+    554          			twi_write_byte(desc->addr, buffer->data[i]);
+    555          
+    556          			if (_check_nack(desc))
+    557          				return -ECONNABORTED;
+    558          		}
+    559          	}
+    560          
+    561          	if (buffer->size > 1)
+    562          		if (desc->flags & BUS_I2C_BUF_ATTR_STOP)
+    563          			twi_send_stop_condition(desc->addr);
+    564          
+    565          	if (size == (buffer->size - 1)) {
+    566          		if (_check_tx_timeout(desc))
+    567          			return -ETIMEDOUT;
+    568          		twi_write_byte(desc->addr, buffer->data[i]);
+    569          		while(!twi_is_byte_sent(desc->addr));
+    570          	}
+    571          
+    572          	/* wait transfer to be finished */
+    573          	if (desc->flags & BUS_I2C_BUF_ATTR_STOP)
+    574          		return _twid_wait_twi_transfer(desc);
+    575          	return 0;
+    576          }
+    577          
+    578          #ifdef CONFIG_HAVE_TWI_FIFO
+    579          
+    580          static void twid_fifo_configure(struct _twi_desc *desc)
+    581          {
+    582          	desc->fifo.rx.size = get_peripheral_fifo_depth(desc->addr);
+    583          	desc->fifo.rx.threshold = desc->fifo.rx.size / 2;
+    584          	desc->fifo.tx.size = get_peripheral_fifo_depth(desc->addr);
+    585          	desc->fifo.tx.threshold = desc->fifo.tx.size / 2;
+    586          	twi_fifo_configure(desc->addr, desc->fifo.tx.threshold, desc->fifo.rx.threshold,
+    587          			   TWI_FMR_RXRDYM_FOUR_DATA | TWI_FMR_TXRDYM_FOUR_DATA);
+    588          }
+    589          
+    590          #endif /* CONFIG_HAVE_TWI_FIFO */
+    591          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    592          static void _twid_slave_handler(uint32_t source, void* user_arg)
+    593          {
+   \                     _twid_slave_handler:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    594          	uint32_t status;
+    595          	Twi* twi;
+    596          	struct _twi_slave_desc *desc;
+    597          	struct _async_desc* adesc = (struct _async_desc*)user_arg;
+    598          
+    599          	desc = adesc->twi_slave_desc;
+   \        0x4   0xE591'4004        LDR      R4,[R1, #+4]
+    600          	twi = adesc->twi_slave_desc->twi;
+   \        0x8   0xE594'5000        LDR      R5,[R4, #+0]
+    601          	status = twi_get_status(twi);
+   \        0xC   0xE1A0'0005        MOV      R0,R5
+   \       0x10   0x....'....        BL       twi_get_status
+   \       0x14   0xE1A0'6000        MOV      R6,R0
+    602          
+    603          	if (TWI_STATUS_GACC(status))
+   \       0x18   0xE316'0020        TST      R6,#0x20
+   \       0x1C   0x1A00'004A        BNE      ??_twid_slave_handler_0
+    604          		return;
+    605          
+    606          	if (TWI_STATUS_EOSACC(status) || TWI_STATUS_TXCOMP(status)) {
+   \       0x20   0xE300'0801        MOVW     R0,#+2049
+   \       0x24   0xE110'0006        TST      R0,R6
+   \       0x28   0x0A00'0010        BEQ      ??_twid_slave_handler_1
+    607          		twi_disable_it(twi, TWI_IDR_RXRDY | TWI_IDR_TXRDY | TWI_IER_TXCOMP);
+   \       0x2C   0xE3A0'1007        MOV      R1,#+7
+   \       0x30   0xE1A0'0005        MOV      R0,R5
+   \       0x34   0x....'....        BL       twi_disable_it
+    608          
+    609          		if (desc->state == TWID_SLAVE_STATE_STARTED) {
+   \       0x38   0xE5D4'0006        LDRB     R0,[R4, #+6]
+   \       0x3C   0xE350'0001        CMP      R0,#+1
+   \       0x40   0x1A00'0006        BNE      ??_twid_slave_handler_2
+    610          			desc->state = TWID_SLAVE_STATE_STOPPED;
+    611          			if (desc->ops->on_stop)
+   \       0x44   0xE594'0008        LDR      R0,[R4, #+8]
+   \       0x48   0xE3A0'1000        MOV      R1,#+0
+   \       0x4C   0xE5C4'1006        STRB     R1,[R4, #+6]
+   \       0x50   0xE590'0004        LDR      R0,[R0, #+4]
+   \       0x54   0xE350'0000        CMP      R0,#+0
+   \       0x58   0x0A00'0000        BEQ      ??_twid_slave_handler_2
+    612          				desc->ops->on_stop();
+   \       0x5C   0xE12F'FF30        BLX      R0
+    613          		}
+    614          
+    615          		twi_enable_it(desc->twi, TWI_IER_SVACC);
+   \                     ??_twid_slave_handler_2:
+   \       0x60   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x64   0xE8BD'4070        POP      {R4-R6,LR}
+   \       0x68   0xE3A0'1010        MOV      R1,#+16
+   \       0x6C   0x....'....        B        twi_enable_it    ;; tailcall
+    616          	}
+    617          	else if (TWI_STATUS_SVACC(status)) {
+   \                     ??_twid_slave_handler_1:
+   \       0x70   0xE316'0010        TST      R6,#0x10
+   \       0x74   0x0A00'0034        BEQ      ??_twid_slave_handler_0
+    618          		if (desc->state == TWID_SLAVE_STATE_STOPPED) {
+   \       0x78   0xE5D4'0006        LDRB     R0,[R4, #+6]
+   \       0x7C   0xE350'0000        CMP      R0,#+0
+   \       0x80   0x1A00'0009        BNE      ??_twid_slave_handler_3
+    619          			twi_disable_it(twi, TWI_IDR_SVACC);
+   \       0x84   0xE3A0'1010        MOV      R1,#+16
+   \       0x88   0xE1A0'0005        MOV      R0,R5
+   \       0x8C   0x....'....        BL       twi_disable_it
+    620          
+    621          			desc->state = TWID_SLAVE_STATE_STARTED;
+    622          
+    623          			if (desc->ops->on_start)
+   \       0x90   0xE594'1008        LDR      R1,[R4, #+8]
+   \       0x94   0xE3A0'0001        MOV      R0,#+1
+   \       0x98   0xE5C4'0006        STRB     R0,[R4, #+6]
+   \       0x9C   0xE591'0000        LDR      R0,[R1, #+0]
+   \       0xA0   0xE350'0000        CMP      R0,#+0
+   \       0xA4   0x0A00'0000        BEQ      ??_twid_slave_handler_3
+    624          				desc->ops->on_start();
+   \       0xA8   0xE12F'FF30        BLX      R0
+    625          		}
+    626          
+    627          		if (TWI_STATUS_SVREAD(status)) {
+   \                     ??_twid_slave_handler_3:
+   \       0xAC   0xE316'0008        TST      R6,#0x8
+   \       0xB0   0x0A00'000E        BEQ      ??_twid_slave_handler_4
+    628          			twi_disable_it(twi, TWI_IER_RXRDY);
+   \       0xB4   0xE3A0'1002        MOV      R1,#+2
+   \       0xB8   0xE1A0'0005        MOV      R0,R5
+   \       0xBC   0x....'....        BL       twi_disable_it
+    629          			twi_enable_it(twi, TWI_IER_TXRDY | TWI_IER_TXCOMP);
+   \       0xC0   0xE3A0'1005        MOV      R1,#+5
+   \       0xC4   0xE1A0'0005        MOV      R0,R5
+   \       0xC8   0x....'....        BL       twi_enable_it
+    630          
+    631          			if (TWI_STATUS_TXRDY(status) && !TWI_STATUS_NACK(status)) {
+   \       0xCC   0xE206'0F41        AND      R0,R6,#0x104
+   \       0xD0   0xE350'0004        CMP      R0,#+4
+   \       0xD4   0x1A00'001C        BNE      ??_twid_slave_handler_0
+    632          				int16_t err = -1;
+    633          				if (desc->ops->on_write)
+   \       0xD8   0xE594'1008        LDR      R1,[R4, #+8]
+   \       0xDC   0xE591'000C        LDR      R0,[R1, #+12]
+   \       0xE0   0xE350'0000        CMP      R0,#+0
+   \       0xE4   0x0A00'0018        BEQ      ??_twid_slave_handler_0
+    634          					err = desc->ops->on_write();
+   \       0xE8   0xE12F'FF30        BLX      R0
+    635          				if (err > 0)
+   \       0xEC   0xEA00'0010        B        ??_twid_slave_handler_5
+    636          					twi_write_byte(twi, err);
+    637          			}
+    638          		} else {
+    639          			twi_disable_it(twi, TWI_IER_TXRDY);
+   \                     ??_twid_slave_handler_4:
+   \       0xF0   0xE3A0'1004        MOV      R1,#+4
+   \       0xF4   0xE1A0'0005        MOV      R0,R5
+   \       0xF8   0x....'....        BL       twi_disable_it
+    640          			twi_enable_it(twi, TWI_IER_RXRDY | TWI_IER_TXCOMP);
+   \       0xFC   0xE3A0'1003        MOV      R1,#+3
+   \      0x100   0xE1A0'0005        MOV      R0,R5
+   \      0x104   0x....'....        BL       twi_enable_it
+    641          
+    642          			if (TWI_STATUS_RXRDY(status)) {
+   \      0x108   0xE316'0002        TST      R6,#0x2
+   \      0x10C   0x0A00'000E        BEQ      ??_twid_slave_handler_0
+    643          				int16_t err = -1;
+    644          				if (desc->ops->on_read)
+   \      0x110   0xE594'0008        LDR      R0,[R4, #+8]
+   \      0x114   0xE590'1008        LDR      R1,[R0, #+8]
+   \      0x118   0xE351'0000        CMP      R1,#+0
+   \      0x11C   0x0A00'000A        BEQ      ??_twid_slave_handler_0
+    645          					err = desc->ops->on_read(twi_read_byte(twi));
+   \      0x120   0xE1A0'0005        MOV      R0,R5
+   \      0x124   0x....'....        BL       twi_read_byte
+   \      0x128   0xE594'1008        LDR      R1,[R4, #+8]
+   \      0x12C   0xE591'2008        LDR      R2,[R1, #+8]
+   \      0x130   0xE12F'FF32        BLX      R2
+    646          				if (err > 0)
+   \                     ??_twid_slave_handler_5:
+   \      0x134   0xE350'0001        CMP      R0,#+1
+   \      0x138   0xBA00'0003        BLT      ??_twid_slave_handler_0
+    647          					twi_write_byte(twi, err);
+   \      0x13C   0xE6EF'1070        UXTB     R1,R0
+   \      0x140   0xE1A0'0005        MOV      R0,R5
+   \      0x144   0xE8BD'4070        POP      {R4-R6,LR}
+   \      0x148   0x....'....        B        twi_write_byte   ;; tailcall
+    648          			}
+    649          		}
+    650          	}
+    651          
+    652          }
+   \                     ??_twid_slave_handler_0:
+   \      0x14C   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    653          
+    654          /*
+    655           *
+    656           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    657          static int _twid_transfer(struct _twi_desc* desc, struct _buffer* buf,  struct _callback* cb)
+    658          {
+   \                     _twid_transfer:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE1A0'9000        MOV      R9,R0
+   \        0x8   0xE24D'D010        SUB      SP,SP,#+16
+   \        0xC   0xE1A0'6001        MOV      R6,R1
+   \       0x10   0xE1A0'4002        MOV      R4,R2
+    659          	int err = 0;
+    660          	uint32_t id;
+    661          	uint8_t tmode;
+    662          
+    663          	if (!mutex_try_lock(&desc->mutex))
+   \       0x14   0xE289'0018        ADD      R0,R9,#+24
+   \       0x18   0xE3A0'5000        MOV      R5,#+0
+   \       0x1C   0x....'....        BL       mutex_try_lock
+   \       0x20   0xE350'0000        CMP      R0,#+0
+    664          		return -EBUSY;
+   \       0x24   0x03E0'0009        MVNEQ    R0,#+9
+   \       0x28   0x0A00'0173        BEQ      ??_twid_transfer_0
+    665          
+    666          	callback_copy(&desc->callback, cb);
+   \       0x2C   0xE1A0'1004        MOV      R1,R4
+   \       0x30   0xE289'001C        ADD      R0,R9,#+28
+   \       0x34   0x....'....        BL       callback_copy
+    667          	desc->flags = buf->attr;
+    668          	tmode = desc->transfer_mode;
+   \       0x38   0xE599'400C        LDR      R4,[R9, #+12]
+   \       0x3C   0xE596'2008        LDR      R2,[R6, #+8]
+    669          
+    670          	/* If short transfer detected, use POLLING mode */
+    671          	if (tmode != BUS_TRANSFER_MODE_POLLING) {
+   \       0x40   0xE6EF'0074        UXTB     R0,R4
+   \       0x44   0xE350'0000        CMP      R0,#+0
+   \       0x48   0xE589'2010        STR      R2,[R9, #+16]
+   \       0x4C   0x0A00'0002        BEQ      ??_twid_transfer_1
+    672          		if (buf->size < TWID_POLLING_THRESHOLD)
+   \       0x50   0xE596'1004        LDR      R1,[R6, #+4]
+   \       0x54   0xE351'0010        CMP      R1,#+16
+    673          			tmode = BUS_TRANSFER_MODE_POLLING;
+   \       0x58   0x33A0'4000        MOVCC    R4,#+0
+    674          	}
+    675          
+    676          	if (desc->flags & BUS_I2C_BUF_ATTR_START) {
+   \                     ??_twid_transfer_1:
+   \       0x5C   0xE312'0D40        TST      R2,#0x1000
+   \       0x60   0x0A00'0009        BEQ      ??_twid_transfer_2
+    677          		if (desc->flags & BUS_BUF_ATTR_TX) {
+   \       0x64   0xE599'1008        LDR      R1,[R9, #+8]
+   \       0x68   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0x6C   0xE312'0002        TST      R2,#0x2
+   \       0x70   0xE1A0'3005        MOV      R3,R5
+   \       0x74   0xE1A0'2003        MOV      R2,R3
+   \       0x78   0xE6EF'1071        UXTB     R1,R1
+   \       0x7C   0x0A00'0001        BEQ      ??_twid_transfer_3
+    678          			twi_init_write(desc->addr, desc->slave_addr, 0, 0);
+   \       0x80   0x....'....        BL       twi_init_write
+   \       0x84   0xEA00'0000        B        ??_twid_transfer_2
+    679          #ifdef CONFIG_HAVE_TWI_FIFO
+    680          			if (desc->use_fifo)
+    681          				twi_fifo_flush_tx(desc->addr);
+    682          #endif
+    683          		} else {
+    684          			twi_init_read(desc->addr, desc->slave_addr, 0, 0);
+   \                     ??_twid_transfer_3:
+   \       0x88   0x....'....        BL       twi_init_read
+    685          #ifdef CONFIG_HAVE_TWI_FIFO
+    686          			if (desc->use_fifo)
+    687          				twi_fifo_flush_rx(desc->addr);
+    688          #endif
+    689          		}
+    690          	}
+    691          
+    692          	switch (tmode) {
+   \                     ??_twid_transfer_2:
+   \       0x8C   0xE6EF'4074        UXTB     R4,R4
+   \       0x90   0xE354'0000        CMP      R4,#+0
+   \       0x94   0x0A00'0049        BEQ      ??_twid_transfer_4
+   \       0x98   0xE354'0002        CMP      R4,#+2
+   \       0x9C   0x0A00'00E8        BEQ      ??_twid_transfer_5
+   \       0xA0   0x2A00'014D        BCS      ??_twid_transfer_6
+    693          	case BUS_TRANSFER_MODE_ASYNC:
+    694          		/* Copy descriptor to async descriptor */
+    695          		async_desc[adesc_index].twi_desc = desc;
+   \       0xA4   0x....'....        LDR      R4,??DataTable10_4
+   \       0xA8   0xE5D4'0054        LDRB     R0,[R4, #+84]
+   \       0xAC   0xE060'1180        RSB      R1,R0,R0, LSL #+3
+   \       0xB0   0xE084'0101        ADD      R0,R4,R1, LSL #+2
+   \       0xB4   0xE580'9004        STR      R9,[R0, #+4]
+    696          		/* Init param used by interrupt handler */
+    697          		async_desc[adesc_index].transferred = 0;
+   \       0xB8   0xE580'5018        STR      R5,[R0, #+24]
+    698          		async_desc[adesc_index].buf.data = buf->data;
+   \       0xBC   0xE596'3000        LDR      R3,[R6, #+0]
+   \       0xC0   0xE580'300C        STR      R3,[R0, #+12]
+    699          		async_desc[adesc_index].buf.size = buf->size;
+   \       0xC4   0xE596'1004        LDR      R1,[R6, #+4]
+   \       0xC8   0xE580'1010        STR      R1,[R0, #+16]
+    700          		async_desc[adesc_index].buf.attr = buf->attr;
+   \       0xCC   0xE596'2008        LDR      R2,[R6, #+8]
+   \       0xD0   0xE580'2014        STR      R2,[R0, #+20]
+    701          		id = get_twi_id_from_addr(desc->addr);
+   \       0xD4   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0xD8   0x....'....        BL       get_twi_id_from_addr
+   \       0xDC   0xE1A0'7000        MOV      R7,R0
+    702          		async_desc[adesc_index].twi_id = id;
+   \       0xE0   0xE5D4'0054        LDRB     R0,[R4, #+84]
+   \       0xE4   0xE284'2008        ADD      R2,R4,#+8
+   \       0xE8   0xE060'1180        RSB      R1,R0,R0, LSL #+3
+   \       0xEC   0xE1A0'0101        LSL      R0,R1,#+2
+    703          
+    704          		/* Set TWI handler */
+    705          		irq_add_handler(id, _twid_handler, &async_desc[adesc_index]);
+   \       0xF0   0x....'....        LDR      R1,??DataTable10_5
+   \       0xF4   0xE782'7000        STR      R7,[R2, +R0]
+   \       0xF8   0xE084'2000        ADD      R2,R4,R0
+   \       0xFC   0xE1A0'0007        MOV      R0,R7
+   \      0x100   0x....'....        BL       irq_add_handler
+    706          		/* Enable TWI interrupt */
+    707          		irq_enable(id);
+   \      0x104   0xE1A0'0007        MOV      R0,R7
+   \      0x108   0x....'....        BL       irq_enable
+    708          
+    709          		if (desc->flags & BUS_BUF_ATTR_TX) {
+   \      0x10C   0xE5D9'0010        LDRB     R0,[R9, #+16]
+   \      0x110   0xE310'0002        TST      R0,#0x2
+   \      0x114   0x0A00'0017        BEQ      ??_twid_transfer_7
+    710          			if (_check_tx_timeout(desc)) {
+   \      0x118   0xE1A0'0009        MOV      R0,R9
+   \      0x11C   0x....'....        BL       _check_tx_timeout
+   \      0x120   0xE350'0000        CMP      R0,#+0
+   \      0x124   0x0A00'0006        BEQ      ??_twid_transfer_8
+    711          				twi_disable_it(desc->addr, TWI_IER_TXRDY);
+   \      0x128   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x12C   0xE3A0'1004        MOV      R1,#+4
+   \      0x130   0x....'....        BL       twi_disable_it
+    712          				irq_disable(id);
+   \      0x134   0xE1A0'0007        MOV      R0,R7
+   \      0x138   0x....'....        BL       irq_disable
+    713          				return -ETIMEDOUT;
+   \      0x13C   0xE3E0'004C        MVN      R0,#+76
+   \      0x140   0x....'....        B        ?Subroutine3
+    714          			}
+    715          
+    716          #ifdef CONFIG_HAVE_TWI_FIFO
+    717          			if (desc->use_fifo)
+    718          				desc->addr->TWI_FMR = (desc->addr->TWI_FMR & ~TWI_FMR_TXRDYM_Msk) | TWI_FMR_TXRDYM_FOUR_DATA;
+    719          #endif /* CONFIG_HAVE_TWI_FIFO */
+    720          
+    721          			/* Start twi with send first byte */
+    722          			async_desc[adesc_index].transferred = 1;
+   \                     ??_twid_transfer_8:
+   \      0x144   0xE5D4'1054        LDRB     R1,[R4, #+84]
+   \      0x148   0xE284'0018        ADD      R0,R4,#+24
+   \      0x14C   0xE3A0'3001        MOV      R3,#+1
+   \      0x150   0xE061'2181        RSB      R2,R1,R1, LSL #+3
+    723          			twi_enable_it(desc->addr, TWI_IER_TXRDY);
+   \      0x154   0xE3A0'1004        MOV      R1,#+4
+   \      0x158   0xE780'3102        STR      R3,[R0, +R2, LSL #+2]
+   \      0x15C   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x160   0x....'....        BL       twi_enable_it
+    724          			twi_write_byte(desc->addr, buf->data[0]);
+   \      0x164   0xE596'0000        LDR      R0,[R6, #+0]
+   \      0x168   0xE5D0'1000        LDRB     R1,[R0, #+0]
+   \      0x16C   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x170   0x....'....        BL       twi_write_byte
+   \      0x174   0xEA00'0007        B        ??_twid_transfer_9
+    725          		} else {
+    726          #ifdef CONFIG_HAVE_TWI_FIFO
+    727          			if (desc->use_fifo)
+    728          				desc->addr->TWI_FMR = (desc->addr->TWI_FMR & ~TWI_FMR_RXRDYM_Msk) | TWI_FMR_RXRDYM_FOUR_DATA;
+    729          #endif /* CONFIG_HAVE_TWI_FIFO */
+    730          
+    731          			/* Enable read interrupt and start the transfer */
+    732          			twi_enable_it(desc->addr, TWI_IER_RXRDY);
+   \                     ??_twid_transfer_7:
+   \      0x178   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x17C   0xE3A0'1002        MOV      R1,#+2
+   \      0x180   0x....'....        BL       twi_enable_it
+    733          
+    734          			if (desc->flags & BUS_I2C_BUF_ATTR_START)
+   \      0x184   0xE1D9'01B0        LDRH     R0,[R9, #+16]
+   \      0x188   0xE310'0D40        TST      R0,#0x1000
+   \      0x18C   0x0A00'0001        BEQ      ??_twid_transfer_9
+    735          				twi_send_start_condition(desc->addr);
+   \      0x190   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x194   0x....'....        BL       twi_send_start_condition
+    736          		}
+    737          
+    738          		adesc_index = (adesc_index + 1) % TWI_IFACE_COUNT;
+   \                     ??_twid_transfer_9:
+   \      0x198   0xE5D4'0054        LDRB     R0,[R4, #+84]
+   \      0x19C   0xE30A'2AAB        MOVW     R2,#+43691
+   \      0x1A0   0xE280'0001        ADD      R0,R0,#+1
+   \      0x1A4   0xE6FF'1070        UXTH     R1,R0
+   \      0x1A8   0xE002'0291        MUL      R2,R1,R2
+   \      0x1AC   0xE1A0'28A2        LSR      R2,R2,#+17
+   \      0x1B0   0xE082'3082        ADD      R3,R2,R2, LSL #+1
+   \      0x1B4   0xE040'3003        SUB      R3,R0,R3
+   \      0x1B8   0xE5C4'3054        STRB     R3,[R4, #+84]
+    739          		break;
+   \      0x1BC   0xEA00'010D        B        ??_twid_transfer_10
+    740          
+    741          	case BUS_TRANSFER_MODE_POLLING:
+    742          		if (desc->flags & BUS_BUF_ATTR_TX)
+   \                     ??_twid_transfer_4:
+   \      0x1C0   0xE599'1010        LDR      R1,[R9, #+16]
+   \      0x1C4   0xE596'0004        LDR      R0,[R6, #+4]
+   \      0x1C8   0xE311'0002        TST      R1,#0x2
+   \      0x1CC   0xE240'7001        SUB      R7,R0,#+1
+   \      0x1D0   0x0A00'004D        BEQ      ??_twid_transfer_11
+    743          			err = _twid_poll_write(desc, buf);
+   \      0x1D4   0xE1B0'4007        MOVS     R4,R7
+   \      0x1D8   0x43A0'4000        MOVMI    R4,#+0
+   \      0x1DC   0xE350'0002        CMP      R0,#+2
+   \      0x1E0   0x2A00'0003        BCS      ??_twid_transfer_12
+   \      0x1E4   0xE311'0D80        TST      R1,#0x2000
+   \      0x1E8   0x0A00'0001        BEQ      ??_twid_transfer_12
+   \      0x1EC   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x1F0   0x....'....        BL       twi_send_stop_condition
+   \                     ??_twid_transfer_12:
+   \      0x1F4   0xE3A0'7000        MOV      R7,#+0
+   \      0x1F8   0xEA00'0000        B        ??_twid_transfer_13
+   \                     ??_twid_transfer_14:
+   \      0x1FC   0xE287'7001        ADD      R7,R7,#+1
+   \                     ??_twid_transfer_13:
+   \      0x200   0xE157'0004        CMP      R7,R4
+   \      0x204   0xAA00'0013        BGE      ??_twid_transfer_15
+   \      0x208   0xE599'2014        LDR      R2,[R9, #+20]
+   \      0x20C   0xE3A0'3000        MOV      R3,#+0
+   \      0x210   0xE1A0'000D        MOV      R0,SP
+   \      0x214   0x....'....        BL       timer_start_timeout
+   \                     ??_twid_transfer_16:
+   \      0x218   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x21C   0x....'....        BL       twi_is_byte_sent
+   \      0x220   0xE350'0000        CMP      R0,#+0
+   \      0x224   0x1A00'001D        BNE      ??_twid_transfer_17
+   \      0x228   0xE1A0'000D        MOV      R0,SP
+   \      0x22C   0x....'....        BL       timer_timeout_reached
+   \      0x230   0xE350'0000        CMP      R0,#+0
+   \      0x234   0x0AFF'FFF7        BEQ      ??_twid_transfer_16
+   \      0x238   0x....'....        LDR      R0,??DataTable10
+   \      0x23C   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x240   0xE351'0002        CMP      R1,#+2
+   \      0x244   0x3A00'0001        BCC      ??_twid_transfer_18
+   \      0x248   0x....'....        LDR      R0,??DataTable10_2
+   \      0x24C   0x....'....        BL       printf
+   \                     ??_twid_transfer_18:
+   \      0x250   0xE1A0'0009        MOV      R0,R9
+   \      0x254   0x....'....        BL       twid_configure
+   \                     ??_twid_transfer_15:
+   \      0x258   0xE596'0004        LDR      R0,[R6, #+4]
+   \      0x25C   0xE350'0002        CMP      R0,#+2
+   \      0x260   0x3A00'0004        BCC      ??_twid_transfer_19
+   \      0x264   0xE1D9'11B0        LDRH     R1,[R9, #+16]
+   \      0x268   0xE311'0D80        TST      R1,#0x2000
+   \      0x26C   0x0A00'0001        BEQ      ??_twid_transfer_19
+   \      0x270   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x274   0x....'....        BL       twi_send_stop_condition
+   \                     ??_twid_transfer_19:
+   \      0x278   0xE596'0004        LDR      R0,[R6, #+4]
+   \      0x27C   0xE240'1001        SUB      R1,R0,#+1
+   \      0x280   0xE154'0001        CMP      R4,R1
+   \      0x284   0x1A00'005D        BNE      ??_twid_transfer_20
+   \      0x288   0xE1A0'0009        MOV      R0,R9
+   \      0x28C   0x....'....        BL       _check_tx_timeout
+   \      0x290   0xE350'0000        CMP      R0,#+0
+   \      0x294   0x0A00'0013        BEQ      ??_twid_transfer_21
+   \                     ??_twid_transfer_22:
+   \      0x298   0xE3E0'504C        MVN      R5,#+76
+   \      0x29C   0xEA00'0062        B        ??_twid_transfer_23
+   \                     ??_twid_transfer_17:
+   \      0x2A0   0xE596'0000        LDR      R0,[R6, #+0]
+   \      0x2A4   0xE7D0'1007        LDRB     R1,[R0, +R7]
+   \      0x2A8   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x2AC   0x....'....        BL       twi_write_byte
+   \      0x2B0   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x2B4   0x....'....        BL       twi_get_status
+   \      0x2B8   0xE310'0F40        TST      R0,#0x100
+   \      0x2BC   0x0AFF'FFCE        BEQ      ??_twid_transfer_14
+   \      0x2C0   0x....'....        LDR      R0,??DataTable10
+   \      0x2C4   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x2C8   0xE351'0002        CMP      R1,#+2
+   \                     ??_twid_transfer_24:
+   \      0x2CC   0x3A00'0001        BCC      ??_twid_transfer_25
+   \      0x2D0   0x....'....        LDR      R0,??DataTable10_6
+   \      0x2D4   0x....'....        BL       printf
+   \                     ??_twid_transfer_25:
+   \      0x2D8   0xE1A0'0009        MOV      R0,R9
+   \      0x2DC   0xE3E0'500C        MVN      R5,#+12
+   \      0x2E0   0x....'....        BL       twid_configure
+   \      0x2E4   0xEA00'0050        B        ??_twid_transfer_23
+   \                     ??_twid_transfer_21:
+   \      0x2E8   0xE596'0000        LDR      R0,[R6, #+0]
+   \      0x2EC   0xE7D0'1007        LDRB     R1,[R0, +R7]
+   \      0x2F0   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x2F4   0x....'....        BL       twi_write_byte
+   \                     ??_twid_transfer_26:
+   \      0x2F8   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x2FC   0x....'....        BL       twi_is_byte_sent
+   \      0x300   0xE350'0000        CMP      R0,#+0
+   \      0x304   0x0AFF'FFFB        BEQ      ??_twid_transfer_26
+   \      0x308   0xEA00'003C        B        ??_twid_transfer_20
+    744          		else
+    745          			err = _twid_poll_read(desc, buf);
+   \                     ??_twid_transfer_11:
+   \      0x30C   0xE357'0000        CMP      R7,#+0
+   \      0x310   0xE599'A000        LDR      R10,[R9, #+0]
+   \      0x314   0x43A0'7000        MOVMI    R7,#+0
+   \      0x318   0xE311'0D40        TST      R1,#0x1000
+   \      0x31C   0x0A00'0001        BEQ      ??_twid_transfer_27
+   \      0x320   0xE1A0'000A        MOV      R0,R10
+   \      0x324   0x....'....        BL       twi_send_start_condition
+   \                     ??_twid_transfer_27:
+   \      0x328   0xE357'0000        CMP      R7,#+0
+   \      0x32C   0xE3A0'8000        MOV      R8,#+0
+   \      0x330   0xDA00'001F        BLE      ??_twid_transfer_28
+   \      0x334   0x....'....        LDR      R11,??DataTable10
+   \                     ??_twid_transfer_29:
+   \      0x338   0xE599'2014        LDR      R2,[R9, #+20]
+   \      0x33C   0xE3A0'3000        MOV      R3,#+0
+   \      0x340   0xE1A0'000D        MOV      R0,SP
+   \      0x344   0x....'....        BL       timer_start_timeout
+   \                     ??_twid_transfer_30:
+   \      0x348   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x34C   0x....'....        BL       twi_is_byte_received
+   \      0x350   0xE350'0000        CMP      R0,#+0
+   \      0x354   0x1A00'000B        BNE      ??_twid_transfer_31
+   \      0x358   0xE1A0'000D        MOV      R0,SP
+   \      0x35C   0x....'....        BL       timer_timeout_reached
+   \      0x360   0xE350'0000        CMP      R0,#+0
+   \      0x364   0x0AFF'FFF7        BEQ      ??_twid_transfer_30
+   \      0x368   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x36C   0xE350'0002        CMP      R0,#+2
+   \      0x370   0x3A00'0001        BCC      ??_twid_transfer_32
+   \      0x374   0x....'....        LDR      R0,??DataTable10_1
+   \      0x378   0x....'....        BL       printf
+   \                     ??_twid_transfer_32:
+   \      0x37C   0xE1A0'0009        MOV      R0,R9
+   \      0x380   0x....'....        BL       twid_configure
+   \      0x384   0xEA00'000A        B        ??_twid_transfer_28
+   \                     ??_twid_transfer_31:
+   \      0x388   0xE1A0'000A        MOV      R0,R10
+   \      0x38C   0x....'....        BL       twi_read_byte
+   \      0x390   0xE596'1000        LDR      R1,[R6, #+0]
+   \      0x394   0xE7C1'0008        STRB     R0,[R1, +R8]
+   \      0x398   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x39C   0x....'....        BL       twi_get_status
+   \      0x3A0   0xE310'0F40        TST      R0,#0x100
+   \      0x3A4   0x1A00'0023        BNE      ??_twid_transfer_33
+   \      0x3A8   0xE288'8001        ADD      R8,R8,#+1
+   \      0x3AC   0xE158'0007        CMP      R8,R7
+   \      0x3B0   0xBAFF'FFE0        BLT      ??_twid_transfer_29
+   \                     ??_twid_transfer_28:
+   \      0x3B4   0xE1D9'01B0        LDRH     R0,[R9, #+16]
+   \      0x3B8   0xE310'0D80        TST      R0,#0x2000
+   \      0x3BC   0x0A00'0001        BEQ      ??_twid_transfer_34
+   \      0x3C0   0xE1A0'000A        MOV      R0,R10
+   \      0x3C4   0x....'....        BL       twi_send_stop_condition
+   \                     ??_twid_transfer_34:
+   \      0x3C8   0xE596'0004        LDR      R0,[R6, #+4]
+   \      0x3CC   0xE240'1001        SUB      R1,R0,#+1
+   \      0x3D0   0xE157'0001        CMP      R7,R1
+   \      0x3D4   0x0A00'0001        BEQ      ??_twid_transfer_35
+   \      0x3D8   0xE357'0000        CMP      R7,#+0
+   \      0x3DC   0x1A00'0007        BNE      ??_twid_transfer_20
+   \                     ??_twid_transfer_35:
+   \      0x3E0   0xE1A0'0009        MOV      R0,R9
+   \      0x3E4   0x....'....        BL       _check_rx_timeout
+   \      0x3E8   0xE350'0000        CMP      R0,#+0
+   \      0x3EC   0x1AFF'FFA9        BNE      ??_twid_transfer_22
+   \      0x3F0   0xE1A0'000A        MOV      R0,R10
+   \      0x3F4   0x....'....        BL       twi_read_byte
+   \      0x3F8   0xE596'1000        LDR      R1,[R6, #+0]
+   \      0x3FC   0xE7C1'0008        STRB     R0,[R1, +R8]
+   \                     ??_twid_transfer_20:
+   \      0x400   0xE1D9'01B0        LDRH     R0,[R9, #+16]
+   \      0x404   0xE310'0D80        TST      R0,#0x2000
+   \      0x408   0x0A00'0004        BEQ      ??_twid_transfer_36
+   \      0x40C   0xE1A0'0009        MOV      R0,R9
+   \      0x410   0x....'....        BL       _twid_wait_twi_transfer
+   \      0x414   0xE1A0'5000        MOV      R5,R0
+    746          
+    747          		if (err == 0)
+   \      0x418   0xE355'0000        CMP      R5,#+0
+   \      0x41C   0x1A00'0002        BNE      ??_twid_transfer_23
+    748          			callback_call(&desc->callback, NULL);
+   \                     ??_twid_transfer_36:
+   \      0x420   0xE3A0'1000        MOV      R1,#+0
+   \      0x424   0xE289'001C        ADD      R0,R9,#+28
+   \      0x428   0x....'....        BL       callback_call
+    749          		mutex_unlock(&desc->mutex);
+   \                     ??_twid_transfer_23:
+   \      0x42C   0xE289'0018        ADD      R0,R9,#+24
+   \      0x430   0x....'....        BL       mutex_unlock
+    750          		break;
+   \      0x434   0xEA00'006F        B        ??_twid_transfer_10
+   \                     ??_twid_transfer_33:
+   \      0x438   0xE59B'0000        LDR      R0,[R11, #+0]
+   \      0x43C   0xE350'0002        CMP      R0,#+2
+   \      0x440   0xEAFF'FFA1        B        ??_twid_transfer_24
+    751          
+    752          	case BUS_TRANSFER_MODE_DMA:
+    753          		if (desc->flags & BUS_BUF_ATTR_TX)
+   \                     ??_twid_transfer_5:
+   \      0x444   0xE5D9'0010        LDRB     R0,[R9, #+16]
+   \      0x448   0xE310'0002        TST      R0,#0x2
+   \      0x44C   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x450   0x0A00'002F        BEQ      ??_twid_transfer_37
+    754          			_twid_dma_write(desc, buf);
+   \      0x454   0x....'....        BL       get_twi_id_from_addr
+   \      0x458   0xE289'1050        ADD      R1,R9,#+80
+   \      0x45C   0xE3A0'2000        MOV      R2,#+0
+   \      0x460   0xE3A0'3000        MOV      R3,#+0
+   \      0x464   0xE3A0'C000        MOV      R12,#+0
+   \      0x468   0xE881'100C        STM      R1,{R2,R3,R12}
+   \      0x46C   0xE599'2040        LDR      R2,[R9, #+64]
+   \      0x470   0xE352'0000        CMP      R2,#+0
+   \      0x474   0x1A00'0003        BNE      ??_twid_transfer_38
+   \      0x478   0xE6EF'1070        UXTB     R1,R0
+   \      0x47C   0xE3A0'00FF        MOV      R0,#+255
+   \      0x480   0x....'....        BL       dma_allocate_channel
+   \      0x484   0xE589'0040        STR      R0,[R9, #+64]
+   \                     ??_twid_transfer_38:
+   \      0x488   0xE599'0040        LDR      R0,[R9, #+64]
+   \      0x48C   0xE350'0000        CMP      R0,#+0
+   \      0x490   0x1A00'0004        BNE      ??_twid_transfer_39
+   \      0x494   0xE300'2125        MOVW     R2,#+293
+   \      0x498   0x....'....        LDR      R1,??DataTable10_7
+   \      0x49C   0x....'....        LDR      R0,??DataTable10_8
+   \      0x4A0   0x....'....        BL       __aeabi_assert
+   \      0x4A4   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??_twid_transfer_39:
+   \      0x4A8   0xE596'0000        LDR      R0,[R6, #+0]
+   \      0x4AC   0xE589'0050        STR      R0,[R9, #+80]
+   \      0x4B0   0xE599'1000        LDR      R1,[R9, #+0]
+   \      0x4B4   0xE281'2034        ADD      R2,R1,#+52
+   \      0x4B8   0xE289'1044        ADD      R1,R9,#+68
+   \      0x4BC   0xE589'2054        STR      R2,[R9, #+84]
+   \      0x4C0   0xE596'0004        LDR      R0,[R6, #+4]
+   \      0x4C4   0xE589'5044        STR      R5,[R9, #+68]
+   \      0x4C8   0xE289'2050        ADD      R2,R9,#+80
+   \      0x4CC   0xE240'3001        SUB      R3,R0,#+1
+   \      0x4D0   0xE599'0040        LDR      R0,[R9, #+64]
+   \      0x4D4   0xE589'3058        STR      R3,[R9, #+88]
+   \      0x4D8   0xE3A0'3001        MOV      R3,#+1
+   \      0x4DC   0x....'....        BL       dma_configure_transfer
+   \      0x4E0   0xE1A0'2009        MOV      R2,R9
+   \      0x4E4   0x....'....        LDR      R1,??DataTable10_9
+   \      0x4E8   0xE1A0'000D        MOV      R0,SP
+   \      0x4EC   0x....'....        BL       callback_set
+   \      0x4F0   0xE599'0040        LDR      R0,[R9, #+64]
+   \      0x4F4   0xE1A0'100D        MOV      R1,SP
+   \      0x4F8   0x....'....        BL       dma_set_callback
+   \      0x4FC   0xE599'1058        LDR      R1,[R9, #+88]
+   \      0x500   0xE599'0050        LDR      R0,[R9, #+80]
+   \      0x504   0x....'....        BL       cache_clean_region
+   \      0x508   0xE599'0040        LDR      R0,[R9, #+64]
+   \      0x50C   0x....'....        BL       dma_start_transfer
+   \      0x510   0xEA00'0038        B        ??_twid_transfer_10
+    755          		else
+    756          			_twid_dma_read(desc, buf);
+   \                     ??_twid_transfer_37:
+   \      0x514   0x....'....        BL       get_twi_id_from_addr
+   \      0x518   0xE289'1034        ADD      R1,R9,#+52
+   \      0x51C   0xE3A0'2000        MOV      R2,#+0
+   \      0x520   0xE3A0'3000        MOV      R3,#+0
+   \      0x524   0xE3A0'C000        MOV      R12,#+0
+   \      0x528   0xE881'100C        STM      R1,{R2,R3,R12}
+   \      0x52C   0xE599'2000        LDR      R2,[R9, #+0]
+   \      0x530   0xE599'1024        LDR      R1,[R9, #+36]
+   \      0x534   0xE282'3030        ADD      R3,R2,#+48
+   \      0x538   0xE589'3034        STR      R3,[R9, #+52]
+   \      0x53C   0xE596'C000        LDR      R12,[R6, #+0]
+   \      0x540   0xE351'0000        CMP      R1,#+0
+   \      0x544   0xE589'C038        STR      R12,[R9, #+56]
+   \      0x548   0x1A00'0003        BNE      ??_twid_transfer_40
+   \      0x54C   0xE3A0'10FF        MOV      R1,#+255
+   \      0x550   0xE6EF'0070        UXTB     R0,R0
+   \      0x554   0x....'....        BL       dma_allocate_channel
+   \      0x558   0xE589'0024        STR      R0,[R9, #+36]
+   \                     ??_twid_transfer_40:
+   \      0x55C   0xE599'0024        LDR      R0,[R9, #+36]
+   \      0x560   0xE350'0000        CMP      R0,#+0
+   \      0x564   0x1A00'0004        BNE      ??_twid_transfer_41
+   \      0x568   0xE3A0'20E1        MOV      R2,#+225
+   \      0x56C   0x....'....        LDR      R1,??DataTable10_7
+   \      0x570   0x....'....        ADR      R0,?_5
+   \      0x574   0x....'....        BL       __aeabi_assert
+   \      0x578   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??_twid_transfer_41:
+   \      0x57C   0xE596'0004        LDR      R0,[R6, #+4]
+   \      0x580   0xE589'5028        STR      R5,[R9, #+40]
+   \      0x584   0xE3A0'3001        MOV      R3,#+1
+   \      0x588   0xE289'2034        ADD      R2,R9,#+52
+   \      0x58C   0xE240'1002        SUB      R1,R0,#+2
+   \      0x590   0xE599'0024        LDR      R0,[R9, #+36]
+   \      0x594   0xE589'103C        STR      R1,[R9, #+60]
+   \      0x598   0xE289'1028        ADD      R1,R9,#+40
+   \      0x59C   0x....'....        BL       dma_configure_transfer
+   \      0x5A0   0xE1A0'2009        MOV      R2,R9
+   \      0x5A4   0x....'....        LDR      R1,??DataTable10_10
+   \      0x5A8   0xE1A0'000D        MOV      R0,SP
+   \      0x5AC   0x....'....        BL       callback_set
+   \      0x5B0   0xE599'0024        LDR      R0,[R9, #+36]
+   \      0x5B4   0xE1A0'100D        MOV      R1,SP
+   \      0x5B8   0x....'....        BL       dma_set_callback
+   \      0x5BC   0xE599'0024        LDR      R0,[R9, #+36]
+   \      0x5C0   0x....'....        BL       dma_start_transfer
+   \      0x5C4   0xE1D9'01B0        LDRH     R0,[R9, #+16]
+   \      0x5C8   0xE310'0D40        TST      R0,#0x1000
+   \      0x5CC   0x0A00'0009        BEQ      ??_twid_transfer_10
+   \      0x5D0   0xE599'0000        LDR      R0,[R9, #+0]
+   \      0x5D4   0x....'....        BL       twi_send_start_condition
+   \      0x5D8   0xEA00'0006        B        ??_twid_transfer_10
+    757          		break;
+    758          
+    759          	default:
+    760          		trace_error("Unknown TWI transfer mode");
+   \                     ??_twid_transfer_6:
+   \      0x5DC   0x....'....        LDR      R0,??DataTable10
+   \      0x5E0   0xE590'1000        LDR      R1,[R0, #+0]
+   \      0x5E4   0xE351'0002        CMP      R1,#+2
+   \      0x5E8   0x3A00'0001        BCC      ??_twid_transfer_42
+   \      0x5EC   0x....'....        ADR      R0,?_7
+   \      0x5F0   0x....'....        BL       printf
+    761          		err = -ENOTSUP;
+   \                     ??_twid_transfer_42:
+   \      0x5F4   0xE3E0'503C        MVN      R5,#+60
+    762          	}
+    763          
+    764          	return err;
+   \                     ??_twid_transfer_10:
+   \      0x5F8   0xE1A0'0005        MOV      R0,R5
+   \                     ??_twid_transfer_0:
+   \      0x5FC                      REQUIRE ?Subroutine3
+   \      0x5FC                      ;; // Fall through to label ?Subroutine3
+    765          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine3:
+   \        0x0   0xE28D'D014        ADD      SP,SP,#+20
+   \        0x4   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+    766          
+    767          /*----------------------------------------------------------------------------
+    768           *        External functions
+    769           *----------------------------------------------------------------------------*/
+    770          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    771          int twid_configure(struct _twi_desc* desc)
+    772          {
+   \                     twid_configure:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+    773          	uint32_t id = get_twi_id_from_addr(desc->addr);
+   \        0x8   0xE594'0000        LDR      R0,[R4, #+0]
+   \        0xC   0x....'....        BL       get_twi_id_from_addr
+   \       0x10   0xE1A0'5000        MOV      R5,R0
+    774          	assert(id < ID_PERIPH_COUNT);
+   \       0x14   0xE355'0032        CMP      R5,#+50
+   \       0x18   0x3A00'0004        BCC      ??twid_configure_0
+   \       0x1C   0xE300'2306        MOVW     R2,#+774
+   \       0x20   0x....'....        LDR      R1,??DataTable10_7
+   \       0x24   0x....'....        ADR      R0,?_8
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+    775          
+    776          	if (desc->timeout == 0)
+   \                     ??twid_configure_0:
+   \       0x30   0xE594'0014        LDR      R0,[R4, #+20]
+    777          		desc->timeout = TWID_TIMEOUT;
+    778          
+    779          #ifdef CONFIG_HAVE_FLEXCOM
+    780          	Flexcom* flexcom = get_flexcom_addr_from_id(get_twi_id_from_addr(desc->addr));
+    781          	if (flexcom)
+    782          		flexcom_select(flexcom, FLEX_MR_OPMODE_TWI);
+    783          #endif
+    784          
+    785          	pmc_configure_peripheral(id, NULL, true);
+   \       0x34   0xE3A0'2001        MOV      R2,#+1
+   \       0x38   0xE350'0000        CMP      R0,#+0
+   \       0x3C   0xE1A0'0005        MOV      R0,R5
+   \       0x40   0x03A0'1064        MOVEQ    R1,#+100
+   \       0x44   0xE3A0'5000        MOV      R5,#+0
+   \       0x48   0x0584'1014        STREQ    R1,[R4, #+20]
+   \       0x4C   0xE3A0'1000        MOV      R1,#+0
+   \       0x50   0x....'....        BL       pmc_configure_peripheral
+    786          	twi_configure_master(desc->addr, desc->freq);
+   \       0x54   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x58   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x5C   0x....'....        BL       twi_configure_master
+    787          #ifdef CONFIG_HAVE_TWI_FIFO
+    788          	twid_fifo_configure(desc);
+    789          	if (desc->use_fifo)
+    790          		twi_fifo_enable(desc->addr, true);
+    791          #endif
+    792          
+    793          	if(desc->dma.rx.channel) {
+   \       0x60   0xE594'0024        LDR      R0,[R4, #+36]
+   \       0x64   0xE350'0000        CMP      R0,#+0
+   \       0x68   0x0A00'0003        BEQ      ??twid_configure_1
+    794          		dma_stop_transfer(desc->dma.rx.channel);
+   \       0x6C   0x....'....        BL       dma_stop_transfer
+    795          		dma_free_channel(desc->dma.rx.channel);
+   \       0x70   0xE594'0024        LDR      R0,[R4, #+36]
+   \       0x74   0x....'....        BL       dma_free_channel
+    796          		desc->dma.rx.channel = NULL;
+   \       0x78   0xE584'5024        STR      R5,[R4, #+36]
+    797          	}
+    798          	desc->dma.rx.cfg_dma.incr_saddr = false;
+    799          	desc->dma.rx.cfg_dma.incr_daddr = true;
+    800          	desc->dma.rx.cfg_dma.loop = false;
+    801          	desc->dma.rx.cfg_dma.chunk_size = DMA_CHUNK_SIZE_1;
+    802          
+    803          	if(desc->dma.tx.channel) {
+   \                     ??twid_configure_1:
+   \       0x7C   0xE594'0040        LDR      R0,[R4, #+64]
+   \       0x80   0xE3A0'6001        MOV      R6,#+1
+   \       0x84   0xE5C4'5030        STRB     R5,[R4, #+48]
+   \       0x88   0xE5C4'6031        STRB     R6,[R4, #+49]
+   \       0x8C   0xE350'0000        CMP      R0,#+0
+   \       0x90   0xE5C4'5032        STRB     R5,[R4, #+50]
+   \       0x94   0xE584'502C        STR      R5,[R4, #+44]
+   \       0x98   0x0A00'0003        BEQ      ??twid_configure_2
+    804          		dma_stop_transfer(desc->dma.tx.channel);
+   \       0x9C   0x....'....        BL       dma_stop_transfer
+    805          		dma_free_channel(desc->dma.tx.channel);
+   \       0xA0   0xE594'0040        LDR      R0,[R4, #+64]
+   \       0xA4   0x....'....        BL       dma_free_channel
+    806          		desc->dma.tx.channel = NULL;
+   \       0xA8   0xE584'5040        STR      R5,[R4, #+64]
+    807          	}
+    808          	desc->dma.tx.cfg_dma.incr_saddr = true;
+   \                     ??twid_configure_2:
+   \       0xAC   0xE5C4'604C        STRB     R6,[R4, #+76]
+    809          	desc->dma.tx.cfg_dma.incr_daddr = false;
+   \       0xB0   0xE5C4'504D        STRB     R5,[R4, #+77]
+    810          	desc->dma.tx.cfg_dma.loop = false;
+   \       0xB4   0xE5C4'504E        STRB     R5,[R4, #+78]
+    811          	desc->dma.tx.cfg_dma.chunk_size = DMA_CHUNK_SIZE_1;
+   \       0xB8   0xE584'5048        STR      R5,[R4, #+72]
+    812          
+    813          	desc->mutex = 0;
+   \       0xBC   0xE584'5018        STR      R5,[R4, #+24]
+    814          
+    815          	return 0;
+   \       0xC0   0xE3A0'0000        MOV      R0,#+0
+   \       0xC4   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    816          }
+    817          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    818          int twid_slave_configure(struct _twi_slave_desc *desc, struct _twi_slave_ops* ops)
+    819          {
+   \                     twid_slave_configure:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'6001        MOV      R6,R1
+    820          	uint32_t twi_id = get_twi_id_from_addr(desc->twi);
+   \        0xC   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x10   0x....'....        BL       get_twi_id_from_addr
+   \       0x14   0xE1A0'5000        MOV      R5,R0
+    821          
+    822          	irq_disable(twi_id);
+   \       0x18   0x....'....        BL       irq_disable
+    823          	twi_disable_it(desc->twi, 0xffffffff);
+   \       0x1C   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x20   0xE3E0'1000        MVN      R1,#+0
+   \       0x24   0x....'....        BL       twi_disable_it
+    824          
+    825          	desc->ops = ops;
+   \       0x28   0xE584'6008        STR      R6,[R4, #+8]
+    826          	desc->state = TWID_SLAVE_STATE_STOPPED;
+   \       0x2C   0xE3A0'0000        MOV      R0,#+0
+    827          
+    828          	async_desc[adesc_index].twi_id = twi_id;
+   \       0x30   0x....'....        LDR      R6,??DataTable10_4
+   \       0x34   0xE5C4'0006        STRB     R0,[R4, #+6]
+   \       0x38   0xE5D6'1054        LDRB     R1,[R6, #+84]
+   \       0x3C   0xE061'2181        RSB      R2,R1,R1, LSL #+3
+    829          	async_desc[adesc_index].twi_slave_desc = desc;
+    830          
+    831          #ifdef CONFIG_HAVE_FLEXCOM
+    832          	Flexcom* flexcom = get_flexcom_addr_from_id(get_twi_id_from_addr(desc->twi));
+    833          	if (flexcom)
+    834          		flexcom_select(flexcom, FLEX_MR_OPMODE_TWI);
+    835          #endif
+    836          
+    837          	/* Configure TWI slave */
+    838          	pmc_configure_peripheral(twi_id, NULL, true);
+   \       0x40   0xE3A0'1000        MOV      R1,#+0
+   \       0x44   0xE086'0102        ADD      R0,R6,R2, LSL #+2
+   \       0x48   0xE3A0'2001        MOV      R2,#+1
+   \       0x4C   0xE580'5008        STR      R5,[R0, #+8]
+   \       0x50   0xE580'4004        STR      R4,[R0, #+4]
+   \       0x54   0xE1A0'0005        MOV      R0,R5
+   \       0x58   0x....'....        BL       pmc_configure_peripheral
+    839          	twi_configure_slave(desc->twi, desc->addr);
+   \       0x5C   0xE1D4'10B4        LDRH     R1,[R4, #+4]
+   \       0x60   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x64   0xE6EF'1071        UXTB     R1,R1
+   \       0x68   0x....'....        BL       twi_configure_slave
+    840          	irq_add_handler(twi_id, _twid_slave_handler, &async_desc[adesc_index]);
+   \       0x6C   0xE5D6'0054        LDRB     R0,[R6, #+84]
+   \       0x70   0xE060'1180        RSB      R1,R0,R0, LSL #+3
+   \       0x74   0xE1A0'0005        MOV      R0,R5
+   \       0x78   0xE086'2101        ADD      R2,R6,R1, LSL #+2
+   \       0x7C   0x....'....        LDR      R1,??DataTable10_11
+   \       0x80   0x....'....        BL       irq_add_handler
+    841          	twi_enable_it(desc->twi, TWI_IER_SVACC | TWI_IER_EOSACC);
+   \       0x84   0xE594'0000        LDR      R0,[R4, #+0]
+   \       0x88   0xE3A0'1E81        MOV      R1,#+2064
+   \       0x8C   0x....'....        BL       twi_enable_it
+    842          	irq_enable(twi_id);
+   \       0x90   0xE1A0'0005        MOV      R0,R5
+   \       0x94   0x....'....        BL       irq_enable
+    843          
+    844          	adesc_index = (adesc_index + 1) % TWI_IFACE_COUNT;
+   \       0x98   0xE5D6'0054        LDRB     R0,[R6, #+84]
+   \       0x9C   0xE30A'2AAB        MOVW     R2,#+43691
+   \       0xA0   0xE280'0001        ADD      R0,R0,#+1
+   \       0xA4   0xE6FF'1070        UXTH     R1,R0
+   \       0xA8   0xE002'0291        MUL      R2,R1,R2
+   \       0xAC   0xE1A0'28A2        LSR      R2,R2,#+17
+   \       0xB0   0xE082'3082        ADD      R3,R2,R2, LSL #+1
+   \       0xB4   0xE040'3003        SUB      R3,R0,R3
+    845          
+    846          	return 0;
+   \       0xB8   0xE3A0'0000        MOV      R0,#+0
+   \       0xBC   0xE5C6'3054        STRB     R3,[R6, #+84]
+   \       0xC0   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+    847          }
+    848          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    849          int twid_transfer(struct _twi_desc* desc, struct _buffer* buf, int buffers, struct _callback* cb)
+    850          {
+   \                     twid_transfer:
+   \        0x0   0xE92D'43F8        PUSH     {R3-R9,LR}
+    851          	int b;
+    852          	int err;
+    853          
+    854          	if (buf == NULL)
+   \        0x4   0xE351'0000        CMP      R1,#+0
+   \        0x8   0xE1A0'4000        MOV      R4,R0
+   \        0xC   0xE1A0'5002        MOV      R5,R2
+   \       0x10   0xE1A0'6003        MOV      R6,R3
+   \       0x14   0x0A00'0019        BEQ      ??twid_transfer_0
+    855          		return -EINVAL;
+    856          
+    857          	for (b = 0 ; b < buffers ; b++) {
+   \       0x18   0xE3A0'7000        MOV      R7,#+0
+   \       0x1C   0xE281'9008        ADD      R9,R1,#+8
+   \       0x20   0xE245'8001        SUB      R8,R5,#+1
+   \       0x24   0xEA00'0009        B        ??twid_transfer_1
+    858          		if ((buf[b].attr & (BUS_BUF_ATTR_TX | BUS_BUF_ATTR_RX)) == 0)
+    859          			return -EINVAL;
+    860          
+    861          		if ((buf[b].attr & (BUS_BUF_ATTR_TX | BUS_BUF_ATTR_RX)) == (BUS_BUF_ATTR_TX | BUS_BUF_ATTR_RX))
+    862          			return -EINVAL;
+    863          
+    864          		if (b == (buffers - 1)) {
+    865          			err = _twid_transfer(desc, &buf[b], cb);
+    866          		} else {
+    867          #if defined(CONFIG_SOC_SAM9XX5) || defined(CONFIG_SOC_SAMA5D3)
+    868          			/* workaround for IP versions that do not support manual restart */
+    869          			if (buf[b + 1].attr & BUS_I2C_BUF_ATTR_START)
+    870          				buf[b].attr |= BUS_I2C_BUF_ATTR_STOP;
+    871          #endif
+    872          			err = _twid_transfer(desc, &buf[b], NULL);
+    873          		}
+    874          		if (err < 0)
+   \                     ??twid_transfer_2:
+   \       0x28   0xE594'000C        LDR      R0,[R4, #+12]
+   \       0x2C   0xE350'0002        CMP      R0,#+2
+   \       0x30   0x1A00'0000        BNE      ??twid_transfer_3
+   \       0x34   0x....'....        BL       dma_poll
+   \                     ??twid_transfer_3:
+   \       0x38   0xE284'0018        ADD      R0,R4,#+24
+   \       0x3C   0x....'....        BL       mutex_is_locked
+   \       0x40   0xE350'0000        CMP      R0,#+0
+   \       0x44   0x1AFF'FFF7        BNE      ??twid_transfer_2
+   \       0x48   0xE287'7001        ADD      R7,R7,#+1
+   \       0x4C   0xE289'900C        ADD      R9,R9,#+12
+   \                     ??twid_transfer_1:
+   \       0x50   0xE157'0005        CMP      R7,R5
+   \       0x54   0xAA00'0016        BGE      ??twid_transfer_4
+   \       0x58   0xE599'0000        LDR      R0,[R9, #+0]
+   \       0x5C   0xE310'0003        TST      R0,#0x3
+   \       0x60   0x0A00'0006        BEQ      ??twid_transfer_0
+   \       0x64   0xE200'1003        AND      R1,R0,#0x3
+   \       0x68   0xE351'0003        CMP      R1,#+3
+   \       0x6C   0x0A00'0003        BEQ      ??twid_transfer_0
+   \       0x70   0xE157'0008        CMP      R7,R8
+   \       0x74   0x1A00'0003        BNE      ??twid_transfer_5
+   \       0x78   0xE1A0'2006        MOV      R2,R6
+   \       0x7C   0xEA00'0006        B        ??twid_transfer_6
+   \                     ??twid_transfer_0:
+   \       0x80   0xE3E0'001B        MVN      R0,#+27
+   \       0x84   0xE8BD'83F2        POP      {R1,R4-R9,PC}    ;; return
+   \                     ??twid_transfer_5:
+   \       0x88   0xE1D9'10BC        LDRH     R1,[R9, #+12]
+   \       0x8C   0xE3A0'2000        MOV      R2,#+0
+   \       0x90   0xE311'0D40        TST      R1,#0x1000
+   \       0x94   0x1380'0D80        ORRNE    R0,R0,#0x2000
+   \       0x98   0x1589'0000        STRNE    R0,[R9, #+0]
+   \                     ??twid_transfer_6:
+   \       0x9C   0xE249'1008        SUB      R1,R9,#+8
+   \       0xA0   0xE1A0'0004        MOV      R0,R4
+   \       0xA4   0x....'....        BL       _twid_transfer
+   \       0xA8   0xE350'0000        CMP      R0,#+0
+   \       0xAC   0x5AFF'FFE1        BPL      ??twid_transfer_3
+    875          			return err;
+   \       0xB0   0xE8BD'83F2        POP      {R1,R4-R9,PC}
+    876          		twid_wait_transfer(desc);
+    877          	}
+    878          
+    879          	return 0;
+   \                     ??twid_transfer_4:
+   \       0xB4   0xE3A0'0000        MOV      R0,#+0
+   \       0xB8   0xE8BD'83F2        POP      {R1,R4-R9,PC}
+    880          }
+    881          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    882          bool twid_is_busy(const struct _twi_desc* desc)
+    883          {
+    884          	return mutex_is_locked(&desc->mutex);
+   \                     twid_is_busy:
+   \        0x0   0xE280'0018        ADD      R0,R0,#+24
+   \        0x4   0x....'....        B        mutex_is_locked  ;; tailcall
+    885          }
+    886          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    887          void twid_wait_transfer(const struct _twi_desc* desc)
+    888          {
+   \                     twid_wait_transfer:
+   \        0x0   0xE92D'4010        PUSH     {R4,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xEA00'0003        B        ??twid_wait_transfer_0
+    889          	while (twid_is_busy(desc)) {
+    890          		if (desc->transfer_mode == BUS_TRANSFER_MODE_DMA)
+   \                     ??twid_wait_transfer_1:
+   \        0xC   0xE594'000C        LDR      R0,[R4, #+12]
+   \       0x10   0xE350'0002        CMP      R0,#+2
+   \       0x14   0x1A00'0000        BNE      ??twid_wait_transfer_0
+    891          			dma_poll();
+   \       0x18   0x....'....        BL       dma_poll
+    892          	}
+   \                     ??twid_wait_transfer_0:
+   \       0x1C   0xE284'0018        ADD      R0,R4,#+24
+   \       0x20   0x....'....        BL       mutex_is_locked
+   \       0x24   0xE350'0000        CMP      R0,#+0
+   \       0x28   0x1AFF'FFF7        BNE      ??twid_wait_transfer_1
+    893          }
+   \       0x2C   0xE8BD'8010        POP      {R4,PC}          ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10:
+   \        0x0   0x....'....        DC32     trace_level
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_2:
+   \        0x0   0x....'....        DC32     ?_0+0x30
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_3:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_4:
+   \        0x0   0x....'....        DC32     async_desc
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_5:
+   \        0x0   0x....'....        DC32     _twid_handler
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_6:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_7:
+   \        0x0   0x....'....        DC32     ?_0+0x60
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_8:
+   \        0x0   0x....'....        DC32     ?_6
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_9:
+   \        0x0   0x....'....        DC32     _twid_dma_write_callback
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_10:
+   \        0x0   0x....'....        DC32     _twid_dma_read_callback
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable10_11:
+   \        0x0   0x....'....        DC32     _twid_slave_handler
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2D 0x45          DC8 "-E- twid: Device doesn't answer (RX TIMEOUT)\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x74 0x77    
+
+   \              0x69 0x64    
+
+   \              0x3A 0x20    
+
+   \              0x44 0x65    
+
+   \              0x76 0x69    
+
+   \              0x63 0x65    
+
+   \              0x20 0x64    
+
+   \              0x6F 0x65    
+
+   \              0x73 0x6E    
+
+   \              0x27 0x74    
+
+   \              0x20 0x61    
+
+   \              0x6E 0x73    
+
+   \              0x77 0x65    
+
+   \              0x72 0x20    
+
+   \              0x28 0x52    
+
+   \              0x58 0x20    
+
+   \              0x54 0x49    
+
+   \              0x4D 0x45    
+
+   \              0x4F 0x55    
+
+   \              0x54 0x29    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x2F   0x00               DC8 0
+   \       0x30   0x2D 0x45          DC8 "-E- twid: Device doesn't answer (TX TIMEOUT)\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x74 0x77    
+
+   \              0x69 0x64    
+
+   \              0x3A 0x20    
+
+   \              0x44 0x65    
+
+   \              0x76 0x69    
+
+   \              0x63 0x65    
+
+   \              0x20 0x64    
+
+   \              0x6F 0x65    
+
+   \              0x73 0x6E    
+
+   \              0x27 0x74    
+
+   \              0x20 0x61    
+
+   \              0x6E 0x73    
+
+   \              0x77 0x65    
+
+   \              0x72 0x20    
+
+   \              0x28 0x54    
+
+   \              0x58 0x20    
+
+   \              0x54 0x49    
+
+   \              0x4D 0x45    
+
+   \              0x4F 0x55    
+
+   \              0x54 0x29    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x5F   0x00               DC8 0
+   \       0x60   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \       0x68   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x70   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x78   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x80   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x88   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x90   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x98   0x73 0x5C          DC8 0x73, 0x5C, 0x69, 0x32, 0x63, 0x5C, 0x74, 0x77
+
+   \              0x69 0x32    
+
+   \              0x63 0x5C    
+
+   \              0x74 0x77
+   \       0xA0   0x69 0x64          DC8 0x69, 0x64, 0x2E, 0x63, 0
+
+   \              0x2E 0x63    
+
+   \              0x00
+   \       0xA5   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x2D 0x45          DC8 "-E- twid: Unable to complete transfer!\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x74 0x77    
+
+   \              0x69 0x64    
+
+   \              0x3A 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x61 0x62    
+
+   \              0x6C 0x65    
+
+   \              0x20 0x74    
+
+   \              0x6F 0x20    
+
+   \              0x63 0x6F    
+
+   \              0x6D 0x70    
+
+   \              0x6C 0x65    
+
+   \              0x74 0x65    
+
+   \              0x20 0x74    
+
+   \              0x72 0x61    
+
+   \              0x6E 0x73    
+
+   \              0x66 0x65    
+
+   \              0x72 0x21    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x29   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_4:
+   \        0x0   0x2D 0x45          DC8 "-E- twid: command NACK\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x74 0x77    
+
+   \              0x69 0x64    
+
+   \              0x3A 0x20    
+
+   \              0x63 0x6F    
+
+   \              0x6D 0x6D    
+
+   \              0x61 0x6E    
+
+   \              0x64 0x20    
+
+   \              0x4E 0x41    
+
+   \              0x43 0x4B    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x19   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x64 0x65          DC8 "desc->dma.rx.channel"
+
+   \              0x73 0x63    
+
+   \              0x2D 0x3E    
+
+   \              0x64 0x6D    
+
+   \              0x61 0x2E    
+
+   \              0x72 0x78    
+
+   \              0x2E 0x63    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x6C    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_7:
+   \        0x0   0x2D 0x45          DC8 "-E- Unknown TWI transfer mode"
+
+   \              0x2D 0x20    
+
+   \              0x55 0x6E    
+
+   \              0x6B 0x6E    
+
+   \              0x6F 0x77    
+
+   \              0x6E 0x20    
+
+   \              0x54 0x57    
+
+   \              0x49 0x20    
+
+   \              0x74 0x72    
+
+   \              0x61 0x6E    
+
+   \              0x73 0x66    
+
+   \              0x65 0x72    
+
+   \              0x20 0x6D    
+
+   \              0x6F 0x64    
+
+   \              0x65 0x00
+   \       0x1E   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_6:
+   \        0x0   0x64 0x65          DC8 "desc->dma.tx.channel"
+
+   \              0x73 0x63    
+
+   \              0x2D 0x3E    
+
+   \              0x64 0x6D    
+
+   \              0x61 0x2E    
+
+   \              0x74 0x78    
+
+   \              0x2E 0x63    
+
+   \              0x68 0x61    
+
+   \              0x6E 0x6E    
+
+   \              0x65 0x6C    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_8:
+   \        0x0   0x69 0x64          DC8 "id < (50)"
+
+   \              0x20 0x3C    
+
+   \              0x20 0x28    
+
+   \              0x35 0x30    
+
+   \              0x29 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   _check_rx_timeout
+        24   -> printf
+        24   -> timer_start_timeout
+        24   -> timer_timeout_reached
+        24   -> twi_is_byte_received
+        24   -> twid_configure
+      24   _check_tx_timeout
+        24   -> printf
+        24   -> timer_start_timeout
+        24   -> timer_timeout_reached
+        24   -> twi_is_byte_sent
+        24   -> twid_configure
+       8   _twid_dma_read_callback
+         8   -> _check_rx_timeout
+         8   -> cache_invalidate_region
+         8   -> callback_call
+         8   -> dma_reset_channel
+         8   -> mutex_unlock
+         8   -> twi_read_byte
+         8   -> twi_send_stop_condition
+       8   _twid_dma_write_callback
+         8   -> _check_tx_timeout
+         8   -> callback_call
+         8   -> dma_reset_channel
+         8   -> mutex_unlock
+         8   -> twi_send_stop_condition
+      16   _twid_handler
+         0   -> callback_call
+        16   -> irq_disable
+         0   -> mutex_unlock
+        16   -> mutex_unlock
+        16   -> twi_disable_it
+         0   -> twi_enable_it
+        16   -> twi_get_masked_status
+        16   -> twi_read_byte
+        16   -> twi_send_stop_condition
+        16   -> twi_write_byte
+      16   _twid_slave_handler
+        16   -- Indirect call
+        16   -> twi_disable_it
+         0   -> twi_enable_it
+        16   -> twi_enable_it
+        16   -> twi_get_status
+        16   -> twi_read_byte
+         0   -> twi_write_byte
+      56   _twid_transfer
+        56   -> __aeabi_assert
+        56   -> __iar_EmptyStepPoint
+        56   -> _check_rx_timeout
+        56   -> _check_tx_timeout
+        56   -> _twid_wait_twi_transfer
+        56   -> cache_clean_region
+        56   -> callback_call
+        56   -> callback_copy
+        56   -> callback_set
+        56   -> dma_allocate_channel
+        56   -> dma_configure_transfer
+        56   -> dma_set_callback
+        56   -> dma_start_transfer
+        56   -> get_twi_id_from_addr
+        56   -> irq_add_handler
+        56   -> irq_disable
+        56   -> irq_enable
+        56   -> mutex_try_lock
+        56   -> mutex_unlock
+        56   -> printf
+        56   -> timer_start_timeout
+        56   -> timer_timeout_reached
+        56   -> twi_disable_it
+        56   -> twi_enable_it
+        56   -> twi_get_status
+        56   -> twi_init_read
+        56   -> twi_init_write
+        56   -> twi_is_byte_received
+        56   -> twi_is_byte_sent
+        56   -> twi_read_byte
+        56   -> twi_send_start_condition
+        56   -> twi_send_stop_condition
+        56   -> twi_write_byte
+        56   -> twid_configure
+      24   _twid_wait_twi_transfer
+        24   -> printf
+        24   -> timer_start_timeout
+        24   -> timer_timeout_reached
+        24   -> twi_is_transfer_complete
+        24   -> twid_configure
+      16   twid_configure
+        16   -> __aeabi_assert
+        16   -> __iar_EmptyStepPoint
+        16   -> dma_free_channel
+        16   -> dma_stop_transfer
+        16   -> get_twi_id_from_addr
+        16   -> pmc_configure_peripheral
+        16   -> twi_configure_master
+       0   twid_is_busy
+         0   -> mutex_is_locked
+      16   twid_slave_configure
+        16   -> get_twi_id_from_addr
+        16   -> irq_add_handler
+        16   -> irq_disable
+        16   -> irq_enable
+        16   -> pmc_configure_peripheral
+        16   -> twi_configure_slave
+        16   -> twi_disable_it
+        16   -> twi_enable_it
+      32   twid_transfer
+        32   -> _twid_transfer
+        32   -> dma_poll
+        32   -> mutex_is_locked
+       8   twid_wait_transfer
+         8   -> dma_poll
+         8   -> mutex_is_locked
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable10_1
+       4  ??DataTable10_10
+       4  ??DataTable10_11
+       4  ??DataTable10_2
+       4  ??DataTable10_3
+       4  ??DataTable10_4
+       4  ??DataTable10_5
+       4  ??DataTable10_6
+       4  ??DataTable10_7
+       4  ??DataTable10_8
+       4  ??DataTable10_9
+       8  ??Subroutine4_0
+      28  ?Subroutine0
+      12  ?Subroutine1
+      16  ?Subroutine2
+       8  ?Subroutine3
+     168  ?_0
+      44  ?_3
+      28  ?_4
+      24  ?_5
+      24  ?_6
+      32  ?_7
+      12  ?_8
+      96  _check_rx_timeout
+      96  _check_tx_timeout
+     132  _twid_dma_read_callback
+      60  _twid_dma_write_callback
+     384  _twid_handler
+     336  _twid_slave_handler
+   1'532  _twid_transfer
+     108  _twid_wait_twi_transfer
+      85  async_desc
+          adesc_index
+     200  twid_configure
+       8  twid_is_busy
+     196  twid_slave_configure
+     188  twid_transfer
+      48  twid_wait_transfer
+
+ 
+    85 bytes in section .bss
+   264 bytes in section .rodata
+ 3'572 bytes in section SOFTPACK
+ 
+ 3'572 bytes of CODE  memory
+   264 bytes of CONST memory
+    85 bytes of DATA  memory
+
+Errors: none
+Warnings: none

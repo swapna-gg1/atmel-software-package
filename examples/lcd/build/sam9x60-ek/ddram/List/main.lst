@@ -1,0 +1,1035 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         15/Jan/2021  07:46:45
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\main.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW3ADD.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\main.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_LCD -D CONFIG_HAVE_LCDC -D CONFIG_HAVE_LCDC_OVR1 -D
+#        CONFIG_HAVE_LCDC_OVR2 -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_DDR2_W972GG6KB -D CONFIG_HAVE_RSTC_EXTERNAL_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_RTT -D
+#        CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List\main.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\Obj\main.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\main.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2016, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           *  \page lcd LCD Example
+     32           *
+     33           *  \section Purpose
+     34           *
+     35           *  This example demonstrates how to configure the LCD Controller (LCDC)
+     36           *  to use the LCD on the board.
+     37           *
+     38           *  \section Requirements
+     39           *
+     40           *  This package can be used with SAMA5D4x Xplained board.
+     41           *
+     42           *  \section Description
+     43           *
+     44           *  The example configures the LCDC for LCD to display and then draw test
+     45           *  patterns on LCD.
+     46           *
+     47           *  4 layers are displayed:
+     48           *  - Base: The layer at bottom, show test pattern with color blocks.
+     49           *  - OVR1: The layer over base, used as canvas to draw shapes.
+     50           *  - HEO:  The next layer, showed scaled ('F') which flips or rotates once
+     51           *          for a while.
+     52           *
+     53           *  \section Usage
+     54           *
+     55           *  -# Build the program and download it inside the evaluation board. Please
+     56           *     refer to the
+     57           *     <a href="http://www.atmel.com/dyn/resources/prod_documents/6421B.pdf">
+     58           *     SAM-BA User Guide</a>, the
+     59           *     <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">
+     60           *     GNU-Based Software Development</a>
+     61           *     application note or to the
+     62           *     <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">
+     63           *     IAR EWARM User Guide</a>,
+     64           *     depending on your chosen solution.
+     65           *  -# On the computer, open and configure a terminal application
+     66           *     (e.g. HyperTerminal on Microsoft Windows) with these settings:
+     67           *    - 115200 bauds
+     68           *    - 8 bits of data
+     69           *    - No parity
+     70           *    - 1 stop bit
+     71           *    - No flow control
+     72           *  -# Start the application.
+     73           *  -# In the terminal window, the
+     74           *     following text should appear (values depend on the board and chip used):
+     75           *     \code
+     76           *      -- LCD Example xxx --
+     77           *      -- SAMxxxxx-xx
+     78           *      -- Compiled: xxx xx xxxx xx:xx:xx --
+     79           *     \endcode
+     80           *  -# Test pattern images should be displayed on the LCD.
+     81           *
+     82           *  \section References
+     83           */
+     84          /**
+     85           * \file
+     86           *
+     87           * This file contains all the specific code for the ISI example.
+     88           */
+     89          
+     90          /*----------------------------------------------------------------------------
+     91           *        Headers
+     92           *----------------------------------------------------------------------------*/
+     93          #include "board.h"
+     94          #include "chip.h"
+     95          
+     96          #include "display/lcdc.h"
+     97          #include "peripherals/pmc.h"
+     98          #include "gpio/pio.h"
+     99          
+    100          #include "mm/cache.h"
+    101          #include "serial/console.h"
+    102          #include "led/led.h"
+    103          
+    104          #include "lcd_draw.h"
+    105          #include "lcd_font.h"
+    106          #include "lcd_color.h"
+    107          #include "font.h"
+    108          #include "timer.h"
+    109          #include "trace.h"
+    110          
+    111          #include <stdbool.h>
+    112          #include <stdio.h>
+    113          #include <stdlib.h>
+    114          #include <string.h>
+    115          /*----------------------------------------------------------------------------
+    116           *        Local definitions
+    117           *----------------------------------------------------------------------------*/
+    118          #define EXAMPLE_LCD_SCALE 1
+    119          
+    120          /** Get double word */
+    121          #define _DW(pByte) ((uint32_t)((((uint8_t*)pByte)[0] << 0) \
+    122          			      |(((uint8_t*)pByte)[1] << 8) \
+    123          			      |(((uint8_t*)pByte)[2] <<16) \
+    124          			      |(((uint8_t*)pByte)[3] <<24)))
+    125          
+    126          /** Screen X -> Display X */
+    127          #define SCR_X(X)    \
+    128              ((BOARD_LCD_WIDTH>(X))?(X):(BOARD_LCD_WIDTH-1))
+    129          /** Screen Y -> Display Y */
+    130          #define SCR_Y(Y)    \
+    131              ((BOARD_LCD_HEIGHT>(Y))?(BOARD_LCD_HEIGHT-1-(Y)):(BOARD_LCD_HEIGHT-1))
+    132          /** Display X -> Screen X */
+    133          #define IMG_X(X)    \
+    134              ((BOARD_LCD_WIDTH>(X))?(X):(BOARD_LCD_WIDTH-1))
+    135          /** Display Y -> Screen Y */
+    136          #define IMG_Y(Y)    \
+    137              ((BOARD_LCD_HEIGHT>(Y))?(BOARD_LCD_HEIGHT-1-(Y)):(BOARD_LCD_HEIGHT-1))
+    138          /** Absolute */
+    139          #define abs(x)  (((x) > 0)?(x):(-(x)))
+    140          
+    141          /** Size of base image buffer */
+    142          #define SIZE_LCD_BUFFER_BASE (BOARD_LCD_WIDTH * BOARD_LCD_HEIGHT * 4)
+    143          /** Size of Overlay 1 buffer */
+    144          #define SIZE_LCD_BUFFER_OVR1 (BOARD_LCD_WIDTH * BOARD_LCD_HEIGHT * 4)
+    145          /** Size of Overlay 2 buffer */
+    146          #define SIZE_LCD_BUFFER_OVR2 (BOARD_LCD_WIDTH * BOARD_LCD_HEIGHT * 4)
+    147          /** Size of High End Overlay buffer */
+    148          #define SIZE_LCD_BUFFER_HEO  (BOARD_LCD_WIDTH * BOARD_LCD_HEIGHT * 4)
+    149          
+    150          /** Width for OVR1 */
+    151          #define OVR1_W      (BOARD_LCD_WIDTH * 5 / 6)
+    152          /** Height for OVR1 */
+    153          #define OVR1_H      (BOARD_LCD_HEIGHT * 5/ 6)
+    154          /** Background color for OVR1 */
+    155          #define OVR1_BG      0xFFFFFF
+    156          /** OVR1 draw step */
+    157          #define OVR1_STEP    15
+    158          
+    159          /** Width for HEO */
+    160          #define HEO_W       (BOARD_LCD_WIDTH * 2 / 3)
+    161          /** Height for HEO */
+    162          #define HEO_H       (BOARD_LCD_HEIGHT * 2 /3)
+    163          
+    164          /** Number of blocks in vertical */
+    165          #define N_BLK_VERT    4
+    166          /** Number of blocks in horizontal */
+    167          #define N_BLK_HOR     6
+    168          
+    169          
+    170          /*----------------------------------------------------------------------------
+    171           *        Local variables
+    172           *----------------------------------------------------------------------------*/
+    173          
+    174          /** LCD BASE buffer */
+    175          //CACHE_ALIGNED_DDR static uint8_t _base_buffer[2][BOARD_LCD_WIDTH * BOARD_LCD_HEIGHT * 3];
+
+   \                                 In section .region_cache_aligned, align 8
+    176          CACHE_ALIGNED_DDR static uint8_t _base_buffer[BOARD_LCD_WIDTH * BOARD_LCD_HEIGHT * 3];
+   \                     _base_buffer:
+   \        0x0                      DS8 1'152'000
+    177          
+    178          //CACHE_ALIGNED_DDR static uint8_t _base_buffer[BOARD_LCD_WIDTH * BOARD_LCD_HEIGHT];
+    179          
+    180          #ifdef CONFIG_HAVE_LCDC_PP
+    181          CACHE_ALIGNED_DDR static uint8_t _pp_buffer[SIZE_LCD_BUFFER_BASE];
+    182          #endif
+    183          
+    184          #ifdef CONFIG_HAVE_LCDC_OVR1
+    185          /** Overlay 1 buffer */
+    186          CACHE_ALIGNED_DDR static uint8_t _ovr1_buffer[SIZE_LCD_BUFFER_OVR1];
+    187          #endif
+    188          
+    189          #ifdef CONFIG_HAVE_LCDC_OVR2
+    190          /** Overlay 2 buffer */
+    191          CACHE_ALIGNED_DDR static uint8_t _ovr2_buffer[SIZE_LCD_BUFFER_OVR2];
+    192          #endif
+    193          
+    194          /** High End Overlay buffer */
+    195          CACHE_ALIGNED_DDR static uint8_t _heo_buffer_rgb[SIZE_LCD_BUFFER_HEO];
+    196          
+    197          #ifdef LCDC_HEOCFG1_YUVEN
+    198          CACHE_ALIGNED_DDR static uint8_t _heo_buffer_yuv[SIZE_LCD_BUFFER_HEO];
+    199          #endif
+    200          
+    201          /** Test pattern source */
+
+   \                                 In section .data, align 4
+    202          static uint32_t test_colors[N_BLK_HOR*N_BLK_VERT] = {
+   \                     test_colors:
+   \        0x0   0x0000'0000        DC32 0, 65'535, 255, 16'711'935, 8'421'504, 32'768, 65'280, 8'388'608
+
+   \              0x0000'FFFF  
+
+   \              0x0000'00FF  
+
+   \              0x00FF'00FF  
+
+   \              0x0080'8080  
+
+   \              0x0000'8000  
+
+   \              0x0000'FF00  
+
+   \              0x0080'0000
+   \       0x20   0x0000'0080        DC32 128, 8'421'376, 16'753'920, 8'388'736, 16'711'680, 12'632'256
+
+   \              0x0080'8000  
+
+   \              0x00FF'A500  
+
+   \              0x0080'0080  
+
+   \              0x00FF'0000  
+
+   \              0x00C0'C0C0
+   \       0x38   0x0000'8080        DC32 32'896, 16'776'960, 10'145'074, 16'770'273, 8'900'331, 15'631'086
+
+   \              0x00FF'FF00  
+
+   \              0x009A'CD32  
+
+   \              0x00FF'E4E1  
+
+   \              0x0087'CEEB  
+
+   \              0x00EE'82EE
+   \       0x50   0x00A9'A9A9        DC32 11'119'017, 25'600, 16'119'260, 10'824'234
+
+   \              0x0000'6400  
+
+   \              0x00F5'F5DC  
+
+   \              0x00A5'2A2A
+    203              COLOR_BLACK,  COLOR_Aqua,  COLOR_BLUE,  COLOR_Fuchsia,  COLOR_GRAY,  COLOR_GREEN,
+    204              COLOR_Lime,  COLOR_Maroon,  COLOR_NAVY,  COLOR_OLIVE, COLOR_ORANGE, COLOR_Purple,
+    205              COLOR_RED, COLOR_SILVER, COLOR_Teal, COLOR_YELLOW, COLOR_YELLOWGREEN, COLOR_MistyRose,
+    206              COLOR_SKYBLUE, COLOR_VIOLET, COLOR_DARKGRAY, COLOR_DARKGREEN, COLOR_BEIGE, COLOR_BROWN,
+    207          };
+    208          
+    209          /** Backlight value */
+
+   \                                 In section .data, align 1
+   \        0x0   0xF0               DC8 240
+    210          static uint8_t bBackLight = 0xF0;
+    211          
+    212          #ifdef CONFIG_HAVE_LCDC_OVR1
+    213          
+    214          /** OVR1 X */
+    215          static uint16_t ovr1_x = 0;
+    216          /** OVR1 Y */
+    217          static uint16_t ovr1_y = BOARD_LCD_HEIGHT - 1;
+    218          /** OVR1 W */
+    219          static uint16_t orv1_w = 0;
+    220          /** OVR1 H */
+    221          static uint16_t ovr1_h = 0;
+    222          /** OVR1 XY move direction (XY - 00 01 10 11) */
+    223          static uint8_t ovr1_dir = 0x01;
+    224          
+    225          /** Drawing changing step */
+    226          static uint8_t  draw_changed = 0;
+    227          /** Drawing size */
+    228          static uint8_t  draw_size  =  0;
+    229          /** Drawing shape */
+    230          static uint8_t  draw_shape =  0;
+    231          /** Last drawing w, h */
+    232          static uint16_t last_w, last_h;
+    233          
+    234          #endif /* CONFIG_HAVE_LCDC_OVR1 */
+    235          
+    236          #ifdef CONFIG_HAVE_LCDC_OVR2
+    237          
+    238          /** OVR2 X */
+    239          static uint16_t ovr2_x = 0;
+    240          /** OVR2 Y */
+    241          static uint16_t ovr2_y = BOARD_LCD_HEIGHT-1;
+    242          /** OVR2 W */
+    243          static uint16_t ovr2_w = 0;
+    244          /** OVR2 H */
+    245          static uint16_t ovr2_h = 0;
+    246          /** OVR2 XY move direction (XY - 00 01 10 11) */
+    247          static uint8_t ovr2_dir = 0x01;
+    248          
+    249          #endif /* CONFIG_HAVE_LCDC_OVR2 */
+    250          
+    251          /** HEO X and Width */
+    252          static uint16_t heo_x = 0, heo_w = 0;
+    253          /** HEO Y and Height */
+    254          static uint16_t heo_y = BOARD_LCD_HEIGHT-1, heo_h = 0;
+    255          /** HEO XY move direction */
+    256          static uint8_t heo_dir = 0x01;
+    257          /** HEO draw mode */
+    258          static uint8_t heo_draw = 0;
+    259          /** HEO image width & height */
+    260          static uint16_t heo_img_w, heo_img_h;
+    261          /** HEO image bpp */
+    262          static uint8_t heo_bpp = 0;
+    263          
+    264          /** Global timestamp in milliseconds since start of application */
+
+   \                                 In section .bss, align 4
+    265          volatile uint32_t time_stamp = 0;
+   \                     time_stamp:
+   \        0x0                      DS8 4
+    266          
+    267          #define NB_TAB_COLOR N_BLK_HOR*N_BLK_VERT
+
+   \                                 In section .bss, align 1
+    268          uint8_t ncolor = 0;
+   \                     ncolor:
+   \        0x0                      DS8 1
+    269          
+    270          /*----------------------------------------------------------------------------
+    271           *        Functions
+    272           *----------------------------------------------------------------------------*/
+    273          
+    274          /**
+    275           * Fill buffer with test pattern
+    276           */
+    277          static void test_pattern_24RGB (uint8_t *lcd_base)
+    278          {
+    279          	uint16_t v_max  = BOARD_LCD_WIDTH;
+    280          	uint16_t h_max  = BOARD_LCD_HEIGHT;
+    281          	uint16_t v_step = (v_max + N_BLK_VERT - 1) / N_BLK_VERT;
+    282          	uint16_t h_step = (h_max + N_BLK_HOR  - 1) / N_BLK_HOR;
+    283          	uint16_t v, h;
+    284          	uint8_t *pix = (uint8_t *)lcd_base;
+    285          /*
+    286          	printf("- Test Pattern: %d x %d [%d x %d]\r\n",
+    287          			h_max, v_max, h_step, v_step);
+    288          */
+    289          	/* WARNING: Code silently assumes 24bit/pixel */
+    290          	for (v = 0; v < v_max; ++v) {
+    291          		uint8_t iy = v / v_step;
+    292          		for (h = 0; h < h_max; ++h) {
+    293          			uint8_t ix = N_BLK_HOR * iy + (h/h_step);
+    294          			*pix++ = (test_colors[ix]&0x0000FF) >>  0;
+    295          			*pix++ = (test_colors[ix]&0x00FF00) >>  8;
+    296          			*pix++ = (test_colors[ix]&0xFF0000) >>  16;
+    297          		}
+    298          	}
+    299          }
+    300          /**
+    301           * Turn ON LCD, show base .
+    302           */
+    303          static void _LcdOn(void)
+    304          {
+    305                  test_pattern_24RGB(_base_buffer);
+    306          	//test_pattern_24RGB(_base_buffer[1]);
+    307          	//cache_clean_region(_base_buffer, sizeof(_base_buffer));
+    308                  led_clear(2);
+    309          	lcdc_on();
+    310          
+    311          	lcdc_set_backlight(bBackLight);
+    312          	/* Display base layer */
+    313          	lcdc_show_base(_base_buffer, 24, 0);
+    314                  //lcdc_show_base(_base_buffer[0], 24, 0);
+    315          #if 0
+    316          	lcdc_base_auto_loop(_base_buffer[0], sizeof(_base_buffer[0]), N_BLK_VERT);
+    317          
+    318          	/* Display HEO layer */
+    319          #ifdef LCDC_HEOCFG1_YUVEN	
+    320          	/* Create HEO YUV422 image */
+    321          	heo_img_w = 80 * EXAMPLE_LCD_SCALE;
+    322          	heo_img_h = 40 * EXAMPLE_LCD_SCALE;
+    323          	heo_w = heo_img_w*2;
+    324          	heo_h = heo_img_h*2;
+    325          	heo_bpp = 16;
+    326          	lcdc_create_canvas(LCDC_HEO, _heo_buffer_yuv, heo_bpp, 0, 0,
+    327          						heo_img_w, heo_img_h);
+    328          	lcd_fill_yuv422();
+    329          	cache_clean_region(_heo_buffer_yuv, sizeof(_heo_buffer_yuv));
+    330          #endif
+    331          	/* Show magnified 'F' for rotate test */
+    332          	heo_img_w = 20 * EXAMPLE_LCD_SCALE;
+    333          	heo_img_h = 24 * EXAMPLE_LCD_SCALE;
+    334          	heo_w = heo_img_w * 3;
+    335          	heo_h = (uint16_t) (heo_img_h * 5.5);
+    336          	heo_bpp = 24;
+    337          	/* Mask out background color */
+    338          	lcdc_set_color_keying(LCDC_HEO, 0, COLOR_WHITE, 0xFFFFFF);
+    339          	lcdc_create_canvas(LCDC_HEO, _heo_buffer_rgb, heo_bpp, 0, 0,
+    340          			   heo_img_w, heo_img_h);
+    341          
+    342          	lcd_fill(COLOR_WHITE);
+    343          	lcd_draw_filled_rectangle(0, 0, heo_img_w, 2 * EXAMPLE_LCD_SCALE,
+    344          				   COLOR_BLACK);
+    345          	lcd_draw_filled_rectangle(0, 2 * EXAMPLE_LCD_SCALE, EXAMPLE_LCD_SCALE,
+    346          				   heo_img_h, COLOR_BLACK);
+    347          	lcd_draw_filled_rectangle(2*EXAMPLE_LCD_SCALE,
+    348          				   10 * EXAMPLE_LCD_SCALE,
+    349          				   13 * EXAMPLE_LCD_SCALE,
+    350          				   13 * EXAMPLE_LCD_SCALE, COLOR_BLACK);
+    351          
+    352          	cache_clean_region(_heo_buffer_rgb, sizeof(_heo_buffer_rgb));
+    353          	lcdc_put_image_rotated(LCDC_HEO, _heo_buffer_rgb, heo_bpp, SCR_X(heo_x),
+    354          			      SCR_Y(heo_y), heo_w, heo_h, heo_img_w,
+    355          			      heo_img_h, 0);
+    356          	/* It's over overlay 1 */
+    357          	lcdc_set_priority(LCDC_HEO, 1);
+    358          
+    359          #ifdef CONFIG_HAVE_LCDC_OVR2
+    360          	/* Test LCD draw */
+    361          	ovr2_x = IMG_X(BOARD_LCD_WIDTH / 4);
+    362          	ovr2_y = IMG_Y(BOARD_LCD_WIDTH / 4);
+    363          	ovr2_w = BOARD_LCD_WIDTH / 5;
+    364          	ovr2_h = BOARD_LCD_HEIGHT / 4;
+    365          	lcdc_create_canvas(LCDC_OVR2, _ovr2_buffer, 24, SCR_X(ovr2_x),
+    366          			   SCR_Y(ovr2_y), ovr2_w, ovr2_h);
+    367          	lcd_fill_white();
+    368          
+    369          	/* Display message font 8x8 */
+    370          	lcd_select_font(FONT8x8);
+    371          	lcd_draw_string(8, 56, "ATMEL RFO", COLOR_BLACK);
+    372          	cache_clean_region(_ovr2_buffer, sizeof(_ovr2_buffer));
+    373          #endif /* CONFIG_HAVE_LCDC_OVR2 */
+    374          
+    375          #ifdef CONFIG_HAVE_LCDC_OVR1
+    376          	/* Test LCD draw */
+    377          	ovr1_x = IMG_X(0);
+    378          	ovr1_y = IMG_Y(0);
+    379          	orv1_w = BOARD_LCD_WIDTH / 2;
+    380          	ovr1_h = BOARD_LCD_HEIGHT / 2;
+    381          	lcdc_create_canvas(LCDC_OVR1, _ovr1_buffer, 24, SCR_X(ovr1_x),
+    382          			   SCR_Y(ovr1_y), orv1_w, ovr1_h);
+    383          	lcd_fill(OVR1_BG);
+    384          	cache_clean_region(_ovr1_buffer, sizeof(_ovr1_buffer));
+    385          #endif /* CONFIG_HAVE_LCDC_OVR1 */
+    386          
+    387          	printf("- LCD ON\r\n");
+    388          #ifdef CONFIG_HAVE_LCDC_PP
+    389          	lcdc_configure_pp(_pp_buffer, LCDC_PPCFG1_PPMODE_PPMODE_RGB_24BPP_UNPACKED);
+    390          #endif
+    391          #endif
+    392          }
+    393          
+    394          /**
+    395           * Calculate X,Y and DIR for move.
+    396           * \param wx  Pointer to X.
+    397           * \param wy  Pointer to Y.
+    398           * \param dir Pointer to DIR.
+    399           */
+    400          static void _move_calc(uint16_t *wx, uint16_t *wy, uint8_t *dir,
+    401          	uint8_t  x_mov, uint8_t  y_mov,
+    402          	uint16_t x_min, uint16_t x_max,
+    403          	uint16_t y_min, uint16_t y_max)
+    404          {
+    405          	uint8_t x_dir = (0xF0 & *dir);
+    406          	uint8_t y_dir = (0x0F & *dir);
+    407          	if (x_dir == 0x10) {
+    408          		if ((*wx) <= x_min + x_mov){
+    409          			(*wx)   = x_min;
+    410          			(*dir) &= ~0x10;
+    411          		} else {
+    412          			(*wx) -= x_mov;
+    413          		}
+    414          	} else if (x_dir == 0) {
+    415          		if ((*wx) >= x_max - x_mov) {
+    416          			(*wx)   = x_max;
+    417          			(*dir) |= 0x10;
+    418          		} else {
+    419          			(*wx) += x_mov;
+    420          		}
+    421          	}
+    422          	if (y_dir == 0x01) {
+    423          		if ((*wy) <= y_min + y_mov){
+    424          			(*wy)   =  y_min;
+    425          			(*dir) &= ~0x01;
+    426          		} else {
+    427          			(*wy) -= y_mov;
+    428          		}
+    429          	} else if (y_dir == 0) {
+    430          		if ((*wy) >= y_max - y_mov){
+    431          			(*wy)   = y_max;
+    432          			(*dir) |= 0x01;
+    433          		} else {
+    434          			(*wy) += y_mov;
+    435          		}
+    436          	}
+    437          }
+    438          
+    439          /**
+    440           * Rotates on HEO
+    441           */
+    442          static void _rotates(void)
+    443          {
+    444          	int32_t w = heo_w, h = heo_h;
+    445          	uint16_t rotate = 0;
+    446          
+    447          	if (!lcdc_is_layer_on(LCDC_HEO))
+    448          		return;
+    449          
+    450          	switch (heo_draw){
+    451          		/* Origional size */
+    452          		case 0:
+    453          			heo_draw = 1;
+    454          			w = heo_img_w;
+    455          			h = heo_img_h;
+    456          			break;
+    457          		/* Mirrow (scan direction) */
+    458          		case 1:
+    459          			heo_draw = 2;
+    460          			break;
+    461          		case 2:
+    462          			heo_draw = 3;
+    463          			h = -h;
+    464          			break;
+    465          		case 3:
+    466          			heo_draw = 4;
+    467          			h = -h; w = -w;
+    468          			break;
+    469          		case 4:
+    470          			heo_draw = 5;
+    471          			w = -w;
+    472          			break;
+    473          		/* Goes Back */
+    474          		case 5:
+    475          			heo_draw = 6;
+    476          			w = heo_img_w;
+    477          			h = heo_img_h;
+    478          			break;
+    479          		/* Rotate (0?) */
+    480          		case 6:
+    481          			heo_draw = 7;
+    482          			break;
+    483          		/* Rotate (90?) */
+    484          		case 7:
+    485          			heo_draw = 8;
+    486          			w = heo_h;
+    487          			h = heo_w;
+    488          			heo_h = h;
+    489          			heo_w = w;
+    490          			rotate = 90;
+    491          			break;
+    492          		/* X mirror & Rotate (90?) */
+    493          		case 8:
+    494          			heo_draw = 9;
+    495          			w = (0-heo_w);
+    496          			h = heo_h;
+    497          			rotate = 90;
+    498          			break;
+    499          		/* Rotate (180?) */
+    500          		case 9:
+    501          			heo_draw = 10;
+    502          			w = heo_h;
+    503          			h = heo_w;
+    504          			heo_h = h;
+    505          			heo_w = w;
+    506          			rotate = 180;
+    507          			break;
+    508          		/* Rotate (270?) */
+    509          		case 10:
+    510          			heo_draw = 11;
+    511          			w = heo_h;
+    512          			h = heo_w;
+    513          			heo_h = h;
+    514          			heo_w = w;
+    515          			rotate = 270;
+    516          			break;
+    517          		/* Y mirror & Rotate (270?) */
+    518          		case 11:
+    519          			heo_draw = 12;
+    520          			w = heo_w;
+    521          			h = 0-heo_h;
+    522          			rotate = 270;
+    523          			break;
+    524          		/* Rotate (0?) */
+    525          		case 12:
+    526          			heo_draw = 0;
+    527          			w = heo_h;
+    528          			h = heo_w;
+    529          			heo_h = h;
+    530          			heo_w = w;
+    531          			break;
+    532          	}
+    533          	if (SCR_X(heo_x) + abs(w) > BOARD_LCD_WIDTH){
+    534          		heo_x = IMG_X(BOARD_LCD_WIDTH - abs(w));
+    535          	}
+    536          	if (SCR_Y(heo_y) + abs(h) > BOARD_LCD_HEIGHT){
+    537          		heo_y = IMG_Y(BOARD_LCD_HEIGHT - abs(h));
+    538          	}
+    539          
+    540          	printf("Show: %u,%u %d, %d %u\r\n", (unsigned)SCR_X(heo_x),
+    541          	       (unsigned)SCR_Y(heo_y), (int)w, (int)h, (unsigned)rotate);
+    542          	lcdc_put_image_rotated(LCDC_HEO, 0, heo_bpp, SCR_X(heo_x), SCR_Y(heo_y),
+    543          			      w, h, heo_img_w, heo_img_h, rotate);
+    544          
+    545          	if (heo_draw == 0) {
+    546          		printf("\r\n");
+    547          		printf("------------------------------------\r\n");
+    548          		printf(" Use 'SPACE' to change HEO priority\r\n");
+    549          #ifdef LCDC_HEOCFG1_YUVEN
+    550          		printf(" Use 'a' to change HEO YUV or RGB\r\n");
+    551          #endif
+    552          
+    553          
+    554          #ifdef CONFIG_HAVE_LCDC_PP
+    555          		printf(" Use 'p' to enable PPC\r\n");
+    556          		printf(" Use 'r' to disable PPC\r\n");
+    557          #endif
+    558          		printf("------------------------------------\r\n");
+    559          	}
+    560          }
+    561          
+    562          #ifdef CONFIG_HAVE_LCDC_OVR1
+    563          
+    564          /**
+    565           * Draw on canvas
+    566           */
+    567          static void _draws(void)
+    568          {
+    569          	uint32_t x, y, w, h;
+    570          
+    571          	x = orv1_w / 2;
+    572          	y = ovr1_h / 2;
+    573          	if (!lcdc_is_layer_on(LCDC_OVR1))
+    574          		return;
+    575          
+    576          	/* Drawing width, height */
+    577          	if (draw_size == 0) {
+    578          		w = h = 2;
+    579          	} else {
+    580          		w = orv1_w / 10 * draw_size;
+    581          		h = ovr1_h / 10 * draw_size;
+    582          	}
+    583          
+    584          	/* Draw circles */
+    585          	if (draw_shape){
+    586          		/* Remove last shape */
+    587          		lcd_draw_circle(x, y, last_w > last_h ? last_h/2 : last_w/2, OVR1_BG);
+    588          		/* Draw new */
+    589          		lcd_draw_circle(x, y, w > h ? h/2 : w/2, test_colors[ncolor]);
+    590          		ncolor = (ncolor+1)%NB_TAB_COLOR;
+    591          	} else {
+    592          		/* Remove last shape */
+    593          		lcd_draw_rounded_rect(x - last_w/2, y - last_h/2, last_w, last_h, last_h/3, OVR1_BG);
+    594          		/* Draw new */
+    595          		lcd_draw_rounded_rect(x - w/2, y - h/2, w, h, h/3, test_colors[ncolor]);
+    596          		ncolor = (ncolor + 1) % NB_TAB_COLOR;
+    597          	}
+    598          	last_w = w;
+    599          	last_h = h;
+    600          
+    601          	/* Size -- */
+    602          	if (draw_changed) {
+    603          		if (draw_size == 0) {
+    604          			draw_shape = !draw_shape;
+    605          			draw_changed = 0;
+    606          		} else {
+    607          			draw_size--;
+    608          		}
+    609          	}
+    610          	/* Size ++ */
+    611          	else {
+    612          		if (draw_size == 8) {
+    613          			draw_changed = 1;
+    614          		} else {
+    615          			draw_size++;
+    616          		}
+    617          	}
+    618          
+    619          	/* Display message font 10x8 */
+    620          	lcd_select_font(FONT10x8);
+    621          	lcd_draw_string(1, 1,
+    622          			" This example shows the \n"
+    623          			"graphic functionnalities\n"
+    624          			"       on a SAMA5", COLOR_BLACK);
+    625          
+    626          	cache_clean_region(_ovr1_buffer, sizeof(_ovr1_buffer));
+    627          }
+    628          
+    629          #endif /* CONFIG_HAVE_LCDC_OVR1 */
+    630          
+    631          /**
+    632           * Move layers.
+    633           */
+    634          static void _moves(void)
+    635          {
+    636          #ifdef CONFIG_HAVE_LCDC_OVR1
+    637          	if (lcdc_is_layer_on(LCDC_OVR1)){
+    638          		_move_calc(&ovr1_x, &ovr1_y, &ovr1_dir,
+    639          				1, 1,
+    640          				0, BOARD_LCD_WIDTH - orv1_w - 1,
+    641          				ovr1_h, BOARD_LCD_HEIGHT - 1);
+    642          		lcdc_set_position(LCDC_OVR1, SCR_X(ovr1_x), SCR_Y(ovr1_y));
+    643          	}
+    644          #endif /* CONFIG_HAVE_LCDC_OVR1 */
+    645          
+    646          #ifdef CONFIG_HAVE_LCDC_OVR2
+    647          	if (lcdc_is_layer_on(LCDC_OVR2)){
+    648          		_move_calc(&ovr2_x, &ovr2_y, &ovr2_dir,
+    649          				1, 1,
+    650          				0, BOARD_LCD_WIDTH - ovr2_w - 1,
+    651          				ovr2_h, BOARD_LCD_HEIGHT - 1);
+    652          		lcdc_set_position(LCDC_OVR2, SCR_X(ovr2_x), SCR_Y(ovr2_y));
+    653          	}
+    654          #endif /* CONFIG_HAVE_LCDC_OVR2 */
+    655          
+    656          	if (lcdc_is_layer_on(LCDC_HEO)){
+    657          		_move_calc(&heo_x, &heo_y, &heo_dir,
+    658          				2, 3,
+    659          				0, BOARD_LCD_WIDTH - heo_w - 1,
+    660          				heo_h, BOARD_LCD_HEIGHT - 1);
+    661          		lcdc_set_position(LCDC_HEO, SCR_X(heo_x), SCR_Y(heo_y));
+    662          	}
+    663          }
+    664          
+    665          /**
+    666           * Handle DBGU events.
+    667           */
+    668          static void dbg_events(void)
+    669          {
+    670          	uint8_t key;
+    671          	uint32_t heo_mode;
+    672          	uint8_t *_heo_buffer;
+    673          	if (console_is_rx_ready()){
+    674          		key = console_get_char();
+    675          		switch(key){
+    676          			case ' ': /* HEO & OVR1 layout */
+    677          				lcdc_set_priority(LCDC_HEO,
+    678          						!lcdc_get_priority(LCDC_HEO));
+    679          				printf("Changed HEO priority\r\n");
+    680          				break;
+    681          #ifdef LCDC_HEOCFG1_YUVEN
+    682          			case 'a': /* HEO RGB or YUV*/
+    683          				heo_mode = lcdc_configure_get_mode(LCDC_HEO);
+    684          				if((heo_mode & LCDC_HEOCFG1_YUVEN) == LCDC_HEOCFG1_YUVEN) {
+    685          					lcdc_configure_input_mode(LCDC_HEO, 0);
+    686          					heo_img_w = 20 * EXAMPLE_LCD_SCALE;
+    687          					heo_img_h = 24 * EXAMPLE_LCD_SCALE;
+    688          					heo_w = heo_img_w * 3;
+    689          					heo_h = (uint16_t) (heo_img_h * 5.5);
+    690          					heo_bpp = 24;
+    691          					_heo_buffer = _heo_buffer_rgb;
+    692          					printf("Change HEO to RGB\r\n");
+    693          				} else {
+    694          					lcdc_configure_input_mode(LCDC_HEO, LCDC_HEOCFG1_YUVEN);
+    695          					heo_img_w = 80 * EXAMPLE_LCD_SCALE;
+    696          					heo_img_h = 40 * EXAMPLE_LCD_SCALE;
+    697          					heo_w = heo_img_w*2;
+    698          					heo_h = heo_img_h*2;
+    699          					heo_bpp = 16;
+    700          					_heo_buffer = _heo_buffer_yuv;
+    701          					printf("Change HEO to YUV\r\n");
+    702          				}
+    703          				heo_draw = 0;
+    704          				lcdc_put_image_rotated(LCDC_HEO, _heo_buffer, heo_bpp, SCR_X(heo_x),
+    705          										SCR_Y(heo_y), heo_w, heo_h, heo_img_w,
+    706          										heo_img_h, 0);
+    707          				break;
+    708          #endif
+    709          
+    710          #ifdef CONFIG_HAVE_LCDC_PP
+    711          			case 'p':
+    712          				printf("Post processing (PPC) enabled, the output stream is written to the PP memory\r\n");
+    713          				lcdc_enable_layer(LCDC_PP, true);
+    714          				break;
+    715          			case 'r':
+    716          				printf("Post processing (PPC) disable PPC\r\n");
+    717          				lcdc_enable_layer(LCDC_PP, false);
+    718          			break;
+    719          #endif
+    720          		}
+    721          	}
+    722          }
+    723          
+    724          /*----------------------------------------------------------------------------
+    725           *        Exported functions
+    726           *----------------------------------------------------------------------------*/
+    727          
+    728          /**
+    729           *  \brief LCD Exmple Application entry point.
+    730           *
+    731           *  \return Unused (ANSI-C compatibility).
+    732           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    733          extern int main(void)
+    734          {
+   \                     main:
+   \        0x0   0xE92D'41F0        PUSH     {R4-R8,LR}
+    735          	uint32_t t1, t2;
+                 	         ^
+Warning[Pe177]: variable "t1" was declared but never referenced
+
+  	uint32_t t1, t2;
+  	             ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\main.c",735  Warning[Pe177]: 
+          variable "t2" was declared but never referenced
+    736          	uint32_t heo_delay = 0;
+                 	         ^
+Warning[Pe177]: variable "heo_delay" was declared but never referenced
+    737          #ifdef CONFIG_HAVE_LCDC_OVR1
+    738          	uint32_t ovr1_delay = 0;
+                 	         ^
+Warning[Pe177]: variable "ovr1_delay" was declared but never referenced
+
+  static void _rotates(void)
+              ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\main.c",442  Warning[Pe177]: 
+          function "_rotates" was declared but never referenced
+
+  static void _draws(void)
+              ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\main.c",567  Warning[Pe177]: 
+          function "_draws" was declared but never referenced
+
+  static void _moves(void)
+              ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\main.c",634  Warning[Pe177]: 
+          function "_moves" was declared but never referenced
+
+  static void dbg_events(void)
+              ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\main.c",668  Warning[Pe177]: 
+          function "dbg_events" was declared but never referenced
+    739          #endif
+    740                  led_set(0);
+   \        0x4   0xE3A0'0000        MOV      R0,#+0
+   \        0x8   0x....'....        BL       led_set
+    741                  led_set(1);led_set(2);
+   \        0xC   0xE3A0'0001        MOV      R0,#+1
+   \       0x10   0x....'....        BL       led_set
+   \       0x14   0xE3A0'0002        MOV      R0,#+2
+   \       0x18   0x....'....        BL       led_set
+    742          	/* Output example information */
+    743          	//console_example_info("LCD Example");
+    744          
+    745          	/* Configure LCD */
+    746          	_LcdOn();
+   \       0x1C   0xE59F'40BC        LDR      R4,??main_0
+   \       0x20   0xE3A0'3000        MOV      R3,#+0
+   \       0x24   0xE1A0'2004        MOV      R2,R4
+   \       0x28   0xE59F'10B4        LDR      R1,??main_0+0x4
+   \                     ??main_1:
+   \       0x2C   0xE1A0'C803        LSL      R12,R3,#+16
+   \       0x30   0xE3A0'E0D7        MOV      LR,#+215
+   \       0x34   0xE1A0'C82C        LSR      R12,R12,#+16
+   \       0x38   0xE38E'ECA3        ORR      LR,LR,#0xA300
+   \       0x3C   0xE00C'0C9E        MUL      R12,LR,R12
+   \       0x40   0xE08E'E00C        ADD      LR,LR,R12
+   \       0x44   0xE1A0'EBAE        LSR      LR,LR,#+23
+   \       0x48   0xE08E'508E        ADD      R5,LR,LR, LSL #+1
+   \       0x4C   0xE3A0'C000        MOV      R12,#+0
+   \       0x50   0xE1A0'E085        LSL      LR,R5,#+1
+   \                     ??main_2:
+   \       0x54   0xE1A0'680C        LSL      R6,R12,#+16
+   \       0x58   0xE3A0'70CD        MOV      R7,#+205
+   \       0x5C   0xE1A0'6826        LSR      R6,R6,#+16
+   \       0x60   0xE387'7CCC        ORR      R7,R7,#0xCC00
+   \       0x64   0xE007'0796        MUL      R7,R6,R7
+   \       0x68   0xE28C'C001        ADD      R12,R12,#+1
+   \       0x6C   0xE08E'5B27        ADD      R5,LR,R7, LSR #+22
+   \       0x70   0xE205'50FF        AND      R5,R5,#0xFF
+   \       0x74   0xE791'8105        LDR      R8,[R1, +R5, LSL #+2]
+   \       0x78   0xE4C2'8001        STRB     R8,[R2], #+1
+   \       0x7C   0xE791'6105        LDR      R6,[R1, +R5, LSL #+2]
+   \       0x80   0xE1A0'7426        LSR      R7,R6,#+8
+   \       0x84   0xE4C2'7001        STRB     R7,[R2], #+1
+   \       0x88   0xE791'5105        LDR      R5,[R1, +R5, LSL #+2]
+   \       0x8C   0xE1A0'780C        LSL      R7,R12,#+16
+   \       0x90   0xE1A0'6825        LSR      R6,R5,#+16
+   \       0x94   0xE1A0'7827        LSR      R7,R7,#+16
+   \       0x98   0xE4C2'6001        STRB     R6,[R2], #+1
+   \       0x9C   0xE357'0F78        CMP      R7,#+480
+   \       0xA0   0xBAFF'FFEB        BLT      ??main_2
+   \       0xA4   0xE283'3001        ADD      R3,R3,#+1
+   \       0xA8   0xE1A0'C803        LSL      R12,R3,#+16
+   \       0xAC   0xE1A0'C82C        LSR      R12,R12,#+16
+   \       0xB0   0xE35C'0FC8        CMP      R12,#+800
+   \       0xB4   0xBAFF'FFDC        BLT      ??main_1
+   \       0xB8   0xE3A0'0002        MOV      R0,#+2
+   \       0xBC   0x....'....        BL       led_clear
+   \       0xC0   0x....'....        BL       lcdc_on
+   \       0xC4   0xE3A0'00F0        MOV      R0,#+240
+   \       0xC8   0x....'....        BL       lcdc_set_backlight
+   \       0xCC   0xE3A0'2000        MOV      R2,#+0
+   \       0xD0   0xE3A0'1018        MOV      R1,#+24
+   \       0xD4   0xE1A0'0004        MOV      R0,R4
+   \       0xD8   0x....'....        BL       lcdc_show_base
+    747          #if 0
+    748          	t1 = timer_get_tick();
+    749          	while(1) {
+    750          		dbg_events();
+    751          		t2 = timer_get_tick();
+    752          		/* Move layers */
+    753          		if ((t2 - t1) >= 10) {
+    754          			t1 = t2;
+    755          			_moves();
+    756          #ifdef CONFIG_HAVE_LCDC_OVR1
+    757          			/* Change OVR1  */
+    758          			if (ovr1_delay >= 500 / 50){
+    759          				ovr1_delay = 0;
+    760          				_draws();
+    761          				//led_toggle(0);
+    762          			} else {
+    763          				ovr1_delay++;
+    764          			}
+    765          #endif
+    766          			/* Change HEO display mode */
+    767          			if (heo_delay >= 4000 / 50) {
+    768          				heo_delay = 0;
+    769          				_rotates();
+    770          			} else {
+    771          				heo_delay++;
+    772          			}
+    773          		}
+    774          	}
+    775          #endif
+    776                  while(1)
+   \                     ??main_3:
+   \       0xDC   0xEAFF'FFFE        B        ??main_3
+   \                     ??main_0:
+   \       0xE0   0x....'....        DC32     _base_buffer
+   \       0xE4   0x....'....        DC32     test_colors
+    777                  {
+    778                  }
+    779          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   main
+        24   -> lcdc_on
+        24   -> lcdc_set_backlight
+        24   -> lcdc_show_base
+        24   -> led_clear
+        24   -> led_set
+
+
+   Section sizes:
+
+   Bytes      Function/Label
+   -----      --------------
+   1'152'000  _base_buffer
+           1  bBackLight
+         232  main
+           1  ncolor
+          96  test_colors
+           4  time_stamp
+
+ 
+         5 bytes in section .bss
+        97 bytes in section .data
+ 1'152'000 bytes in section .region_cache_aligned
+       232 bytes in section SOFTPACK
+ 
+       232 bytes of CODE memory
+ 1'152'102 bytes of DATA memory
+
+Errors: none
+Warnings: 8

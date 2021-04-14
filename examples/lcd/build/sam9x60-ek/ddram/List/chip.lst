@@ -1,0 +1,626 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         14/Jan/2021  23:03:13
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sam9x60\chip.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWE05E.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sam9x60\chip.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_LCD -D CONFIG_HAVE_LCDC -D CONFIG_HAVE_LCDC_OVR1 -D
+#        CONFIG_HAVE_LCDC_OVR2 -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_DDR2_W972GG6KB -D CONFIG_HAVE_RSTC_EXTERNAL_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_RTT -D
+#        CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List\chip.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\Obj\chip.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\target\sam9x60\chip.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2018, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /*----------------------------------------------------------------------------
+     31           *        Headers
+     32           *----------------------------------------------------------------------------*/
+     33          
+     34          #include <string.h>
+     35          
+     36          #include "chip.h"
+     37          #include "compiler.h"
+     38          #include "peripherals/pmc.h"
+     39          #include "serial/console.h"
+     40          
+     41          /*----------------------------------------------------------------------------
+     42           *        Definitions
+     43           *----------------------------------------------------------------------------*/
+     44          
+     45          struct peripheral_xdma {
+     46          	uint32_t id;   /**< Peripheral ID */
+     47          	uint8_t  iftx; /**< DMA Interface for TX */
+     48          	uint8_t  ifrx; /**< DMA Interface for RX */
+     49          };
+     50          
+     51          /*----------------------------------------------------------------------------
+     52           *        Local constants
+     53           *----------------------------------------------------------------------------*/
+     54          
+     55          /* default console used by ROM-code */
+
+   \                                 In section .rodata, align 4
+     56          static const struct _console_cfg _console_cfg =
+   \                     _console_cfg:
+   \        0x0   0xFFFF'F200        DC32 0xffff'f200, 115'200
+
+   \              0x0001'C200
+   \        0x8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0400        DC32 1'024
+   \       0x10   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x14   0x0000'0000        DC32 0
+   \       0x18   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x1C   0x0000'0200        DC32 512
+   \       0x20   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \       0x24   0x0000'0000        DC32 0
+     57          	{ DBGU, 115200, PIN_DBGU_TXD, PIN_DBGU_RXD };
+     58          
+
+   \                                 In section .rodata, align 4
+     59          static const struct peripheral_xdma _xdmac_peripherals[] = {
+   \                     _xdmac_peripherals:
+   \        0x0   0x0000'0005        DC32 5
+   \        0x4   0x00 0x01          DC8 0, 1, 0, 0
+
+   \              0x00 0x00
+   \        0x8   0x0000'0006        DC32 6
+   \        0xC   0x02 0x03          DC8 2, 3, 0, 0
+
+   \              0x00 0x00
+   \       0x10   0x0000'0007        DC32 7
+   \       0x14   0x04 0x05          DC8 4, 5, 0, 0
+
+   \              0x00 0x00
+   \       0x18   0x0000'0008        DC32 8
+   \       0x1C   0x06 0x07          DC8 6, 7, 0, 0
+
+   \              0x00 0x00
+   \       0x20   0x0000'000D        DC32 13
+   \       0x24   0x08 0x09          DC8 8, 9, 0, 0
+
+   \              0x00 0x00
+   \       0x28   0x0000'000E        DC32 14
+   \       0x2C   0x0A 0x0B          DC8 10, 11, 0, 0
+
+   \              0x00 0x00
+   \       0x30   0x0000'0009        DC32 9
+   \       0x34   0x0C 0x0D          DC8 12, 13, 0, 0
+
+   \              0x00 0x00
+   \       0x38   0x0000'000A        DC32 10
+   \       0x3C   0x0E 0x0F          DC8 14, 15, 0, 0
+
+   \              0x00 0x00
+   \       0x40   0x0000'000B        DC32 11
+   \       0x44   0x10 0x11          DC8 16, 17, 0, 0
+
+   \              0x00 0x00
+   \       0x48   0x0000'000F        DC32 15
+   \       0x4C   0x12 0x13          DC8 18, 19, 0, 0
+
+   \              0x00 0x00
+   \       0x50   0x0000'0010        DC32 16
+   \       0x54   0x14 0x15          DC8 20, 21, 0, 0
+
+   \              0x00 0x00
+   \       0x58   0x0000'0020        DC32 32
+   \       0x5C   0x16 0x17          DC8 22, 23, 0, 0
+
+   \              0x00 0x00
+   \       0x60   0x0000'0021        DC32 33
+   \       0x64   0x18 0x19          DC8 24, 25, 0, 0
+
+   \              0x00 0x00
+   \       0x68   0x0000'0023        DC32 35
+   \       0x6C   0x1A 0x1B          DC8 26, 27, 0, 0
+
+   \              0x00 0x00
+   \       0x70   0x0000'002F        DC32 47
+   \       0x74   0x1C 0x1D          DC8 28, 29, 0, 0
+
+   \              0x00 0x00
+   \       0x78   0x0000'0028        DC32 40
+   \       0x7C   0x1F 0x1E          DC8 31, 30, 0, 0
+
+   \              0x00 0x00
+   \       0x80   0x0000'0027        DC32 39
+   \       0x84   0x20 0x21          DC8 32, 33, 0, 0
+
+   \              0x00 0x00
+   \       0x88   0x0000'0029        DC32 41
+   \       0x8C   0x22 0xFF          DC8 34, 255, 0, 0
+
+   \              0x00 0x00
+   \       0x90   0x0000'002A        DC32 42
+   \       0x94   0x23 0xFF          DC8 35, 255, 0, 0
+
+   \              0x00 0x00
+   \       0x98   0x0000'0022        DC32 34
+   \       0x9C   0x24 0x25          DC8 36, 37, 0, 0
+
+   \              0x00 0x00
+   \       0xA0   0x0000'001C        DC32 28
+   \       0xA4   0x26 0x27          DC8 38, 39, 0, 0
+
+   \              0x00 0x00
+   \       0xA8   0x0000'0013        DC32 19
+   \       0xAC   0xFF 0x28          DC8 255, 40, 0, 0
+
+   \              0x00 0x00
+   \       0xB0   0x0000'0011        DC32 17
+   \       0xB4   0xFF 0x29          DC8 255, 41, 0, 0
+
+   \              0x00 0x00
+   \       0xB8   0x0000'002D        DC32 45
+   \       0xBC   0xFF 0x2A          DC8 255, 42, 0, 0
+
+   \              0x00 0x00
+     60          	{ ID_FLEXCOM0,    0,    1 },
+     61          	{ ID_FLEXCOM1,    2,    3 },
+     62          	{ ID_FLEXCOM2,    4,    5 },
+     63          	{ ID_FLEXCOM3,    6,    7 },
+     64          	{ ID_FLEXCOM4,    8,    9 },
+     65          	{ ID_FLEXCOM5,   10,   11 },
+     66          	{ ID_FLEXCOM6,   12,   13 },
+     67          	{ ID_FLEXCOM7,   14,   15 },
+     68          	{ ID_FLEXCOM8,   16,   17 },
+     69          	{ ID_FLEXCOM9,   18,   19 },
+     70          	{ ID_FLEXCOM10,  20,   21 },
+     71          	{ ID_FLEXCOM11,  22,   23 },
+     72          	{ ID_FLEXCOM12,  24,   25 },
+     73          	{ ID_QSPI0,      26,   27 },
+     74          	{ ID_DBGU,       28,   29 },
+     75          	{ ID_TDES,       31,   30 },
+     76          	{ ID_AES,        32,   33 },
+     77          	{ ID_SHA,        34,  0xff},
+     78          	{ ID_CLASSD0,    35, 0xff },
+     79          	{ ID_I2SMCC,     36,   37 },
+     80          	{ ID_SSC,        38,   39 },
+     81          	{ ID_ADC,      0xff,   40 },
+     82          	{ ID_TC0,      0xff,   41 },
+     83          	{ ID_TC1,      0xff,   42 },
+     84          /*	{ ID_TC0_TC1_CPA, 43,  0xff },
+     85          	{ ID_TC1_TC4_CPA, 44,  0xff },
+     86          	{ ID_TC0_TC1_CPB, 45,  0xff },
+     87          	{ ID_TC1_TC4_CPB, 46,  0xff },
+     88          	{ ID_TC0_TC1_CPC, 47,  0xff },
+     89          	{ ID_TC1_TC4_CPC, 48,  0xff },
+     90          	{ ID_TC0_TC1_EXT, 49,  0xff },
+     91          	{ ID_TC1_TC4_EXT, 50,  0xff },*/
+     92          };
+     93          
+     94          /* must be sorted by peripheral ID */
+     95          static const uint32_t _div_peripherals[] = {
+     96          	ID_PIOA,
+     97          #ifdef CONFIG_HAVE_CAN
+     98          	ID_CAN0, ID_CAN1
+     99          #endif
+    100          };
+    101          
+    102          /*----------------------------------------------------------------------------
+    103           *        Private functions
+    104           *----------------------------------------------------------------------------*/
+    105          
+    106          static const struct peripheral_xdma *get_peripheral_xdma(uint32_t id, Xdmac *xdmac)
+    107          {
+    108          	int i;
+    109          
+    110          	if (xdmac != XDMAC0) {
+    111          		return NULL;
+    112          	}
+    113          
+    114          	for (i = 0; i < ARRAY_SIZE(_xdmac_peripherals); i++) {
+    115          		if (_xdmac_peripherals[i].id == id) {
+    116          			return &_xdmac_peripherals[i];
+    117          		}
+    118          	}
+    119          
+    120          	return NULL;
+    121          }
+    122          
+    123          /*----------------------------------------------------------------------------
+    124           *        Exported functions
+    125           *----------------------------------------------------------------------------*/
+    126          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    127          const char* get_chip_name(void)
+    128          {
+    129          	if ((DBGU->DBGU_CIDR & ~DBGU_CIDR_VERSION_Msk) ==
+    130          			CHIPID_CIDR_SAM9X60) {
+   \                     get_chip_name:
+   \        0x0   0xE3E0'00BF        MVN      R0,#+191
+   \        0x4   0xE3C0'0ED0        BIC      R0,R0,#0xD00
+   \        0x8   0xE590'1000        LDR      R1,[R0, #+0]
+   \        0xC   0x....'....        LDR      R3,??DataTable5  ;; 0x819b35a0
+   \       0x10   0xE1A0'22A1        LSR      R2,R1,#+5
+   \       0x14   0xE153'0282        CMP      R3,R2, LSL #+5
+    131          		return "SAM9X60";
+   \       0x18   0x....'....        ADREQ    R0,?_0
+    132          	}
+    133          
+    134          	return "Unknown";
+   \       0x1C   0x....'....        ADRNE    R0,?_1
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    135          }
+    136          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    137          void get_romcode_console(struct _console_cfg* config)
+    138          {
+    139          	memcpy(config, &_console_cfg, sizeof(*config));
+   \                     get_romcode_console:
+   \        0x0   0xE3A0'2028        MOV      R2,#+40
+   \        0x4   0x....'....        LDR      R1,??DataTable5_1
+   \        0x8   0x....'....        B        __aeabi_memcpy4  ;; tailcall
+    140          }
+    141          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    142          uint32_t get_peripheral_clock_matrix_div(uint32_t id)
+    143          {
+    144          	return 1;
+   \                     get_peripheral_clock_matrix_div:
+   \        0x0   0xE3A0'0001        MOV      R0,#+1
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+    145          }
+    146          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    147          uint32_t get_peripheral_clock_max_freq(uint32_t id)
+    148          {
+    149          	return pmc_get_master_clock();
+   \                     get_peripheral_clock_max_freq:
+   \        0x0   0x....'....        B        pmc_get_master_clock  ;; tailcall
+    150          }
+    151          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    152          bool peripheral_has_clock_div(uint32_t id)
+    153          {
+    154          	int i;
+    155          	for (i = 0; i < ARRAY_SIZE(_div_peripherals) && _div_peripherals[i] <= id; i++)
+   \                     peripheral_has_clock_div:
+   \        0x0   0xE350'0002        CMP      R0,#+2
+   \        0x4   0x3A00'0002        BCC      ??peripheral_has_clock_div_0
+    156          		if (_div_peripherals[i] == id)
+   \        0x8   0x1A00'0001        BNE      ??peripheral_has_clock_div_0
+    157          			return true;
+   \        0xC   0xE3A0'0001        MOV      R0,#+1
+   \       0x10   0xE12F'FF1E        BX       LR
+    158          	return false;
+   \                     ??peripheral_has_clock_div_0:
+   \       0x14   0xE3A0'0000        MOV      R0,#+0
+   \       0x18   0xE12F'FF1E        BX       LR               ;; return
+    159          }
+    160          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    161          uint8_t get_peripheral_dma_channel(uint32_t id, Xdmac *xdmac, bool transmit)
+    162          {
+    163          	const struct peripheral_xdma *periph_xdma = get_peripheral_xdma(id, xdmac);
+   \                     get_peripheral_dma_channel:
+   \        0x0   0xE3A0'34F0        MOV      R3,#-268435456
+   \        0x4   0xE92D'4000        PUSH     {LR}
+   \        0x8   0xE383'3C80        ORR      R3,R3,#0x8000
+   \        0xC   0xE151'0003        CMP      R1,R3
+   \       0x10   0x1A00'0008        BNE      ??get_peripheral_dma_channel_0
+   \       0x14   0x....'....        LDR      R3,??DataTable5_2
+   \       0x18   0xE3A0'1000        MOV      R1,#+0
+   \       0x1C   0xE1A0'C003        MOV      R12,R3
+   \                     ??get_peripheral_dma_channel_1:
+   \       0x20   0xE49C'E008        LDR      LR,[R12], #+8
+   \       0x24   0xE15E'0000        CMP      LR,R0
+   \       0x28   0x0A00'0004        BEQ      ??get_peripheral_dma_channel_2
+   \       0x2C   0xE281'1001        ADD      R1,R1,#+1
+   \       0x30   0xE351'0018        CMP      R1,#+24
+   \       0x34   0x3AFF'FFF9        BCC      ??get_peripheral_dma_channel_1
+    164          	if (periph_xdma) {
+    165          		return transmit ? periph_xdma->iftx : periph_xdma->ifrx;
+    166          	} else {
+    167          		return 0xff;
+   \                     ??get_peripheral_dma_channel_0:
+   \       0x38   0xE3A0'00FF        MOV      R0,#+255
+   \       0x3C   0xE8BD'8000        POP      {PC}             ;; return
+   \                     ??get_peripheral_dma_channel_2:
+   \       0x40   0xE083'0181        ADD      R0,R3,R1, LSL #+3
+   \       0x44   0xE352'0000        CMP      R2,#+0
+   \       0x48   0x15D0'0004        LDRBNE   R0,[R0, #+4]
+   \       0x4C   0x05D0'0005        LDRBEQ   R0,[R0, #+5]
+   \       0x50   0xE8BD'8000        POP      {PC}
+    168          	}
+    169          }
+    170          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    171          bool is_peripheral_on_dma_controller(uint32_t id, Xdmac *xdmac)
+    172          {
+    173          	return get_peripheral_xdma(id, xdmac) != NULL;
+   \                     is_peripheral_on_dma_controller:
+   \        0x0   0xE3A0'24F0        MOV      R2,#-268435456
+   \        0x4   0xE382'2C80        ORR      R2,R2,#0x8000
+   \        0x8   0xE151'0002        CMP      R1,R2
+   \        0xC   0x1A00'0007        BNE      ??is_peripheral_on_dma_controller_0
+   \       0x10   0xE3A0'1000        MOV      R1,#+0
+   \       0x14   0x....'....        LDR      R2,??DataTable5_2
+   \                     ??is_peripheral_on_dma_controller_1:
+   \       0x18   0xE492'3008        LDR      R3,[R2], #+8
+   \       0x1C   0xE153'0000        CMP      R3,R0
+   \       0x20   0x0A00'0004        BEQ      ??is_peripheral_on_dma_controller_2
+   \       0x24   0xE281'1001        ADD      R1,R1,#+1
+   \       0x28   0xE351'0018        CMP      R1,#+24
+   \       0x2C   0x3AFF'FFF9        BCC      ??is_peripheral_on_dma_controller_1
+   \                     ??is_peripheral_on_dma_controller_0:
+   \       0x30   0xE3A0'0000        MOV      R0,#+0
+   \       0x34   0xE12F'FF1E        BX       LR               ;; return
+   \                     ??is_peripheral_on_dma_controller_2:
+   \       0x38   0xE3A0'0001        MOV      R0,#+1
+   \       0x3C   0xE12F'FF1E        BX       LR
+    174          }
+    175          
+    176          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    177          int32_t get_peripheral_fifo_depth(void* addr)
+    178          {
+   \                     get_peripheral_fifo_depth:
+   \        0x0   0xE1A0'1000        MOV      R1,R0
+    179          	uint32_t size = -1;
+    180          	uint32_t tmp = (uint32_t)addr;
+    181          	switch (tmp) {
+   \        0x4   0xE241'14F0        SUB      R1,R1,#-268435456
+   \        0x8   0xE3E0'0000        MVN      R0,#+0
+   \        0xC   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x10   0x0A00'001C        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x14   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x18   0x0A00'001A        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x1C   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x20   0x0A00'0018        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x24   0xE241'1680        SUB      R1,R1,#+134217728
+   \       0x28   0xE251'1B6F        SUBS     R1,R1,#+113664
+   \       0x2C   0x0A00'0015        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x30   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x34   0x0A00'0013        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x38   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x3C   0x0A00'0011        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x40   0xE251'1DF0        SUBS     R1,R1,#+15360
+   \       0x44   0x0A00'000F        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x48   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x4C   0x0A00'000D        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x50   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x54   0x0A00'000B        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x58   0xE251'1DF0        SUBS     R1,R1,#+15360
+   \       0x5C   0x0A00'0009        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x60   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x64   0x0A00'0007        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x68   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x6C   0x0A00'0005        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x70   0xE251'1DF0        SUBS     R1,R1,#+15360
+   \       0x74   0x0A00'0003        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x78   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x7C   0x0A00'0001        BEQ      ??get_peripheral_fifo_depth_0
+   \       0x80   0xE251'1F80        SUBS     R1,R1,#+512
+   \       0x84   0x1A00'0000        BNE      ??get_peripheral_fifo_depth_1
+    182          	case (uint32_t)FLEXUSART0:
+    183          #ifdef FLEXUSART1
+    184          	case (uint32_t)FLEXUSART1:
+    185          #endif
+    186          #ifdef FLEXUSART2
+    187          	case (uint32_t)FLEXUSART2:
+    188          #endif
+    189          #ifdef FLEXUSART3
+    190          	case (uint32_t)FLEXUSART3:
+    191          #endif
+    192          #ifdef FLEXUSART4
+    193          	case (uint32_t)FLEXUSART4:
+    194          #endif
+    195          		size = FLEXCOM_USART_FIFO_DEPTH;
+    196          		break;
+    197          
+    198          	case (uint32_t)FLEXSPI0:
+    199          #ifdef FLEXSPI1
+    200          	case (uint32_t)FLEXSPI1:
+    201          #endif
+    202          #ifdef FLEXSPI2
+    203          	case (uint32_t)FLEXSPI2:
+    204          #endif
+    205          #ifdef FLEXSPI3
+    206          	case (uint32_t)FLEXSPI3:
+    207          #endif
+    208          #ifdef FLEXSPI4
+    209          	case (uint32_t)FLEXSPI4:
+    210          #endif
+    211          		size = FLEXCOM_SPI_FIFO_DEPTH;
+    212          		break;
+    213          	case (uint32_t)FLEXTWI0:
+    214          #ifdef FLEXTWI1
+    215          	case (uint32_t)FLEXTWI1:
+    216          #endif
+    217          #ifdef FLEXTWI2
+    218          	case (uint32_t)FLEXTWI2:
+    219          #endif
+    220          #ifdef FLEXTWI3
+    221          	case (uint32_t)FLEXTWI3:
+    222          #endif
+    223          #ifdef FLEXTWI4
+    224          	case (uint32_t)FLEXTWI4:
+    225          #endif
+    226          #ifdef TWI0
+    227          	case (uint32_t)TWI0:
+    228          #endif
+    229          #ifdef TWI1
+    230          	case (uint32_t)TWI1:
+    231          #endif
+    232          		size = TWI_FIFO_DEPTH;
+   \                     ??get_peripheral_fifo_depth_0:
+   \       0x88   0xE3A0'0010        MOV      R0,#+16
+    233          		break;
+    234          	default:
+    235          		size = -1;
+    236          	}
+    237          	return size;
+   \                     ??get_peripheral_fifo_depth_1:
+   \       0x8C   0xE12F'FF1E        BX       LR               ;; return
+    238          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5:
+   \        0x0   0x819B'35A0        DC32     0x819b35a0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \        0x0   0x....'....        DC32     _console_cfg
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \        0x0   0x....'....        DC32     _xdmac_peripherals
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_0:
+   \        0x0   0x53 0x41          DC8 "SAM9X60"
+
+   \              0x4D 0x39    
+
+   \              0x58 0x36    
+
+   \              0x30 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x55 0x6E          DC8 "Unknown"
+
+   \              0x6B 0x6E    
+
+   \              0x6F 0x77    
+
+   \              0x6E 0x00
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   get_chip_name
+       0   get_peripheral_clock_matrix_div
+       0   get_peripheral_clock_max_freq
+         0   -> pmc_get_master_clock
+       4   get_peripheral_dma_channel
+       0   get_peripheral_fifo_depth
+       0   get_romcode_console
+         0   -> __aeabi_memcpy4
+       0   is_peripheral_on_dma_controller
+       0   peripheral_has_clock_div
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       8  ?_0
+       8  ?_1
+      40  _console_cfg
+     192  _xdmac_peripherals
+      36  get_chip_name
+       8  get_peripheral_clock_matrix_div
+       4  get_peripheral_clock_max_freq
+      84  get_peripheral_dma_channel
+     144  get_peripheral_fifo_depth
+      12  get_romcode_console
+      64  is_peripheral_on_dma_controller
+      28  peripheral_has_clock_div
+
+ 
+ 232 bytes in section .rodata
+ 408 bytes in section SOFTPACK
+ 
+ 408 bytes of CODE  memory
+ 232 bytes of CONST memory
+
+Errors: none
+Warnings: none

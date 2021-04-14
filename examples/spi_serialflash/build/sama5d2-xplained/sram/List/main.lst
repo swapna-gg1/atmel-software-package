@@ -1,0 +1,3106 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         19/Aug/2020  13:39:15
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                        
+#    Endian                       =  little
+#    Source file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\main.c
+#    Command line                 =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW5CBB.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\main.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_SPI -D
+#        CONFIG_HAVE_SPI_FIFO -D CONFIG_HAVE_SPI_AT25 -D CONFIG_DRV_AT25 -D
+#        CONFIG_HAVE_SPI_NOR -D CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D
+#        CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_SPI_BUS -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale                       =  C
+#    List file                    =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\List\main.lst
+#    Object file                  =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\build\sama5d2-xplained\sram\Obj\main.o
+#    Runtime model:                  
+#      __SystemLibrary            =  DLib
+#      __dlib_file_descriptor     =  0
+#      __dlib_full_locale_support =  0
+#      __dlib_version             =  6
+#      __iar_require _Printf      =  flags,widths
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\spi_serialflash\main.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          /**
+     30           * \page spi_serialflash SPI SerialFlash Example
+     31           *
+     32           * \section Purpose
+     33           *
+     34           * This basic serialflash example shall show how to SPI serial Flash.
+     35           *
+     36           * \section Requirements
+     37           *
+     38           * This package can be used with SAMA5D2. On evaluation boards such as 
+     39           * SAMA5D2-XULT mind the Boot_Disable jumper, as proper execution of 
+     40           * this example requires the chip select signal from SoC to memory to 
+     41           * be effectively connected (Boot_Disable jumper removed).
+     42           *
+     43           * \section Description
+     44           *
+     45           * Upon startup, the program displays the menu.
+     46           *  - Press 'a status' to print AT25 chip status;
+     47           *  - Press 'a device' to get device information;
+     48           *  - Press 'w 0 abcd' to write the flash;
+     49           *  - Press 'r 0 4' to read at address: 0x00000000;
+     50           *  - Press 'd 0 4k' to erase the flash;
+     51           *  - Press 'w 0 12345678' to write the flash;
+     52           *  - Press 'r 0 8' to read at address: 0x00000000;
+     53           *  - Press 'd 0 32k' to erase 32k size of flash;
+     54           *  - Press 'd 0 64k' to erase 64k size of flash;
+     55           *  - Press 'm' to print the menu.
+     56           *
+     57           * \section Usage
+     58           *
+     59           * -# Build the program and download it inside the evaluation board. Please
+     60           *    refer to the
+     61           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/6421B.pdf">
+     62           *    SAM-BA User Guide</a>, the
+     63           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">
+     64           *    GNU-Based Software Development</a> application note or to the
+     65           *    <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">
+     66           *    IAR EWARM User Guide</a>, depending on your chosen solution.
+     67           * -# On the computer, open and configure a terminal application
+     68           *    (e.g. HyperTerminal on Microsoft Windows) with these settings:
+     69           *   - 115200 bauds
+     70           *   - 8 bits of data
+     71           *   - No parity
+     72           *   - 1 stop bit
+     73           *   - No flow control
+     74           * -# Start the application.
+     75           * -# In the terminal window, the following text should appear:
+     76           *     \code
+     77           *     -- Spi flash Example xxx --
+     78           *     -- SAMxxxxx-xx
+     79           *     -- Compiled: xxx xx xxxx xx:xx:xx --
+     80           *     =========================================================
+     81           *     Menu: press a key to select test mode.
+     82           *     ---------------------------------------------------------
+     83           *     |===========        Commands        ====================|
+     84           *     | a status                                              |
+     85           *     |      Query device status                              |
+     86           *     | a device                                              |
+     87           *     |      Query serial flash JEDEC info                    |
+     88           *     | r addr size                                           |
+     89           *     |      Read 'size' octets starting from address 'addr'  |
+     90           *     | w addr str                                            |
+     91           *     |      Write 'str' to address 'addr'                    |
+     92           *     | d addr [4k|32k|64k|256k]                              |
+     93           *     |      Erase block containing the address 'addr'        |
+     94           *     |      The erase can be 4k, 32k, 64k or 256k            |
+     95           *     | m                                                     |
+     96           *     |      Print this menu                                  |
+     97           *     |=======================================================|
+     98           *    \endcode
+     99           *
+    100           * \section References
+    101           * - spi_serialflash/main.c
+    102           */
+    103           
+    104          
+    105          
+    106          /**
+    107           * \file
+    108           *
+    109           * This file contains all the specific code for spi_serialflash example.
+    110           */
+    111          
+    112          /*----------------------------------------------------------------------------
+    113           *        Headers
+    114           *----------------------------------------------------------------------------*/
+    115          
+    116          #include <errno.h>
+    117          #include <stdint.h>
+    118          #include <stdio.h>
+    119          #include <stdlib.h>
+    120          #include <string.h>
+    121          
+    122          #include "board.h"
+    123          #include "board_spi.h"
+    124          #include "chip.h"
+    125          #include "compiler.h"
+    126          #include "cpuidle.h"
+    127          #include "gpio/pio.h"
+    128          #include "mm/cache.h"
+    129          #include "nvm/spi-nor/spi-nor.h"
+    130          #include "peripherals/bus.h"
+    131          #include "peripherals/pmc.h"
+    132          #include "serial/console.h"
+    133          #include "spi/spid.h"
+    134          
+    135          /*----------------------------------------------------------------------------
+    136           *        Constants
+    137           *----------------------------------------------------------------------------*/
+    138          
+    139          #define CMD_BUFFER_SIZE   (1024)
+    140          #define READ_BUFFER_SIZE  (4 * 1024)
+    141          #define BOARD_SPI_FLASH_SPI0 0
+    142          
+    143          /*----------------------------------------------------------------------------
+    144           *        Local variables
+    145           *----------------------------------------------------------------------------*/
+    146          
+
+   \                                 In section .region_cache_aligned, align 32
+    147          CACHE_ALIGNED static uint8_t cmd_buffer[CMD_BUFFER_SIZE];
+   \                     cmd_buffer:
+   \        0x0                      DS8 1'024
+
+   \                                 In section .region_cache_aligned, align 32
+    148          CACHE_ALIGNED static uint8_t read_buffer[READ_BUFFER_SIZE];
+   \                     read_buffer:
+   \        0x0                      DS8 4'096
+    149          
+    150          typedef void (*_parser)(const uint8_t*, uint32_t);
+    151          
+
+   \                                 In section .bss, align 4
+    152          static _parser _cmd_parser;
+   \                     _cmd_parser:
+   \        0x0                      DS8 4
+   \        0x4                      DS8 4
+   \        0x8                      DS8 4
+   \        0xC                      DS8 1
+    153          static volatile uint32_t cmd_length = 0;
+    154          static volatile bool cmd_complete = false;
+    155          
+    156          static struct spi_flash* flash;
+    157          
+    158          /*----------------------------------------------------------------------------
+    159           *        Constants
+    160           *----------------------------------------------------------------------------*/
+    161          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    162          static void console_handler(uint8_t key)
+    163          {
+   \                     console_handler:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    164          	/* already processing a command: ignore input */
+    165          	if (cmd_complete)
+   \        0x4   0x....'....        LDR      R4,??DataTable38_7
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+   \        0xC   0xE5D4'000C        LDRB     R0,[R4, #+12]
+   \       0x10   0xE350'0000        CMP      R0,#+0
+   \       0x14   0x1A00'0029        BNE      ??console_handler_0
+    166          	       return;
+    167          
+    168          	switch (key) {
+   \       0x18   0xE1A0'0005        MOV      R0,R5
+   \       0x1C   0xE350'0008        CMP      R0,#+8
+   \       0x20   0x0A00'000E        BEQ      ??console_handler_1
+   \       0x24   0xE350'000A        CMP      R0,#+10
+   \       0x28   0x0A00'0004        BEQ      ??console_handler_2
+   \       0x2C   0xE350'000D        CMP      R0,#+13
+   \       0x30   0x0A00'0002        BEQ      ??console_handler_2
+   \       0x34   0xE350'007F        CMP      R0,#+127
+   \       0x38   0x0A00'0008        BEQ      ??console_handler_1
+   \       0x3C   0xEA00'0014        B        ??console_handler_3
+    169          	case '\r':
+    170          	case '\n':
+    171          		console_echo(key);
+   \                     ??console_handler_2:
+   \       0x40   0x....'....        BL       console_echo
+    172          		cmd_buffer[cmd_length] = '\0';
+   \       0x44   0xE594'2004        LDR      R2,[R4, #+4]
+   \       0x48   0xE3A0'1000        MOV      R1,#+0
+   \       0x4C   0x....'....        LDR      R0,??DataTable38_8
+    173          		cmd_complete = true;
+   \       0x50   0xE3A0'3001        MOV      R3,#+1
+   \       0x54   0xE7C0'1002        STRB     R1,[R0, +R2]
+   \       0x58   0xE5C4'300C        STRB     R3,[R4, #+12]
+    174          		break;
+   \       0x5C   0xE8BD'8031        POP      {R0,R4,R5,PC}
+    175          	case 0x7F:
+    176          	case '\b':
+    177          		if (cmd_length > 0) {
+   \                     ??console_handler_1:
+   \       0x60   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x64   0xE350'0000        CMP      R0,#+0
+   \       0x68   0x0A00'0014        BEQ      ??console_handler_0
+    178          			console_echo(key);
+   \       0x6C   0xE1A0'0005        MOV      R0,R5
+   \       0x70   0x....'....        BL       console_echo
+    179          			cmd_length--;
+   \       0x74   0xE594'0004        LDR      R0,[R4, #+4]
+    180          			cmd_buffer[cmd_length] = '\0';
+   \       0x78   0xE3A0'2000        MOV      R2,#+0
+   \       0x7C   0x....'....        LDR      R3,??DataTable38_8
+   \       0x80   0xE240'1001        SUB      R1,R0,#+1
+   \       0x84   0xE584'1004        STR      R1,[R4, #+4]
+   \       0x88   0xE594'0004        LDR      R0,[R4, #+4]
+   \       0x8C   0xE7C3'2000        STRB     R2,[R3, +R0]
+   \       0x90   0xE8BD'8031        POP      {R0,R4,R5,PC}
+    181          		}
+    182          		break;
+    183          	default:
+    184          		if (cmd_length < (ARRAY_SIZE(cmd_buffer) - 1)) {
+   \                     ??console_handler_3:
+   \       0x94   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x98   0xE300'23FF        MOVW     R2,#+1023
+   \       0x9C   0xE151'0002        CMP      R1,R2
+   \       0xA0   0x2A00'0006        BCS      ??console_handler_0
+    185          			console_echo(key);
+   \       0xA4   0x....'....        BL       console_echo
+    186          			cmd_buffer[cmd_length] = key;
+   \       0xA8   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0xAC   0x....'....        LDR      R0,??DataTable38_8
+   \       0xB0   0xE7C0'5001        STRB     R5,[R0, +R1]
+    187          			cmd_length++;
+   \       0xB4   0xE594'2004        LDR      R2,[R4, #+4]
+   \       0xB8   0xE282'3001        ADD      R3,R2,#+1
+   \       0xBC   0xE584'3004        STR      R3,[R4, #+4]
+    188          		}
+    189          		break;
+    190          	}
+    191          
+    192          }
+   \                     ??console_handler_0:
+   \       0xC0   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    193          
+    194          static void _flash_read_arg_parser(const uint8_t* buffer, uint32_t len)
+    195          {
+    196          	char* end_addr = NULL;
+    197          	char* end_length = NULL;
+    198          	unsigned long addr = strtoul((char*)buffer, &end_addr, 0);
+    199          	if (end_addr == (char*)buffer) {
+    200          		printf("Args: %s\r\n"
+    201          		       "Invalid address\r\n",
+    202          		       buffer);
+    203          		return;
+    204          	}
+    205          
+    206          	int length = strtol(end_addr, &end_length, 0);
+    207          	if (end_length == end_addr) {
+    208          		printf("Args: %s\r\n"
+    209          		       "Invalid size\r\n",
+    210          			buffer);
+    211          		return;
+    212          	}
+    213          	int offset = 0;
+    214          	while (length > 0) {
+    215          		int rc;
+    216          		int chunk_size = length < READ_BUFFER_SIZE ? length : READ_BUFFER_SIZE;
+    217          
+    218          		rc = spi_nor_read(flash, addr + offset, read_buffer, chunk_size);
+    219          		if (rc < 0) {
+    220          			printf("Read failed (errno=%d)\r\n", rc);
+    221          			/* Read failed, no need to dump anything */
+    222          			return;
+    223          		}
+    224          		offset += chunk_size;
+    225          		length -= chunk_size;
+    226          		console_dump_frame(read_buffer, chunk_size);
+    227          	}
+    228          }
+    229          
+    230          static void _flash_write_arg_parser(const uint8_t* buffer, uint32_t len)
+    231          {
+    232          	int rc;
+    233          	char* end_addr = NULL;
+    234          	unsigned int addr = strtoul((char*)buffer, &end_addr, 0);
+    235          	if (end_addr == (char*)buffer) {
+    236          		printf("Args: %s\r\n"
+    237          		       "Invalid address\r\n",
+    238          			buffer);
+    239          		return;
+    240          	}
+    241          
+    242          	if (1+end_addr - (char*)buffer > len) {
+    243          		printf("No data given.\r\n");
+    244          		return;
+    245          	}
+    246          
+    247          	len -= (end_addr+1) - (char*)buffer;
+    248          
+    249          	rc = spi_nor_write(flash, addr, (uint8_t *)end_addr + 1, len);
+    250          	if (rc < 0)
+    251          		printf("Write failed (errno=%d)\r\n", rc);
+    252          }
+    253          
+    254          static void _flash_delete_arg_parser(const uint8_t* buffer, uint32_t len)
+    255          {
+    256          	int rc;
+    257          	char* end_addr = NULL;
+    258          	char* erase_type_str = NULL;
+    259          	unsigned long addr = strtoul((char*)buffer, &end_addr, 0);
+    260          	if (end_addr == (char*)buffer) {
+    261          		printf("Args: %s\r\n"
+    262          		       "Invalid address\r\n",
+    263          		       buffer);
+    264          		return;
+    265          	}
+    266          
+    267          	uint32_t erase_length = 4096;
+    268          
+    269          	erase_type_str = end_addr + 1;
+    270          	if (!strcmp("4k", erase_type_str) ||
+    271          	    !strcmp("4K", erase_type_str)) {
+    272          		erase_length = 4 * 1024;
+    273          	} else if (!strcmp("32k", erase_type_str) ||
+    274          	           !strcmp("32K", erase_type_str)) {
+    275          		erase_length = 32 * 1024;
+    276          	} else if (!strcmp("64k", erase_type_str) ||
+    277          	           !strcmp("64K", erase_type_str)) {
+    278          		erase_length = 64 * 1024;
+    279          	} else if (!strcmp("256k", erase_type_str) ||
+    280          	           !strcmp("256K", erase_type_str)) {
+    281          		erase_length = 256 * 1024;
+    282          	} else {
+    283          		printf("Args: %s\r\n"
+    284          		       "Invalid Erase type\r\n",
+    285          		       buffer);
+    286          		return;
+    287          	}
+    288          
+    289          	rc = spi_nor_erase(flash, addr, erase_length);
+    290          	if (rc < 0)
+    291          		printf("Erase failed (errno=%d)\r\n", rc);
+    292          }
+    293          
+    294          static void _flash_mode_arg_parser(const uint8_t* buffer, uint32_t len)
+    295          {
+    296          	enum _bus_transfer_mode mode;
+    297          
+    298          	if (!strncmp((char*)buffer, "polling", 7)) {
+    299          		mode = BUS_TRANSFER_MODE_POLLING;
+    300          		printf("Use POLLING mode\r\n");
+    301          	} else if (!strncmp((char*)buffer, "async", 5)) {
+    302          		mode = BUS_TRANSFER_MODE_ASYNC;
+    303          		printf("Use ASYNC mode\r\n");
+    304          	} else if (!strncmp((char*)buffer, "dma", 3)) {
+    305          		mode = BUS_TRANSFER_MODE_DMA;
+    306          		printf("Use DMA mode\r\n");
+    307          	} else {
+    308          		printf("Args: %s\r\nInvalid mode (polling, async, dma)\r\n", buffer);
+    309          		return;
+    310          	}
+    311          
+    312          	bus_ioctl(flash->priv.spi.bus, BUS_IOCTL_SET_TRANSFER_MODE, &mode);
+    313          }
+    314          
+    315          #ifdef CONFIG_HAVE_SPI_FIFO
+    316          static void _flash_feature_arg_parser(const uint8_t* buffer, uint32_t len)
+    317          {
+    318          	if (!strncmp((char*)buffer, "fifo", 4)) {
+    319          		bool _enabled;
+    320          
+    321          		bus_ioctl(flash->priv.spi.bus, BUS_IOCTL_GET_FIFO_STATUS, &_enabled);
+    322          		if (!_enabled) {
+    323          			bus_ioctl(flash->priv.spi.bus, BUS_IOCTL_ENABLE_FIFO, NULL);
+    324          			printf("Enable FIFO\r\n");
+    325          		} else {
+    326          			bus_ioctl(flash->priv.spi.bus, BUS_IOCTL_DISABLE_FIFO, NULL);
+    327          			printf("Disable FIFO\r\n");
+    328          		}
+    329          	}
+    330          }
+    331          #endif /* CONFIG_HAVE_SPI_FIFO */
+    332          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    333          static void print_menu(void)
+    334          {
+   \                     print_menu:
+   \        0x0   0xE92D'4038        PUSH     {R3-R5,LR}
+    335          	const char* mode_str;
+    336          	enum _bus_transfer_mode mode;
+    337          
+    338          	printf("\r\n");
+   \        0x4   0x....'....        LDR      R5,??DataTable38_7
+   \        0x8   0x....'....        ADR      R0,??DataTable36  ;; 0x0D, 0x0A, 0x00, 0x00
+   \        0xC   0x....'....        BL       printf
+    339          
+    340          	printf("|=============== SPI SerialFlash Example ===============|\r\n");
+   \       0x10   0x....'....        LDR      R4,??DataTable38_9
+   \       0x14   0xE1A0'0004        MOV      R0,R4
+   \       0x18   0x....'....        BL       printf
+    341          
+    342          	bus_ioctl(flash->priv.spi.bus, BUS_IOCTL_GET_TRANSFER_MODE, &mode);
+   \       0x1C   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0x20   0xE28D'2001        ADD      R2,SP,#+1
+   \       0x24   0xE3A0'1007        MOV      R1,#+7
+   \       0x28   0xE5D0'0000        LDRB     R0,[R0, #+0]
+   \       0x2C   0x....'....        BL       bus_ioctl
+    343          	switch (mode) {
+   \       0x30   0xE5DD'2001        LDRB     R2,[SP, #+1]
+   \       0x34   0xE352'0000        CMP      R2,#+0
+   \       0x38   0x0A00'0003        BEQ      ??print_menu_0
+   \       0x3C   0xE352'0002        CMP      R2,#+2
+   \       0x40   0x0A00'0005        BEQ      ??print_menu_1
+   \       0x44   0x3A00'0002        BCC      ??print_menu_2
+   \       0x48   0xEA00'0005        B        ??print_menu_3
+    344          	case BUS_TRANSFER_MODE_POLLING:
+    345          		mode_str = "polling";
+   \                     ??print_menu_0:
+   \       0x4C   0x....'....        LDR      R1,??DataTable38_10
+    346          		break;
+   \       0x50   0xEA00'0004        B        ??print_menu_4
+    347          	case BUS_TRANSFER_MODE_ASYNC:
+    348          		mode_str = "async";
+   \                     ??print_menu_2:
+   \       0x54   0x....'....        LDR      R1,??DataTable38_11
+    349          		break;
+   \       0x58   0xEA00'0002        B        ??print_menu_4
+    350          	case BUS_TRANSFER_MODE_DMA:
+    351          		mode_str = "DMA";
+   \                     ??print_menu_1:
+   \       0x5C   0x....'....        ADR      R1,??DataTable36_1  ;; "DMA"
+    352          		break;
+   \       0x60   0xEA00'0000        B        ??print_menu_4
+    353          	default:
+    354          		mode_str = "unknown";
+   \                     ??print_menu_3:
+   \       0x64   0x....'....        LDR      R1,??DataTable38_12
+    355          		break;
+    356          	}
+    357          	printf("| Mode: %-48s|\r\n", mode_str);
+   \                     ??print_menu_4:
+   \       0x68   0x....'....        LDR      R0,??DataTable38_13
+   \       0x6C   0x....'....        BL       printf
+    358          #ifdef CONFIG_HAVE_SPI_FIFO
+    359          	{
+    360          		bool _enabled;
+    361          
+    362          		bus_ioctl(flash->priv.spi.bus, BUS_IOCTL_GET_FIFO_STATUS, &_enabled);
+   \       0x70   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0x74   0xE1A0'200D        MOV      R2,SP
+   \       0x78   0xE3A0'1005        MOV      R1,#+5
+   \       0x7C   0xE5D0'0000        LDRB     R0,[R0, #+0]
+   \       0x80   0x....'....        BL       bus_ioctl
+    363          		printf("| FIFO: %-48s|\r\n", _enabled ? "enabled" : "disabled");
+   \       0x84   0xE5DD'2000        LDRB     R2,[SP, #+0]
+   \       0x88   0x....'....        LDR      R0,??DataTable38_14
+   \       0x8C   0xE352'0000        CMP      R2,#+0
+   \       0x90   0x....'....        LDRNE    R1,??DataTable38_15
+   \       0x94   0x....'....        LDREQ    R1,??DataTable38_16
+   \       0x98   0x....'....        BL       printf
+    364          	}
+    365          #endif
+    366          	printf("|==================== SERIAL FLASH =====================|\r\n");
+   \       0x9C   0xE284'003C        ADD      R0,R4,#+60
+   \       0xA0   0x....'....        BL       printf
+    367          	printf("| Device: %s\t\t\t\t\t|\r\n", flash->name);
+   \       0xA4   0xE595'0008        LDR      R0,[R5, #+8]
+   \       0xA8   0xE590'103C        LDR      R1,[R0, #+60]
+   \       0xAC   0x....'....        LDR      R0,??DataTable38_17
+   \       0xB0   0x....'....        BL       printf
+    368          	printf("|====================== Commands =======================|\r\n"
+    369          	       "| m polling                                             |\r\n"
+    370          	       "| m async                                               |\r\n"
+    371          	       "| m dma                                                 |\r\n"
+    372          	       "|      Select transfer mode                             |\r\n"
+    373          #ifdef CONFIG_HAVE_SPI_FIFO
+    374          	       "| f fifo                                                |\r\n"
+    375          	       "|      Enable/disable FIFO                              |\r\n"
+    376          #endif
+    377          	       "| a status                                              |\r\n"
+    378          	       "|      Query device status                              |\r\n"
+    379          	       "| a device                                              |\r\n"
+    380          	       "|      Query serial flash JEDEC info                    |\r\n"
+    381          	       "| r addr size                                           |\r\n"
+    382          	       "|      Read 'size' bytes starting at address 'addr'     |\r\n"
+    383          	       "| w addr str                                            |\r\n"
+    384          	       "|      Write 'str' to address 'addr'                    |\r\n"
+    385          	       "| d addr [4k|32k|64k|256k]                              |\r\n"
+    386          	       "|      Erase block containing the address 'addr'        |\r\n"
+    387          	       "|      The erase can be 4k, 32k, 64k or 256k            |\r\n"
+    388          	       "| h                                                     |\r\n"
+    389          	       "|      Print this menu                                  |\r\n"
+    390          	       "|=======================================================|\r\n");
+   \       0xB4   0xE284'0078        ADD      R0,R4,#+120
+   \       0xB8   0x....'....        BL       printf
+    391          }
+   \       0xBC   0xE8BD'8031        POP      {R0,R4,R5,PC}    ;; return
+    392          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    393          static void _flash_cmd_parser(const uint8_t* buffer, uint32_t len)
+    394          {
+   \                     _flash_cmd_parser:
+   \        0x0   0xE92D'43F0        PUSH     {R4-R9,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE24D'D00C        SUB      SP,SP,#+12
+   \        0xC   0xE1A0'0001        MOV      R0,R1
+    395          	if (*buffer == 'h'||*buffer=='H') {
+   \       0x10   0xE5D4'1000        LDRB     R1,[R4, #+0]
+   \       0x14   0xE351'0068        CMP      R1,#+104
+   \       0x18   0x0A00'0001        BEQ      ??_flash_cmd_parser_0
+   \       0x1C   0xE351'0048        CMP      R1,#+72
+   \       0x20   0x1A00'0001        BNE      ??_flash_cmd_parser_1
+    396          		print_menu();
+   \                     ??_flash_cmd_parser_0:
+   \       0x24   0x....'....        BL       print_menu
+    397          		return;
+    398          	}
+    399          	if (*(buffer+1) != ' ') {
+    400          		printf("Commands can only be one caracter size\r\n");
+    401          		printf("%c%c\r\n", *buffer, *(buffer+1));
+    402          		return;
+    403          	}
+    404          	switch(*buffer) {
+    405          	case 'r':
+    406          		_flash_read_arg_parser(buffer+2, len-2);
+    407          		break;
+    408          	case 'w':
+    409          		_flash_write_arg_parser(buffer+2, len-2);
+    410          		break;
+    411          	case 'd':
+    412          		_flash_delete_arg_parser(buffer+2, len-2);
+    413          		break;
+    414          	case 'm':
+    415          		_flash_mode_arg_parser(buffer+2, len-2);
+    416          		break;
+    417          #ifdef CONFIG_HAVE_SPI_FIFO
+    418          	case 'f':
+    419          		_flash_feature_arg_parser(buffer+2, len-2);
+    420          		break;
+    421          #endif
+    422          	default:
+    423          		printf("Command %c unknown\r\n", *buffer);
+    424          	}
+    425          
+    426          }
+   \       0x28   0x....'....        B        ?Subroutine0
+   \                     ??_flash_cmd_parser_1:
+   \       0x2C   0xE5D4'2001        LDRB     R2,[R4, #+1]
+   \       0x30   0xE352'0020        CMP      R2,#+32
+   \       0x34   0x0A00'0006        BEQ      ??_flash_cmd_parser_2
+   \       0x38   0x....'....        LDR      R0,??DataTable38_18
+   \       0x3C   0x....'....        BL       printf
+   \       0x40   0xE5D4'2001        LDRB     R2,[R4, #+1]
+   \       0x44   0xE5D4'1000        LDRB     R1,[R4, #+0]
+   \       0x48   0x....'....        LDR      R0,??DataTable38_19
+   \       0x4C   0x....'....        BL       printf
+   \       0x50   0x....'....        B        ?Subroutine0
+   \                     ??_flash_cmd_parser_2:
+   \       0x54   0xE351'0064        CMP      R1,#+100
+   \       0x58   0x0A00'0058        BEQ      ??_flash_cmd_parser_3
+   \       0x5C   0xE351'0066        CMP      R1,#+102
+   \       0x60   0x0A00'00C4        BEQ      ??_flash_cmd_parser_4
+   \       0x64   0xE351'006D        CMP      R1,#+109
+   \       0x68   0x0A00'009D        BEQ      ??_flash_cmd_parser_5
+   \       0x6C   0xE351'0072        CMP      R1,#+114
+   \       0x70   0x0A00'0002        BEQ      ??_flash_cmd_parser_6
+   \       0x74   0xE351'0077        CMP      R1,#+119
+   \       0x78   0x0A00'0030        BEQ      ??_flash_cmd_parser_7
+   \       0x7C   0xEA00'00D7        B        ??_flash_cmd_parser_8
+   \                     ??_flash_cmd_parser_6:
+   \       0x80   0xE3A0'0000        MOV      R0,#+0
+   \       0x84   0xE3A0'2000        MOV      R2,#+0
+   \       0x88   0xE58D'0000        STR      R0,[SP, #+0]
+   \       0x8C   0xE58D'0004        STR      R0,[SP, #+4]
+   \       0x90   0xE1A0'100D        MOV      R1,SP
+   \       0x94   0xE284'0002        ADD      R0,R4,#+2
+   \       0x98   0x....'....        BL       strtoul
+   \       0x9C   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0xA0   0xE284'2002        ADD      R2,R4,#+2
+   \       0xA4   0xE1A0'5000        MOV      R5,R0
+   \       0xA8   0xE151'0002        CMP      R1,R2
+   \       0xAC   0x0A00'004E        BEQ      ??_flash_cmd_parser_9
+   \       0xB0   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0xB4   0xE3A0'2000        MOV      R2,#+0
+   \       0xB8   0xE28D'1004        ADD      R1,SP,#+4
+   \       0xBC   0x....'....        BL       strtol
+   \       0xC0   0xE59D'2004        LDR      R2,[SP, #+4]
+   \       0xC4   0xE59D'3000        LDR      R3,[SP, #+0]
+   \       0xC8   0xE1A0'6000        MOV      R6,R0
+   \       0xCC   0xE152'0003        CMP      R2,R3
+   \       0xD0   0x0284'1002        ADDEQ    R1,R4,#+2
+   \       0xD4   0x....'....        LDREQ    R0,??DataTable38_20
+   \       0xD8   0x0A00'0016        BEQ      ??_flash_cmd_parser_10
+   \       0xDC   0xE3A0'4000        MOV      R4,#+0
+   \       0xE0   0x....'....        LDR      R7,??DataTable38_21
+   \       0xE4   0x....'....        LDR      R8,??DataTable38_7
+   \       0xE8   0xEA00'0004        B        ??_flash_cmd_parser_11
+   \                     ??_flash_cmd_parser_12:
+   \       0xEC   0xE1A0'1009        MOV      R1,R9
+   \       0xF0   0xE1A0'0007        MOV      R0,R7
+   \       0xF4   0x....'....        BL       console_dump_frame
+   \       0xF8   0xE089'4004        ADD      R4,R9,R4
+   \       0xFC   0xE046'6009        SUB      R6,R6,R9
+   \                     ??_flash_cmd_parser_11:
+   \      0x100   0xE356'0000        CMP      R6,#+0
+   \      0x104   0xDA00'000C        BLE      ??_flash_cmd_parser_13
+   \      0x108   0xE3A0'9D40        MOV      R9,#+4096
+   \      0x10C   0xE356'0D40        CMP      R6,#+4096
+   \      0x110   0xE598'0008        LDR      R0,[R8, #+8]
+   \      0x114   0xD1A0'9006        MOVLE    R9,R6
+   \      0x118   0xE1A0'2007        MOV      R2,R7
+   \      0x11C   0xE1A0'3009        MOV      R3,R9
+   \      0x120   0xE084'1005        ADD      R1,R4,R5
+   \      0x124   0x....'....        BL       spi_nor_read
+   \      0x128   0xE350'0000        CMP      R0,#+0
+   \      0x12C   0x5AFF'FFEE        BPL      ??_flash_cmd_parser_12
+   \      0x130   0xE1A0'1000        MOV      R1,R0
+   \      0x134   0x....'....        LDR      R0,??DataTable38_22
+   \                     ??_flash_cmd_parser_10:
+   \      0x138   0x....'....        BL       printf
+   \                     ??_flash_cmd_parser_13:
+   \      0x13C   0x....'....        B        ?Subroutine0
+   \                     ??_flash_cmd_parser_7:
+   \      0x140   0xE240'5002        SUB      R5,R0,#+2
+   \      0x144   0xE3A0'0000        MOV      R0,#+0
+   \      0x148   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x14C   0xE3A0'2000        MOV      R2,#+0
+   \      0x150   0xE1A0'100D        MOV      R1,SP
+   \      0x154   0xE284'0002        ADD      R0,R4,#+2
+   \      0x158   0x....'....        BL       strtoul
+   \      0x15C   0xE59D'2000        LDR      R2,[SP, #+0]
+   \      0x160   0xE284'3002        ADD      R3,R4,#+2
+   \      0x164   0xE152'0003        CMP      R2,R3
+   \      0x168   0x0A00'001F        BEQ      ??_flash_cmd_parser_9
+   \      0x16C   0xE1A0'E002        MOV      LR,R2
+   \      0x170   0xE284'1002        ADD      R1,R4,#+2
+   \      0x174   0xE28E'2001        ADD      R2,LR,#+1
+   \      0x178   0xE042'4001        SUB      R4,R2,R1
+   \      0x17C   0xE155'0004        CMP      R5,R4
+   \      0x180   0x2A00'0002        BCS      ??_flash_cmd_parser_14
+   \      0x184   0x....'....        LDR      R0,??DataTable38_23
+   \                     ??_flash_cmd_parser_15:
+   \      0x188   0x....'....        BL       printf
+   \      0x18C   0x....'....        B        ?Subroutine0
+   \                     ??_flash_cmd_parser_14:
+   \      0x190   0xE045'2002        SUB      R2,R5,R2
+   \      0x194   0xE081'3002        ADD      R3,R1,R2
+   \      0x198   0xE1A0'1000        MOV      R1,R0
+   \      0x19C   0x....'....        LDR      R0,??DataTable38_7
+   \      0x1A0   0xE28E'2001        ADD      R2,LR,#+1
+   \      0x1A4   0xE590'0008        LDR      R0,[R0, #+8]
+   \      0x1A8   0x....'....        BL       spi_nor_write
+   \      0x1AC   0xE350'0000        CMP      R0,#+0
+   \      0x1B0   0x5AFF'FFE1        BPL      ??_flash_cmd_parser_13
+   \      0x1B4   0xE1A0'1000        MOV      R1,R0
+   \      0x1B8   0x....'....        ADR      R0,?_9
+   \      0x1BC   0xEAFF'FFDD        B        ??_flash_cmd_parser_10
+   \                     ??_flash_cmd_parser_3:
+   \      0x1C0   0xE3A0'0000        MOV      R0,#+0
+   \      0x1C4   0xE3A0'2000        MOV      R2,#+0
+   \      0x1C8   0xE58D'0008        STR      R0,[SP, #+8]
+   \      0x1CC   0xE28D'1008        ADD      R1,SP,#+8
+   \      0x1D0   0xE284'0002        ADD      R0,R4,#+2
+   \      0x1D4   0x....'....        BL       strtoul
+   \      0x1D8   0xE59D'1008        LDR      R1,[SP, #+8]
+   \      0x1DC   0xE284'2002        ADD      R2,R4,#+2
+   \      0x1E0   0xE1A0'5000        MOV      R5,R0
+   \      0x1E4   0xE151'0002        CMP      R1,R2
+   \      0x1E8   0x1A00'0002        BNE      ??_flash_cmd_parser_16
+   \                     ??_flash_cmd_parser_9:
+   \      0x1EC   0xE284'1002        ADD      R1,R4,#+2
+   \      0x1F0   0x....'....        ADR      R0,?_5
+   \      0x1F4   0xEAFF'FFCF        B        ??_flash_cmd_parser_10
+   \                     ??_flash_cmd_parser_16:
+   \      0x1F8   0xE281'7001        ADD      R7,R1,#+1
+   \      0x1FC   0xE3A0'6D40        MOV      R6,#+4096
+   \      0x200   0xE1A0'1007        MOV      R1,R7
+   \      0x204   0x....'....        ADR      R0,??DataTable38  ;; 0x34, 0x6B, 0x00, 0x00
+   \      0x208   0x....'....        BL       strcmp
+   \      0x20C   0xE350'0000        CMP      R0,#+0
+   \      0x210   0x0A00'0029        BEQ      ??_flash_cmd_parser_17
+   \      0x214   0xE1A0'1007        MOV      R1,R7
+   \      0x218   0x....'....        ADR      R0,??DataTable38_1  ;; 0x34, 0x4B, 0x00, 0x00
+   \      0x21C   0x....'....        BL       strcmp
+   \      0x220   0xE350'0000        CMP      R0,#+0
+   \      0x224   0x0A00'0024        BEQ      ??_flash_cmd_parser_17
+   \      0x228   0xE1A0'1007        MOV      R1,R7
+   \      0x22C   0x....'....        ADR      R0,??DataTable38_2  ;; "32k"
+   \      0x230   0x....'....        BL       strcmp
+   \      0x234   0xE350'0000        CMP      R0,#+0
+   \      0x238   0x0A00'001E        BEQ      ??_flash_cmd_parser_18
+   \      0x23C   0xE1A0'1007        MOV      R1,R7
+   \      0x240   0x....'....        ADR      R0,??DataTable38_3  ;; "32K"
+   \      0x244   0x....'....        BL       strcmp
+   \      0x248   0xE350'0000        CMP      R0,#+0
+   \      0x24C   0x0A00'0019        BEQ      ??_flash_cmd_parser_18
+   \      0x250   0xE1A0'1007        MOV      R1,R7
+   \      0x254   0x....'....        ADR      R0,??DataTable38_4  ;; "64k"
+   \      0x258   0x....'....        BL       strcmp
+   \      0x25C   0xE350'0000        CMP      R0,#+0
+   \      0x260   0x0A00'0012        BEQ      ??_flash_cmd_parser_19
+   \      0x264   0xE1A0'1007        MOV      R1,R7
+   \      0x268   0x....'....        ADR      R0,??DataTable38_5  ;; "64K"
+   \      0x26C   0x....'....        BL       strcmp
+   \      0x270   0xE350'0000        CMP      R0,#+0
+   \      0x274   0x0A00'000D        BEQ      ??_flash_cmd_parser_19
+   \      0x278   0xE1A0'1007        MOV      R1,R7
+   \      0x27C   0x....'....        ADR      R0,?_16
+   \      0x280   0x....'....        BL       strcmp
+   \      0x284   0xE350'0000        CMP      R0,#+0
+   \      0x288   0x0A00'0006        BEQ      ??_flash_cmd_parser_20
+   \      0x28C   0xE1A0'1007        MOV      R1,R7
+   \      0x290   0x....'....        ADR      R0,?_17
+   \      0x294   0x....'....        BL       strcmp
+   \      0x298   0xE350'0000        CMP      R0,#+0
+   \      0x29C   0x1284'1002        ADDNE    R1,R4,#+2
+   \      0x2A0   0x....'....        ADRNE    R0,?_18
+   \      0x2A4   0x1AFF'FFA3        BNE      ??_flash_cmd_parser_10
+   \                     ??_flash_cmd_parser_20:
+   \      0x2A8   0xE3A0'6A40        MOV      R6,#+262144
+   \      0x2AC   0xEA00'0002        B        ??_flash_cmd_parser_17
+   \                     ??_flash_cmd_parser_19:
+   \      0x2B0   0xE3A0'6B40        MOV      R6,#+65536
+   \      0x2B4   0xEA00'0000        B        ??_flash_cmd_parser_17
+   \                     ??_flash_cmd_parser_18:
+   \      0x2B8   0xE3A0'6C80        MOV      R6,#+32768
+   \                     ??_flash_cmd_parser_17:
+   \      0x2BC   0x....'....        LDR      R0,??DataTable38_7
+   \      0x2C0   0xE1A0'2006        MOV      R2,R6
+   \      0x2C4   0xE1A0'1005        MOV      R1,R5
+   \      0x2C8   0xE590'0008        LDR      R0,[R0, #+8]
+   \      0x2CC   0x....'....        BL       spi_nor_erase
+   \      0x2D0   0xE350'0000        CMP      R0,#+0
+   \      0x2D4   0x5AFF'FF98        BPL      ??_flash_cmd_parser_13
+   \      0x2D8   0xE1A0'1000        MOV      R1,R0
+   \      0x2DC   0x....'....        ADR      R0,?_19
+   \      0x2E0   0xEAFF'FF94        B        ??_flash_cmd_parser_10
+   \                     ??_flash_cmd_parser_5:
+   \      0x2E4   0xE3A0'2007        MOV      R2,#+7
+   \      0x2E8   0x....'....        ADR      R1,?_20
+   \      0x2EC   0xE284'0002        ADD      R0,R4,#+2
+   \      0x2F0   0x....'....        BL       strncmp
+   \      0x2F4   0xE350'0000        CMP      R0,#+0
+   \      0x2F8   0x05CD'0000        STRBEQ   R0,[SP, #+0]
+   \      0x2FC   0x....'....        ADREQ    R0,?_21
+   \      0x300   0x0A00'0011        BEQ      ??_flash_cmd_parser_21
+   \      0x304   0xE3A0'2005        MOV      R2,#+5
+   \      0x308   0x....'....        ADR      R1,?_22
+   \      0x30C   0xE284'0002        ADD      R0,R4,#+2
+   \      0x310   0x....'....        BL       strncmp
+   \      0x314   0xE350'0000        CMP      R0,#+0
+   \      0x318   0x03A0'0001        MOVEQ    R0,#+1
+   \      0x31C   0x05CD'0000        STRBEQ   R0,[SP, #+0]
+   \      0x320   0x....'....        ADREQ    R0,?_23
+   \      0x324   0x0A00'0008        BEQ      ??_flash_cmd_parser_21
+   \      0x328   0xE3A0'2003        MOV      R2,#+3
+   \      0x32C   0xE284'0002        ADD      R0,R4,#+2
+   \      0x330   0x....'....        ADR      R1,??DataTable38_6  ;; "dma"
+   \      0x334   0x....'....        BL       strncmp
+   \      0x338   0xE350'0000        CMP      R0,#+0
+   \      0x33C   0x1A00'000A        BNE      ??_flash_cmd_parser_22
+   \      0x340   0xE3A0'0002        MOV      R0,#+2
+   \      0x344   0xE5CD'0000        STRB     R0,[SP, #+0]
+   \      0x348   0x....'....        ADR      R0,?_25
+   \                     ??_flash_cmd_parser_21:
+   \      0x34C   0x....'....        BL       printf
+   \      0x350   0x....'....        LDR      R0,??DataTable38_7
+   \      0x354   0xE1A0'200D        MOV      R2,SP
+   \      0x358   0xE3A0'1006        MOV      R1,#+6
+   \      0x35C   0xE590'3008        LDR      R3,[R0, #+8]
+   \      0x360   0xE5D3'0000        LDRB     R0,[R3, #+0]
+   \      0x364   0x....'....        BL       bus_ioctl
+   \      0x368   0x....'....        B        ?Subroutine0
+   \                     ??_flash_cmd_parser_22:
+   \      0x36C   0xE284'1002        ADD      R1,R4,#+2
+   \      0x370   0x....'....        LDR      R0,??DataTable38_24
+   \      0x374   0xEAFF'FF6F        B        ??_flash_cmd_parser_10
+   \                     ??_flash_cmd_parser_4:
+   \      0x378   0xE3A0'2004        MOV      R2,#+4
+   \      0x37C   0x....'....        ADR      R1,?_26
+   \      0x380   0xE284'0002        ADD      R0,R4,#+2
+   \      0x384   0x....'....        BL       strncmp
+   \      0x388   0xE350'0000        CMP      R0,#+0
+   \      0x38C   0x1AFF'FF6A        BNE      ??_flash_cmd_parser_13
+   \      0x390   0x....'....        LDR      R4,??DataTable38_7
+   \      0x394   0xE1A0'200D        MOV      R2,SP
+   \      0x398   0xE3A0'1005        MOV      R1,#+5
+   \      0x39C   0xE594'0008        LDR      R0,[R4, #+8]
+   \      0x3A0   0xE5D0'0000        LDRB     R0,[R0, #+0]
+   \      0x3A4   0x....'....        BL       bus_ioctl
+   \      0x3A8   0xE5DD'3000        LDRB     R3,[SP, #+0]
+   \      0x3AC   0xE594'1008        LDR      R1,[R4, #+8]
+   \      0x3B0   0xE3A0'2000        MOV      R2,#+0
+   \      0x3B4   0xE353'0000        CMP      R3,#+0
+   \      0x3B8   0xE5D1'0000        LDRB     R0,[R1, #+0]
+   \      0x3BC   0x1A00'0003        BNE      ??_flash_cmd_parser_23
+   \      0x3C0   0xE3A0'1003        MOV      R1,#+3
+   \      0x3C4   0x....'....        BL       bus_ioctl
+   \      0x3C8   0x....'....        ADR      R0,?_27
+   \      0x3CC   0xEAFF'FF6D        B        ??_flash_cmd_parser_15
+   \                     ??_flash_cmd_parser_23:
+   \      0x3D0   0xE3A0'1004        MOV      R1,#+4
+   \      0x3D4   0x....'....        BL       bus_ioctl
+   \      0x3D8   0x....'....        ADR      R0,?_28
+   \      0x3DC   0xEAFF'FF69        B        ??_flash_cmd_parser_15
+   \                     ??_flash_cmd_parser_8:
+   \      0x3E0   0x....'....        ADR      R0,?_38
+   \      0x3E4   0xEAFF'FF53        B        ??_flash_cmd_parser_10
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE28D'D00C        ADD      SP,SP,#+12
+   \        0x4   0xE8BD'83F0        POP      {R4-R9,PC}
+    427          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    428          int main (void)
+    429          {
+   \                     main:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+    430          	console_set_rx_handler(console_handler);
+   \        0x4   0x....'....        LDR      R0,??DataTable38_25
+   \        0x8   0x....'....        BL       console_set_rx_handler
+    431          	console_enable_rx_interrupt();
+   \        0xC   0x....'....        BL       console_enable_rx_interrupt
+    432          	_cmd_parser = _flash_cmd_parser;
+   \       0x10   0x....'....        LDR      R4,??DataTable38_7
+   \       0x14   0x....'....        LDR      R0,??DataTable38_26
+   \       0x18   0xE584'0000        STR      R0,[R4, #+0]
+    433          
+    434          	/* Output example information */
+    435          	console_example_info("SPI Flash Example");
+   \       0x1C   0x....'....        ADR      R0,?_39
+   \       0x20   0x....'....        BL       console_example_info
+    436          
+    437          	/* retrieve pointer to AT25 device structure */
+    438          	flash = board_get_spi_flash(BOARD_SPI_FLASH_SPI0);
+   \       0x24   0xE3A0'0000        MOV      R0,#+0
+   \       0x28   0x....'....        LDR      R5,??DataTable38_8
+   \       0x2C   0x....'....        BL       board_get_spi_flash
+   \       0x30   0xE584'0008        STR      R0,[R4, #+8]
+    439          
+    440          	print_menu();
+   \       0x34   0x....'....        BL       print_menu
+   \       0x38   0xE3A0'6000        MOV      R6,#+0
+    441          
+    442          	while (1) {
+    443          		cpu_idle();
+   \                     ??main_0:
+   \       0x3C   0xF57F'F04F        dsb
+   \       0x40   0xE320'F003        wfi
+    444          
+    445          		if (cmd_complete && cmd_length > 0) {
+   \       0x44   0xE5D4'000C        LDRB     R0,[R4, #+12]
+   \       0x48   0xE350'0000        CMP      R0,#+0
+   \       0x4C   0x0AFF'FFFA        BEQ      ??main_0
+   \       0x50   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x54   0xE351'0000        CMP      R1,#+0
+   \       0x58   0x0AFF'FFF7        BEQ      ??main_0
+    446          			_cmd_parser(cmd_buffer, cmd_length);
+   \       0x5C   0xE594'1004        LDR      R1,[R4, #+4]
+   \       0x60   0xE594'2000        LDR      R2,[R4, #+0]
+   \       0x64   0xE1A0'0005        MOV      R0,R5
+   \       0x68   0xE12F'FF32        BLX      R2
+    447          			cmd_length = 0;
+   \       0x6C   0xE584'6004        STR      R6,[R4, #+4]
+    448          			cmd_complete = false;
+   \       0x70   0xE5C4'600C        STRB     R6,[R4, #+12]
+   \       0x74   0xEAFF'FFF0        B        ??main_0
+    449          		}
+    450          	}
+    451          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable36:
+   \        0x0   0x0D 0x0A          DC8      0x0D, 0x0A, 0x00, 0x00
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable36_1:
+   \        0x0   0x44 0x4D          DC8      "DMA"
+
+   \              0x41 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38:
+   \        0x0   0x34 0x6B          DC8      0x34, 0x6B, 0x00, 0x00
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_1:
+   \        0x0   0x34 0x4B          DC8      0x34, 0x4B, 0x00, 0x00
+
+   \              0x00 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_2:
+   \        0x0   0x33 0x32          DC8      "32k"
+
+   \              0x6B 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_3:
+   \        0x0   0x33 0x32          DC8      "32K"
+
+   \              0x4B 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_4:
+   \        0x0   0x36 0x34          DC8      "64k"
+
+   \              0x6B 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_5:
+   \        0x0   0x36 0x34          DC8      "64K"
+
+   \              0x4B 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_6:
+   \        0x0   0x64 0x6D          DC8      "dma"
+
+   \              0x61 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_7:
+   \        0x0   0x....'....        DC32     _cmd_parser
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_8:
+   \        0x0   0x....'....        DC32     cmd_buffer
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_9:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_10:
+   \        0x0   0x....'....        DC32     ?_20
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_11:
+   \        0x0   0x....'....        DC32     ?_22
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_12:
+   \        0x0   0x....'....        DC32     ?_31
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_13:
+   \        0x0   0x....'....        DC32     ?_32
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_14:
+   \        0x0   0x....'....        DC32     ?_33
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_15:
+   \        0x0   0x....'....        DC32     ?_34
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_16:
+   \        0x0   0x....'....        DC32     ?_35
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_17:
+   \        0x0   0x....'....        DC32     ?_36
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_18:
+   \        0x0   0x....'....        DC32     ?_0+0x30
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_19:
+   \        0x0   0x....'....        DC32     ?_37
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_20:
+   \        0x0   0x....'....        DC32     ?_6
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_21:
+   \        0x0   0x....'....        DC32     read_buffer
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_22:
+   \        0x0   0x....'....        DC32     ?_7
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_23:
+   \        0x0   0x....'....        DC32     ?_8
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_24:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_25:
+   \        0x0   0x....'....        DC32     console_handler
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable38_26:
+   \        0x0   0x....'....        DC32     _flash_cmd_parser
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_5:
+   \        0x0   0x41 0x72          DC8 "Args: %s\015\012Invalid address\015\012"
+
+   \              0x67 0x73    
+
+   \              0x3A 0x20    
+
+   \              0x25 0x73    
+
+   \              0x0D 0x0A    
+
+   \              0x49 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x61 0x64    
+
+   \              0x64 0x72    
+
+   \              0x65 0x73    
+
+   \              0x73 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x41 0x72          DC8 "Args: %s\015\012Invalid mode (polling, async, dma)\015\012"
+
+   \              0x67 0x73    
+
+   \              0x3A 0x20    
+
+   \              0x25 0x73    
+
+   \              0x0D 0x0A    
+
+   \              0x49 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x20 0x28    
+
+   \              0x70 0x6F    
+
+   \              0x6C 0x6C    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x2C    
+
+   \              0x20 0x61    
+
+   \              0x73 0x79    
+
+   \              0x6E 0x63    
+
+   \              0x2C 0x20    
+
+   \              0x64 0x6D    
+
+   \              0x61 0x29    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x2F   0x00               DC8 0
+   \       0x30   0x43 0x6F          DC8 "Commands can only be one caracter size\015\012"
+
+   \              0x6D 0x6D    
+
+   \              0x61 0x6E    
+
+   \              0x64 0x73    
+
+   \              0x20 0x63    
+
+   \              0x61 0x6E    
+
+   \              0x20 0x6F    
+
+   \              0x6E 0x6C    
+
+   \              0x79 0x20    
+
+   \              0x62 0x65    
+
+   \              0x20 0x6F    
+
+   \              0x6E 0x65    
+
+   \              0x20 0x63    
+
+   \              0x61 0x72    
+
+   \              0x61 0x63    
+
+   \              0x74 0x65    
+
+   \              0x72 0x20    
+
+   \              0x73 0x69    
+
+   \              0x7A 0x65    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x59   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_9:
+   \        0x0   0x57 0x72          DC8 "Write failed (errno=%d)\015\012"
+
+   \              0x69 0x74    
+
+   \              0x65 0x20    
+
+   \              0x66 0x61    
+
+   \              0x69 0x6C    
+
+   \              0x65 0x64    
+
+   \              0x20 0x28    
+
+   \              0x65 0x72    
+
+   \              0x72 0x6E    
+
+   \              0x6F 0x3D    
+
+   \              0x25 0x64    
+
+   \              0x29 0x0D    
+
+   \              0x0A 0x00
+   \       0x1A   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_16:
+   \        0x0   0x32 0x35          DC8 "256k"
+
+   \              0x36 0x6B    
+
+   \              0x00
+   \        0x5   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_17:
+   \        0x0   0x32 0x35          DC8 "256K"
+
+   \              0x36 0x4B    
+
+   \              0x00
+   \        0x5   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_18:
+   \        0x0   0x41 0x72          DC8 "Args: %s\015\012Invalid Erase type\015\012"
+
+   \              0x67 0x73    
+
+   \              0x3A 0x20    
+
+   \              0x25 0x73    
+
+   \              0x0D 0x0A    
+
+   \              0x49 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x45 0x72    
+
+   \              0x61 0x73    
+
+   \              0x65 0x20    
+
+   \              0x74 0x79    
+
+   \              0x70 0x65    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x1F   0x00               DC8 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_19:
+   \        0x0   0x45 0x72          DC8 "Erase failed (errno=%d)\015\012"
+
+   \              0x61 0x73    
+
+   \              0x65 0x20    
+
+   \              0x66 0x61    
+
+   \              0x69 0x6C    
+
+   \              0x65 0x64    
+
+   \              0x20 0x28    
+
+   \              0x65 0x72    
+
+   \              0x72 0x6E    
+
+   \              0x6F 0x3D    
+
+   \              0x25 0x64    
+
+   \              0x29 0x0D    
+
+   \              0x0A 0x00
+   \       0x1A   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_20:
+   \        0x0   0x70 0x6F          DC8 "polling"
+
+   \              0x6C 0x6C    
+
+   \              0x69 0x6E    
+
+   \              0x67 0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_21:
+   \        0x0   0x55 0x73          DC8 "Use POLLING mode\015\012"
+
+   \              0x65 0x20    
+
+   \              0x50 0x4F    
+
+   \              0x4C 0x4C    
+
+   \              0x49 0x4E    
+
+   \              0x47 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x13   0x00               DC8 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_22:
+   \        0x0   0x61 0x73          DC8 "async"
+
+   \              0x79 0x6E    
+
+   \              0x63 0x00
+   \        0x6   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_23:
+   \        0x0   0x55 0x73          DC8 "Use ASYNC mode\015\012"
+
+   \              0x65 0x20    
+
+   \              0x41 0x53    
+
+   \              0x59 0x4E    
+
+   \              0x43 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x11   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_25:
+   \        0x0   0x55 0x73          DC8 "Use DMA mode\015\012"
+
+   \              0x65 0x20    
+
+   \              0x44 0x4D    
+
+   \              0x41 0x20    
+
+   \              0x6D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \        0xF   0x00               DC8 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_26:
+   \        0x0   0x66 0x69          DC8 "fifo"
+
+   \              0x66 0x6F    
+
+   \              0x00
+   \        0x5   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_27:
+   \        0x0   0x45 0x6E          DC8 "Enable FIFO\015\012"
+
+   \              0x61 0x62    
+
+   \              0x6C 0x65    
+
+   \              0x20 0x46    
+
+   \              0x49 0x46    
+
+   \              0x4F 0x0D    
+
+   \              0x0A 0x00
+   \        0xE   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_28:
+   \        0x0   0x44 0x69          DC8 "Disable FIFO\015\012"
+
+   \              0x73 0x61    
+
+   \              0x62 0x6C    
+
+   \              0x65 0x20    
+
+   \              0x46 0x49    
+
+   \              0x46 0x4F    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \        0xF   0x00               DC8 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_38:
+   \        0x0   0x43 0x6F          DC8 "Command %c unknown\015\012"
+
+   \              0x6D 0x6D    
+
+   \              0x61 0x6E    
+
+   \              0x64 0x20    
+
+   \              0x25 0x63    
+
+   \              0x20 0x75    
+
+   \              0x6E 0x6B    
+
+   \              0x6E 0x6F    
+
+   \              0x77 0x6E    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_39:
+   \        0x0   0x53 0x50          DC8 "SPI Flash Example"
+
+   \              0x49 0x20    
+
+   \              0x46 0x6C    
+
+   \              0x61 0x73    
+
+   \              0x68 0x20    
+
+   \              0x45 0x78    
+
+   \              0x61 0x6D    
+
+   \              0x70 0x6C    
+
+   \              0x65 0x00
+   \       0x12   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x7C 0x3D          DC8 0x7C, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \        0x8   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x10   0x20 0x53          DC8 0x20, 0x53, 0x50, 0x49, 0x20, 0x53, 0x65, 0x72
+
+   \              0x50 0x49    
+
+   \              0x20 0x53    
+
+   \              0x65 0x72
+   \       0x18   0x69 0x61          DC8 0x69, 0x61, 0x6C, 0x46, 0x6C, 0x61, 0x73, 0x68
+
+   \              0x6C 0x46    
+
+   \              0x6C 0x61    
+
+   \              0x73 0x68
+   \       0x20   0x20 0x45          DC8 0x20, 0x45, 0x78, 0x61, 0x6D, 0x70, 0x6C, 0x65
+
+   \              0x78 0x61    
+
+   \              0x6D 0x70    
+
+   \              0x6C 0x65
+   \       0x28   0x20 0x3D          DC8 0x20, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x30   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x38   0x7C 0x0D          DC8 0x7C, 0x0D, 0x0A, 0
+
+   \              0x0A 0x00
+   \       0x3C   0x7C 0x3D          DC8 0x7C, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x44   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x4C   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x20, 0x53, 0x45
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x20    
+
+   \              0x53 0x45
+   \       0x54   0x52 0x49          DC8 0x52, 0x49, 0x41, 0x4C, 0x20, 0x46, 0x4C, 0x41
+
+   \              0x41 0x4C    
+
+   \              0x20 0x46    
+
+   \              0x4C 0x41
+   \       0x5C   0x53 0x48          DC8 0x53, 0x48, 0x20, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x20 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x64   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x6C   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x74   0x7C 0x0D          DC8 0x7C, 0x0D, 0x0A, 0
+
+   \              0x0A 0x00
+   \       0x78   0x7C 0x3D          DC8 0x7C, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x80   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0x88   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x20
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x20
+   \       0x90   0x43 0x6F          DC8 0x43, 0x6F, 0x6D, 0x6D, 0x61, 0x6E, 0x64, 0x73
+
+   \              0x6D 0x6D    
+
+   \              0x61 0x6E    
+
+   \              0x64 0x73
+   \       0x98   0x20 0x3D          DC8 0x20, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0xA0   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0xA8   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \       0xB0   0x7C 0x0D          DC8 0x7C, 0x0D, 0x0A, 0x7C, 0x20, 0x6D, 0x20, 0x70
+
+   \              0x0A 0x7C    
+
+   \              0x20 0x6D    
+
+   \              0x20 0x70
+   \       0xB8   0x6F 0x6C          DC8 0x6F, 0x6C, 0x6C, 0x69, 0x6E, 0x67, 0x20, 0x20
+
+   \              0x6C 0x69    
+
+   \              0x6E 0x67    
+
+   \              0x20 0x20
+   \       0xC0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \       0xC8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \       0xD0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \       0xD8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \       0xE0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \       0xE8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x7C, 0x0D, 0x0A, 0x7C, 0x20
+
+   \              0x20 0x7C    
+
+   \              0x0D 0x0A    
+
+   \              0x7C 0x20
+   \       0xF0   0x6D 0x20          DC8 0x6D, 0x20, 0x61, 0x73, 0x79, 0x6E, 0x63, 0x20
+
+   \              0x61 0x73    
+
+   \              0x79 0x6E    
+
+   \              0x63 0x20
+   \       0xF8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x100   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x108   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x110   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x118   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x120   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x7C, 0x0D
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x7C 0x0D
+   \      0x128   0x0A 0x7C          DC8 0x0A, 0x7C, 0x20, 0x6D, 0x20, 0x64, 0x6D, 0x61
+
+   \              0x20 0x6D    
+
+   \              0x20 0x64    
+
+   \              0x6D 0x61
+   \      0x130   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x138   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x140   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x148   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x150   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x158   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x160   0x20 0x7C          DC8 0x20, 0x7C, 0x0D, 0x0A, 0x7C, 0x20, 0x20, 0x20
+
+   \              0x0D 0x0A    
+
+   \              0x7C 0x20    
+
+   \              0x20 0x20
+   \      0x168   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x53, 0x65, 0x6C, 0x65, 0x63
+
+   \              0x20 0x53    
+
+   \              0x65 0x6C    
+
+   \              0x65 0x63
+   \      0x170   0x74 0x20          DC8 0x74, 0x20, 0x74, 0x72, 0x61, 0x6E, 0x73, 0x66
+
+   \              0x74 0x72    
+
+   \              0x61 0x6E    
+
+   \              0x73 0x66
+   \      0x178   0x65 0x72          DC8 0x65, 0x72, 0x20, 0x6D, 0x6F, 0x64, 0x65, 0x20
+
+   \              0x20 0x6D    
+
+   \              0x6F 0x64    
+
+   \              0x65 0x20
+   \      0x180   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x188   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x190   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x198   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x7C, 0x0D, 0x0A, 0x7C
+
+   \              0x20 0x20    
+
+   \              0x7C 0x0D    
+
+   \              0x0A 0x7C
+   \      0x1A0   0x20 0x66          DC8 0x20, 0x66, 0x20, 0x66, 0x69, 0x66, 0x6F, 0x20
+
+   \              0x20 0x66    
+
+   \              0x69 0x66    
+
+   \              0x6F 0x20
+   \      0x1A8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x1B0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x1B8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x1C0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x1C8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x1D0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x7C
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x7C
+   \      0x1D8   0x0D 0x0A          DC8 0x0D, 0x0A, 0x7C, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x7C 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x1E0   0x20 0x45          DC8 0x20, 0x45, 0x6E, 0x61, 0x62, 0x6C, 0x65, 0x2F
+
+   \              0x6E 0x61    
+
+   \              0x62 0x6C    
+
+   \              0x65 0x2F
+   \      0x1E8   0x64 0x69          DC8 0x64, 0x69, 0x73, 0x61, 0x62, 0x6C, 0x65, 0x20
+
+   \              0x73 0x61    
+
+   \              0x62 0x6C    
+
+   \              0x65 0x20
+   \      0x1F0   0x46 0x49          DC8 0x46, 0x49, 0x46, 0x4F, 0x20, 0x20, 0x20, 0x20
+
+   \              0x46 0x4F    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x1F8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x200   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x208   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x210   0x20 0x20          DC8 0x20, 0x20, 0x7C, 0x0D, 0x0A, 0x7C, 0x20, 0x61
+
+   \              0x7C 0x0D    
+
+   \              0x0A 0x7C    
+
+   \              0x20 0x61
+   \      0x218   0x20 0x73          DC8 0x20, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x20
+
+   \              0x74 0x61    
+
+   \              0x74 0x75    
+
+   \              0x73 0x20
+   \      0x220   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x228   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x230   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x238   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x240   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x248   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x7C, 0x0D, 0x0A
+
+   \              0x20 0x20    
+
+   \              0x20 0x7C    
+
+   \              0x0D 0x0A
+   \      0x250   0x7C 0x20          DC8 0x7C, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x51
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x51
+   \      0x258   0x75 0x65          DC8 0x75, 0x65, 0x72, 0x79, 0x20, 0x64, 0x65, 0x76
+
+   \              0x72 0x79    
+
+   \              0x20 0x64    
+
+   \              0x65 0x76
+   \      0x260   0x69 0x63          DC8 0x69, 0x63, 0x65, 0x20, 0x73, 0x74, 0x61, 0x74
+
+   \              0x65 0x20    
+
+   \              0x73 0x74    
+
+   \              0x61 0x74
+   \      0x268   0x75 0x73          DC8 0x75, 0x73, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x270   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x278   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x280   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x288   0x7C 0x0D          DC8 0x7C, 0x0D, 0x0A, 0x7C, 0x20, 0x61, 0x20, 0x64
+
+   \              0x0A 0x7C    
+
+   \              0x20 0x61    
+
+   \              0x20 0x64
+   \      0x290   0x65 0x76          DC8 0x65, 0x76, 0x69, 0x63, 0x65, 0x20, 0x20, 0x20
+
+   \              0x69 0x63    
+
+   \              0x65 0x20    
+
+   \              0x20 0x20
+   \      0x298   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x2A0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x2A8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x2B0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x2B8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x2C0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x7C, 0x0D, 0x0A, 0x7C, 0x20
+
+   \              0x20 0x7C    
+
+   \              0x0D 0x0A    
+
+   \              0x7C 0x20
+   \      0x2C8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x51, 0x75, 0x65
+
+   \              0x20 0x20    
+
+   \              0x20 0x51    
+
+   \              0x75 0x65
+   \      0x2D0   0x72 0x79          DC8 0x72, 0x79, 0x20, 0x73, 0x65, 0x72, 0x69, 0x61
+
+   \              0x20 0x73    
+
+   \              0x65 0x72    
+
+   \              0x69 0x61
+   \      0x2D8   0x6C 0x20          DC8 0x6C, 0x20, 0x66, 0x6C, 0x61, 0x73, 0x68, 0x20
+
+   \              0x66 0x6C    
+
+   \              0x61 0x73    
+
+   \              0x68 0x20
+   \      0x2E0   0x4A 0x45          DC8 0x4A, 0x45, 0x44, 0x45, 0x43, 0x20, 0x69, 0x6E
+
+   \              0x44 0x45    
+
+   \              0x43 0x20    
+
+   \              0x69 0x6E
+   \      0x2E8   0x66 0x6F          DC8 0x66, 0x6F, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x2F0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x2F8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x7C, 0x0D
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x7C 0x0D
+   \      0x300   0x0A 0x7C          DC8 0x0A, 0x7C, 0x20, 0x72, 0x20, 0x61, 0x64, 0x64
+
+   \              0x20 0x72    
+
+   \              0x20 0x61    
+
+   \              0x64 0x64
+   \      0x308   0x72 0x20          DC8 0x72, 0x20, 0x73, 0x69, 0x7A, 0x65, 0x20, 0x20
+
+   \              0x73 0x69    
+
+   \              0x7A 0x65    
+
+   \              0x20 0x20
+   \      0x310   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x318   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x320   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x328   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x330   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x338   0x20 0x7C          DC8 0x20, 0x7C, 0x0D, 0x0A, 0x7C, 0x20, 0x20, 0x20
+
+   \              0x0D 0x0A    
+
+   \              0x7C 0x20    
+
+   \              0x20 0x20
+   \      0x340   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x52, 0x65, 0x61, 0x64, 0x20
+
+   \              0x20 0x52    
+
+   \              0x65 0x61    
+
+   \              0x64 0x20
+   \      0x348   0x27 0x73          DC8 0x27, 0x73, 0x69, 0x7A, 0x65, 0x27, 0x20, 0x62
+
+   \              0x69 0x7A    
+
+   \              0x65 0x27    
+
+   \              0x20 0x62
+   \      0x350   0x79 0x74          DC8 0x79, 0x74, 0x65, 0x73, 0x20, 0x73, 0x74, 0x61
+
+   \              0x65 0x73    
+
+   \              0x20 0x73    
+
+   \              0x74 0x61
+   \      0x358   0x72 0x74          DC8 0x72, 0x74, 0x69, 0x6E, 0x67, 0x20, 0x61, 0x74
+
+   \              0x69 0x6E    
+
+   \              0x67 0x20    
+
+   \              0x61 0x74
+   \      0x360   0x20 0x61          DC8 0x20, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73
+
+   \              0x64 0x64    
+
+   \              0x72 0x65    
+
+   \              0x73 0x73
+   \      0x368   0x20 0x27          DC8 0x20, 0x27, 0x61, 0x64, 0x64, 0x72, 0x27, 0x20
+
+   \              0x61 0x64    
+
+   \              0x64 0x72    
+
+   \              0x27 0x20
+   \      0x370   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x7C, 0x0D, 0x0A, 0x7C
+
+   \              0x20 0x20    
+
+   \              0x7C 0x0D    
+
+   \              0x0A 0x7C
+   \      0x378   0x20 0x77          DC8 0x20, 0x77, 0x20, 0x61, 0x64, 0x64, 0x72, 0x20
+
+   \              0x20 0x61    
+
+   \              0x64 0x64    
+
+   \              0x72 0x20
+   \      0x380   0x73 0x74          DC8 0x73, 0x74, 0x72, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x72 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x388   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x390   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x398   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x3A0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x3A8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x7C
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x7C
+   \      0x3B0   0x0D 0x0A          DC8 0x0D, 0x0A, 0x7C, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x7C 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x3B8   0x20 0x57          DC8 0x20, 0x57, 0x72, 0x69, 0x74, 0x65, 0x20, 0x27
+
+   \              0x72 0x69    
+
+   \              0x74 0x65    
+
+   \              0x20 0x27
+   \      0x3C0   0x73 0x74          DC8 0x73, 0x74, 0x72, 0x27, 0x20, 0x74, 0x6F, 0x20
+
+   \              0x72 0x27    
+
+   \              0x20 0x74    
+
+   \              0x6F 0x20
+   \      0x3C8   0x61 0x64          DC8 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x20
+
+   \              0x64 0x72    
+
+   \              0x65 0x73    
+
+   \              0x73 0x20
+   \      0x3D0   0x27 0x61          DC8 0x27, 0x61, 0x64, 0x64, 0x72, 0x27, 0x20, 0x20
+
+   \              0x64 0x64    
+
+   \              0x72 0x27    
+
+   \              0x20 0x20
+   \      0x3D8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x3E0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x3E8   0x20 0x20          DC8 0x20, 0x20, 0x7C, 0x0D, 0x0A, 0x7C, 0x20, 0x64
+
+   \              0x7C 0x0D    
+
+   \              0x0A 0x7C    
+
+   \              0x20 0x64
+   \      0x3F0   0x20 0x61          DC8 0x20, 0x61, 0x64, 0x64, 0x72, 0x20, 0x5B, 0x34
+
+   \              0x64 0x64    
+
+   \              0x72 0x20    
+
+   \              0x5B 0x34
+   \      0x3F8   0x6B 0x7C          DC8 0x6B, 0x7C, 0x33, 0x32, 0x6B, 0x7C, 0x36, 0x34
+
+   \              0x33 0x32    
+
+   \              0x6B 0x7C    
+
+   \              0x36 0x34
+   \      0x400   0x6B 0x7C          DC8 0x6B, 0x7C, 0x32, 0x35, 0x36, 0x6B, 0x5D, 0x20
+
+   \              0x32 0x35    
+
+   \              0x36 0x6B    
+
+   \              0x5D 0x20
+   \      0x408   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x410   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x418   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x420   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x7C, 0x0D, 0x0A
+
+   \              0x20 0x20    
+
+   \              0x20 0x7C    
+
+   \              0x0D 0x0A
+   \      0x428   0x7C 0x20          DC8 0x7C, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x45
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x45
+   \      0x430   0x72 0x61          DC8 0x72, 0x61, 0x73, 0x65, 0x20, 0x62, 0x6C, 0x6F
+
+   \              0x73 0x65    
+
+   \              0x20 0x62    
+
+   \              0x6C 0x6F
+   \      0x438   0x63 0x6B          DC8 0x63, 0x6B, 0x20, 0x63, 0x6F, 0x6E, 0x74, 0x61
+
+   \              0x20 0x63    
+
+   \              0x6F 0x6E    
+
+   \              0x74 0x61
+   \      0x440   0x69 0x6E          DC8 0x69, 0x6E, 0x69, 0x6E, 0x67, 0x20, 0x74, 0x68
+
+   \              0x69 0x6E    
+
+   \              0x67 0x20    
+
+   \              0x74 0x68
+   \      0x448   0x65 0x20          DC8 0x65, 0x20, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73
+
+   \              0x61 0x64    
+
+   \              0x64 0x72    
+
+   \              0x65 0x73
+   \      0x450   0x73 0x20          DC8 0x73, 0x20, 0x27, 0x61, 0x64, 0x64, 0x72, 0x27
+
+   \              0x27 0x61    
+
+   \              0x64 0x64    
+
+   \              0x72 0x27
+   \      0x458   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x460   0x7C 0x0D          DC8 0x7C, 0x0D, 0x0A, 0x7C, 0x20, 0x20, 0x20, 0x20
+
+   \              0x0A 0x7C    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x468   0x20 0x20          DC8 0x20, 0x20, 0x54, 0x68, 0x65, 0x20, 0x65, 0x72
+
+   \              0x54 0x68    
+
+   \              0x65 0x20    
+
+   \              0x65 0x72
+   \      0x470   0x61 0x73          DC8 0x61, 0x73, 0x65, 0x20, 0x63, 0x61, 0x6E, 0x20
+
+   \              0x65 0x20    
+
+   \              0x63 0x61    
+
+   \              0x6E 0x20
+   \      0x478   0x62 0x65          DC8 0x62, 0x65, 0x20, 0x34, 0x6B, 0x2C, 0x20, 0x33
+
+   \              0x20 0x34    
+
+   \              0x6B 0x2C    
+
+   \              0x20 0x33
+   \      0x480   0x32 0x6B          DC8 0x32, 0x6B, 0x2C, 0x20, 0x36, 0x34, 0x6B, 0x20
+
+   \              0x2C 0x20    
+
+   \              0x36 0x34    
+
+   \              0x6B 0x20
+   \      0x488   0x6F 0x72          DC8 0x6F, 0x72, 0x20, 0x32, 0x35, 0x36, 0x6B, 0x20
+
+   \              0x20 0x32    
+
+   \              0x35 0x36    
+
+   \              0x6B 0x20
+   \      0x490   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x498   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x7C, 0x0D, 0x0A, 0x7C, 0x20
+
+   \              0x20 0x7C    
+
+   \              0x0D 0x0A    
+
+   \              0x7C 0x20
+   \      0x4A0   0x68 0x20          DC8 0x68, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x4A8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x4B0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x4B8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x4C0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x4C8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x4D0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x7C, 0x0D
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x7C 0x0D
+   \      0x4D8   0x0A 0x7C          DC8 0x0A, 0x7C, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x4E0   0x50 0x72          DC8 0x50, 0x72, 0x69, 0x6E, 0x74, 0x20, 0x74, 0x68
+
+   \              0x69 0x6E    
+
+   \              0x74 0x20    
+
+   \              0x74 0x68
+   \      0x4E8   0x69 0x73          DC8 0x69, 0x73, 0x20, 0x6D, 0x65, 0x6E, 0x75, 0x20
+
+   \              0x20 0x6D    
+
+   \              0x65 0x6E    
+
+   \              0x75 0x20
+   \      0x4F0   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x4F8   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x500   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x508   0x20 0x20          DC8 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20
+
+   \              0x20 0x20    
+
+   \              0x20 0x20    
+
+   \              0x20 0x20
+   \      0x510   0x20 0x7C          DC8 0x20, 0x7C, 0x0D, 0x0A, 0x7C, 0x3D, 0x3D, 0x3D
+
+   \              0x0D 0x0A    
+
+   \              0x7C 0x3D    
+
+   \              0x3D 0x3D
+   \      0x518   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \      0x520   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \      0x528   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \      0x530   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \      0x538   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \      0x540   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D, 0x3D
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D    
+
+   \              0x3D 0x3D
+   \      0x548   0x3D 0x3D          DC8 0x3D, 0x3D, 0x3D, 0x3D, 0x7C, 0x0D, 0x0A, 0
+
+   \              0x3D 0x3D    
+
+   \              0x7C 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_6:
+   \        0x0   0x41 0x72          DC8 "Args: %s\015\012Invalid size\015\012"
+
+   \              0x67 0x73    
+
+   \              0x3A 0x20    
+
+   \              0x25 0x73    
+
+   \              0x0D 0x0A    
+
+   \              0x49 0x6E    
+
+   \              0x76 0x61    
+
+   \              0x6C 0x69    
+
+   \              0x64 0x20    
+
+   \              0x73 0x69    
+
+   \              0x7A 0x65    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x19   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_7:
+   \        0x0   0x52 0x65          DC8 "Read failed (errno=%d)\015\012"
+
+   \              0x61 0x64    
+
+   \              0x20 0x66    
+
+   \              0x61 0x69    
+
+   \              0x6C 0x65    
+
+   \              0x64 0x20    
+
+   \              0x28 0x65    
+
+   \              0x72 0x72    
+
+   \              0x6E 0x6F    
+
+   \              0x3D 0x25    
+
+   \              0x64 0x29    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x19   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_8:
+   \        0x0   0x4E 0x6F          DC8 "No data given.\015\012"
+
+   \              0x20 0x64    
+
+   \              0x61 0x74    
+
+   \              0x61 0x20    
+
+   \              0x67 0x69    
+
+   \              0x76 0x65    
+
+   \              0x6E 0x2E    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x11   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_10:
+   \        0x0   0x34 0x6B          DC8 "4k"
+
+   \              0x00
+   \        0x3   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_11:
+   \        0x0   0x34 0x4B          DC8 "4K"
+
+   \              0x00
+   \        0x3   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_12:
+   \        0x0   0x33 0x32          DC8 "32k"
+
+   \              0x6B 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_13:
+   \        0x0   0x33 0x32          DC8 "32K"
+
+   \              0x4B 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_14:
+   \        0x0   0x36 0x34          DC8 "64k"
+
+   \              0x6B 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_15:
+   \        0x0   0x36 0x34          DC8 "64K"
+
+   \              0x4B 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_24:
+   \        0x0   0x64 0x6D          DC8 "dma"
+
+   \              0x61 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_29:
+   \        0x0   0x0D 0x0A          DC8 "\015\012"
+
+   \              0x00
+   \        0x3   0x00               DC8 0
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_30:
+   \        0x0   0x44 0x4D          DC8 "DMA"
+
+   \              0x41 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_31:
+   \        0x0   0x75 0x6E          DC8 "unknown"
+
+   \              0x6B 0x6E    
+
+   \              0x6F 0x77    
+
+   \              0x6E 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_32:
+   \        0x0   0x7C 0x20          DC8 "| Mode: %-48s|\015\012"
+
+   \              0x4D 0x6F    
+
+   \              0x64 0x65    
+
+   \              0x3A 0x20    
+
+   \              0x25 0x2D    
+
+   \              0x34 0x38    
+
+   \              0x73 0x7C    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x11   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_33:
+   \        0x0   0x7C 0x20          DC8 "| FIFO: %-48s|\015\012"
+
+   \              0x46 0x49    
+
+   \              0x46 0x4F    
+
+   \              0x3A 0x20    
+
+   \              0x25 0x2D    
+
+   \              0x34 0x38    
+
+   \              0x73 0x7C    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x11   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_34:
+   \        0x0   0x65 0x6E          DC8 "enabled"
+
+   \              0x61 0x62    
+
+   \              0x6C 0x65    
+
+   \              0x64 0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_35:
+   \        0x0   0x64 0x69          DC8 "disabled"
+
+   \              0x73 0x61    
+
+   \              0x62 0x6C    
+
+   \              0x65 0x64    
+
+   \              0x00
+   \        0x9   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_36:
+   \        0x0   0x7C 0x20          DC8 "| Device: %s\t\t\t\t\t|\015\012"
+
+   \              0x44 0x65    
+
+   \              0x76 0x69    
+
+   \              0x63 0x65    
+
+   \              0x3A 0x20    
+
+   \              0x25 0x73    
+
+   \              0x09 0x09    
+
+   \              0x09 0x09    
+
+   \              0x09 0x7C    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4, keep-with-next
+   \                     ?_37:
+   \        0x0   0x25 0x63          DC8 "%c%c\015\012"
+
+   \              0x25 0x63    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \        0x7   0x00               DC8 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      40   _flash_cmd_parser
+        40   -> bus_ioctl
+        40   -> console_dump_frame
+        40   -> print_menu
+        40   -> printf
+        40   -> spi_nor_erase
+        40   -> spi_nor_read
+        40   -> spi_nor_write
+        40   -> strcmp
+        40   -> strncmp
+        40   -> strtol
+        40   -> strtoul
+      16   console_handler
+        16   -> console_echo
+      16   main
+        16   -- Indirect call
+        16   -> board_get_spi_flash
+        16   -> console_enable_rx_interrupt
+        16   -> console_example_info
+        16   -> console_set_rx_handler
+        16   -> print_menu
+      16   print_menu
+        16   -> bus_ioctl
+        16   -> printf
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable36
+       4  ??DataTable36_1
+       4  ??DataTable38
+       4  ??DataTable38_1
+       4  ??DataTable38_10
+       4  ??DataTable38_11
+       4  ??DataTable38_12
+       4  ??DataTable38_13
+       4  ??DataTable38_14
+       4  ??DataTable38_15
+       4  ??DataTable38_16
+       4  ??DataTable38_17
+       4  ??DataTable38_18
+       4  ??DataTable38_19
+       4  ??DataTable38_2
+       4  ??DataTable38_20
+       4  ??DataTable38_21
+       4  ??DataTable38_22
+       4  ??DataTable38_23
+       4  ??DataTable38_24
+       4  ??DataTable38_25
+       4  ??DataTable38_26
+       4  ??DataTable38_3
+       4  ??DataTable38_4
+       4  ??DataTable38_5
+       4  ??DataTable38_6
+       4  ??DataTable38_7
+       4  ??DataTable38_8
+       4  ??DataTable38_9
+       8  ?Subroutine0
+      92  ?_0
+       4  ?_10
+       4  ?_11
+       4  ?_12
+       4  ?_13
+       4  ?_14
+       4  ?_15
+       8  ?_16
+       8  ?_17
+      32  ?_18
+      28  ?_19
+   1'360  ?_2
+       8  ?_20
+      20  ?_21
+       8  ?_22
+      20  ?_23
+       4  ?_24
+      16  ?_25
+       8  ?_26
+      16  ?_27
+      16  ?_28
+       4  ?_29
+       4  ?_30
+       8  ?_31
+      20  ?_32
+      20  ?_33
+       8  ?_34
+      12  ?_35
+      24  ?_36
+       8  ?_37
+      24  ?_38
+      20  ?_39
+      28  ?_5
+      28  ?_6
+      28  ?_7
+      20  ?_8
+      28  ?_9
+      13  _cmd_parser
+          cmd_length
+          flash
+          cmd_complete
+   1'000  _flash_cmd_parser
+   1'024  cmd_buffer
+     196  console_handler
+     120  main
+     192  print_menu
+   4'096  read_buffer
+
+ 
+    13 bytes in section .bss
+ 5'120 bytes in section .region_cache_aligned
+ 1'664 bytes in section .rodata
+ 1'920 bytes in section SOFTPACK
+ 
+ 1'920 bytes of CODE  memory
+ 1'664 bytes of CONST memory
+ 5'133 bytes of DATA  memory
+
+Errors: none
+Warnings: none

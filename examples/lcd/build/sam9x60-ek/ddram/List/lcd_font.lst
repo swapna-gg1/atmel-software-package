@@ -1,0 +1,855 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         13/Jan/2021  17:37:06
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\lcd_font.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW604C.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\lcd_font.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV5TE -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAM9X60 -D
+#        CONFIG_CHIP_SAM9X60 -D CONFIG_BOARD_SAM9X60_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO3 -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SDRAMC -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_ADC_LOW_RES -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_NFD0_ON_D16 -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_LCD -D CONFIG_HAVE_LCDC -D CONFIG_HAVE_LCDC_OVR1 -D
+#        CONFIG_HAVE_LCDC_OVR2 -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_DDR2_W972GG6KB -D CONFIG_HAVE_RSTC_EXTERNAL_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_RTT -D
+#        CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_OTPC -D CONFIG_HAVE_DBGU -D
+#        CONFIG_HAVE_SERIALD_DBGU -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO -D CONFIG_HAVE_DWDT --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\Obj
+#        --debug --endian=little --cpu=ARM926EJ-S -e --fpu=None --dlib_config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\target\sam9x60\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\List\lcd_font.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\build\sam9x60-ek\ddram\Obj\lcd_font.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\lcd\lcd_font.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /** \file
+     31           *
+     32           * Implementation of draw font on LCD.
+     33           *
+     34           */
+     35          
+     36          /*----------------------------------------------------------------------------
+     37           *        Headers
+     38           *----------------------------------------------------------------------------*/
+     39          
+     40          #include "lcd_font.h"
+     41          #include "lcd_draw.h"
+     42          
+     43          #include "font.h"
+     44          
+     45          #include <assert.h>
+     46          
+     47          /*----------------------------------------------------------------------------
+     48           *        Local variables
+     49           *----------------------------------------------------------------------------*/
+     50          
+     51          /** Global variable describing the font being instanced. */
+     52          //const Font gFont = { 10, 14 };
+     53          
+
+   \                                 In section .bss, align 1
+     54          static uint8_t font_sel = FONT10x14;
+   \                     font_sel:
+   \        0x0                      DS8 1
+     55          
+     56          /*----------------------------------------------------------------------------
+     57           *        Exported functions
+     58           *----------------------------------------------------------------------------*/
+     59          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     60          struct _font_parameters* lcd_select_font (_FONT_enum font)
+     61          {
+     62          	font_sel = font;
+   \                     lcd_select_font:
+   \        0x0   0x....'....        LDR      R1,??DataTable4
+     63          	return &font_param[font];
+   \        0x4   0x....'....        LDR      R2,??DataTable4_1
+   \        0x8   0xE5C1'0000        STRB     R0,[R1, #+0]
+   \        0xC   0xE082'0180        ADD      R0,R2,R0, LSL #+3
+   \       0x10   0xE12F'FF1E        BX       LR               ;; return
+     64          }
+     65          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     66          uint8_t lcd_get_selected_font (void)
+     67          {
+     68          	return font_sel;
+   \                     lcd_get_selected_font:
+   \        0x0   0x....'....        LDR      R0,??DataTable4
+   \        0x4   0xE5D0'0000        LDRB     R0,[R0, #+0]
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+     69          }
+     70          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     71          void lcd_draw_char(uint32_t x, uint32_t y, uint8_t c, uint32_t color)
+     72          {
+   \                     lcd_draw_char:
+   \        0x0   0xE92D'4FF0        PUSH     {R4-R11,LR}
+   \        0x4   0xE1A0'A000        MOV      R10,R0
+     73          	uint32_t row, col;
+     74          	uint8_t Ch;
+     75          	uint8_t width = font_param[font_sel].width ;
+   \        0x8   0x....'....        LDR      R0,??DataTable4
+   \        0xC   0xE1A0'5001        MOV      R5,R1
+   \       0x10   0xE5D0'0000        LDRB     R0,[R0, #+0]
+   \       0x14   0xE1A0'6002        MOV      R6,R2
+   \       0x18   0x....'....        LDR      R1,??DataTable4_1
+   \       0x1C   0xE24D'D014        SUB      SP,SP,#+20
+     76              uint8_t height = font_param[font_sel].height;
+   \       0x20   0xE281'2001        ADD      R2,R1,#+1
+   \       0x24   0xE7D1'8180        LDRB     R8,[R1, +R0, LSL #+3]
+   \       0x28   0xE7D2'9180        LDRB     R9,[R2, +R0, LSL #+3]
+     77          	const uint8_t* pfont = font_param[font_sel].pfont;
+   \       0x2C   0xE081'0180        ADD      R0,R1,R0, LSL #+3
+     78          
+     79          	assert((c >= 0x20) && (c <= 0x7F));
+   \       0x30   0xE246'2020        SUB      R2,R6,#+32
+   \       0x34   0xE1A0'4003        MOV      R4,R3
+   \       0x38   0xE590'7004        LDR      R7,[R0, #+4]
+   \       0x3C   0xE352'0060        CMP      R2,#+96
+   \       0x40   0x3A00'0004        BCC      ??lcd_draw_char_1
+   \       0x44   0xE3A0'204F        MOV      R2,#+79
+   \       0x48   0x....'....        LDR      R1,??DataTable4_2
+   \       0x4C   0x....'....        LDR      R0,??DataTable4_3
+   \       0x50   0x....'....        BL       __aeabi_assert
+   \       0x54   0x....'....        BL       __iar_EmptyStepPoint
+     80          
+     81              switch (font_sel)
+   \                     ??lcd_draw_char_1:
+   \       0x58   0x....'....        LDR      R1,??DataTable4
+   \       0x5C   0xE5D1'2000        LDRB     R2,[R1, #+0]
+   \       0x60   0xE352'0003        CMP      R2,#+3
+   \       0x64   0x8A00'0053        BHI      ??lcd_draw_char_2
+   \       0x68   0xE7DF'3002        LDRB     R3,[PC, R2]
+   \       0x6C   0xE08F'F103        ADD      PC,PC,R3, LSL #+2
+   \                     ??lcd_draw_char_0:
+   \       0x70   0x00 0x53          DC8      0x0,0x53,0x6E,0x6E
+
+   \              0x6E 0x6E
+     82              {
+     83                case FONT10x14:
+     84                  for (col=0 ; col < width ; col++ ) {
+   \                     ??lcd_draw_char_3:
+   \       0x74   0xE358'0000        CMP      R8,#+0
+   \       0x78   0x0A00'004E        BEQ      ??lcd_draw_char_2
+   \       0x7C   0xE086'1106        ADD      R1,R6,R6, LSL #+2
+   \       0x80   0xE3E0'207F        MVN      R2,#+127
+   \       0x84   0xE087'1101        ADD      R1,R7,R1, LSL #+2
+   \       0x88   0xE3C2'2F80        BIC      R2,R2,#0x200
+   \       0x8C   0xE081'9002        ADD      R9,R1,R2
+   \       0x90   0xE285'300D        ADD      R3,R5,#+13
+   \       0x94   0xE285'100C        ADD      R1,R5,#+12
+   \       0x98   0xE58D'3010        STR      R3,[SP, #+16]
+   \       0x9C   0xE58D'100C        STR      R1,[SP, #+12]
+   \       0xA0   0xE285'300B        ADD      R3,R5,#+11
+   \       0xA4   0xE285'100A        ADD      R1,R5,#+10
+   \       0xA8   0xE285'6009        ADD      R6,R5,#+9
+   \       0xAC   0xE285'7008        ADD      R7,R5,#+8
+   \       0xB0   0xE58D'5000        STR      R5,[SP, #+0]
+   \       0xB4   0xE58D'3008        STR      R3,[SP, #+8]
+   \       0xB8   0xE58D'1004        STR      R1,[SP, #+4]
+   \       0xBC   0xE1A0'500A        MOV      R5,R10
+     85                    for (row=0 ; row<8 ; row++ ) {
+   \                     ??lcd_draw_char_4:
+   \       0xC0   0xE3A0'A000        MOV      R10,#+0
+   \       0xC4   0xE59D'B000        LDR      R11,[SP, #+0]
+     86                      Ch = (pfont[((c - 0x20) * 20) + col * 2] >> (7 - row)) & 0x1;
+     87                      if (Ch) lcd_draw_pixel( x+col, y+row, color) ;
+   \                     ??lcd_draw_char_5:
+   \       0xC8   0xE5D9'1000        LDRB     R1,[R9, #+0]
+   \       0xCC   0xE1A0'000A        MOV      R0,R10
+   \       0xD0   0xE260'0007        RSB      R0,R0,#+7
+   \       0xD4   0xE1A0'0031        LSR      R0,R1,R0
+   \       0xD8   0xE310'0001        TST      R0,#0x1
+   \       0xDC   0x0A00'0003        BEQ      ??lcd_draw_char_6
+   \       0xE0   0xE1A0'2004        MOV      R2,R4
+   \       0xE4   0xE1A0'100B        MOV      R1,R11
+   \       0xE8   0xE1A0'0005        MOV      R0,R5
+   \       0xEC   0x....'....        BL       lcd_draw_pixel
+     88                    }
+   \                     ??lcd_draw_char_6:
+   \       0xF0   0xE28A'A001        ADD      R10,R10,#+1
+   \       0xF4   0xE28B'B001        ADD      R11,R11,#+1
+   \       0xF8   0xE35A'0008        CMP      R10,#+8
+   \       0xFC   0x3AFF'FFF1        BCC      ??lcd_draw_char_5
+     89                    for (row=0; row<6; row++ ) {
+     90                      Ch = (pfont[((c - 0x20) * 20) + col * 2 + 1] >> (7 - row)) & 0x1;
+     91                      if (Ch) lcd_draw_pixel( x+col, y+row+8, color) ;
+   \      0x100   0xE5D9'0001        LDRB     R0,[R9, #+1]
+   \      0x104   0xE310'0080        TST      R0,#0x80
+   \      0x108   0x0A00'0003        BEQ      ??lcd_draw_char_7
+   \      0x10C   0xE1A0'2004        MOV      R2,R4
+   \      0x110   0xE1A0'1007        MOV      R1,R7
+   \      0x114   0xE1A0'0005        MOV      R0,R5
+   \      0x118   0x....'....        BL       lcd_draw_pixel
+   \                     ??lcd_draw_char_7:
+   \      0x11C   0xE5D9'0001        LDRB     R0,[R9, #+1]
+   \      0x120   0xE310'0040        TST      R0,#0x40
+   \      0x124   0x0A00'0003        BEQ      ??lcd_draw_char_8
+   \      0x128   0xE1A0'2004        MOV      R2,R4
+   \      0x12C   0xE1A0'1006        MOV      R1,R6
+   \      0x130   0xE1A0'0005        MOV      R0,R5
+   \      0x134   0x....'....        BL       lcd_draw_pixel
+   \                     ??lcd_draw_char_8:
+   \      0x138   0xE5D9'0001        LDRB     R0,[R9, #+1]
+   \      0x13C   0xE310'0020        TST      R0,#0x20
+   \      0x140   0x0A00'0003        BEQ      ??lcd_draw_char_9
+   \      0x144   0xE1A0'2004        MOV      R2,R4
+   \      0x148   0xE59D'1004        LDR      R1,[SP, #+4]
+   \      0x14C   0xE1A0'0005        MOV      R0,R5
+   \      0x150   0x....'....        BL       lcd_draw_pixel
+   \                     ??lcd_draw_char_9:
+   \      0x154   0xE5D9'0001        LDRB     R0,[R9, #+1]
+   \      0x158   0xE310'0010        TST      R0,#0x10
+   \      0x15C   0x0A00'0003        BEQ      ??lcd_draw_char_10
+   \      0x160   0xE1A0'2004        MOV      R2,R4
+   \      0x164   0xE59D'1008        LDR      R1,[SP, #+8]
+   \      0x168   0xE1A0'0005        MOV      R0,R5
+   \      0x16C   0x....'....        BL       lcd_draw_pixel
+   \                     ??lcd_draw_char_10:
+   \      0x170   0xE5D9'0001        LDRB     R0,[R9, #+1]
+   \      0x174   0xE310'0008        TST      R0,#0x8
+   \      0x178   0x0A00'0003        BEQ      ??lcd_draw_char_11
+   \      0x17C   0xE1A0'2004        MOV      R2,R4
+   \      0x180   0xE59D'100C        LDR      R1,[SP, #+12]
+   \      0x184   0xE1A0'0005        MOV      R0,R5
+   \      0x188   0x....'....        BL       lcd_draw_pixel
+   \                     ??lcd_draw_char_11:
+   \      0x18C   0xE5D9'0001        LDRB     R0,[R9, #+1]
+   \      0x190   0xE310'0004        TST      R0,#0x4
+   \      0x194   0x0A00'0003        BEQ      ??lcd_draw_char_12
+   \      0x198   0xE1A0'2004        MOV      R2,R4
+   \      0x19C   0xE59D'1010        LDR      R1,[SP, #+16]
+   \      0x1A0   0xE1A0'0005        MOV      R0,R5
+   \      0x1A4   0x....'....        BL       lcd_draw_pixel
+     92                    }
+     93                  }
+   \                     ??lcd_draw_char_12:
+   \      0x1A8   0xE289'9002        ADD      R9,R9,#+2
+   \      0x1AC   0xE285'5001        ADD      R5,R5,#+1
+   \      0x1B0   0xE258'8001        SUBS     R8,R8,#+1
+   \      0x1B4   0x1AFF'FFC1        BNE      ??lcd_draw_char_4
+     94                  break;
+     95          
+     96                 case FONT10x8:
+     97                  for (col=0 ; col < width ; col++ ) {
+     98                    Ch = pfont[((c-0x20)*width)+ col];
+     99          		  if (Ch) {
+    100                      for (row=0 ; row < height; row++ ) {
+    101                        if ((Ch>>row)&0x1) {
+    102                            lcd_draw_pixel( x+(height-row), y+col, color) ;
+    103                        }
+    104                      }
+    105                    }
+    106                  }
+    107                  break;
+    108          
+    109                case FONT8x8:
+    110                case FONT6x8:
+    111                  for (col=0 ; col < width ; col++ ) {
+    112                    Ch = pfont[((c-0x20)*width)+ col];
+    113                    if (Ch) {
+    114                      for (row=0 ; row < height; row++ ) {
+    115                        if ((Ch>>row)&0x1)  {
+    116                          if (font_sel == FONT8x8)
+    117                            lcd_draw_pixel( x+row, y+col, color) ;
+    118                          else
+    119                            lcd_draw_pixel( x+col, y+row, color) ;
+    120                        }
+    121                      }
+    122                    }
+    123                  }
+    124                  break;
+    125              }
+    126          }
+   \                     ??lcd_draw_char_2:
+   \      0x1B8   0xE28D'D014        ADD      SP,SP,#+20
+   \      0x1BC   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+   \                     ??lcd_draw_char_13:
+   \      0x1C0   0xE358'0000        CMP      R8,#+0
+   \      0x1C4   0x0AFF'FFFB        BEQ      ??lcd_draw_char_2
+   \      0x1C8   0xE246'1020        SUB      R1,R6,#+32
+   \      0x1CC   0xE001'0198        MUL      R1,R8,R1
+   \      0x1D0   0xE089'600A        ADD      R6,R9,R10
+   \      0x1D4   0xE087'7001        ADD      R7,R7,R1
+   \                     ??lcd_draw_char_14:
+   \      0x1D8   0xE5D7'B000        LDRB     R11,[R7, #+0]
+   \      0x1DC   0xE35B'0000        CMP      R11,#+0
+   \      0x1E0   0x0A00'000C        BEQ      ??lcd_draw_char_15
+   \      0x1E4   0xE3A0'A000        MOV      R10,#+0
+   \      0x1E8   0xE359'0000        CMP      R9,#+0
+   \      0x1EC   0x0A00'0009        BEQ      ??lcd_draw_char_15
+   \                     ??lcd_draw_char_16:
+   \      0x1F0   0xE3A0'0001        MOV      R0,#+1
+   \      0x1F4   0xE110'0A5B        TST      R0,R11, ASR R10
+   \      0x1F8   0x0A00'0003        BEQ      ??lcd_draw_char_17
+   \      0x1FC   0xE1A0'2004        MOV      R2,R4
+   \      0x200   0xE1A0'1005        MOV      R1,R5
+   \      0x204   0xE046'000A        SUB      R0,R6,R10
+   \      0x208   0x....'....        BL       lcd_draw_pixel
+   \                     ??lcd_draw_char_17:
+   \      0x20C   0xE28A'A001        ADD      R10,R10,#+1
+   \      0x210   0xE15A'0009        CMP      R10,R9
+   \      0x214   0x3AFF'FFF5        BCC      ??lcd_draw_char_16
+   \                     ??lcd_draw_char_15:
+   \      0x218   0xE285'5001        ADD      R5,R5,#+1
+   \      0x21C   0xE287'7001        ADD      R7,R7,#+1
+   \      0x220   0xE258'8001        SUBS     R8,R8,#+1
+   \      0x224   0x0AFF'FFE3        BEQ      ??lcd_draw_char_2
+   \      0x228   0xEAFF'FFEA        B        ??lcd_draw_char_14
+   \                     ??lcd_draw_char_18:
+   \      0x22C   0xE358'0000        CMP      R8,#+0
+   \      0x230   0x0AFF'FFE0        BEQ      ??lcd_draw_char_2
+   \      0x234   0xE246'1020        SUB      R1,R6,#+32
+   \      0x238   0xE001'0198        MUL      R1,R8,R1
+   \      0x23C   0xE1A0'600A        MOV      R6,R10
+   \      0x240   0xE087'2001        ADD      R2,R7,R1
+   \      0x244   0xE1A0'7008        MOV      R7,R8
+   \      0x248   0xE58D'A010        STR      R10,[SP, #+16]
+   \      0x24C   0xE58D'5000        STR      R5,[SP, #+0]
+   \      0x250   0xE1A0'0009        MOV      R0,R9
+   \      0x254   0xE58D'2004        STR      R2,[SP, #+4]
+   \      0x258   0x....'....        LDR      R8,??DataTable4
+   \                     ??lcd_draw_char_19:
+   \      0x25C   0xE59D'2004        LDR      R2,[SP, #+4]
+   \      0x260   0xE5D2'1000        LDRB     R1,[R2, #+0]
+   \      0x264   0xE351'0000        CMP      R1,#+0
+   \      0x268   0x0A00'0019        BEQ      ??lcd_draw_char_20
+   \      0x26C   0xE3A0'9000        MOV      R9,#+0
+   \      0x270   0xE350'0000        CMP      R0,#+0
+   \      0x274   0x0A00'0016        BEQ      ??lcd_draw_char_20
+   \      0x278   0xE59D'A010        LDR      R10,[SP, #+16]
+   \      0x27C   0xE59D'B000        LDR      R11,[SP, #+0]
+   \      0x280   0xE58D'0008        STR      R0,[SP, #+8]
+   \      0x284   0xE58D'100C        STR      R1,[SP, #+12]
+   \                     ??lcd_draw_char_21:
+   \      0x288   0xE59D'200C        LDR      R2,[SP, #+12]
+   \      0x28C   0xE3A0'0001        MOV      R0,#+1
+   \      0x290   0xE110'0952        TST      R0,R2, ASR R9
+   \      0x294   0x0A00'0007        BEQ      ??lcd_draw_char_22
+   \      0x298   0xE5D8'1000        LDRB     R1,[R8, #+0]
+   \      0x29C   0xE1A0'2004        MOV      R2,R4
+   \      0x2A0   0xE351'0002        CMP      R1,#+2
+   \      0x2A4   0x01A0'1005        MOVEQ    R1,R5
+   \      0x2A8   0x01A0'000A        MOVEQ    R0,R10
+   \      0x2AC   0x11A0'100B        MOVNE    R1,R11
+   \      0x2B0   0x11A0'0006        MOVNE    R0,R6
+   \      0x2B4   0x....'....        BL       lcd_draw_pixel
+   \                     ??lcd_draw_char_22:
+   \      0x2B8   0xE59D'1008        LDR      R1,[SP, #+8]
+   \      0x2BC   0xE289'9001        ADD      R9,R9,#+1
+   \      0x2C0   0xE28B'B001        ADD      R11,R11,#+1
+   \      0x2C4   0xE28A'A001        ADD      R10,R10,#+1
+   \      0x2C8   0xE159'0001        CMP      R9,R1
+   \      0x2CC   0x3AFF'FFED        BCC      ??lcd_draw_char_21
+   \      0x2D0   0xE1A0'0001        MOV      R0,R1
+   \                     ??lcd_draw_char_20:
+   \      0x2D4   0xE59D'2004        LDR      R2,[SP, #+4]
+   \      0x2D8   0xE286'6001        ADD      R6,R6,#+1
+   \      0x2DC   0xE282'3001        ADD      R3,R2,#+1
+   \      0x2E0   0xE285'5001        ADD      R5,R5,#+1
+   \      0x2E4   0xE58D'3004        STR      R3,[SP, #+4]
+   \      0x2E8   0xE257'7001        SUBS     R7,R7,#+1
+   \      0x2EC   0x1AFF'FFDA        BNE      ??lcd_draw_char_19
+   \      0x2F0   0xE28D'D014        ADD      SP,SP,#+20
+   \      0x2F4   0xE8BD'8FF0        POP      {R4-R11,PC}
+    127          
+    128          /**
+    129           * \brief Draws an ASCII character on LCD with given background color.
+    130           *
+    131           * \param x          X-coordinate of character upper-left corner.
+    132           * \param y          Y-coordinate of character upper-left corner.
+    133           * \param c          Character to output.
+    134           * \param fontColor  Character color.
+    135           * \param bgColor    Background color.
+    136           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    137          void lcd_draw_char_with_bgcolor(uint32_t x, uint32_t y, uint8_t c, uint32_t fontColor,
+    138          			 uint32_t bgColor)
+    139          {
+   \                     lcd_draw_char_with_bgcolor:
+   \        0x0   0xE92D'4FF8        PUSH     {R3-R11,LR}
+   \        0x4   0xE1A0'6000        MOV      R6,R0
+    140          	uint32_t row, col;
+    141          	uint8_t Ch;
+    142          	uint8_t width = font_param[font_sel].width ;
+   \        0x8   0x....'....        LDR      R0,??DataTable4
+   \        0xC   0xE1A0'8001        MOV      R8,R1
+   \       0x10   0xE5D0'0000        LDRB     R0,[R0, #+0]
+   \       0x14   0x....'....        LDR      R1,??DataTable4_1
+   \       0x18   0xE24D'D018        SUB      SP,SP,#+24
+   \       0x1C   0xE1A0'9002        MOV      R9,R2
+   \       0x20   0xE7D1'4180        LDRB     R4,[R1, +R0, LSL #+3]
+    143              uint8_t height = font_param[font_sel].height;
+   \       0x24   0xE081'0180        ADD      R0,R1,R0, LSL #+3
+    144          	const uint8_t* pfont = font_param[font_sel].pfont;
+    145          
+    146          	assert((c >= 0x20) && (c <= 0x7F));
+   \       0x28   0xE249'1020        SUB      R1,R9,#+32
+   \       0x2C   0xE1A0'7003        MOV      R7,R3
+   \       0x30   0xE5D0'B001        LDRB     R11,[R0, #+1]
+   \       0x34   0xE590'A004        LDR      R10,[R0, #+4]
+   \       0x38   0xE351'0060        CMP      R1,#+96
+   \       0x3C   0x3A00'0004        BCC      ??lcd_draw_char_with_bgcolor_1
+   \       0x40   0xE3A0'2092        MOV      R2,#+146
+   \       0x44   0x....'....        LDR      R1,??DataTable4_2
+   \       0x48   0x....'....        ADR      R0,?_1
+   \       0x4C   0x....'....        BL       __aeabi_assert
+   \       0x50   0x....'....        BL       __iar_EmptyStepPoint
+    147          
+    148              switch (font_sel)
+   \                     ??lcd_draw_char_with_bgcolor_1:
+   \       0x54   0x....'....        LDR      R5,??DataTable4
+   \       0x58   0xE1A0'0008        MOV      R0,R8
+   \       0x5C   0xE5D5'2000        LDRB     R2,[R5, #+0]
+   \       0x60   0xE59D'8040        LDR      R8,[SP, #+64]
+   \       0x64   0xE352'0003        CMP      R2,#+3
+   \       0x68   0x8A00'0030        BHI      ??lcd_draw_char_with_bgcolor_2
+   \       0x6C   0xE7DF'3002        LDRB     R3,[PC, R2]
+   \       0x70   0xE08F'F103        ADD      PC,PC,R3, LSL #+2
+   \                     ??lcd_draw_char_with_bgcolor_0:
+   \       0x74   0x00 0x30          DC8      0x0,0x30,0x51,0x51
+
+   \              0x51 0x51
+    149              {
+    150                case FONT10x14:
+    151                  for (col=0 ; col < width ; col++ ) {
+   \                     ??lcd_draw_char_with_bgcolor_3:
+   \       0x78   0xE354'0000        CMP      R4,#+0
+   \       0x7C   0x0A00'002B        BEQ      ??lcd_draw_char_with_bgcolor_2
+   \       0x80   0xE089'1109        ADD      R1,R9,R9, LSL #+2
+   \       0x84   0xE3E0'207F        MVN      R2,#+127
+   \       0x88   0xE1A0'5006        MOV      R5,R6
+   \       0x8C   0xE08A'1101        ADD      R1,R10,R1, LSL #+2
+   \       0x90   0xE3C2'2F80        BIC      R2,R2,#0x200
+   \       0x94   0xE081'6002        ADD      R6,R1,R2
+   \       0x98   0xE58D'0000        STR      R0,[SP, #+0]
+    152                    for (row=0 ; row<8 ; row++ ) {
+   \                     ??lcd_draw_char_with_bgcolor_4:
+   \       0x9C   0xE3A0'9000        MOV      R9,#+0
+   \       0xA0   0xE3A0'A000        MOV      R10,#+0
+   \       0xA4   0xE59D'B000        LDR      R11,[SP, #+0]
+    153                      Ch = (pfont[((c - 0x20) * 20) + col * 2] >> (7 - row)) & 0x1;
+    154                      if (Ch) lcd_draw_pixel( x+col, y+row, fontColor) ;
+   \                     ??lcd_draw_char_with_bgcolor_5:
+   \       0xA8   0xE5D6'1000        LDRB     R1,[R6, #+0]
+   \       0xAC   0xE1A0'000A        MOV      R0,R10
+   \       0xB0   0xE260'0007        RSB      R0,R0,#+7
+   \       0xB4   0xE1A0'0031        LSR      R0,R1,R0
+   \       0xB8   0xE310'0001        TST      R0,#0x1
+   \       0xBC   0x11A0'2007        MOVNE    R2,R7
+    155          			else lcd_draw_pixel( x+col, y+row, bgColor) ;
+   \       0xC0   0x01A0'2008        MOVEQ    R2,R8
+   \       0xC4   0xE1A0'100B        MOV      R1,R11
+   \       0xC8   0xE1A0'0005        MOV      R0,R5
+   \       0xCC   0x....'....        BL       lcd_draw_pixel
+    156                    }
+   \       0xD0   0xE28A'A001        ADD      R10,R10,#+1
+   \       0xD4   0xE28B'B001        ADD      R11,R11,#+1
+   \       0xD8   0xE35A'0008        CMP      R10,#+8
+   \       0xDC   0x3AFF'FFF1        BCC      ??lcd_draw_char_with_bgcolor_5
+    157                    for (row=0; row<6; row++ ) {
+   \       0xE0   0xE59D'1000        LDR      R1,[SP, #+0]
+   \       0xE4   0xE281'A008        ADD      R10,R1,#+8
+    158                      Ch = (pfont[((c - 0x20) * 20) + col * 2 + 1] >> (7 - row)) & 0x1;
+    159                      if (Ch) lcd_draw_pixel( x+col, y+row+8, fontColor) ;
+   \                     ??lcd_draw_char_with_bgcolor_6:
+   \       0xE8   0xE5D6'0001        LDRB     R0,[R6, #+1]
+   \       0xEC   0xE1A0'1009        MOV      R1,R9
+   \       0xF0   0xE261'1007        RSB      R1,R1,#+7
+   \       0xF4   0xE1A0'1130        LSR      R1,R0,R1
+   \       0xF8   0xE311'0001        TST      R1,#0x1
+   \       0xFC   0x11A0'2007        MOVNE    R2,R7
+    160          			else lcd_draw_pixel( x+col, y+row+8, bgColor) ;
+   \      0x100   0x01A0'2008        MOVEQ    R2,R8
+   \      0x104   0xE1A0'100A        MOV      R1,R10
+   \      0x108   0xE1A0'0005        MOV      R0,R5
+   \      0x10C   0x....'....        BL       lcd_draw_pixel
+    161                    }
+   \      0x110   0xE289'9001        ADD      R9,R9,#+1
+   \      0x114   0xE28A'A001        ADD      R10,R10,#+1
+   \      0x118   0xE359'0006        CMP      R9,#+6
+   \      0x11C   0x3AFF'FFF1        BCC      ??lcd_draw_char_with_bgcolor_6
+    162                  }
+   \      0x120   0xE286'6002        ADD      R6,R6,#+2
+   \      0x124   0xE285'5001        ADD      R5,R5,#+1
+   \      0x128   0xE254'4001        SUBS     R4,R4,#+1
+   \      0x12C   0x1AFF'FFDA        BNE      ??lcd_draw_char_with_bgcolor_4
+    163                  break;
+    164          
+    165                 case FONT10x8:
+    166                  for (col=0 ; col < width ; col++ ) {
+    167                    Ch = pfont[((c-0x20)*width)+ col];
+    168          		  if (Ch) {
+    169                      for (row=0 ; row < height; row++ ) {
+    170                        if ((Ch>>row)&0x1) {
+    171                            lcd_draw_pixel( x+(height-row), y+col, fontColor) ;
+    172          			  }
+    173          			  else {
+    174          				  lcd_draw_pixel( x+(height-row), y+col, bgColor) ;
+    175          			  }
+    176                      }
+    177                    }
+    178                  }
+    179                  break;
+    180          
+    181                case FONT8x8:
+    182                case FONT6x8:
+    183                  for (col=0 ; col < width ; col++ ) {
+    184                    Ch = pfont[((c-0x20)*width)+ col];
+    185                    if (Ch) {
+    186                      for (row=0 ; row < height; row++ ) {
+    187                        if ((Ch>>row)&0x1)  {
+    188                          if (font_sel == FONT8x8)
+    189                            lcd_draw_pixel( x+row, y+col, fontColor) ;
+    190                          else
+    191                            lcd_draw_pixel( x+col, y+row, fontColor) ;
+    192                        }
+    193          			  else {
+    194          				  if (font_sel == FONT8x8)
+    195                            lcd_draw_pixel( x+row, y+col, bgColor) ;
+    196                          else
+    197                            lcd_draw_pixel( x+col, y+row, bgColor) ;
+    198          			  }
+    199                      }
+    200                    }
+    201                  }
+    202                  break;
+    203              }
+    204          }
+   \                     ??lcd_draw_char_with_bgcolor_2:
+   \      0x130   0xE28D'D01C        ADD      SP,SP,#+28
+   \      0x134   0xE8BD'8FF0        POP      {R4-R11,PC}      ;; return
+   \                     ??lcd_draw_char_with_bgcolor_7:
+   \      0x138   0xE354'0000        CMP      R4,#+0
+   \      0x13C   0x0AFF'FFFB        BEQ      ??lcd_draw_char_with_bgcolor_2
+   \      0x140   0xE249'1020        SUB      R1,R9,#+32
+   \      0x144   0xE001'0194        MUL      R1,R4,R1
+   \      0x148   0xE1A0'5004        MOV      R5,R4
+   \      0x14C   0xE08A'1001        ADD      R1,R10,R1
+   \      0x150   0xE1A0'900B        MOV      R9,R11
+   \      0x154   0xE1A0'4001        MOV      R4,R1
+   \      0x158   0xE1A0'B000        MOV      R11,R0
+   \                     ??lcd_draw_char_with_bgcolor_8:
+   \      0x15C   0xE5D4'0000        LDRB     R0,[R4, #+0]
+   \      0x160   0xE350'0000        CMP      R0,#+0
+   \      0x164   0x0A00'000F        BEQ      ??lcd_draw_char_with_bgcolor_9
+   \      0x168   0xE3A0'A000        MOV      R10,#+0
+   \      0x16C   0xE359'0000        CMP      R9,#+0
+   \      0x170   0x0A00'000C        BEQ      ??lcd_draw_char_with_bgcolor_9
+   \      0x174   0xE58D'0004        STR      R0,[SP, #+4]
+   \                     ??lcd_draw_char_with_bgcolor_10:
+   \      0x178   0xE59D'3004        LDR      R3,[SP, #+4]
+   \      0x17C   0xE3A0'1001        MOV      R1,#+1
+   \      0x180   0xE111'0A53        TST      R1,R3, ASR R10
+   \      0x184   0xE089'0006        ADD      R0,R9,R6
+   \      0x188   0xE040'000A        SUB      R0,R0,R10
+   \      0x18C   0x11A0'2007        MOVNE    R2,R7
+   \      0x190   0x01A0'2008        MOVEQ    R2,R8
+   \      0x194   0xE1A0'100B        MOV      R1,R11
+   \      0x198   0x....'....        BL       lcd_draw_pixel
+   \      0x19C   0xE28A'A001        ADD      R10,R10,#+1
+   \      0x1A0   0xE15A'0009        CMP      R10,R9
+   \      0x1A4   0x3AFF'FFF3        BCC      ??lcd_draw_char_with_bgcolor_10
+   \                     ??lcd_draw_char_with_bgcolor_9:
+   \      0x1A8   0xE28B'B001        ADD      R11,R11,#+1
+   \      0x1AC   0xE284'4001        ADD      R4,R4,#+1
+   \      0x1B0   0xE255'5001        SUBS     R5,R5,#+1
+   \      0x1B4   0x0AFF'FFDD        BEQ      ??lcd_draw_char_with_bgcolor_2
+   \      0x1B8   0xEAFF'FFE7        B        ??lcd_draw_char_with_bgcolor_8
+   \                     ??lcd_draw_char_with_bgcolor_11:
+   \      0x1BC   0xE354'0000        CMP      R4,#+0
+   \      0x1C0   0x0AFF'FFDA        BEQ      ??lcd_draw_char_with_bgcolor_2
+   \      0x1C4   0xE249'1020        SUB      R1,R9,#+32
+   \      0x1C8   0xE001'0194        MUL      R1,R4,R1
+   \      0x1CC   0xE1A0'3000        MOV      R3,R0
+   \      0x1D0   0xE08A'C001        ADD      R12,R10,R1
+   \      0x1D4   0xE1A0'2004        MOV      R2,R4
+   \      0x1D8   0xE58D'0000        STR      R0,[SP, #+0]
+   \      0x1DC   0xE58D'6014        STR      R6,[SP, #+20]
+   \      0x1E0   0xE1A0'000B        MOV      R0,R11
+   \      0x1E4   0xE58D'C00C        STR      R12,[SP, #+12]
+   \      0x1E8   0xE1A0'4003        MOV      R4,R3
+   \      0x1EC   0xE58D'2008        STR      R2,[SP, #+8]
+   \                     ??lcd_draw_char_with_bgcolor_12:
+   \      0x1F0   0xE59D'300C        LDR      R3,[SP, #+12]
+   \      0x1F4   0xE5D3'1000        LDRB     R1,[R3, #+0]
+   \      0x1F8   0xE351'0000        CMP      R1,#+0
+   \      0x1FC   0x0A00'001F        BEQ      ??lcd_draw_char_with_bgcolor_13
+   \      0x200   0xE3A0'9000        MOV      R9,#+0
+   \      0x204   0xE350'0000        CMP      R0,#+0
+   \      0x208   0x0A00'001C        BEQ      ??lcd_draw_char_with_bgcolor_13
+   \      0x20C   0xE59D'A014        LDR      R10,[SP, #+20]
+   \      0x210   0xE59D'B000        LDR      R11,[SP, #+0]
+   \      0x214   0xE58D'0010        STR      R0,[SP, #+16]
+   \      0x218   0xE58D'1004        STR      R1,[SP, #+4]
+   \                     ??lcd_draw_char_with_bgcolor_14:
+   \      0x21C   0xE59D'2004        LDR      R2,[SP, #+4]
+   \      0x220   0xE3A0'3001        MOV      R3,#+1
+   \      0x224   0xE113'0952        TST      R3,R2, ASR R9
+   \      0x228   0xE5D5'0000        LDRB     R0,[R5, #+0]
+   \      0x22C   0x0A00'0002        BEQ      ??lcd_draw_char_with_bgcolor_15
+   \      0x230   0xE350'0002        CMP      R0,#+2
+   \      0x234   0xE1A0'2007        MOV      R2,R7
+   \      0x238   0xEA00'0001        B        ??lcd_draw_char_with_bgcolor_16
+   \                     ??lcd_draw_char_with_bgcolor_15:
+   \      0x23C   0xE350'0002        CMP      R0,#+2
+   \      0x240   0xE1A0'2008        MOV      R2,R8
+   \                     ??lcd_draw_char_with_bgcolor_16:
+   \      0x244   0x1A00'0003        BNE      ??lcd_draw_char_with_bgcolor_17
+   \      0x248   0xE1A0'1004        MOV      R1,R4
+   \      0x24C   0xE1A0'000A        MOV      R0,R10
+   \      0x250   0x....'....        BL       lcd_draw_pixel
+   \      0x254   0xEA00'0002        B        ??lcd_draw_char_with_bgcolor_18
+   \                     ??lcd_draw_char_with_bgcolor_17:
+   \      0x258   0xE1A0'100B        MOV      R1,R11
+   \      0x25C   0xE1A0'0006        MOV      R0,R6
+   \      0x260   0x....'....        BL       lcd_draw_pixel
+   \                     ??lcd_draw_char_with_bgcolor_18:
+   \      0x264   0xE59D'1010        LDR      R1,[SP, #+16]
+   \      0x268   0xE289'9001        ADD      R9,R9,#+1
+   \      0x26C   0xE28B'B001        ADD      R11,R11,#+1
+   \      0x270   0xE28A'A001        ADD      R10,R10,#+1
+   \      0x274   0xE159'0001        CMP      R9,R1
+   \      0x278   0x3AFF'FFE7        BCC      ??lcd_draw_char_with_bgcolor_14
+   \      0x27C   0xE1A0'0001        MOV      R0,R1
+   \                     ??lcd_draw_char_with_bgcolor_13:
+   \      0x280   0xE59D'200C        LDR      R2,[SP, #+12]
+   \      0x284   0xE286'6001        ADD      R6,R6,#+1
+   \      0x288   0xE282'3001        ADD      R3,R2,#+1
+   \      0x28C   0xE58D'300C        STR      R3,[SP, #+12]
+   \      0x290   0xE59D'3008        LDR      R3,[SP, #+8]
+   \      0x294   0xE284'4001        ADD      R4,R4,#+1
+   \      0x298   0xE253'C001        SUBS     R12,R3,#+1
+   \      0x29C   0xE58D'C008        STR      R12,[SP, #+8]
+   \      0x2A0   0x1AFF'FFD2        BNE      ??lcd_draw_char_with_bgcolor_12
+   \      0x2A4   0xE28D'D01C        ADD      SP,SP,#+28
+   \      0x2A8   0xE8BD'8FF0        POP      {R4-R11,PC}
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4:
+   \        0x0   0x....'....        DC32     font_sel
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_1:
+   \        0x0   0x....'....        DC32     font_param
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_2:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable4_3:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x28 0x63          DC8 "(c >= 0x20) && (c <= 0x7F)"
+
+   \              0x20 0x3E    
+
+   \              0x3D 0x20    
+
+   \              0x30 0x78    
+
+   \              0x32 0x30    
+
+   \              0x29 0x20    
+
+   \              0x26 0x26    
+
+   \              0x20 0x28    
+
+   \              0x63 0x20    
+
+   \              0x3C 0x3D    
+
+   \              0x20 0x30    
+
+   \              0x78 0x37    
+
+   \              0x46 0x29    
+
+   \              0x00
+   \       0x1B   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x65, 0x78, 0x61, 0x6D, 0x70, 0x6C
+
+   \              0x65 0x78    
+
+   \              0x61 0x6D    
+
+   \              0x70 0x6C
+   \       0x38   0x65 0x73          DC8 0x65, 0x73, 0x5C, 0x6C, 0x63, 0x64, 0x5C, 0x6C
+
+   \              0x5C 0x6C    
+
+   \              0x63 0x64    
+
+   \              0x5C 0x6C
+   \       0x40   0x63 0x64          DC8 0x63, 0x64, 0x5F, 0x66, 0x6F, 0x6E, 0x74, 0x2E
+
+   \              0x5F 0x66    
+
+   \              0x6F 0x6E    
+
+   \              0x74 0x2E
+   \       0x48   0x63 0x00          DC8 0x63, 0
+   \       0x4A   0x00 0x00          DC8 0, 0
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      56   lcd_draw_char
+        56   -> __aeabi_assert
+        56   -> __iar_EmptyStepPoint
+        56   -> lcd_draw_pixel
+      64   lcd_draw_char_with_bgcolor
+        64   -> __aeabi_assert
+        64   -> __iar_EmptyStepPoint
+        64   -> lcd_draw_pixel
+       0   lcd_get_selected_font
+       0   lcd_select_font
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable4
+       4  ??DataTable4_1
+       4  ??DataTable4_2
+       4  ??DataTable4_3
+      76  ?_0
+      28  ?_1
+       1  font_sel
+     760  lcd_draw_char
+     684  lcd_draw_char_with_bgcolor
+      12  lcd_get_selected_font
+      20  lcd_select_font
+
+ 
+     1 byte  in section .bss
+    76 bytes in section .rodata
+ 1'520 bytes in section SOFTPACK
+ 
+ 1'520 bytes of CODE  memory
+    76 bytes of CONST memory
+     1 byte  of DATA  memory
+
+Errors: none
+Warnings: none

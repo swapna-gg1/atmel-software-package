@@ -1,0 +1,762 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         24/Nov/2020  13:57:07
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode             
+#    Endian            =  little
+#    Source file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\matrix.c
+#    Command line      =
+#        -f C:\Users\c40450\AppData\Local\Temp\EWF21E.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\matrix.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_DDRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D4 -D
+#        CONFIG_CHIP_SAMA5D44 -D CONFIG_BOARD_SAMA5D4_EK -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_PIO3 -D CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D
+#        CONFIG_HAVE_SMC -D CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_MPDDRC -D
+#        CONFIG_HAVE_MPDDRC_DATA_PATH -D CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D
+#        CONFIG_HAVE_MPDDRC_DDR2 -D CONFIG_HAVE_MPDDRC_LPDDR2 -D
+#        CONFIG_HAVE_ADC_LOW_RES -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D
+#        CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR -D
+#        CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D CONFIG_HAVE_XDMAC -D
+#        CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D CONFIG_HAVE_SFC -D
+#        CONFIG_HAVE_PWMC -D CONFIG_HAVE_SECURE_MATRIX -D
+#        CONFIG_HAVE_DDR2_MT47H128M8 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D
+#        CONFIG_HAVE_RSTC_INDEPENDENT_RESET -D CONFIG_HAVE_TC_FAULT_MODE -D
+#        CONFIG_HAVE_RTC_CALIBRATION -D CONFIG_HAVE_RTC_MODE_PERSIAN -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_LED -D
+#        CONFIG_HAVE_MMU -D CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D
+#        CONFIG_HAVE_DBGU -D CONFIG_HAVE_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_SPI_MODE -D CONFIG_HAVE_SERIALD_USART --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\Obj
+#        --debug --endian=little --cpu=Cortex-A5 -e --fpu=VFPv4_D16
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\target\sama5d4\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -Oh)
+#    Locale            =  C
+#    List file         =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\List\matrix.lst
+#    Object file       =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\getting_started\build\sama5d4-ek\ddram\Obj\matrix.o
+#    Runtime model:       
+#      __SystemLibrary =  DLib
+#      __dlib_version  =  6
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\drivers\peripherals\matrix.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          #include "chip.h"
+     31          
+     32          #include "peripherals/matrix.h"
+     33          
+     34          #include "mm/cache.h"
+     35          #include "mm/l1cache.h"
+     36          
+     37          #include <assert.h>
+     38          
+     39          #if defined(CONFIG_SOC_SAMA5D2) || defined(CONFIG_SOC_SAMA5D4)
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     40          void matrix_configure_master(Matrix* mtx, uint8_t id, uint32_t val)
+     41          {
+     42          	mtx->MATRIX_MCFG[id] = val;
+   \                     matrix_configure_master:
+   \        0x0   0xE780'2101        STR      R2,[R0, +R1, LSL #+2]
+     43          }
+   \        0x4   0xE12F'FF1E        BX       LR               ;; return
+     44          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     45          void matrix_configure_slave(Matrix* mtx, uint8_t id, uint32_t val)
+     46          {
+     47          	mtx->MATRIX_SCFG[id] = val;
+   \                     matrix_configure_slave:
+   \        0x0   0xE080'0101        ADD      R0,R0,R1, LSL #+2
+   \        0x4   0xE580'2040        STR      R2,[R0, #+64]
+     48          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+     49          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     50          void matrix_master_priority_for_slave(Matrix* mtx,
+     51          	uint8_t s_id, uint8_t m_id, uint8_t priority)
+     52          {
+   \                     matrix_master_priority_for_slave:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'7002        MOV      R7,R2
+   \        0x8   0xE1A0'5000        MOV      R5,R0
+     53          	if (m_id <= 7) {
+   \        0xC   0xE357'0008        CMP      R7,#+8
+   \       0x10   0xE1A0'6001        MOV      R6,R1
+   \       0x14   0xE1A0'4003        MOV      R4,R3
+   \       0x18   0xAA00'0008        BGE      ??matrix_master_priority_for_slave_0
+     54          		m_id <<= 2;
+     55          		mtx->MATRIX_PR[s_id].MATRIX_PRAS = (mtx->MATRIX_PR[s_id].MATRIX_PRAS &
+     56          			(~(MATRIX_PRAS_M0PR_Msk << m_id))) | (priority << m_id);
+   \       0x1C   0xE085'1186        ADD      R1,R5,R6, LSL #+3
+   \       0x20   0xE1A0'0107        LSL      R0,R7,#+2
+   \       0x24   0xE3A0'3003        MOV      R3,#+3
+   \       0x28   0xE1E0'3013        MVN      R3,R3, LSL R0
+   \       0x2C   0xE591'2080        LDR      R2,[R1, #+128]
+   \       0x30   0xE003'3002        AND      R3,R3,R2
+   \       0x34   0xE183'0014        ORR      R0,R3,R4, LSL R0
+   \       0x38   0xE581'0080        STR      R0,[R1, #+128]
+   \       0x3C   0xE8BD'80F1        POP      {R0,R4-R7,PC}
+     57          	} else {
+     58          		assert(m_id < 16);
+   \                     ??matrix_master_priority_for_slave_0:
+   \       0x40   0xE357'0010        CMP      R7,#+16
+   \       0x44   0xBA00'0004        BLT      ??matrix_master_priority_for_slave_1
+   \       0x48   0xE3A0'203A        MOV      R2,#+58
+   \       0x4C   0x....'....        LDR      R1,??DataTable6
+   \       0x50   0x....'....        ADR      R0,?_1
+   \       0x54   0x....'....        BL       __aeabi_assert
+   \       0x58   0x....'....        BL       __iar_EmptyStepPoint
+     59          		m_id = (m_id - 8) << 2;
+     60          		mtx->MATRIX_PR[s_id].MATRIX_PRBS = (mtx->MATRIX_PR[s_id].MATRIX_PRBS &
+     61          			(~(MATRIX_PRAS_M0PR_Msk << m_id))) | (priority << m_id);
+   \                     ??matrix_master_priority_for_slave_1:
+   \       0x5C   0xE085'1186        ADD      R1,R5,R6, LSL #+3
+   \       0x60   0xE247'0008        SUB      R0,R7,#+8
+   \       0x64   0xE1A0'0100        LSL      R0,R0,#+2
+   \       0x68   0xE3A0'3003        MOV      R3,#+3
+   \       0x6C   0xE1E0'3013        MVN      R3,R3, LSL R0
+   \       0x70   0xE591'2084        LDR      R2,[R1, #+132]
+   \       0x74   0xE003'3002        AND      R3,R3,R2
+   \       0x78   0xE183'3014        ORR      R3,R3,R4, LSL R0
+   \       0x7C   0xE581'3084        STR      R3,[R1, #+132]
+     62          	}
+     63          }
+   \       0x80   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+     64          #endif
+     65          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     66          void matrix_configure_slave_sec(Matrix* mtx, uint8_t slave_id,
+     67          				uint8_t sel_mask, uint8_t read_mask,
+     68          				uint8_t write_mask)
+     69          {
+   \                     matrix_configure_slave_sec:
+   \        0x0   0xE5DD'C000        LDRB     R12,[SP, #+0]
+     70          #ifdef CONFIG_HAVE_SECURE_MATRIX
+     71          	mtx->MATRIX_SSR[slave_id] = sel_mask | (read_mask << 8) |
+     72          		(write_mask << 16);
+   \        0x4   0xE182'2403        ORR      R2,R2,R3, LSL #+8
+   \        0x8   0xE080'0101        ADD      R0,R0,R1, LSL #+2
+   \        0xC   0xE182'380C        ORR      R3,R2,R12, LSL #+16
+   \       0x10   0xE580'3200        STR      R3,[R0, #+512]
+     73          #endif
+     74          }
+   \       0x14   0xE12F'FF1E        BX       LR               ;; return
+     75          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     76          void matrix_set_slave_split_addr(Matrix* mtx, uint8_t slave_id,
+     77          				 uint8_t area_size, uint8_t mask)
+     78          {
+   \                     matrix_set_slave_split_addr:
+   \        0x0   0xE92D'4070        PUSH     {R4-R6,LR}
+     79          #ifdef CONFIG_HAVE_SECURE_MATRIX
+     80          	uint8_t i = mask, j = 0;
+   \        0x4   0xE3A0'C000        MOV      R12,#+0
+     81          	uint32_t value = 0;
+   \        0x8   0xE3A0'E000        MOV      LR,#+0
+     82          	for (i = 1; (i <= mask) && (j < 32); i <<= 1, j += 4) {
+   \        0xC   0xE3A0'4001        MOV      R4,#+1
+   \       0x10   0xEA00'0003        B        ??matrix_set_slave_split_addr_0
+     83          		if (i & mask)
+   \                     ??matrix_set_slave_split_addr_1:
+   \       0x14   0xE113'0004        TST      R3,R4
+     84          			value |= area_size << j;
+     85          	}
+   \       0x18   0xE1A0'4084        LSL      R4,R4,#+1
+   \       0x1C   0x118E'EC12        ORRNE    LR,LR,R2, LSL R12
+   \       0x20   0xE28C'C004        ADD      R12,R12,#+4
+   \                     ??matrix_set_slave_split_addr_0:
+   \       0x24   0xE1A0'6C04        MOV      R6,R4, LSL #+24
+   \       0x28   0xE153'0C26        CMP      R3,R6, LSR #+24
+   \       0x2C   0x3A00'0002        BCC      ??matrix_set_slave_split_addr_2
+   \       0x30   0xE6EF'507C        UXTB     R5,R12
+   \       0x34   0xE355'0020        CMP      R5,#+32
+   \       0x38   0xBAFF'FFF5        BLT      ??matrix_set_slave_split_addr_1
+     86          	mtx->MATRIX_SASSR[slave_id] = value;
+   \                     ??matrix_set_slave_split_addr_2:
+   \       0x3C   0xE080'0101        ADD      R0,R0,R1, LSL #+2
+   \       0x40   0xE580'E240        STR      LR,[R0, #+576]
+     87          #endif
+     88          }
+   \       0x44   0xE8BD'8070        POP      {R4-R6,PC}       ;; return
+     89          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+     90          void matrix_set_slave_region_size(Matrix* mtx, uint8_t slave_id,
+     91          				  uint8_t area_size, uint8_t mask)
+     92          {
+   \                     matrix_set_slave_region_size:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1A0'4000        MOV      R4,R0
+   \        0x8   0xE1A0'5001        MOV      R5,R1
+     93          #ifdef CONFIG_HAVE_SECURE_MATRIX
+     94          	assert(slave_id != 0);
+   \        0xC   0xE1B0'0005        MOVS     R0,R5
+   \       0x10   0xE1A0'6002        MOV      R6,R2
+   \       0x14   0xE1A0'7003        MOV      R7,R3
+   \       0x18   0x1A00'0004        BNE      ??matrix_set_slave_region_size_0
+   \       0x1C   0xE3A0'205E        MOV      R2,#+94
+   \       0x20   0x....'....        LDR      R1,??DataTable6
+   \       0x24   0x....'....        ADR      R0,?_2
+   \       0x28   0x....'....        BL       __aeabi_assert
+   \       0x2C   0x....'....        BL       __iar_EmptyStepPoint
+     95          	uint8_t i = mask, j = 0;
+   \                     ??matrix_set_slave_region_size_0:
+   \       0x30   0xE3A0'0000        MOV      R0,#+0
+     96          	uint32_t value = 0;
+   \       0x34   0xE3A0'1000        MOV      R1,#+0
+     97          	for (i = 1; (i <= mask) && (j < 32 ); i <<= 1, j += 4) {
+   \       0x38   0xE3A0'2001        MOV      R2,#+1
+   \       0x3C   0xEA00'0003        B        ??matrix_set_slave_region_size_1
+     98          		if (i & mask)
+   \                     ??matrix_set_slave_region_size_2:
+   \       0x40   0xE117'0002        TST      R7,R2
+     99          			value |= area_size << j;
+    100          	}
+   \       0x44   0xE1A0'2082        LSL      R2,R2,#+1
+   \       0x48   0x1181'1016        ORRNE    R1,R1,R6, LSL R0
+   \       0x4C   0xE280'0004        ADD      R0,R0,#+4
+   \                     ??matrix_set_slave_region_size_1:
+   \       0x50   0xE1A0'CC02        MOV      R12,R2, LSL #+24
+   \       0x54   0xE157'0C2C        CMP      R7,R12, LSR #+24
+   \       0x58   0x3A00'0002        BCC      ??matrix_set_slave_region_size_3
+   \       0x5C   0xE6EF'3070        UXTB     R3,R0
+   \       0x60   0xE353'0020        CMP      R3,#+32
+   \       0x64   0xBAFF'FFF5        BLT      ??matrix_set_slave_region_size_2
+    101          	mtx->MATRIX_SRTSR[slave_id] = value;
+   \                     ??matrix_set_slave_region_size_3:
+   \       0x68   0xE084'0105        ADD      R0,R4,R5, LSL #+2
+   \       0x6C   0xE580'1280        STR      R1,[R0, #+640]
+    102          #endif
+    103          }
+   \       0x70   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    104          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    105          bool matrix_is_peripheral_secured(Matrix* mtx, uint32_t periph_id)
+    106          {
+    107          #ifdef CONFIG_HAVE_SECURE_MATRIX
+    108          	if (mtx->MATRIX_SPSELR[periph_id / 32] & (1 << (periph_id % 32))) {
+   \                     matrix_is_peripheral_secured:
+   \        0x0   0xE1A0'22A1        LSR      R2,R1,#+5
+   \        0x4   0xE201'101F        AND      R1,R1,#0x1F
+   \        0x8   0xE080'0102        ADD      R0,R0,R2, LSL #+2
+   \        0xC   0xE3A0'C001        MOV      R12,#+1
+   \       0x10   0xE590'32C0        LDR      R3,[R0, #+704]
+   \       0x14   0xE11C'0133        TST      R12,R3, LSR R1
+    109          		return false;
+   \       0x18   0x13A0'0000        MOVNE    R0,#+0
+    110          	} else
+    111          #endif
+    112          	{
+    113          		return true;
+   \       0x1C   0x03A0'0001        MOVEQ    R0,#+1
+   \       0x20   0xE12F'FF1E        BX       LR               ;; return
+    114          	}
+    115          }
+    116          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    117          void matrix_remove_write_protection(Matrix* mtx)
+    118          {
+    119          	mtx->MATRIX_WPMR = MATRIX_WPMR_WPKEY_PASSWD;
+   \                     matrix_remove_write_protection:
+   \        0x0   0x....'....        LDR      R1,??DataTable6_1  ;; 0x4d415400
+   \        0x4   0xE580'11E4        STR      R1,[R0, #+484]
+    120          }
+   \        0x8   0xE12F'FF1E        BX       LR               ;; return
+    121          
+    122          /**
+    123           * \brief Changes the mapping of the chip so that the remap area mirrors the
+    124           * internal ROM or the EBI CS0.
+    125           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    126          void matrix_remap_rom(void)
+    127          {
+   \                     matrix_remap_rom:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    128          	volatile int i;
+    129          #if defined(CONFIG_SOC_SAM9XX5) || defined(CONFIG_SOC_SAM9X60)
+    130          	MATRIX->MATRIX_MRCR = 0;
+    131          #elif defined(CONFIG_SOC_SAMA5D3)
+    132          	MATRIX->MATRIX_MRCR = 0;
+    133          	AXIMX->AXIMX_REMAP = 0;
+    134          #elif defined(CONFIG_SOC_SAMA5D2) || defined(CONFIG_SOC_SAMA5D4)
+    135          	AXIMX->AXIMX_REMAP = 0;
+   \        0x4   0xE3A0'0000        MOV      R0,#+0
+   \        0x8   0xE3A0'1870        MOV      R1,#+7340032
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+    136          #endif
+    137          	for (i = 200; i--; ) {}
+   \       0x10   0xE3A0'20C8        MOV      R2,#+200
+   \       0x14   0xE58D'2000        STR      R2,[SP, #+0]
+   \                     ??matrix_remap_rom_0:
+   \       0x18   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x1C   0xE350'0000        CMP      R0,#+0
+   \       0x20   0xE240'1001        SUB      R1,R0,#+1
+   \       0x24   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x28   0x1AFF'FFFA        BNE      ??matrix_remap_rom_0
+    138          	icache_invalidate();
+   \       0x2C   0x....'....        BL       icache_invalidate
+    139          
+    140          	/* If caching is enabled, invalidate the remap area */
+    141          	cache_invalidate_region((void*)0, IRAM_SIZE);
+   \       0x30   0x....'....        B        ?Subroutine0
+    142          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?Subroutine0:
+   \        0x0   0xE8BD'4004        POP      {R2,LR}
+   \        0x4   0xE3A0'1B80        MOV      R1,#+131072
+   \        0x8   0xE3A0'0000        MOV      R0,#+0
+   \        0xC   0x....'....        B        cache_invalidate_region  ;; tailcall
+    143          
+    144          /**
+    145           * \brief Changes the mapping of the chip so that the remap area mirrors the
+    146           * internal RAM.
+    147           */
+    148          
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    149          void matrix_remap_ram(void)
+    150          {
+   \                     matrix_remap_ram:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    151          	volatile int i;
+    152          #if defined(CONFIG_SOC_SAM9XX5) || defined(CONFIG_SOC_SAM9X60)
+    153          	MATRIX->MATRIX_MRCR = MATRIX_MRCR_RCB0 | MATRIX_MRCR_RCB1;
+    154          #elif defined(CONFIG_SOC_SAMA5D3)
+    155          	MATRIX->MATRIX_MRCR = MATRIX_MRCR_RCB0;
+    156          	AXIMX->AXIMX_REMAP = AXIMX_REMAP_REMAP0;
+    157          #elif defined(CONFIG_SOC_SAMA5D2) || defined(CONFIG_SOC_SAMA5D4)
+    158          	AXIMX->AXIMX_REMAP = AXIMX_REMAP_REMAP0;
+   \        0x4   0xE3A0'0001        MOV      R0,#+1
+   \        0x8   0xE3A0'1870        MOV      R1,#+7340032
+   \        0xC   0xE581'0000        STR      R0,[R1, #+0]
+    159          #endif
+    160          	for (i = 200; i--; ) {}
+   \       0x10   0xE3A0'20C8        MOV      R2,#+200
+   \       0x14   0xE58D'2000        STR      R2,[SP, #+0]
+   \                     ??matrix_remap_ram_0:
+   \       0x18   0xE59D'0000        LDR      R0,[SP, #+0]
+   \       0x1C   0xE350'0000        CMP      R0,#+0
+   \       0x20   0xE240'1001        SUB      R1,R0,#+1
+   \       0x24   0xE58D'1000        STR      R1,[SP, #+0]
+   \       0x28   0x1AFF'FFFA        BNE      ??matrix_remap_ram_0
+    161          	icache_invalidate();
+   \       0x2C   0x....'....        BL       icache_invalidate
+    162          
+    163          	/* If caching is enabled, clean the SRAM region and invalidate remap
+    164          	 * area */
+    165          	cache_clean_region((void*)IRAM_ADDR, IRAM_SIZE);
+   \       0x30   0xE3A0'1B80        MOV      R1,#+131072
+   \       0x34   0xE3A0'0980        MOV      R0,#+2097152
+   \       0x38   0x....'....        BL       cache_clean_region
+    166          	cache_invalidate_region((void*)0, IRAM_SIZE);
+   \       0x3C                      REQUIRE ?Subroutine0
+   \       0x3C                      ;; // Fall through to label ?Subroutine0
+    167          }
+    168          
+    169          #if defined(CONFIG_SOC_SAMA5D2) || defined(CONFIG_SOC_SAMA5D4)
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    170          void matrix_set_default_config(void)
+    171          {
+   \                     matrix_set_default_config:
+   \        0x0   0xE92D'4DF0        PUSH     {R4-R8,R10,R11,LR}
+    172          	uint32_t m_id;
+    173          	uint32_t s_id;
+    174          
+    175          	/* Disable write protection */
+    176          	matrix_remove_write_protection(MATRIX0);
+   \        0x4   0xE3A0'14F0        MOV      R1,#-268435456
+   \        0x8   0x....'....        LDR      R0,??DataTable6_1  ;; 0x4d415400
+   \        0xC   0xE381'1B70        ORR      R1,R1,#0x1C000
+    177          
+    178          	for (m_id = 0; m_id < H64MX_MASTER_COUNT; m_id++)
+   \       0x10   0xE3A0'4004        MOV      R4,#+4
+   \       0x14   0xE581'01E4        STR      R0,[R1, #+484]
+   \       0x18   0xE1A0'0001        MOV      R0,R1
+   \       0x1C   0xE3A0'1005        MOV      R1,#+5
+    179          		matrix_configure_master(MATRIX0, m_id, MATRIX_MCFG_ULBT_16_BEAT);
+   \                     ??matrix_set_default_config_0:
+   \       0x20   0xE580'4000        STR      R4,[R0, #+0]
+   \       0x24   0xE251'1001        SUBS     R1,R1,#+1
+   \       0x28   0xE580'4004        STR      R4,[R0, #+4]
+   \       0x2C   0xE280'0008        ADD      R0,R0,#+8
+   \       0x30   0x1AFF'FFFA        BNE      ??matrix_set_default_config_0
+    180          
+    181          	for (s_id = 0; s_id < H64MX_SLAVE_COUNT; s_id++) {
+   \       0x34   0xE3A0'64F0        MOV      R6,#-268435456
+   \       0x38   0xE3A0'5000        MOV      R5,#+0
+   \       0x3C   0xE386'6B70        ORR      R6,R6,#0x1C000
+   \       0x40   0x....'....        ADR      R7,?_1
+   \       0x44   0x....'....        LDR      R8,??DataTable6
+    182          		matrix_configure_slave(MATRIX0, s_id, MATRIX_SCFG_FIXED_DEFMSTR(0) |
+    183          			MATRIX_SCFG_DEFMSTR_TYPE_NONE | MATRIX_SCFG_SLOT_CYCLE_Msk);
+   \                     ??matrix_set_default_config_1:
+   \       0x48   0xE300'01FF        MOVW     R0,#+511
+    184          		for (m_id = 0; m_id < H64MX_MASTER_COUNT; m_id++)
+   \       0x4C   0xE3A0'B000        MOV      R11,#+0
+   \       0x50   0xE586'0040        STR      R0,[R6, #+64]
+    185          			matrix_master_priority_for_slave(MATRIX0, s_id, m_id, 0);
+   \                     ??matrix_set_default_config_2:
+   \       0x54   0xE6EF'007B        UXTB     R0,R11
+   \       0x58   0xE350'0008        CMP      R0,#+8
+   \       0x5C   0xAA00'000A        BGE      ??matrix_set_default_config_3
+   \       0x60   0xE3A0'04F0        MOV      R0,#-268435456
+   \       0x64   0xE6EF'A075        UXTB     R10,R5
+   \       0x68   0xE380'0B70        ORR      R0,R0,#0x1C000
+   \       0x6C   0xE3A0'2003        MOV      R2,#+3
+   \       0x70   0xE080'018A        ADD      R0,R0,R10, LSL #+3
+   \       0x74   0xE1A0'310B        LSL      R3,R11,#+2
+   \       0x78   0xE1E0'3312        MVN      R3,R2, LSL R3
+   \       0x7C   0xE590'1080        LDR      R1,[R0, #+128]
+   \       0x80   0xE003'3001        AND      R3,R3,R1
+   \       0x84   0xE580'3080        STR      R3,[R0, #+128]
+   \       0x88   0xEA00'0011        B        ??matrix_set_default_config_4
+   \                     ??matrix_set_default_config_3:
+   \       0x8C   0xE350'0010        CMP      R0,#+16
+   \       0x90   0xBA00'0004        BLT      ??matrix_set_default_config_5
+   \       0x94   0xE3A0'203A        MOV      R2,#+58
+   \       0x98   0xE1A0'1008        MOV      R1,R8
+   \       0x9C   0xE1A0'0007        MOV      R0,R7
+   \       0xA0   0x....'....        BL       __aeabi_assert
+   \       0xA4   0x....'....        BL       __iar_EmptyStepPoint
+   \                     ??matrix_set_default_config_5:
+   \       0xA8   0xE3A0'04F0        MOV      R0,#-268435456
+   \       0xAC   0xE6EF'A075        UXTB     R10,R5
+   \       0xB0   0xE380'0B70        ORR      R0,R0,#0x1C000
+   \       0xB4   0xE24B'3008        SUB      R3,R11,#+8
+   \       0xB8   0xE080'018A        ADD      R0,R0,R10, LSL #+3
+   \       0xBC   0xE3A0'2003        MOV      R2,#+3
+   \       0xC0   0xE1A0'C103        LSL      R12,R3,#+2
+   \       0xC4   0xE1E0'CC12        MVN      R12,R2, LSL R12
+   \       0xC8   0xE590'1084        LDR      R1,[R0, #+132]
+   \       0xCC   0xE00C'C001        AND      R12,R12,R1
+   \       0xD0   0xE580'C084        STR      R12,[R0, #+132]
+   \                     ??matrix_set_default_config_4:
+   \       0xD4   0xE28B'B001        ADD      R11,R11,#+1
+   \       0xD8   0xE35B'000A        CMP      R11,#+10
+   \       0xDC   0x3AFF'FFDC        BCC      ??matrix_set_default_config_2
+    186          		matrix_configure_slave_sec(MATRIX0, s_id, 0xFF, 0xFF, 0xFF);
+    187          	}
+   \       0xE0   0xE285'5001        ADD      R5,R5,#+1
+   \       0xE4   0xE3E0'04FF        MVN      R0,#-16777216
+   \       0xE8   0xE355'000D        CMP      R5,#+13
+   \       0xEC   0xE586'0200        STR      R0,[R6, #+512]
+   \       0xF0   0xE286'6004        ADD      R6,R6,#+4
+   \       0xF4   0x3AFF'FFD3        BCC      ??matrix_set_default_config_1
+    188          
+    189          	/* Disable write protection */
+    190          	matrix_remove_write_protection(MATRIX1);
+   \       0xF8   0xE3A0'54FC        MOV      R5,#-67108864
+   \       0xFC   0x....'....        LDR      R0,??DataTable6_1  ;; 0x4d415400
+   \      0x100   0xE385'5A54        ORR      R5,R5,#0x54000
+    191          
+    192          	for (m_id = 0; m_id <= H32MX_MASTER_COUNT; m_id++)
+    193          		matrix_configure_master(MATRIX1, m_id, MATRIX_MCFG_ULBT_16_BEAT);
+    194          
+    195          	for (s_id = 0; s_id <= H32MX_SLAVE_COUNT; s_id++) {
+   \      0x104   0xE3E0'74FF        MVN      R7,#-16777216
+   \      0x108   0xE585'01E4        STR      R0,[R5, #+484]
+   \      0x10C   0xE585'4000        STR      R4,[R5, #+0]
+   \      0x110   0xE585'4004        STR      R4,[R5, #+4]
+   \      0x114   0xE585'4008        STR      R4,[R5, #+8]
+   \      0x118   0xE585'400C        STR      R4,[R5, #+12]
+   \      0x11C   0xE585'4010        STR      R4,[R5, #+16]
+   \      0x120   0xE585'4014        STR      R4,[R5, #+20]
+   \      0x124   0xE585'4018        STR      R4,[R5, #+24]
+   \      0x128   0xE585'401C        STR      R4,[R5, #+28]
+   \      0x12C   0xE3A0'4000        MOV      R4,#+0
+   \      0x130   0xE1A0'6005        MOV      R6,R5
+   \      0x134   0xE382'8F7F        ORR      R8,R2,#0x1FC
+    196          		matrix_configure_slave(MATRIX1, s_id, MATRIX_SCFG_FIXED_DEFMSTR(0) |
+    197          			MATRIX_SCFG_DEFMSTR_TYPE_NONE | MATRIX_SCFG_SLOT_CYCLE_Msk);
+   \                     ??matrix_set_default_config_6:
+   \      0x138   0xE586'8040        STR      R8,[R6, #+64]
+    198          		for (m_id = 0; m_id <= H32MX_MASTER_COUNT; m_id++)
+    199          			matrix_master_priority_for_slave(MATRIX1, s_id, m_id, 0);
+   \      0x13C   0xE3A0'3000        MOV      R3,#+0
+   \      0x140   0xE3A0'2000        MOV      R2,#+0
+   \      0x144   0xE6EF'1074        UXTB     R1,R4
+   \      0x148   0xE1A0'0005        MOV      R0,R5
+   \      0x14C   0x....'....        BL       matrix_master_priority_for_slave
+   \      0x150   0xE3A0'3000        MOV      R3,#+0
+   \      0x154   0xE3A0'2001        MOV      R2,#+1
+   \      0x158   0xE6EF'1074        UXTB     R1,R4
+   \      0x15C   0xE1A0'0005        MOV      R0,R5
+   \      0x160   0x....'....        BL       matrix_master_priority_for_slave
+   \      0x164   0xE3A0'3000        MOV      R3,#+0
+   \      0x168   0xE3A0'2002        MOV      R2,#+2
+   \      0x16C   0xE6EF'1074        UXTB     R1,R4
+   \      0x170   0xE1A0'0005        MOV      R0,R5
+   \      0x174   0x....'....        BL       matrix_master_priority_for_slave
+   \      0x178   0xE3A0'3000        MOV      R3,#+0
+   \      0x17C   0xE3A0'2003        MOV      R2,#+3
+   \      0x180   0xE6EF'1074        UXTB     R1,R4
+   \      0x184   0xE1A0'0005        MOV      R0,R5
+   \      0x188   0x....'....        BL       matrix_master_priority_for_slave
+   \      0x18C   0xE3A0'3000        MOV      R3,#+0
+   \      0x190   0xE3A0'2004        MOV      R2,#+4
+   \      0x194   0xE6EF'1074        UXTB     R1,R4
+   \      0x198   0xE1A0'0005        MOV      R0,R5
+   \      0x19C   0x....'....        BL       matrix_master_priority_for_slave
+   \      0x1A0   0xE3A0'3000        MOV      R3,#+0
+   \      0x1A4   0xE3A0'2005        MOV      R2,#+5
+   \      0x1A8   0xE6EF'1074        UXTB     R1,R4
+   \      0x1AC   0xE1A0'0005        MOV      R0,R5
+   \      0x1B0   0x....'....        BL       matrix_master_priority_for_slave
+   \      0x1B4   0xE3A0'3000        MOV      R3,#+0
+   \      0x1B8   0xE3A0'2006        MOV      R2,#+6
+   \      0x1BC   0xE6EF'1074        UXTB     R1,R4
+   \      0x1C0   0xE1A0'0005        MOV      R0,R5
+   \      0x1C4   0x....'....        BL       matrix_master_priority_for_slave
+   \      0x1C8   0xE3A0'3000        MOV      R3,#+0
+   \      0x1CC   0xE3A0'2007        MOV      R2,#+7
+   \      0x1D0   0xE6EF'1074        UXTB     R1,R4
+   \      0x1D4   0xE1A0'0005        MOV      R0,R5
+   \      0x1D8   0x....'....        BL       matrix_master_priority_for_slave
+    200          		matrix_configure_slave_sec(MATRIX1, s_id, 0xFF, 0xFF, 0xFF);
+    201          	}
+   \      0x1DC   0xE284'4001        ADD      R4,R4,#+1
+   \      0x1E0   0xE586'7200        STR      R7,[R6, #+512]
+   \      0x1E4   0xE354'0008        CMP      R4,#+8
+   \      0x1E8   0xE286'6004        ADD      R6,R6,#+4
+   \      0x1EC   0x3AFF'FFD1        BCC      ??matrix_set_default_config_6
+    202          }
+   \      0x1F0   0xE8BD'8DF0        POP      {R4-R8,R10,R11,PC}  ;; return
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable6_1:
+   \        0x0   0x4D41'5400        DC32     0x4d415400
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x43 0x3A          DC8 0x43, 0x3A, 0x5C, 0x77, 0x6F, 0x72, 0x6B, 0x5C
+
+   \              0x5C 0x77    
+
+   \              0x6F 0x72    
+
+   \              0x6B 0x5C
+   \        0x8   0x41 0x74          DC8 0x41, 0x74, 0x6D, 0x65, 0x6C, 0x53, 0x6F, 0x66
+
+   \              0x6D 0x65    
+
+   \              0x6C 0x53    
+
+   \              0x6F 0x66
+   \       0x10   0x74 0x50          DC8 0x74, 0x50, 0x41, 0x63, 0x6B, 0x5C, 0x61, 0x74
+
+   \              0x41 0x63    
+
+   \              0x6B 0x5C    
+
+   \              0x61 0x74
+   \       0x18   0x6D 0x65          DC8 0x6D, 0x65, 0x6C, 0x2D, 0x73, 0x6F, 0x66, 0x74
+
+   \              0x6C 0x2D    
+
+   \              0x73 0x6F    
+
+   \              0x66 0x74
+   \       0x20   0x77 0x61          DC8 0x77, 0x61, 0x72, 0x65, 0x2D, 0x70, 0x61, 0x63
+
+   \              0x72 0x65    
+
+   \              0x2D 0x70    
+
+   \              0x61 0x63
+   \       0x28   0x6B 0x61          DC8 0x6B, 0x61, 0x67, 0x65, 0x2D, 0x32, 0x2E, 0x31
+
+   \              0x67 0x65    
+
+   \              0x2D 0x32    
+
+   \              0x2E 0x31
+   \       0x30   0x37 0x5C          DC8 0x37, 0x5C, 0x64, 0x72, 0x69, 0x76, 0x65, 0x72
+
+   \              0x64 0x72    
+
+   \              0x69 0x76    
+
+   \              0x65 0x72
+   \       0x38   0x73 0x5C          DC8 0x73, 0x5C, 0x70, 0x65, 0x72, 0x69, 0x70, 0x68
+
+   \              0x70 0x65    
+
+   \              0x72 0x69    
+
+   \              0x70 0x68
+   \       0x40   0x65 0x72          DC8 0x65, 0x72, 0x61, 0x6C, 0x73, 0x5C, 0x6D, 0x61
+
+   \              0x61 0x6C    
+
+   \              0x73 0x5C    
+
+   \              0x6D 0x61
+   \       0x48   0x74 0x72          DC8 0x74, 0x72, 0x69, 0x78, 0x2E, 0x63, 0
+
+   \              0x69 0x78    
+
+   \              0x2E 0x63    
+
+   \              0x00
+   \       0x4F   0x00               DC8 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_1:
+   \        0x0   0x6D 0x5F          DC8 "m_id < 16"
+
+   \              0x69 0x64    
+
+   \              0x20 0x3C    
+
+   \              0x20 0x31    
+
+   \              0x36 0x00
+   \        0xA   0x00 0x00          DC8 0, 0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ?_2:
+   \        0x0   0x73 0x6C          DC8 "slave_id != 0"
+
+   \              0x61 0x76    
+
+   \              0x65 0x5F    
+
+   \              0x69 0x64    
+
+   \              0x20 0x21    
+
+   \              0x3D 0x20    
+
+   \              0x30 0x00
+   \        0xE   0x00 0x00          DC8 0, 0
+    203          #endif
+    204          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   matrix_configure_master
+       0   matrix_configure_slave
+       0   matrix_configure_slave_sec
+       0   matrix_is_peripheral_secured
+      24   matrix_master_priority_for_slave
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+       8   matrix_remap_ram
+         8   -> cache_clean_region
+         0   -> cache_invalidate_region
+         8   -> icache_invalidate
+       8   matrix_remap_rom
+         0   -> cache_invalidate_region
+         8   -> icache_invalidate
+       0   matrix_remove_write_protection
+      32   matrix_set_default_config
+        32   -> __aeabi_assert
+        32   -> __iar_EmptyStepPoint
+        32   -> matrix_master_priority_for_slave
+      24   matrix_set_slave_region_size
+        24   -> __aeabi_assert
+        24   -> __iar_EmptyStepPoint
+      16   matrix_set_slave_split_addr
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable6
+       4  ??DataTable6_1
+      16  ?Subroutine0
+      80  ?_0
+      12  ?_1
+      16  ?_2
+       8  matrix_configure_master
+      12  matrix_configure_slave
+      24  matrix_configure_slave_sec
+      36  matrix_is_peripheral_secured
+     132  matrix_master_priority_for_slave
+      60  matrix_remap_ram
+      52  matrix_remap_rom
+      12  matrix_remove_write_protection
+     500  matrix_set_default_config
+     116  matrix_set_slave_region_size
+      72  matrix_set_slave_split_addr
+
+ 
+    80 bytes in section .rodata
+ 1'076 bytes in section SOFTPACK
+ 
+ 1'076 bytes of CODE  memory
+    80 bytes of CONST memory
+
+Errors: none
+Warnings: none

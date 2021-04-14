@@ -1,0 +1,954 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V8.50.1.245/W32 for ARM         13/Jan/2021  09:55:55
+# Copyright 1999-2020 IAR Systems AB.
+#
+#    Cpu mode                    
+#    Endian                   =  little
+#    Source file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\main.c
+#    Command line             =
+#        -f C:\Users\c40450\AppData\Local\Temp\EW2C76.tmp
+#        (C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\main.c
+#        -D "SOFTPACK_VERSION=\"2.17\"" -D TRACE_LEVEL=5 -D VARIANT_SRAM -D
+#        CONFIG_ARCH_ARMV7A -D CONFIG_ARCH_ARM -D CONFIG_SOC_SAMA5D2 -D
+#        CONFIG_CHIP_SAMA5D27 -D CONFIG_PACKAGE_289PIN -D
+#        CONFIG_BOARD_SAMA5D2_XPLAINED -D CONFIG_HAVE_AIC5 -D
+#        CONFIG_HAVE_FLEXCOM -D CONFIG_HAVE_PIO4 -D CONFIG_HAVE_PIO4_SECURE -D
+#        CONFIG_HAVE_NFC -D CONFIG_HAVE_PIT -D CONFIG_HAVE_SMC -D
+#        CONFIG_HAVE_SMC_SCRAMBLING -D CONFIG_HAVE_GMAC_QUEUES -D
+#        CONFIG_HAVE_MPDDRC -D CONFIG_HAVE_MPDDRC_DATA_PATH -D
+#        CONFIG_HAVE_MPDDRC_IO_CALIBRATION -D CONFIG_HAVE_MPDDRC_DDR2 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR2 -D CONFIG_HAVE_MPDDRC_DDR3 -D
+#        CONFIG_HAVE_MPDDRC_LPDDR3 -D CONFIG_HAVE_ADC_SETTLING_TIME -D
+#        CONFIG_HAVE_ADC_DIFF_INPUT -D CONFIG_HAVE_ADC_SEQ_R2 -D
+#        CONFIG_HAVE_PMC_FAST_STARTUP -D CONFIG_HAVE_PMC_GENERATED_CLOCKS -D
+#        CONFIG_HAVE_PMC_AUDIO_CLOCK -D CONFIG_HAVE_PMC_PLLADIV2 -D
+#        CONFIG_HAVE_PMC_H32MXDIV -D CONFIG_HAVE_PMC_UPLL_BIAS -D
+#        CONFIG_HAVE_SCKC -D CONFIG_HAVE_PWMC_DMA -D
+#        CONFIG_HAVE_PWMC_SPREAD_SPECTRUM -D CONFIG_HAVE_PWMC_EXTERNAL_TRIGGER
+#        -D CONFIG_HAVE_PWMC_FAULT_PROT_HIZ -D CONFIG_HAVE_PWMC_STEPPER_MOTOR
+#        -D CONFIG_HAVE_PWMC_CMP_UNIT -D CONFIG_HAVE_PWMC_SYNC_MODE -D
+#        CONFIG_HAVE_PWMC_OOV -D CONFIG_HAVE_PWMC_FMODE -D CONFIG_HAVE_PWMC_WP
+#        -D CONFIG_HAVE_PWMC_DTIME -D CONFIG_HAVE_PWMC_ELINE -D
+#        CONFIG_HAVE_SFRBU -D CONFIG_HAVE_L2CC -D CONFIG_HAVE_SAIC -D
+#        CONFIG_HAVE_XDMAC -D CONFIG_HAVE_XDMAC_DATA_WIDTH_DWORD -D
+#        CONFIG_HAVE_SECUMOD -D CONFIG_HAVE_SFC -D CONFIG_HAVE_PWMC -D
+#        CONFIG_HAVE_SECURE_MATRIX -D CONFIG_HAVE_DDR3_MT41K128M16 -D
+#        CONFIG_HAVE_RSTC_CONFIGURABLE_USER_RESET -D CONFIG_HAVE_TC_FAULT_MODE
+#        -D CONFIG_HAVE_TC_DMA_MODE -D CONFIG_HAVE_RTC_CALIBRATION -D
+#        CONFIG_HAVE_RTC_MODE_PERSIAN -D CONFIG_HAVE_RTC_MODE_UTC -D
+#        CONFIG_HAVE_RTC_TAMPER -D CONFIG_HAVE_SHDWC -D CONFIG_HAVE_MMU -D
+#        CONFIG_HAVE_L1CACHE -D CONFIG_HAVE_L2CACHE -D CONFIG_HAVE_UART -D
+#        CONFIG_HAVE_SERIALD_UART -D CONFIG_HAVE_USART -D
+#        CONFIG_HAVE_USART_FIFO --preprocess
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\List
+#        -lC
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\List
+#        --diag_suppress Pa050 -o
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\Obj
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-A5 -e --fpu=VFPv4_D16 --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\inc\c\DLib_Config_Normal.h" -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\arch\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\utils\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\target\common\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\target\sama5d2\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\drivers\
+#        -I
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\..\..\lib\
+#        --section .text=SOFTPACK --cpu_mode arm -On)
+#    Locale                   =  C
+#    List file                =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\List\main.lst
+#    Object file              =
+#        C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\build\sama5d2-xplained\sram\Obj\main.o
+#    Runtime model:              
+#      __SystemLibrary        =  DLib
+#      __dlib_file_descriptor =  0
+#      __dlib_version         =  6
+#      __iar_require _Printf  =  widths
+#
+###############################################################################
+
+C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\main.c
+      1          /* ----------------------------------------------------------------------------
+      2           *         SAM Software Package License
+      3           * ----------------------------------------------------------------------------
+      4           * Copyright (c) 2015, Atmel Corporation
+      5           *
+      6           * All rights reserved.
+      7           *
+      8           * Redistribution and use in source and binary forms, with or without
+      9           * modification, are permitted provided that the following conditions are met:
+     10           *
+     11           * - Redistributions of source code must retain the above copyright notice,
+     12           * this list of conditions and the disclaimer below.
+     13           *
+     14           * Atmel's name may not be used to endorse or promote products derived from
+     15           * this software without specific prior written permission.
+     16           *
+     17           * DISCLAIMER: THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
+     18           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     19           * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
+     20           * DISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,
+     21           * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+     22           * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+     23           * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+     24           * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+     25           * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+     26           * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     27           * ----------------------------------------------------------------------------
+     28           */
+     29          
+     30          /**
+     31           * \page tc_capture_waveform TC Capture Waveform Example
+     32           *
+     33           * \section Purpose
+     34           *
+     35           * This example indicates how to use TC in capture mode to measure the pulse
+     36           * frequency and count the total pulse number of an external signal injected
+     37           * on TIOA pin.
+     38           *
+     39           * \section Requirements
+     40           *
+     41           * This package can be used with SAMA5D2, SAMA5D3, SAMA5D3, SAM9XX5 and SAMV71
+     42           * targets.
+     43           * A jumper cable must connected between the TC Waveform pin and the TC capture
+     44           * pin, please read README.md for information.
+     45           *
+     46           * \section Descriptions
+     47           *
+     48           * This example shows how to configure TC in waveform and capture mode.
+     49           * In capture mode, pulse signal is set as an input, RA and RB will be loaded when
+     50           * programmed event occurs. When TC interrupt happens, we could read RA and RB
+     51           * value for calculating pulse frequency and pulse number be increased. The current
+     52           * pulse frequency and total pulse number is output on DBGU.
+     53           *
+     54           * The code can be roughly broken down as follows:
+     55           * <ul>
+     56           * <li>Select pre-defined waveform frequency and duty cycle to be generated.
+     57           * <li>Configure TC channel 1 as waveform output.
+     58           * <li>Configure TC channel 2 as capture input.
+     59           * <li>Configure capture Register A be loaded when rising edge of TIOA occurs.
+     60           * <li>Configure capture Register B be loaded when failing edge of TIOA occurs.
+     61           * <li>Configure an interrupt for TC and enable the RB load interrupt.
+     62           * <li> 'c' start capture.
+     63           * <li> 's' will stop capture,and dump the informations what have been captured.
+     64           * </ul>
+     65           *
+     66           * \section Usage
+     67           *
+     68           * -# Compile the application and connect the DBGU port of the evaluation board
+     69           *    to the computer.
+     70           * -# Open and configure a terminal application on PC
+     71           *    (e.g. HyperTerminal on Microsoft Windows) with these settings:
+     72           *   - 115200 bauds
+     73           *   - 8 bits of data
+     74           *   - No parity
+     75           *   - 1 stop bit
+     76           *   - No flow control
+     77           * -# Download the program inside the evaluation board and run it. Please refer to
+     78           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/6421B.pdf">
+     79           *    SAM-BA User Guide</a>, the
+     80           *    <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">
+     81           *    GNU-Based Software Development</a> application note or to the
+     82           *    <a href="ftp://ftp.iar.se/WWWfiles/arm/Guides/EWARM_UserGuide.ENU.pdf">
+     83           *    IAR EWARM User Guide</a>, depending on your chosen solution.
+     84           * -# Upon startup, the application will output the following line on the DBGU:
+     85           *    \code
+     86           *     -- TC Capture Waveform Example  xxx --
+     87           *     -- SAMxxxxx-xx
+     88           *     -- Compiled: xxx xx xxxx xx:xx:xx --
+     89           *    \endcode
+     90           * -# Choose the item in the following menu to test.
+     91           *    \code
+     92           *     Menu :
+     93           *     ------
+     94           *       Output waveform property:
+     95           *       0: Set Frequency =  80 Hz, Duty Cycle = 30%
+     96           *       1: Set Frequency =  180 Hz, Duty Cycle = 50%
+     97           *       2: Set Frequency =  400 Hz, Duty Cycle = 75%
+     98           *       3: Set Frequency =  500 Hz, Duty Cycle = 80%
+     99           *       4: Set Frequency = 2000 Hz, Duty Cycle = 55%
+    100           *       -------------------------------------------
+    101           *       c: Capture waveform from TC capture channel
+    102           *       s: Stop capture and display informations what have been captured
+    103           *       h: Display menu
+    104           *     ------
+    105           *    \endcode
+    106           *
+    107           * \section References
+    108           * - tc_capture_waveform/main.c
+    109           */
+    110          
+    111          /**
+    112           * \file
+    113           *
+    114           * This file contains all the specific code for the tc capture waveform example.
+    115           */
+    116          
+    117          /*----------------------------------------------------------------------------
+    118           *        Headers
+    119           *----------------------------------------------------------------------------*/
+    120          
+    121          #include <stdbool.h>
+    122          #include <stdio.h>
+    123          #include <string.h>
+    124          
+    125          #include "board.h"
+    126          #include "callback.h"
+    127          #include "chip.h"
+    128          #include "compiler.h"
+    129          #include "dma/dma.h"
+    130          #include "gpio/pio.h"
+    131          #include "irq/irq.h"
+    132          #include "mm/cache.h"
+    133          #include "peripherals/pmc.h"
+    134          #include "peripherals/tc.h"
+    135          #include "peripherals/tcd.h"
+    136          #include "serial/console.h"
+    137          #include "trace.h"
+    138          
+    139          /*----------------------------------------------------------------------------
+    140           *        Local definitions
+    141           *----------------------------------------------------------------------------*/
+    142          #if defined(CONFIG_BOARD_SAMA5D2_PTC_EK)
+    143          	#include "config_sama5d2-ptc-ek.h"
+    144          #elif defined(CONFIG_BOARD_SAMA5D2_XPLAINED)
+    145          	#include "config_sama5d2-xplained.h"
+    146          #elif defined(CONFIG_BOARD_SAMA5D4_EK)
+    147          	#include "config_sama5d4-ek.h"
+    148          #elif defined(CONFIG_BOARD_SAMA5D4_XPLAINED)
+    149          	#include "config_sama5d4-xplained.h"
+    150          #elif defined(CONFIG_BOARD_SAMA5D3_EK)
+    151          	#include "config_sama5d3-ek.h"
+    152          #elif defined(CONFIG_BOARD_SAM9G15_EK)
+    153          	#include "config_sam9xx5-ek.h"
+    154          #elif defined(CONFIG_BOARD_SAM9G25_EK)
+    155          	#include "config_sam9xx5-ek.h"
+    156          #elif defined(CONFIG_BOARD_SAM9G35_EK)
+    157          	#include "config_sam9xx5-ek.h"
+    158          #elif defined(CONFIG_BOARD_SAM9X25_EK)
+    159          	#include "config_sam9xx5-ek.h"
+    160          #elif defined(CONFIG_BOARD_SAM9X35_EK)
+    161          	#include "config_sam9xx5-ek.h"
+    162          #elif defined(CONFIG_BOARD_SAME70_XPLAINED)
+    163          	#include "config_same70-xplained.h"
+    164          #elif defined(CONFIG_BOARD_SAMV71_XPLAINED)
+    165          	#include "config_samv71-xplained.h"
+    166          #else
+    167          	#error Unsupported board!
+    168          #endif
+    169          
+    170          #define CAPTURE_FREQ  100000 /* 100 KHz */
+    171          #define CAPTURE_COUNT     50
+    172          #define COUNTER_FREQ    1000
+    173          
+    174          /** Describes a possible Timer configuration as waveform mode */
+    175          struct _waveform {
+    176          	uint32_t min_timer_freq;
+    177          	uint32_t frequency;       /** Waveform frequency (in Hz). */
+    178          	uint32_t duty_cycle;      /** Duty cycle in percent (positive). */
+    179          };
+    180          
+    181          /*----------------------------------------------------------------------------
+    182           *        Local variables
+    183           *----------------------------------------------------------------------------*/
+    184          
+    185          /** PIOs for TC capture, waveform */
+    186          //static const struct _pin pins_tc[] = { PIN_TC_CAPTURE_IN, PIN_TC_WAVEFORM_OUT };
+
+   \                                 In section .rodata, align 4
+    187          const struct _pin pins_tc[] = { PIN_TC_WAVEFORM_OUT };
+   \                     pins_tc:
+   \        0x0   0x03 0x00          DC8 3, 0, 0, 0
+
+   \              0x00 0x00
+   \        0x4   0x0000'0800        DC32 2'048
+   \        0x8   0x00 0x00          DC8 0, 0, 0, 0
+
+   \              0x00 0x00
+   \        0xC   0x0000'0000        DC32 0
+    188          
+    189          /** define Timer Counter descriptor for counter/timer */
+    190          static struct _tcd_desc tc_counter = {
+    191          	.addr = EXAMPLE_TC,
+    192          	.channel = EXAMPLE_TC_CHANNEL_COUNTER,
+    193          };
+    194          
+    195          /** define Timer Counter descriptor for capture */
+    196          static struct _tcd_desc tc_capture = {
+    197          	.addr = TC0,
+    198          	.channel = EXAMPLE_TC_CHANNEL_CAPTURE_IN,
+    199          	.cfg = {
+    200          		.capture = {
+    201          			.use_ext_clk = false,
+    202          			.transfer_mode = TCD_TRANSFER_MODE_POLLING,
+    203          		},
+    204          	},
+    205          };
+    206          
+    207          /** define Timer Counter descriptor for waveform */
+
+   \                                 In section .data, align 4
+    208          static struct _tcd_desc tc_waveform = {
+   \                     tc_waveform:
+   \        0x0   0xF800'C000        DC32 0xf800'c000
+   \        0x4   0x01 0x00          DC8 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00
+   \       0x15   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00
+   \       0x25   0x00 0x00          DC8 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00 0x00    
+
+   \              0x00
+    209          	.addr = EXAMPLE_TC,
+    210          	.channel = EXAMPLE_TC_CHANNEL_WAVEFORM_OUT,
+    211          };
+    212          
+    213          /** TC waveform configurations (base on 66MHz peripheral clock)*/
+
+   \                                 In section .rodata, align 4
+    214          static const struct _waveform waveforms[] = {
+   \                     waveforms:
+   \        0x0   0x0001'86A0        DC32 100'000, 80, 30, 100'000, 180, 50, 100'000, 400, 75, 100'000, 500
+
+   \              0x0000'0050  
+
+   \              0x0000'001E  
+
+   \              0x0001'86A0  
+
+   \              0x0000'00B4  
+
+   \              0x0000'0032  
+
+   \              0x0001'86A0  
+
+   \              0x0000'0190  
+
+   \              0x0000'004B  
+
+   \              0x0001'86A0  
+
+   \              0x0000'01F4
+   \       0x2C   0x0000'0050        DC32 80, 100'000, 2'000, 55, 100'000, 5'000, 20
+
+   \              0x0001'86A0  
+
+   \              0x0000'07D0  
+
+   \              0x0000'0037  
+
+   \              0x0001'86A0  
+
+   \              0x0000'1388  
+
+   \              0x0000'0014
+    215          	{ 100000, 80, 30 },
+    216          	{ 100000, 180, 50 },
+    217          	{ 100000, 400, 75 },
+    218          	{ 100000, 500, 80 },
+    219          	{ 100000, 2000, 55 },
+    220          	{ 100000, 5000, 20 },
+    221          };
+    222          
+    223          CACHE_ALIGNED static uint32_t capture_buf[CAPTURE_COUNT * 2];
+    224          
+    225          static uint32_t _tick = 0;
+    226          
+    227          /*----------------------------------------------------------------------------
+    228           *        Local functions
+    229           *----------------------------------------------------------------------------*/
+    230          
+    231          static int _tc_capture_callback(void* arg, void* arg2)
+    232          {
+    233          	tcd_stop(&tc_capture);
+    234          	printf("TC: Waveform captured...\r\n");
+    235          	return 0;
+    236          }
+    237          
+    238          static int _tc_counter_callback(void* arg, void* arg2)
+    239          {
+    240          	_tick++;
+    241          
+    242          	if (_tick % 10000 == 0)
+    243          		printf("time: %us\r\n", (unsigned)_tick / 1000);
+    244          	return 0;
+    245          }
+    246          
+    247          /**
+    248           * \brief Displays the user menu.
+    249           */
+    250          static void _display_menu(void)
+    251          {
+    252          	uint32_t i;
+    253          
+    254          	printf("\r\nMenu :\r\n");
+    255          	printf("------\r\n");
+    256          	printf("  Output waveform property:\r\n");
+    257          	for (i = 0; i < ARRAY_SIZE(waveforms); i++) {
+    258          		printf("  %u: Set Frequency = %4u Hz, Duty Cycle = %2u%%\r\n",
+    259          			(unsigned)i,
+    260          			(unsigned)waveforms[i].frequency,
+    261          			(unsigned)waveforms[i].duty_cycle);
+    262          	}
+    263          	printf("  -------------------------------------------\r\n");
+    264          #ifdef CONFIG_HAVE_TC_DMA_MODE
+    265          	printf("  [p|d] to set capture mode (polling/dma) \r\n");
+    266          #endif
+    267          	printf("  c: Capture waveform from TC capture channel \r\n");
+    268          	printf("  h: Display menu \r\n");
+    269          	printf("  ------\r\n\r\n");
+    270          }
+    271          
+    272          
+    273          static void _tc_counter_initialize(uint32_t freq)
+    274          {
+    275          	uint32_t frequency;
+    276          	struct _callback _cb;
+    277          
+    278          	printf("* Configure TC: channel %d: counter mode\r\n", tc_counter.channel);
+    279          
+    280          	frequency = tcd_configure_counter(&tc_counter, freq, freq);
+    281          
+    282          	printf("  - Required frequency = %uHz\r\n", (unsigned)freq);
+    283          	printf("  - Configured frequency = %uHz\r\n", (unsigned)frequency);
+    284          	callback_set(&_cb, _tc_counter_callback, NULL);
+    285          	tcd_start(&tc_counter, &_cb);
+    286          }
+    287          
+    288          /**
+    289           * \brief Configure a TC channel as waveform operating mode.
+    290           */
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    291          static void _tc_waveform_initialize(uint8_t waveform_idx)
+    292          {
+   \                     _tc_waveform_initialize:
+   \        0x0   0xE92D'40F8        PUSH     {R3-R7,LR}
+   \        0x4   0xE1B0'4000        MOVS     R4,R0
+    293          	uint32_t frequency;
+    294          
+    295          	printf("* Configure TC: channel %d: waveform generator mode\r\n", tc_waveform.channel);
+   \        0x8   0x....'....        LDR      R5,??DataTable1
+   \        0xC   0xE5D5'1004        LDRB     R1,[R5, #+4]
+   \       0x10   0x....'....        LDR      R0,??DataTable1_1
+   \       0x14   0x....'....        BL       printf
+    296          
+    297          	frequency = tcd_configure_waveform(&tc_waveform,
+    298          					   waveforms[waveform_idx].min_timer_freq,
+    299          					   waveforms[waveform_idx].frequency,
+    300          					   waveforms[waveform_idx].duty_cycle * 10);
+   \       0x18   0x....'....        LDR      R6,??DataTable1_2
+   \       0x1C   0xE1B0'0004        MOVS     R0,R4
+   \       0x20   0xE6EF'0070        UXTB     R0,R0
+   \       0x24   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \       0x28   0xE096'0101        ADDS     R0,R6,R1, LSL #+2
+   \       0x2C   0xE590'0008        LDR      R0,[R0, #+8]
+   \       0x30   0xE080'1100        ADD      R1,R0,R0, LSL #+2
+   \       0x34   0xE1B0'3081        LSLS     R3,R1,#+1
+   \       0x38   0xE6FF'3073        UXTH     R3,R3
+   \       0x3C   0xE1B0'0004        MOVS     R0,R4
+   \       0x40   0xE6EF'0070        UXTB     R0,R0
+   \       0x44   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \       0x48   0xE096'0101        ADDS     R0,R6,R1, LSL #+2
+   \       0x4C   0xE590'2004        LDR      R2,[R0, #+4]
+   \       0x50   0xE1B0'0004        MOVS     R0,R4
+   \       0x54   0xE6EF'0070        UXTB     R0,R0
+   \       0x58   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \       0x5C   0xE796'1101        LDR      R1,[R6, +R1, LSL #+2]
+   \       0x60   0xE1B0'0005        MOVS     R0,R5
+   \       0x64   0x....'....        BL       tcd_configure_waveform
+   \       0x68   0xE1B0'7000        MOVS     R7,R0
+    301          
+    302          	printf("  - Duty Cycle = %2d%%\r\n",(int)waveforms[waveform_idx].duty_cycle);
+   \       0x6C   0xE1B0'0004        MOVS     R0,R4
+   \       0x70   0xE6EF'0070        UXTB     R0,R0
+   \       0x74   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \       0x78   0xE096'0101        ADDS     R0,R6,R1, LSL #+2
+   \       0x7C   0xE590'1008        LDR      R1,[R0, #+8]
+   \       0x80   0x....'....        LDR      R0,??DataTable1_3
+   \       0x84   0x....'....        BL       printf
+    303          	printf("  - Required frequency = %dHz\r\n", (int)waveforms[waveform_idx].frequency);
+   \       0x88   0xE1B0'0004        MOVS     R0,R4
+   \       0x8C   0xE6EF'0070        UXTB     R0,R0
+   \       0x90   0xE080'1080        ADD      R1,R0,R0, LSL #+1
+   \       0x94   0xE096'0101        ADDS     R0,R6,R1, LSL #+2
+   \       0x98   0xE590'1004        LDR      R1,[R0, #+4]
+   \       0x9C   0x....'....        LDR      R0,??DataTable1_4
+   \       0xA0   0x....'....        BL       printf
+    304          	printf("  - Configured frequency = %dHz\r\n", (int)frequency);
+   \       0xA4   0xE1B0'1007        MOVS     R1,R7
+   \       0xA8   0x....'....        LDR      R0,??DataTable1_5
+   \       0xAC   0x....'....        BL       printf
+    305          	tcd_start(&tc_waveform, NULL);
+   \       0xB0   0xE3A0'1000        MOV      R1,#+0
+   \       0xB4   0xE1B0'0005        MOVS     R0,R5
+   \       0xB8   0x....'....        BL       tcd_start
+    306          }
+   \       0xBC   0xE8BD'80F1        POP      {R0,R4-R7,PC}    ;; return
+    307          
+    308          static uint32_t _tc_capture_initialize(uint32_t freq, uint8_t* buf, uint32_t buf_size)
+    309          {
+    310          	uint32_t frequency;
+    311          
+    312          	struct _buffer _buf = {
+    313          		.data = buf,
+    314          		.size = buf_size,
+    315          	};
+    316          
+    317          	/* Configure one TC channel as capture operating mode */
+    318          	printf("* Configure TC: channel %d: capture mode\r\n", tc_capture.channel);
+    319          
+    320          	frequency = tcd_configure_capture(&tc_capture, freq, &_buf);
+    321          
+    322          	printf("  - Required frequency = %dHz\r\n", (int)freq);
+    323          	printf("  - Configured frequency = %dHz\r\n", (int)frequency);
+    324          
+    325          	return frequency;
+    326          }
+    327          
+    328          /*----------------------------------------------------------------------------
+    329           *        Global functions
+    330           *----------------------------------------------------------------------------*/
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+    331          int main(void)
+    332          {
+   \                     main:
+   \        0x0   0xE92D'5000        PUSH     {R12,LR}
+    333          	uint8_t key;
+                 	        ^
+Warning[Pe177]: variable "key" was declared but never referenced
+    334          	uint32_t frequency, freq;
+                 	         ^
+Warning[Pe177]: variable "frequency" was declared but never referenced
+
+  	uint32_t frequency, freq;
+  	                    ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\main.c",334  Warning[Pe177]: 
+          variable "freq" was declared but never referenced
+    335          	uint32_t duty_cycle;
+                 	         ^
+Warning[Pe177]: variable "duty_cycle" was declared but never referenced
+    336          	struct _callback _cb;
+                 	                 ^
+Warning[Pe177]: variable "_cb" was declared but never referenced
+
+  static int _tc_capture_callback(void* arg, void* arg2)
+             ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\main.c",231  Warning[Pe177]: 
+          function "_tc_capture_callback" was declared but never referenced
+
+  static void _display_menu(void)
+              ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\main.c",250  Warning[Pe177]: 
+          function "_display_menu" was declared but never referenced
+
+  static void _tc_counter_initialize(uint32_t freq)
+              ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\main.c",273  Warning[Pe177]: 
+          function "_tc_counter_initialize" was declared but never referenced
+
+  static uint32_t _tc_capture_initialize(uint32_t freq, uint8_t* buf, uint32_t buf_size)
+                  ^
+"C:\work\AtmelSoftPAck\atmel-software-package-2.17\examples\tc\main.c",308  Warning[Pe177]: 
+          function "_tc_capture_initialize" was declared but never referenced
+    337          
+    338          	/* Output example information */
+    339          	console_example_info("TC Example");
+   \        0x4   0x....'....        LDR      R0,??DataTable1_6
+   \        0x8   0x....'....        BL       console_example_info
+    340          
+    341          	/* Configure PIO Pins for TC0 */
+    342          	pio_configure(pins_tc, ARRAY_SIZE(pins_tc));
+   \        0xC   0xE3A0'1001        MOV      R1,#+1
+   \       0x10   0x....'....        LDR      R0,??DataTable1_7
+   \       0x14   0x....'....        BL       pio_configure
+    343          
+    344          	_tc_waveform_initialize(0);
+   \       0x18   0xE3A0'0000        MOV      R0,#+0
+   \       0x1C   0x....'....        BL       _tc_waveform_initialize
+    345                  while(1)
+   \                     ??main_0:
+   \       0x20   0xEAFF'FFFE        B        ??main_0
+    346                  {
+    347                  }
+    348          }
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1:
+   \        0x0   0x....'....        DC32     tc_waveform
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \        0x0   0x....'....        DC32     ?_0
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_2:
+   \        0x0   0x....'....        DC32     waveforms
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_3:
+   \        0x0   0x....'....        DC32     ?_1
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_4:
+   \        0x0   0x....'....        DC32     ?_2
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_5:
+   \        0x0   0x....'....        DC32     ?_3
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_6:
+   \        0x0   0x....'....        DC32     ?_4
+
+   \                                 In section SOFTPACK, align 4, keep-with-next
+   \                     ??DataTable1_7:
+   \        0x0   0x....'....        DC32     pins_tc
+
+   \                                 In section .rodata, align 4
+   \                     ?_0:
+   \        0x0   0x2A 0x20          DC8 0x2A, 0x20, 0x43, 0x6F, 0x6E, 0x66, 0x69, 0x67
+
+   \              0x43 0x6F    
+
+   \              0x6E 0x66    
+
+   \              0x69 0x67
+   \        0x8   0x75 0x72          DC8 0x75, 0x72, 0x65, 0x20, 0x54, 0x43, 0x3A, 0x20
+
+   \              0x65 0x20    
+
+   \              0x54 0x43    
+
+   \              0x3A 0x20
+   \       0x10   0x63 0x68          DC8 0x63, 0x68, 0x61, 0x6E, 0x6E, 0x65, 0x6C, 0x20
+
+   \              0x61 0x6E    
+
+   \              0x6E 0x65    
+
+   \              0x6C 0x20
+   \       0x18   0x25 0x64          DC8 0x25, 0x64, 0x3A, 0x20, 0x77, 0x61, 0x76, 0x65
+
+   \              0x3A 0x20    
+
+   \              0x77 0x61    
+
+   \              0x76 0x65
+   \       0x20   0x66 0x6F          DC8 0x66, 0x6F, 0x72, 0x6D, 0x20, 0x67, 0x65, 0x6E
+
+   \              0x72 0x6D    
+
+   \              0x20 0x67    
+
+   \              0x65 0x6E
+   \       0x28   0x65 0x72          DC8 0x65, 0x72, 0x61, 0x74, 0x6F, 0x72, 0x20, 0x6D
+
+   \              0x61 0x74    
+
+   \              0x6F 0x72    
+
+   \              0x20 0x6D
+   \       0x30   0x6F 0x64          DC8 0x6F, 0x64, 0x65, 0x0D, 0x0A, 0
+
+   \              0x65 0x0D    
+
+   \              0x0A 0x00
+   \       0x36   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_1:
+   \        0x0   0x20 0x20          DC8 "  - Duty Cycle = %2d%%\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x44 0x75    
+
+   \              0x74 0x79    
+
+   \              0x20 0x43    
+
+   \              0x79 0x63    
+
+   \              0x6C 0x65    
+
+   \              0x20 0x3D    
+
+   \              0x20 0x25    
+
+   \              0x32 0x64    
+
+   \              0x25 0x25    
+
+   \              0x0D 0x0A    
+
+   \              0x00
+   \       0x19   0x00 0x00          DC8 0, 0, 0
+
+   \              0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_2:
+   \        0x0   0x20 0x20          DC8 "  - Required frequency = %dHz\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x52 0x65    
+
+   \              0x71 0x75    
+
+   \              0x69 0x72    
+
+   \              0x65 0x64    
+
+   \              0x20 0x66    
+
+   \              0x72 0x65    
+
+   \              0x71 0x75    
+
+   \              0x65 0x6E    
+
+   \              0x63 0x79    
+
+   \              0x20 0x3D    
+
+   \              0x20 0x25    
+
+   \              0x64 0x48    
+
+   \              0x7A 0x0D    
+
+   \              0x0A 0x00
+
+   \                                 In section .rodata, align 4
+   \                     ?_3:
+   \        0x0   0x20 0x20          DC8 "  - Configured frequency = %dHz\015\012"
+
+   \              0x2D 0x20    
+
+   \              0x43 0x6F    
+
+   \              0x6E 0x66    
+
+   \              0x69 0x67    
+
+   \              0x75 0x72    
+
+   \              0x65 0x64    
+
+   \              0x20 0x66    
+
+   \              0x72 0x65    
+
+   \              0x71 0x75    
+
+   \              0x65 0x6E    
+
+   \              0x63 0x79    
+
+   \              0x20 0x3D    
+
+   \              0x20 0x25    
+
+   \              0x64 0x48    
+
+   \              0x7A 0x0D    
+
+   \              0x0A 0x00
+   \       0x22   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_4:
+   \        0x0   0x54 0x43          DC8 "TC Example"
+
+   \              0x20 0x45    
+
+   \              0x78 0x61    
+
+   \              0x6D 0x70    
+
+   \              0x6C 0x65    
+
+   \              0x00
+   \        0xB   0x00               DC8 0
+    349          #if 0
+    350          /**
+    351           *  \brief tc_capture_waveform Application entry point.
+    352           *
+    353           *  \return Unused (ANSI-C compatibility).
+    354           */
+    355          int main(void)
+    356          {
+    357          	uint8_t key;
+    358          	uint32_t frequency, freq;
+    359          	uint32_t duty_cycle;
+    360          	struct _callback _cb;
+    361          
+    362          	/* Output example information */
+    363          	console_example_info("TC Example");
+    364          
+    365          	/* Configure PIO Pins for TC0 */
+    366          	pio_configure(pins_tc, ARRAY_SIZE(pins_tc));
+    367          
+    368          	_tc_waveform_initialize(0);
+    369          	frequency = _tc_capture_initialize(CAPTURE_FREQ, (uint8_t*)capture_buf, sizeof(capture_buf));
+    370          	_tc_counter_initialize(COUNTER_FREQ);
+    371          
+    372          	_display_menu();
+    373          
+    374          	while (1) {
+    375          		key = console_get_char();
+    376          		switch (key) {
+    377          		case 'H':
+    378          		case 'h':
+    379          			_display_menu();
+    380          			break;
+    381          #ifdef CONFIG_HAVE_TC_DMA_MODE
+    382          		case 'p':
+    383          		case 'P':
+    384          			tc_capture.cfg.capture.transfer_mode = TCD_TRANSFER_MODE_POLLING;
+    385          			printf("TC capture in polling mode\r\n");
+    386          			break;
+    387          		case 'D':
+    388          		case 'd':
+    389          			tc_capture.cfg.capture.transfer_mode = TCD_TRANSFER_MODE_DMA;
+    390          			printf("TC capture in DMA mode\r\n");
+    391          			break;
+    392          #endif
+    393          		case 'c':
+    394          		case 'C':
+    395          			printf("TC: capture...\r\n");
+    396          			callback_set(&_cb, _tc_capture_callback, NULL);
+    397          			tcd_start(&tc_capture, &_cb);
+    398          			tcd_wait(&tc_capture);
+    399          			/* Compute frequency and duty cycle using RA/RB average */
+    400          			{
+    401          				int i;
+    402          				uint32_t ra = 0, rb = 0;
+    403          				/* The first sample is ignored since it may not
+    404          				 * be reliable depending on the capture /
+    405          				 * waveform sync */
+    406          				for (i = 1; i < CAPTURE_COUNT; i++) {
+    407          					ra += capture_buf[2 * i];
+    408          					rb += capture_buf[2 * i + 1];
+    409          				}
+    410          				ra /= (CAPTURE_COUNT - 1);
+    411          				rb /= (CAPTURE_COUNT - 1);
+    412          				freq = frequency / rb;
+    413          				duty_cycle = (rb - ra) * 100 / rb;
+    414          			}
+    415          			printf("Captured wave\r\n");
+    416          			printf("- frequency=%uHz\r\n", (unsigned)freq);
+    417          			printf("- duty cycle=%u%%\r\n", (unsigned)duty_cycle);
+    418          			printf("\r\nPress 'h' to display menu\r\n");
+    419          			break;
+    420          		default:
+    421          			/* Set waveform configuration #n */
+    422          			if ((key >= '0') && (key <= ('0' + ARRAY_SIZE(waveforms) - 1))) {
+    423          				_tc_waveform_initialize(key - '0');
+    424          			}
+    425          			break;
+    426          		}
+    427          	}
+    428          }
+    429          #endif
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   _tc_waveform_initialize
+        24   -> printf
+        24   -> tcd_configure_waveform
+        24   -> tcd_start
+       8   main
+         8   -> _tc_waveform_initialize
+         8   -> console_example_info
+         8   -> pio_configure
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+       4  ??DataTable1_2
+       4  ??DataTable1_3
+       4  ??DataTable1_4
+       4  ??DataTable1_5
+       4  ??DataTable1_6
+       4  ??DataTable1_7
+      56  ?_0
+      28  ?_1
+      32  ?_2
+      36  ?_3
+      12  ?_4
+     192  _tc_waveform_initialize
+      36  main
+      16  pins_tc
+      52  tc_waveform
+      72  waveforms
+
+ 
+  52 bytes in section .data
+ 252 bytes in section .rodata
+ 260 bytes in section SOFTPACK
+ 
+ 260 bytes of CODE  memory
+ 252 bytes of CONST memory
+  52 bytes of DATA  memory
+
+Errors: none
+Warnings: 9
